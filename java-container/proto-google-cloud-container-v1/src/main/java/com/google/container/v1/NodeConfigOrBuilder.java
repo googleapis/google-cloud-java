@@ -1597,4 +1597,17 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
    */
   com.google.container.v1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableConfidentialStorage.
+   */
+  boolean getEnableConfidentialStorage();
 }

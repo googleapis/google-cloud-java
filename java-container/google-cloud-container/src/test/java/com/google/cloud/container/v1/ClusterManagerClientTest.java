@@ -747,6 +747,7 @@ public class ClusterManagerClientTest {
             .setDiskType("diskType279771767")
             .setDiskSizeGb(-757478089)
             .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
+            .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -785,6 +786,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getDiskType(), actualRequest.getDiskType());
     Assert.assertEquals(request.getDiskSizeGb(), actualRequest.getDiskSizeGb());
     Assert.assertEquals(request.getResourceManagerTags(), actualRequest.getResourceManagerTags());
+    Assert.assertEquals(request.getQueuedProvisioning(), actualRequest.getQueuedProvisioning());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -827,6 +829,7 @@ public class ClusterManagerClientTest {
               .setDiskType("diskType279771767")
               .setDiskSizeGb(-757478089)
               .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
+              .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

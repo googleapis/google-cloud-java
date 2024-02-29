@@ -834,11 +834,12 @@ message NodeConfig {
   // A map of resource manager tag keys and values to be attached to the nodes.
   ResourceManagerTags resource_manager_tags = 45;
 
-  // Optional. Enable confidential storage on Hyperdisk.
-  // boot_disk_kms_key is required when enable_confidential_storage is true.
-  // This is only available for private preview.
+  // Optional. Reserved for future use.
   bool enable_confidential_storage = 46
       [(google.api.field_behavior) = OPTIONAL];
+
+  // List of secondary boot disks attached to the nodes.
+  repeated SecondaryBootDisk secondary_boot_disks = 48;
 }
 
 // Specifies options for controlling advanced machine features.
@@ -3150,6 +3151,9 @@ message UpdateNodePoolRequest {
   // for managing Compute Engine firewalls using Network Firewall Policies.
   // Existing tags will be replaced with new values.
   ResourceManagerTags resource_manager_tags = 39;
+
+  // Specifies the configuration of queued provisioning.
+  NodePool.QueuedProvisioning queued_provisioning = 42;
 }
 
 // SetNodePoolAutoscalingRequest sets the autoscaler settings of a node pool.
@@ -5936,6 +5940,27 @@ message EnterpriseConfig {
   // Output only. [Output only] cluster_tier specifies the premium tier of the
   // cluster.
   ClusterTier cluster_tier = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// SecondaryBootDisk represents a persistent disk attached to a node
+// with special configurations based on its mode.
+message SecondaryBootDisk {
+  // Mode specifies how the secondary boot disk will be used.
+  // This triggers mode-specified logic in the control plane.
+  enum Mode {
+    // MODE_UNSPECIFIED is when mode is not set.
+    MODE_UNSPECIFIED = 0;
+
+    // CONTAINER_IMAGE_CACHE is for using the secondary boot disk as
+    // a container image cache.
+    CONTAINER_IMAGE_CACHE = 1;
+  }
+
+  // Disk mode (container image cache, etc.)
+  Mode mode = 1;
+
+  // Fully-qualified resource ID for an existing disk image.
+  string disk_image = 2;
 }
 
 // Options for in-transit encryption.

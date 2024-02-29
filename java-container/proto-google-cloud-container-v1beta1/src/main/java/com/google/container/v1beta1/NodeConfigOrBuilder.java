@@ -1689,9 +1689,7 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Enable confidential storage on Hyperdisk.
-   * boot_disk_kms_key is required when enable_confidential_storage is true.
-   * This is only available for private preview.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1699,4 +1697,56 @@ public interface NodeConfigOrBuilder
    * @return The enableConfidentialStorage.
    */
   boolean getEnableConfidentialStorage();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  java.util.List<com.google.container.v1beta1.SecondaryBootDisk> getSecondaryBootDisksList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  com.google.container.v1beta1.SecondaryBootDisk getSecondaryBootDisks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  int getSecondaryBootDisksCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  java.util.List<? extends com.google.container.v1beta1.SecondaryBootDiskOrBuilder>
+      getSecondaryBootDisksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  com.google.container.v1beta1.SecondaryBootDiskOrBuilder getSecondaryBootDisksOrBuilder(int index);
 }

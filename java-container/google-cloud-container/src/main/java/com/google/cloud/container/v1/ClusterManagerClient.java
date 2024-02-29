@@ -1410,6 +1410,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setDiskType("diskType279771767")
    *           .setDiskSizeGb(-757478089)
    *           .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
+   *           .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
    *           .build();
    *   Operation response = clusterManagerClient.updateNodePool(request);
    * }
@@ -1465,6 +1466,7 @@ public class ClusterManagerClient implements BackgroundResource {
    *           .setDiskType("diskType279771767")
    *           .setDiskSizeGb(-757478089)
    *           .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
+   *           .setQueuedProvisioning(NodePool.QueuedProvisioning.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterManagerClient.updateNodePoolCallable().futureCall(request);

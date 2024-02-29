@@ -91,7 +91,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3026
+   *     google/container/v1beta1/cluster_service.proto;l=3027
    * @return The projectId.
    */
   @java.lang.Override
@@ -120,7 +120,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3026
+   *     google/container/v1beta1/cluster_service.proto;l=3027
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -154,7 +154,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3033
+   *     google/container/v1beta1/cluster_service.proto;l=3034
    * @return The zone.
    */
   @java.lang.Override
@@ -183,7 +183,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3033
+   *     google/container/v1beta1/cluster_service.proto;l=3034
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -216,7 +216,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3037
+   *     google/container/v1beta1/cluster_service.proto;l=3038
    * @return The clusterId.
    */
   @java.lang.Override
@@ -244,7 +244,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3037
+   *     google/container/v1beta1/cluster_service.proto;l=3038
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -277,7 +277,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3042
+   *     google/container/v1beta1/cluster_service.proto;l=3043
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -305,7 +305,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3042
+   *     google/container/v1beta1/cluster_service.proto;l=3043
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1585,6 +1585,57 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : resourceManagerTags_;
   }
 
+  public static final int QUEUED_PROVISIONING_FIELD_NUMBER = 42;
+  private com.google.container.v1beta1.NodePool.QueuedProvisioning queuedProvisioning_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the configuration of queued provisioning.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+   *
+   * @return Whether the queuedProvisioning field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueuedProvisioning() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the configuration of queued provisioning.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+   *
+   * @return The queuedProvisioning.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePool.QueuedProvisioning getQueuedProvisioning() {
+    return queuedProvisioning_ == null
+        ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+        : queuedProvisioning_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the configuration of queued provisioning.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder
+      getQueuedProvisioningOrBuilder() {
+    return queuedProvisioning_ == null
+        ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+        : queuedProvisioning_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1682,6 +1733,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(39, getResourceManagerTags());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(42, getQueuedProvisioning());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1783,6 +1837,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(39, getResourceManagerTags());
     }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, getQueuedProvisioning());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1874,6 +1931,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasResourceManagerTags() != other.hasResourceManagerTags()) return false;
     if (hasResourceManagerTags()) {
       if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
+    }
+    if (hasQueuedProvisioning() != other.hasQueuedProvisioning()) return false;
+    if (hasQueuedProvisioning()) {
+      if (!getQueuedProvisioning().equals(other.getQueuedProvisioning())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1975,6 +2036,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasResourceManagerTags()) {
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + getResourceManagerTags().hashCode();
+    }
+    if (hasQueuedProvisioning()) {
+      hash = (37 * hash) + QUEUED_PROVISIONING_FIELD_NUMBER;
+      hash = (53 * hash) + getQueuedProvisioning().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2132,6 +2197,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         getResourceLabelsFieldBuilder();
         getWindowsNodeConfigFieldBuilder();
         getResourceManagerTagsFieldBuilder();
+        getQueuedProvisioningFieldBuilder();
       }
     }
 
@@ -2230,6 +2296,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (resourceManagerTagsBuilder_ != null) {
         resourceManagerTagsBuilder_.dispose();
         resourceManagerTagsBuilder_ = null;
+      }
+      queuedProvisioning_ = null;
+      if (queuedProvisioningBuilder_ != null) {
+        queuedProvisioningBuilder_.dispose();
+        queuedProvisioningBuilder_ = null;
       }
       return this;
     }
@@ -2388,6 +2459,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 ? resourceManagerTags_
                 : resourceManagerTagsBuilder_.build();
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.queuedProvisioning_ =
+            queuedProvisioningBuilder_ == null
+                ? queuedProvisioning_
+                : queuedProvisioningBuilder_.build();
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2548,6 +2626,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasResourceManagerTags()) {
         mergeResourceManagerTags(other.getResourceManagerTags());
+      }
+      if (other.hasQueuedProvisioning()) {
+        mergeQueuedProvisioning(other.getQueuedProvisioning());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2749,6 +2830,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x08000000;
                 break;
               } // case 314
+            case 338:
+              {
+                input.readMessage(
+                    getQueuedProvisioningFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 338
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2782,7 +2870,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3026
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2810,7 +2898,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3026
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2838,7 +2926,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3026
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2865,7 +2953,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3026
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2888,7 +2976,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3026
+     *     google/container/v1beta1/cluster_service.proto;l=3027
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2918,7 +3006,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3033
+     *     google/container/v1beta1/cluster_service.proto;l=3034
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2946,7 +3034,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3033
+     *     google/container/v1beta1/cluster_service.proto;l=3034
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2974,7 +3062,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3033
+     *     google/container/v1beta1/cluster_service.proto;l=3034
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -3001,7 +3089,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3033
+     *     google/container/v1beta1/cluster_service.proto;l=3034
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3024,7 +3112,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3033
+     *     google/container/v1beta1/cluster_service.proto;l=3034
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3053,7 +3141,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3037
+     *     google/container/v1beta1/cluster_service.proto;l=3038
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -3080,7 +3168,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3037
+     *     google/container/v1beta1/cluster_service.proto;l=3038
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -3107,7 +3195,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3037
+     *     google/container/v1beta1/cluster_service.proto;l=3038
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -3133,7 +3221,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3037
+     *     google/container/v1beta1/cluster_service.proto;l=3038
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3155,7 +3243,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3037
+     *     google/container/v1beta1/cluster_service.proto;l=3038
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -3184,7 +3272,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3042
+     *     google/container/v1beta1/cluster_service.proto;l=3043
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -3211,7 +3299,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3042
+     *     google/container/v1beta1/cluster_service.proto;l=3043
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -3238,7 +3326,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3042
+     *     google/container/v1beta1/cluster_service.proto;l=3043
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -3264,7 +3352,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3042
+     *     google/container/v1beta1/cluster_service.proto;l=3043
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3286,7 +3374,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3042
+     *     google/container/v1beta1/cluster_service.proto;l=3043
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -7385,6 +7473,197 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         resourceManagerTags_ = null;
       }
       return resourceManagerTagsBuilder_;
+    }
+
+    private com.google.container.v1beta1.NodePool.QueuedProvisioning queuedProvisioning_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePool.QueuedProvisioning,
+            com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder,
+            com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder>
+        queuedProvisioningBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     *
+     * @return Whether the queuedProvisioning field is set.
+     */
+    public boolean hasQueuedProvisioning() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     *
+     * @return The queuedProvisioning.
+     */
+    public com.google.container.v1beta1.NodePool.QueuedProvisioning getQueuedProvisioning() {
+      if (queuedProvisioningBuilder_ == null) {
+        return queuedProvisioning_ == null
+            ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+            : queuedProvisioning_;
+      } else {
+        return queuedProvisioningBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     */
+    public Builder setQueuedProvisioning(
+        com.google.container.v1beta1.NodePool.QueuedProvisioning value) {
+      if (queuedProvisioningBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queuedProvisioning_ = value;
+      } else {
+        queuedProvisioningBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     */
+    public Builder setQueuedProvisioning(
+        com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder builderForValue) {
+      if (queuedProvisioningBuilder_ == null) {
+        queuedProvisioning_ = builderForValue.build();
+      } else {
+        queuedProvisioningBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     */
+    public Builder mergeQueuedProvisioning(
+        com.google.container.v1beta1.NodePool.QueuedProvisioning value) {
+      if (queuedProvisioningBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && queuedProvisioning_ != null
+            && queuedProvisioning_
+                != com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()) {
+          getQueuedProvisioningBuilder().mergeFrom(value);
+        } else {
+          queuedProvisioning_ = value;
+        }
+      } else {
+        queuedProvisioningBuilder_.mergeFrom(value);
+      }
+      if (queuedProvisioning_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     */
+    public Builder clearQueuedProvisioning() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      queuedProvisioning_ = null;
+      if (queuedProvisioningBuilder_ != null) {
+        queuedProvisioningBuilder_.dispose();
+        queuedProvisioningBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     */
+    public com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder
+        getQueuedProvisioningBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getQueuedProvisioningFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     */
+    public com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder
+        getQueuedProvisioningOrBuilder() {
+      if (queuedProvisioningBuilder_ != null) {
+        return queuedProvisioningBuilder_.getMessageOrBuilder();
+      } else {
+        return queuedProvisioning_ == null
+            ? com.google.container.v1beta1.NodePool.QueuedProvisioning.getDefaultInstance()
+            : queuedProvisioning_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the configuration of queued provisioning.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.NodePool.QueuedProvisioning queued_provisioning = 42;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.NodePool.QueuedProvisioning,
+            com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder,
+            com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder>
+        getQueuedProvisioningFieldBuilder() {
+      if (queuedProvisioningBuilder_ == null) {
+        queuedProvisioningBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.NodePool.QueuedProvisioning,
+                com.google.container.v1beta1.NodePool.QueuedProvisioning.Builder,
+                com.google.container.v1beta1.NodePool.QueuedProvisioningOrBuilder>(
+                getQueuedProvisioning(), getParentForChildren(), isClean());
+        queuedProvisioning_ = null;
+      }
+      return queuedProvisioningBuilder_;
     }
 
     @java.lang.Override

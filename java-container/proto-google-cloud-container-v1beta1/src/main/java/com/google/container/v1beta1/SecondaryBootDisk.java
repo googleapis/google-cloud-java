@@ -23,76 +23,80 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration options for Istio addon.
+ * SecondaryBootDisk represents a persistent disk attached to a node
+ * with special configurations based on its mode.
  * </pre>
  *
- * Protobuf type {@code google.container.v1beta1.IstioConfig}
+ * Protobuf type {@code google.container.v1beta1.SecondaryBootDisk}
  */
-public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
+public final class SecondaryBootDisk extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.container.v1beta1.IstioConfig)
-    IstioConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.container.v1beta1.SecondaryBootDisk)
+    SecondaryBootDiskOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use IstioConfig.newBuilder() to construct.
-  private IstioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SecondaryBootDisk.newBuilder() to construct.
+  private SecondaryBootDisk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private IstioConfig() {
-    auth_ = 0;
+  private SecondaryBootDisk() {
+    mode_ = 0;
+    diskImage_ = "";
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new IstioConfig();
+    return new SecondaryBootDisk();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+        .internal_static_google_container_v1beta1_SecondaryBootDisk_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_IstioConfig_fieldAccessorTable
+        .internal_static_google_container_v1beta1_SecondaryBootDisk_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1beta1.IstioConfig.class,
-            com.google.container.v1beta1.IstioConfig.Builder.class);
+            com.google.container.v1beta1.SecondaryBootDisk.class,
+            com.google.container.v1beta1.SecondaryBootDisk.Builder.class);
   }
 
   /**
    *
    *
    * <pre>
-   * Istio auth mode, https://istio.io/docs/concepts/security/mutual-tls.html
+   * Mode specifies how the secondary boot disk will be used.
+   * This triggers mode-specified logic in the control plane.
    * </pre>
    *
-   * Protobuf enum {@code google.container.v1beta1.IstioConfig.IstioAuthMode}
+   * Protobuf enum {@code google.container.v1beta1.SecondaryBootDisk.Mode}
    */
-  public enum IstioAuthMode implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Mode implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
      * <pre>
-     * auth not enabled
+     * MODE_UNSPECIFIED is when mode is not set.
      * </pre>
      *
-     * <code>AUTH_NONE = 0;</code>
+     * <code>MODE_UNSPECIFIED = 0;</code>
      */
-    AUTH_NONE(0),
+    MODE_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
-     * auth mutual TLS enabled
+     * CONTAINER_IMAGE_CACHE is for using the secondary boot disk as
+     * a container image cache.
      * </pre>
      *
-     * <code>AUTH_MUTUAL_TLS = 1;</code>
+     * <code>CONTAINER_IMAGE_CACHE = 1;</code>
      */
-    AUTH_MUTUAL_TLS(1),
+    CONTAINER_IMAGE_CACHE(1),
     UNRECOGNIZED(-1),
     ;
 
@@ -100,22 +104,23 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * auth not enabled
+     * MODE_UNSPECIFIED is when mode is not set.
      * </pre>
      *
-     * <code>AUTH_NONE = 0;</code>
+     * <code>MODE_UNSPECIFIED = 0;</code>
      */
-    public static final int AUTH_NONE_VALUE = 0;
+    public static final int MODE_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
      * <pre>
-     * auth mutual TLS enabled
+     * CONTAINER_IMAGE_CACHE is for using the secondary boot disk as
+     * a container image cache.
      * </pre>
      *
-     * <code>AUTH_MUTUAL_TLS = 1;</code>
+     * <code>CONTAINER_IMAGE_CACHE = 1;</code>
      */
-    public static final int AUTH_MUTUAL_TLS_VALUE = 1;
+    public static final int CONTAINER_IMAGE_CACHE_VALUE = 1;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -131,7 +136,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static IstioAuthMode valueOf(int value) {
+    public static Mode valueOf(int value) {
       return forNumber(value);
     }
 
@@ -139,25 +144,25 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static IstioAuthMode forNumber(int value) {
+    public static Mode forNumber(int value) {
       switch (value) {
         case 0:
-          return AUTH_NONE;
+          return MODE_UNSPECIFIED;
         case 1:
-          return AUTH_MUTUAL_TLS;
+          return CONTAINER_IMAGE_CACHE;
         default:
           return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Mode> internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<IstioAuthMode>() {
-          public IstioAuthMode findValueByNumber(int number) {
-            return IstioAuthMode.forNumber(number);
+    private static final com.google.protobuf.Internal.EnumLiteMap<Mode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Mode>() {
+          public Mode findValueByNumber(int number) {
+            return Mode.forNumber(number);
           }
         };
 
@@ -174,12 +179,12 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.container.v1beta1.IstioConfig.getDescriptor().getEnumTypes().get(0);
+      return com.google.container.v1beta1.SecondaryBootDisk.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final IstioAuthMode[] VALUES = values();
+    private static final Mode[] VALUES = values();
 
-    public static IstioAuthMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Mode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
@@ -191,75 +196,99 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private IstioAuthMode(int value) {
+    private Mode(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.IstioConfig.IstioAuthMode)
+    // @@protoc_insertion_point(enum_scope:google.container.v1beta1.SecondaryBootDisk.Mode)
   }
 
-  public static final int DISABLED_FIELD_NUMBER = 1;
-  private boolean disabled_ = false;
+  public static final int MODE_FIELD_NUMBER = 1;
+  private int mode_ = 0;
   /**
    *
    *
    * <pre>
-   * Whether Istio is enabled for this cluster.
+   * Disk mode (container image cache, etc.)
    * </pre>
    *
-   * <code>bool disabled = 1 [deprecated = true];</code>
+   * <code>.google.container.v1beta1.SecondaryBootDisk.Mode mode = 1;</code>
    *
-   * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1509
-   * @return The disabled.
+   * @return The enum numeric value on the wire for mode.
    */
   @java.lang.Override
-  @java.lang.Deprecated
-  public boolean getDisabled() {
-    return disabled_;
-  }
-
-  public static final int AUTH_FIELD_NUMBER = 2;
-  private int auth_ = 0;
-  /**
-   *
-   *
-   * <pre>
-   * The specified Istio auth mode, either none, or mutual TLS.
-   * </pre>
-   *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
-   *
-   * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1512
-   * @return The enum numeric value on the wire for auth.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public int getAuthValue() {
-    return auth_;
+  public int getModeValue() {
+    return mode_;
   }
   /**
    *
    *
    * <pre>
-   * The specified Istio auth mode, either none, or mutual TLS.
+   * Disk mode (container image cache, etc.)
    * </pre>
    *
-   * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];</code>
+   * <code>.google.container.v1beta1.SecondaryBootDisk.Mode mode = 1;</code>
    *
-   * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1512
-   * @return The auth.
+   * @return The mode.
    */
   @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
-    com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
-        com.google.container.v1beta1.IstioConfig.IstioAuthMode.forNumber(auth_);
+  public com.google.container.v1beta1.SecondaryBootDisk.Mode getMode() {
+    com.google.container.v1beta1.SecondaryBootDisk.Mode result =
+        com.google.container.v1beta1.SecondaryBootDisk.Mode.forNumber(mode_);
     return result == null
-        ? com.google.container.v1beta1.IstioConfig.IstioAuthMode.UNRECOGNIZED
+        ? com.google.container.v1beta1.SecondaryBootDisk.Mode.UNRECOGNIZED
         : result;
+  }
+
+  public static final int DISK_IMAGE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diskImage_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Fully-qualified resource ID for an existing disk image.
+   * </pre>
+   *
+   * <code>string disk_image = 2;</code>
+   *
+   * @return The diskImage.
+   */
+  @java.lang.Override
+  public java.lang.String getDiskImage() {
+    java.lang.Object ref = diskImage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      diskImage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fully-qualified resource ID for an existing disk image.
+   * </pre>
+   *
+   * <code>string disk_image = 2;</code>
+   *
+   * @return The bytes for diskImage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDiskImageBytes() {
+    java.lang.Object ref = diskImage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      diskImage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -276,11 +305,11 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (disabled_ != false) {
-      output.writeBool(1, disabled_);
+    if (mode_ != com.google.container.v1beta1.SecondaryBootDisk.Mode.MODE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(1, mode_);
     }
-    if (auth_ != com.google.container.v1beta1.IstioConfig.IstioAuthMode.AUTH_NONE.getNumber()) {
-      output.writeEnum(2, auth_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskImage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, diskImage_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -291,11 +320,11 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (disabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disabled_);
+    if (mode_ != com.google.container.v1beta1.SecondaryBootDisk.Mode.MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, mode_);
     }
-    if (auth_ != com.google.container.v1beta1.IstioConfig.IstioAuthMode.AUTH_NONE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, auth_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskImage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, diskImage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -307,13 +336,14 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.container.v1beta1.IstioConfig)) {
+    if (!(obj instanceof com.google.container.v1beta1.SecondaryBootDisk)) {
       return super.equals(obj);
     }
-    com.google.container.v1beta1.IstioConfig other = (com.google.container.v1beta1.IstioConfig) obj;
+    com.google.container.v1beta1.SecondaryBootDisk other =
+        (com.google.container.v1beta1.SecondaryBootDisk) obj;
 
-    if (getDisabled() != other.getDisabled()) return false;
-    if (auth_ != other.auth_) return false;
+    if (mode_ != other.mode_) return false;
+    if (!getDiskImage().equals(other.getDiskImage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -325,80 +355,80 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + DISABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
-    hash = (37 * hash) + AUTH_FIELD_NUMBER;
-    hash = (53 * hash) + auth_;
+    hash = (37 * hash) + MODE_FIELD_NUMBER;
+    hash = (53 * hash) + mode_;
+    hash = (37 * hash) + DISK_IMAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getDiskImage().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(java.nio.ByteBuffer data)
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(byte[] data)
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(java.io.InputStream input)
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.IstioConfig parseFrom(
+  public static com.google.container.v1beta1.SecondaryBootDisk parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -415,7 +445,7 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.container.v1beta1.IstioConfig prototype) {
+  public static Builder newBuilder(com.google.container.v1beta1.SecondaryBootDisk prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -433,31 +463,32 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration options for Istio addon.
+   * SecondaryBootDisk represents a persistent disk attached to a node
+   * with special configurations based on its mode.
    * </pre>
    *
-   * Protobuf type {@code google.container.v1beta1.IstioConfig}
+   * Protobuf type {@code google.container.v1beta1.SecondaryBootDisk}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.IstioConfig)
-      com.google.container.v1beta1.IstioConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.SecondaryBootDisk)
+      com.google.container.v1beta1.SecondaryBootDiskOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+          .internal_static_google_container_v1beta1_SecondaryBootDisk_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_fieldAccessorTable
+          .internal_static_google_container_v1beta1_SecondaryBootDisk_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1beta1.IstioConfig.class,
-              com.google.container.v1beta1.IstioConfig.Builder.class);
+              com.google.container.v1beta1.SecondaryBootDisk.class,
+              com.google.container.v1beta1.SecondaryBootDisk.Builder.class);
     }
 
-    // Construct using com.google.container.v1beta1.IstioConfig.newBuilder()
+    // Construct using com.google.container.v1beta1.SecondaryBootDisk.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -468,25 +499,25 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      disabled_ = false;
-      auth_ = 0;
+      mode_ = 0;
+      diskImage_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_IstioConfig_descriptor;
+          .internal_static_google_container_v1beta1_SecondaryBootDisk_descriptor;
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig getDefaultInstanceForType() {
-      return com.google.container.v1beta1.IstioConfig.getDefaultInstance();
+    public com.google.container.v1beta1.SecondaryBootDisk getDefaultInstanceForType() {
+      return com.google.container.v1beta1.SecondaryBootDisk.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig build() {
-      com.google.container.v1beta1.IstioConfig result = buildPartial();
+    public com.google.container.v1beta1.SecondaryBootDisk build() {
+      com.google.container.v1beta1.SecondaryBootDisk result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -494,9 +525,9 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.IstioConfig buildPartial() {
-      com.google.container.v1beta1.IstioConfig result =
-          new com.google.container.v1beta1.IstioConfig(this);
+    public com.google.container.v1beta1.SecondaryBootDisk buildPartial() {
+      com.google.container.v1beta1.SecondaryBootDisk result =
+          new com.google.container.v1beta1.SecondaryBootDisk(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -504,13 +535,13 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartial0(com.google.container.v1beta1.IstioConfig result) {
+    private void buildPartial0(com.google.container.v1beta1.SecondaryBootDisk result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.disabled_ = disabled_;
+        result.mode_ = mode_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.auth_ = auth_;
+        result.diskImage_ = diskImage_;
       }
     }
 
@@ -549,21 +580,23 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.container.v1beta1.IstioConfig) {
-        return mergeFrom((com.google.container.v1beta1.IstioConfig) other);
+      if (other instanceof com.google.container.v1beta1.SecondaryBootDisk) {
+        return mergeFrom((com.google.container.v1beta1.SecondaryBootDisk) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.container.v1beta1.IstioConfig other) {
-      if (other == com.google.container.v1beta1.IstioConfig.getDefaultInstance()) return this;
-      if (other.getDisabled() != false) {
-        setDisabled(other.getDisabled());
+    public Builder mergeFrom(com.google.container.v1beta1.SecondaryBootDisk other) {
+      if (other == com.google.container.v1beta1.SecondaryBootDisk.getDefaultInstance()) return this;
+      if (other.mode_ != 0) {
+        setModeValue(other.getModeValue());
       }
-      if (other.auth_ != 0) {
-        setAuthValue(other.getAuthValue());
+      if (!other.getDiskImage().isEmpty()) {
+        diskImage_ = other.diskImage_;
+        bitField0_ |= 0x00000002;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -593,16 +626,16 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
               break;
             case 8:
               {
-                disabled_ = input.readBool();
+                mode_ = input.readEnum();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
-            case 16:
+            case 18:
               {
-                auth_ = input.readEnum();
+                diskImage_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -622,43 +655,36 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
-    private boolean disabled_;
+    private int mode_ = 0;
     /**
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Disk mode (container image cache, etc.)
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>.google.container.v1beta1.SecondaryBootDisk.Mode mode = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1509
-     * @return The disabled.
+     * @return The enum numeric value on the wire for mode.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public boolean getDisabled() {
-      return disabled_;
+    public int getModeValue() {
+      return mode_;
     }
     /**
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Disk mode (container image cache, etc.)
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>.google.container.v1beta1.SecondaryBootDisk.Mode mode = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1509
-     * @param value The disabled to set.
+     * @param value The enum numeric value on the wire for mode to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder setDisabled(boolean value) {
-
-      disabled_ = value;
+    public Builder setModeValue(int value) {
+      mode_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -667,110 +693,39 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether Istio is enabled for this cluster.
+     * Disk mode (container image cache, etc.)
      * </pre>
      *
-     * <code>bool disabled = 1 [deprecated = true];</code>
+     * <code>.google.container.v1beta1.SecondaryBootDisk.Mode mode = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.disabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1509
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      disabled_ = false;
-      onChanged();
-      return this;
-    }
-
-    private int auth_ = 0;
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1512
-     * @return The enum numeric value on the wire for auth.
+     * @return The mode.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public int getAuthValue() {
-      return auth_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1512
-     * @param value The enum numeric value on the wire for auth to set.
-     * @return This builder for chaining.
-     */
-    @java.lang.Deprecated
-    public Builder setAuthValue(int value) {
-      auth_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
-     * </pre>
-     *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
-     *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1512
-     * @return The auth.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public com.google.container.v1beta1.IstioConfig.IstioAuthMode getAuth() {
-      com.google.container.v1beta1.IstioConfig.IstioAuthMode result =
-          com.google.container.v1beta1.IstioConfig.IstioAuthMode.forNumber(auth_);
+    public com.google.container.v1beta1.SecondaryBootDisk.Mode getMode() {
+      com.google.container.v1beta1.SecondaryBootDisk.Mode result =
+          com.google.container.v1beta1.SecondaryBootDisk.Mode.forNumber(mode_);
       return result == null
-          ? com.google.container.v1beta1.IstioConfig.IstioAuthMode.UNRECOGNIZED
+          ? com.google.container.v1beta1.SecondaryBootDisk.Mode.UNRECOGNIZED
           : result;
     }
     /**
      *
      *
      * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
+     * Disk mode (container image cache, etc.)
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
+     * <code>.google.container.v1beta1.SecondaryBootDisk.Mode mode = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1512
-     * @param value The auth to set.
+     * @param value The mode to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder setAuth(com.google.container.v1beta1.IstioConfig.IstioAuthMode value) {
+    public Builder setMode(com.google.container.v1beta1.SecondaryBootDisk.Mode value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
-      auth_ = value.getNumber();
+      bitField0_ |= 0x00000001;
+      mode_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -778,20 +733,122 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The specified Istio auth mode, either none, or mutual TLS.
+     * Disk mode (container image cache, etc.)
      * </pre>
      *
-     * <code>.google.container.v1beta1.IstioConfig.IstioAuthMode auth = 2 [deprecated = true];
-     * </code>
+     * <code>.google.container.v1beta1.SecondaryBootDisk.Mode mode = 1;</code>
      *
-     * @deprecated google.container.v1beta1.IstioConfig.auth is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1512
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
-    public Builder clearAuth() {
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      mode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object diskImage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Fully-qualified resource ID for an existing disk image.
+     * </pre>
+     *
+     * <code>string disk_image = 2;</code>
+     *
+     * @return The diskImage.
+     */
+    public java.lang.String getDiskImage() {
+      java.lang.Object ref = diskImage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        diskImage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully-qualified resource ID for an existing disk image.
+     * </pre>
+     *
+     * <code>string disk_image = 2;</code>
+     *
+     * @return The bytes for diskImage.
+     */
+    public com.google.protobuf.ByteString getDiskImageBytes() {
+      java.lang.Object ref = diskImage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        diskImage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully-qualified resource ID for an existing disk image.
+     * </pre>
+     *
+     * <code>string disk_image = 2;</code>
+     *
+     * @param value The diskImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskImage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      diskImage_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully-qualified resource ID for an existing disk image.
+     * </pre>
+     *
+     * <code>string disk_image = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskImage() {
+      diskImage_ = getDefaultInstance().getDiskImage();
       bitField0_ = (bitField0_ & ~0x00000002);
-      auth_ = 0;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fully-qualified resource ID for an existing disk image.
+     * </pre>
+     *
+     * <code>string disk_image = 2;</code>
+     *
+     * @param value The bytes for diskImage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskImageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      diskImage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -807,24 +864,24 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.IstioConfig)
+    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.SecondaryBootDisk)
   }
 
-  // @@protoc_insertion_point(class_scope:google.container.v1beta1.IstioConfig)
-  private static final com.google.container.v1beta1.IstioConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.container.v1beta1.SecondaryBootDisk)
+  private static final com.google.container.v1beta1.SecondaryBootDisk DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.container.v1beta1.IstioConfig();
+    DEFAULT_INSTANCE = new com.google.container.v1beta1.SecondaryBootDisk();
   }
 
-  public static com.google.container.v1beta1.IstioConfig getDefaultInstance() {
+  public static com.google.container.v1beta1.SecondaryBootDisk getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IstioConfig> PARSER =
-      new com.google.protobuf.AbstractParser<IstioConfig>() {
+  private static final com.google.protobuf.Parser<SecondaryBootDisk> PARSER =
+      new com.google.protobuf.AbstractParser<SecondaryBootDisk>() {
         @java.lang.Override
-        public IstioConfig parsePartialFrom(
+        public SecondaryBootDisk parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -843,17 +900,17 @@ public final class IstioConfig extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<IstioConfig> parser() {
+  public static com.google.protobuf.Parser<SecondaryBootDisk> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<IstioConfig> getParserForType() {
+  public com.google.protobuf.Parser<SecondaryBootDisk> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.container.v1beta1.IstioConfig getDefaultInstanceForType() {
+  public com.google.container.v1beta1.SecondaryBootDisk getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

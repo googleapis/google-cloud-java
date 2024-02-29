@@ -55,6 +55,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     minCpuPlatform_ = "";
     taints_ = java.util.Collections.emptyList();
     bootDiskKmsKey_ = "";
+    secondaryBootDisks_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -2413,9 +2414,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Enable confidential storage on Hyperdisk.
-   * boot_disk_kms_key is required when enable_confidential_storage is true.
-   * This is only available for private preview.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2425,6 +2424,79 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableConfidentialStorage() {
     return enableConfidentialStorage_;
+  }
+
+  public static final int SECONDARY_BOOT_DISKS_FIELD_NUMBER = 48;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.container.v1beta1.SecondaryBootDisk> secondaryBootDisks_;
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1beta1.SecondaryBootDisk>
+      getSecondaryBootDisksList() {
+    return secondaryBootDisks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.container.v1beta1.SecondaryBootDiskOrBuilder>
+      getSecondaryBootDisksOrBuilderList() {
+    return secondaryBootDisks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  @java.lang.Override
+  public int getSecondaryBootDisksCount() {
+    return secondaryBootDisks_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecondaryBootDisk getSecondaryBootDisks(int index) {
+    return secondaryBootDisks_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecondaryBootDiskOrBuilder getSecondaryBootDisksOrBuilder(
+      int index) {
+    return secondaryBootDisks_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2551,6 +2623,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (enableConfidentialStorage_ != false) {
       output.writeBool(46, enableConfidentialStorage_);
+    }
+    for (int i = 0; i < secondaryBootDisks_.size(); i++) {
+      output.writeMessage(48, secondaryBootDisks_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2718,6 +2793,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (enableConfidentialStorage_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, enableConfidentialStorage_);
     }
+    for (int i = 0; i < secondaryBootDisks_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(48, secondaryBootDisks_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2830,6 +2909,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!getResourceManagerTags().equals(other.getResourceManagerTags())) return false;
     }
     if (getEnableConfidentialStorage() != other.getEnableConfidentialStorage()) return false;
+    if (!getSecondaryBootDisksList().equals(other.getSecondaryBootDisksList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2969,6 +3049,10 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENABLE_CONFIDENTIAL_STORAGE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialStorage());
+    if (getSecondaryBootDisksCount() > 0) {
+      hash = (37 * hash) + SECONDARY_BOOT_DISKS_FIELD_NUMBER;
+      hash = (53 * hash) + getSecondaryBootDisksList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3165,6 +3249,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         getSoleTenantConfigFieldBuilder();
         getHostMaintenancePolicyFieldBuilder();
         getResourceManagerTagsFieldBuilder();
+        getSecondaryBootDisksFieldBuilder();
       }
     }
 
@@ -3299,6 +3384,13 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         resourceManagerTagsBuilder_ = null;
       }
       enableConfidentialStorage_ = false;
+      if (secondaryBootDisksBuilder_ == null) {
+        secondaryBootDisks_ = java.util.Collections.emptyList();
+      } else {
+        secondaryBootDisks_ = null;
+        secondaryBootDisksBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000040);
       return this;
     }
 
@@ -3355,6 +3447,15 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         result.taints_ = taints_;
       } else {
         result.taints_ = taintsBuilder_.build();
+      }
+      if (secondaryBootDisksBuilder_ == null) {
+        if (((bitField1_ & 0x00000040) != 0)) {
+          secondaryBootDisks_ = java.util.Collections.unmodifiableList(secondaryBootDisks_);
+          bitField1_ = (bitField1_ & ~0x00000040);
+        }
+        result.secondaryBootDisks_ = secondaryBootDisks_;
+      } else {
+        result.secondaryBootDisks_ = secondaryBootDisksBuilder_.build();
       }
     }
 
@@ -3772,6 +3873,33 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableConfidentialStorage() != false) {
         setEnableConfidentialStorage(other.getEnableConfidentialStorage());
       }
+      if (secondaryBootDisksBuilder_ == null) {
+        if (!other.secondaryBootDisks_.isEmpty()) {
+          if (secondaryBootDisks_.isEmpty()) {
+            secondaryBootDisks_ = other.secondaryBootDisks_;
+            bitField1_ = (bitField1_ & ~0x00000040);
+          } else {
+            ensureSecondaryBootDisksIsMutable();
+            secondaryBootDisks_.addAll(other.secondaryBootDisks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.secondaryBootDisks_.isEmpty()) {
+          if (secondaryBootDisksBuilder_.isEmpty()) {
+            secondaryBootDisksBuilder_.dispose();
+            secondaryBootDisksBuilder_ = null;
+            secondaryBootDisks_ = other.secondaryBootDisks_;
+            bitField1_ = (bitField1_ & ~0x00000040);
+            secondaryBootDisksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSecondaryBootDisksFieldBuilder()
+                    : null;
+          } else {
+            secondaryBootDisksBuilder_.addAllMessages(other.secondaryBootDisks_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4073,6 +4201,19 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000020;
                 break;
               } // case 368
+            case 386:
+              {
+                com.google.container.v1beta1.SecondaryBootDisk m =
+                    input.readMessage(
+                        com.google.container.v1beta1.SecondaryBootDisk.parser(), extensionRegistry);
+                if (secondaryBootDisksBuilder_ == null) {
+                  ensureSecondaryBootDisksIsMutable();
+                  secondaryBootDisks_.add(m);
+                } else {
+                  secondaryBootDisksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 386
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10972,9 +11113,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Enable confidential storage on Hyperdisk.
-     * boot_disk_kms_key is required when enable_confidential_storage is true.
-     * This is only available for private preview.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -10989,9 +11128,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Enable confidential storage on Hyperdisk.
-     * boot_disk_kms_key is required when enable_confidential_storage is true.
-     * This is only available for private preview.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -11010,9 +11147,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Enable confidential storage on Hyperdisk.
-     * boot_disk_kms_key is required when enable_confidential_storage is true.
-     * This is only available for private preview.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -11024,6 +11159,367 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       enableConfidentialStorage_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.container.v1beta1.SecondaryBootDisk> secondaryBootDisks_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSecondaryBootDisksIsMutable() {
+      if (!((bitField1_ & 0x00000040) != 0)) {
+        secondaryBootDisks_ =
+            new java.util.ArrayList<com.google.container.v1beta1.SecondaryBootDisk>(
+                secondaryBootDisks_);
+        bitField1_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.SecondaryBootDisk,
+            com.google.container.v1beta1.SecondaryBootDisk.Builder,
+            com.google.container.v1beta1.SecondaryBootDiskOrBuilder>
+        secondaryBootDisksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public java.util.List<com.google.container.v1beta1.SecondaryBootDisk>
+        getSecondaryBootDisksList() {
+      if (secondaryBootDisksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(secondaryBootDisks_);
+      } else {
+        return secondaryBootDisksBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public int getSecondaryBootDisksCount() {
+      if (secondaryBootDisksBuilder_ == null) {
+        return secondaryBootDisks_.size();
+      } else {
+        return secondaryBootDisksBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public com.google.container.v1beta1.SecondaryBootDisk getSecondaryBootDisks(int index) {
+      if (secondaryBootDisksBuilder_ == null) {
+        return secondaryBootDisks_.get(index);
+      } else {
+        return secondaryBootDisksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder setSecondaryBootDisks(
+        int index, com.google.container.v1beta1.SecondaryBootDisk value) {
+      if (secondaryBootDisksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecondaryBootDisksIsMutable();
+        secondaryBootDisks_.set(index, value);
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder setSecondaryBootDisks(
+        int index, com.google.container.v1beta1.SecondaryBootDisk.Builder builderForValue) {
+      if (secondaryBootDisksBuilder_ == null) {
+        ensureSecondaryBootDisksIsMutable();
+        secondaryBootDisks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder addSecondaryBootDisks(com.google.container.v1beta1.SecondaryBootDisk value) {
+      if (secondaryBootDisksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecondaryBootDisksIsMutable();
+        secondaryBootDisks_.add(value);
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder addSecondaryBootDisks(
+        int index, com.google.container.v1beta1.SecondaryBootDisk value) {
+      if (secondaryBootDisksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecondaryBootDisksIsMutable();
+        secondaryBootDisks_.add(index, value);
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder addSecondaryBootDisks(
+        com.google.container.v1beta1.SecondaryBootDisk.Builder builderForValue) {
+      if (secondaryBootDisksBuilder_ == null) {
+        ensureSecondaryBootDisksIsMutable();
+        secondaryBootDisks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder addSecondaryBootDisks(
+        int index, com.google.container.v1beta1.SecondaryBootDisk.Builder builderForValue) {
+      if (secondaryBootDisksBuilder_ == null) {
+        ensureSecondaryBootDisksIsMutable();
+        secondaryBootDisks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder addAllSecondaryBootDisks(
+        java.lang.Iterable<? extends com.google.container.v1beta1.SecondaryBootDisk> values) {
+      if (secondaryBootDisksBuilder_ == null) {
+        ensureSecondaryBootDisksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondaryBootDisks_);
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder clearSecondaryBootDisks() {
+      if (secondaryBootDisksBuilder_ == null) {
+        secondaryBootDisks_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000040);
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public Builder removeSecondaryBootDisks(int index) {
+      if (secondaryBootDisksBuilder_ == null) {
+        ensureSecondaryBootDisksIsMutable();
+        secondaryBootDisks_.remove(index);
+        onChanged();
+      } else {
+        secondaryBootDisksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public com.google.container.v1beta1.SecondaryBootDisk.Builder getSecondaryBootDisksBuilder(
+        int index) {
+      return getSecondaryBootDisksFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public com.google.container.v1beta1.SecondaryBootDiskOrBuilder getSecondaryBootDisksOrBuilder(
+        int index) {
+      if (secondaryBootDisksBuilder_ == null) {
+        return secondaryBootDisks_.get(index);
+      } else {
+        return secondaryBootDisksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public java.util.List<? extends com.google.container.v1beta1.SecondaryBootDiskOrBuilder>
+        getSecondaryBootDisksOrBuilderList() {
+      if (secondaryBootDisksBuilder_ != null) {
+        return secondaryBootDisksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(secondaryBootDisks_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public com.google.container.v1beta1.SecondaryBootDisk.Builder addSecondaryBootDisksBuilder() {
+      return getSecondaryBootDisksFieldBuilder()
+          .addBuilder(com.google.container.v1beta1.SecondaryBootDisk.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public com.google.container.v1beta1.SecondaryBootDisk.Builder addSecondaryBootDisksBuilder(
+        int index) {
+      return getSecondaryBootDisksFieldBuilder()
+          .addBuilder(index, com.google.container.v1beta1.SecondaryBootDisk.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of secondary boot disks attached to the nodes.
+     * </pre>
+     *
+     * <code>repeated .google.container.v1beta1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+     */
+    public java.util.List<com.google.container.v1beta1.SecondaryBootDisk.Builder>
+        getSecondaryBootDisksBuilderList() {
+      return getSecondaryBootDisksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.SecondaryBootDisk,
+            com.google.container.v1beta1.SecondaryBootDisk.Builder,
+            com.google.container.v1beta1.SecondaryBootDiskOrBuilder>
+        getSecondaryBootDisksFieldBuilder() {
+      if (secondaryBootDisksBuilder_ == null) {
+        secondaryBootDisksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1beta1.SecondaryBootDisk,
+                com.google.container.v1beta1.SecondaryBootDisk.Builder,
+                com.google.container.v1beta1.SecondaryBootDiskOrBuilder>(
+                secondaryBootDisks_,
+                ((bitField1_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        secondaryBootDisks_ = null;
+      }
+      return secondaryBootDisksBuilder_;
     }
 
     @java.lang.Override
