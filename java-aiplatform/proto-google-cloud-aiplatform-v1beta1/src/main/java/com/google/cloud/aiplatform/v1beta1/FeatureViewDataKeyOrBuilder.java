@@ -61,5 +61,47 @@ public interface FeatureViewDataKeyOrBuilder
    */
   com.google.protobuf.ByteString getKeyBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * The actual Entity ID will be composed from this struct. This should match
+   * with the way ID is defined in the FeatureView spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKey composite_key = 2;
+   * </code>
+   *
+   * @return Whether the compositeKey field is set.
+   */
+  boolean hasCompositeKey();
+  /**
+   *
+   *
+   * <pre>
+   * The actual Entity ID will be composed from this struct. This should match
+   * with the way ID is defined in the FeatureView spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKey composite_key = 2;
+   * </code>
+   *
+   * @return The compositeKey.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKey getCompositeKey();
+  /**
+   *
+   *
+   * <pre>
+   * The actual Entity ID will be composed from this struct. This should match
+   * with the way ID is defined in the FeatureView spec.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKey composite_key = 2;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.CompositeKeyOrBuilder
+      getCompositeKeyOrBuilder();
+
   com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.KeyOneofCase getKeyOneofCase();
 }

@@ -444,5 +444,73 @@ public interface FeatureViewOrBuilder
   com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfigOrBuilder
       getVectorSearchConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service agent type used during data sync. By default, the Vertex
+   * AI Service Agent is used. When using an IAM Policy to isolate this
+   * FeatureView within a project, a separate service account should be
+   * provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_VIEW`.
+   * This will generate a separate service account to access the BigQuery source
+   * table.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.ServiceAgentType service_agent_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for serviceAgentType.
+   */
+  int getServiceAgentTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Service agent type used during data sync. By default, the Vertex
+   * AI Service Agent is used. When using an IAM Policy to isolate this
+   * FeatureView within a project, a separate service account should be
+   * provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_VIEW`.
+   * This will generate a separate service account to access the BigQuery source
+   * table.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.ServiceAgentType service_agent_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceAgentType.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureView.ServiceAgentType getServiceAgentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A Service Account unique to this FeatureView. The role
+   * bigquery.dataViewer should be granted to this service account to allow
+   * Vertex AI Feature Store to sync data to the online store.
+   * </pre>
+   *
+   * <code>string service_account_email = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAccountEmail.
+   */
+  java.lang.String getServiceAccountEmail();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A Service Account unique to this FeatureView. The role
+   * bigquery.dataViewer should be granted to this service account to allow
+   * Vertex AI Feature Store to sync data to the online store.
+   * </pre>
+   *
+   * <code>string service_account_email = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAccountEmail.
+   */
+  com.google.protobuf.ByteString getServiceAccountEmailBytes();
+
   com.google.cloud.aiplatform.v1beta1.FeatureView.SourceCase getSourceCase();
 }

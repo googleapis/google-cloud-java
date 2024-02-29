@@ -634,4 +634,31 @@ public interface FeatureOrBuilder
    * @return The bytes for versionColumnName.
    */
   com.google.protobuf.ByteString getVersionColumnNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Entity responsible for maintaining this feature. Can be comma separated
+   * list of email addresses or URIs.
+   * </pre>
+   *
+   * <code>string point_of_contact = 107;</code>
+   *
+   * @return The pointOfContact.
+   */
+  java.lang.String getPointOfContact();
+  /**
+   *
+   *
+   * <pre>
+   * Entity responsible for maintaining this feature. Can be comma separated
+   * list of email addresses or URIs.
+   * </pre>
+   *
+   * <code>string point_of_contact = 107;</code>
+   *
+   * @return The bytes for pointOfContact.
+   */
+  com.google.protobuf.ByteString getPointOfContactBytes();
 }
