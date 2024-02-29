@@ -138,7 +138,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system generated unique ID (in UUID4 format) for the Job.
+   * Output only. A system generated unique ID for the Job.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -161,7 +161,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system generated unique ID (in UUID4 format) for the Job.
+   * Output only. A system generated unique ID for the Job.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1614,7 +1614,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system generated unique ID (in UUID4 format) for the Job.
+     * Output only. A system generated unique ID for the Job.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1636,7 +1636,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system generated unique ID (in UUID4 format) for the Job.
+     * Output only. A system generated unique ID for the Job.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1658,7 +1658,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system generated unique ID (in UUID4 format) for the Job.
+     * Output only. A system generated unique ID for the Job.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1679,7 +1679,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system generated unique ID (in UUID4 format) for the Job.
+     * Output only. A system generated unique ID for the Job.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1696,7 +1696,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system generated unique ID (in UUID4 format) for the Job.
+     * Output only. A system generated unique ID for the Job.
      * </pre>
      *
      * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

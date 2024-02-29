@@ -55,7 +55,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. A system generated unique ID (in UUID4 format) for the Job.
+   * Output only. A system generated unique ID for the Job.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -67,7 +67,7 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. A system generated unique ID (in UUID4 format) for the Job.
+   * Output only. A system generated unique ID for the Job.
    * </pre>
    *
    * <code>string uid = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
