@@ -138,7 +138,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDescendantSecurityHealthAnalyticsCustomModules</td>
- *      <td><p> Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent and all of the parent’s CRM descendants.</td>
+ *      <td><p> Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent and all of the parent's CRM descendants.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1309,7 +1309,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent’s CRM descendants.
+   * and all of the parent's CRM descendants.
    *
    * <p>Sample code:
    *
@@ -1348,7 +1348,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent’s CRM descendants.
+   * and all of the parent's CRM descendants.
    *
    * <p>Sample code:
    *
@@ -1387,7 +1387,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent’s CRM descendants.
+   * and all of the parent's CRM descendants.
    *
    * <p>Sample code:
    *
@@ -1426,7 +1426,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent’s CRM descendants.
+   * and all of the parent's CRM descendants.
    *
    * <p>Sample code:
    *
@@ -1465,7 +1465,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent’s CRM descendants.
+   * and all of the parent's CRM descendants.
    *
    * <p>Sample code:
    *
@@ -1504,7 +1504,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent’s CRM descendants.
+   * and all of the parent's CRM descendants.
    *
    * <p>Sample code:
    *
@@ -1543,7 +1543,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of all resident SecurityHealthAnalyticsCustomModules under the given CRM parent
-   * and all of the parent’s CRM descendants.
+   * and all of the parent's CRM descendants.
    *
    * <p>Sample code:
    *

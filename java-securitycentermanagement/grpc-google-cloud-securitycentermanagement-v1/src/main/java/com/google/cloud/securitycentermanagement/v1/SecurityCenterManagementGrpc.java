@@ -1324,7 +1324,7 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent’s CRM descendants.
+     * the given CRM parent and all of the parent's CRM descendants.
      * </pre>
      */
     default void listDescendantSecurityHealthAnalyticsCustomModules(
@@ -1729,7 +1729,7 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent’s CRM descendants.
+     * the given CRM parent and all of the parent's CRM descendants.
      * </pre>
      */
     public void listDescendantSecurityHealthAnalyticsCustomModules(
@@ -2152,7 +2152,7 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent’s CRM descendants.
+     * the given CRM parent and all of the parent's CRM descendants.
      * </pre>
      */
     public com.google.cloud.securitycentermanagement.v1
@@ -2556,7 +2556,7 @@ public final class SecurityCenterManagementGrpc {
      *
      * <pre>
      * Returns a list of all resident SecurityHealthAnalyticsCustomModules under
-     * the given CRM parent and all of the parent’s CRM descendants.
+     * the given CRM parent and all of the parent's CRM descendants.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
