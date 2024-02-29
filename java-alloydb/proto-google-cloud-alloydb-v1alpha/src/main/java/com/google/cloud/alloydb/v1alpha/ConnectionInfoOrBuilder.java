@@ -128,7 +128,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1032
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -146,7 +146,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1032
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -164,7 +164,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1032
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -183,7 +183,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.ConnectionInfo.pem_certificate_chain is deprecated.
-   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1027
+   *     See google/cloud/alloydb/v1alpha/resources.proto;l=1032
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
@@ -214,4 +214,29 @@ public interface ConnectionInfoOrBuilder
    * @return The bytes for instanceUid.
    */
   com.google.protobuf.ByteString getInstanceUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The DNS name to use with PSC for the Instance.
+   * </pre>
+   *
+   * <code>string psc_dns_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The pscDnsName.
+   */
+  java.lang.String getPscDnsName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The DNS name to use with PSC for the Instance.
+   * </pre>
+   *
+   * <code>string psc_dns_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for pscDnsName.
+   */
+  com.google.protobuf.ByteString getPscDnsNameBytes();
 }

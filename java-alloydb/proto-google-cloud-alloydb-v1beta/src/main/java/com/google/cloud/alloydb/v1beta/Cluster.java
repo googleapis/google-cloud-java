@@ -581,7 +581,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -590,7 +590,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -600,7 +600,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -609,7 +609,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -625,8 +625,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -643,8 +643,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -706,7 +706,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -715,7 +715,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -736,7 +736,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The resource link for the VPC network in which cluster
+     * Optional. The resource link for the VPC network in which cluster
      * resources are created and from which they are accessible via Private IP.
      * The network must belong to the same project as the cluster. It is
      * specified in the form:
@@ -745,7 +745,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -776,8 +776,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -805,8 +805,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * instance IPs for this cluster will be created in the allocated range. The
      * range name must comply with RFC 1035. Specifically, the name must be 1-63
      * characters long and match the regular expression
-     * [a-z]([-a-z0-9]*[a-z0-9])?.
-     * Field name is intended to be consistent with CloudSQL.
+     * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+     * Field name is intended to be consistent with Cloud SQL.
      * </pre>
      *
      * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1202,7 +1202,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1211,7 +1211,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The network.
@@ -1231,7 +1231,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1240,7 +1240,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for network.
@@ -1260,7 +1260,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1269,7 +1269,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The network to set.
@@ -1288,7 +1288,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1297,7 +1297,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return This builder for chaining.
@@ -1312,7 +1312,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The resource link for the VPC network in which cluster
+       * Optional. The resource link for the VPC network in which cluster
        * resources are created and from which they are accessible via Private IP.
        * The network must belong to the same project as the cluster. It is
        * specified in the form:
@@ -1321,7 +1321,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * string network = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+       * string network = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The bytes for network to set.
@@ -1348,8 +1348,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1376,8 +1376,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1404,8 +1404,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1431,8 +1431,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1454,8 +1454,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * instance IPs for this cluster will be created in the allocated range. The
        * range name must comply with RFC 1035. Specifically, the name must be 1-63
        * characters long and match the regular expression
-       * [a-z]([-a-z0-9]*[a-z0-9])?.
-       * Field name is intended to be consistent with CloudSQL.
+       * `[a-z]([-a-z0-9]*[a-z0-9])?`.
+       * Field name is intended to be consistent with Cloud SQL.
        * </pre>
        *
        * <code>string allocated_ip_range = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3780,7 +3780,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=546
+   *     google/cloud/alloydb/v1beta/resources.proto;l=547
    * @return The network.
    */
   @java.lang.Override
@@ -3812,7 +3812,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=546
+   *     google/cloud/alloydb/v1beta/resources.proto;l=547
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -4153,7 +4153,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=581
+   *     google/cloud/alloydb/v1beta/resources.proto;l=582
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -4171,7 +4171,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=581
+   *     google/cloud/alloydb/v1beta/resources.proto;l=582
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -4544,6 +4544,24 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : primaryConfig_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 30;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4637,6 +4655,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(29, getNetworkConfig());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(30, satisfiesPzs_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4750,6 +4771,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getNetworkConfig());
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4828,6 +4852,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasPrimaryConfig()) {
       if (!getPrimaryConfig().equals(other.getPrimaryConfig())) return false;
     }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 15:
@@ -4928,6 +4953,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRIMARY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrimaryConfig().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     switch (sourceCase_) {
       case 15:
         hash = (37 * hash) + BACKUP_SOURCE_FIELD_NUMBER;
@@ -5210,6 +5237,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfigBuilder_.dispose();
         primaryConfigBuilder_ = null;
       }
+      satisfiesPzs_ = false;
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -5352,6 +5380,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             primaryConfigBuilder_ == null ? primaryConfig_ : primaryConfigBuilder_.build();
         to_bitField0_ |= 0x00001000;
       }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -5490,6 +5521,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPrimaryConfig()) {
         mergePrimaryConfig(other.getPrimaryConfig());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
       }
       switch (other.getSourceCase()) {
         case BACKUP_SOURCE:
@@ -5705,6 +5739,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 234
+            case 240:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 240
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7813,7 +7853,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=546
+     *     google/cloud/alloydb/v1beta/resources.proto;l=547
      * @return The network.
      */
     @java.lang.Deprecated
@@ -7844,7 +7884,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=546
+     *     google/cloud/alloydb/v1beta/resources.proto;l=547
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -7875,7 +7915,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=546
+     *     google/cloud/alloydb/v1beta/resources.proto;l=547
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -7905,7 +7945,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=546
+     *     google/cloud/alloydb/v1beta/resources.proto;l=547
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -7931,7 +7971,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=546
+     *     google/cloud/alloydb/v1beta/resources.proto;l=547
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -8772,7 +8812,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=581
+     *     google/cloud/alloydb/v1beta/resources.proto;l=582
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -8789,7 +8829,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=581
+     *     google/cloud/alloydb/v1beta/resources.proto;l=582
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -10213,6 +10253,59 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         primaryConfig_ = null;
       }
       return primaryConfigBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

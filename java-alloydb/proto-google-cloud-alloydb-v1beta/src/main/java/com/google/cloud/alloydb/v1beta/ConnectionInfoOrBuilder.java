@@ -86,6 +86,39 @@ public interface ConnectionInfoOrBuilder
    *
    *
    * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The publicIpAddress.
+   */
+  java.lang.String getPublicIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>
+   * string public_ip_address = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for publicIpAddress.
+   */
+  com.google.protobuf.ByteString getPublicIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The pem-encoded chain that may be used to verify the X.509
    * certificate. Expected to be in issuer-to-root order according to RFC 5246.
    * </pre>
@@ -95,7 +128,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=912
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1015
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -113,7 +146,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=912
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1015
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -131,7 +164,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=912
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1015
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -150,7 +183,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=912
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1015
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
@@ -181,4 +214,29 @@ public interface ConnectionInfoOrBuilder
    * @return The bytes for instanceUid.
    */
   com.google.protobuf.ByteString getInstanceUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The DNS name to use with PSC for the Instance.
+   * </pre>
+   *
+   * <code>string psc_dns_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The pscDnsName.
+   */
+  java.lang.String getPscDnsName();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The DNS name to use with PSC for the Instance.
+   * </pre>
+   *
+   * <code>string psc_dns_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for pscDnsName.
+   */
+  com.google.protobuf.ByteString getPscDnsNameBytes();
 }

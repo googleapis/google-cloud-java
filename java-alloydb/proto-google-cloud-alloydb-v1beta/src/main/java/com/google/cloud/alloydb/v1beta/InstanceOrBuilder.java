@@ -735,7 +735,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -747,7 +748,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -759,7 +761,8 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -792,6 +795,35 @@ public interface InstanceOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The publicIpAddress.
+   */
+  java.lang.String getPublicIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for publicIpAddress.
+   */
+  com.google.protobuf.ByteString getPublicIpAddressBytes();
 
   /**
    *
@@ -988,4 +1020,104 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfigOrBuilder
       getClientConnectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInstanceConfig field is set.
+   */
+  boolean hasPscInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInstanceConfig.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig getPscInstanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfigOrBuilder
+      getPscInstanceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig getNetworkConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder
+      getNetworkConfigOrBuilder();
 }
