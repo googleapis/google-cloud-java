@@ -142,4 +142,17 @@ public interface ExfiltrationOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.ExfilResource targets = 2;</code>
    */
   com.google.cloud.securitycenter.v1.ExfilResourceOrBuilder getTargetsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Total exfiltrated bytes processed for the entire job.
+   * </pre>
+   *
+   * <code>int64 total_exfiltrated_bytes = 3;</code>
+   *
+   * @return The totalExfiltratedBytes.
+   */
+  long getTotalExfiltratedBytes();
 }

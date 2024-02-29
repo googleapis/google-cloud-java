@@ -24,7 +24,9 @@ package com.google.cloud.securitycenter.v1;
  *
  * <pre>
  * CVE stands for Common Vulnerabilities and Exposures.
- * More information: https://cve.mitre.org
+ * Information from the [CVE
+ * record](https://www.cve.org/ResourcesSupport/Glossary) that describes this
+ * vulnerability.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Cve}
@@ -42,6 +44,8 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
   private Cve() {
     id_ = "";
     references_ = java.util.Collections.emptyList();
+    impact_ = 0;
+    exploitationActivity_ = 0;
   }
 
   @java.lang.Override
@@ -63,6 +67,445 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.securitycenter.v1.Cve.class,
             com.google.cloud.securitycenter.v1.Cve.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The possible values of impact of the vulnerability if it was to be
+   * exploited.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.securitycenter.v1.Cve.RiskRating}
+   */
+  public enum RiskRating implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Invalid or empty value.
+     * </pre>
+     *
+     * <code>RISK_RATING_UNSPECIFIED = 0;</code>
+     */
+    RISK_RATING_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would have little to no security impact.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    LOW(1),
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would enable attackers to perform activities, or could allow
+     * attackers to have a direct impact, but would require additional steps.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    MEDIUM(2),
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would enable attackers to have a notable direct impact
+     * without needing to overcome any major mitigating factors.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    HIGH(3),
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would fundamentally undermine the security of affected
+     * systems, enable actors to perform significant attacks with minimal
+     * effort, with little to no mitigating factors to overcome.
+     * </pre>
+     *
+     * <code>CRITICAL = 4;</code>
+     */
+    CRITICAL(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Invalid or empty value.
+     * </pre>
+     *
+     * <code>RISK_RATING_UNSPECIFIED = 0;</code>
+     */
+    public static final int RISK_RATING_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would have little to no security impact.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    public static final int LOW_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would enable attackers to perform activities, or could allow
+     * attackers to have a direct impact, but would require additional steps.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    public static final int MEDIUM_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would enable attackers to have a notable direct impact
+     * without needing to overcome any major mitigating factors.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    public static final int HIGH_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation would fundamentally undermine the security of affected
+     * systems, enable actors to perform significant attacks with minimal
+     * effort, with little to no mitigating factors to overcome.
+     * </pre>
+     *
+     * <code>CRITICAL = 4;</code>
+     */
+    public static final int CRITICAL_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RiskRating valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RiskRating forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RISK_RATING_UNSPECIFIED;
+        case 1:
+          return LOW;
+        case 2:
+          return MEDIUM;
+        case 3:
+          return HIGH;
+        case 4:
+          return CRITICAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RiskRating> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RiskRating> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RiskRating>() {
+          public RiskRating findValueByNumber(int number) {
+            return RiskRating.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.Cve.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RiskRating[] VALUES = values();
+
+    public static RiskRating valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RiskRating(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Cve.RiskRating)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The possible values of exploitation activity of the vulnerability in the
+   * wild.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.securitycenter.v1.Cve.ExploitationActivity}
+   */
+  public enum ExploitationActivity implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Invalid or empty value.
+     * </pre>
+     *
+     * <code>EXPLOITATION_ACTIVITY_UNSPECIFIED = 0;</code>
+     */
+    EXPLOITATION_ACTIVITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation has been reported or confirmed to widely occur.
+     * </pre>
+     *
+     * <code>WIDE = 1;</code>
+     */
+    WIDE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Limited reported or confirmed exploitation activities.
+     * </pre>
+     *
+     * <code>CONFIRMED = 2;</code>
+     */
+    CONFIRMED(2),
+    /**
+     *
+     *
+     * <pre>
+     * Exploit is publicly available.
+     * </pre>
+     *
+     * <code>AVAILABLE = 3;</code>
+     */
+    AVAILABLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * No known exploitation activity, but has a high potential for
+     * exploitation.
+     * </pre>
+     *
+     * <code>ANTICIPATED = 4;</code>
+     */
+    ANTICIPATED(4),
+    /**
+     *
+     *
+     * <pre>
+     * No known exploitation activity.
+     * </pre>
+     *
+     * <code>NO_KNOWN = 5;</code>
+     */
+    NO_KNOWN(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Invalid or empty value.
+     * </pre>
+     *
+     * <code>EXPLOITATION_ACTIVITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int EXPLOITATION_ACTIVITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Exploitation has been reported or confirmed to widely occur.
+     * </pre>
+     *
+     * <code>WIDE = 1;</code>
+     */
+    public static final int WIDE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Limited reported or confirmed exploitation activities.
+     * </pre>
+     *
+     * <code>CONFIRMED = 2;</code>
+     */
+    public static final int CONFIRMED_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Exploit is publicly available.
+     * </pre>
+     *
+     * <code>AVAILABLE = 3;</code>
+     */
+    public static final int AVAILABLE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * No known exploitation activity, but has a high potential for
+     * exploitation.
+     * </pre>
+     *
+     * <code>ANTICIPATED = 4;</code>
+     */
+    public static final int ANTICIPATED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * No known exploitation activity.
+     * </pre>
+     *
+     * <code>NO_KNOWN = 5;</code>
+     */
+    public static final int NO_KNOWN_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExploitationActivity valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ExploitationActivity forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EXPLOITATION_ACTIVITY_UNSPECIFIED;
+        case 1:
+          return WIDE;
+        case 2:
+          return CONFIRMED;
+        case 3:
+          return AVAILABLE;
+        case 4:
+          return ANTICIPATED;
+        case 5:
+          return NO_KNOWN;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExploitationActivity>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExploitationActivity>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ExploitationActivity>() {
+              public ExploitationActivity findValueByNumber(int number) {
+                return ExploitationActivity.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.Cve.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ExploitationActivity[] VALUES = values();
+
+    public static ExploitationActivity valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExploitationActivity(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Cve.ExploitationActivity)
   }
 
   private int bitField0_;
@@ -264,6 +707,118 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     return upstreamFixAvailable_;
   }
 
+  public static final int IMPACT_FIELD_NUMBER = 5;
+  private int impact_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The potential impact of the vulnerability if it was to be exploited.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+   *
+   * @return The enum numeric value on the wire for impact.
+   */
+  @java.lang.Override
+  public int getImpactValue() {
+    return impact_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The potential impact of the vulnerability if it was to be exploited.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+   *
+   * @return The impact.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Cve.RiskRating getImpact() {
+    com.google.cloud.securitycenter.v1.Cve.RiskRating result =
+        com.google.cloud.securitycenter.v1.Cve.RiskRating.forNumber(impact_);
+    return result == null ? com.google.cloud.securitycenter.v1.Cve.RiskRating.UNRECOGNIZED : result;
+  }
+
+  public static final int EXPLOITATION_ACTIVITY_FIELD_NUMBER = 6;
+  private int exploitationActivity_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The exploitation activity of the vulnerability in the wild.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for exploitationActivity.
+   */
+  @java.lang.Override
+  public int getExploitationActivityValue() {
+    return exploitationActivity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The exploitation activity of the vulnerability in the wild.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+   * </code>
+   *
+   * @return The exploitationActivity.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Cve.ExploitationActivity getExploitationActivity() {
+    com.google.cloud.securitycenter.v1.Cve.ExploitationActivity result =
+        com.google.cloud.securitycenter.v1.Cve.ExploitationActivity.forNumber(
+            exploitationActivity_);
+    return result == null
+        ? com.google.cloud.securitycenter.v1.Cve.ExploitationActivity.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int OBSERVED_IN_THE_WILD_FIELD_NUMBER = 7;
+  private boolean observedInTheWild_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether or not the vulnerability has been observed in the wild.
+   * </pre>
+   *
+   * <code>bool observed_in_the_wild = 7;</code>
+   *
+   * @return The observedInTheWild.
+   */
+  @java.lang.Override
+  public boolean getObservedInTheWild() {
+    return observedInTheWild_;
+  }
+
+  public static final int ZERO_DAY_FIELD_NUMBER = 8;
+  private boolean zeroDay_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether or not the vulnerability was zero day when the finding was
+   * published.
+   * </pre>
+   *
+   * <code>bool zero_day = 8;</code>
+   *
+   * @return The zeroDay.
+   */
+  @java.lang.Override
+  public boolean getZeroDay() {
+    return zeroDay_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -290,6 +845,22 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     if (upstreamFixAvailable_ != false) {
       output.writeBool(4, upstreamFixAvailable_);
     }
+    if (impact_
+        != com.google.cloud.securitycenter.v1.Cve.RiskRating.RISK_RATING_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, impact_);
+    }
+    if (exploitationActivity_
+        != com.google.cloud.securitycenter.v1.Cve.ExploitationActivity
+            .EXPLOITATION_ACTIVITY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, exploitationActivity_);
+    }
+    if (observedInTheWild_ != false) {
+      output.writeBool(7, observedInTheWild_);
+    }
+    if (zeroDay_ != false) {
+      output.writeBool(8, zeroDay_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -310,6 +881,22 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
     if (upstreamFixAvailable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, upstreamFixAvailable_);
+    }
+    if (impact_
+        != com.google.cloud.securitycenter.v1.Cve.RiskRating.RISK_RATING_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, impact_);
+    }
+    if (exploitationActivity_
+        != com.google.cloud.securitycenter.v1.Cve.ExploitationActivity
+            .EXPLOITATION_ACTIVITY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, exploitationActivity_);
+    }
+    if (observedInTheWild_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, observedInTheWild_);
+    }
+    if (zeroDay_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, zeroDay_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -333,6 +920,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (!getCvssv3().equals(other.getCvssv3())) return false;
     }
     if (getUpstreamFixAvailable() != other.getUpstreamFixAvailable()) return false;
+    if (impact_ != other.impact_) return false;
+    if (exploitationActivity_ != other.exploitationActivity_) return false;
+    if (getObservedInTheWild() != other.getObservedInTheWild()) return false;
+    if (getZeroDay() != other.getZeroDay()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -356,6 +947,14 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + UPSTREAM_FIX_AVAILABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUpstreamFixAvailable());
+    hash = (37 * hash) + IMPACT_FIELD_NUMBER;
+    hash = (53 * hash) + impact_;
+    hash = (37 * hash) + EXPLOITATION_ACTIVITY_FIELD_NUMBER;
+    hash = (53 * hash) + exploitationActivity_;
+    hash = (37 * hash) + OBSERVED_IN_THE_WILD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getObservedInTheWild());
+    hash = (37 * hash) + ZERO_DAY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getZeroDay());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -461,7 +1060,9 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * CVE stands for Common Vulnerabilities and Exposures.
-   * More information: https://cve.mitre.org
+   * Information from the [CVE
+   * record](https://www.cve.org/ResourcesSupport/Glossary) that describes this
+   * vulnerability.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Cve}
@@ -520,6 +1121,10 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
         cvssv3Builder_ = null;
       }
       upstreamFixAvailable_ = false;
+      impact_ = 0;
+      exploitationActivity_ = 0;
+      observedInTheWild_ = false;
+      zeroDay_ = false;
       return this;
     }
 
@@ -579,6 +1184,18 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.upstreamFixAvailable_ = upstreamFixAvailable_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.impact_ = impact_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.exploitationActivity_ = exploitationActivity_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.observedInTheWild_ = observedInTheWild_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.zeroDay_ = zeroDay_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -666,6 +1283,18 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
       if (other.getUpstreamFixAvailable() != false) {
         setUpstreamFixAvailable(other.getUpstreamFixAvailable());
       }
+      if (other.impact_ != 0) {
+        setImpactValue(other.getImpactValue());
+      }
+      if (other.exploitationActivity_ != 0) {
+        setExploitationActivityValue(other.getExploitationActivityValue());
+      }
+      if (other.getObservedInTheWild() != false) {
+        setObservedInTheWild(other.getObservedInTheWild());
+      }
+      if (other.getZeroDay() != false) {
+        setZeroDay(other.getZeroDay());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -723,6 +1352,30 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                impact_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                exploitationActivity_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                observedInTheWild_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 64:
+              {
+                zeroDay_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1460,6 +2113,306 @@ public final class Cve extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUpstreamFixAvailable() {
       bitField0_ = (bitField0_ & ~0x00000008);
       upstreamFixAvailable_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int impact_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The potential impact of the vulnerability if it was to be exploited.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+     *
+     * @return The enum numeric value on the wire for impact.
+     */
+    @java.lang.Override
+    public int getImpactValue() {
+      return impact_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The potential impact of the vulnerability if it was to be exploited.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+     *
+     * @param value The enum numeric value on the wire for impact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImpactValue(int value) {
+      impact_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The potential impact of the vulnerability if it was to be exploited.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+     *
+     * @return The impact.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Cve.RiskRating getImpact() {
+      com.google.cloud.securitycenter.v1.Cve.RiskRating result =
+          com.google.cloud.securitycenter.v1.Cve.RiskRating.forNumber(impact_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1.Cve.RiskRating.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The potential impact of the vulnerability if it was to be exploited.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+     *
+     * @param value The impact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImpact(com.google.cloud.securitycenter.v1.Cve.RiskRating value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      impact_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The potential impact of the vulnerability if it was to be exploited.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImpact() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      impact_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int exploitationActivity_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The exploitation activity of the vulnerability in the wild.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for exploitationActivity.
+     */
+    @java.lang.Override
+    public int getExploitationActivityValue() {
+      return exploitationActivity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The exploitation activity of the vulnerability in the wild.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for exploitationActivity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExploitationActivityValue(int value) {
+      exploitationActivity_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The exploitation activity of the vulnerability in the wild.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+     * </code>
+     *
+     * @return The exploitationActivity.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Cve.ExploitationActivity getExploitationActivity() {
+      com.google.cloud.securitycenter.v1.Cve.ExploitationActivity result =
+          com.google.cloud.securitycenter.v1.Cve.ExploitationActivity.forNumber(
+              exploitationActivity_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1.Cve.ExploitationActivity.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The exploitation activity of the vulnerability in the wild.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+     * </code>
+     *
+     * @param value The exploitationActivity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExploitationActivity(
+        com.google.cloud.securitycenter.v1.Cve.ExploitationActivity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      exploitationActivity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The exploitation activity of the vulnerability in the wild.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExploitationActivity() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      exploitationActivity_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean observedInTheWild_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether or not the vulnerability has been observed in the wild.
+     * </pre>
+     *
+     * <code>bool observed_in_the_wild = 7;</code>
+     *
+     * @return The observedInTheWild.
+     */
+    @java.lang.Override
+    public boolean getObservedInTheWild() {
+      return observedInTheWild_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether or not the vulnerability has been observed in the wild.
+     * </pre>
+     *
+     * <code>bool observed_in_the_wild = 7;</code>
+     *
+     * @param value The observedInTheWild to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObservedInTheWild(boolean value) {
+
+      observedInTheWild_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether or not the vulnerability has been observed in the wild.
+     * </pre>
+     *
+     * <code>bool observed_in_the_wild = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearObservedInTheWild() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      observedInTheWild_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean zeroDay_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether or not the vulnerability was zero day when the finding was
+     * published.
+     * </pre>
+     *
+     * <code>bool zero_day = 8;</code>
+     *
+     * @return The zeroDay.
+     */
+    @java.lang.Override
+    public boolean getZeroDay() {
+      return zeroDay_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether or not the vulnerability was zero day when the finding was
+     * published.
+     * </pre>
+     *
+     * <code>bool zero_day = 8;</code>
+     *
+     * @param value The zeroDay to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZeroDay(boolean value) {
+
+      zeroDay_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether or not the vulnerability was zero day when the finding was
+     * published.
+     * </pre>
+     *
+     * <code>bool zero_day = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearZeroDay() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      zeroDay_ = false;
       onChanged();
       return this;
     }

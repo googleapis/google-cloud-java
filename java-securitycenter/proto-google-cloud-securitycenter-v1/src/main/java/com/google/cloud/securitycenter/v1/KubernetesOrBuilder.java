@@ -401,4 +401,56 @@ public interface KubernetesOrBuilder
    */
   com.google.cloud.securitycenter.v1.Kubernetes.AccessReviewOrBuilder getAccessReviewsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Object> getObjectsList();
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  com.google.cloud.securitycenter.v1.Kubernetes.Object getObjects(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  int getObjectsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder>
+      getObjectsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder getObjectsOrBuilder(int index);
 }

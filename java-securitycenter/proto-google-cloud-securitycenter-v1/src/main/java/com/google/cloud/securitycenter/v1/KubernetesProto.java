@@ -60,6 +60,10 @@ public final class KubernetesProto {
       internal_static_google_cloud_securitycenter_v1_Kubernetes_AccessReview_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_Kubernetes_AccessReview_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -73,7 +77,7 @@ public final class KubernetesProto {
           + "tes.proto\022\036google.cloud.securitycenter.v"
           + "1\032.google/cloud/securitycenter/v1/contai"
           + "ner.proto\032*google/cloud/securitycenter/v"
-          + "1/label.proto\"\276\n\n\nKubernetes\022<\n\004pods\030\001 \003"
+          + "1/label.proto\"\202\014\n\nKubernetes\022<\n\004pods\030\001 \003"
           + "(\0132..google.cloud.securitycenter.v1.Kube"
           + "rnetes.Pod\022>\n\005nodes\030\002 \003(\0132/.google.cloud"
           + ".securitycenter.v1.Kubernetes.Node\022G\n\nno"
@@ -84,36 +88,40 @@ public final class KubernetesProto {
           + "loud.securitycenter.v1.Kubernetes.Bindin"
           + "g\022O\n\016access_reviews\030\006 \003(\01327.google.cloud"
           + ".securitycenter.v1.Kubernetes.AccessRevi"
-          + "ew\032\225\001\n\003Pod\022\n\n\002ns\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0225\n\006"
-          + "labels\030\003 \003(\0132%.google.cloud.securitycent"
-          + "er.v1.Label\022=\n\ncontainers\030\004 \003(\0132).google"
-          + ".cloud.securitycenter.v1.Container\032\024\n\004No"
-          + "de\022\014\n\004name\030\001 \001(\t\032X\n\010NodePool\022\014\n\004name\030\001 \001"
-          + "(\t\022>\n\005nodes\030\002 \003(\0132/.google.cloud.securit"
-          + "ycenter.v1.Kubernetes.Node\032\236\001\n\004Role\022B\n\004k"
-          + "ind\030\001 \001(\01624.google.cloud.securitycenter."
-          + "v1.Kubernetes.Role.Kind\022\n\n\002ns\030\002 \001(\t\022\014\n\004n"
-          + "ame\030\003 \001(\t\"8\n\004Kind\022\024\n\020KIND_UNSPECIFIED\020\000\022"
-          + "\010\n\004ROLE\020\001\022\020\n\014CLUSTER_ROLE\020\002\032\250\001\n\007Binding\022"
-          + "\n\n\002ns\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022=\n\004role\030\003 \001(\0132"
-          + "/.google.cloud.securitycenter.v1.Kuberne"
-          + "tes.Role\022D\n\010subjects\030\004 \003(\01322.google.clou"
-          + "d.securitycenter.v1.Kubernetes.Subject\032\276"
-          + "\001\n\007Subject\022I\n\004kind\030\001 \001(\0162;.google.cloud."
-          + "securitycenter.v1.Kubernetes.Subject.Aut"
-          + "hType\022\n\n\002ns\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"N\n\010AuthT"
-          + "ype\022\031\n\025AUTH_TYPE_UNSPECIFIED\020\000\022\010\n\004USER\020\001"
-          + "\022\022\n\016SERVICEACCOUNT\020\002\022\t\n\005GROUP\020\003\032}\n\014Acces"
-          + "sReview\022\r\n\005group\030\001 \001(\t\022\n\n\002ns\030\002 \001(\t\022\014\n\004na"
-          + "me\030\003 \001(\t\022\020\n\010resource\030\004 \001(\t\022\023\n\013subresourc"
-          + "e\030\005 \001(\t\022\014\n\004verb\030\006 \001(\t\022\017\n\007version\030\007 \001(\tB\351"
-          + "\001\n\"com.google.cloud.securitycenter.v1B\017K"
-          + "ubernetesProtoP\001ZJcloud.google.com/go/se"
-          + "curitycenter/apiv1/securitycenterpb;secu"
-          + "ritycenterpb\252\002\036Google.Cloud.SecurityCent"
-          + "er.V1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002"
-          + "!Google::Cloud::SecurityCenter::V1b\006prot"
-          + "o3"
+          + "ew\022B\n\007objects\030\007 \003(\01321.google.cloud.secur"
+          + "itycenter.v1.Kubernetes.Object\032\225\001\n\003Pod\022\n"
+          + "\n\002ns\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\0225\n\006labels\030\003 \003(\013"
+          + "2%.google.cloud.securitycenter.v1.Label\022"
+          + "=\n\ncontainers\030\004 \003(\0132).google.cloud.secur"
+          + "itycenter.v1.Container\032\024\n\004Node\022\014\n\004name\030\001"
+          + " \001(\t\032X\n\010NodePool\022\014\n\004name\030\001 \001(\t\022>\n\005nodes\030"
+          + "\002 \003(\0132/.google.cloud.securitycenter.v1.K"
+          + "ubernetes.Node\032\236\001\n\004Role\022B\n\004kind\030\001 \001(\01624."
+          + "google.cloud.securitycenter.v1.Kubernete"
+          + "s.Role.Kind\022\n\n\002ns\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"8\n"
+          + "\004Kind\022\024\n\020KIND_UNSPECIFIED\020\000\022\010\n\004ROLE\020\001\022\020\n"
+          + "\014CLUSTER_ROLE\020\002\032\250\001\n\007Binding\022\n\n\002ns\030\001 \001(\t\022"
+          + "\014\n\004name\030\002 \001(\t\022=\n\004role\030\003 \001(\0132/.google.clo"
+          + "ud.securitycenter.v1.Kubernetes.Role\022D\n\010"
+          + "subjects\030\004 \003(\01322.google.cloud.securityce"
+          + "nter.v1.Kubernetes.Subject\032\276\001\n\007Subject\022I"
+          + "\n\004kind\030\001 \001(\0162;.google.cloud.securitycent"
+          + "er.v1.Kubernetes.Subject.AuthType\022\n\n\002ns\030"
+          + "\002 \001(\t\022\014\n\004name\030\003 \001(\t\"N\n\010AuthType\022\031\n\025AUTH_"
+          + "TYPE_UNSPECIFIED\020\000\022\010\n\004USER\020\001\022\022\n\016SERVICEA"
+          + "CCOUNT\020\002\022\t\n\005GROUP\020\003\032}\n\014AccessReview\022\r\n\005g"
+          + "roup\030\001 \001(\t\022\n\n\002ns\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\020\n\010"
+          + "resource\030\004 \001(\t\022\023\n\013subresource\030\005 \001(\t\022\014\n\004v"
+          + "erb\030\006 \001(\t\022\017\n\007version\030\007 \001(\t\032~\n\006Object\022\r\n\005"
+          + "group\030\001 \001(\t\022\014\n\004kind\030\002 \001(\t\022\n\n\002ns\030\003 \001(\t\022\014\n"
+          + "\004name\030\004 \001(\t\022=\n\ncontainers\030\005 \003(\0132).google"
+          + ".cloud.securitycenter.v1.ContainerB\351\001\n\"c"
+          + "om.google.cloud.securitycenter.v1B\017Kuber"
+          + "netesProtoP\001ZJcloud.google.com/go/securi"
+          + "tycenter/apiv1/securitycenterpb;security"
+          + "centerpb\252\002\036Google.Cloud.SecurityCenter.V"
+          + "1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goo"
+          + "gle::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -128,7 +136,7 @@ public final class KubernetesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Kubernetes_descriptor,
             new java.lang.String[] {
-              "Pods", "Nodes", "NodePools", "Roles", "Bindings", "AccessReviews",
+              "Pods", "Nodes", "NodePools", "Roles", "Bindings", "AccessReviews", "Objects",
             });
     internal_static_google_cloud_securitycenter_v1_Kubernetes_Pod_descriptor =
         internal_static_google_cloud_securitycenter_v1_Kubernetes_descriptor
@@ -199,6 +207,16 @@ public final class KubernetesProto {
             internal_static_google_cloud_securitycenter_v1_Kubernetes_AccessReview_descriptor,
             new java.lang.String[] {
               "Group", "Ns", "Name", "Resource", "Subresource", "Verb", "Version",
+            });
+    internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_descriptor =
+        internal_static_google_cloud_securitycenter_v1_Kubernetes_descriptor
+            .getNestedTypes()
+            .get(7);
+    internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_descriptor,
+            new java.lang.String[] {
+              "Group", "Kind", "Ns", "Name", "Containers",
             });
     com.google.cloud.securitycenter.v1.ContainerProto.getDescriptor();
     com.google.cloud.securitycenter.v1.LabelProto.getDescriptor();

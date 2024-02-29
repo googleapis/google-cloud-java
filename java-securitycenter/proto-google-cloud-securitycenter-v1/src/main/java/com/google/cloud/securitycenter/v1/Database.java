@@ -30,11 +30,6 @@ package com.google.cloud.securitycenter.v1;
  * name](https://google.aip.dev/122#full-resource-names) populated because these
  * resource types, such as Cloud SQL databases, are not yet supported by Cloud
  * Asset Inventory. In these cases only the display name is provided.
- * Some database resources may not have the [full resource
- * name](https://google.aip.dev/122#full-resource-names) populated because
- * these resource types are not yet supported by Cloud Asset Inventory (e.g.
- * Cloud SQL databases). In these cases only the display name will be
- * provided.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Database}
@@ -55,6 +50,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     userName_ = "";
     query_ = "";
     grantees_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    version_ = "";
   }
 
   @java.lang.Override
@@ -86,6 +82,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Some database resources may not have the [full resource
+   * name](https://google.aip.dev/122#full-resource-names) populated because
+   * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+   * Cloud SQL databases). In these cases only the display name will be
+   * provided.
    * The [full resource name](https://google.aip.dev/122#full-resource-names) of
    * the database that the user connected to, if it is supported by Cloud Asset
    * Inventory.
@@ -111,6 +112,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Some database resources may not have the [full resource
+   * name](https://google.aip.dev/122#full-resource-names) populated because
+   * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+   * Cloud SQL databases). In these cases only the display name will be
+   * provided.
    * The [full resource name](https://google.aip.dev/122#full-resource-names) of
    * the database that the user connected to, if it is supported by Cloud Asset
    * Inventory.
@@ -356,6 +362,61 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     return grantees_.getByteString(index);
   }
 
+  public static final int VERSION_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The version of the database, for example, POSTGRES_14.
+   * See [the complete
+   * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The version.
+   */
+  @java.lang.Override
+  public java.lang.String getVersion() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      version_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The version of the database, for example, POSTGRES_14.
+   * See [the complete
+   * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The bytes for version.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVersionBytes() {
+    java.lang.Object ref = version_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      version_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -384,6 +445,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < grantees_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, grantees_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -414,6 +478,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getGranteesList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -435,6 +502,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (!getUserName().equals(other.getUserName())) return false;
     if (!getQuery().equals(other.getQuery())) return false;
     if (!getGranteesList().equals(other.getGranteesList())) return false;
+    if (!getVersion().equals(other.getVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -458,6 +526,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GRANTEES_FIELD_NUMBER;
       hash = (53 * hash) + getGranteesList().hashCode();
     }
+    hash = (37 * hash) + VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -569,11 +639,6 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    * name](https://google.aip.dev/122#full-resource-names) populated because these
    * resource types, such as Cloud SQL databases, are not yet supported by Cloud
    * Asset Inventory. In these cases only the display name is provided.
-   * Some database resources may not have the [full resource
-   * name](https://google.aip.dev/122#full-resource-names) populated because
-   * these resource types are not yet supported by Cloud Asset Inventory (e.g.
-   * Cloud SQL databases). In these cases only the display name will be
-   * provided.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Database}
@@ -613,6 +678,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       userName_ = "";
       query_ = "";
       grantees_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      version_ = "";
       return this;
     }
 
@@ -664,6 +730,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         grantees_.makeImmutable();
         result.grantees_ = grantees_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.version_ = version_;
       }
     }
 
@@ -742,6 +811,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (!other.getVersion().isEmpty()) {
+        version_ = other.version_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -799,6 +873,12 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
                 grantees_.add(s);
                 break;
               } // case 42
+            case 50:
+              {
+                version_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -823,6 +903,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Some database resources may not have the [full resource
+     * name](https://google.aip.dev/122#full-resource-names) populated because
+     * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+     * Cloud SQL databases). In these cases only the display name will be
+     * provided.
      * The [full resource name](https://google.aip.dev/122#full-resource-names) of
      * the database that the user connected to, if it is supported by Cloud Asset
      * Inventory.
@@ -847,6 +932,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Some database resources may not have the [full resource
+     * name](https://google.aip.dev/122#full-resource-names) populated because
+     * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+     * Cloud SQL databases). In these cases only the display name will be
+     * provided.
      * The [full resource name](https://google.aip.dev/122#full-resource-names) of
      * the database that the user connected to, if it is supported by Cloud Asset
      * Inventory.
@@ -871,6 +961,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Some database resources may not have the [full resource
+     * name](https://google.aip.dev/122#full-resource-names) populated because
+     * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+     * Cloud SQL databases). In these cases only the display name will be
+     * provided.
      * The [full resource name](https://google.aip.dev/122#full-resource-names) of
      * the database that the user connected to, if it is supported by Cloud Asset
      * Inventory.
@@ -894,6 +989,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Some database resources may not have the [full resource
+     * name](https://google.aip.dev/122#full-resource-names) populated because
+     * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+     * Cloud SQL databases). In these cases only the display name will be
+     * provided.
      * The [full resource name](https://google.aip.dev/122#full-resource-names) of
      * the database that the user connected to, if it is supported by Cloud Asset
      * Inventory.
@@ -913,6 +1013,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Some database resources may not have the [full resource
+     * name](https://google.aip.dev/122#full-resource-names) populated because
+     * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+     * Cloud SQL databases). In these cases only the display name will be
+     * provided.
      * The [full resource name](https://google.aip.dev/122#full-resource-names) of
      * the database that the user connected to, if it is supported by Cloud Asset
      * Inventory.
@@ -1436,6 +1541,122 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       ensureGranteesIsMutable();
       grantees_.add(value);
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object version_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The version of the database, for example, POSTGRES_14.
+     * See [the complete
+     * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @return The version.
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the database, for example, POSTGRES_14.
+     * See [the complete
+     * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @return The bytes for version.
+     */
+    public com.google.protobuf.ByteString getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the database, for example, POSTGRES_14.
+     * See [the complete
+     * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @param value The version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      version_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the database, for example, POSTGRES_14.
+     * See [the complete
+     * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVersion() {
+      version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The version of the database, for example, POSTGRES_14.
+     * See [the complete
+     * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+     * </pre>
+     *
+     * <code>string version = 6;</code>
+     *
+     * @param value The bytes for version to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      version_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

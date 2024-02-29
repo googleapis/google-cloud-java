@@ -28,6 +28,11 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
+   * Some database resources may not have the [full resource
+   * name](https://google.aip.dev/122#full-resource-names) populated because
+   * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+   * Cloud SQL databases). In these cases only the display name will be
+   * provided.
    * The [full resource name](https://google.aip.dev/122#full-resource-names) of
    * the database that the user connected to, if it is supported by Cloud Asset
    * Inventory.
@@ -42,6 +47,11 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
+   * Some database resources may not have the [full resource
+   * name](https://google.aip.dev/122#full-resource-names) populated because
+   * these resource types are not yet supported by Cloud Asset Inventory (e.g.
+   * Cloud SQL databases). In these cases only the display name will be
+   * provided.
    * The [full resource name](https://google.aip.dev/122#full-resource-names) of
    * the database that the user connected to, if it is supported by Cloud Asset
    * Inventory.
@@ -184,4 +194,33 @@ public interface DatabaseOrBuilder
    * @return The bytes of the grantees at the given index.
    */
   com.google.protobuf.ByteString getGranteesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The version of the database, for example, POSTGRES_14.
+   * See [the complete
+   * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The version.
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The version of the database, for example, POSTGRES_14.
+   * See [the complete
+   * list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
+   * </pre>
+   *
+   * <code>string version = 6;</code>
+   *
+   * @return The bytes for version.
+   */
+  com.google.protobuf.ByteString getVersionBytes();
 }

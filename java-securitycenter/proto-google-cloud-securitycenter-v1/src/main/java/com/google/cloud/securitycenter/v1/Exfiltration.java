@@ -224,6 +224,24 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     return targets_.get(index);
   }
 
+  public static final int TOTAL_EXFILTRATED_BYTES_FIELD_NUMBER = 3;
+  private long totalExfiltratedBytes_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Total exfiltrated bytes processed for the entire job.
+   * </pre>
+   *
+   * <code>int64 total_exfiltrated_bytes = 3;</code>
+   *
+   * @return The totalExfiltratedBytes.
+   */
+  @java.lang.Override
+  public long getTotalExfiltratedBytes() {
+    return totalExfiltratedBytes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -244,6 +262,9 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < targets_.size(); i++) {
       output.writeMessage(2, targets_.get(i));
     }
+    if (totalExfiltratedBytes_ != 0L) {
+      output.writeInt64(3, totalExfiltratedBytes_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -258,6 +279,9 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < targets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, targets_.get(i));
+    }
+    if (totalExfiltratedBytes_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, totalExfiltratedBytes_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -277,6 +301,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
 
     if (!getSourcesList().equals(other.getSourcesList())) return false;
     if (!getTargetsList().equals(other.getTargetsList())) return false;
+    if (getTotalExfiltratedBytes() != other.getTotalExfiltratedBytes()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -296,6 +321,8 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TARGETS_FIELD_NUMBER;
       hash = (53 * hash) + getTargetsList().hashCode();
     }
+    hash = (37 * hash) + TOTAL_EXFILTRATED_BYTES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalExfiltratedBytes());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -452,6 +479,7 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         targetsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      totalExfiltratedBytes_ = 0L;
       return this;
     }
 
@@ -511,6 +539,9 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.securitycenter.v1.Exfiltration result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalExfiltratedBytes_ = totalExfiltratedBytes_;
+      }
     }
 
     @java.lang.Override
@@ -613,6 +644,9 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.getTotalExfiltratedBytes() != 0L) {
+        setTotalExfiltratedBytes(other.getTotalExfiltratedBytes());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -667,6 +701,12 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 18
+            case 24:
+              {
+                totalExfiltratedBytes_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1442,6 +1482,59 @@ public final class Exfiltration extends com.google.protobuf.GeneratedMessageV3
         targets_ = null;
       }
       return targetsBuilder_;
+    }
+
+    private long totalExfiltratedBytes_;
+    /**
+     *
+     *
+     * <pre>
+     * Total exfiltrated bytes processed for the entire job.
+     * </pre>
+     *
+     * <code>int64 total_exfiltrated_bytes = 3;</code>
+     *
+     * @return The totalExfiltratedBytes.
+     */
+    @java.lang.Override
+    public long getTotalExfiltratedBytes() {
+      return totalExfiltratedBytes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total exfiltrated bytes processed for the entire job.
+     * </pre>
+     *
+     * <code>int64 total_exfiltrated_bytes = 3;</code>
+     *
+     * @param value The totalExfiltratedBytes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalExfiltratedBytes(long value) {
+
+      totalExfiltratedBytes_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Total exfiltrated bytes processed for the entire job.
+     * </pre>
+     *
+     * <code>int64 total_exfiltrated_bytes = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalExfiltratedBytes() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      totalExfiltratedBytes_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

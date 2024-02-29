@@ -262,7 +262,7 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (o == this) {
       return true;
     }

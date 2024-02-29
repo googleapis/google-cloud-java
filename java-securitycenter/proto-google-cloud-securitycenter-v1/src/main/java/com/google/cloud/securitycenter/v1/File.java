@@ -66,6 +66,873 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securitycenter.v1.File.Builder.class);
   }
 
+  public interface DiskPathOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.File.DiskPath)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * UUID of the partition (format
+     * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+     * </pre>
+     *
+     * <code>string partition_uuid = 1;</code>
+     *
+     * @return The partitionUuid.
+     */
+    java.lang.String getPartitionUuid();
+    /**
+     *
+     *
+     * <pre>
+     * UUID of the partition (format
+     * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+     * </pre>
+     *
+     * <code>string partition_uuid = 1;</code>
+     *
+     * @return The bytes for partitionUuid.
+     */
+    com.google.protobuf.ByteString getPartitionUuidBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative path of the file in the partition as a JSON encoded string.
+     * Example: /home/user1/executable_file.sh
+     * </pre>
+     *
+     * <code>string relative_path = 2;</code>
+     *
+     * @return The relativePath.
+     */
+    java.lang.String getRelativePath();
+    /**
+     *
+     *
+     * <pre>
+     * Relative path of the file in the partition as a JSON encoded string.
+     * Example: /home/user1/executable_file.sh
+     * </pre>
+     *
+     * <code>string relative_path = 2;</code>
+     *
+     * @return The bytes for relativePath.
+     */
+    com.google.protobuf.ByteString getRelativePathBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Path of the file in terms of underlying disk/partition identifiers.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.securitycenter.v1.File.DiskPath}
+   */
+  public static final class DiskPath extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.File.DiskPath)
+      DiskPathOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DiskPath.newBuilder() to construct.
+    private DiskPath(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DiskPath() {
+      partitionUuid_ = "";
+      relativePath_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DiskPath();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.FileProto
+          .internal_static_google_cloud_securitycenter_v1_File_DiskPath_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.securitycenter.v1.FileProto
+          .internal_static_google_cloud_securitycenter_v1_File_DiskPath_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.securitycenter.v1.File.DiskPath.class,
+              com.google.cloud.securitycenter.v1.File.DiskPath.Builder.class);
+    }
+
+    public static final int PARTITION_UUID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object partitionUuid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * UUID of the partition (format
+     * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+     * </pre>
+     *
+     * <code>string partition_uuid = 1;</code>
+     *
+     * @return The partitionUuid.
+     */
+    @java.lang.Override
+    public java.lang.String getPartitionUuid() {
+      java.lang.Object ref = partitionUuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        partitionUuid_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UUID of the partition (format
+     * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+     * </pre>
+     *
+     * <code>string partition_uuid = 1;</code>
+     *
+     * @return The bytes for partitionUuid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPartitionUuidBytes() {
+      java.lang.Object ref = partitionUuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        partitionUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RELATIVE_PATH_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object relativePath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Relative path of the file in the partition as a JSON encoded string.
+     * Example: /home/user1/executable_file.sh
+     * </pre>
+     *
+     * <code>string relative_path = 2;</code>
+     *
+     * @return The relativePath.
+     */
+    @java.lang.Override
+    public java.lang.String getRelativePath() {
+      java.lang.Object ref = relativePath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        relativePath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Relative path of the file in the partition as a JSON encoded string.
+     * Example: /home/user1/executable_file.sh
+     * </pre>
+     *
+     * <code>string relative_path = 2;</code>
+     *
+     * @return The bytes for relativePath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRelativePathBytes() {
+      java.lang.Object ref = relativePath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        relativePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionUuid_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, partitionUuid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relativePath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, relativePath_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(partitionUuid_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, partitionUuid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(relativePath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, relativePath_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.securitycenter.v1.File.DiskPath)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.securitycenter.v1.File.DiskPath other =
+          (com.google.cloud.securitycenter.v1.File.DiskPath) obj;
+
+      if (!getPartitionUuid().equals(other.getPartitionUuid())) return false;
+      if (!getRelativePath().equals(other.getRelativePath())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PARTITION_UUID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartitionUuid().hashCode();
+      hash = (37 * hash) + RELATIVE_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getRelativePath().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.securitycenter.v1.File.DiskPath prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.securitycenter.v1.File.DiskPath}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.File.DiskPath)
+        com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1.FileProto
+            .internal_static_google_cloud_securitycenter_v1_File_DiskPath_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securitycenter.v1.FileProto
+            .internal_static_google_cloud_securitycenter_v1_File_DiskPath_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securitycenter.v1.File.DiskPath.class,
+                com.google.cloud.securitycenter.v1.File.DiskPath.Builder.class);
+      }
+
+      // Construct using com.google.cloud.securitycenter.v1.File.DiskPath.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        partitionUuid_ = "";
+        relativePath_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securitycenter.v1.FileProto
+            .internal_static_google_cloud_securitycenter_v1_File_DiskPath_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.File.DiskPath getDefaultInstanceForType() {
+        return com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.File.DiskPath build() {
+        com.google.cloud.securitycenter.v1.File.DiskPath result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.File.DiskPath buildPartial() {
+        com.google.cloud.securitycenter.v1.File.DiskPath result =
+            new com.google.cloud.securitycenter.v1.File.DiskPath(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.File.DiskPath result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.partitionUuid_ = partitionUuid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.relativePath_ = relativePath_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.securitycenter.v1.File.DiskPath) {
+          return mergeFrom((com.google.cloud.securitycenter.v1.File.DiskPath) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.securitycenter.v1.File.DiskPath other) {
+        if (other == com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance())
+          return this;
+        if (!other.getPartitionUuid().isEmpty()) {
+          partitionUuid_ = other.partitionUuid_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getRelativePath().isEmpty()) {
+          relativePath_ = other.relativePath_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  partitionUuid_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  relativePath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object partitionUuid_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * UUID of the partition (format
+       * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+       * </pre>
+       *
+       * <code>string partition_uuid = 1;</code>
+       *
+       * @return The partitionUuid.
+       */
+      public java.lang.String getPartitionUuid() {
+        java.lang.Object ref = partitionUuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          partitionUuid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * UUID of the partition (format
+       * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+       * </pre>
+       *
+       * <code>string partition_uuid = 1;</code>
+       *
+       * @return The bytes for partitionUuid.
+       */
+      public com.google.protobuf.ByteString getPartitionUuidBytes() {
+        java.lang.Object ref = partitionUuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          partitionUuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * UUID of the partition (format
+       * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+       * </pre>
+       *
+       * <code>string partition_uuid = 1;</code>
+       *
+       * @param value The partitionUuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionUuid(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partitionUuid_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * UUID of the partition (format
+       * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+       * </pre>
+       *
+       * <code>string partition_uuid = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartitionUuid() {
+        partitionUuid_ = getDefaultInstance().getPartitionUuid();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * UUID of the partition (format
+       * https://wiki.archlinux.org/title/persistent_block_device_naming#by-uuid)
+       * </pre>
+       *
+       * <code>string partition_uuid = 1;</code>
+       *
+       * @param value The bytes for partitionUuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartitionUuidBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        partitionUuid_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object relativePath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Relative path of the file in the partition as a JSON encoded string.
+       * Example: /home/user1/executable_file.sh
+       * </pre>
+       *
+       * <code>string relative_path = 2;</code>
+       *
+       * @return The relativePath.
+       */
+      public java.lang.String getRelativePath() {
+        java.lang.Object ref = relativePath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          relativePath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Relative path of the file in the partition as a JSON encoded string.
+       * Example: /home/user1/executable_file.sh
+       * </pre>
+       *
+       * <code>string relative_path = 2;</code>
+       *
+       * @return The bytes for relativePath.
+       */
+      public com.google.protobuf.ByteString getRelativePathBytes() {
+        java.lang.Object ref = relativePath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          relativePath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Relative path of the file in the partition as a JSON encoded string.
+       * Example: /home/user1/executable_file.sh
+       * </pre>
+       *
+       * <code>string relative_path = 2;</code>
+       *
+       * @param value The relativePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRelativePath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        relativePath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Relative path of the file in the partition as a JSON encoded string.
+       * Example: /home/user1/executable_file.sh
+       * </pre>
+       *
+       * <code>string relative_path = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRelativePath() {
+        relativePath_ = getDefaultInstance().getRelativePath();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Relative path of the file in the partition as a JSON encoded string.
+       * Example: /home/user1/executable_file.sh
+       * </pre>
+       *
+       * <code>string relative_path = 2;</code>
+       *
+       * @param value The bytes for relativePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRelativePathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        relativePath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.File.DiskPath)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.File.DiskPath)
+    private static final com.google.cloud.securitycenter.v1.File.DiskPath DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.File.DiskPath();
+    }
+
+    public static com.google.cloud.securitycenter.v1.File.DiskPath getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DiskPath> PARSER =
+        new com.google.protobuf.AbstractParser<DiskPath>() {
+          @java.lang.Override
+          public DiskPath parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DiskPath> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DiskPath> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.File.DiskPath getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int PATH_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -279,6 +1146,56 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISK_PATH_FIELD_NUMBER = 7;
+  private com.google.cloud.securitycenter.v1.File.DiskPath diskPath_;
+  /**
+   *
+   *
+   * <pre>
+   * Path of the file in terms of underlying disk/partition identifiers.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+   *
+   * @return Whether the diskPath field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskPath() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Path of the file in terms of underlying disk/partition identifiers.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+   *
+   * @return The diskPath.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.File.DiskPath getDiskPath() {
+    return diskPath_ == null
+        ? com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance()
+        : diskPath_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Path of the file in terms of underlying disk/partition identifiers.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder getDiskPathOrBuilder() {
+    return diskPath_ == null
+        ? com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance()
+        : diskPath_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -311,6 +1228,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contents_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, contents_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getDiskPath());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -338,6 +1258,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contents_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, contents_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDiskPath());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -359,6 +1282,10 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     if (getHashedSize() != other.getHashedSize()) return false;
     if (getPartiallyHashed() != other.getPartiallyHashed()) return false;
     if (!getContents().equals(other.getContents())) return false;
+    if (hasDiskPath() != other.hasDiskPath()) return false;
+    if (hasDiskPath()) {
+      if (!getDiskPath().equals(other.getDiskPath())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -382,6 +1309,10 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPartiallyHashed());
     hash = (37 * hash) + CONTENTS_FIELD_NUMBER;
     hash = (53 * hash) + getContents().hashCode();
+    if (hasDiskPath()) {
+      hash = (37 * hash) + DISK_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskPath().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -512,10 +1443,19 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.securitycenter.v1.File.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDiskPathFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -528,6 +1468,11 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       hashedSize_ = 0L;
       partiallyHashed_ = false;
       contents_ = "";
+      diskPath_ = null;
+      if (diskPathBuilder_ != null) {
+        diskPathBuilder_.dispose();
+        diskPathBuilder_ = null;
+      }
       return this;
     }
 
@@ -582,6 +1527,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.contents_ = contents_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.diskPath_ = diskPathBuilder_ == null ? diskPath_ : diskPathBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -653,6 +1604,9 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasDiskPath()) {
+        mergeDiskPath(other.getDiskPath());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -715,6 +1669,12 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getDiskPathFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1225,6 +2185,192 @@ public final class File extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000020;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.securitycenter.v1.File.DiskPath diskPath_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.File.DiskPath,
+            com.google.cloud.securitycenter.v1.File.DiskPath.Builder,
+            com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder>
+        diskPathBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     *
+     * @return Whether the diskPath field is set.
+     */
+    public boolean hasDiskPath() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     *
+     * @return The diskPath.
+     */
+    public com.google.cloud.securitycenter.v1.File.DiskPath getDiskPath() {
+      if (diskPathBuilder_ == null) {
+        return diskPath_ == null
+            ? com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance()
+            : diskPath_;
+      } else {
+        return diskPathBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     */
+    public Builder setDiskPath(com.google.cloud.securitycenter.v1.File.DiskPath value) {
+      if (diskPathBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        diskPath_ = value;
+      } else {
+        diskPathBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     */
+    public Builder setDiskPath(
+        com.google.cloud.securitycenter.v1.File.DiskPath.Builder builderForValue) {
+      if (diskPathBuilder_ == null) {
+        diskPath_ = builderForValue.build();
+      } else {
+        diskPathBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     */
+    public Builder mergeDiskPath(com.google.cloud.securitycenter.v1.File.DiskPath value) {
+      if (diskPathBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && diskPath_ != null
+            && diskPath_ != com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance()) {
+          getDiskPathBuilder().mergeFrom(value);
+        } else {
+          diskPath_ = value;
+        }
+      } else {
+        diskPathBuilder_.mergeFrom(value);
+      }
+      if (diskPath_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     */
+    public Builder clearDiskPath() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      diskPath_ = null;
+      if (diskPathBuilder_ != null) {
+        diskPathBuilder_.dispose();
+        diskPathBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v1.File.DiskPath.Builder getDiskPathBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getDiskPathFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder getDiskPathOrBuilder() {
+      if (diskPathBuilder_ != null) {
+        return diskPathBuilder_.getMessageOrBuilder();
+      } else {
+        return diskPath_ == null
+            ? com.google.cloud.securitycenter.v1.File.DiskPath.getDefaultInstance()
+            : diskPath_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Path of the file in terms of underlying disk/partition identifiers.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.File.DiskPath,
+            com.google.cloud.securitycenter.v1.File.DiskPath.Builder,
+            com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder>
+        getDiskPathFieldBuilder() {
+      if (diskPathBuilder_ == null) {
+        diskPathBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.File.DiskPath,
+                com.google.cloud.securitycenter.v1.File.DiskPath.Builder,
+                com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder>(
+                getDiskPath(), getParentForChildren(), isClean());
+        diskPath_ = null;
+      }
+      return diskPathBuilder_;
     }
 
     @java.lang.Override

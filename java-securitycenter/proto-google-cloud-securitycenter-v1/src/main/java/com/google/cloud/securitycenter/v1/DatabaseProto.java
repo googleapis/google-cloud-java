@@ -43,15 +43,15 @@ public final class DatabaseProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/securitycenter/v1/databas"
           + "e.proto\022\036google.cloud.securitycenter.v1\""
-          + "b\n\010Database\022\014\n\004name\030\001 \001(\t\022\024\n\014display_nam"
+          + "s\n\010Database\022\014\n\004name\030\001 \001(\t\022\024\n\014display_nam"
           + "e\030\002 \001(\t\022\021\n\tuser_name\030\003 \001(\t\022\r\n\005query\030\004 \001("
-          + "\t\022\020\n\010grantees\030\005 \003(\tB\347\001\n\"com.google.cloud"
-          + ".securitycenter.v1B\rDatabaseProtoP\001ZJclo"
-          + "ud.google.com/go/securitycenter/apiv1/se"
-          + "curitycenterpb;securitycenterpb\252\002\036Google"
-          + ".Cloud.SecurityCenter.V1\312\002\036Google\\Cloud\\"
-          + "SecurityCenter\\V1\352\002!Google::Cloud::Secur"
-          + "ityCenter::V1b\006proto3"
+          + "\t\022\020\n\010grantees\030\005 \003(\t\022\017\n\007version\030\006 \001(\tB\347\001\n"
+          + "\"com.google.cloud.securitycenter.v1B\rDat"
+          + "abaseProtoP\001ZJcloud.google.com/go/securi"
+          + "tycenter/apiv1/securitycenterpb;security"
+          + "centerpb\252\002\036Google.Cloud.SecurityCenter.V"
+          + "1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goo"
+          + "gle::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -62,7 +62,7 @@ public final class DatabaseProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Database_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "UserName", "Query", "Grantees",
+              "Name", "DisplayName", "UserName", "Query", "Grantees", "Version",
             });
   }
 

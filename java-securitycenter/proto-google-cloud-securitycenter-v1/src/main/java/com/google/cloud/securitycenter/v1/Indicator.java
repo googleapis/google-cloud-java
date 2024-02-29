@@ -161,6 +161,35 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignatureOrBuilder
         getYaraRuleSignatureOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Describes the type of resource associated with the signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for signatureType.
+     */
+    int getSignatureTypeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Describes the type of resource associated with the signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+     * </code>
+     *
+     * @return The signatureType.
+     */
+    com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType getSignatureType();
+
     com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureCase getSignatureCase();
   }
   /**
@@ -182,7 +211,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private ProcessSignature() {}
+    private ProcessSignature() {
+      signatureType_ = 0;
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -203,6 +234,167 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.class,
               com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Possible resource types to be associated with a signature.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType}
+     */
+    public enum SignatureType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The default signature type.
+       * </pre>
+       *
+       * <code>SIGNATURE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      SIGNATURE_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Used for signatures concerning processes.
+       * </pre>
+       *
+       * <code>SIGNATURE_TYPE_PROCESS = 1;</code>
+       */
+      SIGNATURE_TYPE_PROCESS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Used for signatures concerning disks.
+       * </pre>
+       *
+       * <code>SIGNATURE_TYPE_FILE = 2;</code>
+       */
+      SIGNATURE_TYPE_FILE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * The default signature type.
+       * </pre>
+       *
+       * <code>SIGNATURE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int SIGNATURE_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Used for signatures concerning processes.
+       * </pre>
+       *
+       * <code>SIGNATURE_TYPE_PROCESS = 1;</code>
+       */
+      public static final int SIGNATURE_TYPE_PROCESS_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Used for signatures concerning disks.
+       * </pre>
+       *
+       * <code>SIGNATURE_TYPE_FILE = 2;</code>
+       */
+      public static final int SIGNATURE_TYPE_FILE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SignatureType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SignatureType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SIGNATURE_TYPE_UNSPECIFIED;
+          case 1:
+            return SIGNATURE_TYPE_PROCESS;
+          case 2:
+            return SIGNATURE_TYPE_FILE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SignatureType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SignatureType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SignatureType>() {
+                public SignatureType findValueByNumber(int number) {
+                  return SignatureType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SignatureType[] VALUES = values();
+
+      public static SignatureType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SignatureType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType)
     }
 
     public interface MemoryHashSignatureOrBuilder
@@ -3314,6 +3506,49 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
           .getDefaultInstance();
     }
 
+    public static final int SIGNATURE_TYPE_FIELD_NUMBER = 8;
+    private int signatureType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Describes the type of resource associated with the signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for signatureType.
+     */
+    @java.lang.Override
+    public int getSignatureTypeValue() {
+      return signatureType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Describes the type of resource associated with the signature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+     * </code>
+     *
+     * @return The signatureType.
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType
+        getSignatureType() {
+      com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType result =
+          com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType.forNumber(
+              signatureType_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3340,6 +3575,12 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature)
                 signature_);
       }
+      if (signatureType_
+          != com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType
+              .SIGNATURE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(8, signatureType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3363,6 +3604,12 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                 (com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.YaraRuleSignature)
                     signature_);
       }
+      if (signatureType_
+          != com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType
+              .SIGNATURE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, signatureType_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3379,6 +3626,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.securitycenter.v1.Indicator.ProcessSignature other =
           (com.google.cloud.securitycenter.v1.Indicator.ProcessSignature) obj;
 
+      if (signatureType_ != other.signatureType_) return false;
       if (!getSignatureCase().equals(other.getSignatureCase())) return false;
       switch (signatureCase_) {
         case 6:
@@ -3401,6 +3649,8 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SIGNATURE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + signatureType_;
       switch (signatureCase_) {
         case 6:
           hash = (37 * hash) + MEMORY_HASH_SIGNATURE_FIELD_NUMBER;
@@ -3561,6 +3811,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         if (yaraRuleSignatureBuilder_ != null) {
           yaraRuleSignatureBuilder_.clear();
         }
+        signatureType_ = 0;
         signatureCase_ = 0;
         signature_ = null;
         return this;
@@ -3602,6 +3853,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.securitycenter.v1.Indicator.ProcessSignature result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.signatureType_ = signatureType_;
+        }
       }
 
       private void buildPartialOneofs(
@@ -3666,6 +3920,9 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         if (other
             == com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.getDefaultInstance())
           return this;
+        if (other.signatureType_ != 0) {
+          setSignatureTypeValue(other.getSignatureTypeValue());
+        }
         switch (other.getSignatureCase()) {
           case MEMORY_HASH_SIGNATURE:
             {
@@ -3722,6 +3979,12 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
                   signatureCase_ = 7;
                   break;
                 } // case 58
+              case 64:
+                {
+                  signatureType_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 64
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4263,6 +4526,112 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
         signatureCase_ = 7;
         onChanged();
         return yaraRuleSignatureBuilder_;
+      }
+
+      private int signatureType_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Describes the type of resource associated with the signature.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for signatureType.
+       */
+      @java.lang.Override
+      public int getSignatureTypeValue() {
+        return signatureType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the type of resource associated with the signature.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for signatureType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSignatureTypeValue(int value) {
+        signatureType_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the type of resource associated with the signature.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+       * </code>
+       *
+       * @return The signatureType.
+       */
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType
+          getSignatureType() {
+        com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType result =
+            com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType.forNumber(
+                signatureType_);
+        return result == null
+            ? com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the type of resource associated with the signature.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+       * </code>
+       *
+       * @param value The signatureType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSignatureType(
+          com.google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        signatureType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Describes the type of resource associated with the signature.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securitycenter.v1.Indicator.ProcessSignature.SignatureType signature_type = 8;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSignatureType() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        signatureType_ = 0;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

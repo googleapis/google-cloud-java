@@ -154,4 +154,39 @@ public interface ContainerOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.Label labels = 4;</code>
    */
   com.google.cloud.securitycenter.v1.LabelOrBuilder getLabelsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The time that the container was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time that the container was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time that the container was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 5;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 }

@@ -59,23 +59,28 @@ public final class IndicatorProto {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/securitycenter/v1/indicat"
           + "or.proto\022\036google.cloud.securitycenter.v1"
-          + "\"\221\005\n\tIndicator\022\024\n\014ip_addresses\030\001 \003(\t\022\017\n\007"
+          + "\"\331\006\n\tIndicator\022\024\n\014ip_addresses\030\001 \003(\t\022\017\n\007"
           + "domains\030\002 \003(\t\022N\n\nsignatures\030\003 \003(\0132:.goog"
           + "le.cloud.securitycenter.v1.Indicator.Pro"
-          + "cessSignature\022\014\n\004uris\030\004 \003(\t\032\376\003\n\020ProcessS"
+          + "cessSignature\022\014\n\004uris\030\004 \003(\t\032\306\005\n\020ProcessS"
           + "ignature\022o\n\025memory_hash_signature\030\006 \001(\0132"
           + "N.google.cloud.securitycenter.v1.Indicat"
           + "or.ProcessSignature.MemoryHashSignatureH"
           + "\000\022k\n\023yara_rule_signature\030\007 \001(\0132L.google."
           + "cloud.securitycenter.v1.Indicator.Proces"
-          + "sSignature.YaraRuleSignatureH\000\032\326\001\n\023Memor"
-          + "yHashSignature\022\025\n\rbinary_family\030\001 \001(\t\022l\n"
-          + "\ndetections\030\004 \003(\0132X.google.cloud.securit"
-          + "ycenter.v1.Indicator.ProcessSignature.Me"
-          + "moryHashSignature.Detection\032:\n\tDetection"
-          + "\022\016\n\006binary\030\002 \001(\t\022\035\n\025percent_pages_matche"
-          + "d\030\003 \001(\001\032&\n\021YaraRuleSignature\022\021\n\tyara_rul"
-          + "e\030\005 \001(\tB\013\n\tsignatureB\350\001\n\"com.google.clou"
+          + "sSignature.YaraRuleSignatureH\000\022`\n\016signat"
+          + "ure_type\030\010 \001(\0162H.google.cloud.securityce"
+          + "nter.v1.Indicator.ProcessSignature.Signa"
+          + "tureType\032\326\001\n\023MemoryHashSignature\022\025\n\rbina"
+          + "ry_family\030\001 \001(\t\022l\n\ndetections\030\004 \003(\0132X.go"
+          + "ogle.cloud.securitycenter.v1.Indicator.P"
+          + "rocessSignature.MemoryHashSignature.Dete"
+          + "ction\032:\n\tDetection\022\016\n\006binary\030\002 \001(\t\022\035\n\025pe"
+          + "rcent_pages_matched\030\003 \001(\001\032&\n\021YaraRuleSig"
+          + "nature\022\021\n\tyara_rule\030\005 \001(\t\"d\n\rSignatureTy"
+          + "pe\022\036\n\032SIGNATURE_TYPE_UNSPECIFIED\020\000\022\032\n\026SI"
+          + "GNATURE_TYPE_PROCESS\020\001\022\027\n\023SIGNATURE_TYPE"
+          + "_FILE\020\002B\013\n\tsignatureB\350\001\n\"com.google.clou"
           + "d.securitycenter.v1B\016IndicatorProtoP\001ZJc"
           + "loud.google.com/go/securitycenter/apiv1/"
           + "securitycenterpb;securitycenterpb\252\002\036Goog"
@@ -100,7 +105,7 @@ public final class IndicatorProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Indicator_ProcessSignature_descriptor,
             new java.lang.String[] {
-              "MemoryHashSignature", "YaraRuleSignature", "Signature",
+              "MemoryHashSignature", "YaraRuleSignature", "SignatureType", "Signature",
             });
     internal_static_google_cloud_securitycenter_v1_Indicator_ProcessSignature_MemoryHashSignature_descriptor =
         internal_static_google_cloud_securitycenter_v1_Indicator_ProcessSignature_descriptor

@@ -45,6 +45,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     roles_ = java.util.Collections.emptyList();
     bindings_ = java.util.Collections.emptyList();
     accessReviews_ = java.util.Collections.emptyList();
+    objects_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -9947,6 +9948,1848 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ObjectOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1.Kubernetes.Object)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object group, such as "policy.k8s.io/v1".
+     * </pre>
+     *
+     * <code>string group = 1;</code>
+     *
+     * @return The group.
+     */
+    java.lang.String getGroup();
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object group, such as "policy.k8s.io/v1".
+     * </pre>
+     *
+     * <code>string group = 1;</code>
+     *
+     * @return The bytes for group.
+     */
+    com.google.protobuf.ByteString getGroupBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object kind, such as "Namespace".
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     *
+     * @return The kind.
+     */
+    java.lang.String getKind();
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object kind, such as "Namespace".
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     *
+     * @return The bytes for kind.
+     */
+    com.google.protobuf.ByteString getKindBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object namespace. Must be a valid DNS label. Named
+     * "ns" to avoid collision with C++ namespace keyword. For details see
+     * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+     * </pre>
+     *
+     * <code>string ns = 3;</code>
+     *
+     * @return The ns.
+     */
+    java.lang.String getNs();
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object namespace. Must be a valid DNS label. Named
+     * "ns" to avoid collision with C++ namespace keyword. For details see
+     * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+     * </pre>
+     *
+     * <code>string ns = 3;</code>
+     *
+     * @return The bytes for ns.
+     */
+    com.google.protobuf.ByteString getNsBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object name. For details see
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object name. For details see
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    java.util.List<com.google.cloud.securitycenter.v1.Container> getContainersList();
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    com.google.cloud.securitycenter.v1.Container getContainers(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    int getContainersCount();
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    java.util.List<? extends com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+        getContainersOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    com.google.cloud.securitycenter.v1.ContainerOrBuilder getContainersOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes object related to the finding, uniquely identified by GKNN.
+   * Used if the object Kind is not one of Pod, Node, NodePool, Binding, or
+   * AccessReview.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Object}
+   */
+  public static final class Object extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1.Kubernetes.Object)
+      ObjectOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Object.newBuilder() to construct.
+    private Object(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Object() {
+      group_ = "";
+      kind_ = "";
+      ns_ = "";
+      name_ = "";
+      containers_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Object();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1.KubernetesProto
+          .internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.securitycenter.v1.KubernetesProto
+          .internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.securitycenter.v1.Kubernetes.Object.class,
+              com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder.class);
+    }
+
+    public static final int GROUP_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object group_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object group, such as "policy.k8s.io/v1".
+     * </pre>
+     *
+     * <code>string group = 1;</code>
+     *
+     * @return The group.
+     */
+    @java.lang.Override
+    public java.lang.String getGroup() {
+      java.lang.Object ref = group_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        group_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object group, such as "policy.k8s.io/v1".
+     * </pre>
+     *
+     * <code>string group = 1;</code>
+     *
+     * @return The bytes for group.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGroupBytes() {
+      java.lang.Object ref = group_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        group_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KIND_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kind_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object kind, such as "Namespace".
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     *
+     * @return The kind.
+     */
+    @java.lang.Override
+    public java.lang.String getKind() {
+      java.lang.Object ref = kind_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kind_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object kind, such as "Namespace".
+     * </pre>
+     *
+     * <code>string kind = 2;</code>
+     *
+     * @return The bytes for kind.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getKindBytes() {
+      java.lang.Object ref = kind_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kind_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ns_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object namespace. Must be a valid DNS label. Named
+     * "ns" to avoid collision with C++ namespace keyword. For details see
+     * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+     * </pre>
+     *
+     * <code>string ns = 3;</code>
+     *
+     * @return The ns.
+     */
+    @java.lang.Override
+    public java.lang.String getNs() {
+      java.lang.Object ref = ns_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ns_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object namespace. Must be a valid DNS label. Named
+     * "ns" to avoid collision with C++ namespace keyword. For details see
+     * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+     * </pre>
+     *
+     * <code>string ns = 3;</code>
+     *
+     * @return The bytes for ns.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNsBytes() {
+      java.lang.Object ref = ns_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ns_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NAME_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object name. For details see
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object name. For details see
+     * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+     * </pre>
+     *
+     * <code>string name = 4;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTAINERS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.securitycenter.v1.Container> containers_;
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.securitycenter.v1.Container> getContainersList() {
+      return containers_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+        getContainersOrBuilderList() {
+      return containers_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    @java.lang.Override
+    public int getContainersCount() {
+      return containers_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Container getContainers(int index) {
+      return containers_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pod containers associated with this finding, if any.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.ContainerOrBuilder getContainersOrBuilder(int index) {
+      return containers_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, group_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, kind_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ns_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ns_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
+      }
+      for (int i = 0; i < containers_.size(); i++) {
+        output.writeMessage(5, containers_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(group_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, group_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kind_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, kind_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ns_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ns_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+      }
+      for (int i = 0; i < containers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, containers_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.securitycenter.v1.Kubernetes.Object)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.securitycenter.v1.Kubernetes.Object other =
+          (com.google.cloud.securitycenter.v1.Kubernetes.Object) obj;
+
+      if (!getGroup().equals(other.getGroup())) return false;
+      if (!getKind().equals(other.getKind())) return false;
+      if (!getNs().equals(other.getNs())) return false;
+      if (!getName().equals(other.getName())) return false;
+      if (!getContainersList().equals(other.getContainersList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GROUP_FIELD_NUMBER;
+      hash = (53 * hash) + getGroup().hashCode();
+      hash = (37 * hash) + KIND_FIELD_NUMBER;
+      hash = (53 * hash) + getKind().hashCode();
+      hash = (37 * hash) + NS_FIELD_NUMBER;
+      hash = (53 * hash) + getNs().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      if (getContainersCount() > 0) {
+        hash = (37 * hash) + CONTAINERS_FIELD_NUMBER;
+        hash = (53 * hash) + getContainersList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.securitycenter.v1.Kubernetes.Object prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes object related to the finding, uniquely identified by GKNN.
+     * Used if the object Kind is not one of Pod, Node, NodePool, Binding, or
+     * AccessReview.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.securitycenter.v1.Kubernetes.Object}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1.Kubernetes.Object)
+        com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1.KubernetesProto
+            .internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securitycenter.v1.KubernetesProto
+            .internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securitycenter.v1.Kubernetes.Object.class,
+                com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder.class);
+      }
+
+      // Construct using com.google.cloud.securitycenter.v1.Kubernetes.Object.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        group_ = "";
+        kind_ = "";
+        ns_ = "";
+        name_ = "";
+        if (containersBuilder_ == null) {
+          containers_ = java.util.Collections.emptyList();
+        } else {
+          containers_ = null;
+          containersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securitycenter.v1.KubernetesProto
+            .internal_static_google_cloud_securitycenter_v1_Kubernetes_Object_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.Kubernetes.Object getDefaultInstanceForType() {
+        return com.google.cloud.securitycenter.v1.Kubernetes.Object.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.Kubernetes.Object build() {
+        com.google.cloud.securitycenter.v1.Kubernetes.Object result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securitycenter.v1.Kubernetes.Object buildPartial() {
+        com.google.cloud.securitycenter.v1.Kubernetes.Object result =
+            new com.google.cloud.securitycenter.v1.Kubernetes.Object(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.securitycenter.v1.Kubernetes.Object result) {
+        if (containersBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            containers_ = java.util.Collections.unmodifiableList(containers_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.containers_ = containers_;
+        } else {
+          result.containers_ = containersBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.securitycenter.v1.Kubernetes.Object result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.group_ = group_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.kind_ = kind_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ns_ = ns_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.name_ = name_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.securitycenter.v1.Kubernetes.Object) {
+          return mergeFrom((com.google.cloud.securitycenter.v1.Kubernetes.Object) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.securitycenter.v1.Kubernetes.Object other) {
+        if (other == com.google.cloud.securitycenter.v1.Kubernetes.Object.getDefaultInstance())
+          return this;
+        if (!other.getGroup().isEmpty()) {
+          group_ = other.group_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getKind().isEmpty()) {
+          kind_ = other.kind_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getNs().isEmpty()) {
+          ns_ = other.ns_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (containersBuilder_ == null) {
+          if (!other.containers_.isEmpty()) {
+            if (containers_.isEmpty()) {
+              containers_ = other.containers_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureContainersIsMutable();
+              containers_.addAll(other.containers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.containers_.isEmpty()) {
+            if (containersBuilder_.isEmpty()) {
+              containersBuilder_.dispose();
+              containersBuilder_ = null;
+              containers_ = other.containers_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              containersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getContainersFieldBuilder()
+                      : null;
+            } else {
+              containersBuilder_.addAllMessages(other.containers_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  group_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  kind_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  ns_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  com.google.cloud.securitycenter.v1.Container m =
+                      input.readMessage(
+                          com.google.cloud.securitycenter.v1.Container.parser(), extensionRegistry);
+                  if (containersBuilder_ == null) {
+                    ensureContainersIsMutable();
+                    containers_.add(m);
+                  } else {
+                    containersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object group_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object group, such as "policy.k8s.io/v1".
+       * </pre>
+       *
+       * <code>string group = 1;</code>
+       *
+       * @return The group.
+       */
+      public java.lang.String getGroup() {
+        java.lang.Object ref = group_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          group_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object group, such as "policy.k8s.io/v1".
+       * </pre>
+       *
+       * <code>string group = 1;</code>
+       *
+       * @return The bytes for group.
+       */
+      public com.google.protobuf.ByteString getGroupBytes() {
+        java.lang.Object ref = group_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          group_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object group, such as "policy.k8s.io/v1".
+       * </pre>
+       *
+       * <code>string group = 1;</code>
+       *
+       * @param value The group to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroup(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        group_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object group, such as "policy.k8s.io/v1".
+       * </pre>
+       *
+       * <code>string group = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGroup() {
+        group_ = getDefaultInstance().getGroup();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object group, such as "policy.k8s.io/v1".
+       * </pre>
+       *
+       * <code>string group = 1;</code>
+       *
+       * @param value The bytes for group to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        group_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kind_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object kind, such as "Namespace".
+       * </pre>
+       *
+       * <code>string kind = 2;</code>
+       *
+       * @return The kind.
+       */
+      public java.lang.String getKind() {
+        java.lang.Object ref = kind_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kind_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object kind, such as "Namespace".
+       * </pre>
+       *
+       * <code>string kind = 2;</code>
+       *
+       * @return The bytes for kind.
+       */
+      public com.google.protobuf.ByteString getKindBytes() {
+        java.lang.Object ref = kind_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          kind_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object kind, such as "Namespace".
+       * </pre>
+       *
+       * <code>string kind = 2;</code>
+       *
+       * @param value The kind to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKind(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kind_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object kind, such as "Namespace".
+       * </pre>
+       *
+       * <code>string kind = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearKind() {
+        kind_ = getDefaultInstance().getKind();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object kind, such as "Namespace".
+       * </pre>
+       *
+       * <code>string kind = 2;</code>
+       *
+       * @param value The bytes for kind to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKindBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        kind_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ns_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object namespace. Must be a valid DNS label. Named
+       * "ns" to avoid collision with C++ namespace keyword. For details see
+       * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+       * </pre>
+       *
+       * <code>string ns = 3;</code>
+       *
+       * @return The ns.
+       */
+      public java.lang.String getNs() {
+        java.lang.Object ref = ns_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ns_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object namespace. Must be a valid DNS label. Named
+       * "ns" to avoid collision with C++ namespace keyword. For details see
+       * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+       * </pre>
+       *
+       * <code>string ns = 3;</code>
+       *
+       * @return The bytes for ns.
+       */
+      public com.google.protobuf.ByteString getNsBytes() {
+        java.lang.Object ref = ns_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          ns_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object namespace. Must be a valid DNS label. Named
+       * "ns" to avoid collision with C++ namespace keyword. For details see
+       * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+       * </pre>
+       *
+       * <code>string ns = 3;</code>
+       *
+       * @param value The ns to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNs(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ns_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object namespace. Must be a valid DNS label. Named
+       * "ns" to avoid collision with C++ namespace keyword. For details see
+       * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+       * </pre>
+       *
+       * <code>string ns = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNs() {
+        ns_ = getDefaultInstance().getNs();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object namespace. Must be a valid DNS label. Named
+       * "ns" to avoid collision with C++ namespace keyword. For details see
+       * https://kubernetes.io/docs/tasks/administer-cluster/namespaces/.
+       * </pre>
+       *
+       * <code>string ns = 3;</code>
+       *
+       * @param value The bytes for ns to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ns_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object name. For details see
+       * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object name. For details see
+       * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object name. For details see
+       * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object name. For details see
+       * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Kubernetes object name. For details see
+       * https://kubernetes.io/docs/concepts/overview/working-with-objects/names/.
+       * </pre>
+       *
+       * <code>string name = 4;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.securitycenter.v1.Container> containers_ =
+          java.util.Collections.emptyList();
+
+      private void ensureContainersIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          containers_ =
+              new java.util.ArrayList<com.google.cloud.securitycenter.v1.Container>(containers_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.securitycenter.v1.Container,
+              com.google.cloud.securitycenter.v1.Container.Builder,
+              com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+          containersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public java.util.List<com.google.cloud.securitycenter.v1.Container> getContainersList() {
+        if (containersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(containers_);
+        } else {
+          return containersBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public int getContainersCount() {
+        if (containersBuilder_ == null) {
+          return containers_.size();
+        } else {
+          return containersBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Container getContainers(int index) {
+        if (containersBuilder_ == null) {
+          return containers_.get(index);
+        } else {
+          return containersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder setContainers(int index, com.google.cloud.securitycenter.v1.Container value) {
+        if (containersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContainersIsMutable();
+          containers_.set(index, value);
+          onChanged();
+        } else {
+          containersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder setContainers(
+          int index, com.google.cloud.securitycenter.v1.Container.Builder builderForValue) {
+        if (containersBuilder_ == null) {
+          ensureContainersIsMutable();
+          containers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          containersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder addContainers(com.google.cloud.securitycenter.v1.Container value) {
+        if (containersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContainersIsMutable();
+          containers_.add(value);
+          onChanged();
+        } else {
+          containersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder addContainers(int index, com.google.cloud.securitycenter.v1.Container value) {
+        if (containersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContainersIsMutable();
+          containers_.add(index, value);
+          onChanged();
+        } else {
+          containersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder addContainers(
+          com.google.cloud.securitycenter.v1.Container.Builder builderForValue) {
+        if (containersBuilder_ == null) {
+          ensureContainersIsMutable();
+          containers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          containersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder addContainers(
+          int index, com.google.cloud.securitycenter.v1.Container.Builder builderForValue) {
+        if (containersBuilder_ == null) {
+          ensureContainersIsMutable();
+          containers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          containersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder addAllContainers(
+          java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.Container> values) {
+        if (containersBuilder_ == null) {
+          ensureContainersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, containers_);
+          onChanged();
+        } else {
+          containersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder clearContainers() {
+        if (containersBuilder_ == null) {
+          containers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          containersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public Builder removeContainers(int index) {
+        if (containersBuilder_ == null) {
+          ensureContainersIsMutable();
+          containers_.remove(index);
+          onChanged();
+        } else {
+          containersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Container.Builder getContainersBuilder(int index) {
+        return getContainersFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public com.google.cloud.securitycenter.v1.ContainerOrBuilder getContainersOrBuilder(
+          int index) {
+        if (containersBuilder_ == null) {
+          return containers_.get(index);
+        } else {
+          return containersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public java.util.List<? extends com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+          getContainersOrBuilderList() {
+        if (containersBuilder_ != null) {
+          return containersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(containers_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Container.Builder addContainersBuilder() {
+        return getContainersFieldBuilder()
+            .addBuilder(com.google.cloud.securitycenter.v1.Container.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public com.google.cloud.securitycenter.v1.Container.Builder addContainersBuilder(int index) {
+        return getContainersFieldBuilder()
+            .addBuilder(index, com.google.cloud.securitycenter.v1.Container.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Pod containers associated with this finding, if any.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.securitycenter.v1.Container containers = 5;</code>
+       */
+      public java.util.List<com.google.cloud.securitycenter.v1.Container.Builder>
+          getContainersBuilderList() {
+        return getContainersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.securitycenter.v1.Container,
+              com.google.cloud.securitycenter.v1.Container.Builder,
+              com.google.cloud.securitycenter.v1.ContainerOrBuilder>
+          getContainersFieldBuilder() {
+        if (containersBuilder_ == null) {
+          containersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.securitycenter.v1.Container,
+                  com.google.cloud.securitycenter.v1.Container.Builder,
+                  com.google.cloud.securitycenter.v1.ContainerOrBuilder>(
+                  containers_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+          containers_ = null;
+        }
+        return containersBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.Kubernetes.Object)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1.Kubernetes.Object)
+    private static final com.google.cloud.securitycenter.v1.Kubernetes.Object DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1.Kubernetes.Object();
+    }
+
+    public static com.google.cloud.securitycenter.v1.Kubernetes.Object getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Object> PARSER =
+        new com.google.protobuf.AbstractParser<Object>() {
+          @java.lang.Override
+          public Object parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Object> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Object> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.securitycenter.v1.Kubernetes.Object getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int PODS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -10443,6 +12286,78 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     return accessReviews_.get(index);
   }
 
+  public static final int OBJECTS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Object> objects_;
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Object> getObjectsList() {
+    return objects_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder>
+      getObjectsOrBuilderList() {
+    return objects_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  @java.lang.Override
+  public int getObjectsCount() {
+    return objects_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Kubernetes.Object getObjects(int index) {
+    return objects_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Kubernetes objects related to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder getObjectsOrBuilder(
+      int index) {
+    return objects_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10475,6 +12390,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < accessReviews_.size(); i++) {
       output.writeMessage(6, accessReviews_.get(i));
     }
+    for (int i = 0; i < objects_.size(); i++) {
+      output.writeMessage(7, objects_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -10502,6 +12420,9 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < accessReviews_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, accessReviews_.get(i));
     }
+    for (int i = 0; i < objects_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, objects_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10524,6 +12445,7 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     if (!getRolesList().equals(other.getRolesList())) return false;
     if (!getBindingsList().equals(other.getBindingsList())) return false;
     if (!getAccessReviewsList().equals(other.getAccessReviewsList())) return false;
+    if (!getObjectsList().equals(other.getObjectsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -10558,6 +12480,10 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
     if (getAccessReviewsCount() > 0) {
       hash = (37 * hash) + ACCESS_REVIEWS_FIELD_NUMBER;
       hash = (53 * hash) + getAccessReviewsList().hashCode();
+    }
+    if (getObjectsCount() > 0) {
+      hash = (37 * hash) + OBJECTS_FIELD_NUMBER;
+      hash = (53 * hash) + getObjectsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -10740,6 +12666,13 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         accessReviewsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      if (objectsBuilder_ == null) {
+        objects_ = java.util.Collections.emptyList();
+      } else {
+        objects_ = null;
+        objectsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -10829,6 +12762,15 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         result.accessReviews_ = accessReviews_;
       } else {
         result.accessReviews_ = accessReviewsBuilder_.build();
+      }
+      if (objectsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          objects_ = java.util.Collections.unmodifiableList(objects_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.objects_ = objects_;
+      } else {
+        result.objects_ = objectsBuilder_.build();
       }
     }
 
@@ -11043,6 +12985,33 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (objectsBuilder_ == null) {
+        if (!other.objects_.isEmpty()) {
+          if (objects_.isEmpty()) {
+            objects_ = other.objects_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureObjectsIsMutable();
+            objects_.addAll(other.objects_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.objects_.isEmpty()) {
+          if (objectsBuilder_.isEmpty()) {
+            objectsBuilder_.dispose();
+            objectsBuilder_ = null;
+            objects_ = other.objects_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            objectsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getObjectsFieldBuilder()
+                    : null;
+          } else {
+            objectsBuilder_.addAllMessages(other.objects_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -11153,6 +13122,20 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.cloud.securitycenter.v1.Kubernetes.Object m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.Kubernetes.Object.parser(),
+                        extensionRegistry);
+                if (objectsBuilder_ == null) {
+                  ensureObjectsIsMutable();
+                  objects_.add(m);
+                } else {
+                  objectsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13550,6 +15533,363 @@ public final class Kubernetes extends com.google.protobuf.GeneratedMessageV3
         accessReviews_ = null;
       }
       return accessReviewsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Object> objects_ =
+        java.util.Collections.emptyList();
+
+    private void ensureObjectsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        objects_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.Kubernetes.Object>(objects_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Kubernetes.Object,
+            com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder,
+            com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder>
+        objectsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Object> getObjectsList() {
+      if (objectsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(objects_);
+      } else {
+        return objectsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public int getObjectsCount() {
+      if (objectsBuilder_ == null) {
+        return objects_.size();
+      } else {
+        return objectsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Kubernetes.Object getObjects(int index) {
+      if (objectsBuilder_ == null) {
+        return objects_.get(index);
+      } else {
+        return objectsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder setObjects(
+        int index, com.google.cloud.securitycenter.v1.Kubernetes.Object value) {
+      if (objectsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectsIsMutable();
+        objects_.set(index, value);
+        onChanged();
+      } else {
+        objectsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder setObjects(
+        int index, com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder builderForValue) {
+      if (objectsBuilder_ == null) {
+        ensureObjectsIsMutable();
+        objects_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        objectsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder addObjects(com.google.cloud.securitycenter.v1.Kubernetes.Object value) {
+      if (objectsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectsIsMutable();
+        objects_.add(value);
+        onChanged();
+      } else {
+        objectsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder addObjects(
+        int index, com.google.cloud.securitycenter.v1.Kubernetes.Object value) {
+      if (objectsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectsIsMutable();
+        objects_.add(index, value);
+        onChanged();
+      } else {
+        objectsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder addObjects(
+        com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder builderForValue) {
+      if (objectsBuilder_ == null) {
+        ensureObjectsIsMutable();
+        objects_.add(builderForValue.build());
+        onChanged();
+      } else {
+        objectsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder addObjects(
+        int index, com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder builderForValue) {
+      if (objectsBuilder_ == null) {
+        ensureObjectsIsMutable();
+        objects_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        objectsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder addAllObjects(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.Kubernetes.Object> values) {
+      if (objectsBuilder_ == null) {
+        ensureObjectsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, objects_);
+        onChanged();
+      } else {
+        objectsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder clearObjects() {
+      if (objectsBuilder_ == null) {
+        objects_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        objectsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public Builder removeObjects(int index) {
+      if (objectsBuilder_ == null) {
+        ensureObjectsIsMutable();
+        objects_.remove(index);
+        onChanged();
+      } else {
+        objectsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder getObjectsBuilder(
+        int index) {
+      return getObjectsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder getObjectsOrBuilder(
+        int index) {
+      if (objectsBuilder_ == null) {
+        return objects_.get(index);
+      } else {
+        return objectsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder>
+        getObjectsOrBuilderList() {
+      if (objectsBuilder_ != null) {
+        return objectsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(objects_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder addObjectsBuilder() {
+      return getObjectsFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.Kubernetes.Object.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder addObjectsBuilder(
+        int index) {
+      return getObjectsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.securitycenter.v1.Kubernetes.Object.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Kubernetes objects related to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.Kubernetes.Object objects = 7;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder>
+        getObjectsBuilderList() {
+      return getObjectsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.Kubernetes.Object,
+            com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder,
+            com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder>
+        getObjectsFieldBuilder() {
+      if (objectsBuilder_ == null) {
+        objectsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.Kubernetes.Object,
+                com.google.cloud.securitycenter.v1.Kubernetes.Object.Builder,
+                com.google.cloud.securitycenter.v1.Kubernetes.ObjectOrBuilder>(
+                objects_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+        objects_ = null;
+      }
+      return objectsBuilder_;
     }
 
     @java.lang.Override

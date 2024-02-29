@@ -37,7 +37,7 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   private List<AbstractMessage> requests;
-  private Queue<Object> responses;
+  private Queue<java.lang.Object> responses;
 
   public MockSecurityCenterImpl() {
     requests = new ArrayList<>();
@@ -53,7 +53,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   public void setResponses(List<AbstractMessage> responses) {
-    this.responses = new LinkedList<Object>(responses);
+    this.responses = new LinkedList<java.lang.Object>(responses);
   }
 
   public void addException(Exception exception) {
@@ -68,7 +68,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void bulkMuteFindings(
       BulkMuteFindingsRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -90,7 +90,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void createSecurityHealthAnalyticsCustomModule(
       CreateSecurityHealthAnalyticsCustomModuleRequest request,
       StreamObserver<SecurityHealthAnalyticsCustomModule> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof SecurityHealthAnalyticsCustomModule) {
       requests.add(request);
       responseObserver.onNext(((SecurityHealthAnalyticsCustomModule) response));
@@ -110,7 +110,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
 
   @Override
   public void createSource(CreateSourceRequest request, StreamObserver<Source> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Source) {
       requests.add(request);
       responseObserver.onNext(((Source) response));
@@ -131,7 +131,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void createFinding(
       CreateFindingRequest request, StreamObserver<Finding> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Finding) {
       requests.add(request);
       responseObserver.onNext(((Finding) response));
@@ -152,7 +152,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void createMuteConfig(
       CreateMuteConfigRequest request, StreamObserver<MuteConfig> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof MuteConfig) {
       requests.add(request);
       responseObserver.onNext(((MuteConfig) response));
@@ -174,7 +174,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void createNotificationConfig(
       CreateNotificationConfigRequest request,
       StreamObserver<NotificationConfig> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof NotificationConfig) {
       requests.add(request);
       responseObserver.onNext(((NotificationConfig) response));
@@ -195,7 +195,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void deleteMuteConfig(
       DeleteMuteConfigRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -216,7 +216,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void deleteNotificationConfig(
       DeleteNotificationConfigRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -238,7 +238,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void deleteSecurityHealthAnalyticsCustomModule(
       DeleteSecurityHealthAnalyticsCustomModuleRequest request,
       StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -259,7 +259,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void getBigQueryExport(
       GetBigQueryExportRequest request, StreamObserver<BigQueryExport> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof BigQueryExport) {
       requests.add(request);
       responseObserver.onNext(((BigQueryExport) response));
@@ -279,7 +279,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
 
   @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -300,7 +300,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void getMuteConfig(
       GetMuteConfigRequest request, StreamObserver<MuteConfig> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof MuteConfig) {
       requests.add(request);
       responseObserver.onNext(((MuteConfig) response));
@@ -321,7 +321,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void getNotificationConfig(
       GetNotificationConfigRequest request, StreamObserver<NotificationConfig> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof NotificationConfig) {
       requests.add(request);
       responseObserver.onNext(((NotificationConfig) response));
@@ -343,7 +343,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void getOrganizationSettings(
       GetOrganizationSettingsRequest request,
       StreamObserver<OrganizationSettings> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof OrganizationSettings) {
       requests.add(request);
       responseObserver.onNext(((OrganizationSettings) response));
@@ -365,7 +365,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void getEffectiveSecurityHealthAnalyticsCustomModule(
       GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request,
       StreamObserver<EffectiveSecurityHealthAnalyticsCustomModule> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof EffectiveSecurityHealthAnalyticsCustomModule) {
       requests.add(request);
       responseObserver.onNext(((EffectiveSecurityHealthAnalyticsCustomModule) response));
@@ -387,7 +387,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void getSecurityHealthAnalyticsCustomModule(
       GetSecurityHealthAnalyticsCustomModuleRequest request,
       StreamObserver<SecurityHealthAnalyticsCustomModule> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof SecurityHealthAnalyticsCustomModule) {
       requests.add(request);
       responseObserver.onNext(((SecurityHealthAnalyticsCustomModule) response));
@@ -407,7 +407,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
 
   @Override
   public void getSource(GetSourceRequest request, StreamObserver<Source> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Source) {
       requests.add(request);
       responseObserver.onNext(((Source) response));
@@ -428,7 +428,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void groupAssets(
       GroupAssetsRequest request, StreamObserver<GroupAssetsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof GroupAssetsResponse) {
       requests.add(request);
       responseObserver.onNext(((GroupAssetsResponse) response));
@@ -449,7 +449,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void groupFindings(
       GroupFindingsRequest request, StreamObserver<GroupFindingsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof GroupFindingsResponse) {
       requests.add(request);
       responseObserver.onNext(((GroupFindingsResponse) response));
@@ -470,7 +470,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void listAssets(
       ListAssetsRequest request, StreamObserver<ListAssetsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListAssetsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListAssetsResponse) response));
@@ -492,7 +492,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void listDescendantSecurityHealthAnalyticsCustomModules(
       ListDescendantSecurityHealthAnalyticsCustomModulesRequest request,
       StreamObserver<ListDescendantSecurityHealthAnalyticsCustomModulesResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListDescendantSecurityHealthAnalyticsCustomModulesResponse) {
       requests.add(request);
       responseObserver.onNext(
@@ -514,7 +514,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void listFindings(
       ListFindingsRequest request, StreamObserver<ListFindingsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListFindingsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListFindingsResponse) response));
@@ -535,7 +535,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void listMuteConfigs(
       ListMuteConfigsRequest request, StreamObserver<ListMuteConfigsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListMuteConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListMuteConfigsResponse) response));
@@ -557,7 +557,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void listNotificationConfigs(
       ListNotificationConfigsRequest request,
       StreamObserver<ListNotificationConfigsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListNotificationConfigsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListNotificationConfigsResponse) response));
@@ -579,7 +579,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void listEffectiveSecurityHealthAnalyticsCustomModules(
       ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request,
       StreamObserver<ListEffectiveSecurityHealthAnalyticsCustomModulesResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListEffectiveSecurityHealthAnalyticsCustomModulesResponse) {
       requests.add(request);
       responseObserver.onNext(
@@ -602,7 +602,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void listSecurityHealthAnalyticsCustomModules(
       ListSecurityHealthAnalyticsCustomModulesRequest request,
       StreamObserver<ListSecurityHealthAnalyticsCustomModulesResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListSecurityHealthAnalyticsCustomModulesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSecurityHealthAnalyticsCustomModulesResponse) response));
@@ -623,7 +623,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void listSources(
       ListSourcesRequest request, StreamObserver<ListSourcesResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListSourcesResponse) {
       requests.add(request);
       responseObserver.onNext(((ListSourcesResponse) response));
@@ -644,7 +644,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void runAssetDiscovery(
       RunAssetDiscoveryRequest request, StreamObserver<Operation> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Operation) {
       requests.add(request);
       responseObserver.onNext(((Operation) response));
@@ -665,7 +665,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void setFindingState(
       SetFindingStateRequest request, StreamObserver<Finding> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Finding) {
       requests.add(request);
       responseObserver.onNext(((Finding) response));
@@ -685,7 +685,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
 
   @Override
   public void setMute(SetMuteRequest request, StreamObserver<Finding> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Finding) {
       requests.add(request);
       responseObserver.onNext(((Finding) response));
@@ -705,7 +705,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
 
   @Override
   public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Policy) {
       requests.add(request);
       responseObserver.onNext(((Policy) response));
@@ -727,7 +727,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void testIamPermissions(
       TestIamPermissionsRequest request,
       StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof TestIamPermissionsResponse) {
       requests.add(request);
       responseObserver.onNext(((TestIamPermissionsResponse) response));
@@ -749,7 +749,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void simulateSecurityHealthAnalyticsCustomModule(
       SimulateSecurityHealthAnalyticsCustomModuleRequest request,
       StreamObserver<SimulateSecurityHealthAnalyticsCustomModuleResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof SimulateSecurityHealthAnalyticsCustomModuleResponse) {
       requests.add(request);
       responseObserver.onNext(((SimulateSecurityHealthAnalyticsCustomModuleResponse) response));
@@ -770,7 +770,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void updateExternalSystem(
       UpdateExternalSystemRequest request, StreamObserver<ExternalSystem> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ExternalSystem) {
       requests.add(request);
       responseObserver.onNext(((ExternalSystem) response));
@@ -791,7 +791,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void updateFinding(
       UpdateFindingRequest request, StreamObserver<Finding> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Finding) {
       requests.add(request);
       responseObserver.onNext(((Finding) response));
@@ -812,7 +812,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void updateMuteConfig(
       UpdateMuteConfigRequest request, StreamObserver<MuteConfig> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof MuteConfig) {
       requests.add(request);
       responseObserver.onNext(((MuteConfig) response));
@@ -834,7 +834,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void updateNotificationConfig(
       UpdateNotificationConfigRequest request,
       StreamObserver<NotificationConfig> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof NotificationConfig) {
       requests.add(request);
       responseObserver.onNext(((NotificationConfig) response));
@@ -856,7 +856,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void updateOrganizationSettings(
       UpdateOrganizationSettingsRequest request,
       StreamObserver<OrganizationSettings> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof OrganizationSettings) {
       requests.add(request);
       responseObserver.onNext(((OrganizationSettings) response));
@@ -878,7 +878,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void updateSecurityHealthAnalyticsCustomModule(
       UpdateSecurityHealthAnalyticsCustomModuleRequest request,
       StreamObserver<SecurityHealthAnalyticsCustomModule> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof SecurityHealthAnalyticsCustomModule) {
       requests.add(request);
       responseObserver.onNext(((SecurityHealthAnalyticsCustomModule) response));
@@ -898,7 +898,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
 
   @Override
   public void updateSource(UpdateSourceRequest request, StreamObserver<Source> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Source) {
       requests.add(request);
       responseObserver.onNext(((Source) response));
@@ -919,7 +919,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void updateSecurityMarks(
       UpdateSecurityMarksRequest request, StreamObserver<SecurityMarks> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof SecurityMarks) {
       requests.add(request);
       responseObserver.onNext(((SecurityMarks) response));
@@ -940,7 +940,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void createBigQueryExport(
       CreateBigQueryExportRequest request, StreamObserver<BigQueryExport> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof BigQueryExport) {
       requests.add(request);
       responseObserver.onNext(((BigQueryExport) response));
@@ -961,7 +961,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void deleteBigQueryExport(
       DeleteBigQueryExportRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof Empty) {
       requests.add(request);
       responseObserver.onNext(((Empty) response));
@@ -982,7 +982,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   @Override
   public void updateBigQueryExport(
       UpdateBigQueryExportRequest request, StreamObserver<BigQueryExport> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof BigQueryExport) {
       requests.add(request);
       responseObserver.onNext(((BigQueryExport) response));
@@ -1004,7 +1004,7 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   public void listBigQueryExports(
       ListBigQueryExportsRequest request,
       StreamObserver<ListBigQueryExportsResponse> responseObserver) {
-    Object response = responses.poll();
+    java.lang.Object response = responses.poll();
     if (response instanceof ListBigQueryExportsResponse) {
       requests.add(request);
       responseObserver.onNext(((ListBigQueryExportsResponse) response));

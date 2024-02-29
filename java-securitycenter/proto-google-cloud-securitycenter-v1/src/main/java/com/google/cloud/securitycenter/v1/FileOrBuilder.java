@@ -143,4 +143,39 @@ public interface FileOrBuilder
    * @return The bytes for contents.
    */
   com.google.protobuf.ByteString getContentsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Path of the file in terms of underlying disk/partition identifiers.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+   *
+   * @return Whether the diskPath field is set.
+   */
+  boolean hasDiskPath();
+  /**
+   *
+   *
+   * <pre>
+   * Path of the file in terms of underlying disk/partition identifiers.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+   *
+   * @return The diskPath.
+   */
+  com.google.cloud.securitycenter.v1.File.DiskPath getDiskPath();
+  /**
+   *
+   *
+   * <pre>
+   * Path of the file in terms of underlying disk/partition identifiers.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.File.DiskPath disk_path = 7;</code>
+   */
+  com.google.cloud.securitycenter.v1.File.DiskPathOrBuilder getDiskPathOrBuilder();
 }

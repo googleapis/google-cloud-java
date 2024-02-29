@@ -47,18 +47,18 @@ public final class ExfiltrationProto {
     java.lang.String[] descriptorData = {
       "\n1google/cloud/securitycenter/v1/exfiltr"
           + "ation.proto\022\036google.cloud.securitycenter"
-          + ".v1\"\216\001\n\014Exfiltration\022>\n\007sources\030\001 \003(\0132-."
+          + ".v1\"\257\001\n\014Exfiltration\022>\n\007sources\030\001 \003(\0132-."
           + "google.cloud.securitycenter.v1.ExfilReso"
           + "urce\022>\n\007targets\030\002 \003(\0132-.google.cloud.sec"
-          + "uritycenter.v1.ExfilResource\"1\n\rExfilRes"
-          + "ource\022\014\n\004name\030\001 \001(\t\022\022\n\ncomponents\030\002 \003(\tB"
-          + "\353\001\n\"com.google.cloud.securitycenter.v1B\021"
-          + "ExfiltrationProtoP\001ZJcloud.google.com/go"
-          + "/securitycenter/apiv1/securitycenterpb;s"
-          + "ecuritycenterpb\252\002\036Google.Cloud.SecurityC"
-          + "enter.V1\312\002\036Google\\Cloud\\SecurityCenter\\V"
-          + "1\352\002!Google::Cloud::SecurityCenter::V1b\006p"
-          + "roto3"
+          + "uritycenter.v1.ExfilResource\022\037\n\027total_ex"
+          + "filtrated_bytes\030\003 \001(\003\"1\n\rExfilResource\022\014"
+          + "\n\004name\030\001 \001(\t\022\022\n\ncomponents\030\002 \003(\tB\353\001\n\"com"
+          + ".google.cloud.securitycenter.v1B\021Exfiltr"
+          + "ationProtoP\001ZJcloud.google.com/go/securi"
+          + "tycenter/apiv1/securitycenterpb;security"
+          + "centerpb\252\002\036Google.Cloud.SecurityCenter.V"
+          + "1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goo"
+          + "gle::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -69,7 +69,7 @@ public final class ExfiltrationProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_Exfiltration_descriptor,
             new java.lang.String[] {
-              "Sources", "Targets",
+              "Sources", "Targets", "TotalExfiltratedBytes",
             });
     internal_static_google_cloud_securitycenter_v1_ExfilResource_descriptor =
         getDescriptor().getMessageTypes().get(1);

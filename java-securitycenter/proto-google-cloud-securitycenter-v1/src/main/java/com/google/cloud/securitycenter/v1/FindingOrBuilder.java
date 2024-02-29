@@ -1637,6 +1637,58 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.OrgPolicy> getOrgPoliciesList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  com.google.cloud.securitycenter.v1.OrgPolicy getOrgPolicies(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  int getOrgPoliciesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder>
+      getOrgPoliciesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder getOrgPoliciesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Represents an application associated with the finding.
    * </pre>
    *
@@ -1667,4 +1719,147 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
    */
   com.google.cloud.securitycenter.v1.ApplicationOrBuilder getApplicationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return Whether the backupDisasterRecovery field is set.
+   */
+  boolean hasBackupDisasterRecovery();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return The backupDisasterRecovery.
+   */
+  com.google.cloud.securitycenter.v1.BackupDisasterRecovery getBackupDisasterRecovery();
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   */
+  com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder
+      getBackupDisasterRecoveryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.LogEntry> getLogEntriesList();
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  com.google.cloud.securitycenter.v1.LogEntry getLogEntries(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  int getLogEntriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.LogEntryOrBuilder>
+      getLogEntriesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  com.google.cloud.securitycenter.v1.LogEntryOrBuilder getLogEntriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.LoadBalancer> getLoadBalancersList();
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  com.google.cloud.securitycenter.v1.LoadBalancer getLoadBalancers(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  int getLoadBalancersCount();
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder>
+      getLoadBalancersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder getLoadBalancersOrBuilder(int index);
 }

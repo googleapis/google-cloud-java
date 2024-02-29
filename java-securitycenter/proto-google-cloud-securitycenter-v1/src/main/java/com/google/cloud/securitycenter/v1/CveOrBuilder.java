@@ -156,4 +156,83 @@ public interface CveOrBuilder
    * @return The upstreamFixAvailable.
    */
   boolean getUpstreamFixAvailable();
+
+  /**
+   *
+   *
+   * <pre>
+   * The potential impact of the vulnerability if it was to be exploited.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+   *
+   * @return The enum numeric value on the wire for impact.
+   */
+  int getImpactValue();
+  /**
+   *
+   *
+   * <pre>
+   * The potential impact of the vulnerability if it was to be exploited.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.RiskRating impact = 5;</code>
+   *
+   * @return The impact.
+   */
+  com.google.cloud.securitycenter.v1.Cve.RiskRating getImpact();
+
+  /**
+   *
+   *
+   * <pre>
+   * The exploitation activity of the vulnerability in the wild.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for exploitationActivity.
+   */
+  int getExploitationActivityValue();
+  /**
+   *
+   *
+   * <pre>
+   * The exploitation activity of the vulnerability in the wild.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Cve.ExploitationActivity exploitation_activity = 6;
+   * </code>
+   *
+   * @return The exploitationActivity.
+   */
+  com.google.cloud.securitycenter.v1.Cve.ExploitationActivity getExploitationActivity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether or not the vulnerability has been observed in the wild.
+   * </pre>
+   *
+   * <code>bool observed_in_the_wild = 7;</code>
+   *
+   * @return The observedInTheWild.
+   */
+  boolean getObservedInTheWild();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether or not the vulnerability was zero day when the finding was
+   * published.
+   * </pre>
+   *
+   * <code>bool zero_day = 8;</code>
+   *
+   * @return The zeroDay.
+   */
+  boolean getZeroDay();
 }

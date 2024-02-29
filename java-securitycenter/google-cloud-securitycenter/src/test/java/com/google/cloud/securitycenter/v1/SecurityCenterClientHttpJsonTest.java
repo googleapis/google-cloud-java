@@ -456,7 +456,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -541,7 +545,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3913,7 +3921,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4000,7 +4012,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4085,7 +4101,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4170,7 +4190,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4558,7 +4582,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4601,7 +4629,11 @@ public class SecurityCenterClientHttpJsonTest {
             .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
             .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
+            .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
+            .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .addAllLogEntries(new ArrayList<LogEntry>())
+            .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -4669,7 +4701,11 @@ public class SecurityCenterClientHttpJsonTest {
               .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
               .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
               .setKernelRootkit(KernelRootkit.newBuilder().build())
+              .addAllOrgPolicies(new ArrayList<OrgPolicy>())
               .setApplication(Application.newBuilder().build())
+              .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+              .addAllLogEntries(new ArrayList<LogEntry>())
+              .addAllLoadBalancers(new ArrayList<LoadBalancer>())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");

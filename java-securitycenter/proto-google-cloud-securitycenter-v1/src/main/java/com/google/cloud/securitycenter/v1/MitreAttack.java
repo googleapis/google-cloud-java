@@ -496,6 +496,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * MITRE ATT&amp;CK techniques that can be referenced by SCC findings.
    * See: https://attack.mitre.org/techniques/enterprise/
+   * Next ID: 59
    * </pre>
    *
    * Protobuf enum {@code google.cloud.securitycenter.v1.MitreAttack.Technique}
@@ -515,52 +516,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1595
+     * T1036
      * </pre>
      *
-     * <code>ACTIVE_SCANNING = 1;</code>
+     * <code>MASQUERADING = 49;</code>
      */
-    ACTIVE_SCANNING(1),
+    MASQUERADING(49),
     /**
      *
      *
      * <pre>
-     * T1595.001
+     * T1036.005
      * </pre>
      *
-     * <code>SCANNING_IP_BLOCKS = 2;</code>
+     * <code>MATCH_LEGITIMATE_NAME_OR_LOCATION = 50;</code>
      */
-    SCANNING_IP_BLOCKS(2),
+    MATCH_LEGITIMATE_NAME_OR_LOCATION(50),
     /**
      *
      *
      * <pre>
-     * T1105
+     * T1037
      * </pre>
      *
-     * <code>INGRESS_TOOL_TRANSFER = 3;</code>
+     * <code>BOOT_OR_LOGON_INITIALIZATION_SCRIPTS = 37;</code>
      */
-    INGRESS_TOOL_TRANSFER(3),
+    BOOT_OR_LOGON_INITIALIZATION_SCRIPTS(37),
     /**
      *
      *
      * <pre>
-     * T1106
+     * T1037.005
      * </pre>
      *
-     * <code>NATIVE_API = 4;</code>
+     * <code>STARTUP_ITEMS = 38;</code>
      */
-    NATIVE_API(4),
+    STARTUP_ITEMS(38),
     /**
      *
      *
      * <pre>
-     * T1129
+     * T1046
      * </pre>
      *
-     * <code>SHARED_MODULES = 5;</code>
+     * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
      */
-    SHARED_MODULES(5),
+    NETWORK_SERVICE_DISCOVERY(32),
+    /**
+     *
+     *
+     * <pre>
+     * T1057
+     * </pre>
+     *
+     * <code>PROCESS_DISCOVERY = 56;</code>
+     */
+    PROCESS_DISCOVERY(56),
     /**
      *
      *
@@ -585,12 +596,92 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1496
+     * T1069
      * </pre>
      *
-     * <code>RESOURCE_HIJACKING = 8;</code>
+     * <code>PERMISSION_GROUPS_DISCOVERY = 18;</code>
      */
-    RESOURCE_HIJACKING(8),
+    PERMISSION_GROUPS_DISCOVERY(18),
+    /**
+     *
+     *
+     * <pre>
+     * T1069.003
+     * </pre>
+     *
+     * <code>CLOUD_GROUPS = 19;</code>
+     */
+    CLOUD_GROUPS(19),
+    /**
+     *
+     *
+     * <pre>
+     * T1071
+     * </pre>
+     *
+     * <code>APPLICATION_LAYER_PROTOCOL = 45;</code>
+     */
+    APPLICATION_LAYER_PROTOCOL(45),
+    /**
+     *
+     *
+     * <pre>
+     * T1071.004
+     * </pre>
+     *
+     * <code>DNS = 46;</code>
+     */
+    DNS(46),
+    /**
+     *
+     *
+     * <pre>
+     * T1072
+     * </pre>
+     *
+     * <code>SOFTWARE_DEPLOYMENT_TOOLS = 47;</code>
+     */
+    SOFTWARE_DEPLOYMENT_TOOLS(47),
+    /**
+     *
+     *
+     * <pre>
+     * T1078
+     * </pre>
+     *
+     * <code>VALID_ACCOUNTS = 14;</code>
+     */
+    VALID_ACCOUNTS(14),
+    /**
+     *
+     *
+     * <pre>
+     * T1078.001
+     * </pre>
+     *
+     * <code>DEFAULT_ACCOUNTS = 35;</code>
+     */
+    DEFAULT_ACCOUNTS(35),
+    /**
+     *
+     *
+     * <pre>
+     * T1078.003
+     * </pre>
+     *
+     * <code>LOCAL_ACCOUNTS = 15;</code>
+     */
+    LOCAL_ACCOUNTS(15),
+    /**
+     *
+     *
+     * <pre>
+     * T1078.004
+     * </pre>
+     *
+     * <code>CLOUD_ACCOUNTS = 16;</code>
+     */
+    CLOUD_ACCOUNTS(16),
     /**
      *
      *
@@ -625,52 +716,162 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1568
+     * T1098
      * </pre>
      *
-     * <code>DYNAMIC_RESOLUTION = 12;</code>
+     * <code>ACCOUNT_MANIPULATION = 22;</code>
      */
-    DYNAMIC_RESOLUTION(12),
+    ACCOUNT_MANIPULATION(22),
     /**
      *
      *
      * <pre>
-     * T1552
+     * T1098.001
      * </pre>
      *
-     * <code>UNSECURED_CREDENTIALS = 13;</code>
+     * <code>ADDITIONAL_CLOUD_CREDENTIALS = 40;</code>
      */
-    UNSECURED_CREDENTIALS(13),
+    ADDITIONAL_CLOUD_CREDENTIALS(40),
     /**
      *
      *
      * <pre>
-     * T1078
+     * T1098.004
      * </pre>
      *
-     * <code>VALID_ACCOUNTS = 14;</code>
+     * <code>SSH_AUTHORIZED_KEYS = 23;</code>
      */
-    VALID_ACCOUNTS(14),
+    SSH_AUTHORIZED_KEYS(23),
     /**
      *
      *
      * <pre>
-     * T1078.003
+     * T1098.006
      * </pre>
      *
-     * <code>LOCAL_ACCOUNTS = 15;</code>
+     * <code>ADDITIONAL_CONTAINER_CLUSTER_ROLES = 58;</code>
      */
-    LOCAL_ACCOUNTS(15),
+    ADDITIONAL_CONTAINER_CLUSTER_ROLES(58),
     /**
      *
      *
      * <pre>
-     * T1078.004
+     * T1105
      * </pre>
      *
-     * <code>CLOUD_ACCOUNTS = 16;</code>
+     * <code>INGRESS_TOOL_TRANSFER = 3;</code>
      */
-    CLOUD_ACCOUNTS(16),
+    INGRESS_TOOL_TRANSFER(3),
+    /**
+     *
+     *
+     * <pre>
+     * T1106
+     * </pre>
+     *
+     * <code>NATIVE_API = 4;</code>
+     */
+    NATIVE_API(4),
+    /**
+     *
+     *
+     * <pre>
+     * T1110
+     * </pre>
+     *
+     * <code>BRUTE_FORCE = 44;</code>
+     */
+    BRUTE_FORCE(44),
+    /**
+     *
+     *
+     * <pre>
+     * T1129
+     * </pre>
+     *
+     * <code>SHARED_MODULES = 5;</code>
+     */
+    SHARED_MODULES(5),
+    /**
+     *
+     *
+     * <pre>
+     * T1134
+     * </pre>
+     *
+     * <code>ACCESS_TOKEN_MANIPULATION = 33;</code>
+     */
+    ACCESS_TOKEN_MANIPULATION(33),
+    /**
+     *
+     *
+     * <pre>
+     * T1134.001
+     * </pre>
+     *
+     * <code>TOKEN_IMPERSONATION_OR_THEFT = 39;</code>
+     */
+    TOKEN_IMPERSONATION_OR_THEFT(39),
+    /**
+     *
+     *
+     * <pre>
+     * T1190
+     * </pre>
+     *
+     * <code>EXPLOIT_PUBLIC_FACING_APPLICATION = 27;</code>
+     */
+    EXPLOIT_PUBLIC_FACING_APPLICATION(27),
+    /**
+     *
+     *
+     * <pre>
+     * T1484
+     * </pre>
+     *
+     * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
+     */
+    DOMAIN_POLICY_MODIFICATION(30),
+    /**
+     *
+     *
+     * <pre>
+     * T1485
+     * </pre>
+     *
+     * <code>DATA_DESTRUCTION = 29;</code>
+     */
+    DATA_DESTRUCTION(29),
+    /**
+     *
+     *
+     * <pre>
+     * T1489
+     * </pre>
+     *
+     * <code>SERVICE_STOP = 52;</code>
+     */
+    SERVICE_STOP(52),
+    /**
+     *
+     *
+     * <pre>
+     * T1490
+     * </pre>
+     *
+     * <code>INHIBIT_SYSTEM_RECOVERY = 36;</code>
+     */
+    INHIBIT_SYSTEM_RECOVERY(36),
+    /**
+     *
+     *
+     * <pre>
+     * T1496
+     * </pre>
+     *
+     * <code>RESOURCE_HIJACKING = 8;</code>
+     */
+    RESOURCE_HIJACKING(8),
     /**
      *
      *
@@ -685,22 +886,102 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1069
+     * T1526
      * </pre>
      *
-     * <code>PERMISSION_GROUPS_DISCOVERY = 18;</code>
+     * <code>CLOUD_SERVICE_DISCOVERY = 48;</code>
      */
-    PERMISSION_GROUPS_DISCOVERY(18),
+    CLOUD_SERVICE_DISCOVERY(48),
     /**
      *
      *
      * <pre>
-     * T1069.003
+     * T1528
      * </pre>
      *
-     * <code>CLOUD_GROUPS = 19;</code>
+     * <code>STEAL_APPLICATION_ACCESS_TOKEN = 42;</code>
      */
-    CLOUD_GROUPS(19),
+    STEAL_APPLICATION_ACCESS_TOKEN(42),
+    /**
+     *
+     *
+     * <pre>
+     * T1531
+     * </pre>
+     *
+     * <code>ACCOUNT_ACCESS_REMOVAL = 51;</code>
+     */
+    ACCOUNT_ACCESS_REMOVAL(51),
+    /**
+     *
+     *
+     * <pre>
+     * T1539
+     * </pre>
+     *
+     * <code>STEAL_WEB_SESSION_COOKIE = 25;</code>
+     */
+    STEAL_WEB_SESSION_COOKIE(25),
+    /**
+     *
+     *
+     * <pre>
+     * T1543
+     * </pre>
+     *
+     * <code>CREATE_OR_MODIFY_SYSTEM_PROCESS = 24;</code>
+     */
+    CREATE_OR_MODIFY_SYSTEM_PROCESS(24),
+    /**
+     *
+     *
+     * <pre>
+     * T1548
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
+     */
+    ABUSE_ELEVATION_CONTROL_MECHANISM(34),
+    /**
+     *
+     *
+     * <pre>
+     * T1552
+     * </pre>
+     *
+     * <code>UNSECURED_CREDENTIALS = 13;</code>
+     */
+    UNSECURED_CREDENTIALS(13),
+    /**
+     *
+     *
+     * <pre>
+     * T1556
+     * </pre>
+     *
+     * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
+     */
+    MODIFY_AUTHENTICATION_PROCESS(28),
+    /**
+     *
+     *
+     * <pre>
+     * T1562
+     * </pre>
+     *
+     * <code>IMPAIR_DEFENSES = 31;</code>
+     */
+    IMPAIR_DEFENSES(31),
+    /**
+     *
+     *
+     * <pre>
+     * T1562.001
+     * </pre>
+     *
+     * <code>DISABLE_OR_MODIFY_TOOLS = 55;</code>
+     */
+    DISABLE_OR_MODIFY_TOOLS(55),
     /**
      *
      *
@@ -725,42 +1006,22 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1098
+     * T1568
      * </pre>
      *
-     * <code>ACCOUNT_MANIPULATION = 22;</code>
+     * <code>DYNAMIC_RESOLUTION = 12;</code>
      */
-    ACCOUNT_MANIPULATION(22),
+    DYNAMIC_RESOLUTION(12),
     /**
      *
      *
      * <pre>
-     * T1098.004
+     * T1570
      * </pre>
      *
-     * <code>SSH_AUTHORIZED_KEYS = 23;</code>
+     * <code>LATERAL_TOOL_TRANSFER = 41;</code>
      */
-    SSH_AUTHORIZED_KEYS(23),
-    /**
-     *
-     *
-     * <pre>
-     * T1543
-     * </pre>
-     *
-     * <code>CREATE_OR_MODIFY_SYSTEM_PROCESS = 24;</code>
-     */
-    CREATE_OR_MODIFY_SYSTEM_PROCESS(24),
-    /**
-     *
-     *
-     * <pre>
-     * T1539
-     * </pre>
-     *
-     * <code>STEAL_WEB_SESSION_COOKIE = 25;</code>
-     */
-    STEAL_WEB_SESSION_COOKIE(25),
+    LATERAL_TOOL_TRANSFER(41),
     /**
      *
      *
@@ -775,92 +1036,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1190
+     * T1578.001
      * </pre>
      *
-     * <code>EXPLOIT_PUBLIC_FACING_APPLICATION = 27;</code>
+     * <code>CREATE_SNAPSHOT = 54;</code>
      */
-    EXPLOIT_PUBLIC_FACING_APPLICATION(27),
+    CREATE_SNAPSHOT(54),
     /**
      *
      *
      * <pre>
-     * T1556
+     * T1580
      * </pre>
      *
-     * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
+     * <code>CLOUD_INFRASTRUCTURE_DISCOVERY = 53;</code>
      */
-    MODIFY_AUTHENTICATION_PROCESS(28),
+    CLOUD_INFRASTRUCTURE_DISCOVERY(53),
     /**
      *
      *
      * <pre>
-     * T1485
+     * T1588
      * </pre>
      *
-     * <code>DATA_DESTRUCTION = 29;</code>
+     * <code>OBTAIN_CAPABILITIES = 43;</code>
      */
-    DATA_DESTRUCTION(29),
+    OBTAIN_CAPABILITIES(43),
     /**
      *
      *
      * <pre>
-     * T1484
+     * T1595
      * </pre>
      *
-     * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
+     * <code>ACTIVE_SCANNING = 1;</code>
      */
-    DOMAIN_POLICY_MODIFICATION(30),
+    ACTIVE_SCANNING(1),
     /**
      *
      *
      * <pre>
-     * T1562
+     * T1595.001
      * </pre>
      *
-     * <code>IMPAIR_DEFENSES = 31;</code>
+     * <code>SCANNING_IP_BLOCKS = 2;</code>
      */
-    IMPAIR_DEFENSES(31),
+    SCANNING_IP_BLOCKS(2),
     /**
      *
      *
      * <pre>
-     * T1046
+     * T1613
      * </pre>
      *
-     * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
+     * <code>CONTAINER_AND_RESOURCE_DISCOVERY = 57;</code>
      */
-    NETWORK_SERVICE_DISCOVERY(32),
-    /**
-     *
-     *
-     * <pre>
-     * T1134
-     * </pre>
-     *
-     * <code>ACCESS_TOKEN_MANIPULATION = 33;</code>
-     */
-    ACCESS_TOKEN_MANIPULATION(33),
-    /**
-     *
-     *
-     * <pre>
-     * T1548
-     * </pre>
-     *
-     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
-     */
-    ABUSE_ELEVATION_CONTROL_MECHANISM(34),
-    /**
-     *
-     *
-     * <pre>
-     * T1078.001
-     * </pre>
-     *
-     * <code>DEFAULT_ACCOUNTS = 35;</code>
-     */
-    DEFAULT_ACCOUNTS(35),
+    CONTAINER_AND_RESOURCE_DISCOVERY(57),
     UNRECOGNIZED(-1),
     ;
 
@@ -878,52 +1109,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1595
+     * T1036
      * </pre>
      *
-     * <code>ACTIVE_SCANNING = 1;</code>
+     * <code>MASQUERADING = 49;</code>
      */
-    public static final int ACTIVE_SCANNING_VALUE = 1;
+    public static final int MASQUERADING_VALUE = 49;
     /**
      *
      *
      * <pre>
-     * T1595.001
+     * T1036.005
      * </pre>
      *
-     * <code>SCANNING_IP_BLOCKS = 2;</code>
+     * <code>MATCH_LEGITIMATE_NAME_OR_LOCATION = 50;</code>
      */
-    public static final int SCANNING_IP_BLOCKS_VALUE = 2;
+    public static final int MATCH_LEGITIMATE_NAME_OR_LOCATION_VALUE = 50;
     /**
      *
      *
      * <pre>
-     * T1105
+     * T1037
      * </pre>
      *
-     * <code>INGRESS_TOOL_TRANSFER = 3;</code>
+     * <code>BOOT_OR_LOGON_INITIALIZATION_SCRIPTS = 37;</code>
      */
-    public static final int INGRESS_TOOL_TRANSFER_VALUE = 3;
+    public static final int BOOT_OR_LOGON_INITIALIZATION_SCRIPTS_VALUE = 37;
     /**
      *
      *
      * <pre>
-     * T1106
+     * T1037.005
      * </pre>
      *
-     * <code>NATIVE_API = 4;</code>
+     * <code>STARTUP_ITEMS = 38;</code>
      */
-    public static final int NATIVE_API_VALUE = 4;
+    public static final int STARTUP_ITEMS_VALUE = 38;
     /**
      *
      *
      * <pre>
-     * T1129
+     * T1046
      * </pre>
      *
-     * <code>SHARED_MODULES = 5;</code>
+     * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
      */
-    public static final int SHARED_MODULES_VALUE = 5;
+    public static final int NETWORK_SERVICE_DISCOVERY_VALUE = 32;
+    /**
+     *
+     *
+     * <pre>
+     * T1057
+     * </pre>
+     *
+     * <code>PROCESS_DISCOVERY = 56;</code>
+     */
+    public static final int PROCESS_DISCOVERY_VALUE = 56;
     /**
      *
      *
@@ -948,12 +1189,92 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1496
+     * T1069
      * </pre>
      *
-     * <code>RESOURCE_HIJACKING = 8;</code>
+     * <code>PERMISSION_GROUPS_DISCOVERY = 18;</code>
      */
-    public static final int RESOURCE_HIJACKING_VALUE = 8;
+    public static final int PERMISSION_GROUPS_DISCOVERY_VALUE = 18;
+    /**
+     *
+     *
+     * <pre>
+     * T1069.003
+     * </pre>
+     *
+     * <code>CLOUD_GROUPS = 19;</code>
+     */
+    public static final int CLOUD_GROUPS_VALUE = 19;
+    /**
+     *
+     *
+     * <pre>
+     * T1071
+     * </pre>
+     *
+     * <code>APPLICATION_LAYER_PROTOCOL = 45;</code>
+     */
+    public static final int APPLICATION_LAYER_PROTOCOL_VALUE = 45;
+    /**
+     *
+     *
+     * <pre>
+     * T1071.004
+     * </pre>
+     *
+     * <code>DNS = 46;</code>
+     */
+    public static final int DNS_VALUE = 46;
+    /**
+     *
+     *
+     * <pre>
+     * T1072
+     * </pre>
+     *
+     * <code>SOFTWARE_DEPLOYMENT_TOOLS = 47;</code>
+     */
+    public static final int SOFTWARE_DEPLOYMENT_TOOLS_VALUE = 47;
+    /**
+     *
+     *
+     * <pre>
+     * T1078
+     * </pre>
+     *
+     * <code>VALID_ACCOUNTS = 14;</code>
+     */
+    public static final int VALID_ACCOUNTS_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * T1078.001
+     * </pre>
+     *
+     * <code>DEFAULT_ACCOUNTS = 35;</code>
+     */
+    public static final int DEFAULT_ACCOUNTS_VALUE = 35;
+    /**
+     *
+     *
+     * <pre>
+     * T1078.003
+     * </pre>
+     *
+     * <code>LOCAL_ACCOUNTS = 15;</code>
+     */
+    public static final int LOCAL_ACCOUNTS_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * T1078.004
+     * </pre>
+     *
+     * <code>CLOUD_ACCOUNTS = 16;</code>
+     */
+    public static final int CLOUD_ACCOUNTS_VALUE = 16;
     /**
      *
      *
@@ -988,52 +1309,162 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1568
+     * T1098
      * </pre>
      *
-     * <code>DYNAMIC_RESOLUTION = 12;</code>
+     * <code>ACCOUNT_MANIPULATION = 22;</code>
      */
-    public static final int DYNAMIC_RESOLUTION_VALUE = 12;
+    public static final int ACCOUNT_MANIPULATION_VALUE = 22;
     /**
      *
      *
      * <pre>
-     * T1552
+     * T1098.001
      * </pre>
      *
-     * <code>UNSECURED_CREDENTIALS = 13;</code>
+     * <code>ADDITIONAL_CLOUD_CREDENTIALS = 40;</code>
      */
-    public static final int UNSECURED_CREDENTIALS_VALUE = 13;
+    public static final int ADDITIONAL_CLOUD_CREDENTIALS_VALUE = 40;
     /**
      *
      *
      * <pre>
-     * T1078
+     * T1098.004
      * </pre>
      *
-     * <code>VALID_ACCOUNTS = 14;</code>
+     * <code>SSH_AUTHORIZED_KEYS = 23;</code>
      */
-    public static final int VALID_ACCOUNTS_VALUE = 14;
+    public static final int SSH_AUTHORIZED_KEYS_VALUE = 23;
     /**
      *
      *
      * <pre>
-     * T1078.003
+     * T1098.006
      * </pre>
      *
-     * <code>LOCAL_ACCOUNTS = 15;</code>
+     * <code>ADDITIONAL_CONTAINER_CLUSTER_ROLES = 58;</code>
      */
-    public static final int LOCAL_ACCOUNTS_VALUE = 15;
+    public static final int ADDITIONAL_CONTAINER_CLUSTER_ROLES_VALUE = 58;
     /**
      *
      *
      * <pre>
-     * T1078.004
+     * T1105
      * </pre>
      *
-     * <code>CLOUD_ACCOUNTS = 16;</code>
+     * <code>INGRESS_TOOL_TRANSFER = 3;</code>
      */
-    public static final int CLOUD_ACCOUNTS_VALUE = 16;
+    public static final int INGRESS_TOOL_TRANSFER_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * T1106
+     * </pre>
+     *
+     * <code>NATIVE_API = 4;</code>
+     */
+    public static final int NATIVE_API_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * T1110
+     * </pre>
+     *
+     * <code>BRUTE_FORCE = 44;</code>
+     */
+    public static final int BRUTE_FORCE_VALUE = 44;
+    /**
+     *
+     *
+     * <pre>
+     * T1129
+     * </pre>
+     *
+     * <code>SHARED_MODULES = 5;</code>
+     */
+    public static final int SHARED_MODULES_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * T1134
+     * </pre>
+     *
+     * <code>ACCESS_TOKEN_MANIPULATION = 33;</code>
+     */
+    public static final int ACCESS_TOKEN_MANIPULATION_VALUE = 33;
+    /**
+     *
+     *
+     * <pre>
+     * T1134.001
+     * </pre>
+     *
+     * <code>TOKEN_IMPERSONATION_OR_THEFT = 39;</code>
+     */
+    public static final int TOKEN_IMPERSONATION_OR_THEFT_VALUE = 39;
+    /**
+     *
+     *
+     * <pre>
+     * T1190
+     * </pre>
+     *
+     * <code>EXPLOIT_PUBLIC_FACING_APPLICATION = 27;</code>
+     */
+    public static final int EXPLOIT_PUBLIC_FACING_APPLICATION_VALUE = 27;
+    /**
+     *
+     *
+     * <pre>
+     * T1484
+     * </pre>
+     *
+     * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
+     */
+    public static final int DOMAIN_POLICY_MODIFICATION_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
+     * T1485
+     * </pre>
+     *
+     * <code>DATA_DESTRUCTION = 29;</code>
+     */
+    public static final int DATA_DESTRUCTION_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * T1489
+     * </pre>
+     *
+     * <code>SERVICE_STOP = 52;</code>
+     */
+    public static final int SERVICE_STOP_VALUE = 52;
+    /**
+     *
+     *
+     * <pre>
+     * T1490
+     * </pre>
+     *
+     * <code>INHIBIT_SYSTEM_RECOVERY = 36;</code>
+     */
+    public static final int INHIBIT_SYSTEM_RECOVERY_VALUE = 36;
+    /**
+     *
+     *
+     * <pre>
+     * T1496
+     * </pre>
+     *
+     * <code>RESOURCE_HIJACKING = 8;</code>
+     */
+    public static final int RESOURCE_HIJACKING_VALUE = 8;
     /**
      *
      *
@@ -1048,22 +1479,102 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1069
+     * T1526
      * </pre>
      *
-     * <code>PERMISSION_GROUPS_DISCOVERY = 18;</code>
+     * <code>CLOUD_SERVICE_DISCOVERY = 48;</code>
      */
-    public static final int PERMISSION_GROUPS_DISCOVERY_VALUE = 18;
+    public static final int CLOUD_SERVICE_DISCOVERY_VALUE = 48;
     /**
      *
      *
      * <pre>
-     * T1069.003
+     * T1528
      * </pre>
      *
-     * <code>CLOUD_GROUPS = 19;</code>
+     * <code>STEAL_APPLICATION_ACCESS_TOKEN = 42;</code>
      */
-    public static final int CLOUD_GROUPS_VALUE = 19;
+    public static final int STEAL_APPLICATION_ACCESS_TOKEN_VALUE = 42;
+    /**
+     *
+     *
+     * <pre>
+     * T1531
+     * </pre>
+     *
+     * <code>ACCOUNT_ACCESS_REMOVAL = 51;</code>
+     */
+    public static final int ACCOUNT_ACCESS_REMOVAL_VALUE = 51;
+    /**
+     *
+     *
+     * <pre>
+     * T1539
+     * </pre>
+     *
+     * <code>STEAL_WEB_SESSION_COOKIE = 25;</code>
+     */
+    public static final int STEAL_WEB_SESSION_COOKIE_VALUE = 25;
+    /**
+     *
+     *
+     * <pre>
+     * T1543
+     * </pre>
+     *
+     * <code>CREATE_OR_MODIFY_SYSTEM_PROCESS = 24;</code>
+     */
+    public static final int CREATE_OR_MODIFY_SYSTEM_PROCESS_VALUE = 24;
+    /**
+     *
+     *
+     * <pre>
+     * T1548
+     * </pre>
+     *
+     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
+     */
+    public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_VALUE = 34;
+    /**
+     *
+     *
+     * <pre>
+     * T1552
+     * </pre>
+     *
+     * <code>UNSECURED_CREDENTIALS = 13;</code>
+     */
+    public static final int UNSECURED_CREDENTIALS_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * T1556
+     * </pre>
+     *
+     * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
+     */
+    public static final int MODIFY_AUTHENTICATION_PROCESS_VALUE = 28;
+    /**
+     *
+     *
+     * <pre>
+     * T1562
+     * </pre>
+     *
+     * <code>IMPAIR_DEFENSES = 31;</code>
+     */
+    public static final int IMPAIR_DEFENSES_VALUE = 31;
+    /**
+     *
+     *
+     * <pre>
+     * T1562.001
+     * </pre>
+     *
+     * <code>DISABLE_OR_MODIFY_TOOLS = 55;</code>
+     */
+    public static final int DISABLE_OR_MODIFY_TOOLS_VALUE = 55;
     /**
      *
      *
@@ -1088,42 +1599,22 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1098
+     * T1568
      * </pre>
      *
-     * <code>ACCOUNT_MANIPULATION = 22;</code>
+     * <code>DYNAMIC_RESOLUTION = 12;</code>
      */
-    public static final int ACCOUNT_MANIPULATION_VALUE = 22;
+    public static final int DYNAMIC_RESOLUTION_VALUE = 12;
     /**
      *
      *
      * <pre>
-     * T1098.004
+     * T1570
      * </pre>
      *
-     * <code>SSH_AUTHORIZED_KEYS = 23;</code>
+     * <code>LATERAL_TOOL_TRANSFER = 41;</code>
      */
-    public static final int SSH_AUTHORIZED_KEYS_VALUE = 23;
-    /**
-     *
-     *
-     * <pre>
-     * T1543
-     * </pre>
-     *
-     * <code>CREATE_OR_MODIFY_SYSTEM_PROCESS = 24;</code>
-     */
-    public static final int CREATE_OR_MODIFY_SYSTEM_PROCESS_VALUE = 24;
-    /**
-     *
-     *
-     * <pre>
-     * T1539
-     * </pre>
-     *
-     * <code>STEAL_WEB_SESSION_COOKIE = 25;</code>
-     */
-    public static final int STEAL_WEB_SESSION_COOKIE_VALUE = 25;
+    public static final int LATERAL_TOOL_TRANSFER_VALUE = 41;
     /**
      *
      *
@@ -1138,92 +1629,62 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * T1190
+     * T1578.001
      * </pre>
      *
-     * <code>EXPLOIT_PUBLIC_FACING_APPLICATION = 27;</code>
+     * <code>CREATE_SNAPSHOT = 54;</code>
      */
-    public static final int EXPLOIT_PUBLIC_FACING_APPLICATION_VALUE = 27;
+    public static final int CREATE_SNAPSHOT_VALUE = 54;
     /**
      *
      *
      * <pre>
-     * T1556
+     * T1580
      * </pre>
      *
-     * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
+     * <code>CLOUD_INFRASTRUCTURE_DISCOVERY = 53;</code>
      */
-    public static final int MODIFY_AUTHENTICATION_PROCESS_VALUE = 28;
+    public static final int CLOUD_INFRASTRUCTURE_DISCOVERY_VALUE = 53;
     /**
      *
      *
      * <pre>
-     * T1485
+     * T1588
      * </pre>
      *
-     * <code>DATA_DESTRUCTION = 29;</code>
+     * <code>OBTAIN_CAPABILITIES = 43;</code>
      */
-    public static final int DATA_DESTRUCTION_VALUE = 29;
+    public static final int OBTAIN_CAPABILITIES_VALUE = 43;
     /**
      *
      *
      * <pre>
-     * T1484
+     * T1595
      * </pre>
      *
-     * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
+     * <code>ACTIVE_SCANNING = 1;</code>
      */
-    public static final int DOMAIN_POLICY_MODIFICATION_VALUE = 30;
+    public static final int ACTIVE_SCANNING_VALUE = 1;
     /**
      *
      *
      * <pre>
-     * T1562
+     * T1595.001
      * </pre>
      *
-     * <code>IMPAIR_DEFENSES = 31;</code>
+     * <code>SCANNING_IP_BLOCKS = 2;</code>
      */
-    public static final int IMPAIR_DEFENSES_VALUE = 31;
+    public static final int SCANNING_IP_BLOCKS_VALUE = 2;
     /**
      *
      *
      * <pre>
-     * T1046
+     * T1613
      * </pre>
      *
-     * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
+     * <code>CONTAINER_AND_RESOURCE_DISCOVERY = 57;</code>
      */
-    public static final int NETWORK_SERVICE_DISCOVERY_VALUE = 32;
-    /**
-     *
-     *
-     * <pre>
-     * T1134
-     * </pre>
-     *
-     * <code>ACCESS_TOKEN_MANIPULATION = 33;</code>
-     */
-    public static final int ACCESS_TOKEN_MANIPULATION_VALUE = 33;
-    /**
-     *
-     *
-     * <pre>
-     * T1548
-     * </pre>
-     *
-     * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
-     */
-    public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_VALUE = 34;
-    /**
-     *
-     *
-     * <pre>
-     * T1078.001
-     * </pre>
-     *
-     * <code>DEFAULT_ACCOUNTS = 35;</code>
-     */
-    public static final int DEFAULT_ACCOUNTS_VALUE = 35;
+    public static final int CONTAINER_AND_RESOURCE_DISCOVERY_VALUE = 57;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1251,76 +1712,122 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return TECHNIQUE_UNSPECIFIED;
-        case 1:
-          return ACTIVE_SCANNING;
-        case 2:
-          return SCANNING_IP_BLOCKS;
-        case 3:
-          return INGRESS_TOOL_TRANSFER;
-        case 4:
-          return NATIVE_API;
-        case 5:
-          return SHARED_MODULES;
+        case 49:
+          return MASQUERADING;
+        case 50:
+          return MATCH_LEGITIMATE_NAME_OR_LOCATION;
+        case 37:
+          return BOOT_OR_LOGON_INITIALIZATION_SCRIPTS;
+        case 38:
+          return STARTUP_ITEMS;
+        case 32:
+          return NETWORK_SERVICE_DISCOVERY;
+        case 56:
+          return PROCESS_DISCOVERY;
         case 6:
           return COMMAND_AND_SCRIPTING_INTERPRETER;
         case 7:
           return UNIX_SHELL;
-        case 8:
-          return RESOURCE_HIJACKING;
+        case 18:
+          return PERMISSION_GROUPS_DISCOVERY;
+        case 19:
+          return CLOUD_GROUPS;
+        case 45:
+          return APPLICATION_LAYER_PROTOCOL;
+        case 46:
+          return DNS;
+        case 47:
+          return SOFTWARE_DEPLOYMENT_TOOLS;
+        case 14:
+          return VALID_ACCOUNTS;
+        case 35:
+          return DEFAULT_ACCOUNTS;
+        case 15:
+          return LOCAL_ACCOUNTS;
+        case 16:
+          return CLOUD_ACCOUNTS;
         case 9:
           return PROXY;
         case 10:
           return EXTERNAL_PROXY;
         case 11:
           return MULTI_HOP_PROXY;
-        case 12:
-          return DYNAMIC_RESOLUTION;
-        case 13:
-          return UNSECURED_CREDENTIALS;
-        case 14:
-          return VALID_ACCOUNTS;
-        case 15:
-          return LOCAL_ACCOUNTS;
-        case 16:
-          return CLOUD_ACCOUNTS;
+        case 22:
+          return ACCOUNT_MANIPULATION;
+        case 40:
+          return ADDITIONAL_CLOUD_CREDENTIALS;
+        case 23:
+          return SSH_AUTHORIZED_KEYS;
+        case 58:
+          return ADDITIONAL_CONTAINER_CLUSTER_ROLES;
+        case 3:
+          return INGRESS_TOOL_TRANSFER;
+        case 4:
+          return NATIVE_API;
+        case 44:
+          return BRUTE_FORCE;
+        case 5:
+          return SHARED_MODULES;
+        case 33:
+          return ACCESS_TOKEN_MANIPULATION;
+        case 39:
+          return TOKEN_IMPERSONATION_OR_THEFT;
+        case 27:
+          return EXPLOIT_PUBLIC_FACING_APPLICATION;
+        case 30:
+          return DOMAIN_POLICY_MODIFICATION;
+        case 29:
+          return DATA_DESTRUCTION;
+        case 52:
+          return SERVICE_STOP;
+        case 36:
+          return INHIBIT_SYSTEM_RECOVERY;
+        case 8:
+          return RESOURCE_HIJACKING;
         case 17:
           return NETWORK_DENIAL_OF_SERVICE;
-        case 18:
-          return PERMISSION_GROUPS_DISCOVERY;
-        case 19:
-          return CLOUD_GROUPS;
+        case 48:
+          return CLOUD_SERVICE_DISCOVERY;
+        case 42:
+          return STEAL_APPLICATION_ACCESS_TOKEN;
+        case 51:
+          return ACCOUNT_ACCESS_REMOVAL;
+        case 25:
+          return STEAL_WEB_SESSION_COOKIE;
+        case 24:
+          return CREATE_OR_MODIFY_SYSTEM_PROCESS;
+        case 34:
+          return ABUSE_ELEVATION_CONTROL_MECHANISM;
+        case 13:
+          return UNSECURED_CREDENTIALS;
+        case 28:
+          return MODIFY_AUTHENTICATION_PROCESS;
+        case 31:
+          return IMPAIR_DEFENSES;
+        case 55:
+          return DISABLE_OR_MODIFY_TOOLS;
         case 20:
           return EXFILTRATION_OVER_WEB_SERVICE;
         case 21:
           return EXFILTRATION_TO_CLOUD_STORAGE;
-        case 22:
-          return ACCOUNT_MANIPULATION;
-        case 23:
-          return SSH_AUTHORIZED_KEYS;
-        case 24:
-          return CREATE_OR_MODIFY_SYSTEM_PROCESS;
-        case 25:
-          return STEAL_WEB_SESSION_COOKIE;
+        case 12:
+          return DYNAMIC_RESOLUTION;
+        case 41:
+          return LATERAL_TOOL_TRANSFER;
         case 26:
           return MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE;
-        case 27:
-          return EXPLOIT_PUBLIC_FACING_APPLICATION;
-        case 28:
-          return MODIFY_AUTHENTICATION_PROCESS;
-        case 29:
-          return DATA_DESTRUCTION;
-        case 30:
-          return DOMAIN_POLICY_MODIFICATION;
-        case 31:
-          return IMPAIR_DEFENSES;
-        case 32:
-          return NETWORK_SERVICE_DISCOVERY;
-        case 33:
-          return ACCESS_TOKEN_MANIPULATION;
-        case 34:
-          return ABUSE_ELEVATION_CONTROL_MECHANISM;
-        case 35:
-          return DEFAULT_ACCOUNTS;
+        case 54:
+          return CREATE_SNAPSHOT;
+        case 53:
+          return CLOUD_INFRASTRUCTURE_DISCOVERY;
+        case 43:
+          return OBTAIN_CAPABILITIES;
+        case 1:
+          return ACTIVE_SCANNING;
+        case 2:
+          return SCANNING_IP_BLOCKS;
+        case 57:
+          return CONTAINER_AND_RESOURCE_DISCOVERY;
         default:
           return null;
       }

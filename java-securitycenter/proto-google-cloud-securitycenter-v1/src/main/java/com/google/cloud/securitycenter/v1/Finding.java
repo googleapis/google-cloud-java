@@ -66,6 +66,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     moduleName_ = "";
     containers_ = java.util.Collections.emptyList();
     files_ = java.util.Collections.emptyList();
+    orgPolicies_ = java.util.Collections.emptyList();
+    logEntries_ = java.util.Collections.emptyList();
+    loadBalancers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -3353,6 +3356,77 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         : kernelRootkit_;
   }
 
+  public static final int ORG_POLICIES_FIELD_NUMBER = 51;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v1.OrgPolicy> orgPolicies_;
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.OrgPolicy> getOrgPoliciesList() {
+    return orgPolicies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder>
+      getOrgPoliciesOrBuilderList() {
+    return orgPolicies_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  @java.lang.Override
+  public int getOrgPoliciesCount() {
+    return orgPolicies_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.OrgPolicy getOrgPolicies(int index) {
+    return orgPolicies_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information about the org policies associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder getOrgPoliciesOrBuilder(int index) {
+    return orgPolicies_.get(index);
+  }
+
   public static final int APPLICATION_FIELD_NUMBER = 53;
   private com.google.cloud.securitycenter.v1.Application application_;
   /**
@@ -3401,6 +3475,203 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return application_ == null
         ? com.google.cloud.securitycenter.v1.Application.getDefaultInstance()
         : application_;
+  }
+
+  public static final int BACKUP_DISASTER_RECOVERY_FIELD_NUMBER = 55;
+  private com.google.cloud.securitycenter.v1.BackupDisasterRecovery backupDisasterRecovery_;
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return Whether the backupDisasterRecovery field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupDisasterRecovery() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   *
+   * @return The backupDisasterRecovery.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.BackupDisasterRecovery getBackupDisasterRecovery() {
+    return backupDisasterRecovery_ == null
+        ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+        : backupDisasterRecovery_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fields related to Backup and DR findings.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder
+      getBackupDisasterRecoveryOrBuilder() {
+    return backupDisasterRecovery_ == null
+        ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+        : backupDisasterRecovery_;
+  }
+
+  public static final int LOG_ENTRIES_FIELD_NUMBER = 57;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v1.LogEntry> logEntries_;
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.LogEntry> getLogEntriesList() {
+    return logEntries_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.LogEntryOrBuilder>
+      getLogEntriesOrBuilderList() {
+    return logEntries_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  @java.lang.Override
+  public int getLogEntriesCount() {
+    return logEntries_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.LogEntry getLogEntries(int index) {
+    return logEntries_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Log entries that are relevant to the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.LogEntryOrBuilder getLogEntriesOrBuilder(int index) {
+    return logEntries_.get(index);
+  }
+
+  public static final int LOAD_BALANCERS_FIELD_NUMBER = 58;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v1.LoadBalancer> loadBalancers_;
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.LoadBalancer> getLoadBalancersList() {
+    return loadBalancers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder>
+      getLoadBalancersOrBuilderList() {
+    return loadBalancers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  @java.lang.Override
+  public int getLoadBalancersCount() {
+    return loadBalancers_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.LoadBalancer getLoadBalancers(int index) {
+    return loadBalancers_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The load balancers associated with the finding.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder getLoadBalancersOrBuilder(
+      int index) {
+    return loadBalancers_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3531,8 +3802,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(50, getKernelRootkit());
     }
+    for (int i = 0; i < orgPolicies_.size(); i++) {
+      output.writeMessage(51, orgPolicies_.get(i));
+    }
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(53, getApplication());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeMessage(55, getBackupDisasterRecovery());
+    }
+    for (int i = 0; i < logEntries_.size(); i++) {
+      output.writeMessage(57, logEntries_.get(i));
+    }
+    for (int i = 0; i < loadBalancers_.size(); i++) {
+      output.writeMessage(58, loadBalancers_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -3686,8 +3969,21 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getKernelRootkit());
     }
+    for (int i = 0; i < orgPolicies_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, orgPolicies_.get(i));
+    }
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(53, getApplication());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(55, getBackupDisasterRecovery());
+    }
+    for (int i = 0; i < logEntries_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(57, logEntries_.get(i));
+    }
+    for (int i = 0; i < loadBalancers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(58, loadBalancers_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3785,10 +4081,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasKernelRootkit()) {
       if (!getKernelRootkit().equals(other.getKernelRootkit())) return false;
     }
+    if (!getOrgPoliciesList().equals(other.getOrgPoliciesList())) return false;
     if (hasApplication() != other.hasApplication()) return false;
     if (hasApplication()) {
       if (!getApplication().equals(other.getApplication())) return false;
     }
+    if (hasBackupDisasterRecovery() != other.hasBackupDisasterRecovery()) return false;
+    if (hasBackupDisasterRecovery()) {
+      if (!getBackupDisasterRecovery().equals(other.getBackupDisasterRecovery())) return false;
+    }
+    if (!getLogEntriesList().equals(other.getLogEntriesList())) return false;
+    if (!getLoadBalancersList().equals(other.getLoadBalancersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3922,9 +4225,25 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + KERNEL_ROOTKIT_FIELD_NUMBER;
       hash = (53 * hash) + getKernelRootkit().hashCode();
     }
+    if (getOrgPoliciesCount() > 0) {
+      hash = (37 * hash) + ORG_POLICIES_FIELD_NUMBER;
+      hash = (53 * hash) + getOrgPoliciesList().hashCode();
+    }
     if (hasApplication()) {
       hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
       hash = (53 * hash) + getApplication().hashCode();
+    }
+    if (hasBackupDisasterRecovery()) {
+      hash = (37 * hash) + BACKUP_DISASTER_RECOVERY_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupDisasterRecovery().hashCode();
+    }
+    if (getLogEntriesCount() > 0) {
+      hash = (37 * hash) + LOG_ENTRIES_FIELD_NUMBER;
+      hash = (53 * hash) + getLogEntriesList().hashCode();
+    }
+    if (getLoadBalancersCount() > 0) {
+      hash = (37 * hash) + LOAD_BALANCERS_FIELD_NUMBER;
+      hash = (53 * hash) + getLoadBalancersList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4122,7 +4441,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getCloudDlpInspectionFieldBuilder();
         getCloudDlpDataProfileFieldBuilder();
         getKernelRootkitFieldBuilder();
+        getOrgPoliciesFieldBuilder();
         getApplicationFieldBuilder();
+        getBackupDisasterRecoveryFieldBuilder();
+        getLogEntriesFieldBuilder();
+        getLoadBalancersFieldBuilder();
       }
     }
 
@@ -4261,11 +4584,37 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         kernelRootkitBuilder_.dispose();
         kernelRootkitBuilder_ = null;
       }
+      if (orgPoliciesBuilder_ == null) {
+        orgPolicies_ = java.util.Collections.emptyList();
+      } else {
+        orgPolicies_ = null;
+        orgPoliciesBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000040);
       application_ = null;
       if (applicationBuilder_ != null) {
         applicationBuilder_.dispose();
         applicationBuilder_ = null;
       }
+      backupDisasterRecovery_ = null;
+      if (backupDisasterRecoveryBuilder_ != null) {
+        backupDisasterRecoveryBuilder_.dispose();
+        backupDisasterRecoveryBuilder_ = null;
+      }
+      if (logEntriesBuilder_ == null) {
+        logEntries_ = java.util.Collections.emptyList();
+      } else {
+        logEntries_ = null;
+        logEntriesBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000200);
+      if (loadBalancersBuilder_ == null) {
+        loadBalancers_ = java.util.Collections.emptyList();
+      } else {
+        loadBalancers_ = null;
+        loadBalancersBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000400);
       return this;
     }
 
@@ -4358,6 +4707,33 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.files_ = files_;
       } else {
         result.files_ = filesBuilder_.build();
+      }
+      if (orgPoliciesBuilder_ == null) {
+        if (((bitField1_ & 0x00000040) != 0)) {
+          orgPolicies_ = java.util.Collections.unmodifiableList(orgPolicies_);
+          bitField1_ = (bitField1_ & ~0x00000040);
+        }
+        result.orgPolicies_ = orgPolicies_;
+      } else {
+        result.orgPolicies_ = orgPoliciesBuilder_.build();
+      }
+      if (logEntriesBuilder_ == null) {
+        if (((bitField1_ & 0x00000200) != 0)) {
+          logEntries_ = java.util.Collections.unmodifiableList(logEntries_);
+          bitField1_ = (bitField1_ & ~0x00000200);
+        }
+        result.logEntries_ = logEntries_;
+      } else {
+        result.logEntries_ = logEntriesBuilder_.build();
+      }
+      if (loadBalancersBuilder_ == null) {
+        if (((bitField1_ & 0x00000400) != 0)) {
+          loadBalancers_ = java.util.Collections.unmodifiableList(loadBalancers_);
+          bitField1_ = (bitField1_ & ~0x00000400);
+        }
+        result.loadBalancers_ = loadBalancers_;
+      } else {
+        result.loadBalancers_ = loadBalancersBuilder_.build();
       }
     }
 
@@ -4494,10 +4870,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             kernelRootkitBuilder_ == null ? kernelRootkit_ : kernelRootkitBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField1_ & 0x00000040) != 0)) {
+      if (((from_bitField1_ & 0x00000080) != 0)) {
         result.application_ =
             applicationBuilder_ == null ? application_ : applicationBuilder_.build();
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.backupDisasterRecovery_ =
+            backupDisasterRecoveryBuilder_ == null
+                ? backupDisasterRecovery_
+                : backupDisasterRecoveryBuilder_.build();
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4824,8 +5207,92 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (other.hasKernelRootkit()) {
         mergeKernelRootkit(other.getKernelRootkit());
       }
+      if (orgPoliciesBuilder_ == null) {
+        if (!other.orgPolicies_.isEmpty()) {
+          if (orgPolicies_.isEmpty()) {
+            orgPolicies_ = other.orgPolicies_;
+            bitField1_ = (bitField1_ & ~0x00000040);
+          } else {
+            ensureOrgPoliciesIsMutable();
+            orgPolicies_.addAll(other.orgPolicies_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.orgPolicies_.isEmpty()) {
+          if (orgPoliciesBuilder_.isEmpty()) {
+            orgPoliciesBuilder_.dispose();
+            orgPoliciesBuilder_ = null;
+            orgPolicies_ = other.orgPolicies_;
+            bitField1_ = (bitField1_ & ~0x00000040);
+            orgPoliciesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOrgPoliciesFieldBuilder()
+                    : null;
+          } else {
+            orgPoliciesBuilder_.addAllMessages(other.orgPolicies_);
+          }
+        }
+      }
       if (other.hasApplication()) {
         mergeApplication(other.getApplication());
+      }
+      if (other.hasBackupDisasterRecovery()) {
+        mergeBackupDisasterRecovery(other.getBackupDisasterRecovery());
+      }
+      if (logEntriesBuilder_ == null) {
+        if (!other.logEntries_.isEmpty()) {
+          if (logEntries_.isEmpty()) {
+            logEntries_ = other.logEntries_;
+            bitField1_ = (bitField1_ & ~0x00000200);
+          } else {
+            ensureLogEntriesIsMutable();
+            logEntries_.addAll(other.logEntries_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.logEntries_.isEmpty()) {
+          if (logEntriesBuilder_.isEmpty()) {
+            logEntriesBuilder_.dispose();
+            logEntriesBuilder_ = null;
+            logEntries_ = other.logEntries_;
+            bitField1_ = (bitField1_ & ~0x00000200);
+            logEntriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLogEntriesFieldBuilder()
+                    : null;
+          } else {
+            logEntriesBuilder_.addAllMessages(other.logEntries_);
+          }
+        }
+      }
+      if (loadBalancersBuilder_ == null) {
+        if (!other.loadBalancers_.isEmpty()) {
+          if (loadBalancers_.isEmpty()) {
+            loadBalancers_ = other.loadBalancers_;
+            bitField1_ = (bitField1_ & ~0x00000400);
+          } else {
+            ensureLoadBalancersIsMutable();
+            loadBalancers_.addAll(other.loadBalancers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.loadBalancers_.isEmpty()) {
+          if (loadBalancersBuilder_.isEmpty()) {
+            loadBalancersBuilder_.dispose();
+            loadBalancersBuilder_ = null;
+            loadBalancers_ = other.loadBalancers_;
+            bitField1_ = (bitField1_ & ~0x00000400);
+            loadBalancersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLoadBalancersFieldBuilder()
+                    : null;
+          } else {
+            loadBalancersBuilder_.addAllMessages(other.loadBalancers_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5148,12 +5615,59 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000020;
                 break;
               } // case 402
+            case 410:
+              {
+                com.google.cloud.securitycenter.v1.OrgPolicy m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.OrgPolicy.parser(), extensionRegistry);
+                if (orgPoliciesBuilder_ == null) {
+                  ensureOrgPoliciesIsMutable();
+                  orgPolicies_.add(m);
+                } else {
+                  orgPoliciesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 410
             case 426:
               {
                 input.readMessage(getApplicationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 426
+            case 442:
+              {
+                input.readMessage(
+                    getBackupDisasterRecoveryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000100;
+                break;
+              } // case 442
+            case 458:
+              {
+                com.google.cloud.securitycenter.v1.LogEntry m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.LogEntry.parser(), extensionRegistry);
+                if (logEntriesBuilder_ == null) {
+                  ensureLogEntriesIsMutable();
+                  logEntries_.add(m);
+                } else {
+                  logEntriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 458
+            case 466:
+              {
+                com.google.cloud.securitycenter.v1.LoadBalancer m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.LoadBalancer.parser(),
+                        extensionRegistry);
+                if (loadBalancersBuilder_ == null) {
+                  ensureLoadBalancersIsMutable();
+                  loadBalancers_.add(m);
+                } else {
+                  loadBalancersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 466
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12696,6 +13210,358 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return kernelRootkitBuilder_;
     }
 
+    private java.util.List<com.google.cloud.securitycenter.v1.OrgPolicy> orgPolicies_ =
+        java.util.Collections.emptyList();
+
+    private void ensureOrgPoliciesIsMutable() {
+      if (!((bitField1_ & 0x00000040) != 0)) {
+        orgPolicies_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.OrgPolicy>(orgPolicies_);
+        bitField1_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.OrgPolicy,
+            com.google.cloud.securitycenter.v1.OrgPolicy.Builder,
+            com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder>
+        orgPoliciesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.OrgPolicy> getOrgPoliciesList() {
+      if (orgPoliciesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(orgPolicies_);
+      } else {
+        return orgPoliciesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public int getOrgPoliciesCount() {
+      if (orgPoliciesBuilder_ == null) {
+        return orgPolicies_.size();
+      } else {
+        return orgPoliciesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public com.google.cloud.securitycenter.v1.OrgPolicy getOrgPolicies(int index) {
+      if (orgPoliciesBuilder_ == null) {
+        return orgPolicies_.get(index);
+      } else {
+        return orgPoliciesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder setOrgPolicies(int index, com.google.cloud.securitycenter.v1.OrgPolicy value) {
+      if (orgPoliciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOrgPoliciesIsMutable();
+        orgPolicies_.set(index, value);
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder setOrgPolicies(
+        int index, com.google.cloud.securitycenter.v1.OrgPolicy.Builder builderForValue) {
+      if (orgPoliciesBuilder_ == null) {
+        ensureOrgPoliciesIsMutable();
+        orgPolicies_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder addOrgPolicies(com.google.cloud.securitycenter.v1.OrgPolicy value) {
+      if (orgPoliciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOrgPoliciesIsMutable();
+        orgPolicies_.add(value);
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder addOrgPolicies(int index, com.google.cloud.securitycenter.v1.OrgPolicy value) {
+      if (orgPoliciesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOrgPoliciesIsMutable();
+        orgPolicies_.add(index, value);
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder addOrgPolicies(
+        com.google.cloud.securitycenter.v1.OrgPolicy.Builder builderForValue) {
+      if (orgPoliciesBuilder_ == null) {
+        ensureOrgPoliciesIsMutable();
+        orgPolicies_.add(builderForValue.build());
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder addOrgPolicies(
+        int index, com.google.cloud.securitycenter.v1.OrgPolicy.Builder builderForValue) {
+      if (orgPoliciesBuilder_ == null) {
+        ensureOrgPoliciesIsMutable();
+        orgPolicies_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder addAllOrgPolicies(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.OrgPolicy> values) {
+      if (orgPoliciesBuilder_ == null) {
+        ensureOrgPoliciesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, orgPolicies_);
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder clearOrgPolicies() {
+      if (orgPoliciesBuilder_ == null) {
+        orgPolicies_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000040);
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public Builder removeOrgPolicies(int index) {
+      if (orgPoliciesBuilder_ == null) {
+        ensureOrgPoliciesIsMutable();
+        orgPolicies_.remove(index);
+        onChanged();
+      } else {
+        orgPoliciesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public com.google.cloud.securitycenter.v1.OrgPolicy.Builder getOrgPoliciesBuilder(int index) {
+      return getOrgPoliciesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder getOrgPoliciesOrBuilder(
+        int index) {
+      if (orgPoliciesBuilder_ == null) {
+        return orgPolicies_.get(index);
+      } else {
+        return orgPoliciesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder>
+        getOrgPoliciesOrBuilderList() {
+      if (orgPoliciesBuilder_ != null) {
+        return orgPoliciesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(orgPolicies_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public com.google.cloud.securitycenter.v1.OrgPolicy.Builder addOrgPoliciesBuilder() {
+      return getOrgPoliciesFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.OrgPolicy.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public com.google.cloud.securitycenter.v1.OrgPolicy.Builder addOrgPoliciesBuilder(int index) {
+      return getOrgPoliciesFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.OrgPolicy.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information about the org policies associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.OrgPolicy org_policies = 51;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.OrgPolicy.Builder>
+        getOrgPoliciesBuilderList() {
+      return getOrgPoliciesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.OrgPolicy,
+            com.google.cloud.securitycenter.v1.OrgPolicy.Builder,
+            com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder>
+        getOrgPoliciesFieldBuilder() {
+      if (orgPoliciesBuilder_ == null) {
+        orgPoliciesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.OrgPolicy,
+                com.google.cloud.securitycenter.v1.OrgPolicy.Builder,
+                com.google.cloud.securitycenter.v1.OrgPolicyOrBuilder>(
+                orgPolicies_, ((bitField1_ & 0x00000040) != 0), getParentForChildren(), isClean());
+        orgPolicies_ = null;
+      }
+      return orgPoliciesBuilder_;
+    }
+
     private com.google.cloud.securitycenter.v1.Application application_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.Application,
@@ -12714,7 +13580,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the application field is set.
      */
     public boolean hasApplication() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      *
@@ -12754,7 +13620,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         applicationBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12774,7 +13640,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         applicationBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12789,7 +13655,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeApplication(com.google.cloud.securitycenter.v1.Application value) {
       if (applicationBuilder_ == null) {
-        if (((bitField1_ & 0x00000040) != 0)
+        if (((bitField1_ & 0x00000080) != 0)
             && application_ != null
             && application_
                 != com.google.cloud.securitycenter.v1.Application.getDefaultInstance()) {
@@ -12801,7 +13667,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         applicationBuilder_.mergeFrom(value);
       }
       if (application_ != null) {
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -12816,7 +13682,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
      */
     public Builder clearApplication() {
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000080);
       application_ = null;
       if (applicationBuilder_ != null) {
         applicationBuilder_.dispose();
@@ -12835,7 +13701,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Application application = 53;</code>
      */
     public com.google.cloud.securitycenter.v1.Application.Builder getApplicationBuilder() {
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return getApplicationFieldBuilder().getBuilder();
     }
@@ -12881,6 +13747,917 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         application_ = null;
       }
       return applicationBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.BackupDisasterRecovery backupDisasterRecovery_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder>
+        backupDisasterRecoveryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     *
+     * @return Whether the backupDisasterRecovery field is set.
+     */
+    public boolean hasBackupDisasterRecovery() {
+      return ((bitField1_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     *
+     * @return The backupDisasterRecovery.
+     */
+    public com.google.cloud.securitycenter.v1.BackupDisasterRecovery getBackupDisasterRecovery() {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        return backupDisasterRecovery_ == null
+            ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+            : backupDisasterRecovery_;
+      } else {
+        return backupDisasterRecoveryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder setBackupDisasterRecovery(
+        com.google.cloud.securitycenter.v1.BackupDisasterRecovery value) {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupDisasterRecovery_ = value;
+      } else {
+        backupDisasterRecoveryBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder setBackupDisasterRecovery(
+        com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder builderForValue) {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        backupDisasterRecovery_ = builderForValue.build();
+      } else {
+        backupDisasterRecoveryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder mergeBackupDisasterRecovery(
+        com.google.cloud.securitycenter.v1.BackupDisasterRecovery value) {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        if (((bitField1_ & 0x00000100) != 0)
+            && backupDisasterRecovery_ != null
+            && backupDisasterRecovery_
+                != com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()) {
+          getBackupDisasterRecoveryBuilder().mergeFrom(value);
+        } else {
+          backupDisasterRecovery_ = value;
+        }
+      } else {
+        backupDisasterRecoveryBuilder_.mergeFrom(value);
+      }
+      if (backupDisasterRecovery_ != null) {
+        bitField1_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public Builder clearBackupDisasterRecovery() {
+      bitField1_ = (bitField1_ & ~0x00000100);
+      backupDisasterRecovery_ = null;
+      if (backupDisasterRecoveryBuilder_ != null) {
+        backupDisasterRecoveryBuilder_.dispose();
+        backupDisasterRecoveryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder
+        getBackupDisasterRecoveryBuilder() {
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return getBackupDisasterRecoveryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    public com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder
+        getBackupDisasterRecoveryOrBuilder() {
+      if (backupDisasterRecoveryBuilder_ != null) {
+        return backupDisasterRecoveryBuilder_.getMessageOrBuilder();
+      } else {
+        return backupDisasterRecovery_ == null
+            ? com.google.cloud.securitycenter.v1.BackupDisasterRecovery.getDefaultInstance()
+            : backupDisasterRecovery_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fields related to Backup and DR findings.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.BackupDisasterRecovery backup_disaster_recovery = 55;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder,
+            com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder>
+        getBackupDisasterRecoveryFieldBuilder() {
+      if (backupDisasterRecoveryBuilder_ == null) {
+        backupDisasterRecoveryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.BackupDisasterRecovery,
+                com.google.cloud.securitycenter.v1.BackupDisasterRecovery.Builder,
+                com.google.cloud.securitycenter.v1.BackupDisasterRecoveryOrBuilder>(
+                getBackupDisasterRecovery(), getParentForChildren(), isClean());
+        backupDisasterRecovery_ = null;
+      }
+      return backupDisasterRecoveryBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.LogEntry> logEntries_ =
+        java.util.Collections.emptyList();
+
+    private void ensureLogEntriesIsMutable() {
+      if (!((bitField1_ & 0x00000200) != 0)) {
+        logEntries_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.LogEntry>(logEntries_);
+        bitField1_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.LogEntry,
+            com.google.cloud.securitycenter.v1.LogEntry.Builder,
+            com.google.cloud.securitycenter.v1.LogEntryOrBuilder>
+        logEntriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.LogEntry> getLogEntriesList() {
+      if (logEntriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(logEntries_);
+      } else {
+        return logEntriesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public int getLogEntriesCount() {
+      if (logEntriesBuilder_ == null) {
+        return logEntries_.size();
+      } else {
+        return logEntriesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LogEntry getLogEntries(int index) {
+      if (logEntriesBuilder_ == null) {
+        return logEntries_.get(index);
+      } else {
+        return logEntriesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder setLogEntries(int index, com.google.cloud.securitycenter.v1.LogEntry value) {
+      if (logEntriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLogEntriesIsMutable();
+        logEntries_.set(index, value);
+        onChanged();
+      } else {
+        logEntriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder setLogEntries(
+        int index, com.google.cloud.securitycenter.v1.LogEntry.Builder builderForValue) {
+      if (logEntriesBuilder_ == null) {
+        ensureLogEntriesIsMutable();
+        logEntries_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        logEntriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder addLogEntries(com.google.cloud.securitycenter.v1.LogEntry value) {
+      if (logEntriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLogEntriesIsMutable();
+        logEntries_.add(value);
+        onChanged();
+      } else {
+        logEntriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder addLogEntries(int index, com.google.cloud.securitycenter.v1.LogEntry value) {
+      if (logEntriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLogEntriesIsMutable();
+        logEntries_.add(index, value);
+        onChanged();
+      } else {
+        logEntriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder addLogEntries(
+        com.google.cloud.securitycenter.v1.LogEntry.Builder builderForValue) {
+      if (logEntriesBuilder_ == null) {
+        ensureLogEntriesIsMutable();
+        logEntries_.add(builderForValue.build());
+        onChanged();
+      } else {
+        logEntriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder addLogEntries(
+        int index, com.google.cloud.securitycenter.v1.LogEntry.Builder builderForValue) {
+      if (logEntriesBuilder_ == null) {
+        ensureLogEntriesIsMutable();
+        logEntries_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        logEntriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder addAllLogEntries(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.LogEntry> values) {
+      if (logEntriesBuilder_ == null) {
+        ensureLogEntriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, logEntries_);
+        onChanged();
+      } else {
+        logEntriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder clearLogEntries() {
+      if (logEntriesBuilder_ == null) {
+        logEntries_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000200);
+        onChanged();
+      } else {
+        logEntriesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public Builder removeLogEntries(int index) {
+      if (logEntriesBuilder_ == null) {
+        ensureLogEntriesIsMutable();
+        logEntries_.remove(index);
+        onChanged();
+      } else {
+        logEntriesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LogEntry.Builder getLogEntriesBuilder(int index) {
+      return getLogEntriesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LogEntryOrBuilder getLogEntriesOrBuilder(int index) {
+      if (logEntriesBuilder_ == null) {
+        return logEntries_.get(index);
+      } else {
+        return logEntriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.LogEntryOrBuilder>
+        getLogEntriesOrBuilderList() {
+      if (logEntriesBuilder_ != null) {
+        return logEntriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(logEntries_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LogEntry.Builder addLogEntriesBuilder() {
+      return getLogEntriesFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.LogEntry.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LogEntry.Builder addLogEntriesBuilder(int index) {
+      return getLogEntriesFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.LogEntry.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Log entries that are relevant to the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LogEntry log_entries = 57;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.LogEntry.Builder>
+        getLogEntriesBuilderList() {
+      return getLogEntriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.LogEntry,
+            com.google.cloud.securitycenter.v1.LogEntry.Builder,
+            com.google.cloud.securitycenter.v1.LogEntryOrBuilder>
+        getLogEntriesFieldBuilder() {
+      if (logEntriesBuilder_ == null) {
+        logEntriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.LogEntry,
+                com.google.cloud.securitycenter.v1.LogEntry.Builder,
+                com.google.cloud.securitycenter.v1.LogEntryOrBuilder>(
+                logEntries_, ((bitField1_ & 0x00000200) != 0), getParentForChildren(), isClean());
+        logEntries_ = null;
+      }
+      return logEntriesBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.LoadBalancer> loadBalancers_ =
+        java.util.Collections.emptyList();
+
+    private void ensureLoadBalancersIsMutable() {
+      if (!((bitField1_ & 0x00000400) != 0)) {
+        loadBalancers_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.LoadBalancer>(
+                loadBalancers_);
+        bitField1_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.LoadBalancer,
+            com.google.cloud.securitycenter.v1.LoadBalancer.Builder,
+            com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder>
+        loadBalancersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.LoadBalancer> getLoadBalancersList() {
+      if (loadBalancersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(loadBalancers_);
+      } else {
+        return loadBalancersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public int getLoadBalancersCount() {
+      if (loadBalancersBuilder_ == null) {
+        return loadBalancers_.size();
+      } else {
+        return loadBalancersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LoadBalancer getLoadBalancers(int index) {
+      if (loadBalancersBuilder_ == null) {
+        return loadBalancers_.get(index);
+      } else {
+        return loadBalancersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder setLoadBalancers(
+        int index, com.google.cloud.securitycenter.v1.LoadBalancer value) {
+      if (loadBalancersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoadBalancersIsMutable();
+        loadBalancers_.set(index, value);
+        onChanged();
+      } else {
+        loadBalancersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder setLoadBalancers(
+        int index, com.google.cloud.securitycenter.v1.LoadBalancer.Builder builderForValue) {
+      if (loadBalancersBuilder_ == null) {
+        ensureLoadBalancersIsMutable();
+        loadBalancers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        loadBalancersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder addLoadBalancers(com.google.cloud.securitycenter.v1.LoadBalancer value) {
+      if (loadBalancersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoadBalancersIsMutable();
+        loadBalancers_.add(value);
+        onChanged();
+      } else {
+        loadBalancersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder addLoadBalancers(
+        int index, com.google.cloud.securitycenter.v1.LoadBalancer value) {
+      if (loadBalancersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoadBalancersIsMutable();
+        loadBalancers_.add(index, value);
+        onChanged();
+      } else {
+        loadBalancersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder addLoadBalancers(
+        com.google.cloud.securitycenter.v1.LoadBalancer.Builder builderForValue) {
+      if (loadBalancersBuilder_ == null) {
+        ensureLoadBalancersIsMutable();
+        loadBalancers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        loadBalancersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder addLoadBalancers(
+        int index, com.google.cloud.securitycenter.v1.LoadBalancer.Builder builderForValue) {
+      if (loadBalancersBuilder_ == null) {
+        ensureLoadBalancersIsMutable();
+        loadBalancers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        loadBalancersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder addAllLoadBalancers(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.LoadBalancer> values) {
+      if (loadBalancersBuilder_ == null) {
+        ensureLoadBalancersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, loadBalancers_);
+        onChanged();
+      } else {
+        loadBalancersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder clearLoadBalancers() {
+      if (loadBalancersBuilder_ == null) {
+        loadBalancers_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000400);
+        onChanged();
+      } else {
+        loadBalancersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public Builder removeLoadBalancers(int index) {
+      if (loadBalancersBuilder_ == null) {
+        ensureLoadBalancersIsMutable();
+        loadBalancers_.remove(index);
+        onChanged();
+      } else {
+        loadBalancersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LoadBalancer.Builder getLoadBalancersBuilder(
+        int index) {
+      return getLoadBalancersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder getLoadBalancersOrBuilder(
+        int index) {
+      if (loadBalancersBuilder_ == null) {
+        return loadBalancers_.get(index);
+      } else {
+        return loadBalancersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder>
+        getLoadBalancersOrBuilderList() {
+      if (loadBalancersBuilder_ != null) {
+        return loadBalancersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(loadBalancers_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LoadBalancer.Builder addLoadBalancersBuilder() {
+      return getLoadBalancersFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.LoadBalancer.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public com.google.cloud.securitycenter.v1.LoadBalancer.Builder addLoadBalancersBuilder(
+        int index) {
+      return getLoadBalancersFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.LoadBalancer.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The load balancers associated with the finding.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.LoadBalancer.Builder>
+        getLoadBalancersBuilderList() {
+      return getLoadBalancersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.LoadBalancer,
+            com.google.cloud.securitycenter.v1.LoadBalancer.Builder,
+            com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder>
+        getLoadBalancersFieldBuilder() {
+      if (loadBalancersBuilder_ == null) {
+        loadBalancersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.LoadBalancer,
+                com.google.cloud.securitycenter.v1.LoadBalancer.Builder,
+                com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder>(
+                loadBalancers_,
+                ((bitField1_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        loadBalancers_ = null;
+      }
+      return loadBalancersBuilder_;
     }
 
     @java.lang.Override

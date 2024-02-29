@@ -129,9 +129,9 @@ public interface SourceOrBuilder
    *
    *
    * <pre>
-   * The canonical name of the finding. It's either
+   * The canonical name of the finding source. It's either
    * "organizations/{organization_id}/sources/{source_id}",
-   * "folders/{folder_id}/sources/{source_id}" or
+   * "folders/{folder_id}/sources/{source_id}", or
    * "projects/{project_number}/sources/{source_id}",
    * depending on the closest CRM ancestor of the resource associated with the
    * finding.
@@ -146,9 +146,9 @@ public interface SourceOrBuilder
    *
    *
    * <pre>
-   * The canonical name of the finding. It's either
+   * The canonical name of the finding source. It's either
    * "organizations/{organization_id}/sources/{source_id}",
-   * "folders/{folder_id}/sources/{source_id}" or
+   * "folders/{folder_id}/sources/{source_id}", or
    * "projects/{project_number}/sources/{source_id}",
    * depending on the closest CRM ancestor of the resource associated with the
    * finding.
