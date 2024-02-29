@@ -88,14 +88,9 @@ public class ExportServiceClientTest {
             .build();
     mockExportService.addResponse(expectedResponse);
 
-    ListProfilesRequest request =
-        ListProfilesRequest.newBuilder()
-            .setParent(ProjectName.of("[PROJECT]").toString())
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    ListProfilesPagedResponse pagedListResponse = client.listProfiles(request);
+    ListProfilesPagedResponse pagedListResponse = client.listProfiles(parent);
 
     List<Profile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -106,9 +101,7 @@ public class ExportServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListProfilesRequest actualRequest = ((ListProfilesRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -121,13 +114,52 @@ public class ExportServiceClientTest {
     mockExportService.addException(exception);
 
     try {
-      ListProfilesRequest request =
-          ListProfilesRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      client.listProfiles(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProfilesTest2() throws Exception {
+    Profile responsesElement = Profile.newBuilder().build();
+    ListProfilesResponse expectedResponse =
+        ListProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockExportService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListProfilesPagedResponse pagedListResponse = client.listProfiles(parent);
+
+    List<Profile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProfilesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockExportService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListProfilesRequest actualRequest = ((ListProfilesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listProfilesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockExportService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listProfiles(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

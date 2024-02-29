@@ -85,14 +85,9 @@ public class ExportServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ListProfilesRequest request =
-        ListProfilesRequest.newBuilder()
-            .setParent(ProjectName.of("[PROJECT]").toString())
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    ListProfilesPagedResponse pagedListResponse = client.listProfiles(request);
+    ListProfilesPagedResponse pagedListResponse = client.listProfiles(parent);
 
     List<Profile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -122,13 +117,58 @@ public class ExportServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ListProfilesRequest request =
-          ListProfilesRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      client.listProfiles(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProfilesTest2() throws Exception {
+    Profile responsesElement = Profile.newBuilder().build();
+    ListProfilesResponse expectedResponse =
+        ListProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-2353";
+
+    ListProfilesPagedResponse pagedListResponse = client.listProfiles(parent);
+
+    List<Profile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProfilesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-2353";
+      client.listProfiles(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

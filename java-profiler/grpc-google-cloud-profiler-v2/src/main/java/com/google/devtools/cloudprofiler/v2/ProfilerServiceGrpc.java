@@ -23,9 +23,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * <pre>
  * Manage the collection of continuous profiling data provided by profiling
  * agents running in the cloud or by an offline provider of profiling data.
- * General guidelines:
- * * Profiles for a single deployment must be created in ascending time order.
- * * Profiles can be created in either online or offline mode, see below.
+ * __The APIs listed in this service are intended for use within our profiler
+ * agents only.__
  * </pre>
  */
 @javax.annotation.Generated(
@@ -228,9 +227,8 @@ public final class ProfilerServiceGrpc {
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
    * agents running in the cloud or by an offline provider of profiling data.
-   * General guidelines:
-   * * Profiles for a single deployment must be created in ascending time order.
-   * * Profiles can be created in either online or offline mode, see below.
+   * __The APIs listed in this service are intended for use within our profiler
+   * agents only.__
    * </pre>
    */
   public interface AsyncService {
@@ -240,6 +238,10 @@ public final class ProfilerServiceGrpc {
      *
      * <pre>
      * CreateProfile creates a new profile resource in the online mode.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * The server ensures that the new profiles are created at a constant rate per
      * deployment, so the creation request may hang for some time until the next
      * profile session is available.
@@ -264,9 +266,13 @@ public final class ProfilerServiceGrpc {
      *
      *
      * <pre>
-     * CreateOfflineProfile creates a new profile resource in the offline mode.
-     * The client provides the profile to create along with the profile bytes, the
-     * server records it.
+     * CreateOfflineProfile creates a new profile resource in the offline
+     * mode. The client provides the profile to create along with the profile
+     * bytes, the server records it.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     default void createOfflineProfile(
@@ -285,6 +291,10 @@ public final class ProfilerServiceGrpc {
      * created in the online mode. Updating the bytes for profiles created in the
      * offline mode is currently not supported: the profile content must be
      * provided at the time of the profile creation.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     default void updateProfile(
@@ -302,9 +312,8 @@ public final class ProfilerServiceGrpc {
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
    * agents running in the cloud or by an offline provider of profiling data.
-   * General guidelines:
-   * * Profiles for a single deployment must be created in ascending time order.
-   * * Profiles can be created in either online or offline mode, see below.
+   * __The APIs listed in this service are intended for use within our profiler
+   * agents only.__
    * </pre>
    */
   public abstract static class ProfilerServiceImplBase
@@ -322,9 +331,8 @@ public final class ProfilerServiceGrpc {
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
    * agents running in the cloud or by an offline provider of profiling data.
-   * General guidelines:
-   * * Profiles for a single deployment must be created in ascending time order.
-   * * Profiles can be created in either online or offline mode, see below.
+   * __The APIs listed in this service are intended for use within our profiler
+   * agents only.__
    * </pre>
    */
   public static final class ProfilerServiceStub
@@ -343,6 +351,10 @@ public final class ProfilerServiceGrpc {
      *
      * <pre>
      * CreateProfile creates a new profile resource in the online mode.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * The server ensures that the new profiles are created at a constant rate per
      * deployment, so the creation request may hang for some time until the next
      * profile session is available.
@@ -369,9 +381,13 @@ public final class ProfilerServiceGrpc {
      *
      *
      * <pre>
-     * CreateOfflineProfile creates a new profile resource in the offline mode.
-     * The client provides the profile to create along with the profile bytes, the
-     * server records it.
+     * CreateOfflineProfile creates a new profile resource in the offline
+     * mode. The client provides the profile to create along with the profile
+     * bytes, the server records it.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     public void createOfflineProfile(
@@ -392,6 +408,10 @@ public final class ProfilerServiceGrpc {
      * created in the online mode. Updating the bytes for profiles created in the
      * offline mode is currently not supported: the profile content must be
      * provided at the time of the profile creation.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     public void updateProfile(
@@ -411,9 +431,8 @@ public final class ProfilerServiceGrpc {
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
    * agents running in the cloud or by an offline provider of profiling data.
-   * General guidelines:
-   * * Profiles for a single deployment must be created in ascending time order.
-   * * Profiles can be created in either online or offline mode, see below.
+   * __The APIs listed in this service are intended for use within our profiler
+   * agents only.__
    * </pre>
    */
   public static final class ProfilerServiceBlockingStub
@@ -433,6 +452,10 @@ public final class ProfilerServiceGrpc {
      *
      * <pre>
      * CreateProfile creates a new profile resource in the online mode.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * The server ensures that the new profiles are created at a constant rate per
      * deployment, so the creation request may hang for some time until the next
      * profile session is available.
@@ -455,9 +478,13 @@ public final class ProfilerServiceGrpc {
      *
      *
      * <pre>
-     * CreateOfflineProfile creates a new profile resource in the offline mode.
-     * The client provides the profile to create along with the profile bytes, the
-     * server records it.
+     * CreateOfflineProfile creates a new profile resource in the offline
+     * mode. The client provides the profile to create along with the profile
+     * bytes, the server records it.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     public com.google.devtools.cloudprofiler.v2.Profile createOfflineProfile(
@@ -474,6 +501,10 @@ public final class ProfilerServiceGrpc {
      * created in the online mode. Updating the bytes for profiles created in the
      * offline mode is currently not supported: the profile content must be
      * provided at the time of the profile creation.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     public com.google.devtools.cloudprofiler.v2.Profile updateProfile(
@@ -489,9 +520,8 @@ public final class ProfilerServiceGrpc {
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
    * agents running in the cloud or by an offline provider of profiling data.
-   * General guidelines:
-   * * Profiles for a single deployment must be created in ascending time order.
-   * * Profiles can be created in either online or offline mode, see below.
+   * __The APIs listed in this service are intended for use within our profiler
+   * agents only.__
    * </pre>
    */
   public static final class ProfilerServiceFutureStub
@@ -511,6 +541,10 @@ public final class ProfilerServiceGrpc {
      *
      * <pre>
      * CreateProfile creates a new profile resource in the online mode.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * The server ensures that the new profiles are created at a constant rate per
      * deployment, so the creation request may hang for some time until the next
      * profile session is available.
@@ -534,9 +568,13 @@ public final class ProfilerServiceGrpc {
      *
      *
      * <pre>
-     * CreateOfflineProfile creates a new profile resource in the offline mode.
-     * The client provides the profile to create along with the profile bytes, the
-     * server records it.
+     * CreateOfflineProfile creates a new profile resource in the offline
+     * mode. The client provides the profile to create along with the profile
+     * bytes, the server records it.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -555,6 +593,10 @@ public final class ProfilerServiceGrpc {
      * created in the online mode. Updating the bytes for profiles created in the
      * offline mode is currently not supported: the profile content must be
      * provided at the time of the profile creation.
+     * _Direct use of this API is discouraged, please use a [supported
+     * profiler
+     * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent)
+     * instead for profile collection._
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

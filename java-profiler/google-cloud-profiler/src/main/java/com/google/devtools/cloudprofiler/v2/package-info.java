@@ -24,12 +24,7 @@
  * <p>Service Description: Manage the collection of continuous profiling data provided by profiling
  * agents running in the cloud or by an offline provider of profiling data.
  *
- * <p>General guidelines:
- *
- * <ul>
- *   <li>Profiles for a single deployment must be created in ascending time order.
- *   <li>Profiles can be created in either online or offline mode, see below.
- * </ul>
+ * <p>__The APIs listed in this service are intended for use within our profiler agents only.__
  *
  * <p>Sample for ProfilerServiceClient:
  *
@@ -64,13 +59,8 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ExportServiceClient exportServiceClient = ExportServiceClient.create()) {
- *   ListProfilesRequest request =
- *       ListProfilesRequest.newBuilder()
- *           .setParent(ProjectName.of("[PROJECT]").toString())
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
- *           .build();
- *   for (Profile element : exportServiceClient.listProfiles(request).iterateAll()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   for (Profile element : exportServiceClient.listProfiles(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
  * }

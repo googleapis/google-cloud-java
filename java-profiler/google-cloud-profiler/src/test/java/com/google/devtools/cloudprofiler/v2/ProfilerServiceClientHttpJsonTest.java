@@ -29,6 +29,7 @@ import com.google.devtools.cloudprofiler.v2.stub.HttpJsonProfilerServiceStub;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -86,6 +87,7 @@ public class ProfilerServiceClientHttpJsonTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -145,6 +147,7 @@ public class ProfilerServiceClientHttpJsonTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -196,6 +199,7 @@ public class ProfilerServiceClientHttpJsonTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -247,6 +251,7 @@ public class ProfilerServiceClientHttpJsonTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -258,6 +263,7 @@ public class ProfilerServiceClientHttpJsonTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -295,6 +301,7 @@ public class ProfilerServiceClientHttpJsonTest {
               .setDuration(Duration.newBuilder().build())
               .setProfileBytes(ByteString.EMPTY)
               .putAllLabels(new HashMap<String, String>())
+              .setStartTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateProfile(profile, updateMask);

@@ -29,7 +29,7 @@
           "libraryClient": "ExportServiceClient",
           "rpcs": {
             "ListProfiles": {
-              "methods": ["listProfiles", "listProfilesPagedCallable", "listProfilesCallable"]
+              "methods": ["listProfiles", "listProfiles", "listProfiles", "listProfilesPagedCallable", "listProfilesCallable"]
             }
           }
         }

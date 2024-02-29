@@ -27,6 +27,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -90,6 +91,7 @@ public class ProfilerServiceClientTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockProfilerService.addResponse(expectedResponse);
 
@@ -145,6 +147,7 @@ public class ProfilerServiceClientTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockProfilerService.addResponse(expectedResponse);
 
@@ -192,6 +195,7 @@ public class ProfilerServiceClientTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockProfilerService.addResponse(expectedResponse);
 
@@ -239,6 +243,7 @@ public class ProfilerServiceClientTest {
             .setDuration(Duration.newBuilder().build())
             .setProfileBytes(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setStartTime(Timestamp.newBuilder().build())
             .build();
     mockProfilerService.addResponse(expectedResponse);
 

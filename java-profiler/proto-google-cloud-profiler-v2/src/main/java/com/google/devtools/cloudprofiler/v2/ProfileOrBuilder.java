@@ -244,4 +244,45 @@ public interface ProfileOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Start time for the profile.
+   * This output is only present in response from the ListProfiles method.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  boolean hasStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Start time for the profile.
+   * This output is only present in response from the ListProfiles method.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  com.google.protobuf.Timestamp getStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Start time for the profile.
+   * This output is only present in response from the ListProfiles method.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 }

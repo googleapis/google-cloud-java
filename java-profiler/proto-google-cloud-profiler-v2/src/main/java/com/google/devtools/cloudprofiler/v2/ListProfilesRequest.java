@@ -130,7 +130,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The maximum number of items to return.
    * Default page_size is 1000.
-   * Max limit is 10000.
+   * Max limit is 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -715,7 +715,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The maximum number of items to return.
      * Default page_size is 1000.
-     * Max limit is 10000.
+     * Max limit is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -732,7 +732,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The maximum number of items to return.
      * Default page_size is 1000.
-     * Max limit is 10000.
+     * Max limit is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -753,7 +753,7 @@ public final class ListProfilesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The maximum number of items to return.
      * Default page_size is 1000.
-     * Max limit is 10000.
+     * Max limit is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

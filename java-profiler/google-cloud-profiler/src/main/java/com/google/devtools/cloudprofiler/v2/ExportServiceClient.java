@@ -47,13 +47,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ExportServiceClient exportServiceClient = ExportServiceClient.create()) {
- *   ListProfilesRequest request =
- *       ListProfilesRequest.newBuilder()
- *           .setParent(ProjectName.of("[PROJECT]").toString())
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
- *           .build();
- *   for (Profile element : exportServiceClient.listProfiles(request).iterateAll()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   for (Profile element : exportServiceClient.listProfiles(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
  * }
@@ -76,6 +71,11 @@ import javax.annotation.Generated;
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
  *           <li><p> listProfiles(ListProfilesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProfiles(ProjectName parent)
+ *           <li><p> listProfiles(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -187,6 +187,69 @@ public class ExportServiceClient implements BackgroundResource {
 
   public ExportServiceStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists profiles which have been collected so far and for which the caller has permission to
+   * view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ExportServiceClient exportServiceClient = ExportServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (Profile element : exportServiceClient.listProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of profiles. Format:
+   *     projects/{user_project_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProfilesPagedResponse listProfiles(ProjectName parent) {
+    ListProfilesRequest request =
+        ListProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists profiles which have been collected so far and for which the caller has permission to
+   * view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ExportServiceClient exportServiceClient = ExportServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (Profile element : exportServiceClient.listProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of profiles. Format:
+   *     projects/{user_project_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProfilesPagedResponse listProfiles(String parent) {
+    ListProfilesRequest request = ListProfilesRequest.newBuilder().setParent(parent).build();
+    return listProfiles(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

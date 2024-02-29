@@ -30,12 +30,7 @@ import javax.annotation.Generated;
  * Service Description: Manage the collection of continuous profiling data provided by profiling
  * agents running in the cloud or by an offline provider of profiling data.
  *
- * <p>General guidelines:
- *
- * <ul>
- *   <li>Profiles for a single deployment must be created in ascending time order.
- *   <li>Profiles can be created in either online or offline mode, see below.
- * </ul>
+ * <p>__The APIs listed in this service are intended for use within our profiler agents only.__
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -71,6 +66,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> CreateProfile</td>
  *      <td><p> CreateProfile creates a new profile resource in the online mode.
+ * <p>  _Direct use of this API is discouraged, please use a [supported profiler agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for profile collection._
  * <p>  The server ensures that the new profiles are created at a constant rate per deployment, so the creation request may hang for some time until the next profile session is available.
  * <p>  The request may fail with ABORTED error if the creation is not available within ~1m, the response will indicate the duration of the backoff the client should take before attempting creating a profile again. The backoff duration is returned in google.rpc.RetryInfo extension on the response status. To a gRPC client, the extension will be return as a binary-serialized proto in the trailing metadata item named "google.rpc.retryinfo-bin".</td>
  *      <td>
@@ -86,7 +82,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateOfflineProfile</td>
- *      <td><p> CreateOfflineProfile creates a new profile resource in the offline mode. The client provides the profile to create along with the profile bytes, the server records it.</td>
+ *      <td><p> CreateOfflineProfile creates a new profile resource in the offline mode. The client provides the profile to create along with the profile bytes, the server records it.
+ * <p>  _Direct use of this API is discouraged, please use a [supported profiler agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for profile collection._</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +102,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateProfile</td>
- *      <td><p> UpdateProfile updates the profile bytes and labels on the profile resource created in the online mode. Updating the bytes for profiles created in the offline mode is currently not supported: the profile content must be provided at the time of the profile creation.</td>
+ *      <td><p> UpdateProfile updates the profile bytes and labels on the profile resource created in the online mode. Updating the bytes for profiles created in the offline mode is currently not supported: the profile content must be provided at the time of the profile creation.
+ * <p>  _Direct use of this API is discouraged, please use a [supported profiler agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for profile collection._</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -233,6 +231,10 @@ public class ProfilerServiceClient implements BackgroundResource {
   /**
    * CreateProfile creates a new profile resource in the online mode.
    *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
+   *
    * <p>The server ensures that the new profiles are created at a constant rate per deployment, so
    * the creation request may hang for some time until the next profile session is available.
    *
@@ -271,6 +273,10 @@ public class ProfilerServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * CreateProfile creates a new profile resource in the online mode.
+   *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
    *
    * <p>The server ensures that the new profiles are created at a constant rate per deployment, so
    * the creation request may hang for some time until the next profile session is available.
@@ -311,6 +317,10 @@ public class ProfilerServiceClient implements BackgroundResource {
    * CreateOfflineProfile creates a new profile resource in the offline mode. The client provides
    * the profile to create along with the profile bytes, the server records it.
    *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -344,6 +354,10 @@ public class ProfilerServiceClient implements BackgroundResource {
    * CreateOfflineProfile creates a new profile resource in the offline mode. The client provides
    * the profile to create along with the profile bytes, the server records it.
    *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -373,6 +387,10 @@ public class ProfilerServiceClient implements BackgroundResource {
   /**
    * CreateOfflineProfile creates a new profile resource in the offline mode. The client provides
    * the profile to create along with the profile bytes, the server records it.
+   *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
    *
    * <p>Sample code:
    *
@@ -404,6 +422,10 @@ public class ProfilerServiceClient implements BackgroundResource {
    * CreateOfflineProfile creates a new profile resource in the offline mode. The client provides
    * the profile to create along with the profile bytes, the server records it.
    *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -434,6 +456,10 @@ public class ProfilerServiceClient implements BackgroundResource {
    * UpdateProfile updates the profile bytes and labels on the profile resource created in the
    * online mode. Updating the bytes for profiles created in the offline mode is currently not
    * supported: the profile content must be provided at the time of the profile creation.
+   *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
    *
    * <p>Sample code:
    *
@@ -468,6 +494,10 @@ public class ProfilerServiceClient implements BackgroundResource {
    * online mode. Updating the bytes for profiles created in the offline mode is currently not
    * supported: the profile content must be provided at the time of the profile creation.
    *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -498,6 +528,10 @@ public class ProfilerServiceClient implements BackgroundResource {
    * UpdateProfile updates the profile bytes and labels on the profile resource created in the
    * online mode. Updating the bytes for profiles created in the offline mode is currently not
    * supported: the profile content must be provided at the time of the profile creation.
+   *
+   * <p>_Direct use of this API is discouraged, please use a [supported profiler
+   * agent](https://cloud.google.com/profiler/docs/about-profiler#profiling_agent) instead for
+   * profile collection._
    *
    * <p>Sample code:
    *
