@@ -40,6 +40,8 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
 
   private CloudStorageResult() {
     uri_ = "";
+    vttFormatUri_ = "";
+    srtFormatUri_ = "";
   }
 
   @java.lang.Override
@@ -114,6 +116,112 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int VTT_FORMAT_URI_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vttFormatUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as VTT
+   * formatted captions. This is populated only when `VTT` output is requested.
+   * </pre>
+   *
+   * <code>string vtt_format_uri = 2;</code>
+   *
+   * @return The vttFormatUri.
+   */
+  @java.lang.Override
+  public java.lang.String getVttFormatUri() {
+    java.lang.Object ref = vttFormatUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vttFormatUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as VTT
+   * formatted captions. This is populated only when `VTT` output is requested.
+   * </pre>
+   *
+   * <code>string vtt_format_uri = 2;</code>
+   *
+   * @return The bytes for vttFormatUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVttFormatUriBytes() {
+    java.lang.Object ref = vttFormatUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      vttFormatUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SRT_FORMAT_URI_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object srtFormatUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as SRT
+   * formatted captions. This is populated only when `SRT` output is requested.
+   * </pre>
+   *
+   * <code>string srt_format_uri = 3;</code>
+   *
+   * @return The srtFormatUri.
+   */
+  @java.lang.Override
+  public java.lang.String getSrtFormatUri() {
+    java.lang.Object ref = srtFormatUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      srtFormatUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as SRT
+   * formatted captions. This is populated only when `SRT` output is requested.
+   * </pre>
+   *
+   * <code>string srt_format_uri = 3;</code>
+   *
+   * @return The bytes for srtFormatUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSrtFormatUriBytes() {
+    java.lang.Object ref = srtFormatUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      srtFormatUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -131,6 +239,12 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vttFormatUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vttFormatUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(srtFormatUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, srtFormatUri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -142,6 +256,12 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vttFormatUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vttFormatUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(srtFormatUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, srtFormatUri_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -160,6 +280,8 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.speech.v2.CloudStorageResult) obj;
 
     if (!getUri().equals(other.getUri())) return false;
+    if (!getVttFormatUri().equals(other.getVttFormatUri())) return false;
+    if (!getSrtFormatUri().equals(other.getSrtFormatUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -173,6 +295,10 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + URI_FIELD_NUMBER;
     hash = (53 * hash) + getUri().hashCode();
+    hash = (37 * hash) + VTT_FORMAT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getVttFormatUri().hashCode();
+    hash = (37 * hash) + SRT_FORMAT_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getSrtFormatUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -313,6 +439,8 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       uri_ = "";
+      vttFormatUri_ = "";
+      srtFormatUri_ = "";
       return this;
     }
 
@@ -351,6 +479,12 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vttFormatUri_ = vttFormatUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.srtFormatUri_ = srtFormatUri_;
       }
     }
 
@@ -404,6 +538,16 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getVttFormatUri().isEmpty()) {
+        vttFormatUri_ = other.vttFormatUri_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getSrtFormatUri().isEmpty()) {
+        srtFormatUri_ = other.srtFormatUri_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -436,6 +580,18 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                vttFormatUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                srtFormatUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -557,6 +713,228 @@ public final class CloudStorageResult extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       uri_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object vttFormatUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as VTT
+     * formatted captions. This is populated only when `VTT` output is requested.
+     * </pre>
+     *
+     * <code>string vtt_format_uri = 2;</code>
+     *
+     * @return The vttFormatUri.
+     */
+    public java.lang.String getVttFormatUri() {
+      java.lang.Object ref = vttFormatUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vttFormatUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as VTT
+     * formatted captions. This is populated only when `VTT` output is requested.
+     * </pre>
+     *
+     * <code>string vtt_format_uri = 2;</code>
+     *
+     * @return The bytes for vttFormatUri.
+     */
+    public com.google.protobuf.ByteString getVttFormatUriBytes() {
+      java.lang.Object ref = vttFormatUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        vttFormatUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as VTT
+     * formatted captions. This is populated only when `VTT` output is requested.
+     * </pre>
+     *
+     * <code>string vtt_format_uri = 2;</code>
+     *
+     * @param value The vttFormatUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVttFormatUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      vttFormatUri_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as VTT
+     * formatted captions. This is populated only when `VTT` output is requested.
+     * </pre>
+     *
+     * <code>string vtt_format_uri = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVttFormatUri() {
+      vttFormatUri_ = getDefaultInstance().getVttFormatUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as VTT
+     * formatted captions. This is populated only when `VTT` output is requested.
+     * </pre>
+     *
+     * <code>string vtt_format_uri = 2;</code>
+     *
+     * @param value The bytes for vttFormatUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVttFormatUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      vttFormatUri_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object srtFormatUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as SRT
+     * formatted captions. This is populated only when `SRT` output is requested.
+     * </pre>
+     *
+     * <code>string srt_format_uri = 3;</code>
+     *
+     * @return The srtFormatUri.
+     */
+    public java.lang.String getSrtFormatUri() {
+      java.lang.Object ref = srtFormatUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        srtFormatUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as SRT
+     * formatted captions. This is populated only when `SRT` output is requested.
+     * </pre>
+     *
+     * <code>string srt_format_uri = 3;</code>
+     *
+     * @return The bytes for srtFormatUri.
+     */
+    public com.google.protobuf.ByteString getSrtFormatUriBytes() {
+      java.lang.Object ref = srtFormatUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        srtFormatUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as SRT
+     * formatted captions. This is populated only when `SRT` output is requested.
+     * </pre>
+     *
+     * <code>string srt_format_uri = 3;</code>
+     *
+     * @param value The srtFormatUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrtFormatUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      srtFormatUri_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as SRT
+     * formatted captions. This is populated only when `SRT` output is requested.
+     * </pre>
+     *
+     * <code>string srt_format_uri = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSrtFormatUri() {
+      srtFormatUri_ = getDefaultInstance().getSrtFormatUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written as SRT
+     * formatted captions. This is populated only when `SRT` output is requested.
+     * </pre>
+     *
+     * <code>string srt_format_uri = 3;</code>
+     *
+     * @param value The bytes for srtFormatUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSrtFormatUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      srtFormatUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

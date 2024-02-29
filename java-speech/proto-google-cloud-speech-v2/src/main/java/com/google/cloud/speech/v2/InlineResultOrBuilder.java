@@ -58,4 +58,58 @@ public interface InlineResultOrBuilder
    * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 1;</code>
    */
   com.google.cloud.speech.v2.BatchRecognizeResultsOrBuilder getTranscriptOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The transcript for the audio file as VTT formatted captions. This is
+   * populated only when `VTT` output is requested.
+   * </pre>
+   *
+   * <code>string vtt_captions = 2;</code>
+   *
+   * @return The vttCaptions.
+   */
+  java.lang.String getVttCaptions();
+  /**
+   *
+   *
+   * <pre>
+   * The transcript for the audio file as VTT formatted captions. This is
+   * populated only when `VTT` output is requested.
+   * </pre>
+   *
+   * <code>string vtt_captions = 2;</code>
+   *
+   * @return The bytes for vttCaptions.
+   */
+  com.google.protobuf.ByteString getVttCaptionsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The transcript for the audio file as SRT formatted captions. This is
+   * populated only when `SRT` output is requested.
+   * </pre>
+   *
+   * <code>string srt_captions = 3;</code>
+   *
+   * @return The srtCaptions.
+   */
+  java.lang.String getSrtCaptions();
+  /**
+   *
+   *
+   * <pre>
+   * The transcript for the audio file as SRT formatted captions. This is
+   * populated only when `SRT` output is requested.
+   * </pre>
+   *
+   * <code>string srt_captions = 3;</code>
+   *
+   * @return The bytes for srtCaptions.
+   */
+  com.google.protobuf.ByteString getSrtCaptionsBytes();
 }

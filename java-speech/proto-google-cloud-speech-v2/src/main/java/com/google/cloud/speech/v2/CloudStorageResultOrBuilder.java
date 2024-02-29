@@ -48,4 +48,58 @@ public interface CloudStorageResultOrBuilder
    * @return The bytes for uri.
    */
   com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as VTT
+   * formatted captions. This is populated only when `VTT` output is requested.
+   * </pre>
+   *
+   * <code>string vtt_format_uri = 2;</code>
+   *
+   * @return The vttFormatUri.
+   */
+  java.lang.String getVttFormatUri();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as VTT
+   * formatted captions. This is populated only when `VTT` output is requested.
+   * </pre>
+   *
+   * <code>string vtt_format_uri = 2;</code>
+   *
+   * @return The bytes for vttFormatUri.
+   */
+  com.google.protobuf.ByteString getVttFormatUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as SRT
+   * formatted captions. This is populated only when `SRT` output is requested.
+   * </pre>
+   *
+   * <code>string srt_format_uri = 3;</code>
+   *
+   * @return The srtFormatUri.
+   */
+  java.lang.String getSrtFormatUri();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written as SRT
+   * formatted captions. This is populated only when `SRT` output is requested.
+   * </pre>
+   *
+   * <code>string srt_format_uri = 3;</code>
+   *
+   * @return The bytes for srtFormatUri.
+   */
+  com.google.protobuf.ByteString getSrtFormatUriBytes();
 }

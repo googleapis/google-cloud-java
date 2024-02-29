@@ -28,11 +28,13 @@ public interface RecognizerOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Recognizer.
+   * Output only. Identifier. The resource name of the Recognizer.
    * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -41,11 +43,13 @@ public interface RecognizerOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Recognizer.
+   * Output only. Identifier. The resource name of the Recognizer.
    * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -125,7 +129,7 @@ public interface RecognizerOrBuilder
    * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=600
+   *     google/cloud/speech/v2/cloud_speech.proto;l=603
    * @return The model.
    */
   @java.lang.Deprecated
@@ -152,7 +156,7 @@ public interface RecognizerOrBuilder
    * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=600
+   *     google/cloud/speech/v2/cloud_speech.proto;l=603
    * @return The bytes for model.
    */
   @java.lang.Deprecated
@@ -186,7 +190,7 @@ public interface RecognizerOrBuilder
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @return A list containing the languageCodes.
    */
   @java.lang.Deprecated
@@ -219,7 +223,7 @@ public interface RecognizerOrBuilder
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @return The count of languageCodes.
    */
   @java.lang.Deprecated
@@ -252,7 +256,7 @@ public interface RecognizerOrBuilder
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @param index The index of the element to return.
    * @return The languageCodes at the given index.
    */
@@ -286,7 +290,7 @@ public interface RecognizerOrBuilder
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @param index The index of the value to return.
    * @return The bytes of the languageCodes at the given index.
    */

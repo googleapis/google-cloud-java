@@ -249,11 +249,13 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Recognizer.
+   * Output only. Identifier. The resource name of the Recognizer.
    * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -273,11 +275,13 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Recognizer.
+   * Output only. Identifier. The resource name of the Recognizer.
    * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -424,7 +428,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=600
+   *     google/cloud/speech/v2/cloud_speech.proto;l=603
    * @return The model.
    */
   @java.lang.Override
@@ -462,7 +466,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=600
+   *     google/cloud/speech/v2/cloud_speech.proto;l=603
    * @return The bytes for model.
    */
   @java.lang.Override
@@ -512,7 +516,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @return A list containing the languageCodes.
    */
   @java.lang.Deprecated
@@ -547,7 +551,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @return The count of languageCodes.
    */
   @java.lang.Deprecated
@@ -582,7 +586,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @param index The index of the element to return.
    * @return The languageCodes at the given index.
    */
@@ -618,7 +622,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-   *     google/cloud/speech/v2/cloud_speech.proto;l=619
+   *     google/cloud/speech/v2/cloud_speech.proto;l=622
    * @param index The index of the value to return.
    * @return The bytes of the languageCodes at the given index.
    */
@@ -2038,11 +2042,13 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Recognizer.
+     * Output only. Identifier. The resource name of the Recognizer.
      * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -2061,11 +2067,13 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Recognizer.
+     * Output only. Identifier. The resource name of the Recognizer.
      * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -2084,11 +2092,13 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Recognizer.
+     * Output only. Identifier. The resource name of the Recognizer.
      * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2106,11 +2116,13 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Recognizer.
+     * Output only. Identifier. The resource name of the Recognizer.
      * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2124,11 +2136,13 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Recognizer.
+     * Output only. Identifier. The resource name of the Recognizer.
      * Format: `projects/{project}/locations/{location}/recognizers/{recognizer}`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2384,7 +2398,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=600
+     *     google/cloud/speech/v2/cloud_speech.proto;l=603
      * @return The model.
      */
     @java.lang.Deprecated
@@ -2421,7 +2435,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=600
+     *     google/cloud/speech/v2/cloud_speech.proto;l=603
      * @return The bytes for model.
      */
     @java.lang.Deprecated
@@ -2458,7 +2472,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=600
+     *     google/cloud/speech/v2/cloud_speech.proto;l=603
      * @param value The model to set.
      * @return This builder for chaining.
      */
@@ -2494,7 +2508,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=600
+     *     google/cloud/speech/v2/cloud_speech.proto;l=603
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2526,7 +2540,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <code>string model = 4 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.model is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=600
+     *     google/cloud/speech/v2/cloud_speech.proto;l=603
      * @param value The bytes for model to set.
      * @return This builder for chaining.
      */
@@ -2579,7 +2593,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @return A list containing the languageCodes.
      */
     @java.lang.Deprecated
@@ -2615,7 +2629,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @return The count of languageCodes.
      */
     @java.lang.Deprecated
@@ -2650,7 +2664,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @param index The index of the element to return.
      * @return The languageCodes at the given index.
      */
@@ -2686,7 +2700,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @param index The index of the value to return.
      * @return The bytes of the languageCodes at the given index.
      */
@@ -2722,7 +2736,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @param index The index to set the value at.
      * @param value The languageCodes to set.
      * @return This builder for chaining.
@@ -2766,7 +2780,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @param value The languageCodes to add.
      * @return This builder for chaining.
      */
@@ -2809,7 +2823,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @param values The languageCodes to add.
      * @return This builder for chaining.
      */
@@ -2849,7 +2863,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2888,7 +2902,7 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.speech.v2.Recognizer.language_codes is deprecated. See
-     *     google/cloud/speech/v2/cloud_speech.proto;l=619
+     *     google/cloud/speech/v2/cloud_speech.proto;l=622
      * @param value The bytes of the languageCodes to add.
      * @return This builder for chaining.
      */
