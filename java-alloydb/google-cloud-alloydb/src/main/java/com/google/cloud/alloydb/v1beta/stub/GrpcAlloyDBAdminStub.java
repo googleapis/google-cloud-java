@@ -18,6 +18,7 @@ package com.google.cloud.alloydb.v1beta.stub;
 
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListClustersPagedResponse;
+import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListDatabasesPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
@@ -61,6 +62,8 @@ import com.google.cloud.alloydb.v1beta.ListBackupsRequest;
 import com.google.cloud.alloydb.v1beta.ListBackupsResponse;
 import com.google.cloud.alloydb.v1beta.ListClustersRequest;
 import com.google.cloud.alloydb.v1beta.ListClustersResponse;
+import com.google.cloud.alloydb.v1beta.ListDatabasesRequest;
+import com.google.cloud.alloydb.v1beta.ListDatabasesResponse;
 import com.google.cloud.alloydb.v1beta.ListInstancesRequest;
 import com.google.cloud.alloydb.v1beta.ListInstancesResponse;
 import com.google.cloud.alloydb.v1beta.ListSupportedDatabaseFlagsRequest;
@@ -397,6 +400,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<ListDatabasesRequest, ListDatabasesResponse>
+      listDatabasesMethodDescriptor =
+          MethodDescriptor.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1beta.AlloyDBAdmin/ListDatabases")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatabasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatabasesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -496,6 +510,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<CreateUserRequest, User> createUserCallable;
   private final UnaryCallable<UpdateUserRequest, User> updateUserCallable;
   private final UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable;
+  private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
+  private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -859,6 +876,16 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
+        GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
+            .setMethodDescriptor(listDatabasesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1104,6 +1131,12 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
     this.deleteUserCallable =
         callableFactory.createUnaryCallable(
             deleteUserTransportSettings, settings.deleteUserSettings(), clientContext);
+    this.listDatabasesCallable =
+        callableFactory.createUnaryCallable(
+            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
+    this.listDatabasesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1408,6 +1441,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   @Override
   public UnaryCallable<DeleteUserRequest, Empty> deleteUserCallable() {
     return deleteUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable() {
+    return listDatabasesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
+      listDatabasesPagedCallable() {
+    return listDatabasesPagedCallable;
   }
 
   @Override

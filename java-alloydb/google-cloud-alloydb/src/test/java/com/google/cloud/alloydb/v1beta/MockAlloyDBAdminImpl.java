@@ -704,4 +704,25 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listDatabases(
+      ListDatabasesRequest request, StreamObserver<ListDatabasesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDatabasesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDatabasesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatabases, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDatabasesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

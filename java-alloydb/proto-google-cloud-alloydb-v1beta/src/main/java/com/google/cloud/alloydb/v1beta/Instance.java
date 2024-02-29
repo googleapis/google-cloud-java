@@ -49,6 +49,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     gceZone_ = "";
     nodes_ = java.util.Collections.emptyList();
     ipAddress_ = "";
+    publicIpAddress_ = "";
     etag_ = "";
   }
 
@@ -5847,6 +5848,5653 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PscInterfaceConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @return A list containing the consumerEndpointIps.
+     */
+    java.util.List<java.lang.String> getConsumerEndpointIpsList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @return The count of consumerEndpointIps.
+     */
+    int getConsumerEndpointIpsCount();
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The consumerEndpointIps at the given index.
+     */
+    java.lang.String getConsumerEndpointIps(int index);
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the consumerEndpointIps at the given index.
+     */
+    com.google.protobuf.ByteString getConsumerEndpointIpsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The NetworkAttachment resource created in the consumer VPC to which the
+     * PSC interface will be linked, in the form of:
+     * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+     * NetworkAttachment has to be provided when the PSC interface is created.
+     * </pre>
+     *
+     * <code>string network_attachment = 2;</code>
+     *
+     * @return The networkAttachment.
+     */
+    java.lang.String getNetworkAttachment();
+    /**
+     *
+     *
+     * <pre>
+     * The NetworkAttachment resource created in the consumer VPC to which the
+     * PSC interface will be linked, in the form of:
+     * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+     * NetworkAttachment has to be provided when the PSC interface is created.
+     * </pre>
+     *
+     * <code>string network_attachment = 2;</code>
+     *
+     * @return The bytes for networkAttachment.
+     */
+    com.google.protobuf.ByteString getNetworkAttachmentBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for setting up a PSC interface. This information needs to be
+   * provided by the customer.
+   * PSC interfaces will be created and added to VMs via SLM (adding a network
+   * interface will require recreating the VM). For HA instances this will be
+   * done via LDTM.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig}
+   */
+  public static final class PscInterfaceConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig)
+      PscInterfaceConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PscInterfaceConfig.newBuilder() to construct.
+    private PscInterfaceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PscInterfaceConfig() {
+      consumerEndpointIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      networkAttachment_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PscInterfaceConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.class,
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder.class);
+    }
+
+    public static final int CONSUMER_ENDPOINT_IPS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList consumerEndpointIps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @return A list containing the consumerEndpointIps.
+     */
+    public com.google.protobuf.ProtocolStringList getConsumerEndpointIpsList() {
+      return consumerEndpointIps_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @return The count of consumerEndpointIps.
+     */
+    public int getConsumerEndpointIpsCount() {
+      return consumerEndpointIps_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The consumerEndpointIps at the given index.
+     */
+    public java.lang.String getConsumerEndpointIps(int index) {
+      return consumerEndpointIps_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of endpoints in the consumer VPC the interface might initiate
+     * outbound connections to. This list has to be provided when the PSC
+     * interface is created.
+     * </pre>
+     *
+     * <code>repeated string consumer_endpoint_ips = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the consumerEndpointIps at the given index.
+     */
+    public com.google.protobuf.ByteString getConsumerEndpointIpsBytes(int index) {
+      return consumerEndpointIps_.getByteString(index);
+    }
+
+    public static final int NETWORK_ATTACHMENT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object networkAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The NetworkAttachment resource created in the consumer VPC to which the
+     * PSC interface will be linked, in the form of:
+     * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+     * NetworkAttachment has to be provided when the PSC interface is created.
+     * </pre>
+     *
+     * <code>string network_attachment = 2;</code>
+     *
+     * @return The networkAttachment.
+     */
+    @java.lang.Override
+    public java.lang.String getNetworkAttachment() {
+      java.lang.Object ref = networkAttachment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkAttachment_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The NetworkAttachment resource created in the consumer VPC to which the
+     * PSC interface will be linked, in the form of:
+     * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+     * NetworkAttachment has to be provided when the PSC interface is created.
+     * </pre>
+     *
+     * <code>string network_attachment = 2;</code>
+     *
+     * @return The bytes for networkAttachment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNetworkAttachmentBytes() {
+      java.lang.Object ref = networkAttachment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        networkAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < consumerEndpointIps_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 1, consumerEndpointIps_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkAttachment_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, networkAttachment_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < consumerEndpointIps_.size(); i++) {
+          dataSize += computeStringSizeNoTag(consumerEndpointIps_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getConsumerEndpointIpsList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkAttachment_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, networkAttachment_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig other =
+          (com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig) obj;
+
+      if (!getConsumerEndpointIpsList().equals(other.getConsumerEndpointIpsList())) return false;
+      if (!getNetworkAttachment().equals(other.getNetworkAttachment())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getConsumerEndpointIpsCount() > 0) {
+        hash = (37 * hash) + CONSUMER_ENDPOINT_IPS_FIELD_NUMBER;
+        hash = (53 * hash) + getConsumerEndpointIpsList().hashCode();
+      }
+      hash = (37 * hash) + NETWORK_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkAttachment().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for setting up a PSC interface. This information needs to be
+     * provided by the customer.
+     * PSC interfaces will be created and added to VMs via SLM (adding a network
+     * interface will require recreating the VM). For HA instances this will be
+     * done via LDTM.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig)
+        com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.class,
+                com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        consumerEndpointIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        networkAttachment_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_PscInterfaceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig build() {
+        com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig buildPartial() {
+        com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig result =
+            new com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          consumerEndpointIps_.makeImmutable();
+          result.consumerEndpointIps_ = consumerEndpointIps_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.networkAttachment_ = networkAttachment_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig other) {
+        if (other
+            == com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.getDefaultInstance())
+          return this;
+        if (!other.consumerEndpointIps_.isEmpty()) {
+          if (consumerEndpointIps_.isEmpty()) {
+            consumerEndpointIps_ = other.consumerEndpointIps_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureConsumerEndpointIpsIsMutable();
+            consumerEndpointIps_.addAll(other.consumerEndpointIps_);
+          }
+          onChanged();
+        }
+        if (!other.getNetworkAttachment().isEmpty()) {
+          networkAttachment_ = other.networkAttachment_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureConsumerEndpointIpsIsMutable();
+                  consumerEndpointIps_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  networkAttachment_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList consumerEndpointIps_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureConsumerEndpointIpsIsMutable() {
+        if (!consumerEndpointIps_.isModifiable()) {
+          consumerEndpointIps_ = new com.google.protobuf.LazyStringArrayList(consumerEndpointIps_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @return A list containing the consumerEndpointIps.
+       */
+      public com.google.protobuf.ProtocolStringList getConsumerEndpointIpsList() {
+        consumerEndpointIps_.makeImmutable();
+        return consumerEndpointIps_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @return The count of consumerEndpointIps.
+       */
+      public int getConsumerEndpointIpsCount() {
+        return consumerEndpointIps_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The consumerEndpointIps at the given index.
+       */
+      public java.lang.String getConsumerEndpointIps(int index) {
+        return consumerEndpointIps_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the consumerEndpointIps at the given index.
+       */
+      public com.google.protobuf.ByteString getConsumerEndpointIpsBytes(int index) {
+        return consumerEndpointIps_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The consumerEndpointIps to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConsumerEndpointIps(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConsumerEndpointIpsIsMutable();
+        consumerEndpointIps_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @param value The consumerEndpointIps to add.
+       * @return This builder for chaining.
+       */
+      public Builder addConsumerEndpointIps(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureConsumerEndpointIpsIsMutable();
+        consumerEndpointIps_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @param values The consumerEndpointIps to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllConsumerEndpointIps(java.lang.Iterable<java.lang.String> values) {
+        ensureConsumerEndpointIpsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, consumerEndpointIps_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConsumerEndpointIps() {
+        consumerEndpointIps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A list of endpoints in the consumer VPC the interface might initiate
+       * outbound connections to. This list has to be provided when the PSC
+       * interface is created.
+       * </pre>
+       *
+       * <code>repeated string consumer_endpoint_ips = 1;</code>
+       *
+       * @param value The bytes of the consumerEndpointIps to add.
+       * @return This builder for chaining.
+       */
+      public Builder addConsumerEndpointIpsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureConsumerEndpointIpsIsMutable();
+        consumerEndpointIps_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object networkAttachment_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The NetworkAttachment resource created in the consumer VPC to which the
+       * PSC interface will be linked, in the form of:
+       * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+       * NetworkAttachment has to be provided when the PSC interface is created.
+       * </pre>
+       *
+       * <code>string network_attachment = 2;</code>
+       *
+       * @return The networkAttachment.
+       */
+      public java.lang.String getNetworkAttachment() {
+        java.lang.Object ref = networkAttachment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          networkAttachment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The NetworkAttachment resource created in the consumer VPC to which the
+       * PSC interface will be linked, in the form of:
+       * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+       * NetworkAttachment has to be provided when the PSC interface is created.
+       * </pre>
+       *
+       * <code>string network_attachment = 2;</code>
+       *
+       * @return The bytes for networkAttachment.
+       */
+      public com.google.protobuf.ByteString getNetworkAttachmentBytes() {
+        java.lang.Object ref = networkAttachment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          networkAttachment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The NetworkAttachment resource created in the consumer VPC to which the
+       * PSC interface will be linked, in the form of:
+       * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+       * NetworkAttachment has to be provided when the PSC interface is created.
+       * </pre>
+       *
+       * <code>string network_attachment = 2;</code>
+       *
+       * @param value The networkAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkAttachment(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkAttachment_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The NetworkAttachment resource created in the consumer VPC to which the
+       * PSC interface will be linked, in the form of:
+       * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+       * NetworkAttachment has to be provided when the PSC interface is created.
+       * </pre>
+       *
+       * <code>string network_attachment = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNetworkAttachment() {
+        networkAttachment_ = getDefaultInstance().getNetworkAttachment();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The NetworkAttachment resource created in the consumer VPC to which the
+       * PSC interface will be linked, in the form of:
+       * `projects/${CONSUMER_PROJECT}/regions/${REGION}/networkAttachments/${NETWORK_ATTACHMENT_NAME}`.
+       * NetworkAttachment has to be provided when the PSC interface is created.
+       * </pre>
+       *
+       * <code>string network_attachment = 2;</code>
+       *
+       * @param value The bytes for networkAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkAttachmentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        networkAttachment_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig)
+    private static final com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PscInterfaceConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PscInterfaceConfig>() {
+          @java.lang.Override
+          public PscInterfaceConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PscInterfaceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PscInterfaceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PscInstanceConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Instance.PscInstanceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The service attachment created when Private
+     * Service Connect (PSC) is enabled for the instance.
+     * The name of the resource will be in the format of
+     * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+     * </pre>
+     *
+     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAttachmentLink.
+     */
+    java.lang.String getServiceAttachmentLink();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The service attachment created when Private
+     * Service Connect (PSC) is enabled for the instance.
+     * The name of the resource will be in the format of
+     * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+     * </pre>
+     *
+     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAttachmentLink.
+     */
+    com.google.protobuf.ByteString getServiceAttachmentLinkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the allowedConsumerProjects.
+     */
+    java.util.List<java.lang.String> getAllowedConsumerProjectsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of allowedConsumerProjects.
+     */
+    int getAllowedConsumerProjectsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedConsumerProjects at the given index.
+     */
+    java.lang.String getAllowedConsumerProjects(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedConsumerProjects at the given index.
+     */
+    com.google.protobuf.ByteString getAllowedConsumerProjectsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the allowedConsumerNetworks.
+     */
+    java.util.List<java.lang.String> getAllowedConsumerNetworksList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of allowedConsumerNetworks.
+     */
+    int getAllowedConsumerNetworksCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedConsumerNetworks at the given index.
+     */
+    java.lang.String getAllowedConsumerNetworks(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedConsumerNetworks at the given index.
+     */
+    com.google.protobuf.ByteString getAllowedConsumerNetworksBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig>
+        getPscInterfaceConfigsList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig getPscInterfaceConfigs(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getPscInterfaceConfigsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder>
+        getPscInterfaceConfigsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder
+        getPscInterfaceConfigsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the outgoingServiceAttachmentLinks.
+     */
+    java.util.List<java.lang.String> getOutgoingServiceAttachmentLinksList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of outgoingServiceAttachmentLinks.
+     */
+    int getOutgoingServiceAttachmentLinksCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The outgoingServiceAttachmentLinks at the given index.
+     */
+    java.lang.String getOutgoingServiceAttachmentLinks(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the outgoingServiceAttachmentLinks at the given index.
+     */
+    com.google.protobuf.ByteString getOutgoingServiceAttachmentLinksBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether PSC connectivity is enabled for this instance.
+     * This is populated by referencing the value from the parent cluster.
+     * </pre>
+     *
+     * <code>bool psc_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pscEnabled.
+     */
+    boolean getPscEnabled();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * PscInstanceConfig contains PSC related configuration at an
+   * instance level.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.PscInstanceConfig}
+   */
+  public static final class PscInstanceConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Instance.PscInstanceConfig)
+      PscInstanceConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PscInstanceConfig.newBuilder() to construct.
+    private PscInstanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PscInstanceConfig() {
+      serviceAttachmentLink_ = "";
+      allowedConsumerProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      allowedConsumerNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      pscInterfaceConfigs_ = java.util.Collections.emptyList();
+      outgoingServiceAttachmentLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PscInstanceConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.class,
+              com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.Builder.class);
+    }
+
+    public static final int SERVICE_ATTACHMENT_LINK_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAttachmentLink_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The service attachment created when Private
+     * Service Connect (PSC) is enabled for the instance.
+     * The name of the resource will be in the format of
+     * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+     * </pre>
+     *
+     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceAttachmentLink.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceAttachmentLink() {
+      java.lang.Object ref = serviceAttachmentLink_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAttachmentLink_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The service attachment created when Private
+     * Service Connect (PSC) is enabled for the instance.
+     * The name of the resource will be in the format of
+     * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+     * </pre>
+     *
+     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceAttachmentLink.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceAttachmentLinkBytes() {
+      java.lang.Object ref = serviceAttachmentLink_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAttachmentLink_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ALLOWED_CONSUMER_PROJECTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList allowedConsumerProjects_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the allowedConsumerProjects.
+     */
+    public com.google.protobuf.ProtocolStringList getAllowedConsumerProjectsList() {
+      return allowedConsumerProjects_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of allowedConsumerProjects.
+     */
+    public int getAllowedConsumerProjectsCount() {
+      return allowedConsumerProjects_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedConsumerProjects at the given index.
+     */
+    public java.lang.String getAllowedConsumerProjects(int index) {
+      return allowedConsumerProjects_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer projects that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedConsumerProjects at the given index.
+     */
+    public com.google.protobuf.ByteString getAllowedConsumerProjectsBytes(int index) {
+      return allowedConsumerProjects_.getByteString(index);
+    }
+
+    public static final int ALLOWED_CONSUMER_NETWORKS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList allowedConsumerNetworks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the allowedConsumerNetworks.
+     */
+    public com.google.protobuf.ProtocolStringList getAllowedConsumerNetworksList() {
+      return allowedConsumerNetworks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of allowedConsumerNetworks.
+     */
+    public int getAllowedConsumerNetworksCount() {
+      return allowedConsumerNetworks_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedConsumerNetworks at the given index.
+     */
+    public java.lang.String getAllowedConsumerNetworks(int index) {
+      return allowedConsumerNetworks_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of consumer networks that are allowed to create
+     * PSC endpoints to service-attachments to this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allowedConsumerNetworks at the given index.
+     */
+    public com.google.protobuf.ByteString getAllowedConsumerNetworksBytes(int index) {
+      return allowedConsumerNetworks_.getByteString(index);
+    }
+
+    public static final int PSC_INTERFACE_CONFIGS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig>
+        pscInterfaceConfigs_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig>
+        getPscInterfaceConfigsList() {
+      return pscInterfaceConfigs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder>
+        getPscInterfaceConfigsOrBuilderList() {
+      return pscInterfaceConfigs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getPscInterfaceConfigsCount() {
+      return pscInterfaceConfigs_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig getPscInterfaceConfigs(
+        int index) {
+      return pscInterfaceConfigs_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configurations for setting up PSC interfaces attached to the
+     * instance which are used for outbound connectivity. Only primary instances
+     * can have PSC interface attached. All the VMs created for the primary
+     * instance will share the same configurations. Currently we only support 0
+     * or 1 PSC interface.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder
+        getPscInterfaceConfigsOrBuilder(int index) {
+      return pscInterfaceConfigs_.get(index);
+    }
+
+    public static final int OUTGOING_SERVICE_ATTACHMENT_LINKS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList outgoingServiceAttachmentLinks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the outgoingServiceAttachmentLinks.
+     */
+    public com.google.protobuf.ProtocolStringList getOutgoingServiceAttachmentLinksList() {
+      return outgoingServiceAttachmentLinks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of outgoingServiceAttachmentLinks.
+     */
+    public int getOutgoingServiceAttachmentLinksCount() {
+      return outgoingServiceAttachmentLinks_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The outgoingServiceAttachmentLinks at the given index.
+     */
+    public java.lang.String getOutgoingServiceAttachmentLinks(int index) {
+      return outgoingServiceAttachmentLinks_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of service attachments that this instance has created
+     * endpoints to connect with. Currently, only a single outgoing service
+     * attachment is supported per instance.
+     * </pre>
+     *
+     * <code>
+     * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the outgoingServiceAttachmentLinks at the given index.
+     */
+    public com.google.protobuf.ByteString getOutgoingServiceAttachmentLinksBytes(int index) {
+      return outgoingServiceAttachmentLinks_.getByteString(index);
+    }
+
+    public static final int PSC_ENABLED_FIELD_NUMBER = 6;
+    private boolean pscEnabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether PSC connectivity is enabled for this instance.
+     * This is populated by referencing the value from the parent cluster.
+     * </pre>
+     *
+     * <code>bool psc_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pscEnabled.
+     */
+    @java.lang.Override
+    public boolean getPscEnabled() {
+      return pscEnabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachmentLink_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceAttachmentLink_);
+      }
+      for (int i = 0; i < allowedConsumerProjects_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 2, allowedConsumerProjects_.getRaw(i));
+      }
+      for (int i = 0; i < allowedConsumerNetworks_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 3, allowedConsumerNetworks_.getRaw(i));
+      }
+      for (int i = 0; i < pscInterfaceConfigs_.size(); i++) {
+        output.writeMessage(4, pscInterfaceConfigs_.get(i));
+      }
+      for (int i = 0; i < outgoingServiceAttachmentLinks_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 5, outgoingServiceAttachmentLinks_.getRaw(i));
+      }
+      if (pscEnabled_ != false) {
+        output.writeBool(6, pscEnabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachmentLink_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceAttachmentLink_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < allowedConsumerProjects_.size(); i++) {
+          dataSize += computeStringSizeNoTag(allowedConsumerProjects_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAllowedConsumerProjectsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < allowedConsumerNetworks_.size(); i++) {
+          dataSize += computeStringSizeNoTag(allowedConsumerNetworks_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAllowedConsumerNetworksList().size();
+      }
+      for (int i = 0; i < pscInterfaceConfigs_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, pscInterfaceConfigs_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < outgoingServiceAttachmentLinks_.size(); i++) {
+          dataSize += computeStringSizeNoTag(outgoingServiceAttachmentLinks_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getOutgoingServiceAttachmentLinksList().size();
+      }
+      if (pscEnabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, pscEnabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig other =
+          (com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig) obj;
+
+      if (!getServiceAttachmentLink().equals(other.getServiceAttachmentLink())) return false;
+      if (!getAllowedConsumerProjectsList().equals(other.getAllowedConsumerProjectsList()))
+        return false;
+      if (!getAllowedConsumerNetworksList().equals(other.getAllowedConsumerNetworksList()))
+        return false;
+      if (!getPscInterfaceConfigsList().equals(other.getPscInterfaceConfigsList())) return false;
+      if (!getOutgoingServiceAttachmentLinksList()
+          .equals(other.getOutgoingServiceAttachmentLinksList())) return false;
+      if (getPscEnabled() != other.getPscEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_ATTACHMENT_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAttachmentLink().hashCode();
+      if (getAllowedConsumerProjectsCount() > 0) {
+        hash = (37 * hash) + ALLOWED_CONSUMER_PROJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAllowedConsumerProjectsList().hashCode();
+      }
+      if (getAllowedConsumerNetworksCount() > 0) {
+        hash = (37 * hash) + ALLOWED_CONSUMER_NETWORKS_FIELD_NUMBER;
+        hash = (53 * hash) + getAllowedConsumerNetworksList().hashCode();
+      }
+      if (getPscInterfaceConfigsCount() > 0) {
+        hash = (37 * hash) + PSC_INTERFACE_CONFIGS_FIELD_NUMBER;
+        hash = (53 * hash) + getPscInterfaceConfigsList().hashCode();
+      }
+      if (getOutgoingServiceAttachmentLinksCount() > 0) {
+        hash = (37 * hash) + OUTGOING_SERVICE_ATTACHMENT_LINKS_FIELD_NUMBER;
+        hash = (53 * hash) + getOutgoingServiceAttachmentLinksList().hashCode();
+      }
+      hash = (37 * hash) + PSC_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPscEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * PscInstanceConfig contains PSC related configuration at an
+     * instance level.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.PscInstanceConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Instance.PscInstanceConfig)
+        com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.class,
+                com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        serviceAttachmentLink_ = "";
+        allowedConsumerProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allowedConsumerNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        if (pscInterfaceConfigsBuilder_ == null) {
+          pscInterfaceConfigs_ = java.util.Collections.emptyList();
+        } else {
+          pscInterfaceConfigs_ = null;
+          pscInterfaceConfigsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        outgoingServiceAttachmentLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        pscEnabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_PscInstanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig build() {
+        com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig buildPartial() {
+        com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig result =
+            new com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig result) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            pscInterfaceConfigs_ = java.util.Collections.unmodifiableList(pscInterfaceConfigs_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.pscInterfaceConfigs_ = pscInterfaceConfigs_;
+        } else {
+          result.pscInterfaceConfigs_ = pscInterfaceConfigsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serviceAttachmentLink_ = serviceAttachmentLink_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          allowedConsumerProjects_.makeImmutable();
+          result.allowedConsumerProjects_ = allowedConsumerProjects_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          allowedConsumerNetworks_.makeImmutable();
+          result.allowedConsumerNetworks_ = allowedConsumerNetworks_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          outgoingServiceAttachmentLinks_.makeImmutable();
+          result.outgoingServiceAttachmentLinks_ = outgoingServiceAttachmentLinks_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.pscEnabled_ = pscEnabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig other) {
+        if (other
+            == com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.getDefaultInstance())
+          return this;
+        if (!other.getServiceAttachmentLink().isEmpty()) {
+          serviceAttachmentLink_ = other.serviceAttachmentLink_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.allowedConsumerProjects_.isEmpty()) {
+          if (allowedConsumerProjects_.isEmpty()) {
+            allowedConsumerProjects_ = other.allowedConsumerProjects_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureAllowedConsumerProjectsIsMutable();
+            allowedConsumerProjects_.addAll(other.allowedConsumerProjects_);
+          }
+          onChanged();
+        }
+        if (!other.allowedConsumerNetworks_.isEmpty()) {
+          if (allowedConsumerNetworks_.isEmpty()) {
+            allowedConsumerNetworks_ = other.allowedConsumerNetworks_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureAllowedConsumerNetworksIsMutable();
+            allowedConsumerNetworks_.addAll(other.allowedConsumerNetworks_);
+          }
+          onChanged();
+        }
+        if (pscInterfaceConfigsBuilder_ == null) {
+          if (!other.pscInterfaceConfigs_.isEmpty()) {
+            if (pscInterfaceConfigs_.isEmpty()) {
+              pscInterfaceConfigs_ = other.pscInterfaceConfigs_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensurePscInterfaceConfigsIsMutable();
+              pscInterfaceConfigs_.addAll(other.pscInterfaceConfigs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pscInterfaceConfigs_.isEmpty()) {
+            if (pscInterfaceConfigsBuilder_.isEmpty()) {
+              pscInterfaceConfigsBuilder_.dispose();
+              pscInterfaceConfigsBuilder_ = null;
+              pscInterfaceConfigs_ = other.pscInterfaceConfigs_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              pscInterfaceConfigsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getPscInterfaceConfigsFieldBuilder()
+                      : null;
+            } else {
+              pscInterfaceConfigsBuilder_.addAllMessages(other.pscInterfaceConfigs_);
+            }
+          }
+        }
+        if (!other.outgoingServiceAttachmentLinks_.isEmpty()) {
+          if (outgoingServiceAttachmentLinks_.isEmpty()) {
+            outgoingServiceAttachmentLinks_ = other.outgoingServiceAttachmentLinks_;
+            bitField0_ |= 0x00000010;
+          } else {
+            ensureOutgoingServiceAttachmentLinksIsMutable();
+            outgoingServiceAttachmentLinks_.addAll(other.outgoingServiceAttachmentLinks_);
+          }
+          onChanged();
+        }
+        if (other.getPscEnabled() != false) {
+          setPscEnabled(other.getPscEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  serviceAttachmentLink_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAllowedConsumerProjectsIsMutable();
+                  allowedConsumerProjects_.add(s);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAllowedConsumerNetworksIsMutable();
+                  allowedConsumerNetworks_.add(s);
+                  break;
+                } // case 26
+              case 34:
+                {
+                  com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig m =
+                      input.readMessage(
+                          com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.parser(),
+                          extensionRegistry);
+                  if (pscInterfaceConfigsBuilder_ == null) {
+                    ensurePscInterfaceConfigsIsMutable();
+                    pscInterfaceConfigs_.add(m);
+                  } else {
+                    pscInterfaceConfigsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureOutgoingServiceAttachmentLinksIsMutable();
+                  outgoingServiceAttachmentLinks_.add(s);
+                  break;
+                } // case 42
+              case 48:
+                {
+                  pscEnabled_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object serviceAttachmentLink_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service attachment created when Private
+       * Service Connect (PSC) is enabled for the instance.
+       * The name of the resource will be in the format of
+       * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+       * </pre>
+       *
+       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The serviceAttachmentLink.
+       */
+      public java.lang.String getServiceAttachmentLink() {
+        java.lang.Object ref = serviceAttachmentLink_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAttachmentLink_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service attachment created when Private
+       * Service Connect (PSC) is enabled for the instance.
+       * The name of the resource will be in the format of
+       * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+       * </pre>
+       *
+       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for serviceAttachmentLink.
+       */
+      public com.google.protobuf.ByteString getServiceAttachmentLinkBytes() {
+        java.lang.Object ref = serviceAttachmentLink_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAttachmentLink_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service attachment created when Private
+       * Service Connect (PSC) is enabled for the instance.
+       * The name of the resource will be in the format of
+       * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+       * </pre>
+       *
+       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The serviceAttachmentLink to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAttachmentLink(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceAttachmentLink_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service attachment created when Private
+       * Service Connect (PSC) is enabled for the instance.
+       * The name of the resource will be in the format of
+       * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+       * </pre>
+       *
+       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceAttachmentLink() {
+        serviceAttachmentLink_ = getDefaultInstance().getServiceAttachmentLink();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service attachment created when Private
+       * Service Connect (PSC) is enabled for the instance.
+       * The name of the resource will be in the format of
+       * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
+       * </pre>
+       *
+       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for serviceAttachmentLink to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAttachmentLinkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceAttachmentLink_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList allowedConsumerProjects_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureAllowedConsumerProjectsIsMutable() {
+        if (!allowedConsumerProjects_.isModifiable()) {
+          allowedConsumerProjects_ =
+              new com.google.protobuf.LazyStringArrayList(allowedConsumerProjects_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the allowedConsumerProjects.
+       */
+      public com.google.protobuf.ProtocolStringList getAllowedConsumerProjectsList() {
+        allowedConsumerProjects_.makeImmutable();
+        return allowedConsumerProjects_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of allowedConsumerProjects.
+       */
+      public int getAllowedConsumerProjectsCount() {
+        return allowedConsumerProjects_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The allowedConsumerProjects at the given index.
+       */
+      public java.lang.String getAllowedConsumerProjects(int index) {
+        return allowedConsumerProjects_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the allowedConsumerProjects at the given index.
+       */
+      public com.google.protobuf.ByteString getAllowedConsumerProjectsBytes(int index) {
+        return allowedConsumerProjects_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The allowedConsumerProjects to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowedConsumerProjects(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowedConsumerProjectsIsMutable();
+        allowedConsumerProjects_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The allowedConsumerProjects to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllowedConsumerProjects(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowedConsumerProjectsIsMutable();
+        allowedConsumerProjects_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The allowedConsumerProjects to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAllowedConsumerProjects(java.lang.Iterable<java.lang.String> values) {
+        ensureAllowedConsumerProjectsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedConsumerProjects_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowedConsumerProjects() {
+        allowedConsumerProjects_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer projects that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_projects = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the allowedConsumerProjects to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllowedConsumerProjectsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAllowedConsumerProjectsIsMutable();
+        allowedConsumerProjects_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList allowedConsumerNetworks_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureAllowedConsumerNetworksIsMutable() {
+        if (!allowedConsumerNetworks_.isModifiable()) {
+          allowedConsumerNetworks_ =
+              new com.google.protobuf.LazyStringArrayList(allowedConsumerNetworks_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the allowedConsumerNetworks.
+       */
+      public com.google.protobuf.ProtocolStringList getAllowedConsumerNetworksList() {
+        allowedConsumerNetworks_.makeImmutable();
+        return allowedConsumerNetworks_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of allowedConsumerNetworks.
+       */
+      public int getAllowedConsumerNetworksCount() {
+        return allowedConsumerNetworks_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The allowedConsumerNetworks at the given index.
+       */
+      public java.lang.String getAllowedConsumerNetworks(int index) {
+        return allowedConsumerNetworks_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the allowedConsumerNetworks at the given index.
+       */
+      public com.google.protobuf.ByteString getAllowedConsumerNetworksBytes(int index) {
+        return allowedConsumerNetworks_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The allowedConsumerNetworks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowedConsumerNetworks(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowedConsumerNetworksIsMutable();
+        allowedConsumerNetworks_.set(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The allowedConsumerNetworks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllowedConsumerNetworks(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowedConsumerNetworksIsMutable();
+        allowedConsumerNetworks_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The allowedConsumerNetworks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAllowedConsumerNetworks(java.lang.Iterable<java.lang.String> values) {
+        ensureAllowedConsumerNetworksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedConsumerNetworks_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowedConsumerNetworks() {
+        allowedConsumerNetworks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of consumer networks that are allowed to create
+       * PSC endpoints to service-attachments to this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string allowed_consumer_networks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the allowedConsumerNetworks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllowedConsumerNetworksBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAllowedConsumerNetworksIsMutable();
+        allowedConsumerNetworks_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig>
+          pscInterfaceConfigs_ = java.util.Collections.emptyList();
+
+      private void ensurePscInterfaceConfigsIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          pscInterfaceConfigs_ =
+              new java.util.ArrayList<com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig>(
+                  pscInterfaceConfigs_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig,
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder,
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder>
+          pscInterfaceConfigsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig>
+          getPscInterfaceConfigsList() {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pscInterfaceConfigs_);
+        } else {
+          return pscInterfaceConfigsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getPscInterfaceConfigsCount() {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          return pscInterfaceConfigs_.size();
+        } else {
+          return pscInterfaceConfigsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig getPscInterfaceConfigs(
+          int index) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          return pscInterfaceConfigs_.get(index);
+        } else {
+          return pscInterfaceConfigsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPscInterfaceConfigs(
+          int index, com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig value) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePscInterfaceConfigsIsMutable();
+          pscInterfaceConfigs_.set(index, value);
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPscInterfaceConfigs(
+          int index,
+          com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder builderForValue) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          ensurePscInterfaceConfigsIsMutable();
+          pscInterfaceConfigs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addPscInterfaceConfigs(
+          com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig value) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePscInterfaceConfigsIsMutable();
+          pscInterfaceConfigs_.add(value);
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addPscInterfaceConfigs(
+          int index, com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig value) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePscInterfaceConfigsIsMutable();
+          pscInterfaceConfigs_.add(index, value);
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addPscInterfaceConfigs(
+          com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder builderForValue) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          ensurePscInterfaceConfigsIsMutable();
+          pscInterfaceConfigs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addPscInterfaceConfigs(
+          int index,
+          com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder builderForValue) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          ensurePscInterfaceConfigsIsMutable();
+          pscInterfaceConfigs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllPscInterfaceConfigs(
+          java.lang.Iterable<? extends com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig>
+              values) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          ensurePscInterfaceConfigsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pscInterfaceConfigs_);
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPscInterfaceConfigs() {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          pscInterfaceConfigs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removePscInterfaceConfigs(int index) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          ensurePscInterfaceConfigsIsMutable();
+          pscInterfaceConfigs_.remove(index);
+          onChanged();
+        } else {
+          pscInterfaceConfigsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder
+          getPscInterfaceConfigsBuilder(int index) {
+        return getPscInterfaceConfigsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder
+          getPscInterfaceConfigsOrBuilder(int index) {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          return pscInterfaceConfigs_.get(index);
+        } else {
+          return pscInterfaceConfigsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder>
+          getPscInterfaceConfigsOrBuilderList() {
+        if (pscInterfaceConfigsBuilder_ != null) {
+          return pscInterfaceConfigsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pscInterfaceConfigs_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder
+          addPscInterfaceConfigsBuilder() {
+        return getPscInterfaceConfigsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder
+          addPscInterfaceConfigsBuilder(int index) {
+        return getPscInterfaceConfigsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configurations for setting up PSC interfaces attached to the
+       * instance which are used for outbound connectivity. Only primary instances
+       * can have PSC interface attached. All the VMs created for the primary
+       * instance will share the same configurations. Currently we only support 0
+       * or 1 PSC interface.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig psc_interface_configs = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder>
+          getPscInterfaceConfigsBuilderList() {
+        return getPscInterfaceConfigsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig,
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder,
+              com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder>
+          getPscInterfaceConfigsFieldBuilder() {
+        if (pscInterfaceConfigsBuilder_ == null) {
+          pscInterfaceConfigsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig,
+                  com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfig.Builder,
+                  com.google.cloud.alloydb.v1beta.Instance.PscInterfaceConfigOrBuilder>(
+                  pscInterfaceConfigs_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          pscInterfaceConfigs_ = null;
+        }
+        return pscInterfaceConfigsBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringArrayList outgoingServiceAttachmentLinks_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureOutgoingServiceAttachmentLinksIsMutable() {
+        if (!outgoingServiceAttachmentLinks_.isModifiable()) {
+          outgoingServiceAttachmentLinks_ =
+              new com.google.protobuf.LazyStringArrayList(outgoingServiceAttachmentLinks_);
+        }
+        bitField0_ |= 0x00000010;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the outgoingServiceAttachmentLinks.
+       */
+      public com.google.protobuf.ProtocolStringList getOutgoingServiceAttachmentLinksList() {
+        outgoingServiceAttachmentLinks_.makeImmutable();
+        return outgoingServiceAttachmentLinks_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of outgoingServiceAttachmentLinks.
+       */
+      public int getOutgoingServiceAttachmentLinksCount() {
+        return outgoingServiceAttachmentLinks_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The outgoingServiceAttachmentLinks at the given index.
+       */
+      public java.lang.String getOutgoingServiceAttachmentLinks(int index) {
+        return outgoingServiceAttachmentLinks_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the outgoingServiceAttachmentLinks at the given index.
+       */
+      public com.google.protobuf.ByteString getOutgoingServiceAttachmentLinksBytes(int index) {
+        return outgoingServiceAttachmentLinks_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The outgoingServiceAttachmentLinks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOutgoingServiceAttachmentLinks(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOutgoingServiceAttachmentLinksIsMutable();
+        outgoingServiceAttachmentLinks_.set(index, value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The outgoingServiceAttachmentLinks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOutgoingServiceAttachmentLinks(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureOutgoingServiceAttachmentLinksIsMutable();
+        outgoingServiceAttachmentLinks_.add(value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The outgoingServiceAttachmentLinks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllOutgoingServiceAttachmentLinks(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureOutgoingServiceAttachmentLinksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, outgoingServiceAttachmentLinks_);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOutgoingServiceAttachmentLinks() {
+        outgoingServiceAttachmentLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of service attachments that this instance has created
+       * endpoints to connect with. Currently, only a single outgoing service
+       * attachment is supported per instance.
+       * </pre>
+       *
+       * <code>
+       * repeated string outgoing_service_attachment_links = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the outgoingServiceAttachmentLinks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOutgoingServiceAttachmentLinksBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureOutgoingServiceAttachmentLinksIsMutable();
+        outgoingServiceAttachmentLinks_.add(value);
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private boolean pscEnabled_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether PSC connectivity is enabled for this instance.
+       * This is populated by referencing the value from the parent cluster.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The pscEnabled.
+       */
+      @java.lang.Override
+      public boolean getPscEnabled() {
+        return pscEnabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether PSC connectivity is enabled for this instance.
+       * This is populated by referencing the value from the parent cluster.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The pscEnabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPscEnabled(boolean value) {
+
+        pscEnabled_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether PSC connectivity is enabled for this instance.
+       * This is populated by referencing the value from the parent cluster.
+       * </pre>
+       *
+       * <code>bool psc_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPscEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        pscEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Instance.PscInstanceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Instance.PscInstanceConfig)
+    private static final com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PscInstanceConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PscInstanceConfig>() {
+          @java.lang.Override
+          public PscInstanceConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PscInstanceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PscInstanceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface InstanceNetworkConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork>
+        getAuthorizedExternalNetworksList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+        getAuthorizedExternalNetworks(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getAuthorizedExternalNetworksCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                    .AuthorizedNetworkOrBuilder>
+        getAuthorizedExternalNetworksOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetworkOrBuilder
+        getAuthorizedExternalNetworksOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enabling public ip for the instance.
+     * </pre>
+     *
+     * <code>bool enable_public_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enablePublicIp.
+     */
+    boolean getEnablePublicIp();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to instance level network configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig}
+   */
+  public static final class InstanceNetworkConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig)
+      InstanceNetworkConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InstanceNetworkConfig.newBuilder() to construct.
+    private InstanceNetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InstanceNetworkConfig() {
+      authorizedExternalNetworks_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InstanceNetworkConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1beta.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.class,
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.Builder.class);
+    }
+
+    public interface AuthorizedNetworkOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * CIDR range for one authorzied network of the instance.
+       * </pre>
+       *
+       * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+       *
+       * @return The cidrRange.
+       */
+      java.lang.String getCidrRange();
+      /**
+       *
+       *
+       * <pre>
+       * CIDR range for one authorzied network of the instance.
+       * </pre>
+       *
+       * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+       *
+       * @return The bytes for cidrRange.
+       */
+      com.google.protobuf.ByteString getCidrRangeBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * AuthorizedNetwork contains metadata for an authorized network.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork}
+     */
+    public static final class AuthorizedNetwork extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork)
+        AuthorizedNetworkOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use AuthorizedNetwork.newBuilder() to construct.
+      private AuthorizedNetwork(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AuthorizedNetwork() {
+        cidrRange_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new AuthorizedNetwork();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_AuthorizedNetwork_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_AuthorizedNetwork_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                    .class,
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                    .Builder.class);
+      }
+
+      public static final int CIDR_RANGE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object cidrRange_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * CIDR range for one authorzied network of the instance.
+       * </pre>
+       *
+       * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+       *
+       * @return The cidrRange.
+       */
+      @java.lang.Override
+      public java.lang.String getCidrRange() {
+        java.lang.Object ref = cidrRange_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cidrRange_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * CIDR range for one authorzied network of the instance.
+       * </pre>
+       *
+       * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+       *
+       * @return The bytes for cidrRange.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getCidrRangeBytes() {
+        java.lang.Object ref = cidrRange_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          cidrRange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cidrRange_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cidrRange_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cidrRange_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cidrRange_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork other =
+            (com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork) obj;
+
+        if (!getCidrRange().equals(other.getCidrRange())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CIDR_RANGE_FIELD_NUMBER;
+        hash = (53 * hash) + getCidrRange().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * AuthorizedNetwork contains metadata for an authorized network.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork)
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+              .AuthorizedNetworkOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.alloydb.v1beta.ResourcesProto
+              .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_AuthorizedNetwork_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.alloydb.v1beta.ResourcesProto
+              .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_AuthorizedNetwork_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                      .class,
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          cidrRange_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.alloydb.v1beta.ResourcesProto
+              .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_AuthorizedNetwork_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+            getDefaultInstanceForType() {
+          return com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+            build() {
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+            buildPartial() {
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork result =
+              new com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.cidrRange_ = cidrRange_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork) {
+            return mergeFrom(
+                (com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                other) {
+          if (other
+              == com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                  .getDefaultInstance()) return this;
+          if (!other.getCidrRange().isEmpty()) {
+            cidrRange_ = other.cidrRange_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    cidrRange_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object cidrRange_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * CIDR range for one authorzied network of the instance.
+         * </pre>
+         *
+         * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+         *
+         * @return The cidrRange.
+         */
+        public java.lang.String getCidrRange() {
+          java.lang.Object ref = cidrRange_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            cidrRange_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CIDR range for one authorzied network of the instance.
+         * </pre>
+         *
+         * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+         *
+         * @return The bytes for cidrRange.
+         */
+        public com.google.protobuf.ByteString getCidrRangeBytes() {
+          java.lang.Object ref = cidrRange_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            cidrRange_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CIDR range for one authorzied network of the instance.
+         * </pre>
+         *
+         * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+         *
+         * @param value The cidrRange to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCidrRange(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cidrRange_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CIDR range for one authorzied network of the instance.
+         * </pre>
+         *
+         * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCidrRange() {
+          cidrRange_ = getDefaultInstance().getCidrRange();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * CIDR range for one authorzied network of the instance.
+         * </pre>
+         *
+         * <code>string cidr_range = 1 [(.google.api.field_info) = { ... }</code>
+         *
+         * @param value The bytes for cidrRange to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCidrRangeBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          cidrRange_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork)
+      private static final com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+              .AuthorizedNetwork
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork();
+      }
+
+      public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AuthorizedNetwork> PARSER =
+          new com.google.protobuf.AbstractParser<AuthorizedNetwork>() {
+            @java.lang.Override
+            public AuthorizedNetwork parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AuthorizedNetwork> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AuthorizedNetwork> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int AUTHORIZED_EXTERNAL_NETWORKS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork>
+        authorizedExternalNetworks_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork>
+        getAuthorizedExternalNetworksList() {
+      return authorizedExternalNetworks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                    .AuthorizedNetworkOrBuilder>
+        getAuthorizedExternalNetworksOrBuilderList() {
+      return authorizedExternalNetworks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getAuthorizedExternalNetworksCount() {
+      return authorizedExternalNetworks_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+        getAuthorizedExternalNetworks(int index) {
+      return authorizedExternalNetworks_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of external network authorized to access this instance.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetworkOrBuilder
+        getAuthorizedExternalNetworksOrBuilder(int index) {
+      return authorizedExternalNetworks_.get(index);
+    }
+
+    public static final int ENABLE_PUBLIC_IP_FIELD_NUMBER = 2;
+    private boolean enablePublicIp_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enabling public ip for the instance.
+     * </pre>
+     *
+     * <code>bool enable_public_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enablePublicIp.
+     */
+    @java.lang.Override
+    public boolean getEnablePublicIp() {
+      return enablePublicIp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < authorizedExternalNetworks_.size(); i++) {
+        output.writeMessage(1, authorizedExternalNetworks_.get(i));
+      }
+      if (enablePublicIp_ != false) {
+        output.writeBool(2, enablePublicIp_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < authorizedExternalNetworks_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, authorizedExternalNetworks_.get(i));
+      }
+      if (enablePublicIp_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enablePublicIp_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig other =
+          (com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig) obj;
+
+      if (!getAuthorizedExternalNetworksList().equals(other.getAuthorizedExternalNetworksList()))
+        return false;
+      if (getEnablePublicIp() != other.getEnablePublicIp()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAuthorizedExternalNetworksCount() > 0) {
+        hash = (37 * hash) + AUTHORIZED_EXTERNAL_NETWORKS_FIELD_NUMBER;
+        hash = (53 * hash) + getAuthorizedExternalNetworksList().hashCode();
+      }
+      hash = (37 * hash) + ENABLE_PUBLIC_IP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePublicIp());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to instance level network configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig)
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.class,
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (authorizedExternalNetworksBuilder_ == null) {
+          authorizedExternalNetworks_ = java.util.Collections.emptyList();
+        } else {
+          authorizedExternalNetworks_ = null;
+          authorizedExternalNetworksBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enablePublicIp_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1beta.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1beta_Instance_InstanceNetworkConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig build() {
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig buildPartial() {
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig result =
+            new com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig result) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            authorizedExternalNetworks_ =
+                java.util.Collections.unmodifiableList(authorizedExternalNetworks_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.authorizedExternalNetworks_ = authorizedExternalNetworks_;
+        } else {
+          result.authorizedExternalNetworks_ = authorizedExternalNetworksBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enablePublicIp_ = enablePublicIp_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig other) {
+        if (other
+            == com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.getDefaultInstance())
+          return this;
+        if (authorizedExternalNetworksBuilder_ == null) {
+          if (!other.authorizedExternalNetworks_.isEmpty()) {
+            if (authorizedExternalNetworks_.isEmpty()) {
+              authorizedExternalNetworks_ = other.authorizedExternalNetworks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAuthorizedExternalNetworksIsMutable();
+              authorizedExternalNetworks_.addAll(other.authorizedExternalNetworks_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.authorizedExternalNetworks_.isEmpty()) {
+            if (authorizedExternalNetworksBuilder_.isEmpty()) {
+              authorizedExternalNetworksBuilder_.dispose();
+              authorizedExternalNetworksBuilder_ = null;
+              authorizedExternalNetworks_ = other.authorizedExternalNetworks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              authorizedExternalNetworksBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getAuthorizedExternalNetworksFieldBuilder()
+                      : null;
+            } else {
+              authorizedExternalNetworksBuilder_.addAllMessages(other.authorizedExternalNetworks_);
+            }
+          }
+        }
+        if (other.getEnablePublicIp() != false) {
+          setEnablePublicIp(other.getEnablePublicIp());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                      m =
+                          input.readMessage(
+                              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                                  .AuthorizedNetwork.parser(),
+                              extensionRegistry);
+                  if (authorizedExternalNetworksBuilder_ == null) {
+                    ensureAuthorizedExternalNetworksIsMutable();
+                    authorizedExternalNetworks_.add(m);
+                  } else {
+                    authorizedExternalNetworksBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 16:
+                {
+                  enablePublicIp_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork>
+          authorizedExternalNetworks_ = java.util.Collections.emptyList();
+
+      private void ensureAuthorizedExternalNetworksIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          authorizedExternalNetworks_ =
+              new java.util.ArrayList<
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork>(
+                  authorizedExternalNetworks_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork,
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                  .Builder,
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                  .AuthorizedNetworkOrBuilder>
+          authorizedExternalNetworksBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork>
+          getAuthorizedExternalNetworksList() {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(authorizedExternalNetworks_);
+        } else {
+          return authorizedExternalNetworksBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getAuthorizedExternalNetworksCount() {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          return authorizedExternalNetworks_.size();
+        } else {
+          return authorizedExternalNetworksBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+          getAuthorizedExternalNetworks(int index) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          return authorizedExternalNetworks_.get(index);
+        } else {
+          return authorizedExternalNetworksBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAuthorizedExternalNetworks(
+          int index,
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork value) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAuthorizedExternalNetworksIsMutable();
+          authorizedExternalNetworks_.set(index, value);
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAuthorizedExternalNetworks(
+          int index,
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork.Builder
+              builderForValue) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          ensureAuthorizedExternalNetworksIsMutable();
+          authorizedExternalNetworks_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAuthorizedExternalNetworks(
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork value) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAuthorizedExternalNetworksIsMutable();
+          authorizedExternalNetworks_.add(value);
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAuthorizedExternalNetworks(
+          int index,
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork value) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAuthorizedExternalNetworksIsMutable();
+          authorizedExternalNetworks_.add(index, value);
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAuthorizedExternalNetworks(
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork.Builder
+              builderForValue) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          ensureAuthorizedExternalNetworksIsMutable();
+          authorizedExternalNetworks_.add(builderForValue.build());
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAuthorizedExternalNetworks(
+          int index,
+          com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork.Builder
+              builderForValue) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          ensureAuthorizedExternalNetworksIsMutable();
+          authorizedExternalNetworks_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllAuthorizedExternalNetworks(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                          .AuthorizedNetwork>
+              values) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          ensureAuthorizedExternalNetworksIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, authorizedExternalNetworks_);
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAuthorizedExternalNetworks() {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          authorizedExternalNetworks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeAuthorizedExternalNetworks(int index) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          ensureAuthorizedExternalNetworksIsMutable();
+          authorizedExternalNetworks_.remove(index);
+          onChanged();
+        } else {
+          authorizedExternalNetworksBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+              .Builder
+          getAuthorizedExternalNetworksBuilder(int index) {
+        return getAuthorizedExternalNetworksFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+              .AuthorizedNetworkOrBuilder
+          getAuthorizedExternalNetworksOrBuilder(int index) {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          return authorizedExternalNetworks_.get(index);
+        } else {
+          return authorizedExternalNetworksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                      .AuthorizedNetworkOrBuilder>
+          getAuthorizedExternalNetworksOrBuilderList() {
+        if (authorizedExternalNetworksBuilder_ != null) {
+          return authorizedExternalNetworksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(authorizedExternalNetworks_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+              .Builder
+          addAuthorizedExternalNetworksBuilder() {
+        return getAuthorizedExternalNetworksFieldBuilder()
+            .addBuilder(
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+              .Builder
+          addAuthorizedExternalNetworksBuilder(int index) {
+        return getAuthorizedExternalNetworksFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of external network authorized to access this instance.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork authorized_external_networks = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                  .Builder>
+          getAuthorizedExternalNetworksBuilderList() {
+        return getAuthorizedExternalNetworksFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork,
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                  .Builder,
+              com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                  .AuthorizedNetworkOrBuilder>
+          getAuthorizedExternalNetworksFieldBuilder() {
+        if (authorizedExternalNetworksBuilder_ == null) {
+          authorizedExternalNetworksBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork,
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.AuthorizedNetwork
+                      .Builder,
+                  com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                      .AuthorizedNetworkOrBuilder>(
+                  authorizedExternalNetworks_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          authorizedExternalNetworks_ = null;
+        }
+        return authorizedExternalNetworksBuilder_;
+      }
+
+      private boolean enablePublicIp_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enabling public ip for the instance.
+       * </pre>
+       *
+       * <code>bool enable_public_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enablePublicIp.
+       */
+      @java.lang.Override
+      public boolean getEnablePublicIp() {
+        return enablePublicIp_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enabling public ip for the instance.
+       * </pre>
+       *
+       * <code>bool enable_public_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enablePublicIp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnablePublicIp(boolean value) {
+
+        enablePublicIp_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enabling public ip for the instance.
+       * </pre>
+       *
+       * <code>bool enable_public_ip = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnablePublicIp() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        enablePublicIp_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig)
+    private static final com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InstanceNetworkConfig> PARSER =
+        new com.google.protobuf.AbstractParser<InstanceNetworkConfig>() {
+          @java.lang.Override
+          public InstanceNetworkConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InstanceNetworkConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InstanceNetworkConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -6875,7 +12523,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -6890,7 +12539,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -6907,7 +12557,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Read pool specific config.
+   * Read pool instance configuration.
+   * This is required if the value of instanceType is READ_POOL.
    * </pre>
    *
    * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -6967,6 +12618,61 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PUBLIC_IP_ADDRESS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicIpAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The publicIpAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getPublicIpAddress() {
+    java.lang.Object ref = publicIpAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      publicIpAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for publicIpAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPublicIpAddressBytes() {
+    java.lang.Object ref = publicIpAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      publicIpAddress_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -7274,6 +12980,141 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : clientConnectionConfig_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 24;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int PSC_INSTANCE_CONFIG_FIELD_NUMBER = 28;
+  private com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig pscInstanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pscInstanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPscInstanceConfig() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pscInstanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig getPscInstanceConfig() {
+    return pscInstanceConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.getDefaultInstance()
+        : pscInstanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfigOrBuilder
+      getPscInstanceConfigOrBuilder() {
+    return pscInstanceConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.getDefaultInstance()
+        : pscInstanceConfig_;
+  }
+
+  public static final int NETWORK_CONFIG_FIELD_NUMBER = 29;
+  private com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig networkConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkConfig() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig getNetworkConfig() {
+    return networkConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance level network configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder
+      getNetworkConfigOrBuilder() {
+    return networkConfig_ == null
+        ? com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.getDefaultInstance()
+        : networkConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7357,6 +13198,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(23, getClientConnectionConfig());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(24, satisfiesPzs_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIpAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, publicIpAddress_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(28, getPscInstanceConfig());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(29, getNetworkConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -7463,6 +13316,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(23, getClientConnectionConfig());
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, satisfiesPzs_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIpAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, publicIpAddress_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getPscInstanceConfig());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getNetworkConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7517,6 +13382,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!getReadPoolConfig().equals(other.getReadPoolConfig())) return false;
     }
     if (!getIpAddress().equals(other.getIpAddress())) return false;
+    if (!getPublicIpAddress().equals(other.getPublicIpAddress())) return false;
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
@@ -7527,6 +13393,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasClientConnectionConfig() != other.hasClientConnectionConfig()) return false;
     if (hasClientConnectionConfig()) {
       if (!getClientConnectionConfig().equals(other.getClientConnectionConfig())) return false;
+    }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (hasPscInstanceConfig() != other.hasPscInstanceConfig()) return false;
+    if (hasPscInstanceConfig()) {
+      if (!getPscInstanceConfig().equals(other.getPscInstanceConfig())) return false;
+    }
+    if (hasNetworkConfig() != other.hasNetworkConfig()) return false;
+    if (hasNetworkConfig()) {
+      if (!getNetworkConfig().equals(other.getNetworkConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -7595,6 +13470,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getIpAddress().hashCode();
+    hash = (37 * hash) + PUBLIC_IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getPublicIpAddress().hashCode();
     hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
@@ -7610,6 +13487,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasClientConnectionConfig()) {
       hash = (37 * hash) + CLIENT_CONNECTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getClientConnectionConfig().hashCode();
+    }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    if (hasPscInstanceConfig()) {
+      hash = (37 * hash) + PSC_INSTANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPscInstanceConfig().hashCode();
+    }
+    if (hasNetworkConfig()) {
+      hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7792,6 +13679,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         getReadPoolConfigFieldBuilder();
         getUpdatePolicyFieldBuilder();
         getClientConnectionConfigFieldBuilder();
+        getPscInstanceConfigFieldBuilder();
+        getNetworkConfigFieldBuilder();
       }
     }
 
@@ -7851,6 +13740,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         readPoolConfigBuilder_ = null;
       }
       ipAddress_ = "";
+      publicIpAddress_ = "";
       reconciling_ = false;
       etag_ = "";
       internalGetMutableAnnotations().clear();
@@ -7863,6 +13753,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (clientConnectionConfigBuilder_ != null) {
         clientConnectionConfigBuilder_.dispose();
         clientConnectionConfigBuilder_ = null;
+      }
+      satisfiesPzs_ = false;
+      pscInstanceConfig_ = null;
+      if (pscInstanceConfigBuilder_ != null) {
+        pscInstanceConfigBuilder_.dispose();
+        pscInstanceConfigBuilder_ = null;
+      }
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
+        networkConfigBuilder_ = null;
       }
       return this;
     }
@@ -7981,26 +13882,44 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         result.ipAddress_ = ipAddress_;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.publicIpAddress_ = publicIpAddress_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.etag_ = etag_;
+        result.reconciling_ = reconciling_;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.updatePolicy_ =
             updatePolicyBuilder_ == null ? updatePolicy_ : updatePolicyBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.clientConnectionConfig_ =
             clientConnectionConfigBuilder_ == null
                 ? clientConnectionConfig_
                 : clientConnectionConfigBuilder_.build();
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.pscInstanceConfig_ =
+            pscInstanceConfigBuilder_ == null
+                ? pscInstanceConfig_
+                : pscInstanceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.networkConfig_ =
+            networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8136,21 +14055,35 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00020000;
         onChanged();
       }
+      if (!other.getPublicIpAddress().isEmpty()) {
+        publicIpAddress_ = other.publicIpAddress_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       if (other.hasUpdatePolicy()) {
         mergeUpdatePolicy(other.getUpdatePolicy());
       }
       if (other.hasClientConnectionConfig()) {
         mergeClientConnectionConfig(other.getClientConnectionConfig());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasPscInstanceConfig()) {
+        mergePscInstanceConfig(other.getPscInstanceConfig());
+      }
+      if (other.hasNetworkConfig()) {
+        mergeNetworkConfig(other.getNetworkConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8283,13 +14216,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 128:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 128
             case 138:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 138
             case 146:
@@ -8301,7 +14234,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 146
             case 154:
@@ -8333,16 +14266,41 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 178:
               {
                 input.readMessage(getUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(
                     getClientConnectionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 186
+            case 192:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 192
+            case 218:
+              {
+                publicIpAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 218
+            case 226:
+              {
+                input.readMessage(
+                    getPscInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 226
+            case 234:
+              {
+                input.readMessage(getNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11246,7 +17204,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11260,7 +17219,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11280,7 +17240,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11303,7 +17264,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11323,7 +17285,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11352,7 +17315,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11371,7 +17335,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11386,7 +17351,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11405,7 +17371,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Read pool specific config.
+     * Read pool instance configuration.
+     * This is required if the value of instanceType is READ_POOL.
      * </pre>
      *
      * <code>.google.cloud.alloydb.v1beta.Instance.ReadPoolConfig read_pool_config = 14;</code>
@@ -11538,6 +17505,122 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object publicIpAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The publicIpAddress.
+     */
+    public java.lang.String getPublicIpAddress() {
+      java.lang.Object ref = publicIpAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publicIpAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for publicIpAddress.
+     */
+    public com.google.protobuf.ByteString getPublicIpAddressBytes() {
+      java.lang.Object ref = publicIpAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        publicIpAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The publicIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      publicIpAddress_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublicIpAddress() {
+      publicIpAddress_ = getDefaultInstance().getPublicIpAddress();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for publicIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      publicIpAddress_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
     private boolean reconciling_;
     /**
      *
@@ -11577,7 +17660,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -11597,7 +17680,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -11665,7 +17748,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11682,7 +17765,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -11704,7 +17787,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -11729,7 +17812,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return annotations_;
     }
@@ -11822,7 +17905,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -11847,7 +17930,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -11869,7 +17952,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
     /**
@@ -11885,7 +17968,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 
@@ -11910,7 +17993,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updatePolicy field is set.
      */
     public boolean hasUpdatePolicy() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -11956,7 +18039,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         updatePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11979,7 +18062,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         updatePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -11997,7 +18080,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdatePolicy(com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy value) {
       if (updatePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && updatePolicy_ != null
             && updatePolicy_
                 != com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.getDefaultInstance()) {
@@ -12009,7 +18092,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         updatePolicyBuilder_.mergeFrom(value);
       }
       if (updatePolicy_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -12027,7 +18110,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
      */
     public Builder clearUpdatePolicy() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       updatePolicy_ = null;
       if (updatePolicyBuilder_ != null) {
         updatePolicyBuilder_.dispose();
@@ -12049,7 +18132,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.Instance.UpdatePolicy update_policy = 22;</code>
      */
     public com.google.cloud.alloydb.v1beta.Instance.UpdatePolicy.Builder getUpdatePolicyBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getUpdatePolicyFieldBuilder().getBuilder();
     }
@@ -12124,7 +18207,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the clientConnectionConfig field is set.
      */
     public boolean hasClientConnectionConfig() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -12170,7 +18253,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         clientConnectionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -12192,7 +18275,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         clientConnectionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -12210,7 +18293,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeClientConnectionConfig(
         com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig value) {
       if (clientConnectionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && clientConnectionConfig_ != null
             && clientConnectionConfig_
                 != com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig
@@ -12223,7 +18306,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         clientConnectionConfigBuilder_.mergeFrom(value);
       }
       if (clientConnectionConfig_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -12240,7 +18323,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearClientConnectionConfig() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       clientConnectionConfig_ = null;
       if (clientConnectionConfigBuilder_ != null) {
         clientConnectionConfigBuilder_.dispose();
@@ -12262,7 +18345,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1beta.Instance.ClientConnectionConfig.Builder
         getClientConnectionConfigBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getClientConnectionConfigFieldBuilder().getBuilder();
     }
@@ -12313,6 +18396,488 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         clientConnectionConfig_ = null;
       }
       return clientConnectionConfigBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig pscInstanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig,
+            com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfigOrBuilder>
+        pscInstanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pscInstanceConfig field is set.
+     */
+    public boolean hasPscInstanceConfig() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pscInstanceConfig.
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig getPscInstanceConfig() {
+      if (pscInstanceConfigBuilder_ == null) {
+        return pscInstanceConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.getDefaultInstance()
+            : pscInstanceConfig_;
+      } else {
+        return pscInstanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscInstanceConfig(
+        com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig value) {
+      if (pscInstanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pscInstanceConfig_ = value;
+      } else {
+        pscInstanceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPscInstanceConfig(
+        com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.Builder builderForValue) {
+      if (pscInstanceConfigBuilder_ == null) {
+        pscInstanceConfig_ = builderForValue.build();
+      } else {
+        pscInstanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePscInstanceConfig(
+        com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig value) {
+      if (pscInstanceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && pscInstanceConfig_ != null
+            && pscInstanceConfig_
+                != com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig
+                    .getDefaultInstance()) {
+          getPscInstanceConfigBuilder().mergeFrom(value);
+        } else {
+          pscInstanceConfig_ = value;
+        }
+      } else {
+        pscInstanceConfigBuilder_.mergeFrom(value);
+      }
+      if (pscInstanceConfig_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPscInstanceConfig() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      pscInstanceConfig_ = null;
+      if (pscInstanceConfigBuilder_ != null) {
+        pscInstanceConfigBuilder_.dispose();
+        pscInstanceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.Builder
+        getPscInstanceConfigBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return getPscInstanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfigOrBuilder
+        getPscInstanceConfigOrBuilder() {
+      if (pscInstanceConfigBuilder_ != null) {
+        return pscInstanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pscInstanceConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.getDefaultInstance()
+            : pscInstanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Private Service Connect (PSC) for the
+     * instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.PscInstanceConfig psc_instance_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig,
+            com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfigOrBuilder>
+        getPscInstanceConfigFieldBuilder() {
+      if (pscInstanceConfigBuilder_ == null) {
+        pscInstanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig,
+                com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfig.Builder,
+                com.google.cloud.alloydb.v1beta.Instance.PscInstanceConfigOrBuilder>(
+                getPscInstanceConfig(), getParentForChildren(), isClean());
+        pscInstanceConfig_ = null;
+      }
+      return pscInstanceConfigBuilder_;
+    }
+
+    private com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig networkConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig,
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder>
+        networkConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the networkConfig field is set.
+     */
+    public boolean hasNetworkConfig() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The networkConfig.
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig getNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        return networkConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      } else {
+        return networkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfig(
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkConfig_ = value;
+      } else {
+        networkConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNetworkConfig(
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.Builder builderForValue) {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = builderForValue.build();
+      } else {
+        networkConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNetworkConfig(
+        com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (((bitField0_ & 0x04000000) != 0)
+            && networkConfig_ != null
+            && networkConfig_
+                != com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig
+                    .getDefaultInstance()) {
+          getNetworkConfigBuilder().mergeFrom(value);
+        } else {
+          networkConfig_ = value;
+        }
+      } else {
+        networkConfigBuilder_.mergeFrom(value);
+      }
+      if (networkConfig_ != null) {
+        bitField0_ |= 0x04000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNetworkConfig() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      networkConfig_ = null;
+      if (networkConfigBuilder_ != null) {
+        networkConfigBuilder_.dispose();
+        networkConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.Builder
+        getNetworkConfigBuilder() {
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return getNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder
+        getNetworkConfigOrBuilder() {
+      if (networkConfigBuilder_ != null) {
+        return networkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkConfig_ == null
+            ? com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.getDefaultInstance()
+            : networkConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance level network configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig,
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.Builder,
+            com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder>
+        getNetworkConfigFieldBuilder() {
+      if (networkConfigBuilder_ == null) {
+        networkConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig,
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfig.Builder,
+                com.google.cloud.alloydb.v1beta.Instance.InstanceNetworkConfigOrBuilder>(
+                getNetworkConfig(), getParentForChildren(), isClean());
+        networkConfig_ = null;
+      }
+      return networkConfigBuilder_;
     }
 
     @java.lang.Override

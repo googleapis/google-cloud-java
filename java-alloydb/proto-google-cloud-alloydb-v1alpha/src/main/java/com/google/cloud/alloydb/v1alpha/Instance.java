@@ -49,6 +49,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     gceZone_ = "";
     nodes_ = java.util.Collections.emptyList();
     ipAddress_ = "";
+    publicIpAddress_ = "";
     etag_ = "";
   }
 
@@ -12648,6 +12649,61 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PUBLIC_IP_ADDRESS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicIpAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The publicIpAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getPublicIpAddress() {
+    java.lang.Object ref = publicIpAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      publicIpAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The public IP addresses for the Instance. This is available
+   * ONLY when enable_public_ip is set. This is the connection endpoint for an
+   * end-user application.
+   * </pre>
+   *
+   * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for publicIpAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPublicIpAddressBytes() {
+    java.lang.Object ref = publicIpAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      publicIpAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RECONCILING_FIELD_NUMBER = 16;
   private boolean reconciling_ = false;
   /**
@@ -13190,6 +13246,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       output.writeBool(24, satisfiesPzs_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIpAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27, publicIpAddress_);
+    }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(28, getPscInstanceConfig());
     }
@@ -13307,6 +13366,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, satisfiesPzs_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicIpAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, publicIpAddress_);
+    }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getPscInstanceConfig());
     }
@@ -13371,6 +13433,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!getReadPoolConfig().equals(other.getReadPoolConfig())) return false;
     }
     if (!getIpAddress().equals(other.getIpAddress())) return false;
+    if (!getPublicIpAddress().equals(other.getPublicIpAddress())) return false;
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
@@ -13459,6 +13522,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
     hash = (53 * hash) + getIpAddress().hashCode();
+    hash = (37 * hash) + PUBLIC_IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getPublicIpAddress().hashCode();
     hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
@@ -13729,6 +13794,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         readPoolConfigBuilder_ = null;
       }
       ipAddress_ = "";
+      publicIpAddress_ = "";
       reconciling_ = false;
       etag_ = "";
       internalGetMutableAnnotations().clear();
@@ -13871,41 +13937,44 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         result.ipAddress_ = ipAddress_;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.publicIpAddress_ = publicIpAddress_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.etag_ = etag_;
+        result.reconciling_ = reconciling_;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.updatePolicy_ =
             updatePolicyBuilder_ == null ? updatePolicy_ : updatePolicyBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.clientConnectionConfig_ =
             clientConnectionConfigBuilder_ == null
                 ? clientConnectionConfig_
                 : clientConnectionConfigBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.pscInstanceConfig_ =
             pscInstanceConfigBuilder_ == null
                 ? pscInstanceConfig_
                 : pscInstanceConfigBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.networkConfig_ =
             networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
         to_bitField0_ |= 0x00000400;
@@ -14044,16 +14113,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00020000;
         onChanged();
       }
+      if (!other.getPublicIpAddress().isEmpty()) {
+        publicIpAddress_ = other.publicIpAddress_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       if (other.hasUpdatePolicy()) {
         mergeUpdatePolicy(other.getUpdatePolicy());
       }
@@ -14203,13 +14277,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 128:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 128
             case 138:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 138
             case 146:
@@ -14221,7 +14295,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 146
             case 154:
@@ -14253,39 +14327,45 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             case 178:
               {
                 input.readMessage(getUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(
                     getClientConnectionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 186
             case 192:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 192
+            case 218:
+              {
+                publicIpAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 218
             case 226:
               {
                 input.readMessage(
                     getPscInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 226
             case 234:
               {
                 input.readMessage(getNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 234
             case 240:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 240
             default:
@@ -17493,6 +17573,122 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object publicIpAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The publicIpAddress.
+     */
+    public java.lang.String getPublicIpAddress() {
+      java.lang.Object ref = publicIpAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publicIpAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for publicIpAddress.
+     */
+    public com.google.protobuf.ByteString getPublicIpAddressBytes() {
+      java.lang.Object ref = publicIpAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        publicIpAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The publicIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      publicIpAddress_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublicIpAddress() {
+      publicIpAddress_ = getDefaultInstance().getPublicIpAddress();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The public IP addresses for the Instance. This is available
+     * ONLY when enable_public_ip is set. This is the connection endpoint for an
+     * end-user application.
+     * </pre>
+     *
+     * <code>string public_ip_address = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for publicIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      publicIpAddress_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
     private boolean reconciling_;
     /**
      *
@@ -17532,7 +17728,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -17552,7 +17748,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -17620,7 +17816,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -17637,7 +17833,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -17659,7 +17855,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -17684,7 +17880,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return annotations_;
     }
@@ -17777,7 +17973,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -17802,7 +17998,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -17824,7 +18020,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
     /**
@@ -17840,7 +18036,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       return this;
     }
 
@@ -17865,7 +18061,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updatePolicy field is set.
      */
     public boolean hasUpdatePolicy() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -17911,7 +18107,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         updatePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -17934,7 +18130,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         updatePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -17952,7 +18148,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdatePolicy(com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy value) {
       if (updatePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && updatePolicy_ != null
             && updatePolicy_
                 != com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy.getDefaultInstance()) {
@@ -17964,7 +18160,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         updatePolicyBuilder_.mergeFrom(value);
       }
       if (updatePolicy_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -17982,7 +18178,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy update_policy = 22;</code>
      */
     public Builder clearUpdatePolicy() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       updatePolicy_ = null;
       if (updatePolicyBuilder_ != null) {
         updatePolicyBuilder_.dispose();
@@ -18004,7 +18200,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy update_policy = 22;</code>
      */
     public com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy.Builder getUpdatePolicyBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getUpdatePolicyFieldBuilder().getBuilder();
     }
@@ -18080,7 +18276,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the clientConnectionConfig field is set.
      */
     public boolean hasClientConnectionConfig() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -18126,7 +18322,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         clientConnectionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -18148,7 +18344,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         clientConnectionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -18166,7 +18362,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeClientConnectionConfig(
         com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig value) {
       if (clientConnectionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && clientConnectionConfig_ != null
             && clientConnectionConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig
@@ -18179,7 +18375,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         clientConnectionConfigBuilder_.mergeFrom(value);
       }
       if (clientConnectionConfig_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -18196,7 +18392,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearClientConnectionConfig() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       clientConnectionConfig_ = null;
       if (clientConnectionConfigBuilder_ != null) {
         clientConnectionConfigBuilder_.dispose();
@@ -18218,7 +18414,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig.Builder
         getClientConnectionConfigBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getClientConnectionConfigFieldBuilder().getBuilder();
     }
@@ -18302,7 +18498,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -18318,7 +18514,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       satisfiesPzi_ = false;
       onChanged();
       return this;
@@ -18355,7 +18551,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -18371,7 +18567,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -18398,7 +18594,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pscInstanceConfig field is set.
      */
     public boolean hasPscInstanceConfig() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -18445,7 +18641,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         pscInstanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -18468,7 +18664,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         pscInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -18487,7 +18683,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePscInstanceConfig(
         com.google.cloud.alloydb.v1alpha.Instance.PscInstanceConfig value) {
       if (pscInstanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && pscInstanceConfig_ != null
             && pscInstanceConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.PscInstanceConfig
@@ -18500,7 +18696,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         pscInstanceConfigBuilder_.mergeFrom(value);
       }
       if (pscInstanceConfig_ != null) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -18518,7 +18714,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPscInstanceConfig() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       pscInstanceConfig_ = null;
       if (pscInstanceConfigBuilder_ != null) {
         pscInstanceConfigBuilder_.dispose();
@@ -18541,7 +18737,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1alpha.Instance.PscInstanceConfig.Builder
         getPscInstanceConfigBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return getPscInstanceConfigFieldBuilder().getBuilder();
     }
@@ -18616,7 +18812,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networkConfig field is set.
      */
     public boolean hasNetworkConfig() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -18661,7 +18857,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         networkConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -18683,7 +18879,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         networkConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -18701,7 +18897,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeNetworkConfig(
         com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfig value) {
       if (networkConfigBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x08000000) != 0)
             && networkConfig_ != null
             && networkConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfig
@@ -18714,7 +18910,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         networkConfigBuilder_.mergeFrom(value);
       }
       if (networkConfig_ != null) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       return this;
@@ -18731,7 +18927,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNetworkConfig() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       networkConfig_ = null;
       if (networkConfigBuilder_ != null) {
         networkConfigBuilder_.dispose();
@@ -18753,7 +18949,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfig.Builder
         getNetworkConfigBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }

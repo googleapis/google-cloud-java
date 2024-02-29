@@ -734,6 +734,19 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The database engine major version of the cluster this backup
    * was created from. Any restored cluster created from this backup will have
    * the same database version.

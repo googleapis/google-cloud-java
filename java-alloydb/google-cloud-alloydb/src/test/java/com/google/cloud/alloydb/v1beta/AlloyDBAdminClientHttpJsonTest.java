@@ -18,6 +18,7 @@ package com.google.cloud.alloydb.v1beta;
 
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListClustersPagedResponse;
+import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListDatabasesPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListInstancesPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListLocationsPagedResponse;
 import static com.google.cloud.alloydb.v1beta.AlloyDBAdminClient.ListSupportedDatabaseFlagsPagedResponse;
@@ -218,6 +219,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -283,6 +285,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -348,6 +351,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -422,6 +426,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -496,6 +501,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -529,6 +535,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -582,6 +589,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
               .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
               .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+              .setSatisfiesPzs(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
@@ -706,6 +714,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -776,6 +785,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -846,6 +856,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -930,6 +941,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1004,6 +1016,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setContinuousBackupInfo(ContinuousBackupInfo.newBuilder().build())
             .setSecondaryConfig(Cluster.SecondaryConfig.newBuilder().build())
             .setPrimaryConfig(Cluster.PrimaryConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1172,11 +1185,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1236,11 +1253,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1302,11 +1323,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1375,11 +1400,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1448,11 +1477,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1522,11 +1555,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1655,11 +1692,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1687,11 +1728,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1739,11 +1784,15 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
               .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
               .setIpAddress("ipAddress1634032845")
+              .setPublicIpAddress("publicIpAddress2055303268")
               .setReconciling(true)
               .setEtag("etag3123477")
               .putAllAnnotations(new HashMap<String, String>())
               .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
               .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+              .setSatisfiesPzs(true)
+              .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+              .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -1864,11 +1913,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1933,11 +1986,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2004,11 +2061,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2075,11 +2136,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2148,11 +2213,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2217,11 +2286,15 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setQueryInsightsConfig(Instance.QueryInsightsInstanceConfig.newBuilder().build())
             .setReadPoolConfig(Instance.ReadPoolConfig.newBuilder().build())
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
             .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setPscInstanceConfig(Instance.PscInstanceConfig.newBuilder().build())
+            .setNetworkConfig(Instance.InstanceNetworkConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2390,6 +2463,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -2452,6 +2526,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -2514,6 +2589,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
@@ -2585,6 +2661,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
@@ -2656,6 +2733,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
@@ -2686,6 +2764,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setSatisfiesPzs(true)
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -2736,6 +2815,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setSizeBytes(-1796325715)
               .setExpiryTime(Timestamp.newBuilder().build())
               .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+              .setSatisfiesPzs(true)
               .setDatabaseVersion(DatabaseVersion.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -3035,8 +3115,10 @@ public class AlloyDBAdminClientHttpJsonTest {
         ConnectionInfo.newBuilder()
             .setName("name3373707")
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .addAllPemCertificateChain(new ArrayList<String>())
             .setInstanceUid("instanceUid-2102004869")
+            .setPscDnsName("pscDnsName1984562292")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3082,8 +3164,10 @@ public class AlloyDBAdminClientHttpJsonTest {
         ConnectionInfo.newBuilder()
             .setName("name3373707")
             .setIpAddress("ipAddress1634032845")
+            .setPublicIpAddress("publicIpAddress2055303268")
             .addAllPemCertificateChain(new ArrayList<String>())
             .setInstanceUid("instanceUid-2102004869")
+            .setPscDnsName("pscDnsName1984562292")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3553,6 +3637,106 @@ public class AlloyDBAdminClientHttpJsonTest {
       String name =
           "projects/project-6835/locations/location-6835/clusters/cluster-6835/users/user-6835";
       client.deleteUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabasesTest() throws Exception {
+    Database responsesElement = Database.newBuilder().build();
+    ListDatabasesResponse expectedResponse =
+        ListDatabasesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabases(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    ListDatabasesPagedResponse pagedListResponse = client.listDatabases(parent);
+
+    List<Database> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabasesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatabasesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.listDatabases(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDatabasesTest2() throws Exception {
+    Database responsesElement = Database.newBuilder().build();
+    ListDatabasesResponse expectedResponse =
+        ListDatabasesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDatabases(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+
+    ListDatabasesPagedResponse pagedListResponse = client.listDatabases(parent);
+
+    List<Database> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDatabasesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDatabasesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      client.listDatabases(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -77,11 +77,16 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
    * Output only. The pem-encoded, signed X.509 certificate.
    * </pre>
    *
-   * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
+   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1383
    * @return The pemCertificate.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getPemCertificate() {
     java.lang.Object ref = pemCertificate_;
     if (ref instanceof java.lang.String) {
@@ -100,11 +105,16 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
    * Output only. The pem-encoded, signed X.509 certificate.
    * </pre>
    *
-   * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
+   *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1383
    * @return The bytes for pemCertificate.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getPemCertificateBytes() {
     java.lang.Object ref = pemCertificate_;
     if (ref instanceof java.lang.String) {
@@ -659,10 +669,15 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * Output only. The pem-encoded, signed X.509 certificate.
      * </pre>
      *
-     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1383
      * @return The pemCertificate.
      */
+    @java.lang.Deprecated
     public java.lang.String getPemCertificate() {
       java.lang.Object ref = pemCertificate_;
       if (!(ref instanceof java.lang.String)) {
@@ -681,10 +696,15 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * Output only. The pem-encoded, signed X.509 certificate.
      * </pre>
      *
-     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1383
      * @return The bytes for pemCertificate.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getPemCertificateBytes() {
       java.lang.Object ref = pemCertificate_;
       if (ref instanceof String) {
@@ -703,11 +723,16 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * Output only. The pem-encoded, signed X.509 certificate.
      * </pre>
      *
-     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1383
      * @param value The pemCertificate to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPemCertificate(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -724,10 +749,15 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * Output only. The pem-encoded, signed X.509 certificate.
      * </pre>
      *
-     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1383
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearPemCertificate() {
       pemCertificate_ = getDefaultInstance().getPemCertificate();
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -741,11 +771,16 @@ public final class GenerateClientCertificateResponse extends com.google.protobuf
      * Output only. The pem-encoded, signed X.509 certificate.
      * </pre>
      *
-     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string pem_certificate = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.alloydb.v1beta.GenerateClientCertificateResponse.pem_certificate is
+     *     deprecated. See google/cloud/alloydb/v1beta/service.proto;l=1383
      * @param value The bytes for pemCertificate to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setPemCertificateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
