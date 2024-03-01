@@ -600,8 +600,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreatePolicyRequest, Policy, PolicyOperationMetadata>
         createPolicyOperationSettings() {
       return createPolicyOperationSettings;
@@ -613,8 +611,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updatePolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdatePolicyRequest, Policy, PolicyOperationMetadata>
         updatePolicyOperationSettings() {
       return updatePolicyOperationSettings;
@@ -626,8 +622,6 @@ public class PoliciesStubSettings extends StubSettings<PoliciesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deletePolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePolicyRequest, Policy, PolicyOperationMetadata>
         deletePolicyOperationSettings() {
       return deletePolicyOperationSettings;

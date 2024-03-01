@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -81,12 +80,10 @@ public class ConversationModelName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationConversationModelBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectConversationModelBuilder newProjectConversationModelBuilder() {
     return new ProjectConversationModelBuilder();
   }
@@ -104,7 +101,6 @@ public class ConversationModelName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ConversationModelName ofProjectLocationConversationModelName(
       String project, String location, String conversationModel) {
     return newBuilder()
@@ -114,7 +110,6 @@ public class ConversationModelName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ConversationModelName ofProjectConversationModelName(
       String project, String conversationModel) {
     return newProjectConversationModelBuilder()
@@ -132,7 +127,6 @@ public class ConversationModelName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationConversationModelName(
       String project, String location, String conversationModel) {
     return newBuilder()
@@ -143,7 +137,6 @@ public class ConversationModelName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectConversationModelName(
       String project, String conversationModel) {
     return newProjectConversationModelBuilder()
@@ -306,7 +299,6 @@ public class ConversationModelName implements ResourceName {
   }
 
   /** Builder for projects/{project}/conversationModels/{conversation_model}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectConversationModelBuilder {
     private String project;
     private String conversationModel;
