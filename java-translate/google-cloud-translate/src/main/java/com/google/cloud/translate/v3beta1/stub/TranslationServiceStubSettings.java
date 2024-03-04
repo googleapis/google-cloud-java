@@ -808,8 +808,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to batchTranslateText. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
         batchTranslateTextOperationSettings() {
@@ -823,8 +821,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to batchTranslateDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchTranslateDocumentRequest,
             BatchTranslateDocumentResponse,
@@ -839,8 +835,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to createGlossary. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
         createGlossaryOperationSettings() {
       return createGlossaryOperationSettings;
@@ -864,8 +858,6 @@ public class TranslationServiceStubSettings extends StubSettings<TranslationServ
     }
 
     /** Returns the builder for the settings used for calls to deleteGlossary. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
         deleteGlossaryOperationSettings() {

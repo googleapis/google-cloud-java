@@ -883,7 +883,6 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -925,7 +924,6 @@ public class VmwareEngineSettings extends ClientSettings<VmwareEngineSettings> {
       return new Builder(VmwareEngineStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(VmwareEngineStubSettings.newHttpJsonBuilder());
     }

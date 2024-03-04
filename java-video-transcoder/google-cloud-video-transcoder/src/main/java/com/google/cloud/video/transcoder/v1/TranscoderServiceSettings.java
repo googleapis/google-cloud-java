@@ -171,7 +171,6 @@ public class TranscoderServiceSettings extends ClientSettings<TranscoderServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -213,7 +212,6 @@ public class TranscoderServiceSettings extends ClientSettings<TranscoderServiceS
       return new Builder(TranscoderServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TranscoderServiceStubSettings.newHttpJsonBuilder());
     }

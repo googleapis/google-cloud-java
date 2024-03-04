@@ -896,8 +896,6 @@ public class StorageTransferServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to runTransferJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             TransferProto.RunTransferJobRequest, Empty, TransferTypes.TransferOperation>
         runTransferJobOperationSettings() {

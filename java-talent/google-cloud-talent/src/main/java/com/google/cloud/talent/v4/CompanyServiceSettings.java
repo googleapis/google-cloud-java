@@ -153,7 +153,6 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -195,7 +194,6 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
       return new Builder(CompanyServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CompanyServiceStubSettings.newHttpJsonBuilder());
     }

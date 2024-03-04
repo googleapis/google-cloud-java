@@ -1176,8 +1176,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     }
 
     /** Returns the builder for the settings used for calls to importProductSets. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
         importProductSetsOperationSettings() {
@@ -1190,8 +1188,6 @@ public class ProductSearchStubSettings extends StubSettings<ProductSearchStubSet
     }
 
     /** Returns the builder for the settings used for calls to purgeProducts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PurgeProductsRequest, Empty, BatchOperationMetadata>
         purgeProductsOperationSettings() {
       return purgeProductsOperationSettings;

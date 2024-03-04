@@ -256,7 +256,6 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -298,7 +297,6 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
       return new Builder(CloudTasksStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudTasksStubSettings.newHttpJsonBuilder());
     }

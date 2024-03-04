@@ -405,7 +405,6 @@ public class TelcoAutomationSettings extends ClientSettings<TelcoAutomationSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -447,7 +446,6 @@ public class TelcoAutomationSettings extends ClientSettings<TelcoAutomationSetti
       return new Builder(TelcoAutomationStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TelcoAutomationStubSettings.newHttpJsonBuilder());
     }

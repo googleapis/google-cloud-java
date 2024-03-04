@@ -184,7 +184,6 @@ public class StorageInsightsSettings extends ClientSettings<StorageInsightsSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -226,7 +225,6 @@ public class StorageInsightsSettings extends ClientSettings<StorageInsightsSetti
       return new Builder(StorageInsightsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(StorageInsightsStubSettings.newHttpJsonBuilder());
     }

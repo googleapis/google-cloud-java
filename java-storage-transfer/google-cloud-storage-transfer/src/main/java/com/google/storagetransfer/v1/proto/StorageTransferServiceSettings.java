@@ -233,7 +233,6 @@ public class StorageTransferServiceSettings extends ClientSettings<StorageTransf
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -276,7 +275,6 @@ public class StorageTransferServiceSettings extends ClientSettings<StorageTransf
       return new Builder(StorageTransferServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(StorageTransferServiceStubSettings.newHttpJsonBuilder());
     }

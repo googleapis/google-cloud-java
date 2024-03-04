@@ -152,7 +152,6 @@ public class TenantServiceSettings extends ClientSettings<TenantServiceSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -194,7 +193,6 @@ public class TenantServiceSettings extends ClientSettings<TenantServiceSettings>
       return new Builder(TenantServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TenantServiceStubSettings.newHttpJsonBuilder());
     }

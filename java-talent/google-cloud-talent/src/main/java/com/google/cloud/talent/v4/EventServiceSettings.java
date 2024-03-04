@@ -127,7 +127,6 @@ public class EventServiceSettings extends ClientSettings<EventServiceSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -169,7 +168,6 @@ public class EventServiceSettings extends ClientSettings<EventServiceSettings> {
       return new Builder(EventServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EventServiceStubSettings.newHttpJsonBuilder());
     }

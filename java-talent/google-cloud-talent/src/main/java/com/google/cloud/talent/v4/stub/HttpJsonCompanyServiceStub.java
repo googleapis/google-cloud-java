@@ -18,7 +18,6 @@ package com.google.cloud.talent.v4.stub;
 
 import static com.google.cloud.talent.v4.CompanyServiceClient.ListCompaniesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -55,7 +54,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

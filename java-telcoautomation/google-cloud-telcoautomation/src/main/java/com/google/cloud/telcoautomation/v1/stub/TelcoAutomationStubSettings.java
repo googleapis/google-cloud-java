@@ -2068,8 +2068,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     }
 
     /** Returns the builder for the settings used for calls to createOrchestrationCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateOrchestrationClusterRequest, OrchestrationCluster, OperationMetadata>
         createOrchestrationClusterOperationSettings() {
@@ -2083,8 +2081,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     }
 
     /** Returns the builder for the settings used for calls to deleteOrchestrationCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteOrchestrationClusterRequest, Empty, OperationMetadata>
         deleteOrchestrationClusterOperationSettings() {
@@ -2109,8 +2105,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     }
 
     /** Returns the builder for the settings used for calls to createEdgeSlm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEdgeSlmRequest, EdgeSlm, OperationMetadata>
         createEdgeSlmOperationSettings() {
       return createEdgeSlmOperationSettings;
@@ -2122,8 +2116,6 @@ public class TelcoAutomationStubSettings extends StubSettings<TelcoAutomationStu
     }
 
     /** Returns the builder for the settings used for calls to deleteEdgeSlm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEdgeSlmRequest, Empty, OperationMetadata>
         deleteEdgeSlmOperationSettings() {
       return deleteEdgeSlmOperationSettings;

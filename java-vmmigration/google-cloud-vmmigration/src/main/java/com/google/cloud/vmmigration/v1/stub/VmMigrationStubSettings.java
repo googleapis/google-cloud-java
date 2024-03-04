@@ -3033,8 +3033,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSourceRequest, Source, OperationMetadata>
         createSourceOperationSettings() {
       return createSourceOperationSettings;
@@ -3046,8 +3044,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSourceRequest, Source, OperationMetadata>
         updateSourceOperationSettings() {
       return updateSourceOperationSettings;
@@ -3059,8 +3055,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSourceRequest, Empty, OperationMetadata>
         deleteSourceOperationSettings() {
       return deleteSourceOperationSettings;
@@ -3094,8 +3088,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createUtilizationReport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateUtilizationReportRequest, UtilizationReport, OperationMetadata>
         createUtilizationReportOperationSettings() {
@@ -3109,8 +3101,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteUtilizationReport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteUtilizationReportRequest, Empty, OperationMetadata>
         deleteUtilizationReportOperationSettings() {
       return deleteUtilizationReportOperationSettings;
@@ -3138,8 +3128,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createDatacenterConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDatacenterConnectorRequest, DatacenterConnector, OperationMetadata>
         createDatacenterConnectorOperationSettings() {
@@ -3153,8 +3141,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteDatacenterConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDatacenterConnectorRequest, Empty, OperationMetadata>
         deleteDatacenterConnectorOperationSettings() {
       return deleteDatacenterConnectorOperationSettings;
@@ -3167,8 +3153,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to upgradeAppliance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpgradeApplianceRequest, UpgradeApplianceResponse, OperationMetadata>
         upgradeApplianceOperationSettings() {
@@ -3182,8 +3166,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createMigratingVm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateMigratingVmRequest, MigratingVm, OperationMetadata>
         createMigratingVmOperationSettings() {
       return createMigratingVmOperationSettings;
@@ -3208,8 +3190,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateMigratingVm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateMigratingVmRequest, MigratingVm, OperationMetadata>
         updateMigratingVmOperationSettings() {
       return updateMigratingVmOperationSettings;
@@ -3222,8 +3202,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteMigratingVm. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteMigratingVmRequest, Empty, OperationMetadata>
         deleteMigratingVmOperationSettings() {
       return deleteMigratingVmOperationSettings;
@@ -3235,8 +3213,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to startMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StartMigrationRequest, StartMigrationResponse, OperationMetadata>
         startMigrationOperationSettings() {
@@ -3249,8 +3225,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to resumeMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ResumeMigrationRequest, ResumeMigrationResponse, OperationMetadata>
         resumeMigrationOperationSettings() {
@@ -3263,8 +3237,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to pauseMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PauseMigrationRequest, PauseMigrationResponse, OperationMetadata>
         pauseMigrationOperationSettings() {
@@ -3278,8 +3250,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to finalizeMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
         finalizeMigrationOperationSettings() {
@@ -3292,8 +3262,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createCloneJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCloneJobRequest, CloneJob, OperationMetadata>
         createCloneJobOperationSettings() {
       return createCloneJobOperationSettings;
@@ -3305,8 +3273,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to cancelCloneJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CancelCloneJobRequest, CancelCloneJobResponse, OperationMetadata>
         cancelCloneJobOperationSettings() {
@@ -3332,8 +3298,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createCutoverJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCutoverJobRequest, CutoverJob, OperationMetadata>
         createCutoverJobOperationSettings() {
       return createCutoverJobOperationSettings;
@@ -3346,8 +3310,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to cancelCutoverJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CancelCutoverJobRequest, CancelCutoverJobResponse, OperationMetadata>
         cancelCutoverJobOperationSettings() {
@@ -3383,8 +3345,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateGroupRequest, Group, OperationMetadata>
         createGroupOperationSettings() {
       return createGroupOperationSettings;
@@ -3396,8 +3356,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
         updateGroupOperationSettings() {
       return updateGroupOperationSettings;
@@ -3409,8 +3367,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteGroupRequest, Empty, OperationMetadata>
         deleteGroupOperationSettings() {
       return deleteGroupOperationSettings;
@@ -3423,8 +3379,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to addGroupMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AddGroupMigrationRequest, AddGroupMigrationResponse, OperationMetadata>
         addGroupMigrationOperationSettings() {
@@ -3438,8 +3392,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to removeGroupMigration. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RemoveGroupMigrationRequest, RemoveGroupMigrationResponse, OperationMetadata>
         removeGroupMigrationOperationSettings() {
@@ -3466,8 +3418,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createTargetProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTargetProjectRequest, TargetProject, OperationMetadata>
         createTargetProjectOperationSettings() {
@@ -3481,8 +3431,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateTargetProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateTargetProjectRequest, TargetProject, OperationMetadata>
         updateTargetProjectOperationSettings() {
@@ -3496,8 +3444,6 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteTargetProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTargetProjectRequest, Empty, OperationMetadata>
         deleteTargetProjectOperationSettings() {
       return deleteTargetProjectOperationSettings;

@@ -716,8 +716,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to batchCreateJobs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchCreateJobsRequest, BatchCreateJobsResponse, BatchOperationMetadata>
         batchCreateJobsOperationSettings() {
@@ -740,8 +738,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateJobs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchUpdateJobsRequest, BatchUpdateJobsResponse, BatchOperationMetadata>
         batchUpdateJobsOperationSettings() {
@@ -759,8 +755,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteJobs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchDeleteJobsRequest, BatchDeleteJobsResponse, BatchOperationMetadata>
         batchDeleteJobsOperationSettings() {
