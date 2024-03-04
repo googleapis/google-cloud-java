@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.RegionSecurityPoliciesClient.ListPaged
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -778,8 +777,6 @@ public class RegionSecurityPoliciesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to addRule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddRuleRegionSecurityPolicyRequest, Operation, Operation>
         addRuleOperationSettings() {
       return addRuleOperationSettings;
@@ -792,8 +789,6 @@ public class RegionSecurityPoliciesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRegionSecurityPolicyRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -817,8 +812,6 @@ public class RegionSecurityPoliciesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertRegionSecurityPolicyRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -837,8 +830,6 @@ public class RegionSecurityPoliciesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchRegionSecurityPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
@@ -851,8 +842,6 @@ public class RegionSecurityPoliciesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to patchRule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchRuleRegionSecurityPolicyRequest, Operation, Operation>
         patchRuleOperationSettings() {
       return patchRuleOperationSettings;
@@ -865,8 +854,6 @@ public class RegionSecurityPoliciesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to removeRule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RemoveRuleRegionSecurityPolicyRequest, Operation, Operation>
         removeRuleOperationSettings() {

@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -253,6 +252,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SetCloudArmorTier</td>
+ *      <td><p> Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise for more information.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setCloudArmorTierAsync(SetCloudArmorTierProjectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setCloudArmorTierAsync(String project, ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setCloudArmorTierOperationCallable()
+ *           <li><p> setCloudArmorTierCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SetCommonInstanceMetadata</td>
  *      <td><p> Sets metadata common to all instances within the specified project using the data included in the request.</td>
  *      <td>
@@ -450,8 +468,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> disableXpnHostAsync(
       DisableXpnHostProjectRequest request) {
     return disableXpnHostOperationCallable().futureCall(request);
@@ -579,8 +595,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> disableXpnResourceAsync(
       DisableXpnResourceProjectRequest request) {
     return disableXpnResourceOperationCallable().futureCall(request);
@@ -701,8 +715,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> enableXpnHostAsync(
       EnableXpnHostProjectRequest request) {
     return enableXpnHostOperationCallable().futureCall(request);
@@ -832,8 +844,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> enableXpnResourceAsync(
       EnableXpnResourceProjectRequest request) {
     return enableXpnResourceOperationCallable().futureCall(request);
@@ -1430,8 +1440,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> moveDiskAsync(MoveDiskProjectRequest request) {
     return moveDiskOperationCallable().futureCall(request);
   }
@@ -1566,8 +1574,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> moveInstanceAsync(
       MoveInstanceProjectRequest request) {
     return moveInstanceOperationCallable().futureCall(request);
@@ -1645,6 +1651,146 @@ public class ProjectsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   String project = "project-309310695";
+   *   ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource =
+   *       ProjectsSetCloudArmorTierRequest.newBuilder().build();
+   *   Operation response =
+   *       projectsClient
+   *           .setCloudArmorTierAsync(project, projectsSetCloudArmorTierRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param projectsSetCloudArmorTierRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setCloudArmorTierAsync(
+      String project, ProjectsSetCloudArmorTierRequest projectsSetCloudArmorTierRequestResource) {
+    SetCloudArmorTierProjectRequest request =
+        SetCloudArmorTierProjectRequest.newBuilder()
+            .setProject(project)
+            .setProjectsSetCloudArmorTierRequestResource(projectsSetCloudArmorTierRequestResource)
+            .build();
+    return setCloudArmorTierAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetCloudArmorTierProjectRequest request =
+   *       SetCloudArmorTierProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsSetCloudArmorTierRequestResource(
+   *               ProjectsSetCloudArmorTierRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = projectsClient.setCloudArmorTierAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setCloudArmorTierAsync(
+      SetCloudArmorTierProjectRequest request) {
+    return setCloudArmorTierOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetCloudArmorTierProjectRequest request =
+   *       SetCloudArmorTierProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsSetCloudArmorTierRequestResource(
+   *               ProjectsSetCloudArmorTierRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       projectsClient.setCloudArmorTierOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationCallable() {
+    return stub.setCloudArmorTierOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the billing account of the
+   * project must be subscribed to Cloud Armor Enterprise. See Subscribing to Cloud Armor Enterprise
+   * for more information.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   SetCloudArmorTierProjectRequest request =
+   *       SetCloudArmorTierProjectRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setProjectsSetCloudArmorTierRequestResource(
+   *               ProjectsSetCloudArmorTierRequest.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = projectsClient.setCloudArmorTierCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetCloudArmorTierProjectRequest, Operation>
+      setCloudArmorTierCallable() {
+    return stub.setCloudArmorTierCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Sets metadata common to all instances within the specified project using the data included in
    * the request.
    *
@@ -1705,8 +1851,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setCommonInstanceMetadataAsync(
       SetCommonInstanceMetadataProjectRequest request) {
     return setCommonInstanceMetadataOperationCallable().futureCall(request);
@@ -1844,8 +1988,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setDefaultNetworkTierAsync(
       SetDefaultNetworkTierProjectRequest request) {
     return setDefaultNetworkTierOperationCallable().futureCall(request);
@@ -1979,8 +2121,6 @@ public class ProjectsClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setUsageExportBucketAsync(
       SetUsageExportBucketProjectRequest request) {
     return setUsageExportBucketOperationCallable().futureCall(request);

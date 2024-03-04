@@ -1447,6 +1447,43 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
+   * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * </pre>
+   *
+   * <code>optional string service_lb_policy = 94848785;</code>
+   *
+   * @return Whether the serviceLbPolicy field is set.
+   */
+  boolean hasServiceLbPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * </pre>
+   *
+   * <code>optional string service_lb_policy = 94848785;</code>
+   *
+   * @return The serviceLbPolicy.
+   */
+  java.lang.String getServiceLbPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * </pre>
+   *
+   * <code>optional string service_lb_policy = 94848785;</code>
+   *
+   * @return The bytes for serviceLbPolicy.
+   */
+  com.google.protobuf.ByteString getServiceLbPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Type of session affinity to use. The default is NONE. Only NONE and HEADER_FIELD are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. For more details, see: [Session Affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity).
    * Check the SessionAffinity enum for the list of possible values.
    * </pre>

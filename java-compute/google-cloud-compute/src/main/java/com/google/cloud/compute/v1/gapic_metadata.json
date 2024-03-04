@@ -944,6 +944,42 @@
         }
       }
     },
+    "InstantSnapshots": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "InstantSnapshotsClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "InterconnectAttachments": {
       "clients": {
         "grpc": {
@@ -1492,6 +1528,9 @@
             "MoveInstance": {
               "methods": ["moveInstanceAsync", "moveInstanceAsync", "moveInstanceOperationCallable", "moveInstanceCallable"]
             },
+            "SetCloudArmorTier": {
+              "methods": ["setCloudArmorTierAsync", "setCloudArmorTierAsync", "setCloudArmorTierOperationCallable", "setCloudArmorTierCallable"]
+            },
             "SetCommonInstanceMetadata": {
               "methods": ["setCommonInstanceMetadataAsync", "setCommonInstanceMetadataAsync", "setCommonInstanceMetadataOperationCallable", "setCommonInstanceMetadataCallable"]
             },
@@ -1905,6 +1944,39 @@
           "rpcs": {
             "BulkInsert": {
               "methods": ["bulkInsertAsync", "bulkInsertAsync", "bulkInsertOperationCallable", "bulkInsertCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionInstantSnapshots": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionInstantSnapshotsClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SetLabels": {
+              "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

@@ -42,6 +42,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     balancingMode_ = "";
     description_ = "";
     group_ = "";
+    preference_ = "";
   }
 
   @java.lang.Override
@@ -242,6 +243,185 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Backend.BalancingMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Backend.Preference}
+   */
+  public enum Preference implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PREFERENCE = 0;</code>
+     */
+    UNDEFINED_PREFERENCE(0),
+    /**
+     *
+     *
+     * <pre>
+     * No preference.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
+    DEFAULT(115302945),
+    /**
+     *
+     *
+     * <pre>
+     * If preference is unspecified, we set it to the DEFAULT value
+     * </pre>
+     *
+     * <code>PREFERENCE_UNSPECIFIED = 496219571;</code>
+     */
+    PREFERENCE_UNSPECIFIED(496219571),
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be sent to this backend first.
+     * </pre>
+     *
+     * <code>PREFERRED = 418847841;</code>
+     */
+    PREFERRED(418847841),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_PREFERENCE = 0;</code>
+     */
+    public static final int UNDEFINED_PREFERENCE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * No preference.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
+    public static final int DEFAULT_VALUE = 115302945;
+    /**
+     *
+     *
+     * <pre>
+     * If preference is unspecified, we set it to the DEFAULT value
+     * </pre>
+     *
+     * <code>PREFERENCE_UNSPECIFIED = 496219571;</code>
+     */
+    public static final int PREFERENCE_UNSPECIFIED_VALUE = 496219571;
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be sent to this backend first.
+     * </pre>
+     *
+     * <code>PREFERRED = 418847841;</code>
+     */
+    public static final int PREFERRED_VALUE = 418847841;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Preference valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Preference forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_PREFERENCE;
+        case 115302945:
+          return DEFAULT;
+        case 496219571:
+          return PREFERENCE_UNSPECIFIED;
+        case 418847841:
+          return PREFERRED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Preference> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Preference> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Preference>() {
+          public Preference findValueByNumber(int number) {
+            return Preference.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Backend.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final Preference[] VALUES = values();
+
+    public static Preference valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Preference(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Backend.Preference)
   }
 
   private int bitField0_;
@@ -743,6 +923,75 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     return maxUtilization_;
   }
 
+  public static final int PREFERENCE_FIELD_NUMBER = 150781147;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object preference_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+   * Check the Preference enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string preference = 150781147;</code>
+   *
+   * @return Whether the preference field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreference() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+   * Check the Preference enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string preference = 150781147;</code>
+   *
+   * @return The preference.
+   */
+  @java.lang.Override
+  public java.lang.String getPreference() {
+    java.lang.Object ref = preference_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      preference_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+   * Check the Preference enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string preference = 150781147;</code>
+   *
+   * @return The bytes for preference.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPreferenceBytes() {
+    java.lang.Object ref = preference_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      preference_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -777,6 +1026,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeFloat(148192199, maxUtilization_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 150781147, preference_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeInt32(216904604, maxConnectionsPerEndpoint_);
@@ -825,6 +1077,9 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(148192199, maxUtilization_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(150781147, preference_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size +=
@@ -910,6 +1165,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (java.lang.Float.floatToIntBits(getMaxUtilization())
           != java.lang.Float.floatToIntBits(other.getMaxUtilization())) return false;
     }
+    if (hasPreference() != other.hasPreference()) return false;
+    if (hasPreference()) {
+      if (!getPreference().equals(other.getPreference())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -968,6 +1227,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     if (hasMaxUtilization()) {
       hash = (37 * hash) + MAX_UTILIZATION_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getMaxUtilization());
+    }
+    if (hasPreference()) {
+      hash = (37 * hash) + PREFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getPreference().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1119,6 +1382,7 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       maxRatePerEndpoint_ = 0F;
       maxRatePerInstance_ = 0F;
       maxUtilization_ = 0F;
+      preference_ = "";
       return this;
     }
 
@@ -1202,6 +1466,10 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.maxUtilization_ = maxUtilization_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.preference_ = preference_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1293,6 +1561,11 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMaxUtilization()) {
         setMaxUtilization(other.getMaxUtilization());
       }
+      if (other.hasPreference()) {
+        preference_ = other.preference_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1361,6 +1634,12 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 1185537597
+            case 1206249178:
+              {
+                preference_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 1206249178
             case 1735236832:
               {
                 maxConnectionsPerEndpoint_ = input.readInt32();
@@ -2384,6 +2663,132 @@ public final class Backend extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMaxUtilization() {
       bitField0_ = (bitField0_ & ~0x00000800);
       maxUtilization_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object preference_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+     * Check the Preference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string preference = 150781147;</code>
+     *
+     * @return Whether the preference field is set.
+     */
+    public boolean hasPreference() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+     * Check the Preference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string preference = 150781147;</code>
+     *
+     * @return The preference.
+     */
+    public java.lang.String getPreference() {
+      java.lang.Object ref = preference_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        preference_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+     * Check the Preference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string preference = 150781147;</code>
+     *
+     * @return The bytes for preference.
+     */
+    public com.google.protobuf.ByteString getPreferenceBytes() {
+      java.lang.Object ref = preference_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        preference_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+     * Check the Preference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string preference = 150781147;</code>
+     *
+     * @param value The preference to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreference(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      preference_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+     * Check the Preference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string preference = 150781147;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreference() {
+      preference_ = getDefaultInstance().getPreference();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field indicates whether this backend should be fully utilized before sending traffic to backends with default preference. The possible values are: - PREFERRED: Backends with this preference level will be filled up to their capacity limits first, based on RTT. - DEFAULT: If preferred backends don't have enough capacity, backends in this layer would be used and traffic would be assigned based on the load balancing algorithm you use. This is the default
+     * Check the Preference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string preference = 150781147;</code>
+     *
+     * @param value The bytes for preference to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreferenceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      preference_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

@@ -55,6 +55,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     sourceDisk_ = "";
     sourceDiskForRecoveryCheckpoint_ = "";
     sourceDiskId_ = "";
+    sourceInstantSnapshot_ = "";
+    sourceInstantSnapshotId_ = "";
     sourceSnapshotSchedulePolicy_ = "";
     sourceSnapshotSchedulePolicyId_ = "";
     status_ = "";
@@ -2282,6 +2284,195 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_INSTANT_SNAPSHOT_FIELD_NUMBER = 219202054;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstantSnapshot_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return Whether the sourceInstantSnapshot field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstantSnapshot() {
+    return ((bitField0_ & 0x00800000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The sourceInstantSnapshot.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceInstantSnapshot() {
+    java.lang.Object ref = sourceInstantSnapshot_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceInstantSnapshot_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The bytes for sourceInstantSnapshot.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceInstantSnapshotBytes() {
+    java.lang.Object ref = sourceInstantSnapshot_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceInstantSnapshot_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_INSTANT_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER = 436536060;
+  private com.google.cloud.compute.v1.CustomerEncryptionKey sourceInstantSnapshotEncryptionKey_;
+  /**
+   *
+   *
+   * <pre>
+   * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+   * </code>
+   *
+   * @return Whether the sourceInstantSnapshotEncryptionKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstantSnapshotEncryptionKey() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+   * </code>
+   *
+   * @return The sourceInstantSnapshotEncryptionKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CustomerEncryptionKey getSourceInstantSnapshotEncryptionKey() {
+    return sourceInstantSnapshotEncryptionKey_ == null
+        ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
+        : sourceInstantSnapshotEncryptionKey_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
+      getSourceInstantSnapshotEncryptionKeyOrBuilder() {
+    return sourceInstantSnapshotEncryptionKey_ == null
+        ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
+        : sourceInstantSnapshotEncryptionKey_;
+  }
+
+  public static final int SOURCE_INSTANT_SNAPSHOT_ID_FIELD_NUMBER = 287582708;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstantSnapshotId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return Whether the sourceInstantSnapshotId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstantSnapshotId() {
+    return ((bitField0_ & 0x02000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The sourceInstantSnapshotId.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceInstantSnapshotId() {
+    java.lang.Object ref = sourceInstantSnapshotId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceInstantSnapshotId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceInstantSnapshotIdBytes() {
+    java.lang.Object ref = sourceInstantSnapshotId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceInstantSnapshotId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SOURCE_SNAPSHOT_SCHEDULE_POLICY_FIELD_NUMBER = 235756291;
 
   @SuppressWarnings("serial")
@@ -2299,7 +2490,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotSchedulePolicy() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
   /**
    *
@@ -2365,7 +2556,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotSchedulePolicyId() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
   /**
    *
@@ -2432,7 +2623,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
   /**
    *
@@ -2498,7 +2689,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStorageBytes() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
   /**
    *
@@ -2534,7 +2725,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStorageBytesStatus() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
   /**
    *
@@ -2689,7 +2880,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 68644169, chainName_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 70489047, sourceSnapshotSchedulePolicyId_);
     }
@@ -2708,12 +2899,19 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 219202054, sourceInstantSnapshot_);
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 235756291, sourceSnapshotSchedulePolicy_);
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 287582708, sourceInstantSnapshotId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 302803283, architecture_);
@@ -2738,11 +2936,14 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       output.writeInt64(424631719, storageBytes_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt64(435054068, downloadBytes_);
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      output.writeMessage(436536060, getSourceInstantSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 451753793, sourceDisk_);
@@ -2762,7 +2963,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 490739082, storageBytesStatus_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -2813,7 +3014,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(68644169, chainName_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               70489047, sourceSnapshotSchedulePolicyId_);
@@ -2838,13 +3039,23 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              219202054, sourceInstantSnapshot_);
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
               235756291, sourceSnapshotSchedulePolicy_);
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              287582708, sourceInstantSnapshotId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(302803283, architecture_);
@@ -2879,11 +3090,16 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(424631719, storageBytes_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(435054068, downloadBytes_);
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              436536060, getSourceInstantSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(451753793, sourceDisk_);
@@ -2903,7 +3119,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(490739082, storageBytesStatus_);
     }
@@ -3034,6 +3250,20 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceDiskId() != other.hasSourceDiskId()) return false;
     if (hasSourceDiskId()) {
       if (!getSourceDiskId().equals(other.getSourceDiskId())) return false;
+    }
+    if (hasSourceInstantSnapshot() != other.hasSourceInstantSnapshot()) return false;
+    if (hasSourceInstantSnapshot()) {
+      if (!getSourceInstantSnapshot().equals(other.getSourceInstantSnapshot())) return false;
+    }
+    if (hasSourceInstantSnapshotEncryptionKey() != other.hasSourceInstantSnapshotEncryptionKey())
+      return false;
+    if (hasSourceInstantSnapshotEncryptionKey()) {
+      if (!getSourceInstantSnapshotEncryptionKey()
+          .equals(other.getSourceInstantSnapshotEncryptionKey())) return false;
+    }
+    if (hasSourceInstantSnapshotId() != other.hasSourceInstantSnapshotId()) return false;
+    if (hasSourceInstantSnapshotId()) {
+      if (!getSourceInstantSnapshotId().equals(other.getSourceInstantSnapshotId())) return false;
     }
     if (hasSourceSnapshotSchedulePolicy() != other.hasSourceSnapshotSchedulePolicy()) return false;
     if (hasSourceSnapshotSchedulePolicy()) {
@@ -3177,6 +3407,18 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceDiskId()) {
       hash = (37 * hash) + SOURCE_DISK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceDiskId().hashCode();
+    }
+    if (hasSourceInstantSnapshot()) {
+      hash = (37 * hash) + SOURCE_INSTANT_SNAPSHOT_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstantSnapshot().hashCode();
+    }
+    if (hasSourceInstantSnapshotEncryptionKey()) {
+      hash = (37 * hash) + SOURCE_INSTANT_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstantSnapshotEncryptionKey().hashCode();
+    }
+    if (hasSourceInstantSnapshotId()) {
+      hash = (37 * hash) + SOURCE_INSTANT_SNAPSHOT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstantSnapshotId().hashCode();
     }
     if (hasSourceSnapshotSchedulePolicy()) {
       hash = (37 * hash) + SOURCE_SNAPSHOT_SCHEDULE_POLICY_FIELD_NUMBER;
@@ -3366,6 +3608,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         getGuestOsFeaturesFieldBuilder();
         getSnapshotEncryptionKeyFieldBuilder();
         getSourceDiskEncryptionKeyFieldBuilder();
+        getSourceInstantSnapshotEncryptionKeyFieldBuilder();
       }
     }
 
@@ -3415,6 +3658,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       sourceDiskForRecoveryCheckpoint_ = "";
       sourceDiskId_ = "";
+      sourceInstantSnapshot_ = "";
+      sourceInstantSnapshotEncryptionKey_ = null;
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ != null) {
+        sourceInstantSnapshotEncryptionKeyBuilder_.dispose();
+        sourceInstantSnapshotEncryptionKeyBuilder_ = null;
+      }
+      sourceInstantSnapshotId_ = "";
       sourceSnapshotSchedulePolicy_ = "";
       sourceSnapshotSchedulePolicyId_ = "";
       status_ = "";
@@ -3584,23 +3834,26 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00400000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.sourceSnapshotSchedulePolicy_ = sourceSnapshotSchedulePolicy_;
+        result.sourceInstantSnapshot_ = sourceInstantSnapshot_;
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.sourceSnapshotSchedulePolicyId_ = sourceSnapshotSchedulePolicyId_;
+        result.sourceInstantSnapshotEncryptionKey_ =
+            sourceInstantSnapshotEncryptionKeyBuilder_ == null
+                ? sourceInstantSnapshotEncryptionKey_
+                : sourceInstantSnapshotEncryptionKeyBuilder_.build();
         to_bitField0_ |= 0x01000000;
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.status_ = status_;
+        result.sourceInstantSnapshotId_ = sourceInstantSnapshotId_;
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.storageBytes_ = storageBytes_;
+        result.sourceSnapshotSchedulePolicy_ = sourceSnapshotSchedulePolicy_;
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.storageBytesStatus_ = storageBytesStatus_;
+        result.sourceSnapshotSchedulePolicyId_ = sourceSnapshotSchedulePolicyId_;
         to_bitField0_ |= 0x08000000;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3608,10 +3861,24 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial1(com.google.cloud.compute.v1.Snapshot result) {
       int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x10000000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.storageBytes_ = storageBytes_;
+        to_bitField0_ |= 0x20000000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.storageBytesStatus_ = storageBytesStatus_;
+        to_bitField0_ |= 0x40000000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         storageLocations_.makeImmutable();
         result.storageLocations_ = storageLocations_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -3804,19 +4071,32 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x04000000;
         onChanged();
       }
+      if (other.hasSourceInstantSnapshot()) {
+        sourceInstantSnapshot_ = other.sourceInstantSnapshot_;
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      if (other.hasSourceInstantSnapshotEncryptionKey()) {
+        mergeSourceInstantSnapshotEncryptionKey(other.getSourceInstantSnapshotEncryptionKey());
+      }
+      if (other.hasSourceInstantSnapshotId()) {
+        sourceInstantSnapshotId_ = other.sourceInstantSnapshotId_;
+        bitField0_ |= 0x20000000;
+        onChanged();
+      }
       if (other.hasSourceSnapshotSchedulePolicy()) {
         sourceSnapshotSchedulePolicy_ = other.sourceSnapshotSchedulePolicy_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       if (other.hasSourceSnapshotSchedulePolicyId()) {
         sourceSnapshotSchedulePolicyId_ = other.sourceSnapshotSchedulePolicyId_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x20000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStorageBytes()) {
@@ -3824,13 +4104,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasStorageBytesStatus()) {
         storageBytesStatus_ = other.storageBytesStatus_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000004;
         onChanged();
       }
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
-          bitField1_ |= 0x00000001;
+          bitField1_ |= 0x00000008;
         } else {
           ensureStorageLocationsIsMutable();
           storageLocations_.addAll(other.storageLocations_);
@@ -3921,7 +4201,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             case 563912378:
               {
                 sourceSnapshotSchedulePolicyId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 563912378
             case 634356362:
@@ -3964,15 +4244,27 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 1450082194
+            case 1753616434:
+              {
+                sourceInstantSnapshot_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 1753616434
             case 1886050330:
               {
                 sourceSnapshotSchedulePolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 1886050330
+            case -1994305630:
+              {
+                sourceInstantSnapshotId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case -1994305630
             case -1872541030:
               {
                 architecture_ = input.readStringRequireUtf8();
@@ -4020,7 +4312,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             case -897913544:
               {
                 storageBytes_ = input.readInt64();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case -897913544
             case -814534752:
@@ -4029,6 +4321,14 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case -814534752
+            case -802678814:
+              {
+                input.readMessage(
+                    getSourceInstantSnapshotEncryptionKeyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case -802678814
             case -680936950:
               {
                 sourceDisk_ = input.readStringRequireUtf8();
@@ -4068,7 +4368,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             case -369054638:
               {
                 storageBytesStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000004;
                 break;
               } // case -369054638
             case -293404678:
@@ -7466,6 +7766,456 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object sourceInstantSnapshot_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return Whether the sourceInstantSnapshot field is set.
+     */
+    public boolean hasSourceInstantSnapshot() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return The sourceInstantSnapshot.
+     */
+    public java.lang.String getSourceInstantSnapshot() {
+      java.lang.Object ref = sourceInstantSnapshot_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceInstantSnapshot_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return The bytes for sourceInstantSnapshot.
+     */
+    public com.google.protobuf.ByteString getSourceInstantSnapshotBytes() {
+      java.lang.Object ref = sourceInstantSnapshot_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceInstantSnapshot_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @param value The sourceInstantSnapshot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshot(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceInstantSnapshot_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceInstantSnapshot() {
+      sourceInstantSnapshot_ = getDefaultInstance().getSourceInstantSnapshot();
+      bitField0_ = (bitField0_ & ~0x08000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @param value The bytes for sourceInstantSnapshot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceInstantSnapshot_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.compute.v1.CustomerEncryptionKey sourceInstantSnapshotEncryptionKey_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.CustomerEncryptionKey,
+            com.google.cloud.compute.v1.CustomerEncryptionKey.Builder,
+            com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder>
+        sourceInstantSnapshotEncryptionKeyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     *
+     * @return Whether the sourceInstantSnapshotEncryptionKey field is set.
+     */
+    public boolean hasSourceInstantSnapshotEncryptionKey() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     *
+     * @return The sourceInstantSnapshotEncryptionKey.
+     */
+    public com.google.cloud.compute.v1.CustomerEncryptionKey
+        getSourceInstantSnapshotEncryptionKey() {
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ == null) {
+        return sourceInstantSnapshotEncryptionKey_ == null
+            ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
+            : sourceInstantSnapshotEncryptionKey_;
+      } else {
+        return sourceInstantSnapshotEncryptionKeyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     */
+    public Builder setSourceInstantSnapshotEncryptionKey(
+        com.google.cloud.compute.v1.CustomerEncryptionKey value) {
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceInstantSnapshotEncryptionKey_ = value;
+      } else {
+        sourceInstantSnapshotEncryptionKeyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     */
+    public Builder setSourceInstantSnapshotEncryptionKey(
+        com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ == null) {
+        sourceInstantSnapshotEncryptionKey_ = builderForValue.build();
+      } else {
+        sourceInstantSnapshotEncryptionKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     */
+    public Builder mergeSourceInstantSnapshotEncryptionKey(
+        com.google.cloud.compute.v1.CustomerEncryptionKey value) {
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && sourceInstantSnapshotEncryptionKey_ != null
+            && sourceInstantSnapshotEncryptionKey_
+                != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
+          getSourceInstantSnapshotEncryptionKeyBuilder().mergeFrom(value);
+        } else {
+          sourceInstantSnapshotEncryptionKey_ = value;
+        }
+      } else {
+        sourceInstantSnapshotEncryptionKeyBuilder_.mergeFrom(value);
+      }
+      if (sourceInstantSnapshotEncryptionKey_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     */
+    public Builder clearSourceInstantSnapshotEncryptionKey() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      sourceInstantSnapshotEncryptionKey_ = null;
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ != null) {
+        sourceInstantSnapshotEncryptionKeyBuilder_.dispose();
+        sourceInstantSnapshotEncryptionKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
+        getSourceInstantSnapshotEncryptionKeyBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getSourceInstantSnapshotEncryptionKeyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
+        getSourceInstantSnapshotEncryptionKeyOrBuilder() {
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ != null) {
+        return sourceInstantSnapshotEncryptionKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return sourceInstantSnapshotEncryptionKey_ == null
+            ? com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()
+            : sourceInstantSnapshotEncryptionKey_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.CustomerEncryptionKey,
+            com.google.cloud.compute.v1.CustomerEncryptionKey.Builder,
+            com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder>
+        getSourceInstantSnapshotEncryptionKeyFieldBuilder() {
+      if (sourceInstantSnapshotEncryptionKeyBuilder_ == null) {
+        sourceInstantSnapshotEncryptionKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.CustomerEncryptionKey,
+                com.google.cloud.compute.v1.CustomerEncryptionKey.Builder,
+                com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder>(
+                getSourceInstantSnapshotEncryptionKey(), getParentForChildren(), isClean());
+        sourceInstantSnapshotEncryptionKey_ = null;
+      }
+      return sourceInstantSnapshotEncryptionKeyBuilder_;
+    }
+
+    private java.lang.Object sourceInstantSnapshotId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return Whether the sourceInstantSnapshotId field is set.
+     */
+    public boolean hasSourceInstantSnapshotId() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return The sourceInstantSnapshotId.
+     */
+    public java.lang.String getSourceInstantSnapshotId() {
+      java.lang.Object ref = sourceInstantSnapshotId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceInstantSnapshotId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return The bytes for sourceInstantSnapshotId.
+     */
+    public com.google.protobuf.ByteString getSourceInstantSnapshotIdBytes() {
+      java.lang.Object ref = sourceInstantSnapshotId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceInstantSnapshotId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @param value The sourceInstantSnapshotId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceInstantSnapshotId_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceInstantSnapshotId() {
+      sourceInstantSnapshotId_ = getDefaultInstance().getSourceInstantSnapshotId();
+      bitField0_ = (bitField0_ & ~0x20000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @param value The bytes for sourceInstantSnapshotId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceInstantSnapshotId_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object sourceSnapshotSchedulePolicy_ = "";
     /**
      *
@@ -7479,7 +8229,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotSchedulePolicy field is set.
      */
     public boolean hasSourceSnapshotSchedulePolicy() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
     /**
      *
@@ -7542,7 +8292,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshotSchedulePolicy_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -7559,7 +8309,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshotSchedulePolicy() {
       sourceSnapshotSchedulePolicy_ = getDefaultInstance().getSourceSnapshotSchedulePolicy();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -7581,7 +8331,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshotSchedulePolicy_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -7599,7 +8349,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotSchedulePolicyId field is set.
      */
     public boolean hasSourceSnapshotSchedulePolicyId() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
     /**
      *
@@ -7662,7 +8412,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshotSchedulePolicyId_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -7679,7 +8429,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshotSchedulePolicyId() {
       sourceSnapshotSchedulePolicyId_ = getDefaultInstance().getSourceSnapshotSchedulePolicyId();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -7701,7 +8451,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshotSchedulePolicyId_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -7720,7 +8470,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
@@ -7786,7 +8536,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7804,7 +8554,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -7827,7 +8577,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7846,7 +8596,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasStorageBytes() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -7878,7 +8628,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder setStorageBytes(long value) {
 
       storageBytes_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7894,7 +8644,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageBytes() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       storageBytes_ = 0L;
       onChanged();
       return this;
@@ -7914,7 +8664,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the storageBytesStatus field is set.
      */
     public boolean hasStorageBytesStatus() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      *
@@ -7980,7 +8730,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       storageBytesStatus_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7998,7 +8748,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStorageBytesStatus() {
       storageBytesStatus_ = getDefaultInstance().getStorageBytesStatus();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -8021,7 +8771,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       storageBytesStatus_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -8033,7 +8783,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       if (!storageLocations_.isModifiable()) {
         storageLocations_ = new com.google.protobuf.LazyStringArrayList(storageLocations_);
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
     }
     /**
      *
@@ -8113,7 +8863,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.set(index, value);
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8135,7 +8885,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8154,7 +8904,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllStorageLocations(java.lang.Iterable<java.lang.String> values) {
       ensureStorageLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storageLocations_);
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -8171,7 +8921,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStorageLocations() {
       storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -8195,7 +8945,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }

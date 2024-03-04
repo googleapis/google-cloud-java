@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedRespo
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -71,7 +70,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonRoutersStub extends RoutersStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();

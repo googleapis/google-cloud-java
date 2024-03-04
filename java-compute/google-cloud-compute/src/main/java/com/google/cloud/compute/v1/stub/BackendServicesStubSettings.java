@@ -22,7 +22,6 @@ import static com.google.cloud.compute.v1.BackendServicesClient.ListUsablePagedR
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1149,8 +1148,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to addSignedUrlKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddSignedUrlKeyBackendServiceRequest, Operation, Operation>
         addSignedUrlKeyOperationSettings() {
       return addSignedUrlKeyOperationSettings;
@@ -1171,8 +1168,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackendServiceRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -1185,8 +1180,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to deleteSignedUrlKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteSignedUrlKeyBackendServiceRequest, Operation, Operation>
         deleteSignedUrlKeyOperationSettings() {
@@ -1216,8 +1209,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertBackendServiceRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -1243,8 +1234,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchBackendServiceRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
@@ -1257,8 +1246,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to setEdgeSecurityPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetEdgeSecurityPolicyBackendServiceRequest, Operation, Operation>
         setEdgeSecurityPolicyOperationSettings() {
@@ -1278,8 +1265,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to setSecurityPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetSecurityPolicyBackendServiceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
@@ -1299,8 +1284,6 @@ public class BackendServicesStubSettings extends StubSettings<BackendServicesStu
     }
 
     /** Returns the builder for the settings used for calls to update. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackendServiceRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;

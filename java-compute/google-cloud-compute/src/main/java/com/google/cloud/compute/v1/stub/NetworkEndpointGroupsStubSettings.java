@@ -22,7 +22,6 @@ import static com.google.cloud.compute.v1.NetworkEndpointGroupsClient.ListPagedR
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -915,8 +914,6 @@ public class NetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation, Operation>
         attachNetworkEndpointsOperationSettings() {
@@ -930,8 +927,6 @@ public class NetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNetworkEndpointGroupRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -944,8 +939,6 @@ public class NetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation, Operation>
         detachNetworkEndpointsOperationSettings() {
@@ -965,8 +958,6 @@ public class NetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertNetworkEndpointGroupRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;

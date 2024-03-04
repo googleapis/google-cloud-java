@@ -122,4 +122,41 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * @return The bytes for ipAddress.
    */
   com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv6 address for this VPN interface associated with the VPN gateway. The IPv6 address must be a regional external IPv6 address. The format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  boolean hasIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv6 address for this VPN interface associated with the VPN gateway. The IPv6 address must be a regional external IPv6 address. The format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  java.lang.String getIpv6Address();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] IPv6 address for this VPN interface associated with the VPN gateway. The IPv6 address must be a regional external IPv6 address. The format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  com.google.protobuf.ByteString getIpv6AddressBytes();
 }

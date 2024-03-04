@@ -355,7 +355,7 @@ public final class ListLicensesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
    * </pre>
    *
    * <code>optional bool return_partial_success = 517198390;</code>
@@ -370,7 +370,7 @@ public final class ListLicensesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
    * </pre>
    *
    * <code>optional bool return_partial_success = 517198390;</code>
@@ -1412,7 +1412,7 @@ public final class ListLicensesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>
@@ -1427,7 +1427,7 @@ public final class ListLicensesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>
@@ -1442,7 +1442,7 @@ public final class ListLicensesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>
@@ -1461,7 +1461,7 @@ public final class ListLicensesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>

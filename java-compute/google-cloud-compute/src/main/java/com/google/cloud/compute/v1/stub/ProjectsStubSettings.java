@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.ProjectsClient.ListXpnHostsPagedRespon
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -58,6 +57,7 @@ import com.google.cloud.compute.v1.MoveInstanceProjectRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
+import com.google.cloud.compute.v1.SetCloudArmorTierProjectRequest;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest;
 import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectRequest;
@@ -145,6 +145,10 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
   private final UnaryCallSettings<MoveInstanceProjectRequest, Operation> moveInstanceSettings;
   private final OperationCallSettings<MoveInstanceProjectRequest, Operation, Operation>
       moveInstanceOperationSettings;
+  private final UnaryCallSettings<SetCloudArmorTierProjectRequest, Operation>
+      setCloudArmorTierSettings;
+  private final OperationCallSettings<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationSettings;
   private final UnaryCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataSettings;
   private final OperationCallSettings<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
@@ -368,6 +372,17 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     return moveInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setCloudArmorTier. */
+  public UnaryCallSettings<SetCloudArmorTierProjectRequest, Operation> setCloudArmorTierSettings() {
+    return setCloudArmorTierSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setCloudArmorTier. */
+  public OperationCallSettings<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationSettings() {
+    return setCloudArmorTierOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setCommonInstanceMetadata. */
   public UnaryCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataSettings() {
@@ -511,6 +526,9 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     moveDiskOperationSettings = settingsBuilder.moveDiskOperationSettings().build();
     moveInstanceSettings = settingsBuilder.moveInstanceSettings().build();
     moveInstanceOperationSettings = settingsBuilder.moveInstanceOperationSettings().build();
+    setCloudArmorTierSettings = settingsBuilder.setCloudArmorTierSettings().build();
+    setCloudArmorTierOperationSettings =
+        settingsBuilder.setCloudArmorTierOperationSettings().build();
     setCommonInstanceMetadataSettings = settingsBuilder.setCommonInstanceMetadataSettings().build();
     setCommonInstanceMetadataOperationSettings =
         settingsBuilder.setCommonInstanceMetadataOperationSettings().build();
@@ -558,6 +576,11 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
         moveInstanceSettings;
     private final OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
         moveInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation>
+        setCloudArmorTierSettings;
+    private final OperationCallSettings.Builder<
+            SetCloudArmorTierProjectRequest, Operation, Operation>
+        setCloudArmorTierOperationSettings;
     private final UnaryCallSettings.Builder<SetCommonInstanceMetadataProjectRequest, Operation>
         setCommonInstanceMetadataSettings;
     private final OperationCallSettings.Builder<
@@ -639,6 +662,8 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       moveDiskOperationSettings = OperationCallSettings.newBuilder();
       moveInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       moveInstanceOperationSettings = OperationCallSettings.newBuilder();
+      setCloudArmorTierSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setCloudArmorTierOperationSettings = OperationCallSettings.newBuilder();
       setCommonInstanceMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setCommonInstanceMetadataOperationSettings = OperationCallSettings.newBuilder();
       setDefaultNetworkTierSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -658,6 +683,7 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
               listXpnHostsSettings,
               moveDiskSettings,
               moveInstanceSettings,
+              setCloudArmorTierSettings,
               setCommonInstanceMetadataSettings,
               setDefaultNetworkTierSettings,
               setUsageExportBucketSettings);
@@ -684,6 +710,8 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
       moveDiskOperationSettings = settings.moveDiskOperationSettings.toBuilder();
       moveInstanceSettings = settings.moveInstanceSettings.toBuilder();
       moveInstanceOperationSettings = settings.moveInstanceOperationSettings.toBuilder();
+      setCloudArmorTierSettings = settings.setCloudArmorTierSettings.toBuilder();
+      setCloudArmorTierOperationSettings = settings.setCloudArmorTierOperationSettings.toBuilder();
       setCommonInstanceMetadataSettings = settings.setCommonInstanceMetadataSettings.toBuilder();
       setCommonInstanceMetadataOperationSettings =
           settings.setCommonInstanceMetadataOperationSettings.toBuilder();
@@ -706,6 +734,7 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
               listXpnHostsSettings,
               moveDiskSettings,
               moveInstanceSettings,
+              setCloudArmorTierSettings,
               setCommonInstanceMetadataSettings,
               setDefaultNetworkTierSettings,
               setUsageExportBucketSettings);
@@ -771,6 +800,11 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
 
       builder
           .moveInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setCloudArmorTierSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -935,6 +969,30 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
                       .build()));
 
       builder
+          .setCloudArmorTierOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetCloudArmorTierProjectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .setCommonInstanceMetadataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1034,8 +1092,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to disableXpnHost. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DisableXpnHostProjectRequest, Operation, Operation>
         disableXpnHostOperationSettings() {
       return disableXpnHostOperationSettings;
@@ -1048,8 +1104,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to disableXpnResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DisableXpnResourceProjectRequest, Operation, Operation>
         disableXpnResourceOperationSettings() {
       return disableXpnResourceOperationSettings;
@@ -1062,8 +1116,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to enableXpnHost. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<EnableXpnHostProjectRequest, Operation, Operation>
         enableXpnHostOperationSettings() {
       return enableXpnHostOperationSettings;
@@ -1076,8 +1128,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to enableXpnResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<EnableXpnResourceProjectRequest, Operation, Operation>
         enableXpnResourceOperationSettings() {
       return enableXpnResourceOperationSettings;
@@ -1113,8 +1163,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to moveDisk. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<MoveDiskProjectRequest, Operation, Operation>
         moveDiskOperationSettings() {
       return moveDiskOperationSettings;
@@ -1126,11 +1174,21 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to moveInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
         moveInstanceOperationSettings() {
       return moveInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCloudArmorTier. */
+    public UnaryCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation>
+        setCloudArmorTierSettings() {
+      return setCloudArmorTierSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setCloudArmorTier. */
+    public OperationCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation, Operation>
+        setCloudArmorTierOperationSettings() {
+      return setCloudArmorTierOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
@@ -1140,8 +1198,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetCommonInstanceMetadataProjectRequest, Operation, Operation>
         setCommonInstanceMetadataOperationSettings() {
@@ -1155,8 +1211,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setDefaultNetworkTier. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetDefaultNetworkTierProjectRequest, Operation, Operation>
         setDefaultNetworkTierOperationSettings() {
       return setDefaultNetworkTierOperationSettings;
@@ -1169,8 +1223,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setUsageExportBucket. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetUsageExportBucketProjectRequest, Operation, Operation>
         setUsageExportBucketOperationSettings() {
       return setUsageExportBucketOperationSettings;

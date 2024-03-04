@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -69,7 +68,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves the list of all TargetTcpProxy resources, regional and global, available to the specified project.</td>
+ *      <td><p> Retrieves the list of all TargetTcpProxy resources, regional and global, available to the specified project. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -295,7 +294,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetTcpProxy resources, regional and global, available to the
-   * specified project.
+   * specified project. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -326,7 +326,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetTcpProxy resources, regional and global, available to the
-   * specified project.
+   * specified project. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -366,7 +367,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetTcpProxy resources, regional and global, available to the
-   * specified project.
+   * specified project. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -405,7 +407,8 @@ public class TargetTcpProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the list of all TargetTcpProxy resources, regional and global, available to the
-   * specified project.
+   * specified project. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -507,8 +510,6 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> deleteAsync(
       DeleteTargetTcpProxyRequest request) {
     return deleteOperationCallable().futureCall(request);
@@ -725,8 +726,6 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> insertAsync(
       InsertTargetTcpProxyRequest request) {
     return insertOperationCallable().futureCall(request);
@@ -1007,8 +1006,6 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setBackendServiceAsync(
       SetBackendServiceTargetTcpProxyRequest request) {
     return setBackendServiceOperationCallable().futureCall(request);
@@ -1152,8 +1149,6 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setProxyHeaderAsync(
       SetProxyHeaderTargetTcpProxyRequest request) {
     return setProxyHeaderOperationCallable().futureCall(request);

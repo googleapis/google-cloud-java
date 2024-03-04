@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.ServiceAttachmentsClient.ListPagedResp
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -756,8 +755,6 @@ public class ServiceAttachmentsStubSettings extends StubSettings<ServiceAttachme
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteServiceAttachmentRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -780,8 +777,6 @@ public class ServiceAttachmentsStubSettings extends StubSettings<ServiceAttachme
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertServiceAttachmentRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -800,8 +795,6 @@ public class ServiceAttachmentsStubSettings extends StubSettings<ServiceAttachme
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchServiceAttachmentRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;

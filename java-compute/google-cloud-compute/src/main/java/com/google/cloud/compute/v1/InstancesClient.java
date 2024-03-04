@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -107,7 +106,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of all of the instances in your project across all regions and zones. The performance of this method degrades when a filter is specified on a project that has a very large number of instances.</td>
+ *      <td><p> Retrieves an aggregated list of all of the instances in your project across all regions and zones. The performance of this method degrades when a filter is specified on a project that has a very large number of instances. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1136,8 +1135,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> addAccessConfigAsync(
       AddAccessConfigInstanceRequest request) {
     return addAccessConfigOperationCallable().futureCall(request);
@@ -1288,8 +1285,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> addResourcePoliciesAsync(
       AddResourcePoliciesInstanceRequest request) {
     return addResourcePoliciesOperationCallable().futureCall(request);
@@ -1369,7 +1364,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all of the instances in your project across all regions and
    * zones. The performance of this method degrades when a filter is specified on a project that has
-   * a very large number of instances.
+   * a very large number of instances. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -1401,7 +1397,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all of the instances in your project across all regions and
    * zones. The performance of this method degrades when a filter is specified on a project that has
-   * a very large number of instances.
+   * a very large number of instances. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -1441,7 +1438,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all of the instances in your project across all regions and
    * zones. The performance of this method degrades when a filter is specified on a project that has
-   * a very large number of instances.
+   * a very large number of instances. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -1481,7 +1479,8 @@ public class InstancesClient implements BackgroundResource {
   /**
    * Retrieves an aggregated list of all of the instances in your project across all regions and
    * zones. The performance of this method degrades when a filter is specified on a project that has
-   * a very large number of instances.
+   * a very large number of instances. To prevent failure, Google recommends that you set the
+   * `returnPartialSuccess` parameter to `true`.
    *
    * <p>Sample code:
    *
@@ -1596,8 +1595,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> attachDiskAsync(
       AttachDiskInstanceRequest request) {
     return attachDiskOperationCallable().futureCall(request);
@@ -1741,8 +1738,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> bulkInsertAsync(
       BulkInsertInstanceRequest request) {
     return bulkInsertOperationCallable().futureCall(request);
@@ -1877,8 +1872,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> deleteAsync(DeleteInstanceRequest request) {
     return deleteOperationCallable().futureCall(request);
   }
@@ -2019,8 +2012,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> deleteAccessConfigAsync(
       DeleteAccessConfigInstanceRequest request) {
     return deleteAccessConfigOperationCallable().futureCall(request);
@@ -2163,8 +2154,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> detachDiskAsync(
       DetachDiskInstanceRequest request) {
     return detachDiskOperationCallable().futureCall(request);
@@ -2991,8 +2980,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> insertAsync(InsertInstanceRequest request) {
     return insertOperationCallable().futureCall(request);
   }
@@ -3437,8 +3424,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> performMaintenanceAsync(
       PerformMaintenanceInstanceRequest request) {
     return performMaintenanceOperationCallable().futureCall(request);
@@ -3585,8 +3570,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> removeResourcePoliciesAsync(
       RemoveResourcePoliciesInstanceRequest request) {
     return removeResourcePoliciesOperationCallable().futureCall(request);
@@ -3725,8 +3708,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> resetAsync(ResetInstanceRequest request) {
     return resetOperationCallable().futureCall(request);
   }
@@ -3858,8 +3839,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> resumeAsync(ResumeInstanceRequest request) {
     return resumeOperationCallable().futureCall(request);
   }
@@ -4092,8 +4071,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setDeletionProtectionAsync(
       SetDeletionProtectionInstanceRequest request) {
     return setDeletionProtectionOperationCallable().futureCall(request);
@@ -4240,8 +4217,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setDiskAutoDeleteAsync(
       SetDiskAutoDeleteInstanceRequest request) {
     return setDiskAutoDeleteOperationCallable().futureCall(request);
@@ -4494,8 +4469,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setLabelsAsync(
       SetLabelsInstanceRequest request) {
     return setLabelsOperationCallable().futureCall(request);
@@ -4646,8 +4619,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setMachineResourcesAsync(
       SetMachineResourcesInstanceRequest request) {
     return setMachineResourcesOperationCallable().futureCall(request);
@@ -4798,8 +4769,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setMachineTypeAsync(
       SetMachineTypeInstanceRequest request) {
     return setMachineTypeOperationCallable().futureCall(request);
@@ -4939,8 +4908,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setMetadataAsync(
       SetMetadataInstanceRequest request) {
     return setMetadataOperationCallable().futureCall(request);
@@ -5088,8 +5055,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setMinCpuPlatformAsync(
       SetMinCpuPlatformInstanceRequest request) {
     return setMinCpuPlatformOperationCallable().futureCall(request);
@@ -5238,8 +5203,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setNameAsync(SetNameInstanceRequest request) {
     return setNameOperationCallable().futureCall(request);
   }
@@ -5382,8 +5345,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setSchedulingAsync(
       SetSchedulingInstanceRequest request) {
     return setSchedulingOperationCallable().futureCall(request);
@@ -5538,8 +5499,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setSecurityPolicyAsync(
       SetSecurityPolicyInstanceRequest request) {
     return setSecurityPolicyOperationCallable().futureCall(request);
@@ -5692,8 +5651,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setServiceAccountAsync(
       SetServiceAccountInstanceRequest request) {
     return setServiceAccountOperationCallable().futureCall(request);
@@ -5848,8 +5805,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setShieldedInstanceIntegrityPolicyAsync(
       SetShieldedInstanceIntegrityPolicyInstanceRequest request) {
     return setShieldedInstanceIntegrityPolicyOperationCallable().futureCall(request);
@@ -5996,8 +5951,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setTagsAsync(SetTagsInstanceRequest request) {
     return setTagsOperationCallable().futureCall(request);
   }
@@ -6133,8 +6086,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> simulateMaintenanceEventAsync(
       SimulateMaintenanceEventInstanceRequest request) {
     return simulateMaintenanceEventOperationCallable().futureCall(request);
@@ -6273,8 +6224,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> startAsync(StartInstanceRequest request) {
     return startOperationCallable().futureCall(request);
   }
@@ -6422,8 +6371,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> startWithEncryptionKeyAsync(
       StartWithEncryptionKeyInstanceRequest request) {
     return startWithEncryptionKeyOperationCallable().futureCall(request);
@@ -6569,8 +6516,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> stopAsync(StopInstanceRequest request) {
     return stopOperationCallable().futureCall(request);
   }
@@ -6719,8 +6664,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> suspendAsync(SuspendInstanceRequest request) {
     return suspendOperationCallable().futureCall(request);
   }
@@ -6982,8 +6925,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateAsync(UpdateInstanceRequest request) {
     return updateOperationCallable().futureCall(request);
   }
@@ -7143,8 +7084,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateAccessConfigAsync(
       UpdateAccessConfigInstanceRequest request) {
     return updateAccessConfigOperationCallable().futureCall(request);
@@ -7296,8 +7235,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateDisplayDeviceAsync(
       UpdateDisplayDeviceInstanceRequest request) {
     return updateDisplayDeviceOperationCallable().futureCall(request);
@@ -7458,8 +7395,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateNetworkInterfaceAsync(
       UpdateNetworkInterfaceInstanceRequest request) {
     return updateNetworkInterfaceOperationCallable().futureCall(request);
@@ -7618,8 +7553,6 @@ public class InstancesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateShieldedInstanceConfigAsync(
       UpdateShieldedInstanceConfigInstanceRequest request) {
     return updateShieldedInstanceConfigOperationCallable().futureCall(request);

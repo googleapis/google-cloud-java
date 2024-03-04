@@ -19,7 +19,6 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.ProjectsClient.GetXpnResourcesPagedResponse;
 import static com.google.cloud.compute.v1.ProjectsClient.ListXpnHostsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -48,6 +47,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
+import com.google.cloud.compute.v1.SetCloudArmorTierProjectRequest;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest;
 import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectRequest;
@@ -68,7 +68,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonProjectsStub extends ProjectsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
@@ -560,6 +559,60 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetCloudArmorTierProjectRequest, Operation>
+      setCloudArmorTierMethodDescriptor =
+          ApiMethodDescriptor.<SetCloudArmorTierProjectRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Projects/SetCloudArmorTier")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetCloudArmorTierProjectRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/setCloudArmorTier",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetCloudArmorTierProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetCloudArmorTierProjectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "projectsSetCloudArmorTierRequestResource",
+                                      request.getProjectsSetCloudArmorTierRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetCloudArmorTierProjectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataMethodDescriptor =
           ApiMethodDescriptor.<SetCommonInstanceMetadataProjectRequest, Operation>newBuilder()
@@ -747,6 +800,9 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   private final UnaryCallable<MoveInstanceProjectRequest, Operation> moveInstanceCallable;
   private final OperationCallable<MoveInstanceProjectRequest, Operation, Operation>
       moveInstanceOperationCallable;
+  private final UnaryCallable<SetCloudArmorTierProjectRequest, Operation> setCloudArmorTierCallable;
+  private final OperationCallable<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationCallable;
   private final UnaryCallable<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataCallable;
   private final OperationCallable<SetCommonInstanceMetadataProjectRequest, Operation, Operation>
@@ -917,6 +973,18 @@ public class HttpJsonProjectsStub extends ProjectsStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<SetCloudArmorTierProjectRequest, Operation>
+        setCloudArmorTierTransportSettings =
+            HttpJsonCallSettings.<SetCloudArmorTierProjectRequest, Operation>newBuilder()
+                .setMethodDescriptor(setCloudArmorTierMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
         setCommonInstanceMetadataTransportSettings =
             HttpJsonCallSettings.<SetCommonInstanceMetadataProjectRequest, Operation>newBuilder()
@@ -1030,6 +1098,17 @@ public class HttpJsonProjectsStub extends ProjectsStub {
             settings.moveInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setCloudArmorTierCallable =
+        callableFactory.createUnaryCallable(
+            setCloudArmorTierTransportSettings,
+            settings.setCloudArmorTierSettings(),
+            clientContext);
+    this.setCloudArmorTierOperationCallable =
+        callableFactory.createOperationCallable(
+            setCloudArmorTierTransportSettings,
+            settings.setCloudArmorTierOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setCommonInstanceMetadataCallable =
         callableFactory.createUnaryCallable(
             setCommonInstanceMetadataTransportSettings,
@@ -1081,6 +1160,7 @@ public class HttpJsonProjectsStub extends ProjectsStub {
     methodDescriptors.add(listXpnHostsMethodDescriptor);
     methodDescriptors.add(moveDiskMethodDescriptor);
     methodDescriptors.add(moveInstanceMethodDescriptor);
+    methodDescriptors.add(setCloudArmorTierMethodDescriptor);
     methodDescriptors.add(setCommonInstanceMetadataMethodDescriptor);
     methodDescriptors.add(setDefaultNetworkTierMethodDescriptor);
     methodDescriptors.add(setUsageExportBucketMethodDescriptor);
@@ -1184,6 +1264,17 @@ public class HttpJsonProjectsStub extends ProjectsStub {
   public OperationCallable<MoveInstanceProjectRequest, Operation, Operation>
       moveInstanceOperationCallable() {
     return moveInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetCloudArmorTierProjectRequest, Operation> setCloudArmorTierCallable() {
+    return setCloudArmorTierCallable;
+  }
+
+  @Override
+  public OperationCallable<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationCallable() {
+    return setCloudArmorTierOperationCallable;
   }
 
   @Override

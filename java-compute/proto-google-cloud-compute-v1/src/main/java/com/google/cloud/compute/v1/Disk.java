@@ -62,6 +62,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     sourceDiskId_ = "";
     sourceImage_ = "";
     sourceImageId_ = "";
+    sourceInstantSnapshot_ = "";
+    sourceInstantSnapshotId_ = "";
     sourceSnapshot_ = "";
     sourceSnapshotId_ = "";
     sourceStorageObject_ = "";
@@ -1877,7 +1879,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -1892,7 +1894,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -2766,6 +2768,138 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_INSTANT_SNAPSHOT_FIELD_NUMBER = 219202054;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstantSnapshot_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return Whether the sourceInstantSnapshot field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstantSnapshot() {
+    return ((bitField0_ & 0x80000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The sourceInstantSnapshot.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceInstantSnapshot() {
+    java.lang.Object ref = sourceInstantSnapshot_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceInstantSnapshot_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The bytes for sourceInstantSnapshot.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceInstantSnapshotBytes() {
+    java.lang.Object ref = sourceInstantSnapshot_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceInstantSnapshot_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_INSTANT_SNAPSHOT_ID_FIELD_NUMBER = 287582708;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceInstantSnapshotId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return Whether the sourceInstantSnapshotId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceInstantSnapshotId() {
+    return ((bitField1_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The sourceInstantSnapshotId.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceInstantSnapshotId() {
+    java.lang.Object ref = sourceInstantSnapshotId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceInstantSnapshotId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceInstantSnapshotIdBytes() {
+    java.lang.Object ref = sourceInstantSnapshotId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceInstantSnapshotId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SOURCE_SNAPSHOT_FIELD_NUMBER = 126061928;
 
   @SuppressWarnings("serial")
@@ -2783,7 +2917,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshot() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
   /**
    *
@@ -2849,7 +2983,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotEncryptionKey() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
   /**
    *
@@ -2906,7 +3040,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotId() {
-    return ((bitField1_ & 0x00000002) != 0);
+    return ((bitField1_ & 0x00000008) != 0);
   }
   /**
    *
@@ -2972,7 +3106,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceStorageObject() {
-    return ((bitField1_ & 0x00000004) != 0);
+    return ((bitField1_ & 0x00000010) != 0);
   }
   /**
    *
@@ -3039,7 +3173,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField1_ & 0x00000008) != 0);
+    return ((bitField1_ & 0x00000020) != 0);
   }
   /**
    *
@@ -3107,7 +3241,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField1_ & 0x00000010) != 0);
+    return ((bitField1_ & 0x00000040) != 0);
   }
   /**
    *
@@ -3237,7 +3371,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField1_ & 0x00000020) != 0);
+    return ((bitField1_ & 0x00000080) != 0);
   }
   /**
    *
@@ -3310,10 +3444,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (((bitField1_ & 0x00000020) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x01000000) != 0)) {
@@ -3355,7 +3489,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       output.writeMessage(79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98962258, sourceSnapshotId_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3364,7 +3498,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < users_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 111578632, users_.getRaw(i));
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
@@ -3376,13 +3510,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(180517533, getAsyncPrimaryDisk());
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       output.writeInt64(186769108, provisionedIops_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 219202054, sourceInstantSnapshot_);
+    }
+    if (((bitField1_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 233052711, sourceStorageObject_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
@@ -3395,10 +3532,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(271660677, getDiskEncryptionKey());
     }
+    if (((bitField1_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 287582708, sourceInstantSnapshotId_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 302803283, architecture_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -3465,10 +3606,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
-    if (((bitField1_ & 0x00000020) != 0)) {
+    if (((bitField1_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x01000000) != 0)) {
@@ -3531,7 +3672,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98962258, sourceSnapshotId_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3547,7 +3688,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getUsersList().size();
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
@@ -3562,13 +3703,18 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               180517533, getAsyncPrimaryDisk());
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(186769108, provisionedIops_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              219202054, sourceInstantSnapshot_);
+    }
+    if (((bitField1_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(233052711, sourceStorageObject_);
     }
@@ -3586,10 +3732,15 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               271660677, getDiskEncryptionKey());
     }
+    if (((bitField1_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              287582708, sourceInstantSnapshotId_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(302803283, architecture_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               303679322, getSourceSnapshotEncryptionKey());
@@ -3817,6 +3968,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceImageId()) {
       if (!getSourceImageId().equals(other.getSourceImageId())) return false;
     }
+    if (hasSourceInstantSnapshot() != other.hasSourceInstantSnapshot()) return false;
+    if (hasSourceInstantSnapshot()) {
+      if (!getSourceInstantSnapshot().equals(other.getSourceInstantSnapshot())) return false;
+    }
+    if (hasSourceInstantSnapshotId() != other.hasSourceInstantSnapshotId()) return false;
+    if (hasSourceInstantSnapshotId()) {
+      if (!getSourceInstantSnapshotId().equals(other.getSourceInstantSnapshotId())) return false;
+    }
     if (hasSourceSnapshot() != other.hasSourceSnapshot()) return false;
     if (hasSourceSnapshot()) {
       if (!getSourceSnapshot().equals(other.getSourceSnapshot())) return false;
@@ -4009,6 +4168,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceImageId()) {
       hash = (37 * hash) + SOURCE_IMAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceImageId().hashCode();
+    }
+    if (hasSourceInstantSnapshot()) {
+      hash = (37 * hash) + SOURCE_INSTANT_SNAPSHOT_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstantSnapshot().hashCode();
+    }
+    if (hasSourceInstantSnapshotId()) {
+      hash = (37 * hash) + SOURCE_INSTANT_SNAPSHOT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceInstantSnapshotId().hashCode();
     }
     if (hasSourceSnapshot()) {
       hash = (37 * hash) + SOURCE_SNAPSHOT_FIELD_NUMBER;
@@ -4286,6 +4453,8 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         sourceImageEncryptionKeyBuilder_ = null;
       }
       sourceImageId_ = "";
+      sourceInstantSnapshot_ = "";
+      sourceInstantSnapshotId_ = "";
       sourceSnapshot_ = "";
       sourceSnapshotEncryptionKey_ = null;
       if (sourceSnapshotEncryptionKeyBuilder_ != null) {
@@ -4514,40 +4683,48 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x40000000;
       }
       if (((from_bitField1_ & 0x00000040) != 0)) {
-        result.sourceSnapshot_ = sourceSnapshot_;
+        result.sourceInstantSnapshot_ = sourceInstantSnapshot_;
         to_bitField0_ |= 0x80000000;
       }
       int to_bitField1_ = 0;
       if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.sourceInstantSnapshotId_ = sourceInstantSnapshotId_;
+        to_bitField1_ |= 0x00000001;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.sourceSnapshot_ = sourceSnapshot_;
+        to_bitField1_ |= 0x00000002;
+      }
+      if (((from_bitField1_ & 0x00000200) != 0)) {
         result.sourceSnapshotEncryptionKey_ =
             sourceSnapshotEncryptionKeyBuilder_ == null
                 ? sourceSnapshotEncryptionKey_
                 : sourceSnapshotEncryptionKeyBuilder_.build();
-        to_bitField1_ |= 0x00000001;
-      }
-      if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.sourceSnapshotId_ = sourceSnapshotId_;
-        to_bitField1_ |= 0x00000002;
-      }
-      if (((from_bitField1_ & 0x00000200) != 0)) {
-        result.sourceStorageObject_ = sourceStorageObject_;
         to_bitField1_ |= 0x00000004;
       }
       if (((from_bitField1_ & 0x00000400) != 0)) {
-        result.status_ = status_;
+        result.sourceSnapshotId_ = sourceSnapshotId_;
         to_bitField1_ |= 0x00000008;
       }
       if (((from_bitField1_ & 0x00000800) != 0)) {
-        result.type_ = type_;
+        result.sourceStorageObject_ = sourceStorageObject_;
         to_bitField1_ |= 0x00000010;
       }
       if (((from_bitField1_ & 0x00001000) != 0)) {
+        result.status_ = status_;
+        to_bitField1_ |= 0x00000020;
+      }
+      if (((from_bitField1_ & 0x00002000) != 0)) {
+        result.type_ = type_;
+        to_bitField1_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x00004000) != 0)) {
         users_.makeImmutable();
         result.users_ = users_;
       }
-      if (((from_bitField1_ & 0x00002000) != 0)) {
+      if (((from_bitField1_ & 0x00008000) != 0)) {
         result.zone_ = zone_;
-        to_bitField1_ |= 0x00000020;
+        to_bitField1_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -4799,9 +4976,19 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         bitField1_ |= 0x00000020;
         onChanged();
       }
+      if (other.hasSourceInstantSnapshot()) {
+        sourceInstantSnapshot_ = other.sourceInstantSnapshot_;
+        bitField1_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.hasSourceInstantSnapshotId()) {
+        sourceInstantSnapshotId_ = other.sourceInstantSnapshotId_;
+        bitField1_ |= 0x00000080;
+        onChanged();
+      }
       if (other.hasSourceSnapshot()) {
         sourceSnapshot_ = other.sourceSnapshot_;
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000100;
         onChanged();
       }
       if (other.hasSourceSnapshotEncryptionKey()) {
@@ -4809,28 +4996,28 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceSnapshotId()) {
         sourceSnapshotId_ = other.sourceSnapshotId_;
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSourceStorageObject()) {
         sourceStorageObject_ = other.sourceStorageObject_;
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00001000;
         onChanged();
       }
       if (other.hasType()) {
         type_ = other.type_;
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00002000;
         onChanged();
       }
       if (!other.users_.isEmpty()) {
         if (users_.isEmpty()) {
           users_ = other.users_;
-          bitField1_ |= 0x00001000;
+          bitField1_ |= 0x00004000;
         } else {
           ensureUsersIsMutable();
           users_.addAll(other.users_);
@@ -4839,7 +5026,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4889,13 +5076,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 28604882:
               {
                 type_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00002000;
                 break;
               } // case 28604882
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00008000;
                 break;
               } // case 29957474
             case 156928746:
@@ -4988,7 +5175,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 791698066:
               {
                 sourceSnapshotId_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 791698066
             case 817081824:
@@ -5007,7 +5194,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 1008495426:
               {
                 sourceSnapshot_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 1008495426
             case 1111570338:
@@ -5032,7 +5219,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 1450082194
             case 1494152864:
@@ -5041,10 +5228,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00200000;
                 break;
               } // case 1494152864
+            case 1753616434:
+              {
+                sourceInstantSnapshot_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000040;
+                break;
+              } // case 1753616434
             case 1864421690:
               {
                 sourceStorageObject_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 1864421690
             case 1995434522:
@@ -5066,6 +5259,12 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case -2121681878
+            case -1994305630:
+              {
+                sourceInstantSnapshotId_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000080;
+                break;
+              } // case -1994305630
             case -1872541030:
               {
                 architecture_ = input.readStringRequireUtf8();
@@ -5076,7 +5275,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00000200;
                 break;
               } // case -1865532718
             case -1711562430:
@@ -8355,7 +8554,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -8370,7 +8569,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -8385,7 +8584,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -8404,7 +8603,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -10335,6 +10534,246 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object sourceInstantSnapshot_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return Whether the sourceInstantSnapshot field is set.
+     */
+    public boolean hasSourceInstantSnapshot() {
+      return ((bitField1_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return The sourceInstantSnapshot.
+     */
+    public java.lang.String getSourceInstantSnapshot() {
+      java.lang.Object ref = sourceInstantSnapshot_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceInstantSnapshot_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return The bytes for sourceInstantSnapshot.
+     */
+    public com.google.protobuf.ByteString getSourceInstantSnapshotBytes() {
+      java.lang.Object ref = sourceInstantSnapshot_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceInstantSnapshot_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @param value The sourceInstantSnapshot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshot(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceInstantSnapshot_ = value;
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceInstantSnapshot() {
+      sourceInstantSnapshot_ = getDefaultInstance().getSourceInstantSnapshot();
+      bitField1_ = (bitField1_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot = 219202054;</code>
+     *
+     * @param value The bytes for sourceInstantSnapshot to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceInstantSnapshot_ = value;
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceInstantSnapshotId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return Whether the sourceInstantSnapshotId field is set.
+     */
+    public boolean hasSourceInstantSnapshotId() {
+      return ((bitField1_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return The sourceInstantSnapshotId.
+     */
+    public java.lang.String getSourceInstantSnapshotId() {
+      java.lang.Object ref = sourceInstantSnapshotId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceInstantSnapshotId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return The bytes for sourceInstantSnapshotId.
+     */
+    public com.google.protobuf.ByteString getSourceInstantSnapshotIdBytes() {
+      java.lang.Object ref = sourceInstantSnapshotId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceInstantSnapshotId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @param value The sourceInstantSnapshotId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceInstantSnapshotId_ = value;
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceInstantSnapshotId() {
+      sourceInstantSnapshotId_ = getDefaultInstance().getSourceInstantSnapshotId();
+      bitField1_ = (bitField1_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+     * </pre>
+     *
+     * <code>optional string source_instant_snapshot_id = 287582708;</code>
+     *
+     * @param value The bytes for sourceInstantSnapshotId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceInstantSnapshotIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceInstantSnapshotId_ = value;
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object sourceSnapshot_ = "";
     /**
      *
@@ -10348,7 +10787,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshot field is set.
      */
     public boolean hasSourceSnapshot() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
     /**
      *
@@ -10411,7 +10850,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshot_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10428,7 +10867,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshot() {
       sourceSnapshot_ = getDefaultInstance().getSourceSnapshot();
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -10450,7 +10889,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshot_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -10475,7 +10914,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotEncryptionKey field is set.
      */
     public boolean hasSourceSnapshotEncryptionKey() {
-      return ((bitField1_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
     /**
      *
@@ -10520,7 +10959,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10542,7 +10981,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10560,7 +10999,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceSnapshotEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
-        if (((bitField1_ & 0x00000080) != 0)
+        if (((bitField1_ & 0x00000200) != 0)
             && sourceSnapshotEncryptionKey_ != null
             && sourceSnapshotEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -10572,7 +11011,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         sourceSnapshotEncryptionKeyBuilder_.mergeFrom(value);
       }
       if (sourceSnapshotEncryptionKey_ != null) {
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -10589,7 +11028,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000200);
       sourceSnapshotEncryptionKey_ = null;
       if (sourceSnapshotEncryptionKeyBuilder_ != null) {
         sourceSnapshotEncryptionKeyBuilder_.dispose();
@@ -10611,7 +11050,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceSnapshotEncryptionKeyBuilder() {
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -10677,7 +11116,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotId field is set.
      */
     public boolean hasSourceSnapshotId() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
     /**
      *
@@ -10740,7 +11179,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshotId_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10757,7 +11196,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshotId() {
       sourceSnapshotId_ = getDefaultInstance().getSourceSnapshotId();
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -10779,7 +11218,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshotId_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10797,7 +11236,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceStorageObject field is set.
      */
     public boolean hasSourceStorageObject() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
     /**
      *
@@ -10860,7 +11299,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceStorageObject_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10877,7 +11316,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceStorageObject() {
       sourceStorageObject_ = getDefaultInstance().getSourceStorageObject();
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -10899,7 +11338,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceStorageObject_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10918,7 +11357,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
     /**
      *
@@ -10984,7 +11423,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -11002,7 +11441,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -11025,7 +11464,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -11043,7 +11482,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
     /**
      *
@@ -11106,7 +11545,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       type_ = value;
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -11123,7 +11562,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearType() {
       type_ = getDefaultInstance().getType();
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -11145,7 +11584,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       type_ = value;
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -11157,7 +11596,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (!users_.isModifiable()) {
         users_ = new com.google.protobuf.LazyStringArrayList(users_);
       }
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00004000;
     }
     /**
      *
@@ -11237,7 +11676,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.set(index, value);
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11259,7 +11698,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       ensureUsersIsMutable();
       users_.add(value);
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11278,7 +11717,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllUsers(java.lang.Iterable<java.lang.String> values) {
       ensureUsersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, users_);
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11295,7 +11734,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUsers() {
       users_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00004000);
       ;
       onChanged();
       return this;
@@ -11319,7 +11758,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureUsersIsMutable();
       users_.add(value);
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -11337,7 +11776,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00008000) != 0);
     }
     /**
      *
@@ -11400,7 +11839,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -11417,7 +11856,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -11439,7 +11878,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }

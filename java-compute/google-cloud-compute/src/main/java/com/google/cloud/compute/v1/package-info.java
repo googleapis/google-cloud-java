@@ -492,6 +492,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= InstantSnapshotsClient =======================
+ *
+ * <p>Service Description: The InstantSnapshots API.
+ *
+ * <p>Sample for InstantSnapshotsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (InstantSnapshotsClient instantSnapshotsClient = InstantSnapshotsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String instantSnapshot = "instantSnapshot800321221";
+ *   InstantSnapshot response = instantSnapshotsClient.get(project, zone, instantSnapshot);
+ * }
+ * }</pre>
+ *
  * <p>======================= InterconnectAttachmentsClient =======================
  *
  * <p>Service Description: The InterconnectAttachments API.
@@ -1125,6 +1145,27 @@
  *       regionInstancesClient
  *           .bulkInsertAsync(project, region, bulkInsertInstanceResourceResource)
  *           .get();
+ * }
+ * }</pre>
+ *
+ * <p>======================= RegionInstantSnapshotsClient =======================
+ *
+ * <p>Service Description: The RegionInstantSnapshots API.
+ *
+ * <p>Sample for RegionInstantSnapshotsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RegionInstantSnapshotsClient regionInstantSnapshotsClient =
+ *     RegionInstantSnapshotsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String instantSnapshot = "instantSnapshot800321221";
+ *   InstantSnapshot response = regionInstantSnapshotsClient.get(project, region, instantSnapshot);
  * }
  * }</pre>
  *

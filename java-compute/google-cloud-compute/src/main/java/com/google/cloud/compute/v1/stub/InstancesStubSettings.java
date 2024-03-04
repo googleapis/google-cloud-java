@@ -22,7 +22,6 @@ import static com.google.cloud.compute.v1.InstancesClient.ListReferrersPagedResp
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -2832,8 +2831,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to addAccessConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddAccessConfigInstanceRequest, Operation, Operation>
         addAccessConfigOperationSettings() {
       return addAccessConfigOperationSettings;
@@ -2846,8 +2843,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation, Operation>
         addResourcePoliciesOperationSettings() {
       return addResourcePoliciesOperationSettings;
@@ -2866,8 +2861,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to attachDisk. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AttachDiskInstanceRequest, Operation, Operation>
         attachDiskOperationSettings() {
       return attachDiskOperationSettings;
@@ -2879,8 +2872,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to bulkInsert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BulkInsertInstanceRequest, Operation, Operation>
         bulkInsertOperationSettings() {
       return bulkInsertOperationSettings;
@@ -2892,8 +2883,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -2906,8 +2895,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteAccessConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation, Operation>
         deleteAccessConfigOperationSettings() {
       return deleteAccessConfigOperationSettings;
@@ -2919,8 +2906,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to detachDisk. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DetachDiskInstanceRequest, Operation, Operation>
         detachDiskOperationSettings() {
       return detachDiskOperationSettings;
@@ -2974,8 +2959,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertInstanceRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -3001,8 +2984,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to performMaintenance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PerformMaintenanceInstanceRequest, Operation, Operation>
         performMaintenanceOperationSettings() {
       return performMaintenanceOperationSettings;
@@ -3015,8 +2996,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to removeResourcePolicies. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RemoveResourcePoliciesInstanceRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings() {
@@ -3029,8 +3008,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to reset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResetInstanceRequest, Operation, Operation>
         resetOperationSettings() {
       return resetOperationSettings;
@@ -3042,8 +3019,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to resume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResumeInstanceRequest, Operation, Operation>
         resumeOperationSettings() {
       return resumeOperationSettings;
@@ -3063,8 +3038,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setDeletionProtection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetDeletionProtectionInstanceRequest, Operation, Operation>
         setDeletionProtectionOperationSettings() {
       return setDeletionProtectionOperationSettings;
@@ -3077,8 +3050,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setDiskAutoDelete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetDiskAutoDeleteInstanceRequest, Operation, Operation>
         setDiskAutoDeleteOperationSettings() {
       return setDiskAutoDeleteOperationSettings;
@@ -3095,8 +3066,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetLabelsInstanceRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;
@@ -3109,8 +3078,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setMachineResources. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetMachineResourcesInstanceRequest, Operation, Operation>
         setMachineResourcesOperationSettings() {
       return setMachineResourcesOperationSettings;
@@ -3123,8 +3090,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setMachineType. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetMachineTypeInstanceRequest, Operation, Operation>
         setMachineTypeOperationSettings() {
       return setMachineTypeOperationSettings;
@@ -3136,8 +3101,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setMetadata. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetMetadataInstanceRequest, Operation, Operation>
         setMetadataOperationSettings() {
       return setMetadataOperationSettings;
@@ -3150,8 +3113,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setMinCpuPlatform. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetMinCpuPlatformInstanceRequest, Operation, Operation>
         setMinCpuPlatformOperationSettings() {
       return setMinCpuPlatformOperationSettings;
@@ -3163,8 +3124,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setName. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetNameInstanceRequest, Operation, Operation>
         setNameOperationSettings() {
       return setNameOperationSettings;
@@ -3177,8 +3136,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setScheduling. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
         setSchedulingOperationSettings() {
       return setSchedulingOperationSettings;
@@ -3191,8 +3148,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setSecurityPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetSecurityPolicyInstanceRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
       return setSecurityPolicyOperationSettings;
@@ -3205,8 +3160,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setServiceAccount. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetServiceAccountInstanceRequest, Operation, Operation>
         setServiceAccountOperationSettings() {
       return setServiceAccountOperationSettings;
@@ -3223,8 +3176,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     /**
      * Returns the builder for the settings used for calls to setShieldedInstanceIntegrityPolicy.
      */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetShieldedInstanceIntegrityPolicyInstanceRequest, Operation, Operation>
         setShieldedInstanceIntegrityPolicyOperationSettings() {
@@ -3237,8 +3188,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to setTags. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetTagsInstanceRequest, Operation, Operation>
         setTagsOperationSettings() {
       return setTagsOperationSettings;
@@ -3251,8 +3200,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SimulateMaintenanceEventInstanceRequest, Operation, Operation>
         simulateMaintenanceEventOperationSettings() {
@@ -3265,8 +3212,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to start. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartInstanceRequest, Operation, Operation>
         startOperationSettings() {
       return startOperationSettings;
@@ -3279,8 +3224,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to startWithEncryptionKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StartWithEncryptionKeyInstanceRequest, Operation, Operation>
         startWithEncryptionKeyOperationSettings() {
@@ -3293,8 +3236,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to stop. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopInstanceRequest, Operation, Operation>
         stopOperationSettings() {
       return stopOperationSettings;
@@ -3306,8 +3247,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to suspend. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SuspendInstanceRequest, Operation, Operation>
         suspendOperationSettings() {
       return suspendOperationSettings;
@@ -3325,8 +3264,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to update. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
@@ -3339,8 +3276,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateAccessConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAccessConfigInstanceRequest, Operation, Operation>
         updateAccessConfigOperationSettings() {
       return updateAccessConfigOperationSettings;
@@ -3353,8 +3288,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateDisplayDevice. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDisplayDeviceInstanceRequest, Operation, Operation>
         updateDisplayDeviceOperationSettings() {
       return updateDisplayDeviceOperationSettings;
@@ -3367,8 +3300,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateNetworkInterface. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateNetworkInterfaceInstanceRequest, Operation, Operation>
         updateNetworkInterfaceOperationSettings() {
@@ -3382,8 +3313,6 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateShieldedInstanceConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateShieldedInstanceConfigInstanceRequest, Operation, Operation>
         updateShieldedInstanceConfigOperationSettings() {

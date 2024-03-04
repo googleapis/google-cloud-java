@@ -40,6 +40,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
   }
 
   private InstanceGroupManagerInstanceLifecyclePolicy() {
+    defaultActionOnFailure_ = "";
     forceUpdateOnRepair_ = "";
   }
 
@@ -62,6 +63,169 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.class,
             com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.DefaultActionOnFailure}
+   */
+  public enum DefaultActionOnFailure implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DEFAULT_ACTION_ON_FAILURE = 0;</code>
+     */
+    UNDEFINED_DEFAULT_ACTION_ON_FAILURE(0),
+    /**
+     *
+     *
+     * <pre>
+     * MIG does not repair a failed or an unhealthy VM.
+     * </pre>
+     *
+     * <code>DO_NOTHING = 451307513;</code>
+     */
+    DO_NOTHING(451307513),
+    /**
+     *
+     *
+     * <pre>
+     * (Default) MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG.
+     * </pre>
+     *
+     * <code>REPAIR = 266277773;</code>
+     */
+    REPAIR(266277773),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DEFAULT_ACTION_ON_FAILURE = 0;</code>
+     */
+    public static final int UNDEFINED_DEFAULT_ACTION_ON_FAILURE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * MIG does not repair a failed or an unhealthy VM.
+     * </pre>
+     *
+     * <code>DO_NOTHING = 451307513;</code>
+     */
+    public static final int DO_NOTHING_VALUE = 451307513;
+    /**
+     *
+     *
+     * <pre>
+     * (Default) MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG.
+     * </pre>
+     *
+     * <code>REPAIR = 266277773;</code>
+     */
+    public static final int REPAIR_VALUE = 266277773;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DefaultActionOnFailure valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DefaultActionOnFailure forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_DEFAULT_ACTION_ON_FAILURE;
+        case 451307513:
+          return DO_NOTHING;
+        case 266277773:
+          return REPAIR;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DefaultActionOnFailure>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DefaultActionOnFailure>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DefaultActionOnFailure>() {
+              public DefaultActionOnFailure findValueByNumber(int number) {
+                return DefaultActionOnFailure.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final DefaultActionOnFailure[] VALUES = values();
+
+    public static DefaultActionOnFailure valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DefaultActionOnFailure(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.DefaultActionOnFailure)
   }
 
   /**
@@ -170,7 +334,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy.getDescriptor()
           .getEnumTypes()
-          .get(0);
+          .get(1);
     }
 
     private static final ForceUpdateOnRepair[] VALUES = values();
@@ -196,6 +360,75 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
   }
 
   private int bitField0_;
+  public static final int DEFAULT_ACTION_ON_FAILURE_FIELD_NUMBER = 61383253;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object defaultActionOnFailure_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * Check the DefaultActionOnFailure enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string default_action_on_failure = 61383253;</code>
+   *
+   * @return Whether the defaultActionOnFailure field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultActionOnFailure() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * Check the DefaultActionOnFailure enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string default_action_on_failure = 61383253;</code>
+   *
+   * @return The defaultActionOnFailure.
+   */
+  @java.lang.Override
+  public java.lang.String getDefaultActionOnFailure() {
+    java.lang.Object ref = defaultActionOnFailure_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      defaultActionOnFailure_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+   * Check the DefaultActionOnFailure enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string default_action_on_failure = 61383253;</code>
+   *
+   * @return The bytes for defaultActionOnFailure.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDefaultActionOnFailureBytes() {
+    java.lang.Object ref = defaultActionOnFailure_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      defaultActionOnFailure_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FORCE_UPDATE_ON_REPAIR_FIELD_NUMBER = 356302027;
 
   @SuppressWarnings("serial")
@@ -214,7 +447,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    */
   @java.lang.Override
   public boolean hasForceUpdateOnRepair() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -280,6 +513,9 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 61383253, defaultActionOnFailure_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 356302027, forceUpdateOnRepair_);
     }
     getUnknownFields().writeTo(output);
@@ -292,6 +528,11 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              61383253, defaultActionOnFailure_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(356302027, forceUpdateOnRepair_);
     }
@@ -311,6 +552,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy other =
         (com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy) obj;
 
+    if (hasDefaultActionOnFailure() != other.hasDefaultActionOnFailure()) return false;
+    if (hasDefaultActionOnFailure()) {
+      if (!getDefaultActionOnFailure().equals(other.getDefaultActionOnFailure())) return false;
+    }
     if (hasForceUpdateOnRepair() != other.hasForceUpdateOnRepair()) return false;
     if (hasForceUpdateOnRepair()) {
       if (!getForceUpdateOnRepair().equals(other.getForceUpdateOnRepair())) return false;
@@ -326,6 +571,10 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDefaultActionOnFailure()) {
+      hash = (37 * hash) + DEFAULT_ACTION_ON_FAILURE_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultActionOnFailure().hashCode();
+    }
     if (hasForceUpdateOnRepair()) {
       hash = (37 * hash) + FORCE_UPDATE_ON_REPAIR_FIELD_NUMBER;
       hash = (53 * hash) + getForceUpdateOnRepair().hashCode();
@@ -472,6 +721,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      defaultActionOnFailure_ = "";
       forceUpdateOnRepair_ = "";
       return this;
     }
@@ -515,8 +765,12 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.forceUpdateOnRepair_ = forceUpdateOnRepair_;
+        result.defaultActionOnFailure_ = defaultActionOnFailure_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.forceUpdateOnRepair_ = forceUpdateOnRepair_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -571,9 +825,14 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       if (other
           == com.google.cloud.compute.v1.InstanceGroupManagerInstanceLifecyclePolicy
               .getDefaultInstance()) return this;
+      if (other.hasDefaultActionOnFailure()) {
+        defaultActionOnFailure_ = other.defaultActionOnFailure_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (other.hasForceUpdateOnRepair()) {
         forceUpdateOnRepair_ = other.forceUpdateOnRepair_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -602,10 +861,16 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
             case 0:
               done = true;
               break;
+            case 491066026:
+              {
+                defaultActionOnFailure_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 491066026
             case -1444551078:
               {
                 forceUpdateOnRepair_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1444551078
             default:
@@ -627,6 +892,132 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
 
     private int bitField0_;
 
+    private java.lang.Object defaultActionOnFailure_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * Check the DefaultActionOnFailure enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string default_action_on_failure = 61383253;</code>
+     *
+     * @return Whether the defaultActionOnFailure field is set.
+     */
+    public boolean hasDefaultActionOnFailure() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * Check the DefaultActionOnFailure enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string default_action_on_failure = 61383253;</code>
+     *
+     * @return The defaultActionOnFailure.
+     */
+    public java.lang.String getDefaultActionOnFailure() {
+      java.lang.Object ref = defaultActionOnFailure_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        defaultActionOnFailure_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * Check the DefaultActionOnFailure enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string default_action_on_failure = 61383253;</code>
+     *
+     * @return The bytes for defaultActionOnFailure.
+     */
+    public com.google.protobuf.ByteString getDefaultActionOnFailureBytes() {
+      java.lang.Object ref = defaultActionOnFailure_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        defaultActionOnFailure_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * Check the DefaultActionOnFailure enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string default_action_on_failure = 61383253;</code>
+     *
+     * @param value The defaultActionOnFailure to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultActionOnFailure(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      defaultActionOnFailure_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * Check the DefaultActionOnFailure enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string default_action_on_failure = 61383253;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultActionOnFailure() {
+      defaultActionOnFailure_ = getDefaultInstance().getDefaultActionOnFailure();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The action that a MIG performs on a failed or an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed or an unhealthy VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed or an unhealthy VM.
+     * Check the DefaultActionOnFailure enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string default_action_on_failure = 61383253;</code>
+     *
+     * @param value The bytes for defaultActionOnFailure to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultActionOnFailureBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      defaultActionOnFailure_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object forceUpdateOnRepair_ = "";
     /**
      *
@@ -641,7 +1032,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      * @return Whether the forceUpdateOnRepair field is set.
      */
     public boolean hasForceUpdateOnRepair() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -707,7 +1098,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
         throw new NullPointerException();
       }
       forceUpdateOnRepair_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -725,7 +1116,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      */
     public Builder clearForceUpdateOnRepair() {
       forceUpdateOnRepair_ = getDefaultInstance().getForceUpdateOnRepair();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -748,7 +1139,7 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
       }
       checkByteStringIsUtf8(value);
       forceUpdateOnRepair_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

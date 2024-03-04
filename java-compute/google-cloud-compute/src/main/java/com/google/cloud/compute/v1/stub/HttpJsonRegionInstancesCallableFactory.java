@@ -16,7 +16,6 @@
 
 package com.google.cloud.compute.v1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonOperationSnapshotCallable;
@@ -40,7 +39,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonRegionInstancesCallableFactory
     implements HttpJsonStubCallableFactory<Operation, RegionOperationsStub> {
 
@@ -72,8 +70,6 @@ public class HttpJsonRegionInstancesCallableFactory
         httpJsonCallSettings, callSettings, clientContext);
   }
 
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   @Override
   public <RequestT, ResponseT, MetadataT>
       OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(

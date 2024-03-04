@@ -60,6 +60,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     securityPolicy_ = "";
     selfLink_ = "";
     serviceBindings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serviceLbPolicy_ = "";
     sessionAffinity_ = "";
     usedBy_ = java.util.Collections.emptyList();
   }
@@ -3500,6 +3501,72 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return serviceBindings_.getByteString(index);
   }
 
+  public static final int SERVICE_LB_POLICY_FIELD_NUMBER = 94848785;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceLbPolicy_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * </pre>
+   *
+   * <code>optional string service_lb_policy = 94848785;</code>
+   *
+   * @return Whether the serviceLbPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceLbPolicy() {
+    return ((bitField0_ & 0x40000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * </pre>
+   *
+   * <code>optional string service_lb_policy = 94848785;</code>
+   *
+   * @return The serviceLbPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceLbPolicy() {
+    java.lang.Object ref = serviceLbPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceLbPolicy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * </pre>
+   *
+   * <code>optional string service_lb_policy = 94848785;</code>
+   *
+   * @return The bytes for serviceLbPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceLbPolicyBytes() {
+    java.lang.Object ref = serviceLbPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceLbPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
 
   @SuppressWarnings("serial")
@@ -3518,7 +3585,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSessionAffinity() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
   /**
    *
@@ -3578,7 +3645,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSubsetting() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
   /**
    * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
@@ -3614,7 +3681,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTimeoutSec() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
   /**
    *
@@ -3713,11 +3780,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00080000) != 0)) {
       output.writeMessage(61428376, getMaxStreamDuration());
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       output.writeInt32(79994995, timeoutSec_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 84577944, protocol_);
+    }
+    if (((bitField0_ & 0x40000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 94848785, serviceLbPolicy_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 95520988, compressionMode_);
@@ -3785,7 +3855,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 448370606, healthChecks_.getRaw(i));
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       output.writeMessage(450283536, getSubsetting());
     }
     if (((bitField0_ & 0x20000000) != 0)) {
@@ -3794,7 +3864,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(461096747, getConnectionDraining());
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 463888561, sessionAffinity_);
     }
     if (((bitField0_ & 0x10000000) != 0)) {
@@ -3864,11 +3934,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               61428376, getMaxStreamDuration());
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(79994995, timeoutSec_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(84577944, protocol_);
+    }
+    if (((bitField0_ & 0x40000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(94848785, serviceLbPolicy_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(95520988, compressionMode_);
@@ -3959,7 +4032,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getHealthChecksList().size();
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(450283536, getSubsetting());
     }
     if (((bitField0_ & 0x20000000) != 0)) {
@@ -3970,7 +4043,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               461096747, getConnectionDraining());
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(463888561, sessionAffinity_);
     }
     if (((bitField0_ & 0x10000000) != 0)) {
@@ -4124,6 +4197,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
     if (!getServiceBindingsList().equals(other.getServiceBindingsList())) return false;
+    if (hasServiceLbPolicy() != other.hasServiceLbPolicy()) return false;
+    if (hasServiceLbPolicy()) {
+      if (!getServiceLbPolicy().equals(other.getServiceLbPolicy())) return false;
+    }
     if (hasSessionAffinity() != other.hasSessionAffinity()) return false;
     if (hasSessionAffinity()) {
       if (!getSessionAffinity().equals(other.getSessionAffinity())) return false;
@@ -4295,6 +4372,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (getServiceBindingsCount() > 0) {
       hash = (37 * hash) + SERVICE_BINDINGS_FIELD_NUMBER;
       hash = (53 * hash) + getServiceBindingsList().hashCode();
+    }
+    if (hasServiceLbPolicy()) {
+      hash = (37 * hash) + SERVICE_LB_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceLbPolicy().hashCode();
     }
     if (hasSessionAffinity()) {
       hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
@@ -4590,6 +4671,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       selfLink_ = "";
       serviceBindings_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serviceLbPolicy_ = "";
       sessionAffinity_ = "";
       subsetting_ = null;
       if (subsettingBuilder_ != null) {
@@ -4603,7 +4685,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         usedBy_ = null;
         usedByBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000200);
       return this;
     }
 
@@ -4662,9 +4744,9 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         result.localityLbPolicies_ = localityLbPoliciesBuilder_.build();
       }
       if (usedByBuilder_ == null) {
-        if (((bitField1_ & 0x00000100) != 0)) {
+        if (((bitField1_ & 0x00000200) != 0)) {
           usedBy_ = java.util.Collections.unmodifiableList(usedBy_);
-          bitField1_ = (bitField1_ & ~0x00000100);
+          bitField1_ = (bitField1_ & ~0x00000200);
         }
         result.usedBy_ = usedBy_;
       } else {
@@ -4836,17 +4918,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         result.serviceBindings_ = serviceBindings_;
       }
       if (((from_bitField1_ & 0x00000020) != 0)) {
-        result.sessionAffinity_ = sessionAffinity_;
+        result.serviceLbPolicy_ = serviceLbPolicy_;
         to_bitField0_ |= 0x40000000;
       }
       if (((from_bitField1_ & 0x00000040) != 0)) {
-        result.subsetting_ = subsettingBuilder_ == null ? subsetting_ : subsettingBuilder_.build();
+        result.sessionAffinity_ = sessionAffinity_;
         to_bitField0_ |= 0x80000000;
       }
       int to_bitField1_ = 0;
       if (((from_bitField1_ & 0x00000080) != 0)) {
-        result.timeoutSec_ = timeoutSec_;
+        result.subsetting_ = subsettingBuilder_ == null ? subsetting_ : subsettingBuilder_.build();
         to_bitField1_ |= 0x00000001;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.timeoutSec_ = timeoutSec_;
+        to_bitField1_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -5113,9 +5199,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasServiceLbPolicy()) {
+        serviceLbPolicy_ = other.serviceLbPolicy_;
+        bitField1_ |= 0x00000020;
+        onChanged();
+      }
       if (other.hasSessionAffinity()) {
         sessionAffinity_ = other.sessionAffinity_;
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSubsetting()) {
@@ -5128,7 +5219,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         if (!other.usedBy_.isEmpty()) {
           if (usedBy_.isEmpty()) {
             usedBy_ = other.usedBy_;
-            bitField1_ = (bitField1_ & ~0x00000100);
+            bitField1_ = (bitField1_ & ~0x00000200);
           } else {
             ensureUsedByIsMutable();
             usedBy_.addAll(other.usedBy_);
@@ -5141,7 +5232,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             usedByBuilder_.dispose();
             usedByBuilder_ = null;
             usedBy_ = other.usedBy_;
-            bitField1_ = (bitField1_ & ~0x00000100);
+            bitField1_ = (bitField1_ & ~0x00000200);
             usedByBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUsedByFieldBuilder()
@@ -5260,7 +5351,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 639959960:
               {
                 timeoutSec_ = input.readInt32();
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 639959960
             case 676623554:
@@ -5269,6 +5360,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x80000000;
                 break;
               } // case 676623554
+            case 758790282:
+              {
+                serviceLbPolicy_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000020;
+                break;
+              } // case 758790282
             case 764167906:
               {
                 compressionMode_ = input.readStringRequireUtf8();
@@ -5420,7 +5517,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case -692699006:
               {
                 input.readMessage(getSubsettingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000080;
                 break;
               } // case -692699006
             case -645248918:
@@ -5439,7 +5536,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case -583858806:
               {
                 sessionAffinity_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000040;
                 break;
               } // case -583858806
             case -465767918:
@@ -11276,6 +11373,126 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object serviceLbPolicy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * </pre>
+     *
+     * <code>optional string service_lb_policy = 94848785;</code>
+     *
+     * @return Whether the serviceLbPolicy field is set.
+     */
+    public boolean hasServiceLbPolicy() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * </pre>
+     *
+     * <code>optional string service_lb_policy = 94848785;</code>
+     *
+     * @return The serviceLbPolicy.
+     */
+    public java.lang.String getServiceLbPolicy() {
+      java.lang.Object ref = serviceLbPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceLbPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * </pre>
+     *
+     * <code>optional string service_lb_policy = 94848785;</code>
+     *
+     * @return The bytes for serviceLbPolicy.
+     */
+    public com.google.protobuf.ByteString getServiceLbPolicyBytes() {
+      java.lang.Object ref = serviceLbPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceLbPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * </pre>
+     *
+     * <code>optional string service_lb_policy = 94848785;</code>
+     *
+     * @param value The serviceLbPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceLbPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceLbPolicy_ = value;
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * </pre>
+     *
+     * <code>optional string service_lb_policy = 94848785;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceLbPolicy() {
+      serviceLbPolicy_ = getDefaultInstance().getServiceLbPolicy();
+      bitField1_ = (bitField1_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL, EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * </pre>
+     *
+     * <code>optional string service_lb_policy = 94848785;</code>
+     *
+     * @param value The bytes for serviceLbPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceLbPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceLbPolicy_ = value;
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object sessionAffinity_ = "";
     /**
      *
@@ -11290,7 +11507,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sessionAffinity field is set.
      */
     public boolean hasSessionAffinity() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
     /**
      *
@@ -11356,7 +11573,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sessionAffinity_ = value;
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11374,7 +11591,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSessionAffinity() {
       sessionAffinity_ = getDefaultInstance().getSessionAffinity();
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -11397,7 +11614,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sessionAffinity_ = value;
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -11414,7 +11631,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subsetting field is set.
      */
     public boolean hasSubsetting() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
@@ -11440,7 +11657,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -11451,14 +11668,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
     public Builder mergeSubsetting(com.google.cloud.compute.v1.Subsetting value) {
       if (subsettingBuilder_ == null) {
-        if (((bitField1_ & 0x00000040) != 0)
+        if (((bitField1_ & 0x00000080) != 0)
             && subsetting_ != null
             && subsetting_ != com.google.cloud.compute.v1.Subsetting.getDefaultInstance()) {
           getSubsettingBuilder().mergeFrom(value);
@@ -11469,14 +11686,14 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         subsettingBuilder_.mergeFrom(value);
       }
       if (subsetting_ != null) {
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       return this;
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
     public Builder clearSubsetting() {
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000080);
       subsetting_ = null;
       if (subsettingBuilder_ != null) {
         subsettingBuilder_.dispose();
@@ -11487,7 +11704,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
     /** <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code> */
     public com.google.cloud.compute.v1.Subsetting.Builder getSubsettingBuilder() {
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000080;
       onChanged();
       return getSubsettingFieldBuilder().getBuilder();
     }
@@ -11533,7 +11750,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTimeoutSec() {
-      return ((bitField1_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
     /**
      *
@@ -11565,7 +11782,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeoutSec(int value) {
 
       timeoutSec_ = value;
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -11581,7 +11798,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000100);
       timeoutSec_ = 0;
       onChanged();
       return this;
@@ -11591,10 +11808,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureUsedByIsMutable() {
-      if (!((bitField1_ & 0x00000100) != 0)) {
+      if (!((bitField1_ & 0x00000200) != 0)) {
         usedBy_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.BackendServiceUsedBy>(usedBy_);
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000200;
       }
     }
 
@@ -11722,7 +11939,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUsedBy() {
       if (usedByBuilder_ == null) {
         usedBy_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000100);
+        bitField1_ = (bitField1_ & ~0x00000200);
         onChanged();
       } else {
         usedByBuilder_.clear();
@@ -11788,7 +12005,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.BackendServiceUsedBy,
                 com.google.cloud.compute.v1.BackendServiceUsedBy.Builder,
                 com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>(
-                usedBy_, ((bitField1_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                usedBy_, ((bitField1_ & 0x00000200) != 0), getParentForChildren(), isClean());
         usedBy_ = null;
       }
       return usedByBuilder_;

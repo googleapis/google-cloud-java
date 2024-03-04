@@ -486,6 +486,8 @@ public class DisksClientTest {
             .setSourceImage("sourceImage-105174528")
             .setSourceImageEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceImageId("sourceImageId2006496059")
+            .setSourceInstantSnapshot("sourceInstantSnapshot-1002724054")
+            .setSourceInstantSnapshotId("sourceInstantSnapshotId-1545139227")
             .setSourceSnapshot("sourceSnapshot-1078634753")
             .setSourceSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceSnapshotId("sourceSnapshotId-1480876934")

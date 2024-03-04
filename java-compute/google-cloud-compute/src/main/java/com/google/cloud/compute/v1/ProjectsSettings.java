@@ -164,6 +164,17 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
     return ((ProjectsStubSettings) getStubSettings()).moveInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setCloudArmorTier. */
+  public UnaryCallSettings<SetCloudArmorTierProjectRequest, Operation> setCloudArmorTierSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).setCloudArmorTierSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setCloudArmorTier. */
+  public OperationCallSettings<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationSettings() {
+    return ((ProjectsStubSettings) getStubSettings()).setCloudArmorTierOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setCommonInstanceMetadata. */
   public UnaryCallSettings<SetCommonInstanceMetadataProjectRequest, Operation>
       setCommonInstanceMetadataSettings() {
@@ -388,6 +399,18 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
     public OperationCallSettings.Builder<MoveInstanceProjectRequest, Operation, Operation>
         moveInstanceOperationSettings() {
       return getStubSettingsBuilder().moveInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setCloudArmorTier. */
+    public UnaryCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation>
+        setCloudArmorTierSettings() {
+      return getStubSettingsBuilder().setCloudArmorTierSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setCloudArmorTier. */
+    public OperationCallSettings.Builder<SetCloudArmorTierProjectRequest, Operation, Operation>
+        setCloudArmorTierOperationSettings() {
+      return getStubSettingsBuilder().setCloudArmorTierOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setCommonInstanceMetadata. */

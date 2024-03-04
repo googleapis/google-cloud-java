@@ -102,6 +102,46 @@ public interface VpnGatewayOrBuilder
    *
    *
    * <pre>
+   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+   * Check the GatewayIpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string gateway_ip_version = 65074843;</code>
+   *
+   * @return Whether the gatewayIpVersion field is set.
+   */
+  boolean hasGatewayIpVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+   * Check the GatewayIpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string gateway_ip_version = 65074843;</code>
+   *
+   * @return The gatewayIpVersion.
+   */
+  java.lang.String getGatewayIpVersion();
+  /**
+   *
+   *
+   * <pre>
+   * The IP family of the gateway IPs for the HA-VPN gateway interfaces. If not specified, IPV4 will be used.
+   * Check the GatewayIpVersion enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string gateway_ip_version = 65074843;</code>
+   *
+   * @return The bytes for gatewayIpVersion.
+   */
+  com.google.protobuf.ByteString getGatewayIpVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
    * </pre>
    *

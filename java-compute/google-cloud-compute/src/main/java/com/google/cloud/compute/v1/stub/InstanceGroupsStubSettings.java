@@ -22,7 +22,6 @@ import static com.google.cloud.compute.v1.InstanceGroupsClient.ListPagedResponse
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -899,8 +898,6 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     }
 
     /** Returns the builder for the settings used for calls to addInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddInstancesInstanceGroupRequest, Operation, Operation>
         addInstancesOperationSettings() {
       return addInstancesOperationSettings;
@@ -921,8 +918,6 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceGroupRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -939,8 +934,6 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertInstanceGroupRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -969,8 +962,6 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     }
 
     /** Returns the builder for the settings used for calls to removeInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RemoveInstancesInstanceGroupRequest, Operation, Operation>
         removeInstancesOperationSettings() {
       return removeInstancesOperationSettings;
@@ -983,8 +974,6 @@ public class InstanceGroupsStubSettings extends StubSettings<InstanceGroupsStubS
     }
 
     /** Returns the builder for the settings used for calls to setNamedPorts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetNamedPortsInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings() {
       return setNamedPortsOperationSettings;

@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.TargetHttpsProxiesClient.ListPagedResp
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -991,8 +990,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTargetHttpsProxyRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -1009,8 +1006,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertTargetHttpsProxyRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -1029,8 +1024,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchTargetHttpsProxyRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
@@ -1043,8 +1036,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to setCertificateMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetCertificateMapTargetHttpsProxyRequest, Operation, Operation>
         setCertificateMapOperationSettings() {
@@ -1058,8 +1049,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to setQuicOverride. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetQuicOverrideTargetHttpsProxyRequest, Operation, Operation>
         setQuicOverrideOperationSettings() {
@@ -1073,8 +1062,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to setSslCertificates. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetSslCertificatesTargetHttpsProxyRequest, Operation, Operation>
         setSslCertificatesOperationSettings() {
@@ -1088,8 +1075,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to setSslPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetSslPolicyTargetHttpsProxyRequest, Operation, Operation>
         setSslPolicyOperationSettings() {
       return setSslPolicyOperationSettings;
@@ -1102,8 +1087,6 @@ public class TargetHttpsProxiesStubSettings extends StubSettings<TargetHttpsProx
     }
 
     /** Returns the builder for the settings used for calls to setUrlMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetUrlMapTargetHttpsProxyRequest, Operation, Operation>
         setUrlMapOperationSettings() {
       return setUrlMapOperationSettings;

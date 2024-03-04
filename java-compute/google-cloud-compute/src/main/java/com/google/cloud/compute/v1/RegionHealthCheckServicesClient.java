@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -325,8 +324,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> deleteAsync(
       DeleteRegionHealthCheckServiceRequest request) {
     return deleteOperationCallable().futureCall(request);
@@ -567,8 +564,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> insertAsync(
       InsertRegionHealthCheckServiceRequest request) {
     return insertOperationCallable().futureCall(request);
@@ -882,8 +877,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> patchAsync(
       PatchRegionHealthCheckServiceRequest request) {
     return patchOperationCallable().futureCall(request);

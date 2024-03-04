@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.GlobalAddressesClient.ListPagedRespons
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -615,8 +614,6 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteGlobalAddressRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -633,8 +630,6 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertGlobalAddressRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -652,8 +647,6 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
     }
 
     /** Returns the builder for the settings used for calls to move. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<MoveGlobalAddressRequest, Operation, Operation>
         moveOperationSettings() {
       return moveOperationSettings;
@@ -665,8 +658,6 @@ public class GlobalAddressesStubSettings extends StubSettings<GlobalAddressesStu
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;

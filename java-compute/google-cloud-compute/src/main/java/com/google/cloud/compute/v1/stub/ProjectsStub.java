@@ -35,6 +35,7 @@ import com.google.cloud.compute.v1.MoveInstanceProjectRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Project;
 import com.google.cloud.compute.v1.ProjectsGetXpnResources;
+import com.google.cloud.compute.v1.SetCloudArmorTierProjectRequest;
 import com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest;
 import com.google.cloud.compute.v1.SetDefaultNetworkTierProjectRequest;
 import com.google.cloud.compute.v1.SetUsageExportBucketProjectRequest;
@@ -131,6 +132,16 @@ public abstract class ProjectsStub implements BackgroundResource {
 
   public UnaryCallable<MoveInstanceProjectRequest, Operation> moveInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: moveInstanceCallable()");
+  }
+
+  public OperationCallable<SetCloudArmorTierProjectRequest, Operation, Operation>
+      setCloudArmorTierOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setCloudArmorTierOperationCallable()");
+  }
+
+  public UnaryCallable<SetCloudArmorTierProjectRequest, Operation> setCloudArmorTierCallable() {
+    throw new UnsupportedOperationException("Not implemented: setCloudArmorTierCallable()");
   }
 
   public OperationCallable<SetCommonInstanceMetadataProjectRequest, Operation, Operation>

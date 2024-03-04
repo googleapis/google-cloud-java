@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -560,8 +559,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> addAssociationAsync(
       AddAssociationRegionNetworkFirewallPolicyRequest request) {
     return addAssociationOperationCallable().futureCall(request);
@@ -715,8 +712,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> addRuleAsync(
       AddRuleRegionNetworkFirewallPolicyRequest request) {
     return addRuleOperationCallable().futureCall(request);
@@ -863,8 +858,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> cloneRulesAsync(
       CloneRulesRegionNetworkFirewallPolicyRequest request) {
     return cloneRulesOperationCallable().futureCall(request);
@@ -1004,8 +997,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> deleteAsync(
       DeleteRegionNetworkFirewallPolicyRequest request) {
     return deleteOperationCallable().futureCall(request);
@@ -1660,8 +1651,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> insertAsync(
       InsertRegionNetworkFirewallPolicyRequest request) {
     return insertOperationCallable().futureCall(request);
@@ -1965,8 +1954,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> patchAsync(
       PatchRegionNetworkFirewallPolicyRequest request) {
     return patchOperationCallable().futureCall(request);
@@ -2115,8 +2102,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> patchRuleAsync(
       PatchRuleRegionNetworkFirewallPolicyRequest request) {
     return patchRuleOperationCallable().futureCall(request);
@@ -2262,8 +2247,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> removeAssociationAsync(
       RemoveAssociationRegionNetworkFirewallPolicyRequest request) {
     return removeAssociationOperationCallable().futureCall(request);
@@ -2409,8 +2392,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> removeRuleAsync(
       RemoveRuleRegionNetworkFirewallPolicyRequest request) {
     return removeRuleOperationCallable().futureCall(request);

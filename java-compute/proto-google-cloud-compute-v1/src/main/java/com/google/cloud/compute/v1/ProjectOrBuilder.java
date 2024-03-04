@@ -28,6 +28,46 @@ public interface ProjectOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+   * Check the CloudArmorTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string cloud_armor_tier = 4427052;</code>
+   *
+   * @return Whether the cloudArmorTier field is set.
+   */
+  boolean hasCloudArmorTier();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+   * Check the CloudArmorTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string cloud_armor_tier = 4427052;</code>
+   *
+   * @return The cloudArmorTier.
+   */
+  java.lang.String getCloudArmorTier();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The Cloud Armor tier for this project. It can be one of the following values: CA_STANDARD, CA_ENTERPRISE_PAYGO. If this field is not specified, it is assumed to be CA_STANDARD.
+   * Check the CloudArmorTier enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string cloud_armor_tier = 4427052;</code>
+   *
+   * @return The bytes for cloudArmorTier.
+   */
+  com.google.protobuf.ByteString getCloudArmorTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
    * </pre>
    *

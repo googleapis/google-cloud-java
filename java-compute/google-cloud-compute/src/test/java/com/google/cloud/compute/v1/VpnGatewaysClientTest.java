@@ -214,6 +214,7 @@ public class VpnGatewaysClientTest {
         VpnGateway.newBuilder()
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .setGatewayIpVersion("gatewayIpVersion-416578611")
             .setId(3355)
             .setKind("kind3292052")
             .setLabelFingerprint("labelFingerprint379449680")

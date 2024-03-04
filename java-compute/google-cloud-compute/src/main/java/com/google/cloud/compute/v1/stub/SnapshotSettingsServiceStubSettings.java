@@ -17,7 +17,6 @@
 package com.google.cloud.compute.v1.stub;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -367,8 +366,6 @@ public class SnapshotSettingsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PatchSnapshotSettingRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;

@@ -996,6 +996,122 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return Whether the sourceInstantSnapshot field is set.
+   */
+  boolean hasSourceInstantSnapshot();
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The sourceInstantSnapshot.
+   */
+  java.lang.String getSourceInstantSnapshot();
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The bytes for sourceInstantSnapshot.
+   */
+  com.google.protobuf.ByteString getSourceInstantSnapshotBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+   * </code>
+   *
+   * @return Whether the sourceInstantSnapshotEncryptionKey field is set.
+   */
+  boolean hasSourceInstantSnapshotEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+   * </code>
+   *
+   * @return The sourceInstantSnapshotEncryptionKey.
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKey getSourceInstantSnapshotEncryptionKey();
+  /**
+   *
+   *
+   * <pre>
+   * Customer provided encryption key when creating Snapshot from Instant Snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.CustomerEncryptionKey source_instant_snapshot_encryption_key = 436536060;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
+      getSourceInstantSnapshotEncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return Whether the sourceInstantSnapshotId field is set.
+   */
+  boolean hasSourceInstantSnapshotId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The sourceInstantSnapshotId.
+   */
+  java.lang.String getSourceInstantSnapshotId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotId.
+   */
+  com.google.protobuf.ByteString getSourceInstantSnapshotIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] URL of the resource policy which created this scheduled snapshot.
    * </pre>
    *

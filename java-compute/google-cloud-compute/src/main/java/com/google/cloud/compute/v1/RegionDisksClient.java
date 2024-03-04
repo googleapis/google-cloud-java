@@ -18,7 +18,6 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -554,8 +553,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> addResourcePoliciesAsync(
       AddResourcePoliciesRegionDiskRequest request) {
     return addResourcePoliciesOperationCallable().futureCall(request);
@@ -696,8 +693,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> bulkInsertAsync(
       BulkInsertRegionDiskRequest request) {
     return bulkInsertOperationCallable().futureCall(request);
@@ -837,8 +832,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> createSnapshotAsync(
       CreateSnapshotRegionDiskRequest request) {
     return createSnapshotOperationCallable().futureCall(request);
@@ -979,8 +972,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> deleteAsync(DeleteRegionDiskRequest request) {
     return deleteOperationCallable().futureCall(request);
   }
@@ -1310,8 +1301,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> insertAsync(InsertRegionDiskRequest request) {
     return insertOperationCallable().futureCall(request);
   }
@@ -1603,8 +1592,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> removeResourcePoliciesAsync(
       RemoveResourcePoliciesRegionDiskRequest request) {
     return removeResourcePoliciesOperationCallable().futureCall(request);
@@ -1752,8 +1739,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> resizeAsync(ResizeRegionDiskRequest request) {
     return resizeOperationCallable().futureCall(request);
   }
@@ -2001,8 +1986,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> setLabelsAsync(
       SetLabelsRegionDiskRequest request) {
     return setLabelsOperationCallable().futureCall(request);
@@ -2149,8 +2132,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> startAsyncReplicationAsync(
       StartAsyncReplicationRegionDiskRequest request) {
     return startAsyncReplicationOperationCallable().futureCall(request);
@@ -2287,8 +2268,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> stopAsyncReplicationAsync(
       StopAsyncReplicationRegionDiskRequest request) {
     return stopAsyncReplicationOperationCallable().futureCall(request);
@@ -2433,8 +2412,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> stopGroupAsyncReplicationAsync(
       StopGroupAsyncReplicationRegionDiskRequest request) {
     return stopGroupAsyncReplicationOperationCallable().futureCall(request);
@@ -2690,8 +2667,6 @@ public class RegionDisksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public final OperationFuture<Operation, Operation> updateAsync(UpdateRegionDiskRequest request) {
     return updateOperationCallable().futureCall(request);
   }

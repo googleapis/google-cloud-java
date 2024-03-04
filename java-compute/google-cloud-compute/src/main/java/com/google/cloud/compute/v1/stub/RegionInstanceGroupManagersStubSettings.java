@@ -23,7 +23,6 @@ import static com.google.cloud.compute.v1.RegionInstanceGroupManagersClient.List
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1642,8 +1641,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to abandonInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AbandonInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
         abandonInstancesOperationSettings() {
@@ -1658,8 +1655,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to applyUpdatesToInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
         applyUpdatesToInstancesOperationSettings() {
@@ -1673,8 +1668,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
         createInstancesOperationSettings() {
@@ -1688,8 +1681,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteRegionInstanceGroupManagerRequest, Operation, Operation>
         deleteOperationSettings() {
@@ -1703,8 +1694,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
         deleteInstancesOperationSettings() {
@@ -1719,8 +1708,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deletePerInstanceConfigs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
         deletePerInstanceConfigsOperationSettings() {
@@ -1740,8 +1727,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             InsertRegionInstanceGroupManagerRequest, Operation, Operation>
         insertOperationSettings() {
@@ -1791,8 +1776,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to patch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PatchRegionInstanceGroupManagerRequest, Operation, Operation>
         patchOperationSettings() {
@@ -1807,8 +1790,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to patchPerInstanceConfigs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
         patchPerInstanceConfigsOperationSettings() {
@@ -1822,8 +1803,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to recreateInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RecreateInstancesRegionInstanceGroupManagerRequest, Operation, Operation>
         recreateInstancesOperationSettings() {
@@ -1837,8 +1816,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to resize. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ResizeRegionInstanceGroupManagerRequest, Operation, Operation>
         resizeOperationSettings() {
@@ -1853,8 +1830,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to setInstanceTemplate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation, Operation>
         setInstanceTemplateOperationSettings() {
@@ -1868,8 +1843,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to setTargetPools. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetTargetPoolsRegionInstanceGroupManagerRequest, Operation, Operation>
         setTargetPoolsOperationSettings() {
@@ -1884,8 +1857,6 @@ public class RegionInstanceGroupManagersStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updatePerInstanceConfigs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation, Operation>
         updatePerInstanceConfigsOperationSettings() {

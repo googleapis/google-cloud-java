@@ -1056,7 +1056,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -1071,7 +1071,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -3674,7 +3674,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -3689,7 +3689,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -3704,7 +3704,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -3723,7 +3723,7 @@ public final class AttachedDiskInitializeParams extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+     * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must greater than or equal to 1.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>

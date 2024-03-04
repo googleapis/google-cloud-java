@@ -882,7 +882,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -894,7 +894,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be between 1 and 7,124.
+   * Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -1451,6 +1451,80 @@ public interface DiskOrBuilder
    * @return The bytes for sourceImageId.
    */
   com.google.protobuf.ByteString getSourceImageIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return Whether the sourceInstantSnapshot field is set.
+   */
+  boolean hasSourceInstantSnapshot();
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The sourceInstantSnapshot.
+   */
+  java.lang.String getSourceInstantSnapshot();
+  /**
+   *
+   *
+   * <pre>
+   * The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot = 219202054;</code>
+   *
+   * @return The bytes for sourceInstantSnapshot.
+   */
+  com.google.protobuf.ByteString getSourceInstantSnapshotBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return Whether the sourceInstantSnapshotId field is set.
+   */
+  boolean hasSourceInstantSnapshotId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The sourceInstantSnapshotId.
+   */
+  java.lang.String getSourceInstantSnapshotId();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_id = 287582708;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotId.
+   */
+  com.google.protobuf.ByteString getSourceInstantSnapshotIdBytes();
 
   /**
    *

@@ -40,6 +40,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
 
   private ExternalVpnGatewayInterface() {
     ipAddress_ = "";
+    ipv6Address_ = "";
   }
 
   @java.lang.Override
@@ -163,6 +164,72 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     }
   }
 
+  public static final int IPV6_ADDRESS_FIELD_NUMBER = 341563804;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipv6Address_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return Whether the ipv6Address field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6Address() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The ipv6Address.
+   */
+  @java.lang.Override
+  public java.lang.String getIpv6Address() {
+    java.lang.Object ref = ipv6Address_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6Address_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+   * </pre>
+   *
+   * <code>optional string ipv6_address = 341563804;</code>
+   *
+   * @return The bytes for ipv6Address.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpv6AddressBytes() {
+    java.lang.Object ref = ipv6Address_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipv6Address_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -180,6 +247,9 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(3355, id_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
@@ -194,6 +264,9 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3355, id_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
@@ -222,6 +295,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     if (hasIpAddress()) {
       if (!getIpAddress().equals(other.getIpAddress())) return false;
     }
+    if (hasIpv6Address() != other.hasIpv6Address()) return false;
+    if (hasIpv6Address()) {
+      if (!getIpv6Address().equals(other.getIpv6Address())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -240,6 +317,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
     if (hasIpAddress()) {
       hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getIpAddress().hashCode();
+    }
+    if (hasIpv6Address()) {
+      hash = (37 * hash) + IPV6_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getIpv6Address().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -383,6 +464,7 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       bitField0_ = 0;
       id_ = 0;
       ipAddress_ = "";
+      ipv6Address_ = "";
       return this;
     }
 
@@ -427,6 +509,10 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.ipAddress_ = ipAddress_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipv6Address_ = ipv6Address_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -485,6 +571,11 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasIpv6Address()) {
+        ipv6Address_ = other.ipv6Address_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -517,6 +608,12 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000001;
                 break;
               } // case 26840
+            case -1562456862:
+              {
+                ipv6Address_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1562456862
             case -1044789534:
               {
                 ipAddress_ = input.readStringRequireUtf8();
@@ -726,6 +823,126 @@ public final class ExternalVpnGatewayInterface extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipv6Address_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return Whether the ipv6Address field is set.
+     */
+    public boolean hasIpv6Address() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return The ipv6Address.
+     */
+    public java.lang.String getIpv6Address() {
+      java.lang.Object ref = ipv6Address_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6Address_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return The bytes for ipv6Address.
+     */
+    public com.google.protobuf.ByteString getIpv6AddressBytes() {
+      java.lang.Object ref = ipv6Address_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipv6Address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @param value The ipv6Address to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6Address(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipv6Address_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6Address() {
+      ipv6Address_ = getDefaultInstance().getIpv6Address();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 address of the interface in the external VPN gateway. This IPv6 address can be either from your on-premise gateway or another Cloud provider's VPN gateway, it cannot be an IP address from Google Compute Engine. Must specify an IPv6 address (not IPV4-mapped) using any format described in RFC 4291 (e.g. 2001:db8:0:0:2d9:51:0:0). The output format is RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
+     * </pre>
+     *
+     * <code>optional string ipv6_address = 341563804;</code>
+     *
+     * @param value The bytes for ipv6Address to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipv6Address_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

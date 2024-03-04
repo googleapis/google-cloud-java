@@ -21,7 +21,6 @@ import static com.google.cloud.compute.v1.RegionNetworkEndpointGroupsClient.List
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -783,8 +782,6 @@ public class RegionNetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to attachNetworkEndpoints. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AttachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
         attachNetworkEndpointsOperationSettings() {
@@ -798,8 +795,6 @@ public class RegionNetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteRegionNetworkEndpointGroupRequest, Operation, Operation>
         deleteOperationSettings() {
@@ -814,8 +809,6 @@ public class RegionNetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to detachNetworkEndpoints. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DetachNetworkEndpointsRegionNetworkEndpointGroupRequest, Operation, Operation>
         detachNetworkEndpointsOperationSettings() {
@@ -835,8 +828,6 @@ public class RegionNetworkEndpointGroupsStubSettings
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             InsertRegionNetworkEndpointGroupRequest, Operation, Operation>
         insertOperationSettings() {

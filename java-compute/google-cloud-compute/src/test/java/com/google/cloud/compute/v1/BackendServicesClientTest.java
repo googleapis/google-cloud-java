@@ -400,6 +400,7 @@ public class BackendServicesClientTest {
             .setSecuritySettings(SecuritySettings.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .addAllServiceBindings(new ArrayList<String>())
+            .setServiceLbPolicy("serviceLbPolicy-347155427")
             .setSessionAffinity("sessionAffinity-289859106")
             .setSubsetting(Subsetting.newBuilder().build())
             .setTimeoutSec(-2067488653)

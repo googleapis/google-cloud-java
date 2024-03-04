@@ -20,7 +20,6 @@ import static com.google.cloud.compute.v1.RegionDisksClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1153,8 +1152,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
         addResourcePoliciesOperationSettings() {
       return addResourcePoliciesOperationSettings;
@@ -1166,8 +1163,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to bulkInsert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BulkInsertRegionDiskRequest, Operation, Operation>
         bulkInsertOperationSettings() {
       return bulkInsertOperationSettings;
@@ -1180,8 +1175,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSnapshotRegionDiskRequest, Operation, Operation>
         createSnapshotOperationSettings() {
       return createSnapshotOperationSettings;
@@ -1193,8 +1186,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to delete. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRegionDiskRequest, Operation, Operation>
         deleteOperationSettings() {
       return deleteOperationSettings;
@@ -1216,8 +1207,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to insert. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InsertRegionDiskRequest, Operation, Operation>
         insertOperationSettings() {
       return insertOperationSettings;
@@ -1236,8 +1225,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to removeResourcePolicies. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RemoveResourcePoliciesRegionDiskRequest, Operation, Operation>
         removeResourcePoliciesOperationSettings() {
@@ -1250,8 +1237,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to resize. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResizeRegionDiskRequest, Operation, Operation>
         resizeOperationSettings() {
       return resizeOperationSettings;
@@ -1268,8 +1253,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to setLabels. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetLabelsRegionDiskRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;
@@ -1282,8 +1265,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to startAsyncReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StartAsyncReplicationRegionDiskRequest, Operation, Operation>
         startAsyncReplicationOperationSettings() {
@@ -1297,8 +1278,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to stopAsyncReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StopAsyncReplicationRegionDiskRequest, Operation, Operation>
         stopAsyncReplicationOperationSettings() {
@@ -1312,8 +1291,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to stopGroupAsyncReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StopGroupAsyncReplicationRegionDiskRequest, Operation, Operation>
         stopGroupAsyncReplicationOperationSettings() {
@@ -1332,8 +1309,6 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     }
 
     /** Returns the builder for the settings used for calls to update. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRegionDiskRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
