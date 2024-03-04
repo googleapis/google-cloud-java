@@ -288,11 +288,9 @@ grpc-google-cloud-gkehub-v1beta1:0.42.0:0.43.0-SNAPSHOT
 grpc-google-cloud-gkehub-v1:1.36.0:1.37.0-SNAPSHOT
 grpc-google-cloud-gkehub-v1alpha:0.42.0:0.43.0-SNAPSHOT
 grpc-google-cloud-gkehub-v1beta:0.42.0:0.43.0-SNAPSHOT
-grpc-google-cloud-gkehub-v1alpha2:0.42.0:0.43.0-SNAPSHOT
 proto-google-cloud-gkehub-v1beta1:0.42.0:0.43.0-SNAPSHOT
 proto-google-cloud-gkehub-v1:1.36.0:1.37.0-SNAPSHOT
 proto-google-cloud-gkehub-v1alpha:0.42.0:0.43.0-SNAPSHOT
-proto-google-cloud-gkehub-v1alpha2:0.42.0:0.43.0-SNAPSHOT
 proto-google-cloud-gkehub-v1beta:0.42.0:0.43.0-SNAPSHOT
 google-cloud-gke-multi-cloud:0.35.0:0.36.0-SNAPSHOT
 proto-google-cloud-gke-multi-cloud-v1:0.35.0:0.36.0-SNAPSHOT
