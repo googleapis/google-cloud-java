@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -98,17 +97,14 @@ public class MuteConfigName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationMuteConfigBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderMuteConfigBuilder newFolderMuteConfigBuilder() {
     return new FolderMuteConfigBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectMuteConfigBuilder newProjectMuteConfigBuilder() {
     return new ProjectMuteConfigBuilder();
   }
@@ -121,18 +117,15 @@ public class MuteConfigName implements ResourceName {
     return newBuilder().setOrganization(organization).setMuteConfig(muteConfig).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MuteConfigName ofOrganizationMuteConfigName(
       String organization, String muteConfig) {
     return newBuilder().setOrganization(organization).setMuteConfig(muteConfig).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MuteConfigName ofFolderMuteConfigName(String folder, String muteConfig) {
     return newFolderMuteConfigBuilder().setFolder(folder).setMuteConfig(muteConfig).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MuteConfigName ofProjectMuteConfigName(String project, String muteConfig) {
     return newProjectMuteConfigBuilder().setProject(project).setMuteConfig(muteConfig).build();
   }
@@ -141,12 +134,10 @@ public class MuteConfigName implements ResourceName {
     return newBuilder().setOrganization(organization).setMuteConfig(muteConfig).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationMuteConfigName(String organization, String muteConfig) {
     return newBuilder().setOrganization(organization).setMuteConfig(muteConfig).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderMuteConfigName(String folder, String muteConfig) {
     return newFolderMuteConfigBuilder()
         .setFolder(folder)
@@ -155,7 +146,6 @@ public class MuteConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectMuteConfigName(String project, String muteConfig) {
     return newProjectMuteConfigBuilder()
         .setProject(project)
@@ -312,7 +302,6 @@ public class MuteConfigName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/muteConfigs/{mute_config}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderMuteConfigBuilder {
     private String folder;
     private String muteConfig;
@@ -343,7 +332,6 @@ public class MuteConfigName implements ResourceName {
   }
 
   /** Builder for projects/{project}/muteConfigs/{mute_config}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectMuteConfigBuilder {
     private String project;
     private String muteConfig;

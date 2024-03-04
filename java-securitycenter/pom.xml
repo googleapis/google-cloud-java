@@ -33,6 +33,16 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-securitycenter-v2</artifactId>
+        <version>2.45.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-securitycenter-v2</artifactId>
+        <version>2.45.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-v1beta1</artifactId>
         <version>0.140.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1beta1:current} -->
       </dependency>
@@ -69,9 +79,11 @@
     <module>grpc-google-cloud-securitycenter-v1</module>
     <module>grpc-google-cloud-securitycenter-v1beta1</module>
     <module>grpc-google-cloud-securitycenter-v1p1beta1</module>
+    <module>grpc-google-cloud-securitycenter-v2</module>
     <module>proto-google-cloud-securitycenter-v1</module>
     <module>proto-google-cloud-securitycenter-v1beta1</module>
     <module>proto-google-cloud-securitycenter-v1p1beta1</module>
+    <module>proto-google-cloud-securitycenter-v2</module>
     <module>google-cloud-securitycenter-bom</module>
   </modules>
 

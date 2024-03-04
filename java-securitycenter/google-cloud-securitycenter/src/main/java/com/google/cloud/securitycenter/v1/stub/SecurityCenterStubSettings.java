@@ -2259,8 +2259,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     }
 
     /** Returns the builder for the settings used for calls to bulkMuteFindings. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
         bulkMuteFindingsOperationSettings() {
       return bulkMuteFindingsOperationSettings;
@@ -2480,8 +2478,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     }
 
     /** Returns the builder for the settings used for calls to runAssetDiscovery. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RunAssetDiscoveryRequest, RunAssetDiscoveryResponse, Empty>
         runAssetDiscoveryOperationSettings() {
       return runAssetDiscoveryOperationSettings;

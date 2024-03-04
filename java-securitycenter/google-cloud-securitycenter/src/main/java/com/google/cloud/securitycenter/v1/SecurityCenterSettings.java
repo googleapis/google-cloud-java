@@ -487,7 +487,6 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -529,7 +528,6 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
       return new Builder(SecurityCenterStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SecurityCenterStubSettings.newHttpJsonBuilder());
     }

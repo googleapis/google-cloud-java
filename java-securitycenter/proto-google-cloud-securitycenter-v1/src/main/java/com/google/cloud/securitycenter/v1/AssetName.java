@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,17 +96,14 @@ public class AssetName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationAssetBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderAssetBuilder newFolderAssetBuilder() {
     return new FolderAssetBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectAssetBuilder newProjectAssetBuilder() {
     return new ProjectAssetBuilder();
   }
@@ -120,17 +116,14 @@ public class AssetName implements ResourceName {
     return newBuilder().setOrganization(organization).setAsset(asset).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AssetName ofOrganizationAssetName(String organization, String asset) {
     return newBuilder().setOrganization(organization).setAsset(asset).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AssetName ofFolderAssetName(String folder, String asset) {
     return newFolderAssetBuilder().setFolder(folder).setAsset(asset).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AssetName ofProjectAssetName(String project, String asset) {
     return newProjectAssetBuilder().setProject(project).setAsset(asset).build();
   }
@@ -139,17 +132,14 @@ public class AssetName implements ResourceName {
     return newBuilder().setOrganization(organization).setAsset(asset).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationAssetName(String organization, String asset) {
     return newBuilder().setOrganization(organization).setAsset(asset).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderAssetName(String folder, String asset) {
     return newFolderAssetBuilder().setFolder(folder).setAsset(asset).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectAssetName(String project, String asset) {
     return newProjectAssetBuilder().setProject(project).setAsset(asset).build().toString();
   }
@@ -301,7 +291,6 @@ public class AssetName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/assets/{asset}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderAssetBuilder {
     private String folder;
     private String asset;
@@ -332,7 +321,6 @@ public class AssetName implements ResourceName {
   }
 
   /** Builder for projects/{project}/assets/{asset}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectAssetBuilder {
     private String project;
     private String asset;

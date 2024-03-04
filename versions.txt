@@ -730,3 +730,5 @@ grpc-google-cloud-meet-v2:0.3.0:0.4.0-SNAPSHOT
 google-cloud-securityposture:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-securityposture-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-securityposture-v1:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-securitycenter-v2:2.44.0:2.45.0-SNAPSHOT
+grpc-google-cloud-securitycenter-v2:2.44.0:2.45.0-SNAPSHOT

@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,17 +88,14 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderBuilder newFolderBuilder() {
     return new FolderBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectBuilder newProjectBuilder() {
     return new ProjectBuilder();
   }
@@ -112,17 +108,14 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
     return newBuilder().setOrganization(organization).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsSettingsName ofOrganizationName(String organization) {
     return newBuilder().setOrganization(organization).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsSettingsName ofFolderName(String folder) {
     return newFolderBuilder().setFolder(folder).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsSettingsName ofProjectName(String project) {
     return newProjectBuilder().setProject(project).build();
   }
@@ -131,17 +124,14 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
     return newBuilder().setOrganization(organization).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationName(String organization) {
     return newBuilder().setOrganization(organization).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderName(String folder) {
     return newFolderBuilder().setFolder(folder).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectName(String project) {
     return newProjectBuilder().setProject(project).build().toString();
   }
@@ -277,7 +267,6 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/securityHealthAnalyticsSettings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderBuilder {
     private String folder;
 
@@ -298,7 +287,6 @@ public class SecurityHealthAnalyticsSettingsName implements ResourceName {
   }
 
   /** Builder for projects/{project}/securityHealthAnalyticsSettings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectBuilder {
     private String project;
 

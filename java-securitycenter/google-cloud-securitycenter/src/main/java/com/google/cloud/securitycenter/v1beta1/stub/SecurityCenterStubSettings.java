@@ -1113,8 +1113,6 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     }
 
     /** Returns the builder for the settings used for calls to runAssetDiscovery. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RunAssetDiscoveryRequest, Empty, Empty>
         runAssetDiscoveryOperationSettings() {
       return runAssetDiscoveryOperationSettings;

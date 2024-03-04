@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycenter.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -100,17 +99,14 @@ public class NotificationConfigName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationNotificationConfigBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderNotificationConfigBuilder newFolderNotificationConfigBuilder() {
     return new FolderNotificationConfigBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectNotificationConfigBuilder newProjectNotificationConfigBuilder() {
     return new ProjectNotificationConfigBuilder();
   }
@@ -126,7 +122,6 @@ public class NotificationConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationConfigName ofOrganizationNotificationConfigName(
       String organization, String notificationConfig) {
     return newBuilder()
@@ -135,7 +130,6 @@ public class NotificationConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationConfigName ofFolderNotificationConfigName(
       String folder, String notificationConfig) {
     return newFolderNotificationConfigBuilder()
@@ -144,7 +138,6 @@ public class NotificationConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationConfigName ofProjectNotificationConfigName(
       String project, String notificationConfig) {
     return newProjectNotificationConfigBuilder()
@@ -161,7 +154,6 @@ public class NotificationConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationNotificationConfigName(
       String organization, String notificationConfig) {
     return newBuilder()
@@ -171,7 +163,6 @@ public class NotificationConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderNotificationConfigName(
       String folder, String notificationConfig) {
     return newFolderNotificationConfigBuilder()
@@ -181,7 +172,6 @@ public class NotificationConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectNotificationConfigName(
       String project, String notificationConfig) {
     return newProjectNotificationConfigBuilder()
@@ -342,7 +332,6 @@ public class NotificationConfigName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/notificationConfigs/{notification_config}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderNotificationConfigBuilder {
     private String folder;
     private String notificationConfig;
@@ -373,7 +362,6 @@ public class NotificationConfigName implements ResourceName {
   }
 
   /** Builder for projects/{project}/notificationConfigs/{notification_config}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectNotificationConfigBuilder {
     private String project;
     private String notificationConfig;
