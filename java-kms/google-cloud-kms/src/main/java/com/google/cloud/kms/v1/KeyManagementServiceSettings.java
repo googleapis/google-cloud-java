@@ -326,7 +326,6 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -369,7 +368,6 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       return new Builder(KeyManagementServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(KeyManagementServiceStubSettings.newHttpJsonBuilder());
     }

@@ -144,7 +144,6 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -186,7 +185,6 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
       return new Builder(SpacesServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SpacesServiceStubSettings.newHttpJsonBuilder());
     }

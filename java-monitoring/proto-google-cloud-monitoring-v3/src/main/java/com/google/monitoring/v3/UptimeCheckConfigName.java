@@ -16,7 +16,6 @@
 
 package com.google.monitoring.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -100,17 +99,14 @@ public class UptimeCheckConfigName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectUptimeCheckConfigBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationUptimeCheckConfigBuilder newOrganizationUptimeCheckConfigBuilder() {
     return new OrganizationUptimeCheckConfigBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderUptimeCheckConfigBuilder newFolderUptimeCheckConfigBuilder() {
     return new FolderUptimeCheckConfigBuilder();
   }
@@ -123,13 +119,11 @@ public class UptimeCheckConfigName implements ResourceName {
     return newBuilder().setProject(project).setUptimeCheckConfig(uptimeCheckConfig).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static UptimeCheckConfigName ofProjectUptimeCheckConfigName(
       String project, String uptimeCheckConfig) {
     return newBuilder().setProject(project).setUptimeCheckConfig(uptimeCheckConfig).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static UptimeCheckConfigName ofOrganizationUptimeCheckConfigName(
       String organization, String uptimeCheckConfig) {
     return newOrganizationUptimeCheckConfigBuilder()
@@ -138,7 +132,6 @@ public class UptimeCheckConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static UptimeCheckConfigName ofFolderUptimeCheckConfigName(
       String folder, String uptimeCheckConfig) {
     return newFolderUptimeCheckConfigBuilder()
@@ -155,7 +148,6 @@ public class UptimeCheckConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectUptimeCheckConfigName(
       String project, String uptimeCheckConfig) {
     return newBuilder()
@@ -165,7 +157,6 @@ public class UptimeCheckConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationUptimeCheckConfigName(
       String organization, String uptimeCheckConfig) {
     return newOrganizationUptimeCheckConfigBuilder()
@@ -175,7 +166,6 @@ public class UptimeCheckConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderUptimeCheckConfigName(String folder, String uptimeCheckConfig) {
     return newFolderUptimeCheckConfigBuilder()
         .setFolder(folder)
@@ -335,7 +325,6 @@ public class UptimeCheckConfigName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/uptimeCheckConfigs/{uptime_check_config}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationUptimeCheckConfigBuilder {
     private String organization;
     private String uptimeCheckConfig;
@@ -366,7 +355,6 @@ public class UptimeCheckConfigName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/uptimeCheckConfigs/{uptime_check_config}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderUptimeCheckConfigBuilder {
     private String folder;
     private String uptimeCheckConfig;

@@ -147,7 +147,6 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -189,7 +188,6 @@ public class PlacesSettings extends ClientSettings<PlacesSettings> {
       return new Builder(PlacesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PlacesStubSettings.newHttpJsonBuilder());
     }

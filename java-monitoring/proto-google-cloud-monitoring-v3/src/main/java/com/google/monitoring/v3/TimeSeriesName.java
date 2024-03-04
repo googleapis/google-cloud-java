@@ -16,7 +16,6 @@
 
 package com.google.monitoring.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -98,17 +97,14 @@ public class TimeSeriesName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectTimeSeriesBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationTimeSeriesBuilder newOrganizationTimeSeriesBuilder() {
     return new OrganizationTimeSeriesBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderTimeSeriesBuilder newFolderTimeSeriesBuilder() {
     return new FolderTimeSeriesBuilder();
   }
@@ -121,12 +117,10 @@ public class TimeSeriesName implements ResourceName {
     return newBuilder().setProject(project).setTimeSeries(timeSeries).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TimeSeriesName ofProjectTimeSeriesName(String project, String timeSeries) {
     return newBuilder().setProject(project).setTimeSeries(timeSeries).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TimeSeriesName ofOrganizationTimeSeriesName(
       String organization, String timeSeries) {
     return newOrganizationTimeSeriesBuilder()
@@ -135,7 +129,6 @@ public class TimeSeriesName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TimeSeriesName ofFolderTimeSeriesName(String folder, String timeSeries) {
     return newFolderTimeSeriesBuilder().setFolder(folder).setTimeSeries(timeSeries).build();
   }
@@ -144,12 +137,10 @@ public class TimeSeriesName implements ResourceName {
     return newBuilder().setProject(project).setTimeSeries(timeSeries).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTimeSeriesName(String project, String timeSeries) {
     return newBuilder().setProject(project).setTimeSeries(timeSeries).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationTimeSeriesName(String organization, String timeSeries) {
     return newOrganizationTimeSeriesBuilder()
         .setOrganization(organization)
@@ -158,7 +149,6 @@ public class TimeSeriesName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderTimeSeriesName(String folder, String timeSeries) {
     return newFolderTimeSeriesBuilder()
         .setFolder(folder)
@@ -315,7 +305,6 @@ public class TimeSeriesName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/timeSeries/{time_series}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationTimeSeriesBuilder {
     private String organization;
     private String timeSeries;
@@ -346,7 +335,6 @@ public class TimeSeriesName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/timeSeries/{time_series}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderTimeSeriesBuilder {
     private String folder;
     private String timeSeries;

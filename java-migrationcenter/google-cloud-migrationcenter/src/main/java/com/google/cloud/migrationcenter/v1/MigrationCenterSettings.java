@@ -553,7 +553,6 @@ public class MigrationCenterSettings extends ClientSettings<MigrationCenterSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -595,7 +594,6 @@ public class MigrationCenterSettings extends ClientSettings<MigrationCenterSetti
       return new Builder(MigrationCenterStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(MigrationCenterStubSettings.newHttpJsonBuilder());
     }

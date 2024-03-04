@@ -173,7 +173,6 @@ public class MapsPlatformDatasetsV1AlphaSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -216,7 +215,6 @@ public class MapsPlatformDatasetsV1AlphaSettings
       return new Builder(MapsPlatformDatasetsV1AlphaStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(MapsPlatformDatasetsV1AlphaStubSettings.newHttpJsonBuilder());
     }

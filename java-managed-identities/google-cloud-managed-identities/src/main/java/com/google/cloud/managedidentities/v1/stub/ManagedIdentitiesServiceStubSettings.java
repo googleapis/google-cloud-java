@@ -20,7 +20,6 @@ import static com.google.cloud.managedidentities.v1.ManagedIdentitiesServiceClie
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -790,8 +789,6 @@ public class ManagedIdentitiesServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createMicrosoftAdDomain. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateMicrosoftAdDomainRequest, Domain, OpMetadata>
         createMicrosoftAdDomainOperationSettings() {
       return createMicrosoftAdDomainOperationSettings;
@@ -821,8 +818,6 @@ public class ManagedIdentitiesServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateDomain. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDomainRequest, Domain, OpMetadata>
         updateDomainOperationSettings() {
       return updateDomainOperationSettings;
@@ -834,8 +829,6 @@ public class ManagedIdentitiesServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteDomain. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDomainRequest, Empty, OpMetadata>
         deleteDomainOperationSettings() {
       return deleteDomainOperationSettings;
@@ -847,8 +840,6 @@ public class ManagedIdentitiesServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to attachTrust. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AttachTrustRequest, Domain, OpMetadata>
         attachTrustOperationSettings() {
       return attachTrustOperationSettings;
@@ -861,8 +852,6 @@ public class ManagedIdentitiesServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to reconfigureTrust. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ReconfigureTrustRequest, Domain, OpMetadata>
         reconfigureTrustOperationSettings() {
       return reconfigureTrustOperationSettings;
@@ -874,8 +863,6 @@ public class ManagedIdentitiesServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to detachTrust. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DetachTrustRequest, Domain, OpMetadata>
         detachTrustOperationSettings() {
       return detachTrustOperationSettings;
@@ -887,8 +874,6 @@ public class ManagedIdentitiesServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to validateTrust. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ValidateTrustRequest, Domain, OpMetadata>
         validateTrustOperationSettings() {
       return validateTrustOperationSettings;

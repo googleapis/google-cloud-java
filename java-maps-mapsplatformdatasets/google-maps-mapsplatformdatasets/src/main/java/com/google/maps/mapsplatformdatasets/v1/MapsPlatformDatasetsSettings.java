@@ -155,7 +155,6 @@ public class MapsPlatformDatasetsSettings extends ClientSettings<MapsPlatformDat
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -198,7 +197,6 @@ public class MapsPlatformDatasetsSettings extends ClientSettings<MapsPlatformDat
       return new Builder(MapsPlatformDatasetsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(MapsPlatformDatasetsStubSettings.newHttpJsonBuilder());
     }

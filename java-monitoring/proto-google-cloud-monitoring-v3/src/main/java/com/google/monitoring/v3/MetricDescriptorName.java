@@ -16,7 +16,6 @@
 
 package com.google.monitoring.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -100,17 +99,14 @@ public class MetricDescriptorName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectMetricDescriptorBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationMetricDescriptorBuilder newOrganizationMetricDescriptorBuilder() {
     return new OrganizationMetricDescriptorBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderMetricDescriptorBuilder newFolderMetricDescriptorBuilder() {
     return new FolderMetricDescriptorBuilder();
   }
@@ -123,13 +119,11 @@ public class MetricDescriptorName implements ResourceName {
     return newBuilder().setProject(project).setMetricDescriptor(metricDescriptor).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MetricDescriptorName ofProjectMetricDescriptorName(
       String project, String metricDescriptor) {
     return newBuilder().setProject(project).setMetricDescriptor(metricDescriptor).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MetricDescriptorName ofOrganizationMetricDescriptorName(
       String organization, String metricDescriptor) {
     return newOrganizationMetricDescriptorBuilder()
@@ -138,7 +132,6 @@ public class MetricDescriptorName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MetricDescriptorName ofFolderMetricDescriptorName(
       String folder, String metricDescriptor) {
     return newFolderMetricDescriptorBuilder()
@@ -155,7 +148,6 @@ public class MetricDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectMetricDescriptorName(String project, String metricDescriptor) {
     return newBuilder()
         .setProject(project)
@@ -164,7 +156,6 @@ public class MetricDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationMetricDescriptorName(
       String organization, String metricDescriptor) {
     return newOrganizationMetricDescriptorBuilder()
@@ -174,7 +165,6 @@ public class MetricDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderMetricDescriptorName(String folder, String metricDescriptor) {
     return newFolderMetricDescriptorBuilder()
         .setFolder(folder)
@@ -334,7 +324,6 @@ public class MetricDescriptorName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/metricDescriptors/{metric_descriptor=&#42;&#42;}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationMetricDescriptorBuilder {
     private String organization;
     private String metricDescriptor;
@@ -365,7 +354,6 @@ public class MetricDescriptorName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/metricDescriptors/{metric_descriptor=&#42;&#42;}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderMetricDescriptorBuilder {
     private String folder;
     private String metricDescriptor;

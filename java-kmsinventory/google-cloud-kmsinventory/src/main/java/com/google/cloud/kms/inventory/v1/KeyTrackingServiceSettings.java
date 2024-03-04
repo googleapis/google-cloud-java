@@ -143,7 +143,6 @@ public class KeyTrackingServiceSettings extends ClientSettings<KeyTrackingServic
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -185,7 +184,6 @@ public class KeyTrackingServiceSettings extends ClientSettings<KeyTrackingServic
       return new Builder(KeyTrackingServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(KeyTrackingServiceStubSettings.newHttpJsonBuilder());
     }

@@ -3233,8 +3233,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createStoragePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateStoragePoolRequest, StoragePool, OperationMetadata>
         createStoragePoolOperationSettings() {
       return createStoragePoolOperationSettings;
@@ -3252,8 +3250,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateStoragePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateStoragePoolRequest, StoragePool, OperationMetadata>
         updateStoragePoolOperationSettings() {
       return updateStoragePoolOperationSettings;
@@ -3266,8 +3262,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteStoragePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteStoragePoolRequest, Empty, OperationMetadata>
         deleteStoragePoolOperationSettings() {
       return deleteStoragePoolOperationSettings;
@@ -3291,8 +3285,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createVolume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateVolumeRequest, Volume, OperationMetadata>
         createVolumeOperationSettings() {
       return createVolumeOperationSettings;
@@ -3304,8 +3296,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateVolume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateVolumeRequest, Volume, OperationMetadata>
         updateVolumeOperationSettings() {
       return updateVolumeOperationSettings;
@@ -3317,8 +3307,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteVolume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteVolumeRequest, Empty, OperationMetadata>
         deleteVolumeOperationSettings() {
       return deleteVolumeOperationSettings;
@@ -3330,8 +3318,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to revertVolume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings() {
       return revertVolumeOperationSettings;
@@ -3355,8 +3341,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSnapshotRequest, Snapshot, OperationMetadata>
         createSnapshotOperationSettings() {
       return createSnapshotOperationSettings;
@@ -3368,8 +3352,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSnapshotRequest, Empty, OperationMetadata>
         deleteSnapshotOperationSettings() {
       return deleteSnapshotOperationSettings;
@@ -3381,8 +3363,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSnapshotRequest, Snapshot, OperationMetadata>
         updateSnapshotOperationSettings() {
       return updateSnapshotOperationSettings;
@@ -3410,8 +3390,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createActiveDirectory. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateActiveDirectoryRequest, ActiveDirectory, OperationMetadata>
         createActiveDirectoryOperationSettings() {
@@ -3425,8 +3403,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateActiveDirectory. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateActiveDirectoryRequest, ActiveDirectory, OperationMetadata>
         updateActiveDirectoryOperationSettings() {
@@ -3440,8 +3416,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteActiveDirectory. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteActiveDirectoryRequest, Empty, OperationMetadata>
         deleteActiveDirectoryOperationSettings() {
       return deleteActiveDirectoryOperationSettings;
@@ -3460,8 +3434,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createKmsConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateKmsConfigRequest, KmsConfig, OperationMetadata>
         createKmsConfigOperationSettings() {
       return createKmsConfigOperationSettings;
@@ -3478,8 +3450,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateKmsConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateKmsConfigRequest, KmsConfig, OperationMetadata>
         updateKmsConfigOperationSettings() {
       return updateKmsConfigOperationSettings;
@@ -3491,8 +3461,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to encryptVolumes. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<EncryptVolumesRequest, KmsConfig, OperationMetadata>
         encryptVolumesOperationSettings() {
       return encryptVolumesOperationSettings;
@@ -3510,8 +3478,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteKmsConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteKmsConfigRequest, Empty, OperationMetadata>
         deleteKmsConfigOperationSettings() {
       return deleteKmsConfigOperationSettings;
@@ -3536,8 +3502,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateReplicationRequest, Replication, OperationMetadata>
         createReplicationOperationSettings() {
       return createReplicationOperationSettings;
@@ -3550,8 +3514,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteReplicationRequest, Empty, OperationMetadata>
         deleteReplicationOperationSettings() {
       return deleteReplicationOperationSettings;
@@ -3564,8 +3526,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateReplicationRequest, Replication, OperationMetadata>
         updateReplicationOperationSettings() {
       return updateReplicationOperationSettings;
@@ -3577,8 +3537,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to stopReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopReplicationRequest, Replication, OperationMetadata>
         stopReplicationOperationSettings() {
       return stopReplicationOperationSettings;
@@ -3591,8 +3549,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to resumeReplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResumeReplicationRequest, Replication, OperationMetadata>
         resumeReplicationOperationSettings() {
       return resumeReplicationOperationSettings;
@@ -3605,8 +3561,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to reverseReplicationDirection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
@@ -3620,8 +3574,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createBackupVault. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupVaultRequest, BackupVault, OperationMetadata>
         createBackupVaultOperationSettings() {
       return createBackupVaultOperationSettings;
@@ -3646,8 +3598,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateBackupVault. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupVaultRequest, BackupVault, OperationMetadata>
         updateBackupVaultOperationSettings() {
       return updateBackupVaultOperationSettings;
@@ -3660,8 +3610,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteBackupVault. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupVaultRequest, Empty, OperationMetadata>
         deleteBackupVaultOperationSettings() {
       return deleteBackupVaultOperationSettings;
@@ -3673,8 +3621,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
         createBackupOperationSettings() {
       return createBackupOperationSettings;
@@ -3698,8 +3644,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return deleteBackupOperationSettings;
@@ -3711,8 +3655,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return updateBackupOperationSettings;
@@ -3725,8 +3667,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createBackupPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupPolicyRequest, BackupPolicy, OperationMetadata>
         createBackupPolicyOperationSettings() {
       return createBackupPolicyOperationSettings;
@@ -3752,8 +3692,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateBackupPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupPolicyRequest, BackupPolicy, OperationMetadata>
         updateBackupPolicyOperationSettings() {
       return updateBackupPolicyOperationSettings;
@@ -3766,8 +3704,6 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteBackupPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupPolicyRequest, Empty, OperationMetadata>
         deleteBackupPolicyOperationSettings() {
       return deleteBackupPolicyOperationSettings;

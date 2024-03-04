@@ -16,7 +16,6 @@
 
 package com.google.monitoring.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -100,17 +99,14 @@ public class NotificationChannelName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectNotificationChannelBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationNotificationChannelBuilder newOrganizationNotificationChannelBuilder() {
     return new OrganizationNotificationChannelBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderNotificationChannelBuilder newFolderNotificationChannelBuilder() {
     return new FolderNotificationChannelBuilder();
   }
@@ -123,13 +119,11 @@ public class NotificationChannelName implements ResourceName {
     return newBuilder().setProject(project).setNotificationChannel(notificationChannel).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationChannelName ofProjectNotificationChannelName(
       String project, String notificationChannel) {
     return newBuilder().setProject(project).setNotificationChannel(notificationChannel).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationChannelName ofOrganizationNotificationChannelName(
       String organization, String notificationChannel) {
     return newOrganizationNotificationChannelBuilder()
@@ -138,7 +132,6 @@ public class NotificationChannelName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationChannelName ofFolderNotificationChannelName(
       String folder, String notificationChannel) {
     return newFolderNotificationChannelBuilder()
@@ -155,7 +148,6 @@ public class NotificationChannelName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectNotificationChannelName(
       String project, String notificationChannel) {
     return newBuilder()
@@ -165,7 +157,6 @@ public class NotificationChannelName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationNotificationChannelName(
       String organization, String notificationChannel) {
     return newOrganizationNotificationChannelBuilder()
@@ -175,7 +166,6 @@ public class NotificationChannelName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderNotificationChannelName(
       String folder, String notificationChannel) {
     return newFolderNotificationChannelBuilder()
@@ -336,7 +326,6 @@ public class NotificationChannelName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/notificationChannels/{notification_channel}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationNotificationChannelBuilder {
     private String organization;
     private String notificationChannel;
@@ -368,7 +357,6 @@ public class NotificationChannelName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/notificationChannels/{notification_channel}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderNotificationChannelBuilder {
     private String folder;
     private String notificationChannel;

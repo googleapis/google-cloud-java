@@ -17,7 +17,6 @@
 package com.google.monitoring.metricsscope.v1.stub;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -455,8 +454,6 @@ public class MetricsScopesStubSettings extends StubSettings<MetricsScopesStubSet
     }
 
     /** Returns the builder for the settings used for calls to createMonitoredProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateMonitoredProjectRequest, MonitoredProject, OperationMetadata>
         createMonitoredProjectOperationSettings() {
@@ -470,8 +467,6 @@ public class MetricsScopesStubSettings extends StubSettings<MetricsScopesStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteMonitoredProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteMonitoredProjectRequest, Empty, OperationMetadata>
         deleteMonitoredProjectOperationSettings() {
       return deleteMonitoredProjectOperationSettings;

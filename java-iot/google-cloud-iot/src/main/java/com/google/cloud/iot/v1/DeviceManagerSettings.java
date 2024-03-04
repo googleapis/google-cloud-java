@@ -241,7 +241,6 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -283,7 +282,6 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
       return new Builder(DeviceManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DeviceManagerStubSettings.newHttpJsonBuilder());
     }

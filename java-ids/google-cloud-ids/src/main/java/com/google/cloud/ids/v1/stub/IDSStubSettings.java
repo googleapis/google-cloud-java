@@ -565,8 +565,6 @@ public class IDSStubSettings extends StubSettings<IDSStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEndpointRequest, Endpoint, OperationMetadata>
         createEndpointOperationSettings() {
       return createEndpointOperationSettings;
@@ -578,8 +576,6 @@ public class IDSStubSettings extends StubSettings<IDSStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEndpointRequest, Empty, OperationMetadata>
         deleteEndpointOperationSettings() {
       return deleteEndpointOperationSettings;

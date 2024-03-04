@@ -16,7 +16,6 @@
 
 package com.google.monitoring.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -103,18 +102,15 @@ public class MonitoredResourceDescriptorName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectMonitoredResourceDescriptorBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationMonitoredResourceDescriptorBuilder
       newOrganizationMonitoredResourceDescriptorBuilder() {
     return new OrganizationMonitoredResourceDescriptorBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderMonitoredResourceDescriptorBuilder
       newFolderMonitoredResourceDescriptorBuilder() {
     return new FolderMonitoredResourceDescriptorBuilder();
@@ -132,7 +128,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MonitoredResourceDescriptorName ofProjectMonitoredResourceDescriptorName(
       String project, String monitoredResourceDescriptor) {
     return newBuilder()
@@ -141,7 +136,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MonitoredResourceDescriptorName ofOrganizationMonitoredResourceDescriptorName(
       String organization, String monitoredResourceDescriptor) {
     return newOrganizationMonitoredResourceDescriptorBuilder()
@@ -150,7 +144,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MonitoredResourceDescriptorName ofFolderMonitoredResourceDescriptorName(
       String folder, String monitoredResourceDescriptor) {
     return newFolderMonitoredResourceDescriptorBuilder()
@@ -167,7 +160,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectMonitoredResourceDescriptorName(
       String project, String monitoredResourceDescriptor) {
     return newBuilder()
@@ -177,7 +169,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationMonitoredResourceDescriptorName(
       String organization, String monitoredResourceDescriptor) {
     return newOrganizationMonitoredResourceDescriptorBuilder()
@@ -187,7 +178,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderMonitoredResourceDescriptorName(
       String folder, String monitoredResourceDescriptor) {
     return newFolderMonitoredResourceDescriptorBuilder()
@@ -356,7 +346,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
    * Builder for
    * organizations/{organization}/monitoredResourceDescriptors/{monitored_resource_descriptor}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationMonitoredResourceDescriptorBuilder {
     private String organization;
     private String monitoredResourceDescriptor;
@@ -388,7 +377,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/monitoredResourceDescriptors/{monitored_resource_descriptor}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderMonitoredResourceDescriptorBuilder {
     private String folder;
     private String monitoredResourceDescriptor;

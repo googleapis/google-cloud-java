@@ -1390,8 +1390,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDeploymentRequest, Deployment, OperationMetadata>
         createDeploymentOperationSettings() {
       return createDeploymentOperationSettings;
@@ -1404,8 +1402,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDeploymentRequest, Deployment, OperationMetadata>
         updateDeploymentOperationSettings() {
       return updateDeploymentOperationSettings;
@@ -1418,8 +1414,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDeploymentRequest, Deployment, OperationMetadata>
         deleteDeploymentOperationSettings() {
       return deleteDeploymentOperationSettings;
@@ -1477,8 +1471,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to lockDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<LockDeploymentRequest, Deployment, OperationMetadata>
         lockDeploymentOperationSettings() {
       return lockDeploymentOperationSettings;
@@ -1491,8 +1483,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to unlockDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UnlockDeploymentRequest, Deployment, OperationMetadata>
         unlockDeploymentOperationSettings() {
       return unlockDeploymentOperationSettings;
@@ -1509,8 +1499,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createPreview. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreatePreviewRequest, Preview, OperationMetadata>
         createPreviewOperationSettings() {
       return createPreviewOperationSettings;
@@ -1534,8 +1522,6 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deletePreview. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePreviewRequest, Preview, OperationMetadata>
         deletePreviewOperationSettings() {
       return deletePreviewOperationSettings;

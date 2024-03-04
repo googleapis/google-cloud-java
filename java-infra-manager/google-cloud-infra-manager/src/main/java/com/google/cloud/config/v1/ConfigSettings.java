@@ -322,7 +322,6 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -364,7 +363,6 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       return new Builder(ConfigStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConfigStubSettings.newHttpJsonBuilder());
     }

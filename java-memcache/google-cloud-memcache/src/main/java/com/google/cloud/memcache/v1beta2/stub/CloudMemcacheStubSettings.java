@@ -935,8 +935,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -948,8 +946,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
@@ -962,8 +958,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateParameters. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateParametersRequest, Instance, OperationMetadata>
         updateParametersOperationSettings() {
       return updateParametersOperationSettings;
@@ -975,8 +969,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
@@ -988,8 +980,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     }
 
     /** Returns the builder for the settings used for calls to applyParameters. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ApplyParametersRequest, Instance, OperationMetadata>
         applyParametersOperationSettings() {
       return applyParametersOperationSettings;
@@ -1002,8 +992,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     }
 
     /** Returns the builder for the settings used for calls to applySoftwareUpdate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
         applySoftwareUpdateOperationSettings() {
       return applySoftwareUpdateOperationSettings;
@@ -1016,8 +1004,6 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     }
 
     /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
         rescheduleMaintenanceOperationSettings() {
       return rescheduleMaintenanceOperationSettings;

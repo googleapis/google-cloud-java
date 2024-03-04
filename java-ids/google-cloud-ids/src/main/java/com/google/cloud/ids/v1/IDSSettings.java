@@ -160,7 +160,6 @@ public class IDSSettings extends ClientSettings<IDSSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -202,7 +201,6 @@ public class IDSSettings extends ClientSettings<IDSSettings> {
       return new Builder(IDSStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(IDSStubSettings.newHttpJsonBuilder());
     }

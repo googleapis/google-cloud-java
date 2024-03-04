@@ -16,7 +16,6 @@
 
 package com.google.monitoring.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -100,17 +99,14 @@ public class NotificationChannelDescriptorName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectChannelDescriptorBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationChannelDescriptorBuilder newOrganizationChannelDescriptorBuilder() {
     return new OrganizationChannelDescriptorBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderChannelDescriptorBuilder newFolderChannelDescriptorBuilder() {
     return new FolderChannelDescriptorBuilder();
   }
@@ -123,13 +119,11 @@ public class NotificationChannelDescriptorName implements ResourceName {
     return newBuilder().setProject(project).setChannelDescriptor(channelDescriptor).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationChannelDescriptorName ofProjectChannelDescriptorName(
       String project, String channelDescriptor) {
     return newBuilder().setProject(project).setChannelDescriptor(channelDescriptor).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationChannelDescriptorName ofOrganizationChannelDescriptorName(
       String organization, String channelDescriptor) {
     return newOrganizationChannelDescriptorBuilder()
@@ -138,7 +132,6 @@ public class NotificationChannelDescriptorName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationChannelDescriptorName ofFolderChannelDescriptorName(
       String folder, String channelDescriptor) {
     return newFolderChannelDescriptorBuilder()
@@ -155,7 +148,6 @@ public class NotificationChannelDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectChannelDescriptorName(
       String project, String channelDescriptor) {
     return newBuilder()
@@ -165,7 +157,6 @@ public class NotificationChannelDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationChannelDescriptorName(
       String organization, String channelDescriptor) {
     return newOrganizationChannelDescriptorBuilder()
@@ -175,7 +166,6 @@ public class NotificationChannelDescriptorName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderChannelDescriptorName(String folder, String channelDescriptor) {
     return newFolderChannelDescriptorBuilder()
         .setFolder(folder)
@@ -338,7 +328,6 @@ public class NotificationChannelDescriptorName implements ResourceName {
   /**
    * Builder for organizations/{organization}/notificationChannelDescriptors/{channel_descriptor}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationChannelDescriptorBuilder {
     private String organization;
     private String channelDescriptor;
@@ -369,7 +358,6 @@ public class NotificationChannelDescriptorName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/notificationChannelDescriptors/{channel_descriptor}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderChannelDescriptorBuilder {
     private String folder;
     private String channelDescriptor;

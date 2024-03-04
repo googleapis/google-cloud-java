@@ -234,7 +234,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -276,7 +275,6 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
       return new Builder(CloudMemcacheStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudMemcacheStubSettings.newHttpJsonBuilder());
     }

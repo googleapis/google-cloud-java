@@ -2835,8 +2835,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to createImportJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateImportJobRequest, ImportJob, OperationMetadata>
         createImportJobOperationSettings() {
       return createImportJobOperationSettings;
@@ -2860,8 +2858,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to deleteImportJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteImportJobRequest, Empty, OperationMetadata>
         deleteImportJobOperationSettings() {
       return deleteImportJobOperationSettings;
@@ -2873,8 +2869,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to updateImportJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateImportJobRequest, ImportJob, OperationMetadata>
         updateImportJobOperationSettings() {
       return updateImportJobOperationSettings;
@@ -2887,8 +2881,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to validateImportJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ValidateImportJobRequest, Empty, OperationMetadata>
         validateImportJobOperationSettings() {
       return validateImportJobOperationSettings;
@@ -2900,8 +2892,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to runImportJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RunImportJobRequest, Empty, OperationMetadata>
         runImportJobOperationSettings() {
       return runImportJobOperationSettings;
@@ -2929,8 +2919,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to createImportDataFile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateImportDataFileRequest, ImportDataFile, OperationMetadata>
         createImportDataFileOperationSettings() {
@@ -2944,8 +2932,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to deleteImportDataFile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteImportDataFileRequest, Empty, OperationMetadata>
         deleteImportDataFileOperationSettings() {
       return deleteImportDataFileOperationSettings;
@@ -2968,8 +2954,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to createGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateGroupRequest, Group, OperationMetadata>
         createGroupOperationSettings() {
       return createGroupOperationSettings;
@@ -2981,8 +2965,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to updateGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
         updateGroupOperationSettings() {
       return updateGroupOperationSettings;
@@ -2994,8 +2976,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to deleteGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteGroupRequest, Empty, OperationMetadata>
         deleteGroupOperationSettings() {
       return deleteGroupOperationSettings;
@@ -3008,8 +2988,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to addAssetsToGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<AddAssetsToGroupRequest, Group, OperationMetadata>
         addAssetsToGroupOperationSettings() {
       return addAssetsToGroupOperationSettings;
@@ -3022,8 +3000,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to removeAssetsFromGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RemoveAssetsFromGroupRequest, Group, OperationMetadata>
         removeAssetsFromGroupOperationSettings() {
       return removeAssetsFromGroupOperationSettings;
@@ -3059,8 +3035,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to createSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSourceRequest, Source, OperationMetadata>
         createSourceOperationSettings() {
       return createSourceOperationSettings;
@@ -3072,8 +3046,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to updateSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSourceRequest, Source, OperationMetadata>
         updateSourceOperationSettings() {
       return updateSourceOperationSettings;
@@ -3085,8 +3057,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to deleteSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSourceRequest, Empty, OperationMetadata>
         deleteSourceOperationSettings() {
       return deleteSourceOperationSettings;
@@ -3112,8 +3082,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to createPreferenceSet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePreferenceSetRequest, PreferenceSet, OperationMetadata>
         createPreferenceSetOperationSettings() {
@@ -3127,8 +3095,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to updatePreferenceSet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdatePreferenceSetRequest, PreferenceSet, OperationMetadata>
         updatePreferenceSetOperationSettings() {
@@ -3142,8 +3108,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to deletePreferenceSet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePreferenceSetRequest, Empty, OperationMetadata>
         deletePreferenceSetOperationSettings() {
       return deletePreferenceSetOperationSettings;
@@ -3160,8 +3124,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to updateSettings. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSettingsRequest, Settings, OperationMetadata>
         updateSettingsOperationSettings() {
       return updateSettingsOperationSettings;
@@ -3174,8 +3136,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to createReportConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateReportConfigRequest, ReportConfig, OperationMetadata>
         createReportConfigOperationSettings() {
       return createReportConfigOperationSettings;
@@ -3201,8 +3161,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to deleteReportConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteReportConfigRequest, Empty, OperationMetadata>
         deleteReportConfigOperationSettings() {
       return deleteReportConfigOperationSettings;
@@ -3214,8 +3172,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to createReport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateReportRequest, Report, OperationMetadata>
         createReportOperationSettings() {
       return createReportOperationSettings;
@@ -3239,8 +3195,6 @@ public class MigrationCenterStubSettings extends StubSettings<MigrationCenterStu
     }
 
     /** Returns the builder for the settings used for calls to deleteReport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteReportRequest, Empty, OperationMetadata>
         deleteReportOperationSettings() {
       return deleteReportOperationSettings;

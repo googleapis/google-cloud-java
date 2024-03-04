@@ -162,7 +162,6 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -204,7 +203,6 @@ public class LanguageServiceSettings extends ClientSettings<LanguageServiceSetti
       return new Builder(LanguageServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(LanguageServiceStubSettings.newHttpJsonBuilder());
     }

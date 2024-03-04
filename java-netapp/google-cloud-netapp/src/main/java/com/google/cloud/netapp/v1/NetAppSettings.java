@@ -621,7 +621,6 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -663,7 +662,6 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
       return new Builder(NetAppStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(NetAppStubSettings.newHttpJsonBuilder());
     }

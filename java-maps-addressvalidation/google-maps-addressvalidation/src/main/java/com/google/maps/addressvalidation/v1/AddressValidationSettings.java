@@ -136,7 +136,6 @@ public class AddressValidationSettings extends ClientSettings<AddressValidationS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -178,7 +177,6 @@ public class AddressValidationSettings extends ClientSettings<AddressValidationS
       return new Builder(AddressValidationStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AddressValidationStubSettings.newHttpJsonBuilder());
     }

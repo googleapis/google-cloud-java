@@ -133,7 +133,6 @@ public class RoutesSettings extends ClientSettings<RoutesSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -175,7 +174,6 @@ public class RoutesSettings extends ClientSettings<RoutesSettings> {
       return new Builder(RoutesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RoutesStubSettings.newHttpJsonBuilder());
     }

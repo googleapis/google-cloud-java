@@ -23,7 +23,6 @@ import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListRecordi
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptEntriesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -76,7 +75,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

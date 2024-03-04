@@ -134,7 +134,6 @@ public class KeyDashboardServiceSettings extends ClientSettings<KeyDashboardServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -176,7 +175,6 @@ public class KeyDashboardServiceSettings extends ClientSettings<KeyDashboardServ
       return new Builder(KeyDashboardServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(KeyDashboardServiceStubSettings.newHttpJsonBuilder());
     }

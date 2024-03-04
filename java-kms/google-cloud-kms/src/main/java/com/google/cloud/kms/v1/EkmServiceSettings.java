@@ -201,7 +201,6 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -243,7 +242,6 @@ public class EkmServiceSettings extends ClientSettings<EkmServiceSettings> {
       return new Builder(EkmServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EkmServiceStubSettings.newHttpJsonBuilder());
     }

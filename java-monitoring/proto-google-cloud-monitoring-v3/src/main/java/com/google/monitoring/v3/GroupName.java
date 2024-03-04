@@ -16,7 +16,6 @@
 
 package com.google.monitoring.v3;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,17 +96,14 @@ public class GroupName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectGroupBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationGroupBuilder newOrganizationGroupBuilder() {
     return new OrganizationGroupBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderGroupBuilder newFolderGroupBuilder() {
     return new FolderGroupBuilder();
   }
@@ -120,17 +116,14 @@ public class GroupName implements ResourceName {
     return newBuilder().setProject(project).setGroup(group).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static GroupName ofProjectGroupName(String project, String group) {
     return newBuilder().setProject(project).setGroup(group).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static GroupName ofOrganizationGroupName(String organization, String group) {
     return newOrganizationGroupBuilder().setOrganization(organization).setGroup(group).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static GroupName ofFolderGroupName(String folder, String group) {
     return newFolderGroupBuilder().setFolder(folder).setGroup(group).build();
   }
@@ -139,12 +132,10 @@ public class GroupName implements ResourceName {
     return newBuilder().setProject(project).setGroup(group).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectGroupName(String project, String group) {
     return newBuilder().setProject(project).setGroup(group).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationGroupName(String organization, String group) {
     return newOrganizationGroupBuilder()
         .setOrganization(organization)
@@ -153,7 +144,6 @@ public class GroupName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderGroupName(String folder, String group) {
     return newFolderGroupBuilder().setFolder(folder).setGroup(group).build().toString();
   }
@@ -305,7 +295,6 @@ public class GroupName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/groups/{group}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationGroupBuilder {
     private String organization;
     private String group;
@@ -336,7 +325,6 @@ public class GroupName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/groups/{group}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderGroupBuilder {
     private String folder;
     private String group;
