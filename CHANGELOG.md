@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.18.5](https://github.com/googleapis/java-datastore/compare/v2.18.4...v2.18.5) (2024-03-04)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.27.0 ([#1352](https://github.com/googleapis/java-datastore/issues/1352)) ([124d7ca](https://github.com/googleapis/java-datastore/commit/124d7cab46e2fa1ba654369887fb10ffb3f8eaef))
+* Update dependency com.google.errorprone:error_prone_core to v2.25.0 ([#1339](https://github.com/googleapis/java-datastore/issues/1339)) ([0c6702e](https://github.com/googleapis/java-datastore/commit/0c6702e27917b976c76a0d44d3f5d550418310be))
+
 ## [2.18.4](https://github.com/googleapis/java-datastore/compare/v2.18.3...v2.18.4) (2024-02-14)
 
 
