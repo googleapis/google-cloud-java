@@ -3018,8 +3018,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to provisionCloudIdentity. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ProvisionCloudIdentityRequest, Customer, OperationMetadata>
         provisionCloudIdentityOperationSettings() {
       return provisionCloudIdentityOperationSettings;
@@ -3062,8 +3060,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to createEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEntitlementRequest, Entitlement, OperationMetadata>
         createEntitlementOperationSettings() {
       return createEntitlementOperationSettings;
@@ -3076,8 +3072,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to changeParameters. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ChangeParametersRequest, Entitlement, OperationMetadata>
         changeParametersOperationSettings() {
       return changeParametersOperationSettings;
@@ -3090,8 +3084,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to changeRenewalSettings. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ChangeRenewalSettingsRequest, Entitlement, OperationMetadata>
         changeRenewalSettingsOperationSettings() {
@@ -3104,8 +3096,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to changeOffer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ChangeOfferRequest, Entitlement, OperationMetadata>
         changeOfferOperationSettings() {
       return changeOfferOperationSettings;
@@ -3118,8 +3108,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to startPaidService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartPaidServiceRequest, Entitlement, OperationMetadata>
         startPaidServiceOperationSettings() {
       return startPaidServiceOperationSettings;
@@ -3132,8 +3120,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to suspendEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SuspendEntitlementRequest, Entitlement, OperationMetadata>
         suspendEntitlementOperationSettings() {
       return suspendEntitlementOperationSettings;
@@ -3146,8 +3132,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to cancelEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CancelEntitlementRequest, Empty, OperationMetadata>
         cancelEntitlementOperationSettings() {
       return cancelEntitlementOperationSettings;
@@ -3160,8 +3144,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to activateEntitlement. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ActivateEntitlementRequest, Entitlement, OperationMetadata>
         activateEntitlementOperationSettings() {
       return activateEntitlementOperationSettings;
@@ -3174,8 +3156,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to transferEntitlements. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             TransferEntitlementsRequest, TransferEntitlementsResponse, OperationMetadata>
         transferEntitlementsOperationSettings() {
@@ -3189,8 +3169,6 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     }
 
     /** Returns the builder for the settings used for calls to transferEntitlementsToGoogle. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             TransferEntitlementsToGoogleRequest, Empty, OperationMetadata>
         transferEntitlementsToGoogleOperationSettings() {

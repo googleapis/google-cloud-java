@@ -16,7 +16,6 @@
 
 package com.google.cloud.billing.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -72,12 +71,10 @@ public class BillingAccountName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newBillingAccountBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationBillingAccountBuilder newOrganizationBillingAccountBuilder() {
     return new OrganizationBillingAccountBuilder();
   }
@@ -90,12 +87,10 @@ public class BillingAccountName implements ResourceName {
     return newBuilder().setBillingAccount(billingAccount).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BillingAccountName ofBillingAccountName(String billingAccount) {
     return newBuilder().setBillingAccount(billingAccount).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BillingAccountName ofOrganizationBillingAccountName(
       String organization, String billingAccount) {
     return newOrganizationBillingAccountBuilder()
@@ -108,12 +103,10 @@ public class BillingAccountName implements ResourceName {
     return newBuilder().setBillingAccount(billingAccount).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountName(String billingAccount) {
     return newBuilder().setBillingAccount(billingAccount).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationBillingAccountName(
       String organization, String billingAccount) {
     return newOrganizationBillingAccountBuilder()
@@ -244,7 +237,6 @@ public class BillingAccountName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/billingAccounts/{billing_account}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationBillingAccountBuilder {
     private String organization;
     private String billingAccount;

@@ -131,7 +131,6 @@ public class SqlTranslationServiceSettings extends ClientSettings<SqlTranslation
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -174,7 +173,6 @@ public class SqlTranslationServiceSettings extends ClientSettings<SqlTranslation
       return new Builder(SqlTranslationServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SqlTranslationServiceStubSettings.newHttpJsonBuilder());
     }

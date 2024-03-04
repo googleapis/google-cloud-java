@@ -21,7 +21,6 @@ import static com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorsServiceC
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -794,8 +793,6 @@ public class AppConnectorsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createAppConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
         createAppConnectorOperationSettings() {
@@ -809,8 +806,6 @@ public class AppConnectorsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateAppConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
         updateAppConnectorOperationSettings() {
@@ -824,8 +819,6 @@ public class AppConnectorsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteAppConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteAppConnectorRequest, Empty, AppConnectorOperationMetadata>
         deleteAppConnectorOperationSettings() {
@@ -838,8 +831,6 @@ public class AppConnectorsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to reportStatus. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReportStatusRequest, AppConnector, AppConnectorOperationMetadata>
         reportStatusOperationSettings() {

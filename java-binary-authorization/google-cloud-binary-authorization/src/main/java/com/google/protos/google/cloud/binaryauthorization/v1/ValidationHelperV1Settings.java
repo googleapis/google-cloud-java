@@ -134,7 +134,6 @@ public class ValidationHelperV1Settings extends ClientSettings<ValidationHelperV
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -176,7 +175,6 @@ public class ValidationHelperV1Settings extends ClientSettings<ValidationHelperV
       return new Builder(ValidationHelperV1StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ValidationHelperV1StubSettings.newHttpJsonBuilder());
     }

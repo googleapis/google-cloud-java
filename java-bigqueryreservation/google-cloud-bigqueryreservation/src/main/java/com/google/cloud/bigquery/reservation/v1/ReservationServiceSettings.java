@@ -264,7 +264,6 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -306,7 +305,6 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
       return new Builder(ReservationServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ReservationServiceStubSettings.newHttpJsonBuilder());
     }

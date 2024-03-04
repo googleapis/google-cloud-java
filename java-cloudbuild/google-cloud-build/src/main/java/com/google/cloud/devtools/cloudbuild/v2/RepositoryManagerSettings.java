@@ -294,7 +294,6 @@ public class RepositoryManagerSettings extends ClientSettings<RepositoryManagerS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -336,7 +335,6 @@ public class RepositoryManagerSettings extends ClientSettings<RepositoryManagerS
       return new Builder(RepositoryManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RepositoryManagerStubSettings.newHttpJsonBuilder());
     }

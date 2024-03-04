@@ -20,7 +20,6 @@ import static com.google.cloud.bigquery.biglake.v1.MetastoreServiceClient.ListCa
 import static com.google.cloud.bigquery.biglake.v1.MetastoreServiceClient.ListDatabasesPagedResponse;
 import static com.google.cloud.bigquery.biglake.v1.MetastoreServiceClient.ListTablesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -70,7 +69,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonMetastoreServiceStub extends MetastoreServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

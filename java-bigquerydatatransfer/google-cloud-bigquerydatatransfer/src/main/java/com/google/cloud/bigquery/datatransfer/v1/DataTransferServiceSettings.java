@@ -246,7 +246,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -288,7 +287,6 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
       return new Builder(DataTransferServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataTransferServiceStubSettings.newHttpJsonBuilder());
     }

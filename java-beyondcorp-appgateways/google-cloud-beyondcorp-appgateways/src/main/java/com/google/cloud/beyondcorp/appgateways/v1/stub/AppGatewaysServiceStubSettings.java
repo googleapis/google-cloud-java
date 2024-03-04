@@ -21,7 +21,6 @@ import static com.google.cloud.beyondcorp.appgateways.v1.AppGatewaysServiceClien
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -660,8 +659,6 @@ public class AppGatewaysServiceStubSettings extends StubSettings<AppGatewaysServ
     }
 
     /** Returns the builder for the settings used for calls to createAppGateway. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateAppGatewayRequest, AppGateway, AppGatewayOperationMetadata>
         createAppGatewayOperationSettings() {
@@ -675,8 +672,6 @@ public class AppGatewaysServiceStubSettings extends StubSettings<AppGatewaysServ
     }
 
     /** Returns the builder for the settings used for calls to deleteAppGateway. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteAppGatewayRequest, Empty, AppGatewayOperationMetadata>
         deleteAppGatewayOperationSettings() {

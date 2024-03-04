@@ -16,7 +16,6 @@
 
 package com.google.protos.google.cloud.binaryauthorization.v1.stub;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -46,7 +45,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonValidationHelperV1Stub extends ValidationHelperV1Stub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

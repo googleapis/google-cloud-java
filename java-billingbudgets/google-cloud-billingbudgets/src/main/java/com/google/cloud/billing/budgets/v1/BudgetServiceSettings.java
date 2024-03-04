@@ -153,7 +153,6 @@ public class BudgetServiceSettings extends ClientSettings<BudgetServiceSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -195,7 +194,6 @@ public class BudgetServiceSettings extends ClientSettings<BudgetServiceSettings>
       return new Builder(BudgetServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(BudgetServiceStubSettings.newHttpJsonBuilder());
     }

@@ -503,7 +503,6 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -545,7 +544,6 @@ public class BareMetalSolutionSettings extends ClientSettings<BareMetalSolutionS
       return new Builder(BareMetalSolutionStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(BareMetalSolutionStubSettings.newHttpJsonBuilder());
     }

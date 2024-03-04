@@ -183,7 +183,6 @@ public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -225,7 +224,6 @@ public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceS
       return new Builder(ConnectionServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConnectionServiceStubSettings.newHttpJsonBuilder());
     }

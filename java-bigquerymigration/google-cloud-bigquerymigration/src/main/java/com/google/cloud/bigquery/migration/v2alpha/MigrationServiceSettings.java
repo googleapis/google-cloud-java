@@ -177,7 +177,6 @@ public class MigrationServiceSettings extends ClientSettings<MigrationServiceSet
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -219,7 +218,6 @@ public class MigrationServiceSettings extends ClientSettings<MigrationServiceSet
       return new Builder(MigrationServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(MigrationServiceStubSettings.newHttpJsonBuilder());
     }

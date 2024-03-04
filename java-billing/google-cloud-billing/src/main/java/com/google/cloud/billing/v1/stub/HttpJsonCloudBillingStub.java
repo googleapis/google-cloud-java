@@ -19,7 +19,6 @@ package com.google.cloud.billing.v1.stub;
 import static com.google.cloud.billing.v1.CloudBillingClient.ListBillingAccountsPagedResponse;
 import static com.google.cloud.billing.v1.CloudBillingClient.ListProjectBillingInfoPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -65,7 +64,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonCloudBillingStub extends CloudBillingStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

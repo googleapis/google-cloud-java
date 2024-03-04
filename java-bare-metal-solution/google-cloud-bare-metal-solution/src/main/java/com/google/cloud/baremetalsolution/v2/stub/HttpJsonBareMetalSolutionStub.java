@@ -27,7 +27,6 @@ import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.List
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumeSnapshotsPagedResponse;
 import static com.google.cloud.baremetalsolution.v2.BareMetalSolutionClient.ListVolumesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -134,7 +133,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonBareMetalSolutionStub extends BareMetalSolutionStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()

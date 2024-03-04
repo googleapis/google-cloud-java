@@ -16,7 +16,6 @@
 
 package com.google.cloudbuild.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class BuildTriggerName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectTriggerBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationTriggerBuilder newProjectLocationTriggerBuilder() {
     return new ProjectLocationTriggerBuilder();
   }
@@ -98,12 +95,10 @@ public class BuildTriggerName implements ResourceName {
     return newBuilder().setProject(project).setTrigger(trigger).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BuildTriggerName ofProjectTriggerName(String project, String trigger) {
     return newBuilder().setProject(project).setTrigger(trigger).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BuildTriggerName ofProjectLocationTriggerName(
       String project, String location, String trigger) {
     return newProjectLocationTriggerBuilder()
@@ -117,12 +112,10 @@ public class BuildTriggerName implements ResourceName {
     return newBuilder().setProject(project).setTrigger(trigger).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTriggerName(String project, String trigger) {
     return newBuilder().setProject(project).setTrigger(trigger).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationTriggerName(
       String project, String location, String trigger) {
     return newProjectLocationTriggerBuilder()
@@ -271,7 +264,6 @@ public class BuildTriggerName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/triggers/{trigger}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationTriggerBuilder {
     private String project;
     private String location;

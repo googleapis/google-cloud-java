@@ -197,7 +197,6 @@ public class CloudBillingSettings extends ClientSettings<CloudBillingSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -239,7 +238,6 @@ public class CloudBillingSettings extends ClientSettings<CloudBillingSettings> {
       return new Builder(CloudBillingStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudBillingStubSettings.newHttpJsonBuilder());
     }

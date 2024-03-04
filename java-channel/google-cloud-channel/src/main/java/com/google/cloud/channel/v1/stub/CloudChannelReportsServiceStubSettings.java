@@ -560,8 +560,6 @@ public class CloudChannelReportsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to runReportJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RunReportJobRequest, RunReportJobResponse, OperationMetadata>
         runReportJobOperationSettings() {

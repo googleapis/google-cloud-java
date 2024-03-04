@@ -184,7 +184,6 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -226,7 +225,6 @@ public class BatchServiceSettings extends ClientSettings<BatchServiceSettings> {
       return new Builder(BatchServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(BatchServiceStubSettings.newHttpJsonBuilder());
     }

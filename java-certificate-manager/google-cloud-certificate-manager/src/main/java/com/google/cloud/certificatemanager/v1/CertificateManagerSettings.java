@@ -403,7 +403,6 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -445,7 +444,6 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
       return new Builder(CertificateManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CertificateManagerStubSettings.newHttpJsonBuilder());
     }

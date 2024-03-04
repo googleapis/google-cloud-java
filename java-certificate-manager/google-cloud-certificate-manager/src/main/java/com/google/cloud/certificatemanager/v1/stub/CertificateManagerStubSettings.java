@@ -1913,8 +1913,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCertificateRequest, Certificate, OperationMetadata>
         createCertificateOperationSettings() {
       return createCertificateOperationSettings;
@@ -1927,8 +1925,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateCertificate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateCertificateRequest, Certificate, OperationMetadata>
         updateCertificateOperationSettings() {
       return updateCertificateOperationSettings;
@@ -1941,8 +1937,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCertificateRequest, Empty, OperationMetadata>
         deleteCertificateOperationSettings() {
       return deleteCertificateOperationSettings;
@@ -1970,8 +1964,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificateMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateMapRequest, CertificateMap, OperationMetadata>
         createCertificateMapOperationSettings() {
@@ -1985,8 +1977,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateMapRequest, CertificateMap, OperationMetadata>
         updateCertificateMapOperationSettings() {
@@ -2000,8 +1990,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateMap. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCertificateMapRequest, Empty, OperationMetadata>
         deleteCertificateMapOperationSettings() {
       return deleteCertificateMapOperationSettings;
@@ -2029,8 +2017,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificateMapEntry. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateMapEntryRequest, CertificateMapEntry, OperationMetadata>
         createCertificateMapEntryOperationSettings() {
@@ -2044,8 +2030,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateMapEntry. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateMapEntryRequest, CertificateMapEntry, OperationMetadata>
         updateCertificateMapEntryOperationSettings() {
@@ -2059,8 +2043,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateMapEntry. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCertificateMapEntryRequest, Empty, OperationMetadata>
         deleteCertificateMapEntryOperationSettings() {
       return deleteCertificateMapEntryOperationSettings;
@@ -2088,8 +2070,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createDnsAuthorization. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDnsAuthorizationRequest, DnsAuthorization, OperationMetadata>
         createDnsAuthorizationOperationSettings() {
@@ -2103,8 +2083,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to updateDnsAuthorization. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDnsAuthorizationRequest, DnsAuthorization, OperationMetadata>
         updateDnsAuthorizationOperationSettings() {
@@ -2118,8 +2096,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteDnsAuthorization. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDnsAuthorizationRequest, Empty, OperationMetadata>
         deleteDnsAuthorizationOperationSettings() {
       return deleteDnsAuthorizationOperationSettings;
@@ -2147,8 +2123,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to createCertificateIssuanceConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
         createCertificateIssuanceConfigOperationSettings() {
@@ -2162,8 +2136,6 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
         deleteCertificateIssuanceConfigOperationSettings() {

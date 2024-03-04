@@ -16,7 +16,6 @@
 
 package com.google.cloudbuild.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class BuildName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectBuildBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationBuildBuilder newProjectLocationBuildBuilder() {
     return new ProjectLocationBuildBuilder();
   }
@@ -98,12 +95,10 @@ public class BuildName implements ResourceName {
     return newBuilder().setProject(project).setBuild(build).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BuildName ofProjectBuildName(String project, String build) {
     return newBuilder().setProject(project).setBuild(build).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static BuildName ofProjectLocationBuildName(
       String project, String location, String build) {
     return newProjectLocationBuildBuilder()
@@ -117,12 +112,10 @@ public class BuildName implements ResourceName {
     return newBuilder().setProject(project).setBuild(build).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectBuildName(String project, String build) {
     return newBuilder().setProject(project).setBuild(build).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationBuildName(
       String project, String location, String build) {
     return newProjectLocationBuildBuilder()
@@ -271,7 +264,6 @@ public class BuildName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/builds/{build}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationBuildBuilder {
     private String project;
     private String location;

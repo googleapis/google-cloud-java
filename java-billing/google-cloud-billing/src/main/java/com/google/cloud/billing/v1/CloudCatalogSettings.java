@@ -138,7 +138,6 @@ public class CloudCatalogSettings extends ClientSettings<CloudCatalogSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -180,7 +179,6 @@ public class CloudCatalogSettings extends ClientSettings<CloudCatalogSettings> {
       return new Builder(CloudCatalogStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudCatalogStubSettings.newHttpJsonBuilder());
     }

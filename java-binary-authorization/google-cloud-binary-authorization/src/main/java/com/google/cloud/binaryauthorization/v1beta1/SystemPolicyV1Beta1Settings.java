@@ -131,7 +131,6 @@ public class SystemPolicyV1Beta1Settings extends ClientSettings<SystemPolicyV1Be
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -173,7 +172,6 @@ public class SystemPolicyV1Beta1Settings extends ClientSettings<SystemPolicyV1Be
       return new Builder(SystemPolicyV1Beta1StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SystemPolicyV1Beta1StubSettings.newHttpJsonBuilder());
     }

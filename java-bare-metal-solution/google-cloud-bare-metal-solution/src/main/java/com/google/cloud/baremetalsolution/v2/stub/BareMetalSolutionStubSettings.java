@@ -2479,8 +2479,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
@@ -2497,8 +2495,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to resetInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ResetInstanceRequest, ResetInstanceResponse, OperationMetadata>
         resetInstanceOperationSettings() {
@@ -2511,8 +2507,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to startInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StartInstanceRequest, StartInstanceResponse, OperationMetadata>
         startInstanceOperationSettings() {
@@ -2525,8 +2519,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to stopInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StopInstanceRequest, StopInstanceResponse, OperationMetadata>
         stopInstanceOperationSettings() {
@@ -2540,8 +2532,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to enableInteractiveSerialConsole. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             EnableInteractiveSerialConsoleRequest,
             EnableInteractiveSerialConsoleResponse,
@@ -2557,8 +2547,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to disableInteractiveSerialConsole. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DisableInteractiveSerialConsoleRequest,
             DisableInteractiveSerialConsoleResponse,
@@ -2573,8 +2561,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to detachLun. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DetachLunRequest, Instance, OperationMetadata>
         detachLunOperationSettings() {
       return detachLunOperationSettings;
@@ -2615,8 +2601,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to updateVolume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateVolumeRequest, Volume, OperationMetadata>
         updateVolumeOperationSettings() {
       return updateVolumeOperationSettings;
@@ -2633,8 +2617,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to evictVolume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<EvictVolumeRequest, Empty, OperationMetadata>
         evictVolumeOperationSettings() {
       return evictVolumeOperationSettings;
@@ -2646,8 +2628,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to resizeVolume. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResizeVolumeRequest, Volume, OperationMetadata>
         resizeVolumeOperationSettings() {
       return resizeVolumeOperationSettings;
@@ -2677,8 +2657,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to updateNetwork. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateNetworkRequest, Network, OperationMetadata>
         updateNetworkOperationSettings() {
       return updateNetworkOperationSettings;
@@ -2697,8 +2675,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to restoreVolumeSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RestoreVolumeSnapshotRequest, VolumeSnapshot, OperationMetadata>
         restoreVolumeSnapshotOperationSettings() {
@@ -2743,8 +2719,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to evictLun. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<EvictLunRequest, Empty, OperationMetadata>
         evictLunOperationSettings() {
       return evictLunOperationSettings;
@@ -2768,8 +2742,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to updateNfsShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateNfsShareRequest, NfsShare, OperationMetadata>
         updateNfsShareOperationSettings() {
       return updateNfsShareOperationSettings;
@@ -2781,8 +2753,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to createNfsShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateNfsShareRequest, NfsShare, OperationMetadata>
         createNfsShareOperationSettings() {
       return createNfsShareOperationSettings;
@@ -2799,8 +2769,6 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     }
 
     /** Returns the builder for the settings used for calls to deleteNfsShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNfsShareRequest, Empty, OperationMetadata>
         deleteNfsShareOperationSettings() {
       return deleteNfsShareOperationSettings;

@@ -173,7 +173,6 @@ public class BinauthzManagementServiceV1Beta1Settings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -216,7 +215,6 @@ public class BinauthzManagementServiceV1Beta1Settings
       return new Builder(BinauthzManagementServiceV1Beta1StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(BinauthzManagementServiceV1Beta1StubSettings.newHttpJsonBuilder());
     }

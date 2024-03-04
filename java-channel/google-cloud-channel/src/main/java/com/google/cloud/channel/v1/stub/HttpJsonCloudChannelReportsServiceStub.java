@@ -20,7 +20,6 @@ import static com.google.cloud.channel.v1.CloudChannelReportsServiceClient.Fetch
 import static com.google.cloud.channel.v1.CloudChannelReportsServiceClient.ListReportsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -64,7 +63,6 @@ import javax.annotation.Generated;
  */
 @Deprecated
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonCloudChannelReportsServiceStub extends CloudChannelReportsServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
