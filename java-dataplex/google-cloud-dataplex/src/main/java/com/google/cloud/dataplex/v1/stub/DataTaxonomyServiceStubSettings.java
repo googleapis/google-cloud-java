@@ -1309,8 +1309,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to createDataTaxonomy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDataTaxonomyRequest, DataTaxonomy, OperationMetadata>
         createDataTaxonomyOperationSettings() {
       return createDataTaxonomyOperationSettings;
@@ -1323,8 +1321,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to updateDataTaxonomy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDataTaxonomyRequest, DataTaxonomy, OperationMetadata>
         updateDataTaxonomyOperationSettings() {
       return updateDataTaxonomyOperationSettings;
@@ -1337,8 +1333,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to deleteDataTaxonomy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDataTaxonomyRequest, Empty, OperationMetadata>
         deleteDataTaxonomyOperationSettings() {
       return deleteDataTaxonomyOperationSettings;
@@ -1364,8 +1358,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to createDataAttributeBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDataAttributeBindingRequest, DataAttributeBinding, OperationMetadata>
         createDataAttributeBindingOperationSettings() {
@@ -1379,8 +1371,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to updateDataAttributeBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDataAttributeBindingRequest, DataAttributeBinding, OperationMetadata>
         updateDataAttributeBindingOperationSettings() {
@@ -1394,8 +1384,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to deleteDataAttributeBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteDataAttributeBindingRequest, Empty, OperationMetadata>
         deleteDataAttributeBindingOperationSettings() {
@@ -1424,8 +1412,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to createDataAttribute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDataAttributeRequest, DataAttribute, OperationMetadata>
         createDataAttributeOperationSettings() {
@@ -1439,8 +1425,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to updateDataAttribute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDataAttributeRequest, DataAttribute, OperationMetadata>
         updateDataAttributeOperationSettings() {
@@ -1454,8 +1438,6 @@ public class DataTaxonomyServiceStubSettings extends StubSettings<DataTaxonomySe
     }
 
     /** Returns the builder for the settings used for calls to deleteDataAttribute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDataAttributeRequest, Empty, OperationMetadata>
         deleteDataAttributeOperationSettings() {
       return deleteDataAttributeOperationSettings;

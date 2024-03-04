@@ -16,7 +16,6 @@
 
 package com.google.api.cloudquotas.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -109,17 +108,14 @@ public class ServiceName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationServiceBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationServiceBuilder newFolderLocationServiceBuilder() {
     return new FolderLocationServiceBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationServiceBuilder newOrganizationLocationServiceBuilder() {
     return new OrganizationLocationServiceBuilder();
   }
@@ -132,13 +128,11 @@ public class ServiceName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setService(service).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServiceName ofProjectLocationServiceName(
       String project, String location, String service) {
     return newBuilder().setProject(project).setLocation(location).setService(service).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServiceName ofFolderLocationServiceName(
       String folder, String location, String service) {
     return newFolderLocationServiceBuilder()
@@ -148,7 +142,6 @@ public class ServiceName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServiceName ofOrganizationLocationServiceName(
       String organization, String location, String service) {
     return newOrganizationLocationServiceBuilder()
@@ -167,7 +160,6 @@ public class ServiceName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationServiceName(
       String project, String location, String service) {
     return newBuilder()
@@ -178,7 +170,6 @@ public class ServiceName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationServiceName(
       String folder, String location, String service) {
     return newFolderLocationServiceBuilder()
@@ -189,7 +180,6 @@ public class ServiceName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationServiceName(
       String organization, String location, String service) {
     return newOrganizationLocationServiceBuilder()
@@ -367,7 +357,6 @@ public class ServiceName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/locations/{location}/services/{service}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationServiceBuilder {
     private String folder;
     private String location;
@@ -408,7 +397,6 @@ public class ServiceName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/locations/{location}/services/{service}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationServiceBuilder {
     private String organization;
     private String location;

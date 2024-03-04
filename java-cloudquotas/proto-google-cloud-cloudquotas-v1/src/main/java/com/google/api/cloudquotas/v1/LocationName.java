@@ -16,7 +16,6 @@
 
 package com.google.api.cloudquotas.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,17 +96,14 @@ public class LocationName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationBuilder newFolderLocationBuilder() {
     return new FolderLocationBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationBuilder newOrganizationLocationBuilder() {
     return new OrganizationLocationBuilder();
   }
@@ -120,17 +116,14 @@ public class LocationName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LocationName ofProjectLocationName(String project, String location) {
     return newBuilder().setProject(project).setLocation(location).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LocationName ofFolderLocationName(String folder, String location) {
     return newFolderLocationBuilder().setFolder(folder).setLocation(location).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LocationName ofOrganizationLocationName(String organization, String location) {
     return newOrganizationLocationBuilder()
         .setOrganization(organization)
@@ -142,17 +135,14 @@ public class LocationName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationName(String project, String location) {
     return newBuilder().setProject(project).setLocation(location).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationName(String folder, String location) {
     return newFolderLocationBuilder().setFolder(folder).setLocation(location).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationName(String organization, String location) {
     return newOrganizationLocationBuilder()
         .setOrganization(organization)
@@ -308,7 +298,6 @@ public class LocationName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/locations/{location}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationBuilder {
     private String folder;
     private String location;
@@ -339,7 +328,6 @@ public class LocationName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/locations/{location}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationBuilder {
     private String organization;
     private String location;

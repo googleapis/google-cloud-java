@@ -237,7 +237,6 @@ public class DataFusionSettings extends ClientSettings<DataFusionSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -279,7 +278,6 @@ public class DataFusionSettings extends ClientSettings<DataFusionSettings> {
       return new Builder(DataFusionStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataFusionStubSettings.newHttpJsonBuilder());
     }

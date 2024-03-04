@@ -182,7 +182,6 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -225,7 +224,6 @@ public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRout
       return new Builder(TransitionRouteGroupsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TransitionRouteGroupsStubSettings.newHttpJsonBuilder());
     }

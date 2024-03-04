@@ -16,7 +16,6 @@
 
 package com.google.cloud.dataproc.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class WorkflowTemplateName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectRegionWorkflowTemplateBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationWorkflowTemplateBuilder newProjectLocationWorkflowTemplateBuilder() {
     return new ProjectLocationWorkflowTemplateBuilder();
   }
@@ -111,7 +108,6 @@ public class WorkflowTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static WorkflowTemplateName ofProjectRegionWorkflowTemplateName(
       String project, String region, String workflowTemplate) {
     return newBuilder()
@@ -121,7 +117,6 @@ public class WorkflowTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static WorkflowTemplateName ofProjectLocationWorkflowTemplateName(
       String project, String location, String workflowTemplate) {
     return newProjectLocationWorkflowTemplateBuilder()
@@ -140,7 +135,6 @@ public class WorkflowTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectRegionWorkflowTemplateName(
       String project, String region, String workflowTemplate) {
     return newBuilder()
@@ -151,7 +145,6 @@ public class WorkflowTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationWorkflowTemplateName(
       String project, String location, String workflowTemplate) {
     return newProjectLocationWorkflowTemplateBuilder()
@@ -319,7 +312,6 @@ public class WorkflowTemplateName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/workflowTemplates/{workflow_template}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationWorkflowTemplateBuilder {
     private String project;
     private String location;

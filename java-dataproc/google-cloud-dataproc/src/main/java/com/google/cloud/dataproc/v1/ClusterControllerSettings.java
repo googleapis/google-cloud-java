@@ -228,7 +228,6 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -270,7 +269,6 @@ public class ClusterControllerSettings extends ClientSettings<ClusterControllerS
       return new Builder(ClusterControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ClusterControllerStubSettings.newHttpJsonBuilder());
     }

@@ -137,7 +137,6 @@ public class CommentServiceSettings extends ClientSettings<CommentServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -179,7 +178,6 @@ public class CommentServiceSettings extends ClientSettings<CommentServiceSetting
       return new Builder(CommentServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CommentServiceStubSettings.newHttpJsonBuilder());
     }

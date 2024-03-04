@@ -192,7 +192,6 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -234,7 +233,6 @@ public class VersionsSettings extends ClientSettings<VersionsSettings> {
       return new Builder(VersionsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(VersionsStubSettings.newHttpJsonBuilder());
     }

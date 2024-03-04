@@ -503,8 +503,6 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
     }
 
     /** Returns the builder for the settings used for calls to createNodeGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateNodeGroupRequest, NodeGroup, NodeGroupOperationMetadata>
         createNodeGroupOperationSettings() {
@@ -517,8 +515,6 @@ public class NodeGroupControllerStubSettings extends StubSettings<NodeGroupContr
     }
 
     /** Returns the builder for the settings used for calls to resizeNodeGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ResizeNodeGroupRequest, NodeGroup, NodeGroupOperationMetadata>
         resizeNodeGroupOperationSettings() {

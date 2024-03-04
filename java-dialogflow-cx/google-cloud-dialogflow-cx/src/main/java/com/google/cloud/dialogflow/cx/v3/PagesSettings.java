@@ -167,7 +167,6 @@ public class PagesSettings extends ClientSettings<PagesSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -209,7 +208,6 @@ public class PagesSettings extends ClientSettings<PagesSettings> {
       return new Builder(PagesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PagesStubSettings.newHttpJsonBuilder());
     }

@@ -134,7 +134,6 @@ public class MessagesV1Beta3Settings extends ClientSettings<MessagesV1Beta3Setti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -176,7 +175,6 @@ public class MessagesV1Beta3Settings extends ClientSettings<MessagesV1Beta3Setti
       return new Builder(MessagesV1Beta3StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(MessagesV1Beta3StubSettings.newHttpJsonBuilder());
     }

@@ -169,7 +169,6 @@ public class GeneratorsSettings extends ClientSettings<GeneratorsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -211,7 +210,6 @@ public class GeneratorsSettings extends ClientSettings<GeneratorsSettings> {
       return new Builder(GeneratorsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(GeneratorsStubSettings.newHttpJsonBuilder());
     }

@@ -154,7 +154,6 @@ public class ConsumerProcurementServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -197,7 +196,6 @@ public class ConsumerProcurementServiceSettings
       return new Builder(ConsumerProcurementServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConsumerProcurementServiceStubSettings.newHttpJsonBuilder());
     }

@@ -153,7 +153,6 @@ public class ChangelogsSettings extends ClientSettings<ChangelogsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -195,7 +194,6 @@ public class ChangelogsSettings extends ClientSettings<ChangelogsSettings> {
       return new Builder(ChangelogsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ChangelogsStubSettings.newHttpJsonBuilder());
     }

@@ -191,7 +191,6 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -233,7 +232,6 @@ public class JobControllerSettings extends ClientSettings<JobControllerSettings>
       return new Builder(JobControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(JobControllerStubSettings.newHttpJsonBuilder());
     }

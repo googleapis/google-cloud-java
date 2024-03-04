@@ -157,7 +157,6 @@ public class Debugger2Settings extends ClientSettings<Debugger2Settings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -199,7 +198,6 @@ public class Debugger2Settings extends ClientSettings<Debugger2Settings> {
       return new Builder(Debugger2StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(Debugger2StubSettings.newHttpJsonBuilder());
     }

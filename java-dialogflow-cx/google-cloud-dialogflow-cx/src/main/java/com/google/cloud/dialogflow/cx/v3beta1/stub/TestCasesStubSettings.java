@@ -980,8 +980,6 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to runTestCase. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RunTestCaseRequest, RunTestCaseResponse, RunTestCaseMetadata>
         runTestCaseOperationSettings() {
@@ -995,8 +993,6 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchRunTestCases. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchRunTestCasesRequest, BatchRunTestCasesResponse, BatchRunTestCasesMetadata>
         batchRunTestCasesOperationSettings() {
@@ -1015,8 +1011,6 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to importTestCases. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportTestCasesRequest, ImportTestCasesResponse, ImportTestCasesMetadata>
         importTestCasesOperationSettings() {
@@ -1029,8 +1023,6 @@ public class TestCasesStubSettings extends StubSettings<TestCasesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportTestCases. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportTestCasesRequest, ExportTestCasesResponse, ExportTestCasesMetadata>
         exportTestCasesOperationSettings() {

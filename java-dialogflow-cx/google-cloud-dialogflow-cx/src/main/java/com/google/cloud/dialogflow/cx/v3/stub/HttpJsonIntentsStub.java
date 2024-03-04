@@ -20,7 +20,6 @@ import static com.google.cloud.dialogflow.cx.v3.IntentsClient.ListIntentsPagedRe
 import static com.google.cloud.dialogflow.cx.v3.IntentsClient.ListLocationsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -72,7 +71,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonIntentsStub extends IntentsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()

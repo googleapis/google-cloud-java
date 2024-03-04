@@ -634,8 +634,6 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     }
 
     /** Returns the builder for the settings used for calls to submitJobAsOperation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SubmitJobRequest, Job, JobMetadata>
         submitJobAsOperationOperationSettings() {
       return submitJobAsOperationOperationSettings;

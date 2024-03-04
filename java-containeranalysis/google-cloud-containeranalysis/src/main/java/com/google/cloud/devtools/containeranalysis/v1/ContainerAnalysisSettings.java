@@ -155,7 +155,6 @@ public class ContainerAnalysisSettings extends ClientSettings<ContainerAnalysisS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -197,7 +196,6 @@ public class ContainerAnalysisSettings extends ClientSettings<ContainerAnalysisS
       return new Builder(ContainerAnalysisStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ContainerAnalysisStubSettings.newHttpJsonBuilder());
     }

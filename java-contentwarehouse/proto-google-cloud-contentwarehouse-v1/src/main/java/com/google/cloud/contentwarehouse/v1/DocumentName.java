@@ -16,7 +16,6 @@
 
 package com.google.cloud.contentwarehouse.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class DocumentName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationDocumentBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationReferenceIdBuilder newProjectLocationReferenceIdBuilder() {
     return new ProjectLocationReferenceIdBuilder();
   }
@@ -107,13 +104,11 @@ public class DocumentName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setDocument(document).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DocumentName ofProjectLocationDocumentName(
       String project, String location, String document) {
     return newBuilder().setProject(project).setLocation(location).setDocument(document).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DocumentName ofProjectLocationReferenceIdName(
       String project, String location, String referenceId) {
     return newProjectLocationReferenceIdBuilder()
@@ -132,7 +127,6 @@ public class DocumentName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDocumentName(
       String project, String location, String document) {
     return newBuilder()
@@ -143,7 +137,6 @@ public class DocumentName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationReferenceIdName(
       String project, String location, String referenceId) {
     return newProjectLocationReferenceIdBuilder()
@@ -310,7 +303,6 @@ public class DocumentName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/documents/referenceId/{reference_id}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationReferenceIdBuilder {
     private String project;
     private String location;

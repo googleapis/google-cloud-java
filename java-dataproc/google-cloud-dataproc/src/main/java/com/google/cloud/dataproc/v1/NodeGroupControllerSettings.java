@@ -174,7 +174,6 @@ public class NodeGroupControllerSettings extends ClientSettings<NodeGroupControl
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -216,7 +215,6 @@ public class NodeGroupControllerSettings extends ClientSettings<NodeGroupControl
       return new Builder(NodeGroupControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(NodeGroupControllerStubSettings.newHttpJsonBuilder());
     }

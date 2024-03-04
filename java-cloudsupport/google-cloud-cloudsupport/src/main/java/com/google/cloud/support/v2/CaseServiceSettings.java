@@ -172,7 +172,6 @@ public class CaseServiceSettings extends ClientSettings<CaseServiceSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -214,7 +213,6 @@ public class CaseServiceSettings extends ClientSettings<CaseServiceSettings> {
       return new Builder(CaseServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CaseServiceStubSettings.newHttpJsonBuilder());
     }

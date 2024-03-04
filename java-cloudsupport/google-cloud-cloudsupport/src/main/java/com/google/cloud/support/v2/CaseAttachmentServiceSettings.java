@@ -134,7 +134,6 @@ public class CaseAttachmentServiceSettings extends ClientSettings<CaseAttachment
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -177,7 +176,6 @@ public class CaseAttachmentServiceSettings extends ClientSettings<CaseAttachment
       return new Builder(CaseAttachmentServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CaseAttachmentServiceStubSettings.newHttpJsonBuilder());
     }

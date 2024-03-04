@@ -190,7 +190,6 @@ public class ContentServiceSettings extends ClientSettings<ContentServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -232,7 +231,6 @@ public class ContentServiceSettings extends ClientSettings<ContentServiceSetting
       return new Builder(ContentServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ContentServiceStubSettings.newHttpJsonBuilder());
     }

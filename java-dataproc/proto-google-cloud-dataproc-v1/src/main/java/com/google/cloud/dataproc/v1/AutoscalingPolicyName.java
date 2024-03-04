@@ -16,7 +16,6 @@
 
 package com.google.cloud.dataproc.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class AutoscalingPolicyName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationAutoscalingPolicyBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectRegionAutoscalingPolicyBuilder newProjectRegionAutoscalingPolicyBuilder() {
     return new ProjectRegionAutoscalingPolicyBuilder();
   }
@@ -112,7 +109,6 @@ public class AutoscalingPolicyName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AutoscalingPolicyName ofProjectLocationAutoscalingPolicyName(
       String project, String location, String autoscalingPolicy) {
     return newBuilder()
@@ -122,7 +118,6 @@ public class AutoscalingPolicyName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AutoscalingPolicyName ofProjectRegionAutoscalingPolicyName(
       String project, String region, String autoscalingPolicy) {
     return newProjectRegionAutoscalingPolicyBuilder()
@@ -141,7 +136,6 @@ public class AutoscalingPolicyName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAutoscalingPolicyName(
       String project, String location, String autoscalingPolicy) {
     return newBuilder()
@@ -152,7 +146,6 @@ public class AutoscalingPolicyName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectRegionAutoscalingPolicyName(
       String project, String region, String autoscalingPolicy) {
     return newProjectRegionAutoscalingPolicyBuilder()
@@ -322,7 +315,6 @@ public class AutoscalingPolicyName implements ResourceName {
   }
 
   /** Builder for projects/{project}/regions/{region}/autoscalingPolicies/{autoscaling_policy}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectRegionAutoscalingPolicyBuilder {
     private String project;
     private String region;

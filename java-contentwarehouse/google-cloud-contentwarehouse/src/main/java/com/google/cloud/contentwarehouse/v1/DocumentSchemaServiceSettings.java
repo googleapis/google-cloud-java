@@ -158,7 +158,6 @@ public class DocumentSchemaServiceSettings extends ClientSettings<DocumentSchema
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -201,7 +200,6 @@ public class DocumentSchemaServiceSettings extends ClientSettings<DocumentSchema
       return new Builder(DocumentSchemaServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DocumentSchemaServiceStubSettings.newHttpJsonBuilder());
     }

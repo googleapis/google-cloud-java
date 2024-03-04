@@ -191,7 +191,6 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -233,7 +232,6 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
       return new Builder(IntentsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(IntentsStubSettings.newHttpJsonBuilder());
     }

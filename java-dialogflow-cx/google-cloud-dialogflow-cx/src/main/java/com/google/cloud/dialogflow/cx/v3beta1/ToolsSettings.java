@@ -181,7 +181,6 @@ public class ToolsSettings extends ClientSettings<ToolsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -223,7 +222,6 @@ public class ToolsSettings extends ClientSettings<ToolsSettings> {
       return new Builder(ToolsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ToolsStubSettings.newHttpJsonBuilder());
     }

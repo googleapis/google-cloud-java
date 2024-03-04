@@ -154,7 +154,6 @@ public class RuleSetServiceSettings extends ClientSettings<RuleSetServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -196,7 +195,6 @@ public class RuleSetServiceSettings extends ClientSettings<RuleSetServiceSetting
       return new Builder(RuleSetServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RuleSetServiceStubSettings.newHttpJsonBuilder());
     }

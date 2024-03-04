@@ -759,8 +759,6 @@ public class DataprocMetastoreFederationStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createFederation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateFederationRequest, Federation, OperationMetadata>
         createFederationOperationSettings() {
       return createFederationOperationSettings;
@@ -773,8 +771,6 @@ public class DataprocMetastoreFederationStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateFederation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateFederationRequest, Federation, OperationMetadata>
         updateFederationOperationSettings() {
       return updateFederationOperationSettings;
@@ -787,8 +783,6 @@ public class DataprocMetastoreFederationStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteFederation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFederationRequest, Empty, OperationMetadata>
         deleteFederationOperationSettings() {
       return deleteFederationOperationSettings;

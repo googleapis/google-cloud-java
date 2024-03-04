@@ -152,7 +152,6 @@ public class DocumentLinkServiceSettings extends ClientSettings<DocumentLinkServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -194,7 +193,6 @@ public class DocumentLinkServiceSettings extends ClientSettings<DocumentLinkServ
       return new Builder(DocumentLinkServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DocumentLinkServiceStubSettings.newHttpJsonBuilder());
     }

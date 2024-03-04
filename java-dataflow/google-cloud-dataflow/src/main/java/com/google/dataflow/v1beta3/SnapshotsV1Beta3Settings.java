@@ -139,7 +139,6 @@ public class SnapshotsV1Beta3Settings extends ClientSettings<SnapshotsV1Beta3Set
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -181,7 +180,6 @@ public class SnapshotsV1Beta3Settings extends ClientSettings<SnapshotsV1Beta3Set
       return new Builder(SnapshotsV1Beta3StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SnapshotsV1Beta3StubSettings.newHttpJsonBuilder());
     }

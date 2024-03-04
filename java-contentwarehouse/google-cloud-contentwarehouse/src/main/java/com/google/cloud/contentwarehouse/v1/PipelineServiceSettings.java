@@ -137,7 +137,6 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -179,7 +178,6 @@ public class PipelineServiceSettings extends ClientSettings<PipelineServiceSetti
       return new Builder(PipelineServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PipelineServiceStubSettings.newHttpJsonBuilder());
     }

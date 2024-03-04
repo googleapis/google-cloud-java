@@ -482,7 +482,6 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -524,7 +523,6 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
       return new Builder(DataformStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataformStubSettings.newHttpJsonBuilder());
     }

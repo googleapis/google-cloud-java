@@ -719,8 +719,6 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to importIntents. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
         importIntentsOperationSettings() {
@@ -733,8 +731,6 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportIntents. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
         exportIntentsOperationSettings() {

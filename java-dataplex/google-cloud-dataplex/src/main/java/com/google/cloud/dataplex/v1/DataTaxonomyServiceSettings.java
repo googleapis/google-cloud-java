@@ -304,7 +304,6 @@ public class DataTaxonomyServiceSettings extends ClientSettings<DataTaxonomyServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -346,7 +345,6 @@ public class DataTaxonomyServiceSettings extends ClientSettings<DataTaxonomyServ
       return new Builder(DataTaxonomyServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataTaxonomyServiceStubSettings.newHttpJsonBuilder());
     }

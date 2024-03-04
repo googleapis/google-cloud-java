@@ -168,7 +168,6 @@ public class WebhooksSettings extends ClientSettings<WebhooksSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -210,7 +209,6 @@ public class WebhooksSettings extends ClientSettings<WebhooksSettings> {
       return new Builder(WebhooksStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(WebhooksStubSettings.newHttpJsonBuilder());
     }

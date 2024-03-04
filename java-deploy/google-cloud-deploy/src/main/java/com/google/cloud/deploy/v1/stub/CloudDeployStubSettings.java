@@ -2367,8 +2367,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createDeliveryPipeline. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDeliveryPipelineRequest, DeliveryPipeline, OperationMetadata>
         createDeliveryPipelineOperationSettings() {
@@ -2382,8 +2380,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateDeliveryPipeline. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDeliveryPipelineRequest, DeliveryPipeline, OperationMetadata>
         updateDeliveryPipelineOperationSettings() {
@@ -2397,8 +2393,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteDeliveryPipeline. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDeliveryPipelineRequest, Empty, OperationMetadata>
         deleteDeliveryPipelineOperationSettings() {
       return deleteDeliveryPipelineOperationSettings;
@@ -2428,8 +2422,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createTarget. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateTargetRequest, Target, OperationMetadata>
         createTargetOperationSettings() {
       return createTargetOperationSettings;
@@ -2441,8 +2433,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateTarget. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateTargetRequest, Target, OperationMetadata>
         updateTargetOperationSettings() {
       return updateTargetOperationSettings;
@@ -2454,8 +2444,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteTarget. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTargetRequest, Empty, OperationMetadata>
         deleteTargetOperationSettings() {
       return deleteTargetOperationSettings;
@@ -2483,8 +2471,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createCustomTargetType. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
         createCustomTargetTypeOperationSettings() {
@@ -2498,8 +2484,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateCustomTargetType. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCustomTargetTypeRequest, CustomTargetType, OperationMetadata>
         updateCustomTargetTypeOperationSettings() {
@@ -2513,8 +2497,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteCustomTargetType. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCustomTargetTypeRequest, Empty, OperationMetadata>
         deleteCustomTargetTypeOperationSettings() {
       return deleteCustomTargetTypeOperationSettings;
@@ -2538,8 +2520,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createRelease. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateReleaseRequest, Release, OperationMetadata>
         createReleaseOperationSettings() {
       return createReleaseOperationSettings;
@@ -2587,8 +2567,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createRollout. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRolloutRequest, Rollout, OperationMetadata>
         createRolloutOperationSettings() {
       return createRolloutOperationSettings;
@@ -2634,8 +2612,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createAutomation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAutomationRequest, Automation, OperationMetadata>
         createAutomationOperationSettings() {
       return createAutomationOperationSettings;
@@ -2648,8 +2624,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateAutomation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAutomationRequest, Automation, OperationMetadata>
         updateAutomationOperationSettings() {
       return updateAutomationOperationSettings;
@@ -2662,8 +2636,6 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteAutomation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAutomationRequest, Empty, OperationMetadata>
         deleteAutomationOperationSettings() {
       return deleteAutomationOperationSettings;

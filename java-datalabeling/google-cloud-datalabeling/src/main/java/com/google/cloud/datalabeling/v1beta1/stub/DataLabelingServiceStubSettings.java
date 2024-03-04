@@ -1849,8 +1849,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     }
 
     /** Returns the builder for the settings used for calls to importData. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
         importDataOperationSettings() {
@@ -1863,8 +1861,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     }
 
     /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
         exportDataOperationSettings() {
@@ -1910,8 +1906,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     }
 
     /** Returns the builder for the settings used for calls to labelImage. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
         labelImageOperationSettings() {
@@ -1924,8 +1918,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     }
 
     /** Returns the builder for the settings used for calls to labelVideo. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
         labelVideoOperationSettings() {
@@ -1938,8 +1930,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     }
 
     /** Returns the builder for the settings used for calls to labelText. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
         labelTextOperationSettings() {
       return labelTextOperationSettings;
@@ -1991,8 +1981,6 @@ public class DataLabelingServiceStubSettings extends StubSettings<DataLabelingSe
     }
 
     /** Returns the builder for the settings used for calls to createInstruction. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateInstructionRequest, Instruction, CreateInstructionMetadata>
         createInstructionOperationSettings() {

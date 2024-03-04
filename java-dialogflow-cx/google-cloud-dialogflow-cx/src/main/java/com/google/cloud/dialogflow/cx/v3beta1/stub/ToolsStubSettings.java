@@ -642,8 +642,6 @@ public class ToolsStubSettings extends StubSettings<ToolsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportTools. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportToolsRequest, ExportToolsResponse, ExportToolsMetadata>
         exportToolsOperationSettings() {

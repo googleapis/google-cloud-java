@@ -152,7 +152,6 @@ public class DeploymentsSettings extends ClientSettings<DeploymentsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -194,7 +193,6 @@ public class DeploymentsSettings extends ClientSettings<DeploymentsSettings> {
       return new Builder(DeploymentsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DeploymentsStubSettings.newHttpJsonBuilder());
     }

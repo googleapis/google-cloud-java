@@ -186,7 +186,6 @@ public class SessionTemplateControllerSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -229,7 +228,6 @@ public class SessionTemplateControllerSettings
       return new Builder(SessionTemplateControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SessionTemplateControllerStubSettings.newHttpJsonBuilder());
     }

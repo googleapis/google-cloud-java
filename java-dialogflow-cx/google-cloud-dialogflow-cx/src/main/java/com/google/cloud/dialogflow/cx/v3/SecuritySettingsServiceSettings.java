@@ -180,7 +180,6 @@ public class SecuritySettingsServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -223,7 +222,6 @@ public class SecuritySettingsServiceSettings
       return new Builder(SecuritySettingsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SecuritySettingsServiceStubSettings.newHttpJsonBuilder());
     }

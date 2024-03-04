@@ -1465,8 +1465,6 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     }
 
     /** Returns the builder for the settings used for calls to reconcileTags. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReconcileTagsRequest, ReconcileTagsResponse, ReconcileTagsMetadata>
         reconcileTagsOperationSettings() {
@@ -1506,8 +1504,6 @@ public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSetting
     }
 
     /** Returns the builder for the settings used for calls to importEntries. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportEntriesRequest, ImportEntriesResponse, ImportEntriesMetadata>
         importEntriesOperationSettings() {

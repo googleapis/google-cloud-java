@@ -29,7 +29,6 @@ import com.google.api.cloudquotas.v1.ListQuotaPreferencesResponse;
 import com.google.api.cloudquotas.v1.QuotaInfo;
 import com.google.api.cloudquotas.v1.QuotaPreference;
 import com.google.api.cloudquotas.v1.UpdateQuotaPreferenceRequest;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -58,7 +57,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonCloudQuotasStub extends CloudQuotasStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

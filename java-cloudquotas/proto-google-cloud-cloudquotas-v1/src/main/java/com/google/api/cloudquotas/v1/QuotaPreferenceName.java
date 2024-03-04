@@ -16,7 +16,6 @@
 
 package com.google.api.cloudquotas.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -109,17 +108,14 @@ public class QuotaPreferenceName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationQuotaPreferenceBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationQuotaPreferenceBuilder newFolderLocationQuotaPreferenceBuilder() {
     return new FolderLocationQuotaPreferenceBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationQuotaPreferenceBuilder
       newOrganizationLocationQuotaPreferenceBuilder() {
     return new OrganizationLocationQuotaPreferenceBuilder();
@@ -137,7 +133,6 @@ public class QuotaPreferenceName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static QuotaPreferenceName ofProjectLocationQuotaPreferenceName(
       String project, String location, String quotaPreference) {
     return newBuilder()
@@ -147,7 +142,6 @@ public class QuotaPreferenceName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static QuotaPreferenceName ofFolderLocationQuotaPreferenceName(
       String folder, String location, String quotaPreference) {
     return newFolderLocationQuotaPreferenceBuilder()
@@ -157,7 +151,6 @@ public class QuotaPreferenceName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static QuotaPreferenceName ofOrganizationLocationQuotaPreferenceName(
       String organization, String location, String quotaPreference) {
     return newOrganizationLocationQuotaPreferenceBuilder()
@@ -176,7 +169,6 @@ public class QuotaPreferenceName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationQuotaPreferenceName(
       String project, String location, String quotaPreference) {
     return newBuilder()
@@ -187,7 +179,6 @@ public class QuotaPreferenceName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationQuotaPreferenceName(
       String folder, String location, String quotaPreference) {
     return newFolderLocationQuotaPreferenceBuilder()
@@ -198,7 +189,6 @@ public class QuotaPreferenceName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationQuotaPreferenceName(
       String organization, String location, String quotaPreference) {
     return newOrganizationLocationQuotaPreferenceBuilder()
@@ -376,7 +366,6 @@ public class QuotaPreferenceName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/locations/{location}/quotaPreferences/{quota_preference}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationQuotaPreferenceBuilder {
     private String folder;
     private String location;
@@ -420,7 +409,6 @@ public class QuotaPreferenceName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/quotaPreferences/{quota_preference}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationQuotaPreferenceBuilder {
     private String organization;
     private String location;

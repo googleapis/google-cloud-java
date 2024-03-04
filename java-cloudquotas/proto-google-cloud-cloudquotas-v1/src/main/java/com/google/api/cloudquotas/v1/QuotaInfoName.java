@@ -16,7 +16,6 @@
 
 package com.google.api.cloudquotas.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -118,17 +117,14 @@ public class QuotaInfoName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationServiceQuotaInfoBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationServiceQuotaInfoBuilder newFolderLocationServiceQuotaInfoBuilder() {
     return new FolderLocationServiceQuotaInfoBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationServiceQuotaInfoBuilder
       newOrganizationLocationServiceQuotaInfoBuilder() {
     return new OrganizationLocationServiceQuotaInfoBuilder();
@@ -148,7 +144,6 @@ public class QuotaInfoName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static QuotaInfoName ofProjectLocationServiceQuotaInfoName(
       String project, String location, String service, String quotaInfo) {
     return newBuilder()
@@ -159,7 +154,6 @@ public class QuotaInfoName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static QuotaInfoName ofFolderLocationServiceQuotaInfoName(
       String folder, String location, String service, String quotaInfo) {
     return newFolderLocationServiceQuotaInfoBuilder()
@@ -170,7 +164,6 @@ public class QuotaInfoName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static QuotaInfoName ofOrganizationLocationServiceQuotaInfoName(
       String organization, String location, String service, String quotaInfo) {
     return newOrganizationLocationServiceQuotaInfoBuilder()
@@ -191,7 +184,6 @@ public class QuotaInfoName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationServiceQuotaInfoName(
       String project, String location, String service, String quotaInfo) {
     return newBuilder()
@@ -203,7 +195,6 @@ public class QuotaInfoName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationServiceQuotaInfoName(
       String folder, String location, String service, String quotaInfo) {
     return newFolderLocationServiceQuotaInfoBuilder()
@@ -215,7 +206,6 @@ public class QuotaInfoName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationServiceQuotaInfoName(
       String organization, String location, String service, String quotaInfo) {
     return newOrganizationLocationServiceQuotaInfoBuilder()
@@ -425,7 +415,6 @@ public class QuotaInfoName implements ResourceName {
   /**
    * Builder for folders/{folder}/locations/{location}/services/{service}/quotaInfos/{quota_info}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationServiceQuotaInfoBuilder {
     private String folder;
     private String location;
@@ -479,7 +468,6 @@ public class QuotaInfoName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/services/{service}/quotaInfos/{quota_info}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationServiceQuotaInfoBuilder {
     private String organization;
     private String location;

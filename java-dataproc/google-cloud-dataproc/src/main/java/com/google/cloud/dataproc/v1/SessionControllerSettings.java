@@ -193,7 +193,6 @@ public class SessionControllerSettings extends ClientSettings<SessionControllerS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -235,7 +234,6 @@ public class SessionControllerSettings extends ClientSettings<SessionControllerS
       return new Builder(SessionControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SessionControllerStubSettings.newHttpJsonBuilder());
     }

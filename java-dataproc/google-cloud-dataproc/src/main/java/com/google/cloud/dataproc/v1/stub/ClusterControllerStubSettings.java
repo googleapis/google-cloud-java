@@ -844,8 +844,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, ClusterOperationMetadata>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
@@ -857,8 +855,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
@@ -870,8 +866,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     }
 
     /** Returns the builder for the settings used for calls to stopCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopClusterRequest, Cluster, ClusterOperationMetadata>
         stopClusterOperationSettings() {
       return stopClusterOperationSettings;
@@ -883,8 +877,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     }
 
     /** Returns the builder for the settings used for calls to startCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartClusterRequest, Cluster, ClusterOperationMetadata>
         startClusterOperationSettings() {
       return startClusterOperationSettings;
@@ -896,8 +888,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, ClusterOperationMetadata>
         deleteClusterOperationSettings() {
       return deleteClusterOperationSettings;
@@ -921,8 +911,6 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
     }
 
     /** Returns the builder for the settings used for calls to diagnoseCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
         diagnoseClusterOperationSettings() {

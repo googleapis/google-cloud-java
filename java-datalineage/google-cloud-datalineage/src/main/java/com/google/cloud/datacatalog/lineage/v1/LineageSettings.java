@@ -238,7 +238,6 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -280,7 +279,6 @@ public class LineageSettings extends ClientSettings<LineageSettings> {
       return new Builder(LineageStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(LineageStubSettings.newHttpJsonBuilder());
     }

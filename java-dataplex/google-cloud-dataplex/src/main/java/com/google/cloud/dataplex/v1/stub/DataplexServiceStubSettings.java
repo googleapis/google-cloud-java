@@ -2208,8 +2208,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createLake. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateLakeRequest, Lake, OperationMetadata>
         createLakeOperationSettings() {
       return createLakeOperationSettings;
@@ -2221,8 +2219,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateLake. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateLakeRequest, Lake, OperationMetadata>
         updateLakeOperationSettings() {
       return updateLakeOperationSettings;
@@ -2234,8 +2230,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteLake. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteLakeRequest, Empty, OperationMetadata>
         deleteLakeOperationSettings() {
       return deleteLakeOperationSettings;
@@ -2265,8 +2259,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createZone. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateZoneRequest, Zone, OperationMetadata>
         createZoneOperationSettings() {
       return createZoneOperationSettings;
@@ -2278,8 +2270,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateZone. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateZoneRequest, Zone, OperationMetadata>
         updateZoneOperationSettings() {
       return updateZoneOperationSettings;
@@ -2291,8 +2281,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteZone. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteZoneRequest, Empty, OperationMetadata>
         deleteZoneOperationSettings() {
       return deleteZoneOperationSettings;
@@ -2322,8 +2310,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createAsset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAssetRequest, Asset, OperationMetadata>
         createAssetOperationSettings() {
       return createAssetOperationSettings;
@@ -2335,8 +2321,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateAsset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAssetRequest, Asset, OperationMetadata>
         updateAssetOperationSettings() {
       return updateAssetOperationSettings;
@@ -2348,8 +2332,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteAsset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAssetRequest, Empty, OperationMetadata>
         deleteAssetOperationSettings() {
       return deleteAssetOperationSettings;
@@ -2379,8 +2361,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createTask. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateTaskRequest, Task, OperationMetadata>
         createTaskOperationSettings() {
       return createTaskOperationSettings;
@@ -2392,8 +2372,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateTask. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateTaskRequest, Task, OperationMetadata>
         updateTaskOperationSettings() {
       return updateTaskOperationSettings;
@@ -2405,8 +2383,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteTask. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTaskRequest, Empty, OperationMetadata>
         deleteTaskOperationSettings() {
       return deleteTaskOperationSettings;
@@ -2451,8 +2427,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, OperationMetadata>
         createEnvironmentOperationSettings() {
       return createEnvironmentOperationSettings;
@@ -2465,8 +2439,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateEnvironmentRequest, Environment, OperationMetadata>
         updateEnvironmentOperationSettings() {
       return updateEnvironmentOperationSettings;
@@ -2479,8 +2451,6 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return deleteEnvironmentOperationSettings;

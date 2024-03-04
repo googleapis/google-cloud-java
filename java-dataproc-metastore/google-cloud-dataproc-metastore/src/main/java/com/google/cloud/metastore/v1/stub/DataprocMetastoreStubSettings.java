@@ -1518,8 +1518,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to createService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateServiceRequest, Service, OperationMetadata>
         createServiceOperationSettings() {
       return createServiceOperationSettings;
@@ -1531,8 +1529,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to updateService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateServiceRequest, Service, OperationMetadata>
         updateServiceOperationSettings() {
       return updateServiceOperationSettings;
@@ -1544,8 +1540,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to deleteService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteServiceRequest, Empty, OperationMetadata>
         deleteServiceOperationSettings() {
       return deleteServiceOperationSettings;
@@ -1573,8 +1567,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to createMetadataImport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateMetadataImportRequest, MetadataImport, OperationMetadata>
         createMetadataImportOperationSettings() {
@@ -1588,8 +1580,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to updateMetadataImport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateMetadataImportRequest, MetadataImport, OperationMetadata>
         updateMetadataImportOperationSettings() {
@@ -1602,8 +1592,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to exportMetadata. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportMetadataRequest, MetadataExport, OperationMetadata>
         exportMetadataOperationSettings() {
       return exportMetadataOperationSettings;
@@ -1615,8 +1603,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to restoreService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreServiceRequest, Restore, OperationMetadata>
         restoreServiceOperationSettings() {
       return restoreServiceOperationSettings;
@@ -1640,8 +1626,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
         createBackupOperationSettings() {
       return createBackupOperationSettings;
@@ -1653,8 +1637,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to deleteBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return deleteBackupOperationSettings;
@@ -1666,8 +1648,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to queryMetadata. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             QueryMetadataRequest, QueryMetadataResponse, OperationMetadata>
         queryMetadataOperationSettings() {
@@ -1681,8 +1661,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to moveTableToDatabase. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             MoveTableToDatabaseRequest, MoveTableToDatabaseResponse, OperationMetadata>
         moveTableToDatabaseOperationSettings() {
@@ -1696,8 +1674,6 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     }
 
     /** Returns the builder for the settings used for calls to alterMetadataResourceLocation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AlterMetadataResourceLocationRequest,
             AlterMetadataResourceLocationResponse,

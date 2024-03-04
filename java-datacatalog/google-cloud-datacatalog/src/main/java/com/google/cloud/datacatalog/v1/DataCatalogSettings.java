@@ -328,7 +328,6 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -370,7 +369,6 @@ public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
       return new Builder(DataCatalogStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataCatalogStubSettings.newHttpJsonBuilder());
     }

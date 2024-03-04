@@ -1081,8 +1081,6 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteProcess. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteProcessRequest, Empty, OperationMetadata>
         deleteProcessOperationSettings() {
       return deleteProcessOperationSettings;
@@ -1115,8 +1113,6 @@ public class LineageStubSettings extends StubSettings<LineageStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteRun. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRunRequest, Empty, OperationMetadata>
         deleteRunOperationSettings() {
       return deleteRunOperationSettings;

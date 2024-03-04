@@ -357,7 +357,6 @@ public class DatastreamSettings extends ClientSettings<DatastreamSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -399,7 +398,6 @@ public class DatastreamSettings extends ClientSettings<DatastreamSettings> {
       return new Builder(DatastreamStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DatastreamStubSettings.newHttpJsonBuilder());
     }

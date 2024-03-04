@@ -149,7 +149,6 @@ public class MetricsV1Beta3Settings extends ClientSettings<MetricsV1Beta3Setting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -191,7 +190,6 @@ public class MetricsV1Beta3Settings extends ClientSettings<MetricsV1Beta3Setting
       return new Builder(MetricsV1Beta3StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(MetricsV1Beta3StubSettings.newHttpJsonBuilder());
     }

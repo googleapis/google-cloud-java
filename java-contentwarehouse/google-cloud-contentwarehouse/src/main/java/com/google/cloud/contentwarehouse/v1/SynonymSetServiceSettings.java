@@ -155,7 +155,6 @@ public class SynonymSetServiceSettings extends ClientSettings<SynonymSetServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -197,7 +196,6 @@ public class SynonymSetServiceSettings extends ClientSettings<SynonymSetServiceS
       return new Builder(SynonymSetServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SynonymSetServiceStubSettings.newHttpJsonBuilder());
     }

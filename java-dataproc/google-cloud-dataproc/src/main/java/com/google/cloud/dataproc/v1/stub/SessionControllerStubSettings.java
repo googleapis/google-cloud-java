@@ -641,8 +641,6 @@ public class SessionControllerStubSettings extends StubSettings<SessionControlle
     }
 
     /** Returns the builder for the settings used for calls to createSession. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSessionRequest, Session, SessionOperationMetadata>
         createSessionOperationSettings() {
       return createSessionOperationSettings;
@@ -667,8 +665,6 @@ public class SessionControllerStubSettings extends StubSettings<SessionControlle
     }
 
     /** Returns the builder for the settings used for calls to terminateSession. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<TerminateSessionRequest, Session, SessionOperationMetadata>
         terminateSessionOperationSettings() {
       return terminateSessionOperationSettings;
@@ -680,8 +676,6 @@ public class SessionControllerStubSettings extends StubSettings<SessionControlle
     }
 
     /** Returns the builder for the settings used for calls to deleteSession. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSessionRequest, Session, SessionOperationMetadata>
         deleteSessionOperationSettings() {
       return deleteSessionOperationSettings;

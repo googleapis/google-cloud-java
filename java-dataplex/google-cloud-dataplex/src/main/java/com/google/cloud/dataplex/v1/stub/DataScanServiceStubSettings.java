@@ -803,8 +803,6 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createDataScan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDataScanRequest, DataScan, OperationMetadata>
         createDataScanOperationSettings() {
       return createDataScanOperationSettings;
@@ -816,8 +814,6 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateDataScan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateDataScanRequest, DataScan, OperationMetadata>
         updateDataScanOperationSettings() {
       return updateDataScanOperationSettings;
@@ -829,8 +825,6 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteDataScan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDataScanRequest, Empty, OperationMetadata>
         deleteDataScanOperationSettings() {
       return deleteDataScanOperationSettings;

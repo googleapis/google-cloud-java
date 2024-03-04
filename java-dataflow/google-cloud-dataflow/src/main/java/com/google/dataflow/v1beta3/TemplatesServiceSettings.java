@@ -139,7 +139,6 @@ public class TemplatesServiceSettings extends ClientSettings<TemplatesServiceSet
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -181,7 +180,6 @@ public class TemplatesServiceSettings extends ClientSettings<TemplatesServiceSet
       return new Builder(TemplatesServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TemplatesServiceStubSettings.newHttpJsonBuilder());
     }

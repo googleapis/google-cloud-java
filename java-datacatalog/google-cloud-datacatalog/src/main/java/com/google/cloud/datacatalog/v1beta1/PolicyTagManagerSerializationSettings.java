@@ -140,7 +140,6 @@ public class PolicyTagManagerSerializationSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -183,7 +182,6 @@ public class PolicyTagManagerSerializationSettings
       return new Builder(PolicyTagManagerSerializationStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PolicyTagManagerSerializationStubSettings.newHttpJsonBuilder());
     }

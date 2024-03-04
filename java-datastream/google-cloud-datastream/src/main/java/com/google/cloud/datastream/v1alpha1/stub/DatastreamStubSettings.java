@@ -1536,8 +1536,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateConnectionProfileRequest, ConnectionProfile, OperationMetadata>
         createConnectionProfileOperationSettings() {
@@ -1551,8 +1549,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateConnectionProfileRequest, ConnectionProfile, OperationMetadata>
         updateConnectionProfileOperationSettings() {
@@ -1566,8 +1562,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteConnectionProfileRequest, Empty, OperationMetadata>
         deleteConnectionProfileOperationSettings() {
       return deleteConnectionProfileOperationSettings;
@@ -1598,8 +1592,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createStream. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateStreamRequest, Stream, OperationMetadata>
         createStreamOperationSettings() {
       return createStreamOperationSettings;
@@ -1611,8 +1603,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateStream. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateStreamRequest, Stream, OperationMetadata>
         updateStreamOperationSettings() {
       return updateStreamOperationSettings;
@@ -1624,8 +1614,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteStream. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteStreamRequest, Empty, OperationMetadata>
         deleteStreamOperationSettings() {
       return deleteStreamOperationSettings;
@@ -1637,8 +1625,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to fetchErrors. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<FetchErrorsRequest, FetchErrorsResponse, OperationMetadata>
         fetchErrorsOperationSettings() {
       return fetchErrorsOperationSettings;
@@ -1658,8 +1644,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createPrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
         createPrivateConnectionOperationSettings() {
@@ -1688,8 +1672,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deletePrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
         deletePrivateConnectionOperationSettings() {
       return deletePrivateConnectionOperationSettings;
@@ -1701,8 +1683,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createRoute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRouteRequest, Route, OperationMetadata>
         createRouteOperationSettings() {
       return createRouteOperationSettings;
@@ -1725,8 +1705,6 @@ public class DatastreamStubSettings extends StubSettings<DatastreamStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteRoute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRouteRequest, Empty, OperationMetadata>
         deleteRouteOperationSettings() {
       return deleteRouteOperationSettings;

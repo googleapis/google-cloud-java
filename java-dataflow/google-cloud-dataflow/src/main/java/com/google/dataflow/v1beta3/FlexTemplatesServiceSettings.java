@@ -131,7 +131,6 @@ public class FlexTemplatesServiceSettings extends ClientSettings<FlexTemplatesSe
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -174,7 +173,6 @@ public class FlexTemplatesServiceSettings extends ClientSettings<FlexTemplatesSe
       return new Builder(FlexTemplatesServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(FlexTemplatesServiceStubSettings.newHttpJsonBuilder());
     }

@@ -203,7 +203,6 @@ public class PolicyTagManagerSettings extends ClientSettings<PolicyTagManagerSet
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -245,7 +244,6 @@ public class PolicyTagManagerSettings extends ClientSettings<PolicyTagManagerSet
       return new Builder(PolicyTagManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PolicyTagManagerStubSettings.newHttpJsonBuilder());
     }

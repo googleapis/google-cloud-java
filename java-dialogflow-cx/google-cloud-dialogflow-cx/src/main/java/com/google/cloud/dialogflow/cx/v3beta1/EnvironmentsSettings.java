@@ -228,7 +228,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -270,7 +269,6 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
       return new Builder(EnvironmentsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EnvironmentsStubSettings.newHttpJsonBuilder());
     }

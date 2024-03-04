@@ -207,7 +207,6 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -249,7 +248,6 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
       return new Builder(DataScanServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataScanServiceStubSettings.newHttpJsonBuilder());
     }

@@ -424,7 +424,6 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -467,7 +466,6 @@ public class ContactCenterInsightsSettings extends ClientSettings<ContactCenterI
       return new Builder(ContactCenterInsightsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ContactCenterInsightsStubSettings.newHttpJsonBuilder());
     }

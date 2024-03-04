@@ -216,7 +216,6 @@ public class WorkflowTemplateServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -259,7 +258,6 @@ public class WorkflowTemplateServiceSettings
       return new Builder(WorkflowTemplateServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(WorkflowTemplateServiceStubSettings.newHttpJsonBuilder());
     }

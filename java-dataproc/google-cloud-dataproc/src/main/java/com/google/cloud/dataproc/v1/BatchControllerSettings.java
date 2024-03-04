@@ -177,7 +177,6 @@ public class BatchControllerSettings extends ClientSettings<BatchControllerSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -219,7 +218,6 @@ public class BatchControllerSettings extends ClientSettings<BatchControllerSetti
       return new Builder(BatchControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(BatchControllerStubSettings.newHttpJsonBuilder());
     }

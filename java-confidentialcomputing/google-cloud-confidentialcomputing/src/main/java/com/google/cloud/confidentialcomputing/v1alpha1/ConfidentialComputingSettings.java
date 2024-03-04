@@ -155,7 +155,6 @@ public class ConfidentialComputingSettings extends ClientSettings<ConfidentialCo
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -198,7 +197,6 @@ public class ConfidentialComputingSettings extends ClientSettings<ConfidentialCo
       return new Builder(ConfidentialComputingStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConfidentialComputingStubSettings.newHttpJsonBuilder());
     }

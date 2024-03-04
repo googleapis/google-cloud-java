@@ -164,7 +164,6 @@ public class CloudQuotasSettings extends ClientSettings<CloudQuotasSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -206,7 +205,6 @@ public class CloudQuotasSettings extends ClientSettings<CloudQuotasSettings> {
       return new Builder(CloudQuotasStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudQuotasStubSettings.newHttpJsonBuilder());
     }

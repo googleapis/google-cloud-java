@@ -168,7 +168,6 @@ public class ExamplesSettings extends ClientSettings<ExamplesSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -210,7 +209,6 @@ public class ExamplesSettings extends ClientSettings<ExamplesSettings> {
       return new Builder(ExamplesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ExamplesStubSettings.newHttpJsonBuilder());
     }

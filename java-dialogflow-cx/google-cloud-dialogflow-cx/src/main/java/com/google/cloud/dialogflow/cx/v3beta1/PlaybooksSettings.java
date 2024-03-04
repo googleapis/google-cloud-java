@@ -195,7 +195,6 @@ public class PlaybooksSettings extends ClientSettings<PlaybooksSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -237,7 +236,6 @@ public class PlaybooksSettings extends ClientSettings<PlaybooksSettings> {
       return new Builder(PlaybooksStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PlaybooksStubSettings.newHttpJsonBuilder());
     }

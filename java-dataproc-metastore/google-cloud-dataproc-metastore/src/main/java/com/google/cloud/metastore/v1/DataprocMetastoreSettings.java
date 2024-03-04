@@ -344,7 +344,6 @@ public class DataprocMetastoreSettings extends ClientSettings<DataprocMetastoreS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -386,7 +385,6 @@ public class DataprocMetastoreSettings extends ClientSettings<DataprocMetastoreS
       return new Builder(DataprocMetastoreStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataprocMetastoreStubSettings.newHttpJsonBuilder());
     }

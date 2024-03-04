@@ -809,8 +809,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportAgent. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportAgentRequest, ExportAgentResponse, Struct>
         exportAgentOperationSettings() {
       return exportAgentOperationSettings;
@@ -822,8 +820,6 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to restoreAgent. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings() {
       return restoreAgentOperationSettings;

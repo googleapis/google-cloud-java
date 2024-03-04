@@ -734,8 +734,6 @@ public class WorkflowTemplateServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to instantiateWorkflowTemplate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
         instantiateWorkflowTemplateOperationSettings() {
@@ -749,8 +747,6 @@ public class WorkflowTemplateServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to instantiateInlineWorkflowTemplate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
         instantiateInlineWorkflowTemplateOperationSettings() {

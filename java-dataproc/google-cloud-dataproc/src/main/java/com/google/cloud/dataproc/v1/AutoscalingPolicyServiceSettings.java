@@ -188,7 +188,6 @@ public class AutoscalingPolicyServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -231,7 +230,6 @@ public class AutoscalingPolicyServiceSettings
       return new Builder(AutoscalingPolicyServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AutoscalingPolicyServiceStubSettings.newHttpJsonBuilder());
     }

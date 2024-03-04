@@ -218,7 +218,6 @@ public class DataprocMetastoreFederationSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -261,7 +260,6 @@ public class DataprocMetastoreFederationSettings
       return new Builder(DataprocMetastoreFederationStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataprocMetastoreFederationStubSettings.newHttpJsonBuilder());
     }
