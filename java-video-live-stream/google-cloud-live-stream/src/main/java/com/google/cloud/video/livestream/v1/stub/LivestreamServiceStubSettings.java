@@ -1480,8 +1480,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to createChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateChannelRequest, Channel, OperationMetadata>
         createChannelOperationSettings() {
       return createChannelOperationSettings;
@@ -1505,8 +1503,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to deleteChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteChannelRequest, Empty, OperationMetadata>
         deleteChannelOperationSettings() {
       return deleteChannelOperationSettings;
@@ -1518,8 +1514,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to updateChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateChannelRequest, Channel, OperationMetadata>
         updateChannelOperationSettings() {
       return updateChannelOperationSettings;
@@ -1531,8 +1525,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to startChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StartChannelRequest, ChannelOperationResponse, OperationMetadata>
         startChannelOperationSettings() {
@@ -1545,8 +1537,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to stopChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             StopChannelRequest, ChannelOperationResponse, OperationMetadata>
         stopChannelOperationSettings() {
@@ -1559,8 +1549,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to createInput. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInputRequest, Input, OperationMetadata>
         createInputOperationSettings() {
       return createInputOperationSettings;
@@ -1583,8 +1571,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to deleteInput. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInputRequest, Empty, OperationMetadata>
         deleteInputOperationSettings() {
       return deleteInputOperationSettings;
@@ -1596,8 +1582,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to updateInput. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInputRequest, Input, OperationMetadata>
         updateInputOperationSettings() {
       return updateInputOperationSettings;
@@ -1630,8 +1614,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to createAsset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAssetRequest, Asset, OperationMetadata>
         createAssetOperationSettings() {
       return createAssetOperationSettings;
@@ -1643,8 +1625,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to deleteAsset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAssetRequest, Empty, OperationMetadata>
         deleteAssetOperationSettings() {
       return deleteAssetOperationSettings;
@@ -1672,8 +1652,6 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     }
 
     /** Returns the builder for the settings used for calls to updatePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdatePoolRequest, Pool, OperationMetadata>
         updatePoolOperationSettings() {
       return updatePoolOperationSettings;

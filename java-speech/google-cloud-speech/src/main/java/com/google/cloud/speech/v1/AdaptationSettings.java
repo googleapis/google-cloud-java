@@ -179,7 +179,6 @@ public class AdaptationSettings extends ClientSettings<AdaptationSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -221,7 +220,6 @@ public class AdaptationSettings extends ClientSettings<AdaptationSettings> {
       return new Builder(AdaptationStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AdaptationStubSettings.newHttpJsonBuilder());
     }

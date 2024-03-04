@@ -216,7 +216,6 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -258,7 +257,6 @@ public class TranslationServiceSettings extends ClientSettings<TranslationServic
       return new Builder(TranslationServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TranslationServiceStubSettings.newHttpJsonBuilder());
     }

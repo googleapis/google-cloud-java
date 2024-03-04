@@ -146,7 +146,6 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -188,7 +187,6 @@ public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSetting
       return new Builder(ImageAnnotatorStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ImageAnnotatorStubSettings.newHttpJsonBuilder());
     }

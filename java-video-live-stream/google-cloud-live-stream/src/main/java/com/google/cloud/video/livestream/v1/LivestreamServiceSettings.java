@@ -328,7 +328,6 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -370,7 +369,6 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
       return new Builder(LivestreamServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(LivestreamServiceStubSettings.newHttpJsonBuilder());
     }

@@ -1555,8 +1555,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createRecognizer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRecognizerRequest, Recognizer, OperationMetadata>
         createRecognizerOperationSettings() {
       return createRecognizerOperationSettings;
@@ -1581,8 +1579,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateRecognizer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRecognizerRequest, Recognizer, OperationMetadata>
         updateRecognizerOperationSettings() {
       return updateRecognizerOperationSettings;
@@ -1595,8 +1591,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteRecognizer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRecognizerRequest, Recognizer, OperationMetadata>
         deleteRecognizerOperationSettings() {
       return deleteRecognizerOperationSettings;
@@ -1609,8 +1603,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeleteRecognizer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeleteRecognizerRequest, Recognizer, OperationMetadata>
         undeleteRecognizerOperationSettings() {
       return undeleteRecognizerOperationSettings;
@@ -1633,8 +1625,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchRecognize. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchRecognizeRequest, BatchRecognizeResponse, OperationMetadata>
         batchRecognizeOperationSettings() {
@@ -1658,8 +1648,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createCustomClass. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCustomClassRequest, CustomClass, OperationMetadata>
         createCustomClassOperationSettings() {
       return createCustomClassOperationSettings;
@@ -1684,8 +1672,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateCustomClass. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateCustomClassRequest, CustomClass, OperationMetadata>
         updateCustomClassOperationSettings() {
       return updateCustomClassOperationSettings;
@@ -1698,8 +1684,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteCustomClass. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCustomClassRequest, CustomClass, OperationMetadata>
         deleteCustomClassOperationSettings() {
       return deleteCustomClassOperationSettings;
@@ -1712,8 +1696,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeleteCustomClass. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeleteCustomClassRequest, CustomClass, OperationMetadata>
         undeleteCustomClassOperationSettings() {
       return undeleteCustomClassOperationSettings;
@@ -1725,8 +1707,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createPhraseSet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreatePhraseSetRequest, PhraseSet, OperationMetadata>
         createPhraseSetOperationSettings() {
       return createPhraseSetOperationSettings;
@@ -1750,8 +1730,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updatePhraseSet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdatePhraseSetRequest, PhraseSet, OperationMetadata>
         updatePhraseSetOperationSettings() {
       return updatePhraseSetOperationSettings;
@@ -1763,8 +1741,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deletePhraseSet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePhraseSetRequest, PhraseSet, OperationMetadata>
         deletePhraseSetOperationSettings() {
       return deletePhraseSetOperationSettings;
@@ -1777,8 +1753,6 @@ public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeletePhraseSet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeletePhraseSetRequest, PhraseSet, OperationMetadata>
         undeletePhraseSetOperationSettings() {
       return undeletePhraseSetOperationSettings;

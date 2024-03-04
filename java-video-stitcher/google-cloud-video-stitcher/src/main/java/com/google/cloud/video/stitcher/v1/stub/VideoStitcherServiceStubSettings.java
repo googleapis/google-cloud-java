@@ -25,7 +25,6 @@ import static com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient.List
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1442,8 +1441,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createCdnKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCdnKeyRequest, CdnKey, OperationMetadata>
         createCdnKeyOperationSettings() {
       return createCdnKeyOperationSettings;
@@ -1467,8 +1464,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteCdnKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCdnKeyRequest, Empty, OperationMetadata>
         deleteCdnKeyOperationSettings() {
       return deleteCdnKeyOperationSettings;
@@ -1480,8 +1475,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCdnKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateCdnKeyRequest, CdnKey, OperationMetadata>
         updateCdnKeyOperationSettings() {
       return updateCdnKeyOperationSettings;
@@ -1549,8 +1542,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createSlate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSlateRequest, Slate, OperationMetadata>
         createSlateOperationSettings() {
       return createSlateOperationSettings;
@@ -1573,8 +1564,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateSlate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSlateRequest, Slate, OperationMetadata>
         updateSlateOperationSettings() {
       return updateSlateOperationSettings;
@@ -1586,8 +1575,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteSlate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSlateRequest, Empty, OperationMetadata>
         deleteSlateOperationSettings() {
       return deleteSlateOperationSettings;
@@ -1611,8 +1598,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createLiveConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateLiveConfigRequest, LiveConfig, OperationMetadata>
         createLiveConfigOperationSettings() {
       return createLiveConfigOperationSettings;
@@ -1637,8 +1622,6 @@ public class VideoStitcherServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteLiveConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteLiveConfigRequest, Empty, OperationMetadata>
         deleteLiveConfigOperationSettings() {
       return deleteLiveConfigOperationSettings;

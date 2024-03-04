@@ -172,7 +172,6 @@ public class VpcAccessServiceSettings extends ClientSettings<VpcAccessServiceSet
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -214,7 +213,6 @@ public class VpcAccessServiceSettings extends ClientSettings<VpcAccessServiceSet
       return new Builder(VpcAccessServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(VpcAccessServiceStubSettings.newHttpJsonBuilder());
     }

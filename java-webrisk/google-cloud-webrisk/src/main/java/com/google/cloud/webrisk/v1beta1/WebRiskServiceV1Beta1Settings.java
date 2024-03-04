@@ -147,7 +147,6 @@ public class WebRiskServiceV1Beta1Settings extends ClientSettings<WebRiskService
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -190,7 +189,6 @@ public class WebRiskServiceV1Beta1Settings extends ClientSettings<WebRiskService
       return new Builder(WebRiskServiceV1Beta1StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(WebRiskServiceV1Beta1StubSettings.newHttpJsonBuilder());
     }

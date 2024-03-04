@@ -4885,8 +4885,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createPrivateCloud. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreatePrivateCloudRequest, PrivateCloud, OperationMetadata>
         createPrivateCloudOperationSettings() {
       return createPrivateCloudOperationSettings;
@@ -4899,8 +4897,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updatePrivateCloud. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdatePrivateCloudRequest, PrivateCloud, OperationMetadata>
         updatePrivateCloudOperationSettings() {
       return updatePrivateCloudOperationSettings;
@@ -4913,8 +4909,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deletePrivateCloud. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePrivateCloudRequest, PrivateCloud, OperationMetadata>
         deletePrivateCloudOperationSettings() {
       return deletePrivateCloudOperationSettings;
@@ -4927,8 +4921,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to undeletePrivateCloud. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UndeletePrivateCloudRequest, PrivateCloud, OperationMetadata>
         undeletePrivateCloudOperationSettings() {
@@ -4953,8 +4945,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, OperationMetadata>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
@@ -4966,8 +4956,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, OperationMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
@@ -4979,8 +4967,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings() {
       return deleteClusterOperationSettings;
@@ -5030,8 +5016,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createExternalAddress. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateExternalAddressRequest, ExternalAddress, OperationMetadata>
         createExternalAddressOperationSettings() {
@@ -5045,8 +5029,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateExternalAddress. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateExternalAddressRequest, ExternalAddress, OperationMetadata>
         updateExternalAddressOperationSettings() {
@@ -5060,8 +5042,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteExternalAddress. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteExternalAddressRequest, Empty, OperationMetadata>
         deleteExternalAddressOperationSettings() {
       return deleteExternalAddressOperationSettings;
@@ -5085,8 +5065,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateSubnet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSubnetRequest, Subnet, OperationMetadata>
         updateSubnetOperationSettings() {
       return updateSubnetOperationSettings;
@@ -5114,8 +5092,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createExternalAccessRule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
         createExternalAccessRuleOperationSettings() {
@@ -5129,8 +5105,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateExternalAccessRule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateExternalAccessRuleRequest, ExternalAccessRule, OperationMetadata>
         updateExternalAccessRuleOperationSettings() {
@@ -5144,8 +5118,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteExternalAccessRule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteExternalAccessRuleRequest, Empty, OperationMetadata>
         deleteExternalAccessRuleOperationSettings() {
       return deleteExternalAccessRuleOperationSettings;
@@ -5171,8 +5143,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createLoggingServer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateLoggingServerRequest, LoggingServer, OperationMetadata>
         createLoggingServerOperationSettings() {
@@ -5186,8 +5156,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateLoggingServer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateLoggingServerRequest, LoggingServer, OperationMetadata>
         updateLoggingServerOperationSettings() {
@@ -5201,8 +5169,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteLoggingServer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteLoggingServerRequest, Empty, OperationMetadata>
         deleteLoggingServerOperationSettings() {
       return deleteLoggingServerOperationSettings;
@@ -5239,8 +5205,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to resetNsxCredentials. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ResetNsxCredentialsRequest, PrivateCloud, OperationMetadata>
         resetNsxCredentialsOperationSettings() {
@@ -5254,8 +5218,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to resetVcenterCredentials. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ResetVcenterCredentialsRequest, PrivateCloud, OperationMetadata>
         resetVcenterCredentialsOperationSettings() {
@@ -5275,8 +5237,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateDnsForwarding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDnsForwardingRequest, DnsForwarding, OperationMetadata>
         updateDnsForwardingOperationSettings() {
@@ -5305,8 +5265,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createNetworkPeering. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
         createNetworkPeeringOperationSettings() {
@@ -5320,8 +5278,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteNetworkPeering. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNetworkPeeringRequest, Empty, OperationMetadata>
         deleteNetworkPeeringOperationSettings() {
       return deleteNetworkPeeringOperationSettings;
@@ -5334,8 +5290,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateNetworkPeering. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateNetworkPeeringRequest, NetworkPeering, OperationMetadata>
         updateNetworkPeeringOperationSettings() {
@@ -5356,8 +5310,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createHcxActivationKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateHcxActivationKeyRequest, HcxActivationKey, OperationMetadata>
         createHcxActivationKeyOperationSettings() {
@@ -5401,8 +5353,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createNetworkPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateNetworkPolicyRequest, NetworkPolicy, OperationMetadata>
         createNetworkPolicyOperationSettings() {
@@ -5416,8 +5366,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateNetworkPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateNetworkPolicyRequest, NetworkPolicy, OperationMetadata>
         updateNetworkPolicyOperationSettings() {
@@ -5431,8 +5379,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteNetworkPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNetworkPolicyRequest, Empty, OperationMetadata>
         deleteNetworkPolicyOperationSettings() {
       return deleteNetworkPolicyOperationSettings;
@@ -5460,8 +5406,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createManagementDnsZoneBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
         createManagementDnsZoneBindingOperationSettings() {
@@ -5475,8 +5419,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateManagementDnsZoneBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
         updateManagementDnsZoneBindingOperationSettings() {
@@ -5490,8 +5432,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteManagementDnsZoneBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteManagementDnsZoneBindingRequest, Empty, OperationMetadata>
         deleteManagementDnsZoneBindingOperationSettings() {
@@ -5505,8 +5445,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to repairManagementDnsZoneBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RepairManagementDnsZoneBindingRequest, ManagementDnsZoneBinding, OperationMetadata>
         repairManagementDnsZoneBindingOperationSettings() {
@@ -5520,8 +5458,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createVmwareEngineNetwork. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateVmwareEngineNetworkRequest, VmwareEngineNetwork, OperationMetadata>
         createVmwareEngineNetworkOperationSettings() {
@@ -5535,8 +5471,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateVmwareEngineNetwork. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateVmwareEngineNetworkRequest, VmwareEngineNetwork, OperationMetadata>
         updateVmwareEngineNetworkOperationSettings() {
@@ -5550,8 +5484,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteVmwareEngineNetwork. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteVmwareEngineNetworkRequest, Empty, OperationMetadata>
         deleteVmwareEngineNetworkOperationSettings() {
       return deleteVmwareEngineNetworkOperationSettings;
@@ -5579,8 +5511,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createPrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
         createPrivateConnectionOperationSettings() {
@@ -5609,8 +5539,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updatePrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
         updatePrivateConnectionOperationSettings() {
@@ -5624,8 +5552,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deletePrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
         deletePrivateConnectionOperationSettings() {
       return deletePrivateConnectionOperationSettings;
@@ -5649,8 +5575,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to grantDnsBindPermission. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             GrantDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
         grantDnsBindPermissionOperationSettings() {
@@ -5670,8 +5594,6 @@ public class VmwareEngineStubSettings extends StubSettings<VmwareEngineStubSetti
     }
 
     /** Returns the builder for the settings used for calls to revokeDnsBindPermission. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RevokeDnsBindPermissionRequest, DnsBindPermission, OperationMetadata>
         revokeDnsBindPermissionOperationSettings() {

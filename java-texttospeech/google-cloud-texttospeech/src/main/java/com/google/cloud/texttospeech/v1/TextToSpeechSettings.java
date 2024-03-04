@@ -133,7 +133,6 @@ public class TextToSpeechSettings extends ClientSettings<TextToSpeechSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -175,7 +174,6 @@ public class TextToSpeechSettings extends ClientSettings<TextToSpeechSettings> {
       return new Builder(TextToSpeechStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TextToSpeechStubSettings.newHttpJsonBuilder());
     }

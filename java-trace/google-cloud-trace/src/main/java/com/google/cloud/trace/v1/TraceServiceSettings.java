@@ -147,7 +147,6 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -189,7 +188,6 @@ public class TraceServiceSettings extends ClientSettings<TraceServiceSettings> {
       return new Builder(TraceServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TraceServiceStubSettings.newHttpJsonBuilder());
     }

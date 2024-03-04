@@ -16,7 +16,6 @@
 
 package com.google.cloud.talent.v4beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -79,12 +78,10 @@ public class JobName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectTenantJobBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectJobBuilder newProjectJobBuilder() {
     return new ProjectJobBuilder();
   }
@@ -97,12 +94,10 @@ public class JobName implements ResourceName {
     return newBuilder().setProject(project).setTenant(tenant).setJob(job).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static JobName ofProjectTenantJobName(String project, String tenant, String job) {
     return newBuilder().setProject(project).setTenant(tenant).setJob(job).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static JobName ofProjectJobName(String project, String job) {
     return newProjectJobBuilder().setProject(project).setJob(job).build();
   }
@@ -111,12 +106,10 @@ public class JobName implements ResourceName {
     return newBuilder().setProject(project).setTenant(tenant).setJob(job).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTenantJobName(String project, String tenant, String job) {
     return newBuilder().setProject(project).setTenant(tenant).setJob(job).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectJobName(String project, String job) {
     return newProjectJobBuilder().setProject(project).setJob(job).build().toString();
   }
@@ -269,7 +262,6 @@ public class JobName implements ResourceName {
   }
 
   /** Builder for projects/{project}/jobs/{job}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectJobBuilder {
     private String project;
     private String job;

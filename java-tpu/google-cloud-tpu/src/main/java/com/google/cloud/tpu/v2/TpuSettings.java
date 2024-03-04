@@ -250,7 +250,6 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -292,7 +291,6 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
       return new Builder(TpuStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TpuStubSettings.newHttpJsonBuilder());
     }

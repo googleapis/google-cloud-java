@@ -141,7 +141,6 @@ public class TextToSpeechLongAudioSynthesizeSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -184,7 +183,6 @@ public class TextToSpeechLongAudioSynthesizeSettings
       return new Builder(TextToSpeechLongAudioSynthesizeStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TextToSpeechLongAudioSynthesizeStubSettings.newHttpJsonBuilder());
     }

@@ -630,8 +630,6 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
     }
 
     /** Returns the builder for the settings used for calls to createConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateConnectorRequest, Connector, OperationMetadata>
         createConnectorOperationSettings() {
       return createConnectorOperationSettings;
@@ -655,8 +653,6 @@ public class VpcAccessServiceStubSettings extends StubSettings<VpcAccessServiceS
     }
 
     /** Returns the builder for the settings used for calls to deleteConnector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteConnectorRequest, Empty, OperationMetadata>
         deleteConnectorOperationSettings() {
       return deleteConnectorOperationSettings;

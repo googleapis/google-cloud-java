@@ -240,7 +240,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -282,7 +281,6 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
       return new Builder(ProductSearchStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ProductSearchStubSettings.newHttpJsonBuilder());
     }
