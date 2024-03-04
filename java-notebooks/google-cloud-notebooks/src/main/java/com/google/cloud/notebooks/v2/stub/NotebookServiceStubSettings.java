@@ -1130,8 +1130,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -1143,8 +1141,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
@@ -1156,8 +1152,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
@@ -1169,8 +1163,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to startInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartInstanceRequest, Instance, OperationMetadata>
         startInstanceOperationSettings() {
       return startInstanceOperationSettings;
@@ -1182,8 +1174,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to stopInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopInstanceRequest, Instance, OperationMetadata>
         stopInstanceOperationSettings() {
       return stopInstanceOperationSettings;
@@ -1195,8 +1185,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to resetInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResetInstanceRequest, Instance, OperationMetadata>
         resetInstanceOperationSettings() {
       return resetInstanceOperationSettings;
@@ -1215,8 +1203,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to upgradeInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpgradeInstanceRequest, Instance, OperationMetadata>
         upgradeInstanceOperationSettings() {
       return upgradeInstanceOperationSettings;
@@ -1229,8 +1215,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to rollbackInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RollbackInstanceRequest, Instance, OperationMetadata>
         rollbackInstanceOperationSettings() {
       return rollbackInstanceOperationSettings;
@@ -1243,8 +1227,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to diagnoseInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DiagnoseInstanceRequest, Instance, OperationMetadata>
         diagnoseInstanceOperationSettings() {
       return diagnoseInstanceOperationSettings;

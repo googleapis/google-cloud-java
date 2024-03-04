@@ -710,8 +710,6 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
     }
 
     /** Returns the builder for the settings used for calls to createConnectivityTest. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateConnectivityTestRequest, ConnectivityTest, OperationMetadata>
         createConnectivityTestOperationSettings() {
@@ -725,8 +723,6 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
     }
 
     /** Returns the builder for the settings used for calls to updateConnectivityTest. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateConnectivityTestRequest, ConnectivityTest, OperationMetadata>
         updateConnectivityTestOperationSettings() {
@@ -740,8 +736,6 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
     }
 
     /** Returns the builder for the settings used for calls to rerunConnectivityTest. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RerunConnectivityTestRequest, ConnectivityTest, OperationMetadata>
         rerunConnectivityTestOperationSettings() {
@@ -755,8 +749,6 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
     }
 
     /** Returns the builder for the settings used for calls to deleteConnectivityTest. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteConnectivityTestRequest, Empty, OperationMetadata>
         deleteConnectivityTestOperationSettings() {
       return deleteConnectivityTestOperationSettings;

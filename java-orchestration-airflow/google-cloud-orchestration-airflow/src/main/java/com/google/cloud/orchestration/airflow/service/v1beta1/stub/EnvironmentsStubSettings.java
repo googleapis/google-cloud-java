@@ -1462,8 +1462,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, OperationMetadata>
         createEnvironmentOperationSettings() {
       return createEnvironmentOperationSettings;
@@ -1488,8 +1486,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateEnvironmentRequest, Environment, OperationMetadata>
         updateEnvironmentOperationSettings() {
       return updateEnvironmentOperationSettings;
@@ -1502,8 +1498,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return deleteEnvironmentOperationSettings;
@@ -1516,8 +1510,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to restartWebServer. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestartWebServerRequest, Environment, OperationMetadata>
         restartWebServerOperationSettings() {
       return restartWebServerOperationSettings;
@@ -1529,8 +1521,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to checkUpgrade. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CheckUpgradeRequest, CheckUpgradeResponse, OperationMetadata>
         checkUpgradeOperationSettings() {
@@ -1634,8 +1624,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to saveSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SaveSnapshotRequest, SaveSnapshotResponse, OperationMetadata>
         saveSnapshotOperationSettings() {
@@ -1648,8 +1636,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to loadSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             LoadSnapshotRequest, LoadSnapshotResponse, OperationMetadata>
         loadSnapshotOperationSettings() {
@@ -1663,8 +1649,6 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to databaseFailover. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DatabaseFailoverRequest, DatabaseFailoverResponse, OperationMetadata>
         databaseFailoverOperationSettings() {

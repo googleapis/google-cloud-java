@@ -248,7 +248,6 @@ public class RapidMigrationAssessmentSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -291,7 +290,6 @@ public class RapidMigrationAssessmentSettings
       return new Builder(RapidMigrationAssessmentStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RapidMigrationAssessmentStubSettings.newHttpJsonBuilder());
     }

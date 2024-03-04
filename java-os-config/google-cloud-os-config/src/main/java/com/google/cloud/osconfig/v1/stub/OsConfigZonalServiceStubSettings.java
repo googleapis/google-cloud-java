@@ -1142,8 +1142,6 @@ public class OsConfigZonalServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createOSPolicyAssignment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateOSPolicyAssignmentRequest,
             OSPolicyAssignment,
@@ -1159,8 +1157,6 @@ public class OsConfigZonalServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateOSPolicyAssignment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateOSPolicyAssignmentRequest,
             OSPolicyAssignment,
@@ -1200,8 +1196,6 @@ public class OsConfigZonalServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteOSPolicyAssignment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteOSPolicyAssignmentRequest, Empty, OSPolicyAssignmentOperationMetadata>
         deleteOSPolicyAssignmentOperationSettings() {

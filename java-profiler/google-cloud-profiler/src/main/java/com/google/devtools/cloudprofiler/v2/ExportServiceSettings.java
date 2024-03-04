@@ -131,7 +131,6 @@ public class ExportServiceSettings extends ClientSettings<ExportServiceSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -173,7 +172,6 @@ public class ExportServiceSettings extends ClientSettings<ExportServiceSettings>
       return new Builder(ExportServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ExportServiceStubSettings.newHttpJsonBuilder());
     }

@@ -138,7 +138,6 @@ public class ProfilerServiceSettings extends ClientSettings<ProfilerServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -180,7 +179,6 @@ public class ProfilerServiceSettings extends ClientSettings<ProfilerServiceSetti
       return new Builder(ProfilerServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ProfilerServiceStubSettings.newHttpJsonBuilder());
     }

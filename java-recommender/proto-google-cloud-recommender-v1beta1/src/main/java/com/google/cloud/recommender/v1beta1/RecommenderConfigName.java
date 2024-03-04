@@ -16,7 +16,6 @@
 
 package com.google.cloud.recommender.v1beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class RecommenderConfigName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationRecommenderBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationRecommenderBuilder newOrganizationLocationRecommenderBuilder() {
     return new OrganizationLocationRecommenderBuilder();
   }
@@ -111,7 +108,6 @@ public class RecommenderConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommenderConfigName ofProjectLocationRecommenderName(
       String project, String location, String recommender) {
     return newBuilder()
@@ -121,7 +117,6 @@ public class RecommenderConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RecommenderConfigName ofOrganizationLocationRecommenderName(
       String organization, String location, String recommender) {
     return newOrganizationLocationRecommenderBuilder()
@@ -140,7 +135,6 @@ public class RecommenderConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationRecommenderName(
       String project, String location, String recommender) {
     return newBuilder()
@@ -151,7 +145,6 @@ public class RecommenderConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationRecommenderName(
       String organization, String location, String recommender) {
     return newOrganizationLocationRecommenderBuilder()
@@ -322,7 +315,6 @@ public class RecommenderConfigName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/recommenders/{recommender}/config.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationRecommenderBuilder {
     private String organization;
     private String location;

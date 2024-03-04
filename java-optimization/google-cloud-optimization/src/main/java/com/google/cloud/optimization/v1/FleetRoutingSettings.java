@@ -142,7 +142,6 @@ public class FleetRoutingSettings extends ClientSettings<FleetRoutingSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -184,7 +183,6 @@ public class FleetRoutingSettings extends ClientSettings<FleetRoutingSettings> {
       return new Builder(FleetRoutingStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(FleetRoutingStubSettings.newHttpJsonBuilder());
     }

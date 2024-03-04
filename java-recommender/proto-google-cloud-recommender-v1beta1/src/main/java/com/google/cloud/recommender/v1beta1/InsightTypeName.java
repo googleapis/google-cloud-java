@@ -16,7 +16,6 @@
 
 package com.google.cloud.recommender.v1beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -143,28 +142,23 @@ public class InsightTypeName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationInsightTypeBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static BillingAccountLocationInsightTypeBuilder
       newBillingAccountLocationInsightTypeBuilder() {
     return new BillingAccountLocationInsightTypeBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationInsightTypeBuilder newFolderLocationInsightTypeBuilder() {
     return new FolderLocationInsightTypeBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationInsightTypeBuilder newOrganizationLocationInsightTypeBuilder() {
     return new OrganizationLocationInsightTypeBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static InsightTypeBuilder newInsightTypeBuilder() {
     return new InsightTypeBuilder();
   }
@@ -181,7 +175,6 @@ public class InsightTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InsightTypeName ofProjectLocationInsightTypeName(
       String project, String location, String insightType) {
     return newBuilder()
@@ -191,7 +184,6 @@ public class InsightTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InsightTypeName ofBillingAccountLocationInsightTypeName(
       String billingAccount, String location, String insightType) {
     return newBillingAccountLocationInsightTypeBuilder()
@@ -201,7 +193,6 @@ public class InsightTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InsightTypeName ofFolderLocationInsightTypeName(
       String folder, String location, String insightType) {
     return newFolderLocationInsightTypeBuilder()
@@ -211,7 +202,6 @@ public class InsightTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InsightTypeName ofOrganizationLocationInsightTypeName(
       String organization, String location, String insightType) {
     return newOrganizationLocationInsightTypeBuilder()
@@ -221,7 +211,6 @@ public class InsightTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InsightTypeName ofInsightTypeName(String insightType) {
     return newInsightTypeBuilder().setInsightType(insightType).build();
   }
@@ -235,7 +224,6 @@ public class InsightTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationInsightTypeName(
       String project, String location, String insightType) {
     return newBuilder()
@@ -246,7 +234,6 @@ public class InsightTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountLocationInsightTypeName(
       String billingAccount, String location, String insightType) {
     return newBillingAccountLocationInsightTypeBuilder()
@@ -257,7 +244,6 @@ public class InsightTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationInsightTypeName(
       String folder, String location, String insightType) {
     return newFolderLocationInsightTypeBuilder()
@@ -268,7 +254,6 @@ public class InsightTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationInsightTypeName(
       String organization, String location, String insightType) {
     return newOrganizationLocationInsightTypeBuilder()
@@ -279,7 +264,6 @@ public class InsightTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatInsightTypeName(String insightType) {
     return newInsightTypeBuilder().setInsightType(insightType).build().toString();
   }
@@ -468,7 +452,6 @@ public class InsightTypeName implements ResourceName {
   /**
    * Builder for billingAccounts/{billing_account}/locations/{location}/insightTypes/{insight_type}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLocationInsightTypeBuilder {
     private String billingAccount;
     private String location;
@@ -509,7 +492,6 @@ public class InsightTypeName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/locations/{location}/insightTypes/{insight_type}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationInsightTypeBuilder {
     private String folder;
     private String location;
@@ -550,7 +532,6 @@ public class InsightTypeName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/locations/{location}/insightTypes/{insight_type}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationInsightTypeBuilder {
     private String organization;
     private String location;
@@ -591,7 +572,6 @@ public class InsightTypeName implements ResourceName {
   }
 
   /** Builder for insightTypes/{insight_type}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class InsightTypeBuilder {
     private String insightType;
 

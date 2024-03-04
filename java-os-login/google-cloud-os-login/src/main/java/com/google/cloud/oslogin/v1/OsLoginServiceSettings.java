@@ -164,7 +164,6 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -206,7 +205,6 @@ public class OsLoginServiceSettings extends ClientSettings<OsLoginServiceSetting
       return new Builder(OsLoginServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(OsLoginServiceStubSettings.newHttpJsonBuilder());
     }

@@ -190,7 +190,6 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -232,7 +231,6 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
       return new Builder(CloudRedisClusterStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudRedisClusterStubSettings.newHttpJsonBuilder());
     }

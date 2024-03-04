@@ -198,7 +198,6 @@ public class ReachabilityServiceSettings extends ClientSettings<ReachabilityServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -240,7 +239,6 @@ public class ReachabilityServiceSettings extends ClientSettings<ReachabilityServ
       return new Builder(ReachabilityServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ReachabilityServiceStubSettings.newHttpJsonBuilder());
     }

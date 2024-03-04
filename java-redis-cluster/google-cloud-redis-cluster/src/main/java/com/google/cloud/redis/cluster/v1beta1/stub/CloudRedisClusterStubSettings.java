@@ -695,8 +695,6 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, Any>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
@@ -708,8 +706,6 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, Any>
         deleteClusterOperationSettings() {
       return deleteClusterOperationSettings;
@@ -721,8 +717,6 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings() {
       return createClusterOperationSettings;

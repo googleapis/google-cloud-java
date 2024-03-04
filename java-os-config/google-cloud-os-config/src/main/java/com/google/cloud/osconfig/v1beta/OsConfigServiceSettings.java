@@ -256,7 +256,6 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -298,7 +297,6 @@ public class OsConfigServiceSettings extends ClientSettings<OsConfigServiceSetti
       return new Builder(OsConfigServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(OsConfigServiceStubSettings.newHttpJsonBuilder());
     }

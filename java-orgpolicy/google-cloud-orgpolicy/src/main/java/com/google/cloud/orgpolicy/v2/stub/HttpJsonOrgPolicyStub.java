@@ -20,7 +20,6 @@ import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListConstraintsPaged
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListCustomConstraintsPagedResponse;
 import static com.google.cloud.orgpolicy.v2.OrgPolicyClient.ListPoliciesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -67,7 +66,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonOrgPolicyStub extends OrgPolicyStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

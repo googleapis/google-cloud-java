@@ -136,7 +136,6 @@ public class PhishingProtectionServiceV1Beta1Settings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -179,7 +178,6 @@ public class PhishingProtectionServiceV1Beta1Settings
       return new Builder(PhishingProtectionServiceV1Beta1StubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PhishingProtectionServiceV1Beta1StubSettings.newHttpJsonBuilder());
     }

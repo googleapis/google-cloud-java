@@ -498,8 +498,6 @@ public class SimulatorStubSettings extends StubSettings<SimulatorStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createReplay. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateReplayRequest, Replay, ReplayOperationMetadata>
         createReplayOperationSettings() {
       return createReplayOperationSettings;

@@ -151,7 +151,6 @@ public class PrivateCatalogSettings extends ClientSettings<PrivateCatalogSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -193,7 +192,6 @@ public class PrivateCatalogSettings extends ClientSettings<PrivateCatalogSetting
       return new Builder(PrivateCatalogStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PrivateCatalogStubSettings.newHttpJsonBuilder());
     }
