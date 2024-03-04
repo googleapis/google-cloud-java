@@ -187,7 +187,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -229,7 +228,6 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
       return new Builder(WorkflowsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(WorkflowsStubSettings.newHttpJsonBuilder());
     }

@@ -687,8 +687,6 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createWorkflow. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateWorkflowRequest, Workflow, OperationMetadata>
         createWorkflowOperationSettings() {
       return createWorkflowOperationSettings;
@@ -700,8 +698,6 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkflow. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteWorkflowRequest, Empty, OperationMetadata>
         deleteWorkflowOperationSettings() {
       return deleteWorkflowOperationSettings;
@@ -713,8 +709,6 @@ public class WorkflowsStubSettings extends StubSettings<WorkflowsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateWorkflow. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings() {
       return updateWorkflowOperationSettings;

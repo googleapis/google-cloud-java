@@ -355,7 +355,6 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -397,7 +396,6 @@ public class WorkstationsSettings extends ClientSettings<WorkstationsSettings> {
       return new Builder(WorkstationsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(WorkstationsStubSettings.newHttpJsonBuilder());
     }

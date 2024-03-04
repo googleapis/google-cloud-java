@@ -21,7 +21,6 @@ import static com.google.cloud.websecurityscanner.v1.WebSecurityScannerClient.Li
 import static com.google.cloud.websecurityscanner.v1.WebSecurityScannerClient.ListScanConfigsPagedResponse;
 import static com.google.cloud.websecurityscanner.v1.WebSecurityScannerClient.ListScanRunsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -72,7 +71,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonWebSecurityScannerStub extends WebSecurityScannerStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

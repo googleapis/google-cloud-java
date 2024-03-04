@@ -148,7 +148,6 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -190,7 +189,6 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
       return new Builder(ExecutionsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ExecutionsStubSettings.newHttpJsonBuilder());
     }

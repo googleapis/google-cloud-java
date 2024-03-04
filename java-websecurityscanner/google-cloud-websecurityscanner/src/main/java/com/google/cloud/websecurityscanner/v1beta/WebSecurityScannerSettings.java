@@ -205,7 +205,6 @@ public class WebSecurityScannerSettings extends ClientSettings<WebSecurityScanne
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -247,7 +246,6 @@ public class WebSecurityScannerSettings extends ClientSettings<WebSecurityScanne
       return new Builder(WebSecurityScannerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(WebSecurityScannerStubSettings.newHttpJsonBuilder());
     }

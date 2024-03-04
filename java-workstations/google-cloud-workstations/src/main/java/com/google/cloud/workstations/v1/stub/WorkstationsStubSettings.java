@@ -1672,8 +1672,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createWorkstationCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateWorkstationClusterRequest, WorkstationCluster, OperationMetadata>
         createWorkstationClusterOperationSettings() {
@@ -1687,8 +1685,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateWorkstationCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateWorkstationClusterRequest, WorkstationCluster, OperationMetadata>
         updateWorkstationClusterOperationSettings() {
@@ -1702,8 +1698,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkstationCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteWorkstationClusterRequest, WorkstationCluster, OperationMetadata>
         deleteWorkstationClusterOperationSettings() {
@@ -1741,8 +1735,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createWorkstationConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateWorkstationConfigRequest, WorkstationConfig, OperationMetadata>
         createWorkstationConfigOperationSettings() {
@@ -1756,8 +1748,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateWorkstationConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateWorkstationConfigRequest, WorkstationConfig, OperationMetadata>
         updateWorkstationConfigOperationSettings() {
@@ -1771,8 +1761,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkstationConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteWorkstationConfigRequest, WorkstationConfig, OperationMetadata>
         deleteWorkstationConfigOperationSettings() {
@@ -1807,8 +1795,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createWorkstation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateWorkstationRequest, Workstation, OperationMetadata>
         createWorkstationOperationSettings() {
       return createWorkstationOperationSettings;
@@ -1821,8 +1807,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateWorkstation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateWorkstationRequest, Workstation, OperationMetadata>
         updateWorkstationOperationSettings() {
       return updateWorkstationOperationSettings;
@@ -1835,8 +1819,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkstation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteWorkstationRequest, Workstation, OperationMetadata>
         deleteWorkstationOperationSettings() {
       return deleteWorkstationOperationSettings;
@@ -1849,8 +1831,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to startWorkstation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartWorkstationRequest, Workstation, OperationMetadata>
         startWorkstationOperationSettings() {
       return startWorkstationOperationSettings;
@@ -1862,8 +1842,6 @@ public class WorkstationsStubSettings extends StubSettings<WorkstationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to stopWorkstation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopWorkstationRequest, Workstation, OperationMetadata>
         stopWorkstationOperationSettings() {
       return stopWorkstationOperationSettings;
