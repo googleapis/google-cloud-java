@@ -150,7 +150,6 @@ public class SimulatorSettings extends ClientSettings<SimulatorSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -192,7 +191,6 @@ public class SimulatorSettings extends ClientSettings<SimulatorSettings> {
       return new Builder(SimulatorStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SimulatorStubSettings.newHttpJsonBuilder());
     }

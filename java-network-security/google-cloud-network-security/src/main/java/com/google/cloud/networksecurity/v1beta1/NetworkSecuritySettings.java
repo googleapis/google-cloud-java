@@ -334,7 +334,6 @@ public class NetworkSecuritySettings extends ClientSettings<NetworkSecuritySetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -376,7 +375,6 @@ public class NetworkSecuritySettings extends ClientSettings<NetworkSecuritySetti
       return new Builder(NetworkSecurityStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(NetworkSecurityStubSettings.newHttpJsonBuilder());
     }

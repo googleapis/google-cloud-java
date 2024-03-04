@@ -817,8 +817,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateHubRequest, Hub, OperationMetadata>
         createHubOperationSettings() {
       return createHubOperationSettings;
@@ -830,8 +828,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateHubRequest, Hub, OperationMetadata>
         updateHubOperationSettings() {
       return updateHubOperationSettings;
@@ -843,8 +839,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteHubRequest, Empty, OperationMetadata>
         deleteHubOperationSettings() {
       return deleteHubOperationSettings;
@@ -867,8 +861,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSpokeRequest, Spoke, OperationMetadata>
         createSpokeOperationSettings() {
       return createSpokeOperationSettings;
@@ -880,8 +872,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSpokeRequest, Spoke, OperationMetadata>
         updateSpokeOperationSettings() {
       return updateSpokeOperationSettings;
@@ -893,8 +883,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSpokeRequest, Empty, OperationMetadata>
         deleteSpokeOperationSettings() {
       return deleteSpokeOperationSettings;

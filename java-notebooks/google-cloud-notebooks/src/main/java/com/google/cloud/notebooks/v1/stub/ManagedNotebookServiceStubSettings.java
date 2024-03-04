@@ -21,7 +21,6 @@ import static com.google.cloud.notebooks.v1.ManagedNotebookServiceClient.ListRun
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1141,8 +1140,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRuntimeRequest, Runtime, OperationMetadata>
         createRuntimeOperationSettings() {
       return createRuntimeOperationSettings;
@@ -1154,8 +1151,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRuntimeRequest, Runtime, OperationMetadata>
         updateRuntimeOperationSettings() {
       return updateRuntimeOperationSettings;
@@ -1167,8 +1162,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRuntimeRequest, Empty, OperationMetadata>
         deleteRuntimeOperationSettings() {
       return deleteRuntimeOperationSettings;
@@ -1180,8 +1173,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to startRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartRuntimeRequest, Runtime, OperationMetadata>
         startRuntimeOperationSettings() {
       return startRuntimeOperationSettings;
@@ -1193,8 +1184,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to stopRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopRuntimeRequest, Runtime, OperationMetadata>
         stopRuntimeOperationSettings() {
       return stopRuntimeOperationSettings;
@@ -1206,8 +1195,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to switchRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SwitchRuntimeRequest, Runtime, OperationMetadata>
         switchRuntimeOperationSettings() {
       return switchRuntimeOperationSettings;
@@ -1219,8 +1206,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to resetRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResetRuntimeRequest, Runtime, OperationMetadata>
         resetRuntimeOperationSettings() {
       return resetRuntimeOperationSettings;
@@ -1232,8 +1217,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to upgradeRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpgradeRuntimeRequest, Runtime, OperationMetadata>
         upgradeRuntimeOperationSettings() {
       return upgradeRuntimeOperationSettings;
@@ -1246,8 +1229,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to reportRuntimeEvent. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ReportRuntimeEventRequest, Runtime, OperationMetadata>
         reportRuntimeEventOperationSettings() {
       return reportRuntimeEventOperationSettings;
@@ -1266,8 +1247,6 @@ public class ManagedNotebookServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to diagnoseRuntime. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DiagnoseRuntimeRequest, Runtime, OperationMetadata>
         diagnoseRuntimeOperationSettings() {
       return diagnoseRuntimeOperationSettings;

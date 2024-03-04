@@ -282,7 +282,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -324,7 +323,6 @@ public class NotebookServiceSettings extends ClientSettings<NotebookServiceSetti
       return new Builder(NotebookServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(NotebookServiceStubSettings.newHttpJsonBuilder());
     }

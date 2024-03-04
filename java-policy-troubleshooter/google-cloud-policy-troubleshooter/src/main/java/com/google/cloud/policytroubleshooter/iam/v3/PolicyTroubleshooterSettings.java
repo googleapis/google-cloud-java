@@ -131,7 +131,6 @@ public class PolicyTroubleshooterSettings extends ClientSettings<PolicyTroublesh
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -174,7 +173,6 @@ public class PolicyTroubleshooterSettings extends ClientSettings<PolicyTroublesh
       return new Builder(PolicyTroubleshooterStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PolicyTroubleshooterStubSettings.newHttpJsonBuilder());
     }

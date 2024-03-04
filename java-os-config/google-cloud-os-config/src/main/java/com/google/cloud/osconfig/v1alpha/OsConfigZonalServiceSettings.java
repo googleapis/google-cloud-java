@@ -278,7 +278,6 @@ public class OsConfigZonalServiceSettings extends ClientSettings<OsConfigZonalSe
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -321,7 +320,6 @@ public class OsConfigZonalServiceSettings extends ClientSettings<OsConfigZonalSe
       return new Builder(OsConfigZonalServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(OsConfigZonalServiceStubSettings.newHttpJsonBuilder());
     }

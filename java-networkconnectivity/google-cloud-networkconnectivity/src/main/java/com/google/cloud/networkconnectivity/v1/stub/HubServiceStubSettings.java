@@ -26,7 +26,6 @@ import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpoke
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1461,8 +1460,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateHubRequest, Hub, OperationMetadata>
         createHubOperationSettings() {
       return createHubOperationSettings;
@@ -1474,8 +1471,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateHubRequest, Hub, OperationMetadata>
         updateHubOperationSettings() {
       return updateHubOperationSettings;
@@ -1487,8 +1482,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteHub. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteHubRequest, Empty, OperationMetadata>
         deleteHubOperationSettings() {
       return deleteHubOperationSettings;
@@ -1518,8 +1511,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to createSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSpokeRequest, Spoke, OperationMetadata>
         createSpokeOperationSettings() {
       return createSpokeOperationSettings;
@@ -1531,8 +1522,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to updateSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSpokeRequest, Spoke, OperationMetadata>
         updateSpokeOperationSettings() {
       return updateSpokeOperationSettings;
@@ -1544,8 +1533,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to rejectHubSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RejectHubSpokeRequest, RejectHubSpokeResponse, OperationMetadata>
         rejectHubSpokeOperationSettings() {
@@ -1558,8 +1545,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to acceptHubSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
         acceptHubSpokeOperationSettings() {
@@ -1572,8 +1557,6 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteSpoke. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSpokeRequest, Empty, OperationMetadata>
         deleteSpokeOperationSettings() {
       return deleteSpokeOperationSettings;

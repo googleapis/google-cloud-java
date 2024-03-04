@@ -21,7 +21,6 @@ import static com.google.cloud.networkconnectivity.v1.PolicyBasedRoutingServiceC
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -711,8 +710,6 @@ public class PolicyBasedRoutingServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createPolicyBasedRoute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePolicyBasedRouteRequest, PolicyBasedRoute, OperationMetadata>
         createPolicyBasedRouteOperationSettings() {
@@ -726,8 +723,6 @@ public class PolicyBasedRoutingServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deletePolicyBasedRoute. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePolicyBasedRouteRequest, Empty, OperationMetadata>
         deletePolicyBasedRouteOperationSettings() {
       return deletePolicyBasedRouteOperationSettings;

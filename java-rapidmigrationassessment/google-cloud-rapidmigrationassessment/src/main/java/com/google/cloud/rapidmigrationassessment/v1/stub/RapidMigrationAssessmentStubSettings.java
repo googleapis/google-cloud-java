@@ -959,8 +959,6 @@ public class RapidMigrationAssessmentStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createCollector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateCollectorRequest, Collector, OperationMetadata>
         createCollectorOperationSettings() {
       return createCollectorOperationSettings;
@@ -973,8 +971,6 @@ public class RapidMigrationAssessmentStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createAnnotation. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAnnotationRequest, Annotation, OperationMetadata>
         createAnnotationOperationSettings() {
       return createAnnotationOperationSettings;
@@ -1003,8 +999,6 @@ public class RapidMigrationAssessmentStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCollector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateCollectorRequest, Collector, OperationMetadata>
         updateCollectorOperationSettings() {
       return updateCollectorOperationSettings;
@@ -1016,8 +1010,6 @@ public class RapidMigrationAssessmentStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteCollector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCollectorRequest, Collector, OperationMetadata>
         deleteCollectorOperationSettings() {
       return deleteCollectorOperationSettings;
@@ -1029,8 +1021,6 @@ public class RapidMigrationAssessmentStubSettings
     }
 
     /** Returns the builder for the settings used for calls to resumeCollector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResumeCollectorRequest, Collector, OperationMetadata>
         resumeCollectorOperationSettings() {
       return resumeCollectorOperationSettings;
@@ -1043,8 +1033,6 @@ public class RapidMigrationAssessmentStubSettings
     }
 
     /** Returns the builder for the settings used for calls to registerCollector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RegisterCollectorRequest, Collector, OperationMetadata>
         registerCollectorOperationSettings() {
       return registerCollectorOperationSettings;
@@ -1056,8 +1044,6 @@ public class RapidMigrationAssessmentStubSettings
     }
 
     /** Returns the builder for the settings used for calls to pauseCollector. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PauseCollectorRequest, Collector, OperationMetadata>
         pauseCollectorOperationSettings() {
       return pauseCollectorOperationSettings;

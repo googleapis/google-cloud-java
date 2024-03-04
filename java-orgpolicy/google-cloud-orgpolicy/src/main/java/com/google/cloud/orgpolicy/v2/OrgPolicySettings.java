@@ -197,7 +197,6 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -239,7 +238,6 @@ public class OrgPolicySettings extends ClientSettings<OrgPolicySettings> {
       return new Builder(OrgPolicyStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(OrgPolicyStubSettings.newHttpJsonBuilder());
     }

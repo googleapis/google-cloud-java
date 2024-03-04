@@ -1506,8 +1506,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -1520,8 +1518,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to registerInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RegisterInstanceRequest, Instance, OperationMetadata>
         registerInstanceOperationSettings() {
       return registerInstanceOperationSettings;
@@ -1534,8 +1530,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to setInstanceAccelerator. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
         setInstanceAcceleratorOperationSettings() {
       return setInstanceAcceleratorOperationSettings;
@@ -1548,8 +1542,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to setInstanceMachineType. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
         setInstanceMachineTypeOperationSettings() {
       return setInstanceMachineTypeOperationSettings;
@@ -1562,8 +1554,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to setInstanceLabels. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SetInstanceLabelsRequest, Instance, OperationMetadata>
         setInstanceLabelsOperationSettings() {
       return setInstanceLabelsOperationSettings;
@@ -1575,8 +1565,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
@@ -1588,8 +1576,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to startInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartInstanceRequest, Instance, OperationMetadata>
         startInstanceOperationSettings() {
       return startInstanceOperationSettings;
@@ -1601,8 +1587,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to stopInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopInstanceRequest, Instance, OperationMetadata>
         stopInstanceOperationSettings() {
       return stopInstanceOperationSettings;
@@ -1614,8 +1598,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to resetInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResetInstanceRequest, Instance, OperationMetadata>
         resetInstanceOperationSettings() {
       return resetInstanceOperationSettings;
@@ -1628,8 +1610,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to reportInstanceInfo. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ReportInstanceInfoRequest, Instance, OperationMetadata>
         reportInstanceInfoOperationSettings() {
       return reportInstanceInfoOperationSettings;
@@ -1657,8 +1637,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to upgradeInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpgradeInstanceRequest, Instance, OperationMetadata>
         upgradeInstanceOperationSettings() {
       return upgradeInstanceOperationSettings;
@@ -1676,8 +1654,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to upgradeInstanceInternal. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpgradeInstanceInternalRequest, Instance, OperationMetadata>
         upgradeInstanceInternalOperationSettings() {
@@ -1703,8 +1679,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEnvironmentRequest, Environment, OperationMetadata>
         createEnvironmentOperationSettings() {
       return createEnvironmentOperationSettings;
@@ -1717,8 +1691,6 @@ public class NotebookServiceStubSettings extends StubSettings<NotebookServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteEnvironment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEnvironmentRequest, Empty, OperationMetadata>
         deleteEnvironmentOperationSettings() {
       return deleteEnvironmentOperationSettings;

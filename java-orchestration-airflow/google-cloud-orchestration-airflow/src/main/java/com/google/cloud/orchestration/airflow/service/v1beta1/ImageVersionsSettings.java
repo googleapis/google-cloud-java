@@ -133,7 +133,6 @@ public class ImageVersionsSettings extends ClientSettings<ImageVersionsSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -175,7 +174,6 @@ public class ImageVersionsSettings extends ClientSettings<ImageVersionsSettings>
       return new Builder(ImageVersionsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ImageVersionsStubSettings.newHttpJsonBuilder());
     }

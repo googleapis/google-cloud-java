@@ -128,7 +128,6 @@ public class IamCheckerSettings extends ClientSettings<IamCheckerSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -170,7 +169,6 @@ public class IamCheckerSettings extends ClientSettings<IamCheckerSettings> {
       return new Builder(IamCheckerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(IamCheckerStubSettings.newHttpJsonBuilder());
     }
