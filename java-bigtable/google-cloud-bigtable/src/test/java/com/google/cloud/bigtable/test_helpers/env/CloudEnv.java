@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.test_helpers.env;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
@@ -31,6 +32,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableMap;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -48,6 +50,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -84,9 +87,12 @@ class CloudEnv extends AbstractTestEnv {
   private static final String TABLE_PROPERTY_NAME = "bigtable.table";
   private static final String CMEK_KMS_KEY_PROPERTY_NAME = "bigtable.kms_key_name";
 
+  private static final String TRACING_COOKIE_PROPERTY_NAME = "bigtable.tracing_cookie";
+
   private final String projectId;
   private final String instanceId;
   private final String tableId;
+  private final String tracingCookie;
   private final String kmsKeyName;
 
   private final BigtableDataSettings.Builder dataSettings;
@@ -104,7 +110,8 @@ class CloudEnv extends AbstractTestEnv {
         getOptionalProperty(CMEK_KMS_KEY_PROPERTY_NAME, ""),
         getRequiredProperty(PROJECT_PROPERTY_NAME),
         getRequiredProperty(INSTANCE_PROPERTY_NAME),
-        getRequiredProperty(TABLE_PROPERTY_NAME));
+        getRequiredProperty(TABLE_PROPERTY_NAME),
+        getOptionalProperty(TRACING_COOKIE_PROPERTY_NAME));
   }
 
   private CloudEnv(
@@ -113,10 +120,12 @@ class CloudEnv extends AbstractTestEnv {
       @Nullable String kmsKeyName,
       String projectId,
       String instanceId,
-      String tableId) {
+      String tableId,
+      @Nullable String tracingCookie) {
     this.projectId = projectId;
     this.instanceId = instanceId;
     this.tableId = tableId;
+    this.tracingCookie = tracingCookie;
     this.kmsKeyName = kmsKeyName;
 
     this.dataSettings =
@@ -127,6 +136,9 @@ class CloudEnv extends AbstractTestEnv {
 
     setupRemoteAddrInterceptor(dataSettings.stubSettings());
     configureUserAgent(dataSettings.stubSettings());
+    if (tracingCookie != null) {
+      injectTracingCookie(tracingCookie, dataSettings.stubSettings());
+    }
 
     this.tableAdminSettings =
         BigtableTableAdminSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId);
@@ -138,6 +150,18 @@ class CloudEnv extends AbstractTestEnv {
     if (!Strings.isNullOrEmpty(adminEndpoint)) {
       this.instanceAdminSettings.stubSettings().setEndpoint(adminEndpoint);
     }
+  }
+
+  private static void injectTracingCookie(
+      String tracingCookie, EnhancedBigtableStubSettings.Builder settings) {
+    HeaderProvider oldHeaderProvider = settings.getHeaderProvider();
+    settings.setHeaderProvider(
+        () ->
+            Optional.ofNullable(oldHeaderProvider)
+                .map(p -> ImmutableMap.<String, String>builder().putAll(p.getHeaders()))
+                .orElse(ImmutableMap.builder())
+                .put("cookie", tracingCookie)
+                .build());
   }
 
   private void setupRemoteAddrInterceptor(StubSettings.Builder stubSettings) {
@@ -204,6 +228,7 @@ class CloudEnv extends AbstractTestEnv {
         return new SimpleForwardingClientCall<ReqT, RespT>(clientCall) {
           @Override
           public void start(Listener<RespT> responseListener, Metadata headers) {
+            System.out.println(headers);
             super.start(
                 new SimpleForwardingClientCallListener<RespT>(responseListener) {
                   @Override
@@ -359,6 +384,11 @@ class CloudEnv extends AbstractTestEnv {
 
   public String getKmsKeyName() {
     return kmsKeyName;
+  }
+
+  @Nullable
+  private static String getOptionalProperty(String prop) {
+    return System.getProperty(prop);
   }
 
   private static String getOptionalProperty(String prop, String defaultValue) {
