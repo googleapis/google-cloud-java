@@ -76,21 +76,4 @@ public final class GenerateContentConfigTest {
     assertThat(config.getSafetySettings()).isEqualTo(safetySettings);
     assertThat(config.getTools()).isEqualTo(tools);
   }
-
-  @Test
-  public void testGenerateContentConfigSetters() {
-    config = GenerateContentConfig.newBuilder().build();
-
-    assertThat(config.getGenerationConfig()).isNull();
-    assertThat(config.getSafetySettings()).isEmpty();
-    assertThat(config.getTools()).isEmpty();
-
-    config.setGenerationConfig(GENERATION_CONFIG);
-    config.setSafetySettings(safetySettings);
-    config.setTools(tools);
-
-    assertThat(config.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
-    assertThat(config.getSafetySettings()).isEqualTo(safetySettings);
-    assertThat(config.getTools()).isEqualTo(tools);
-  }
 }
