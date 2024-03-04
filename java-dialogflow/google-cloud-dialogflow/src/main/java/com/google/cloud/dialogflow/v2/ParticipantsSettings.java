@@ -193,7 +193,6 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -235,7 +234,6 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
       return new Builder(ParticipantsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ParticipantsStubSettings.newHttpJsonBuilder());
     }

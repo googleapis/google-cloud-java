@@ -26,7 +26,6 @@ import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivat
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -2628,8 +2627,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateMigrationJobRequest, MigrationJob, OperationMetadata>
         createMigrationJobOperationSettings() {
       return createMigrationJobOperationSettings;
@@ -2642,8 +2639,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateMigrationJobRequest, MigrationJob, OperationMetadata>
         updateMigrationJobOperationSettings() {
       return updateMigrationJobOperationSettings;
@@ -2656,8 +2651,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteMigrationJobRequest, Empty, OperationMetadata>
         deleteMigrationJobOperationSettings() {
       return deleteMigrationJobOperationSettings;
@@ -2670,8 +2663,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to startMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StartMigrationJobRequest, MigrationJob, OperationMetadata>
         startMigrationJobOperationSettings() {
       return startMigrationJobOperationSettings;
@@ -2684,8 +2675,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to stopMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<StopMigrationJobRequest, MigrationJob, OperationMetadata>
         stopMigrationJobOperationSettings() {
       return stopMigrationJobOperationSettings;
@@ -2698,8 +2687,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to resumeMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ResumeMigrationJobRequest, MigrationJob, OperationMetadata>
         resumeMigrationJobOperationSettings() {
       return resumeMigrationJobOperationSettings;
@@ -2712,8 +2699,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to promoteMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PromoteMigrationJobRequest, MigrationJob, OperationMetadata>
         promoteMigrationJobOperationSettings() {
@@ -2727,8 +2712,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to verifyMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<VerifyMigrationJobRequest, MigrationJob, OperationMetadata>
         verifyMigrationJobOperationSettings() {
       return verifyMigrationJobOperationSettings;
@@ -2741,8 +2724,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to restartMigrationJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RestartMigrationJobRequest, MigrationJob, OperationMetadata>
         restartMigrationJobOperationSettings() {
@@ -2783,8 +2764,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateConnectionProfileRequest, ConnectionProfile, OperationMetadata>
         createConnectionProfileOperationSettings() {
@@ -2798,8 +2777,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateConnectionProfileRequest, ConnectionProfile, OperationMetadata>
         updateConnectionProfileOperationSettings() {
@@ -2813,8 +2790,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteConnectionProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteConnectionProfileRequest, Empty, OperationMetadata>
         deleteConnectionProfileOperationSettings() {
       return deleteConnectionProfileOperationSettings;
@@ -2827,8 +2802,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createPrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePrivateConnectionRequest, PrivateConnection, OperationMetadata>
         createPrivateConnectionOperationSettings() {
@@ -2857,8 +2830,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deletePrivateConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePrivateConnectionRequest, Empty, OperationMetadata>
         deletePrivateConnectionOperationSettings() {
       return deletePrivateConnectionOperationSettings;
@@ -2886,8 +2857,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
         createConversionWorkspaceOperationSettings() {
@@ -2901,8 +2870,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
         updateConversionWorkspaceOperationSettings() {
@@ -2916,8 +2883,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
         deleteConversionWorkspaceOperationSettings() {
       return deleteConversionWorkspaceOperationSettings;
@@ -2953,8 +2918,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to seedConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
         seedConversionWorkspaceOperationSettings() {
@@ -2968,8 +2931,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to importMappingRules. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportMappingRulesRequest, ConversionWorkspace, OperationMetadata>
         importMappingRulesOperationSettings() {
@@ -2983,8 +2944,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to convertConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ConvertConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
         convertConversionWorkspaceOperationSettings() {
@@ -2998,8 +2957,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to commitConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CommitConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
         commitConversionWorkspaceOperationSettings() {
@@ -3013,8 +2970,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to rollbackConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RollbackConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
         rollbackConversionWorkspaceOperationSettings() {
@@ -3028,8 +2983,6 @@ public class DataMigrationServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to applyConversionWorkspace. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ApplyConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>
         applyConversionWorkspaceOperationSettings() {

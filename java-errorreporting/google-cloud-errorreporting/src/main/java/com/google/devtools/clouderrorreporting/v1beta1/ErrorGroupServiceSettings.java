@@ -135,7 +135,6 @@ public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -177,7 +176,6 @@ public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceS
       return new Builder(ErrorGroupServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ErrorGroupServiceStubSettings.newHttpJsonBuilder());
     }

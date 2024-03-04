@@ -285,7 +285,6 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -327,7 +326,6 @@ public class AzureClustersSettings extends ClientSettings<AzureClustersSettings>
       return new Builder(AzureClustersStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AzureClustersStubSettings.newHttpJsonBuilder());
     }

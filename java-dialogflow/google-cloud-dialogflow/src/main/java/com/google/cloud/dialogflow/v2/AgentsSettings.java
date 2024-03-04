@@ -212,7 +212,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -254,7 +253,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
       return new Builder(AgentsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AgentsStubSettings.newHttpJsonBuilder());
     }

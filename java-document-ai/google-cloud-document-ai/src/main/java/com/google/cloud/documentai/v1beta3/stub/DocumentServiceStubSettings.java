@@ -740,8 +740,6 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateDataset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDatasetRequest, Dataset, UpdateDatasetOperationMetadata>
         updateDatasetOperationSettings() {
@@ -754,8 +752,6 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     }
 
     /** Returns the builder for the settings used for calls to importDocuments. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
         importDocumentsOperationSettings() {
@@ -782,8 +778,6 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteDocuments. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
         batchDeleteDocumentsOperationSettings() {

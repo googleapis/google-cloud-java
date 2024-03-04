@@ -372,7 +372,6 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -414,7 +413,6 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
       return new Builder(BackupForGKEStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(BackupForGKEStubSettings.newHttpJsonBuilder());
     }

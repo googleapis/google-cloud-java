@@ -190,7 +190,6 @@ public class EnterpriseKnowledgeGraphServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -233,7 +232,6 @@ public class EnterpriseKnowledgeGraphServiceSettings
       return new Builder(EnterpriseKnowledgeGraphServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EnterpriseKnowledgeGraphServiceStubSettings.newHttpJsonBuilder());
     }

@@ -802,8 +802,6 @@ public class ConversationProfilesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to setSuggestionFeatureConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetSuggestionFeatureConfigRequest,
             ConversationProfile,
@@ -819,8 +817,6 @@ public class ConversationProfilesStubSettings
     }
 
     /** Returns the builder for the settings used for calls to clearSuggestionFeatureConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ClearSuggestionFeatureConfigRequest,
             ConversationProfile,

@@ -16,7 +16,6 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -109,23 +108,19 @@ public class StoredInfoTypeName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationStoredInfoTypeBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectStoredInfoTypeBuilder newProjectStoredInfoTypeBuilder() {
     return new ProjectStoredInfoTypeBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationStoredInfoTypeBuilder
       newOrganizationLocationStoredInfoTypeBuilder() {
     return new OrganizationLocationStoredInfoTypeBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationStoredInfoTypeBuilder newProjectLocationStoredInfoTypeBuilder() {
     return new ProjectLocationStoredInfoTypeBuilder();
   }
@@ -138,13 +133,11 @@ public class StoredInfoTypeName implements ResourceName {
     return newBuilder().setOrganization(organization).setStoredInfoType(storedInfoType).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static StoredInfoTypeName ofOrganizationStoredInfoTypeName(
       String organization, String storedInfoType) {
     return newBuilder().setOrganization(organization).setStoredInfoType(storedInfoType).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static StoredInfoTypeName ofProjectStoredInfoTypeName(
       String project, String storedInfoType) {
     return newProjectStoredInfoTypeBuilder()
@@ -153,7 +146,6 @@ public class StoredInfoTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static StoredInfoTypeName ofOrganizationLocationStoredInfoTypeName(
       String organization, String location, String storedInfoType) {
     return newOrganizationLocationStoredInfoTypeBuilder()
@@ -163,7 +155,6 @@ public class StoredInfoTypeName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static StoredInfoTypeName ofProjectLocationStoredInfoTypeName(
       String project, String location, String storedInfoType) {
     return newProjectLocationStoredInfoTypeBuilder()
@@ -181,7 +172,6 @@ public class StoredInfoTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationStoredInfoTypeName(
       String organization, String storedInfoType) {
     return newBuilder()
@@ -191,7 +181,6 @@ public class StoredInfoTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectStoredInfoTypeName(String project, String storedInfoType) {
     return newProjectStoredInfoTypeBuilder()
         .setProject(project)
@@ -200,7 +189,6 @@ public class StoredInfoTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationStoredInfoTypeName(
       String organization, String location, String storedInfoType) {
     return newOrganizationLocationStoredInfoTypeBuilder()
@@ -211,7 +199,6 @@ public class StoredInfoTypeName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationStoredInfoTypeName(
       String project, String location, String storedInfoType) {
     return newProjectLocationStoredInfoTypeBuilder()
@@ -356,7 +343,6 @@ public class StoredInfoTypeName implements ResourceName {
   }
 
   /** Builder for projects/{project}/storedInfoTypes/{stored_info_type}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectStoredInfoTypeBuilder {
     private String project;
     private String storedInfoType;
@@ -390,7 +376,6 @@ public class StoredInfoTypeName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/storedInfoTypes/{stored_info_type}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationStoredInfoTypeBuilder {
     private String organization;
     private String location;
@@ -431,7 +416,6 @@ public class StoredInfoTypeName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/storedInfoTypes/{stored_info_type}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationStoredInfoTypeBuilder {
     private String project;
     private String location;

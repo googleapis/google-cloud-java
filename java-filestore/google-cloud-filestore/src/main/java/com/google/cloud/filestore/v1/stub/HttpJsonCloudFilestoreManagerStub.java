@@ -21,7 +21,6 @@ import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInst
 import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -80,7 +79,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()

@@ -842,8 +842,6 @@ public class GkeHubMembershipServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createMembership. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateMembershipRequest, Membership, OperationMetadata>
         createMembershipOperationSettings() {
       return createMembershipOperationSettings;
@@ -856,8 +854,6 @@ public class GkeHubMembershipServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteMembership. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteMembershipRequest, Empty, OperationMetadata>
         deleteMembershipOperationSettings() {
       return deleteMembershipOperationSettings;
@@ -870,8 +866,6 @@ public class GkeHubMembershipServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateMembership. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateMembershipRequest, Membership, OperationMetadata>
         updateMembershipOperationSettings() {
       return updateMembershipOperationSettings;

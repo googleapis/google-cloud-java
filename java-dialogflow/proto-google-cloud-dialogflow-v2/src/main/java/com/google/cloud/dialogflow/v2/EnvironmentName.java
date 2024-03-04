@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class EnvironmentName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectEnvironmentBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationEnvironmentBuilder newProjectLocationEnvironmentBuilder() {
     return new ProjectLocationEnvironmentBuilder();
   }
@@ -98,12 +95,10 @@ public class EnvironmentName implements ResourceName {
     return newBuilder().setProject(project).setEnvironment(environment).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EnvironmentName ofProjectEnvironmentName(String project, String environment) {
     return newBuilder().setProject(project).setEnvironment(environment).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EnvironmentName ofProjectLocationEnvironmentName(
       String project, String location, String environment) {
     return newProjectLocationEnvironmentBuilder()
@@ -117,12 +112,10 @@ public class EnvironmentName implements ResourceName {
     return newBuilder().setProject(project).setEnvironment(environment).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectEnvironmentName(String project, String environment) {
     return newBuilder().setProject(project).setEnvironment(environment).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEnvironmentName(
       String project, String location, String environment) {
     return newProjectLocationEnvironmentBuilder()
@@ -271,7 +264,6 @@ public class EnvironmentName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/agent/environments/{environment}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEnvironmentBuilder {
     private String project;
     private String location;

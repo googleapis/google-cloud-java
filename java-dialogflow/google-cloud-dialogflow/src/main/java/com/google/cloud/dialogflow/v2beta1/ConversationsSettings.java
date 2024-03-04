@@ -196,7 +196,6 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -238,7 +237,6 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
       return new Builder(ConversationsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConversationsStubSettings.newHttpJsonBuilder());
     }

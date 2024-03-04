@@ -1065,8 +1065,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createAwsCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAwsClusterRequest, AwsCluster, OperationMetadata>
         createAwsClusterOperationSettings() {
       return createAwsClusterOperationSettings;
@@ -1079,8 +1077,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateAwsCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAwsClusterRequest, AwsCluster, OperationMetadata>
         updateAwsClusterOperationSettings() {
       return updateAwsClusterOperationSettings;
@@ -1105,8 +1101,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteAwsCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAwsClusterRequest, Empty, OperationMetadata>
         deleteAwsClusterOperationSettings() {
       return deleteAwsClusterOperationSettings;
@@ -1132,8 +1126,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createAwsNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         createAwsNodePoolOperationSettings() {
       return createAwsNodePoolOperationSettings;
@@ -1146,8 +1138,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateAwsNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         updateAwsNodePoolOperationSettings() {
       return updateAwsNodePoolOperationSettings;
@@ -1160,8 +1150,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
         rollbackAwsNodePoolUpdateOperationSettings() {
@@ -1187,8 +1175,6 @@ public class AwsClustersStubSettings extends StubSettings<AwsClustersStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteAwsNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
         deleteAwsNodePoolOperationSettings() {
       return deleteAwsNodePoolOperationSettings;

@@ -1222,8 +1222,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, OperationMetadata>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
@@ -1235,8 +1233,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, OperationMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
@@ -1248,8 +1244,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings() {
       return deleteClusterOperationSettings;
@@ -1279,8 +1273,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to createNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateNodePoolRequest, NodePool, OperationMetadata>
         createNodePoolOperationSettings() {
       return createNodePoolOperationSettings;
@@ -1292,8 +1284,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateNodePoolRequest, NodePool, OperationMetadata>
         updateNodePoolOperationSettings() {
       return updateNodePoolOperationSettings;
@@ -1305,8 +1295,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNodePoolRequest, Empty, OperationMetadata>
         deleteNodePoolOperationSettings() {
       return deleteNodePoolOperationSettings;
@@ -1344,8 +1332,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to createVpnConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateVpnConnectionRequest, VpnConnection, OperationMetadata>
         createVpnConnectionOperationSettings() {
@@ -1359,8 +1345,6 @@ public class EdgeContainerStubSettings extends StubSettings<EdgeContainerStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteVpnConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteVpnConnectionRequest, Empty, OperationMetadata>
         deleteVpnConnectionOperationSettings() {
       return deleteVpnConnectionOperationSettings;

@@ -551,8 +551,6 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
     }
 
     /** Returns the builder for the settings used for calls to createDataStore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateDataStoreRequest, DataStore, CreateDataStoreMetadata>
         createDataStoreOperationSettings() {
       return createDataStoreOperationSettings;
@@ -576,8 +574,6 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
     }
 
     /** Returns the builder for the settings used for calls to deleteDataStore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDataStoreRequest, Empty, DeleteDataStoreMetadata>
         deleteDataStoreOperationSettings() {
       return deleteDataStoreOperationSettings;

@@ -218,7 +218,6 @@ public class ConversationProfilesSettings extends ClientSettings<ConversationPro
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -261,7 +260,6 @@ public class ConversationProfilesSettings extends ClientSettings<ConversationPro
       return new Builder(ConversationProfilesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConversationProfilesStubSettings.newHttpJsonBuilder());
     }

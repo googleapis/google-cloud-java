@@ -1750,8 +1750,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to batchProcessDocuments. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
         batchProcessDocumentsOperationSettings() {
@@ -1796,8 +1794,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to trainProcessorVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             TrainProcessorVersionRequest,
             TrainProcessorVersionResponse,
@@ -1828,8 +1824,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteProcessorVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteProcessorVersionRequest, Empty, DeleteProcessorVersionMetadata>
         deleteProcessorVersionOperationSettings() {
@@ -1843,8 +1837,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deployProcessorVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeployProcessorVersionRequest,
             DeployProcessorVersionResponse,
@@ -1860,8 +1852,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to undeployProcessorVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UndeployProcessorVersionRequest,
             UndeployProcessorVersionResponse,
@@ -1881,8 +1871,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteProcessor. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteProcessorRequest, Empty, DeleteProcessorMetadata>
         deleteProcessorOperationSettings() {
       return deleteProcessorOperationSettings;
@@ -1894,8 +1882,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to enableProcessor. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             EnableProcessorRequest, EnableProcessorResponse, EnableProcessorMetadata>
         enableProcessorOperationSettings() {
@@ -1909,8 +1895,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to disableProcessor. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DisableProcessorRequest, DisableProcessorResponse, DisableProcessorMetadata>
         disableProcessorOperationSettings() {
@@ -1924,8 +1908,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to setDefaultProcessorVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetDefaultProcessorVersionRequest,
             SetDefaultProcessorVersionResponse,
@@ -1940,8 +1922,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to reviewDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
         reviewDocumentOperationSettings() {
@@ -1955,8 +1935,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to evaluateProcessorVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             EvaluateProcessorVersionRequest,
             EvaluateProcessorVersionResponse,
@@ -1984,8 +1962,6 @@ public class DocumentProcessorServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to importProcessorVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportProcessorVersionRequest,
             ImportProcessorVersionResponse,

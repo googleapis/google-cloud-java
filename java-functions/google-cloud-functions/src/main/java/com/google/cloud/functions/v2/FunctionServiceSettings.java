@@ -221,7 +221,6 @@ public class FunctionServiceSettings extends ClientSettings<FunctionServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -263,7 +262,6 @@ public class FunctionServiceSettings extends ClientSettings<FunctionServiceSetti
       return new Builder(FunctionServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(FunctionServiceStubSettings.newHttpJsonBuilder());
     }

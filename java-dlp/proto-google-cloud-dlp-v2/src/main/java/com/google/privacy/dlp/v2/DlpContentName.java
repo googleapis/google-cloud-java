@@ -16,7 +16,6 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -71,12 +70,10 @@ public class DlpContentName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationBuilder newProjectLocationBuilder() {
     return new ProjectLocationBuilder();
   }
@@ -89,12 +86,10 @@ public class DlpContentName implements ResourceName {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DlpContentName ofProjectName(String project) {
     return newBuilder().setProject(project).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DlpContentName ofProjectLocationName(String project, String location) {
     return newProjectLocationBuilder().setProject(project).setLocation(location).build();
   }
@@ -103,12 +98,10 @@ public class DlpContentName implements ResourceName {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectName(String project) {
     return newBuilder().setProject(project).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationName(String project, String location) {
     return newProjectLocationBuilder().setProject(project).setLocation(location).build().toString();
   }
@@ -232,7 +225,6 @@ public class DlpContentName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/dlpContent. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationBuilder {
     private String project;
     private String location;

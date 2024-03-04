@@ -172,7 +172,6 @@ public class GkeHubSettings extends ClientSettings<GkeHubSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -214,7 +213,6 @@ public class GkeHubSettings extends ClientSettings<GkeHubSettings> {
       return new Builder(GkeHubStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(GkeHubStubSettings.newHttpJsonBuilder());
     }

@@ -721,8 +721,6 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateIntents. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
         batchUpdateIntentsOperationSettings() {
@@ -736,8 +734,6 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteIntents. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
         batchDeleteIntentsOperationSettings() {
       return batchDeleteIntentsOperationSettings;

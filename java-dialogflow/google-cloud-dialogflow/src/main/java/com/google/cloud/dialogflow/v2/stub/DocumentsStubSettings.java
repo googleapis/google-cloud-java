@@ -884,8 +884,6 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDocumentRequest, Document, KnowledgeOperationMetadata>
         createDocumentOperationSettings() {
@@ -898,8 +896,6 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to importDocuments. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportDocumentsRequest, ImportDocumentsResponse, KnowledgeOperationMetadata>
         importDocumentsOperationSettings() {
@@ -912,8 +908,6 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
         deleteDocumentOperationSettings() {
       return deleteDocumentOperationSettings;
@@ -925,8 +919,6 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
         updateDocumentOperationSettings() {
@@ -939,8 +931,6 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to reloadDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
         reloadDocumentOperationSettings() {
@@ -953,8 +943,6 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportDocument. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportDocumentRequest, Document, KnowledgeOperationMetadata>
         exportDocumentOperationSettings() {

@@ -341,7 +341,6 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -384,7 +383,6 @@ public class CloudFilestoreManagerSettings extends ClientSettings<CloudFilestore
       return new Builder(CloudFilestoreManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudFilestoreManagerStubSettings.newHttpJsonBuilder());
     }

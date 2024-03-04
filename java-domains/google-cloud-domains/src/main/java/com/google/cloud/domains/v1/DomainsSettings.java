@@ -258,7 +258,6 @@ public class DomainsSettings extends ClientSettings<DomainsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -300,7 +299,6 @@ public class DomainsSettings extends ClientSettings<DomainsSettings> {
       return new Builder(DomainsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DomainsStubSettings.newHttpJsonBuilder());
     }

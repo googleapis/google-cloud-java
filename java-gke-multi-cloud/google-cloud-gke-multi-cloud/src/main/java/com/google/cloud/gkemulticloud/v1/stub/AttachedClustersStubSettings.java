@@ -787,8 +787,6 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
     }
 
     /** Returns the builder for the settings used for calls to createAttachedCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateAttachedClusterRequest, AttachedCluster, OperationMetadata>
         createAttachedClusterOperationSettings() {
@@ -802,8 +800,6 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
     }
 
     /** Returns the builder for the settings used for calls to updateAttachedCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAttachedClusterRequest, AttachedCluster, OperationMetadata>
         updateAttachedClusterOperationSettings() {
@@ -817,8 +813,6 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
     }
 
     /** Returns the builder for the settings used for calls to importAttachedCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportAttachedClusterRequest, AttachedCluster, OperationMetadata>
         importAttachedClusterOperationSettings() {
@@ -847,8 +841,6 @@ public class AttachedClustersStubSettings extends StubSettings<AttachedClustersS
     }
 
     /** Returns the builder for the settings used for calls to deleteAttachedCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAttachedClusterRequest, Empty, OperationMetadata>
         deleteAttachedClusterOperationSettings() {
       return deleteAttachedClusterOperationSettings;

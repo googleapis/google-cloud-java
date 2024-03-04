@@ -151,7 +151,6 @@ public class FulfillmentsSettings extends ClientSettings<FulfillmentsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -193,7 +192,6 @@ public class FulfillmentsSettings extends ClientSettings<FulfillmentsSettings> {
       return new Builder(FulfillmentsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(FulfillmentsStubSettings.newHttpJsonBuilder());
     }

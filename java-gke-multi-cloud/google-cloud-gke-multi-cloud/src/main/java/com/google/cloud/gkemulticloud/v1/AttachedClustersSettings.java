@@ -221,7 +221,6 @@ public class AttachedClustersSettings extends ClientSettings<AttachedClustersSet
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -263,7 +262,6 @@ public class AttachedClustersSettings extends ClientSettings<AttachedClustersSet
       return new Builder(AttachedClustersStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AttachedClustersStubSettings.newHttpJsonBuilder());
     }

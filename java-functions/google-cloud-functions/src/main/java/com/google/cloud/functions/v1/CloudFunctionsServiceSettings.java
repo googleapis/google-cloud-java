@@ -225,7 +225,6 @@ public class CloudFunctionsServiceSettings extends ClientSettings<CloudFunctions
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -268,7 +267,6 @@ public class CloudFunctionsServiceSettings extends ClientSettings<CloudFunctions
       return new Builder(CloudFunctionsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudFunctionsServiceStubSettings.newHttpJsonBuilder());
     }

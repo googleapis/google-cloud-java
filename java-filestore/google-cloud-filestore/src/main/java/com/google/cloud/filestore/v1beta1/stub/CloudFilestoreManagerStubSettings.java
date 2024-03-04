@@ -1537,8 +1537,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -1550,8 +1548,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
@@ -1563,8 +1559,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to restoreInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreInstanceRequest, Instance, OperationMetadata>
         restoreInstanceOperationSettings() {
       return restoreInstanceOperationSettings;
@@ -1576,8 +1570,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to revertInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RevertInstanceRequest, Instance, OperationMetadata>
         revertInstanceOperationSettings() {
       return revertInstanceOperationSettings;
@@ -1589,8 +1581,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
@@ -1614,8 +1604,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSnapshotRequest, Snapshot, OperationMetadata>
         createSnapshotOperationSettings() {
       return createSnapshotOperationSettings;
@@ -1627,8 +1615,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSnapshotRequest, Empty, OperationMetadata>
         deleteSnapshotOperationSettings() {
       return deleteSnapshotOperationSettings;
@@ -1640,8 +1626,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSnapshotRequest, Snapshot, OperationMetadata>
         updateSnapshotOperationSettings() {
       return updateSnapshotOperationSettings;
@@ -1665,8 +1649,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
         createBackupOperationSettings() {
       return createBackupOperationSettings;
@@ -1678,8 +1660,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return deleteBackupOperationSettings;
@@ -1691,8 +1671,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return updateBackupOperationSettings;
@@ -1715,8 +1693,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateShareRequest, Share, OperationMetadata>
         createShareOperationSettings() {
       return createShareOperationSettings;
@@ -1728,8 +1704,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteShareRequest, Empty, OperationMetadata>
         deleteShareOperationSettings() {
       return deleteShareOperationSettings;
@@ -1741,8 +1715,6 @@ public class CloudFilestoreManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateShare. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateShareRequest, Share, OperationMetadata>
         updateShareOperationSettings() {
       return updateShareOperationSettings;

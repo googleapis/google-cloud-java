@@ -173,7 +173,6 @@ public class GSuiteAddOnsSettings extends ClientSettings<GSuiteAddOnsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -215,7 +214,6 @@ public class GSuiteAddOnsSettings extends ClientSettings<GSuiteAddOnsSettings> {
       return new Builder(GSuiteAddOnsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(GSuiteAddOnsStubSettings.newHttpJsonBuilder());
     }

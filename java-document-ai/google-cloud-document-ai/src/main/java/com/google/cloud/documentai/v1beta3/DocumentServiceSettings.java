@@ -203,7 +203,6 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -245,7 +244,6 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
       return new Builder(DocumentServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DocumentServiceStubSettings.newHttpJsonBuilder());
     }

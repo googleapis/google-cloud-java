@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -81,12 +80,10 @@ public class ConversationProfileName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectConversationProfileBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationConversationProfileBuilder
       newProjectLocationConversationProfileBuilder() {
     return new ProjectLocationConversationProfileBuilder();
@@ -100,13 +97,11 @@ public class ConversationProfileName implements ResourceName {
     return newBuilder().setProject(project).setConversationProfile(conversationProfile).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ConversationProfileName ofProjectConversationProfileName(
       String project, String conversationProfile) {
     return newBuilder().setProject(project).setConversationProfile(conversationProfile).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ConversationProfileName ofProjectLocationConversationProfileName(
       String project, String location, String conversationProfile) {
     return newProjectLocationConversationProfileBuilder()
@@ -124,7 +119,6 @@ public class ConversationProfileName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectConversationProfileName(
       String project, String conversationProfile) {
     return newBuilder()
@@ -134,7 +128,6 @@ public class ConversationProfileName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationConversationProfileName(
       String project, String location, String conversationProfile) {
     return newProjectLocationConversationProfileBuilder()
@@ -288,7 +281,6 @@ public class ConversationProfileName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationConversationProfileBuilder {
     private String project;
     private String location;

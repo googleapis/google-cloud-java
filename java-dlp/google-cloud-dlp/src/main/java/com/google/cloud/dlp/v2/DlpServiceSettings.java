@@ -415,7 +415,6 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -457,7 +456,6 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
       return new Builder(DlpServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DlpServiceStubSettings.newHttpJsonBuilder());
     }

@@ -370,8 +370,6 @@ public class SearchTuningServiceStubSettings extends StubSettings<SearchTuningSe
     }
 
     /** Returns the builder for the settings used for calls to trainCustomModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             TrainCustomModelRequest, TrainCustomModelResponse, TrainCustomModelMetadata>
         trainCustomModelOperationSettings() {

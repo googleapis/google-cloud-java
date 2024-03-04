@@ -636,8 +636,6 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to createEngine. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateEngineRequest, Engine, CreateEngineMetadata>
         createEngineOperationSettings() {
       return createEngineOperationSettings;
@@ -649,8 +647,6 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteEngine. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEngineRequest, Empty, DeleteEngineMetadata>
         deleteEngineOperationSettings() {
       return deleteEngineOperationSettings;
@@ -689,8 +685,6 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to tuneEngine. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
         tuneEngineOperationSettings() {
       return tuneEngineOperationSettings;

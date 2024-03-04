@@ -210,7 +210,6 @@ public class ConversationDatasetsSettings extends ClientSettings<ConversationDat
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -253,7 +252,6 @@ public class ConversationDatasetsSettings extends ClientSettings<ConversationDat
       return new Builder(ConversationDatasetsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConversationDatasetsStubSettings.newHttpJsonBuilder());
     }

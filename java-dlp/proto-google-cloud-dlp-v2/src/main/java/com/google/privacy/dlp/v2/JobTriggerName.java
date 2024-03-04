@@ -16,7 +16,6 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class JobTriggerName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectJobTriggerBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationJobTriggerBuilder newProjectLocationJobTriggerBuilder() {
     return new ProjectLocationJobTriggerBuilder();
   }
@@ -98,12 +95,10 @@ public class JobTriggerName implements ResourceName {
     return newBuilder().setProject(project).setJobTrigger(jobTrigger).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static JobTriggerName ofProjectJobTriggerName(String project, String jobTrigger) {
     return newBuilder().setProject(project).setJobTrigger(jobTrigger).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static JobTriggerName ofProjectLocationJobTriggerName(
       String project, String location, String jobTrigger) {
     return newProjectLocationJobTriggerBuilder()
@@ -117,12 +112,10 @@ public class JobTriggerName implements ResourceName {
     return newBuilder().setProject(project).setJobTrigger(jobTrigger).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectJobTriggerName(String project, String jobTrigger) {
     return newBuilder().setProject(project).setJobTrigger(jobTrigger).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationJobTriggerName(
       String project, String location, String jobTrigger) {
     return newProjectLocationJobTriggerBuilder()
@@ -271,7 +264,6 @@ public class JobTriggerName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/jobTriggers/{job_trigger}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationJobTriggerBuilder {
     private String project;
     private String location;

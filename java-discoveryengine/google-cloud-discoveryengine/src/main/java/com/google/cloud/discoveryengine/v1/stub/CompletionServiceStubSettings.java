@@ -499,8 +499,6 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     }
 
     /** Returns the builder for the settings used for calls to importSuggestionDenyListEntries. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportSuggestionDenyListEntriesRequest,
             ImportSuggestionDenyListEntriesResponse,
@@ -516,8 +514,6 @@ public class CompletionServiceStubSettings extends StubSettings<CompletionServic
     }
 
     /** Returns the builder for the settings used for calls to purgeSuggestionDenyListEntries. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PurgeSuggestionDenyListEntriesRequest,
             PurgeSuggestionDenyListEntriesResponse,

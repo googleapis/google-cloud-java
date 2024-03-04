@@ -16,7 +16,6 @@
 
 package com.google.cloud.discoveryengine.v1alpha;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,12 +96,10 @@ public class SchemaName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationDataStoreSchemaBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationCollectionDataStoreSchemaBuilder
       newProjectLocationCollectionDataStoreSchemaBuilder() {
     return new ProjectLocationCollectionDataStoreSchemaBuilder();
@@ -121,7 +118,6 @@ public class SchemaName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SchemaName ofProjectLocationDataStoreSchemaName(
       String project, String location, String dataStore, String schema) {
     return newBuilder()
@@ -132,7 +128,6 @@ public class SchemaName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SchemaName ofProjectLocationCollectionDataStoreSchemaName(
       String project, String location, String collection, String dataStore, String schema) {
     return newProjectLocationCollectionDataStoreSchemaBuilder()
@@ -154,7 +149,6 @@ public class SchemaName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataStoreSchemaName(
       String project, String location, String dataStore, String schema) {
     return newBuilder()
@@ -166,7 +160,6 @@ public class SchemaName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationCollectionDataStoreSchemaName(
       String project, String location, String collection, String dataStore, String schema) {
     return newProjectLocationCollectionDataStoreSchemaBuilder()
@@ -365,7 +358,6 @@ public class SchemaName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationCollectionDataStoreSchemaBuilder {
     private String project;
     private String location;

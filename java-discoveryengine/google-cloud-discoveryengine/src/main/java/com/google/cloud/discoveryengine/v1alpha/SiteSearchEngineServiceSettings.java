@@ -277,7 +277,6 @@ public class SiteSearchEngineServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -320,7 +319,6 @@ public class SiteSearchEngineServiceSettings
       return new Builder(SiteSearchEngineServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SiteSearchEngineServiceStubSettings.newHttpJsonBuilder());
     }
