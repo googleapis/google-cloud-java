@@ -129,7 +129,6 @@ public class QuotaControllerSettings extends ClientSettings<QuotaControllerSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -171,7 +170,6 @@ public class QuotaControllerSettings extends ClientSettings<QuotaControllerSetti
       return new Builder(QuotaControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(QuotaControllerStubSettings.newHttpJsonBuilder());
     }

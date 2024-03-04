@@ -638,8 +638,6 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createTagBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTagBindingRequest, TagBinding, CreateTagBindingMetadata>
         createTagBindingOperationSettings() {
@@ -653,8 +651,6 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteTagBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
         deleteTagBindingOperationSettings() {
       return deleteTagBindingOperationSettings;

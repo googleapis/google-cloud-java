@@ -221,7 +221,6 @@ public class FoldersSettings extends ClientSettings<FoldersSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -263,7 +262,6 @@ public class FoldersSettings extends ClientSettings<FoldersSettings> {
       return new Builder(FoldersStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(FoldersStubSettings.newHttpJsonBuilder());
     }

@@ -184,7 +184,6 @@ public class ServiceHealthSettings extends ClientSettings<ServiceHealthSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -226,7 +225,6 @@ public class ServiceHealthSettings extends ClientSettings<ServiceHealthSettings>
       return new Builder(ServiceHealthStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ServiceHealthStubSettings.newHttpJsonBuilder());
     }

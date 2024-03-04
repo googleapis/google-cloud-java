@@ -198,7 +198,6 @@ public class JobsSettings extends ClientSettings<JobsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -240,7 +239,6 @@ public class JobsSettings extends ClientSettings<JobsSettings> {
       return new Builder(JobsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(JobsStubSettings.newHttpJsonBuilder());
     }

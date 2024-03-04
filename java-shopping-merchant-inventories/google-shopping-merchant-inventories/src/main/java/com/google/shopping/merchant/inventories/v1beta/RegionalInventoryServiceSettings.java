@@ -154,7 +154,6 @@ public class RegionalInventoryServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -197,7 +196,6 @@ public class RegionalInventoryServiceSettings
       return new Builder(RegionalInventoryServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RegionalInventoryServiceStubSettings.newHttpJsonBuilder());
     }

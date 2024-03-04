@@ -217,7 +217,6 @@ public class SecretManagerServiceSettings extends ClientSettings<SecretManagerSe
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -260,7 +259,6 @@ public class SecretManagerServiceSettings extends ClientSettings<SecretManagerSe
       return new Builder(SecretManagerServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SecretManagerServiceStubSettings.newHttpJsonBuilder());
     }

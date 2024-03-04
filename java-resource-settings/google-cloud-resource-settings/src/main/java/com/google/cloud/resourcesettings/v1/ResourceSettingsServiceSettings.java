@@ -145,7 +145,6 @@ public class ResourceSettingsServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -188,7 +187,6 @@ public class ResourceSettingsServiceSettings
       return new Builder(ResourceSettingsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ResourceSettingsServiceStubSettings.newHttpJsonBuilder());
     }

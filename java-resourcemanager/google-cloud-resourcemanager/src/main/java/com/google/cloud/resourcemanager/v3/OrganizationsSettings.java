@@ -159,7 +159,6 @@ public class OrganizationsSettings extends ClientSettings<OrganizationsSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -201,7 +200,6 @@ public class OrganizationsSettings extends ClientSettings<OrganizationsSettings>
       return new Builder(OrganizationsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(OrganizationsStubSettings.newHttpJsonBuilder());
     }

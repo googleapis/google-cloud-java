@@ -1293,8 +1293,6 @@ public class SecurityPostureStubSettings extends StubSettings<SecurityPostureStu
     }
 
     /** Returns the builder for the settings used for calls to createPosture. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreatePostureRequest, Posture, OperationMetadata>
         createPostureOperationSettings() {
       return createPostureOperationSettings;
@@ -1306,8 +1304,6 @@ public class SecurityPostureStubSettings extends StubSettings<SecurityPostureStu
     }
 
     /** Returns the builder for the settings used for calls to updatePosture. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdatePostureRequest, Posture, OperationMetadata>
         updatePostureOperationSettings() {
       return updatePostureOperationSettings;
@@ -1319,8 +1315,6 @@ public class SecurityPostureStubSettings extends StubSettings<SecurityPostureStu
     }
 
     /** Returns the builder for the settings used for calls to deletePosture. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePostureRequest, Empty, OperationMetadata>
         deletePostureOperationSettings() {
       return deletePostureOperationSettings;
@@ -1332,8 +1326,6 @@ public class SecurityPostureStubSettings extends StubSettings<SecurityPostureStu
     }
 
     /** Returns the builder for the settings used for calls to extractPosture. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExtractPostureRequest, Posture, OperationMetadata>
         extractPostureOperationSettings() {
       return extractPostureOperationSettings;
@@ -1361,8 +1353,6 @@ public class SecurityPostureStubSettings extends StubSettings<SecurityPostureStu
     }
 
     /** Returns the builder for the settings used for calls to createPostureDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePostureDeploymentRequest, PostureDeployment, OperationMetadata>
         createPostureDeploymentOperationSettings() {
@@ -1376,8 +1366,6 @@ public class SecurityPostureStubSettings extends StubSettings<SecurityPostureStu
     }
 
     /** Returns the builder for the settings used for calls to updatePostureDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdatePostureDeploymentRequest, PostureDeployment, OperationMetadata>
         updatePostureDeploymentOperationSettings() {
@@ -1391,8 +1379,6 @@ public class SecurityPostureStubSettings extends StubSettings<SecurityPostureStu
     }
 
     /** Returns the builder for the settings used for calls to deletePostureDeployment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePostureDeploymentRequest, Empty, OperationMetadata>
         deletePostureDeploymentOperationSettings() {
       return deletePostureDeploymentOperationSettings;

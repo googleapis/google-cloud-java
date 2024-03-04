@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycentermanagement.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -116,18 +115,15 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationLocationEffectiveEventThreatDetectionCustomModuleBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationEffectiveEventThreatDetectionCustomModuleBuilder
       newProjectLocationEffectiveEventThreatDetectionCustomModuleBuilder() {
     return new ProjectLocationEffectiveEventThreatDetectionCustomModuleBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationEffectiveEventThreatDetectionCustomModuleBuilder
       newFolderLocationEffectiveEventThreatDetectionCustomModuleBuilder() {
     return new FolderLocationEffectiveEventThreatDetectionCustomModuleBuilder();
@@ -146,7 +142,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EffectiveEventThreatDetectionCustomModuleName
       ofOrganizationLocationEffectiveEventThreatDetectionCustomModuleName(
           String organization, String location, String effectiveEventThreatDetectionCustomModule) {
@@ -157,7 +152,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EffectiveEventThreatDetectionCustomModuleName
       ofProjectLocationEffectiveEventThreatDetectionCustomModuleName(
           String project, String location, String effectiveEventThreatDetectionCustomModule) {
@@ -168,7 +162,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EffectiveEventThreatDetectionCustomModuleName
       ofFolderLocationEffectiveEventThreatDetectionCustomModuleName(
           String folder, String location, String effectiveEventThreatDetectionCustomModule) {
@@ -189,7 +182,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationEffectiveEventThreatDetectionCustomModuleName(
       String organization, String location, String effectiveEventThreatDetectionCustomModule) {
     return newBuilder()
@@ -200,7 +192,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEffectiveEventThreatDetectionCustomModuleName(
       String project, String location, String effectiveEventThreatDetectionCustomModule) {
     return newProjectLocationEffectiveEventThreatDetectionCustomModuleBuilder()
@@ -211,7 +202,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationEffectiveEventThreatDetectionCustomModuleName(
       String folder, String location, String effectiveEventThreatDetectionCustomModule) {
     return newFolderLocationEffectiveEventThreatDetectionCustomModuleBuilder()
@@ -424,7 +414,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
    * Builder for
    * projects/{project}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEffectiveEventThreatDetectionCustomModuleBuilder {
     private String project;
     private String location;
@@ -472,7 +461,6 @@ public class EffectiveEventThreatDetectionCustomModuleName implements ResourceNa
    * Builder for
    * folders/{folder}/locations/{location}/effectiveEventThreatDetectionCustomModules/{effective_event_threat_detection_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationEffectiveEventThreatDetectionCustomModuleBuilder {
     private String folder;
     private String location;

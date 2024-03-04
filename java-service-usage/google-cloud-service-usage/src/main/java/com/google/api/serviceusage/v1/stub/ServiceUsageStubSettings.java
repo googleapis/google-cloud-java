@@ -626,8 +626,6 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
     }
 
     /** Returns the builder for the settings used for calls to enableService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             EnableServiceRequest, EnableServiceResponse, OperationMetadata>
         enableServiceOperationSettings() {
@@ -640,8 +638,6 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
     }
 
     /** Returns the builder for the settings used for calls to disableService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DisableServiceRequest, DisableServiceResponse, OperationMetadata>
         disableServiceOperationSettings() {
@@ -667,8 +663,6 @@ public class ServiceUsageStubSettings extends StubSettings<ServiceUsageStubSetti
     }
 
     /** Returns the builder for the settings used for calls to batchEnableServices. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchEnableServicesRequest, BatchEnableServicesResponse, OperationMetadata>
         batchEnableServicesOperationSettings() {

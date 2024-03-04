@@ -536,8 +536,6 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteExecution. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteExecutionRequest, Execution, Execution>
         deleteExecutionOperationSettings() {
       return deleteExecutionOperationSettings;
@@ -549,8 +547,6 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to cancelExecution. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CancelExecutionRequest, Execution, Execution>
         cancelExecutionOperationSettings() {
       return cancelExecutionOperationSettings;

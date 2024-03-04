@@ -222,7 +222,6 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -264,7 +263,6 @@ public class ProjectsSettings extends ClientSettings<ProjectsSettings> {
       return new Builder(ProjectsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ProjectsStubSettings.newHttpJsonBuilder());
     }

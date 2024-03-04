@@ -167,7 +167,6 @@ public class ServingConfigServiceSettings extends ClientSettings<ServingConfigSe
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -210,7 +209,6 @@ public class ServingConfigServiceSettings extends ClientSettings<ServingConfigSe
       return new Builder(ServingConfigServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ServingConfigServiceStubSettings.newHttpJsonBuilder());
     }

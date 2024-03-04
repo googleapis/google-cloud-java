@@ -134,7 +134,6 @@ public class ServiceControllerSettings extends ClientSettings<ServiceControllerS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -176,7 +175,6 @@ public class ServiceControllerSettings extends ClientSettings<ServiceControllerS
       return new Builder(ServiceControllerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ServiceControllerStubSettings.newHttpJsonBuilder());
     }

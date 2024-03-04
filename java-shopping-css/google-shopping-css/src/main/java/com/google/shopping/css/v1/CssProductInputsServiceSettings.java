@@ -139,7 +139,6 @@ public class CssProductInputsServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -182,7 +181,6 @@ public class CssProductInputsServiceSettings
       return new Builder(CssProductInputsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CssProductInputsServiceStubSettings.newHttpJsonBuilder());
     }

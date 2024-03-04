@@ -148,7 +148,6 @@ public class RevisionsSettings extends ClientSettings<RevisionsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -190,7 +189,6 @@ public class RevisionsSettings extends ClientSettings<RevisionsSettings> {
       return new Builder(RevisionsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RevisionsStubSettings.newHttpJsonBuilder());
     }

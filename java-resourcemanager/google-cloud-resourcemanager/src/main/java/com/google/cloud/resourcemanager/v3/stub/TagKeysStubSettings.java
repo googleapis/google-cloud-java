@@ -699,8 +699,6 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createTagKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateTagKeyRequest, TagKey, CreateTagKeyMetadata>
         createTagKeyOperationSettings() {
       return createTagKeyOperationSettings;
@@ -712,8 +710,6 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateTagKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateTagKeyRequest, TagKey, UpdateTagKeyMetadata>
         updateTagKeyOperationSettings() {
       return updateTagKeyOperationSettings;
@@ -725,8 +721,6 @@ public class TagKeysStubSettings extends StubSettings<TagKeysStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteTagKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTagKeyRequest, TagKey, DeleteTagKeyMetadata>
         deleteTagKeyOperationSettings() {
       return deleteTagKeyOperationSettings;

@@ -707,8 +707,6 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createTagValue. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateTagValueRequest, TagValue, CreateTagValueMetadata>
         createTagValueOperationSettings() {
       return createTagValueOperationSettings;
@@ -720,8 +718,6 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateTagValue. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateTagValueRequest, TagValue, UpdateTagValueMetadata>
         updateTagValueOperationSettings() {
       return updateTagValueOperationSettings;
@@ -733,8 +729,6 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteTagValue. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTagValueRequest, TagValue, DeleteTagValueMetadata>
         deleteTagValueOperationSettings() {
       return deleteTagValueOperationSettings;

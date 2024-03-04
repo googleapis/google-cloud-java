@@ -162,7 +162,6 @@ public class MerchantCenterAccountLinkServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -205,7 +204,6 @@ public class MerchantCenterAccountLinkServiceSettings
       return new Builder(MerchantCenterAccountLinkServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(MerchantCenterAccountLinkServiceStubSettings.newHttpJsonBuilder());
     }

@@ -668,8 +668,6 @@ public class JobsStubSettings extends StubSettings<JobsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateJobRequest, Job, Job> createJobOperationSettings() {
       return createJobOperationSettings;
     }
@@ -691,8 +689,6 @@ public class JobsStubSettings extends StubSettings<JobsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateJobRequest, Job, Job> updateJobOperationSettings() {
       return updateJobOperationSettings;
     }
@@ -703,8 +699,6 @@ public class JobsStubSettings extends StubSettings<JobsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteJobRequest, Job, Job> deleteJobOperationSettings() {
       return deleteJobOperationSettings;
     }
@@ -715,8 +709,6 @@ public class JobsStubSettings extends StubSettings<JobsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to runJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RunJobRequest, Execution, Execution>
         runJobOperationSettings() {
       return runJobOperationSettings;

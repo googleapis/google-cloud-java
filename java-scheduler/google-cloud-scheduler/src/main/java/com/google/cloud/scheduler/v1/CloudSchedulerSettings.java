@@ -185,7 +185,6 @@ public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -227,7 +226,6 @@ public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSetting
       return new Builder(CloudSchedulerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudSchedulerStubSettings.newHttpJsonBuilder());
     }

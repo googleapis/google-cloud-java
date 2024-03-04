@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycentermanagement.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -114,18 +113,15 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationLocationSecurityHealthAnalyticsCustomModuleBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationSecurityHealthAnalyticsCustomModuleBuilder
       newProjectLocationSecurityHealthAnalyticsCustomModuleBuilder() {
     return new ProjectLocationSecurityHealthAnalyticsCustomModuleBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationSecurityHealthAnalyticsCustomModuleBuilder
       newFolderLocationSecurityHealthAnalyticsCustomModuleBuilder() {
     return new FolderLocationSecurityHealthAnalyticsCustomModuleBuilder();
@@ -144,7 +140,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsCustomModuleName
       ofOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
           String organization, String location, String securityHealthAnalyticsCustomModule) {
@@ -155,7 +150,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsCustomModuleName
       ofProjectLocationSecurityHealthAnalyticsCustomModuleName(
           String project, String location, String securityHealthAnalyticsCustomModule) {
@@ -166,7 +160,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SecurityHealthAnalyticsCustomModuleName
       ofFolderLocationSecurityHealthAnalyticsCustomModuleName(
           String folder, String location, String securityHealthAnalyticsCustomModule) {
@@ -187,7 +180,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationSecurityHealthAnalyticsCustomModuleName(
       String organization, String location, String securityHealthAnalyticsCustomModule) {
     return newBuilder()
@@ -198,7 +190,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationSecurityHealthAnalyticsCustomModuleName(
       String project, String location, String securityHealthAnalyticsCustomModule) {
     return newProjectLocationSecurityHealthAnalyticsCustomModuleBuilder()
@@ -209,7 +200,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationSecurityHealthAnalyticsCustomModuleName(
       String folder, String location, String securityHealthAnalyticsCustomModule) {
     return newFolderLocationSecurityHealthAnalyticsCustomModuleBuilder()
@@ -411,7 +401,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationSecurityHealthAnalyticsCustomModuleBuilder {
     private String project;
     private String location;
@@ -456,7 +445,6 @@ public class SecurityHealthAnalyticsCustomModuleName implements ResourceName {
    * Builder for
    * folders/{folder}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationSecurityHealthAnalyticsCustomModuleBuilder {
     private String folder;
     private String location;

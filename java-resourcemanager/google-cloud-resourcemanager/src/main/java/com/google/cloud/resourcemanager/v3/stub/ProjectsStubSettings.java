@@ -878,8 +878,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateProjectRequest, Project, CreateProjectMetadata>
         createProjectOperationSettings() {
       return createProjectOperationSettings;
@@ -891,8 +889,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateProjectRequest, Project, UpdateProjectMetadata>
         updateProjectOperationSettings() {
       return updateProjectOperationSettings;
@@ -904,8 +900,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to moveProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<MoveProjectRequest, Project, MoveProjectMetadata>
         moveProjectOperationSettings() {
       return moveProjectOperationSettings;
@@ -917,8 +911,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteProjectRequest, Project, DeleteProjectMetadata>
         deleteProjectOperationSettings() {
       return deleteProjectOperationSettings;
@@ -930,8 +922,6 @@ public class ProjectsStubSettings extends StubSettings<ProjectsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeleteProject. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeleteProjectRequest, Project, UndeleteProjectMetadata>
         undeleteProjectOperationSettings() {
       return undeleteProjectOperationSettings;

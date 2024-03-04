@@ -18,7 +18,6 @@ package com.google.cloud.servicedirectory.v1.stub;
 
 import static com.google.cloud.servicedirectory.v1.LookupServiceClient.ListLocationsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -53,7 +52,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonLookupServiceStub extends LookupServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

@@ -144,7 +144,6 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -186,7 +185,6 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
       return new Builder(CompletionServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CompletionServiceStubSettings.newHttpJsonBuilder());
     }

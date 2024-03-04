@@ -165,7 +165,6 @@ public class TagBindingsSettings extends ClientSettings<TagBindingsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -207,7 +206,6 @@ public class TagBindingsSettings extends ClientSettings<TagBindingsSettings> {
       return new Builder(TagBindingsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TagBindingsStubSettings.newHttpJsonBuilder());
     }

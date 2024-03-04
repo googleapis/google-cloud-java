@@ -363,7 +363,6 @@ public class ServiceUsageSettings extends ClientSettings<ServiceUsageSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -405,7 +404,6 @@ public class ServiceUsageSettings extends ClientSettings<ServiceUsageSettings> {
       return new Builder(ServiceUsageStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ServiceUsageStubSettings.newHttpJsonBuilder());
     }

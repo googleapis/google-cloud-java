@@ -16,7 +16,6 @@
 
 package com.google.cloud.securitycentermanagement.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -114,18 +113,15 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationLocationEventThreatDetectionCustomModuleBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationEventThreatDetectionCustomModuleBuilder
       newProjectLocationEventThreatDetectionCustomModuleBuilder() {
     return new ProjectLocationEventThreatDetectionCustomModuleBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationEventThreatDetectionCustomModuleBuilder
       newFolderLocationEventThreatDetectionCustomModuleBuilder() {
     return new FolderLocationEventThreatDetectionCustomModuleBuilder();
@@ -144,7 +140,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EventThreatDetectionCustomModuleName
       ofOrganizationLocationEventThreatDetectionCustomModuleName(
           String organization, String location, String eventThreatDetectionCustomModule) {
@@ -155,7 +150,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EventThreatDetectionCustomModuleName
       ofProjectLocationEventThreatDetectionCustomModuleName(
           String project, String location, String eventThreatDetectionCustomModule) {
@@ -166,7 +160,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EventThreatDetectionCustomModuleName
       ofFolderLocationEventThreatDetectionCustomModuleName(
           String folder, String location, String eventThreatDetectionCustomModule) {
@@ -187,7 +180,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationEventThreatDetectionCustomModuleName(
       String organization, String location, String eventThreatDetectionCustomModule) {
     return newBuilder()
@@ -198,7 +190,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEventThreatDetectionCustomModuleName(
       String project, String location, String eventThreatDetectionCustomModule) {
     return newProjectLocationEventThreatDetectionCustomModuleBuilder()
@@ -209,7 +200,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationEventThreatDetectionCustomModuleName(
       String folder, String location, String eventThreatDetectionCustomModule) {
     return newFolderLocationEventThreatDetectionCustomModuleBuilder()
@@ -409,7 +399,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEventThreatDetectionCustomModuleBuilder {
     private String project;
     private String location;
@@ -454,7 +443,6 @@ public class EventThreatDetectionCustomModuleName implements ResourceName {
    * Builder for
    * folders/{folder}/locations/{location}/eventThreatDetectionCustomModules/{event_threat_detection_custom_module}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationEventThreatDetectionCustomModuleBuilder {
     private String folder;
     private String location;

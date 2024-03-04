@@ -1050,8 +1050,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     }
 
     /** Returns the builder for the settings used for calls to createService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateServiceRequest, ManagedService, OperationMetadata>
         createServiceOperationSettings() {
       return createServiceOperationSettings;
@@ -1063,8 +1061,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     }
 
     /** Returns the builder for the settings used for calls to deleteService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteServiceRequest, Empty, OperationMetadata>
         deleteServiceOperationSettings() {
       return deleteServiceOperationSettings;
@@ -1076,8 +1072,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     }
 
     /** Returns the builder for the settings used for calls to undeleteService. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UndeleteServiceRequest, UndeleteServiceResponse, OperationMetadata>
         undeleteServiceOperationSettings() {
@@ -1109,8 +1103,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     }
 
     /** Returns the builder for the settings used for calls to submitConfigSource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SubmitConfigSourceRequest, SubmitConfigSourceResponse, OperationMetadata>
         submitConfigSourceOperationSettings() {
@@ -1139,8 +1131,6 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     }
 
     /** Returns the builder for the settings used for calls to createServiceRollout. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateServiceRolloutRequest, Rollout, OperationMetadata>
         createServiceRolloutOperationSettings() {
       return createServiceRolloutOperationSettings;

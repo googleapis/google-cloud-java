@@ -199,7 +199,6 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -241,7 +240,6 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
       return new Builder(CatalogServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CatalogServiceStubSettings.newHttpJsonBuilder());
     }

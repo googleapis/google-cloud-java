@@ -1466,8 +1466,6 @@ public class CertificateAuthorityServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to activateCertificateAuthority. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ActivateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         activateCertificateAuthorityOperationSettings() {
@@ -1481,8 +1479,6 @@ public class CertificateAuthorityServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createCertificateAuthority. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         createCertificateAuthorityOperationSettings() {
@@ -1496,8 +1492,6 @@ public class CertificateAuthorityServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to disableCertificateAuthority. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DisableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         disableCertificateAuthorityOperationSettings() {
@@ -1511,8 +1505,6 @@ public class CertificateAuthorityServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to enableCertificateAuthority. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             EnableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         enableCertificateAuthorityOperationSettings() {
@@ -1548,8 +1540,6 @@ public class CertificateAuthorityServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to restoreCertificateAuthority. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RestoreCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         restoreCertificateAuthorityOperationSettings() {
@@ -1567,8 +1557,6 @@ public class CertificateAuthorityServiceStubSettings
     /**
      * Returns the builder for the settings used for calls to scheduleDeleteCertificateAuthority.
      */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ScheduleDeleteCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         scheduleDeleteCertificateAuthorityOperationSettings() {
@@ -1582,8 +1570,6 @@ public class CertificateAuthorityServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateAuthority. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
         updateCertificateAuthorityOperationSettings() {
@@ -1612,8 +1598,6 @@ public class CertificateAuthorityServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCertificateRevocationList. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
         updateCertificateRevocationListOperationSettings() {

@@ -16,7 +16,6 @@
 
 package com.google.cloud.resourcesettings.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,17 +96,14 @@ public class SettingName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectNumberSettingNameBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderSettingNameBuilder newFolderSettingNameBuilder() {
     return new FolderSettingNameBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationSettingNameBuilder newOrganizationSettingNameBuilder() {
     return new OrganizationSettingNameBuilder();
   }
@@ -120,18 +116,15 @@ public class SettingName implements ResourceName {
     return newBuilder().setProjectNumber(projectNumber).setSettingName(settingName).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingName ofProjectNumberSettingNameName(
       String projectNumber, String settingName) {
     return newBuilder().setProjectNumber(projectNumber).setSettingName(settingName).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingName ofFolderSettingNameName(String folder, String settingName) {
     return newFolderSettingNameBuilder().setFolder(folder).setSettingName(settingName).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SettingName ofOrganizationSettingNameName(String organization, String settingName) {
     return newOrganizationSettingNameBuilder()
         .setOrganization(organization)
@@ -147,7 +140,6 @@ public class SettingName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectNumberSettingNameName(
       String projectNumber, String settingName) {
     return newBuilder()
@@ -157,7 +149,6 @@ public class SettingName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderSettingNameName(String folder, String settingName) {
     return newFolderSettingNameBuilder()
         .setFolder(folder)
@@ -166,7 +157,6 @@ public class SettingName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationSettingNameName(String organization, String settingName) {
     return newOrganizationSettingNameBuilder()
         .setOrganization(organization)
@@ -324,7 +314,6 @@ public class SettingName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/settings/{setting_name}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderSettingNameBuilder {
     private String folder;
     private String settingName;
@@ -355,7 +344,6 @@ public class SettingName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/settings/{setting_name}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationSettingNameBuilder {
     private String organization;
     private String settingName;

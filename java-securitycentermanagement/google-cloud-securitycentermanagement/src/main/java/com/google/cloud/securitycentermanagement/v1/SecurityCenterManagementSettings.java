@@ -356,7 +356,6 @@ public class SecurityCenterManagementSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -399,7 +398,6 @@ public class SecurityCenterManagementSettings
       return new Builder(SecurityCenterManagementStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SecurityCenterManagementStubSettings.newHttpJsonBuilder());
     }

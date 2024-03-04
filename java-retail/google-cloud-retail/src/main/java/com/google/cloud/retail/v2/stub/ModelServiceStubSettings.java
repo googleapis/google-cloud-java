@@ -608,8 +608,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateModelRequest, Model, CreateModelMetadata>
         createModelOperationSettings() {
       return createModelOperationSettings;
@@ -652,8 +650,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to tuneModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<TuneModelRequest, TuneModelResponse, TuneModelMetadata>
         tuneModelOperationSettings() {
       return tuneModelOperationSettings;

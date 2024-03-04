@@ -919,8 +919,6 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to importProducts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportProductsRequest, ImportProductsResponse, ImportMetadata>
         importProductsOperationSettings() {
@@ -933,8 +931,6 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to setInventory. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
         setInventoryOperationSettings() {
@@ -948,8 +944,6 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to addFulfillmentPlaces. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
         addFulfillmentPlacesOperationSettings() {
@@ -963,8 +957,6 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to removeFulfillmentPlaces. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RemoveFulfillmentPlacesRequest,
             RemoveFulfillmentPlacesResponse,
@@ -980,8 +972,6 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to addLocalInventories. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AddLocalInventoriesRequest, AddLocalInventoriesResponse, AddLocalInventoriesMetadata>
         addLocalInventoriesOperationSettings() {
@@ -995,8 +985,6 @@ public class ProductServiceStubSettings extends StubSettings<ProductServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to removeLocalInventories. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RemoveLocalInventoriesRequest,
             RemoveLocalInventoriesResponse,

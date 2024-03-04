@@ -139,7 +139,6 @@ public class CssProductsServiceSettings extends ClientSettings<CssProductsServic
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -181,7 +180,6 @@ public class CssProductsServiceSettings extends ClientSettings<CssProductsServic
       return new Builder(CssProductsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CssProductsServiceStubSettings.newHttpJsonBuilder());
     }

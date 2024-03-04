@@ -147,7 +147,6 @@ public class LookupServiceSettings extends ClientSettings<LookupServiceSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -189,7 +188,6 @@ public class LookupServiceSettings extends ClientSettings<LookupServiceSettings>
       return new Builder(LookupServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(LookupServiceStubSettings.newHttpJsonBuilder());
     }

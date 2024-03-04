@@ -245,7 +245,6 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -287,7 +286,6 @@ public class ProductServiceSettings extends ClientSettings<ProductServiceSetting
       return new Builder(ProductServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ProductServiceStubSettings.newHttpJsonBuilder());
     }

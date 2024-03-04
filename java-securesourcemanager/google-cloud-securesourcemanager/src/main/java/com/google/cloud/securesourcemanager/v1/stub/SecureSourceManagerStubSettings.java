@@ -980,8 +980,6 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -993,8 +991,6 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
@@ -1019,8 +1015,6 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     }
 
     /** Returns the builder for the settings used for calls to createRepository. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRepositoryRequest, Repository, OperationMetadata>
         createRepositoryOperationSettings() {
       return createRepositoryOperationSettings;
@@ -1033,8 +1027,6 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     }
 
     /** Returns the builder for the settings used for calls to deleteRepository. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRepositoryRequest, Empty, OperationMetadata>
         deleteRepositoryOperationSettings() {
       return deleteRepositoryOperationSettings;

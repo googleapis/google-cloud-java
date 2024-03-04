@@ -135,7 +135,6 @@ public class TasksSettings extends ClientSettings<TasksSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -177,7 +176,6 @@ public class TasksSettings extends ClientSettings<TasksSettings> {
       return new Builder(TasksStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TasksStubSettings.newHttpJsonBuilder());
     }

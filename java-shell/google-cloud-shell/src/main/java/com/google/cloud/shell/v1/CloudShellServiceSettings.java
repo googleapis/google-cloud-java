@@ -178,7 +178,6 @@ public class CloudShellServiceSettings extends ClientSettings<CloudShellServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -220,7 +219,6 @@ public class CloudShellServiceSettings extends ClientSettings<CloudShellServiceS
       return new Builder(CloudShellServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(CloudShellServiceStubSettings.newHttpJsonBuilder());
     }

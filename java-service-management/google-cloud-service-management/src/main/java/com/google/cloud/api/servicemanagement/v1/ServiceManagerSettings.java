@@ -278,7 +278,6 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -320,7 +319,6 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
       return new Builder(ServiceManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ServiceManagerStubSettings.newHttpJsonBuilder());
     }

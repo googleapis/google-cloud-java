@@ -872,8 +872,6 @@ public class FoldersStubSettings extends StubSettings<FoldersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createFolder. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateFolderRequest, Folder, CreateFolderMetadata>
         createFolderOperationSettings() {
       return createFolderOperationSettings;
@@ -885,8 +883,6 @@ public class FoldersStubSettings extends StubSettings<FoldersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateFolder. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateFolderRequest, Folder, UpdateFolderMetadata>
         updateFolderOperationSettings() {
       return updateFolderOperationSettings;
@@ -898,8 +894,6 @@ public class FoldersStubSettings extends StubSettings<FoldersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to moveFolder. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<MoveFolderRequest, Folder, MoveFolderMetadata>
         moveFolderOperationSettings() {
       return moveFolderOperationSettings;
@@ -911,8 +905,6 @@ public class FoldersStubSettings extends StubSettings<FoldersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteFolder. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFolderRequest, Folder, DeleteFolderMetadata>
         deleteFolderOperationSettings() {
       return deleteFolderOperationSettings;
@@ -924,8 +916,6 @@ public class FoldersStubSettings extends StubSettings<FoldersStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeleteFolder. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeleteFolderRequest, Folder, UndeleteFolderMetadata>
         undeleteFolderOperationSettings() {
       return undeleteFolderOperationSettings;

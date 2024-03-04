@@ -504,8 +504,6 @@ public class TagHoldsStubSettings extends StubSettings<TagHoldsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createTagHold. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateTagHoldRequest, TagHold, CreateTagHoldMetadata>
         createTagHoldOperationSettings() {
       return createTagHoldOperationSettings;
@@ -517,8 +515,6 @@ public class TagHoldsStubSettings extends StubSettings<TagHoldsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteTagHold. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTagHoldRequest, Empty, DeleteTagHoldMetadata>
         deleteTagHoldOperationSettings() {
       return deleteTagHoldOperationSettings;

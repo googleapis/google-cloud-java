@@ -149,7 +149,6 @@ public class LocalInventoryServiceSettings extends ClientSettings<LocalInventory
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -192,7 +191,6 @@ public class LocalInventoryServiceSettings extends ClientSettings<LocalInventory
       return new Builder(LocalInventoryServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(LocalInventoryServiceStubSettings.newHttpJsonBuilder());
     }

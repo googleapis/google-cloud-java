@@ -150,7 +150,6 @@ public class AccountLabelsServiceSettings extends ClientSettings<AccountLabelsSe
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -193,7 +192,6 @@ public class AccountLabelsServiceSettings extends ClientSettings<AccountLabelsSe
       return new Builder(AccountLabelsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AccountLabelsServiceStubSettings.newHttpJsonBuilder());
     }

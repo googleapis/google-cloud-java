@@ -282,7 +282,6 @@ public class SecurityPostureSettings extends ClientSettings<SecurityPostureSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -324,7 +323,6 @@ public class SecurityPostureSettings extends ClientSettings<SecurityPostureSetti
       return new Builder(SecurityPostureStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SecurityPostureStubSettings.newHttpJsonBuilder());
     }

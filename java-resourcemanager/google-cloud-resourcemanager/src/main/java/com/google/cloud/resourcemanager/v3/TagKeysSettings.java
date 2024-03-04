@@ -197,7 +197,6 @@ public class TagKeysSettings extends ClientSettings<TagKeysSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -239,7 +238,6 @@ public class TagKeysSettings extends ClientSettings<TagKeysSettings> {
       return new Builder(TagKeysStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TagKeysStubSettings.newHttpJsonBuilder());
     }

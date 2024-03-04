@@ -254,7 +254,6 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -296,7 +295,6 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
       return new Builder(SecureSourceManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SecureSourceManagerStubSettings.newHttpJsonBuilder());
     }

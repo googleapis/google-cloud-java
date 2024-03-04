@@ -248,7 +248,6 @@ public class RegistrationServiceSettings extends ClientSettings<RegistrationServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -290,7 +289,6 @@ public class RegistrationServiceSettings extends ClientSettings<RegistrationServ
       return new Builder(RegistrationServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RegistrationServiceStubSettings.newHttpJsonBuilder());
     }
