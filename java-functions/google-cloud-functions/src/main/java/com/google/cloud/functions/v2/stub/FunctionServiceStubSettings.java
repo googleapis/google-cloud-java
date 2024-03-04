@@ -796,8 +796,6 @@ public class FunctionServiceStubSettings extends StubSettings<FunctionServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createFunction. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateFunctionRequest, Function, OperationMetadata>
         createFunctionOperationSettings() {
       return createFunctionOperationSettings;
@@ -809,8 +807,6 @@ public class FunctionServiceStubSettings extends StubSettings<FunctionServiceStu
     }
 
     /** Returns the builder for the settings used for calls to updateFunction. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateFunctionRequest, Function, OperationMetadata>
         updateFunctionOperationSettings() {
       return updateFunctionOperationSettings;
@@ -822,8 +818,6 @@ public class FunctionServiceStubSettings extends StubSettings<FunctionServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteFunction. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFunctionRequest, Empty, OperationMetadata>
         deleteFunctionOperationSettings() {
       return deleteFunctionOperationSettings;

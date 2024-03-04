@@ -16,7 +16,6 @@
 
 package com.google.cloud.essentialcontacts.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,17 +96,14 @@ public class ContactName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectContactBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderContactBuilder newFolderContactBuilder() {
     return new FolderContactBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationContactBuilder newOrganizationContactBuilder() {
     return new OrganizationContactBuilder();
   }
@@ -120,17 +116,14 @@ public class ContactName implements ResourceName {
     return newBuilder().setProject(project).setContact(contact).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContactName ofProjectContactName(String project, String contact) {
     return newBuilder().setProject(project).setContact(contact).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContactName ofFolderContactName(String folder, String contact) {
     return newFolderContactBuilder().setFolder(folder).setContact(contact).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ContactName ofOrganizationContactName(String organization, String contact) {
     return newOrganizationContactBuilder()
         .setOrganization(organization)
@@ -142,17 +135,14 @@ public class ContactName implements ResourceName {
     return newBuilder().setProject(project).setContact(contact).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectContactName(String project, String contact) {
     return newBuilder().setProject(project).setContact(contact).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderContactName(String folder, String contact) {
     return newFolderContactBuilder().setFolder(folder).setContact(contact).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationContactName(String organization, String contact) {
     return newOrganizationContactBuilder()
         .setOrganization(organization)
@@ -308,7 +298,6 @@ public class ContactName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/contacts/{contact}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderContactBuilder {
     private String folder;
     private String contact;
@@ -339,7 +328,6 @@ public class ContactName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/contacts/{contact}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationContactBuilder {
     private String organization;
     private String contact;

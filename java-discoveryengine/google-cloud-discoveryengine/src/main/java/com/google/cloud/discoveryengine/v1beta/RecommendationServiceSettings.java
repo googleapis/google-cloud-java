@@ -131,7 +131,6 @@ public class RecommendationServiceSettings extends ClientSettings<Recommendation
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -174,7 +173,6 @@ public class RecommendationServiceSettings extends ClientSettings<Recommendation
       return new Builder(RecommendationServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RecommendationServiceStubSettings.newHttpJsonBuilder());
     }

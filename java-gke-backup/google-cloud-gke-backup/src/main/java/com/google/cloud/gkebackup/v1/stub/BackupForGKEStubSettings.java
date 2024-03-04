@@ -1803,8 +1803,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createBackupPlan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupPlanRequest, BackupPlan, OperationMetadata>
         createBackupPlanOperationSettings() {
       return createBackupPlanOperationSettings;
@@ -1829,8 +1827,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateBackupPlan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupPlanRequest, BackupPlan, OperationMetadata>
         updateBackupPlanOperationSettings() {
       return updateBackupPlanOperationSettings;
@@ -1843,8 +1839,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteBackupPlan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupPlanRequest, Empty, OperationMetadata>
         deleteBackupPlanOperationSettings() {
       return deleteBackupPlanOperationSettings;
@@ -1856,8 +1850,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
         createBackupOperationSettings() {
       return createBackupOperationSettings;
@@ -1881,8 +1873,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return updateBackupOperationSettings;
@@ -1894,8 +1884,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return deleteBackupOperationSettings;
@@ -1921,8 +1909,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createRestorePlan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRestorePlanRequest, RestorePlan, OperationMetadata>
         createRestorePlanOperationSettings() {
       return createRestorePlanOperationSettings;
@@ -1947,8 +1933,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateRestorePlan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRestorePlanRequest, RestorePlan, OperationMetadata>
         updateRestorePlanOperationSettings() {
       return updateRestorePlanOperationSettings;
@@ -1961,8 +1945,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteRestorePlan. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRestorePlanRequest, Empty, OperationMetadata>
         deleteRestorePlanOperationSettings() {
       return deleteRestorePlanOperationSettings;
@@ -1974,8 +1956,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createRestore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRestoreRequest, Restore, OperationMetadata>
         createRestoreOperationSettings() {
       return createRestoreOperationSettings;
@@ -1999,8 +1979,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateRestore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRestoreRequest, Restore, OperationMetadata>
         updateRestoreOperationSettings() {
       return updateRestoreOperationSettings;
@@ -2012,8 +1990,6 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteRestore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRestoreRequest, Empty, OperationMetadata>
         deleteRestoreOperationSettings() {
       return deleteRestoreOperationSettings;

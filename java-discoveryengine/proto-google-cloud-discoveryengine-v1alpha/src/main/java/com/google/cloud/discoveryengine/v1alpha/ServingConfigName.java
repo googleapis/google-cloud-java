@@ -16,7 +16,6 @@
 
 package com.google.cloud.discoveryengine.v1alpha;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -118,18 +117,15 @@ public class ServingConfigName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationDataStoreServingConfigBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationCollectionDataStoreServingConfigBuilder
       newProjectLocationCollectionDataStoreServingConfigBuilder() {
     return new ProjectLocationCollectionDataStoreServingConfigBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationCollectionEngineServingConfigBuilder
       newProjectLocationCollectionEngineServingConfigBuilder() {
     return new ProjectLocationCollectionEngineServingConfigBuilder();
@@ -149,7 +145,6 @@ public class ServingConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServingConfigName ofProjectLocationDataStoreServingConfigName(
       String project, String location, String dataStore, String servingConfig) {
     return newBuilder()
@@ -160,7 +155,6 @@ public class ServingConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServingConfigName ofProjectLocationCollectionDataStoreServingConfigName(
       String project, String location, String collection, String dataStore, String servingConfig) {
     return newProjectLocationCollectionDataStoreServingConfigBuilder()
@@ -172,7 +166,6 @@ public class ServingConfigName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServingConfigName ofProjectLocationCollectionEngineServingConfigName(
       String project, String location, String collection, String engine, String servingConfig) {
     return newProjectLocationCollectionEngineServingConfigBuilder()
@@ -195,7 +188,6 @@ public class ServingConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationDataStoreServingConfigName(
       String project, String location, String dataStore, String servingConfig) {
     return newBuilder()
@@ -207,7 +199,6 @@ public class ServingConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationCollectionDataStoreServingConfigName(
       String project, String location, String collection, String dataStore, String servingConfig) {
     return newProjectLocationCollectionDataStoreServingConfigBuilder()
@@ -220,7 +211,6 @@ public class ServingConfigName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationCollectionEngineServingConfigName(
       String project, String location, String collection, String engine, String servingConfig) {
     return newProjectLocationCollectionEngineServingConfigBuilder()
@@ -438,7 +428,6 @@ public class ServingConfigName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationCollectionDataStoreServingConfigBuilder {
     private String project;
     private String location;
@@ -503,7 +492,6 @@ public class ServingConfigName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationCollectionEngineServingConfigBuilder {
     private String project;
     private String location;

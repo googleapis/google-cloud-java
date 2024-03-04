@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class DocumentName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectKnowledgeBaseDocumentBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationKnowledgeBaseDocumentBuilder
       newProjectLocationKnowledgeBaseDocumentBuilder() {
     return new ProjectLocationKnowledgeBaseDocumentBuilder();
@@ -112,7 +109,6 @@ public class DocumentName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DocumentName ofProjectKnowledgeBaseDocumentName(
       String project, String knowledgeBase, String document) {
     return newBuilder()
@@ -122,7 +118,6 @@ public class DocumentName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static DocumentName ofProjectLocationKnowledgeBaseDocumentName(
       String project, String location, String knowledgeBase, String document) {
     return newProjectLocationKnowledgeBaseDocumentBuilder()
@@ -142,7 +137,6 @@ public class DocumentName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectKnowledgeBaseDocumentName(
       String project, String knowledgeBase, String document) {
     return newBuilder()
@@ -153,7 +147,6 @@ public class DocumentName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationKnowledgeBaseDocumentName(
       String project, String location, String knowledgeBase, String document) {
     return newProjectLocationKnowledgeBaseDocumentBuilder()
@@ -328,7 +321,6 @@ public class DocumentName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/knowledgeBases/{knowledge_base}/documents/{document}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationKnowledgeBaseDocumentBuilder {
     private String project;
     private String location;

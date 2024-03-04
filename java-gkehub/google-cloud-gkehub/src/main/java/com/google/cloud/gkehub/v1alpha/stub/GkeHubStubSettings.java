@@ -599,8 +599,6 @@ public class GkeHubStubSettings extends StubSettings<GkeHubStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateFeatureRequest, Feature, OperationMetadata>
         createFeatureOperationSettings() {
       return createFeatureOperationSettings;
@@ -612,8 +610,6 @@ public class GkeHubStubSettings extends StubSettings<GkeHubStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFeatureRequest, Empty, OperationMetadata>
         deleteFeatureOperationSettings() {
       return deleteFeatureOperationSettings;
@@ -625,8 +621,6 @@ public class GkeHubStubSettings extends StubSettings<GkeHubStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateFeatureRequest, Feature, OperationMetadata>
         updateFeatureOperationSettings() {
       return updateFeatureOperationSettings;

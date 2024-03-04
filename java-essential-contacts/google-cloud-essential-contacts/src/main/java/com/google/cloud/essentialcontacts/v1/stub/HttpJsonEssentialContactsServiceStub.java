@@ -19,7 +19,6 @@ package com.google.cloud.essentialcontacts.v1.stub;
 import static com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient.ComputeContactsPagedResponse;
 import static com.google.cloud.essentialcontacts.v1.EssentialContactsServiceClient.ListContactsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -59,7 +58,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonEssentialContactsServiceStub extends EssentialContactsServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 

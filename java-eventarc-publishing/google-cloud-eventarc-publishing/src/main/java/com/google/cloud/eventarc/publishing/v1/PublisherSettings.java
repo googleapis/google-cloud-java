@@ -134,7 +134,6 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -176,7 +175,6 @@ public class PublisherSettings extends ClientSettings<PublisherSettings> {
       return new Builder(PublisherStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PublisherStubSettings.newHttpJsonBuilder());
     }

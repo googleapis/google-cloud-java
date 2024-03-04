@@ -356,7 +356,6 @@ public class EdgeNetworkSettings extends ClientSettings<EdgeNetworkSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -398,7 +397,6 @@ public class EdgeNetworkSettings extends ClientSettings<EdgeNetworkSettings> {
       return new Builder(EdgeNetworkStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EdgeNetworkStubSettings.newHttpJsonBuilder());
     }

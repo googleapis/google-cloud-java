@@ -173,7 +173,6 @@ public class ContextsSettings extends ClientSettings<ContextsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -215,7 +214,6 @@ public class ContextsSettings extends ClientSettings<ContextsSettings> {
       return new Builder(ContextsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ContextsStubSettings.newHttpJsonBuilder());
     }

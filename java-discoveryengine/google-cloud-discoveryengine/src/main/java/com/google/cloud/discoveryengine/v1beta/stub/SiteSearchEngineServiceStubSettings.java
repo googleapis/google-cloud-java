@@ -1088,8 +1088,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createTargetSite. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTargetSiteRequest, TargetSite, CreateTargetSiteMetadata>
         createTargetSiteOperationSettings() {
@@ -1103,8 +1101,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to batchCreateTargetSites. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchCreateTargetSitesRequest,
             BatchCreateTargetSitesResponse,
@@ -1125,8 +1121,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateTargetSite. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateTargetSiteRequest, TargetSite, UpdateTargetSiteMetadata>
         updateTargetSiteOperationSettings() {
@@ -1140,8 +1134,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteTargetSite. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTargetSiteRequest, Empty, DeleteTargetSiteMetadata>
         deleteTargetSiteOperationSettings() {
       return deleteTargetSiteOperationSettings;
@@ -1161,8 +1153,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to enableAdvancedSiteSearch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             EnableAdvancedSiteSearchRequest,
             EnableAdvancedSiteSearchResponse,
@@ -1178,8 +1168,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to disableAdvancedSiteSearch. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DisableAdvancedSiteSearchRequest,
             DisableAdvancedSiteSearchResponse,
@@ -1194,8 +1182,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to recrawlUris. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RecrawlUrisRequest, RecrawlUrisResponse, RecrawlUrisMetadata>
         recrawlUrisOperationSettings() {
@@ -1209,8 +1195,6 @@ public class SiteSearchEngineServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to batchVerifyTargetSites. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchVerifyTargetSitesRequest,
             BatchVerifyTargetSitesResponse,

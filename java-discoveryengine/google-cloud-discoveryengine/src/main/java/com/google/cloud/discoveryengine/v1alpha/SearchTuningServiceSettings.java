@@ -141,7 +141,6 @@ public class SearchTuningServiceSettings extends ClientSettings<SearchTuningServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -183,7 +182,6 @@ public class SearchTuningServiceSettings extends ClientSettings<SearchTuningServ
       return new Builder(SearchTuningServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SearchTuningServiceStubSettings.newHttpJsonBuilder());
     }

@@ -1393,8 +1393,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createTrigger. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateTriggerRequest, Trigger, OperationMetadata>
         createTriggerOperationSettings() {
       return createTriggerOperationSettings;
@@ -1406,8 +1404,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateTrigger. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateTriggerRequest, Trigger, OperationMetadata>
         updateTriggerOperationSettings() {
       return updateTriggerOperationSettings;
@@ -1419,8 +1415,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteTrigger. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTriggerRequest, Trigger, OperationMetadata>
         deleteTriggerOperationSettings() {
       return deleteTriggerOperationSettings;
@@ -1444,8 +1438,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateChannelRequest, Channel, OperationMetadata>
         createChannelOperationSettings() {
       return createChannelOperationSettings;
@@ -1457,8 +1449,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateChannelRequest, Channel, OperationMetadata>
         updateChannelOperationSettings() {
       return updateChannelOperationSettings;
@@ -1470,8 +1460,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteChannel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteChannelRequest, Channel, OperationMetadata>
         deleteChannelOperationSettings() {
       return deleteChannelOperationSettings;
@@ -1511,8 +1499,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createChannelConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateChannelConnectionRequest, ChannelConnection, OperationMetadata>
         createChannelConnectionOperationSettings() {
@@ -1526,8 +1512,6 @@ public class EventarcStubSettings extends StubSettings<EventarcStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteChannelConnection. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteChannelConnectionRequest, ChannelConnection, OperationMetadata>
         deleteChannelConnectionOperationSettings() {

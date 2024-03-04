@@ -16,7 +16,6 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -109,23 +108,19 @@ public class InspectTemplateName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationInspectTemplateBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectInspectTemplateBuilder newProjectInspectTemplateBuilder() {
     return new ProjectInspectTemplateBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationInspectTemplateBuilder
       newOrganizationLocationInspectTemplateBuilder() {
     return new OrganizationLocationInspectTemplateBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationInspectTemplateBuilder newProjectLocationInspectTemplateBuilder() {
     return new ProjectLocationInspectTemplateBuilder();
   }
@@ -138,13 +133,11 @@ public class InspectTemplateName implements ResourceName {
     return newBuilder().setOrganization(organization).setInspectTemplate(inspectTemplate).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InspectTemplateName ofOrganizationInspectTemplateName(
       String organization, String inspectTemplate) {
     return newBuilder().setOrganization(organization).setInspectTemplate(inspectTemplate).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InspectTemplateName ofProjectInspectTemplateName(
       String project, String inspectTemplate) {
     return newProjectInspectTemplateBuilder()
@@ -153,7 +146,6 @@ public class InspectTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InspectTemplateName ofOrganizationLocationInspectTemplateName(
       String organization, String location, String inspectTemplate) {
     return newOrganizationLocationInspectTemplateBuilder()
@@ -163,7 +155,6 @@ public class InspectTemplateName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static InspectTemplateName ofProjectLocationInspectTemplateName(
       String project, String location, String inspectTemplate) {
     return newProjectLocationInspectTemplateBuilder()
@@ -181,7 +172,6 @@ public class InspectTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationInspectTemplateName(
       String organization, String inspectTemplate) {
     return newBuilder()
@@ -191,7 +181,6 @@ public class InspectTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectInspectTemplateName(String project, String inspectTemplate) {
     return newProjectInspectTemplateBuilder()
         .setProject(project)
@@ -200,7 +189,6 @@ public class InspectTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationInspectTemplateName(
       String organization, String location, String inspectTemplate) {
     return newOrganizationLocationInspectTemplateBuilder()
@@ -211,7 +199,6 @@ public class InspectTemplateName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationInspectTemplateName(
       String project, String location, String inspectTemplate) {
     return newProjectLocationInspectTemplateBuilder()
@@ -357,7 +344,6 @@ public class InspectTemplateName implements ResourceName {
   }
 
   /** Builder for projects/{project}/inspectTemplates/{inspect_template}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectInspectTemplateBuilder {
     private String project;
     private String inspectTemplate;
@@ -391,7 +377,6 @@ public class InspectTemplateName implements ResourceName {
    * Builder for
    * organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationInspectTemplateBuilder {
     private String organization;
     private String location;
@@ -432,7 +417,6 @@ public class InspectTemplateName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/inspectTemplates/{inspect_template}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationInspectTemplateBuilder {
     private String project;
     private String location;

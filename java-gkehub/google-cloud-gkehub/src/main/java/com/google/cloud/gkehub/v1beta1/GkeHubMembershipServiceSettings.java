@@ -237,7 +237,6 @@ public class GkeHubMembershipServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -280,7 +279,6 @@ public class GkeHubMembershipServiceSettings
       return new Builder(GkeHubMembershipServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(GkeHubMembershipServiceStubSettings.newHttpJsonBuilder());
     }

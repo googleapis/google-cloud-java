@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class VersionName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectVersionBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationVersionBuilder newProjectLocationVersionBuilder() {
     return new ProjectLocationVersionBuilder();
   }
@@ -98,12 +95,10 @@ public class VersionName implements ResourceName {
     return newBuilder().setProject(project).setVersion(version).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static VersionName ofProjectVersionName(String project, String version) {
     return newBuilder().setProject(project).setVersion(version).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static VersionName ofProjectLocationVersionName(
       String project, String location, String version) {
     return newProjectLocationVersionBuilder()
@@ -117,12 +112,10 @@ public class VersionName implements ResourceName {
     return newBuilder().setProject(project).setVersion(version).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectVersionName(String project, String version) {
     return newBuilder().setProject(project).setVersion(version).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationVersionName(
       String project, String location, String version) {
     return newProjectLocationVersionBuilder()
@@ -271,7 +264,6 @@ public class VersionName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/agent/versions/{version}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationVersionBuilder {
     private String project;
     private String location;

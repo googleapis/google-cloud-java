@@ -1757,8 +1757,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createNetwork. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateNetworkRequest, Network, OperationMetadata>
         createNetworkOperationSettings() {
       return createNetworkOperationSettings;
@@ -1770,8 +1768,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteNetwork. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNetworkRequest, Empty, OperationMetadata>
         deleteNetworkOperationSettings() {
       return deleteNetworkOperationSettings;
@@ -1795,8 +1791,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createSubnet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSubnetRequest, Subnet, OperationMetadata>
         createSubnetOperationSettings() {
       return createSubnetOperationSettings;
@@ -1808,8 +1802,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateSubnet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSubnetRequest, Subnet, OperationMetadata>
         updateSubnetOperationSettings() {
       return updateSubnetOperationSettings;
@@ -1821,8 +1813,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteSubnet. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSubnetRequest, Empty, OperationMetadata>
         deleteSubnetOperationSettings() {
       return deleteSubnetOperationSettings;
@@ -1869,8 +1859,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createInterconnectAttachment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateInterconnectAttachmentRequest, InterconnectAttachment, OperationMetadata>
         createInterconnectAttachmentOperationSettings() {
@@ -1884,8 +1872,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteInterconnectAttachment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteInterconnectAttachmentRequest, Empty, OperationMetadata>
         deleteInterconnectAttachmentOperationSettings() {
@@ -1916,8 +1902,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to createRouter. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRouterRequest, Router, OperationMetadata>
         createRouterOperationSettings() {
       return createRouterOperationSettings;
@@ -1929,8 +1913,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to updateRouter. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateRouterRequest, Router, OperationMetadata>
         updateRouterOperationSettings() {
       return updateRouterOperationSettings;
@@ -1942,8 +1924,6 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     }
 
     /** Returns the builder for the settings used for calls to deleteRouter. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRouterRequest, Empty, OperationMetadata>
         deleteRouterOperationSettings() {
       return deleteRouterOperationSettings;

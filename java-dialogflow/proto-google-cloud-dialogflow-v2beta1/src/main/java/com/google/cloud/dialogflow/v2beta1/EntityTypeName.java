@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class EntityTypeName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectEntityTypeBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationEntityTypeBuilder newProjectLocationEntityTypeBuilder() {
     return new ProjectLocationEntityTypeBuilder();
   }
@@ -98,12 +95,10 @@ public class EntityTypeName implements ResourceName {
     return newBuilder().setProject(project).setEntityType(entityType).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EntityTypeName ofProjectEntityTypeName(String project, String entityType) {
     return newBuilder().setProject(project).setEntityType(entityType).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EntityTypeName ofProjectLocationEntityTypeName(
       String project, String location, String entityType) {
     return newProjectLocationEntityTypeBuilder()
@@ -117,12 +112,10 @@ public class EntityTypeName implements ResourceName {
     return newBuilder().setProject(project).setEntityType(entityType).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectEntityTypeName(String project, String entityType) {
     return newBuilder().setProject(project).setEntityType(entityType).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEntityTypeName(
       String project, String location, String entityType) {
     return newProjectLocationEntityTypeBuilder()
@@ -271,7 +264,6 @@ public class EntityTypeName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/agent/entityTypes/{entity_type}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEntityTypeBuilder {
     private String project;
     private String location;

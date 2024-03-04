@@ -399,7 +399,6 @@ public class DocumentProcessorServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -442,7 +441,6 @@ public class DocumentProcessorServiceSettings
       return new Builder(DocumentProcessorServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DocumentProcessorServiceStubSettings.newHttpJsonBuilder());
     }

@@ -173,7 +173,6 @@ public class KnowledgeBasesSettings extends ClientSettings<KnowledgeBasesSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -215,7 +214,6 @@ public class KnowledgeBasesSettings extends ClientSettings<KnowledgeBasesSetting
       return new Builder(KnowledgeBasesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(KnowledgeBasesStubSettings.newHttpJsonBuilder());
     }

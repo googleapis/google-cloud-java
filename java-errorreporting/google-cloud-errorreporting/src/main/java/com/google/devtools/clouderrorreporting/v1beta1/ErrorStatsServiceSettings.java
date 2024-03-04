@@ -147,7 +147,6 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -189,7 +188,6 @@ public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceS
       return new Builder(ErrorStatsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ErrorStatsServiceStubSettings.newHttpJsonBuilder());
     }

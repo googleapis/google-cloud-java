@@ -169,7 +169,6 @@ public class ConversationalSearchServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -212,7 +211,6 @@ public class ConversationalSearchServiceSettings
       return new Builder(ConversationalSearchServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ConversationalSearchServiceStubSettings.newHttpJsonBuilder());
     }

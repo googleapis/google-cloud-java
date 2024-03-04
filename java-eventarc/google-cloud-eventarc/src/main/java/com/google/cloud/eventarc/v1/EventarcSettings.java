@@ -316,7 +316,6 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -358,7 +357,6 @@ public class EventarcSettings extends ClientSettings<EventarcSettings> {
       return new Builder(EventarcStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EventarcStubSettings.newHttpJsonBuilder());
     }

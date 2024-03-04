@@ -170,7 +170,6 @@ public class DataStoreServiceSettings extends ClientSettings<DataStoreServiceSet
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -212,7 +211,6 @@ public class DataStoreServiceSettings extends ClientSettings<DataStoreServiceSet
       return new Builder(DataStoreServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DataStoreServiceStubSettings.newHttpJsonBuilder());
     }

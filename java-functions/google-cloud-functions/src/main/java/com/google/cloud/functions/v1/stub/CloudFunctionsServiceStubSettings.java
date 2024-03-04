@@ -828,8 +828,6 @@ public class CloudFunctionsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createFunction. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateFunctionRequest, CloudFunction, OperationMetadataV1>
         createFunctionOperationSettings() {
       return createFunctionOperationSettings;
@@ -841,8 +839,6 @@ public class CloudFunctionsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateFunction. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateFunctionRequest, CloudFunction, OperationMetadataV1>
         updateFunctionOperationSettings() {
       return updateFunctionOperationSettings;
@@ -854,8 +850,6 @@ public class CloudFunctionsServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteFunction. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFunctionRequest, Empty, OperationMetadataV1>
         deleteFunctionOperationSettings() {
       return deleteFunctionOperationSettings;

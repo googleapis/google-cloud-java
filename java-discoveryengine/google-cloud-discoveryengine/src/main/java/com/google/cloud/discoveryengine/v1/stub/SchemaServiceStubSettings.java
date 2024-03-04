@@ -603,8 +603,6 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to createSchema. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSchemaRequest, Schema, CreateSchemaMetadata>
         createSchemaOperationSettings() {
       return createSchemaOperationSettings;
@@ -616,8 +614,6 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateSchema. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateSchemaRequest, Schema, UpdateSchemaMetadata>
         updateSchemaOperationSettings() {
       return updateSchemaOperationSettings;
@@ -629,8 +625,6 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteSchema. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSchemaRequest, Empty, DeleteSchemaMetadata>
         deleteSchemaOperationSettings() {
       return deleteSchemaOperationSettings;

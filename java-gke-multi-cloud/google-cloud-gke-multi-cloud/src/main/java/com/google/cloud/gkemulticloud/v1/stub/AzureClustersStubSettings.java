@@ -1245,8 +1245,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to createAzureClient. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAzureClientRequest, AzureClient, OperationMetadata>
         createAzureClientOperationSettings() {
       return createAzureClientOperationSettings;
@@ -1271,8 +1269,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteAzureClient. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAzureClientRequest, Empty, OperationMetadata>
         deleteAzureClientOperationSettings() {
       return deleteAzureClientOperationSettings;
@@ -1285,8 +1281,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to createAzureCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateAzureClusterRequest, AzureCluster, OperationMetadata>
         createAzureClusterOperationSettings() {
       return createAzureClusterOperationSettings;
@@ -1299,8 +1293,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateAzureCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateAzureClusterRequest, AzureCluster, OperationMetadata>
         updateAzureClusterOperationSettings() {
       return updateAzureClusterOperationSettings;
@@ -1326,8 +1318,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteAzureCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAzureClusterRequest, Empty, OperationMetadata>
         deleteAzureClusterOperationSettings() {
       return deleteAzureClusterOperationSettings;
@@ -1354,8 +1344,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to createAzureNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateAzureNodePoolRequest, AzureNodePool, OperationMetadata>
         createAzureNodePoolOperationSettings() {
@@ -1369,8 +1357,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to updateAzureNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAzureNodePoolRequest, AzureNodePool, OperationMetadata>
         updateAzureNodePoolOperationSettings() {
@@ -1397,8 +1383,6 @@ public class AzureClustersStubSettings extends StubSettings<AzureClustersStubSet
     }
 
     /** Returns the builder for the settings used for calls to deleteAzureNodePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteAzureNodePoolRequest, Empty, OperationMetadata>
         deleteAzureNodePoolOperationSettings() {
       return deleteAzureNodePoolOperationSettings;

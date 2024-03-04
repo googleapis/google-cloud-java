@@ -177,7 +177,6 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -219,7 +218,6 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
       return new Builder(SessionEntityTypesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SessionEntityTypesStubSettings.newHttpJsonBuilder());
     }

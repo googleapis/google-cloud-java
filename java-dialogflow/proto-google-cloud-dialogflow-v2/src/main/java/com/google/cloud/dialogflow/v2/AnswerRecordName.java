@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class AnswerRecordName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectAnswerRecordBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationAnswerRecordBuilder newProjectLocationAnswerRecordBuilder() {
     return new ProjectLocationAnswerRecordBuilder();
   }
@@ -98,12 +95,10 @@ public class AnswerRecordName implements ResourceName {
     return newBuilder().setProject(project).setAnswerRecord(answerRecord).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AnswerRecordName ofProjectAnswerRecordName(String project, String answerRecord) {
     return newBuilder().setProject(project).setAnswerRecord(answerRecord).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AnswerRecordName ofProjectLocationAnswerRecordName(
       String project, String location, String answerRecord) {
     return newProjectLocationAnswerRecordBuilder()
@@ -117,12 +112,10 @@ public class AnswerRecordName implements ResourceName {
     return newBuilder().setProject(project).setAnswerRecord(answerRecord).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectAnswerRecordName(String project, String answerRecord) {
     return newBuilder().setProject(project).setAnswerRecord(answerRecord).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationAnswerRecordName(
       String project, String location, String answerRecord) {
     return newProjectLocationAnswerRecordBuilder()
@@ -271,7 +264,6 @@ public class AnswerRecordName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/answerRecords/{answer_record}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationAnswerRecordBuilder {
     private String project;
     private String location;

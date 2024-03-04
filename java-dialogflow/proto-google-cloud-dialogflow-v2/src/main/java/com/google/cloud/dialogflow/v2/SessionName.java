@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -120,22 +119,18 @@ public class SessionName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectSessionBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectEnvironmentUserSessionBuilder newProjectEnvironmentUserSessionBuilder() {
     return new ProjectEnvironmentUserSessionBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationSessionBuilder newProjectLocationSessionBuilder() {
     return new ProjectLocationSessionBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationEnvironmentUserSessionBuilder
       newProjectLocationEnvironmentUserSessionBuilder() {
     return new ProjectLocationEnvironmentUserSessionBuilder();
@@ -149,12 +144,10 @@ public class SessionName implements ResourceName {
     return newBuilder().setProject(project).setSession(session).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionName ofProjectSessionName(String project, String session) {
     return newBuilder().setProject(project).setSession(session).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionName ofProjectEnvironmentUserSessionName(
       String project, String environment, String user, String session) {
     return newProjectEnvironmentUserSessionBuilder()
@@ -165,7 +158,6 @@ public class SessionName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionName ofProjectLocationSessionName(
       String project, String location, String session) {
     return newProjectLocationSessionBuilder()
@@ -175,7 +167,6 @@ public class SessionName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionName ofProjectLocationEnvironmentUserSessionName(
       String project, String location, String environment, String user, String session) {
     return newProjectLocationEnvironmentUserSessionBuilder()
@@ -191,12 +182,10 @@ public class SessionName implements ResourceName {
     return newBuilder().setProject(project).setSession(session).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectSessionName(String project, String session) {
     return newBuilder().setProject(project).setSession(session).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectEnvironmentUserSessionName(
       String project, String environment, String user, String session) {
     return newProjectEnvironmentUserSessionBuilder()
@@ -208,7 +197,6 @@ public class SessionName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationSessionName(
       String project, String location, String session) {
     return newProjectLocationSessionBuilder()
@@ -219,7 +207,6 @@ public class SessionName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEnvironmentUserSessionName(
       String project, String location, String environment, String user, String session) {
     return newProjectLocationEnvironmentUserSessionBuilder()
@@ -403,7 +390,6 @@ public class SessionName implements ResourceName {
    * Builder for
    * projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectEnvironmentUserSessionBuilder {
     private String project;
     private String environment;
@@ -454,7 +440,6 @@ public class SessionName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/agent/sessions/{session}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationSessionBuilder {
     private String project;
     private String location;
@@ -498,7 +483,6 @@ public class SessionName implements ResourceName {
    * Builder for
    * projects/{project}/locations/{location}/agent/environments/{environment}/users/{user}/sessions/{session}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationEnvironmentUserSessionBuilder {
     private String project;
     private String location;

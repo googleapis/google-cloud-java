@@ -641,8 +641,6 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     }
 
     /** Returns the builder for the settings used for calls to importDocuments. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
         importDocumentsOperationSettings() {
@@ -655,8 +653,6 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     }
 
     /** Returns the builder for the settings used for calls to purgeDocuments. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
         purgeDocumentsOperationSettings() {

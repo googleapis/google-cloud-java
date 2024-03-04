@@ -229,7 +229,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -271,7 +270,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
       return new Builder(EntityTypesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EntityTypesStubSettings.newHttpJsonBuilder());
     }
