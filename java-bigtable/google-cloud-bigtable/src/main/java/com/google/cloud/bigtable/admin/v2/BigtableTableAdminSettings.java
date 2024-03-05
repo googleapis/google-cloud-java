@@ -128,6 +128,17 @@ public final class BigtableTableAdminSettings {
         .add("updateTableOperationSettings", stubSettings.updateTableOperationSettings())
         .add("copyBackupSettings", stubSettings.copyBackupSettings())
         .add("copyBackupOperationSettings", stubSettings.copyBackupOperationSettings())
+        .add("createAuthorizedViewSettings", stubSettings.createAuthorizedViewSettings())
+        .add(
+            "createAuthorizedViewOperationSettings",
+            stubSettings.createAuthorizedViewOperationSettings())
+        .add("updateAuthorizedViewSettings", stubSettings.updateAuthorizedViewSettings())
+        .add(
+            "updateAuthorizedViewOperationSettings",
+            stubSettings.updateAuthorizedViewOperationSettings())
+        .add("deleteAuthorizedViewSettings", stubSettings.deleteAuthorizedViewSettings())
+        .add("listAuthorizedViewsSettings", stubSettings.listAuthorizedViewsSettings())
+        .add("getAuthorizedViewSettings", stubSettings.getAuthorizedViewSettings())
         .toString();
   }
 

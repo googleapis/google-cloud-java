@@ -21,7 +21,6 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1081,8 +1080,6 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, CreateInstanceMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -1111,8 +1108,6 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to partialUpdateInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PartialUpdateInstanceRequest, Instance, UpdateInstanceMetadata>
         partialUpdateInstanceOperationSettings() {
@@ -1130,8 +1125,6 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, CreateClusterMetadata>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
@@ -1154,8 +1147,6 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<Cluster, Cluster, UpdateClusterMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
@@ -1168,8 +1159,6 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to partialUpdateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
         partialUpdateClusterOperationSettings() {
@@ -1206,8 +1195,6 @@ public class BigtableInstanceAdminStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateAppProfile. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAppProfileRequest, AppProfile, UpdateAppProfileMetadata>
         updateAppProfileOperationSettings() {

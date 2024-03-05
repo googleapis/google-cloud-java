@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigtable.admin.v2.stub;
 
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
@@ -24,25 +25,32 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.AuthorizedView;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.CopyBackupMetadata;
 import com.google.bigtable.admin.v2.CopyBackupRequest;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
@@ -58,6 +66,8 @@ import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
@@ -128,6 +138,46 @@ public abstract class BigtableTableAdminStub implements BackgroundResource {
 
   public UnaryCallable<UndeleteTableRequest, Operation> undeleteTableCallable() {
     throw new UnsupportedOperationException("Not implemented: undeleteTableCallable()");
+  }
+
+  public OperationCallable<
+          CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createAuthorizedViewOperationCallable()");
+  }
+
+  public UnaryCallable<CreateAuthorizedViewRequest, Operation> createAuthorizedViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAuthorizedViewCallable()");
+  }
+
+  public UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
+      listAuthorizedViewsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthorizedViewsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>
+      listAuthorizedViewsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthorizedViewsCallable()");
+  }
+
+  public UnaryCallable<GetAuthorizedViewRequest, AuthorizedView> getAuthorizedViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAuthorizedViewCallable()");
+  }
+
+  public OperationCallable<
+          UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAuthorizedViewOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAuthorizedViewRequest, Operation> updateAuthorizedViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAuthorizedViewCallable()");
+  }
+
+  public UnaryCallable<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAuthorizedViewCallable()");
   }
 
   public UnaryCallable<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesCallable() {

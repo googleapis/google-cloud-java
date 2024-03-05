@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigtable.admin.v2;
 
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
@@ -32,25 +33,32 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.bigtable.admin.v2.AuthorizedView;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.CopyBackupMetadata;
 import com.google.bigtable.admin.v2.CopyBackupRequest;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
@@ -66,6 +74,8 @@ import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
@@ -142,6 +152,49 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
   public OperationCallSettings<UndeleteTableRequest, Table, UndeleteTableMetadata>
       undeleteTableOperationSettings() {
     return ((BigtableTableAdminStubSettings) getStubSettings()).undeleteTableOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAuthorizedView. */
+  public UnaryCallSettings<CreateAuthorizedViewRequest, Operation> createAuthorizedViewSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).createAuthorizedViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAuthorizedView. */
+  public OperationCallSettings<
+          CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings())
+        .createAuthorizedViewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAuthorizedViews. */
+  public PagedCallSettings<
+          ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, ListAuthorizedViewsPagedResponse>
+      listAuthorizedViewsSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).listAuthorizedViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAuthorizedView. */
+  public UnaryCallSettings<GetAuthorizedViewRequest, AuthorizedView> getAuthorizedViewSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).getAuthorizedViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthorizedView. */
+  public UnaryCallSettings<UpdateAuthorizedViewRequest, Operation> updateAuthorizedViewSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).updateAuthorizedViewSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthorizedView. */
+  public OperationCallSettings<
+          UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewOperationSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings())
+        .updateAuthorizedViewOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthorizedView. */
+  public UnaryCallSettings<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewSettings() {
+    return ((BigtableTableAdminStubSettings) getStubSettings()).deleteAuthorizedViewSettings();
   }
 
   /** Returns the object with the settings used for calls to modifyColumnFamilies. */
@@ -414,6 +467,53 @@ public class BaseBigtableTableAdminSettings extends ClientSettings<BaseBigtableT
     public OperationCallSettings.Builder<UndeleteTableRequest, Table, UndeleteTableMetadata>
         undeleteTableOperationSettings() {
       return getStubSettingsBuilder().undeleteTableOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthorizedView. */
+    public UnaryCallSettings.Builder<CreateAuthorizedViewRequest, Operation>
+        createAuthorizedViewSettings() {
+      return getStubSettingsBuilder().createAuthorizedViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthorizedView. */
+    public OperationCallSettings.Builder<
+            CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+        createAuthorizedViewOperationSettings() {
+      return getStubSettingsBuilder().createAuthorizedViewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthorizedViews. */
+    public PagedCallSettings.Builder<
+            ListAuthorizedViewsRequest,
+            ListAuthorizedViewsResponse,
+            ListAuthorizedViewsPagedResponse>
+        listAuthorizedViewsSettings() {
+      return getStubSettingsBuilder().listAuthorizedViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthorizedView. */
+    public UnaryCallSettings.Builder<GetAuthorizedViewRequest, AuthorizedView>
+        getAuthorizedViewSettings() {
+      return getStubSettingsBuilder().getAuthorizedViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthorizedView. */
+    public UnaryCallSettings.Builder<UpdateAuthorizedViewRequest, Operation>
+        updateAuthorizedViewSettings() {
+      return getStubSettingsBuilder().updateAuthorizedViewSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthorizedView. */
+    public OperationCallSettings.Builder<
+            UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+        updateAuthorizedViewOperationSettings() {
+      return getStubSettingsBuilder().updateAuthorizedViewOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthorizedView. */
+    public UnaryCallSettings.Builder<DeleteAuthorizedViewRequest, Empty>
+        deleteAuthorizedViewSettings() {
+      return getStubSettingsBuilder().deleteAuthorizedViewSettings();
     }
 
     /** Returns the builder for the settings used for calls to modifyColumnFamilies. */

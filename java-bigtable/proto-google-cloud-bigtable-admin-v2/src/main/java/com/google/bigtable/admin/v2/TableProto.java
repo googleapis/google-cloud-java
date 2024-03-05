@@ -53,6 +53,22 @@ public final class TableProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Table_ColumnFamiliesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AuthorizedView_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AuthorizedView_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AuthorizedView_FamilySubsets_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AuthorizedView_FamilySubsets_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_FamilySubsetsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_FamilySubsetsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_ColumnFamily_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_ColumnFamily_fieldAccessorTable;
@@ -135,69 +151,87 @@ public final class TableProto {
           + "EW\020\003\022\023\n\017ENCRYPTION_VIEW\020\005\022\010\n\004FULL\020\004:_\352A\\"
           + "\n\"bigtableadmin.googleapis.com/Table\0226pr"
           + "ojects/{project}/instances/{instance}/ta"
-          + "bles/{table}\"A\n\014ColumnFamily\0221\n\007gc_rule\030"
-          + "\001 \001(\0132 .google.bigtable.admin.v2.GcRule\""
-          + "\325\002\n\006GcRule\022\032\n\020max_num_versions\030\001 \001(\005H\000\022,"
-          + "\n\007max_age\030\002 \001(\0132\031.google.protobuf.Durati"
-          + "onH\000\022E\n\014intersection\030\003 \001(\0132-.google.bigt"
-          + "able.admin.v2.GcRule.IntersectionH\000\0227\n\005u"
-          + "nion\030\004 \001(\0132&.google.bigtable.admin.v2.Gc"
-          + "Rule.UnionH\000\032?\n\014Intersection\022/\n\005rules\030\001 "
-          + "\003(\0132 .google.bigtable.admin.v2.GcRule\0328\n"
-          + "\005Union\022/\n\005rules\030\001 \003(\0132 .google.bigtable."
-          + "admin.v2.GcRuleB\006\n\004rule\"\331\002\n\016EncryptionIn"
-          + "fo\022U\n\017encryption_type\030\003 \001(\01627.google.big"
-          + "table.admin.v2.EncryptionInfo.Encryption"
-          + "TypeB\003\340A\003\0222\n\021encryption_status\030\004 \001(\0132\022.g"
-          + "oogle.rpc.StatusB\003\340A\003\022I\n\017kms_key_version"
-          + "\030\002 \001(\tB0\340A\003\372A*\n(cloudkms.googleapis.com/"
-          + "CryptoKeyVersion\"q\n\016EncryptionType\022\037\n\033EN"
-          + "CRYPTION_TYPE_UNSPECIFIED\020\000\022\035\n\031GOOGLE_DE"
-          + "FAULT_ENCRYPTION\020\001\022\037\n\033CUSTOMER_MANAGED_E"
-          + "NCRYPTION\020\002\"\340\003\n\010Snapshot\022\014\n\004name\030\001 \001(\t\022:"
-          + "\n\014source_table\030\002 \001(\0132\037.google.bigtable.a"
-          + "dmin.v2.TableB\003\340A\003\022\034\n\017data_size_bytes\030\003 "
-          + "\001(\003B\003\340A\003\0224\n\013create_time\030\004 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\022/\n\013delete_time\030\005 "
-          + "\001(\0132\032.google.protobuf.Timestamp\022<\n\005state"
-          + "\030\006 \001(\0162(.google.bigtable.admin.v2.Snapsh"
-          + "ot.StateB\003\340A\003\022\023\n\013description\030\007 \001(\t\"5\n\005St"
-          + "ate\022\023\n\017STATE_NOT_KNOWN\020\000\022\t\n\005READY\020\001\022\014\n\010C"
-          + "REATING\020\002:{\352Ax\n%bigtableadmin.googleapis"
-          + ".com/Snapshot\022Oprojects/{project}/instan"
-          + "ces/{instance}/clusters/{cluster}/snapsh"
-          + "ots/{snapshot}\"\273\004\n\006Backup\022\014\n\004name\030\001 \001(\t\022"
-          + "\034\n\014source_table\030\002 \001(\tB\006\340A\005\340A\002\022\032\n\rsource_"
-          + "backup\030\n \001(\tB\003\340A\003\0224\n\013expire_time\030\003 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\002\0223\n\nstart"
+          + "bles/{table}\"\343\005\n\016AuthorizedView\022\021\n\004name\030"
+          + "\001 \001(\tB\003\340A\010\022J\n\013subset_view\030\002 \001(\01323.google"
+          + ".bigtable.admin.v2.AuthorizedView.Subset"
+          + "ViewH\000\022\014\n\004etag\030\003 \001(\t\022\033\n\023deletion_protect"
+          + "ion\030\004 \001(\010\032?\n\rFamilySubsets\022\022\n\nqualifiers"
+          + "\030\001 \003(\014\022\032\n\022qualifier_prefixes\030\002 \003(\014\032\360\001\n\nS"
+          + "ubsetView\022\024\n\014row_prefixes\030\001 \003(\014\022^\n\016famil"
+          + "y_subsets\030\002 \003(\0132F.google.bigtable.admin."
+          + "v2.AuthorizedView.SubsetView.FamilySubse"
+          + "tsEntry\032l\n\022FamilySubsetsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022E\n\005value\030\002 \001(\01326.google.bigtable.admi"
+          + "n.v2.AuthorizedView.FamilySubsets:\0028\001\"Q\n"
+          + "\014ResponseView\022\035\n\031RESPONSE_VIEW_UNSPECIFI"
+          + "ED\020\000\022\r\n\tNAME_ONLY\020\001\022\t\n\005BASIC\020\002\022\010\n\004FULL\020\003"
+          + ":\254\001\352A\250\001\n+bigtableadmin.googleapis.com/Au"
+          + "thorizedView\022Xprojects/{project}/instanc"
+          + "es/{instance}/tables/{table}/authorizedV"
+          + "iews/{authorized_view}*\017authorizedViews2"
+          + "\016authorizedViewB\021\n\017authorized_view\"A\n\014Co"
+          + "lumnFamily\0221\n\007gc_rule\030\001 \001(\0132 .google.big"
+          + "table.admin.v2.GcRule\"\325\002\n\006GcRule\022\032\n\020max_"
+          + "num_versions\030\001 \001(\005H\000\022,\n\007max_age\030\002 \001(\0132\031."
+          + "google.protobuf.DurationH\000\022E\n\014intersecti"
+          + "on\030\003 \001(\0132-.google.bigtable.admin.v2.GcRu"
+          + "le.IntersectionH\000\0227\n\005union\030\004 \001(\0132&.googl"
+          + "e.bigtable.admin.v2.GcRule.UnionH\000\032?\n\014In"
+          + "tersection\022/\n\005rules\030\001 \003(\0132 .google.bigta"
+          + "ble.admin.v2.GcRule\0328\n\005Union\022/\n\005rules\030\001 "
+          + "\003(\0132 .google.bigtable.admin.v2.GcRuleB\006\n"
+          + "\004rule\"\331\002\n\016EncryptionInfo\022U\n\017encryption_t"
+          + "ype\030\003 \001(\01627.google.bigtable.admin.v2.Enc"
+          + "ryptionInfo.EncryptionTypeB\003\340A\003\0222\n\021encry"
+          + "ption_status\030\004 \001(\0132\022.google.rpc.StatusB\003"
+          + "\340A\003\022I\n\017kms_key_version\030\002 \001(\tB0\340A\003\372A*\n(cl"
+          + "oudkms.googleapis.com/CryptoKeyVersion\"q"
+          + "\n\016EncryptionType\022\037\n\033ENCRYPTION_TYPE_UNSP"
+          + "ECIFIED\020\000\022\035\n\031GOOGLE_DEFAULT_ENCRYPTION\020\001"
+          + "\022\037\n\033CUSTOMER_MANAGED_ENCRYPTION\020\002\"\340\003\n\010Sn"
+          + "apshot\022\014\n\004name\030\001 \001(\t\022:\n\014source_table\030\002 \001"
+          + "(\0132\037.google.bigtable.admin.v2.TableB\003\340A\003"
+          + "\022\034\n\017data_size_bytes\030\003 \001(\003B\003\340A\003\0224\n\013create"
           + "_time\030\004 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0221\n\010end_time\030\005 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\022\027\n\nsize_bytes\030\006 \001(\003B\003\340A\003"
-          + "\022:\n\005state\030\007 \001(\0162&.google.bigtable.admin."
-          + "v2.Backup.StateB\003\340A\003\022F\n\017encryption_info\030"
-          + "\t \001(\0132(.google.bigtable.admin.v2.Encrypt"
-          + "ionInfoB\003\340A\003\"7\n\005State\022\025\n\021STATE_UNSPECIFI"
-          + "ED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002:u\352Ar\n#bigt"
-          + "ableadmin.googleapis.com/Backup\022Kproject"
-          + "s/{project}/instances/{instance}/cluster"
-          + "s/{cluster}/backups/{backup}\"\300\001\n\nBackupI"
-          + "nfo\022\023\n\006backup\030\001 \001(\tB\003\340A\003\0223\n\nstart_time\030\002"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\003 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\022\031\n\014source_table\030\004 \001(\tB\003\340A\003\022\032\n\rs"
-          + "ource_backup\030\n \001(\tB\003\340A\003*D\n\021RestoreSource"
-          + "Type\022#\n\037RESTORE_SOURCE_TYPE_UNSPECIFIED\020"
-          + "\000\022\n\n\006BACKUP\020\001B\374\002\n\034com.google.bigtable.ad"
-          + "min.v2B\nTableProtoP\001Z=google.golang.org/"
-          + "genproto/googleapis/bigtable/admin/v2;ad"
-          + "min\252\002\036Google.Cloud.Bigtable.Admin.V2\312\002\036G"
-          + "oogle\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google::"
-          + "Cloud::Bigtable::Admin::V2\352A\246\001\n(cloudkms"
-          + ".googleapis.com/CryptoKeyVersion\022zprojec"
-          + "ts/{project}/locations/{location}/keyRin"
-          + "gs/{key_ring}/cryptoKeys/{crypto_key}/cr"
-          + "yptoKeyVersions/{crypto_key_version}b\006pr"
-          + "oto3"
+          + "\003\340A\003\022/\n\013delete_time\030\005 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022<\n\005state\030\006 \001(\0162(.google.bi"
+          + "gtable.admin.v2.Snapshot.StateB\003\340A\003\022\023\n\013d"
+          + "escription\030\007 \001(\t\"5\n\005State\022\023\n\017STATE_NOT_K"
+          + "NOWN\020\000\022\t\n\005READY\020\001\022\014\n\010CREATING\020\002:{\352Ax\n%bi"
+          + "gtableadmin.googleapis.com/Snapshot\022Opro"
+          + "jects/{project}/instances/{instance}/clu"
+          + "sters/{cluster}/snapshots/{snapshot}\"\273\004\n"
+          + "\006Backup\022\014\n\004name\030\001 \001(\t\022\034\n\014source_table\030\002 "
+          + "\001(\tB\006\340A\005\340A\002\022\032\n\rsource_backup\030\n \001(\tB\003\340A\003\022"
+          + "4\n\013expire_time\030\003 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\002\0223\n\nstart_time\030\004 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\027\n"
+          + "\nsize_bytes\030\006 \001(\003B\003\340A\003\022:\n\005state\030\007 \001(\0162&."
+          + "google.bigtable.admin.v2.Backup.StateB\003\340"
+          + "A\003\022F\n\017encryption_info\030\t \001(\0132(.google.big"
+          + "table.admin.v2.EncryptionInfoB\003\340A\003\"7\n\005St"
+          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001"
+          + "\022\t\n\005READY\020\002:u\352Ar\n#bigtableadmin.googleap"
+          + "is.com/Backup\022Kprojects/{project}/instan"
+          + "ces/{instance}/clusters/{cluster}/backup"
+          + "s/{backup}\"\300\001\n\nBackupInfo\022\023\n\006backup\030\001 \001("
+          + "\tB\003\340A\003\0223\n\nstart_time\030\002 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\0221\n\010end_time\030\003 \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\022\031\n\014source"
+          + "_table\030\004 \001(\tB\003\340A\003\022\032\n\rsource_backup\030\n \001(\t"
+          + "B\003\340A\003*D\n\021RestoreSourceType\022#\n\037RESTORE_SO"
+          + "URCE_TYPE_UNSPECIFIED\020\000\022\n\n\006BACKUP\020\001B\374\002\n\034"
+          + "com.google.bigtable.admin.v2B\nTableProto"
+          + "P\001Z=google.golang.org/genproto/googleapi"
+          + "s/bigtable/admin/v2;admin\252\002\036Google.Cloud"
+          + ".Bigtable.Admin.V2\312\002\036Google\\Cloud\\Bigtab"
+          + "le\\Admin\\V2\352\002\"Google::Cloud::Bigtable::A"
+          + "dmin::V2\352A\246\001\n(cloudkms.googleapis.com/Cr"
+          + "yptoKeyVersion\022zprojects/{project}/locat"
+          + "ions/{location}/keyRings/{key_ring}/cryp"
+          + "toKeys/{crypto_key}/cryptoKeyVersions/{c"
+          + "rypto_key_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -263,8 +297,42 @@ public final class TableProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_bigtable_admin_v2_ColumnFamily_descriptor =
+    internal_static_google_bigtable_admin_v2_AuthorizedView_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_bigtable_admin_v2_AuthorizedView_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AuthorizedView_descriptor,
+            new java.lang.String[] {
+              "Name", "SubsetView", "Etag", "DeletionProtection", "AuthorizedView",
+            });
+    internal_static_google_bigtable_admin_v2_AuthorizedView_FamilySubsets_descriptor =
+        internal_static_google_bigtable_admin_v2_AuthorizedView_descriptor.getNestedTypes().get(0);
+    internal_static_google_bigtable_admin_v2_AuthorizedView_FamilySubsets_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AuthorizedView_FamilySubsets_descriptor,
+            new java.lang.String[] {
+              "Qualifiers", "QualifierPrefixes",
+            });
+    internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_descriptor =
+        internal_static_google_bigtable_admin_v2_AuthorizedView_descriptor.getNestedTypes().get(1);
+    internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_descriptor,
+            new java.lang.String[] {
+              "RowPrefixes", "FamilySubsets",
+            });
+    internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_FamilySubsetsEntry_descriptor =
+        internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_FamilySubsetsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AuthorizedView_SubsetView_FamilySubsetsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_bigtable_admin_v2_ColumnFamily_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_bigtable_admin_v2_ColumnFamily_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_ColumnFamily_descriptor,
@@ -272,7 +340,7 @@ public final class TableProto {
               "GcRule",
             });
     internal_static_google_bigtable_admin_v2_GcRule_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_bigtable_admin_v2_GcRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_GcRule_descriptor,
@@ -296,7 +364,7 @@ public final class TableProto {
               "Rules",
             });
     internal_static_google_bigtable_admin_v2_EncryptionInfo_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_bigtable_admin_v2_EncryptionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_EncryptionInfo_descriptor,
@@ -304,7 +372,7 @@ public final class TableProto {
               "EncryptionType", "EncryptionStatus", "KmsKeyVersion",
             });
     internal_static_google_bigtable_admin_v2_Snapshot_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_bigtable_admin_v2_Snapshot_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Snapshot_descriptor,
@@ -318,7 +386,7 @@ public final class TableProto {
               "Description",
             });
     internal_static_google_bigtable_admin_v2_Backup_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_bigtable_admin_v2_Backup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_Backup_descriptor,
@@ -334,7 +402,7 @@ public final class TableProto {
               "EncryptionInfo",
             });
     internal_static_google_bigtable_admin_v2_BackupInfo_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_bigtable_admin_v2_BackupInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_BackupInfo_descriptor,

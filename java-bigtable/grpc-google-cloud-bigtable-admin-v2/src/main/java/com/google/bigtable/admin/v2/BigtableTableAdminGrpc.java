@@ -343,6 +343,247 @@ public final class BigtableTableAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateAuthorizedViewRequest,
+          com.google.longrunning.Operation>
+      getCreateAuthorizedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAuthorizedView",
+      requestType = com.google.bigtable.admin.v2.CreateAuthorizedViewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.CreateAuthorizedViewRequest,
+          com.google.longrunning.Operation>
+      getCreateAuthorizedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.CreateAuthorizedViewRequest,
+            com.google.longrunning.Operation>
+        getCreateAuthorizedViewMethod;
+    if ((getCreateAuthorizedViewMethod = BigtableTableAdminGrpc.getCreateAuthorizedViewMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getCreateAuthorizedViewMethod = BigtableTableAdminGrpc.getCreateAuthorizedViewMethod)
+            == null) {
+          BigtableTableAdminGrpc.getCreateAuthorizedViewMethod =
+              getCreateAuthorizedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.CreateAuthorizedViewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAuthorizedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.CreateAuthorizedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("CreateAuthorizedView"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAuthorizedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListAuthorizedViewsRequest,
+          com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>
+      getListAuthorizedViewsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuthorizedViews",
+      requestType = com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.class,
+      responseType = com.google.bigtable.admin.v2.ListAuthorizedViewsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListAuthorizedViewsRequest,
+          com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>
+      getListAuthorizedViewsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.ListAuthorizedViewsRequest,
+            com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>
+        getListAuthorizedViewsMethod;
+    if ((getListAuthorizedViewsMethod = BigtableTableAdminGrpc.getListAuthorizedViewsMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getListAuthorizedViewsMethod = BigtableTableAdminGrpc.getListAuthorizedViewsMethod)
+            == null) {
+          BigtableTableAdminGrpc.getListAuthorizedViewsMethod =
+              getListAuthorizedViewsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.ListAuthorizedViewsRequest,
+                          com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAuthorizedViews"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListAuthorizedViewsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListAuthorizedViewsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("ListAuthorizedViews"))
+                      .build();
+        }
+      }
+    }
+    return getListAuthorizedViewsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetAuthorizedViewRequest,
+          com.google.bigtable.admin.v2.AuthorizedView>
+      getGetAuthorizedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuthorizedView",
+      requestType = com.google.bigtable.admin.v2.GetAuthorizedViewRequest.class,
+      responseType = com.google.bigtable.admin.v2.AuthorizedView.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetAuthorizedViewRequest,
+          com.google.bigtable.admin.v2.AuthorizedView>
+      getGetAuthorizedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.GetAuthorizedViewRequest,
+            com.google.bigtable.admin.v2.AuthorizedView>
+        getGetAuthorizedViewMethod;
+    if ((getGetAuthorizedViewMethod = BigtableTableAdminGrpc.getGetAuthorizedViewMethod) == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getGetAuthorizedViewMethod = BigtableTableAdminGrpc.getGetAuthorizedViewMethod)
+            == null) {
+          BigtableTableAdminGrpc.getGetAuthorizedViewMethod =
+              getGetAuthorizedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.GetAuthorizedViewRequest,
+                          com.google.bigtable.admin.v2.AuthorizedView>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthorizedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.GetAuthorizedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.AuthorizedView.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("GetAuthorizedView"))
+                      .build();
+        }
+      }
+    }
+    return getGetAuthorizedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest,
+          com.google.longrunning.Operation>
+      getUpdateAuthorizedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAuthorizedView",
+      requestType = com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest,
+          com.google.longrunning.Operation>
+      getUpdateAuthorizedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest,
+            com.google.longrunning.Operation>
+        getUpdateAuthorizedViewMethod;
+    if ((getUpdateAuthorizedViewMethod = BigtableTableAdminGrpc.getUpdateAuthorizedViewMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getUpdateAuthorizedViewMethod = BigtableTableAdminGrpc.getUpdateAuthorizedViewMethod)
+            == null) {
+          BigtableTableAdminGrpc.getUpdateAuthorizedViewMethod =
+              getUpdateAuthorizedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAuthorizedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("UpdateAuthorizedView"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAuthorizedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest, com.google.protobuf.Empty>
+      getDeleteAuthorizedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAuthorizedView",
+      requestType = com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest, com.google.protobuf.Empty>
+      getDeleteAuthorizedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest, com.google.protobuf.Empty>
+        getDeleteAuthorizedViewMethod;
+    if ((getDeleteAuthorizedViewMethod = BigtableTableAdminGrpc.getDeleteAuthorizedViewMethod)
+        == null) {
+      synchronized (BigtableTableAdminGrpc.class) {
+        if ((getDeleteAuthorizedViewMethod = BigtableTableAdminGrpc.getDeleteAuthorizedViewMethod)
+            == null) {
+          BigtableTableAdminGrpc.getDeleteAuthorizedViewMethod =
+              getDeleteAuthorizedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteAuthorizedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableTableAdminMethodDescriptorSupplier("DeleteAuthorizedView"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAuthorizedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest,
           com.google.bigtable.admin.v2.Table>
       getModifyColumnFamiliesMethod;
@@ -1294,6 +1535,77 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Creates a new AuthorizedView in a table.
+     * </pre>
+     */
+    default void createAuthorizedView(
+        com.google.bigtable.admin.v2.CreateAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAuthorizedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AuthorizedViews from a specific table.
+     * </pre>
+     */
+    default void listAuthorizedViews(
+        com.google.bigtable.admin.v2.ListAuthorizedViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAuthorizedViewsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information from a specified AuthorizedView.
+     * </pre>
+     */
+    default void getAuthorizedView(
+        com.google.bigtable.admin.v2.GetAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.AuthorizedView> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAuthorizedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an AuthorizedView in a table.
+     * </pre>
+     */
+    default void updateAuthorizedView(
+        com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAuthorizedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes a specified AuthorizedView.
+     * </pre>
+     */
+    default void deleteAuthorizedView(
+        com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAuthorizedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a series of column family modifications on the specified table.
      * Either all or none of the modifications will occur before this method
      * returns, but data requests received prior to that point may see a table
@@ -1748,6 +2060,87 @@ public final class BigtableTableAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUndeleteTableMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AuthorizedView in a table.
+     * </pre>
+     */
+    public void createAuthorizedView(
+        com.google.bigtable.admin.v2.CreateAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAuthorizedViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AuthorizedViews from a specific table.
+     * </pre>
+     */
+    public void listAuthorizedViews(
+        com.google.bigtable.admin.v2.ListAuthorizedViewsRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuthorizedViewsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information from a specified AuthorizedView.
+     * </pre>
+     */
+    public void getAuthorizedView(
+        com.google.bigtable.admin.v2.GetAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.AuthorizedView> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAuthorizedViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an AuthorizedView in a table.
+     * </pre>
+     */
+    public void updateAuthorizedView(
+        com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAuthorizedViewMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes a specified AuthorizedView.
+     * </pre>
+     */
+    public void deleteAuthorizedView(
+        com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAuthorizedViewMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2217,6 +2610,71 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Creates a new AuthorizedView in a table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAuthorizedView(
+        com.google.bigtable.admin.v2.CreateAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AuthorizedViews from a specific table.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListAuthorizedViewsResponse listAuthorizedViews(
+        com.google.bigtable.admin.v2.ListAuthorizedViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthorizedViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information from a specified AuthorizedView.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.AuthorizedView getAuthorizedView(
+        com.google.bigtable.admin.v2.GetAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an AuthorizedView in a table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAuthorizedView(
+        com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes a specified AuthorizedView.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAuthorizedView(
+        com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a series of column family modifications on the specified table.
      * Either all or none of the modifications will occur before this method
      * returns, but data requests received prior to that point may see a table
@@ -2622,6 +3080,73 @@ public final class BigtableTableAdminGrpc {
      *
      *
      * <pre>
+     * Creates a new AuthorizedView in a table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAuthorizedView(com.google.bigtable.admin.v2.CreateAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAuthorizedViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AuthorizedViews from a specific table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>
+        listAuthorizedViews(com.google.bigtable.admin.v2.ListAuthorizedViewsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuthorizedViewsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information from a specified AuthorizedView.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.AuthorizedView>
+        getAuthorizedView(com.google.bigtable.admin.v2.GetAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAuthorizedViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an AuthorizedView in a table.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAuthorizedView(com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAuthorizedViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes a specified AuthorizedView.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAuthorizedView(com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAuthorizedViewMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Performs a series of column family modifications on the specified table.
      * Either all or none of the modifications will occur before this method
      * returns, but data requests received prior to that point may see a table
@@ -2916,24 +3441,29 @@ public final class BigtableTableAdminGrpc {
   private static final int METHODID_UPDATE_TABLE = 4;
   private static final int METHODID_DELETE_TABLE = 5;
   private static final int METHODID_UNDELETE_TABLE = 6;
-  private static final int METHODID_MODIFY_COLUMN_FAMILIES = 7;
-  private static final int METHODID_DROP_ROW_RANGE = 8;
-  private static final int METHODID_GENERATE_CONSISTENCY_TOKEN = 9;
-  private static final int METHODID_CHECK_CONSISTENCY = 10;
-  private static final int METHODID_SNAPSHOT_TABLE = 11;
-  private static final int METHODID_GET_SNAPSHOT = 12;
-  private static final int METHODID_LIST_SNAPSHOTS = 13;
-  private static final int METHODID_DELETE_SNAPSHOT = 14;
-  private static final int METHODID_CREATE_BACKUP = 15;
-  private static final int METHODID_GET_BACKUP = 16;
-  private static final int METHODID_UPDATE_BACKUP = 17;
-  private static final int METHODID_DELETE_BACKUP = 18;
-  private static final int METHODID_LIST_BACKUPS = 19;
-  private static final int METHODID_RESTORE_TABLE = 20;
-  private static final int METHODID_COPY_BACKUP = 21;
-  private static final int METHODID_GET_IAM_POLICY = 22;
-  private static final int METHODID_SET_IAM_POLICY = 23;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 24;
+  private static final int METHODID_CREATE_AUTHORIZED_VIEW = 7;
+  private static final int METHODID_LIST_AUTHORIZED_VIEWS = 8;
+  private static final int METHODID_GET_AUTHORIZED_VIEW = 9;
+  private static final int METHODID_UPDATE_AUTHORIZED_VIEW = 10;
+  private static final int METHODID_DELETE_AUTHORIZED_VIEW = 11;
+  private static final int METHODID_MODIFY_COLUMN_FAMILIES = 12;
+  private static final int METHODID_DROP_ROW_RANGE = 13;
+  private static final int METHODID_GENERATE_CONSISTENCY_TOKEN = 14;
+  private static final int METHODID_CHECK_CONSISTENCY = 15;
+  private static final int METHODID_SNAPSHOT_TABLE = 16;
+  private static final int METHODID_GET_SNAPSHOT = 17;
+  private static final int METHODID_LIST_SNAPSHOTS = 18;
+  private static final int METHODID_DELETE_SNAPSHOT = 19;
+  private static final int METHODID_CREATE_BACKUP = 20;
+  private static final int METHODID_GET_BACKUP = 21;
+  private static final int METHODID_UPDATE_BACKUP = 22;
+  private static final int METHODID_DELETE_BACKUP = 23;
+  private static final int METHODID_LIST_BACKUPS = 24;
+  private static final int METHODID_RESTORE_TABLE = 25;
+  private static final int METHODID_COPY_BACKUP = 26;
+  private static final int METHODID_GET_IAM_POLICY = 27;
+  private static final int METHODID_SET_IAM_POLICY = 28;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 29;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2987,6 +3517,34 @@ public final class BigtableTableAdminGrpc {
           serviceImpl.undeleteTable(
               (com.google.bigtable.admin.v2.UndeleteTableRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_AUTHORIZED_VIEW:
+          serviceImpl.createAuthorizedView(
+              (com.google.bigtable.admin.v2.CreateAuthorizedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_AUTHORIZED_VIEWS:
+          serviceImpl.listAuthorizedViews(
+              (com.google.bigtable.admin.v2.ListAuthorizedViewsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTHORIZED_VIEW:
+          serviceImpl.getAuthorizedView(
+              (com.google.bigtable.admin.v2.GetAuthorizedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.AuthorizedView>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_AUTHORIZED_VIEW:
+          serviceImpl.updateAuthorizedView(
+              (com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTHORIZED_VIEW:
+          serviceImpl.deleteAuthorizedView(
+              (com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_MODIFY_COLUMN_FAMILIES:
           serviceImpl.modifyColumnFamilies(
@@ -3147,6 +3705,38 @@ public final class BigtableTableAdminGrpc {
                 new MethodHandlers<
                     com.google.bigtable.admin.v2.UndeleteTableRequest,
                     com.google.longrunning.Operation>(service, METHODID_UNDELETE_TABLE)))
+        .addMethod(
+            getCreateAuthorizedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.CreateAuthorizedViewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AUTHORIZED_VIEW)))
+        .addMethod(
+            getListAuthorizedViewsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.ListAuthorizedViewsRequest,
+                    com.google.bigtable.admin.v2.ListAuthorizedViewsResponse>(
+                    service, METHODID_LIST_AUTHORIZED_VIEWS)))
+        .addMethod(
+            getGetAuthorizedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.GetAuthorizedViewRequest,
+                    com.google.bigtable.admin.v2.AuthorizedView>(
+                    service, METHODID_GET_AUTHORIZED_VIEW)))
+        .addMethod(
+            getUpdateAuthorizedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AUTHORIZED_VIEW)))
+        .addMethod(
+            getDeleteAuthorizedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_AUTHORIZED_VIEW)))
         .addMethod(
             getModifyColumnFamiliesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3316,6 +3906,11 @@ public final class BigtableTableAdminGrpc {
                       .addMethod(getUpdateTableMethod())
                       .addMethod(getDeleteTableMethod())
                       .addMethod(getUndeleteTableMethod())
+                      .addMethod(getCreateAuthorizedViewMethod())
+                      .addMethod(getListAuthorizedViewsMethod())
+                      .addMethod(getGetAuthorizedViewMethod())
+                      .addMethod(getUpdateAuthorizedViewMethod())
+                      .addMethod(getDeleteAuthorizedViewMethod())
                       .addMethod(getModifyColumnFamiliesMethod())
                       .addMethod(getDropRowRangeMethod())
                       .addMethod(getGenerateConsistencyTokenMethod())

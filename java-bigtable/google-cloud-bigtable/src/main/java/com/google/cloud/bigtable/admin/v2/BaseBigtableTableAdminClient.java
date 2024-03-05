@@ -28,6 +28,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.resourcenames.ResourceName;
+import com.google.bigtable.admin.v2.AuthorizedView;
+import com.google.bigtable.admin.v2.AuthorizedViewName;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.BackupName;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
@@ -35,21 +37,27 @@ import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.CopyBackupMetadata;
 import com.google.bigtable.admin.v2.CopyBackupRequest;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
@@ -67,6 +75,8 @@ import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
@@ -1296,6 +1306,762 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<UndeleteTableRequest, Operation> undeleteTableCallable() {
     return stub.undeleteTableCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+   *   String authorizedViewId = "authorizedViewId-2074136549";
+   *   AuthorizedView response =
+   *       baseBigtableTableAdminClient
+   *           .createAuthorizedViewAsync(parent, authorizedView, authorizedViewId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. This is the name of the table the AuthorizedView belongs to. Values are
+   *     of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param authorizedView Required. The AuthorizedView to create.
+   * @param authorizedViewId Required. The id of the AuthorizedView to create. This AuthorizedView
+   *     must not already exist. The `authorized_view_id` appended to `parent` forms the full
+   *     AuthorizedView name of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/authorizedView/{authorized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewAsync(
+          TableName parent, AuthorizedView authorizedView, String authorizedViewId) {
+    CreateAuthorizedViewRequest request =
+        CreateAuthorizedViewRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAuthorizedView(authorizedView)
+            .setAuthorizedViewId(authorizedViewId)
+            .build();
+    return createAuthorizedViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+   *   String authorizedViewId = "authorizedViewId-2074136549";
+   *   AuthorizedView response =
+   *       baseBigtableTableAdminClient
+   *           .createAuthorizedViewAsync(parent, authorizedView, authorizedViewId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. This is the name of the table the AuthorizedView belongs to. Values are
+   *     of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @param authorizedView Required. The AuthorizedView to create.
+   * @param authorizedViewId Required. The id of the AuthorizedView to create. This AuthorizedView
+   *     must not already exist. The `authorized_view_id` appended to `parent` forms the full
+   *     AuthorizedView name of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/authorizedView/{authorized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewAsync(
+          String parent, AuthorizedView authorizedView, String authorizedViewId) {
+    CreateAuthorizedViewRequest request =
+        CreateAuthorizedViewRequest.newBuilder()
+            .setParent(parent)
+            .setAuthorizedView(authorizedView)
+            .setAuthorizedViewId(authorizedViewId)
+            .build();
+    return createAuthorizedViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   CreateAuthorizedViewRequest request =
+   *       CreateAuthorizedViewRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAuthorizedViewId("authorizedViewId-2074136549")
+   *           .setAuthorizedView(AuthorizedView.newBuilder().build())
+   *           .build();
+   *   AuthorizedView response =
+   *       baseBigtableTableAdminClient.createAuthorizedViewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewAsync(CreateAuthorizedViewRequest request) {
+    return createAuthorizedViewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   CreateAuthorizedViewRequest request =
+   *       CreateAuthorizedViewRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAuthorizedViewId("authorizedViewId-2074136549")
+   *           .setAuthorizedView(AuthorizedView.newBuilder().build())
+   *           .build();
+   *   OperationFuture<AuthorizedView, CreateAuthorizedViewMetadata> future =
+   *       baseBigtableTableAdminClient.createAuthorizedViewOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AuthorizedView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewOperationCallable() {
+    return stub.createAuthorizedViewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   CreateAuthorizedViewRequest request =
+   *       CreateAuthorizedViewRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setAuthorizedViewId("authorizedViewId-2074136549")
+   *           .setAuthorizedView(AuthorizedView.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableTableAdminClient.createAuthorizedViewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAuthorizedViewRequest, Operation>
+      createAuthorizedViewCallable() {
+    return stub.createAuthorizedViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AuthorizedViews from a specific table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+   *   for (AuthorizedView element :
+   *       baseBigtableTableAdminClient.listAuthorizedViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the table for which AuthorizedViews should be
+   *     listed. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthorizedViewsPagedResponse listAuthorizedViews(TableName parent) {
+    ListAuthorizedViewsRequest request =
+        ListAuthorizedViewsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAuthorizedViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AuthorizedViews from a specific table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString();
+   *   for (AuthorizedView element :
+   *       baseBigtableTableAdminClient.listAuthorizedViews(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the table for which AuthorizedViews should be
+   *     listed. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthorizedViewsPagedResponse listAuthorizedViews(String parent) {
+    ListAuthorizedViewsRequest request =
+        ListAuthorizedViewsRequest.newBuilder().setParent(parent).build();
+    return listAuthorizedViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AuthorizedViews from a specific table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   ListAuthorizedViewsRequest request =
+   *       ListAuthorizedViewsRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AuthorizedView element :
+   *       baseBigtableTableAdminClient.listAuthorizedViews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthorizedViewsPagedResponse listAuthorizedViews(
+      ListAuthorizedViewsRequest request) {
+    return listAuthorizedViewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AuthorizedViews from a specific table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   ListAuthorizedViewsRequest request =
+   *       ListAuthorizedViewsRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AuthorizedView> future =
+   *       baseBigtableTableAdminClient.listAuthorizedViewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AuthorizedView element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
+      listAuthorizedViewsPagedCallable() {
+    return stub.listAuthorizedViewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all AuthorizedViews from a specific table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   ListAuthorizedViewsRequest request =
+   *       ListAuthorizedViewsRequest.newBuilder()
+   *           .setParent(TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAuthorizedViewsResponse response =
+   *         baseBigtableTableAdminClient.listAuthorizedViewsCallable().call(request);
+   *     for (AuthorizedView element : response.getAuthorizedViewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>
+      listAuthorizedViewsCallable() {
+    return stub.listAuthorizedViewsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information from a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   AuthorizedViewName name =
+   *       AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
+   *   AuthorizedView response = baseBigtableTableAdminClient.getAuthorizedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested AuthorizedView. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthorizedView getAuthorizedView(AuthorizedViewName name) {
+    GetAuthorizedViewRequest request =
+        GetAuthorizedViewRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAuthorizedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information from a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String name =
+   *       AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *           .toString();
+   *   AuthorizedView response = baseBigtableTableAdminClient.getAuthorizedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested AuthorizedView. Values are of the form
+   *     `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthorizedView getAuthorizedView(String name) {
+    GetAuthorizedViewRequest request = GetAuthorizedViewRequest.newBuilder().setName(name).build();
+    return getAuthorizedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information from a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   GetAuthorizedViewRequest request =
+   *       GetAuthorizedViewRequest.newBuilder()
+   *           .setName(
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   AuthorizedView response = baseBigtableTableAdminClient.getAuthorizedView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthorizedView getAuthorizedView(GetAuthorizedViewRequest request) {
+    return getAuthorizedViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information from a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   GetAuthorizedViewRequest request =
+   *       GetAuthorizedViewRequest.newBuilder()
+   *           .setName(
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AuthorizedView> future =
+   *       baseBigtableTableAdminClient.getAuthorizedViewCallable().futureCall(request);
+   *   // Do something.
+   *   AuthorizedView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAuthorizedViewRequest, AuthorizedView> getAuthorizedViewCallable() {
+    return stub.getAuthorizedViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AuthorizedView response =
+   *       baseBigtableTableAdminClient.updateAuthorizedViewAsync(authorizedView, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param authorizedView Required. The AuthorizedView to update. The `name` in `authorized_view`
+   *     is used to identify the AuthorizedView. AuthorizedView name must in this format
+   *     projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;
+   * @param updateMask Optional. The list of fields to update. A mask specifying which fields in the
+   *     AuthorizedView resource should be updated. This mask is relative to the AuthorizedView
+   *     resource, not to the request message. A field will be overwritten if it is in the mask. If
+   *     empty, all fields set in the request will be overwritten. A special value `&#42;` means to
+   *     overwrite all fields (including fields not set in the request).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewAsync(AuthorizedView authorizedView, FieldMask updateMask) {
+    UpdateAuthorizedViewRequest request =
+        UpdateAuthorizedViewRequest.newBuilder()
+            .setAuthorizedView(authorizedView)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAuthorizedViewAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UpdateAuthorizedViewRequest request =
+   *       UpdateAuthorizedViewRequest.newBuilder()
+   *           .setAuthorizedView(AuthorizedView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
+   *           .build();
+   *   AuthorizedView response =
+   *       baseBigtableTableAdminClient.updateAuthorizedViewAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewAsync(UpdateAuthorizedViewRequest request) {
+    return updateAuthorizedViewOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UpdateAuthorizedViewRequest request =
+   *       UpdateAuthorizedViewRequest.newBuilder()
+   *           .setAuthorizedView(AuthorizedView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
+   *           .build();
+   *   OperationFuture<AuthorizedView, UpdateAuthorizedViewMetadata> future =
+   *       baseBigtableTableAdminClient.updateAuthorizedViewOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AuthorizedView response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewOperationCallable() {
+    return stub.updateAuthorizedViewOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an AuthorizedView in a table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   UpdateAuthorizedViewRequest request =
+   *       UpdateAuthorizedViewRequest.newBuilder()
+   *           .setAuthorizedView(AuthorizedView.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setIgnoreWarnings(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableTableAdminClient.updateAuthorizedViewCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAuthorizedViewRequest, Operation>
+      updateAuthorizedViewCallable() {
+    return stub.updateAuthorizedViewCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   AuthorizedViewName name =
+   *       AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
+   *   baseBigtableTableAdminClient.deleteAuthorizedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the AuthorizedView to be deleted. Values are of the
+   *     form
+   *     `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAuthorizedView(AuthorizedViewName name) {
+    DeleteAuthorizedViewRequest request =
+        DeleteAuthorizedViewRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteAuthorizedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   String name =
+   *       AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *           .toString();
+   *   baseBigtableTableAdminClient.deleteAuthorizedView(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the AuthorizedView to be deleted. Values are of the
+   *     form
+   *     `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAuthorizedView(String name) {
+    DeleteAuthorizedViewRequest request =
+        DeleteAuthorizedViewRequest.newBuilder().setName(name).build();
+    deleteAuthorizedView(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   DeleteAuthorizedViewRequest request =
+   *       DeleteAuthorizedViewRequest.newBuilder()
+   *           .setName(
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   baseBigtableTableAdminClient.deleteAuthorizedView(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteAuthorizedView(DeleteAuthorizedViewRequest request) {
+    deleteAuthorizedViewCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes a specified AuthorizedView.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableTableAdminClient baseBigtableTableAdminClient =
+   *     BaseBigtableTableAdminClient.create()) {
+   *   DeleteAuthorizedViewRequest request =
+   *       DeleteAuthorizedViewRequest.newBuilder()
+   *           .setName(
+   *               AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       baseBigtableTableAdminClient.deleteAuthorizedViewCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewCallable() {
+    return stub.deleteAuthorizedViewCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4236,6 +5002,90 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
     protected ListTablesFixedSizeCollection createCollection(
         List<ListTablesPage> pages, int collectionSize) {
       return new ListTablesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAuthorizedViewsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAuthorizedViewsRequest,
+          ListAuthorizedViewsResponse,
+          AuthorizedView,
+          ListAuthorizedViewsPage,
+          ListAuthorizedViewsFixedSizeCollection> {
+
+    public static ApiFuture<ListAuthorizedViewsPagedResponse> createAsync(
+        PageContext<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, AuthorizedView>
+            context,
+        ApiFuture<ListAuthorizedViewsResponse> futureResponse) {
+      ApiFuture<ListAuthorizedViewsPage> futurePage =
+          ListAuthorizedViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAuthorizedViewsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAuthorizedViewsPagedResponse(ListAuthorizedViewsPage page) {
+      super(page, ListAuthorizedViewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAuthorizedViewsPage
+      extends AbstractPage<
+          ListAuthorizedViewsRequest,
+          ListAuthorizedViewsResponse,
+          AuthorizedView,
+          ListAuthorizedViewsPage> {
+
+    private ListAuthorizedViewsPage(
+        PageContext<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, AuthorizedView>
+            context,
+        ListAuthorizedViewsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAuthorizedViewsPage createEmptyPage() {
+      return new ListAuthorizedViewsPage(null, null);
+    }
+
+    @Override
+    protected ListAuthorizedViewsPage createPage(
+        PageContext<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, AuthorizedView>
+            context,
+        ListAuthorizedViewsResponse response) {
+      return new ListAuthorizedViewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAuthorizedViewsPage> createPageAsync(
+        PageContext<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, AuthorizedView>
+            context,
+        ApiFuture<ListAuthorizedViewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAuthorizedViewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAuthorizedViewsRequest,
+          ListAuthorizedViewsResponse,
+          AuthorizedView,
+          ListAuthorizedViewsPage,
+          ListAuthorizedViewsFixedSizeCollection> {
+
+    private ListAuthorizedViewsFixedSizeCollection(
+        List<ListAuthorizedViewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAuthorizedViewsFixedSizeCollection createEmptyCollection() {
+      return new ListAuthorizedViewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAuthorizedViewsFixedSizeCollection createCollection(
+        List<ListAuthorizedViewsPage> pages, int collectionSize) {
+      return new ListAuthorizedViewsFixedSizeCollection(pages, collectionSize);
     }
   }
 

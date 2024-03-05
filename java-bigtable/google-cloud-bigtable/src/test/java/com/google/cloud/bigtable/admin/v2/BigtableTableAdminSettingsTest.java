@@ -139,6 +139,13 @@ public class BigtableTableAdminSettingsTest {
     "updateTableOperationSettings",
     "copyBackupSettings",
     "copyBackupOperationSettings",
+    "createAuthorizedViewSettings",
+    "createAuthorizedViewOperationSettings",
+    "updateAuthorizedViewSettings",
+    "updateAuthorizedViewOperationSettings",
+    "deleteAuthorizedViewSettings",
+    "listAuthorizedViewsSettings",
+    "getAuthorizedViewSettings",
   };
 
   @Test

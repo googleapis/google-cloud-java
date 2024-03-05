@@ -40,6 +40,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
 
   private ReadModifyWriteRowRequest() {
     tableName_ = "";
+    authorizedViewName_ = "";
     appProfileId_ = "";
     rowKey_ = com.google.protobuf.ByteString.EMPTY;
     rules_ = java.util.Collections.emptyList();
@@ -74,13 +75,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the read/modify/write rules
-   * should be applied. Values are of the form
+   * Optional. The unique name of the table to which the read/modify/write rules
+   * should be applied.
+   *
+   * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
    * <code>
-   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The tableName.
@@ -101,13 +104,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The unique name of the table to which the read/modify/write rules
-   * should be applied. Values are of the form
+   * Optional. The unique name of the table to which the read/modify/write rules
+   * should be applied.
+   *
+   * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
    * <code>
-   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for tableName.
@@ -119,6 +124,69 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       tableName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AUTHORIZED_VIEW_NAME_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authorizedViewName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique name of the AuthorizedView to which the
+   * read/modify/write rules should be applied.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string authorized_view_name = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The authorizedViewName.
+   */
+  @java.lang.Override
+  public java.lang.String getAuthorizedViewName() {
+    java.lang.Object ref = authorizedViewName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      authorizedViewName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique name of the AuthorizedView to which the
+   * read/modify/write rules should be applied.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string authorized_view_name = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for authorizedViewName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAuthorizedViewNameBytes() {
+    java.lang.Object ref = authorizedViewName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      authorizedViewName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -314,6 +382,9 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appProfileId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizedViewName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, authorizedViewName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -335,6 +406,9 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appProfileId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizedViewName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, authorizedViewName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -352,6 +426,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         (com.google.bigtable.v2.ReadModifyWriteRowRequest) obj;
 
     if (!getTableName().equals(other.getTableName())) return false;
+    if (!getAuthorizedViewName().equals(other.getAuthorizedViewName())) return false;
     if (!getAppProfileId().equals(other.getAppProfileId())) return false;
     if (!getRowKey().equals(other.getRowKey())) return false;
     if (!getRulesList().equals(other.getRulesList())) return false;
@@ -368,6 +443,8 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getTableName().hashCode();
+    hash = (37 * hash) + AUTHORIZED_VIEW_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthorizedViewName().hashCode();
     hash = (37 * hash) + APP_PROFILE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppProfileId().hashCode();
     hash = (37 * hash) + ROW_KEY_FIELD_NUMBER;
@@ -516,6 +593,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       tableName_ = "";
+      authorizedViewName_ = "";
       appProfileId_ = "";
       rowKey_ = com.google.protobuf.ByteString.EMPTY;
       if (rulesBuilder_ == null) {
@@ -524,7 +602,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         rules_ = null;
         rulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -563,9 +641,9 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
     private void buildPartialRepeatedFields(
         com.google.bigtable.v2.ReadModifyWriteRowRequest result) {
       if (rulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           rules_ = java.util.Collections.unmodifiableList(rules_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.rules_ = rules_;
       } else {
@@ -579,9 +657,12 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         result.tableName_ = tableName_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.appProfileId_ = appProfileId_;
+        result.authorizedViewName_ = authorizedViewName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.appProfileId_ = appProfileId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.rowKey_ = rowKey_;
       }
     }
@@ -637,9 +718,14 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getAuthorizedViewName().isEmpty()) {
+        authorizedViewName_ = other.authorizedViewName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getAppProfileId().isEmpty()) {
         appProfileId_ = other.appProfileId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getRowKey() != com.google.protobuf.ByteString.EMPTY) {
@@ -649,7 +735,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         if (!other.rules_.isEmpty()) {
           if (rules_.isEmpty()) {
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureRulesIsMutable();
             rules_.addAll(other.rules_);
@@ -662,7 +748,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
             rulesBuilder_.dispose();
             rulesBuilder_ = null;
             rules_ = other.rules_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             rulesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRulesFieldBuilder()
@@ -707,7 +793,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
             case 18:
               {
                 rowKey_ = input.readBytes();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
@@ -726,9 +812,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
             case 34:
               {
                 appProfileId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 50:
+              {
+                authorizedViewName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -753,13 +845,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the read/modify/write rules
-     * should be applied. Values are of the form
+     * Optional. The unique name of the table to which the read/modify/write rules
+     * should be applied.
+     *
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The tableName.
@@ -779,13 +873,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the read/modify/write rules
-     * should be applied. Values are of the form
+     * Optional. The unique name of the table to which the read/modify/write rules
+     * should be applied.
+     *
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for tableName.
@@ -805,13 +901,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the read/modify/write rules
-     * should be applied. Values are of the form
+     * Optional. The unique name of the table to which the read/modify/write rules
+     * should be applied.
+     *
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The tableName to set.
@@ -830,13 +928,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the read/modify/write rules
-     * should be applied. Values are of the form
+     * Optional. The unique name of the table to which the read/modify/write rules
+     * should be applied.
+     *
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -851,13 +951,15 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The unique name of the table to which the read/modify/write rules
-     * should be applied. Values are of the form
+     * Optional. The unique name of the table to which the read/modify/write rules
+     * should be applied.
+     *
+     * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for tableName to set.
@@ -870,6 +972,142 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
       checkByteStringIsUtf8(value);
       tableName_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object authorizedViewName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView to which the
+     * read/modify/write rules should be applied.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The authorizedViewName.
+     */
+    public java.lang.String getAuthorizedViewName() {
+      java.lang.Object ref = authorizedViewName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authorizedViewName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView to which the
+     * read/modify/write rules should be applied.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for authorizedViewName.
+     */
+    public com.google.protobuf.ByteString getAuthorizedViewNameBytes() {
+      java.lang.Object ref = authorizedViewName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        authorizedViewName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView to which the
+     * read/modify/write rules should be applied.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The authorizedViewName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizedViewName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      authorizedViewName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView to which the
+     * read/modify/write rules should be applied.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthorizedViewName() {
+      authorizedViewName_ = getDefaultInstance().getAuthorizedViewName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView to which the
+     * read/modify/write rules should be applied.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for authorizedViewName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizedViewNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      authorizedViewName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -939,7 +1177,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       appProfileId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -957,7 +1195,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      */
     public Builder clearAppProfileId() {
       appProfileId_ = getDefaultInstance().getAppProfileId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -980,7 +1218,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
       }
       checkByteStringIsUtf8(value);
       appProfileId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1020,7 +1258,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       rowKey_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1037,7 +1275,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRowKey() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       rowKey_ = getDefaultInstance().getRowKey();
       onChanged();
       return this;
@@ -1047,9 +1285,9 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
         java.util.Collections.emptyList();
 
     private void ensureRulesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         rules_ = new java.util.ArrayList<com.google.bigtable.v2.ReadModifyWriteRule>(rules_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1308,7 +1546,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
     public Builder clearRules() {
       if (rulesBuilder_ == null) {
         rules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         rulesBuilder_.clear();
@@ -1458,7 +1696,7 @@ public final class ReadModifyWriteRowRequest extends com.google.protobuf.Generat
                 com.google.bigtable.v2.ReadModifyWriteRule,
                 com.google.bigtable.v2.ReadModifyWriteRule.Builder,
                 com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>(
-                rules_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                rules_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         rules_ = null;
       }
       return rulesBuilder_;

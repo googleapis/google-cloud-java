@@ -16,13 +16,13 @@
 
 package com.google.cloud.bigtable.admin.v2.stub;
 
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -46,25 +46,32 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.AuthorizedView;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.CopyBackupMetadata;
 import com.google.bigtable.admin.v2.CopyBackupRequest;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
@@ -80,6 +87,8 @@ import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
@@ -166,6 +175,22 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   private final UnaryCallSettings<UndeleteTableRequest, Operation> undeleteTableSettings;
   private final OperationCallSettings<UndeleteTableRequest, Table, UndeleteTableMetadata>
       undeleteTableOperationSettings;
+  private final UnaryCallSettings<CreateAuthorizedViewRequest, Operation>
+      createAuthorizedViewSettings;
+  private final OperationCallSettings<
+          CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewOperationSettings;
+  private final PagedCallSettings<
+          ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, ListAuthorizedViewsPagedResponse>
+      listAuthorizedViewsSettings;
+  private final UnaryCallSettings<GetAuthorizedViewRequest, AuthorizedView>
+      getAuthorizedViewSettings;
+  private final UnaryCallSettings<UpdateAuthorizedViewRequest, Operation>
+      updateAuthorizedViewSettings;
+  private final OperationCallSettings<
+          UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewOperationSettings;
+  private final UnaryCallSettings<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewSettings;
   private final UnaryCallSettings<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesSettings;
   private final UnaryCallSettings<DropRowRangeRequest, Empty> dropRowRangeSettings;
   private final UnaryCallSettings<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
@@ -232,6 +257,46 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               return payload.getTablesList() == null
                   ? ImmutableList.<Table>of()
                   : payload.getTablesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, AuthorizedView>
+      LIST_AUTHORIZED_VIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, AuthorizedView>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAuthorizedViewsRequest injectToken(
+                ListAuthorizedViewsRequest payload, String token) {
+              return ListAuthorizedViewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAuthorizedViewsRequest injectPageSize(
+                ListAuthorizedViewsRequest payload, int pageSize) {
+              return ListAuthorizedViewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAuthorizedViewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAuthorizedViewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AuthorizedView> extractResources(ListAuthorizedViewsResponse payload) {
+              return payload.getAuthorizedViewsList() == null
+                  ? ImmutableList.<AuthorizedView>of()
+                  : payload.getAuthorizedViewsList();
             }
           };
 
@@ -325,6 +390,27 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
           };
 
   private static final PagedListResponseFactory<
+          ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, ListAuthorizedViewsPagedResponse>
+      LIST_AUTHORIZED_VIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAuthorizedViewsRequest,
+              ListAuthorizedViewsResponse,
+              ListAuthorizedViewsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAuthorizedViewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse> callable,
+                ListAuthorizedViewsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAuthorizedViewsResponse> futureResponse) {
+              PageContext<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, AuthorizedView>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AUTHORIZED_VIEWS_PAGE_STR_DESC, request, context);
+              return ListAuthorizedViewsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSnapshotsRequest, ListSnapshotsResponse, ListSnapshotsPagedResponse>
       LIST_SNAPSHOTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -412,6 +498,47 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
   public OperationCallSettings<UndeleteTableRequest, Table, UndeleteTableMetadata>
       undeleteTableOperationSettings() {
     return undeleteTableOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAuthorizedView. */
+  public UnaryCallSettings<CreateAuthorizedViewRequest, Operation> createAuthorizedViewSettings() {
+    return createAuthorizedViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAuthorizedView. */
+  public OperationCallSettings<
+          CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewOperationSettings() {
+    return createAuthorizedViewOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAuthorizedViews. */
+  public PagedCallSettings<
+          ListAuthorizedViewsRequest, ListAuthorizedViewsResponse, ListAuthorizedViewsPagedResponse>
+      listAuthorizedViewsSettings() {
+    return listAuthorizedViewsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAuthorizedView. */
+  public UnaryCallSettings<GetAuthorizedViewRequest, AuthorizedView> getAuthorizedViewSettings() {
+    return getAuthorizedViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthorizedView. */
+  public UnaryCallSettings<UpdateAuthorizedViewRequest, Operation> updateAuthorizedViewSettings() {
+    return updateAuthorizedViewSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAuthorizedView. */
+  public OperationCallSettings<
+          UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewOperationSettings() {
+    return updateAuthorizedViewOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthorizedView. */
+  public UnaryCallSettings<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewSettings() {
+    return deleteAuthorizedViewSettings;
   }
 
   /** Returns the object with the settings used for calls to modifyColumnFamilies. */
@@ -633,6 +760,15 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     deleteTableSettings = settingsBuilder.deleteTableSettings().build();
     undeleteTableSettings = settingsBuilder.undeleteTableSettings().build();
     undeleteTableOperationSettings = settingsBuilder.undeleteTableOperationSettings().build();
+    createAuthorizedViewSettings = settingsBuilder.createAuthorizedViewSettings().build();
+    createAuthorizedViewOperationSettings =
+        settingsBuilder.createAuthorizedViewOperationSettings().build();
+    listAuthorizedViewsSettings = settingsBuilder.listAuthorizedViewsSettings().build();
+    getAuthorizedViewSettings = settingsBuilder.getAuthorizedViewSettings().build();
+    updateAuthorizedViewSettings = settingsBuilder.updateAuthorizedViewSettings().build();
+    updateAuthorizedViewOperationSettings =
+        settingsBuilder.updateAuthorizedViewOperationSettings().build();
+    deleteAuthorizedViewSettings = settingsBuilder.deleteAuthorizedViewSettings().build();
     modifyColumnFamiliesSettings = settingsBuilder.modifyColumnFamiliesSettings().build();
     dropRowRangeSettings = settingsBuilder.dropRowRangeSettings().build();
     generateConsistencyTokenSettings = settingsBuilder.generateConsistencyTokenSettings().build();
@@ -678,6 +814,25 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     private final UnaryCallSettings.Builder<UndeleteTableRequest, Operation> undeleteTableSettings;
     private final OperationCallSettings.Builder<UndeleteTableRequest, Table, UndeleteTableMetadata>
         undeleteTableOperationSettings;
+    private final UnaryCallSettings.Builder<CreateAuthorizedViewRequest, Operation>
+        createAuthorizedViewSettings;
+    private final OperationCallSettings.Builder<
+            CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+        createAuthorizedViewOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListAuthorizedViewsRequest,
+            ListAuthorizedViewsResponse,
+            ListAuthorizedViewsPagedResponse>
+        listAuthorizedViewsSettings;
+    private final UnaryCallSettings.Builder<GetAuthorizedViewRequest, AuthorizedView>
+        getAuthorizedViewSettings;
+    private final UnaryCallSettings.Builder<UpdateAuthorizedViewRequest, Operation>
+        updateAuthorizedViewSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+        updateAuthorizedViewOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAuthorizedViewRequest, Empty>
+        deleteAuthorizedViewSettings;
     private final UnaryCallSettings.Builder<ModifyColumnFamiliesRequest, Table>
         modifyColumnFamiliesSettings;
     private final UnaryCallSettings.Builder<DropRowRangeRequest, Empty> dropRowRangeSettings;
@@ -797,6 +952,14 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       deleteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       undeleteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       undeleteTableOperationSettings = OperationCallSettings.newBuilder();
+      createAuthorizedViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAuthorizedViewOperationSettings = OperationCallSettings.newBuilder();
+      listAuthorizedViewsSettings =
+          PagedCallSettings.newBuilder(LIST_AUTHORIZED_VIEWS_PAGE_STR_FACT);
+      getAuthorizedViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAuthorizedViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAuthorizedViewOperationSettings = OperationCallSettings.newBuilder();
+      deleteAuthorizedViewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       modifyColumnFamiliesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       dropRowRangeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateConsistencyTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -829,6 +992,11 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               updateTableSettings,
               deleteTableSettings,
               undeleteTableSettings,
+              createAuthorizedViewSettings,
+              listAuthorizedViewsSettings,
+              getAuthorizedViewSettings,
+              updateAuthorizedViewSettings,
+              deleteAuthorizedViewSettings,
               modifyColumnFamiliesSettings,
               dropRowRangeSettings,
               generateConsistencyTokenSettings,
@@ -864,6 +1032,15 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
       deleteTableSettings = settings.deleteTableSettings.toBuilder();
       undeleteTableSettings = settings.undeleteTableSettings.toBuilder();
       undeleteTableOperationSettings = settings.undeleteTableOperationSettings.toBuilder();
+      createAuthorizedViewSettings = settings.createAuthorizedViewSettings.toBuilder();
+      createAuthorizedViewOperationSettings =
+          settings.createAuthorizedViewOperationSettings.toBuilder();
+      listAuthorizedViewsSettings = settings.listAuthorizedViewsSettings.toBuilder();
+      getAuthorizedViewSettings = settings.getAuthorizedViewSettings.toBuilder();
+      updateAuthorizedViewSettings = settings.updateAuthorizedViewSettings.toBuilder();
+      updateAuthorizedViewOperationSettings =
+          settings.updateAuthorizedViewOperationSettings.toBuilder();
+      deleteAuthorizedViewSettings = settings.deleteAuthorizedViewSettings.toBuilder();
       modifyColumnFamiliesSettings = settings.modifyColumnFamiliesSettings.toBuilder();
       dropRowRangeSettings = settings.dropRowRangeSettings.toBuilder();
       generateConsistencyTokenSettings = settings.generateConsistencyTokenSettings.toBuilder();
@@ -896,6 +1073,11 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
               updateTableSettings,
               deleteTableSettings,
               undeleteTableSettings,
+              createAuthorizedViewSettings,
+              listAuthorizedViewsSettings,
+              getAuthorizedViewSettings,
+              updateAuthorizedViewSettings,
+              deleteAuthorizedViewSettings,
               modifyColumnFamiliesSettings,
               dropRowRangeSettings,
               generateConsistencyTokenSettings,
@@ -961,6 +1143,31 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
       builder
           .undeleteTableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createAuthorizedViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAuthorizedViewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAuthorizedViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateAuthorizedViewSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAuthorizedViewSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1127,6 +1334,56 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
                       .build()));
 
       builder
+          .createAuthorizedViewOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAuthorizedViewRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AuthorizedView.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  CreateAuthorizedViewMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateAuthorizedViewOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAuthorizedViewRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AuthorizedView.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateAuthorizedViewMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .snapshotTableOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1251,8 +1508,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to createTableFromSnapshot. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTableFromSnapshotRequest, Table, CreateTableFromSnapshotMetadata>
         createTableFromSnapshotOperationSettings() {
@@ -1276,8 +1531,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to updateTable. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateTableRequest, Table, UpdateTableMetadata>
         updateTableOperationSettings() {
       return updateTableOperationSettings;
@@ -1294,11 +1547,56 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to undeleteTable. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeleteTableRequest, Table, UndeleteTableMetadata>
         undeleteTableOperationSettings() {
       return undeleteTableOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthorizedView. */
+    public UnaryCallSettings.Builder<CreateAuthorizedViewRequest, Operation>
+        createAuthorizedViewSettings() {
+      return createAuthorizedViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAuthorizedView. */
+    public OperationCallSettings.Builder<
+            CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+        createAuthorizedViewOperationSettings() {
+      return createAuthorizedViewOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthorizedViews. */
+    public PagedCallSettings.Builder<
+            ListAuthorizedViewsRequest,
+            ListAuthorizedViewsResponse,
+            ListAuthorizedViewsPagedResponse>
+        listAuthorizedViewsSettings() {
+      return listAuthorizedViewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthorizedView. */
+    public UnaryCallSettings.Builder<GetAuthorizedViewRequest, AuthorizedView>
+        getAuthorizedViewSettings() {
+      return getAuthorizedViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthorizedView. */
+    public UnaryCallSettings.Builder<UpdateAuthorizedViewRequest, Operation>
+        updateAuthorizedViewSettings() {
+      return updateAuthorizedViewSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuthorizedView. */
+    public OperationCallSettings.Builder<
+            UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+        updateAuthorizedViewOperationSettings() {
+      return updateAuthorizedViewOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthorizedView. */
+    public UnaryCallSettings.Builder<DeleteAuthorizedViewRequest, Empty>
+        deleteAuthorizedViewSettings() {
+      return deleteAuthorizedViewSettings;
     }
 
     /** Returns the builder for the settings used for calls to modifyColumnFamilies. */
@@ -1331,8 +1629,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to snapshotTable. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<SnapshotTableRequest, Snapshot, SnapshotTableMetadata>
         snapshotTableOperationSettings() {
       return snapshotTableOperationSettings;
@@ -1361,8 +1657,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, CreateBackupMetadata>
         createBackupOperationSettings() {
       return createBackupOperationSettings;
@@ -1396,8 +1690,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to restoreTable. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreTableRequest, Table, RestoreTableMetadata>
         restoreTableOperationSettings() {
       return restoreTableOperationSettings;
@@ -1409,8 +1701,6 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
     }
 
     /** Returns the builder for the settings used for calls to copyBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CopyBackupRequest, Backup, CopyBackupMetadata>
         copyBackupOperationSettings() {
       return copyBackupOperationSettings;

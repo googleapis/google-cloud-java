@@ -88,6 +88,9 @@
             "CopyBackup": {
               "methods": ["copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupAsync", "copyBackupOperationCallable", "copyBackupCallable"]
             },
+            "CreateAuthorizedView": {
+              "methods": ["createAuthorizedViewAsync", "createAuthorizedViewAsync", "createAuthorizedViewAsync", "createAuthorizedViewOperationCallable", "createAuthorizedViewCallable"]
+            },
             "CreateBackup": {
               "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
             },
@@ -96,6 +99,9 @@
             },
             "CreateTableFromSnapshot": {
               "methods": ["createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotAsync", "createTableFromSnapshotOperationCallable", "createTableFromSnapshotCallable"]
+            },
+            "DeleteAuthorizedView": {
+              "methods": ["deleteAuthorizedView", "deleteAuthorizedView", "deleteAuthorizedView", "deleteAuthorizedViewCallable"]
             },
             "DeleteBackup": {
               "methods": ["deleteBackup", "deleteBackup", "deleteBackup", "deleteBackupCallable"]
@@ -112,6 +118,9 @@
             "GenerateConsistencyToken": {
               "methods": ["generateConsistencyToken", "generateConsistencyToken", "generateConsistencyToken", "generateConsistencyTokenCallable"]
             },
+            "GetAuthorizedView": {
+              "methods": ["getAuthorizedView", "getAuthorizedView", "getAuthorizedView", "getAuthorizedViewCallable"]
+            },
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
             },
@@ -123,6 +132,9 @@
             },
             "GetTable": {
               "methods": ["getTable", "getTable", "getTable", "getTableCallable"]
+            },
+            "ListAuthorizedViews": {
+              "methods": ["listAuthorizedViews", "listAuthorizedViews", "listAuthorizedViews", "listAuthorizedViewsPagedCallable", "listAuthorizedViewsCallable"]
             },
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
@@ -150,6 +162,9 @@
             },
             "UndeleteTable": {
               "methods": ["undeleteTableAsync", "undeleteTableAsync", "undeleteTableAsync", "undeleteTableOperationCallable", "undeleteTableCallable"]
+            },
+            "UpdateAuthorizedView": {
+              "methods": ["updateAuthorizedViewAsync", "updateAuthorizedViewAsync", "updateAuthorizedViewOperationCallable", "updateAuthorizedViewCallable"]
             },
             "UpdateBackup": {
               "methods": ["updateBackup", "updateBackup", "updateBackupCallable"]

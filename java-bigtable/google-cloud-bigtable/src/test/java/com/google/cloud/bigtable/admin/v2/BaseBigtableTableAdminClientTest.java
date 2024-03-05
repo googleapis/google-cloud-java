@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigtable.admin.v2;
 
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
@@ -29,6 +30,8 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.resourcenames.ResourceName;
+import com.google.bigtable.admin.v2.AuthorizedView;
+import com.google.bigtable.admin.v2.AuthorizedViewName;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.BackupName;
 import com.google.bigtable.admin.v2.ChangeStreamConfig;
@@ -37,9 +40,11 @@ import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CopyBackupRequest;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
@@ -47,10 +52,13 @@ import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.EncryptionInfo;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
@@ -66,6 +74,7 @@ import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.common.collect.Lists;
@@ -870,6 +879,423 @@ public class BaseBigtableTableAdminClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAuthorizedViewTest() throws Exception {
+    AuthorizedView expectedResponse =
+        AuthorizedView.newBuilder()
+            .setName(
+                AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+                    .toString())
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAuthorizedViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableTableAdmin.addResponse(resultOperation);
+
+    TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+    AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+    String authorizedViewId = "authorizedViewId-2074136549";
+
+    AuthorizedView actualResponse =
+        client.createAuthorizedViewAsync(parent, authorizedView, authorizedViewId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAuthorizedViewRequest actualRequest =
+        ((CreateAuthorizedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(authorizedView, actualRequest.getAuthorizedView());
+    Assert.assertEquals(authorizedViewId, actualRequest.getAuthorizedViewId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAuthorizedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+      String authorizedViewId = "authorizedViewId-2074136549";
+      client.createAuthorizedViewAsync(parent, authorizedView, authorizedViewId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAuthorizedViewTest2() throws Exception {
+    AuthorizedView expectedResponse =
+        AuthorizedView.newBuilder()
+            .setName(
+                AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+                    .toString())
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAuthorizedViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableTableAdmin.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+    String authorizedViewId = "authorizedViewId-2074136549";
+
+    AuthorizedView actualResponse =
+        client.createAuthorizedViewAsync(parent, authorizedView, authorizedViewId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAuthorizedViewRequest actualRequest =
+        ((CreateAuthorizedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(authorizedView, actualRequest.getAuthorizedView());
+    Assert.assertEquals(authorizedViewId, actualRequest.getAuthorizedViewId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAuthorizedViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+      String authorizedViewId = "authorizedViewId-2074136549";
+      client.createAuthorizedViewAsync(parent, authorizedView, authorizedViewId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listAuthorizedViewsTest() throws Exception {
+    AuthorizedView responsesElement = AuthorizedView.newBuilder().build();
+    ListAuthorizedViewsResponse expectedResponse =
+        ListAuthorizedViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthorizedViews(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+
+    ListAuthorizedViewsPagedResponse pagedListResponse = client.listAuthorizedViews(parent);
+
+    List<AuthorizedView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthorizedViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuthorizedViewsRequest actualRequest = ((ListAuthorizedViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuthorizedViewsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      TableName parent = TableName.of("[PROJECT]", "[INSTANCE]", "[TABLE]");
+      client.listAuthorizedViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthorizedViewsTest2() throws Exception {
+    AuthorizedView responsesElement = AuthorizedView.newBuilder().build();
+    ListAuthorizedViewsResponse expectedResponse =
+        ListAuthorizedViewsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthorizedViews(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAuthorizedViewsPagedResponse pagedListResponse = client.listAuthorizedViews(parent);
+
+    List<AuthorizedView> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthorizedViewsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuthorizedViewsRequest actualRequest = ((ListAuthorizedViewsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuthorizedViewsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAuthorizedViews(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthorizedViewTest() throws Exception {
+    AuthorizedView expectedResponse =
+        AuthorizedView.newBuilder()
+            .setName(
+                AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+                    .toString())
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    AuthorizedViewName name =
+        AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
+
+    AuthorizedView actualResponse = client.getAuthorizedView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuthorizedViewRequest actualRequest = ((GetAuthorizedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuthorizedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      AuthorizedViewName name =
+          AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
+      client.getAuthorizedView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthorizedViewTest2() throws Exception {
+    AuthorizedView expectedResponse =
+        AuthorizedView.newBuilder()
+            .setName(
+                AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+                    .toString())
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AuthorizedView actualResponse = client.getAuthorizedView(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuthorizedViewRequest actualRequest = ((GetAuthorizedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuthorizedViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAuthorizedView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAuthorizedViewTest() throws Exception {
+    AuthorizedView expectedResponse =
+        AuthorizedView.newBuilder()
+            .setName(
+                AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]")
+                    .toString())
+            .setEtag("etag3123477")
+            .setDeletionProtection(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAuthorizedViewTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableTableAdmin.addResponse(resultOperation);
+
+    AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AuthorizedView actualResponse =
+        client.updateAuthorizedViewAsync(authorizedView, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAuthorizedViewRequest actualRequest =
+        ((UpdateAuthorizedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(authorizedView, actualRequest.getAuthorizedView());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAuthorizedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      AuthorizedView authorizedView = AuthorizedView.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAuthorizedViewAsync(authorizedView, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAuthorizedViewTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    AuthorizedViewName name =
+        AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
+
+    client.deleteAuthorizedView(name);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAuthorizedViewRequest actualRequest =
+        ((DeleteAuthorizedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAuthorizedViewExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      AuthorizedViewName name =
+          AuthorizedViewName.of("[PROJECT]", "[INSTANCE]", "[TABLE]", "[AUTHORIZED_VIEW]");
+      client.deleteAuthorizedView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteAuthorizedViewTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockBigtableTableAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteAuthorizedView(name);
+
+    List<AbstractMessage> actualRequests = mockBigtableTableAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAuthorizedViewRequest actualRequest =
+        ((DeleteAuthorizedViewRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAuthorizedViewExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableTableAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAuthorizedView(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

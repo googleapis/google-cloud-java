@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigtable.admin.v2.stub;
 
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
@@ -29,25 +30,32 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.admin.v2.AuthorizedView;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.CopyBackupMetadata;
 import com.google.bigtable.admin.v2.CopyBackupRequest;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotMetadata;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
@@ -63,6 +71,8 @@ import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableMetadata;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
@@ -145,6 +155,57 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteTableRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateAuthorizedViewRequest, Operation>
+      createAuthorizedViewMethodDescriptor =
+          MethodDescriptor.<CreateAuthorizedViewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/CreateAuthorizedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAuthorizedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>
+      listAuthorizedViewsMethodDescriptor =
+          MethodDescriptor.<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/ListAuthorizedViews")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAuthorizedViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAuthorizedViewsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAuthorizedViewRequest, AuthorizedView>
+      getAuthorizedViewMethodDescriptor =
+          MethodDescriptor.<GetAuthorizedViewRequest, AuthorizedView>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/GetAuthorizedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAuthorizedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AuthorizedView.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateAuthorizedViewRequest, Operation>
+      updateAuthorizedViewMethodDescriptor =
+          MethodDescriptor.<UpdateAuthorizedViewRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/UpdateAuthorizedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAuthorizedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteAuthorizedViewRequest, Empty>
+      deleteAuthorizedViewMethodDescriptor =
+          MethodDescriptor.<DeleteAuthorizedViewRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableTableAdmin/DeleteAuthorizedView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAuthorizedViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ModifyColumnFamiliesRequest, Table>
@@ -332,6 +393,20 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   private final UnaryCallable<UndeleteTableRequest, Operation> undeleteTableCallable;
   private final OperationCallable<UndeleteTableRequest, Table, UndeleteTableMetadata>
       undeleteTableOperationCallable;
+  private final UnaryCallable<CreateAuthorizedViewRequest, Operation> createAuthorizedViewCallable;
+  private final OperationCallable<
+          CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewOperationCallable;
+  private final UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>
+      listAuthorizedViewsCallable;
+  private final UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
+      listAuthorizedViewsPagedCallable;
+  private final UnaryCallable<GetAuthorizedViewRequest, AuthorizedView> getAuthorizedViewCallable;
+  private final UnaryCallable<UpdateAuthorizedViewRequest, Operation> updateAuthorizedViewCallable;
+  private final OperationCallable<
+          UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewOperationCallable;
+  private final UnaryCallable<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewCallable;
   private final UnaryCallable<ModifyColumnFamiliesRequest, Table> modifyColumnFamiliesCallable;
   private final UnaryCallable<DropRowRangeRequest, Empty> dropRowRangeCallable;
   private final UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
@@ -474,6 +549,59 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
     GrpcCallSettings<UndeleteTableRequest, Operation> undeleteTableTransportSettings =
         GrpcCallSettings.<UndeleteTableRequest, Operation>newBuilder()
             .setMethodDescriptor(undeleteTableMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateAuthorizedViewRequest, Operation> createAuthorizedViewTransportSettings =
+        GrpcCallSettings.<CreateAuthorizedViewRequest, Operation>newBuilder()
+            .setMethodDescriptor(createAuthorizedViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>
+        listAuthorizedViewsTransportSettings =
+            GrpcCallSettings.<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>newBuilder()
+                .setMethodDescriptor(listAuthorizedViewsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAuthorizedViewRequest, AuthorizedView> getAuthorizedViewTransportSettings =
+        GrpcCallSettings.<GetAuthorizedViewRequest, AuthorizedView>newBuilder()
+            .setMethodDescriptor(getAuthorizedViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateAuthorizedViewRequest, Operation> updateAuthorizedViewTransportSettings =
+        GrpcCallSettings.<UpdateAuthorizedViewRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAuthorizedViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "authorized_view.name",
+                      String.valueOf(request.getAuthorizedView().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewTransportSettings =
+        GrpcCallSettings.<DeleteAuthorizedViewRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteAuthorizedViewMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -710,6 +838,48 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
             settings.undeleteTableOperationSettings(),
             clientContext,
             operationsStub);
+    this.createAuthorizedViewCallable =
+        callableFactory.createUnaryCallable(
+            createAuthorizedViewTransportSettings,
+            settings.createAuthorizedViewSettings(),
+            clientContext);
+    this.createAuthorizedViewOperationCallable =
+        callableFactory.createOperationCallable(
+            createAuthorizedViewTransportSettings,
+            settings.createAuthorizedViewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listAuthorizedViewsCallable =
+        callableFactory.createUnaryCallable(
+            listAuthorizedViewsTransportSettings,
+            settings.listAuthorizedViewsSettings(),
+            clientContext);
+    this.listAuthorizedViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthorizedViewsTransportSettings,
+            settings.listAuthorizedViewsSettings(),
+            clientContext);
+    this.getAuthorizedViewCallable =
+        callableFactory.createUnaryCallable(
+            getAuthorizedViewTransportSettings,
+            settings.getAuthorizedViewSettings(),
+            clientContext);
+    this.updateAuthorizedViewCallable =
+        callableFactory.createUnaryCallable(
+            updateAuthorizedViewTransportSettings,
+            settings.updateAuthorizedViewSettings(),
+            clientContext);
+    this.updateAuthorizedViewOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAuthorizedViewTransportSettings,
+            settings.updateAuthorizedViewOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAuthorizedViewCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthorizedViewTransportSettings,
+            settings.deleteAuthorizedViewSettings(),
+            clientContext);
     this.modifyColumnFamiliesCallable =
         callableFactory.createUnaryCallable(
             modifyColumnFamiliesTransportSettings,
@@ -866,6 +1036,52 @@ public class GrpcBigtableTableAdminStub extends BigtableTableAdminStub {
   public OperationCallable<UndeleteTableRequest, Table, UndeleteTableMetadata>
       undeleteTableOperationCallable() {
     return undeleteTableOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAuthorizedViewRequest, Operation> createAuthorizedViewCallable() {
+    return createAuthorizedViewCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateAuthorizedViewRequest, AuthorizedView, CreateAuthorizedViewMetadata>
+      createAuthorizedViewOperationCallable() {
+    return createAuthorizedViewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsResponse>
+      listAuthorizedViewsCallable() {
+    return listAuthorizedViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
+      listAuthorizedViewsPagedCallable() {
+    return listAuthorizedViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthorizedViewRequest, AuthorizedView> getAuthorizedViewCallable() {
+    return getAuthorizedViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAuthorizedViewRequest, Operation> updateAuthorizedViewCallable() {
+    return updateAuthorizedViewCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+      updateAuthorizedViewOperationCallable() {
+    return updateAuthorizedViewOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthorizedViewRequest, Empty> deleteAuthorizedViewCallable() {
+    return deleteAuthorizedViewCallable;
   }
 
   @Override

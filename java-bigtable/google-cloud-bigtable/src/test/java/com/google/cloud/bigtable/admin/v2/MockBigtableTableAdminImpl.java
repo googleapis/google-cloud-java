@@ -17,23 +17,29 @@
 package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.BetaApi;
+import com.google.bigtable.admin.v2.AuthorizedView;
 import com.google.bigtable.admin.v2.Backup;
 import com.google.bigtable.admin.v2.BigtableTableAdminGrpc.BigtableTableAdminImplBase;
 import com.google.bigtable.admin.v2.CheckConsistencyRequest;
 import com.google.bigtable.admin.v2.CheckConsistencyResponse;
 import com.google.bigtable.admin.v2.CopyBackupRequest;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.CreateBackupRequest;
 import com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest;
 import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteSnapshotRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest;
 import com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetSnapshotRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsResponse;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListBackupsResponse;
 import com.google.bigtable.admin.v2.ListSnapshotsRequest;
@@ -46,6 +52,7 @@ import com.google.bigtable.admin.v2.Snapshot;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.UndeleteTableRequest;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.UpdateBackupRequest;
 import com.google.bigtable.admin.v2.UpdateTableRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -234,6 +241,112 @@ public class MockBigtableTableAdminImpl extends BigtableTableAdminImplBase {
                   "Unrecognized response type %s for method UndeleteTable, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAuthorizedView(
+      CreateAuthorizedViewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAuthorizedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAuthorizedViews(
+      ListAuthorizedViewsRequest request,
+      StreamObserver<ListAuthorizedViewsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAuthorizedViewsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAuthorizedViewsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAuthorizedViews, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAuthorizedViewsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAuthorizedView(
+      GetAuthorizedViewRequest request, StreamObserver<AuthorizedView> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AuthorizedView) {
+      requests.add(request);
+      responseObserver.onNext(((AuthorizedView) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAuthorizedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AuthorizedView.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAuthorizedView(
+      UpdateAuthorizedViewRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAuthorizedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAuthorizedView(
+      DeleteAuthorizedViewRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAuthorizedView, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
                   Exception.class.getName())));
     }
   }

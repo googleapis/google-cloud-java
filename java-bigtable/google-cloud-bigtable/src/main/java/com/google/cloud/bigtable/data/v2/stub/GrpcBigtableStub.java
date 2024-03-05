@@ -181,22 +181,37 @@ public class GrpcBigtableStub extends BigtableStub {
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
   private static final PathTemplate READ_ROWS_1_PATH_TEMPLATE =
       PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate READ_ROWS_2_PATH_TEMPLATE =
+      PathTemplate.create(
+          "{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}");
   private static final PathTemplate SAMPLE_ROW_KEYS_0_PATH_TEMPLATE =
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
   private static final PathTemplate SAMPLE_ROW_KEYS_1_PATH_TEMPLATE =
       PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate SAMPLE_ROW_KEYS_2_PATH_TEMPLATE =
+      PathTemplate.create(
+          "{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}");
   private static final PathTemplate MUTATE_ROW_0_PATH_TEMPLATE =
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
   private static final PathTemplate MUTATE_ROW_1_PATH_TEMPLATE =
       PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate MUTATE_ROW_2_PATH_TEMPLATE =
+      PathTemplate.create(
+          "{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}");
   private static final PathTemplate MUTATE_ROWS_0_PATH_TEMPLATE =
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
   private static final PathTemplate MUTATE_ROWS_1_PATH_TEMPLATE =
       PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate MUTATE_ROWS_2_PATH_TEMPLATE =
+      PathTemplate.create(
+          "{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}");
   private static final PathTemplate CHECK_AND_MUTATE_ROW_0_PATH_TEMPLATE =
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
   private static final PathTemplate CHECK_AND_MUTATE_ROW_1_PATH_TEMPLATE =
       PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate CHECK_AND_MUTATE_ROW_2_PATH_TEMPLATE =
+      PathTemplate.create(
+          "{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}");
   private static final PathTemplate PING_AND_WARM_0_PATH_TEMPLATE =
       PathTemplate.create("{name=projects/*/instances/*}");
   private static final PathTemplate PING_AND_WARM_1_PATH_TEMPLATE =
@@ -205,6 +220,9 @@ public class GrpcBigtableStub extends BigtableStub {
       PathTemplate.create("{table_name=projects/*/instances/*/tables/*}");
   private static final PathTemplate READ_MODIFY_WRITE_ROW_1_PATH_TEMPLATE =
       PathTemplate.create("{app_profile_id=**}");
+  private static final PathTemplate READ_MODIFY_WRITE_ROW_2_PATH_TEMPLATE =
+      PathTemplate.create(
+          "{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}");
 
   public static final GrpcBigtableStub create(BigtableStubSettings settings) throws IOException {
     return new GrpcBigtableStub(settings, ClientContext.create(settings));
@@ -250,6 +268,10 @@ public class GrpcBigtableStub extends BigtableStub {
                   builder.add(request.getTableName(), "table_name", READ_ROWS_0_PATH_TEMPLATE);
                   builder.add(
                       request.getAppProfileId(), "app_profile_id", READ_ROWS_1_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAuthorizedViewName(),
+                      "authorized_view_name",
+                      READ_ROWS_2_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -263,6 +285,10 @@ public class GrpcBigtableStub extends BigtableStub {
                       request.getTableName(), "table_name", SAMPLE_ROW_KEYS_0_PATH_TEMPLATE);
                   builder.add(
                       request.getAppProfileId(), "app_profile_id", SAMPLE_ROW_KEYS_1_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAuthorizedViewName(),
+                      "authorized_view_name",
+                      SAMPLE_ROW_KEYS_2_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -275,6 +301,10 @@ public class GrpcBigtableStub extends BigtableStub {
                   builder.add(request.getTableName(), "table_name", MUTATE_ROW_0_PATH_TEMPLATE);
                   builder.add(
                       request.getAppProfileId(), "app_profile_id", MUTATE_ROW_1_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAuthorizedViewName(),
+                      "authorized_view_name",
+                      MUTATE_ROW_2_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -287,6 +317,10 @@ public class GrpcBigtableStub extends BigtableStub {
                   builder.add(request.getTableName(), "table_name", MUTATE_ROWS_0_PATH_TEMPLATE);
                   builder.add(
                       request.getAppProfileId(), "app_profile_id", MUTATE_ROWS_1_PATH_TEMPLATE);
+                  builder.add(
+                      request.getAuthorizedViewName(),
+                      "authorized_view_name",
+                      MUTATE_ROWS_2_PATH_TEMPLATE);
                   return builder.build();
                 })
             .build();
@@ -305,6 +339,10 @@ public class GrpcBigtableStub extends BigtableStub {
                           request.getAppProfileId(),
                           "app_profile_id",
                           CHECK_AND_MUTATE_ROW_1_PATH_TEMPLATE);
+                      builder.add(
+                          request.getAuthorizedViewName(),
+                          "authorized_view_name",
+                          CHECK_AND_MUTATE_ROW_2_PATH_TEMPLATE);
                       return builder.build();
                     })
                 .build();
@@ -335,6 +373,10 @@ public class GrpcBigtableStub extends BigtableStub {
                           request.getAppProfileId(),
                           "app_profile_id",
                           READ_MODIFY_WRITE_ROW_1_PATH_TEMPLATE);
+                      builder.add(
+                          request.getAuthorizedViewName(),
+                          "authorized_view_name",
+                          READ_MODIFY_WRITE_ROW_2_PATH_TEMPLATE);
                       return builder.build();
                     })
                 .build();

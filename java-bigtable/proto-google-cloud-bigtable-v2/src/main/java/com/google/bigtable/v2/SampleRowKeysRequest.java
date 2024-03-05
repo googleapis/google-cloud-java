@@ -40,6 +40,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
 
   private SampleRowKeysRequest() {
     tableName_ = "";
+    authorizedViewName_ = "";
     appProfileId_ = "";
   }
 
@@ -72,13 +73,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique name of the table from which to sample row keys.
+   * Optional. The unique name of the table from which to sample row keys.
+   *
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
    * <code>
-   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The tableName.
@@ -99,13 +101,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique name of the table from which to sample row keys.
+   * Optional. The unique name of the table from which to sample row keys.
+   *
    * Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
    * </pre>
    *
    * <code>
-   * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for tableName.
@@ -117,6 +120,69 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       tableName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AUTHORIZED_VIEW_NAME_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authorizedViewName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique name of the AuthorizedView from which to sample row
+   * keys.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string authorized_view_name = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The authorizedViewName.
+   */
+  @java.lang.Override
+  public java.lang.String getAuthorizedViewName() {
+    java.lang.Object ref = authorizedViewName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      authorizedViewName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The unique name of the AuthorizedView from which to sample row
+   * keys.
+   *
+   * Values are of the form
+   * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+   * </pre>
+   *
+   * <code>
+   * string authorized_view_name = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for authorizedViewName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAuthorizedViewNameBytes() {
+    java.lang.Object ref = authorizedViewName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      authorizedViewName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -196,6 +262,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appProfileId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizedViewName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, authorizedViewName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -210,6 +279,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(appProfileId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appProfileId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authorizedViewName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, authorizedViewName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -228,6 +300,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         (com.google.bigtable.v2.SampleRowKeysRequest) obj;
 
     if (!getTableName().equals(other.getTableName())) return false;
+    if (!getAuthorizedViewName().equals(other.getAuthorizedViewName())) return false;
     if (!getAppProfileId().equals(other.getAppProfileId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -242,6 +315,8 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TABLE_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getTableName().hashCode();
+    hash = (37 * hash) + AUTHORIZED_VIEW_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthorizedViewName().hashCode();
     hash = (37 * hash) + APP_PROFILE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getAppProfileId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -384,6 +459,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       tableName_ = "";
+      authorizedViewName_ = "";
       appProfileId_ = "";
       return this;
     }
@@ -425,6 +501,9 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         result.tableName_ = tableName_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.authorizedViewName_ = authorizedViewName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.appProfileId_ = appProfileId_;
       }
     }
@@ -479,9 +558,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getAuthorizedViewName().isEmpty()) {
+        authorizedViewName_ = other.authorizedViewName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getAppProfileId().isEmpty()) {
         appProfileId_ = other.appProfileId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -519,9 +603,15 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
             case 18:
               {
                 appProfileId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
+            case 34:
+              {
+                authorizedViewName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -546,13 +636,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the table from which to sample row keys.
+     * Optional. The unique name of the table from which to sample row keys.
+     *
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The tableName.
@@ -572,13 +663,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the table from which to sample row keys.
+     * Optional. The unique name of the table from which to sample row keys.
+     *
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for tableName.
@@ -598,13 +690,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the table from which to sample row keys.
+     * Optional. The unique name of the table from which to sample row keys.
+     *
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The tableName to set.
@@ -623,13 +716,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the table from which to sample row keys.
+     * Optional. The unique name of the table from which to sample row keys.
+     *
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -644,13 +738,14 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the table from which to sample row keys.
+     * Optional. The unique name of the table from which to sample row keys.
+     *
      * Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;`.
      * </pre>
      *
      * <code>
-     * string table_name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string table_name = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for tableName to set.
@@ -663,6 +758,142 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       tableName_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object authorizedViewName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView from which to sample row
+     * keys.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The authorizedViewName.
+     */
+    public java.lang.String getAuthorizedViewName() {
+      java.lang.Object ref = authorizedViewName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authorizedViewName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView from which to sample row
+     * keys.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for authorizedViewName.
+     */
+    public com.google.protobuf.ByteString getAuthorizedViewNameBytes() {
+      java.lang.Object ref = authorizedViewName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        authorizedViewName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView from which to sample row
+     * keys.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The authorizedViewName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizedViewName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      authorizedViewName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView from which to sample row
+     * keys.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthorizedViewName() {
+      authorizedViewName_ = getDefaultInstance().getAuthorizedViewName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The unique name of the AuthorizedView from which to sample row
+     * keys.
+     *
+     * Values are of the form
+     * `projects/&lt;project&gt;/instances/&lt;instance&gt;/tables/&lt;table&gt;/authorizedViews/&lt;authorized_view&gt;`.
+     * </pre>
+     *
+     * <code>
+     * string authorized_view_name = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for authorizedViewName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizedViewNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      authorizedViewName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -732,7 +963,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       appProfileId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -750,7 +981,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearAppProfileId() {
       appProfileId_ = getDefaultInstance().getAppProfileId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -773,7 +1004,7 @@ public final class SampleRowKeysRequest extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       appProfileId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
