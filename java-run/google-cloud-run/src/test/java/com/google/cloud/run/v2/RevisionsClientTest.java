@@ -123,6 +123,7 @@ public class RevisionsClientTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -190,6 +191,7 @@ public class RevisionsClientTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -345,6 +347,7 @@ public class RevisionsClientTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -420,6 +423,7 @@ public class RevisionsClientTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

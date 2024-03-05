@@ -889,16 +889,34 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Enable session affinity.
+   * Optional. Enable session affinity.
    * </pre>
    *
-   * <code>bool session_affinity = 19;</code>
+   * <code>bool session_affinity = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sessionAffinity.
    */
   @java.lang.Override
   public boolean getSessionAffinity() {
     return sessionAffinity_;
+  }
+
+  public static final int HEALTH_CHECK_DISABLED_FIELD_NUMBER = 20;
+  private boolean healthCheckDisabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables health checking containers during deployment.
+   * </pre>
+   *
+   * <code>bool health_check_disabled = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The healthCheckDisabled.
+   */
+  @java.lang.Override
+  public boolean getHealthCheckDisabled() {
+    return healthCheckDisabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -953,6 +971,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
     if (sessionAffinity_ != false) {
       output.writeBool(19, sessionAffinity_);
+    }
+    if (healthCheckDisabled_ != false) {
+      output.writeBool(20, healthCheckDisabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1020,6 +1041,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (sessionAffinity_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, sessionAffinity_);
     }
+    if (healthCheckDisabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, healthCheckDisabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1058,6 +1082,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (getMaxInstanceRequestConcurrency() != other.getMaxInstanceRequestConcurrency())
       return false;
     if (getSessionAffinity() != other.getSessionAffinity()) return false;
+    if (getHealthCheckDisabled() != other.getHealthCheckDisabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1109,6 +1134,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getMaxInstanceRequestConcurrency();
     hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionAffinity());
+    hash = (37 * hash) + HEALTH_CHECK_DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHealthCheckDisabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1325,6 +1352,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       encryptionKey_ = "";
       maxInstanceRequestConcurrency_ = 0;
       sessionAffinity_ = false;
+      healthCheckDisabled_ = false;
       return this;
     }
 
@@ -1421,6 +1449,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.sessionAffinity_ = sessionAffinity_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.healthCheckDisabled_ = healthCheckDisabled_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1561,6 +1592,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (other.getSessionAffinity() != false) {
         setSessionAffinity(other.getSessionAffinity());
       }
+      if (other.getHealthCheckDisabled() != false) {
+        setHealthCheckDisabled(other.getHealthCheckDisabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1690,6 +1724,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00001000;
                 break;
               } // case 152
+            case 160:
+              {
+                healthCheckDisabled_ = input.readBool();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3953,10 +3993,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Enable session affinity.
+     * Optional. Enable session affinity.
      * </pre>
      *
-     * <code>bool session_affinity = 19;</code>
+     * <code>bool session_affinity = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The sessionAffinity.
      */
@@ -3968,10 +4008,10 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Enable session affinity.
+     * Optional. Enable session affinity.
      * </pre>
      *
-     * <code>bool session_affinity = 19;</code>
+     * <code>bool session_affinity = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The sessionAffinity to set.
      * @return This builder for chaining.
@@ -3987,16 +4027,69 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Enable session affinity.
+     * Optional. Enable session affinity.
      * </pre>
      *
-     * <code>bool session_affinity = 19;</code>
+     * <code>bool session_affinity = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearSessionAffinity() {
       bitField0_ = (bitField0_ & ~0x00001000);
       sessionAffinity_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean healthCheckDisabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables health checking containers during deployment.
+     * </pre>
+     *
+     * <code>bool health_check_disabled = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The healthCheckDisabled.
+     */
+    @java.lang.Override
+    public boolean getHealthCheckDisabled() {
+      return healthCheckDisabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables health checking containers during deployment.
+     * </pre>
+     *
+     * <code>bool health_check_disabled = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The healthCheckDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHealthCheckDisabled(boolean value) {
+
+      healthCheckDisabled_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables health checking containers during deployment.
+     * </pre>
+     *
+     * <code>bool health_check_disabled = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHealthCheckDisabled() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      healthCheckDisabled_ = false;
       onChanged();
       return this;
     }

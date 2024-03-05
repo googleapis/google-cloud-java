@@ -317,11 +317,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -331,7 +330,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -350,11 +349,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -364,7 +362,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -374,11 +372,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -388,7 +385,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -405,11 +402,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -419,7 +415,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -464,9 +460,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -477,7 +473,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -496,9 +493,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -509,7 +506,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -519,9 +517,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -532,7 +530,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -549,9 +548,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -562,7 +561,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -1257,6 +1257,80 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return traffic_.get(index);
   }
 
+  public static final int SCALING_FIELD_NUMBER = 20;
+  private com.google.cloud.run.v2.ServiceScaling scaling_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies service-level scaling settings
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the scaling field is set.
+   */
+  @java.lang.Override
+  public boolean hasScaling() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies service-level scaling settings
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scaling.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.ServiceScaling getScaling() {
+    return scaling_ == null
+        ? com.google.cloud.run.v2.ServiceScaling.getDefaultInstance()
+        : scaling_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies service-level scaling settings
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.ServiceScalingOrBuilder getScalingOrBuilder() {
+    return scaling_ == null
+        ? com.google.cloud.run.v2.ServiceScaling.getDefaultInstance()
+        : scaling_;
+  }
+
+  public static final int DEFAULT_URI_DISABLED_FIELD_NUMBER = 22;
+  private boolean defaultUriDisabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables public resolution of the default URI of this service.
+   * </pre>
+   *
+   * <code>bool default_uri_disabled = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The defaultUriDisabled.
+   */
+  @java.lang.Override
+  public boolean getDefaultUriDisabled() {
+    return defaultUriDisabled_;
+  }
+
   public static final int OBSERVED_GENERATION_FIELD_NUMBER = 30;
   private long observedGeneration_ = 0L;
   /**
@@ -1299,7 +1373,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTerminalCondition() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1961,10 +2035,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < traffic_.size(); i++) {
       output.writeMessage(19, traffic_.get(i));
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(20, getScaling());
+    }
+    if (defaultUriDisabled_ != false) {
+      output.writeBool(22, defaultUriDisabled_);
+    }
     if (observedGeneration_ != 0L) {
       output.writeInt64(30, observedGeneration_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(31, getTerminalCondition());
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -2076,10 +2156,16 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < traffic_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, traffic_.get(i));
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getScaling());
+    }
+    if (defaultUriDisabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, defaultUriDisabled_);
+    }
     if (observedGeneration_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(30, observedGeneration_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getTerminalCondition());
     }
     for (int i = 0; i < conditions_.size(); i++) {
@@ -2166,6 +2252,11 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (!getTemplate().equals(other.getTemplate())) return false;
     }
     if (!getTrafficList().equals(other.getTrafficList())) return false;
+    if (hasScaling() != other.hasScaling()) return false;
+    if (hasScaling()) {
+      if (!getScaling().equals(other.getScaling())) return false;
+    }
+    if (getDefaultUriDisabled() != other.getDefaultUriDisabled()) return false;
     if (getObservedGeneration() != other.getObservedGeneration()) return false;
     if (hasTerminalCondition() != other.hasTerminalCondition()) return false;
     if (hasTerminalCondition()) {
@@ -2247,6 +2338,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + TRAFFIC_FIELD_NUMBER;
       hash = (53 * hash) + getTrafficList().hashCode();
     }
+    if (hasScaling()) {
+      hash = (37 * hash) + SCALING_FIELD_NUMBER;
+      hash = (53 * hash) + getScaling().hashCode();
+    }
+    hash = (37 * hash) + DEFAULT_URI_DISABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDefaultUriDisabled());
     hash = (37 * hash) + OBSERVED_GENERATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getObservedGeneration());
     if (hasTerminalCondition()) {
@@ -2452,6 +2549,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         getBinaryAuthorizationFieldBuilder();
         getTemplateFieldBuilder();
         getTrafficFieldBuilder();
+        getScalingFieldBuilder();
         getTerminalConditionFieldBuilder();
         getConditionsFieldBuilder();
         getTrafficStatusesFieldBuilder();
@@ -2511,6 +2609,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         trafficBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00040000);
+      scaling_ = null;
+      if (scalingBuilder_ != null) {
+        scalingBuilder_.dispose();
+        scalingBuilder_ = null;
+      }
+      defaultUriDisabled_ = false;
       observedGeneration_ = 0L;
       terminalCondition_ = null;
       if (terminalConditionBuilder_ != null) {
@@ -2523,7 +2627,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       latestReadyRevision_ = "";
       latestCreatedRevision_ = "";
       if (trafficStatusesBuilder_ == null) {
@@ -2532,7 +2636,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         trafficStatuses_ = null;
         trafficStatusesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       uri_ = "";
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       satisfiesPzs_ = false;
@@ -2583,18 +2687,18 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.traffic_ = trafficBuilder_.build();
       }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)) {
+        if (((bitField0_ & 0x00800000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00200000);
+          bitField0_ = (bitField0_ & ~0x00800000);
         }
         result.conditions_ = conditions_;
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
       if (trafficStatusesBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)) {
+        if (((bitField0_ & 0x04000000) != 0)) {
           trafficStatuses_ = java.util.Collections.unmodifiableList(trafficStatuses_);
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.trafficStatuses_ = trafficStatuses_;
       } else {
@@ -2671,35 +2775,42 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.observedGeneration_ = observedGeneration_;
+        result.scaling_ = scalingBuilder_ == null ? scaling_ : scalingBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.defaultUriDisabled_ = defaultUriDisabled_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.observedGeneration_ = observedGeneration_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.terminalCondition_ =
             terminalConditionBuilder_ == null
                 ? terminalCondition_
                 : terminalConditionBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.latestReadyRevision_ = latestReadyRevision_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.latestCreatedRevision_ = latestCreatedRevision_;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.uri_ = uri_;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         customAudiences_.makeImmutable();
         result.customAudiences_ = customAudiences_;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2843,6 +2954,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasScaling()) {
+        mergeScaling(other.getScaling());
+      }
+      if (other.getDefaultUriDisabled() != false) {
+        setDefaultUriDisabled(other.getDefaultUriDisabled());
+      }
       if (other.getObservedGeneration() != 0L) {
         setObservedGeneration(other.getObservedGeneration());
       }
@@ -2853,7 +2970,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00800000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -2866,7 +2983,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00200000);
+            bitField0_ = (bitField0_ & ~0x00800000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -2878,19 +2995,19 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLatestReadyRevision().isEmpty()) {
         latestReadyRevision_ = other.latestReadyRevision_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (!other.getLatestCreatedRevision().isEmpty()) {
         latestCreatedRevision_ = other.latestCreatedRevision_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (trafficStatusesBuilder_ == null) {
         if (!other.trafficStatuses_.isEmpty()) {
           if (trafficStatuses_.isEmpty()) {
             trafficStatuses_ = other.trafficStatuses_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
           } else {
             ensureTrafficStatusesIsMutable();
             trafficStatuses_.addAll(other.trafficStatuses_);
@@ -2903,7 +3020,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             trafficStatusesBuilder_.dispose();
             trafficStatusesBuilder_ = null;
             trafficStatuses_ = other.trafficStatuses_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
             trafficStatusesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrafficStatusesFieldBuilder()
@@ -2915,13 +3032,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (!other.customAudiences_.isEmpty()) {
         if (customAudiences_.isEmpty()) {
           customAudiences_ = other.customAudiences_;
-          bitField0_ |= 0x04000000;
+          bitField0_ |= 0x10000000;
         } else {
           ensureCustomAudiencesIsMutable();
           customAudiences_.addAll(other.customAudiences_);
@@ -2936,7 +3053,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3099,17 +3216,29 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(getScalingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 162
+            case 176:
+              {
+                defaultUriDisabled_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 176
             case 240:
               {
                 observedGeneration_ = input.readInt64();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 240
             case 250:
               {
                 input.readMessage(
                     getTerminalConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 250
             case 258:
@@ -3128,13 +3257,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             case 266:
               {
                 latestReadyRevision_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 266
             case 274:
               {
                 latestCreatedRevision_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 274
             case 282:
@@ -3153,7 +3282,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             case 290:
               {
                 uri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 290
             case 298:
@@ -3166,19 +3295,19 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
             case 304:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 304
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 794
             default:
@@ -3649,11 +3778,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -3663,7 +3791,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * corresponding field in v2 Service.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5;</code>
+     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -3682,11 +3810,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -3696,7 +3823,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * corresponding field in v2 Service.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5;</code>
+     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3706,11 +3833,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -3720,7 +3846,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * corresponding field in v2 Service.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5;</code>
+     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -3737,11 +3863,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -3751,7 +3876,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * corresponding field in v2 Service.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5;</code>
+     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3774,11 +3899,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -3788,7 +3912,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * corresponding field in v2 Service.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5;</code>
+     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3807,11 +3931,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -3821,7 +3944,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * corresponding field in v2 Service.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5;</code>
+     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3838,11 +3961,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that can be used to organize and categorize
-     * objects.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Optional. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels.
      *
@@ -3852,7 +3974,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * corresponding field in v2 Service.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 5;</code>
+     * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -3892,9 +4014,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -3905,7 +4027,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * annotations' namespacing, limits, and rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 6;</code>
+     * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -3924,9 +4047,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -3937,7 +4060,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * annotations' namespacing, limits, and rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 6;</code>
+     * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -3947,9 +4071,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -3960,7 +4084,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * annotations' namespacing, limits, and rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 6;</code>
+     * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -3977,9 +4102,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -3990,7 +4115,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * annotations' namespacing, limits, and rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 6;</code>
+     * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -4013,9 +4139,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -4026,7 +4152,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * annotations' namespacing, limits, and rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 6;</code>
+     * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -4045,9 +4172,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -4058,7 +4185,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * annotations' namespacing, limits, and rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 6;</code>
+     * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -4075,9 +4203,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unstructured key value map that may be set by external tools to store and
-     * arbitrary metadata. They are not queryable and should be preserved
-     * when modifying objects.
+     * Optional. Unstructured key value map that may be set by external tools to
+     * store and arbitrary metadata. They are not queryable and should be
+     * preserved when modifying objects.
      *
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -4088,7 +4216,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * annotations' namespacing, limits, and rules.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 6;</code>
+     * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -6349,6 +6478,262 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return trafficBuilder_;
     }
 
+    private com.google.cloud.run.v2.ServiceScaling scaling_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.ServiceScaling,
+            com.google.cloud.run.v2.ServiceScaling.Builder,
+            com.google.cloud.run.v2.ServiceScalingOrBuilder>
+        scalingBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the scaling field is set.
+     */
+    public boolean hasScaling() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scaling.
+     */
+    public com.google.cloud.run.v2.ServiceScaling getScaling() {
+      if (scalingBuilder_ == null) {
+        return scaling_ == null
+            ? com.google.cloud.run.v2.ServiceScaling.getDefaultInstance()
+            : scaling_;
+      } else {
+        return scalingBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setScaling(com.google.cloud.run.v2.ServiceScaling value) {
+      if (scalingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scaling_ = value;
+      } else {
+        scalingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setScaling(com.google.cloud.run.v2.ServiceScaling.Builder builderForValue) {
+      if (scalingBuilder_ == null) {
+        scaling_ = builderForValue.build();
+      } else {
+        scalingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeScaling(com.google.cloud.run.v2.ServiceScaling value) {
+      if (scalingBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && scaling_ != null
+            && scaling_ != com.google.cloud.run.v2.ServiceScaling.getDefaultInstance()) {
+          getScalingBuilder().mergeFrom(value);
+        } else {
+          scaling_ = value;
+        }
+      } else {
+        scalingBuilder_.mergeFrom(value);
+      }
+      if (scaling_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearScaling() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      scaling_ = null;
+      if (scalingBuilder_ != null) {
+        scalingBuilder_.dispose();
+        scalingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.ServiceScaling.Builder getScalingBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getScalingFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.run.v2.ServiceScalingOrBuilder getScalingOrBuilder() {
+      if (scalingBuilder_ != null) {
+        return scalingBuilder_.getMessageOrBuilder();
+      } else {
+        return scaling_ == null
+            ? com.google.cloud.run.v2.ServiceScaling.getDefaultInstance()
+            : scaling_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies service-level scaling settings
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.ServiceScaling,
+            com.google.cloud.run.v2.ServiceScaling.Builder,
+            com.google.cloud.run.v2.ServiceScalingOrBuilder>
+        getScalingFieldBuilder() {
+      if (scalingBuilder_ == null) {
+        scalingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.ServiceScaling,
+                com.google.cloud.run.v2.ServiceScaling.Builder,
+                com.google.cloud.run.v2.ServiceScalingOrBuilder>(
+                getScaling(), getParentForChildren(), isClean());
+        scaling_ = null;
+      }
+      return scalingBuilder_;
+    }
+
+    private boolean defaultUriDisabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables public resolution of the default URI of this service.
+     * </pre>
+     *
+     * <code>bool default_uri_disabled = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The defaultUriDisabled.
+     */
+    @java.lang.Override
+    public boolean getDefaultUriDisabled() {
+      return defaultUriDisabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables public resolution of the default URI of this service.
+     * </pre>
+     *
+     * <code>bool default_uri_disabled = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The defaultUriDisabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultUriDisabled(boolean value) {
+
+      defaultUriDisabled_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables public resolution of the default URI of this service.
+     * </pre>
+     *
+     * <code>bool default_uri_disabled = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultUriDisabled() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      defaultUriDisabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private long observedGeneration_;
     /**
      *
@@ -6388,7 +6773,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setObservedGeneration(long value) {
 
       observedGeneration_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6408,7 +6793,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearObservedGeneration() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       observedGeneration_ = 0L;
       onChanged();
       return this;
@@ -6437,7 +6822,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the terminalCondition field is set.
      */
     public boolean hasTerminalCondition() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -6487,7 +6872,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         terminalConditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6511,7 +6896,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       } else {
         terminalConditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6531,7 +6916,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTerminalCondition(com.google.cloud.run.v2.Condition value) {
       if (terminalConditionBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && terminalCondition_ != null
             && terminalCondition_ != com.google.cloud.run.v2.Condition.getDefaultInstance()) {
           getTerminalConditionBuilder().mergeFrom(value);
@@ -6542,7 +6927,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         terminalConditionBuilder_.mergeFrom(value);
       }
       if (terminalCondition_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -6562,7 +6947,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTerminalCondition() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       terminalCondition_ = null;
       if (terminalConditionBuilder_ != null) {
         terminalConditionBuilder_.dispose();
@@ -6586,7 +6971,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.run.v2.Condition.Builder getTerminalConditionBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getTerminalConditionFieldBuilder().getBuilder();
     }
@@ -6648,9 +7033,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00200000) != 0)) {
+      if (!((bitField0_ & 0x00800000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.cloud.run.v2.Condition>(conditions_);
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
       }
     }
 
@@ -6920,7 +7305,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -7076,7 +7461,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.Condition,
                 com.google.cloud.run.v2.Condition.Builder,
                 com.google.cloud.run.v2.ConditionOrBuilder>(
-                conditions_, ((bitField0_ & 0x00200000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00800000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;
@@ -7156,7 +7541,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       latestReadyRevision_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7177,7 +7562,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLatestReadyRevision() {
       latestReadyRevision_ = getDefaultInstance().getLatestReadyRevision();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7203,7 +7588,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       latestReadyRevision_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7282,7 +7667,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       latestCreatedRevision_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7303,7 +7688,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLatestCreatedRevision() {
       latestCreatedRevision_ = getDefaultInstance().getLatestCreatedRevision();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -7329,7 +7714,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       latestCreatedRevision_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7338,10 +7723,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTrafficStatusesIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x04000000) != 0)) {
         trafficStatuses_ =
             new java.util.ArrayList<com.google.cloud.run.v2.TrafficTargetStatus>(trafficStatuses_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x04000000;
       }
     }
 
@@ -7603,7 +7988,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTrafficStatuses() {
       if (trafficStatusesBuilder_ == null) {
         trafficStatuses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
       } else {
         trafficStatusesBuilder_.clear();
@@ -7757,7 +8142,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.run.v2.TrafficTargetStatus.Builder,
                 com.google.cloud.run.v2.TrafficTargetStatusOrBuilder>(
                 trafficStatuses_,
-                ((bitField0_ & 0x01000000) != 0),
+                ((bitField0_ & 0x04000000) != 0),
                 getParentForChildren(),
                 isClean());
         trafficStatuses_ = null;
@@ -7827,7 +8212,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       uri_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7844,7 +8229,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUri() {
       uri_ = getDefaultInstance().getUri();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -7866,7 +8251,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       uri_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7878,7 +8263,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (!customAudiences_.isModifiable()) {
         customAudiences_ = new com.google.protobuf.LazyStringArrayList(customAudiences_);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
     }
     /**
      *
@@ -7978,7 +8363,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomAudiencesIsMutable();
       customAudiences_.set(index, value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8004,7 +8389,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       ensureCustomAudiencesIsMutable();
       customAudiences_.add(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8027,7 +8412,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllCustomAudiences(java.lang.Iterable<java.lang.String> values) {
       ensureCustomAudiencesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customAudiences_);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8048,7 +8433,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCustomAudiences() {
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       ;
       onChanged();
       return this;
@@ -8076,7 +8461,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureCustomAudiencesIsMutable();
       customAudiences_.add(value);
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8112,7 +8497,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8128,7 +8513,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -8207,7 +8592,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8244,7 +8629,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -8315,7 +8700,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8333,7 +8718,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -8356,7 +8741,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }

@@ -50,38 +50,41 @@ public final class RevisionTemplateProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/run/v2/revision_template."
-          + "proto\022\023google.cloud.run.v2\032\031google/api/r"
-          + "esource.proto\032!google/cloud/run/v2/k8s.m"
-          + "in.proto\032)google/cloud/run/v2/vendor_set"
-          + "tings.proto\032\036google/protobuf/duration.pr"
-          + "oto\"\231\006\n\020RevisionTemplate\0222\n\010revision\030\001 \001"
-          + "(\tB \372A\035\n\033run.googleapis.com/Revision\022A\n\006"
-          + "labels\030\002 \003(\01321.google.cloud.run.v2.Revis"
-          + "ionTemplate.LabelsEntry\022K\n\013annotations\030\003"
-          + " \003(\01326.google.cloud.run.v2.RevisionTempl"
-          + "ate.AnnotationsEntry\0225\n\007scaling\030\004 \001(\0132$."
-          + "google.cloud.run.v2.RevisionScaling\0222\n\nv"
-          + "pc_access\030\006 \001(\0132\036.google.cloud.run.v2.Vp"
-          + "cAccess\022*\n\007timeout\030\010 \001(\0132\031.google.protob"
-          + "uf.Duration\022\027\n\017service_account\030\t \001(\t\0222\n\n"
-          + "containers\030\n \003(\0132\036.google.cloud.run.v2.C"
-          + "ontainer\022,\n\007volumes\030\013 \003(\0132\033.google.cloud"
-          + ".run.v2.Volume\022H\n\025execution_environment\030"
-          + "\r \001(\0162).google.cloud.run.v2.ExecutionEnv"
-          + "ironment\022>\n\016encryption_key\030\016 \001(\tB&\372A#\n!c"
-          + "loudkms.googleapis.com/CryptoKey\022(\n max_"
-          + "instance_request_concurrency\030\017 \001(\005\022\030\n\020se"
-          + "ssion_affinity\030\023 \001(\010\032-\n\013LabelsEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Annotatio"
-          + "nsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B"
-          + "]\n\027com.google.cloud.run.v2B\025RevisionTemp"
-          + "lateProtoP\001Z)cloud.google.com/go/run/api"
-          + "v2/runpb;runpbb\006proto3"
+          + "proto\022\023google.cloud.run.v2\032\037google/api/f"
+          + "ield_behavior.proto\032\031google/api/resource"
+          + ".proto\032!google/cloud/run/v2/k8s.min.prot"
+          + "o\032)google/cloud/run/v2/vendor_settings.p"
+          + "roto\032\036google/protobuf/duration.proto\"\302\006\n"
+          + "\020RevisionTemplate\0222\n\010revision\030\001 \001(\tB \372A\035"
+          + "\n\033run.googleapis.com/Revision\022A\n\006labels\030"
+          + "\002 \003(\01321.google.cloud.run.v2.RevisionTemp"
+          + "late.LabelsEntry\022K\n\013annotations\030\003 \003(\01326."
+          + "google.cloud.run.v2.RevisionTemplate.Ann"
+          + "otationsEntry\0225\n\007scaling\030\004 \001(\0132$.google."
+          + "cloud.run.v2.RevisionScaling\0222\n\nvpc_acce"
+          + "ss\030\006 \001(\0132\036.google.cloud.run.v2.VpcAccess"
+          + "\022*\n\007timeout\030\010 \001(\0132\031.google.protobuf.Dura"
+          + "tion\022\027\n\017service_account\030\t \001(\t\0222\n\ncontain"
+          + "ers\030\n \003(\0132\036.google.cloud.run.v2.Containe"
+          + "r\022,\n\007volumes\030\013 \003(\0132\033.google.cloud.run.v2"
+          + ".Volume\022H\n\025execution_environment\030\r \001(\0162)"
+          + ".google.cloud.run.v2.ExecutionEnvironmen"
+          + "t\022>\n\016encryption_key\030\016 \001(\tB&\372A#\n!cloudkms"
+          + ".googleapis.com/CryptoKey\022(\n max_instanc"
+          + "e_request_concurrency\030\017 \001(\005\022\035\n\020session_a"
+          + "ffinity\030\023 \001(\010B\003\340A\001\022\"\n\025health_check_disab"
+          + "led\030\024 \001(\010B\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntr"
+          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B]\n\027com"
+          + ".google.cloud.run.v2B\025RevisionTemplatePr"
+          + "otoP\001Z)cloud.google.com/go/run/apiv2/run"
+          + "pb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
@@ -106,6 +109,7 @@ public final class RevisionTemplateProto {
               "EncryptionKey",
               "MaxInstanceRequestConcurrency",
               "SessionAffinity",
+              "HealthCheckDisabled",
             });
     internal_static_google_cloud_run_v2_RevisionTemplate_LabelsEntry_descriptor =
         internal_static_google_cloud_run_v2_RevisionTemplate_descriptor.getNestedTypes().get(0);
@@ -125,9 +129,11 @@ public final class RevisionTemplateProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.run.v2.K8sMinProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();

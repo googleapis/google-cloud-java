@@ -74,6 +74,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     SECRET(2),
     CLOUD_SQL_INSTANCE(3),
     EMPTY_DIR(4),
+    NFS(5),
+    GCS(6),
     VOLUMETYPE_NOT_SET(0);
     private final int value;
 
@@ -98,6 +100,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_SQL_INSTANCE;
         case 4:
           return EMPTY_DIR;
+        case 5:
+          return NFS;
+        case 6:
+          return GCS;
         case 0:
           return VOLUMETYPE_NOT_SET;
         default:
@@ -324,6 +330,108 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.run.v2.EmptyDirVolumeSource.getDefaultInstance();
   }
 
+  public static final int NFS_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * For NFS Voumes, contains the path to the nfs Volume
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+   *
+   * @return Whether the nfs field is set.
+   */
+  @java.lang.Override
+  public boolean hasNfs() {
+    return volumeTypeCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For NFS Voumes, contains the path to the nfs Volume
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+   *
+   * @return The nfs.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.NFSVolumeSource getNfs() {
+    if (volumeTypeCase_ == 5) {
+      return (com.google.cloud.run.v2.NFSVolumeSource) volumeType_;
+    }
+    return com.google.cloud.run.v2.NFSVolumeSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For NFS Voumes, contains the path to the nfs Volume
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.NFSVolumeSourceOrBuilder getNfsOrBuilder() {
+    if (volumeTypeCase_ == 5) {
+      return (com.google.cloud.run.v2.NFSVolumeSource) volumeType_;
+    }
+    return com.google.cloud.run.v2.NFSVolumeSource.getDefaultInstance();
+  }
+
+  public static final int GCS_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Persistent storage backed by a Google Cloud Storage bucket.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+   *
+   * @return Whether the gcs field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcs() {
+    return volumeTypeCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Persistent storage backed by a Google Cloud Storage bucket.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+   *
+   * @return The gcs.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.GCSVolumeSource getGcs() {
+    if (volumeTypeCase_ == 6) {
+      return (com.google.cloud.run.v2.GCSVolumeSource) volumeType_;
+    }
+    return com.google.cloud.run.v2.GCSVolumeSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Persistent storage backed by a Google Cloud Storage bucket.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.GCSVolumeSourceOrBuilder getGcsOrBuilder() {
+    if (volumeTypeCase_ == 6) {
+      return (com.google.cloud.run.v2.GCSVolumeSource) volumeType_;
+    }
+    return com.google.cloud.run.v2.GCSVolumeSource.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -349,6 +457,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (volumeTypeCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_);
+    }
+    if (volumeTypeCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.run.v2.NFSVolumeSource) volumeType_);
+    }
+    if (volumeTypeCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.run.v2.GCSVolumeSource) volumeType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -377,6 +491,16 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.run.v2.EmptyDirVolumeSource) volumeType_);
     }
+    if (volumeTypeCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.run.v2.NFSVolumeSource) volumeType_);
+    }
+    if (volumeTypeCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.run.v2.GCSVolumeSource) volumeType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -403,6 +527,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         break;
       case 4:
         if (!getEmptyDir().equals(other.getEmptyDir())) return false;
+        break;
+      case 5:
+        if (!getNfs().equals(other.getNfs())) return false;
+        break;
+      case 6:
+        if (!getGcs().equals(other.getGcs())) return false;
         break;
       case 0:
       default:
@@ -432,6 +562,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       case 4:
         hash = (37 * hash) + EMPTY_DIR_FIELD_NUMBER;
         hash = (53 * hash) + getEmptyDir().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + NFS_FIELD_NUMBER;
+        hash = (53 * hash) + getNfs().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + GCS_FIELD_NUMBER;
+        hash = (53 * hash) + getGcs().hashCode();
         break;
       case 0:
       default:
@@ -583,6 +721,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (emptyDirBuilder_ != null) {
         emptyDirBuilder_.clear();
       }
+      if (nfsBuilder_ != null) {
+        nfsBuilder_.clear();
+      }
+      if (gcsBuilder_ != null) {
+        gcsBuilder_.clear();
+      }
       volumeTypeCase_ = 0;
       volumeType_ = null;
       return this;
@@ -637,6 +781,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       if (volumeTypeCase_ == 4 && emptyDirBuilder_ != null) {
         result.volumeType_ = emptyDirBuilder_.build();
+      }
+      if (volumeTypeCase_ == 5 && nfsBuilder_ != null) {
+        result.volumeType_ = nfsBuilder_.build();
+      }
+      if (volumeTypeCase_ == 6 && gcsBuilder_ != null) {
+        result.volumeType_ = gcsBuilder_.build();
       }
     }
 
@@ -706,6 +856,16 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             mergeEmptyDir(other.getEmptyDir());
             break;
           }
+        case NFS:
+          {
+            mergeNfs(other.getNfs());
+            break;
+          }
+        case GCS:
+          {
+            mergeGcs(other.getGcs());
+            break;
+          }
         case VOLUMETYPE_NOT_SET:
           {
             break;
@@ -762,6 +922,18 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 volumeTypeCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getNfsFieldBuilder().getBuilder(), extensionRegistry);
+                volumeTypeCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getGcsFieldBuilder().getBuilder(), extensionRegistry);
+                volumeTypeCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1543,6 +1715,422 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       volumeTypeCase_ = 4;
       onChanged();
       return emptyDirBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.NFSVolumeSource,
+            com.google.cloud.run.v2.NFSVolumeSource.Builder,
+            com.google.cloud.run.v2.NFSVolumeSourceOrBuilder>
+        nfsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     *
+     * @return Whether the nfs field is set.
+     */
+    @java.lang.Override
+    public boolean hasNfs() {
+      return volumeTypeCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     *
+     * @return The nfs.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.NFSVolumeSource getNfs() {
+      if (nfsBuilder_ == null) {
+        if (volumeTypeCase_ == 5) {
+          return (com.google.cloud.run.v2.NFSVolumeSource) volumeType_;
+        }
+        return com.google.cloud.run.v2.NFSVolumeSource.getDefaultInstance();
+      } else {
+        if (volumeTypeCase_ == 5) {
+          return nfsBuilder_.getMessage();
+        }
+        return com.google.cloud.run.v2.NFSVolumeSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     */
+    public Builder setNfs(com.google.cloud.run.v2.NFSVolumeSource value) {
+      if (nfsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        volumeType_ = value;
+        onChanged();
+      } else {
+        nfsBuilder_.setMessage(value);
+      }
+      volumeTypeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     */
+    public Builder setNfs(com.google.cloud.run.v2.NFSVolumeSource.Builder builderForValue) {
+      if (nfsBuilder_ == null) {
+        volumeType_ = builderForValue.build();
+        onChanged();
+      } else {
+        nfsBuilder_.setMessage(builderForValue.build());
+      }
+      volumeTypeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     */
+    public Builder mergeNfs(com.google.cloud.run.v2.NFSVolumeSource value) {
+      if (nfsBuilder_ == null) {
+        if (volumeTypeCase_ == 5
+            && volumeType_ != com.google.cloud.run.v2.NFSVolumeSource.getDefaultInstance()) {
+          volumeType_ =
+              com.google.cloud.run.v2.NFSVolumeSource.newBuilder(
+                      (com.google.cloud.run.v2.NFSVolumeSource) volumeType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          volumeType_ = value;
+        }
+        onChanged();
+      } else {
+        if (volumeTypeCase_ == 5) {
+          nfsBuilder_.mergeFrom(value);
+        } else {
+          nfsBuilder_.setMessage(value);
+        }
+      }
+      volumeTypeCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     */
+    public Builder clearNfs() {
+      if (nfsBuilder_ == null) {
+        if (volumeTypeCase_ == 5) {
+          volumeTypeCase_ = 0;
+          volumeType_ = null;
+          onChanged();
+        }
+      } else {
+        if (volumeTypeCase_ == 5) {
+          volumeTypeCase_ = 0;
+          volumeType_ = null;
+        }
+        nfsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     */
+    public com.google.cloud.run.v2.NFSVolumeSource.Builder getNfsBuilder() {
+      return getNfsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.NFSVolumeSourceOrBuilder getNfsOrBuilder() {
+      if ((volumeTypeCase_ == 5) && (nfsBuilder_ != null)) {
+        return nfsBuilder_.getMessageOrBuilder();
+      } else {
+        if (volumeTypeCase_ == 5) {
+          return (com.google.cloud.run.v2.NFSVolumeSource) volumeType_;
+        }
+        return com.google.cloud.run.v2.NFSVolumeSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For NFS Voumes, contains the path to the nfs Volume
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.NFSVolumeSource,
+            com.google.cloud.run.v2.NFSVolumeSource.Builder,
+            com.google.cloud.run.v2.NFSVolumeSourceOrBuilder>
+        getNfsFieldBuilder() {
+      if (nfsBuilder_ == null) {
+        if (!(volumeTypeCase_ == 5)) {
+          volumeType_ = com.google.cloud.run.v2.NFSVolumeSource.getDefaultInstance();
+        }
+        nfsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.NFSVolumeSource,
+                com.google.cloud.run.v2.NFSVolumeSource.Builder,
+                com.google.cloud.run.v2.NFSVolumeSourceOrBuilder>(
+                (com.google.cloud.run.v2.NFSVolumeSource) volumeType_,
+                getParentForChildren(),
+                isClean());
+        volumeType_ = null;
+      }
+      volumeTypeCase_ = 5;
+      onChanged();
+      return nfsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.GCSVolumeSource,
+            com.google.cloud.run.v2.GCSVolumeSource.Builder,
+            com.google.cloud.run.v2.GCSVolumeSourceOrBuilder>
+        gcsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     *
+     * @return Whether the gcs field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcs() {
+      return volumeTypeCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     *
+     * @return The gcs.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.GCSVolumeSource getGcs() {
+      if (gcsBuilder_ == null) {
+        if (volumeTypeCase_ == 6) {
+          return (com.google.cloud.run.v2.GCSVolumeSource) volumeType_;
+        }
+        return com.google.cloud.run.v2.GCSVolumeSource.getDefaultInstance();
+      } else {
+        if (volumeTypeCase_ == 6) {
+          return gcsBuilder_.getMessage();
+        }
+        return com.google.cloud.run.v2.GCSVolumeSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     */
+    public Builder setGcs(com.google.cloud.run.v2.GCSVolumeSource value) {
+      if (gcsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        volumeType_ = value;
+        onChanged();
+      } else {
+        gcsBuilder_.setMessage(value);
+      }
+      volumeTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     */
+    public Builder setGcs(com.google.cloud.run.v2.GCSVolumeSource.Builder builderForValue) {
+      if (gcsBuilder_ == null) {
+        volumeType_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcsBuilder_.setMessage(builderForValue.build());
+      }
+      volumeTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     */
+    public Builder mergeGcs(com.google.cloud.run.v2.GCSVolumeSource value) {
+      if (gcsBuilder_ == null) {
+        if (volumeTypeCase_ == 6
+            && volumeType_ != com.google.cloud.run.v2.GCSVolumeSource.getDefaultInstance()) {
+          volumeType_ =
+              com.google.cloud.run.v2.GCSVolumeSource.newBuilder(
+                      (com.google.cloud.run.v2.GCSVolumeSource) volumeType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          volumeType_ = value;
+        }
+        onChanged();
+      } else {
+        if (volumeTypeCase_ == 6) {
+          gcsBuilder_.mergeFrom(value);
+        } else {
+          gcsBuilder_.setMessage(value);
+        }
+      }
+      volumeTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     */
+    public Builder clearGcs() {
+      if (gcsBuilder_ == null) {
+        if (volumeTypeCase_ == 6) {
+          volumeTypeCase_ = 0;
+          volumeType_ = null;
+          onChanged();
+        }
+      } else {
+        if (volumeTypeCase_ == 6) {
+          volumeTypeCase_ = 0;
+          volumeType_ = null;
+        }
+        gcsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     */
+    public com.google.cloud.run.v2.GCSVolumeSource.Builder getGcsBuilder() {
+      return getGcsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.GCSVolumeSourceOrBuilder getGcsOrBuilder() {
+      if ((volumeTypeCase_ == 6) && (gcsBuilder_ != null)) {
+        return gcsBuilder_.getMessageOrBuilder();
+      } else {
+        if (volumeTypeCase_ == 6) {
+          return (com.google.cloud.run.v2.GCSVolumeSource) volumeType_;
+        }
+        return com.google.cloud.run.v2.GCSVolumeSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Persistent storage backed by a Google Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.GCSVolumeSource,
+            com.google.cloud.run.v2.GCSVolumeSource.Builder,
+            com.google.cloud.run.v2.GCSVolumeSourceOrBuilder>
+        getGcsFieldBuilder() {
+      if (gcsBuilder_ == null) {
+        if (!(volumeTypeCase_ == 6)) {
+          volumeType_ = com.google.cloud.run.v2.GCSVolumeSource.getDefaultInstance();
+        }
+        gcsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.GCSVolumeSource,
+                com.google.cloud.run.v2.GCSVolumeSource.Builder,
+                com.google.cloud.run.v2.GCSVolumeSourceOrBuilder>(
+                (com.google.cloud.run.v2.GCSVolumeSource) volumeType_,
+                getParentForChildren(),
+                isClean());
+        volumeType_ = null;
+      }
+      volumeTypeCase_ = 6;
+      onChanged();
+      return gcsBuilder_;
     }
 
     @java.lang.Override

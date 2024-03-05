@@ -115,6 +115,7 @@ public class RevisionsClientHttpJsonTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -188,6 +189,7 @@ public class RevisionsClientHttpJsonTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -363,6 +365,7 @@ public class RevisionsClientHttpJsonTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -441,6 +444,7 @@ public class RevisionsClientHttpJsonTest {
             .setLogUri("logUri-1097354360")
             .setSatisfiesPzs(true)
             .setSessionAffinity(true)
+            .setScalingStatus(RevisionScalingStatus.newBuilder().build())
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

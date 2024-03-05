@@ -103,7 +103,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only ´memory´ and 'cpu' are supported.
+   * Only `memory` and `cpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -132,7 +132,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only ´memory´ and 'cpu' are supported.
+   * Only `memory` and `cpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -152,7 +152,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only ´memory´ and 'cpu' are supported.
+   * Only `memory` and `cpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -179,7 +179,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only ´memory´ and 'cpu' are supported.
+   * Only `memory` and `cpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -209,7 +209,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Determines whether CPU should be throttled or not outside of requests.
+   * Determines whether CPU is only allocated during requests (true by default).
+   * However, if ResourceRequirements is set, the caller must explicitly
+   * set this field to true to preserve the default behavior.
    * </pre>
    *
    * <code>bool cpu_idle = 2;</code>
@@ -689,7 +691,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only ´memory´ and 'cpu' are supported.
+     * Only `memory` and `cpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -718,7 +720,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only ´memory´ and 'cpu' are supported.
+     * Only `memory` and `cpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -738,7 +740,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only ´memory´ and 'cpu' are supported.
+     * Only `memory` and `cpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -765,7 +767,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only ´memory´ and 'cpu' are supported.
+     * Only `memory` and `cpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -798,7 +800,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only ´memory´ and 'cpu' are supported.
+     * Only `memory` and `cpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -827,7 +829,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only ´memory´ and 'cpu' are supported.
+     * Only `memory` and `cpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -854,7 +856,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only ´memory´ and 'cpu' are supported.
+     * Only `memory` and `cpu` keys in the map are supported.
      *
      * &lt;p&gt;Notes:
      *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -877,7 +879,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Determines whether CPU should be throttled or not outside of requests.
+     * Determines whether CPU is only allocated during requests (true by default).
+     * However, if ResourceRequirements is set, the caller must explicitly
+     * set this field to true to preserve the default behavior.
      * </pre>
      *
      * <code>bool cpu_idle = 2;</code>
@@ -892,7 +896,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Determines whether CPU should be throttled or not outside of requests.
+     * Determines whether CPU is only allocated during requests (true by default).
+     * However, if ResourceRequirements is set, the caller must explicitly
+     * set this field to true to preserve the default behavior.
      * </pre>
      *
      * <code>bool cpu_idle = 2;</code>
@@ -911,7 +917,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Determines whether CPU should be throttled or not outside of requests.
+     * Determines whether CPU is only allocated during requests (true by default).
+     * However, if ResourceRequirements is set, the caller must explicitly
+     * set this field to true to preserve the default behavior.
      * </pre>
      *
      * <code>bool cpu_idle = 2;</code>

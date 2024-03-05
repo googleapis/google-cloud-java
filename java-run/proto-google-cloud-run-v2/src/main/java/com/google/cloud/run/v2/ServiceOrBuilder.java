@@ -135,11 +135,10 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -149,18 +148,17 @@ public interface ServiceOrBuilder
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -170,7 +168,7 @@ public interface ServiceOrBuilder
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -180,11 +178,10 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -194,18 +191,17 @@ public interface ServiceOrBuilder
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -215,7 +211,7 @@ public interface ServiceOrBuilder
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -226,11 +222,10 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that can be used to organize and categorize
-   * objects.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Optional. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels.
    *
@@ -240,7 +235,7 @@ public interface ServiceOrBuilder
    * corresponding field in v2 Service.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 5;</code>
+   * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -248,9 +243,9 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -261,16 +256,17 @@ public interface ServiceOrBuilder
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -281,7 +277,8 @@ public interface ServiceOrBuilder
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -291,9 +288,9 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -304,16 +301,17 @@ public interface ServiceOrBuilder
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -324,7 +322,8 @@ public interface ServiceOrBuilder
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -335,9 +334,9 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Unstructured key value map that may be set by external tools to store and
-   * arbitrary metadata. They are not queryable and should be preserved
-   * when modifying objects.
+   * Optional. Unstructured key value map that may be set by external tools to
+   * store and arbitrary metadata. They are not queryable and should be
+   * preserved when modifying objects.
    *
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
@@ -348,7 +347,8 @@ public interface ServiceOrBuilder
    * annotations' namespacing, limits, and rules.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 6;</code>
+   * <code>map&lt;string, string&gt; annotations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -816,6 +816,60 @@ public interface ServiceOrBuilder
    * <code>repeated .google.cloud.run.v2.TrafficTarget traffic = 19;</code>
    */
   com.google.cloud.run.v2.TrafficTargetOrBuilder getTrafficOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies service-level scaling settings
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the scaling field is set.
+   */
+  boolean hasScaling();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies service-level scaling settings
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scaling.
+   */
+  com.google.cloud.run.v2.ServiceScaling getScaling();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies service-level scaling settings
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.ServiceScaling scaling = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.ServiceScalingOrBuilder getScalingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables public resolution of the default URI of this service.
+   * </pre>
+   *
+   * <code>bool default_uri_disabled = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The defaultUriDisabled.
+   */
+  boolean getDefaultUriDisabled();
 
   /**
    *

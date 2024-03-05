@@ -1014,6 +1014,47 @@ public interface RevisionOrBuilder
    *
    *
    * <pre>
+   * Output only. The current effective scaling settings for the revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the scalingStatus field is set.
+   */
+  boolean hasScalingStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current effective scaling settings for the revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The scalingStatus.
+   */
+  com.google.cloud.run.v2.RevisionScalingStatus getScalingStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current effective scaling settings for the revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.run.v2.RevisionScalingStatusOrBuilder getScalingStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. A system-generated fingerprint for this version of the
    * resource. May be used to detect modification conflict during updates.
    * </pre>

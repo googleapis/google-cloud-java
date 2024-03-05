@@ -1531,6 +1531,62 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     return sessionAffinity_;
   }
 
+  public static final int SCALING_STATUS_FIELD_NUMBER = 39;
+  private com.google.cloud.run.v2.RevisionScalingStatus scalingStatus_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current effective scaling settings for the revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the scalingStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasScalingStatus() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current effective scaling settings for the revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The scalingStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.RevisionScalingStatus getScalingStatus() {
+    return scalingStatus_ == null
+        ? com.google.cloud.run.v2.RevisionScalingStatus.getDefaultInstance()
+        : scalingStatus_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current effective scaling settings for the revision.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.RevisionScalingStatusOrBuilder getScalingStatusOrBuilder() {
+    return scalingStatus_ == null
+        ? com.google.cloud.run.v2.RevisionScalingStatus.getDefaultInstance()
+        : scalingStatus_;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1685,6 +1741,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (sessionAffinity_ != false) {
       output.writeBool(38, sessionAffinity_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(39, getScalingStatus());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -1805,6 +1864,9 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (sessionAffinity_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, sessionAffinity_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(39, getScalingStatus());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -1878,6 +1940,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     if (!getLogUri().equals(other.getLogUri())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getSessionAffinity() != other.getSessionAffinity()) return false;
+    if (hasScalingStatus() != other.hasScalingStatus()) return false;
+    if (hasScalingStatus()) {
+      if (!getScalingStatus().equals(other.getScalingStatus())) return false;
+    }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1972,6 +2038,10 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionAffinity());
+    if (hasScalingStatus()) {
+      hash = (37 * hash) + SCALING_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getScalingStatus().hashCode();
+    }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2152,6 +2222,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         getVolumesFieldBuilder();
         getEncryptionKeyShutdownDurationFieldBuilder();
         getConditionsFieldBuilder();
+        getScalingStatusFieldBuilder();
       }
     }
 
@@ -2237,6 +2308,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       logUri_ = "";
       satisfiesPzs_ = false;
       sessionAffinity_ = false;
+      scalingStatus_ = null;
+      if (scalingStatusBuilder_ != null) {
+        scalingStatusBuilder_.dispose();
+        scalingStatusBuilder_ = null;
+      }
       etag_ = "";
       return this;
     }
@@ -2394,6 +2470,11 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         result.sessionAffinity_ = sessionAffinity_;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.scalingStatus_ =
+            scalingStatusBuilder_ == null ? scalingStatus_ : scalingStatusBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2610,9 +2691,12 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       if (other.getSessionAffinity() != false) {
         setSessionAffinity(other.getSessionAffinity());
       }
+      if (other.hasScalingStatus()) {
+        mergeScalingStatus(other.getScalingStatus());
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2842,10 +2926,16 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x08000000;
                 break;
               } // case 304
+            case 314:
+              {
+                input.readMessage(getScalingStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 314
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 794
             default:
@@ -7321,6 +7411,211 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.run.v2.RevisionScalingStatus scalingStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.RevisionScalingStatus,
+            com.google.cloud.run.v2.RevisionScalingStatus.Builder,
+            com.google.cloud.run.v2.RevisionScalingStatusOrBuilder>
+        scalingStatusBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the scalingStatus field is set.
+     */
+    public boolean hasScalingStatus() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The scalingStatus.
+     */
+    public com.google.cloud.run.v2.RevisionScalingStatus getScalingStatus() {
+      if (scalingStatusBuilder_ == null) {
+        return scalingStatus_ == null
+            ? com.google.cloud.run.v2.RevisionScalingStatus.getDefaultInstance()
+            : scalingStatus_;
+      } else {
+        return scalingStatusBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setScalingStatus(com.google.cloud.run.v2.RevisionScalingStatus value) {
+      if (scalingStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scalingStatus_ = value;
+      } else {
+        scalingStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setScalingStatus(
+        com.google.cloud.run.v2.RevisionScalingStatus.Builder builderForValue) {
+      if (scalingStatusBuilder_ == null) {
+        scalingStatus_ = builderForValue.build();
+      } else {
+        scalingStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeScalingStatus(com.google.cloud.run.v2.RevisionScalingStatus value) {
+      if (scalingStatusBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && scalingStatus_ != null
+            && scalingStatus_
+                != com.google.cloud.run.v2.RevisionScalingStatus.getDefaultInstance()) {
+          getScalingStatusBuilder().mergeFrom(value);
+        } else {
+          scalingStatus_ = value;
+        }
+      } else {
+        scalingStatusBuilder_.mergeFrom(value);
+      }
+      if (scalingStatus_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearScalingStatus() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      scalingStatus_ = null;
+      if (scalingStatusBuilder_ != null) {
+        scalingStatusBuilder_.dispose();
+        scalingStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.RevisionScalingStatus.Builder getScalingStatusBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return getScalingStatusFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.run.v2.RevisionScalingStatusOrBuilder getScalingStatusOrBuilder() {
+      if (scalingStatusBuilder_ != null) {
+        return scalingStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return scalingStatus_ == null
+            ? com.google.cloud.run.v2.RevisionScalingStatus.getDefaultInstance()
+            : scalingStatus_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current effective scaling settings for the revision.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.RevisionScalingStatus scaling_status = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.run.v2.RevisionScalingStatus,
+            com.google.cloud.run.v2.RevisionScalingStatus.Builder,
+            com.google.cloud.run.v2.RevisionScalingStatusOrBuilder>
+        getScalingStatusFieldBuilder() {
+      if (scalingStatusBuilder_ == null) {
+        scalingStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.run.v2.RevisionScalingStatus,
+                com.google.cloud.run.v2.RevisionScalingStatus.Builder,
+                com.google.cloud.run.v2.RevisionScalingStatusOrBuilder>(
+                getScalingStatus(), getParentForChildren(), isClean());
+        scalingStatus_ = null;
+      }
+      return scalingStatusBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
@@ -7386,7 +7681,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -7404,7 +7699,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -7427,7 +7722,7 @@ public final class Revision extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

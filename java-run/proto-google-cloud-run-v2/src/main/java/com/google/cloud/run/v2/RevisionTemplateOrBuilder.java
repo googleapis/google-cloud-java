@@ -589,12 +589,25 @@ public interface RevisionTemplateOrBuilder
    *
    *
    * <pre>
-   * Enable session affinity.
+   * Optional. Enable session affinity.
    * </pre>
    *
-   * <code>bool session_affinity = 19;</code>
+   * <code>bool session_affinity = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sessionAffinity.
    */
   boolean getSessionAffinity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables health checking containers during deployment.
+   * </pre>
+   *
+   * <code>bool health_check_disabled = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The healthCheckDisabled.
+   */
+  boolean getHealthCheckDisabled();
 }

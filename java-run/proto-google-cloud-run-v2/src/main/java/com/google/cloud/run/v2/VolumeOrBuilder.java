@@ -160,5 +160,75 @@ public interface VolumeOrBuilder
    */
   com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder getEmptyDirOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * For NFS Voumes, contains the path to the nfs Volume
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+   *
+   * @return Whether the nfs field is set.
+   */
+  boolean hasNfs();
+  /**
+   *
+   *
+   * <pre>
+   * For NFS Voumes, contains the path to the nfs Volume
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+   *
+   * @return The nfs.
+   */
+  com.google.cloud.run.v2.NFSVolumeSource getNfs();
+  /**
+   *
+   *
+   * <pre>
+   * For NFS Voumes, contains the path to the nfs Volume
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.NFSVolumeSource nfs = 5;</code>
+   */
+  com.google.cloud.run.v2.NFSVolumeSourceOrBuilder getNfsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Persistent storage backed by a Google Cloud Storage bucket.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+   *
+   * @return Whether the gcs field is set.
+   */
+  boolean hasGcs();
+  /**
+   *
+   *
+   * <pre>
+   * Persistent storage backed by a Google Cloud Storage bucket.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+   *
+   * @return The gcs.
+   */
+  com.google.cloud.run.v2.GCSVolumeSource getGcs();
+  /**
+   *
+   *
+   * <pre>
+   * Persistent storage backed by a Google Cloud Storage bucket.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.GCSVolumeSource gcs = 6;</code>
+   */
+  com.google.cloud.run.v2.GCSVolumeSourceOrBuilder getGcsOrBuilder();
+
   com.google.cloud.run.v2.Volume.VolumeTypeCase getVolumeTypeCase();
 }
