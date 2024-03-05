@@ -25,9 +25,9 @@ import java.util.List;
 
 /** This class holds all the configs when making a generate content API call */
 public class GenerateContentConfig {
-  private GenerationConfig generationConfig;
-  private ImmutableList<SafetySetting> safetySettings;
-  private ImmutableList<Tool> tools;
+  private final GenerationConfig generationConfig;
+  private final ImmutableList<SafetySetting> safetySettings;
+  private final ImmutableList<Tool> tools;
 
   /** Creates a builder for the GenerateContentConfig. */
   public static Builder newBuilder() {
@@ -85,14 +85,7 @@ public class GenerateContentConfig {
      */
     @BetaApi
     public Builder setSafetySettings(List<SafetySetting> safetySettings) {
-      ImmutableList.Builder builder = ImmutableList.builder();
-      for (SafetySetting safetySetting : safetySettings) {
-        if (safetySetting != null) {
-          builder.add(safetySetting);
-        }
-      }
-      this.safetySettings = builder.build();
-
+      this.safetySettings = ImmutableList.copyOf(safetySettings);
       return this;
     }
 
@@ -104,52 +97,9 @@ public class GenerateContentConfig {
      */
     @BetaApi
     public Builder setTools(List<Tool> tools) {
-      ImmutableList.Builder builder = ImmutableList.builder();
-      for (Tool tool : tools) {
-        if (tool != null) {
-          builder.add(tool);
-        }
-      }
-      this.tools = builder.build();
-
+      this.tools = ImmutableList.copyOf(tools);
       return this;
     }
-  }
-
-  /**
-   * Sets the value for {@link #getGenerationConfig}, which will be used in the generate content API
-   * call.
-   */
-  @BetaApi
-  public void setGenerationConfig(GenerationConfig generationConfig) {
-    this.generationConfig = generationConfig;
-  }
-
-  /**
-   * Sets the value for {@link #getSafetySettings}, which will be used in the generate content API
-   * call.
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  public void setSafetySettings(List<SafetySetting> safetySettings) {
-    ImmutableList.Builder builder = ImmutableList.builder();
-    for (SafetySetting safetySetting : safetySettings) {
-      if (safetySetting != null) {
-        builder.add(safetySetting);
-      }
-    }
-    this.safetySettings = builder.build();
-  }
-
-  /** Sets the value for {@link #getTools}, which will be used in the generate content API call. */
-  @BetaApi("tools is a preview feature.")
-  public void setTools(List<Tool> tools) {
-    ImmutableList.Builder builder = ImmutableList.builder();
-    for (Tool tool : tools) {
-      if (tool != null) {
-        builder.add(tool);
-      }
-    }
-    this.tools = builder.build();
   }
 
   /** Returns the {@link com.google.cloud.vertexai.api.GenerationConfig} of this config. */
