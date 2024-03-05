@@ -1724,8 +1724,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createMetadataStore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateMetadataStoreRequest, MetadataStore, CreateMetadataStoreOperationMetadata>
         createMetadataStoreOperationSettings() {
@@ -1752,8 +1750,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteMetadataStore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteMetadataStoreRequest, Empty, DeleteMetadataStoreOperationMetadata>
         deleteMetadataStoreOperationSettings() {
@@ -1788,8 +1784,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteArtifact. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
         deleteArtifactOperationSettings() {
       return deleteArtifactOperationSettings;
@@ -1801,8 +1795,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to purgeArtifacts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
         purgeArtifactsOperationSettings() {
@@ -1837,8 +1829,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteContext. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteContextRequest, Empty, DeleteOperationMetadata>
         deleteContextOperationSettings() {
       return deleteContextOperationSettings;
@@ -1850,8 +1840,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to purgeContexts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
         purgeContextsOperationSettings() {
@@ -1911,8 +1899,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteExecution. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
         deleteExecutionOperationSettings() {
       return deleteExecutionOperationSettings;
@@ -1924,8 +1910,6 @@ public class MetadataServiceStubSettings extends StubSettings<MetadataServiceStu
     }
 
     /** Returns the builder for the settings used for calls to purgeExecutions. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
         purgeExecutionsOperationSettings() {

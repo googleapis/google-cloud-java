@@ -958,8 +958,6 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to suggestTrials. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SuggestTrialsRequest, SuggestTrialsResponse, SuggestTrialsMetadata>
         suggestTrialsOperationSettings() {
@@ -1005,8 +1003,6 @@ public class VizierServiceStubSettings extends StubSettings<VizierServiceStubSet
     }
 
     /** Returns the builder for the settings used for calls to checkTrialEarlyStoppingState. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CheckTrialEarlyStoppingStateRequest,
             CheckTrialEarlyStoppingStateResponse,

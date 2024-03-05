@@ -192,7 +192,6 @@ public class ProvisioningSettings extends ClientSettings<ProvisioningSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -234,7 +233,6 @@ public class ProvisioningSettings extends ClientSettings<ProvisioningSettings> {
       return new Builder(ProvisioningStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ProvisioningStubSettings.newHttpJsonBuilder());
     }

@@ -618,8 +618,6 @@ public class MigrationServiceStubSettings extends StubSettings<MigrationServiceS
     }
 
     /** Returns the builder for the settings used for calls to batchMigrateResources. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchMigrateResourcesRequest,
             BatchMigrateResourcesResponse,

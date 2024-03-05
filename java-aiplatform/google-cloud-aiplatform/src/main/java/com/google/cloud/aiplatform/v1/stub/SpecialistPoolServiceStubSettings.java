@@ -21,7 +21,6 @@ import static com.google.cloud.aiplatform.v1.SpecialistPoolServiceClient.ListSpe
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -730,8 +729,6 @@ public class SpecialistPoolServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createSpecialistPool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateSpecialistPoolRequest, SpecialistPool, CreateSpecialistPoolOperationMetadata>
         createSpecialistPoolOperationSettings() {
@@ -760,8 +757,6 @@ public class SpecialistPoolServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteSpecialistPool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteSpecialistPoolRequest, Empty, DeleteOperationMetadata>
         deleteSpecialistPoolOperationSettings() {
@@ -775,8 +770,6 @@ public class SpecialistPoolServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateSpecialistPool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateSpecialistPoolRequest, SpecialistPool, UpdateSpecialistPoolOperationMetadata>
         updateSpecialistPoolOperationSettings() {

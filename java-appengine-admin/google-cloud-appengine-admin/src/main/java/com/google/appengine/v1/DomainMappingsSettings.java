@@ -174,7 +174,6 @@ public class DomainMappingsSettings extends ClientSettings<DomainMappingsSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -216,7 +215,6 @@ public class DomainMappingsSettings extends ClientSettings<DomainMappingsSetting
       return new Builder(DomainMappingsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DomainMappingsStubSettings.newHttpJsonBuilder());
     }

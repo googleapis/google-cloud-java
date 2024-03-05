@@ -166,7 +166,6 @@ public class AuthorizedCertificatesSettings extends ClientSettings<AuthorizedCer
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -209,7 +208,6 @@ public class AuthorizedCertificatesSettings extends ClientSettings<AuthorizedCer
       return new Builder(AuthorizedCertificatesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AuthorizedCertificatesStubSettings.newHttpJsonBuilder());
     }

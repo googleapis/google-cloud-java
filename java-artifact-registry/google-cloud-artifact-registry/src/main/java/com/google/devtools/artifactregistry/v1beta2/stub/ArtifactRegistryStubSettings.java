@@ -1459,8 +1459,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to importAptArtifacts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportAptArtifactsRequest, ImportAptArtifactsResponse, ImportAptArtifactsMetadata>
         importAptArtifactsOperationSettings() {
@@ -1474,8 +1472,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to importYumArtifacts. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportYumArtifactsRequest, ImportYumArtifactsResponse, ImportYumArtifactsMetadata>
         importYumArtifactsOperationSettings() {
@@ -1501,8 +1497,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to createRepository. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateRepositoryRequest, Repository, OperationMetadata>
         createRepositoryOperationSettings() {
       return createRepositoryOperationSettings;
@@ -1521,8 +1515,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to deleteRepository. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteRepositoryRequest, Empty, OperationMetadata>
         deleteRepositoryOperationSettings() {
       return deleteRepositoryOperationSettings;
@@ -1546,8 +1538,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to deletePackage. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePackageRequest, Empty, OperationMetadata>
         deletePackageOperationSettings() {
       return deletePackageOperationSettings;
@@ -1571,8 +1561,6 @@ public class ArtifactRegistryStubSettings extends StubSettings<ArtifactRegistryS
     }
 
     /** Returns the builder for the settings used for calls to deleteVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadata>
         deleteVersionOperationSettings() {
       return deleteVersionOperationSettings;

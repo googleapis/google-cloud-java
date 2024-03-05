@@ -1069,7 +1069,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -1112,7 +1111,6 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return new Builder(AnalyticsAdminServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AnalyticsAdminServiceStubSettings.newHttpJsonBuilder());
     }

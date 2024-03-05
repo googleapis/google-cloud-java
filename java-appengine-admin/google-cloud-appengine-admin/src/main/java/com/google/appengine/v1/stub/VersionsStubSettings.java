@@ -600,8 +600,6 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateVersionRequest, Version, CreateVersionMetadataV1>
         createVersionOperationSettings() {
       return createVersionOperationSettings;
@@ -613,8 +611,6 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateVersionRequest, Version, OperationMetadataV1>
         updateVersionOperationSettings() {
       return updateVersionOperationSettings;
@@ -626,8 +622,6 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteVersionRequest, Empty, OperationMetadataV1>
         deleteVersionOperationSettings() {
       return deleteVersionOperationSettings;

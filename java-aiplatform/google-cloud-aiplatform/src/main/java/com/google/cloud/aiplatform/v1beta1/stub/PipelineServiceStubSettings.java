@@ -1023,8 +1023,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteTrainingPipeline. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteTrainingPipelineRequest, Empty, DeleteOperationMetadata>
         deleteTrainingPipelineOperationSettings() {
@@ -1062,8 +1060,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deletePipelineJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
         deletePipelineJobOperationSettings() {
       return deletePipelineJobOperationSettings;
@@ -1076,8 +1072,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     }
 
     /** Returns the builder for the settings used for calls to batchDeletePipelineJobs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchDeletePipelineJobsRequest,
             BatchDeletePipelineJobsResponse,
@@ -1098,8 +1092,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     }
 
     /** Returns the builder for the settings used for calls to batchCancelPipelineJobs. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchCancelPipelineJobsRequest,
             BatchCancelPipelineJobsResponse,

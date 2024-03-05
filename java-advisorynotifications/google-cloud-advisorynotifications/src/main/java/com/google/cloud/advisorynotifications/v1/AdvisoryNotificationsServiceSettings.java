@@ -152,7 +152,6 @@ public class AdvisoryNotificationsServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -195,7 +194,6 @@ public class AdvisoryNotificationsServiceSettings
       return new Builder(AdvisoryNotificationsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AdvisoryNotificationsServiceStubSettings.newHttpJsonBuilder());
     }

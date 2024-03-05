@@ -159,7 +159,6 @@ public class FirewallSettings extends ClientSettings<FirewallSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -201,7 +200,6 @@ public class FirewallSettings extends ClientSettings<FirewallSettings> {
       return new Builder(FirewallStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(FirewallStubSettings.newHttpJsonBuilder());
     }

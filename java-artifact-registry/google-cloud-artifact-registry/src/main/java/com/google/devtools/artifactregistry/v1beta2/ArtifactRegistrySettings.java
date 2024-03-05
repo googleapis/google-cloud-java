@@ -328,7 +328,6 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -370,7 +369,6 @@ public class ArtifactRegistrySettings extends ClientSettings<ArtifactRegistrySet
       return new Builder(ArtifactRegistryStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ArtifactRegistryStubSettings.newHttpJsonBuilder());
     }

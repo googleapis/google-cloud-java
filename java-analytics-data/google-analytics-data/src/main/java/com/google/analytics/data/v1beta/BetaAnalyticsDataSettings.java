@@ -198,7 +198,6 @@ public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -240,7 +239,6 @@ public class BetaAnalyticsDataSettings extends ClientSettings<BetaAnalyticsDataS
       return new Builder(BetaAnalyticsDataStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(BetaAnalyticsDataStubSettings.newHttpJsonBuilder());
     }

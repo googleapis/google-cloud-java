@@ -1495,8 +1495,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to createDataset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDatasetRequest, Dataset, CreateDatasetOperationMetadata>
         createDatasetOperationSettings() {
@@ -1526,8 +1524,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to deleteDataset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, DeleteOperationMetadata>
         deleteDatasetOperationSettings() {
       return deleteDatasetOperationSettings;
@@ -1539,8 +1535,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to importData. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportDataRequest, ImportDataResponse, ImportDataOperationMetadata>
         importDataOperationSettings() {
@@ -1553,8 +1547,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
         exportDataOperationSettings() {
@@ -1568,8 +1560,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to createDatasetVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
         createDatasetVersionOperationSettings() {
@@ -1583,8 +1573,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to deleteDatasetVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
         deleteDatasetVersionOperationSettings() {
@@ -1613,8 +1601,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to restoreDatasetVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RestoreDatasetVersionRequest, DatasetVersion, RestoreDatasetVersionOperationMetadata>
         restoreDatasetVersionOperationSettings() {
@@ -1649,8 +1635,6 @@ public class DatasetServiceStubSettings extends StubSettings<DatasetServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to deleteSavedQuery. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
         deleteSavedQueryOperationSettings() {
       return deleteSavedQueryOperationSettings;

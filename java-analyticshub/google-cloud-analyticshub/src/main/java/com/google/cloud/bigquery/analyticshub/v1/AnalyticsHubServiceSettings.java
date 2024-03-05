@@ -290,7 +290,6 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -332,7 +331,6 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
       return new Builder(AnalyticsHubServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AnalyticsHubServiceStubSettings.newHttpJsonBuilder());
     }

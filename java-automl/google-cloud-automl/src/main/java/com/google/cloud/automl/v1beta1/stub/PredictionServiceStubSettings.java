@@ -393,8 +393,6 @@ public class PredictionServiceStubSettings extends StubSettings<PredictionServic
     }
 
     /** Returns the builder for the settings used for calls to batchPredict. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchPredictRequest, BatchPredictResult, OperationMetadata>
         batchPredictOperationSettings() {
       return batchPredictOperationSettings;

@@ -799,8 +799,6 @@ public class DeploymentResourcePoolServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createDeploymentResourcePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDeploymentResourcePoolRequest,
             DeploymentResourcePool,
@@ -831,8 +829,6 @@ public class DeploymentResourcePoolServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteDeploymentResourcePool. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteDeploymentResourcePoolRequest, Empty, DeleteOperationMetadata>
         deleteDeploymentResourcePoolOperationSettings() {

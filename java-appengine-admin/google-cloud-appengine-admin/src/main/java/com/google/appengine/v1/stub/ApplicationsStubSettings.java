@@ -518,8 +518,6 @@ public class ApplicationsStubSettings extends StubSettings<ApplicationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createApplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateApplicationRequest, Application, OperationMetadataV1>
         createApplicationOperationSettings() {
       return createApplicationOperationSettings;
@@ -532,8 +530,6 @@ public class ApplicationsStubSettings extends StubSettings<ApplicationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateApplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateApplicationRequest, Application, OperationMetadataV1>
         updateApplicationOperationSettings() {
       return updateApplicationOperationSettings;
@@ -546,8 +542,6 @@ public class ApplicationsStubSettings extends StubSettings<ApplicationsStubSetti
     }
 
     /** Returns the builder for the settings used for calls to repairApplication. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RepairApplicationRequest, Application, OperationMetadataV1>
         repairApplicationOperationSettings() {
       return repairApplicationOperationSettings;

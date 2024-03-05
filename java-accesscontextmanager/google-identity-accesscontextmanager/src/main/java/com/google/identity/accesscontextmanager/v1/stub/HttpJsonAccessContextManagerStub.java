@@ -22,7 +22,6 @@ import static com.google.identity.accesscontextmanager.v1.AccessContextManagerCl
 import static com.google.identity.accesscontextmanager.v1.AccessContextManagerClient.ListServicePerimetersPagedResponse;
 
 import com.google.api.HttpRule;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -97,7 +96,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()

@@ -1131,8 +1131,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to createGateway. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateGatewayRequest, Gateway, OperationMetadata>
         createGatewayOperationSettings() {
       return createGatewayOperationSettings;
@@ -1144,8 +1142,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to updateGateway. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateGatewayRequest, Gateway, OperationMetadata>
         updateGatewayOperationSettings() {
       return updateGatewayOperationSettings;
@@ -1157,8 +1153,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to deleteGateway. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteGatewayRequest, Empty, OperationMetadata>
         deleteGatewayOperationSettings() {
       return deleteGatewayOperationSettings;
@@ -1181,8 +1175,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to createApi. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateApiRequest, Api, OperationMetadata>
         createApiOperationSettings() {
       return createApiOperationSettings;
@@ -1194,8 +1186,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to updateApi. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateApiRequest, Api, OperationMetadata>
         updateApiOperationSettings() {
       return updateApiOperationSettings;
@@ -1207,8 +1197,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to deleteApi. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteApiRequest, Empty, OperationMetadata>
         deleteApiOperationSettings() {
       return deleteApiOperationSettings;
@@ -1232,8 +1220,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to createApiConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateApiConfigRequest, ApiConfig, OperationMetadata>
         createApiConfigOperationSettings() {
       return createApiConfigOperationSettings;
@@ -1245,8 +1231,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to updateApiConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateApiConfigRequest, ApiConfig, OperationMetadata>
         updateApiConfigOperationSettings() {
       return updateApiConfigOperationSettings;
@@ -1258,8 +1242,6 @@ public class ApiGatewayServiceStubSettings extends StubSettings<ApiGatewayServic
     }
 
     /** Returns the builder for the settings used for calls to deleteApiConfig. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteApiConfigRequest, Empty, OperationMetadata>
         deleteApiConfigOperationSettings() {
       return deleteApiConfigOperationSettings;

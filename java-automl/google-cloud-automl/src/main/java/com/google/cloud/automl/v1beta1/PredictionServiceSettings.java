@@ -142,7 +142,6 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -184,7 +183,6 @@ public class PredictionServiceSettings extends ClientSettings<PredictionServiceS
       return new Builder(PredictionServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PredictionServiceStubSettings.newHttpJsonBuilder());
     }

@@ -162,7 +162,6 @@ public class ApplicationsSettings extends ClientSettings<ApplicationsSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -204,7 +203,6 @@ public class ApplicationsSettings extends ClientSettings<ApplicationsSettings> {
       return new Builder(ApplicationsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ApplicationsStubSettings.newHttpJsonBuilder());
     }

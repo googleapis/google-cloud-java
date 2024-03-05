@@ -21,7 +21,6 @@ import static com.google.cloud.aiplatform.v1.IndexServiceClient.ListLocationsPag
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -735,8 +734,6 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createIndex. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateIndexRequest, Index, CreateIndexOperationMetadata>
         createIndexOperationSettings() {
       return createIndexOperationSettings;
@@ -760,8 +757,6 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateIndex. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateIndexRequest, Index, UpdateIndexOperationMetadata>
         updateIndexOperationSettings() {
       return updateIndexOperationSettings;
@@ -773,8 +768,6 @@ public class IndexServiceStubSettings extends StubSettings<IndexServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteIndex. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteIndexRequest, Empty, DeleteOperationMetadata>
         deleteIndexOperationSettings() {
       return deleteIndexOperationSettings;

@@ -187,7 +187,6 @@ public class AccessApprovalAdminSettings extends ClientSettings<AccessApprovalAd
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -229,7 +228,6 @@ public class AccessApprovalAdminSettings extends ClientSettings<AccessApprovalAd
       return new Builder(AccessApprovalStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AccessApprovalStubSettings.newHttpJsonBuilder());
     }

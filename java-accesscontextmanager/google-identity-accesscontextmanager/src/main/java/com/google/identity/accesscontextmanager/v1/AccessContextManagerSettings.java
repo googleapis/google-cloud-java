@@ -426,7 +426,6 @@ public class AccessContextManagerSettings extends ClientSettings<AccessContextMa
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -469,7 +468,6 @@ public class AccessContextManagerSettings extends ClientSettings<AccessContextMa
       return new Builder(AccessContextManagerStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AccessContextManagerStubSettings.newHttpJsonBuilder());
     }

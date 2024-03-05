@@ -215,7 +215,6 @@ public class TablesServiceSettings extends ClientSettings<TablesServiceSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -257,7 +256,6 @@ public class TablesServiceSettings extends ClientSettings<TablesServiceSettings>
       return new Builder(TablesServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(TablesServiceStubSettings.newHttpJsonBuilder());
     }

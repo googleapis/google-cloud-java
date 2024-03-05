@@ -1462,8 +1462,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteDataset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDatasetRequest, Empty, OperationMetadata>
         deleteDatasetOperationSettings() {
       return deleteDatasetOperationSettings;
@@ -1475,8 +1473,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to importData. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ImportDataRequest, Empty, OperationMetadata>
         importDataOperationSettings() {
       return importDataOperationSettings;
@@ -1488,8 +1484,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportData. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportDataRequest, Empty, OperationMetadata>
         exportDataOperationSettings() {
       return exportDataOperationSettings;
@@ -1542,8 +1536,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateModelRequest, Model, OperationMetadata>
         createModelOperationSettings() {
       return createModelOperationSettings;
@@ -1566,8 +1558,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, OperationMetadata>
         deleteModelOperationSettings() {
       return deleteModelOperationSettings;
@@ -1579,8 +1569,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deployModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeployModelRequest, Empty, OperationMetadata>
         deployModelOperationSettings() {
       return deployModelOperationSettings;
@@ -1592,8 +1580,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeployModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeployModelRequest, Empty, OperationMetadata>
         undeployModelOperationSettings() {
       return undeployModelOperationSettings;
@@ -1605,8 +1591,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportModelRequest, Empty, OperationMetadata>
         exportModelOperationSettings() {
       return exportModelOperationSettings;
@@ -1619,8 +1603,6 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportEvaluatedExamples. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportEvaluatedExamplesRequest, Empty, OperationMetadata>
         exportEvaluatedExamplesOperationSettings() {
       return exportEvaluatedExamplesOperationSettings;

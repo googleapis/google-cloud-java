@@ -1345,8 +1345,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to uploadModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UploadModelRequest, UploadModelResponse, UploadModelOperationMetadata>
         uploadModelOperationSettings() {
@@ -1383,8 +1381,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateExplanationDataset. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateExplanationDatasetRequest,
             UpdateExplanationDatasetResponse,
@@ -1399,8 +1395,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteModelRequest, Empty, DeleteOperationMetadata>
         deleteModelOperationSettings() {
       return deleteModelOperationSettings;
@@ -1413,8 +1407,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteModelVersion. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteModelVersionRequest, Empty, DeleteOperationMetadata>
         deleteModelVersionOperationSettings() {
       return deleteModelVersionOperationSettings;
@@ -1432,8 +1424,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to exportModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportModelRequest, ExportModelResponse, ExportModelOperationMetadata>
         exportModelOperationSettings() {
@@ -1446,8 +1436,6 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     }
 
     /** Returns the builder for the settings used for calls to copyModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CopyModelRequest, CopyModelResponse, CopyModelOperationMetadata>
         copyModelOperationSettings() {

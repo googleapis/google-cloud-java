@@ -160,7 +160,6 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -202,7 +201,6 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return new Builder(InstancesStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(InstancesStubSettings.newHttpJsonBuilder());
     }

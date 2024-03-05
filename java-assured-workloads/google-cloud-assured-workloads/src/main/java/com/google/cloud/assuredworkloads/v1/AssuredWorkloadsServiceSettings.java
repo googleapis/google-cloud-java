@@ -191,7 +191,6 @@ public class AssuredWorkloadsServiceSettings
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -234,7 +233,6 @@ public class AssuredWorkloadsServiceSettings
       return new Builder(AssuredWorkloadsServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AssuredWorkloadsServiceStubSettings.newHttpJsonBuilder());
     }

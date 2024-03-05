@@ -630,8 +630,6 @@ public class DomainMappingsStubSettings extends StubSettings<DomainMappingsStubS
     }
 
     /** Returns the builder for the settings used for calls to createDomainMapping. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateDomainMappingRequest, DomainMapping, OperationMetadataV1>
         createDomainMappingOperationSettings() {
@@ -645,8 +643,6 @@ public class DomainMappingsStubSettings extends StubSettings<DomainMappingsStubS
     }
 
     /** Returns the builder for the settings used for calls to updateDomainMapping. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateDomainMappingRequest, DomainMapping, OperationMetadataV1>
         updateDomainMappingOperationSettings() {
@@ -660,8 +656,6 @@ public class DomainMappingsStubSettings extends StubSettings<DomainMappingsStubS
     }
 
     /** Returns the builder for the settings used for calls to deleteDomainMapping. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteDomainMappingRequest, Empty, OperationMetadataV1>
         deleteDomainMappingOperationSettings() {
       return deleteDomainMappingOperationSettings;

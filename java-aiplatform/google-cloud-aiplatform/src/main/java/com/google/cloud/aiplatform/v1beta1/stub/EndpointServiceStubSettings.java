@@ -863,8 +863,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to createEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateEndpointRequest, Endpoint, CreateEndpointOperationMetadata>
         createEndpointOperationSettings() {
@@ -894,8 +892,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEndpointRequest, Empty, DeleteOperationMetadata>
         deleteEndpointOperationSettings() {
       return deleteEndpointOperationSettings;
@@ -907,8 +903,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deployModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeployModelRequest, DeployModelResponse, DeployModelOperationMetadata>
         deployModelOperationSettings() {
@@ -921,8 +915,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to undeployModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
         undeployModelOperationSettings() {
@@ -936,8 +928,6 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     }
 
     /** Returns the builder for the settings used for calls to mutateDeployedModel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             MutateDeployedModelRequest,
             MutateDeployedModelResponse,

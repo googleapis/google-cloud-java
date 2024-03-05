@@ -149,7 +149,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -191,7 +190,6 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
       return new Builder(AssetServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AssetServiceStubSettings.newHttpJsonBuilder());
     }

@@ -16,7 +16,6 @@
 
 package com.google.analytics.admin.v1alpha;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -80,12 +79,10 @@ public class AccessBindingName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newAccountAccessBindingBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static PropertyAccessBindingBuilder newPropertyAccessBindingBuilder() {
     return new PropertyAccessBindingBuilder();
   }
@@ -98,12 +95,10 @@ public class AccessBindingName implements ResourceName {
     return newBuilder().setAccount(account).setAccessBinding(accessBinding).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AccessBindingName ofAccountAccessBindingName(String account, String accessBinding) {
     return newBuilder().setAccount(account).setAccessBinding(accessBinding).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static AccessBindingName ofPropertyAccessBindingName(
       String property, String accessBinding) {
     return newPropertyAccessBindingBuilder()
@@ -116,12 +111,10 @@ public class AccessBindingName implements ResourceName {
     return newBuilder().setAccount(account).setAccessBinding(accessBinding).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatAccountAccessBindingName(String account, String accessBinding) {
     return newBuilder().setAccount(account).setAccessBinding(accessBinding).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatPropertyAccessBindingName(String property, String accessBinding) {
     return newPropertyAccessBindingBuilder()
         .setProperty(property)
@@ -267,7 +260,6 @@ public class AccessBindingName implements ResourceName {
   }
 
   /** Builder for properties/{property}/accessBindings/{access_binding}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class PropertyAccessBindingBuilder {
     private String property;
     private String accessBinding;

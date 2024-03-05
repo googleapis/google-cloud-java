@@ -365,7 +365,6 @@ public class RegistrySettings extends ClientSettings<RegistrySettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -407,7 +406,6 @@ public class RegistrySettings extends ClientSettings<RegistrySettings> {
       return new Builder(RegistryStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(RegistryStubSettings.newHttpJsonBuilder());
     }

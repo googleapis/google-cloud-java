@@ -426,7 +426,6 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -468,7 +467,6 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
       return new Builder(AlloyDBAdminStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AlloyDBAdminStubSettings.newHttpJsonBuilder());
     }

@@ -1844,8 +1844,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createAccessPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             AccessPolicy, AccessPolicy, AccessContextManagerOperationMetadata>
         createAccessPolicyOperationSettings() {
@@ -1859,8 +1857,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateAccessPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAccessPolicyRequest, AccessPolicy, AccessContextManagerOperationMetadata>
         updateAccessPolicyOperationSettings() {
@@ -1874,8 +1870,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteAccessPolicy. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteAccessPolicyRequest, Empty, AccessContextManagerOperationMetadata>
         deleteAccessPolicyOperationSettings() {
@@ -1901,8 +1895,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createAccessLevel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateAccessLevelRequest, AccessLevel, AccessContextManagerOperationMetadata>
         createAccessLevelOperationSettings() {
@@ -1916,8 +1908,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateAccessLevel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateAccessLevelRequest, AccessLevel, AccessContextManagerOperationMetadata>
         updateAccessLevelOperationSettings() {
@@ -1931,8 +1921,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteAccessLevel. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteAccessLevelRequest, Empty, AccessContextManagerOperationMetadata>
         deleteAccessLevelOperationSettings() {
@@ -1946,8 +1934,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to replaceAccessLevels. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReplaceAccessLevelsRequest,
             ReplaceAccessLevelsResponse,
@@ -1978,8 +1964,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createServicePerimeter. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateServicePerimeterRequest, ServicePerimeter, AccessContextManagerOperationMetadata>
         createServicePerimeterOperationSettings() {
@@ -1993,8 +1977,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateServicePerimeter. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateServicePerimeterRequest, ServicePerimeter, AccessContextManagerOperationMetadata>
         updateServicePerimeterOperationSettings() {
@@ -2008,8 +1990,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteServicePerimeter. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteServicePerimeterRequest, Empty, AccessContextManagerOperationMetadata>
         deleteServicePerimeterOperationSettings() {
@@ -2023,8 +2003,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to replaceServicePerimeters. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ReplaceServicePerimetersRequest,
             ReplaceServicePerimetersResponse,
@@ -2040,8 +2018,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to commitServicePerimeters. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CommitServicePerimetersRequest,
             CommitServicePerimetersResponse,
@@ -2072,8 +2048,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createGcpUserAccessBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateGcpUserAccessBindingRequest,
             GcpUserAccessBinding,
@@ -2089,8 +2063,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateGcpUserAccessBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateGcpUserAccessBindingRequest,
             GcpUserAccessBinding,
@@ -2106,8 +2078,6 @@ public class AccessContextManagerStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteGcpUserAccessBinding. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteGcpUserAccessBindingRequest, Empty, GcpUserAccessBindingOperationMetadata>
         deleteGcpUserAccessBindingOperationSettings() {

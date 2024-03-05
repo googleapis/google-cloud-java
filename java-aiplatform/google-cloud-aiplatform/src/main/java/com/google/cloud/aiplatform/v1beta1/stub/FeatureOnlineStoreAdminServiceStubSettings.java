@@ -1204,8 +1204,6 @@ public class FeatureOnlineStoreAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createFeatureOnlineStore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateFeatureOnlineStoreRequest,
             FeatureOnlineStore,
@@ -1236,8 +1234,6 @@ public class FeatureOnlineStoreAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateFeatureOnlineStore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateFeatureOnlineStoreRequest,
             FeatureOnlineStore,
@@ -1253,8 +1249,6 @@ public class FeatureOnlineStoreAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteFeatureOnlineStore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteFeatureOnlineStoreRequest, Empty, DeleteOperationMetadata>
         deleteFeatureOnlineStoreOperationSettings() {
@@ -1268,8 +1262,6 @@ public class FeatureOnlineStoreAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createFeatureView. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateFeatureViewRequest, FeatureView, CreateFeatureViewOperationMetadata>
         createFeatureViewOperationSettings() {
@@ -1295,8 +1287,6 @@ public class FeatureOnlineStoreAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateFeatureView. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateFeatureViewRequest, FeatureView, UpdateFeatureViewOperationMetadata>
         updateFeatureViewOperationSettings() {
@@ -1310,8 +1300,6 @@ public class FeatureOnlineStoreAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteFeatureView. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFeatureViewRequest, Empty, DeleteOperationMetadata>
         deleteFeatureViewOperationSettings() {
       return deleteFeatureViewOperationSettings;

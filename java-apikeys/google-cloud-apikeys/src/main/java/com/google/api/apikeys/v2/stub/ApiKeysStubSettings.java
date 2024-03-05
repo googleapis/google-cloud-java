@@ -660,8 +660,6 @@ public class ApiKeysStubSettings extends StubSettings<ApiKeysStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to createKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateKeyRequest, Key, Empty>
         createKeyOperationSettings() {
       return createKeyOperationSettings;
@@ -690,8 +688,6 @@ public class ApiKeysStubSettings extends StubSettings<ApiKeysStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to updateKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateKeyRequest, Key, Empty>
         updateKeyOperationSettings() {
       return updateKeyOperationSettings;
@@ -703,8 +699,6 @@ public class ApiKeysStubSettings extends StubSettings<ApiKeysStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to deleteKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteKeyRequest, Key, Empty>
         deleteKeyOperationSettings() {
       return deleteKeyOperationSettings;
@@ -716,8 +710,6 @@ public class ApiKeysStubSettings extends StubSettings<ApiKeysStubSettings> {
     }
 
     /** Returns the builder for the settings used for calls to undeleteKey. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UndeleteKeyRequest, Key, Empty>
         undeleteKeyOperationSettings() {
       return undeleteKeyOperationSettings;

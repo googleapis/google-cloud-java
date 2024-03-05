@@ -16,7 +16,6 @@
 
 package com.google.cloud.advisorynotifications.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -89,12 +88,10 @@ public class NotificationName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newOrganizationLocationNotificationBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationNotificationBuilder newProjectLocationNotificationBuilder() {
     return new ProjectLocationNotificationBuilder();
   }
@@ -111,7 +108,6 @@ public class NotificationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationName ofOrganizationLocationNotificationName(
       String organization, String location, String notification) {
     return newBuilder()
@@ -121,7 +117,6 @@ public class NotificationName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static NotificationName ofProjectLocationNotificationName(
       String project, String location, String notification) {
     return newProjectLocationNotificationBuilder()
@@ -140,7 +135,6 @@ public class NotificationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationNotificationName(
       String organization, String location, String notification) {
     return newBuilder()
@@ -151,7 +145,6 @@ public class NotificationName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationNotificationName(
       String project, String location, String notification) {
     return newProjectLocationNotificationBuilder()
@@ -318,7 +311,6 @@ public class NotificationName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/notifications/{notification}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationNotificationBuilder {
     private String project;
     private String location;

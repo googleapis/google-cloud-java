@@ -724,8 +724,6 @@ public class BetaAnalyticsDataStubSettings extends StubSettings<BetaAnalyticsDat
     }
 
     /** Returns the builder for the settings used for calls to createAudienceExport. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateAudienceExportRequest, AudienceExport, AudienceExportMetadata>
         createAudienceExportOperationSettings() {

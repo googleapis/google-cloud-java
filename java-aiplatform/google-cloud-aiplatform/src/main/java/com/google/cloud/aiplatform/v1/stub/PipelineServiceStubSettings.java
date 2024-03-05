@@ -22,7 +22,6 @@ import static com.google.cloud.aiplatform.v1.PipelineServiceClient.ListTrainingP
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -872,8 +871,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteTrainingPipeline. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteTrainingPipelineRequest, Empty, DeleteOperationMetadata>
         deleteTrainingPipelineOperationSettings() {
@@ -911,8 +908,6 @@ public class PipelineServiceStubSettings extends StubSettings<PipelineServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deletePipelineJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeletePipelineJobRequest, Empty, DeleteOperationMetadata>
         deletePipelineJobOperationSettings() {
       return deletePipelineJobOperationSettings;

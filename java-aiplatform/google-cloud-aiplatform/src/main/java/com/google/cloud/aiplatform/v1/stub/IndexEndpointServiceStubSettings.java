@@ -21,7 +21,6 @@ import static com.google.cloud.aiplatform.v1.IndexEndpointServiceClient.ListLoca
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -876,8 +875,6 @@ public class IndexEndpointServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createIndexEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateIndexEndpointRequest, IndexEndpoint, CreateIndexEndpointOperationMetadata>
         createIndexEndpointOperationSettings() {
@@ -910,8 +907,6 @@ public class IndexEndpointServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteIndexEndpoint. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteIndexEndpointRequest, Empty, DeleteOperationMetadata>
         deleteIndexEndpointOperationSettings() {
       return deleteIndexEndpointOperationSettings;
@@ -923,8 +918,6 @@ public class IndexEndpointServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deployIndex. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeployIndexRequest, DeployIndexResponse, DeployIndexOperationMetadata>
         deployIndexOperationSettings() {
@@ -937,8 +930,6 @@ public class IndexEndpointServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to undeployIndex. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UndeployIndexRequest, UndeployIndexResponse, UndeployIndexOperationMetadata>
         undeployIndexOperationSettings() {
@@ -952,8 +943,6 @@ public class IndexEndpointServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to mutateDeployedIndex. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             MutateDeployedIndexRequest,
             MutateDeployedIndexResponse,

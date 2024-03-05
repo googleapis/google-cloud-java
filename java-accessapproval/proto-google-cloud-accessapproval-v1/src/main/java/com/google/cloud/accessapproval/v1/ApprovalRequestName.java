@@ -16,7 +16,6 @@
 
 package com.google.cloud.accessapproval.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -99,17 +98,14 @@ public class ApprovalRequestName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectApprovalRequestBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderApprovalRequestBuilder newFolderApprovalRequestBuilder() {
     return new FolderApprovalRequestBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationApprovalRequestBuilder newOrganizationApprovalRequestBuilder() {
     return new OrganizationApprovalRequestBuilder();
   }
@@ -122,13 +118,11 @@ public class ApprovalRequestName implements ResourceName {
     return newBuilder().setProject(project).setApprovalRequest(approvalRequest).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ApprovalRequestName ofProjectApprovalRequestName(
       String project, String approvalRequest) {
     return newBuilder().setProject(project).setApprovalRequest(approvalRequest).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ApprovalRequestName ofFolderApprovalRequestName(
       String folder, String approvalRequest) {
     return newFolderApprovalRequestBuilder()
@@ -137,7 +131,6 @@ public class ApprovalRequestName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ApprovalRequestName ofOrganizationApprovalRequestName(
       String organization, String approvalRequest) {
     return newOrganizationApprovalRequestBuilder()
@@ -150,12 +143,10 @@ public class ApprovalRequestName implements ResourceName {
     return newBuilder().setProject(project).setApprovalRequest(approvalRequest).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectApprovalRequestName(String project, String approvalRequest) {
     return newBuilder().setProject(project).setApprovalRequest(approvalRequest).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderApprovalRequestName(String folder, String approvalRequest) {
     return newFolderApprovalRequestBuilder()
         .setFolder(folder)
@@ -164,7 +155,6 @@ public class ApprovalRequestName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationApprovalRequestName(
       String organization, String approvalRequest) {
     return newOrganizationApprovalRequestBuilder()
@@ -323,7 +313,6 @@ public class ApprovalRequestName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/approvalRequests/{approval_request}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderApprovalRequestBuilder {
     private String folder;
     private String approvalRequest;
@@ -354,7 +343,6 @@ public class ApprovalRequestName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/approvalRequests/{approval_request}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationApprovalRequestBuilder {
     private String organization;
     private String approvalRequest;

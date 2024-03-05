@@ -135,7 +135,6 @@ public class AuthorizedDomainsSettings extends ClientSettings<AuthorizedDomainsS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -177,7 +176,6 @@ public class AuthorizedDomainsSettings extends ClientSettings<AuthorizedDomainsS
       return new Builder(AuthorizedDomainsStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AuthorizedDomainsStubSettings.newHttpJsonBuilder());
     }

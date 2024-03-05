@@ -763,8 +763,6 @@ public class PersistentResourceServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createPersistentResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreatePersistentResourceRequest,
             PersistentResource,
@@ -795,8 +793,6 @@ public class PersistentResourceServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deletePersistentResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeletePersistentResourceRequest, Empty, DeleteOperationMetadata>
         deletePersistentResourceOperationSettings() {
@@ -810,8 +806,6 @@ public class PersistentResourceServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updatePersistentResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdatePersistentResourceRequest,
             PersistentResource,

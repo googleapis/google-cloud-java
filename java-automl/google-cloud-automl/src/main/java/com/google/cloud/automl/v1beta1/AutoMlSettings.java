@@ -318,7 +318,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -360,7 +359,6 @@ public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
       return new Builder(AutoMlStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AutoMlStubSettings.newHttpJsonBuilder());
     }

@@ -1335,8 +1335,6 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     }
 
     /** Returns the builder for the settings used for calls to subscribeDataExchange. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
         subscribeDataExchangeOperationSettings() {
@@ -1350,8 +1348,6 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     }
 
     /** Returns the builder for the settings used for calls to refreshSubscription. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
         refreshSubscriptionOperationSettings() {
@@ -1393,8 +1389,6 @@ public class AnalyticsHubServiceStubSettings extends StubSettings<AnalyticsHubSe
     }
 
     /** Returns the builder for the settings used for calls to deleteSubscription. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteSubscriptionRequest, Empty, OperationMetadata>
         deleteSubscriptionOperationSettings() {
       return deleteSubscriptionOperationSettings;

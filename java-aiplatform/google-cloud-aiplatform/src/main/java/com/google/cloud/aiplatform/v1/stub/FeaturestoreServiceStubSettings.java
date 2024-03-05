@@ -24,7 +24,6 @@ import static com.google.cloud.aiplatform.v1.FeaturestoreServiceClient.SearchFea
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -1630,8 +1629,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to createFeaturestore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateFeaturestoreRequest, Featurestore, CreateFeaturestoreOperationMetadata>
         createFeaturestoreOperationSettings() {
@@ -1658,8 +1655,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to updateFeaturestore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateFeaturestoreRequest, Featurestore, UpdateFeaturestoreOperationMetadata>
         updateFeaturestoreOperationSettings() {
@@ -1673,8 +1668,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to deleteFeaturestore. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFeaturestoreRequest, Empty, DeleteOperationMetadata>
         deleteFeaturestoreOperationSettings() {
       return deleteFeaturestoreOperationSettings;
@@ -1687,8 +1680,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to createEntityType. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateEntityTypeRequest, EntityType, CreateEntityTypeOperationMetadata>
         createEntityTypeOperationSettings() {
@@ -1720,8 +1711,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to deleteEntityType. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteEntityTypeRequest, Empty, DeleteOperationMetadata>
         deleteEntityTypeOperationSettings() {
       return deleteEntityTypeOperationSettings;
@@ -1733,8 +1722,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to createFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings() {
@@ -1748,8 +1735,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to batchCreateFeatures. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchCreateFeaturesRequest,
             BatchCreateFeaturesResponse,
@@ -1781,8 +1766,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to deleteFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
         deleteFeatureOperationSettings() {
       return deleteFeatureOperationSettings;
@@ -1795,8 +1778,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to importFeatureValues. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ImportFeatureValuesRequest,
             ImportFeatureValuesResponse,
@@ -1812,8 +1793,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to batchReadFeatureValues. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchReadFeatureValuesRequest,
             BatchReadFeatureValuesResponse,
@@ -1829,8 +1808,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to exportFeatureValues. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             ExportFeatureValuesRequest,
             ExportFeatureValuesResponse,
@@ -1846,8 +1823,6 @@ public class FeaturestoreServiceStubSettings extends StubSettings<FeaturestoreSe
     }
 
     /** Returns the builder for the settings used for calls to deleteFeatureValues. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteFeatureValuesRequest,
             DeleteFeatureValuesResponse,

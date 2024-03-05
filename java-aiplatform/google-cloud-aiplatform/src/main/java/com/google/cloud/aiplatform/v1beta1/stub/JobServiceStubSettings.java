@@ -2144,8 +2144,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteCustomJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteCustomJobRequest, Empty, DeleteOperationMetadata>
         deleteCustomJobOperationSettings() {
       return deleteCustomJobOperationSettings;
@@ -2184,8 +2182,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteDataLabelingJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteDataLabelingJobRequest, Empty, DeleteOperationMetadata>
         deleteDataLabelingJobOperationSettings() {
@@ -2226,8 +2222,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteHyperparameterTuningJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteHyperparameterTuningJobRequest, Empty, DeleteOperationMetadata>
         deleteHyperparameterTuningJobOperationSettings() {
@@ -2263,8 +2257,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteNasJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteNasJobRequest, Empty, DeleteOperationMetadata>
         deleteNasJobOperationSettings() {
       return deleteNasJobOperationSettings;
@@ -2318,8 +2310,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     }
 
     /** Returns the builder for the settings used for calls to deleteBatchPredictionJob. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteBatchPredictionJobRequest, Empty, DeleteOperationMetadata>
         deleteBatchPredictionJobOperationSettings() {
@@ -2380,8 +2370,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     /**
      * Returns the builder for the settings used for calls to updateModelDeploymentMonitoringJob.
      */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateModelDeploymentMonitoringJobRequest,
             ModelDeploymentMonitoringJob,
@@ -2401,8 +2389,6 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     /**
      * Returns the builder for the settings used for calls to deleteModelDeploymentMonitoringJob.
      */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteModelDeploymentMonitoringJobRequest, Empty, DeleteOperationMetadata>
         deleteModelDeploymentMonitoringJobOperationSettings() {

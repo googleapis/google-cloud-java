@@ -2086,8 +2086,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, OperationMetadata>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
@@ -2099,8 +2097,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateClusterRequest, Cluster, OperationMetadata>
         updateClusterOperationSettings() {
       return updateClusterOperationSettings;
@@ -2112,8 +2108,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteClusterRequest, Empty, OperationMetadata>
         deleteClusterOperationSettings() {
       return deleteClusterOperationSettings;
@@ -2125,8 +2119,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to promoteCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<PromoteClusterRequest, Cluster, OperationMetadata>
         promoteClusterOperationSettings() {
       return promoteClusterOperationSettings;
@@ -2138,8 +2130,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to restoreCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreClusterRequest, Cluster, OperationMetadata>
         restoreClusterOperationSettings() {
       return restoreClusterOperationSettings;
@@ -2152,8 +2142,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createSecondaryCluster. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateSecondaryClusterRequest, Cluster, OperationMetadata>
         createSecondaryClusterOperationSettings() {
       return createSecondaryClusterOperationSettings;
@@ -2177,8 +2165,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings() {
       return createInstanceOperationSettings;
@@ -2191,8 +2177,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createSecondaryInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateSecondaryInstanceRequest, Instance, OperationMetadata>
         createSecondaryInstanceOperationSettings() {
@@ -2206,8 +2190,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to batchCreateInstances. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchCreateInstancesRequest, BatchCreateInstancesResponse, OperationMetadata>
         batchCreateInstancesOperationSettings() {
@@ -2220,8 +2202,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
@@ -2233,8 +2213,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings() {
       return deleteInstanceOperationSettings;
@@ -2247,8 +2225,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to failoverInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<FailoverInstanceRequest, Instance, OperationMetadata>
         failoverInstanceOperationSettings() {
       return failoverInstanceOperationSettings;
@@ -2260,8 +2236,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to injectFault. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<InjectFaultRequest, Instance, OperationMetadata>
         injectFaultOperationSettings() {
       return injectFaultOperationSettings;
@@ -2273,8 +2247,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to restartInstance. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestartInstanceRequest, Instance, OperationMetadata>
         restartInstanceOperationSettings() {
       return restartInstanceOperationSettings;
@@ -2298,8 +2270,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to createBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBackupRequest, Backup, OperationMetadata>
         createBackupOperationSettings() {
       return createBackupOperationSettings;
@@ -2311,8 +2281,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to updateBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<UpdateBackupRequest, Backup, OperationMetadata>
         updateBackupOperationSettings() {
       return updateBackupOperationSettings;
@@ -2324,8 +2292,6 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     }
 
     /** Returns the builder for the settings used for calls to deleteBackup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
         deleteBackupOperationSettings() {
       return deleteBackupOperationSettings;

@@ -993,8 +993,6 @@ public class FeatureRegistryServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createFeatureGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateFeatureGroupRequest, FeatureGroup, CreateFeatureGroupOperationMetadata>
         createFeatureGroupOperationSettings() {
@@ -1021,8 +1019,6 @@ public class FeatureRegistryServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateFeatureGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateFeatureGroupRequest, FeatureGroup, UpdateFeatureGroupOperationMetadata>
         updateFeatureGroupOperationSettings() {
@@ -1036,8 +1032,6 @@ public class FeatureRegistryServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteFeatureGroup. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFeatureGroupRequest, Empty, DeleteOperationMetadata>
         deleteFeatureGroupOperationSettings() {
       return deleteFeatureGroupOperationSettings;
@@ -1049,8 +1043,6 @@ public class FeatureRegistryServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to createFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateFeatureRequest, Feature, CreateFeatureOperationMetadata>
         createFeatureOperationSettings() {
@@ -1075,8 +1067,6 @@ public class FeatureRegistryServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to updateFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateFeatureRequest, Feature, UpdateFeatureOperationMetadata>
         updateFeatureOperationSettings() {
@@ -1089,8 +1079,6 @@ public class FeatureRegistryServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to deleteFeature. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteFeatureRequest, Empty, DeleteOperationMetadata>
         deleteFeatureOperationSettings() {
       return deleteFeatureOperationSettings;

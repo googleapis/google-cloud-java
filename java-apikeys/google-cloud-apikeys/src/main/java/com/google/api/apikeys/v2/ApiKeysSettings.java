@@ -188,7 +188,6 @@ public class ApiKeysSettings extends ClientSettings<ApiKeysSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -230,7 +229,6 @@ public class ApiKeysSettings extends ClientSettings<ApiKeysSettings> {
       return new Builder(ApiKeysStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ApiKeysStubSettings.newHttpJsonBuilder());
     }

@@ -21,7 +21,6 @@ import static com.google.cloud.aiplatform.v1.ScheduleServiceClient.ListSchedules
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -658,8 +657,6 @@ public class ScheduleServiceStubSettings extends StubSettings<ScheduleServiceStu
     }
 
     /** Returns the builder for the settings used for calls to deleteSchedule. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteScheduleRequest, Empty, DeleteOperationMetadata>
         deleteScheduleOperationSettings() {
       return deleteScheduleOperationSettings;

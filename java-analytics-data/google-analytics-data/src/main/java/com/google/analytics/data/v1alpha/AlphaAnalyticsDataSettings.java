@@ -196,7 +196,6 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -238,7 +237,6 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
       return new Builder(AlphaAnalyticsDataStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(AlphaAnalyticsDataStubSettings.newHttpJsonBuilder());
     }

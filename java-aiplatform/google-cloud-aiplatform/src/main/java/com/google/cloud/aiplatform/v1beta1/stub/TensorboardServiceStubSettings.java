@@ -1765,8 +1765,6 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     }
 
     /** Returns the builder for the settings used for calls to createTensorboard. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             CreateTensorboardRequest, Tensorboard, CreateTensorboardOperationMetadata>
         createTensorboardOperationSettings() {
@@ -1785,8 +1783,6 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     }
 
     /** Returns the builder for the settings used for calls to updateTensorboard. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             UpdateTensorboardRequest, Tensorboard, UpdateTensorboardOperationMetadata>
         updateTensorboardOperationSettings() {
@@ -1807,8 +1803,6 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     }
 
     /** Returns the builder for the settings used for calls to deleteTensorboard. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<DeleteTensorboardRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardOperationSettings() {
       return deleteTensorboardOperationSettings;
@@ -1860,8 +1854,6 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     }
 
     /** Returns the builder for the settings used for calls to deleteTensorboardExperiment. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteTensorboardExperimentRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardExperimentOperationSettings() {
@@ -1909,8 +1901,6 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     }
 
     /** Returns the builder for the settings used for calls to deleteTensorboardRun. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteTensorboardRunRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardRunOperationSettings() {
@@ -1958,8 +1948,6 @@ public class TensorboardServiceStubSettings extends StubSettings<TensorboardServ
     }
 
     /** Returns the builder for the settings used for calls to deleteTensorboardTimeSeries. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             DeleteTensorboardTimeSeriesRequest, Empty, DeleteOperationMetadata>
         deleteTensorboardTimeSeriesOperationSettings() {

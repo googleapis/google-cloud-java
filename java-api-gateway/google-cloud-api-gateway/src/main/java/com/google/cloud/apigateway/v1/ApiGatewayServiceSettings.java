@@ -264,7 +264,6 @@ public class ApiGatewayServiceSettings extends ClientSettings<ApiGatewayServiceS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -306,7 +305,6 @@ public class ApiGatewayServiceSettings extends ClientSettings<ApiGatewayServiceS
       return new Builder(ApiGatewayServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(ApiGatewayServiceStubSettings.newHttpJsonBuilder());
     }
