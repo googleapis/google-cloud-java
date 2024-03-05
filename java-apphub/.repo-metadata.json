@@ -1,0 +1,17 @@
+{
+  "api_shortname": "apphub",
+  "name_pretty": "App Hub API",
+  "product_documentation": "https://cloud.google.com/app-hub/docs/overview",
+  "api_description": "App Hub simplifies the process of building, running, and managing applications on Google Cloud.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-apphub/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/java-apphub",
+  "repo_short": "java-apphub",
+  "distribution_name": "com.google.cloud:google-cloud-apphub",
+  "api_id": "apphub.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rpc_documentation": "https://cloud.google.com/app-hub/docs/reference/rpc"
+}

@@ -120,6 +120,13 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-apphub-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-apphub:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.area120</groupId>
         <artifactId>google-area120-tables-bom</artifactId>
         <version>0.41.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
