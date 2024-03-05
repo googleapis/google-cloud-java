@@ -735,3 +735,6 @@ proto-google-cloud-cloudcontrolspartner-v1beta:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-cloudcontrolspartner-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-cloudcontrolspartner-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-cloudcontrolspartner-v1beta:0.0.0:0.0.1-SNAPSHOT
+google-cloud-apphub:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-apphub-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-apphub-v1:0.0.0:0.0.1-SNAPSHOT
