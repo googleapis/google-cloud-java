@@ -62,6 +62,21 @@ public class ChatSession {
    * Sends a message to the model and returns a stream of responses.
    *
    * @param text the message to be sent.
+   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
+   *     in a chat session.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
+   */
+  @BetaApi
+  public ResponseStream<GenerateContentResponse> sendMessageStream(
+      String text, GenerateContentConfig config) throws IOException {
+    return sendMessageStream(ContentMaker.fromString(text), config);
+  }
+
+  /**
+   * Sends a message to the model and returns a stream of responses.
+   *
+   * @param text the message to be sent.
    * @param generationConfig the generation config.
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
@@ -121,6 +136,27 @@ public class ChatSession {
   public ResponseStream<GenerateContentResponse> sendMessageStream(Content content)
       throws IOException, IllegalArgumentException {
     return sendMessageStream(content, null, null);
+  }
+
+  /**
+   * Sends a message to the model and returns a stream of responses.
+   *
+   * @param content the content to be sent.
+   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
+   *     in a chat session.
+   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
+   *     stream by stream() method.
+   */
+  @BetaApi
+  public ResponseStream<GenerateContentResponse> sendMessageStream(
+      Content content, GenerateContentConfig config) throws IOException {
+    checkLastResponseAndEditHistory();
+    history.add(content);
+    ResponseStream<GenerateContentResponse> respStream =
+        model.generateContentStream(history, config);
+    currentResponseStream = respStream;
+    currentResponse = null;
+    return respStream;
   }
 
   /**
@@ -191,6 +227,20 @@ public class ChatSession {
    * Sends a message to the model and returns a response.
    *
    * @param text the message to be sent.
+   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
+   *     in a chat session.
+   * @return a response.
+   */
+  @BetaApi
+  public GenerateContentResponse sendMessage(String text, GenerateContentConfig config)
+      throws IOException {
+    return sendMessage(ContentMaker.fromString(text), config);
+  }
+
+  /**
+   * Sends a message to the model and returns a response.
+   *
+   * @param text the message to be sent.
    * @param generationConfig the generation config.
    * @return a response.
    */
@@ -250,6 +300,25 @@ public class ChatSession {
    * Sends a message to the model and returns a response.
    *
    * @param content the content to be sent.
+   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
+   *     in a chat session.
+   * @return a response.
+   */
+  @BetaApi
+  public GenerateContentResponse sendMessage(Content content, GenerateContentConfig config)
+      throws IOException {
+    checkLastResponseAndEditHistory();
+    history.add(content);
+    GenerateContentResponse response = model.generateContent(history, config);
+    currentResponse = response;
+    currentResponseStream = null;
+    return response;
+  }
+
+  /**
+   * Sends a message to the model and returns a response.
+   *
+   * @param content the content to be sent.
    * @param generationConfig the generation config.
    * @return a response.
    */
@@ -303,7 +372,7 @@ public class ChatSession {
    *
    * @throws IllegalStateException if the response stream is not finished.
    */
-  private void checkLastResponseAndEditHistory() throws IllegalStateException {
+  private void checkLastResponseAndEditHistory() {
     if (currentResponseStream == null && currentResponse == null) {
       return;
     } else if (currentResponseStream != null && !currentResponseStream.isConsumed()) {
