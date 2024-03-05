@@ -434,8 +434,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(String, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public GenerateContentResponse generateContent(String text, GenerationConfig generationConfig)
       throws IOException {
     return generateContent(text, generationConfig, null);
@@ -450,8 +452,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(String, GenerateContentConfig)} instead
    */
   @BetaApi("Both generateContent and safetySettings are preview features.")
+  @Deprecated
   public GenerateContentResponse generateContent(String text, List<SafetySetting> safetySettings)
       throws IOException {
     return generateContent(text, null, safetySettings);
@@ -468,8 +472,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(String, GenerateContentConfig)} instead
    */
   @BetaApi("Both generateContent and safetySettings are preview features.")
+  @Deprecated
   public GenerateContentResponse generateContent(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -503,8 +509,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(List<Content>, GenerateContentConfig)} instead
    */
   @BetaApi("generateContent is a preview feature.")
+  @Deprecated
   public GenerateContentResponse generateContent(
       List<Content> contents, GenerationConfig generationConfig) throws IOException {
     return generateContent(contents, generationConfig, null);
@@ -520,8 +528,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(List<Content>, GenerateContentConfig)} instead
    */
   @BetaApi("Both generateContent and safetySettings are preview features")
+  @Deprecated
   public GenerateContentResponse generateContent(
       List<Content> contents, List<SafetySetting> safetySettings) throws IOException {
     return generateContent(contents, null, safetySettings);
@@ -575,8 +585,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(List<Content>, GenerateContentConfig)} instead
    */
   @BetaApi("Both generateContent and safetySettings are preview features")
+  @Deprecated
   public GenerateContentResponse generateContent(
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -657,8 +669,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(Content, GenerateContentConfig)} instead
    */
   @BetaApi("generateContent is a preview feature.")
+  @Deprecated
   public GenerateContentResponse generateContent(Content content, GenerationConfig generationConfig)
       throws IOException {
     return generateContent(content, generationConfig, null);
@@ -673,8 +687,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(Content, GenerateContentConfig)} instead
    */
   @BetaApi("generateContent is a preview feature.")
+  @Deprecated
   public GenerateContentResponse generateContent(
       Content content, List<SafetySetting> safetySettings) throws IOException {
     return generateContent(content, null, safetySettings);
@@ -692,8 +708,10 @@ public class GenerativeModel {
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContent(Content, GenerateContentConfig)} instead
    */
   @BetaApi("Both generateContent and safetySettings are preview features.")
+  @Deprecated
   public GenerateContentResponse generateContent(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -738,8 +756,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(String, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       String text, GenerationConfig generationConfig) throws IOException {
     return generateContentStream(text, generationConfig, null);
@@ -754,8 +774,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(String, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       String text, List<SafetySetting> safetySettings) throws IOException {
     return generateContentStream(text, null, safetySettings);
@@ -773,8 +795,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(String, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -824,8 +848,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(Content, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       Content content, GenerationConfig generationConfig) throws IOException {
     return generateContentStream(content, generationConfig, null);
@@ -841,8 +867,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(Content, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       Content content, List<SafetySetting> safetySettings) throws IOException {
     return generateContentStream(content, null, safetySettings);
@@ -860,8 +888,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(Content, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -893,8 +923,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(List<Content>, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, GenerationConfig generationConfig) throws IOException {
     return generateContentStream(contents, generationConfig, null);
@@ -911,8 +943,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(List<Content>, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, List<SafetySetting> safetySettings) throws IOException {
     return generateContentStream(contents, null, safetySettings);
@@ -931,8 +965,10 @@ public class GenerativeModel {
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
+   * @deprecated use {@link #generateContentStream(List<Content>, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
