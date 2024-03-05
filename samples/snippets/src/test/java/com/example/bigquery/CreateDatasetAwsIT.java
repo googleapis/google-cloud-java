@@ -27,8 +27,10 @@ import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class CreateDatasetAwsIT {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);

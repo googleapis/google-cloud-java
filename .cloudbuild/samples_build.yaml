@@ -1,0 +1,45 @@
+steps:
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: ls
+  args: [
+    '-alt',
+  ]
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: curl
+  args: [
+    '--header',
+    'Metadata-Flavor: Google',
+    'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email'
+  ]
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: pwd
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: bash
+  args: [
+    '.kokoro/build.sh'
+  ]
+  env:
+  - 'JOB_TYPE=samples'
+  - 'BIGQUERY_PROJECT_ID=cloud-java-ci-sample'
+  - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
+  - 'GCS_BUCKET=java-samples-bigquery'
+  - 'BIGQUERY_TEST_TABLE=test_table'
+  - 'BIGQUERY_MODEL_NAME=natality_model'
+  - 'BIGQUERY_MODEL_TEST_PROJECT_ID=bigquery-public-data'
+  - 'OMNI_PROJECT_ID=sunlit-ace-276222'
+  - 'OMNI_EXTERNAL_TABLE_NAME=devrel_test_table'
+  - 'BIGQUERY_TABLE2=table2'
+  - 'BIGQUERY_TABLE1=table1'
+  - 'BIGTABLE_TESTING_INSTANCE=bigquery-samples-instance'
+  - 'BIGQUERY_DATASET_NAME=bigquery_test_dataset'
+  - 'KOKORO_GFILE_DIR=/workspace'
+  # This key is not available yet
+  - 'BIGQUERY_KMS_KEY_NAME=projects/cloud-java-ci-sample/locations/us/keyRings/bq-kms-key/cryptoKeys/bq-kms-key'
+- name: gcr.io/cloud-devrel-public-resources/java8
+  entrypoint: echo
+  args: [
+    'Sample job succeeded',
+  ]
+timeout: 3600s
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET

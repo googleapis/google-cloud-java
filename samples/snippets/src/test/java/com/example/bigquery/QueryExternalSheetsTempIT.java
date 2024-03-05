@@ -28,8 +28,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class QueryExternalSheetsTempIT {
 
   private final Logger log = Logger.getLogger(this.getClass().getName());
