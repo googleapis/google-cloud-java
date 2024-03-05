@@ -19,7 +19,8 @@
     ".kokoro/nightly/graalvm-native*.cfg",
     ".kokoro/nightly/graalvm-sub-jobs/native*/common.cfg",
     ".kokoro/presubmit/graalvm-native*.cfg",
-    "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg"
+    "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg",
+	"generation_config.yaml"
   ],
   "regexManagers": [
     {
@@ -36,6 +37,12 @@
       "fileMatch": ["README.md"],
       "matchStrings": ["<artifactId>libraries-bom</artifactId>\\s+<version>(?<currentValue>.*?)</version>"],
       "depNameTemplate": "com.google.cloud:libraries-bom",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "fileMatch": ["generation_config.yaml"],
+      "matchStrings": ["gapic_generator_version\\s*:\\s*(?<currentValue>.*?)"],
+      "depNameTemplate": "com.google.api:gapic-generator-java",
       "datasourceTemplate": "maven"
     }
   ]
