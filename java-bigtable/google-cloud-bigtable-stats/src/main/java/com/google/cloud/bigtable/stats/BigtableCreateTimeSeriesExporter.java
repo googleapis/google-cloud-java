@@ -58,7 +58,7 @@ final class BigtableCreateTimeSeriesExporter extends MetricExporter {
                   Collectors.groupingBy(
                       timeSeries ->
                           BigtableStackdriverExportUtils.getProjectId(
-                              metric.getMetricDescriptor(), timeSeries),
+                              metric.getMetricDescriptor(), timeSeries, gceOrGkeMonitoredResource),
                       Collectors.mapping(
                           timeSeries ->
                               BigtableStackdriverExportUtils.convertTimeSeries(

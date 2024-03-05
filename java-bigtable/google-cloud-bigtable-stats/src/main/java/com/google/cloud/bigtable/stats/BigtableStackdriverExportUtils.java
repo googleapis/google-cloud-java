@@ -22,6 +22,7 @@ import com.google.api.Distribution.BucketOptions.Explicit;
 import com.google.api.Metric;
 import com.google.api.MetricDescriptor.MetricKind;
 import com.google.api.MonitoredResource;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.monitoring.v3.TimeInterval;
@@ -55,6 +56,10 @@ import javax.annotation.Nullable;
 
 class BigtableStackdriverExportUtils {
   private static final String BIGTABLE_RESOURCE_TYPE = "bigtable_client_raw";
+
+  @VisibleForTesting static final String GCE_RESOURCE_TYPE = "gce_instance";
+  @VisibleForTesting static final String GKE_RESOURCE_TYPE = "k8s_container";
+  @VisibleForTesting static final String GCE_OR_GKE_PROJECT_ID_KEY = "project_id";
   private static final Logger logger =
       Logger.getLogger(BigtableStackdriverExportUtils.class.getName());
 
@@ -209,7 +214,19 @@ class BigtableStackdriverExportUtils {
     return builder;
   }
 
-  static String getProjectId(MetricDescriptor metricDescriptor, TimeSeries timeSeries) {
+  static String getProjectId(
+      MetricDescriptor metricDescriptor,
+      TimeSeries timeSeries,
+      MonitoredResource gceOrGkeMonitoredResource) {
+    if (isBigtableTableMetric(metricDescriptor)) {
+      return getProjectIdForBigtableTableResource(metricDescriptor, timeSeries);
+    } else {
+      return getProjectIdForGceOrGkeResource(gceOrGkeMonitoredResource);
+    }
+  }
+
+  static String getProjectIdForBigtableTableResource(
+      MetricDescriptor metricDescriptor, TimeSeries timeSeries) {
     List<LabelKey> labelKeys = metricDescriptor.getLabelKeys();
     List<LabelValue> labelValues = timeSeries.getLabelValues();
     for (int i = 0; i < labelKeys.size(); i++) {
@@ -218,6 +235,15 @@ class BigtableStackdriverExportUtils {
       }
     }
     throw new IllegalStateException("Can't find project id for the current timeseries");
+  }
+
+  static String getProjectIdForGceOrGkeResource(MonitoredResource gceOrGkeMonitoredResource) {
+    if (!gceOrGkeMonitoredResource.getType().equals(GCE_RESOURCE_TYPE)
+        && !gceOrGkeMonitoredResource.getType().equals(GKE_RESOURCE_TYPE)) {
+      throw new IllegalStateException(
+          "Expected GCE or GKE resource type, but found " + gceOrGkeMonitoredResource);
+    }
+    return gceOrGkeMonitoredResource.getLabelsOrThrow(GCE_OR_GKE_PROJECT_ID_KEY);
   }
 
   static String getDefaultTaskValue() {

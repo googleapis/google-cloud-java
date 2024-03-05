@@ -61,6 +61,8 @@ public class BigtableCreateTimeSeriesExporterTest {
   private static final String bigtableZone = "us-east-1";
   private static final String bigtableCluster = "cluster-1";
   private static final String clientName = "client-name";
+  private static final String gceProjectId = "fake-gce-project";
+  private static final String gkeProjectId = "fake-gke-project";
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
@@ -121,6 +123,7 @@ public class BigtableCreateTimeSeriesExporterTest {
 
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
 
+    assertThat(request.getName()).isEqualTo("projects/" + bigtableProjectId);
     assertThat(request.getTimeSeriesList()).hasSize(1);
 
     com.google.monitoring.v3.TimeSeries timeSeries = request.getTimeSeriesList().get(0);
@@ -148,8 +151,9 @@ public class BigtableCreateTimeSeriesExporterTest {
         new BigtableCreateTimeSeriesExporter(
             fakeMetricServiceClient,
             MonitoredResource.newBuilder()
-                .setType("gce-instance")
-                .putLabels("some-gce-key", "some-gce-value")
+                .setType(BigtableStackdriverExportUtils.GCE_RESOURCE_TYPE)
+                .putLabels(BigtableStackdriverExportUtils.GCE_OR_GKE_PROJECT_ID_KEY, gceProjectId)
+                .putLabels("another-gce-key", "another-gce-value")
                 .build());
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
@@ -197,12 +201,17 @@ public class BigtableCreateTimeSeriesExporterTest {
 
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
 
+    assertThat(request.getName()).isEqualTo("projects/" + gceProjectId);
     assertThat(request.getTimeSeriesList()).hasSize(1);
 
     com.google.monitoring.v3.TimeSeries timeSeries = request.getTimeSeriesList().get(0);
 
     assertThat(timeSeries.getResource().getLabelsMap())
-        .containsExactly("some-gce-key", "some-gce-value");
+        .containsExactly(
+            BigtableStackdriverExportUtils.GCE_OR_GKE_PROJECT_ID_KEY,
+            gceProjectId,
+            "another-gce-key",
+            "another-gce-value");
 
     assertThat(timeSeries.getMetric().getLabelsMap()).hasSize(5);
     assertThat(timeSeries.getMetric().getLabelsMap())
@@ -225,8 +234,9 @@ public class BigtableCreateTimeSeriesExporterTest {
         new BigtableCreateTimeSeriesExporter(
             fakeMetricServiceClient,
             MonitoredResource.newBuilder()
-                .setType("gke-container")
-                .putLabels("some-gke-key", "some-gke-value")
+                .setType(BigtableStackdriverExportUtils.GKE_RESOURCE_TYPE)
+                .putLabels(BigtableStackdriverExportUtils.GCE_OR_GKE_PROJECT_ID_KEY, gkeProjectId)
+                .putLabels("another-gke-key", "another-gke-value")
                 .build());
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
@@ -275,12 +285,17 @@ public class BigtableCreateTimeSeriesExporterTest {
 
     CreateTimeSeriesRequest request = argumentCaptor.getValue();
 
+    assertThat(request.getName()).isEqualTo("projects/" + gkeProjectId);
     assertThat(request.getTimeSeriesList()).hasSize(1);
 
     com.google.monitoring.v3.TimeSeries timeSeries = request.getTimeSeriesList().get(0);
 
     assertThat(timeSeries.getResource().getLabelsMap())
-        .containsExactly("some-gke-key", "some-gke-value");
+        .containsExactly(
+            BigtableStackdriverExportUtils.GCE_OR_GKE_PROJECT_ID_KEY,
+            gkeProjectId,
+            "another-gke-key",
+            "another-gke-value");
 
     assertThat(timeSeries.getMetric().getLabelsMap()).hasSize(5);
     assertThat(timeSeries.getMetric().getLabelsMap())
