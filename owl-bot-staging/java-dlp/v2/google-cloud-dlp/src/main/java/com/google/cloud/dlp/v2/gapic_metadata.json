@@ -1,0 +1,153 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.privacy.dlp.v2",
+  "libraryPackage": "com.google.cloud.dlp.v2",
+  "services": {
+    "DlpService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DlpServiceClient",
+          "rpcs": {
+            "ActivateJobTrigger": {
+              "methods": ["activateJobTrigger", "activateJobTriggerCallable"]
+            },
+            "CancelDlpJob": {
+              "methods": ["cancelDlpJob", "cancelDlpJobCallable"]
+            },
+            "CreateDeidentifyTemplate": {
+              "methods": ["createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplateCallable"]
+            },
+            "CreateDiscoveryConfig": {
+              "methods": ["createDiscoveryConfig", "createDiscoveryConfig", "createDiscoveryConfig", "createDiscoveryConfigCallable"]
+            },
+            "CreateDlpJob": {
+              "methods": ["createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJob", "createDlpJobCallable"]
+            },
+            "CreateInspectTemplate": {
+              "methods": ["createInspectTemplate", "createInspectTemplate", "createInspectTemplate", "createInspectTemplate", "createInspectTemplate", "createInspectTemplate", "createInspectTemplateCallable"]
+            },
+            "CreateJobTrigger": {
+              "methods": ["createJobTrigger", "createJobTrigger", "createJobTrigger", "createJobTrigger", "createJobTriggerCallable"]
+            },
+            "CreateStoredInfoType": {
+              "methods": ["createStoredInfoType", "createStoredInfoType", "createStoredInfoType", "createStoredInfoType", "createStoredInfoType", "createStoredInfoType", "createStoredInfoTypeCallable"]
+            },
+            "DeidentifyContent": {
+              "methods": ["deidentifyContent", "deidentifyContentCallable"]
+            },
+            "DeleteDeidentifyTemplate": {
+              "methods": ["deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplateCallable"]
+            },
+            "DeleteDiscoveryConfig": {
+              "methods": ["deleteDiscoveryConfig", "deleteDiscoveryConfig", "deleteDiscoveryConfig", "deleteDiscoveryConfigCallable"]
+            },
+            "DeleteDlpJob": {
+              "methods": ["deleteDlpJob", "deleteDlpJob", "deleteDlpJob", "deleteDlpJobCallable"]
+            },
+            "DeleteInspectTemplate": {
+              "methods": ["deleteInspectTemplate", "deleteInspectTemplate", "deleteInspectTemplate", "deleteInspectTemplateCallable"]
+            },
+            "DeleteJobTrigger": {
+              "methods": ["deleteJobTrigger", "deleteJobTrigger", "deleteJobTrigger", "deleteJobTriggerCallable"]
+            },
+            "DeleteStoredInfoType": {
+              "methods": ["deleteStoredInfoType", "deleteStoredInfoType", "deleteStoredInfoType", "deleteStoredInfoTypeCallable"]
+            },
+            "FinishDlpJob": {
+              "methods": ["finishDlpJob", "finishDlpJobCallable"]
+            },
+            "GetColumnDataProfile": {
+              "methods": ["getColumnDataProfile", "getColumnDataProfile", "getColumnDataProfile", "getColumnDataProfileCallable"]
+            },
+            "GetDeidentifyTemplate": {
+              "methods": ["getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplateCallable"]
+            },
+            "GetDiscoveryConfig": {
+              "methods": ["getDiscoveryConfig", "getDiscoveryConfig", "getDiscoveryConfig", "getDiscoveryConfigCallable"]
+            },
+            "GetDlpJob": {
+              "methods": ["getDlpJob", "getDlpJob", "getDlpJob", "getDlpJobCallable"]
+            },
+            "GetInspectTemplate": {
+              "methods": ["getInspectTemplate", "getInspectTemplate", "getInspectTemplate", "getInspectTemplateCallable"]
+            },
+            "GetJobTrigger": {
+              "methods": ["getJobTrigger", "getJobTrigger", "getJobTrigger", "getJobTriggerCallable"]
+            },
+            "GetProjectDataProfile": {
+              "methods": ["getProjectDataProfile", "getProjectDataProfile", "getProjectDataProfile", "getProjectDataProfileCallable"]
+            },
+            "GetStoredInfoType": {
+              "methods": ["getStoredInfoType", "getStoredInfoType", "getStoredInfoType", "getStoredInfoTypeCallable"]
+            },
+            "GetTableDataProfile": {
+              "methods": ["getTableDataProfile", "getTableDataProfile", "getTableDataProfile", "getTableDataProfileCallable"]
+            },
+            "HybridInspectDlpJob": {
+              "methods": ["hybridInspectDlpJob", "hybridInspectDlpJob", "hybridInspectDlpJob", "hybridInspectDlpJobCallable"]
+            },
+            "HybridInspectJobTrigger": {
+              "methods": ["hybridInspectJobTrigger", "hybridInspectJobTrigger", "hybridInspectJobTrigger", "hybridInspectJobTriggerCallable"]
+            },
+            "InspectContent": {
+              "methods": ["inspectContent", "inspectContentCallable"]
+            },
+            "ListColumnDataProfiles": {
+              "methods": ["listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfilesPagedCallable", "listColumnDataProfilesCallable"]
+            },
+            "ListDeidentifyTemplates": {
+              "methods": ["listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplatesPagedCallable", "listDeidentifyTemplatesCallable"]
+            },
+            "ListDiscoveryConfigs": {
+              "methods": ["listDiscoveryConfigs", "listDiscoveryConfigs", "listDiscoveryConfigs", "listDiscoveryConfigsPagedCallable", "listDiscoveryConfigsCallable"]
+            },
+            "ListDlpJobs": {
+              "methods": ["listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobs", "listDlpJobsPagedCallable", "listDlpJobsCallable"]
+            },
+            "ListInfoTypes": {
+              "methods": ["listInfoTypes", "listInfoTypes", "listInfoTypesCallable"]
+            },
+            "ListInspectTemplates": {
+              "methods": ["listInspectTemplates", "listInspectTemplates", "listInspectTemplates", "listInspectTemplates", "listInspectTemplates", "listInspectTemplates", "listInspectTemplatesPagedCallable", "listInspectTemplatesCallable"]
+            },
+            "ListJobTriggers": {
+              "methods": ["listJobTriggers", "listJobTriggers", "listJobTriggers", "listJobTriggers", "listJobTriggersPagedCallable", "listJobTriggersCallable"]
+            },
+            "ListProjectDataProfiles": {
+              "methods": ["listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfilesPagedCallable", "listProjectDataProfilesCallable"]
+            },
+            "ListStoredInfoTypes": {
+              "methods": ["listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypesPagedCallable", "listStoredInfoTypesCallable"]
+            },
+            "ListTableDataProfiles": {
+              "methods": ["listTableDataProfiles", "listTableDataProfiles", "listTableDataProfiles", "listTableDataProfiles", "listTableDataProfilesPagedCallable", "listTableDataProfilesCallable"]
+            },
+            "RedactImage": {
+              "methods": ["redactImage", "redactImageCallable"]
+            },
+            "ReidentifyContent": {
+              "methods": ["reidentifyContent", "reidentifyContentCallable"]
+            },
+            "UpdateDeidentifyTemplate": {
+              "methods": ["updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplateCallable"]
+            },
+            "UpdateDiscoveryConfig": {
+              "methods": ["updateDiscoveryConfig", "updateDiscoveryConfig", "updateDiscoveryConfig", "updateDiscoveryConfigCallable"]
+            },
+            "UpdateInspectTemplate": {
+              "methods": ["updateInspectTemplate", "updateInspectTemplate", "updateInspectTemplate", "updateInspectTemplateCallable"]
+            },
+            "UpdateJobTrigger": {
+              "methods": ["updateJobTrigger", "updateJobTrigger", "updateJobTrigger", "updateJobTriggerCallable"]
+            },
+            "UpdateStoredInfoType": {
+              "methods": ["updateStoredInfoType", "updateStoredInfoType", "updateStoredInfoType", "updateStoredInfoTypeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
