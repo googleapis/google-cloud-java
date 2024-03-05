@@ -1164,6 +1164,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-workspaceevents-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-workspaceevents:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-workstations-bom</artifactId>
         <version>0.25.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-workstations:current} -->
         <type>pom</type>

@@ -187,6 +187,7 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
+    <module>java-workspaceevents</module>
     <module>java-workstations</module>
 
   </modules>
