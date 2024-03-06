@@ -158,7 +158,6 @@ def add_new_library(
     config["libraries"].append(new_library)
     config["libraries"] = sorted(config["libraries"], key=__compute_destination_name)
 
-    yaml.dump(config, sys.stdout)
 
     with open(path_to_yaml, "w") as file_stream:
         yaml.dump(config, file_stream)
