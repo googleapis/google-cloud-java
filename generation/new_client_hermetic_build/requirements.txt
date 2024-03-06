@@ -1,2 +1,7 @@
-click==8.1.7
-ruamel.base==1.0.0
+click==8.1.7 \
+    --hash=sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28 \
+    --hash=sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de
+ruamel.base==1.0.0 \
+    --hash=sha256:3613a90afcf0735540804af2a693f630a0bccebefec9b4023a39e88950bb294e \
+    --hash=sha256:c041333a0f0f00cd6593eb36aa83abb1a9e7544e83ba7a42aa7ac7476cee5cf3 \
+    --hash=sha256:ff7fe471b3d715fe4f2c4663d9e6d82efbeb3cea8e72accb99fd4fa90df7e5f9
