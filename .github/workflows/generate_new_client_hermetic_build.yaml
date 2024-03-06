@@ -97,7 +97,7 @@ jobs:
           done
           echo "::set-output name=new_library_args::${arguments}"
           echo "${arguments} --googleapis-gen-url=\"${GOOGLEAPIS_GEN_URL}\"" \
-                | xargs python generation/new_client_hermetic_build/new-client.py generate
+                | xargs python generation/new_client_hermetic_build/new-client.py add-new-library
         env:
           GOOGLEAPIS_GEN_URL: https://cloud-java-bot:${{ secrets.CLOUD_JAVA_BOT_TOKEN }}@github.com/googleapis/googleapis-gen.git
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
