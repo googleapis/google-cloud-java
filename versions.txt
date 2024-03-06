@@ -741,3 +741,6 @@ grpc-google-cloud-workspaceevents-v1:0.0.0:0.0.1-SNAPSHOT
 google-cloud-apphub:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-apphub-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-apphub-v1:0.0.0:0.0.1-SNAPSHOT
+google-cloud-chat:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-chat-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-chat-v1:0.0.0:0.0.1-SNAPSHOT
