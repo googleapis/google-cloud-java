@@ -341,10 +341,7 @@ public class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(String text) throws IOException {
-    Content content = ContentMaker.fromString(text);
-    CountTokensRequest.Builder requestBuilder =
-        CountTokensRequest.newBuilder().addAllContents(Arrays.asList(content));
-    return countTokensFromBuilder(requestBuilder);
+    return countTokens(ContentMaker.fromString(text));
   }
 
   /**
@@ -370,25 +367,27 @@ public class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(List<Content> contents) throws IOException {
-    CountTokensRequest.Builder requestBuilder =
-        CountTokensRequest.newBuilder().addAllContents(contents);
-    return countTokensFromBuilder(requestBuilder);
+    CountTokensRequest request =
+        CountTokensRequest.newBuilder()
+            .setEndpoint(resourceName)
+            .setModel(resourceName)
+            .addAllContents(contents)
+            .build();
+    return countTokensFromRequest(request);
   }
 
   /**
-   * Send CountTokensRequest given a request builder.
+   * Send CountTokensRequest given a request message.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.CountTokensRequest.Builder} that
-   *     contains a list of contents
+   * @param request a {@link com.google.cloud.vertexai.api.CountTokensRequest} that contains a list
+   *     of contents
    * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
   @BetaApi
-  private CountTokensResponse countTokensFromBuilder(CountTokensRequest.Builder requestBuilder)
+  private CountTokensResponse countTokensFromRequest(CountTokensRequest request)
       throws IOException {
-    CountTokensRequest request =
-        requestBuilder.setEndpoint(this.resourceName).setModel(this.resourceName).build();
     if (this.transport == Transport.REST) {
       return vertexAi.getLlmUtilityRestClient().countTokens(request);
     } else {
@@ -552,7 +551,7 @@ public class GenerativeModel {
   public GenerateContentResponse generateContent(
       List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (config.getGenerationConfig() != null) {
       requestBuilder.setGenerationConfig(config.getGenerationConfig());
     } else if (this.generationConfig != null) {
@@ -569,7 +568,7 @@ public class GenerativeModel {
       requestBuilder.addAllTools(this.tools);
     }
 
-    return generateContent(requestBuilder);
+    return generateContent(requestBuilder.build());
   }
 
   /**
@@ -593,7 +592,7 @@ public class GenerativeModel {
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (generationConfig != null) {
       requestBuilder.setGenerationConfig(generationConfig);
     } else if (this.generationConfig != null) {
@@ -607,28 +606,24 @@ public class GenerativeModel {
     if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
-    return generateContent(requestBuilder);
+    return generateContent(requestBuilder.build());
   }
 
   /**
    * A base generateContent method that will be used internally.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.GenerateContentRequest.Builder}
-   *     instance
+   * @param request a {@link com.google.cloud.vertexai.api.GenerateContentRequest} instance
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
-  private GenerateContentResponse generateContent(GenerateContentRequest.Builder requestBuilder)
+  private GenerateContentResponse generateContent(GenerateContentRequest request)
       throws IOException {
-    GenerateContentRequest request = requestBuilder.setModel(this.resourceName).build();
-    GenerateContentResponse response;
     if (this.transport == Transport.REST) {
-      response = vertexAi.getPredictionServiceRestClient().generateContentCallable().call(request);
+      return vertexAi.getPredictionServiceRestClient().generateContentCallable().call(request);
     } else {
-      response = vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
+      return vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
     }
-    return response;
   }
 
   /**
