@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-migrationcenter-bom</artifactId>
-  <version>0.19.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-migrationcenter:current} -->
+  <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-migrationcenter:current} -->
   <packaging>pom</packaging>
 
   <parent>
@@ -27,17 +27,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-migrationcenter</artifactId>
-        <version>0.19.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-migrationcenter:current} -->
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-migrationcenter:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-migrationcenter-v1</artifactId>
-        <version>0.19.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-migrationcenter-v1:current} -->
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-migrationcenter-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-migrationcenter-v1</artifactId>
-        <version>0.19.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-migrationcenter-v1:current} -->
+        <version>0.18.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-migrationcenter-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

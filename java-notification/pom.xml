@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-notification</artifactId>
-  <version>0.155.0-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
+  <version>0.154.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Pub/Sub Notifications for GCS</name>
   <description>
