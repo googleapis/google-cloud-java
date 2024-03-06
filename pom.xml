@@ -53,6 +53,7 @@
     <module>java-binary-authorization</module>
     <module>java-certificate-manager</module>
     <module>java-channel</module>
+    <module>java-chat</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
