@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.35.0](https://github.com/googleapis/java-bigtable/compare/v2.34.0...v2.35.0) (2024-03-05)
+
+
+### Features
+
+* Add authorized view bindings to Cloud Bigtable data APIs and messages ([#2144](https://github.com/googleapis/java-bigtable/issues/2144)) ([ae89709](https://github.com/googleapis/java-bigtable/commit/ae89709514921f7f362b7bf6057ec2f01e50046d))
+
+
+### Bug Fixes
+
+* Per-connection metrics issue when using a different Bigtable project ([#2143](https://github.com/googleapis/java-bigtable/issues/2143)) ([8dbd680](https://github.com/googleapis/java-bigtable/commit/8dbd680abc1ad13ad33981c67f8349f63432b7ea))
+
 ## [2.34.0](https://github.com/googleapis/java-bigtable/compare/v2.33.0...v2.34.0) (2024-02-21)
 
 
