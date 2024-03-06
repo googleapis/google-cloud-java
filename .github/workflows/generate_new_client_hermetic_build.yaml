@@ -1,6 +1,5 @@
 name: Generate new GAPIC client library (Hermetic Build)
 on:
-  pull_request:
   workflow_dispatch:
       # some inputs are ommited due to limit of 10 input arguments
       inputs:
