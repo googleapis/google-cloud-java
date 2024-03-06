@@ -50,4 +50,5 @@
     <module>proto-google-cloud-chat-v1</module>
     <module>google-cloud-chat-bom</module>
   </modules>
-</project>
+
+  </project>
