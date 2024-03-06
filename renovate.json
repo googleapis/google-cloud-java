@@ -41,7 +41,7 @@
     },
     {
       "fileMatch": ["generation_config.yaml"],
-      "matchStrings": ["gapic_generator_version\\s*:\\s*(?<currentValue>.*?)"],
+      "matchStrings": ["gapic_generator_version\\s*:\\s*(?<currentValue>.*?)\\n"],
       "depNameTemplate": "com.google.api:gapic-generator-java",
       "datasourceTemplate": "maven"
     }
