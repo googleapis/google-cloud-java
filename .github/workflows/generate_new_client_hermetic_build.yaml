@@ -69,7 +69,7 @@ jobs:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
       - name: Install new-client.py dependencies
-        run: pip install --require-hashes -r generation/new_client_hermetic_build/requirements.in
+        run: pip install --require-hashes -r generation/new_client_hermetic_build/requirements.txt
       - name: Add entry to generation_config.yaml
         id: config_generation
         run: |
