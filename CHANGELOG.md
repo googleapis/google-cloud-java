@@ -1,5 +1,67 @@
 # Changelog
 
+## [1.31.0](https://github.com/googleapis/google-cloud-java/compare/v1.30.0...v1.31.0) (2024-03-06)
+
+
+### Features
+
+* [alloydb] support for obtaining the public IP address of an Instance ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+* [alloydb] support for obtaining the public IP address of an Instance ([#10439](https://github.com/googleapis/google-cloud-java/issues/10439)) ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+* [apphub] new module for apphub ([#10476](https://github.com/googleapis/google-cloud-java/issues/10476)) ([9dab014](https://github.com/googleapis/google-cloud-java/commit/9dab01499649efd9e4314d56dd90688994faae26))
+* [chat] new module for chat ([#10485](https://github.com/googleapis/google-cloud-java/issues/10485)) ([5252f16](https://github.com/googleapis/google-cloud-java/commit/5252f16a3e0130a6d1068775ae4ff5b522ed12fa))
+* [cloudcontrolspartner] new module for cloudcontrolspartner ([#10473](https://github.com/googleapis/google-cloud-java/issues/10473)) ([ae92301](https://github.com/googleapis/google-cloud-java/commit/ae923015f4ea2d9c235084aaca60d7e4d70902f7))
+* [cloudprofiler] add `start_time` to Profile proto ([#10434](https://github.com/googleapis/google-cloud-java/issues/10434)) ([c04c4f6](https://github.com/googleapis/google-cloud-java/commit/c04c4f676d291e63360236d79afebf4f437e3d17))
+* [compute] Update Compute Engine API to revision 20240220 ([#886](https://github.com/googleapis/google-cloud-java/issues/886)) ([c87fa39](https://github.com/googleapis/google-cloud-java/commit/c87fa396003135a14dfded22d201b83b63d2edc2))
+* [container] add API to enable Provisioning Request API on existing nodepools ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+* [container] add API to enable Provisioning Request API on existing nodepools ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+* [container] add secondary boot disks field to NodePool API ([#10422](https://github.com/googleapis/google-cloud-java/issues/10422)) ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+* [gkehub]Removing support for v1alpha2 since its deprecated ([#10419](https://github.com/googleapis/google-cloud-java/issues/10419)) ([f704e6e](https://github.com/googleapis/google-cloud-java/commit/f704e6e774b18beda61f92a2073c8f556d88e28c))
+* [securitycenter] Add Backup DR field to finding's list of attributes ([ce5aa34](https://github.com/googleapis/google-cloud-java/commit/ce5aa34a223074197cdec0bd5c550941a4e04777))
+* [securitycenter] Add container.create_time, vulnerability.offending_package, vulnerability.fixed_package, vulnerability.security_bulletin, vulnerability.cve.impact, vulnerability.cve.exploitation_activity, vulnerability.cve.observed_in_the_wild, vulnerability.cve... ([#10417](https://github.com/googleapis/google-cloud-java/issues/10417)) ([ce5aa34](https://github.com/googleapis/google-cloud-java/commit/ce5aa34a223074197cdec0bd5c550941a4e04777))
+* [securitycenter] Add load balancer, log entry, org policy, database.version, exfiltration.total_exfiltrated_bytes, file.disk_path, indicator.signature_type, and kubernetes.objects to finding's list of attributes ([ce5aa34](https://github.com/googleapis/google-cloud-java/commit/ce5aa34a223074197cdec0bd5c550941a4e04777))
+* [servicecontrol] include api_key_uid in service control check response ([#10410](https://github.com/googleapis/google-cloud-java/issues/10410)) ([4ed5b45](https://github.com/googleapis/google-cloud-java/commit/4ed5b459df68c25d28775073c0e9736e6929443f))
+* [speech] add API for writing BatchRecognize transcripts in SRT and VTT formats ([#10414](https://github.com/googleapis/google-cloud-java/issues/10414)) ([73bd736](https://github.com/googleapis/google-cloud-java/commit/73bd7360f888f6318d3332888739d7dd542127a5))
+* [vertexai] add GenerateContentConfig class ([#10413](https://github.com/googleapis/google-cloud-java/issues/10413)) ([04e9574](https://github.com/googleapis/google-cloud-java/commit/04e9574a223cd9c42615bfde18aa6ad3dc551251))
+* [vertexai] add GenerateContentConfig to generateContent method ([#10425](https://github.com/googleapis/google-cloud-java/issues/10425)) ([903abf3](https://github.com/googleapis/google-cloud-java/commit/903abf39cae4810be41f2475c63a0fcb0b238bc1))
+* [vertexai] add GenerateContentConfig to generateContentStream method ([#10424](https://github.com/googleapis/google-cloud-java/issues/10424)) ([ec9dd00](https://github.com/googleapis/google-cloud-java/commit/ec9dd001c4058871ecf7ff7e3b91633aac3bf17b))
+* [vertexai] add GenerateContentConfig to sendMessage method ([#10436](https://github.com/googleapis/google-cloud-java/issues/10436)) ([25d00c7](https://github.com/googleapis/google-cloud-java/commit/25d00c7c4f1a68e45e491715b0d2c07f2ac4618d))
+* [workspaceevents] new module for workspaceevents ([#10469](https://github.com/googleapis/google-cloud-java/issues/10469)) ([bcec849](https://github.com/googleapis/google-cloud-java/commit/bcec8493ab3ce6fc2409d3ca6f258ab230ef88a7))
+* add new API to list the databases in a project and location ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+* add PSC cluster and instance configuration settings to enable/disable PSC and obtain the PSC endpoint name ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+* Promoted enable_confidential_storage to GA (behind allowlist) ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+* remove GKEHubv1alpha2 ([#10415](https://github.com/googleapis/google-cloud-java/issues/10415)) ([3e95fa4](https://github.com/googleapis/google-cloud-java/commit/3e95fa4ef08cece06e2c1a34dbed24bfe1827bdf))
+* support for getting PSC DNS name from the GetConnectionInfo API ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+* support for getting PSC DNS name from the GetConnectionInfo API ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+
+
+### Bug Fixes
+
+* **deps:** [compute] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10447](https://github.com/googleapis/google-cloud-java/issues/10447)) ([c87fa39](https://github.com/googleapis/google-cloud-java/commit/c87fa396003135a14dfded22d201b83b63d2edc2))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10451](https://github.com/googleapis/google-cloud-java/issues/10451)) ([55c85fe](https://github.com/googleapis/google-cloud-java/commit/55c85fe950e31adf2eed975cdb654f79cb953d7a))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10452](https://github.com/googleapis/google-cloud-java/issues/10452)) ([135c872](https://github.com/googleapis/google-cloud-java/commit/135c8727096d21186fc151256ea6c91517310d12))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10453](https://github.com/googleapis/google-cloud-java/issues/10453)) ([5a3bf2b](https://github.com/googleapis/google-cloud-java/commit/5a3bf2b0da04f8bce3c81d83af9e8aa5f0c70f36))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10454](https://github.com/googleapis/google-cloud-java/issues/10454)) ([a38c88a](https://github.com/googleapis/google-cloud-java/commit/a38c88a1af6a528c5d8a26c6d1fc3c1b853595fa))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10455](https://github.com/googleapis/google-cloud-java/issues/10455)) ([aeed170](https://github.com/googleapis/google-cloud-java/commit/aeed170beeca6f9a5ca7dc49bfbabddeb54ced8c))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10456](https://github.com/googleapis/google-cloud-java/issues/10456)) ([f42b431](https://github.com/googleapis/google-cloud-java/commit/f42b43122101f83753ac590b1c779a9ed15bfd11))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10457](https://github.com/googleapis/google-cloud-java/issues/10457)) ([ec1623d](https://github.com/googleapis/google-cloud-java/commit/ec1623d95e5326867cb26f57131bacfb44ab57a7))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10458](https://github.com/googleapis/google-cloud-java/issues/10458)) ([b737798](https://github.com/googleapis/google-cloud-java/commit/b737798d3f2393bd15e01dfc85c60f1cf50d1e8b))
+* **deps:** [Many APIs] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10459](https://github.com/googleapis/google-cloud-java/issues/10459)) ([2739000](https://github.com/googleapis/google-cloud-java/commit/2739000adb6d0cf097c6fd4481f1b992cb4ed691))
+* **deps:** [securitycenter] Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10448](https://github.com/googleapis/google-cloud-java/issues/10448)) ([a90ba11](https://github.com/googleapis/google-cloud-java/commit/a90ba112b2ba031fab0e42cd4f2b07b5c2df8bf8))
+
+
+### Documentation
+
+* [aiplatform] Update docs for FeatureView Service Agents ([#10420](https://github.com/googleapis/google-cloud-java/issues/10420)) ([282ea4f](https://github.com/googleapis/google-cloud-java/commit/282ea4f36bf2977c038cad90e20c6c44aa133e72))
+* [batch] Remove UUID specification in comment ([#10408](https://github.com/googleapis/google-cloud-java/issues/10408)) ([391f4f0](https://github.com/googleapis/google-cloud-java/commit/391f4f08da31e026ab7ab08b3118438bac4afd57))
+* [bigquerydatatransfer] update unenrollDataSources API documentation ([#10412](https://github.com/googleapis/google-cloud-java/issues/10412)) ([9adf018](https://github.com/googleapis/google-cloud-java/commit/9adf018fdf1bd560cca4f8918ac3025f6eeec3f9))
+* [run]clarify some defaults and required or optional values ([#10465](https://github.com/googleapis/google-cloud-java/issues/10465)) ([d4e8c3a](https://github.com/googleapis/google-cloud-java/commit/d4e8c3a1269e9f053a756e0ef54d452b71af697f))
+* [securitycentermanagement] Clarify documentation for ListDescendantSecurityHealthAnalyticsCustomModules RPC and CostumConfig message ([#10443](https://github.com/googleapis/google-cloud-java/issues/10443)) ([8dfd142](https://github.com/googleapis/google-cloud-java/commit/8dfd142c95c4f37d327577db653832e7a84c3c66))
+* [vertexai] Mark generateContent variants with GenerationConfig and List&lt;SafetySetting&gt; as deprecated. ([#10474](https://github.com/googleapis/google-cloud-java/issues/10474)) ([7cf463b](https://github.com/googleapis/google-cloud-java/commit/7cf463b7e2d8fe7c3ed467ad8fe2e5dae2904ee7))
+* A comment for field `enable_confidential_storage` in message `.google.container.v1beta1.NodeConfig` is changed ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+* clarified read pool config is for read pool type instances ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+* update documentation to add guidance around use of ProfilerService API methods ([c04c4f6](https://github.com/googleapis/google-cloud-java/commit/c04c4f676d291e63360236d79afebf4f437e3d17))
+* update field documentation based on field behavior updates ([73bd736](https://github.com/googleapis/google-cloud-java/commit/73bd7360f888f6318d3332888739d7dd542127a5))
+
 ## [1.30.0](https://github.com/googleapis/google-cloud-java/compare/v1.29.0...v1.30.0) (2024-02-20)
 
 
