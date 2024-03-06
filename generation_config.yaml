@@ -435,17 +435,6 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/channel/v1
 
-- api_shortname: chat
-  name_pretty: Google Chat API
-  proto_path: google/chat
-  product_documentation: https://developers.google.com/chat/concepts
-  api_description: The Google Chat API lets you build Chat apps to integrate your
-    services with Google Chat and manage Chat resources such as spaces, members, and
-    messages.
-  transport: both
-  destination_name: java-chat
-  rest_docs: https://developers.google.com/chat/api/reference/rest
-  distribution_name: com.google-cloud:google-cloud-chat
 - api_shortname: cloudbuild
   name_pretty: Cloud Build
   product_documentation: https://cloud.google.com/cloud-build/
