@@ -28,21 +28,21 @@ import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.Part;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 /** This class holds a generative model that can complete what you provided. */
 public class GenerativeModel {
   private final String modelName;
   private final String resourceName;
   private final VertexAI vertexAi;
-  private GenerationConfig generationConfig = null;
-  private List<SafetySetting> safetySettings = null;
-  private List<Tool> tools = null;
   private Transport transport;
+  private Optional<GenerationConfig> generationConfig = Optional.empty();
+  private Optional<ImmutableList<SafetySetting>> safetySettings = Optional.empty();
+  private Optional<ImmutableList<Tool>> tools = Optional.empty();
 
   public static Builder newBuilder() {
     return new Builder();
@@ -58,31 +58,23 @@ public class GenerativeModel {
             "projects/%s/locations/%s/publishers/google/models/%s",
             this.vertexAi.getProjectId(), this.vertexAi.getLocation(), this.modelName);
 
-    if (builder.generationConfig != null) {
-      this.generationConfig = builder.generationConfig;
-    }
-    if (builder.safetySettings != null) {
-      this.safetySettings = builder.safetySettings;
-    }
-    if (builder.tools != null) {
-      this.tools = builder.tools;
-    }
+    this.generationConfig = builder.generationConfig;
 
-    if (builder.transport != null) {
-      this.transport = builder.transport;
-    } else {
-      this.transport = this.vertexAi.getTransport();
-    }
+    this.safetySettings = builder.safetySettings;
+
+    this.tools = builder.tools;
+
+    this.transport = builder.transport.orElse(this.vertexAi.getTransport());
   }
 
   /** Builder class for {@link GenerativeModel}. */
   public static class Builder {
     private String modelName;
     private VertexAI vertexAi;
-    private GenerationConfig generationConfig;
-    private List<SafetySetting> safetySettings;
-    private List<Tool> tools;
-    private Transport transport;
+    private Optional<GenerationConfig> generationConfig = Optional.empty();
+    private Optional<ImmutableList<SafetySetting>> safetySettings = Optional.empty();
+    private Optional<ImmutableList<Tool>> tools = Optional.empty();
+    private Optional<Transport> transport = Optional.empty();
 
     private Builder() {}
 
@@ -125,7 +117,7 @@ public class GenerativeModel {
      */
     @BetaApi
     public Builder setGenerationConfig(GenerationConfig generationConfig) {
-      this.generationConfig = generationConfig;
+      this.generationConfig = Optional.of(generationConfig);
       return this;
     }
 
@@ -135,12 +127,7 @@ public class GenerativeModel {
      */
     @BetaApi
     public Builder setSafetySettings(List<SafetySetting> safetySettings) {
-      this.safetySettings = new ArrayList<>();
-      for (SafetySetting safetySetting : safetySettings) {
-        if (safetySetting != null) {
-          this.safetySettings.add(safetySetting);
-        }
-      }
+      this.safetySettings = Optional.of(ImmutableList.copyOf(safetySettings));
       return this;
     }
 
@@ -150,12 +137,7 @@ public class GenerativeModel {
      */
     @BetaApi
     public Builder setTools(List<Tool> tools) {
-      this.tools = new ArrayList<>();
-      for (Tool tool : tools) {
-        if (tool != null) {
-          this.tools.add(tool);
-        }
-      }
+      this.tools = Optional.of(ImmutableList.copyOf(tools));
       return this;
     }
 
@@ -164,7 +146,7 @@ public class GenerativeModel {
      * transport setting in {@link com.google.cloud.vertexai.VertexAI}
      */
     public Builder setTransport(Transport transport) {
-      this.transport = transport;
+      this.transport = Optional.of(transport);
       return this;
     }
   }
@@ -314,20 +296,14 @@ public class GenerativeModel {
         String.format(
             "projects/%s/locations/%s/publishers/google/models/%s",
             vertexAi.getProjectId(), vertexAi.getLocation(), modelName);
+    this.vertexAi = vertexAi;
+    this.transport = transport != null ? transport : vertexAi.getTransport();
+
     if (generationConfig != null) {
-      this.generationConfig = generationConfig;
+      this.generationConfig = Optional.of(generationConfig);
     }
     if (safetySettings != null) {
-      this.safetySettings = new ArrayList<>();
-      for (SafetySetting safetySetting : safetySettings) {
-        this.safetySettings.add(safetySetting);
-      }
-    }
-    this.vertexAi = vertexAi;
-    if (transport != null) {
-      this.transport = transport;
-    } else {
-      this.transport = vertexAi.getTransport();
+      this.safetySettings = Optional.of(ImmutableList.copyOf(safetySettings));
     }
   }
 
@@ -553,20 +529,23 @@ public class GenerativeModel {
       List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder().addAllContents(contents);
-    if (config.getGenerationConfig() != null) {
-      requestBuilder.setGenerationConfig(config.getGenerationConfig());
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
+
+    if (config.getGenerationConfig().isPresent()) {
+      requestBuilder.setGenerationConfig(config.getGenerationConfig().get());
+    } else if (generationConfig.isPresent()) {
+      requestBuilder.setGenerationConfig(generationConfig.get());
     }
-    if (config.getSafetySettings().isEmpty() == false) {
-      requestBuilder.addAllSafetySettings(config.getSafetySettings());
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
+
+    if (config.getSafetySettings().isPresent()) {
+      requestBuilder.addAllSafetySettings(config.getSafetySettings().get());
+    } else if (safetySettings.isPresent()) {
+      requestBuilder.addAllSafetySettings(safetySettings.get());
     }
-    if (config.getTools().isEmpty() == false) {
-      requestBuilder.addAllTools(config.getTools());
-    } else if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
+
+    if (config.getTools().isPresent()) {
+      requestBuilder.addAllTools(config.getTools().get());
+    } else if (tools.isPresent()) {
+      requestBuilder.addAllTools(tools.get());
     }
 
     return generateContent(requestBuilder);
@@ -596,16 +575,16 @@ public class GenerativeModel {
         GenerateContentRequest.newBuilder().addAllContents(contents);
     if (generationConfig != null) {
       requestBuilder.setGenerationConfig(generationConfig);
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
+    } else if (this.generationConfig.isPresent()) {
+      requestBuilder.setGenerationConfig(this.generationConfig.get());
     }
     if (safetySettings != null) {
       requestBuilder.addAllSafetySettings(safetySettings);
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
+    } else if (this.safetySettings.isPresent()) {
+      requestBuilder.addAllSafetySettings(this.safetySettings.get());
     }
-    if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
+    if (this.tools.isPresent()) {
+      requestBuilder.addAllTools(this.tools.get());
     }
     return generateContent(requestBuilder);
   }
@@ -976,16 +955,16 @@ public class GenerativeModel {
         GenerateContentRequest.newBuilder().addAllContents(contents);
     if (generationConfig != null) {
       requestBuilder.setGenerationConfig(generationConfig);
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
+    } else if (this.generationConfig.isPresent()) {
+      requestBuilder.setGenerationConfig(this.generationConfig.get());
     }
     if (safetySettings != null) {
       requestBuilder.addAllSafetySettings(safetySettings);
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
+    } else if (this.safetySettings.isPresent()) {
+      requestBuilder.addAllSafetySettings(this.safetySettings.get());
     }
-    if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
+    if (this.tools.isPresent()) {
+      requestBuilder.addAllTools(this.tools.get());
     }
     return generateContentStream(requestBuilder);
   }
@@ -1006,20 +985,23 @@ public class GenerativeModel {
       List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder().addAllContents(contents);
-    if (config.getGenerationConfig() != null) {
-      requestBuilder.setGenerationConfig(config.getGenerationConfig());
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
+
+    if (config.getGenerationConfig().isPresent()) {
+      requestBuilder.setGenerationConfig(config.getGenerationConfig().get());
+    } else if (generationConfig.isPresent()) {
+      requestBuilder.setGenerationConfig(generationConfig.get());
     }
-    if (config.getSafetySettings().isEmpty() == false) {
-      requestBuilder.addAllSafetySettings(config.getSafetySettings());
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
+
+    if (config.getSafetySettings().isPresent()) {
+      requestBuilder.addAllSafetySettings(config.getSafetySettings().get());
+    } else if (safetySettings.isPresent()) {
+      requestBuilder.addAllSafetySettings(safetySettings.get());
     }
-    if (config.getTools().isEmpty() == false) {
-      requestBuilder.addAllTools(config.getTools());
-    } else if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
+
+    if (config.getTools().isPresent()) {
+      requestBuilder.addAllTools(config.getTools().get());
+    } else if (tools.isPresent()) {
+      requestBuilder.addAllTools(tools.get());
     }
 
     return generateContentStream(requestBuilder);
@@ -1066,7 +1048,7 @@ public class GenerativeModel {
    */
   @BetaApi
   public void setGenerationConfig(GenerationConfig generationConfig) {
-    this.generationConfig = generationConfig;
+    this.generationConfig = Optional.of(generationConfig);
   }
 
   /**
@@ -1075,10 +1057,7 @@ public class GenerativeModel {
    */
   @BetaApi("safetySettings is a preview feature.")
   public void setSafetySettings(List<SafetySetting> safetySettings) {
-    this.safetySettings = new ArrayList<>();
-    for (SafetySetting safetySetting : safetySettings) {
-      this.safetySettings.add(safetySetting);
-    }
+    this.safetySettings = Optional.of(ImmutableList.copyOf(safetySettings));
   }
 
   /**
@@ -1086,10 +1065,7 @@ public class GenerativeModel {
    */
   @BetaApi("tools is a preview feature.")
   public void setTools(List<Tool> tools) {
-    this.tools = new ArrayList<>();
-    for (Tool tool : tools) {
-      this.tools.add(tool);
-    }
+    this.tools = Optional.of(ImmutableList.copyOf(tools));
   }
 
   /**
@@ -1114,7 +1090,7 @@ public class GenerativeModel {
    * Returns the {@link com.google.cloud.vertexai.api.GenerationConfig} of this generative model.
    */
   @BetaApi
-  public GenerationConfig getGenerationConfig() {
+  public Optional<GenerationConfig> getGenerationConfig() {
     return this.generationConfig;
   }
 
@@ -1123,22 +1099,14 @@ public class GenerativeModel {
    * model.
    */
   @BetaApi("safetySettings is a preview feature.")
-  public List<SafetySetting> getSafetySettings() {
-    if (this.safetySettings != null) {
-      return Collections.unmodifiableList(this.safetySettings);
-    } else {
-      return null;
-    }
+  public Optional<ImmutableList<SafetySetting>> getSafetySettings() {
+    return this.safetySettings;
   }
 
   /** Returns a list of {@link com.google.cloud.vertexai.api.Tool} of this generative model. */
   @BetaApi("tools is a preview feature.")
-  public List<Tool> getTools() {
-    if (this.tools != null) {
-      return Collections.unmodifiableList(this.tools);
-    } else {
-      return null;
-    }
+  public Optional<ImmutableList<Tool>> getTools() {
+    return this.tools;
   }
 
   public ChatSession startChat() {

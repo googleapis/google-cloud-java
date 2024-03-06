@@ -28,6 +28,7 @@ import com.google.cloud.vertexai.api.Tool;
 import com.google.cloud.vertexai.api.Type;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -72,8 +73,8 @@ public final class GenerateContentConfigTest {
             .setSafetySettings(safetySettings)
             .setTools(tools)
             .build();
-    assertThat(config.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
-    assertThat(config.getSafetySettings()).isEqualTo(safetySettings);
-    assertThat(config.getTools()).isEqualTo(tools);
+    assertThat(config.getGenerationConfig()).isEqualTo(Optional.of(GENERATION_CONFIG));
+    assertThat(config.getSafetySettings()).isEqualTo(Optional.of(safetySettings));
+    assertThat(config.getTools()).isEqualTo(Optional.of(tools));
   }
 }

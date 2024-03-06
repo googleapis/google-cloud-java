@@ -48,6 +48,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -131,44 +132,44 @@ public final class GenerativeModelTest {
   public void testInstantiateGenerativeModel() {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
-    assertThat(model.getGenerationConfig()).isNull();
-    assertThat(model.getSafetySettings()).isNull();
-    assertThat(model.getTools()).isNull();
+    assertThat(model.getGenerationConfig()).isEqualTo(Optional.empty());
+    assertThat(model.getSafetySettings()).isEqualTo(Optional.empty());
+    assertThat(model.getTools()).isEqualTo(Optional.empty());
   }
 
   @Test
   public void testInstantiateGenerativeModelWithGenerationConfig() {
     model = new GenerativeModel(MODEL_NAME_2, GENERATION_CONFIG, vertexAi);
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
-    assertThat(model.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
-    assertThat(model.getSafetySettings()).isNull();
-    assertThat(model.getTools()).isNull();
+    assertThat(model.getGenerationConfig()).isEqualTo(Optional.of(GENERATION_CONFIG));
+    assertThat(model.getSafetySettings()).isEqualTo(Optional.empty());
+    assertThat(model.getTools()).isEqualTo(Optional.empty());
   }
 
   @Test
   public void testInstantiateGenerativeModelwithSafetySettings() {
     model = new GenerativeModel(MODEL_NAME, safetySettings, vertexAi);
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
-    assertThat(model.getGenerationConfig()).isNull();
-    assertThat(model.getSafetySettings()).isEqualTo(safetySettings);
-    assertThat(model.getTools()).isNull();
+    assertThat(model.getGenerationConfig()).isEqualTo(Optional.empty());
+    assertThat(model.getSafetySettings()).isEqualTo(Optional.of(safetySettings));
+    assertThat(model.getTools()).isEqualTo(Optional.empty());
   }
 
   @Test
   public void testInstantiateGenerativeModelwithGenerationConfigAndSafetySettings() {
     model = new GenerativeModel(MODEL_NAME_3, GENERATION_CONFIG, safetySettings, vertexAi);
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
-    assertThat(model.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
-    assertThat(model.getSafetySettings()).isEqualTo(safetySettings);
+    assertThat(model.getGenerationConfig()).isEqualTo(Optional.of(GENERATION_CONFIG));
+    assertThat(model.getSafetySettings()).isEqualTo(Optional.of(safetySettings));
   }
 
   @Test
   public void testInstantiateGenerativeModelwithBuilder() {
     model = GenerativeModel.newBuilder().setModelName(MODEL_NAME).setVertexAi(vertexAi).build();
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
-    assertThat(model.getGenerationConfig()).isNull();
-    assertThat(model.getSafetySettings()).isNull();
-    assertThat(model.getTools()).isNull();
+    assertThat(model.getGenerationConfig()).isEqualTo(Optional.empty());
+    assertThat(model.getSafetySettings()).isEqualTo(Optional.empty());
+    assertThat(model.getTools()).isEqualTo(Optional.empty());
     assertThat(model.getTransport()).isEqualTo(Transport.GRPC);
   }
 
@@ -184,9 +185,9 @@ public final class GenerativeModelTest {
             .setTransport(Transport.REST)
             .build();
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
-    assertThat(model.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
-    assertThat(model.getSafetySettings()).isEqualTo(safetySettings);
-    assertThat(model.getTools()).isEqualTo(tools);
+    assertThat(model.getGenerationConfig()).isEqualTo(Optional.of(GENERATION_CONFIG));
+    assertThat(model.getSafetySettings()).isEqualTo(Optional.of(safetySettings));
+    assertThat(model.getTools()).isEqualTo(Optional.of(tools));
     assertThat(model.getTransport()).isEqualTo(Transport.REST);
   }
 
@@ -214,21 +215,21 @@ public final class GenerativeModelTest {
   public void testSetGenerationConfig() {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
     model.setGenerationConfig(GENERATION_CONFIG);
-    assertThat(model.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
+    assertThat(model.getGenerationConfig()).isEqualTo(Optional.of(GENERATION_CONFIG));
   }
 
   @Test
   public void testSetSafetySettings() {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
     model.setSafetySettings(safetySettings);
-    assertThat(model.getSafetySettings()).isEqualTo(safetySettings);
+    assertThat(model.getSafetySettings()).isEqualTo(Optional.of(safetySettings));
   }
 
   @Test
   public void testSetTools() {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
     model.setTools(tools);
-    assertThat(model.getTools()).isEqualTo(tools);
+    assertThat(model.getTools()).isEqualTo(Optional.of(tools));
   }
 
   @Test

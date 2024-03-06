@@ -22,12 +22,13 @@ import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import java.util.Optional;
 
 /** This class holds all the configs when making a generate content API call */
 public class GenerateContentConfig {
-  private final GenerationConfig generationConfig;
-  private final ImmutableList<SafetySetting> safetySettings;
-  private final ImmutableList<Tool> tools;
+  private final Optional<GenerationConfig> generationConfig;
+  private final Optional<ImmutableList<SafetySetting>> safetySettings;
+  private final Optional<ImmutableList<Tool>> tools;
 
   /** Creates a builder for the GenerateContentConfig. */
   public static Builder newBuilder() {
@@ -35,28 +36,16 @@ public class GenerateContentConfig {
   }
 
   private GenerateContentConfig(Builder builder) {
-    if (builder.generationConfig != null) {
-      this.generationConfig = builder.generationConfig;
-    } else {
-      this.generationConfig = null;
-    }
-    if (builder.safetySettings != null) {
-      this.safetySettings = builder.safetySettings;
-    } else {
-      this.safetySettings = ImmutableList.of();
-    }
-    if (builder.tools != null) {
-      this.tools = builder.tools;
-    } else {
-      this.tools = ImmutableList.of();
-    }
+    this.generationConfig = builder.generationConfig;
+    this.safetySettings = builder.safetySettings;
+    this.tools = builder.tools;
   }
 
   /** Builder class for {@link GenerateContentConfig}. */
   public static class Builder {
-    private GenerationConfig generationConfig;
-    private ImmutableList<SafetySetting> safetySettings;
-    private ImmutableList<Tool> tools;
+    private Optional<GenerationConfig> generationConfig = Optional.empty();
+    private Optional<ImmutableList<SafetySetting>> safetySettings = Optional.empty();
+    private Optional<ImmutableList<Tool>> tools = Optional.empty();
 
     private Builder() {}
 
@@ -73,7 +62,7 @@ public class GenerateContentConfig {
      */
     @BetaApi
     public Builder setGenerationConfig(GenerationConfig generationConfig) {
-      this.generationConfig = generationConfig;
+      this.generationConfig = Optional.of(generationConfig);
       return this;
     }
 
@@ -85,7 +74,7 @@ public class GenerateContentConfig {
      */
     @BetaApi
     public Builder setSafetySettings(List<SafetySetting> safetySettings) {
-      this.safetySettings = ImmutableList.copyOf(safetySettings);
+      this.safetySettings = Optional.of(ImmutableList.copyOf(safetySettings));
       return this;
     }
 
@@ -97,26 +86,26 @@ public class GenerateContentConfig {
      */
     @BetaApi
     public Builder setTools(List<Tool> tools) {
-      this.tools = ImmutableList.copyOf(tools);
+      this.tools = Optional.of(ImmutableList.copyOf(tools));
       return this;
     }
   }
 
   /** Returns the {@link com.google.cloud.vertexai.api.GenerationConfig} of this config. */
   @BetaApi
-  public GenerationConfig getGenerationConfig() {
+  public Optional<GenerationConfig> getGenerationConfig() {
     return this.generationConfig;
   }
 
   /** Returns a list of {@link com.google.cloud.vertexai.api.SafetySettings} of this config. */
   @BetaApi("safetySettings is a preview feature.")
-  public ImmutableList<SafetySetting> getSafetySettings() {
+  public Optional<ImmutableList<SafetySetting>> getSafetySettings() {
     return this.safetySettings;
   }
 
   /** Returns a list of {@link com.google.cloud.vertexai.api.Tool} of this config. */
   @BetaApi("tools is a preview feature.")
-  public ImmutableList<Tool> getTools() {
+  public Optional<ImmutableList<Tool>> getTools() {
     return this.tools;
   }
 }
