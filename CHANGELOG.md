@@ -1,5 +1,34 @@
 # Changelog
 
+## [3.3.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.2.0...v3.3.0) (2024-03-04)
+
+
+### Features
+
+* Add RetrySettings use to Write API samples. ([#2419](https://github.com/googleapis/java-bigquerystorage/issues/2419)) ([5b000d0](https://github.com/googleapis/java-bigquerystorage/commit/5b000d0a4e953649ca4e44bffd3ba25c288e70e4))
+* Add the RANGE type to the google.cloud.bigquery.storage.v1.TableFieldSchema ([#2413](https://github.com/googleapis/java-bigquerystorage/issues/2413)) ([6aa92b5](https://github.com/googleapis/java-bigquerystorage/commit/6aa92b5d03eed548de9e89b0731707f92c373ce3))
+* Next release from main branch is 2.48.0 ([#2420](https://github.com/googleapis/java-bigquerystorage/issues/2420)) ([2dd8efc](https://github.com/googleapis/java-bigquerystorage/commit/2dd8efc4a21f186c20e86304092d22fd574e822e))
+
+
+### Bug Fixes
+
+* Fix issue where Universe Domain is not correctly set. ([#2423](https://github.com/googleapis/java-bigquerystorage/issues/2423)) ([b7ebd73](https://github.com/googleapis/java-bigquerystorage/commit/b7ebd73754fe51a4835f676e429b95b80f8114a5))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.38.0 ([#2417](https://github.com/googleapis/java-bigquerystorage/issues/2417)) ([8184a0f](https://github.com/googleapis/java-bigquerystorage/commit/8184a0f74e98340fe62621957f3ac78ad70c9edb))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.38.0 ([#2418](https://github.com/googleapis/java-bigquerystorage/issues/2418)) ([4d5eb73](https://github.com/googleapis/java-bigquerystorage/commit/4d5eb7343cdf5fd617a2da120642bfd678d58f94))
+* Update dependency com.google.truth:truth to v1.4.1 ([#2412](https://github.com/googleapis/java-bigquerystorage/issues/2412)) ([c2dcb73](https://github.com/googleapis/java-bigquerystorage/commit/c2dcb73c54ad5dcb68ce18741efaf479298373e1))
+* Update dependency com.google.truth:truth to v1.4.2 ([#2424](https://github.com/googleapis/java-bigquerystorage/issues/2424)) ([7a12de0](https://github.com/googleapis/java-bigquerystorage/commit/7a12de0ebc6a0a0f4bb438e3dcb36ee0759c0b94))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.1 ([#2414](https://github.com/googleapis/java-bigquerystorage/issues/2414)) ([dfa8d53](https://github.com/googleapis/java-bigquerystorage/commit/dfa8d532e5e1a28d644fefed6650ca1a2481a3a3))
+* Update dependency org.json:json to v20240303 ([#2426](https://github.com/googleapis/java-bigquerystorage/issues/2426)) ([2accca7](https://github.com/googleapis/java-bigquerystorage/commit/2accca72f2bd26c9a1cf1bd918961889b9ee3ace))
+
+
+### Documentation
+
+* Mark BigQueryWrite v1beta2 as deprecated ([#2421](https://github.com/googleapis/java-bigquerystorage/issues/2421)) ([07d98ab](https://github.com/googleapis/java-bigquerystorage/commit/07d98ab417ae9fd2f90aca4d6a1a3ff62ef0bc1d))
+
 ## [3.2.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.1.0...v3.2.0) (2024-02-15)
 
 
