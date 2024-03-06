@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.15.0 (2024-03-06)
+
+### Features
+
+* support for obtaining the public IP address of an Instance ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+* support for obtaining the public IP address of an Instance ([#10439](https://github.com/googleapis/google-cloud-java/issues/10439)) ([06497ad](https://github.com/googleapis/google-cloud-java/commit/06497ada58a21579cc87665289d56ee99e19fd87))
+
+
+
 ## 0.14.0 (2024-02-20)
 
 * No change

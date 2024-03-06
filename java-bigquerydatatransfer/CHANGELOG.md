@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.37.0 (2024-03-06)
+
+### Features
+
+* update unenrollDataSources API documentation ([#10412](https://github.com/googleapis/google-cloud-java/issues/10412)) ([9adf018](https://github.com/googleapis/google-cloud-java/commit/9adf018fdf1bd560cca4f8918ac3025f6eeec3f9))
+
+
+
 ## 2.36.0 (2024-02-20)
 
 ### Features

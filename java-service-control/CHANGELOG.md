@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.37.0 (2024-03-06)
+
+### Features
+
+* include api_key_uid in service control check response ([#10410](https://github.com/googleapis/google-cloud-java/issues/10410)) ([4ed5b45](https://github.com/googleapis/google-cloud-java/commit/4ed5b459df68c25d28775073c0e9736e6929443f))
+
+
+
 ## 1.36.0 (2024-02-20)
 
 * No change
