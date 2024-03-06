@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.3.0...v3.3.1) (2024-03-06)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.27.0 ([#2425](https://github.com/googleapis/java-bigquerystorage/issues/2425)) ([488d282](https://github.com/googleapis/java-bigquerystorage/commit/488d28287fdaefff02e7ad9f9f7c8da6ac873671))
+
 ## [3.3.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.2.0...v3.3.0) (2024-03-04)
 
 
