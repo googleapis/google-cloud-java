@@ -197,7 +197,6 @@ public class DatastoreAdminSettings extends ClientSettings<DatastoreAdminSetting
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -239,7 +238,6 @@ public class DatastoreAdminSettings extends ClientSettings<DatastoreAdminSetting
       return new Builder(DatastoreAdminStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(DatastoreAdminStubSettings.newHttpJsonBuilder());
     }
