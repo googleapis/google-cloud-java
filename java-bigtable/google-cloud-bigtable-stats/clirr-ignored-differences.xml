@@ -37,5 +37,6 @@
         <differenceType>7006</differenceType>
         <className>com/google/cloud/bigtable/stats/ConsumerEnvironmentUtils$ResourceUtilsWrapper</className>
         <method>*</method>
+        <to>*</to>
     </difference>
 </differences>
