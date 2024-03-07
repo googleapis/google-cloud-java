@@ -138,7 +138,7 @@ was modified (or the script exited because the library already existed)
 
 The last step you need is to `cd` into the root of `google-cloud-java` and run
 ```
-api_shortname=<the api shortname you used>
+docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
 repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
 docker run --rm \
   ${repo_volumes} \
@@ -150,7 +150,7 @@ docker run --rm \
   python /src/generate_repo.py generate \
   --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \
   --repository-path=/workspace/google-cloud-java \
-  --target-library-api-shortname=${api_shortname}
+  --target-library-api-shortname=<your api_shortname>
 
 ```
 
