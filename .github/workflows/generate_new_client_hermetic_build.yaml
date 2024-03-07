@@ -123,7 +123,7 @@ jobs:
         shell: bash
         run: |
           repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
-          echo "::set-output name=new_library_args::${repo_volumes}"
+          echo "::set-output name=repo_volumes::${repo_volumes}"
           docker run --rm \
             ${repo_volumes} \
             -v /tmp:/tmp \
