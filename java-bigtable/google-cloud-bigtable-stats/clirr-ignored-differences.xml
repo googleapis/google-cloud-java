@@ -26,10 +26,16 @@
         <method>*StatsRecorderWrapperForConnection*</method>
         <to>*</to>
     </difference>
-    <!-- Internal API is updated -->
+    <!-- Internal API is removed -->
     <difference>
         <differenceType>7002</differenceType>
         <className>com/google/cloud/bigtable/stats/ConsumerEnvironmentUtils$ResourceUtilsWrapper</className>
-        <method>*detectResource*</method>
+        <method>*</method>
+    </difference>
+    <!-- Internal API is updated -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/stats/ConsumerEnvironmentUtils$ResourceUtilsWrapper</className>
+        <method>*</method>
     </difference>
 </differences>
