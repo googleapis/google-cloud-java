@@ -89,13 +89,6 @@ def main(ctx):
     help="Description that appears in README.md",
 )
 @click.option(
-    "--transport",
-    type=click.Choice(["grpc", "http", "both"]),
-    default="grpc",
-    show_default=True,
-    help="A label that appears in repo-metadata.json",
-)
-@click.option(
     "--destination-name",
     type=str,
     default=None,
@@ -161,7 +154,6 @@ def add_new_library(
     rest_docs,
     rpc_docs,
     api_description,
-    transport,
     destination_name,
     distribution_name,
     release_level,
@@ -213,7 +205,6 @@ def add_new_library(
         "api_description": api_description,
         "client_documentation": client_documentation,
         "release_level": release_level,
-        "transport": transport,
         "language": 'java',
         "repo": f"googleapis/java-{output_name}",
         "repo_short": f"java-{output_name}",

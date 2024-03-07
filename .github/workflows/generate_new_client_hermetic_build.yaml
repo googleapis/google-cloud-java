@@ -36,15 +36,6 @@ on:
         api_description:
           required: true
           description: "`api_description`: Description that appears in README.md"
-        transport:
-          required: false
-          type: choice
-          default: grpc
-          options:
-            - grpc
-            - http
-            - both
-          description: "`transport`: A label that appears in repo-metadata.json"
         destination_name:
           required: false
           type: string
@@ -90,7 +81,7 @@ jobs:
             fi
           }
 
-          declare -a optional_args=('transport' 'destination-name' 'distribution-name' 'group-id' 'rest-docs' 'rpc-docs')
+          declare -a optional_args=('destination-name' 'distribution-name' 'group-id' 'rest-docs' 'rpc-docs')
 
           for python_argument in "${optional_args[@]}"; do
             append_argument "${python_argument}"
@@ -106,7 +97,6 @@ jobs:
           REST_DOCS: ${{ github.event.inputs.rest_docs }}
           RPC_DOCS: ${{ github.event.inputs.rpc_docs }}
           API_DESCRIPTION: ${{ github.event.inputs.api_description }}
-          TRANSPORT: ${{ github.event.inputs.transport }}
           DESTINATION_NAME: ${{ github.event.inputs.destination_name }}
           DISTRIBUTION_NAME: ${{ github.event.inputs.distribution_name }}
       - name: setup docker environment
