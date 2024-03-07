@@ -138,6 +138,11 @@ def main(ctx):
     help="A label that appears in repo-metadata.json to tell how the library is "
          "maintained or generated"
 )
+@click.option(
+    "--api-reference",
+    type=str,
+    help="API reference for this library"
+)
 def add_new_library(
     api_shortname,
     name_pretty,
@@ -153,6 +158,7 @@ def add_new_library(
     requires_billing,
     group_id,
     library_type,
+    api_reference,
 ):
     output_name = library_name if library_name else api_shortname
     if distribution_name is None:
@@ -200,6 +206,7 @@ def add_new_library(
     __add_item_if_set(new_library, "rest_documentation", rest_docs)
     __add_item_if_set(new_library, "rpc_documentation", rpc_docs)
     __add_item_if_set(new_library, "distribution_name", distribution_name)
+    __add_item_if_set(new_library, "api_reference", api_reference)
 
     config["libraries"].append(new_library)
     config["libraries"] = sorted(config["libraries"], key=__compute_library_name)
