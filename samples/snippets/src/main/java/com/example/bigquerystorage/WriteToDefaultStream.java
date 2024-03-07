@@ -138,6 +138,8 @@ public class WriteToDefaultStream {
 
     private static final int MAX_RECREATE_COUNT = 3;
 
+    private BigQueryWriteClient client;
+
     // Track the number of in-flight requests to wait for all responses before shutting down.
     private final Phaser inflightRequestCount = new Phaser(1);
     private final Object lock = new Object();
@@ -163,12 +165,16 @@ public class WriteToDefaultStream {
               .setMaxRetryDelay(Duration.ofMinutes(1))
               .build();
 
+      // Initialize client without settings, internally within stream writer a new client will be
+      // created with full settings.
+      client = BigQueryWriteClient.create();
+
       // Use the JSON stream writer to send records in JSON format. Specify the table name to write
       // to the default stream.
       // For more information about JsonStreamWriter, see:
       // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1/JsonStreamWriter.html
       streamWriter =
-          JsonStreamWriter.newBuilder(parentTable.toString(), BigQueryWriteClient.create())
+          JsonStreamWriter.newBuilder(parentTable.toString(), client)
               .setExecutorProvider(
                   FixedExecutorProvider.create(Executors.newScheduledThreadPool(100)))
               .setChannelProvider(
@@ -193,10 +199,7 @@ public class WriteToDefaultStream {
         if (!streamWriter.isUserClosed()
             && streamWriter.isClosed()
             && recreateCount.getAndIncrement() < MAX_RECREATE_COUNT) {
-          streamWriter =
-              JsonStreamWriter.newBuilder(
-                      streamWriter.getStreamName(), BigQueryWriteClient.create())
-                  .build();
+          streamWriter = JsonStreamWriter.newBuilder(streamWriter.getStreamName(), client).build();
           this.error = null;
         }
         // If earlier appends have failed, we need to reset before continuing.
@@ -217,6 +220,7 @@ public class WriteToDefaultStream {
       // Wait for all in-flight requests to complete.
       inflightRequestCount.arriveAndAwaitAdvance();
 
+      client.close();
       // Close the connection to the server.
       streamWriter.close();
 
