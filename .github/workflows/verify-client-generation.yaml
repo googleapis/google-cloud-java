@@ -58,7 +58,7 @@ jobs:
               --name-pretty="${API_PRETTY_NAME}" \
               --product-docs="https://github.com/googleapis/google-cloud-java/tree/main/java-${API_SHORT_NAME}" \
               --api-description="${API_PRETTY_NAME} Client lets you use ${API_PRETTY_NAME} API." \
-              --googleapis-gen-url=https://yoshi-approver:${{ secrets.YOSHI_APPROVER_PRIVATE_TOKEN }}@github.com/googleapis/googleapis-gen.git
+              --googleapis-gen-url=https://cloud-java-bot:${{ secrets.CLOUD_JAVA_BOT_TOKEN }}@github.com/googleapis/googleapis-gen.git
       - name: Push to branch (helpful for troubleshooting)
         run: |
           [ -z "`git config user.email`" ] && git config --global user.email "${USERNAME:-script}@google.com"
