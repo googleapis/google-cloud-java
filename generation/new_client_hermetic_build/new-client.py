@@ -159,6 +159,12 @@ def main(ctx):
     type=str,
     help="Comma-separated list of pom files excluded from postprocessing."
 )
+@click.option(
+    "--googleapis-committish",
+    type=str,
+    help="Committish of googleapis/googleapis to get the protos from. It will "
+    "override the repo-level committish and is not subject to automatic updates"
+)
 def add_new_library(
     api_shortname,
     name_pretty,
@@ -178,6 +184,7 @@ def add_new_library(
     codeowner_team,
     excluded_dependencies,
     excluded_poms,
+    googleapis_committish,
 ):
     output_name = library_name if library_name else api_shortname
     if distribution_name is None:
@@ -229,7 +236,7 @@ def add_new_library(
     __add_item_if_set(new_library, "codeowner_team", codeowner_team)
     __add_item_if_set(new_library, "excluded_dependencies", excluded_dependencies)
     __add_item_if_set(new_library, "excluded_poms", excluded_poms)
-
+    __add_item_if_set(new_library, "googleapis_commitish", googleapis_committish)
 
     config["libraries"].append(new_library)
     config["libraries"] = sorted(config["libraries"], key=__compute_library_name)
