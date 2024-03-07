@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.47.0 (2024-03-06)
+
+### Features
+
+* Update Compute Engine API to revision 20240220 ([#886](https://github.com/googleapis/google-cloud-java/issues/886)) ([c87fa39](https://github.com/googleapis/google-cloud-java/commit/c87fa396003135a14dfded22d201b83b63d2edc2))
+* Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10447](https://github.com/googleapis/google-cloud-java/issues/10447)) ([c87fa39](https://github.com/googleapis/google-cloud-java/commit/c87fa396003135a14dfded22d201b83b63d2edc2))
+
+
+
 ## 1.46.0 (2024-02-20)
 
 * No change

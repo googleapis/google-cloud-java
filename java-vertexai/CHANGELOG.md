@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.6.0 (2024-03-06)
+
+### Features
+
+* add GenerateContentConfig class ([#10413](https://github.com/googleapis/google-cloud-java/issues/10413)) ([04e9574](https://github.com/googleapis/google-cloud-java/commit/04e9574a223cd9c42615bfde18aa6ad3dc551251))
+* add GenerateContentConfig to generateContent method ([#10425](https://github.com/googleapis/google-cloud-java/issues/10425)) ([903abf3](https://github.com/googleapis/google-cloud-java/commit/903abf39cae4810be41f2475c63a0fcb0b238bc1))
+* add GenerateContentConfig to generateContentStream method ([#10424](https://github.com/googleapis/google-cloud-java/issues/10424)) ([ec9dd00](https://github.com/googleapis/google-cloud-java/commit/ec9dd001c4058871ecf7ff7e3b91633aac3bf17b))
+* add GenerateContentConfig to sendMessage method ([#10436](https://github.com/googleapis/google-cloud-java/issues/10436)) ([25d00c7](https://github.com/googleapis/google-cloud-java/commit/25d00c7c4f1a68e45e491715b0d2c07f2ac4618d))
+* Mark generateContent variants with GenerationConfig and List&lt;SafetySetting&gt; as deprecated. ([#10474](https://github.com/googleapis/google-cloud-java/issues/10474)) ([7cf463b](https://github.com/googleapis/google-cloud-java/commit/7cf463b7e2d8fe7c3ed467ad8fe2e5dae2904ee7))
+
+
+
 ## 0.5.0 (2024-02-20)
 
 ### Features

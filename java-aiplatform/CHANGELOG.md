@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.38.0 (2024-03-06)
+
+### Features
+
+* Update docs for FeatureView Service Agents ([#10420](https://github.com/googleapis/google-cloud-java/issues/10420)) ([282ea4f](https://github.com/googleapis/google-cloud-java/commit/282ea4f36bf2977c038cad90e20c6c44aa133e72))
+
+
+
 ## 3.37.0 (2024-02-20)
 
 ### Features

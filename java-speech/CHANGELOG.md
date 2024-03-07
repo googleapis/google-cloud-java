@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.32.0 (2024-03-06)
+
+### Features
+
+* add API for writing BatchRecognize transcripts in SRT and VTT formats ([#10414](https://github.com/googleapis/google-cloud-java/issues/10414)) ([73bd736](https://github.com/googleapis/google-cloud-java/commit/73bd7360f888f6318d3332888739d7dd542127a5))
+
+
+
 ## 4.31.0 (2024-02-20)
 
 * No change
