@@ -143,6 +143,11 @@ def main(ctx):
     type=str,
     help="API reference for this library"
 )
+@click.option(
+    "--codeowner-team",
+    type=str,
+    help="Team owning this library"
+)
 def add_new_library(
     api_shortname,
     name_pretty,
@@ -159,6 +164,7 @@ def add_new_library(
     group_id,
     library_type,
     api_reference,
+    codeowner_team,
 ):
     output_name = library_name if library_name else api_shortname
     if distribution_name is None:
@@ -207,6 +213,7 @@ def add_new_library(
     __add_item_if_set(new_library, "rpc_documentation", rpc_docs)
     __add_item_if_set(new_library, "distribution_name", distribution_name)
     __add_item_if_set(new_library, "api_reference", api_reference)
+    __add_item_if_set(new_library, "codeowner_team", codeowner_team)
 
     config["libraries"].append(new_library)
     config["libraries"] = sorted(config["libraries"], key=__compute_library_name)
