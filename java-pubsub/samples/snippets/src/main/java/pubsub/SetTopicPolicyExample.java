@@ -44,7 +44,10 @@ public class SetTopicPolicyExample {
 
       // Create new role -> members binding
       Binding binding =
-          Binding.newBuilder().setRole("roles/pubsub.editor").addMembers("allUsers").build();
+          Binding.newBuilder()
+              .setRole("roles/pubsub.editor")
+              .addMembers("domain:google.com")
+              .build();
 
       // Add new binding to updated policy
       Policy updatedPolicy = Policy.newBuilder(oldPolicy).addBindings(binding).build();
