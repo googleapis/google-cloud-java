@@ -36,11 +36,11 @@ on:
         api_description:
           required: true
           description: "`api_description`: Description that appears in README.md"
-        destination_name:
+        library_name:
           required: false
           type: string
           description: |
-            `destination_name`: The directory name of the new library. By default it's
+            `library_name`: The directory name of the new library. By default it's
             java-<api_shortname>
         distribution_name:
           required: false
@@ -81,7 +81,7 @@ jobs:
             fi
           }
 
-          declare -a optional_args=('destination-name' 'distribution-name' 'group-id' 'rest-docs' 'rpc-docs')
+          declare -a optional_args=('library-name' 'distribution-name' 'group-id' 'rest-docs' 'rpc-docs')
 
           for python_argument in "${optional_args[@]}"; do
             append_argument "${python_argument}"
@@ -97,7 +97,7 @@ jobs:
           REST_DOCS: ${{ github.event.inputs.rest_docs }}
           RPC_DOCS: ${{ github.event.inputs.rpc_docs }}
           API_DESCRIPTION: ${{ github.event.inputs.api_description }}
-          DESTINATION_NAME: ${{ github.event.inputs.destination_name }}
+          LIBRARY_NAME: ${{ github.event.inputs.library_name }}
           DISTRIBUTION_NAME: ${{ github.event.inputs.distribution_name }}
       - name: setup docker environment
         shell: bash

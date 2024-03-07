@@ -89,7 +89,7 @@ def main(ctx):
     help="Description that appears in README.md",
 )
 @click.option(
-    "--destination-name",
+    "--library-name",
     type=str,
     default=None,
     help="The directory name of the new library. By default it's "
@@ -124,14 +124,6 @@ def main(ctx):
          "needed or not."
 )
 @click.option(
-    "--cloud-api",
-    type=bool,
-    default=True,
-    show_default=True,
-    help="If true, the artifact ID of the library is 'google-cloud-'; "
-         "otherwise 'google-'"
-)
-@click.option(
     "--group-id",
     type=str,
     default="com.google.cloud",
@@ -154,19 +146,17 @@ def add_new_library(
     rest_docs,
     rpc_docs,
     api_description,
-    destination_name,
+    library_name,
     distribution_name,
     release_level,
     api_id,
     requires_billing,
-    cloud_api,
     group_id,
     library_type,
 ):
-    cloud_prefix = "cloud-" if cloud_api else ""
-    output_name = destination_name if destination_name else api_shortname
+    output_name = library_name if library_name else api_shortname
     if distribution_name is None:
-        distribution_name = f"{group_id}:google-{cloud_prefix}{output_name}"
+        distribution_name = f"{group_id}:google-cloud-{output_name}"
 
     distribution_name_short = re.split(r"[:\/]", distribution_name)[-1]
 
@@ -180,8 +170,8 @@ def add_new_library(
 
     client_documentation = f"https://cloud.google.com/java/docs/reference/{distribution_name_short}/latest/overview"
 
-    if destination_name is None:
-        destination_name = f"java-{api_shortname}"
+    if library_name is None:
+        library_name = f"java-{api_shortname}"
 
     if api_shortname == "":
         sys.exit("api_shortname is empty")
@@ -191,11 +181,11 @@ def add_new_library(
         config = yaml.load(file_stream)
 
     # confirm library doesn't exist both in the monorepo and config yaml
-    path_to_library = os.path.join(script_dir, "..", "..", destination_name)
+    path_to_library = os.path.join(script_dir, "..", "..", library_name)
 
     for library in config["libraries"]:
-        if __compute_destination_name(library) == destination_name:
-            print(f"library {destination_name} already exists")
+        if __compute_library_name(library) == library_name:
+            print(f"library {library_name} already exists")
             sys.exit(1)
 
     new_library = {
@@ -205,10 +195,8 @@ def add_new_library(
         "api_description": api_description,
         "client_documentation": client_documentation,
         "release_level": release_level,
-        "language": 'java',
-        "repo": f"googleapis/java-{output_name}",
-        "repo_short": f"java-{output_name}",
         "distribution_name": distribution_name,
+        "library_name": library_name,
         "api_id": api_id,
         "library_type": library_type,
         "GAPICs": [{
@@ -222,7 +210,7 @@ def add_new_library(
     __add_item_if_set(new_library, "distribution_name", distribution_name)
 
     config["libraries"].append(new_library)
-    config["libraries"] = sorted(config["libraries"], key=__compute_destination_name)
+    config["libraries"] = sorted(config["libraries"], key=__compute_library_name)
 
 
     with open(path_to_yaml, "w") as file_stream:
@@ -234,7 +222,7 @@ def __add_item_if_set(target, key, value):
         target[key] = value
 
 
-def __compute_destination_name(library: dict) -> str:
+def __compute_library_name(library: dict) -> str:
     if "library_name" in library:
         return f'java-{library["library_name"]}'
     return f'java-{library["api_shortname"]}'
