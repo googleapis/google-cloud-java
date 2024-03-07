@@ -1,4 +1,4 @@
-# New client generation (Workflow)
+# New client generation (GitHub Action)
 This new generation workflow enables generation of new libraries by
  - appending a new library to our [generation_config.yaml](https://github.com/googleapis/google-cloud-java/blob/c7429c0eec419c01d4e2fe14d063b9335efb810b/generation_config.yaml).
  - running the hermetic build scripts docker image and
