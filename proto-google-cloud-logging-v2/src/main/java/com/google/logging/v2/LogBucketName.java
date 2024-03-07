@@ -16,7 +16,6 @@
 
 package com.google.logging.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -131,22 +130,18 @@ public class LogBucketName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationBucketBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationBucketBuilder newOrganizationLocationBucketBuilder() {
     return new OrganizationLocationBucketBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationBucketBuilder newFolderLocationBucketBuilder() {
     return new FolderLocationBucketBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static BillingAccountLocationBucketBuilder newBillingAccountLocationBucketBuilder() {
     return new BillingAccountLocationBucketBuilder();
   }
@@ -159,13 +154,11 @@ public class LogBucketName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setBucket(bucket).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogBucketName ofProjectLocationBucketName(
       String project, String location, String bucket) {
     return newBuilder().setProject(project).setLocation(location).setBucket(bucket).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogBucketName ofOrganizationLocationBucketName(
       String organization, String location, String bucket) {
     return newOrganizationLocationBucketBuilder()
@@ -175,7 +168,6 @@ public class LogBucketName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogBucketName ofFolderLocationBucketName(
       String folder, String location, String bucket) {
     return newFolderLocationBucketBuilder()
@@ -185,7 +177,6 @@ public class LogBucketName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogBucketName ofBillingAccountLocationBucketName(
       String billingAccount, String location, String bucket) {
     return newBillingAccountLocationBucketBuilder()
@@ -204,7 +195,6 @@ public class LogBucketName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationBucketName(
       String project, String location, String bucket) {
     return newBuilder()
@@ -215,7 +205,6 @@ public class LogBucketName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationBucketName(
       String organization, String location, String bucket) {
     return newOrganizationLocationBucketBuilder()
@@ -226,7 +215,6 @@ public class LogBucketName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationBucketName(
       String folder, String location, String bucket) {
     return newFolderLocationBucketBuilder()
@@ -237,7 +225,6 @@ public class LogBucketName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountLocationBucketName(
       String billingAccount, String location, String bucket) {
     return newBillingAccountLocationBucketBuilder()
@@ -426,7 +413,6 @@ public class LogBucketName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/locations/{location}/buckets/{bucket}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationBucketBuilder {
     private String organization;
     private String location;
@@ -467,7 +453,6 @@ public class LogBucketName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/locations/{location}/buckets/{bucket}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationBucketBuilder {
     private String folder;
     private String location;
@@ -508,7 +493,6 @@ public class LogBucketName implements ResourceName {
   }
 
   /** Builder for billingAccounts/{billing_account}/locations/{location}/buckets/{bucket}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLocationBucketBuilder {
     private String billingAccount;
     private String location;

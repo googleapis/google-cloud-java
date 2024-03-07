@@ -16,7 +16,6 @@
 
 package com.google.logging.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -117,22 +116,18 @@ public class LogName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLogBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLogBuilder newOrganizationLogBuilder() {
     return new OrganizationLogBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLogBuilder newFolderLogBuilder() {
     return new FolderLogBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static BillingAccountLogBuilder newBillingAccountLogBuilder() {
     return new BillingAccountLogBuilder();
   }
@@ -145,22 +140,18 @@ public class LogName implements ResourceName {
     return newBuilder().setProject(project).setLog(log).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogName ofProjectLogName(String project, String log) {
     return newBuilder().setProject(project).setLog(log).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogName ofOrganizationLogName(String organization, String log) {
     return newOrganizationLogBuilder().setOrganization(organization).setLog(log).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogName ofFolderLogName(String folder, String log) {
     return newFolderLogBuilder().setFolder(folder).setLog(log).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogName ofBillingAccountLogName(String billingAccount, String log) {
     return newBillingAccountLogBuilder().setBillingAccount(billingAccount).setLog(log).build();
   }
@@ -169,22 +160,18 @@ public class LogName implements ResourceName {
     return newBuilder().setProject(project).setLog(log).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLogName(String project, String log) {
     return newBuilder().setProject(project).setLog(log).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLogName(String organization, String log) {
     return newOrganizationLogBuilder().setOrganization(organization).setLog(log).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLogName(String folder, String log) {
     return newFolderLogBuilder().setFolder(folder).setLog(log).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountLogName(String billingAccount, String log) {
     return newBillingAccountLogBuilder()
         .setBillingAccount(billingAccount)
@@ -350,7 +337,6 @@ public class LogName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/logs/{log}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLogBuilder {
     private String organization;
     private String log;
@@ -381,7 +367,6 @@ public class LogName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/logs/{log}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLogBuilder {
     private String folder;
     private String log;
@@ -412,7 +397,6 @@ public class LogName implements ResourceName {
   }
 
   /** Builder for billingAccounts/{billing_account}/logs/{log}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLogBuilder {
     private String billingAccount;
     private String log;

@@ -16,7 +16,6 @@
 
 package com.google.logging.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -117,22 +116,18 @@ public class LogSinkName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectSinkBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationSinkBuilder newOrganizationSinkBuilder() {
     return new OrganizationSinkBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderSinkBuilder newFolderSinkBuilder() {
     return new FolderSinkBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static BillingAccountSinkBuilder newBillingAccountSinkBuilder() {
     return new BillingAccountSinkBuilder();
   }
@@ -145,22 +140,18 @@ public class LogSinkName implements ResourceName {
     return newBuilder().setProject(project).setSink(sink).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogSinkName ofProjectSinkName(String project, String sink) {
     return newBuilder().setProject(project).setSink(sink).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogSinkName ofOrganizationSinkName(String organization, String sink) {
     return newOrganizationSinkBuilder().setOrganization(organization).setSink(sink).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogSinkName ofFolderSinkName(String folder, String sink) {
     return newFolderSinkBuilder().setFolder(folder).setSink(sink).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogSinkName ofBillingAccountSinkName(String billingAccount, String sink) {
     return newBillingAccountSinkBuilder().setBillingAccount(billingAccount).setSink(sink).build();
   }
@@ -169,12 +160,10 @@ public class LogSinkName implements ResourceName {
     return newBuilder().setProject(project).setSink(sink).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectSinkName(String project, String sink) {
     return newBuilder().setProject(project).setSink(sink).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationSinkName(String organization, String sink) {
     return newOrganizationSinkBuilder()
         .setOrganization(organization)
@@ -183,12 +172,10 @@ public class LogSinkName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderSinkName(String folder, String sink) {
     return newFolderSinkBuilder().setFolder(folder).setSink(sink).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountSinkName(String billingAccount, String sink) {
     return newBillingAccountSinkBuilder()
         .setBillingAccount(billingAccount)
@@ -354,7 +341,6 @@ public class LogSinkName implements ResourceName {
   }
 
   /** Builder for organizations/{organization}/sinks/{sink}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationSinkBuilder {
     private String organization;
     private String sink;
@@ -385,7 +371,6 @@ public class LogSinkName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/sinks/{sink}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderSinkBuilder {
     private String folder;
     private String sink;
@@ -416,7 +401,6 @@ public class LogSinkName implements ResourceName {
   }
 
   /** Builder for billingAccounts/{billing_account}/sinks/{sink}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountSinkBuilder {
     private String billingAccount;
     private String sink;

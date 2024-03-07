@@ -16,7 +16,6 @@
 
 package com.google.logging.v2;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -141,22 +140,18 @@ public class LinkName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationBucketLinkBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationBucketLinkBuilder newOrganizationLocationBucketLinkBuilder() {
     return new OrganizationLocationBucketLinkBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static FolderLocationBucketLinkBuilder newFolderLocationBucketLinkBuilder() {
     return new FolderLocationBucketLinkBuilder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static BillingAccountLocationBucketLinkBuilder
       newBillingAccountLocationBucketLinkBuilder() {
     return new BillingAccountLocationBucketLinkBuilder();
@@ -175,7 +170,6 @@ public class LinkName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LinkName ofProjectLocationBucketLinkName(
       String project, String location, String bucket, String link) {
     return newBuilder()
@@ -186,7 +180,6 @@ public class LinkName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LinkName ofOrganizationLocationBucketLinkName(
       String organization, String location, String bucket, String link) {
     return newOrganizationLocationBucketLinkBuilder()
@@ -197,7 +190,6 @@ public class LinkName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LinkName ofFolderLocationBucketLinkName(
       String folder, String location, String bucket, String link) {
     return newFolderLocationBucketLinkBuilder()
@@ -208,7 +200,6 @@ public class LinkName implements ResourceName {
         .build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LinkName ofBillingAccountLocationBucketLinkName(
       String billingAccount, String location, String bucket, String link) {
     return newBillingAccountLocationBucketLinkBuilder()
@@ -229,7 +220,6 @@ public class LinkName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationBucketLinkName(
       String project, String location, String bucket, String link) {
     return newBuilder()
@@ -241,7 +231,6 @@ public class LinkName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatOrganizationLocationBucketLinkName(
       String organization, String location, String bucket, String link) {
     return newOrganizationLocationBucketLinkBuilder()
@@ -253,7 +242,6 @@ public class LinkName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatFolderLocationBucketLinkName(
       String folder, String location, String bucket, String link) {
     return newFolderLocationBucketLinkBuilder()
@@ -265,7 +253,6 @@ public class LinkName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatBillingAccountLocationBucketLinkName(
       String billingAccount, String location, String bucket, String link) {
     return newBillingAccountLocationBucketLinkBuilder()
@@ -486,7 +473,6 @@ public class LinkName implements ResourceName {
   /**
    * Builder for organizations/{organization}/locations/{location}/buckets/{bucket}/links/{link}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationBucketLinkBuilder {
     private String organization;
     private String location;
@@ -537,7 +523,6 @@ public class LinkName implements ResourceName {
   }
 
   /** Builder for folders/{folder}/locations/{location}/buckets/{bucket}/links/{link}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationBucketLinkBuilder {
     private String folder;
     private String location;
@@ -591,7 +576,6 @@ public class LinkName implements ResourceName {
    * Builder for
    * billingAccounts/{billing_account}/locations/{location}/buckets/{bucket}/links/{link}.
    */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLocationBucketLinkBuilder {
     private String billingAccount;
     private String location;
