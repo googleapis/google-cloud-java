@@ -172,6 +172,11 @@ def main(ctx):
     type=str,
     help="Issue tracker of the library"
 )
+@click.option(
+    "--extra-versioned-modules",
+    type=str,
+    help="Extra modules of the libraries that will be managed via versions.txt"
+)
 def add_new_library(
     api_shortname,
     name_pretty,
@@ -193,6 +198,7 @@ def add_new_library(
     excluded_poms,
     googleapis_committish,
     issue_tracker,
+    extra_versioned_modules,
 ):
     output_name = library_name if library_name else api_shortname
     if distribution_name is None:
@@ -251,6 +257,7 @@ def add_new_library(
     __add_item_if_set(new_library, "excluded_poms", excluded_poms)
     __add_item_if_set(new_library, "googleapis_commitish", googleapis_committish)
     __add_item_if_set(new_library, "issue_tracker", issue_tracker)
+    __add_item_if_set(new_library, "extra_versioned_modules", extra_versioned_modules)
 
 
     config["libraries"].append(new_library)
