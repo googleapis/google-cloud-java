@@ -148,6 +148,12 @@ def main(ctx):
     type=str,
     help="Team owning this library"
 )
+@click.option(
+    "--excluded-dependencies",
+    type=str,
+    help="Dependencies excluded from this library. The modules specified "
+    "here will not be added to the poms when postprocessing."
+)
 def add_new_library(
     api_shortname,
     name_pretty,
@@ -165,6 +171,7 @@ def add_new_library(
     library_type,
     api_reference,
     codeowner_team,
+    excluded_dependencies,
 ):
     output_name = library_name if library_name else api_shortname
     if distribution_name is None:
@@ -214,6 +221,7 @@ def add_new_library(
     __add_item_if_set(new_library, "distribution_name", distribution_name)
     __add_item_if_set(new_library, "api_reference", api_reference)
     __add_item_if_set(new_library, "codeowner_team", codeowner_team)
+    __add_item_if_set(new_library, "excluded_dependencies", excluded_dependencies)
 
     config["libraries"].append(new_library)
     config["libraries"] = sorted(config["libraries"], key=__compute_library_name)
