@@ -341,10 +341,7 @@ public class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(String text) throws IOException {
-    Content content = ContentMaker.fromString(text);
-    CountTokensRequest.Builder requestBuilder =
-        CountTokensRequest.newBuilder().addAllContents(Arrays.asList(content));
-    return countTokensFromBuilder(requestBuilder);
+    return countTokens(ContentMaker.fromString(text));
   }
 
   /**
@@ -370,25 +367,27 @@ public class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(List<Content> contents) throws IOException {
-    CountTokensRequest.Builder requestBuilder =
-        CountTokensRequest.newBuilder().addAllContents(contents);
-    return countTokensFromBuilder(requestBuilder);
+    CountTokensRequest request =
+        CountTokensRequest.newBuilder()
+            .setEndpoint(resourceName)
+            .setModel(resourceName)
+            .addAllContents(contents)
+            .build();
+    return countTokensFromRequest(request);
   }
 
   /**
-   * Send CountTokensRequest given a request builder.
+   * Send CountTokensRequest given a request message.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.CountTokensRequest.Builder} that
-   *     contains a list of contents
+   * @param request a {@link com.google.cloud.vertexai.api.CountTokensRequest} that contains a list
+   *     of contents
    * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
   @BetaApi
-  private CountTokensResponse countTokensFromBuilder(CountTokensRequest.Builder requestBuilder)
+  private CountTokensResponse countTokensFromRequest(CountTokensRequest request)
       throws IOException {
-    CountTokensRequest request =
-        requestBuilder.setEndpoint(this.resourceName).setModel(this.resourceName).build();
     if (this.transport == Transport.REST) {
       return vertexAi.getLlmUtilityRestClient().countTokens(request);
     } else {
