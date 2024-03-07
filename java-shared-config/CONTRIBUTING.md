@@ -1,7 +1,10 @@
 # How to Contribute
 
-We'd love to accept your patches and contributions to this project. There are
-just a few small guidelines you need to follow.
+The code in this repository is only intended to be used as part of the Google Cloud SDK build/test/release infrastructure, and it is not a supported Google product. Please make sure you understand the purpose of this repo before contributing. If you still would like to contribute, please follow the guidelines below before opening an issue or a PR:
+1. Ensure the issue was not already reported.
+2. Open a new issue if you are unable to find an existing issue addressing your problem. Make sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
+3. Discuss the priority and potential solutions with the maintainers in the issue. The maintainers would review the issue and add a label "Accepting Contributions" once the issue is ready for accepting contributions.
+4. Open a PR only if the issue is labeled with "Accepting Contributions", ensure the PR description clearly describes the problem and solution. Note that an open PR without an "Accepting Contributions" issue will not be accepted.
 
 ## Contributor License Agreement
 
