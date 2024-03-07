@@ -217,7 +217,6 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -259,7 +258,6 @@ public class SchemaServiceSettings extends ClientSettings<SchemaServiceSettings>
       return new Builder(SchemaServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SchemaServiceStubSettings.newHttpJsonBuilder());
     }

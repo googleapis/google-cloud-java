@@ -16,7 +16,6 @@
 
 package com.google.pubsub.v1;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -71,7 +70,6 @@ public class TopicName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectTopicBuilder() {
     return new Builder();
   }
@@ -84,12 +82,10 @@ public class TopicName implements ResourceName {
     return newBuilder().setProject(project).setTopic(topic).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TopicName ofProjectTopicName(String project, String topic) {
     return newBuilder().setProject(project).setTopic(topic).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TopicName ofDeletedTopicName() {
     return new TopicName("_deleted-topic_");
   }
@@ -98,12 +94,10 @@ public class TopicName implements ResourceName {
     return newBuilder().setProject(project).setTopic(topic).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectTopicName(String project, String topic) {
     return newBuilder().setProject(project).setTopic(topic).build().toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatDeletedTopicName() {
     return "_deleted-topic_";
   }

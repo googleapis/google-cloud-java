@@ -216,7 +216,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -258,7 +257,6 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
       return new Builder(PublisherStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(PublisherStubSettings.newHttpJsonBuilder());
     }

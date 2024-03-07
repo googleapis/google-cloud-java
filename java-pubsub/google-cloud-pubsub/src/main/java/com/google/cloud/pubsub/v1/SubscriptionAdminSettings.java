@@ -256,7 +256,6 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -298,7 +297,6 @@ public class SubscriptionAdminSettings extends ClientSettings<SubscriptionAdminS
       return new Builder(SubscriberStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(SubscriberStubSettings.newHttpJsonBuilder());
     }
