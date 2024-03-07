@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.37.0 (2024-03-06)
+
+### Features
+
+* add `start_time` to Profile proto ([#10434](https://github.com/googleapis/google-cloud-java/issues/10434)) ([c04c4f6](https://github.com/googleapis/google-cloud-java/commit/c04c4f676d291e63360236d79afebf4f437e3d17))
+
+
+
 ## 2.36.0 (2024-02-20)
 
 * No change

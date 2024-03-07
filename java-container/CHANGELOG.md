@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.40.0 (2024-03-06)
+
+### Features
+
+* add API to enable Provisioning Request API on existing nodepools ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+* add API to enable Provisioning Request API on existing nodepools ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+* add secondary boot disks field to NodePool API ([#10422](https://github.com/googleapis/google-cloud-java/issues/10422)) ([7d0f1cc](https://github.com/googleapis/google-cloud-java/commit/7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9))
+
+
+
 ## 2.39.0 (2024-02-20)
 
 * No change

@@ -53,8 +53,10 @@
     <module>java-binary-authorization</module>
     <module>java-certificate-manager</module>
     <module>java-channel</module>
+    <module>java-chat</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
+    <module>java-cloudcontrolspartner</module>
     <module>java-cloudquotas</module>
     <module>java-cloudsupport</module>
     <module>java-compute</module>
@@ -187,6 +189,7 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
+    <module>java-workspaceevents</module>
     <module>java-workstations</module>
 
   </modules>

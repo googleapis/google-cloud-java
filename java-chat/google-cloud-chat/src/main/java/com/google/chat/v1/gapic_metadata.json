@@ -1,0 +1,84 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.chat.v1",
+  "libraryPackage": "com.google.chat.v1",
+  "services": {
+    "ChatService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ChatServiceClient",
+          "rpcs": {
+            "CompleteImportSpace": {
+              "methods": ["completeImportSpace", "completeImportSpaceCallable"]
+            },
+            "CreateMembership": {
+              "methods": ["createMembership", "createMembership", "createMembership", "createMembershipCallable"]
+            },
+            "CreateMessage": {
+              "methods": ["createMessage", "createMessage", "createMessage", "createMessageCallable"]
+            },
+            "CreateReaction": {
+              "methods": ["createReaction", "createReaction", "createReaction", "createReactionCallable"]
+            },
+            "CreateSpace": {
+              "methods": ["createSpace", "createSpace", "createSpaceCallable"]
+            },
+            "DeleteMembership": {
+              "methods": ["deleteMembership", "deleteMembership", "deleteMembership", "deleteMembershipCallable"]
+            },
+            "DeleteMessage": {
+              "methods": ["deleteMessage", "deleteMessage", "deleteMessage", "deleteMessageCallable"]
+            },
+            "DeleteReaction": {
+              "methods": ["deleteReaction", "deleteReaction", "deleteReaction", "deleteReactionCallable"]
+            },
+            "DeleteSpace": {
+              "methods": ["deleteSpace", "deleteSpace", "deleteSpace", "deleteSpaceCallable"]
+            },
+            "FindDirectMessage": {
+              "methods": ["findDirectMessage", "findDirectMessageCallable"]
+            },
+            "GetAttachment": {
+              "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
+            },
+            "GetMembership": {
+              "methods": ["getMembership", "getMembership", "getMembership", "getMembershipCallable"]
+            },
+            "GetMessage": {
+              "methods": ["getMessage", "getMessage", "getMessage", "getMessageCallable"]
+            },
+            "GetSpace": {
+              "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
+            },
+            "ListMemberships": {
+              "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
+            },
+            "ListMessages": {
+              "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
+            },
+            "ListReactions": {
+              "methods": ["listReactions", "listReactions", "listReactions", "listReactionsPagedCallable", "listReactionsCallable"]
+            },
+            "ListSpaces": {
+              "methods": ["listSpaces", "listSpaces", "listSpacesPagedCallable", "listSpacesCallable"]
+            },
+            "SetUpSpace": {
+              "methods": ["setUpSpace", "setUpSpaceCallable"]
+            },
+            "UpdateMessage": {
+              "methods": ["updateMessage", "updateMessage", "updateMessageCallable"]
+            },
+            "UpdateSpace": {
+              "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]
+            },
+            "UploadAttachment": {
+              "methods": ["uploadAttachment", "uploadAttachmentCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

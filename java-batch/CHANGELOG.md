@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.37.0 (2024-03-06)
+
+### Features
+
+* Remove UUID specification in comment ([#10408](https://github.com/googleapis/google-cloud-java/issues/10408)) ([391f4f0](https://github.com/googleapis/google-cloud-java/commit/391f4f08da31e026ab7ab08b3118438bac4afd57))
+
+
+
 ## 0.36.0 (2024-02-20)
 
 ### Features

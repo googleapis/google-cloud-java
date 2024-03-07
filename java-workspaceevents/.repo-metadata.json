@@ -1,0 +1,17 @@
+{
+  "api_shortname": "workspaceevents",
+  "name_pretty": "Google Workspace Events API",
+  "product_documentation": "https://developers.google.com/workspace/events",
+  "api_description": "The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-workspaceevents/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/java-workspaceevents",
+  "repo_short": "java-workspaceevents",
+  "distribution_name": "com.google.cloud:google-cloud-workspaceevents",
+  "api_id": "workspaceevents.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
+  "rest_documentation": "https://developers.google.com/workspace/events/reference/rest/"
+}

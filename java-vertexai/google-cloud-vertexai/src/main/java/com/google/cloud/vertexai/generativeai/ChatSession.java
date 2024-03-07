@@ -80,8 +80,10 @@ public class ChatSession {
    * @param generationConfig the generation config.
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
+   * @deprecated use {@link #sendMessageStream(String, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, GenerationConfig generationConfig) throws IOException {
     return sendMessageStream(text, generationConfig, null);
@@ -94,8 +96,10 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
+   * @deprecated use {@link #sendMessageStream(String, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, List<SafetySetting> safetySettings) throws IOException {
     return sendMessageStream(text, null, safetySettings);
@@ -109,8 +113,10 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
+   * @deprecated use {@link #sendMessageStream(String, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -166,8 +172,10 @@ public class ChatSession {
    * @param generationConfig the generation config.
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
+   * @deprecated use {@link #sendMessageStream(Content, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, GenerationConfig generationConfig)
       throws IOException, IllegalArgumentException {
@@ -181,8 +189,10 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
+   * @deprecated use {@link #sendMessageStream(Content, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, List<SafetySetting> safetySettings)
       throws IOException, IllegalArgumentException {
@@ -197,8 +207,10 @@ public class ChatSession {
    * @param safetySettings the safety settings.
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
+   * @deprecated use {@link #sendMessageStream(Content, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public ResponseStream<GenerateContentResponse> sendMessageStream(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -243,8 +255,10 @@ public class ChatSession {
    * @param text the message to be sent.
    * @param generationConfig the generation config.
    * @return a response.
+   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public GenerateContentResponse sendMessage(String text, GenerationConfig generationConfig)
       throws IOException {
     return sendMessage(text, generationConfig, null);
@@ -256,8 +270,10 @@ public class ChatSession {
    * @param text the message to be sent.
    * @param safetySettings the safety settings.
    * @return a response.
+   * @deprecated use {@link #sendMessage(String, GenerateContentConfig)} instead
    */
   @BetaApi("safetySettings is a preview feature.")
+  @Deprecated
   public GenerateContentResponse sendMessage(String text, List<SafetySetting> safetySettings)
       throws IOException {
     return sendMessage(text, null, safetySettings);
@@ -270,8 +286,10 @@ public class ChatSession {
    * @param generationConfig the generation config.
    * @param safetySettings the safety settings.
    * @return a response.
+   * @deprecated use {@link #sendMessage(String, GenerateContentConfig)} instead
    */
   @BetaApi("Both sendMessage and safetySettings are preview features.")
+  @Deprecated
   public GenerateContentResponse sendMessage(
       String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
@@ -321,8 +339,10 @@ public class ChatSession {
    * @param content the content to be sent.
    * @param generationConfig the generation config.
    * @return a response.
+   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
    */
   @BetaApi
+  @Deprecated
   public GenerateContentResponse sendMessage(Content content, GenerationConfig generationConfig)
       throws IOException {
     return sendMessage(content, generationConfig, null);
@@ -334,8 +354,10 @@ public class ChatSession {
    * @param content the content to be sent.
    * @param safetySettings the safety settings.
    * @return a response.
+   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
    */
   @BetaApi("Both sendMessage and safetySettings are preview features.")
+  @Deprecated
   public GenerateContentResponse sendMessage(Content content, List<SafetySetting> safetySettings)
       throws IOException {
     return sendMessage(content, null, safetySettings);
@@ -348,8 +370,10 @@ public class ChatSession {
    * @param generationConfig the generation config.
    * @param safetySettings the safety settings.
    * @return a response.
+   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
    */
   @BetaApi("Both sendMessage and safetySettings are preview features.")
+  @Deprecated
   public GenerateContentResponse sendMessage(
       Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {

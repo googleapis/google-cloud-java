@@ -1,0 +1,16 @@
+{
+  "api_shortname": "cloudcontrolspartner",
+  "name_pretty": "Cloud Controls Partner API",
+  "product_documentation": "https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners",
+  "api_description": "Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-cloudcontrolspartner/latest/overview",
+  "release_level": "preview",
+  "transport": "both",
+  "language": "java",
+  "repo": "googleapis/java-cloudcontrolspartner",
+  "repo_short": "java-cloudcontrolspartner",
+  "distribution_name": "com.google.cloud:google-cloud-cloudcontrolspartner",
+  "api_id": "cloudcontrolspartner.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}

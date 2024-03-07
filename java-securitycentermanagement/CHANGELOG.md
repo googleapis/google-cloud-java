@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 (2024-03-06)
+
+### Features
+
+* Clarify documentation for ListDescendantSecurityHealthAnalyticsCustomModules RPC and CostumConfig message ([#10443](https://github.com/googleapis/google-cloud-java/issues/10443)) ([8dfd142](https://github.com/googleapis/google-cloud-java/commit/8dfd142c95c4f37d327577db653832e7a84c3c66))
+
+
+
 ## 0.4.0 (2024-02-20)
 
 ### Features

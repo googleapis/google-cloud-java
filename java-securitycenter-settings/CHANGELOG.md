@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.40.0 (2024-03-06)
+
+### Features
+
+* Add Backup DR field to finding's list of attributes ([ce5aa34](https://github.com/googleapis/google-cloud-java/commit/ce5aa34a223074197cdec0bd5c550941a4e04777))
+* Add container.create_time, vulnerability.offending_package, vulnerability.fixed_package, vulnerability.security_bulletin, vulnerability.cve.impact, vulnerability.cve.exploitation_activity, vulnerability.cve.observed_in_the_wild, vulnerability.cve... ([#10417](https://github.com/googleapis/google-cloud-java/issues/10417)) ([ce5aa34](https://github.com/googleapis/google-cloud-java/commit/ce5aa34a223074197cdec0bd5c550941a4e04777))
+* Add load balancer, log entry, org policy, database.version, exfiltration.total_exfiltrated_bytes, file.disk_path, indicator.signature_type, and kubernetes.objects to finding's list of attributes ([ce5aa34](https://github.com/googleapis/google-cloud-java/commit/ce5aa34a223074197cdec0bd5c550941a4e04777))
+* Update the Java code generator (gapic-generator-java) to 2.37.0 ([#10448](https://github.com/googleapis/google-cloud-java/issues/10448)) ([a90ba11](https://github.com/googleapis/google-cloud-java/commit/a90ba112b2ba031fab0e42cd4f2b07b5c2df8bf8))
+
+
+
 ## 0.39.0 (2024-02-20)
 
 ### Features
