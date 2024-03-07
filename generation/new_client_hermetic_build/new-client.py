@@ -180,14 +180,6 @@ def add_new_library(
     with open(path_to_yaml, "r") as file_stream:
         config = yaml.load(file_stream)
 
-    # confirm library doesn't exist both in the monorepo and config yaml
-    path_to_library = os.path.join(script_dir, "..", "..", library_name)
-
-    for library in config["libraries"]:
-        if __compute_library_name(library) == library_name:
-            print(f"library {library_name} already exists")
-            sys.exit(1)
-
     new_library = {
         "api_shortname": api_shortname,
         "name_pretty": name_pretty,
