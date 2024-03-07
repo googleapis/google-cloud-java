@@ -163,16 +163,16 @@ jobs:
           \`\`\`
           python generation/new_client_hermetic_build/new-client.py add-new-client ${GENERATION_ARGUMENTS}
 
-          docker run --rm \
-            ${DOCKER_VOLUMES} \
-            -v /tmp:/tmp \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            -e \"RUNNING_IN_DOCKER=true\" \
-            -e \"REPO_BINDING_VOLUMES=${DOCKER_VOLUMES}\" \
-            gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
-            python /src/generate_repo.py generate \
-            --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \
-            --repository-path=/workspace/google-cloud-java \
+          docker run --rm \\
+            ${DOCKER_VOLUMES} \\
+            -v /tmp:/tmp \\
+            -v /var/run/docker.sock:/var/run/docker.sock \\
+            -e \"RUNNING_IN_DOCKER=true\" \\
+            -e \"REPO_BINDING_VOLUMES=${DOCKER_VOLUMES}\" \\
+            gcr.io/cloud-devrel-public-resources/java-library-generation:latest \\
+            python /src/generate_repo.py generate \\
+            --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \\
+            --repository-path=/workspace/google-cloud-java \\
             --target-library-api-shortname=${API_SHORTNAME}
 
           \`\`\`"
