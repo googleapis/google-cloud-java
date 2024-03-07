@@ -1,6 +1,6 @@
 """
 Script for enabling generation of a new library
-Creates initial files and appends a new library to generation_config.yaml
+Appends a new library to `generation_config.yaml`
 
 Some of the logic is copied from new-client.py as
 a transition step while we test the hermetic build scripts
