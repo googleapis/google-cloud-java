@@ -64,7 +64,7 @@ def main(ctx):
     "then you specify this value as 'google/maps/routing'",
 )
 @click.option(
-    "--product-documentation",
+    "--product-docs",
     required=True,
     type=str,
     prompt="Product Documentation URL",
@@ -139,13 +139,13 @@ def main(ctx):
          "maintained or generated"
 )
 def add_new_library(
-    api_shortname, #
-    name_pretty, #
+    api_shortname,
+    name_pretty,
     proto_path,
-    product_documentation,
+    product_docs,
     rest_docs,
     rpc_docs,
-    api_description, #
+    api_description,
     library_name,
     distribution_name,
     release_level,
@@ -163,9 +163,9 @@ def add_new_library(
     if api_id is None:
         api_id = f"{api_shortname}.googleapis.com"
 
-    if not product_documentation.startswith("https"):
+    if not product_docs.startswith("https"):
         sys.exit(
-            f"product_documentation must starts with 'https://' - actual value is {product_documentation}"
+            f"product_docs must starts with 'https://' - actual value is {product_docs}"
         )
 
     client_documentation = f"https://cloud.google.com/java/docs/reference/{distribution_name_short}/latest/overview"
@@ -183,7 +183,7 @@ def add_new_library(
     new_library = {
         "api_shortname": api_shortname,
         "name_pretty": name_pretty,
-        "product_documentation": product_documentation,
+        "product_documentation": product_docs,
         "api_description": api_description,
         "client_documentation": client_documentation,
         "release_level": release_level,

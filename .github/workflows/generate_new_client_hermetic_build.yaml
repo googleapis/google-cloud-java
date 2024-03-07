@@ -19,10 +19,10 @@ on:
             directory that contains the proto files (without the version).
             For example, to generate the library for 'google/maps/routing/v2',
             then you specify this value as 'google/maps/routing'
-        product_documentation:
+        product_docs:
           required: true
           type: string
-          description: "`product_documentation`: Documentation URL that appears in README.md"
+          description: "`product_docs`: Documentation URL that appears in README.md"
         rest_docs:
           required: false
           type: string
@@ -67,7 +67,7 @@ jobs:
           arguments="--api_shortname=\"${API_SHORTNAME}\" \
           --proto-path=\"${PROTO_PATH}\" \
           --name-pretty=\"${NAME_PRETTY}\" \
-          --product-documentation=\"${PRODUCT_DOCS}\" \
+          --product-docs=\"${PRODUCT_DOCS}\" \
           --api-description=\"${API_DESCRIPTION}\""
 
           # helper function that appends a python argument only if specified in the GH action inputs
@@ -93,7 +93,7 @@ jobs:
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           NAME_PRETTY: ${{ github.event.inputs.name_pretty }}
           PROTO_PATH: ${{ github.event.inputs.proto_path }}
-          PRODUCT_DOCUMENTATION: ${{ github.event.inputs.product_documentation }}
+          PRODUCT_DOCS: ${{ github.event.inputs.product_docs }}
           REST_DOCS: ${{ github.event.inputs.rest_docs }}
           RPC_DOCS: ${{ github.event.inputs.rpc_docs }}
           API_DESCRIPTION: ${{ github.event.inputs.api_description }}
