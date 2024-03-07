@@ -115,6 +115,7 @@ def main(ctx):
     show_default=True,
     help="A label that appears in repo-metadata.json. The first library "
          "generation is always 'preview'."
+)
 @click.option(
     "--api-id",
     type=str,
@@ -149,7 +150,7 @@ def main(ctx):
     type=str,
     default="GAPIC_AUTO",
     show_default=True,
-    help="A label that appear in repo-metadata.json to tell how the library is "
+    help="A label that appears in repo-metadata.json to tell how the library is "
          "maintained or generated"
 )
 def add_new_library(
