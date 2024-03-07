@@ -100,7 +100,7 @@ def main(ctx):
     type=str,
     help="Maven coordinates of the generated library. By default it's "
     "com.google.cloud:google-cloud-<api_shortname>. "
-    "It cannot be set at the same time with group_id"
+    "It cannot be set at the same time with group_id",
 )
 @click.option(
     "--release-level",
@@ -108,13 +108,13 @@ def main(ctx):
     default="preview",
     show_default=True,
     help="A label that appears in repo-metadata.json. The first library "
-         "generation is always 'preview'."
+    "generation is always 'preview'.",
 )
 @click.option(
     "--api-id",
     type=str,
     help="The value of the apiid parameter used in README.md It has link to "
-         "https://console.cloud.google.com/flows/enableapi?apiid=<api_id>"
+    "https://console.cloud.google.com/flows/enableapi?apiid=<api_id>",
 )
 @click.option(
     "--requires-billing",
@@ -122,15 +122,13 @@ def main(ctx):
     default=True,
     show_default=True,
     help="Based on this value, README.md explains whether billing setup is "
-         "needed or not."
+    "needed or not.",
 )
 @click.option(
     "--group-id",
     type=str,
-    default="com.google.cloud",
-    show_default=True,
     help="The group ID of the artifact when distribution_name is not set. "
-    "It cannot be set at the same time as distribution_name"
+    "It cannot be set at the same time as distribution_name",
 )
 @click.option(
     "--library-type",
@@ -138,44 +136,32 @@ def main(ctx):
     default="GAPIC_AUTO",
     show_default=True,
     help="A label that appears in repo-metadata.json to tell how the library is "
-         "maintained or generated"
+    "maintained or generated",
 )
-@click.option(
-    "--api-reference",
-    type=str,
-    help="API reference for this library"
-)
-@click.option(
-    "--codeowner-team",
-    type=str,
-    help="Team owning this library"
-)
+@click.option("--api-reference", type=str, help="API reference for this library")
+@click.option("--codeowner-team", type=str, help="Team owning this library")
 @click.option(
     "--excluded-dependencies",
     type=str,
     help="Comma-separated list of dependencies excluded from this library. The modules specified "
-    "here will not be added to the poms when postprocessing."
+    "here will not be added to the poms when postprocessing.",
 )
 @click.option(
     "--excluded-poms",
     type=str,
-    help="Comma-separated list of pom files excluded from postprocessing."
+    help="Comma-separated list of pom files excluded from postprocessing.",
 )
 @click.option(
     "--googleapis-committish",
     type=str,
     help="Committish of googleapis/googleapis to get the protos from. It will "
-    "override the repo-level committish and is not subject to automatic updates"
+    "override the repo-level committish and is not subject to automatic updates",
 )
-@click.option(
-    "--issue-tracker",
-    type=str,
-    help="Issue tracker of the library"
-)
+@click.option("--issue-tracker", type=str, help="Issue tracker of the library")
 @click.option(
     "--extra-versioned-modules",
     type=str,
-    help="Extra modules of the libraries that will be managed via versions.txt"
+    help="Extra modules of the libraries that will be managed via versions.txt",
 )
 def add_new_library(
     api_shortname,
@@ -200,15 +186,17 @@ def add_new_library(
     issue_tracker,
     extra_versioned_modules,
 ):
-    output_name = library_name if library_name else api_shortname
+    output_name = library_name.split("java-")[-1] if library_name else api_shortname
     if distribution_name is None:
+        group_id = 'com.google.cloud'
         distribution_name = f"{group_id}:google-cloud-{output_name}"
     elif group_id:
-        raise ValueError('--group-id and --distribution-name are mutually exclusive options')
+        sys.exit("--group-id and --distribution-name are mutually exclusive options")
     else:
-      group_id = distribution_name.split(':')[0]
+        group_id = distribution_name.split(":")[0]
 
     distribution_name_short = re.split(r"[:\/]", distribution_name)[-1]
+    cloud_api = distribution_name_short.startswith("google-cloud-")
 
     if api_id is None:
         api_id = f"{api_shortname}.googleapis.com"
@@ -242,9 +230,8 @@ def add_new_library(
         "api_id": api_id,
         "library_type": library_type,
         "group_id": group_id,
-        "GAPICs": [{
-            "proto_path": proto_path
-        }]
+        "cloud_api": cloud_api,
+        "GAPICs": [{"proto_path": proto_path}],
     }
 
     __add_item_if_set(new_library, "requires_billing", requires_billing)
@@ -259,10 +246,8 @@ def add_new_library(
     __add_item_if_set(new_library, "issue_tracker", issue_tracker)
     __add_item_if_set(new_library, "extra_versioned_modules", extra_versioned_modules)
 
-
     config["libraries"].append(new_library)
     config["libraries"] = sorted(config["libraries"], key=__compute_library_name)
-
 
     with open(path_to_yaml, "w") as file_stream:
         yaml.dump(config, file_stream)
