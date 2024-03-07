@@ -99,7 +99,8 @@ def main(ctx):
     "--distribution-name",
     type=str,
     help="Maven coordinates of the generated library. By default it's "
-    "com.google.cloud:google-cloud-<api_shortname>",
+    "com.google.cloud:google-cloud-<api_shortname>. "
+    "It cannot be set at the same time with group_id"
 )
 @click.option(
     "--release-level",
@@ -128,7 +129,8 @@ def main(ctx):
     type=str,
     default="com.google.cloud",
     show_default=True,
-    help="The group ID of the artifact when distribution name is not set"
+    help="The group ID of the artifact when distribution_name is not set. "
+    "It cannot be set at the same time as distribution_name"
 )
 @click.option(
     "--library-type",
@@ -189,6 +191,10 @@ def add_new_library(
     output_name = library_name if library_name else api_shortname
     if distribution_name is None:
         distribution_name = f"{group_id}:google-cloud-{output_name}"
+    elif group_id:
+        raise ValueError('--group-id and --distribution-name are mutually exclusive options')
+    else:
+      group_id = distribution_name.split(':')[0]
 
     distribution_name_short = re.split(r"[:\/]", distribution_name)[-1]
 
@@ -223,6 +229,7 @@ def add_new_library(
         "library_name": library_name,
         "api_id": api_id,
         "library_type": library_type,
+        "group_id": group_id,
         "GAPICs": [{
             "proto_path": proto_path
         }]
