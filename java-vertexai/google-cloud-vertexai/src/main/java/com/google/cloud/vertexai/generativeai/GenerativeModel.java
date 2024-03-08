@@ -968,7 +968,7 @@ public class GenerativeModel {
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (generationConfig != null) {
       requestBuilder.setGenerationConfig(generationConfig);
     } else if (this.generationConfig != null) {
@@ -982,7 +982,7 @@ public class GenerativeModel {
     if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
-    return generateContentStream(requestBuilder);
+    return generateContentStream(requestBuilder.build());
   }
 
   /**
@@ -1000,7 +1000,7 @@ public class GenerativeModel {
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (config.getGenerationConfig() != null) {
       requestBuilder.setGenerationConfig(config.getGenerationConfig());
     } else if (this.generationConfig != null) {
@@ -1017,42 +1017,36 @@ public class GenerativeModel {
       requestBuilder.addAllTools(this.tools);
     }
 
-    return generateContentStream(requestBuilder);
+    return generateContentStream(requestBuilder.build());
   }
 
   /**
    * A base generateContentStream method that will be used internally.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.GenerateContentRequest.Builder}
-   *     instance
+   * @param request a {@link com.google.cloud.vertexai.api.GenerateContentRequest} instance
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
   private ResponseStream<GenerateContentResponse> generateContentStream(
-      GenerateContentRequest.Builder requestBuilder) throws IOException {
-    GenerateContentRequest request = requestBuilder.setModel(this.resourceName).build();
-    ResponseStream<GenerateContentResponse> responseStream = null;
+      GenerateContentRequest request) throws IOException {
     if (this.transport == Transport.REST) {
-      responseStream =
-          new ResponseStream(
-              new ResponseStreamIteratorWithHistory(
-                  vertexAi
-                      .getPredictionServiceRestClient()
-                      .streamGenerateContentCallable()
-                      .call(request)
-                      .iterator()));
+      return new ResponseStream(
+          new ResponseStreamIteratorWithHistory(
+              vertexAi
+                  .getPredictionServiceRestClient()
+                  .streamGenerateContentCallable()
+                  .call(request)
+                  .iterator()));
     } else {
-      responseStream =
-          new ResponseStream(
-              new ResponseStreamIteratorWithHistory(
-                  vertexAi
-                      .getPredictionServiceClient()
-                      .streamGenerateContentCallable()
-                      .call(request)
-                      .iterator()));
+      return new ResponseStream(
+          new ResponseStreamIteratorWithHistory(
+              vertexAi
+                  .getPredictionServiceClient()
+                  .streamGenerateContentCallable()
+                  .call(request)
+                  .iterator()));
     }
-    return responseStream;
   }
 
   /**
