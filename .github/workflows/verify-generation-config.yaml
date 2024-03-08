@@ -52,6 +52,8 @@ jobs:
       shell: bash
       run: |
         repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
+        # the pr description (body) will be available in pr-description.txt after
+        # running this command.
         docker run --rm \
           ${repo_volumes} \
           -v /tmp:/tmp \
