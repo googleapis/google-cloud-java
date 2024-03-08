@@ -66,7 +66,7 @@ public class GenerateContentConfig {
     }
 
     /**
-     * Set {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used in the generate
+     * Sets {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used in the generate
      * content API call.
      *
      * @return builder for the GenerateContentConfig
@@ -78,7 +78,7 @@ public class GenerateContentConfig {
     }
 
     /**
-     * Set a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used in the
+     * Sets a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used in the
      * generate content API call.
      *
      * @return builder for the GenerateContentConfig
@@ -90,7 +90,7 @@ public class GenerateContentConfig {
     }
 
     /**
-     * Set a list of {@link com.google.cloud.vertexai.api.Tool} that will be used in the generate
+     * Sets a list of {@link com.google.cloud.vertexai.api.Tool} that will be used in the generate
      * content API call.
      *
      * @return builder for the GenerateContentConfig
