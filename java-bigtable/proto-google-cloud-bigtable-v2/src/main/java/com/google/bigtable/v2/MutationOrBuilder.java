@@ -63,6 +63,41 @@ public interface MutationOrBuilder
    *
    *
    * <pre>
+   * Incrementally updates an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.AddToCell add_to_cell = 5;</code>
+   *
+   * @return Whether the addToCell field is set.
+   */
+  boolean hasAddToCell();
+  /**
+   *
+   *
+   * <pre>
+   * Incrementally updates an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.AddToCell add_to_cell = 5;</code>
+   *
+   * @return The addToCell.
+   */
+  com.google.bigtable.v2.Mutation.AddToCell getAddToCell();
+  /**
+   *
+   *
+   * <pre>
+   * Incrementally updates an `Aggregate` cell.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.Mutation.AddToCell add_to_cell = 5;</code>
+   */
+  com.google.bigtable.v2.Mutation.AddToCellOrBuilder getAddToCellOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Deletes cells from a column.
    * </pre>
    *

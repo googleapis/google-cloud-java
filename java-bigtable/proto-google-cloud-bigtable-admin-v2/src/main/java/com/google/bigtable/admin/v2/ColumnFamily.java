@@ -123,6 +123,79 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     return gcRule_ == null ? com.google.bigtable.admin.v2.GcRule.getDefaultInstance() : gcRule_;
   }
 
+  public static final int VALUE_TYPE_FIELD_NUMBER = 3;
+  private com.google.bigtable.admin.v2.Type valueType_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of data stored in each of this family's cell values, including its
+   * full encoding. If omitted, the family only serves raw untyped bytes.
+   *
+   * For now, only the `Aggregate` type is supported.
+   *
+   * `Aggregate` can only be set at family creation and is immutable afterwards.
+   *
+   *
+   * If `value_type` is `Aggregate`, written data must be compatible with:
+   *  * `value_type.input_type` for `AddInput` mutations
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+   *
+   * @return Whether the valueType field is set.
+   */
+  @java.lang.Override
+  public boolean hasValueType() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of data stored in each of this family's cell values, including its
+   * full encoding. If omitted, the family only serves raw untyped bytes.
+   *
+   * For now, only the `Aggregate` type is supported.
+   *
+   * `Aggregate` can only be set at family creation and is immutable afterwards.
+   *
+   *
+   * If `value_type` is `Aggregate`, written data must be compatible with:
+   *  * `value_type.input_type` for `AddInput` mutations
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+   *
+   * @return The valueType.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Type getValueType() {
+    return valueType_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : valueType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of data stored in each of this family's cell values, including its
+   * full encoding. If omitted, the family only serves raw untyped bytes.
+   *
+   * For now, only the `Aggregate` type is supported.
+   *
+   * `Aggregate` can only be set at family creation and is immutable afterwards.
+   *
+   *
+   * If `value_type` is `Aggregate`, written data must be compatible with:
+   *  * `value_type.input_type` for `AddInput` mutations
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.TypeOrBuilder getValueTypeOrBuilder() {
+    return valueType_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : valueType_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +213,9 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getGcRule());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getValueType());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -151,6 +227,9 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGcRule());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getValueType());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -172,6 +251,10 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     if (hasGcRule()) {
       if (!getGcRule().equals(other.getGcRule())) return false;
     }
+    if (hasValueType() != other.hasValueType()) return false;
+    if (hasValueType()) {
+      if (!getValueType().equals(other.getValueType())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -186,6 +269,10 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     if (hasGcRule()) {
       hash = (37 * hash) + GC_RULE_FIELD_NUMBER;
       hash = (53 * hash) + getGcRule().hashCode();
+    }
+    if (hasValueType()) {
+      hash = (37 * hash) + VALUE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getValueType().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -328,6 +415,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getGcRuleFieldBuilder();
+        getValueTypeFieldBuilder();
       }
     }
 
@@ -339,6 +427,11 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       if (gcRuleBuilder_ != null) {
         gcRuleBuilder_.dispose();
         gcRuleBuilder_ = null;
+      }
+      valueType_ = null;
+      if (valueTypeBuilder_ != null) {
+        valueTypeBuilder_.dispose();
+        valueTypeBuilder_ = null;
       }
       return this;
     }
@@ -380,6 +473,10 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.gcRule_ = gcRuleBuilder_ == null ? gcRule_ : gcRuleBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.valueType_ = valueTypeBuilder_ == null ? valueType_ : valueTypeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -432,6 +529,9 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGcRule()) {
         mergeGcRule(other.getGcRule());
       }
+      if (other.hasValueType()) {
+        mergeValueType(other.getValueType());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -464,6 +564,12 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(getValueTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -707,6 +813,272 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
         gcRule_ = null;
       }
       return gcRuleBuilder_;
+    }
+
+    private com.google.bigtable.admin.v2.Type valueType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type,
+            com.google.bigtable.admin.v2.Type.Builder,
+            com.google.bigtable.admin.v2.TypeOrBuilder>
+        valueTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     *
+     * @return Whether the valueType field is set.
+     */
+    public boolean hasValueType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     *
+     * @return The valueType.
+     */
+    public com.google.bigtable.admin.v2.Type getValueType() {
+      if (valueTypeBuilder_ == null) {
+        return valueType_ == null
+            ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+            : valueType_;
+      } else {
+        return valueTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     */
+    public Builder setValueType(com.google.bigtable.admin.v2.Type value) {
+      if (valueTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        valueType_ = value;
+      } else {
+        valueTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     */
+    public Builder setValueType(com.google.bigtable.admin.v2.Type.Builder builderForValue) {
+      if (valueTypeBuilder_ == null) {
+        valueType_ = builderForValue.build();
+      } else {
+        valueTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     */
+    public Builder mergeValueType(com.google.bigtable.admin.v2.Type value) {
+      if (valueTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && valueType_ != null
+            && valueType_ != com.google.bigtable.admin.v2.Type.getDefaultInstance()) {
+          getValueTypeBuilder().mergeFrom(value);
+        } else {
+          valueType_ = value;
+        }
+      } else {
+        valueTypeBuilder_.mergeFrom(value);
+      }
+      if (valueType_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     */
+    public Builder clearValueType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      valueType_ = null;
+      if (valueTypeBuilder_ != null) {
+        valueTypeBuilder_.dispose();
+        valueTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     */
+    public com.google.bigtable.admin.v2.Type.Builder getValueTypeBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getValueTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     */
+    public com.google.bigtable.admin.v2.TypeOrBuilder getValueTypeOrBuilder() {
+      if (valueTypeBuilder_ != null) {
+        return valueTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return valueType_ == null
+            ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
+            : valueType_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of data stored in each of this family's cell values, including its
+     * full encoding. If omitted, the family only serves raw untyped bytes.
+     *
+     * For now, only the `Aggregate` type is supported.
+     *
+     * `Aggregate` can only be set at family creation and is immutable afterwards.
+     *
+     *
+     * If `value_type` is `Aggregate`, written data must be compatible with:
+     *  * `value_type.input_type` for `AddInput` mutations
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.Type,
+            com.google.bigtable.admin.v2.Type.Builder,
+            com.google.bigtable.admin.v2.TypeOrBuilder>
+        getValueTypeFieldBuilder() {
+      if (valueTypeBuilder_ == null) {
+        valueTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Type,
+                com.google.bigtable.admin.v2.Type.Builder,
+                com.google.bigtable.admin.v2.TypeOrBuilder>(
+                getValueType(), getParentForChildren(), isClean());
+        valueType_ = null;
+      }
+      return valueTypeBuilder_;
     }
 
     @java.lang.Override

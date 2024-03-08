@@ -73,4 +73,66 @@ public interface ColumnFamilyOrBuilder
    * <code>.google.bigtable.admin.v2.GcRule gc_rule = 1;</code>
    */
   com.google.bigtable.admin.v2.GcRuleOrBuilder getGcRuleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of data stored in each of this family's cell values, including its
+   * full encoding. If omitted, the family only serves raw untyped bytes.
+   *
+   * For now, only the `Aggregate` type is supported.
+   *
+   * `Aggregate` can only be set at family creation and is immutable afterwards.
+   *
+   *
+   * If `value_type` is `Aggregate`, written data must be compatible with:
+   *  * `value_type.input_type` for `AddInput` mutations
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+   *
+   * @return Whether the valueType field is set.
+   */
+  boolean hasValueType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of data stored in each of this family's cell values, including its
+   * full encoding. If omitted, the family only serves raw untyped bytes.
+   *
+   * For now, only the `Aggregate` type is supported.
+   *
+   * `Aggregate` can only be set at family creation and is immutable afterwards.
+   *
+   *
+   * If `value_type` is `Aggregate`, written data must be compatible with:
+   *  * `value_type.input_type` for `AddInput` mutations
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+   *
+   * @return The valueType.
+   */
+  com.google.bigtable.admin.v2.Type getValueType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of data stored in each of this family's cell values, including its
+   * full encoding. If omitted, the family only serves raw untyped bytes.
+   *
+   * For now, only the `Aggregate` type is supported.
+   *
+   * `Aggregate` can only be set at family creation and is immutable afterwards.
+   *
+   *
+   * If `value_type` is `Aggregate`, written data must be compatible with:
+   *  * `value_type.input_type` for `AddInput` mutations
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.Type value_type = 3;</code>
+   */
+  com.google.bigtable.admin.v2.TypeOrBuilder getValueTypeOrBuilder();
 }

@@ -198,6 +198,50 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      */
     boolean getDrop();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+     * mod should be updated, ignored for other modification types. If unset or
+     * empty, we treat it as updating `gc_rule` to be backward compatible.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    boolean hasUpdateMask();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+     * mod should be updated, ignored for other modification types. If unset or
+     * empty, we treat it as updating `gc_rule` to be backward compatible.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateMask.
+     */
+    com.google.protobuf.FieldMask getUpdateMask();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+     * mod should be updated, ignored for other modification types. If unset or
+     * empty, we treat it as updating `gc_rule` to be backward compatible.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
     com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.ModCase getModCase();
   }
   /**
@@ -244,6 +288,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder.class);
     }
 
+    private int bitField0_;
     private int modCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -492,6 +537,61 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       return false;
     }
 
+    public static final int UPDATE_MASK_FIELD_NUMBER = 6;
+    private com.google.protobuf.FieldMask updateMask_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+     * mod should be updated, ignored for other modification types. If unset or
+     * empty, we treat it as updating `gc_rule` to be backward compatible.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+     * mod should be updated, ignored for other modification types. If unset or
+     * empty, we treat it as updating `gc_rule` to be backward compatible.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The updateMask.
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+     * mod should be updated, ignored for other modification types. If unset or
+     * empty, we treat it as updating `gc_rule` to be backward compatible.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -517,6 +617,9 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       if (modCase_ == 4) {
         output.writeBool(4, (boolean) ((java.lang.Boolean) mod_));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(6, getUpdateMask());
       }
       getUnknownFields().writeTo(output);
     }
@@ -545,6 +648,9 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 4, (boolean) ((java.lang.Boolean) mod_));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateMask());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -562,6 +668,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification) obj;
 
       if (!getId().equals(other.getId())) return false;
+      if (hasUpdateMask() != other.hasUpdateMask()) return false;
+      if (hasUpdateMask()) {
+        if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+      }
       if (!getModCase().equals(other.getModCase())) return false;
       switch (modCase_) {
         case 2:
@@ -589,6 +699,10 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      if (hasUpdateMask()) {
+        hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdateMask().hashCode();
+      }
       switch (modCase_) {
         case 2:
           hash = (37 * hash) + CREATE_FIELD_NUMBER;
@@ -740,10 +854,19 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
 
       // Construct using
       // com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getUpdateMaskFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -756,6 +879,11 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         }
         if (updateBuilder_ != null) {
           updateBuilder_.clear();
+        }
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
+          updateMaskBuilder_ = null;
         }
         modCase_ = 0;
         mod_ = null;
@@ -803,6 +931,13 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.updateMask_ =
+              updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       private void buildPartialOneofs(
@@ -873,6 +1008,9 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           id_ = other.id_;
           bitField0_ |= 0x00000001;
           onChanged();
+        }
+        if (other.hasUpdateMask()) {
+          mergeUpdateMask(other.getUpdateMask());
         }
         switch (other.getModCase()) {
           case CREATE:
@@ -945,6 +1083,12 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
                   modCase_ = 4;
                   break;
                 } // case 32
+              case 50:
+                {
+                  input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1590,6 +1734,218 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           onChanged();
         }
         return this;
+      }
+
+      private com.google.protobuf.FieldMask updateMask_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          updateMaskBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the updateMask field is set.
+       */
+      public boolean hasUpdateMask() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The updateMask.
+       */
+      public com.google.protobuf.FieldMask getUpdateMask() {
+        if (updateMaskBuilder_ == null) {
+          return updateMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : updateMask_;
+        } else {
+          return updateMaskBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+        if (updateMaskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          updateMask_ = value;
+        } else {
+          updateMaskBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+        if (updateMaskBuilder_ == null) {
+          updateMask_ = builderForValue.build();
+        } else {
+          updateMaskBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+        if (updateMaskBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && updateMask_ != null
+              && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+            getUpdateMaskBuilder().mergeFrom(value);
+          } else {
+            updateMask_ = value;
+          }
+        } else {
+          updateMaskBuilder_.mergeFrom(value);
+        }
+        if (updateMask_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearUpdateMask() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        updateMask_ = null;
+        if (updateMaskBuilder_ != null) {
+          updateMaskBuilder_.dispose();
+          updateMaskBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getUpdateMaskFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+        if (updateMaskBuilder_ != null) {
+          return updateMaskBuilder_.getMessageOrBuilder();
+        } else {
+          return updateMask_ == null
+              ? com.google.protobuf.FieldMask.getDefaultInstance()
+              : updateMask_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update`
+       * mod should be updated, ignored for other modification types. If unset or
+       * empty, we treat it as updating `gc_rule` to be backward compatible.
+       * </pre>
+       *
+       * <code>.google.protobuf.FieldMask update_mask = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.FieldMask,
+              com.google.protobuf.FieldMask.Builder,
+              com.google.protobuf.FieldMaskOrBuilder>
+          getUpdateMaskFieldBuilder() {
+        if (updateMaskBuilder_ == null) {
+          updateMaskBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.FieldMask,
+                  com.google.protobuf.FieldMask.Builder,
+                  com.google.protobuf.FieldMaskOrBuilder>(
+                  getUpdateMask(), getParentForChildren(), isClean());
+          updateMask_ = null;
+        }
+        return updateMaskBuilder_;
       }
 
       @java.lang.Override
