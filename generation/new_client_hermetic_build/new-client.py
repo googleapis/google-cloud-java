@@ -289,6 +289,7 @@ def __get_proto_paths(proto_path: str, committish: str) -> List[str]:
       print(subdir_path)
       if is_library_version(subdir_path):
         proto_paths.append(subdir_path.replace('./googleapis/',''))
+    shutil.rmtree('./googleapis')
     return proto_paths
 
 
