@@ -19,6 +19,8 @@ jobs:
       id: setup-branch
       shell: bash
       run: |
+        [ -z "`git config user.email`" ] && git config --global user.email "cloud-java-bot@google.com"
+        [ -z "`git config user.name`" ] && git config --global user.name "cloud-java-bot"
         # try to find a open pull request associated with the branch
         pr_num=$(gh pr list -s open -H "${branch_name}" -q . --json number | jq ".[] | .number")
         # create a branch if there's no open pull request associated with the
@@ -29,6 +31,8 @@ jobs:
           gh pr checkout "${pr_num}"
         fi
         echo "pr_num=${pr_num}" >> "$GITHUB_ENV"
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
     - name: setup docker environment
       shell: bash
       run: |
@@ -87,8 +91,6 @@ jobs:
     - name: create or update the pull request
       shell: bash
       run: |
-        [ -z "`git config user.email`" ] && git config --global user.email "cloud-java-bot@google.com"
-        [ -z "`git config user.name`" ] && git config --global user.name "cloud-java-bot"
         title="generated at $(date)"
         pr_body=$(cat pr_description.txt)
         git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
