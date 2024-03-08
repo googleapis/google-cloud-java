@@ -72,6 +72,7 @@ public class JsonStreamWriterTest {
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/_default";
   private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/_default";
   private static final String TEST_TABLE = "projects/p/datasets/d/tables/t";
+  private static final String TEST_TABLE_DEFAULT = "projects/p/datasets/d/tables/t/_default";
   private static LocalChannelProvider channelProvider;
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
@@ -196,6 +197,14 @@ public class JsonStreamWriterTest {
       throws DescriptorValidationException, IOException, InterruptedException {
     JsonStreamWriter writer = getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build();
     assertEquals(TEST_STREAM, writer.getStreamName());
+  }
+
+  @Test
+  public void testConstructWriterUsingDefaultStreamName()
+      throws DescriptorValidationException, IOException, InterruptedException {
+    JsonStreamWriter writer =
+        getTestJsonStreamWriterBuilder(TEST_TABLE_DEFAULT, TABLE_SCHEMA).build();
+    assertEquals(TEST_TABLE_DEFAULT, writer.getStreamName());
   }
 
   @Test

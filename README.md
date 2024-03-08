@@ -50,7 +50,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.33.0')
+implementation platform('com.google.cloud:libraries-bom:26.34.0')
 
 implementation 'com.google.cloud:google-cloud-bigquerystorage'
 ```

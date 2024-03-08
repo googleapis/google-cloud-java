@@ -150,6 +150,9 @@ public final class Exceptions {
   @Nullable
   public static StorageException toStorageException(
       com.google.rpc.Status rpcStatus, Throwable exception) {
+    if (rpcStatus == null) {
+      return null;
+    }
     StorageError error = toStorageError(rpcStatus);
     Status grpcStatus =
         Status.fromCodeValue(rpcStatus.getCode()).withDescription(rpcStatus.getMessage());

@@ -467,6 +467,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
 
         if (!tableMatcher.matches() && !defaultStreamMatcher.matches()) {
           throw new IllegalArgumentException("Invalid  name: " + streamOrTableName);
+        } else if (!tableMatcher.matches() && defaultStreamMatcher.matches()) {
+          this.streamName = streamOrTableName;
         } else {
           this.streamName = streamOrTableName + "/_default";
         }
