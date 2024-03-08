@@ -18,6 +18,23 @@ jobs:
           docker volume rm repo-google-cloud-java
         fi
         docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
+    - name: get baseline commit
+      id: get-baseline
+      shell: bash
+      run: |
+        echo "baseline_commit=$(grep googleapis_commitish generation_config.yaml | cut -d " " -f2 | xargs)" >> "$GITHUB_ENV"
+    - name: update googleapis commit to latest
+      id: update-commit
+      shell: bash
+      run: |
+        mkdir tmp-googleapis
+        git clone https://github.com/googleapis/googleapis.git tmp-googleapis
+        pushd tmp-googleapis
+        git pull
+        latest_commit=$(git rev-parse HEAD)
+        popd
+        rm -rf tmp-googleapis
+        sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${latest_commit}/" generation_config.yaml
     - name: generate from configuration
       shell: bash
       run: |
@@ -30,3 +47,18 @@ jobs:
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
           gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
           python /src/generate_repo.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --repository-path=/workspace/google-cloud-java
+    - name: generate pull request description
+      id: generate-description
+      shell: bash
+      run: |
+        repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
+        docker run --rm \
+          ${repo_volumes} \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
+          python /src/generate_pr_description.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --baseline-commit="${baseline_commit}"
+      env:
+        baseline_commit: ${{ steps.get-baseline.outputs.baseline_commit }}
