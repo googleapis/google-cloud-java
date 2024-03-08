@@ -53,7 +53,8 @@ public class MutateRowCallableTest {
     MutateRowCallable callable = new MutateRowCallable(innerCallable, REQUEST_CONTEXT);
     RowMutation outerRequest =
         RowMutation.create("fake-table", "fake-key")
-            .setCell("fake-family", "fake-qualifier", 1_000, "fake-value");
+            .setCell("fake-family", "fake-qualifier", 1_000, "fake-value")
+            .addToCell("family-2", "qualifier", 1_000, 1234);
 
     innerResult.set(MutateRowResponse.getDefaultInstance());
     callable.call(outerRequest);

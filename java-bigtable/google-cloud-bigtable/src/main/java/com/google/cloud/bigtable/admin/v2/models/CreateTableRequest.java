@@ -63,11 +63,40 @@ public final class CreateTableRequest {
    *
    * @see GCRule for available options.
    */
-  public CreateTableRequest addFamily(String familyId, GCRule gcRule) {
+  public CreateTableRequest addFamily(@Nonnull String familyId, @Nonnull GCRule gcRule) {
+    return addFamily(familyId, gcRule, Type.raw());
+  }
+
+  /**
+   * Adds a new columnFamily with a {@link Type} to the configuration. Please note that calling this
+   * method with the same familyId will overwrite the previous family.
+   *
+   * @see Type for available options.
+   */
+  public CreateTableRequest addFamily(@Nonnull String familyId, @Nonnull Type valueType) {
+    return addFamily(familyId, GCRules.GCRULES.defaultRule(), valueType);
+  }
+
+  /**
+   * Adds a new columnFamily with a {@link GCRule} and {@link Type} to the configuration. Please
+   * note that calling this method with the same familyId will overwrite the previous family.
+   *
+   * @see GCRule for available options.
+   * @see Type for available options.
+   */
+  public CreateTableRequest addFamily(
+      @Nonnull String familyId, @Nonnull GCRule gcRule, @Nonnull Type valueType) {
     Preconditions.checkNotNull(familyId);
-    requestBuilder
-        .getTableBuilder()
-        .putColumnFamilies(familyId, ColumnFamily.newBuilder().setGcRule(gcRule.toProto()).build());
+    Preconditions.checkNotNull(gcRule);
+    Preconditions.checkNotNull(valueType);
+
+    ColumnFamily.Builder builder = ColumnFamily.newBuilder().setGcRule(gcRule.toProto());
+
+    // Don't set the type if it's the default ("raw")
+    if (!valueType.equals(Type.raw())) {
+      builder.setValueType(valueType.toProto());
+    }
+    requestBuilder.getTableBuilder().putColumnFamilies(familyId, builder.build());
     return this;
   }
 

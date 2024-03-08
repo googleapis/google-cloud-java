@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.Mutation.AddToCell;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
@@ -286,6 +287,24 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
             .setDeleteFromRow(DeleteFromRow.getDefaultInstance())
             .build());
 
+    return this;
+  }
+
+  @Override
+  public Mutation addToCell(
+      @Nonnull String familyName,
+      @Nonnull Value qualifier,
+      @Nonnull Value timestamp,
+      @Nonnull Value value) {
+    com.google.bigtable.v2.Mutation.Builder builder = com.google.bigtable.v2.Mutation.newBuilder();
+    AddToCell.Builder addToCellBuilder = builder.getAddToCellBuilder();
+    addToCellBuilder.setFamilyName(familyName);
+
+    qualifier.buildTo(addToCellBuilder.getColumnQualifierBuilder());
+    timestamp.buildTo(addToCellBuilder.getTimestampBuilder());
+    value.buildTo(addToCellBuilder.getInputBuilder());
+
+    addMutation(builder.build());
     return this;
   }
 

@@ -78,6 +78,8 @@ public class TableAdminRequestsTest {
             .addFamily("cf1")
             .addFamily("cf2", GCRules.GCRULES.maxVersions(1))
             .addFamily("cf3")
+            .addFamily("cf4", Type.int64Sum())
+            .addFamily("cf5", GCRules.GCRULES.maxVersions(1), Type.int64Sum())
             .updateFamily("cf1", GCRules.GCRULES.maxVersions(5))
             .dropFamily("cf3")
             .toProto(PROJECT_ID, INSTANCE_ID);
@@ -103,6 +105,20 @@ public class TableAdminRequestsTest {
                     .setCreate(
                         com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
                             .setGcRule(GcRule.getDefaultInstance())))
+            .addModifications(
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
+                    .setId("cf4")
+                    .setCreate(
+                        com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())
+                            .setValueType(Type.int64Sum().toProto())))
+            .addModifications(
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
+                    .setId("cf5")
+                    .setCreate(
+                        com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
+                            .setGcRule(GCRules.GCRULES.maxVersions(1).toProto())
+                            .setValueType(Type.int64Sum().toProto())))
             .addModifications(
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
                     .setId("cf1")

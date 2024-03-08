@@ -180,6 +180,16 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
     return this;
   }
 
+  @Override
+  public RowMutationEntry addToCell(
+      @Nonnull String familyName,
+      @Nonnull Value qualifier,
+      @Nonnull Value timestamp,
+      @Nonnull Value input) {
+    mutation.addToCell(familyName, qualifier, timestamp, input);
+    return this;
+  }
+
   @InternalApi
   public MutateRowsRequest.Entry toProto() {
     Preconditions.checkArgument(

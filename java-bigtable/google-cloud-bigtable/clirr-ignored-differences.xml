@@ -180,4 +180,16 @@
         <className>com/google/cloud/bigtable/data/v2/models/MutateRowsException</className>
         <method>*</method>
     </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/MutationApi</className>
+        <method>*</method>
+    </difference>
+    <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7012</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/models/ChangeStreamRecordAdapter$ChangeStreamRecordBuilder</className>
+        <method>*</method>
+    </difference>
 </differences>

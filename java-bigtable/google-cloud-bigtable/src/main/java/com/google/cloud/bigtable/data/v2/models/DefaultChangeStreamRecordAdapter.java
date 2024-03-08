@@ -133,6 +133,15 @@ public class DefaultChangeStreamRecordAdapter
       this.changeStreamMutationBuilder.deleteCells(familyName, qualifier, timestampRange);
     }
 
+    @Override
+    public void addToCell(
+        @Nonnull String familyName,
+        @Nonnull Value qualifier,
+        @Nonnull Value timestamp,
+        @Nonnull Value input) {
+      this.changeStreamMutationBuilder.addToCell(familyName, qualifier, timestamp, input);
+    }
+
     /** {@inheritDoc} */
     @Override
     public void startCell(String family, ByteString qualifier, long timestampMicros) {

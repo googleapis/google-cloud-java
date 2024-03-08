@@ -65,6 +65,7 @@ import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
 import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.cloud.bigtable.admin.v2.models.Type;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.collect.ImmutableList;
@@ -208,6 +209,14 @@ public class BigtableTableAdminClientTests {
         com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
             .setParent(INSTANCE_NAME)
             .setTableId(TABLE_ID)
+            .setTable(
+                com.google.bigtable.admin.v2.Table.newBuilder()
+                    .putColumnFamilies(
+                        "cf1",
+                        ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())
+                            .setValueType(TypeProtos.intSumType())
+                            .build()))
             .build();
 
     com.google.bigtable.admin.v2.Table expectedResponse =
@@ -217,7 +226,8 @@ public class BigtableTableAdminClientTests {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    Table result = adminClient.createTable(CreateTableRequest.of(TABLE_ID));
+    Table result =
+        adminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily("cf1", Type.int64Sum()));
 
     // Verify
     assertThat(result).isEqualTo(Table.fromProto(expectedResponse));
@@ -269,6 +279,13 @@ public class BigtableTableAdminClientTests {
                 Modification.newBuilder()
                     .setId("cf")
                     .setCreate(ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance())))
+            .addModifications(
+                Modification.newBuilder()
+                    .setId("cf2")
+                    .setCreate(
+                        ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())
+                            .setValueType(TypeProtos.intSumType())))
             .build();
 
     com.google.bigtable.admin.v2.Table fakeResponse =
@@ -276,6 +293,12 @@ public class BigtableTableAdminClientTests {
             .setName(TABLE_NAME)
             .putColumnFamilies(
                 "cf", ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance()).build())
+            .putColumnFamilies(
+                "cf2",
+                ColumnFamily.newBuilder()
+                    .setGcRule(GcRule.getDefaultInstance())
+                    .setValueType(TypeProtos.intSumType())
+                    .build())
             .build();
 
     Mockito.when(mockModifyTableCallable.futureCall(expectedRequest))
@@ -283,7 +306,10 @@ public class BigtableTableAdminClientTests {
 
     // Execute
     Table actualResult =
-        adminClient.modifyFamilies(ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily("cf"));
+        adminClient.modifyFamilies(
+            ModifyColumnFamiliesRequest.of(TABLE_ID)
+                .addFamily("cf")
+                .addFamily("cf2", Type.int64Sum()));
 
     // Verify
     assertThat(actualResult).isEqualTo(Table.fromProto(fakeResponse));

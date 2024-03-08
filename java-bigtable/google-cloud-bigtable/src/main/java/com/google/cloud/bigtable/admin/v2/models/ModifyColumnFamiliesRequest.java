@@ -55,9 +55,31 @@ public final class ModifyColumnFamiliesRequest {
 
   /** Configures the name and {@link GCRule} of the new {@link ColumnFamily} to be created */
   public ModifyColumnFamiliesRequest addFamily(String familyId, GCRule gcRule) {
+    return addFamily(familyId, gcRule, Type.raw());
+  }
+
+  /** Configures the name and {@link Type} of the new {@link ColumnFamily} to be created */
+  public ModifyColumnFamiliesRequest addFamily(String familyId, Type valueType) {
+    return addFamily(familyId, GCRules.GCRULES.defaultRule(), valueType);
+  }
+
+  /**
+   * Configures the name, {@link GCRule}, and {@link Type} of the new {@link ColumnFamily} to be
+   * created
+   */
+  public ModifyColumnFamiliesRequest addFamily(
+      @Nonnull String familyId, @Nonnull GCRule gcRule, @Nonnull Type valueType) {
     Preconditions.checkNotNull(gcRule);
+    Preconditions.checkNotNull(valueType);
+
     Modification.Builder modification = Modification.newBuilder().setId(familyId);
-    modification.getCreateBuilder().setGcRule(gcRule.toProto());
+    com.google.bigtable.admin.v2.ColumnFamily.Builder createBuilder =
+        modification.getCreateBuilder().setGcRule(gcRule.toProto());
+
+    if (!valueType.equals(Type.raw())) {
+      createBuilder.setValueType(valueType.toProto());
+    }
+
     modFamilyRequest.addModifications(modification.build());
     return this;
   }

@@ -135,6 +135,12 @@ public interface ChangeStreamRecordAdapter<ChangeStreamRecordT> {
         @Nonnull ByteString qualifier,
         @Nonnull TimestampRange timestampRange);
 
+    void addToCell(
+        @Nonnull String familyName,
+        @Nonnull Value qualifier,
+        @Nonnull Value timestamp,
+        @Nonnull Value value);
+
     /**
      * Called to start a SetCell.
      *

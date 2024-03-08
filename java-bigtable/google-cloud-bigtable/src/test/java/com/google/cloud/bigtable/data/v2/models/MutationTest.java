@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.v2.Mutation.AddToCell;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
@@ -180,6 +181,21 @@ public class MutationTest {
   }
 
   @Test
+  public void addToCellTest() {
+    mutation.addToCell("cf1", "q", 10000, 1234);
+    List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
+
+    com.google.bigtable.v2.Mutation.Builder builder = com.google.bigtable.v2.Mutation.newBuilder();
+    AddToCell.Builder addToCellBuilder = builder.getAddToCellBuilder();
+    addToCellBuilder.setFamilyName("cf1");
+    addToCellBuilder.getColumnQualifierBuilder().setRawValue(ByteString.copyFromUtf8("q"));
+    addToCellBuilder.getTimestampBuilder().setRawTimestampMicros(10000);
+    addToCellBuilder.getInputBuilder().setIntValue(1234);
+
+    assertThat(actual).containsExactly(builder.build());
+  }
+
+  @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
     Mutation expected = Mutation.create().setCell("cf", "q", "val");
 
@@ -264,7 +280,8 @@ public class MutationTest {
             1_000,
             ByteString.copyFromUtf8("fake-value"))
         .deleteCells("fake-family", ByteString.copyFromUtf8("fake-qualifier"))
-        .deleteFamily("fake-family2");
+        .deleteFamily("fake-family2")
+        .addToCell("agg-family", "qual1", 1000, 1234);
 
     List<com.google.bigtable.v2.Mutation> protoMutation = mutation.getMutations();
 

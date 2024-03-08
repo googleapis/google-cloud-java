@@ -20,6 +20,7 @@ import com.google.bigtable.v2.ReadChangeStreamResponse;
 import com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.Type;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecordAdapter.ChangeStreamRecordBuilder;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
+import com.google.cloud.bigtable.data.v2.models.Value;
 import com.google.common.base.Preconditions;
 import org.threeten.bp.Instant;
 
@@ -476,6 +477,14 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                       mod.getDeleteFromColumn().getTimeRange().getStartTimestampMicros(),
                       mod.getDeleteFromColumn().getTimeRange().getEndTimestampMicros()));
               continue;
+            }
+            // Case 4: AddToCell
+            if (mod.hasAddToCell()) {
+              builder.addToCell(
+                  mod.getAddToCell().getFamilyName(),
+                  Value.fromProto(mod.getAddToCell().getColumnQualifier()),
+                  Value.fromProto(mod.getAddToCell().getTimestamp()),
+                  Value.fromProto(mod.getAddToCell().getInput()));
             }
             throw new IllegalStateException("AWAITING_NEW_DATA_CHANGE: Unexpected mod type");
           }

@@ -184,6 +184,16 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
     return this;
   }
 
+  @Override
+  public RowMutation addToCell(
+      @Nonnull String familyName,
+      @Nonnull Value qualifier,
+      @Nonnull Value timestamp,
+      @Nonnull Value input) {
+    mutation.addToCell(familyName, qualifier, timestamp, input);
+    return this;
+  }
+
   @InternalApi
   public MutateRowRequest toProto(RequestContext requestContext) {
     String tableName =

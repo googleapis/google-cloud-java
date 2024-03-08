@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2.models;
 import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GcRule.RuleCase;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.MoreObjects;
@@ -28,18 +27,18 @@ import com.google.common.base.Objects;
 public final class ColumnFamily {
   private final String id;
   private final GCRule rule;
+  private final Type valueType;
 
   @InternalApi
   public static ColumnFamily fromProto(String id, com.google.bigtable.admin.v2.ColumnFamily proto) {
-    // TODO(igorbernstein): can getGcRule ever be null?
-    GcRule ruleProto = MoreObjects.firstNonNull(proto.getGcRule(), GcRule.getDefaultInstance());
-
-    return new ColumnFamily(id, GCRULES.fromProto(ruleProto));
+    return new ColumnFamily(
+        id, GCRULES.fromProto(proto.getGcRule()), Type.fromProto(proto.getValueType()));
   }
 
-  private ColumnFamily(String id, GCRule rule) {
+  private ColumnFamily(String id, GCRule rule, Type type) {
     this.id = id;
     this.rule = rule;
+    this.valueType = type;
   }
 
   /** Gets the column family's id. */
@@ -47,14 +46,23 @@ public final class ColumnFamily {
     return id;
   }
 
-  /** Get's the GCRule configured for the column family. */
+  /** Gets the GCRule configured for the column family. */
   public GCRule getGCRule() {
     return rule;
+  }
+
+  /* Gets the valueType configured for the column family. */
+  public Type getValueType() {
+    return valueType;
   }
 
   /** Returns true if a GCRule has been configured for the family. */
   public boolean hasGCRule() {
     return !RuleCase.RULE_NOT_SET.equals(rule.toProto().getRuleCase());
+  }
+
+  public boolean hasValueType() {
+    return valueType.getClass() != Type.Raw.class;
   }
 
   @Override
@@ -66,16 +74,22 @@ public final class ColumnFamily {
       return false;
     }
     ColumnFamily that = (ColumnFamily) o;
-    return Objects.equal(id, that.id) && Objects.equal(rule, that.rule);
+    return Objects.equal(id, that.id)
+        && Objects.equal(rule, that.rule)
+        && Objects.equal(valueType, that.valueType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(id, rule);
+    return Objects.hashCode(id, rule, valueType);
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("id", id).add("GCRule", rule).toString();
+    return MoreObjects.toStringHelper(this)
+        .add("id", id)
+        .add("GCRule", rule)
+        .add("valueType", valueType)
+        .toString();
   }
 }

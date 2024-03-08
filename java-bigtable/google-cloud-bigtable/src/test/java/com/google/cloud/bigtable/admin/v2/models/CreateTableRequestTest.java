@@ -82,6 +82,53 @@ public class CreateTableRequestTest {
   }
 
   @Test
+  public void testToProtoWithTypes() {
+    CreateTableRequest request =
+        CreateTableRequest.of(TABLE_ID)
+            .addFamily("family-id")
+            .addFamily("another-family", GCRULES.maxAge(100, TimeUnit.HOURS))
+            .addFamily("int-sum-family", Type.int64Sum())
+            .addFamily("int-sum-family-2", GCRULES.maxAge(100, TimeUnit.HOURS), Type.int64Sum());
+
+    com.google.bigtable.admin.v2.CreateTableRequest requestProto =
+        com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
+            .setTableId(TABLE_ID)
+            .setTable(
+                Table.newBuilder()
+                    .putColumnFamilies("family-id", ColumnFamily.getDefaultInstance())
+                    .putColumnFamilies(
+                        "another-family",
+                        ColumnFamily.newBuilder()
+                            .setGcRule(
+                                GcRule.newBuilder()
+                                    .setMaxAge(
+                                        com.google.protobuf.Duration.newBuilder()
+                                            .setSeconds(100 * 60 * 60))
+                                    .build())
+                            .build())
+                    .putColumnFamilies(
+                        "int-sum-family",
+                        ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())
+                            .setValueType(Type.int64Sum().toProto())
+                            .build())
+                    .putColumnFamilies(
+                        "int-sum-family-2",
+                        ColumnFamily.newBuilder()
+                            .setGcRule(
+                                GcRule.newBuilder()
+                                    .setMaxAge(
+                                        com.google.protobuf.Duration.newBuilder()
+                                            .setSeconds(100 * 60 * 60))
+                                    .build())
+                            .setValueType(Type.int64Sum().toProto())
+                            .build()))
+            .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
+            .build();
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
   public void testEquality() {
     CreateTableRequest request =
         CreateTableRequest.of(TABLE_ID)
