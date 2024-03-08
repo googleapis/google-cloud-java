@@ -24,7 +24,10 @@ import click
 import os
 import re
 import sys
+import shutil
+from typing import List
 from ruamel.yaml import YAML
+from git import Repo
 
 yaml = YAML()
 
@@ -218,6 +221,9 @@ def add_new_library(
     with open(path_to_yaml, "r") as file_stream:
         config = yaml.load(file_stream)
 
+    version_matcher = re.compile(r'v\d[\w\d]*')
+    proto_paths = __get_proto_paths(proto_path, config['googleapis_commitish'])
+
     new_library = {
         "api_shortname": api_shortname,
         "name_pretty": name_pretty,
@@ -231,7 +237,7 @@ def add_new_library(
         "library_type": library_type,
         "group_id": group_id,
         "cloud_api": cloud_api,
-        "GAPICs": [{"proto_path": proto_path}],
+        "GAPICs": [{"proto_path": p} for p in proto_paths],
     }
 
     __add_item_if_set(new_library, "requires_billing", requires_billing)
@@ -253,7 +259,7 @@ def add_new_library(
         yaml.dump(config, file_stream)
 
 
-def __add_item_if_set(target, key, value):
+def __add_item_if_set(target: dict, key: str, value: any) -> None:
     if value is not None:
         target[key] = value
 
@@ -262,6 +268,28 @@ def __compute_library_name(library: dict) -> str:
     if "library_name" in library:
         return f'java-{library["library_name"]}'
     return f'java-{library["api_shortname"]}'
+
+def __get_proto_paths(proto_path: str, committish: str) -> List[str]:
+    version_re = re.compile(r'v\d[\w\d]*')
+    is_library_version = lambda p: version_re.match(p.split('/')[-1]) is not None
+
+    if is_library_version(proto_path):
+      return [proto_path]
+
+    # if the proto path is not versioned, we must search for all versions
+    # in googleapis
+    if os.path.isdir('./googleapis'):
+      googleapis_repo = Repo('./googleapis')
+    else:
+      googleapis_repo = Repo.clone_from("https://github.com/googleapis/googleapis", './googleapis')
+    googleapis_repo.git.checkout(committish)
+    subdirs = os.walk(f'./googleapis/{proto_path}')
+    proto_paths = []
+    for (subdir_path, _, _) in subdirs:
+      print(subdir_path)
+      if is_library_version(subdir_path):
+        proto_paths.append(subdir_path.replace('./googleapis/',''))
+    return proto_paths
 
 
 if __name__ == "__main__":
