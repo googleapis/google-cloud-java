@@ -95,7 +95,7 @@ jobs:
         git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
         git commit -m "chore: ${title}"
         if [ -z "${pr_num}" ]; then
-          gh pr create --title "${title}" --label "owlbot:run" --head generate-libraries --body=$(cat pr_description.txt)
+          gh pr create --title "${title}" --label "owlbot:run" --body=$(cat pr_description.txt)
         else
           gh pr edit "${pr_num}" --body=$(cat pr_description.txt)
           git push
