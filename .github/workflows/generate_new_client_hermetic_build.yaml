@@ -102,6 +102,7 @@ jobs:
       - name: setup docker environment
         shell: bash
         run: |
+          set -x
           # we create a volume pointing to `pwd` (google-cloud-java) that will
           # be referenced by the container and its children
           if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
@@ -112,6 +113,7 @@ jobs:
         id: generation
         shell: bash
         run: |
+          set -x
           repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
           echo "::set-output name=repo_volumes::${repo_volumes}"
           docker run --rm \
