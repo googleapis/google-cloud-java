@@ -61,3 +61,6 @@ GitPython==3.1.42 \
 gitdb==4.0.1 \
     --hash=sha256:24572287933a9e5bf45260cd7a5629e5b3b190ec3c2c6a5d5e4125dd06ff4027 \
     --hash=sha256:d82c6b76ce8496c5209adf1c0ab969a6e1a8a31510ceb5f57a206fc7c77c0fea
+smmap==3.0.1 \
+    --hash=sha256:171484fe62793e3626c8b05dd752eb2ca01854b0c55a1efc0dc4210fccb65446 \
+    --hash=sha256:5fead614cf2de17ee0707a8c6a5f2aa5a2fc6c698c70993ba42f515485ffda78
