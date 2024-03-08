@@ -9,6 +9,18 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
+    - name: setup branch for pull request
+      shell: bash
+      run: |
+        # check whether `generate-libraries` exists in remote repository.
+        # the generation pull request will always be created in this branch.
+        git rev-parse --quiet --verify refs/heads/generate-libraries
+        if [[ $? == 1]]; then
+          git checkout -b generate-libraries
+        else
+          git switch generate-libraries
+          git pull
+        fi
     - name: setup docker environment
       shell: bash
       run: |
