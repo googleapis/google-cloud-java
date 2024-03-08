@@ -7,20 +7,24 @@ on:
 jobs:
   generate-from-configuration:
     runs-on: ubuntu-22.04
+    env:
+      branch_name: generate-libraries
     steps:
     - uses: actions/checkout@v4
     - name: setup branch for pull request
+      id: setup-branch
       shell: bash
       run: |
-        # check whether `generate-libraries` exists in remote repository.
-        # the generation pull request will always be created in this branch.
-        git rev-parse --quiet --verify refs/heads/generate-libraries
-        if [[ $? == 1]]; then
-          git checkout -b generate-libraries
+        # try to find a open pull request associated with the branch
+        pr_num=$(gh pr list -s open -H "${branch_name}" -q . --json number | jq ".[] | .number")
+        # create a branch if there's no open pull request associated with the
+        # branch; otherwise checkout the pull request.
+        if [ -z "${pr_num}" ]; then
+          git checkout -b "${branch_name}"
         else
-          git switch generate-libraries
-          git pull
+          gh pr checkout "${pr_num}"
         fi
+        echo "pr_num=${pr_num}" >> "$GITHUB_ENV"
     - name: setup docker environment
       shell: bash
       run: |
@@ -76,3 +80,21 @@ jobs:
           python /src/generate_pr_description.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --baseline-commit="${baseline_commit}"
       env:
         baseline_commit: ${{ steps.get-baseline.outputs.baseline_commit }}
+    - name: create or update the pull request
+      shell: bash
+      run: |
+        [ -z "`git config user.email`" ] && git config --global user.email "cloud-java-bot@google.com"
+        [ -z "`git config user.name`" ] && git config --global user.name "cloud-java-bot"
+        title="generated at $(date)"
+        pr_body=$(cat pr_description.txt)
+        git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt
+        git commit -m "chore: ${title}"
+        if [ -z "${pr_num}" ]; then
+          gh pr create --title "${title}" --label "owlbot:run" --head generate-libraries --body "${pr_body}"
+        else
+          gh pr edit "${pr_num}" --body "${pr_body}"
+          git push
+        fi
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+        pr_num: ${{ steps.setup-branch.outputs.pr_num }}
