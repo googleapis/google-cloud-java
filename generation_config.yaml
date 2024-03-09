@@ -1358,6 +1358,7 @@ libraries:
   api_id: policy-troubleshooter.googleapis.com
   GAPICs:
   - proto_path: google/cloud/policytroubleshooter/v1
+  - proto_path: google/cloud/policytroubleshooter/iam/v3
 
 - api_shortname: policysimulator
   name_pretty: Policy Simulator API
