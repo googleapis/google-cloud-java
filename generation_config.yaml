@@ -514,7 +514,6 @@ libraries:
   excluded_dependencies: grpc-google-cloud-compute-v1
   GAPICs:
   - proto_path: google/cloud/compute/v1
-  - proto_path: google/cloud/compute/v1small
 
 - api_shortname: confidentialcomputing
   name_pretty: Confidential Computing API
