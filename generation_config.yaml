@@ -475,13 +475,13 @@ libraries:
   - proto_path: google/cloud/commerce/consumer/procurement/v1
   - proto_path: google/cloud/commerce/consumer/procurement/v1alpha1
 
-#- api_shortname: cloudcontrolspartner
-#  name_pretty: Cloud Controls Partner API
-#  product_documentation: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
-#  api_description: Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.
-#  GAPICs:
-#  - proto_path: google/cloud/cloudcontrolspartner/v1
-#  - proto_path: google/cloud/cloudcontrolspartner/v1beta
+- api_shortname: cloudcontrolspartner
+  name_pretty: Cloud Controls Partner API
+  product_documentation: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
+  api_description: Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.
+  GAPICs:
+  - proto_path: google/cloud/cloudcontrolspartner/v1
+  - proto_path: google/cloud/cloudcontrolspartner/v1beta
 
 - api_shortname: cloudquotas
   name_pretty: Cloud Quotas API
