@@ -15,6 +15,11 @@ jobs:
       branch_name: generate-libraries
     steps:
     - uses: actions/checkout@v4
+    - name: get baseline commit
+      id: get-baseline
+      shell: bash
+      run: |
+        echo "baseline_commit=$(grep googleapis_commitish generation_config.yaml | cut -d " " -f2 | xargs)" >> "$GITHUB_ENV"
     - name: setup branch for pull request
       id: setup-branch
       shell: bash
@@ -42,11 +47,6 @@ jobs:
           docker volume rm repo-google-cloud-java
         fi
         docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
-    - name: get baseline commit
-      id: get-baseline
-      shell: bash
-      run: |
-        echo "baseline_commit=$(grep googleapis_commitish generation_config.yaml | cut -d " " -f2 | xargs)" >> "$GITHUB_ENV"
     - name: update googleapis commit to latest
       id: update-commit
       shell: bash
