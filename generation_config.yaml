@@ -1572,6 +1572,7 @@ libraries:
   - proto_path: google/cloud/securitycenter/v1
   - proto_path: google/cloud/securitycenter/v1beta1
   - proto_path: google/cloud/securitycenter/v1p1beta1
+  - proto_path: google/cloud/securitycenter/v2
 
 - api_shortname: securitycenter
   name_pretty: Security Command Center Settings API
