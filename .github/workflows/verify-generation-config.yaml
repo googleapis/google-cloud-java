@@ -98,7 +98,7 @@ jobs:
           git remote add monorepo https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
           git push -f monorepo "${branch_name}"
-          gh pr create --title "${title}" --label "owlbot:run" --head "${branch_name}" --body "$(cat pr_description.txt)"
+          gh pr create --title "${title}" --label "owlbot:run" --head "${branch_name}" --body "test"
         else
           git push
           gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
