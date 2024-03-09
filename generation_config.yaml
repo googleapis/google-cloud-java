@@ -167,6 +167,14 @@ libraries:
   GAPICs:
   - proto_path: google/appengine/v1
 
+- api_shortname: apphub
+  name_pretty: App Hub API
+  product_documentation: https://cloud.google.com/app-hub/docs/overview
+  api_description: App Hub simplifies the process of building, running, and managing applications on Google Cloud.
+  rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/apphub/v1
+
 - api_shortname: area120tables
   name_pretty: Area 120 Tables
   product_documentation: https://area120.google.com/
