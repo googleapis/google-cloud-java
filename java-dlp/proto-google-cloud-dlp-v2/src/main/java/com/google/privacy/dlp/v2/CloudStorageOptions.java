@@ -77,7 +77,15 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * Protobuf enum {@code google.privacy.dlp.v2.CloudStorageOptions.SampleMethod}
    */
   public enum SampleMethod implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No sampling.
+     * </pre>
+     *
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
     SAMPLE_METHOD_UNSPECIFIED(0),
     /**
      *
@@ -103,7 +111,15 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No sampling.
+     * </pre>
+     *
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
     public static final int SAMPLE_METHOD_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -1329,7 +1345,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * This field can't be set if de-identification is requested. For certain file
    * types, setting this field has no effect. For more information, see [Limits
    * on bytes scanned per
-   * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+   * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
@@ -1354,7 +1370,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * This field can't be set if de-identification is requested. For certain file
    * types, setting this field has no effect. For more information, see [Limits
    * on bytes scanned per
-   * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+   * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
    * </pre>
    *
    * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -1496,6 +1512,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
   public static final int SAMPLE_METHOD_FIELD_NUMBER = 6;
   private int sampleMethod_ = 0;
   /**
+   *
+   *
+   * <pre>
+   * How to sample the data.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
    *
    * @return The enum numeric value on the wire for sampleMethod.
@@ -1505,6 +1527,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
     return sampleMethod_;
   }
   /**
+   *
+   *
+   * <pre>
+   * How to sample the data.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
    *
    * @return The sampleMethod.
@@ -2254,7 +2282,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2275,7 +2303,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2300,7 +2328,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2326,7 +2354,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2348,7 +2376,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2374,7 +2402,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2682,6 +2710,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
 
     private int sampleMethod_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
      *
      * @return The enum numeric value on the wire for sampleMethod.
@@ -2691,6 +2725,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       return sampleMethod_;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
      *
      * @param value The enum numeric value on the wire for sampleMethod to set.
@@ -2703,6 +2743,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
      *
      * @return The sampleMethod.
@@ -2716,6 +2762,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
           : result;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
      *
      * @param value The sampleMethod to set.
@@ -2732,6 +2784,12 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
      *
      * @return This builder for chaining.

@@ -74,7 +74,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to create Application in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -99,7 +100,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to create Application in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -748,7 +750,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to create Application in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -772,7 +775,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to create Application in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -796,7 +800,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to create Application in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -819,7 +824,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to create Application in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -838,7 +844,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Project and location to create Application in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>

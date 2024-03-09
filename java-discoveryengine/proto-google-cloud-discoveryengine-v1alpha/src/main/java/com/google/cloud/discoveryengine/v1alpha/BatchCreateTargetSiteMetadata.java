@@ -24,8 +24,9 @@ package com.google.cloud.discoveryengine.v1alpha;
  *
  * <pre>
  * Metadata related to the progress of the
- * [SiteSearchEngineService.BatchCreateTargetSite][] operation. This will be
- * returned by the google.longrunning.Operation.metadata field.
+ * [SiteSearchEngineService.BatchCreateTargetSites][google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.BatchCreateTargetSites]
+ * operation. This will be returned by the google.longrunning.Operation.metadata
+ * field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1alpha.BatchCreateTargetSiteMetadata}
@@ -344,8 +345,9 @@ public final class BatchCreateTargetSiteMetadata extends com.google.protobuf.Gen
    *
    * <pre>
    * Metadata related to the progress of the
-   * [SiteSearchEngineService.BatchCreateTargetSite][] operation. This will be
-   * returned by the google.longrunning.Operation.metadata field.
+   * [SiteSearchEngineService.BatchCreateTargetSites][google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.BatchCreateTargetSites]
+   * operation. This will be returned by the google.longrunning.Operation.metadata
+   * field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1alpha.BatchCreateTargetSiteMetadata}

@@ -28,7 +28,8 @@ public interface ListDiscoveredServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to list Discovered Services on.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface ListDiscoveredServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to list Discovered Services on.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -96,7 +98,7 @@ public interface ListDiscoveredServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filtering results
+   * Optional. Filtering results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -108,7 +110,7 @@ public interface ListDiscoveredServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filtering results
+   * Optional. Filtering results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -121,7 +123,7 @@ public interface ListDiscoveredServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results
+   * Optional. Hint for how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -133,7 +135,7 @@ public interface ListDiscoveredServicesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results
+   * Optional. Hint for how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

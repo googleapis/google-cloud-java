@@ -28,7 +28,7 @@ public interface ListDiscoveredServicesResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered services.
+   * List of Discovered Services.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredService discovered_services = 1;</code>
@@ -38,7 +38,7 @@ public interface ListDiscoveredServicesResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered services.
+   * List of Discovered Services.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredService discovered_services = 1;</code>
@@ -48,7 +48,7 @@ public interface ListDiscoveredServicesResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered services.
+   * List of Discovered Services.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredService discovered_services = 1;</code>
@@ -58,7 +58,7 @@ public interface ListDiscoveredServicesResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered services.
+   * List of Discovered Services.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredService discovered_services = 1;</code>
@@ -69,7 +69,7 @@ public interface ListDiscoveredServicesResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered services.
+   * List of Discovered Services.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredService discovered_services = 1;</code>

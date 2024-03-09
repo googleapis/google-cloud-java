@@ -211,6 +211,7 @@
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
@@ -233,9 +234,37 @@
  * }
  * }</pre>
  *
+ * <p>======================= SearchTuningServiceClient =======================
+ *
+ * <p>Service Description: Service for search tuning.
+ *
+ * <p>Sample for SearchTuningServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SearchTuningServiceClient searchTuningServiceClient = SearchTuningServiceClient.create()) {
+ *   TrainCustomModelRequest request =
+ *       TrainCustomModelRequest.newBuilder()
+ *           .setDataStore(
+ *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+ *                   .toString())
+ *           .setModelType("modelType-2010627581")
+ *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
+ *           .build();
+ *   TrainCustomModelResponse response =
+ *       searchTuningServiceClient.trainCustomModelAsync(request).get();
+ * }
+ * }</pre>
+ *
  * <p>======================= ServingConfigServiceClient =======================
  *
- * <p>Service Description: Service for modifying ServingConfig.
+ * <p>Service Description: Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig].
  *
  * <p>Sample for ServingConfigServiceClient:
  *

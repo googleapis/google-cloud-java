@@ -71,8 +71,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A url representing a file or path (no wildcards) in Cloud Storage.
-   * Example: gs://[BUCKET_NAME]/dictionary.txt
+   * A URL representing a file or path (no wildcards) in Cloud Storage.
+   * Example: `gs://[BUCKET_NAME]/dictionary.txt`
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -95,8 +95,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A url representing a file or path (no wildcards) in Cloud Storage.
-   * Example: gs://[BUCKET_NAME]/dictionary.txt
+   * A URL representing a file or path (no wildcards) in Cloud Storage.
+   * Example: `gs://[BUCKET_NAME]/dictionary.txt`
    * </pre>
    *
    * <code>string path = 1;</code>
@@ -462,8 +462,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A url representing a file or path (no wildcards) in Cloud Storage.
-     * Example: gs://[BUCKET_NAME]/dictionary.txt
+     * A URL representing a file or path (no wildcards) in Cloud Storage.
+     * Example: `gs://[BUCKET_NAME]/dictionary.txt`
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -485,8 +485,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A url representing a file or path (no wildcards) in Cloud Storage.
-     * Example: gs://[BUCKET_NAME]/dictionary.txt
+     * A URL representing a file or path (no wildcards) in Cloud Storage.
+     * Example: `gs://[BUCKET_NAME]/dictionary.txt`
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -508,8 +508,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A url representing a file or path (no wildcards) in Cloud Storage.
-     * Example: gs://[BUCKET_NAME]/dictionary.txt
+     * A URL representing a file or path (no wildcards) in Cloud Storage.
+     * Example: `gs://[BUCKET_NAME]/dictionary.txt`
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -530,8 +530,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A url representing a file or path (no wildcards) in Cloud Storage.
-     * Example: gs://[BUCKET_NAME]/dictionary.txt
+     * A URL representing a file or path (no wildcards) in Cloud Storage.
+     * Example: `gs://[BUCKET_NAME]/dictionary.txt`
      * </pre>
      *
      * <code>string path = 1;</code>
@@ -548,8 +548,8 @@ public final class CloudStoragePath extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A url representing a file or path (no wildcards) in Cloud Storage.
-     * Example: gs://[BUCKET_NAME]/dictionary.txt
+     * A URL representing a file or path (no wildcards) in Cloud Storage.
+     * Example: `gs://[BUCKET_NAME]/dictionary.txt`
      * </pre>
      *
      * <code>string path = 1;</code>

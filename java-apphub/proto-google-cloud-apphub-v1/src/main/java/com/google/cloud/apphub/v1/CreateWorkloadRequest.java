@@ -74,7 +74,9 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Fully qualified name of the Application to create Workload in.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -99,7 +101,9 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Fully qualified name of the Application to create Workload in.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -740,7 +744,9 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the Application to create Workload in.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -764,7 +770,9 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the Application to create Workload in.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -788,7 +796,9 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the Application to create Workload in.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -811,7 +821,9 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the Application to create Workload in.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -830,7 +842,9 @@ public final class CreateWorkloadRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the Application to create Workload in.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>

@@ -18,9 +18,18 @@ package com.google.cloud.discoveryengine.v1alpha.stub;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1alpha.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1alpha.CompleteQueryResponse;
+import com.google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesMetadata;
+import com.google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesRequest;
+import com.google.cloud.discoveryengine.v1alpha.ImportSuggestionDenyListEntriesResponse;
+import com.google.cloud.discoveryengine.v1alpha.PurgeSuggestionDenyListEntriesMetadata;
+import com.google.cloud.discoveryengine.v1alpha.PurgeSuggestionDenyListEntriesRequest;
+import com.google.cloud.discoveryengine.v1alpha.PurgeSuggestionDenyListEntriesResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -33,8 +42,46 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public abstract class CompletionServiceStub implements BackgroundResource {
 
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
+  }
+
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: completeQueryCallable()");
+  }
+
+  public OperationCallable<
+          ImportSuggestionDenyListEntriesRequest,
+          ImportSuggestionDenyListEntriesResponse,
+          ImportSuggestionDenyListEntriesMetadata>
+      importSuggestionDenyListEntriesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importSuggestionDenyListEntriesOperationCallable()");
+  }
+
+  public UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
+      importSuggestionDenyListEntriesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importSuggestionDenyListEntriesCallable()");
+  }
+
+  public OperationCallable<
+          PurgeSuggestionDenyListEntriesRequest,
+          PurgeSuggestionDenyListEntriesResponse,
+          PurgeSuggestionDenyListEntriesMetadata>
+      purgeSuggestionDenyListEntriesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: purgeSuggestionDenyListEntriesOperationCallable()");
+  }
+
+  public UnaryCallable<PurgeSuggestionDenyListEntriesRequest, Operation>
+      purgeSuggestionDenyListEntriesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: purgeSuggestionDenyListEntriesCallable()");
   }
 
   @Override

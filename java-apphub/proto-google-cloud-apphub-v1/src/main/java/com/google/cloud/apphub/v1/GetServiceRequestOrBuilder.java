@@ -28,7 +28,9 @@ public interface GetServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Service to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface GetServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Service to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * </pre>
    *
    * <code>

@@ -104,7 +104,7 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/servingConfigs/{serving_config_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -117,7 +117,7 @@ public interface ServingConfigOrBuilder
    *
    * <pre>
    * Immutable. Fully qualified name
-   * `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/servingConfigs/{serving_config_id}`
+   * `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -342,8 +342,9 @@ public interface ServingConfigOrBuilder
    * The ranking expression controls the customized ranking on retrieval
    * documents. To leverage this, document embedding is required. The ranking
    * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if [SearchRequest.ranking_expression][] is
-   * specified, it overrides the ServingConfig ranking expression.
+   * by the serving config. However, if
+   * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
+   * is specified, it overrides the ServingConfig ranking expression.
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".
@@ -376,8 +377,9 @@ public interface ServingConfigOrBuilder
    * The ranking expression controls the customized ranking on retrieval
    * documents. To leverage this, document embedding is required. The ranking
    * expression setting in ServingConfig applies to all search requests served
-   * by the serving config. However, if [SearchRequest.ranking_expression][] is
-   * specified, it overrides the ServingConfig ranking expression.
+   * by the serving config. However, if
+   * [SearchRequest.ranking_expression][google.cloud.discoveryengine.v1beta.SearchRequest.ranking_expression]
+   * is specified, it overrides the ServingConfig ranking expression.
    *
    * The ranking expression is a single function or multiple functions that are
    * joined by "+".

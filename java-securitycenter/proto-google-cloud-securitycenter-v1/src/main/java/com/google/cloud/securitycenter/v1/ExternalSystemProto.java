@@ -32,6 +32,10 @@ public final class ExternalSystemProto {
       internal_static_google_cloud_securitycenter_v1_ExternalSystem_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_securitycenter_v1_ExternalSystem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_securitycenter_v1_ExternalSystem_TicketInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_securitycenter_v1_ExternalSystem_TicketInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -44,25 +48,36 @@ public final class ExternalSystemProto {
       "\n4google/cloud/securitycenter/v1/externa"
           + "l_system.proto\022\036google.cloud.securitycen"
           + "ter.v1\032\031google/api/resource.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\340\003\n\016ExternalS"
+          + "e/protobuf/timestamp.proto\"\202\007\n\016ExternalS"
           + "ystem\022\014\n\004name\030\001 \001(\t\022\021\n\tassignees\030\002 \003(\t\022\024"
           + "\n\014external_uid\030\003 \001(\t\022\016\n\006status\030\004 \001(\t\022?\n\033"
           + "external_system_update_time\030\005 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp:\305\002\352A\301\002\n,securityce"
-          + "nter.googleapis.com/ExternalSystem\022aorga"
-          + "nizations/{organization}/sources/{source"
-          + "}/findings/{finding}/externalSystems/{ex"
-          + "ternalsystem}\022Ufolders/{folder}/sources/"
-          + "{source}/findings/{finding}/externalSyst"
-          + "ems/{externalsystem}\022Wprojects/{project}"
-          + "/sources/{source}/findings/{finding}/ext"
-          + "ernalSystems/{externalsystem}B\355\001\n\"com.go"
-          + "ogle.cloud.securitycenter.v1B\023ExternalSy"
-          + "stemProtoP\001ZJcloud.google.com/go/securit"
-          + "ycenter/apiv1/securitycenterpb;securityc"
-          + "enterpb\252\002\036Google.Cloud.SecurityCenter.V1"
-          + "\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goog"
-          + "le::Cloud::SecurityCenter::V1b\006proto3"
+          + "le.protobuf.Timestamp\022\020\n\010case_uri\030\006 \001(\t\022"
+          + "\025\n\rcase_priority\030\007 \001(\t\022,\n\010case_sla\030\t \001(\013"
+          + "2\032.google.protobuf.Timestamp\0224\n\020case_cre"
+          + "ate_time\030\n \001(\0132\032.google.protobuf.Timesta"
+          + "mp\0223\n\017case_close_time\030\013 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp\022N\n\013ticket_info\030\010 \001(\01329.g"
+          + "oogle.cloud.securitycenter.v1.ExternalSy"
+          + "stem.TicketInfo\032\215\001\n\nTicketInfo\022\n\n\002id\030\001 \001"
+          + "(\t\022\020\n\010assignee\030\002 \001(\t\022\023\n\013description\030\003 \001("
+          + "\t\022\013\n\003uri\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022/\n\013update"
+          + "_time\030\006 \001(\0132\032.google.protobuf.Timestamp:"
+          + "\305\002\352A\301\002\n,securitycenter.googleapis.com/Ex"
+          + "ternalSystem\022aorganizations/{organizatio"
+          + "n}/sources/{source}/findings/{finding}/e"
+          + "xternalSystems/{externalsystem}\022Ufolders"
+          + "/{folder}/sources/{source}/findings/{fin"
+          + "ding}/externalSystems/{externalsystem}\022W"
+          + "projects/{project}/sources/{source}/find"
+          + "ings/{finding}/externalSystems/{external"
+          + "system}B\355\001\n\"com.google.cloud.securitycen"
+          + "ter.v1B\023ExternalSystemProtoP\001ZJcloud.goo"
+          + "gle.com/go/securitycenter/apiv1/security"
+          + "centerpb;securitycenterpb\252\002\036Google.Cloud"
+          + ".SecurityCenter.V1\312\002\036Google\\Cloud\\Securi"
+          + "tyCenter\\V1\352\002!Google::Cloud::SecurityCen"
+          + "ter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -77,7 +92,27 @@ public final class ExternalSystemProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_ExternalSystem_descriptor,
             new java.lang.String[] {
-              "Name", "Assignees", "ExternalUid", "Status", "ExternalSystemUpdateTime",
+              "Name",
+              "Assignees",
+              "ExternalUid",
+              "Status",
+              "ExternalSystemUpdateTime",
+              "CaseUri",
+              "CasePriority",
+              "CaseSla",
+              "CaseCreateTime",
+              "CaseCloseTime",
+              "TicketInfo",
+            });
+    internal_static_google_cloud_securitycenter_v1_ExternalSystem_TicketInfo_descriptor =
+        internal_static_google_cloud_securitycenter_v1_ExternalSystem_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_securitycenter_v1_ExternalSystem_TicketInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_securitycenter_v1_ExternalSystem_TicketInfo_descriptor,
+            new java.lang.String[] {
+              "Id", "Assignee", "Description", "Uri", "Status", "UpdateTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

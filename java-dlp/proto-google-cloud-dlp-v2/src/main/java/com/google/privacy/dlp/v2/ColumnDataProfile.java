@@ -1049,7 +1049,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The resource name of the table this column is within.
+   * The resource name of the resource this column is within.
    * </pre>
    *
    * <code>string table_full_resource = 5;</code>
@@ -1072,7 +1072,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The resource name of the table this column is within.
+   * The resource name of the resource this column is within.
    * </pre>
    *
    * <code>string table_full_resource = 5;</code>
@@ -1100,7 +1100,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The Google Cloud project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the profiled resource.
    * </pre>
    *
    * <code>string dataset_project_id = 19;</code>
@@ -1123,7 +1123,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The Google Cloud project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the profiled resource.
    * </pre>
    *
    * <code>string dataset_project_id = 19;</code>
@@ -3353,7 +3353,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the table this column is within.
+     * The resource name of the resource this column is within.
      * </pre>
      *
      * <code>string table_full_resource = 5;</code>
@@ -3375,7 +3375,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the table this column is within.
+     * The resource name of the resource this column is within.
      * </pre>
      *
      * <code>string table_full_resource = 5;</code>
@@ -3397,7 +3397,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the table this column is within.
+     * The resource name of the resource this column is within.
      * </pre>
      *
      * <code>string table_full_resource = 5;</code>
@@ -3418,7 +3418,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the table this column is within.
+     * The resource name of the resource this column is within.
      * </pre>
      *
      * <code>string table_full_resource = 5;</code>
@@ -3435,7 +3435,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The resource name of the table this column is within.
+     * The resource name of the resource this column is within.
      * </pre>
      *
      * <code>string table_full_resource = 5;</code>
@@ -3459,7 +3459,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the profiled resource.
      * </pre>
      *
      * <code>string dataset_project_id = 19;</code>
@@ -3481,7 +3481,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the profiled resource.
      * </pre>
      *
      * <code>string dataset_project_id = 19;</code>
@@ -3503,7 +3503,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the profiled resource.
      * </pre>
      *
      * <code>string dataset_project_id = 19;</code>
@@ -3524,7 +3524,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the profiled resource.
      * </pre>
      *
      * <code>string dataset_project_id = 19;</code>
@@ -3541,7 +3541,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the profiled resource.
      * </pre>
      *
      * <code>string dataset_project_id = 19;</code>

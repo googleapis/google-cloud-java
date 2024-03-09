@@ -22,16 +22,30 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-accessapproval-bom</artifactId>
-        <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
+        <groupId>com.google.analytics</groupId>
+        <artifactId>google-analytics-admin-bom</artifactId>
+        <version>0.48.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.analytics</groupId>
+        <artifactId>google-analytics-data-bom</artifactId>
+        <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.area120</groupId>
+        <artifactId>google-area120-tables-bom</artifactId>
+        <version>0.42.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-identity-accesscontextmanager-bom</artifactId>
-        <version>1.39.0-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+        <artifactId>google-cloud-accessapproval-bom</artifactId>
+        <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -51,29 +65,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-alloydb-connectors-bom</artifactId>
-        <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-alloydb-bom</artifactId>
         <version>0.27.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.analytics</groupId>
-        <artifactId>google-analytics-admin-bom</artifactId>
-        <version>0.48.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-admin:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.analytics</groupId>
-        <artifactId>google-analytics-data-bom</artifactId>
-        <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:google-analytics-data:current} -->
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-alloydb-connectors-bom</artifactId>
+        <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-alloydb-connectors:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -123,13 +123,6 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-apphub-bom</artifactId>
         <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apphub:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.area120</groupId>
-        <artifactId>google-area120-tables-bom</artifactId>
-        <version>0.42.0-SNAPSHOT</version><!-- {x-version-update:google-area120-tables:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -219,15 +212,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bigqueryconnection-bom</artifactId>
-        <version>2.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
+        <artifactId>google-cloud-bigquery-data-exchange-bom</artifactId>
+        <version>2.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bigquery-data-exchange-bom</artifactId>
-        <version>2.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-data-exchange:current} -->
+        <artifactId>google-cloud-bigqueryconnection-bom</artifactId>
+        <version>2.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -261,13 +254,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-billingbudgets-bom</artifactId>
-        <version>2.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-billing-bom</artifactId>
         <version>2.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-billing:current} -->
         <type>pom</type>
@@ -275,8 +261,22 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-billingbudgets-bom</artifactId>
+        <version>2.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-binary-authorization-bom</artifactId>
         <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-binary-authorization:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-build-bom</artifactId>
+        <version>3.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -298,13 +298,6 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-chat-bom</artifactId>
         <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-chat:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-build-bom</artifactId>
-        <version>3.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -359,13 +352,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-containeranalysis-bom</artifactId>
-        <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-container-bom</artifactId>
         <version>2.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-container:current} -->
         <type>pom</type>
@@ -373,8 +359,22 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-containeranalysis-bom</artifactId>
+        <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-contentwarehouse-bom</artifactId>
         <version>0.34.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-contentwarehouse:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-data-fusion-bom</artifactId>
+        <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -396,13 +396,6 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataform-bom</artifactId>
         <version>0.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dataform:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-data-fusion-bom</artifactId>
-        <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-data-fusion:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -464,15 +457,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-dialogflow-cx-bom</artifactId>
-        <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+        <artifactId>google-cloud-dialogflow-bom</artifactId>
+        <version>4.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-dialogflow-bom</artifactId>
-        <version>4.44.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow:current} -->
+        <artifactId>google-cloud-dialogflow-cx-bom</artifactId>
+        <version>0.49.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -506,8 +499,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-dns</artifactId>
+        <version>2.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-document-ai-bom</artifactId>
-        <version>2.42.0-SNAPSHOT</version> <!-- {x-version-update:google-cloud-document-ai:current} -->
+        <version>2.42.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-document-ai:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -590,15 +588,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-gkehub-bom</artifactId>
-        <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
+        <artifactId>google-cloud-gke-multi-cloud-bom</artifactId>
+        <version>0.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-gke-multi-cloud-bom</artifactId>
-        <version>0.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gke-multi-cloud:current} -->
+        <artifactId>google-cloud-gkehub-bom</artifactId>
+        <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-gkehub:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -611,22 +609,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-iam-admin-bom</artifactId>
-        <version>3.33.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-iamcredentials-bom</artifactId>
         <version>2.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-iam-policy-bom</artifactId>
-        <version>1.36.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -681,6 +665,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-live-stream-bom</artifactId>
+        <version>0.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-managed-identities-bom</artifactId>
         <version>1.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-managed-identities:current} -->
         <type>pom</type>
@@ -716,15 +707,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-monitoring-dashboard-bom</artifactId>
-        <version>2.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
+        <artifactId>google-cloud-monitoring-bom</artifactId>
+        <version>3.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-monitoring-bom</artifactId>
-        <version>3.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+        <artifactId>google-cloud-monitoring-dashboard-bom</artifactId>
+        <version>2.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -744,13 +735,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-networkconnectivity-bom</artifactId>
-        <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-network-management-bom</artifactId>
         <version>1.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-network-management:current} -->
         <type>pom</type>
@@ -765,10 +749,22 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-networkconnectivity-bom</artifactId>
+        <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-notebooks-bom</artifactId>
         <version>1.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-notebooks:current} -->
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-notification</artifactId>
+        <version>0.156.0-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -814,15 +810,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-policysimulator-bom</artifactId>
-        <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policysimulator:current} -->
+        <artifactId>google-cloud-policy-troubleshooter-bom</artifactId>
+        <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-policy-troubleshooter-bom</artifactId>
-        <version>1.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policy-troubleshooter:current} -->
+        <artifactId>google-cloud-policysimulator-bom</artifactId>
+        <version>0.17.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-policysimulator:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -877,13 +873,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-redis-cluster-bom</artifactId>
-        <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis-cluster:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-redis-bom</artifactId>
         <version>2.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis:current} -->
         <type>pom</type>
@@ -891,8 +880,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-resourcemanager-bom</artifactId>
-        <version>1.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
+        <artifactId>google-cloud-redis-cluster-bom</artifactId>
+        <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-redis-cluster:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -900,6 +889,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-resource-settings-bom</artifactId>
         <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-resource-settings:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-resourcemanager-bom</artifactId>
+        <version>1.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -940,15 +936,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-securitycenter-bom</artifactId>
-        <version>2.46.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter:current} -->
+        <artifactId>google-cloud-security-private-ca-bom</artifactId>
+        <version>2.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-securitycentermanagement-bom</artifactId>
-        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycentermanagement:current} -->
+        <artifactId>google-cloud-securitycenter-bom</artifactId>
+        <version>2.46.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -961,6 +957,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-securitycentermanagement-bom</artifactId>
+        <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycentermanagement:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-securityposture-bom</artifactId>
         <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-securityposture:current} -->
         <type>pom</type>
@@ -968,29 +971,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-security-private-ca-bom</artifactId>
-        <version>2.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-security-private-ca:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-service-control-bom</artifactId>
         <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-service-control:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-servicedirectory-bom</artifactId>
-        <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-servicehealth-bom</artifactId>
-        <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicehealth:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -1010,6 +992,20 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-servicedirectory-bom</artifactId>
+        <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-servicehealth-bom</artifactId>
+        <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicehealth:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shell-bom</artifactId>
         <version>2.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shell:current} -->
         <type>pom</type>
@@ -1024,13 +1020,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-storageinsights-bom</artifactId>
-        <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage-transfer-bom</artifactId>
         <version>1.38.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage-transfer:current} -->
         <type>pom</type>
@@ -1038,8 +1027,15 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-storageinsights-bom</artifactId>
+        <version>0.23.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storageinsights:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-talent-bom</artifactId>
-        <version>2.39.0-SNAPSHOT</version> <!-- {x-version-update:google-cloud-talent:current} -->
+        <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-talent:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -1096,13 +1092,6 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence-bom</artifactId>
         <version>2.37.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-live-stream-bom</artifactId>
-        <version>0.40.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-live-stream:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -1192,21 +1181,30 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-dns</artifactId>
-        <version>2.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+        <artifactId>google-iam-admin-bom</artifactId>
+        <version>3.33.0-SNAPSHOT</version><!-- {x-version-update:google-iam-admin:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-iam-policy-bom</artifactId>
+        <version>1.36.0-SNAPSHOT</version><!-- {x-version-update:google-iam-policy:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-identity-accesscontextmanager-bom</artifactId>
+        <version>1.39.0-SNAPSHOT</version><!-- {x-version-update:google-identity-accesscontextmanager:current} -->
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>io.grafeas</groupId>
         <artifactId>grafeas</artifactId>
         <version>2.39.0-SNAPSHOT</version><!-- {x-version-update:grafeas:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-notification</artifactId>
-        <version>0.156.0-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-notification:current} -->
-      </dependency>
-
     </dependencies>
   </dependencyManagement>
-
 </project>

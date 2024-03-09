@@ -28,7 +28,9 @@ public interface DeleteWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Workload to delete from an
+   * Application. Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface DeleteWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Workload to delete from an
+   * Application. Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * </pre>
    *
    * <code>

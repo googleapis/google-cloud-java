@@ -19,6 +19,7 @@ package com.google.cloud.dlp.v2;
 import com.google.api.core.BetaApi;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -38,12 +39,15 @@ import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpServiceGrpc.DlpServiceImplBase;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
+import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.GetTableDataProfileRequest;
 import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
@@ -51,6 +55,8 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -63,13 +69,19 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
+import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -894,6 +906,135 @@ public class MockDlpServiceImpl extends DlpServiceImplBase {
                   "Unrecognized response type %s for method DeleteStoredInfoType, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listProjectDataProfiles(
+      ListProjectDataProfilesRequest request,
+      StreamObserver<ListProjectDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListProjectDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListProjectDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProjectDataProfiles, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListProjectDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listTableDataProfiles(
+      ListTableDataProfilesRequest request,
+      StreamObserver<ListTableDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListTableDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListTableDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTableDataProfiles, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListTableDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listColumnDataProfiles(
+      ListColumnDataProfilesRequest request,
+      StreamObserver<ListColumnDataProfilesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListColumnDataProfilesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListColumnDataProfilesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListColumnDataProfiles, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListColumnDataProfilesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getProjectDataProfile(
+      GetProjectDataProfileRequest request, StreamObserver<ProjectDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ProjectDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((ProjectDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProjectDataProfile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ProjectDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getTableDataProfile(
+      GetTableDataProfileRequest request, StreamObserver<TableDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TableDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((TableDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTableDataProfile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TableDataProfile.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getColumnDataProfile(
+      GetColumnDataProfileRequest request, StreamObserver<ColumnDataProfile> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ColumnDataProfile) {
+      requests.add(request);
+      responseObserver.onNext(((ColumnDataProfile) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetColumnDataProfile, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ColumnDataProfile.class.getName(),
                   Exception.class.getName())));
     }
   }
