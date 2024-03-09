@@ -922,7 +922,6 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/gkehub/v1
   - proto_path: google/cloud/gkehub/v1alpha
-  - proto_path: google/cloud/gkehub/v1alpha2
   - proto_path: google/cloud/gkehub/v1beta
   - proto_path: google/cloud/gkehub/v1beta1
 
