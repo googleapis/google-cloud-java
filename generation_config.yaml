@@ -1995,6 +1995,14 @@ libraries:
   - proto_path: google/cloud/workflows/v1
   - proto_path: google/cloud/workflows/v1beta
 
+- api_shortname: workspaceevents
+  name_pretty: Google Workspace Events API
+  product_documentation: https://developers.google.com/workspace/events
+  api_description: The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.
+  rest_documentation: https://developers.google.com/workspace/events/reference/rest
+  GAPICs:
+  - proto_path: google/apps/events/subscriptions/v1
+
 - api_shortname: workstations
   name_pretty: Cloud Workstations
   product_documentation: https://cloud.google.com/workstations
