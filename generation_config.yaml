@@ -20,6 +20,20 @@ template_excludes:
 # java-{library.library_name} or java-{library.api-shortname} when
 # library.library_name is not defined.
 libraries:
+- api_shortname: analyticsdata
+  name_pretty: Analytics Data
+  product_documentation: https://developers.google.com/analytics/trusted-testing/analytics-data
+  api_description: provides programmatic methods to access report data in Google Analytics
+    App+Web properties.
+  library_name: analytics-data
+  api_id: analytics-data.googleapis.com
+  cloud_api: false
+  distribution_name: com.google.analytics:google-analytics-data
+  codeowner_team: '@googleapis/analytics-dpe'
+  GAPICs:
+  - proto_path: google/analytics/data/v1alpha
+  - proto_path: google/analytics/data/v1beta
+
 - api_shortname: networkmanagement
   name_pretty: Network Management API
   product_documentation: https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest/
