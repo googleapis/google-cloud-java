@@ -107,4 +107,4 @@ jobs:
         fi
       env:
         GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
-        pr_num: ${{ steps.setup-branch.outputs.pr_num }}
+        pr_num: ${{ env.pr_num }}
