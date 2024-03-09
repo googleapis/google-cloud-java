@@ -39,7 +39,6 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 @Generated("by gapic-generator-java")
@@ -195,7 +194,6 @@ public class ChunkServiceClientHttpJsonTest {
     }
   }
 
-  @Ignore
   @Test
   public void listChunksTest() throws Exception {
     Chunk responsesElement = Chunk.newBuilder().build();
@@ -232,7 +230,6 @@ public class ChunkServiceClientHttpJsonTest {
             .matches());
   }
 
-  @Ignore
   @Test
   public void listChunksExceptionTest() throws Exception {
     ApiException exception =
@@ -251,7 +248,6 @@ public class ChunkServiceClientHttpJsonTest {
     }
   }
 
-  @Ignore
   @Test
   public void listChunksTest2() throws Exception {
     Chunk responsesElement = Chunk.newBuilder().build();
@@ -287,7 +283,6 @@ public class ChunkServiceClientHttpJsonTest {
             .matches());
   }
 
-  @Ignore
   @Test
   public void listChunksExceptionTest2() throws Exception {
     ApiException exception =
