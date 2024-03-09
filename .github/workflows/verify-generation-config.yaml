@@ -70,7 +70,7 @@ jobs:
           -e "RUNNING_IN_DOCKER=true" \
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
           gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
-          python /src/generate_repo.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --repository-path=/workspace/google-cloud-java --target-library-api-shortname=networkmanagement
+          python /src/generate_repo.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --repository-path=/workspace/google-cloud-java
     - name: generate pull request description
       id: generate-description
       shell: bash
