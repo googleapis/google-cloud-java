@@ -1594,6 +1594,13 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/securitycentermanagement/v1
 
+- api_shortname: securityposture
+  name_pretty: Security Posture API
+  product_documentation: https://cloud.google.com/security-command-center/docs/security-posture-overview
+  api_description: Security Posture is a comprehensive framework of policy sets that empowers organizations to define, assess early, deploy, and monitor their security measures in a unified way and helps simplify governance and reduces administrative toil.
+  GAPICs:
+  - proto_path: google/cloud/securityposture/v1
+
 - api_shortname: servicecontrol
   name_pretty: Service Control API
   product_documentation: https://cloud.google.com/service-infrastructure/docs/overview/
