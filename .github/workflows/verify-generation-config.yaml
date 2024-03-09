@@ -88,7 +88,7 @@ jobs:
           gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
           python /src/generate_pr_description.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --baseline-commit="${baseline_commit}"
       env:
-        baseline_commit: ${{ steps.get-baseline.outputs.baseline_commit }}
+        baseline_commit: ${{ env.baseline_commit }}
     - name: create or update the pull request
       shell: bash
       run: |
