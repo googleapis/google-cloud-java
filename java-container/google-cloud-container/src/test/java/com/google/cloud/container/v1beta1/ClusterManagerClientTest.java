@@ -108,6 +108,7 @@ import com.google.container.v1beta1.ResourceLabels;
 import com.google.container.v1beta1.ResourceManagerTags;
 import com.google.container.v1beta1.ResourceUsageExportConfig;
 import com.google.container.v1beta1.RollbackNodePoolUpgradeRequest;
+import com.google.container.v1beta1.SecretManagerConfig;
 import com.google.container.v1beta1.SecurityPostureConfig;
 import com.google.container.v1beta1.ServerConfig;
 import com.google.container.v1beta1.SetAddonsConfigRequest;
@@ -316,6 +317,7 @@ public class ClusterManagerClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
+            .setSecretManagerConfig(SecretManagerConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

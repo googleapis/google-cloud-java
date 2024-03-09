@@ -178,7 +178,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
      *
      * See the
-     * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+     * [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
      * related to this operation.
      * </pre>
      *
@@ -223,7 +224,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
      *
      * See the
-     * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+     * [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
      * related to this operation.
      * </pre>
      *
@@ -268,7 +270,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
      *
      * See the
-     * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+     * [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
      * related to this operation.
      * </pre>
      *
@@ -473,7 +476,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
      *
      * See the
-     * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+     * [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
      * related to this operation.
      * </pre>
      *
@@ -521,7 +525,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
      *
      * See the
-     * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+     * [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
      * related to this operation.
      * </pre>
      *
@@ -571,7 +576,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
      * Valid data types of the provided timestamp property are: `TIMESTAMP`.
      *
      * See the
-     * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+     * [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
      * related to this operation.
      * </pre>
      *
@@ -1494,7 +1500,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1541,7 +1548,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1594,7 +1602,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1649,7 +1658,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1701,7 +1711,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1761,7 +1772,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1813,7 +1825,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1860,7 +1873,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -1911,7 +1925,8 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
        * Valid data types of the provided timestamp property are: `TIMESTAMP`.
        *
        * See the
-       * [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-timespan)
+       * [known
+       * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-timespan)
        * related to this operation.
        * </pre>
        *
@@ -2326,6 +2341,12 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
   public static final int TIMESPAN_CONFIG_FIELD_NUMBER = 6;
   private com.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespanConfig_;
   /**
+   *
+   *
+   * <pre>
+   * Configuration of the timespan of the items to include in scanning.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
    *
    * @return Whether the timespanConfig field is set.
@@ -2335,6 +2356,12 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * Configuration of the timespan of the items to include in scanning.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
    *
    * @return The timespanConfig.
@@ -2345,7 +2372,15 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.getDefaultInstance()
         : timespanConfig_;
   }
-  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of the timespan of the items to include in scanning.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   */
   @java.lang.Override
   public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder
       getTimespanConfigOrBuilder() {
@@ -3723,6 +3758,12 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder>
         timespanConfigBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
      *
      * @return Whether the timespanConfig field is set.
@@ -3731,6 +3772,12 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
      *
      * @return The timespanConfig.
@@ -3744,7 +3791,15 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
         return timespanConfigBuilder_.getMessage();
       }
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     */
     public Builder setTimespanConfig(com.google.privacy.dlp.v2.StorageConfig.TimespanConfig value) {
       if (timespanConfigBuilder_ == null) {
         if (value == null) {
@@ -3758,7 +3813,15 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     */
     public Builder setTimespanConfig(
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder builderForValue) {
       if (timespanConfigBuilder_ == null) {
@@ -3770,7 +3833,15 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     */
     public Builder mergeTimespanConfig(
         com.google.privacy.dlp.v2.StorageConfig.TimespanConfig value) {
       if (timespanConfigBuilder_ == null) {
@@ -3791,7 +3862,15 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     */
     public Builder clearTimespanConfig() {
       bitField0_ = (bitField0_ & ~0x00000010);
       timespanConfig_ = null;
@@ -3802,14 +3881,30 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     */
     public com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder
         getTimespanConfigBuilder() {
       bitField0_ |= 0x00000010;
       onChanged();
       return getTimespanConfigFieldBuilder().getBuilder();
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     */
     public com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder
         getTimespanConfigOrBuilder() {
       if (timespanConfigBuilder_ != null) {
@@ -3820,7 +3915,15 @@ public final class StorageConfig extends com.google.protobuf.GeneratedMessageV3
             : timespanConfig_;
       }
     }
-    /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the timespan of the items to include in scanning.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfig,
             com.google.privacy.dlp.v2.StorageConfig.TimespanConfig.Builder,

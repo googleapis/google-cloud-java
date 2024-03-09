@@ -139,6 +139,39 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 5;</code>
      */
     OTHER(5),
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for the
+     * terms which are included from the terminology blocklist.
+     * </pre>
+     *
+     * <code>BLOCKLIST = 6;</code>
+     */
+    BLOCKLIST(6),
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * the prohibited contents.
+     * </pre>
+     *
+     * <code>PROHIBITED_CONTENT = 7;</code>
+     */
+    PROHIBITED_CONTENT(7),
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * Sensitive Personally Identifiable Information (SPII) contents.
+     * </pre>
+     *
+     * <code>SPII = 8;</code>
+     */
+    SPII(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -205,6 +238,39 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 5;</code>
      */
     public static final int OTHER_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for the
+     * terms which are included from the terminology blocklist.
+     * </pre>
+     *
+     * <code>BLOCKLIST = 6;</code>
+     */
+    public static final int BLOCKLIST_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * the prohibited contents.
+     * </pre>
+     *
+     * <code>PROHIBITED_CONTENT = 7;</code>
+     */
+    public static final int PROHIBITED_CONTENT_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * Sensitive Personally Identifiable Information (SPII) contents.
+     * </pre>
+     *
+     * <code>SPII = 8;</code>
+     */
+    public static final int SPII_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -242,6 +308,12 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
           return RECITATION;
         case 5:
           return OTHER;
+        case 6:
+          return BLOCKLIST;
+        case 7:
+          return PROHIBITED_CONTENT;
+        case 8:
+          return SPII;
         default:
           return null;
       }

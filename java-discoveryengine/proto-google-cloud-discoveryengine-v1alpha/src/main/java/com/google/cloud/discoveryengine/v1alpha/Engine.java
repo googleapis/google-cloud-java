@@ -1675,7 +1675,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of engine e.g. `recommended-for-you`.
+     * Required. The type of engine. e.g., `recommended-for-you`.
      *
      * This field together with
      * [optimization_objective][Engine.optimization_objective] describe engine
@@ -1694,7 +1694,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of engine e.g. `recommended-for-you`.
+     * Required. The type of engine. e.g., `recommended-for-you`.
      *
      * This field together with
      * [optimization_objective][Engine.optimization_objective] describe engine
@@ -1714,7 +1714,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optimization objective e.g. `cvr`.
+     * The optimization objective. e.g., `cvr`.
      *
      * This field together with
      * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -1740,7 +1740,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optimization objective e.g. `cvr`.
+     * The optimization objective. e.g., `cvr`.
      *
      * This field together with
      * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -2925,7 +2925,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of engine e.g. `recommended-for-you`.
+     * Required. The type of engine. e.g., `recommended-for-you`.
      *
      * This field together with
      * [optimization_objective][Engine.optimization_objective] describe engine
@@ -2955,7 +2955,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The type of engine e.g. `recommended-for-you`.
+     * Required. The type of engine. e.g., `recommended-for-you`.
      *
      * This field together with
      * [optimization_objective][Engine.optimization_objective] describe engine
@@ -2990,7 +2990,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optimization objective e.g. `cvr`.
+     * The optimization objective. e.g., `cvr`.
      *
      * This field together with
      * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -3027,7 +3027,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The optimization objective e.g. `cvr`.
+     * The optimization objective. e.g., `cvr`.
      *
      * This field together with
      * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -3682,7 +3682,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The type of engine e.g. `recommended-for-you`.
+       * Required. The type of engine. e.g., `recommended-for-you`.
        *
        * This field together with
        * [optimization_objective][Engine.optimization_objective] describe engine
@@ -3711,7 +3711,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The type of engine e.g. `recommended-for-you`.
+       * Required. The type of engine. e.g., `recommended-for-you`.
        *
        * This field together with
        * [optimization_objective][Engine.optimization_objective] describe engine
@@ -3740,7 +3740,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The type of engine e.g. `recommended-for-you`.
+       * Required. The type of engine. e.g., `recommended-for-you`.
        *
        * This field together with
        * [optimization_objective][Engine.optimization_objective] describe engine
@@ -3768,7 +3768,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The type of engine e.g. `recommended-for-you`.
+       * Required. The type of engine. e.g., `recommended-for-you`.
        *
        * This field together with
        * [optimization_objective][Engine.optimization_objective] describe engine
@@ -3792,7 +3792,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The type of engine e.g. `recommended-for-you`.
+       * Required. The type of engine. e.g., `recommended-for-you`.
        *
        * This field together with
        * [optimization_objective][Engine.optimization_objective] describe engine
@@ -3823,7 +3823,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The optimization objective e.g. `cvr`.
+       * The optimization objective. e.g., `cvr`.
        *
        * This field together with
        * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -3859,7 +3859,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The optimization objective e.g. `cvr`.
+       * The optimization objective. e.g., `cvr`.
        *
        * This field together with
        * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -3895,7 +3895,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The optimization objective e.g. `cvr`.
+       * The optimization objective. e.g., `cvr`.
        *
        * This field together with
        * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -3930,7 +3930,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The optimization objective e.g. `cvr`.
+       * The optimization objective. e.g., `cvr`.
        *
        * This field together with
        * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -3961,7 +3961,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The optimization objective e.g. `cvr`.
+       * The optimization objective. e.g., `cvr`.
        *
        * This field together with
        * [optimization_objective][google.cloud.discoveryengine.v1alpha.Engine.MediaRecommendationEngineConfig.type]
@@ -4585,8 +4585,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * or
      * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
      * API after engine creation. Please use
-     * [chat_engine_metadata.dialogflow_agent][] for actual agent
-     * association after Engine is created.
+     * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+     * for actual agent association after Engine is created.
      * </pre>
      *
      * <code>string dialogflow_agent_to_link = 2;</code>
@@ -4611,8 +4611,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * or
      * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
      * API after engine creation. Please use
-     * [chat_engine_metadata.dialogflow_agent][] for actual agent
-     * association after Engine is created.
+     * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+     * for actual agent association after Engine is created.
      * </pre>
      *
      * <code>string dialogflow_agent_to_link = 2;</code>
@@ -4758,6 +4758,35 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for timeZone.
        */
       com.google.protobuf.ByteString getTimeZoneBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Agent location for Agent creation, supported values: global/us/eu.
+       * If not provided, us Engine will create Agent using us-central-1 by
+       * default; eu Engine will create Agent using eu-west-1 by default.
+       * </pre>
+       *
+       * <code>string location = 4;</code>
+       *
+       * @return The location.
+       */
+      java.lang.String getLocation();
+      /**
+       *
+       *
+       * <pre>
+       * Agent location for Agent creation, supported values: global/us/eu.
+       * If not provided, us Engine will create Agent using us-central-1 by
+       * default; eu Engine will create Agent using eu-west-1 by default.
+       * </pre>
+       *
+       * <code>string location = 4;</code>
+       *
+       * @return The bytes for location.
+       */
+      com.google.protobuf.ByteString getLocationBytes();
     }
     /**
      *
@@ -4790,6 +4819,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         business_ = "";
         defaultLanguageCode_ = "";
         timeZone_ = "";
+        location_ = "";
       }
 
       @java.lang.Override
@@ -4982,6 +5012,61 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int LOCATION_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object location_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Agent location for Agent creation, supported values: global/us/eu.
+       * If not provided, us Engine will create Agent using us-central-1 by
+       * default; eu Engine will create Agent using eu-west-1 by default.
+       * </pre>
+       *
+       * <code>string location = 4;</code>
+       *
+       * @return The location.
+       */
+      @java.lang.Override
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Agent location for Agent creation, supported values: global/us/eu.
+       * If not provided, us Engine will create Agent using us-central-1 by
+       * default; eu Engine will create Agent using eu-west-1 by default.
+       * </pre>
+       *
+       * <code>string location = 4;</code>
+       *
+       * @return The bytes for location.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -5005,6 +5090,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timeZone_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, location_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -5022,6 +5110,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeZone_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timeZone_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, location_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -5045,6 +5136,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         if (!getBusiness().equals(other.getBusiness())) return false;
         if (!getDefaultLanguageCode().equals(other.getDefaultLanguageCode())) return false;
         if (!getTimeZone().equals(other.getTimeZone())) return false;
+        if (!getLocation().equals(other.getLocation())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -5062,6 +5154,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getDefaultLanguageCode().hashCode();
         hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
         hash = (53 * hash) + getTimeZone().hashCode();
+        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLocation().hashCode();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -5240,6 +5334,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
           business_ = "";
           defaultLanguageCode_ = "";
           timeZone_ = "";
+          location_ = "";
           return this;
         }
 
@@ -5293,6 +5388,9 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
             result.timeZone_ = timeZone_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.location_ = location_;
           }
         }
 
@@ -5368,6 +5466,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000004;
             onChanged();
           }
+          if (!other.getLocation().isEmpty()) {
+            location_ = other.location_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -5412,6 +5515,12 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000004;
                     break;
                   } // case 26
+                case 34:
+                  {
+                    location_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5784,6 +5893,122 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object location_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Agent location for Agent creation, supported values: global/us/eu.
+         * If not provided, us Engine will create Agent using us-central-1 by
+         * default; eu Engine will create Agent using eu-west-1 by default.
+         * </pre>
+         *
+         * <code>string location = 4;</code>
+         *
+         * @return The location.
+         */
+        public java.lang.String getLocation() {
+          java.lang.Object ref = location_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            location_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Agent location for Agent creation, supported values: global/us/eu.
+         * If not provided, us Engine will create Agent using us-central-1 by
+         * default; eu Engine will create Agent using eu-west-1 by default.
+         * </pre>
+         *
+         * <code>string location = 4;</code>
+         *
+         * @return The bytes for location.
+         */
+        public com.google.protobuf.ByteString getLocationBytes() {
+          java.lang.Object ref = location_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            location_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Agent location for Agent creation, supported values: global/us/eu.
+         * If not provided, us Engine will create Agent using us-central-1 by
+         * default; eu Engine will create Agent using eu-west-1 by default.
+         * </pre>
+         *
+         * <code>string location = 4;</code>
+         *
+         * @param value The location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocation(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Agent location for Agent creation, supported values: global/us/eu.
+         * If not provided, us Engine will create Agent using us-central-1 by
+         * default; eu Engine will create Agent using eu-west-1 by default.
+         * </pre>
+         *
+         * <code>string location = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLocation() {
+          location_ = getDefaultInstance().getLocation();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Agent location for Agent creation, supported values: global/us/eu.
+         * If not provided, us Engine will create Agent using us-central-1 by
+         * default; eu Engine will create Agent using eu-west-1 by default.
+         * </pre>
+         *
+         * <code>string location = 4;</code>
+         *
+         * @param value The bytes for location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          location_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5963,8 +6188,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * or
      * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
      * API after engine creation. Please use
-     * [chat_engine_metadata.dialogflow_agent][] for actual agent
-     * association after Engine is created.
+     * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+     * for actual agent association after Engine is created.
      * </pre>
      *
      * <code>string dialogflow_agent_to_link = 2;</code>
@@ -6000,8 +6225,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * or
      * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
      * API after engine creation. Please use
-     * [chat_engine_metadata.dialogflow_agent][] for actual agent
-     * association after Engine is created.
+     * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+     * for actual agent association after Engine is created.
      * </pre>
      *
      * <code>string dialogflow_agent_to_link = 2;</code>
@@ -6741,8 +6966,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        * or
        * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
        * API after engine creation. Please use
-       * [chat_engine_metadata.dialogflow_agent][] for actual agent
-       * association after Engine is created.
+       * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+       * for actual agent association after Engine is created.
        * </pre>
        *
        * <code>string dialogflow_agent_to_link = 2;</code>
@@ -6777,8 +7002,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        * or
        * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
        * API after engine creation. Please use
-       * [chat_engine_metadata.dialogflow_agent][] for actual agent
-       * association after Engine is created.
+       * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+       * for actual agent association after Engine is created.
        * </pre>
        *
        * <code>string dialogflow_agent_to_link = 2;</code>
@@ -6813,8 +7038,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        * or
        * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
        * API after engine creation. Please use
-       * [chat_engine_metadata.dialogflow_agent][] for actual agent
-       * association after Engine is created.
+       * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+       * for actual agent association after Engine is created.
        * </pre>
        *
        * <code>string dialogflow_agent_to_link = 2;</code>
@@ -6848,8 +7073,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        * or
        * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
        * API after engine creation. Please use
-       * [chat_engine_metadata.dialogflow_agent][] for actual agent
-       * association after Engine is created.
+       * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+       * for actual agent association after Engine is created.
        * </pre>
        *
        * <code>string dialogflow_agent_to_link = 2;</code>
@@ -6879,8 +7104,8 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        * or
        * [EngineService.ListEngines][google.cloud.discoveryengine.v1alpha.EngineService.ListEngines]
        * API after engine creation. Please use
-       * [chat_engine_metadata.dialogflow_agent][] for actual agent
-       * association after Engine is created.
+       * [ChatEngineMetadata.dialogflow_agent][google.cloud.discoveryengine.v1alpha.Engine.ChatEngineMetadata.dialogflow_agent]
+       * for actual agent association after Engine is created.
        * </pre>
        *
        * <code>string dialogflow_agent_to_link = 2;</code>
@@ -6975,11 +7200,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the company, business or entity that is associated with the
-     * engine. Setting this may help improve LLM related features.
+     * Immutable. The name of the company, business or entity that is associated
+     * with the engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1;</code>
+     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The companyName.
      */
@@ -6988,11 +7213,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the company, business or entity that is associated with the
-     * engine. Setting this may help improve LLM related features.
+     * Immutable. The name of the company, business or entity that is associated
+     * with the engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1;</code>
+     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for companyName.
      */
@@ -7050,11 +7275,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the company, business or entity that is associated with the
-     * engine. Setting this may help improve LLM related features.
+     * Immutable. The name of the company, business or entity that is associated
+     * with the engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1;</code>
+     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The companyName.
      */
@@ -7074,11 +7299,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the company, business or entity that is associated with the
-     * engine. Setting this may help improve LLM related features.
+     * Immutable. The name of the company, business or entity that is associated
+     * with the engine. Setting this may help improve LLM related features.
      * </pre>
      *
-     * <code>string company_name = 1;</code>
+     * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for companyName.
      */
@@ -7450,11 +7675,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The name of the company, business or entity that is associated with the
-       * engine. Setting this may help improve LLM related features.
+       * Immutable. The name of the company, business or entity that is associated
+       * with the engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1;</code>
+       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return The companyName.
        */
@@ -7473,11 +7698,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The name of the company, business or entity that is associated with the
-       * engine. Setting this may help improve LLM related features.
+       * Immutable. The name of the company, business or entity that is associated
+       * with the engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1;</code>
+       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return The bytes for companyName.
        */
@@ -7496,11 +7721,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The name of the company, business or entity that is associated with the
-       * engine. Setting this may help improve LLM related features.
+       * Immutable. The name of the company, business or entity that is associated
+       * with the engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1;</code>
+       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @param value The companyName to set.
        * @return This builder for chaining.
@@ -7518,11 +7743,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The name of the company, business or entity that is associated with the
-       * engine. Setting this may help improve LLM related features.
+       * Immutable. The name of the company, business or entity that is associated
+       * with the engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1;</code>
+       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @return This builder for chaining.
        */
@@ -7536,11 +7761,11 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The name of the company, business or entity that is associated with the
-       * engine. Setting this may help improve LLM related features.
+       * Immutable. The name of the company, business or entity that is associated
+       * with the engine. Setting this may help improve LLM related features.
        * </pre>
        *
-       * <code>string company_name = 1;</code>
+       * <code>string company_name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
        *
        * @param value The bytes for companyName to set.
        * @return This builder for chaining.
@@ -10989,7 +11214,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>
@@ -11022,7 +11247,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>
@@ -11055,7 +11280,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>
@@ -11089,7 +11314,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>
@@ -14424,7 +14649,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14458,7 +14683,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14491,7 +14716,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14525,7 +14750,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14559,7 +14784,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14601,7 +14826,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14642,7 +14867,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14680,7 +14905,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>
@@ -14717,7 +14942,7 @@ public final class Engine extends com.google.protobuf.GeneratedMessageV3
      * Note that when used in
      * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
      * one DataStore id must be provided as the system will use it for necessary
-     * intializations.
+     * initializations.
      * </pre>
      *
      * <code>repeated string data_store_ids = 5;</code>

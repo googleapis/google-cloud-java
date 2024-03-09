@@ -25,8 +25,9 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * The inspectTemplate contains a configuration (set of types of sensitive data
  * to be detected) to be used anywhere you otherwise would normally specify
- * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
- * to learn more.
+ * InspectConfig. See
+ * https://cloud.google.com/sensitive-data-protection/docs/concepts-templates to
+ * learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.InspectTemplate}
@@ -603,8 +604,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The inspectTemplate contains a configuration (set of types of sensitive data
    * to be detected) to be used anywhere you otherwise would normally specify
-   * InspectConfig. See https://cloud.google.com/dlp/docs/concepts-templates
-   * to learn more.
+   * InspectConfig. See
+   * https://cloud.google.com/sensitive-data-protection/docs/concepts-templates to
+   * learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.InspectTemplate}

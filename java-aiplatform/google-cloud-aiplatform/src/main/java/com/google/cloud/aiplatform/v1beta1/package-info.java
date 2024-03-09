@@ -99,25 +99,6 @@
  * }
  * }</pre>
  *
- * <p>======================= FeatureRegistryServiceClient =======================
- *
- * <p>Service Description: The service that handles CRUD and List for resources for FeatureRegistry.
- *
- * <p>Sample for FeatureRegistryServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (FeatureRegistryServiceClient featureRegistryServiceClient =
- *     FeatureRegistryServiceClient.create()) {
- *   FeatureGroupName name = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
- *   FeatureGroup response = featureRegistryServiceClient.getFeatureGroup(name);
- * }
- * }</pre>
- *
  * <p>======================= FeatureOnlineStoreServiceClient =======================
  *
  * <p>Service Description: A service for fetching feature values from the online store.
@@ -137,6 +118,25 @@
  *   FeatureViewDataKey dataKey = FeatureViewDataKey.newBuilder().build();
  *   FetchFeatureValuesResponse response =
  *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, dataKey);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureRegistryServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for FeatureRegistry.
+ *
+ * <p>Sample for FeatureRegistryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+ *     FeatureRegistryServiceClient.create()) {
+ *   FeatureGroupName name = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+ *   FeatureGroup response = featureRegistryServiceClient.getFeatureGroup(name);
  * }
  * }</pre>
  *

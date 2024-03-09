@@ -41,6 +41,10 @@ public final class PurgeConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_PurgeUserEventsMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeErrorConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeErrorConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsRequest_fieldAccessorTable;
@@ -52,6 +56,18 @@ public final class PurgeConfigProto {
       internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -64,35 +80,51 @@ public final class PurgeConfigProto {
       "\n7google/cloud/discoveryengine/v1alpha/p"
           + "urge_config.proto\022$google.cloud.discover"
           + "yengine.v1alpha\032\037google/api/field_behavi"
-          + "or.proto\032\031google/api/resource.proto\032\037goo"
-          + "gle/protobuf/timestamp.proto\"~\n\026PurgeUse"
-          + "rEventsRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n("
-          + "discoveryengine.googleapis.com/DataStore"
-          + "\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\".\n\027"
-          + "PurgeUserEventsResponse\022\023\n\013purge_count\030\001"
-          + " \001(\003\"\251\001\n\027PurgeUserEventsMetadata\022/\n\013crea"
-          + "te_time\030\001 \001(\0132\032.google.protobuf.Timestam"
-          + "p\022/\n\013update_time\030\002 \001(\0132\032.google.protobuf"
-          + ".Timestamp\022\025\n\rsuccess_count\030\003 \001(\003\022\025\n\rfai"
-          + "lure_count\030\004 \001(\003\"z\n\025PurgeDocumentsReques"
-          + "t\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%discoveryengi"
-          + "ne.googleapis.com/Branch\022\023\n\006filter\030\002 \001(\t"
-          + "B\003\340A\002\022\r\n\005force\030\003 \001(\010\"q\n\026PurgeDocumentsRe"
-          + "sponse\022\023\n\013purge_count\030\001 \001(\003\022B\n\014purge_sam"
-          + "ple\030\002 \003(\tB,\372A)\n\'discoveryengine.googleap"
-          + "is.com/Document\"\250\001\n\026PurgeDocumentsMetada"
-          + "ta\022/\n\013create_time\030\001 \001(\0132\032.google.protobu"
-          + "f.Timestamp\022/\n\013update_time\030\002 \001(\0132\032.googl"
-          + "e.protobuf.Timestamp\022\025\n\rsuccess_count\030\003 "
-          + "\001(\003\022\025\n\rfailure_count\030\004 \001(\003B\234\002\n(com.googl"
-          + "e.cloud.discoveryengine.v1alphaB\020PurgeCo"
-          + "nfigProtoP\001ZRcloud.google.com/go/discove"
-          + "ryengine/apiv1alpha/discoveryenginepb;di"
-          + "scoveryenginepb\242\002\017DISCOVERYENGINE\252\002$Goog"
-          + "le.Cloud.DiscoveryEngine.V1Alpha\312\002$Googl"
-          + "e\\Cloud\\DiscoveryEngine\\V1alpha\352\002\'Google"
-          + "::Cloud::DiscoveryEngine::V1alphab\006proto"
-          + "3"
+          + "or.proto\032\031google/api/resource.proto\0328goo"
+          + "gle/cloud/discoveryengine/v1alpha/import"
+          + "_config.proto\032\037google/protobuf/timestamp"
+          + ".proto\032\027google/rpc/status.proto\"~\n\026Purge"
+          + "UserEventsRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A"
+          + "*\n(discoveryengine.googleapis.com/DataSt"
+          + "ore\022\023\n\006filter\030\002 \001(\tB\003\340A\002\022\r\n\005force\030\003 \001(\010\""
+          + ".\n\027PurgeUserEventsResponse\022\023\n\013purge_coun"
+          + "t\030\001 \001(\003\"\251\001\n\027PurgeUserEventsMetadata\022/\n\013c"
+          + "reate_time\030\001 \001(\0132\032.google.protobuf.Times"
+          + "tamp\022/\n\013update_time\030\002 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022\025\n\rsuccess_count\030\003 \001(\003\022\025\n\r"
+          + "failure_count\030\004 \001(\003\"7\n\020PurgeErrorConfig\022"
+          + "\024\n\ngcs_prefix\030\001 \001(\tH\000B\r\n\013destination\"\231\002\n"
+          + "\025PurgeDocumentsRequest\022E\n\ngcs_source\030\005 \001"
+          + "(\0132/.google.cloud.discoveryengine.v1alph"
+          + "a.GcsSourceH\000\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%d"
+          + "iscoveryengine.googleapis.com/Branch\022\023\n\006"
+          + "filter\030\002 \001(\tB\003\340A\002\022L\n\014error_config\030\007 \001(\0132"
+          + "6.google.cloud.discoveryengine.v1alpha.P"
+          + "urgeErrorConfig\022\r\n\005force\030\003 \001(\010B\010\n\006source"
+          + "\"q\n\026PurgeDocumentsResponse\022\023\n\013purge_coun"
+          + "t\030\001 \001(\003\022B\n\014purge_sample\030\002 \003(\tB,\372A)\n\'disc"
+          + "overyengine.googleapis.com/Document\"\277\001\n\026"
+          + "PurgeDocumentsMetadata\022/\n\013create_time\030\001 "
+          + "\001(\0132\032.google.protobuf.Timestamp\022/\n\013updat"
+          + "e_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022\025\n\rsuccess_count\030\003 \001(\003\022\025\n\rfailure_count"
+          + "\030\004 \001(\003\022\025\n\rignored_count\030\005 \001(\003\"i\n%PurgeSu"
+          + "ggestionDenyListEntriesRequest\022@\n\006parent"
+          + "\030\001 \001(\tB0\340A\002\372A*\n(discoveryengine.googleap"
+          + "is.com/DataStore\"h\n&PurgeSuggestionDenyL"
+          + "istEntriesResponse\022\023\n\013purge_count\030\001 \001(\003\022"
+          + ")\n\rerror_samples\030\002 \003(\0132\022.google.rpc.Stat"
+          + "us\"\212\001\n&PurgeSuggestionDenyListEntriesMet"
+          + "adata\022/\n\013create_time\030\001 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022/\n\013update_time\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\234\002\n(com.google.c"
+          + "loud.discoveryengine.v1alphaB\020PurgeConfi"
+          + "gProtoP\001ZRcloud.google.com/go/discoverye"
+          + "ngine/apiv1alpha/discoveryenginepb;disco"
+          + "veryenginepb\242\002\017DISCOVERYENGINE\252\002$Google."
+          + "Cloud.DiscoveryEngine.V1Alpha\312\002$Google\\C"
+          + "loud\\DiscoveryEngine\\V1alpha\352\002\'Google::C"
+          + "loud::DiscoveryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -100,7 +132,9 @@ public final class PurgeConfigProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1alpha.ImportConfigProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1alpha_PurgeUserEventsRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -126,16 +160,24 @@ public final class PurgeConfigProto {
             new java.lang.String[] {
               "CreateTime", "UpdateTime", "SuccessCount", "FailureCount",
             });
-    internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsRequest_descriptor =
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeErrorConfig_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeErrorConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_PurgeErrorConfig_descriptor,
+            new java.lang.String[] {
+              "GcsPrefix", "Destination",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "Filter", "Force",
+              "GcsSource", "Parent", "Filter", "ErrorConfig", "Force", "Source",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsResponse_descriptor,
@@ -143,12 +185,36 @@ public final class PurgeConfigProto {
               "PurgeCount", "PurgeSample",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_PurgeDocumentsMetadata_descriptor,
             new java.lang.String[] {
-              "CreateTime", "UpdateTime", "SuccessCount", "FailureCount",
+              "CreateTime", "UpdateTime", "SuccessCount", "FailureCount", "IgnoredCount",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesResponse_descriptor,
+            new java.lang.String[] {
+              "PurgeCount", "ErrorSamples",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_PurgeSuggestionDenyListEntriesMetadata_descriptor,
+            new java.lang.String[] {
+              "CreateTime", "UpdateTime",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -158,7 +224,9 @@ public final class PurgeConfigProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1alpha.ImportConfigProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -397,50 +397,54 @@ public interface FeatureViewOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
    * @return Whether the vectorSearchConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasVectorSearchConfig();
   /**
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
    * @return The vectorSearchConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig getVectorSearchConfig();
   /**
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfigOrBuilder
       getVectorSearchConfigOrBuilder();
 

@@ -53,6 +53,41 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
+   * The resource type that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+   *
+   * @return Whether the dataSourceType field is set.
+   */
+  boolean hasDataSourceType();
+  /**
+   *
+   *
+   * <pre>
+   * The resource type that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+   *
+   * @return The dataSourceType.
+   */
+  com.google.privacy.dlp.v2.DataSourceType getDataSourceType();
+  /**
+   *
+   *
+   * <pre>
+   * The resource type that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+   */
+  com.google.privacy.dlp.v2.DataSourceTypeOrBuilder getDataSourceTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The resource name to the project data profile for this table.
    * </pre>
    *
@@ -78,7 +113,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the resource.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>
@@ -90,7 +125,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the resource.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>
@@ -103,7 +138,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery location where the dataset's data is stored.
+   * If supported, the location where the dataset's data is stored.
    * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
@@ -117,7 +152,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery location where the dataset's data is stored.
+   * If supported, the location where the dataset's data is stored.
    * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
@@ -132,7 +167,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery dataset ID.
+   * If the resource is BigQuery, the  dataset ID.
    * </pre>
    *
    * <code>string dataset_id = 25;</code>
@@ -144,7 +179,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery dataset ID.
+   * If the resource is BigQuery, the  dataset ID.
    * </pre>
    *
    * <code>string dataset_id = 25;</code>
@@ -157,7 +192,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery table ID.
+   * If the resource is BigQuery, the BigQuery table ID.
    * </pre>
    *
    * <code>string table_id = 26;</code>
@@ -169,7 +204,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The BigQuery table ID.
+   * If the resource is BigQuery, the BigQuery table ID.
    * </pre>
    *
    * <code>string table_id = 26;</code>
@@ -182,7 +217,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The resource name of the table.
+   * The resource name of the resource profiled.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * </pre>
    *
@@ -195,7 +230,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The resource name of the table.
+   * The resource name of the resource profiled.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * </pre>
    *

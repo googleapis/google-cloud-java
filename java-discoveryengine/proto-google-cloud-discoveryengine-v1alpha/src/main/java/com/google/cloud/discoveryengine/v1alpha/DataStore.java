@@ -692,6 +692,247 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int IDP_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.discoveryengine.v1alpha.IdpConfig idpConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data store level identity provider config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the idpConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdpConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data store level identity provider config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The idpConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.IdpConfig getIdpConfig() {
+    return idpConfig_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.IdpConfig.getDefaultInstance()
+        : idpConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data store level identity provider config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.IdpConfigOrBuilder getIdpConfigOrBuilder() {
+    return idpConfig_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.IdpConfig.getDefaultInstance()
+        : idpConfig_;
+  }
+
+  public static final int ACL_ENABLED_FIELD_NUMBER = 24;
+  private boolean aclEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Whether data in the
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] has ACL
+   * information. If set to `true`, the source data must have ACL. ACL will be
+   * ingested when data is ingested by
+   * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ImportDocuments]
+   * methods.
+   *
+   * When ACL is enabled for the
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore],
+   * [Document][google.cloud.discoveryengine.v1alpha.Document] can't be accessed
+   * by calling
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1alpha.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ListDocuments].
+   *
+   * Currently ACL is only supported in `GENERIC` industry vertical with
+   * non-`PUBLIC_WEBSITE` content config.
+   * </pre>
+   *
+   * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The aclEnabled.
+   */
+  @java.lang.Override
+  public boolean getAclEnabled() {
+    return aclEnabled_;
+  }
+
+  public static final int DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER = 27;
+  private com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+      documentProcessingConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return Whether the documentProcessingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentProcessingConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return The documentProcessingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+      getDocumentProcessingConfig() {
+    return documentProcessingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.getDefaultInstance()
+        : documentProcessingConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigOrBuilder
+      getDocumentProcessingConfigOrBuilder() {
+    return documentProcessingConfig_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.getDefaultInstance()
+        : documentProcessingConfig_;
+  }
+
+  public static final int STARTING_SCHEMA_FIELD_NUMBER = 28;
+  private com.google.cloud.discoveryengine.v1alpha.Schema startingSchema_;
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+   *
+   * @return Whether the startingSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartingSchema() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+   *
+   * @return The startingSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.Schema getStartingSchema() {
+    return startingSchema_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.Schema.getDefaultInstance()
+        : startingSchema_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1alpha.SchemaOrBuilder getStartingSchemaOrBuilder() {
+    return startingSchema_ == null
+        ? com.google.cloud.discoveryengine.v1alpha.Schema.getDefaultInstance()
+        : startingSchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -736,6 +977,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSchemaId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, defaultSchemaId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(21, getIdpConfig());
+    }
+    if (aclEnabled_ != false) {
+      output.writeBool(24, aclEnabled_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(28, getStartingSchema());
     }
     getUnknownFields().writeTo(output);
   }
@@ -782,6 +1035,20 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSchemaId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, defaultSchemaId_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getIdpConfig());
+    }
+    if (aclEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, aclEnabled_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              27, getDocumentProcessingConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -807,6 +1074,19 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasIdpConfig() != other.hasIdpConfig()) return false;
+    if (hasIdpConfig()) {
+      if (!getIdpConfig().equals(other.getIdpConfig())) return false;
+    }
+    if (getAclEnabled() != other.getAclEnabled()) return false;
+    if (hasDocumentProcessingConfig() != other.hasDocumentProcessingConfig()) return false;
+    if (hasDocumentProcessingConfig()) {
+      if (!getDocumentProcessingConfig().equals(other.getDocumentProcessingConfig())) return false;
+    }
+    if (hasStartingSchema() != other.hasStartingSchema()) return false;
+    if (hasStartingSchema()) {
+      if (!getStartingSchema().equals(other.getStartingSchema())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -836,6 +1116,20 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasIdpConfig()) {
+      hash = (37 * hash) + IDP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getIdpConfig().hashCode();
+    }
+    hash = (37 * hash) + ACL_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAclEnabled());
+    if (hasDocumentProcessingConfig()) {
+      hash = (37 * hash) + DOCUMENT_PROCESSING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentProcessingConfig().hashCode();
+    }
+    if (hasStartingSchema()) {
+      hash = (37 * hash) + STARTING_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getStartingSchema().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -978,6 +1272,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getIdpConfigFieldBuilder();
+        getDocumentProcessingConfigFieldBuilder();
+        getStartingSchemaFieldBuilder();
       }
     }
 
@@ -996,6 +1293,22 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      idpConfig_ = null;
+      if (idpConfigBuilder_ != null) {
+        idpConfigBuilder_.dispose();
+        idpConfigBuilder_ = null;
+      }
+      aclEnabled_ = false;
+      documentProcessingConfig_ = null;
+      if (documentProcessingConfigBuilder_ != null) {
+        documentProcessingConfigBuilder_.dispose();
+        documentProcessingConfigBuilder_ = null;
+      }
+      startingSchema_ = null;
+      if (startingSchemaBuilder_ != null) {
+        startingSchemaBuilder_.dispose();
+        startingSchemaBuilder_ = null;
       }
       return this;
     }
@@ -1062,6 +1375,25 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.idpConfig_ = idpConfigBuilder_ == null ? idpConfig_ : idpConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.aclEnabled_ = aclEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.documentProcessingConfig_ =
+            documentProcessingConfigBuilder_ == null
+                ? documentProcessingConfig_
+                : documentProcessingConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.startingSchema_ =
+            startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1146,6 +1478,18 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasIdpConfig()) {
+        mergeIdpConfig(other.getIdpConfig());
+      }
+      if (other.getAclEnabled() != false) {
+        setAclEnabled(other.getAclEnabled());
+      }
+      if (other.hasDocumentProcessingConfig()) {
+        mergeDocumentProcessingConfig(other.getDocumentProcessingConfig());
+      }
+      if (other.hasStartingSchema()) {
+        mergeStartingSchema(other.getStartingSchema());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1227,6 +1571,31 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 170:
+              {
+                input.readMessage(getIdpConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 170
+            case 192:
+              {
+                aclEnabled_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 192
+            case 218:
+              {
+                input.readMessage(
+                    getDocumentProcessingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 218
+            case 226:
+              {
+                input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2325,6 +2694,837 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1alpha.IdpConfig idpConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.IdpConfig,
+            com.google.cloud.discoveryengine.v1alpha.IdpConfig.Builder,
+            com.google.cloud.discoveryengine.v1alpha.IdpConfigOrBuilder>
+        idpConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the idpConfig field is set.
+     */
+    public boolean hasIdpConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The idpConfig.
+     */
+    public com.google.cloud.discoveryengine.v1alpha.IdpConfig getIdpConfig() {
+      if (idpConfigBuilder_ == null) {
+        return idpConfig_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.IdpConfig.getDefaultInstance()
+            : idpConfig_;
+      } else {
+        return idpConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdpConfig(com.google.cloud.discoveryengine.v1alpha.IdpConfig value) {
+      if (idpConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idpConfig_ = value;
+      } else {
+        idpConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdpConfig(
+        com.google.cloud.discoveryengine.v1alpha.IdpConfig.Builder builderForValue) {
+      if (idpConfigBuilder_ == null) {
+        idpConfig_ = builderForValue.build();
+      } else {
+        idpConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIdpConfig(com.google.cloud.discoveryengine.v1alpha.IdpConfig value) {
+      if (idpConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && idpConfig_ != null
+            && idpConfig_
+                != com.google.cloud.discoveryengine.v1alpha.IdpConfig.getDefaultInstance()) {
+          getIdpConfigBuilder().mergeFrom(value);
+        } else {
+          idpConfig_ = value;
+        }
+      } else {
+        idpConfigBuilder_.mergeFrom(value);
+      }
+      if (idpConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIdpConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      idpConfig_ = null;
+      if (idpConfigBuilder_ != null) {
+        idpConfigBuilder_.dispose();
+        idpConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.IdpConfig.Builder getIdpConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getIdpConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.IdpConfigOrBuilder getIdpConfigOrBuilder() {
+      if (idpConfigBuilder_ != null) {
+        return idpConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return idpConfig_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.IdpConfig.getDefaultInstance()
+            : idpConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Data store level identity provider config.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.IdpConfig,
+            com.google.cloud.discoveryengine.v1alpha.IdpConfig.Builder,
+            com.google.cloud.discoveryengine.v1alpha.IdpConfigOrBuilder>
+        getIdpConfigFieldBuilder() {
+      if (idpConfigBuilder_ == null) {
+        idpConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.IdpConfig,
+                com.google.cloud.discoveryengine.v1alpha.IdpConfig.Builder,
+                com.google.cloud.discoveryengine.v1alpha.IdpConfigOrBuilder>(
+                getIdpConfig(), getParentForChildren(), isClean());
+        idpConfig_ = null;
+      }
+      return idpConfigBuilder_;
+    }
+
+    private boolean aclEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] has ACL
+     * information. If set to `true`, the source data must have ACL. ACL will be
+     * ingested when data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore],
+     * [Document][google.cloud.discoveryengine.v1alpha.Document] can't be accessed
+     * by calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1alpha.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The aclEnabled.
+     */
+    @java.lang.Override
+    public boolean getAclEnabled() {
+      return aclEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] has ACL
+     * information. If set to `true`, the source data must have ACL. ACL will be
+     * ingested when data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore],
+     * [Document][google.cloud.discoveryengine.v1alpha.Document] can't be accessed
+     * by calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1alpha.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The aclEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAclEnabled(boolean value) {
+
+      aclEnabled_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Whether data in the
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] has ACL
+     * information. If set to `true`, the source data must have ACL. ACL will be
+     * ingested when data is ingested by
+     * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ImportDocuments]
+     * methods.
+     *
+     * When ACL is enabled for the
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore],
+     * [Document][google.cloud.discoveryengine.v1alpha.Document] can't be accessed
+     * by calling
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1alpha.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ListDocuments].
+     *
+     * Currently ACL is only supported in `GENERIC` industry vertical with
+     * non-`PUBLIC_WEBSITE` content config.
+     * </pre>
+     *
+     * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAclEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      aclEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+        documentProcessingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig,
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.Builder,
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigOrBuilder>
+        documentProcessingConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     *
+     * @return Whether the documentProcessingConfig field is set.
+     */
+    public boolean hasDocumentProcessingConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     *
+     * @return The documentProcessingConfig.
+     */
+    public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+        getDocumentProcessingConfig() {
+      if (documentProcessingConfigBuilder_ == null) {
+        return documentProcessingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.getDefaultInstance()
+            : documentProcessingConfig_;
+      } else {
+        return documentProcessingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder setDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig value) {
+      if (documentProcessingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentProcessingConfig_ = value;
+      } else {
+        documentProcessingConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder setDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.Builder builderForValue) {
+      if (documentProcessingConfigBuilder_ == null) {
+        documentProcessingConfig_ = builderForValue.build();
+      } else {
+        documentProcessingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder mergeDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig value) {
+      if (documentProcessingConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && documentProcessingConfig_ != null
+            && documentProcessingConfig_
+                != com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+                    .getDefaultInstance()) {
+          getDocumentProcessingConfigBuilder().mergeFrom(value);
+        } else {
+          documentProcessingConfig_ = value;
+        }
+      } else {
+        documentProcessingConfigBuilder_.mergeFrom(value);
+      }
+      if (documentProcessingConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public Builder clearDocumentProcessingConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      documentProcessingConfig_ = null;
+      if (documentProcessingConfigBuilder_ != null) {
+        documentProcessingConfigBuilder_.dispose();
+        documentProcessingConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.Builder
+        getDocumentProcessingConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getDocumentProcessingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigOrBuilder
+        getDocumentProcessingConfigOrBuilder() {
+      if (documentProcessingConfigBuilder_ != null) {
+        return documentProcessingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return documentProcessingConfig_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.getDefaultInstance()
+            : documentProcessingConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Document understanding and enrichment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig,
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.Builder,
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigOrBuilder>
+        getDocumentProcessingConfigFieldBuilder() {
+      if (documentProcessingConfigBuilder_ == null) {
+        documentProcessingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig,
+                com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.Builder,
+                com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigOrBuilder>(
+                getDocumentProcessingConfig(), getParentForChildren(), isClean());
+        documentProcessingConfig_ = null;
+      }
+      return documentProcessingConfigBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1alpha.Schema startingSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.Schema,
+            com.google.cloud.discoveryengine.v1alpha.Schema.Builder,
+            com.google.cloud.discoveryengine.v1alpha.SchemaOrBuilder>
+        startingSchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     *
+     * @return Whether the startingSchema field is set.
+     */
+    public boolean hasStartingSchema() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     *
+     * @return The startingSchema.
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Schema getStartingSchema() {
+      if (startingSchemaBuilder_ == null) {
+        return startingSchema_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.Schema.getDefaultInstance()
+            : startingSchema_;
+      } else {
+        return startingSchemaBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     */
+    public Builder setStartingSchema(com.google.cloud.discoveryengine.v1alpha.Schema value) {
+      if (startingSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startingSchema_ = value;
+      } else {
+        startingSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     */
+    public Builder setStartingSchema(
+        com.google.cloud.discoveryengine.v1alpha.Schema.Builder builderForValue) {
+      if (startingSchemaBuilder_ == null) {
+        startingSchema_ = builderForValue.build();
+      } else {
+        startingSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     */
+    public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1alpha.Schema value) {
+      if (startingSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && startingSchema_ != null
+            && startingSchema_
+                != com.google.cloud.discoveryengine.v1alpha.Schema.getDefaultInstance()) {
+          getStartingSchemaBuilder().mergeFrom(value);
+        } else {
+          startingSchema_ = value;
+        }
+      } else {
+        startingSchemaBuilder_.mergeFrom(value);
+      }
+      if (startingSchema_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     */
+    public Builder clearStartingSchema() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      startingSchema_ = null;
+      if (startingSchemaBuilder_ != null) {
+        startingSchemaBuilder_.dispose();
+        startingSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.Schema.Builder getStartingSchemaBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getStartingSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.SchemaOrBuilder getStartingSchemaOrBuilder() {
+      if (startingSchemaBuilder_ != null) {
+        return startingSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return startingSchema_ == null
+            ? com.google.cloud.discoveryengine.v1alpha.Schema.getDefaultInstance()
+            : startingSchema_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+     * provisioning it. If unset, a default vertical specialized schema will be
+     * used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1alpha.Schema,
+            com.google.cloud.discoveryengine.v1alpha.Schema.Builder,
+            com.google.cloud.discoveryengine.v1alpha.SchemaOrBuilder>
+        getStartingSchemaFieldBuilder() {
+      if (startingSchemaBuilder_ == null) {
+        startingSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.Schema,
+                com.google.cloud.discoveryengine.v1alpha.Schema.Builder,
+                com.google.cloud.discoveryengine.v1alpha.SchemaOrBuilder>(
+                getStartingSchema(), getParentForChildren(), isClean());
+        startingSchema_ = null;
+      }
+      return startingSchemaBuilder_;
     }
 
     @java.lang.Override

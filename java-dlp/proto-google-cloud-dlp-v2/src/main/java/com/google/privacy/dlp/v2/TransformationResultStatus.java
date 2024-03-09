@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.privacy.dlp.v2;
 
-/** Protobuf type {@code google.privacy.dlp.v2.TransformationResultStatus} */
+/**
+ *
+ *
+ * <pre>
+ * The outcome of a transformation.
+ * </pre>
+ *
+ * Protobuf type {@code google.privacy.dlp.v2.TransformationResultStatus}
+ */
 public final class TransformationResultStatus extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationResultStatus)
@@ -318,7 +326,15 @@ public final class TransformationResultStatus extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.TransformationResultStatus} */
+  /**
+   *
+   *
+   * <pre>
+   * The outcome of a transformation.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.TransformationResultStatus}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.TransformationResultStatus)

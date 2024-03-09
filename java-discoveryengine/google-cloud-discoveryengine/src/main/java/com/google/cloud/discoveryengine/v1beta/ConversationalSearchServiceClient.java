@@ -410,6 +410,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
    *           .setFilter("filter-1274492040")
+   *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .build();
    *   ConverseConversationResponse response =
    *       conversationalSearchServiceClient.converseConversation(request);
@@ -454,6 +455,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *           .putAllUserLabels(new HashMap<String, String>())
    *           .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
    *           .setFilter("filter-1274492040")
+   *           .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<ConverseConversationResponse> future =
    *       conversationalSearchServiceClient.converseConversationCallable().futureCall(request);

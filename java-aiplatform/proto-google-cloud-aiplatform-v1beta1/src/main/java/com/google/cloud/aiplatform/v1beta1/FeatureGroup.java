@@ -130,8 +130,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -143,8 +143,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -156,8 +156,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -170,8 +170,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -295,8 +295,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -310,8 +310,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -325,8 +325,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -341,8 +341,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Columns to construct entity_id / row keys. Currently only
-     * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+     * Optional. Columns to construct entity_id / row keys.
+     * If not provided defaults to `entity_id`.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -988,8 +988,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1005,8 +1005,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1021,8 +1021,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1038,8 +1038,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1055,8 +1055,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1080,8 +1080,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1104,8 +1104,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1125,8 +1125,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -1145,8 +1145,8 @@ public final class FeatureGroup extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Columns to construct entity_id / row keys. Currently only
-       * supports 1 entity_id_column. If not provided defaults to `entity_id`.
+       * Optional. Columns to construct entity_id / row keys.
+       * If not provided defaults to `entity_id`.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = OPTIONAL];

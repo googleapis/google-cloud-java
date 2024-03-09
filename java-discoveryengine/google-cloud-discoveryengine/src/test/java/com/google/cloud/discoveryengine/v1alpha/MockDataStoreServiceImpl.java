@@ -163,4 +163,48 @@ public class MockDataStoreServiceImpl extends DataStoreServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getDocumentProcessingConfig(
+      GetDocumentProcessingConfigRequest request,
+      StreamObserver<DocumentProcessingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DocumentProcessingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((DocumentProcessingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDocumentProcessingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DocumentProcessingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDocumentProcessingConfig(
+      UpdateDocumentProcessingConfigRequest request,
+      StreamObserver<DocumentProcessingConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DocumentProcessingConfig) {
+      requests.add(request);
+      responseObserver.onNext(((DocumentProcessingConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDocumentProcessingConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DocumentProcessingConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

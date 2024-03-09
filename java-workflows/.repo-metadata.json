@@ -5,14 +5,14 @@
   "api_description": "allows you to ochestrate and automate Google Cloud and HTTP-based API services with serverless workflows.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-workflows/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-workflows",
   "distribution_name": "com.google.cloud:google-cloud-workflows",
   "api_id": "workflows.googleapis.com",
-  "requires_billing": true,
   "library_type": "GAPIC_AUTO",
+  "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes",
   "rest_documentation": "https://cloud.google.com/workflows/docs/reference/rest"
 }

@@ -59,4 +59,29 @@ public interface CreatePersistentResourceOperationMetadataOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder
       getGenericMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Progress Message for Create LRO
+   * </pre>
+   *
+   * <code>string progress_message = 2;</code>
+   *
+   * @return The progressMessage.
+   */
+  java.lang.String getProgressMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Progress Message for Create LRO
+   * </pre>
+   *
+   * <code>string progress_message = 2;</code>
+   *
+   * @return The bytes for progressMessage.
+   */
+  com.google.protobuf.ByteString getProgressMessageBytes();
 }

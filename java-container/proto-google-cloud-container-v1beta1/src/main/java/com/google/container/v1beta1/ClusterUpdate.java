@@ -2400,7 +2400,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2607
+   *     google/container/v1beta1/cluster_service.proto;l=2610
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Override
@@ -2421,7 +2421,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2607
+   *     google/container/v1beta1/cluster_service.proto;l=2610
    * @return The desiredProtectConfig.
    */
   @java.lang.Override
@@ -3306,6 +3306,96 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int DESIRED_ENABLE_CILIUM_CLUSTERWIDE_NETWORK_POLICY_FIELD_NUMBER = 138;
+  private boolean desiredEnableCiliumClusterwideNetworkPolicy_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return Whether the desiredEnableCiliumClusterwideNetworkPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
+    return ((bitField1_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return The desiredEnableCiliumClusterwideNetworkPolicy.
+   */
+  @java.lang.Override
+  public boolean getDesiredEnableCiliumClusterwideNetworkPolicy() {
+    return desiredEnableCiliumClusterwideNetworkPolicy_;
+  }
+
+  public static final int DESIRED_SECRET_MANAGER_CONFIG_FIELD_NUMBER = 139;
+  private com.google.container.v1beta1.SecretManagerConfig desiredSecretManagerConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   *
+   * @return Whether the desiredSecretManagerConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredSecretManagerConfig() {
+    return ((bitField1_ & 0x00020000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   *
+   * @return The desiredSecretManagerConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretManagerConfig getDesiredSecretManagerConfig() {
+    return desiredSecretManagerConfig_ == null
+        ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+        : desiredSecretManagerConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretManagerConfigOrBuilder
+      getDesiredSecretManagerConfigOrBuilder() {
+    return desiredSecretManagerConfig_ == null
+        ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+        : desiredSecretManagerConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3502,6 +3592,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00008000) != 0)) {
       output.writeEnum(137, desiredInTransitEncryptionConfig_);
+    }
+    if (((bitField1_ & 0x00010000) != 0)) {
+      output.writeBool(138, desiredEnableCiliumClusterwideNetworkPolicy_);
+    }
+    if (((bitField1_ & 0x00020000) != 0)) {
+      output.writeMessage(139, getDesiredSecretManagerConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3779,6 +3875,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               137, desiredInTransitEncryptionConfig_);
     }
+    if (((bitField1_ & 0x00010000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              138, desiredEnableCiliumClusterwideNetworkPolicy_);
+    }
+    if (((bitField1_ & 0x00020000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              139, getDesiredSecretManagerConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4044,6 +4150,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (desiredInTransitEncryptionConfig_ != other.desiredInTransitEncryptionConfig_)
         return false;
     }
+    if (hasDesiredEnableCiliumClusterwideNetworkPolicy()
+        != other.hasDesiredEnableCiliumClusterwideNetworkPolicy()) return false;
+    if (hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
+      if (getDesiredEnableCiliumClusterwideNetworkPolicy()
+          != other.getDesiredEnableCiliumClusterwideNetworkPolicy()) return false;
+    }
+    if (hasDesiredSecretManagerConfig() != other.hasDesiredSecretManagerConfig()) return false;
+    if (hasDesiredSecretManagerConfig()) {
+      if (!getDesiredSecretManagerConfig().equals(other.getDesiredSecretManagerConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4274,6 +4391,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + desiredInTransitEncryptionConfig_;
     }
+    if (hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
+      hash = (37 * hash) + DESIRED_ENABLE_CILIUM_CLUSTERWIDE_NETWORK_POLICY_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(
+                  getDesiredEnableCiliumClusterwideNetworkPolicy());
+    }
+    if (hasDesiredSecretManagerConfig()) {
+      hash = (37 * hash) + DESIRED_SECRET_MANAGER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredSecretManagerConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4461,6 +4589,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredK8SBetaApisFieldBuilder();
         getDesiredHostMaintenancePolicyFieldBuilder();
         getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder();
+        getDesiredSecretManagerConfigFieldBuilder();
       }
     }
 
@@ -4708,6 +4837,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_ = null;
       }
       desiredInTransitEncryptionConfig_ = 0;
+      desiredEnableCiliumClusterwideNetworkPolicy_ = false;
+      desiredSecretManagerConfig_ = null;
+      if (desiredSecretManagerConfigBuilder_ != null) {
+        desiredSecretManagerConfigBuilder_.dispose();
+        desiredSecretManagerConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -5108,6 +5243,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredInTransitEncryptionConfig_ = desiredInTransitEncryptionConfig_;
         to_bitField1_ |= 0x00008000;
       }
+      if (((from_bitField1_ & 0x08000000) != 0)) {
+        result.desiredEnableCiliumClusterwideNetworkPolicy_ =
+            desiredEnableCiliumClusterwideNetworkPolicy_;
+        to_bitField1_ |= 0x00010000;
+      }
+      if (((from_bitField1_ & 0x10000000) != 0)) {
+        result.desiredSecretManagerConfig_ =
+            desiredSecretManagerConfigBuilder_ == null
+                ? desiredSecretManagerConfig_
+                : desiredSecretManagerConfigBuilder_.build();
+        to_bitField1_ |= 0x00020000;
+      }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
     }
@@ -5356,6 +5503,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredInTransitEncryptionConfig()) {
         setDesiredInTransitEncryptionConfig(other.getDesiredInTransitEncryptionConfig());
+      }
+      if (other.hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
+        setDesiredEnableCiliumClusterwideNetworkPolicy(
+            other.getDesiredEnableCiliumClusterwideNetworkPolicy());
+      }
+      if (other.hasDesiredSecretManagerConfig()) {
+        mergeDesiredSecretManagerConfig(other.getDesiredSecretManagerConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5792,6 +5946,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x04000000;
                 break;
               } // case 1096
+            case 1104:
+              {
+                desiredEnableCiliumClusterwideNetworkPolicy_ = input.readBool();
+                bitField1_ |= 0x08000000;
+                break;
+              } // case 1104
+            case 1114:
+              {
+                input.readMessage(
+                    getDesiredSecretManagerConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x10000000;
+                break;
+              } // case 1114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13523,7 +13690,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2607
+     *     google/container/v1beta1/cluster_service.proto;l=2610
      * @return Whether the desiredProtectConfig field is set.
      */
     @java.lang.Deprecated
@@ -13543,7 +13710,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2607
+     *     google/container/v1beta1/cluster_service.proto;l=2610
      * @return The desiredProtectConfig.
      */
     @java.lang.Deprecated
@@ -16578,6 +16745,283 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       desiredInTransitEncryptionConfig_ = 0;
       onChanged();
       return this;
+    }
+
+    private boolean desiredEnableCiliumClusterwideNetworkPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @return Whether the desiredEnableCiliumClusterwideNetworkPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
+      return ((bitField1_ & 0x08000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @return The desiredEnableCiliumClusterwideNetworkPolicy.
+     */
+    @java.lang.Override
+    public boolean getDesiredEnableCiliumClusterwideNetworkPolicy() {
+      return desiredEnableCiliumClusterwideNetworkPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @param value The desiredEnableCiliumClusterwideNetworkPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredEnableCiliumClusterwideNetworkPolicy(boolean value) {
+
+      desiredEnableCiliumClusterwideNetworkPolicy_ = value;
+      bitField1_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredEnableCiliumClusterwideNetworkPolicy() {
+      bitField1_ = (bitField1_ & ~0x08000000);
+      desiredEnableCiliumClusterwideNetworkPolicy_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.container.v1beta1.SecretManagerConfig desiredSecretManagerConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretManagerConfig,
+            com.google.container.v1beta1.SecretManagerConfig.Builder,
+            com.google.container.v1beta1.SecretManagerConfigOrBuilder>
+        desiredSecretManagerConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     *
+     * @return Whether the desiredSecretManagerConfig field is set.
+     */
+    public boolean hasDesiredSecretManagerConfig() {
+      return ((bitField1_ & 0x10000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     *
+     * @return The desiredSecretManagerConfig.
+     */
+    public com.google.container.v1beta1.SecretManagerConfig getDesiredSecretManagerConfig() {
+      if (desiredSecretManagerConfigBuilder_ == null) {
+        return desiredSecretManagerConfig_ == null
+            ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+            : desiredSecretManagerConfig_;
+      } else {
+        return desiredSecretManagerConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     */
+    public Builder setDesiredSecretManagerConfig(
+        com.google.container.v1beta1.SecretManagerConfig value) {
+      if (desiredSecretManagerConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredSecretManagerConfig_ = value;
+      } else {
+        desiredSecretManagerConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     */
+    public Builder setDesiredSecretManagerConfig(
+        com.google.container.v1beta1.SecretManagerConfig.Builder builderForValue) {
+      if (desiredSecretManagerConfigBuilder_ == null) {
+        desiredSecretManagerConfig_ = builderForValue.build();
+      } else {
+        desiredSecretManagerConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     */
+    public Builder mergeDesiredSecretManagerConfig(
+        com.google.container.v1beta1.SecretManagerConfig value) {
+      if (desiredSecretManagerConfigBuilder_ == null) {
+        if (((bitField1_ & 0x10000000) != 0)
+            && desiredSecretManagerConfig_ != null
+            && desiredSecretManagerConfig_
+                != com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()) {
+          getDesiredSecretManagerConfigBuilder().mergeFrom(value);
+        } else {
+          desiredSecretManagerConfig_ = value;
+        }
+      } else {
+        desiredSecretManagerConfigBuilder_.mergeFrom(value);
+      }
+      if (desiredSecretManagerConfig_ != null) {
+        bitField1_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     */
+    public Builder clearDesiredSecretManagerConfig() {
+      bitField1_ = (bitField1_ & ~0x10000000);
+      desiredSecretManagerConfig_ = null;
+      if (desiredSecretManagerConfigBuilder_ != null) {
+        desiredSecretManagerConfigBuilder_.dispose();
+        desiredSecretManagerConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     */
+    public com.google.container.v1beta1.SecretManagerConfig.Builder
+        getDesiredSecretManagerConfigBuilder() {
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return getDesiredSecretManagerConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     */
+    public com.google.container.v1beta1.SecretManagerConfigOrBuilder
+        getDesiredSecretManagerConfigOrBuilder() {
+      if (desiredSecretManagerConfigBuilder_ != null) {
+        return desiredSecretManagerConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredSecretManagerConfig_ == null
+            ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+            : desiredSecretManagerConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Secret Manager Config.
+     * </pre>
+     *
+     * <code>
+     * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretManagerConfig,
+            com.google.container.v1beta1.SecretManagerConfig.Builder,
+            com.google.container.v1beta1.SecretManagerConfigOrBuilder>
+        getDesiredSecretManagerConfigFieldBuilder() {
+      if (desiredSecretManagerConfigBuilder_ == null) {
+        desiredSecretManagerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.SecretManagerConfig,
+                com.google.container.v1beta1.SecretManagerConfig.Builder,
+                com.google.container.v1beta1.SecretManagerConfigOrBuilder>(
+                getDesiredSecretManagerConfig(), getParentForChildren(), isClean());
+        desiredSecretManagerConfig_ = null;
+      }
+      return desiredSecretManagerConfigBuilder_;
     }
 
     @java.lang.Override
