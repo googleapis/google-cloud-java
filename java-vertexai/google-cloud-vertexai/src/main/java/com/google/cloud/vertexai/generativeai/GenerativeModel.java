@@ -99,7 +99,7 @@ public class GenerativeModel {
     }
 
     /**
-     * Set the name of the generative model. This is required for building a GenerativeModel
+     * Sets the name of the generative model. This is required for building a GenerativeModel
      * instance. Supported format: "gemini-pro", "models/gemini-pro",
      * "publishers/google/models/gemini-pro", where "gemini-pro" is the model name. Valid model
      * names can be found at
@@ -111,7 +111,7 @@ public class GenerativeModel {
     }
 
     /**
-     * Set {@link com.google.cloud.vertexai.VertexAI} that contains the default configs for the
+     * Sets {@link com.google.cloud.vertexai.VertexAI} that contains the default configs for the
      * generative model. This is required for building a GenerativeModel instance.
      */
     public Builder setVertexAi(VertexAI vertexAi) {
@@ -120,7 +120,7 @@ public class GenerativeModel {
     }
 
     /**
-     * Set {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used by default to
+     * Sets {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used by default to
      * interact with the generative model.
      */
     @BetaApi
@@ -130,7 +130,7 @@ public class GenerativeModel {
     }
 
     /**
-     * Set a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used by
+     * Sets a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used by
      * default to interact with the generative model.
      */
     @BetaApi
@@ -145,7 +145,7 @@ public class GenerativeModel {
     }
 
     /**
-     * Set a list of {@link com.google.cloud.vertexai.api.Tool} that will be used by default to
+     * Sets a list of {@link com.google.cloud.vertexai.api.Tool} that will be used by default to
      * interact with the generative model.
      */
     @BetaApi
@@ -160,7 +160,7 @@ public class GenerativeModel {
     }
 
     /**
-     * Set the {@link Transport} layer for API calls in the generative model. It overrides the
+     * Sets the {@link Transport} layer for API calls in the generative model. It overrides the
      * transport setting in {@link com.google.cloud.vertexai.VertexAI}
      */
     public Builder setTransport(Transport transport) {
@@ -170,7 +170,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance.
+   * Constructs a GenerativeModel instance.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro", where "gemini-pro" is the model
@@ -184,7 +184,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance.
+   * Constructs a GenerativeModel instance.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro"
@@ -198,7 +198,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance with default generation config.
+   * Constructs a GenerativeModel instance with default generation config.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro"
@@ -213,7 +213,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance with default generation config.
+   * Constructs a GenerativeModel instance with default generation config.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro"
@@ -231,7 +231,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance with default safety settings.
+   * Constructs a GenerativeModel instance with default safety settings.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro"
@@ -246,7 +246,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance with default safety settings.
+   * Constructs a GenerativeModel instance with default safety settings.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro"
@@ -267,7 +267,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance with default generation config and safety settings.
+   * Constructs a GenerativeModel instance with default generation config and safety settings.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro"
@@ -288,7 +288,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Construct a GenerativeModel instance with default generation config and safety settings.
+   * Constructs a GenerativeModel instance with default generation config and safety settings.
    *
    * @param modelName the name of the generative model. Supported format: "gemini-pro",
    *     "models/gemini-pro", "publishers/google/models/gemini-pro"
@@ -332,7 +332,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Count tokens in a text message.
+   * Counts tokens in a text message.
    *
    * @param text a text message to count tokens
    * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
@@ -341,14 +341,11 @@ public class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(String text) throws IOException {
-    Content content = ContentMaker.fromString(text);
-    CountTokensRequest.Builder requestBuilder =
-        CountTokensRequest.newBuilder().addAllContents(Arrays.asList(content));
-    return countTokensFromBuilder(requestBuilder);
+    return countTokens(ContentMaker.fromString(text));
   }
 
   /**
-   * Count tokens in a single content.
+   * Counts tokens in a single content.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to count tokens
    * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
@@ -361,7 +358,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Count tokens in a list of contents.
+   * Counts tokens in a list of contents.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to count tokens
    * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
@@ -370,25 +367,27 @@ public class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(List<Content> contents) throws IOException {
-    CountTokensRequest.Builder requestBuilder =
-        CountTokensRequest.newBuilder().addAllContents(contents);
-    return countTokensFromBuilder(requestBuilder);
+    CountTokensRequest request =
+        CountTokensRequest.newBuilder()
+            .setEndpoint(resourceName)
+            .setModel(resourceName)
+            .addAllContents(contents)
+            .build();
+    return countTokensFromRequest(request);
   }
 
   /**
-   * Send CountTokensRequest given a request builder.
+   * Sends CountTokensRequest given a request message.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.CountTokensRequest.Builder} that
-   *     contains a list of contents
+   * @param request a {@link com.google.cloud.vertexai.api.CountTokensRequest} that contains a list
+   *     of contents
    * @return a {@link com.google.cloud.vertexai.api.CountTokensResponse} instance that contains the
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
   @BetaApi
-  private CountTokensResponse countTokensFromBuilder(CountTokensRequest.Builder requestBuilder)
+  private CountTokensResponse countTokensFromRequest(CountTokensRequest request)
       throws IOException {
-    CountTokensRequest request =
-        requestBuilder.setEndpoint(this.resourceName).setModel(this.resourceName).build();
     if (this.transport == Transport.REST) {
       return vertexAi.getLlmUtilityRestClient().countTokens(request);
     } else {
@@ -397,7 +396,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from generative model given a text.
+   * Generates content from generative model given a text.
    *
    * @param text a text message to send to the generative model
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
@@ -426,7 +425,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from generative model given a text and generation config.
+   * Generates content from generative model given a text and generation config.
    *
    * @param text a text message to send to the generative model
    * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
@@ -444,7 +443,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from generative model given a text and safety settings.
+   * Generates content from generative model given a text and safety settings.
    *
    * @param text a text message to send to the generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
@@ -462,7 +461,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from generative model given a text, generation config, and safety settings.
+   * Generates content from generative model given a text, generation config, and safety settings.
    *
    * @param text a text message to send to the generative model
    * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
@@ -486,7 +485,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from this model given a list of contents.
+   * Generates content from this model given a list of contents.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
@@ -500,7 +499,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from this model given a list of contents and generation config.
+   * Generates content from this model given a list of contents and generation config.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
@@ -519,7 +518,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from this model given a list of contents and safety settings.
+   * Generates content from this model given a list of contents and safety settings.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
@@ -552,7 +551,7 @@ public class GenerativeModel {
   public GenerateContentResponse generateContent(
       List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (config.getGenerationConfig() != null) {
       requestBuilder.setGenerationConfig(config.getGenerationConfig());
     } else if (this.generationConfig != null) {
@@ -569,11 +568,11 @@ public class GenerativeModel {
       requestBuilder.addAllTools(this.tools);
     }
 
-    return generateContent(requestBuilder);
+    return generateContent(requestBuilder.build());
   }
 
   /**
-   * Generate content from generative model given a list of contents, generation config, and safety
+   * Generates content from generative model given a list of contents, generation config, and safety
    * settings.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
@@ -593,7 +592,7 @@ public class GenerativeModel {
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (generationConfig != null) {
       requestBuilder.setGenerationConfig(generationConfig);
     } else if (this.generationConfig != null) {
@@ -607,32 +606,28 @@ public class GenerativeModel {
     if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
-    return generateContent(requestBuilder);
+    return generateContent(requestBuilder.build());
   }
 
   /**
    * A base generateContent method that will be used internally.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.GenerateContentRequest.Builder}
-   *     instance
+   * @param request a {@link com.google.cloud.vertexai.api.GenerateContentRequest} instance
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
-  private GenerateContentResponse generateContent(GenerateContentRequest.Builder requestBuilder)
+  private GenerateContentResponse generateContent(GenerateContentRequest request)
       throws IOException {
-    GenerateContentRequest request = requestBuilder.setModel(this.resourceName).build();
-    GenerateContentResponse response;
     if (this.transport == Transport.REST) {
-      response = vertexAi.getPredictionServiceRestClient().generateContentCallable().call(request);
+      return vertexAi.getPredictionServiceRestClient().generateContentCallable().call(request);
     } else {
-      response = vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
+      return vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
     }
-    return response;
   }
 
   /**
-   * Generate content from this model given a single content.
+   * Generates content from this model given a single content.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
@@ -661,7 +656,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from this model given a single content and generation config.
+   * Generates content from this model given a single content and generation config.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
    * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
@@ -679,7 +674,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from this model given a single content and safety settings.
+   * Generates content from this model given a single content and safety settings.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
@@ -697,7 +692,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content from generative model given a single content, generation config, and safety
+   * Generates content from generative model given a single content, generation config, and safety
    * settings.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
@@ -719,7 +714,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a text.
+   * Generates content with streaming support from generative model given a text.
    *
    * @param text a text message to send to the generative model
    * @return a {@link ResponseStream} that contains a streaming of {@link
@@ -732,7 +727,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a text and configs.
+   * Generates content with streaming support from generative model given a text and configs.
    *
    * @param text a text message to send to the generative model
    * @param config a {@link GenerateContentConfig} that contains all the configs in making a
@@ -747,7 +742,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a text and generation
+   * Generates content with streaming support from generative model given a text and generation
    * config.
    *
    * @param text a text message to send to the generative model
@@ -766,7 +761,8 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a text and safety settings.
+   * Generates content with streaming support from generative model given a text and safety
+   * settings.
    *
    * @param text a text message to send to the generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
@@ -784,7 +780,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a text, generation config,
+   * Generates content with streaming support from generative model given a text, generation config,
    * and safety settings.
    *
    * @param text a text message to send to the generative model
@@ -809,7 +805,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a single Content.
+   * Generates content with streaming support from generative model given a single Content.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model.
    *     The role of the content is "user".
@@ -823,7 +819,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a single content and
+   * Generates content with streaming support from generative model given a single content and
    * configs.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
@@ -839,7 +835,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a single Content and
+   * Generates content with streaming support from generative model given a single Content and
    * generation config.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
@@ -858,8 +854,8 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a single content and safety
-   * settings.
+   * Generates content with streaming support from generative model given a single content and
+   * safety settings.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
@@ -877,7 +873,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a single content,
+   * Generates content with streaming support from generative model given a single content,
    * generation config, and safety settings.
    *
    * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
@@ -899,7 +895,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a list of contents.
+   * Generates content with streaming support from generative model given a list of contents.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
    *     generative model
@@ -913,7 +909,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a list of contents and
+   * Generates content with streaming support from generative model given a list of contents and
    * generation config.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
@@ -933,7 +929,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a list of contents and
+   * Generates content with streaming support from generative model given a list of contents and
    * safety settings.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
@@ -953,7 +949,7 @@ public class GenerativeModel {
   }
 
   /**
-   * Generate content with streaming support from generative model given a list of contents,
+   * Generates content with streaming support from generative model given a list of contents,
    * generation config, and safety settings.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
@@ -973,7 +969,7 @@ public class GenerativeModel {
       List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
       throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (generationConfig != null) {
       requestBuilder.setGenerationConfig(generationConfig);
     } else if (this.generationConfig != null) {
@@ -987,11 +983,11 @@ public class GenerativeModel {
     if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
-    return generateContentStream(requestBuilder);
+    return generateContentStream(requestBuilder.build());
   }
 
   /**
-   * Generate content with streaming support from generative model given a list of contents and
+   * Generates content with streaming support from generative model given a list of contents and
    * configs.
    *
    * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
@@ -1005,7 +1001,7 @@ public class GenerativeModel {
   public ResponseStream<GenerateContentResponse> generateContentStream(
       List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().addAllContents(contents);
+        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
     if (config.getGenerationConfig() != null) {
       requestBuilder.setGenerationConfig(config.getGenerationConfig());
     } else if (this.generationConfig != null) {
@@ -1022,42 +1018,36 @@ public class GenerativeModel {
       requestBuilder.addAllTools(this.tools);
     }
 
-    return generateContentStream(requestBuilder);
+    return generateContentStream(requestBuilder.build());
   }
 
   /**
    * A base generateContentStream method that will be used internally.
    *
-   * @param requestBuilder a {@link com.google.cloud.vertexai.api.GenerateContentRequest.Builder}
-   *     instance
+   * @param request a {@link com.google.cloud.vertexai.api.GenerateContentRequest} instance
    * @return a {@link ResponseStream} that contains a streaming of {@link
    *     com.google.cloud.vertexai.api.GenerateContentResponse}
    * @throws IOException if an I/O error occurs while making the API call
    */
   private ResponseStream<GenerateContentResponse> generateContentStream(
-      GenerateContentRequest.Builder requestBuilder) throws IOException {
-    GenerateContentRequest request = requestBuilder.setModel(this.resourceName).build();
-    ResponseStream<GenerateContentResponse> responseStream = null;
+      GenerateContentRequest request) throws IOException {
     if (this.transport == Transport.REST) {
-      responseStream =
-          new ResponseStream(
-              new ResponseStreamIteratorWithHistory(
-                  vertexAi
-                      .getPredictionServiceRestClient()
-                      .streamGenerateContentCallable()
-                      .call(request)
-                      .iterator()));
+      return new ResponseStream(
+          new ResponseStreamIteratorWithHistory(
+              vertexAi
+                  .getPredictionServiceRestClient()
+                  .streamGenerateContentCallable()
+                  .call(request)
+                  .iterator()));
     } else {
-      responseStream =
-          new ResponseStream(
-              new ResponseStreamIteratorWithHistory(
-                  vertexAi
-                      .getPredictionServiceClient()
-                      .streamGenerateContentCallable()
-                      .call(request)
-                      .iterator()));
+      return new ResponseStream(
+          new ResponseStreamIteratorWithHistory(
+              vertexAi
+                  .getPredictionServiceClient()
+                  .streamGenerateContentCallable()
+                  .call(request)
+                  .iterator()));
     }
-    return responseStream;
   }
 
   /**
@@ -1145,7 +1135,7 @@ public class GenerativeModel {
     return new ChatSession(this);
   }
 
-  /** Keep the model name only, if users specify the resource name, and returns the model name. */
+  /** Keeps the model name only, if users specify the resource name, and returns the model name. */
   private static String reconcileModelName(String modelName) {
     for (String prefix : Constants.MODEL_NAME_PREFIXES) {
       if (modelName.startsWith(prefix)) {
