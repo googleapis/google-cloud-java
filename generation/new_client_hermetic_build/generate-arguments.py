@@ -30,12 +30,12 @@ def main() -> None:
   print(result)
 
 def __to_python_arg(arg: str, value: str, is_required: bool) -> str:
-  if value is None:
+  if value is None or value == '':
     if is_required:
       sys.exit(f'required env var {arg} is not set')
     return ""
 
-  return f"--{arg.lower().replace('-','_')} \"{value}\" "
+  return f"--{arg.lower().replace('_','-')} \"{value}\" "
 
 
 
