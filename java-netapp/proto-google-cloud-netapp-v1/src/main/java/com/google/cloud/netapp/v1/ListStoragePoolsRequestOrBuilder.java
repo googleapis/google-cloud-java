@@ -57,10 +57,10 @@ public interface ListStoragePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of items to return.
+   * Optional. The maximum number of items to return.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -70,11 +70,11 @@ public interface ListStoragePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The next_page_token value to use if there are additional
+   * Optional. The next_page_token value to use if there are additional
    * results to retrieve for this list request.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -83,11 +83,11 @@ public interface ListStoragePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * The next_page_token value to use if there are additional
+   * Optional. The next_page_token value to use if there are additional
    * results to retrieve for this list request.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -97,10 +97,11 @@ public interface ListStoragePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+   * Optional. Sort results. Supported values are "name", "name desc" or ""
+   * (unsorted).
    * </pre>
    *
-   * <code>string order_by = 4;</code>
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -109,10 +110,11 @@ public interface ListStoragePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+   * Optional. Sort results. Supported values are "name", "name desc" or ""
+   * (unsorted).
    * </pre>
    *
-   * <code>string order_by = 4;</code>
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -122,10 +124,10 @@ public interface ListStoragePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * List filter.
+   * Optional. List filter.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -134,10 +136,10 @@ public interface ListStoragePoolsRequestOrBuilder
    *
    *
    * <pre>
-   * List filter.
+   * Optional. List filter.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */

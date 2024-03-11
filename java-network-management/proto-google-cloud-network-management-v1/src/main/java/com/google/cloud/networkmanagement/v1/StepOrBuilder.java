@@ -824,5 +824,152 @@ public interface StepOrBuilder
   com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder
       getCloudRunRevisionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.NatInfo nat = 25;</code>
+   *
+   * @return Whether the nat field is set.
+   */
+  boolean hasNat();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.NatInfo nat = 25;</code>
+   *
+   * @return The nat.
+   */
+  com.google.cloud.networkmanagement.v1.NatInfo getNat();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a NAT.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.NatInfo nat = 25;</code>
+   */
+  com.google.cloud.networkmanagement.v1.NatInfoOrBuilder getNatOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a ProxyConnection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.ProxyConnectionInfo proxy_connection = 26;</code>
+   *
+   * @return Whether the proxyConnection field is set.
+   */
+  boolean hasProxyConnection();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a ProxyConnection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.ProxyConnectionInfo proxy_connection = 26;</code>
+   *
+   * @return The proxyConnection.
+   */
+  com.google.cloud.networkmanagement.v1.ProxyConnectionInfo getProxyConnection();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a ProxyConnection.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.ProxyConnectionInfo proxy_connection = 26;</code>
+   */
+  com.google.cloud.networkmanagement.v1.ProxyConnectionInfoOrBuilder getProxyConnectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a specific load balancer backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+   * </code>
+   *
+   * @return Whether the loadBalancerBackendInfo field is set.
+   */
+  boolean hasLoadBalancerBackendInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a specific load balancer backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+   * </code>
+   *
+   * @return The loadBalancerBackendInfo.
+   */
+  com.google.cloud.networkmanagement.v1.LoadBalancerBackendInfo getLoadBalancerBackendInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a specific load balancer backend.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerBackendInfo load_balancer_backend_info = 27;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.LoadBalancerBackendInfoOrBuilder
+      getLoadBalancerBackendInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Storage Bucket. Used only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.StorageBucketInfo storage_bucket = 28;</code>
+   *
+   * @return Whether the storageBucket field is set.
+   */
+  boolean hasStorageBucket();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Storage Bucket. Used only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.StorageBucketInfo storage_bucket = 28;</code>
+   *
+   * @return The storageBucket.
+   */
+  com.google.cloud.networkmanagement.v1.StorageBucketInfo getStorageBucket();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Storage Bucket. Used only for return traces.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.StorageBucketInfo storage_bucket = 28;</code>
+   */
+  com.google.cloud.networkmanagement.v1.StorageBucketInfoOrBuilder getStorageBucketOrBuilder();
+
   com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
 }

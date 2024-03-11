@@ -58,6 +58,9 @@
             "FinishDlpJob": {
               "methods": ["finishDlpJob", "finishDlpJobCallable"]
             },
+            "GetColumnDataProfile": {
+              "methods": ["getColumnDataProfile", "getColumnDataProfile", "getColumnDataProfile", "getColumnDataProfileCallable"]
+            },
             "GetDeidentifyTemplate": {
               "methods": ["getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplateCallable"]
             },
@@ -73,8 +76,14 @@
             "GetJobTrigger": {
               "methods": ["getJobTrigger", "getJobTrigger", "getJobTrigger", "getJobTriggerCallable"]
             },
+            "GetProjectDataProfile": {
+              "methods": ["getProjectDataProfile", "getProjectDataProfile", "getProjectDataProfile", "getProjectDataProfileCallable"]
+            },
             "GetStoredInfoType": {
               "methods": ["getStoredInfoType", "getStoredInfoType", "getStoredInfoType", "getStoredInfoTypeCallable"]
+            },
+            "GetTableDataProfile": {
+              "methods": ["getTableDataProfile", "getTableDataProfile", "getTableDataProfile", "getTableDataProfileCallable"]
             },
             "HybridInspectDlpJob": {
               "methods": ["hybridInspectDlpJob", "hybridInspectDlpJob", "hybridInspectDlpJob", "hybridInspectDlpJobCallable"]
@@ -84,6 +93,9 @@
             },
             "InspectContent": {
               "methods": ["inspectContent", "inspectContentCallable"]
+            },
+            "ListColumnDataProfiles": {
+              "methods": ["listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfiles", "listColumnDataProfilesPagedCallable", "listColumnDataProfilesCallable"]
             },
             "ListDeidentifyTemplates": {
               "methods": ["listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplatesPagedCallable", "listDeidentifyTemplatesCallable"]
@@ -103,8 +115,14 @@
             "ListJobTriggers": {
               "methods": ["listJobTriggers", "listJobTriggers", "listJobTriggers", "listJobTriggers", "listJobTriggersPagedCallable", "listJobTriggersCallable"]
             },
+            "ListProjectDataProfiles": {
+              "methods": ["listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfiles", "listProjectDataProfilesPagedCallable", "listProjectDataProfilesCallable"]
+            },
             "ListStoredInfoTypes": {
               "methods": ["listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypes", "listStoredInfoTypesPagedCallable", "listStoredInfoTypesCallable"]
+            },
+            "ListTableDataProfiles": {
+              "methods": ["listTableDataProfiles", "listTableDataProfiles", "listTableDataProfiles", "listTableDataProfiles", "listTableDataProfilesPagedCallable", "listTableDataProfilesCallable"]
             },
             "RedactImage": {
               "methods": ["redactImage", "redactImageCallable"]

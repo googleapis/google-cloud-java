@@ -28,6 +28,50 @@ public interface PurgeDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1alpha.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.GcsSource gcs_source = 5;</code>
+   *
+   * @return Whether the gcsSource field is set.
+   */
+  boolean hasGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1alpha.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.GcsSource gcs_source = 5;</code>
+   *
+   * @return The gcsSource.
+   */
+  com.google.cloud.discoveryengine.v1alpha.GcsSource getGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Storage location for the input content.
+   * Supported `data_schema`:
+   * * `document_id`: One valid
+   * [Document.id][google.cloud.discoveryengine.v1alpha.Document.id] per line.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.GcsSource gcs_source = 5;</code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.GcsSourceOrBuilder getGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent resource name, such as
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * </pre>
@@ -88,6 +132,41 @@ public interface PurgeDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.PurgeErrorConfig error_config = 7;</code>
+   *
+   * @return Whether the errorConfig field is set.
+   */
+  boolean hasErrorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.PurgeErrorConfig error_config = 7;</code>
+   *
+   * @return The errorConfig.
+   */
+  com.google.cloud.discoveryengine.v1alpha.PurgeErrorConfig getErrorConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The desired location of errors incurred during the purge.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.PurgeErrorConfig error_config = 7;</code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.PurgeErrorConfigOrBuilder getErrorConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Actually performs the purge. If `force` is set to false, return the
    * expected purge count without deleting any documents.
    * </pre>
@@ -97,4 +176,6 @@ public interface PurgeDocumentsRequestOrBuilder
    * @return The force.
    */
   boolean getForce();
+
+  com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest.SourceCase getSourceCase();
 }

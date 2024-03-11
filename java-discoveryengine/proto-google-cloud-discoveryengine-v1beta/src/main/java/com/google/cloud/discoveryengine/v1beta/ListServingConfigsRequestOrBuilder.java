@@ -28,8 +28,8 @@ public interface ListServingConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The dataStore resource name. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+   * Required. Full resource name of the parent resource. Format:
+   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
    * </pre>
    *
    * <code>
@@ -43,8 +43,8 @@ public interface ListServingConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The dataStore resource name. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+   * Required. Full resource name of the parent resource. Format:
+   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
    * </pre>
    *
    * <code>

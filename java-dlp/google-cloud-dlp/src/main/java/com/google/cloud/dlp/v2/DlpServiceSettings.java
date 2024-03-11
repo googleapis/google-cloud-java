@@ -16,12 +16,15 @@
 
 package com.google.cloud.dlp.v2;
 
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -38,6 +41,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dlp.v2.stub.DlpServiceStubSettings;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -56,12 +60,15 @@ import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
+import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.GetTableDataProfileRequest;
 import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
@@ -69,6 +76,8 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -81,13 +90,19 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
+import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -352,6 +367,51 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
   /** Returns the object with the settings used for calls to deleteStoredInfoType. */
   public UnaryCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).deleteStoredInfoTypeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listProjectDataProfiles. */
+  public PagedCallSettings<
+          ListProjectDataProfilesRequest,
+          ListProjectDataProfilesResponse,
+          ListProjectDataProfilesPagedResponse>
+      listProjectDataProfilesSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).listProjectDataProfilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTableDataProfiles. */
+  public PagedCallSettings<
+          ListTableDataProfilesRequest,
+          ListTableDataProfilesResponse,
+          ListTableDataProfilesPagedResponse>
+      listTableDataProfilesSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).listTableDataProfilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listColumnDataProfiles. */
+  public PagedCallSettings<
+          ListColumnDataProfilesRequest,
+          ListColumnDataProfilesResponse,
+          ListColumnDataProfilesPagedResponse>
+      listColumnDataProfilesSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).listColumnDataProfilesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getProjectDataProfile. */
+  public UnaryCallSettings<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).getProjectDataProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTableDataProfile. */
+  public UnaryCallSettings<GetTableDataProfileRequest, TableDataProfile>
+      getTableDataProfileSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).getTableDataProfileSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getColumnDataProfile. */
+  public UnaryCallSettings<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileSettings() {
+    return ((DlpServiceStubSettings) getStubSettings()).getColumnDataProfileSettings();
   }
 
   /** Returns the object with the settings used for calls to hybridInspectDlpJob. */
@@ -704,6 +764,51 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
     public UnaryCallSettings.Builder<DeleteStoredInfoTypeRequest, Empty>
         deleteStoredInfoTypeSettings() {
       return getStubSettingsBuilder().deleteStoredInfoTypeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listProjectDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListProjectDataProfilesRequest,
+            ListProjectDataProfilesResponse,
+            ListProjectDataProfilesPagedResponse>
+        listProjectDataProfilesSettings() {
+      return getStubSettingsBuilder().listProjectDataProfilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTableDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListTableDataProfilesRequest,
+            ListTableDataProfilesResponse,
+            ListTableDataProfilesPagedResponse>
+        listTableDataProfilesSettings() {
+      return getStubSettingsBuilder().listTableDataProfilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listColumnDataProfiles. */
+    public PagedCallSettings.Builder<
+            ListColumnDataProfilesRequest,
+            ListColumnDataProfilesResponse,
+            ListColumnDataProfilesPagedResponse>
+        listColumnDataProfilesSettings() {
+      return getStubSettingsBuilder().listColumnDataProfilesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProjectDataProfile. */
+    public UnaryCallSettings.Builder<GetProjectDataProfileRequest, ProjectDataProfile>
+        getProjectDataProfileSettings() {
+      return getStubSettingsBuilder().getProjectDataProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTableDataProfile. */
+    public UnaryCallSettings.Builder<GetTableDataProfileRequest, TableDataProfile>
+        getTableDataProfileSettings() {
+      return getStubSettingsBuilder().getTableDataProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getColumnDataProfile. */
+    public UnaryCallSettings.Builder<GetColumnDataProfileRequest, ColumnDataProfile>
+        getColumnDataProfileSettings() {
+      return getStubSettingsBuilder().getColumnDataProfileSettings();
     }
 
     /** Returns the builder for the settings used for calls to hybridInspectDlpJob. */

@@ -4191,6 +4191,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
   private java.util.List<com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation>
       transforms_;
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
@@ -4200,6 +4206,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     return transforms_;
   }
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
@@ -4210,6 +4222,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     return transforms_;
   }
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
@@ -4218,6 +4236,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     return transforms_.size();
   }
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
@@ -4227,6 +4251,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
     return transforms_.get(index);
   }
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
@@ -4644,6 +4674,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
         transformsBuilder_;
 
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4657,6 +4693,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4669,6 +4711,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4682,6 +4730,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4701,6 +4755,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4719,6 +4779,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4738,6 +4804,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4757,6 +4829,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4774,6 +4852,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4792,6 +4876,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4810,6 +4900,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4825,6 +4921,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4840,6 +4942,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4849,6 +4957,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       return getTransformsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4862,6 +4976,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4876,6 +4996,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4888,6 +5014,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                   .getDefaultInstance());
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>
@@ -4901,6 +5033,12 @@ public final class ImageTransformations extends com.google.protobuf.GeneratedMes
                   .getDefaultInstance());
     }
     /**
+     *
+     *
+     * <pre>
+     * List of transforms to make.
+     * </pre>
+     *
      * <code>
      * repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
      * </code>

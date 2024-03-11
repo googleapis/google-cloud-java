@@ -37,6 +37,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -95,6 +96,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -156,6 +161,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -217,6 +226,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -271,6 +284,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -515,6 +532,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -529,6 +550,10 @@ public class DataStoreServiceClientHttpJsonTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setIdpConfig(IdpConfig.newBuilder().build())
+            .setAclEnabled(true)
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -569,9 +594,195 @@ public class DataStoreServiceClientHttpJsonTest {
               .addAllSolutionTypes(new ArrayList<SolutionType>())
               .setDefaultSchemaId("defaultSchemaId1300415485")
               .setCreateTime(Timestamp.newBuilder().build())
+              .setIdpConfig(IdpConfig.newBuilder().build())
+              .setAclEnabled(true)
+              .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+              .setStartingSchema(Schema.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataStore(dataStore, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDocumentProcessingConfigTest() throws Exception {
+    DocumentProcessingConfig expectedResponse =
+        DocumentProcessingConfig.newBuilder()
+            .setName(
+                DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+            .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+            .putAllParsingConfigOverrides(
+                new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DocumentProcessingConfigName name =
+        DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+
+    DocumentProcessingConfig actualResponse = client.getDocumentProcessingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDocumentProcessingConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DocumentProcessingConfigName name =
+          DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      client.getDocumentProcessingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDocumentProcessingConfigTest2() throws Exception {
+    DocumentProcessingConfig expectedResponse =
+        DocumentProcessingConfig.newBuilder()
+            .setName(
+                DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+            .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+            .putAllParsingConfigOverrides(
+                new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7379/locations/location-7379/dataStores/dataStore-7379/documentProcessingConfig";
+
+    DocumentProcessingConfig actualResponse = client.getDocumentProcessingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDocumentProcessingConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7379/locations/location-7379/dataStores/dataStore-7379/documentProcessingConfig";
+      client.getDocumentProcessingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDocumentProcessingConfigTest() throws Exception {
+    DocumentProcessingConfig expectedResponse =
+        DocumentProcessingConfig.newBuilder()
+            .setName(
+                DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+            .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+            .putAllParsingConfigOverrides(
+                new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DocumentProcessingConfig documentProcessingConfig =
+        DocumentProcessingConfig.newBuilder()
+            .setName(
+                DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
+            .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+            .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+            .putAllParsingConfigOverrides(
+                new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DocumentProcessingConfig actualResponse =
+        client.updateDocumentProcessingConfig(documentProcessingConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDocumentProcessingConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DocumentProcessingConfig documentProcessingConfig =
+          DocumentProcessingConfig.newBuilder()
+              .setName(
+                  DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
+              .setChunkingConfig(DocumentProcessingConfig.ChunkingConfig.newBuilder().build())
+              .setDefaultParsingConfig(DocumentProcessingConfig.ParsingConfig.newBuilder().build())
+              .putAllParsingConfigOverrides(
+                  new HashMap<String, DocumentProcessingConfig.ParsingConfig>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDocumentProcessingConfig(documentProcessingConfig, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

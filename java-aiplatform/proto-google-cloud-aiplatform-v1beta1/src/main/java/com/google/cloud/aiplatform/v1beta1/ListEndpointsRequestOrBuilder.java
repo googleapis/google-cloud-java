@@ -70,12 +70,14 @@ public interface ListEndpointsRequestOrBuilder
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *   * `base_model_name` only supports =
    *
    * Some examples:
    *
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
+   *   * `baseModelName="text-bison"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -98,12 +100,14 @@ public interface ListEndpointsRequestOrBuilder
    *     * `labels.key=value` - key:value equality
    *     * `labels.key:* or labels:key - key existence
    *     * A key including a space must be quoted. `labels."a key"`.
+   *   * `base_model_name` only supports =
    *
    * Some examples:
    *
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
+   *   * `baseModelName="text-bison"`
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

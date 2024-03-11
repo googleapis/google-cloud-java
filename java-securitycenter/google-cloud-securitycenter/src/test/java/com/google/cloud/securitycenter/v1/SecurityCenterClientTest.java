@@ -446,6 +446,7 @@ public class SecurityCenterClientTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
@@ -531,6 +532,7 @@ public class SecurityCenterClientTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
@@ -3601,6 +3603,7 @@ public class SecurityCenterClientTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
@@ -3688,6 +3691,7 @@ public class SecurityCenterClientTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
@@ -3773,6 +3777,7 @@ public class SecurityCenterClientTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
@@ -3857,6 +3862,7 @@ public class SecurityCenterClientTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();
@@ -4120,6 +4126,12 @@ public class SecurityCenterClientTest {
             .setExternalUid("externalUid-1153085307")
             .setStatus("status-892481550")
             .setExternalSystemUpdateTime(Timestamp.newBuilder().build())
+            .setCaseUri("caseUri554877980")
+            .setCasePriority("casePriority1589324020")
+            .setCaseSla(Timestamp.newBuilder().build())
+            .setCaseCreateTime(Timestamp.newBuilder().build())
+            .setCaseCloseTime(Timestamp.newBuilder().build())
+            .setTicketInfo(ExternalSystem.TicketInfo.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4201,6 +4213,7 @@ public class SecurityCenterClientTest {
             .addAllOrgPolicies(new ArrayList<OrgPolicy>())
             .setApplication(Application.newBuilder().build())
             .setBackupDisasterRecovery(BackupDisasterRecovery.newBuilder().build())
+            .setSecurityPosture(SecurityPosture.newBuilder().build())
             .addAllLogEntries(new ArrayList<LogEntry>())
             .addAllLoadBalancers(new ArrayList<LoadBalancer>())
             .build();

@@ -72,6 +72,22 @@ public final class ContentProto {
       internal_static_google_cloud_aiplatform_v1_Candidate_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Candidate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_Segment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_Segment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingAttribution_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingAttribution_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingAttribution_Web_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingAttribution_Web_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GroundingMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -118,43 +134,66 @@ public final class ContentProto {
           + "ldB\003\340A\002\"\224\001\n\022HarmBlockThreshold\022$\n HARM_B"
           + "LOCK_THRESHOLD_UNSPECIFIED\020\000\022\027\n\023BLOCK_LO"
           + "W_AND_ABOVE\020\001\022\032\n\026BLOCK_MEDIUM_AND_ABOVE\020"
-          + "\002\022\023\n\017BLOCK_ONLY_HIGH\020\003\022\016\n\nBLOCK_NONE\020\004\"\235"
-          + "\002\n\014SafetyRating\022?\n\010category\030\001 \001(\0162(.goog"
+          + "\002\022\023\n\017BLOCK_ONLY_HIGH\020\003\022\016\n\nBLOCK_NONE\020\004\"\277"
+          + "\004\n\014SafetyRating\022?\n\010category\030\001 \001(\0162(.goog"
           + "le.cloud.aiplatform.v1.HarmCategoryB\003\340A\003"
           + "\022R\n\013probability\030\002 \001(\01628.google.cloud.aip"
           + "latform.v1.SafetyRating.HarmProbabilityB"
-          + "\003\340A\003\022\024\n\007blocked\030\003 \001(\010B\003\340A\003\"b\n\017HarmProbab"
-          + "ility\022 \n\034HARM_PROBABILITY_UNSPECIFIED\020\000\022"
-          + "\016\n\nNEGLIGIBLE\020\001\022\007\n\003LOW\020\002\022\n\n\006MEDIUM\020\003\022\010\n\004"
-          + "HIGH\020\004\"P\n\020CitationMetadata\022<\n\tcitations\030"
-          + "\001 \003(\0132$.google.cloud.aiplatform.v1.Citat"
-          + "ionB\003\340A\003\"\252\001\n\010Citation\022\030\n\013start_index\030\001 \001"
-          + "(\005B\003\340A\003\022\026\n\tend_index\030\002 \001(\005B\003\340A\003\022\020\n\003uri\030\003"
-          + " \001(\tB\003\340A\003\022\022\n\005title\030\004 \001(\tB\003\340A\003\022\024\n\007license"
-          + "\030\005 \001(\tB\003\340A\003\0220\n\020publication_date\030\006 \001(\0132\021."
-          + "google.type.DateB\003\340A\003\"\344\003\n\tCandidate\022\022\n\005i"
-          + "ndex\030\001 \001(\005B\003\340A\003\0229\n\007content\030\002 \001(\0132#.googl"
-          + "e.cloud.aiplatform.v1.ContentB\003\340A\003\022N\n\rfi"
-          + "nish_reason\030\003 \001(\01622.google.cloud.aiplatf"
-          + "orm.v1.Candidate.FinishReasonB\003\340A\003\022E\n\016sa"
-          + "fety_ratings\030\004 \003(\0132(.google.cloud.aiplat"
-          + "form.v1.SafetyRatingB\003\340A\003\022 \n\016finish_mess"
-          + "age\030\005 \001(\tB\003\340A\003H\000\210\001\001\022L\n\021citation_metadata"
-          + "\030\006 \001(\0132,.google.cloud.aiplatform.v1.Cita"
-          + "tionMetadataB\003\340A\003\"n\n\014FinishReason\022\035\n\031FIN"
-          + "ISH_REASON_UNSPECIFIED\020\000\022\010\n\004STOP\020\001\022\016\n\nMA"
-          + "X_TOKENS\020\002\022\n\n\006SAFETY\020\003\022\016\n\nRECITATION\020\004\022\t"
-          + "\n\005OTHER\020\005B\021\n\017_finish_message*\264\001\n\014HarmCat"
-          + "egory\022\035\n\031HARM_CATEGORY_UNSPECIFIED\020\000\022\035\n\031"
-          + "HARM_CATEGORY_HATE_SPEECH\020\001\022#\n\037HARM_CATE"
-          + "GORY_DANGEROUS_CONTENT\020\002\022\034\n\030HARM_CATEGOR"
-          + "Y_HARASSMENT\020\003\022#\n\037HARM_CATEGORY_SEXUALLY"
-          + "_EXPLICIT\020\004B\312\001\n\036com.google.cloud.aiplatf"
-          + "orm.v1B\014ContentProtoP\001Z>cloud.google.com"
-          + "/go/aiplatform/apiv1/aiplatformpb;aiplat"
-          + "formpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Go"
-          + "ogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud"
-          + "::AIPlatform::V1b\006proto3"
+          + "\003\340A\003\022\036\n\021probability_score\030\005 \001(\002B\003\340A\003\022L\n\010"
+          + "severity\030\006 \001(\01625.google.cloud.aiplatform"
+          + ".v1.SafetyRating.HarmSeverityB\003\340A\003\022\033\n\016se"
+          + "verity_score\030\007 \001(\002B\003\340A\003\022\024\n\007blocked\030\003 \001(\010"
+          + "B\003\340A\003\"b\n\017HarmProbability\022 \n\034HARM_PROBABI"
+          + "LITY_UNSPECIFIED\020\000\022\016\n\nNEGLIGIBLE\020\001\022\007\n\003LO"
+          + "W\020\002\022\n\n\006MEDIUM\020\003\022\010\n\004HIGH\020\004\"\224\001\n\014HarmSeveri"
+          + "ty\022\035\n\031HARM_SEVERITY_UNSPECIFIED\020\000\022\034\n\030HAR"
+          + "M_SEVERITY_NEGLIGIBLE\020\001\022\025\n\021HARM_SEVERITY"
+          + "_LOW\020\002\022\030\n\024HARM_SEVERITY_MEDIUM\020\003\022\026\n\022HARM"
+          + "_SEVERITY_HIGH\020\004\"P\n\020CitationMetadata\022<\n\t"
+          + "citations\030\001 \003(\0132$.google.cloud.aiplatfor"
+          + "m.v1.CitationB\003\340A\003\"\252\001\n\010Citation\022\030\n\013start"
+          + "_index\030\001 \001(\005B\003\340A\003\022\026\n\tend_index\030\002 \001(\005B\003\340A"
+          + "\003\022\020\n\003uri\030\003 \001(\tB\003\340A\003\022\022\n\005title\030\004 \001(\tB\003\340A\003\022"
+          + "\024\n\007license\030\005 \001(\tB\003\340A\003\0220\n\020publication_dat"
+          + "e\030\006 \001(\0132\021.google.type.DateB\003\340A\003\"\346\004\n\tCand"
+          + "idate\022\022\n\005index\030\001 \001(\005B\003\340A\003\0229\n\007content\030\002 \001"
+          + "(\0132#.google.cloud.aiplatform.v1.ContentB"
+          + "\003\340A\003\022N\n\rfinish_reason\030\003 \001(\01622.google.clo"
+          + "ud.aiplatform.v1.Candidate.FinishReasonB"
+          + "\003\340A\003\022E\n\016safety_ratings\030\004 \003(\0132(.google.cl"
+          + "oud.aiplatform.v1.SafetyRatingB\003\340A\003\022 \n\016f"
+          + "inish_message\030\005 \001(\tB\003\340A\003H\000\210\001\001\022L\n\021citatio"
+          + "n_metadata\030\006 \001(\0132,.google.cloud.aiplatfo"
+          + "rm.v1.CitationMetadataB\003\340A\003\022N\n\022grounding"
+          + "_metadata\030\007 \001(\0132-.google.cloud.aiplatfor"
+          + "m.v1.GroundingMetadataB\003\340A\003\"\237\001\n\014FinishRe"
+          + "ason\022\035\n\031FINISH_REASON_UNSPECIFIED\020\000\022\010\n\004S"
+          + "TOP\020\001\022\016\n\nMAX_TOKENS\020\002\022\n\n\006SAFETY\020\003\022\016\n\nREC"
+          + "ITATION\020\004\022\t\n\005OTHER\020\005\022\r\n\tBLOCKLIST\020\006\022\026\n\022P"
+          + "ROHIBITED_CONTENT\020\007\022\010\n\004SPII\020\010B\021\n\017_finish"
+          + "_message\"T\n\007Segment\022\027\n\npart_index\030\001 \001(\005B"
+          + "\003\340A\003\022\030\n\013start_index\030\002 \001(\005B\003\340A\003\022\026\n\tend_in"
+          + "dex\030\003 \001(\005B\003\340A\003\"\221\002\n\024GroundingAttribution\022"
+          + "H\n\003web\030\003 \001(\01324.google.cloud.aiplatform.v"
+          + "1.GroundingAttribution.WebB\003\340A\001H\000\0229\n\007seg"
+          + "ment\030\001 \001(\0132#.google.cloud.aiplatform.v1."
+          + "SegmentB\003\340A\003\022%\n\020confidence_score\030\002 \001(\002B\006"
+          + "\340A\001\340A\003H\001\210\001\001\032+\n\003Web\022\020\n\003uri\030\001 \001(\tB\003\340A\003\022\022\n\005"
+          + "title\030\002 \001(\tB\003\340A\003B\013\n\treferenceB\023\n\021_confid"
+          + "ence_score\"\213\001\n\021GroundingMetadata\022\037\n\022web_"
+          + "search_queries\030\001 \003(\tB\003\340A\001\022U\n\026grounding_a"
+          + "ttributions\030\002 \003(\01320.google.cloud.aiplatf"
+          + "orm.v1.GroundingAttributionB\003\340A\001*\264\001\n\014Har"
+          + "mCategory\022\035\n\031HARM_CATEGORY_UNSPECIFIED\020\000"
+          + "\022\035\n\031HARM_CATEGORY_HATE_SPEECH\020\001\022#\n\037HARM_"
+          + "CATEGORY_DANGEROUS_CONTENT\020\002\022\034\n\030HARM_CAT"
+          + "EGORY_HARASSMENT\020\003\022#\n\037HARM_CATEGORY_SEXU"
+          + "ALLY_EXPLICIT\020\004B\312\001\n\036com.google.cloud.aip"
+          + "latform.v1B\014ContentProtoP\001Z>cloud.google"
+          + ".com/go/aiplatform/apiv1/aiplatformpb;ai"
+          + "platformpb\252\002\032Google.Cloud.AIPlatform.V1\312"
+          + "\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google::C"
+          + "loud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -234,7 +273,7 @@ public final class ContentProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_SafetyRating_descriptor,
             new java.lang.String[] {
-              "Category", "Probability", "Blocked",
+              "Category", "Probability", "ProbabilityScore", "Severity", "SeverityScore", "Blocked",
             });
     internal_static_google_cloud_aiplatform_v1_CitationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -264,6 +303,41 @@ public final class ContentProto {
               "SafetyRatings",
               "FinishMessage",
               "CitationMetadata",
+              "GroundingMetadata",
+            });
+    internal_static_google_cloud_aiplatform_v1_Segment_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_aiplatform_v1_Segment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_Segment_descriptor,
+            new java.lang.String[] {
+              "PartIndex", "StartIndex", "EndIndex",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingAttribution_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_aiplatform_v1_GroundingAttribution_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingAttribution_descriptor,
+            new java.lang.String[] {
+              "Web", "Segment", "ConfidenceScore", "Reference",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingAttribution_Web_descriptor =
+        internal_static_google_cloud_aiplatform_v1_GroundingAttribution_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1_GroundingAttribution_Web_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingAttribution_Web_descriptor,
+            new java.lang.String[] {
+              "Uri", "Title",
+            });
+    internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_aiplatform_v1_GroundingMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GroundingMetadata_descriptor,
+            new java.lang.String[] {
+              "WebSearchQueries", "GroundingAttributions",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

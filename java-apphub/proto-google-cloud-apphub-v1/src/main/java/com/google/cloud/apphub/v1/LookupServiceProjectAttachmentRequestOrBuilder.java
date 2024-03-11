@@ -28,7 +28,9 @@ public interface LookupServiceProjectAttachmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Service project ID and location to lookup service project
+   * attachment for. Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface LookupServiceProjectAttachmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Service project ID and location to lookup service project
+   * attachment for. Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>

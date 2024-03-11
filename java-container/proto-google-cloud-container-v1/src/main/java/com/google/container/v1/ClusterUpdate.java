@@ -2799,6 +2799,39 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.container.v1.InTransitEncryptionConfig.UNRECOGNIZED : result;
   }
 
+  public static final int DESIRED_ENABLE_CILIUM_CLUSTERWIDE_NETWORK_POLICY_FIELD_NUMBER = 138;
+  private boolean desiredEnableCiliumClusterwideNetworkPolicy_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return Whether the desiredEnableCiliumClusterwideNetworkPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
+    return ((bitField1_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return The desiredEnableCiliumClusterwideNetworkPolicy.
+   */
+  @java.lang.Override
+  public boolean getDesiredEnableCiliumClusterwideNetworkPolicy() {
+    return desiredEnableCiliumClusterwideNetworkPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2968,6 +3001,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000080) != 0)) {
       output.writeEnum(137, desiredInTransitEncryptionConfig_);
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      output.writeBool(138, desiredEnableCiliumClusterwideNetworkPolicy_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3207,6 +3243,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               137, desiredInTransitEncryptionConfig_);
     }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              138, desiredEnableCiliumClusterwideNetworkPolicy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3434,6 +3475,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (desiredInTransitEncryptionConfig_ != other.desiredInTransitEncryptionConfig_)
         return false;
     }
+    if (hasDesiredEnableCiliumClusterwideNetworkPolicy()
+        != other.hasDesiredEnableCiliumClusterwideNetworkPolicy()) return false;
+    if (hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
+      if (getDesiredEnableCiliumClusterwideNetworkPolicy()
+          != other.getDesiredEnableCiliumClusterwideNetworkPolicy()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3631,6 +3678,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredInTransitEncryptionConfig()) {
       hash = (37 * hash) + DESIRED_IN_TRANSIT_ENCRYPTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + desiredInTransitEncryptionConfig_;
+    }
+    if (hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
+      hash = (37 * hash) + DESIRED_ENABLE_CILIUM_CLUSTERWIDE_NETWORK_POLICY_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(
+                  getDesiredEnableCiliumClusterwideNetworkPolicy());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4017,6 +4071,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_ = null;
       }
       desiredInTransitEncryptionConfig_ = 0;
+      desiredEnableCiliumClusterwideNetworkPolicy_ = false;
       return this;
     }
 
@@ -4365,6 +4420,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         result.desiredInTransitEncryptionConfig_ = desiredInTransitEncryptionConfig_;
         to_bitField1_ |= 0x00000080;
       }
+      if (((from_bitField1_ & 0x00080000) != 0)) {
+        result.desiredEnableCiliumClusterwideNetworkPolicy_ =
+            desiredEnableCiliumClusterwideNetworkPolicy_;
+        to_bitField1_ |= 0x00000100;
+      }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
     }
@@ -4589,6 +4649,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredInTransitEncryptionConfig()) {
         setDesiredInTransitEncryptionConfig(other.getDesiredInTransitEncryptionConfig());
+      }
+      if (other.hasDesiredEnableCiliumClusterwideNetworkPolicy()) {
+        setDesiredEnableCiliumClusterwideNetworkPolicy(
+            other.getDesiredEnableCiliumClusterwideNetworkPolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4969,6 +5033,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00040000;
                 break;
               } // case 1096
+            case 1104:
+              {
+                desiredEnableCiliumClusterwideNetworkPolicy_ = input.readBool();
+                bitField1_ |= 0x00080000;
+                break;
+              } // case 1104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14049,6 +14119,74 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDesiredInTransitEncryptionConfig() {
       bitField1_ = (bitField1_ & ~0x00040000);
       desiredInTransitEncryptionConfig_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean desiredEnableCiliumClusterwideNetworkPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @return Whether the desiredEnableCiliumClusterwideNetworkPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
+      return ((bitField1_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @return The desiredEnableCiliumClusterwideNetworkPolicy.
+     */
+    @java.lang.Override
+    public boolean getDesiredEnableCiliumClusterwideNetworkPolicy() {
+      return desiredEnableCiliumClusterwideNetworkPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @param value The desiredEnableCiliumClusterwideNetworkPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredEnableCiliumClusterwideNetworkPolicy(boolean value) {
+
+      desiredEnableCiliumClusterwideNetworkPolicy_ = value;
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+     * </pre>
+     *
+     * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredEnableCiliumClusterwideNetworkPolicy() {
+      bitField1_ = (bitField1_ & ~0x00080000);
+      desiredEnableCiliumClusterwideNetworkPolicy_ = false;
       onChanged();
       return this;
     }

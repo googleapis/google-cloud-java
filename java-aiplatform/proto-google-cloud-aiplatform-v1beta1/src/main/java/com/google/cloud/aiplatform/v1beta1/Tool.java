@@ -28,7 +28,8 @@ package com.google.cloud.aiplatform.v1beta1;
  * A `Tool` is a piece of code that enables the system to interact with
  * external systems to perform an action, or set of actions, outside of
  * knowledge and scope of the model. A Tool object should contain exactly
- * one type of Tool.
+ * one type of Tool (e.g FunctionDeclaration, Retrieval or
+ * GoogleSearchRetrieval).
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.Tool}
@@ -78,14 +79,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. One or more function declarations to be passed to the model along
-   * with the current user query. Model may decide to call a subset of these
-   * functions by populating [FunctionCall][content.part.function_call] in the
-   * response. User should provide a
-   * [FunctionResponse][content.part.function_response] for each function call
-   * in the next turn. Based on the function responses, Model will generate the
-   * final response back to the user. Maximum 64 function declarations can be
-   * provided.
+   * Optional. Function tool type.
+   * One or more function declarations to be passed to the model along with the
+   * current user query. Model may decide to call a subset of these functions
+   * by populating [FunctionCall][content.part.function_call] in the response.
+   * User should provide a [FunctionResponse][content.part.function_response]
+   * for each function call in the next turn. Based on the function responses,
+   * Model will generate the final response back to the user.
+   * Maximum 64 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -101,14 +102,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. One or more function declarations to be passed to the model along
-   * with the current user query. Model may decide to call a subset of these
-   * functions by populating [FunctionCall][content.part.function_call] in the
-   * response. User should provide a
-   * [FunctionResponse][content.part.function_response] for each function call
-   * in the next turn. Based on the function responses, Model will generate the
-   * final response back to the user. Maximum 64 function declarations can be
-   * provided.
+   * Optional. Function tool type.
+   * One or more function declarations to be passed to the model along with the
+   * current user query. Model may decide to call a subset of these functions
+   * by populating [FunctionCall][content.part.function_call] in the response.
+   * User should provide a [FunctionResponse][content.part.function_response]
+   * for each function call in the next turn. Based on the function responses,
+   * Model will generate the final response back to the user.
+   * Maximum 64 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -124,14 +125,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. One or more function declarations to be passed to the model along
-   * with the current user query. Model may decide to call a subset of these
-   * functions by populating [FunctionCall][content.part.function_call] in the
-   * response. User should provide a
-   * [FunctionResponse][content.part.function_response] for each function call
-   * in the next turn. Based on the function responses, Model will generate the
-   * final response back to the user. Maximum 64 function declarations can be
-   * provided.
+   * Optional. Function tool type.
+   * One or more function declarations to be passed to the model along with the
+   * current user query. Model may decide to call a subset of these functions
+   * by populating [FunctionCall][content.part.function_call] in the response.
+   * User should provide a [FunctionResponse][content.part.function_response]
+   * for each function call in the next turn. Based on the function responses,
+   * Model will generate the final response back to the user.
+   * Maximum 64 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -146,14 +147,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. One or more function declarations to be passed to the model along
-   * with the current user query. Model may decide to call a subset of these
-   * functions by populating [FunctionCall][content.part.function_call] in the
-   * response. User should provide a
-   * [FunctionResponse][content.part.function_response] for each function call
-   * in the next turn. Based on the function responses, Model will generate the
-   * final response back to the user. Maximum 64 function declarations can be
-   * provided.
+   * Optional. Function tool type.
+   * One or more function declarations to be passed to the model along with the
+   * current user query. Model may decide to call a subset of these functions
+   * by populating [FunctionCall][content.part.function_call] in the response.
+   * User should provide a [FunctionResponse][content.part.function_response]
+   * for each function call in the next turn. Based on the function responses,
+   * Model will generate the final response back to the user.
+   * Maximum 64 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -169,14 +170,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. One or more function declarations to be passed to the model along
-   * with the current user query. Model may decide to call a subset of these
-   * functions by populating [FunctionCall][content.part.function_call] in the
-   * response. User should provide a
-   * [FunctionResponse][content.part.function_response] for each function call
-   * in the next turn. Based on the function responses, Model will generate the
-   * final response back to the user. Maximum 64 function declarations can be
-   * provided.
+   * Optional. Function tool type.
+   * One or more function declarations to be passed to the model along with the
+   * current user query. Model may decide to call a subset of these functions
+   * by populating [FunctionCall][content.part.function_call] in the response.
+   * User should provide a [FunctionResponse][content.part.function_response]
+   * for each function call in the next turn. Based on the function responses,
+   * Model will generate the final response back to the user.
+   * Maximum 64 function declarations can be provided.
    * </pre>
    *
    * <code>
@@ -195,9 +196,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. System will always execute the provided retrieval tool(s) to get
-   * external knowledge to answer the prompt. Retrieval results are presented to
-   * the model for generation.
+   * Optional. Retrieval tool type.
+   * System will always execute the provided retrieval tool(s) to get external
+   * knowledge to answer the prompt. Retrieval results are presented to the
+   * model for generation.
    * </pre>
    *
    * <code>
@@ -214,9 +216,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. System will always execute the provided retrieval tool(s) to get
-   * external knowledge to answer the prompt. Retrieval results are presented to
-   * the model for generation.
+   * Optional. Retrieval tool type.
+   * System will always execute the provided retrieval tool(s) to get external
+   * knowledge to answer the prompt. Retrieval results are presented to the
+   * model for generation.
    * </pre>
    *
    * <code>
@@ -235,9 +238,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. System will always execute the provided retrieval tool(s) to get
-   * external knowledge to answer the prompt. Retrieval results are presented to
-   * the model for generation.
+   * Optional. Retrieval tool type.
+   * System will always execute the provided retrieval tool(s) to get external
+   * knowledge to answer the prompt. Retrieval results are presented to the
+   * model for generation.
    * </pre>
    *
    * <code>
@@ -257,7 +261,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specialized retrieval tool that is powered by Google search.
+   * Optional. GoogleSearchRetrieval tool type.
+   * Specialized retrieval tool that is powered by Google search.
    * </pre>
    *
    * <code>
@@ -274,7 +279,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specialized retrieval tool that is powered by Google search.
+   * Optional. GoogleSearchRetrieval tool type.
+   * Specialized retrieval tool that is powered by Google search.
    * </pre>
    *
    * <code>
@@ -293,7 +299,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Specialized retrieval tool that is powered by Google search.
+   * Optional. GoogleSearchRetrieval tool type.
+   * Specialized retrieval tool that is powered by Google search.
    * </pre>
    *
    * <code>
@@ -507,7 +514,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * A `Tool` is a piece of code that enables the system to interact with
    * external systems to perform an action, or set of actions, outside of
    * knowledge and scope of the model. A Tool object should contain exactly
-   * one type of Tool.
+   * one type of Tool (e.g FunctionDeclaration, Retrieval or
+   * GoogleSearchRetrieval).
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.Tool}
@@ -806,14 +814,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -832,14 +840,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -857,14 +865,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -883,14 +891,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -915,14 +923,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -945,14 +953,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -977,14 +985,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1009,14 +1017,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1038,14 +1046,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1068,14 +1076,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1098,14 +1106,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1126,14 +1134,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1154,14 +1162,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1176,14 +1184,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1202,14 +1210,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1229,14 +1237,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1252,14 +1260,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1276,14 +1284,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. One or more function declarations to be passed to the model along
-     * with the current user query. Model may decide to call a subset of these
-     * functions by populating [FunctionCall][content.part.function_call] in the
-     * response. User should provide a
-     * [FunctionResponse][content.part.function_response] for each function call
-     * in the next turn. Based on the function responses, Model will generate the
-     * final response back to the user. Maximum 64 function declarations can be
-     * provided.
+     * Optional. Function tool type.
+     * One or more function declarations to be passed to the model along with the
+     * current user query. Model may decide to call a subset of these functions
+     * by populating [FunctionCall][content.part.function_call] in the response.
+     * User should provide a [FunctionResponse][content.part.function_response]
+     * for each function call in the next turn. Based on the function responses,
+     * Model will generate the final response back to the user.
+     * Maximum 64 function declarations can be provided.
      * </pre>
      *
      * <code>
@@ -1325,9 +1333,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1343,9 +1352,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1367,9 +1377,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1393,9 +1404,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1417,9 +1429,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1448,9 +1461,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1471,9 +1485,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1489,9 +1504,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1511,9 +1527,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. System will always execute the provided retrieval tool(s) to get
-     * external knowledge to answer the prompt. Retrieval results are presented to
-     * the model for generation.
+     * Optional. Retrieval tool type.
+     * System will always execute the provided retrieval tool(s) to get external
+     * knowledge to answer the prompt. Retrieval results are presented to the
+     * model for generation.
      * </pre>
      *
      * <code>
@@ -1547,7 +1564,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1563,7 +1581,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1585,7 +1604,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1610,7 +1630,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1632,7 +1653,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1663,7 +1685,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1684,7 +1707,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1701,7 +1725,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>
@@ -1722,7 +1747,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Specialized retrieval tool that is powered by Google search.
+     * Optional. GoogleSearchRetrieval tool type.
+     * Specialized retrieval tool that is powered by Google search.
      * </pre>
      *
      * <code>

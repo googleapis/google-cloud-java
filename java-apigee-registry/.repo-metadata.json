@@ -5,7 +5,7 @@
   "api_description": "allows teams to upload and share machine-readable descriptions of APIs that are in use and in development.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-apigee-registry/latest/overview",
   "release_level": "preview",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-apigee-registry",

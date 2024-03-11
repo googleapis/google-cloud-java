@@ -12,5 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-securitycenter-settings",
   "api_id": "securitycenter-settings.googleapis.com",
   "library_type": "GAPIC_AUTO",
+  "requires_billing": false,
   "rest_documentation": "https://cloud.google.com/security-command-center/docs/reference/rest"
 }

@@ -4505,6 +4505,57 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         : enterpriseConfig_;
   }
 
+  public static final int SECRET_MANAGER_CONFIG_FIELD_NUMBER = 150;
+  private com.google.container.v1beta1.SecretManagerConfig secretManagerConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return Whether the secretManagerConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecretManagerConfig() {
+    return ((bitField1_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return The secretManagerConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretManagerConfig getSecretManagerConfig() {
+    return secretManagerConfig_ == null
+        ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+        : secretManagerConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.SecretManagerConfigOrBuilder
+      getSecretManagerConfigOrBuilder() {
+    return secretManagerConfig_ == null
+        ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+        : secretManagerConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4745,6 +4796,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000100) != 0)) {
       output.writeMessage(149, getEnterpriseConfig());
+    }
+    if (((bitField1_ & 0x00000200) != 0)) {
+      output.writeMessage(150, getSecretManagerConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5019,6 +5073,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (((bitField1_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(149, getEnterpriseConfig());
     }
+    if (((bitField1_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(150, getSecretManagerConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5236,6 +5294,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (hasEnterpriseConfig() != other.hasEnterpriseConfig()) return false;
     if (hasEnterpriseConfig()) {
       if (!getEnterpriseConfig().equals(other.getEnterpriseConfig())) return false;
+    }
+    if (hasSecretManagerConfig() != other.hasSecretManagerConfig()) return false;
+    if (hasSecretManagerConfig()) {
+      if (!getSecretManagerConfig().equals(other.getSecretManagerConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5492,6 +5554,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENTERPRISE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getEnterpriseConfig().hashCode();
     }
+    if (hasSecretManagerConfig()) {
+      hash = (37 * hash) + SECRET_MANAGER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretManagerConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -5696,6 +5762,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getFleetFieldBuilder();
         getSecurityPostureConfigFieldBuilder();
         getEnterpriseConfigFieldBuilder();
+        getSecretManagerConfigFieldBuilder();
       }
     }
 
@@ -5956,6 +6023,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (enterpriseConfigBuilder_ != null) {
         enterpriseConfigBuilder_.dispose();
         enterpriseConfigBuilder_ = null;
+      }
+      secretManagerConfig_ = null;
+      if (secretManagerConfigBuilder_ != null) {
+        secretManagerConfigBuilder_.dispose();
+        secretManagerConfigBuilder_ = null;
       }
       return this;
     }
@@ -6376,6 +6448,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             enterpriseConfigBuilder_ == null ? enterpriseConfig_ : enterpriseConfigBuilder_.build();
         to_bitField1_ |= 0x00000100;
       }
+      if (((from_bitField2_ & 0x00001000) != 0)) {
+        result.secretManagerConfig_ =
+            secretManagerConfigBuilder_ == null
+                ? secretManagerConfig_
+                : secretManagerConfigBuilder_.build();
+        to_bitField1_ |= 0x00000200;
+      }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
     }
@@ -6759,6 +6838,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEnterpriseConfig()) {
         mergeEnterpriseConfig(other.getEnterpriseConfig());
+      }
+      if (other.hasSecretManagerConfig()) {
+        mergeSecretManagerConfig(other.getSecretManagerConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7291,6 +7373,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField2_ |= 0x00000800;
                 break;
               } // case 1194
+            case 1202:
+              {
+                input.readMessage(
+                    getSecretManagerConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00001000;
+                break;
+              } // case 1202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20126,6 +20215,196 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         enterpriseConfig_ = null;
       }
       return enterpriseConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.SecretManagerConfig secretManagerConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretManagerConfig,
+            com.google.container.v1beta1.SecretManagerConfig.Builder,
+            com.google.container.v1beta1.SecretManagerConfigOrBuilder>
+        secretManagerConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     *
+     * @return Whether the secretManagerConfig field is set.
+     */
+    public boolean hasSecretManagerConfig() {
+      return ((bitField2_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     *
+     * @return The secretManagerConfig.
+     */
+    public com.google.container.v1beta1.SecretManagerConfig getSecretManagerConfig() {
+      if (secretManagerConfigBuilder_ == null) {
+        return secretManagerConfig_ == null
+            ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+            : secretManagerConfig_;
+      } else {
+        return secretManagerConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder setSecretManagerConfig(com.google.container.v1beta1.SecretManagerConfig value) {
+      if (secretManagerConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        secretManagerConfig_ = value;
+      } else {
+        secretManagerConfigBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder setSecretManagerConfig(
+        com.google.container.v1beta1.SecretManagerConfig.Builder builderForValue) {
+      if (secretManagerConfigBuilder_ == null) {
+        secretManagerConfig_ = builderForValue.build();
+      } else {
+        secretManagerConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder mergeSecretManagerConfig(
+        com.google.container.v1beta1.SecretManagerConfig value) {
+      if (secretManagerConfigBuilder_ == null) {
+        if (((bitField2_ & 0x00001000) != 0)
+            && secretManagerConfig_ != null
+            && secretManagerConfig_
+                != com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()) {
+          getSecretManagerConfigBuilder().mergeFrom(value);
+        } else {
+          secretManagerConfig_ = value;
+        }
+      } else {
+        secretManagerConfigBuilder_.mergeFrom(value);
+      }
+      if (secretManagerConfig_ != null) {
+        bitField2_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public Builder clearSecretManagerConfig() {
+      bitField2_ = (bitField2_ & ~0x00001000);
+      secretManagerConfig_ = null;
+      if (secretManagerConfigBuilder_ != null) {
+        secretManagerConfigBuilder_.dispose();
+        secretManagerConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public com.google.container.v1beta1.SecretManagerConfig.Builder
+        getSecretManagerConfigBuilder() {
+      bitField2_ |= 0x00001000;
+      onChanged();
+      return getSecretManagerConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    public com.google.container.v1beta1.SecretManagerConfigOrBuilder
+        getSecretManagerConfigOrBuilder() {
+      if (secretManagerConfigBuilder_ != null) {
+        return secretManagerConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return secretManagerConfig_ == null
+            ? com.google.container.v1beta1.SecretManagerConfig.getDefaultInstance()
+            : secretManagerConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Secret CSI driver configuration.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.SecretManagerConfig,
+            com.google.container.v1beta1.SecretManagerConfig.Builder,
+            com.google.container.v1beta1.SecretManagerConfigOrBuilder>
+        getSecretManagerConfigFieldBuilder() {
+      if (secretManagerConfigBuilder_ == null) {
+        secretManagerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.SecretManagerConfig,
+                com.google.container.v1beta1.SecretManagerConfig.Builder,
+                com.google.container.v1beta1.SecretManagerConfigOrBuilder>(
+                getSecretManagerConfig(), getParentForChildren(), isClean());
+        secretManagerConfig_ = null;
+      }
+      return secretManagerConfigBuilder_;
     }
 
     @java.lang.Override

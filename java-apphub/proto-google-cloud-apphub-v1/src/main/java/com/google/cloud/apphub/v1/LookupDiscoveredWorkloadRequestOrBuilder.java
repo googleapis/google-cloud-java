@@ -28,7 +28,8 @@ public interface LookupDiscoveredWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to lookup Discovered Workload in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface LookupDiscoveredWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to lookup Discovered Workload in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -57,8 +59,8 @@ public interface LookupDiscoveredWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. GCP resource URI to find workload for.
-   * Accepts both project number and project id and does translation when
+   * Required. Resource URI to find Discovered Workload for.
+   * Accepts both project number and project ID and does translation when
    * needed.
    * </pre>
    *
@@ -71,8 +73,8 @@ public interface LookupDiscoveredWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. GCP resource URI to find workload for.
-   * Accepts both project number and project id and does translation when
+   * Required. Resource URI to find Discovered Workload for.
+   * Accepts both project number and project ID and does translation when
    * needed.
    * </pre>
    *

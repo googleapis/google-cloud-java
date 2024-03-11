@@ -29,7 +29,8 @@ package com.google.privacy.dlp.v2;
  * Outputs a base64 encoded representation of the hashed output
  * (for example, L7k0BHmF1ha5U3NfGykjro4xWi1MPVQPjhMAZbSV9mM=).
  * Currently, only string and integer values can be hashed.
- * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
+ * See https://cloud.google.com/sensitive-data-protection/docs/pseudonymization
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoHashConfig}
@@ -292,7 +293,8 @@ public final class CryptoHashConfig extends com.google.protobuf.GeneratedMessage
    * Outputs a base64 encoded representation of the hashed output
    * (for example, L7k0BHmF1ha5U3NfGykjro4xWi1MPVQPjhMAZbSV9mM=).
    * Currently, only string and integer values can be hashed.
-   * See https://cloud.google.com/dlp/docs/pseudonymization to learn more.
+   * See https://cloud.google.com/sensitive-data-protection/docs/pseudonymization
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoHashConfig}

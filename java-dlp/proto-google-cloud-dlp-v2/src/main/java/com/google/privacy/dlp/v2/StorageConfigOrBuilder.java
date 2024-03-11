@@ -165,18 +165,38 @@ public interface StorageConfigOrBuilder
   com.google.privacy.dlp.v2.HybridOptionsOrBuilder getHybridOptionsOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Configuration of the timespan of the items to include in scanning.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
    *
    * @return Whether the timespanConfig field is set.
    */
   boolean hasTimespanConfig();
   /**
+   *
+   *
+   * <pre>
+   * Configuration of the timespan of the items to include in scanning.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
    *
    * @return The timespanConfig.
    */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig();
-  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of the timespan of the items to include in scanning.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
+   */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder getTimespanConfigOrBuilder();
 
   com.google.privacy.dlp.v2.StorageConfig.TypeCase getTypeCase();
