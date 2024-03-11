@@ -96,7 +96,7 @@ jobs:
     - name: create or update the pull request
       shell: bash
       run: |
-        title="chore: generated at $(date)"
+        title="chore: generate libraries at $(date)"
         git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt generation_config.yaml
         git commit -m "chore: ${title}"
         if [ -z "${pr_num}" ]; then
@@ -107,6 +107,7 @@ jobs:
           gh pr create --title "${title}" --label "owlbot:run" --head "${branch_name}" --body "$(cat pr_description.txt)"
         else
           git push
+          gh pr edit "${pr_num}" --title "${title}"
           gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
         fi
       env:
