@@ -168,7 +168,7 @@ jobs:
             --target-library-api-shortname=${API_SHORTNAME}
 
           \`\`\`"
-          gh pr create --title "${commit_message}" --head "${branch_name}" --body "${pr_body}"
+          gh pr create --title "${commit_message}" --label "owlbot:run" --head "${branch_name}" --body "${pr_body}"
         env:
           USERNAME: ${{ github.actor }}
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
