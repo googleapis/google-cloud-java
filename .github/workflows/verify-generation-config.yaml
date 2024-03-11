@@ -53,7 +53,8 @@ jobs:
       shell: bash
       run: |
         mkdir tmp-googleapis
-        git clone https://github.com/googleapis/googleapis.git tmp-googleapis
+        # use partial clone because only commit history is needed.
+        git clone --filter=blob:none https://github.com/googleapis/googleapis.git tmp-googleapis
         pushd tmp-googleapis
         git pull
         latest_commit=$(git rev-parse HEAD)
