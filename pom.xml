@@ -56,7 +56,6 @@
     <module>java-chat</module>
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
-    <module>java-cloudcontrolspartner</module>
     <module>java-cloudquotas</module>
     <module>java-cloudsupport</module>
     <module>java-compute</module>

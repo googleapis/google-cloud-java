@@ -730,11 +730,6 @@ proto-google-cloud-securityposture-v1:0.2.0:0.3.0-SNAPSHOT
 grpc-google-cloud-securityposture-v1:0.2.0:0.3.0-SNAPSHOT
 proto-google-cloud-securitycenter-v2:2.45.0:2.46.0-SNAPSHOT
 grpc-google-cloud-securitycenter-v2:2.45.0:2.46.0-SNAPSHOT
-google-cloud-cloudcontrolspartner:0.1.0:0.2.0-SNAPSHOT
-proto-google-cloud-cloudcontrolspartner-v1beta:0.1.0:0.2.0-SNAPSHOT
-proto-google-cloud-cloudcontrolspartner-v1:0.1.0:0.2.0-SNAPSHOT
-grpc-google-cloud-cloudcontrolspartner-v1:0.1.0:0.2.0-SNAPSHOT
-grpc-google-cloud-cloudcontrolspartner-v1beta:0.1.0:0.2.0-SNAPSHOT
 google-cloud-workspaceevents:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-workspaceevents-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-workspaceevents-v1:0.1.0:0.2.0-SNAPSHOT

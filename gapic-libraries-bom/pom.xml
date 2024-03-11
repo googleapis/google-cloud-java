@@ -317,13 +317,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-cloudcontrolspartner-bom</artifactId>
-        <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudcontrolspartner:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-cloudquotas-bom</artifactId>
         <version>0.6.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudquotas:current} -->
         <type>pom</type>
