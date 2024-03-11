@@ -149,6 +149,10 @@ This variable represents the type of requests the library will make to
 its corresponding service. It can be `grpc` (default), `http` or `both`. In
 practice, it is mainly used to create a `.repo-metadata.json` file.
 
+This information can be found in BUILD.bazel file. Look for `transport` parameter
+in bazel rule `java_gapic_library`. For example, in `alloydb`'s
+external mirrored location: https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/BUILD.bazel#L89
+
 ### Destination Name (`destination_name`)
 
 This variable represents the folder name to be created in the root of the
