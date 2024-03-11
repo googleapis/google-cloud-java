@@ -99,7 +99,7 @@ public class HttpJsonChunkServiceStub extends ChunkServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListChunksRequest>newBuilder()
                       .setPath(
-                          "/v1alpha/{parent=projects/*/locations/*/dataStores/*/branches/*}/documents/*/chunks",
+                          "/v1alpha/{parent=projects/*/locations/*/dataStores/*/branches/*/documents/*}/chunks",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListChunksRequest> serializer =
@@ -108,7 +108,7 @@ public class HttpJsonChunkServiceStub extends ChunkServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/branches/*}/documents/*/chunks")
+                          "/v1alpha/{parent=projects/*/locations/*/collections/*/dataStores/*/branches/*/documents/*}/chunks")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

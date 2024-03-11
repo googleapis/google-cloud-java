@@ -259,7 +259,7 @@ public class ChunkServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     String parent =
-        "projects/project-3187/locations/location-3187/dataStores/dataStore-3187/branches/branche-3187";
+        "projects/project-3185/locations/location-3185/dataStores/dataStore-3185/branches/branche-3185/documents/document-3185";
 
     ListChunksPagedResponse pagedListResponse = client.listChunks(parent);
 
@@ -292,7 +292,7 @@ public class ChunkServiceClientHttpJsonTest {
 
     try {
       String parent =
-          "projects/project-3187/locations/location-3187/dataStores/dataStore-3187/branches/branche-3187";
+          "projects/project-3185/locations/location-3185/dataStores/dataStore-3185/branches/branche-3185/documents/document-3185";
       client.listChunks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
