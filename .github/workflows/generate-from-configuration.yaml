@@ -1,4 +1,4 @@
-name: Verify Generation Configuration
+name: Generate GAPIC libraries from configuration
 on:
   schedule:
   - cron: '0 2 * * *' # nightly at 2 am UTC
