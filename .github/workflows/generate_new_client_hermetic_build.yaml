@@ -11,6 +11,9 @@ on:
           required: true
           type: string
           description: "`name_pretty`: The human-friendly name that appears in README.md"
+        api_description:
+          required: true
+          description: "`api_description`: Description that appears in README.md"
         proto_path:
           required: true
           type: string
@@ -33,9 +36,6 @@ on:
           type: string
           description: |
             `rpc_docs`: If it exists, link to the RPC Documentation for a service
-        api_description:
-          required: true
-          description: "`api_description`: Description that appears in README.md"
         library_name:
           required: false
           type: string
