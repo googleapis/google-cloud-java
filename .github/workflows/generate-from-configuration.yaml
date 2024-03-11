@@ -102,7 +102,7 @@ jobs:
           git fetch -q --unshallow monorepo
           git push -f monorepo "${branch_name}"
           set -x
-          gh pr create --title "${title}" --label "owlbot:run" --head "${branch_name}" --body "$(cat pr_description.txt)"
+          gh pr create --title "${title}" --head "${branch_name}" --body "$(cat pr_description.txt)"
         else
           git push
           gh pr edit "${pr_num}" --title "${title}"
