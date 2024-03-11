@@ -22,8 +22,10 @@ import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Citation;
 import com.google.cloud.vertexai.api.CitationMetadata;
 import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.FunctionCall;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.Part;
+import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +35,7 @@ import java.util.Map;
 public class ResponseHandler {
 
   /**
-   * Get the text message in a GenerateContentResponse.
+   * Gets the text message in a GenerateContentResponse.
    *
    * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
    * @return a String that aggregates all the text parts in the response
@@ -41,12 +43,7 @@ public class ResponseHandler {
    *     response is blocked by safety reason or unauthorized citations
    */
   public static String getText(GenerateContentResponse response) {
-    FinishReason finishReason = getFinishReason(response);
-    if (finishReason == FinishReason.SAFETY) {
-      throw new IllegalArgumentException("The response is blocked due to safety reason.");
-    } else if (finishReason == FinishReason.RECITATION) {
-      throw new IllegalArgumentException("The response is blocked due to unauthorized citations.");
-    }
+    checkFinishReason(getFinishReason(response));
 
     String text = "";
     List<Part> parts = response.getCandidates(0).getContent().getPartsList();
@@ -58,7 +55,26 @@ public class ResponseHandler {
   }
 
   /**
-   * Get the content in a GenerateContentResponse.
+   * Gets the list of function calls in a GenerateContentResponse.
+   *
+   * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
+   * @return a list of {@link com.google.cloud.vertexai.api.FunctionCall} in the response
+   * @throws IllegalArgumentException if the response has 0 or more than 1 candidates, or if the
+   *     response is blocked by safety reason or unauthorized citations
+   */
+  public static ImmutableList<FunctionCall> getFunctionCalls(GenerateContentResponse response) {
+    checkFinishReason(getFinishReason(response));
+    if (response.getCandidatesCount() == 0) {
+      return ImmutableList.of();
+    }
+    return response.getCandidates(0).getContent().getPartsList().stream()
+        .filter((part) -> part.hasFunctionCall())
+        .map((part) -> part.getFunctionCall())
+        .collect(ImmutableList.toImmutableList());
+  }
+
+  /**
+   * Gets the content in a GenerateContentResponse.
    *
    * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
    * @return the {@link com.google.cloud.vertexai.api.Content} in the response
@@ -66,18 +82,13 @@ public class ResponseHandler {
    *     response is blocked by safety reason or unauthorized citations
    */
   public static Content getContent(GenerateContentResponse response) {
-    FinishReason finishReason = getFinishReason(response);
-    if (finishReason == FinishReason.SAFETY) {
-      throw new IllegalArgumentException("The response is blocked due to safety reason.");
-    } else if (finishReason == FinishReason.RECITATION) {
-      throw new IllegalArgumentException("The response is blocked due to unauthorized citations.");
-    }
+    checkFinishReason(getFinishReason(response));
 
     return response.getCandidates(0).getContent();
   }
 
   /**
-   * Get the finish reason in a GenerateContentResponse.
+   * Gets the finish reason in a GenerateContentResponse.
    *
    * @param response a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance
    * @return the {@link com.google.cloud.vertexai.api.FinishReason} in the response
@@ -93,7 +104,7 @@ public class ResponseHandler {
     return response.getCandidates(0).getFinishReason();
   }
 
-  /** Aggregate a stream of responses into a single GenerateContentResponse. */
+  /** Aggregates a stream of responses into a single GenerateContentResponse. */
   static GenerateContentResponse aggregateStreamIntoResponse(
       ResponseStream<GenerateContentResponse> responseStream) {
     GenerateContentResponse res = GenerateContentResponse.getDefaultInstance();
@@ -169,5 +180,13 @@ public class ResponseHandler {
     res = res.toBuilder().clearCandidates().addAllCandidates(aggregatedCandidates).build();
 
     return res;
+  }
+
+  private static void checkFinishReason(FinishReason finishReason) {
+    if (finishReason == FinishReason.SAFETY) {
+      throw new IllegalArgumentException("The response is blocked due to safety reason.");
+    } else if (finishReason == FinishReason.RECITATION) {
+      throw new IllegalArgumentException("The response is blocked due to unauthorized citations.");
+    }
   }
 }

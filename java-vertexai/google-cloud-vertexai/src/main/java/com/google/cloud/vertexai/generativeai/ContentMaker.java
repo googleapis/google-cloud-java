@@ -24,7 +24,7 @@ public class ContentMaker {
   private static String role = "user";
 
   /**
-   * Create a ContentMakerForRole for a given role.
+   * Creates a ContentMakerForRole for a given role.
    *
    * @param role Currently accepted role values are: "user", "model". No need to call forRole for
    *     the "user" role since it's the default role.
@@ -53,7 +53,7 @@ public class ContentMaker {
   }
 
   /**
-   * Create a content from a string, assuming the role is "user".
+   * Creates a content from a string, assuming the role is "user".
    *
    * <p>The resulting content will contain one single {@link com.google.cloud.vertexai.api.Part}
    * with its text field set.
@@ -65,7 +65,7 @@ public class ContentMaker {
   }
 
   /**
-   * Create a content from an array of Objects, assuming the role is "user".
+   * Creates a content from an array of Objects, assuming the role is "user".
    *
    * <p>The resulting content can contain multiple {@link com.google.cloud.vertexai.api.Part}s. Each
    * element in the array becomes one part.
@@ -91,7 +91,7 @@ public class ContentMaker {
     }
 
     /**
-     * Create a content from a string.
+     * Creates a content from a string.
      *
      * @param text a string which will be converted to a {@link com.google.cloud.vertexai.api.Part}
      *     with its text field set.
@@ -101,7 +101,7 @@ public class ContentMaker {
     }
 
     /**
-     * Create a content from an array of Objects.
+     * Creates a content from an array of Objects.
      *
      * @param multiModalData an array which contains the actual payload of each part. The element
      *     could be either a single String or a Part. When it's a single string, it's converted to a

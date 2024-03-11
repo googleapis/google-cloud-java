@@ -43,7 +43,7 @@ public class ResponseStream<GenerateContentResponse> implements Iterable<Generat
     }
   }
 
-  /** Make a stream from the instance. */
+  /** Makes a stream from the instance. */
   public Stream<GenerateContentResponse> stream() {
     return StreamSupport.stream(this.spliterator(), false);
   }

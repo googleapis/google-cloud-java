@@ -25,8 +25,10 @@ import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Citation;
 import com.google.cloud.vertexai.api.CitationMetadata;
 import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.FunctionCall;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.Part;
+import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.Iterator;
 import org.junit.Rule;
@@ -47,6 +49,13 @@ public final class ResponseHandlerTest {
           .addParts(Part.newBuilder().setText(TEXT_1))
           .addParts(Part.newBuilder().setText(TEXT_2))
           .build();
+  private static final Content CONTENT_WITH_FNCTION_CALL =
+      Content.newBuilder()
+          .addParts(Part.newBuilder().setText(TEXT_1))
+          .addParts(Part.newBuilder().setFunctionCall(FunctionCall.getDefaultInstance()))
+          .addParts(Part.newBuilder().setText(TEXT_2))
+          .addParts(Part.newBuilder().setFunctionCall(FunctionCall.getDefaultInstance()))
+          .build();
   private static final Citation CITATION_1 =
       Citation.newBuilder().setUri("gs://citation1").setStartIndex(1).setEndIndex(2).build();
   private static final Citation CITATION_2 =
@@ -61,10 +70,14 @@ public final class ResponseHandlerTest {
           .setContent(CONTENT)
           .setCitationMetadata(CitationMetadata.newBuilder().addCitations(CITATION_2))
           .build();
+  private static final Candidate CANDIDATE_3 =
+      Candidate.newBuilder().setContent(CONTENT_WITH_FNCTION_CALL).build();
   private static final GenerateContentResponse RESPONSE_1 =
       GenerateContentResponse.newBuilder().addCandidates(CANDIDATE_1).build();
   private static final GenerateContentResponse RESPONSE_2 =
       GenerateContentResponse.newBuilder().addCandidates(CANDIDATE_2).build();
+  private static final GenerateContentResponse RESPONSE_3 =
+      GenerateContentResponse.newBuilder().addCandidates(CANDIDATE_3).build();
   private static final GenerateContentResponse INVALID_RESPONSE =
       GenerateContentResponse.newBuilder()
           .addCandidates(CANDIDATE_1)
@@ -86,6 +99,28 @@ public final class ResponseHandlerTest {
     IllegalArgumentException thrown =
         assertThrows(
             IllegalArgumentException.class, () -> ResponseHandler.getText(INVALID_RESPONSE));
+    assertThat(thrown)
+        .hasMessageThat()
+        .isEqualTo(
+            String.format(
+                "This response should have exactly 1 candidate, but it has %s.",
+                INVALID_RESPONSE.getCandidatesCount()));
+  }
+
+  @Test
+  public void testGetFunctionCallsFromResponse() {
+    ImmutableList<FunctionCall> functionCalls = ResponseHandler.getFunctionCalls(RESPONSE_3);
+    assertThat(functionCalls.size()).isEqualTo(2);
+    assertThat(functionCalls.get(0)).isEqualTo(FunctionCall.getDefaultInstance());
+    assertThat(functionCalls.get(1)).isEqualTo(FunctionCall.getDefaultInstance());
+  }
+
+  @Test
+  public void testGetFunctionCallsFromInvalidResponse() {
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> ResponseHandler.getFunctionCalls(INVALID_RESPONSE));
     assertThat(thrown)
         .hasMessageThat()
         .isEqualTo(
