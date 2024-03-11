@@ -12,7 +12,10 @@ jobs:
   generate-from-configuration:
     runs-on: ubuntu-22.04
     env:
-      branch_name: generate-libraries
+      # the branch into which pull request is created.
+      base_branch: main
+      # the branch with which the pull request is associated.
+      branch_name: generate-libraries-main
       library_generation_image_tag: latest
       repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
     steps:
@@ -102,7 +105,7 @@ jobs:
           git fetch -q --unshallow monorepo
           git push -f monorepo "${branch_name}"
           set -x
-          gh pr create --title "${title}" --head "${branch_name}" --body "$(cat pr_description.txt)"
+          gh pr create --base "${base_branch}" --title "${title}" --head "${branch_name}" --body "$(cat pr_description.txt)"
         else
           git push
           gh pr edit "${pr_num}" --title "${title}"
