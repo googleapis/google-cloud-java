@@ -64,28 +64,7 @@ jobs:
         id: config_generation
         run: |
           set -x
-          arguments="--api_shortname=\"${API_SHORTNAME}\" \
-          --proto-path=\"${PROTO_PATH}\" \
-          --name-pretty=\"${NAME_PRETTY}\" \
-          --product-docs=\"${PRODUCT_DOCS}\" \
-          --api-description=\"${API_DESCRIPTION}\""
-
-          # helper function that appends a python argument only if specified in the GH action inputs
-          append_argument() {
-            py_arg=$1
-            # env vars look exactly like new-client arguments but uppercase + underscores
-            env_name=$(echo "${py_arg}" | sed 's/-/_/g' | sed -e 's/\([a-z]\)/\U\1/g')
-            if [[ -n "${!env_name}" ]]; then
-              # $(echo) is redundant but it works around a syntax highlighting problem in vim
-              arguments=$(echo "${arguments} --${py_arg}=\"${!env_name}\"")
-            fi
-          }
-
-          declare -a optional_args=('library-name' 'distribution-name' 'group-id' 'rest-docs' 'rpc-docs')
-
-          for python_argument in "${optional_args[@]}"; do
-            append_argument "${python_argument}"
-          done
+          arguments=$(python generation/new_client_hermetic_build/generate-arguments.py)
           echo "::set-output name=new_library_args::${arguments}"
           echo "${arguments}" \
                 | xargs python generation/new_client_hermetic_build/new-client.py add-new-library
