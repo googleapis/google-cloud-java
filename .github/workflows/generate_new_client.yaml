@@ -137,7 +137,7 @@ jobs:
           \`\`\`
           python generation/new_client/new-client.py generate ${GENERATION_ARGUMENTS}
           \`\`\`"
-          gh pr create --title "${commit_message}" --head "${branch_name}" --body "${pr_body}"
+          gh pr create --title "${commit_message}" --label "owlbot:run" --head "${branch_name}" --body "${pr_body}"
         env:
           USERNAME: ${{ github.actor }}
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
