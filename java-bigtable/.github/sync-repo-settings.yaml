@@ -19,7 +19,7 @@ branchProtectionRules:
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
       - javadoc
-      - conformance 
+      - conformance
   - pattern: 1.22.0-sp
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
@@ -124,6 +124,24 @@ branchProtectionRules:
       - OwlBot Post Processor
       - 'Kokoro - Test: Java GraalVM Native Image'
       - 'Kokoro - Test: Java 17 GraalVM Native Image'
+  - pattern: 2.30.x
+    isAdminEnforced: true
+    requiredApprovingReviewCount: 1
+    requiresCodeOwnerReviews: true
+    requiresStrictStatusChecks: false
+    requiredStatusCheckContexts:
+      - dependencies (17)
+      - lint
+      - clirr
+      - units (8)
+      - units (11)
+      - 'Kokoro - Test: Integration'
+      - cla/google
+      - OwlBot Post Processor
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - javadoc
+      - conformance
 permissionRules:
   - team: yoshi-admins
     permission: admin
