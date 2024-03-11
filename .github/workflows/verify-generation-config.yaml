@@ -64,7 +64,6 @@ jobs:
     - name: generate from configuration
       shell: bash
       run: |
-        repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
         docker run --rm \
           ${repo_volumes} \
           -v /tmp:/tmp \
@@ -73,13 +72,10 @@ jobs:
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
           gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
           python /src/generate_repo.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --repository-path=/workspace/google-cloud-java
-      env:
-        repo_volumes: ${{ env.repo_volumes }}
     - name: generate pull request description
       id: generate-description
       shell: bash
       run: |
-        repo_volumes="-v repo-google-cloud-java:/workspace/google-cloud-java"
         # the pr description (body) will be available in pr-description.txt after
         # running this command.
         set -x
@@ -93,7 +89,6 @@ jobs:
           python /src/generate_pr_description.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --baseline-commit="${baseline_commit}"
       env:
         baseline_commit: ${{ env.baseline_commit }}
-        repo_volumes: ${{ env.repo_volumes }}
     - name: create or update the pull request
       shell: bash
       run: |
