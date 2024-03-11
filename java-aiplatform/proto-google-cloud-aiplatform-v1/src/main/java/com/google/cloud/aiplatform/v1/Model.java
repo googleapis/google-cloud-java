@@ -3588,6 +3588,1189 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface BaseModelSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Model.BaseModelSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Source information of Model Garden models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+     *
+     * @return Whether the modelGardenSource field is set.
+     */
+    boolean hasModelGardenSource();
+    /**
+     *
+     *
+     * <pre>
+     * Source information of Model Garden models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+     *
+     * @return The modelGardenSource.
+     */
+    com.google.cloud.aiplatform.v1.ModelGardenSource getModelGardenSource();
+    /**
+     *
+     *
+     * <pre>
+     * Source information of Model Garden models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+     */
+    com.google.cloud.aiplatform.v1.ModelGardenSourceOrBuilder getModelGardenSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about the base model of Genie models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+     *
+     * @return Whether the genieSource field is set.
+     */
+    boolean hasGenieSource();
+    /**
+     *
+     *
+     * <pre>
+     * Information about the base model of Genie models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+     *
+     * @return The genieSource.
+     */
+    com.google.cloud.aiplatform.v1.GenieSource getGenieSource();
+    /**
+     *
+     *
+     * <pre>
+     * Information about the base model of Genie models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+     */
+    com.google.cloud.aiplatform.v1.GenieSourceOrBuilder getGenieSourceOrBuilder();
+
+    com.google.cloud.aiplatform.v1.Model.BaseModelSource.SourceCase getSourceCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * User input field to specify the base model source. Currently it only
+   * supports specifing the Model Garden models and Genie models.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.Model.BaseModelSource}
+   */
+  public static final class BaseModelSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Model.BaseModelSource)
+      BaseModelSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use BaseModelSource.newBuilder() to construct.
+    private BaseModelSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BaseModelSource() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BaseModelSource();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1_Model_BaseModelSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ModelProto
+          .internal_static_google_cloud_aiplatform_v1_Model_BaseModelSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.Model.BaseModelSource.class,
+              com.google.cloud.aiplatform.v1.Model.BaseModelSource.Builder.class);
+    }
+
+    private int sourceCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object source_;
+
+    public enum SourceCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      MODEL_GARDEN_SOURCE(1),
+      GENIE_SOURCE(2),
+      SOURCE_NOT_SET(0);
+      private final int value;
+
+      private SourceCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SourceCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static SourceCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return MODEL_GARDEN_SOURCE;
+          case 2:
+            return GENIE_SOURCE;
+          case 0:
+            return SOURCE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
+    }
+
+    public static final int MODEL_GARDEN_SOURCE_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Source information of Model Garden models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+     *
+     * @return Whether the modelGardenSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasModelGardenSource() {
+      return sourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source information of Model Garden models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+     *
+     * @return The modelGardenSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModelGardenSource getModelGardenSource() {
+      if (sourceCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1.ModelGardenSource) source_;
+      }
+      return com.google.cloud.aiplatform.v1.ModelGardenSource.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Source information of Model Garden models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ModelGardenSourceOrBuilder
+        getModelGardenSourceOrBuilder() {
+      if (sourceCase_ == 1) {
+        return (com.google.cloud.aiplatform.v1.ModelGardenSource) source_;
+      }
+      return com.google.cloud.aiplatform.v1.ModelGardenSource.getDefaultInstance();
+    }
+
+    public static final int GENIE_SOURCE_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Information about the base model of Genie models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+     *
+     * @return Whether the genieSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGenieSource() {
+      return sourceCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the base model of Genie models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+     *
+     * @return The genieSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.GenieSource getGenieSource() {
+      if (sourceCase_ == 2) {
+        return (com.google.cloud.aiplatform.v1.GenieSource) source_;
+      }
+      return com.google.cloud.aiplatform.v1.GenieSource.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about the base model of Genie models.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.GenieSourceOrBuilder getGenieSourceOrBuilder() {
+      if (sourceCase_ == 2) {
+        return (com.google.cloud.aiplatform.v1.GenieSource) source_;
+      }
+      return com.google.cloud.aiplatform.v1.GenieSource.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (sourceCase_ == 1) {
+        output.writeMessage(1, (com.google.cloud.aiplatform.v1.ModelGardenSource) source_);
+      }
+      if (sourceCase_ == 2) {
+        output.writeMessage(2, (com.google.cloud.aiplatform.v1.GenieSource) source_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (sourceCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, (com.google.cloud.aiplatform.v1.ModelGardenSource) source_);
+      }
+      if (sourceCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, (com.google.cloud.aiplatform.v1.GenieSource) source_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.Model.BaseModelSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.Model.BaseModelSource other =
+          (com.google.cloud.aiplatform.v1.Model.BaseModelSource) obj;
+
+      if (!getSourceCase().equals(other.getSourceCase())) return false;
+      switch (sourceCase_) {
+        case 1:
+          if (!getModelGardenSource().equals(other.getModelGardenSource())) return false;
+          break;
+        case 2:
+          if (!getGenieSource().equals(other.getGenieSource())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (sourceCase_) {
+        case 1:
+          hash = (37 * hash) + MODEL_GARDEN_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getModelGardenSource().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + GENIE_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getGenieSource().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.Model.BaseModelSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * User input field to specify the base model source. Currently it only
+     * supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.Model.BaseModelSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.Model.BaseModelSource)
+        com.google.cloud.aiplatform.v1.Model.BaseModelSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1_Model_BaseModelSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1_Model_BaseModelSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.Model.BaseModelSource.class,
+                com.google.cloud.aiplatform.v1.Model.BaseModelSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.Model.BaseModelSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (modelGardenSourceBuilder_ != null) {
+          modelGardenSourceBuilder_.clear();
+        }
+        if (genieSourceBuilder_ != null) {
+          genieSourceBuilder_.clear();
+        }
+        sourceCase_ = 0;
+        source_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ModelProto
+            .internal_static_google_cloud_aiplatform_v1_Model_BaseModelSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Model.BaseModelSource getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.Model.BaseModelSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Model.BaseModelSource build() {
+        com.google.cloud.aiplatform.v1.Model.BaseModelSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Model.BaseModelSource buildPartial() {
+        com.google.cloud.aiplatform.v1.Model.BaseModelSource result =
+            new com.google.cloud.aiplatform.v1.Model.BaseModelSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Model.BaseModelSource result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.google.cloud.aiplatform.v1.Model.BaseModelSource result) {
+        result.sourceCase_ = sourceCase_;
+        result.source_ = this.source_;
+        if (sourceCase_ == 1 && modelGardenSourceBuilder_ != null) {
+          result.source_ = modelGardenSourceBuilder_.build();
+        }
+        if (sourceCase_ == 2 && genieSourceBuilder_ != null) {
+          result.source_ = genieSourceBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.Model.BaseModelSource) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.Model.BaseModelSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.Model.BaseModelSource other) {
+        if (other == com.google.cloud.aiplatform.v1.Model.BaseModelSource.getDefaultInstance())
+          return this;
+        switch (other.getSourceCase()) {
+          case MODEL_GARDEN_SOURCE:
+            {
+              mergeModelGardenSource(other.getModelGardenSource());
+              break;
+            }
+          case GENIE_SOURCE:
+            {
+              mergeGenieSource(other.getGenieSource());
+              break;
+            }
+          case SOURCE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getModelGardenSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  sourceCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getGenieSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  sourceCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int sourceCase_ = 0;
+      private java.lang.Object source_;
+
+      public SourceCase getSourceCase() {
+        return SourceCase.forNumber(sourceCase_);
+      }
+
+      public Builder clearSource() {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModelGardenSource,
+              com.google.cloud.aiplatform.v1.ModelGardenSource.Builder,
+              com.google.cloud.aiplatform.v1.ModelGardenSourceOrBuilder>
+          modelGardenSourceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       *
+       * @return Whether the modelGardenSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasModelGardenSource() {
+        return sourceCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       *
+       * @return The modelGardenSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ModelGardenSource getModelGardenSource() {
+        if (modelGardenSourceBuilder_ == null) {
+          if (sourceCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1.ModelGardenSource) source_;
+          }
+          return com.google.cloud.aiplatform.v1.ModelGardenSource.getDefaultInstance();
+        } else {
+          if (sourceCase_ == 1) {
+            return modelGardenSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.ModelGardenSource.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       */
+      public Builder setModelGardenSource(com.google.cloud.aiplatform.v1.ModelGardenSource value) {
+        if (modelGardenSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          modelGardenSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       */
+      public Builder setModelGardenSource(
+          com.google.cloud.aiplatform.v1.ModelGardenSource.Builder builderForValue) {
+        if (modelGardenSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          modelGardenSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       */
+      public Builder mergeModelGardenSource(
+          com.google.cloud.aiplatform.v1.ModelGardenSource value) {
+        if (modelGardenSourceBuilder_ == null) {
+          if (sourceCase_ == 1
+              && source_ != com.google.cloud.aiplatform.v1.ModelGardenSource.getDefaultInstance()) {
+            source_ =
+                com.google.cloud.aiplatform.v1.ModelGardenSource.newBuilder(
+                        (com.google.cloud.aiplatform.v1.ModelGardenSource) source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 1) {
+            modelGardenSourceBuilder_.mergeFrom(value);
+          } else {
+            modelGardenSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 1;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       */
+      public Builder clearModelGardenSource() {
+        if (modelGardenSourceBuilder_ == null) {
+          if (sourceCase_ == 1) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 1) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          modelGardenSourceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       */
+      public com.google.cloud.aiplatform.v1.ModelGardenSource.Builder
+          getModelGardenSourceBuilder() {
+        return getModelGardenSourceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ModelGardenSourceOrBuilder
+          getModelGardenSourceOrBuilder() {
+        if ((sourceCase_ == 1) && (modelGardenSourceBuilder_ != null)) {
+          return modelGardenSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 1) {
+            return (com.google.cloud.aiplatform.v1.ModelGardenSource) source_;
+          }
+          return com.google.cloud.aiplatform.v1.ModelGardenSource.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Source information of Model Garden models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.ModelGardenSource model_garden_source = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.ModelGardenSource,
+              com.google.cloud.aiplatform.v1.ModelGardenSource.Builder,
+              com.google.cloud.aiplatform.v1.ModelGardenSourceOrBuilder>
+          getModelGardenSourceFieldBuilder() {
+        if (modelGardenSourceBuilder_ == null) {
+          if (!(sourceCase_ == 1)) {
+            source_ = com.google.cloud.aiplatform.v1.ModelGardenSource.getDefaultInstance();
+          }
+          modelGardenSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.ModelGardenSource,
+                  com.google.cloud.aiplatform.v1.ModelGardenSource.Builder,
+                  com.google.cloud.aiplatform.v1.ModelGardenSourceOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.ModelGardenSource) source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 1;
+        onChanged();
+        return modelGardenSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.GenieSource,
+              com.google.cloud.aiplatform.v1.GenieSource.Builder,
+              com.google.cloud.aiplatform.v1.GenieSourceOrBuilder>
+          genieSourceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       *
+       * @return Whether the genieSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasGenieSource() {
+        return sourceCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       *
+       * @return The genieSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.GenieSource getGenieSource() {
+        if (genieSourceBuilder_ == null) {
+          if (sourceCase_ == 2) {
+            return (com.google.cloud.aiplatform.v1.GenieSource) source_;
+          }
+          return com.google.cloud.aiplatform.v1.GenieSource.getDefaultInstance();
+        } else {
+          if (sourceCase_ == 2) {
+            return genieSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.GenieSource.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       */
+      public Builder setGenieSource(com.google.cloud.aiplatform.v1.GenieSource value) {
+        if (genieSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          genieSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       */
+      public Builder setGenieSource(
+          com.google.cloud.aiplatform.v1.GenieSource.Builder builderForValue) {
+        if (genieSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          genieSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       */
+      public Builder mergeGenieSource(com.google.cloud.aiplatform.v1.GenieSource value) {
+        if (genieSourceBuilder_ == null) {
+          if (sourceCase_ == 2
+              && source_ != com.google.cloud.aiplatform.v1.GenieSource.getDefaultInstance()) {
+            source_ =
+                com.google.cloud.aiplatform.v1.GenieSource.newBuilder(
+                        (com.google.cloud.aiplatform.v1.GenieSource) source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 2) {
+            genieSourceBuilder_.mergeFrom(value);
+          } else {
+            genieSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 2;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       */
+      public Builder clearGenieSource() {
+        if (genieSourceBuilder_ == null) {
+          if (sourceCase_ == 2) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 2) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          genieSourceBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       */
+      public com.google.cloud.aiplatform.v1.GenieSource.Builder getGenieSourceBuilder() {
+        return getGenieSourceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.GenieSourceOrBuilder getGenieSourceOrBuilder() {
+        if ((sourceCase_ == 2) && (genieSourceBuilder_ != null)) {
+          return genieSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 2) {
+            return (com.google.cloud.aiplatform.v1.GenieSource) source_;
+          }
+          return com.google.cloud.aiplatform.v1.GenieSource.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Information about the base model of Genie models.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1.GenieSource genie_source = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.GenieSource,
+              com.google.cloud.aiplatform.v1.GenieSource.Builder,
+              com.google.cloud.aiplatform.v1.GenieSourceOrBuilder>
+          getGenieSourceFieldBuilder() {
+        if (genieSourceBuilder_ == null) {
+          if (!(sourceCase_ == 2)) {
+            source_ = com.google.cloud.aiplatform.v1.GenieSource.getDefaultInstance();
+          }
+          genieSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.GenieSource,
+                  com.google.cloud.aiplatform.v1.GenieSource.Builder,
+                  com.google.cloud.aiplatform.v1.GenieSourceOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.GenieSource) source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 2;
+        onChanged();
+        return genieSourceBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Model.BaseModelSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.Model.BaseModelSource)
+    private static final com.google.cloud.aiplatform.v1.Model.BaseModelSource DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.Model.BaseModelSource();
+    }
+
+    public static com.google.cloud.aiplatform.v1.Model.BaseModelSource getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BaseModelSource> PARSER =
+        new com.google.protobuf.AbstractParser<BaseModelSource>() {
+          @java.lang.Override
+          public BaseModelSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BaseModelSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BaseModelSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Model.BaseModelSource getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -6038,6 +7221,66 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int BASE_MODEL_SOURCE_FIELD_NUMBER = 50;
+  private com.google.cloud.aiplatform.v1.Model.BaseModelSource baseModelSource_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User input field to specify the base model source. Currently it
+   * only supports specifing the Model Garden models and Genie models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the baseModelSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasBaseModelSource() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User input field to specify the base model source. Currently it
+   * only supports specifing the Model Garden models and Genie models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The baseModelSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Model.BaseModelSource getBaseModelSource() {
+    return baseModelSource_ == null
+        ? com.google.cloud.aiplatform.v1.Model.BaseModelSource.getDefaultInstance()
+        : baseModelSource_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User input field to specify the base model source. Currently it
+   * only supports specifing the Model Garden models and Genie models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Model.BaseModelSourceOrBuilder
+      getBaseModelSourceOrBuilder() {
+    return baseModelSource_ == null
+        ? com.google.cloud.aiplatform.v1.Model.BaseModelSource.getDefaultInstance()
+        : baseModelSource_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6147,6 +7390,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 47, pipelineJob_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(50, getBaseModelSource());
     }
     getUnknownFields().writeTo(output);
   }
@@ -6282,6 +7528,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47, pipelineJob_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getBaseModelSource());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6367,6 +7616,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (!getOriginalModelInfo().equals(other.getOriginalModelInfo())) return false;
     }
     if (!getMetadataArtifact().equals(other.getMetadataArtifact())) return false;
+    if (hasBaseModelSource() != other.hasBaseModelSource()) return false;
+    if (hasBaseModelSource()) {
+      if (!getBaseModelSource().equals(other.getBaseModelSource())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6476,6 +7729,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + METADATA_ARTIFACT_FIELD_NUMBER;
     hash = (53 * hash) + getMetadataArtifact().hashCode();
+    if (hasBaseModelSource()) {
+      hash = (37 * hash) + BASE_MODEL_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getBaseModelSource().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6651,6 +7908,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         getEncryptionSpecFieldBuilder();
         getModelSourceInfoFieldBuilder();
         getOriginalModelInfoFieldBuilder();
+        getBaseModelSourceFieldBuilder();
       }
     }
 
@@ -6749,6 +8007,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         originalModelInfoBuilder_ = null;
       }
       metadataArtifact_ = "";
+      baseModelSource_ = null;
+      if (baseModelSourceBuilder_ != null) {
+        baseModelSourceBuilder_.dispose();
+        baseModelSourceBuilder_ = null;
+      }
       return this;
     }
 
@@ -6923,6 +8186,11 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
         result.metadataArtifact_ = metadataArtifact_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.baseModelSource_ =
+            baseModelSourceBuilder_ == null ? baseModelSource_ : baseModelSourceBuilder_.build();
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -7158,6 +8426,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         metadataArtifact_ = other.metadataArtifact_;
         bitField0_ |= 0x20000000;
         onChanged();
+      }
+      if (other.hasBaseModelSource()) {
+        mergeBaseModelSource(other.getBaseModelSource());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7406,6 +8677,12 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 378
+            case 402:
+              {
+                input.readMessage(getBaseModelSourceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 402
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14373,6 +15650,223 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x20000000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.Model.BaseModelSource baseModelSource_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Model.BaseModelSource,
+            com.google.cloud.aiplatform.v1.Model.BaseModelSource.Builder,
+            com.google.cloud.aiplatform.v1.Model.BaseModelSourceOrBuilder>
+        baseModelSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the baseModelSource field is set.
+     */
+    public boolean hasBaseModelSource() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The baseModelSource.
+     */
+    public com.google.cloud.aiplatform.v1.Model.BaseModelSource getBaseModelSource() {
+      if (baseModelSourceBuilder_ == null) {
+        return baseModelSource_ == null
+            ? com.google.cloud.aiplatform.v1.Model.BaseModelSource.getDefaultInstance()
+            : baseModelSource_;
+      } else {
+        return baseModelSourceBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBaseModelSource(com.google.cloud.aiplatform.v1.Model.BaseModelSource value) {
+      if (baseModelSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        baseModelSource_ = value;
+      } else {
+        baseModelSourceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBaseModelSource(
+        com.google.cloud.aiplatform.v1.Model.BaseModelSource.Builder builderForValue) {
+      if (baseModelSourceBuilder_ == null) {
+        baseModelSource_ = builderForValue.build();
+      } else {
+        baseModelSourceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBaseModelSource(
+        com.google.cloud.aiplatform.v1.Model.BaseModelSource value) {
+      if (baseModelSourceBuilder_ == null) {
+        if (((bitField0_ & 0x40000000) != 0)
+            && baseModelSource_ != null
+            && baseModelSource_
+                != com.google.cloud.aiplatform.v1.Model.BaseModelSource.getDefaultInstance()) {
+          getBaseModelSourceBuilder().mergeFrom(value);
+        } else {
+          baseModelSource_ = value;
+        }
+      } else {
+        baseModelSourceBuilder_.mergeFrom(value);
+      }
+      if (baseModelSource_ != null) {
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBaseModelSource() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      baseModelSource_ = null;
+      if (baseModelSourceBuilder_ != null) {
+        baseModelSourceBuilder_.dispose();
+        baseModelSourceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Model.BaseModelSource.Builder
+        getBaseModelSourceBuilder() {
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return getBaseModelSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Model.BaseModelSourceOrBuilder
+        getBaseModelSourceOrBuilder() {
+      if (baseModelSourceBuilder_ != null) {
+        return baseModelSourceBuilder_.getMessageOrBuilder();
+      } else {
+        return baseModelSource_ == null
+            ? com.google.cloud.aiplatform.v1.Model.BaseModelSource.getDefaultInstance()
+            : baseModelSource_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User input field to specify the base model source. Currently it
+     * only supports specifing the Model Garden models and Genie models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Model.BaseModelSource,
+            com.google.cloud.aiplatform.v1.Model.BaseModelSource.Builder,
+            com.google.cloud.aiplatform.v1.Model.BaseModelSourceOrBuilder>
+        getBaseModelSourceFieldBuilder() {
+      if (baseModelSourceBuilder_ == null) {
+        baseModelSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Model.BaseModelSource,
+                com.google.cloud.aiplatform.v1.Model.BaseModelSource.Builder,
+                com.google.cloud.aiplatform.v1.Model.BaseModelSourceOrBuilder>(
+                getBaseModelSource(), getParentForChildren(), isClean());
+        baseModelSource_ = null;
+      }
+      return baseModelSourceBuilder_;
     }
 
     @java.lang.Override

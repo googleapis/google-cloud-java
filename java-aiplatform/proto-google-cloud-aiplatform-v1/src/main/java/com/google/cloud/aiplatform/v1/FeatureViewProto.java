@@ -65,7 +65,7 @@ public final class FeatureViewProto {
           + "w.proto\022\032google.cloud.aiplatform.v1\032\037goo"
           + "gle/api/field_behavior.proto\032\031google/api"
           + "/resource.proto\032\037google/protobuf/timesta"
-          + "mp.proto\"\365\007\n\013FeatureView\022W\n\020big_query_so"
+          + "mp.proto\"\252\010\n\013FeatureView\022W\n\020big_query_so"
           + "urce\030\006 \001(\01326.google.cloud.aiplatform.v1."
           + "FeatureView.BigQuerySourceB\003\340A\001H\000\022e\n\027fea"
           + "ture_registry_source\030\t \001(\0132=.google.clou"
@@ -80,23 +80,24 @@ public final class FeatureViewProto {
           + "orm.v1.FeatureView.SyncConfig\032B\n\016BigQuer"
           + "ySource\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\036\n\021entity_id_c"
           + "olumns\030\002 \003(\tB\003\340A\002\032\032\n\nSyncConfig\022\014\n\004cron\030"
-          + "\001 \001(\t\032\311\001\n\025FeatureRegistrySource\022g\n\016featu"
+          + "\001 \001(\t\032\376\001\n\025FeatureRegistrySource\022g\n\016featu"
           + "re_groups\030\001 \003(\0132J.google.cloud.aiplatfor"
           + "m.v1.FeatureView.FeatureRegistrySource.F"
-          + "eatureGroupB\003\340A\002\032G\n\014FeatureGroup\022\035\n\020feat"
-          + "ure_group_id\030\001 \001(\tB\003\340A\002\022\030\n\013feature_ids\030\002"
-          + " \003(\tB\003\340A\002\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001:\233\001\352A\227\001\n%aiplatform.goog"
-          + "leapis.com/FeatureView\022nprojects/{projec"
-          + "t}/locations/{location}/featureOnlineSto"
-          + "res/{feature_online_store}/featureViews/"
-          + "{feature_view}B\010\n\006sourceB\316\001\n\036com.google."
-          + "cloud.aiplatform.v1B\020FeatureViewProtoP\001Z"
-          + ">cloud.google.com/go/aiplatform/apiv1/ai"
-          + "platformpb;aiplatformpb\252\002\032Google.Cloud.A"
-          + "IPlatform.V1\312\002\032Google\\Cloud\\AIPlatform\\V"
-          + "1\352\002\035Google::Cloud::AIPlatform::V1b\006proto"
-          + "3"
+          + "eatureGroupB\003\340A\002\022 \n\016project_number\030\002 \001(\003"
+          + "B\003\340A\001H\000\210\001\001\032G\n\014FeatureGroup\022\035\n\020feature_gr"
+          + "oup_id\030\001 \001(\tB\003\340A\002\022\030\n\013feature_ids\030\002 \003(\tB\003"
+          + "\340A\002B\021\n\017_project_number\032-\n\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\233\001\352A\227\001\n%ai"
+          + "platform.googleapis.com/FeatureView\022npro"
+          + "jects/{project}/locations/{location}/fea"
+          + "tureOnlineStores/{feature_online_store}/"
+          + "featureViews/{feature_view}B\010\n\006sourceB\316\001"
+          + "\n\036com.google.cloud.aiplatform.v1B\020Featur"
+          + "eViewProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -144,7 +145,7 @@ public final class FeatureViewProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_FeatureView_FeatureRegistrySource_descriptor,
             new java.lang.String[] {
-              "FeatureGroups",
+              "FeatureGroups", "ProjectNumber",
             });
     internal_static_google_cloud_aiplatform_v1_FeatureView_FeatureRegistrySource_FeatureGroup_descriptor =
         internal_static_google_cloud_aiplatform_v1_FeatureView_FeatureRegistrySource_descriptor

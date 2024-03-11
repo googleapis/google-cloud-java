@@ -23,6 +23,11 @@ import static com.google.cloud.aiplatform.v1.PipelineServiceClient.ListTrainingP
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsOperationMetadata;
+import com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest;
+import com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsResponse;
+import com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest;
+import com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsResponse;
 import com.google.cloud.aiplatform.v1.CancelPipelineJobRequest;
 import com.google.cloud.aiplatform.v1.CancelTrainingPipelineRequest;
 import com.google.cloud.aiplatform.v1.CreatePipelineJobRequest;
@@ -127,8 +132,34 @@ public abstract class PipelineServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deletePipelineJobCallable()");
   }
 
+  public OperationCallable<
+          BatchDeletePipelineJobsRequest, BatchDeletePipelineJobsResponse, DeleteOperationMetadata>
+      batchDeletePipelineJobsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeletePipelineJobsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeletePipelineJobsRequest, Operation>
+      batchDeletePipelineJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeletePipelineJobsCallable()");
+  }
+
   public UnaryCallable<CancelPipelineJobRequest, Empty> cancelPipelineJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelPipelineJobCallable()");
+  }
+
+  public OperationCallable<
+          BatchCancelPipelineJobsRequest,
+          BatchCancelPipelineJobsResponse,
+          BatchCancelPipelineJobsOperationMetadata>
+      batchCancelPipelineJobsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCancelPipelineJobsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCancelPipelineJobsRequest, Operation>
+      batchCancelPipelineJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCancelPipelineJobsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
