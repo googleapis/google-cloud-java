@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       branch_name: generate-libraries
+      library_generation_image_tag: latest
       repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
     steps:
     - uses: actions/checkout@v4
@@ -70,7 +71,7 @@ jobs:
           -v /var/run/docker.sock:/var/run/docker.sock \
           -e "RUNNING_IN_DOCKER=true" \
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           python /src/generate_repo.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --repository-path=/workspace/google-cloud-java
     - name: generate pull request description
       id: generate-description
@@ -85,7 +86,7 @@ jobs:
           -v /var/run/docker.sock:/var/run/docker.sock \
           -e "RUNNING_IN_DOCKER=true" \
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:latest \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           python /src/generate_pr_description.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --baseline-commit="${baseline_commit}"
       env:
         baseline_commit: ${{ env.baseline_commit }}
