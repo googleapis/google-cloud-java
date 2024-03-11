@@ -94,7 +94,8 @@ jobs:
       run: |
         title="chore: generate libraries at $(date)"
         git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt generation_config.yaml
-        git commit -m "${title}"
+        # use --allow-empty because (rarely) there's no change.
+        git commit --allow-empty -m "${title}"
         if [ -z "${pr_num}" ]; then
           git remote add monorepo https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
           git fetch -q --unshallow monorepo
