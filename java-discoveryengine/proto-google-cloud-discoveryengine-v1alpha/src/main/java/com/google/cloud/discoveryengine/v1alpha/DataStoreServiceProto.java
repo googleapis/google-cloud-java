@@ -60,6 +60,14 @@ public final class DataStoreServiceProto {
       internal_static_google_cloud_discoveryengine_v1alpha_DeleteDataStoreMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_DeleteDataStoreMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_GetDocumentProcessingConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_GetDocumentProcessingConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_UpdateDocumentProcessingConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_UpdateDocumentProcessingConfigRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -75,89 +83,120 @@ public final class DataStoreServiceProto {
           + "tions.proto\032\027google/api/client.proto\032\037go"
           + "ogle/api/field_behavior.proto\032\031google/ap"
           + "i/resource.proto\0325google/cloud/discovery"
-          + "engine/v1alpha/data_store.proto\032#google/"
-          + "longrunning/operations.proto\032\033google/pro"
-          + "tobuf/empty.proto\032 google/protobuf/field"
-          + "_mask.proto\032\037google/protobuf/timestamp.p"
-          + "roto\"\346\001\n\026CreateDataStoreRequest\022A\n\006paren"
-          + "t\030\001 \001(\tB1\340A\002\372A+\n)discoveryengine.googlea"
-          + "pis.com/Collection\022H\n\ndata_store\030\002 \001(\0132/"
-          + ".google.cloud.discoveryengine.v1alpha.Da"
-          + "taStoreB\003\340A\002\022\032\n\rdata_store_id\030\003 \001(\tB\003\340A\002"
-          + "\022#\n\033create_advanced_site_search\030\004 \001(\010\"U\n"
-          + "\023GetDataStoreRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372"
-          + "A*\n(discoveryengine.googleapis.com/DataS"
-          + "tore\"{\n\027CreateDataStoreMetadata\022/\n\013creat"
-          + "e_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022/\n\013update_time\030\002 \001(\0132\032.google.protobuf."
-          + "Timestamp\"\221\001\n\025ListDataStoresRequest\022A\n\006p"
-          + "arent\030\001 \001(\tB1\340A\002\372A+\n)discoveryengine.goo"
-          + "gleapis.com/Collection\022\021\n\tpage_size\030\002 \001("
-          + "\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"w\n"
-          + "\026ListDataStoresResponse\022D\n\013data_stores\030\001"
-          + " \003(\0132/.google.cloud.discoveryengine.v1al"
-          + "pha.DataStore\022\027\n\017next_page_token\030\002 \001(\t\"X"
-          + "\n\026DeleteDataStoreRequest\022>\n\004name\030\001 \001(\tB0"
-          + "\340A\002\372A*\n(discoveryengine.googleapis.com/D"
-          + "ataStore\"\223\001\n\026UpdateDataStoreRequest\022H\n\nd"
-          + "ata_store\030\001 \001(\0132/.google.cloud.discovery"
-          + "engine.v1alpha.DataStoreB\003\340A\002\022/\n\013update_"
-          + "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"{"
-          + "\n\027DeleteDataStoreMetadata\022/\n\013create_time"
-          + "\030\001 \001(\0132\032.google.protobuf.Timestamp\022/\n\013up"
-          + "date_time\030\002 \001(\0132\032.google.protobuf.Timest"
-          + "amp2\310\r\n\020DataStoreService\022\235\003\n\017CreateDataS"
-          + "tore\022<.google.cloud.discoveryengine.v1al"
-          + "pha.CreateDataStoreRequest\032\035.google.long"
-          + "running.Operation\"\254\002\312An\n.google.cloud.di"
-          + "scoveryengine.v1alpha.DataStore\022<google."
-          + "cloud.discoveryengine.v1alpha.CreateData"
-          + "StoreMetadata\332A\037parent,data_store,data_s"
-          + "tore_id\202\323\344\223\002\222\001\"3/v1alpha/{parent=project"
-          + "s/*/locations/*}/dataStores:\ndata_storeZ"
-          + "O\"A/v1alpha/{parent=projects/*/locations"
-          + "/*/collections/*}/dataStores:\ndata_store"
-          + "\022\204\002\n\014GetDataStore\0229.google.cloud.discove"
-          + "ryengine.v1alpha.GetDataStoreRequest\032/.g"
-          + "oogle.cloud.discoveryengine.v1alpha.Data"
-          + "Store\"\207\001\332A\004name\202\323\344\223\002z\0223/v1alpha/{name=pr"
-          + "ojects/*/locations/*/dataStores/*}ZC\022A/v"
-          + "1alpha/{name=projects/*/locations/*/coll"
-          + "ections/*/dataStores/*}\022\227\002\n\016ListDataStor"
-          + "es\022;.google.cloud.discoveryengine.v1alph"
-          + "a.ListDataStoresRequest\032<.google.cloud.d"
-          + "iscoveryengine.v1alpha.ListDataStoresRes"
-          + "ponse\"\211\001\332A\006parent\202\323\344\223\002z\0223/v1alpha/{paren"
-          + "t=projects/*/locations/*}/dataStoresZC\022A"
-          + "/v1alpha/{parent=projects/*/locations/*/"
-          + "collections/*}/dataStores\022\320\002\n\017DeleteData"
-          + "Store\022<.google.cloud.discoveryengine.v1a"
-          + "lpha.DeleteDataStoreRequest\032\035.google.lon"
-          + "grunning.Operation\"\337\001\312AU\n\025google.protobu"
-          + "f.Empty\022<google.cloud.discoveryengine.v1"
-          + "alpha.DeleteDataStoreMetadata\332A\004name\202\323\344\223"
-          + "\002z*3/v1alpha/{name=projects/*/locations/"
-          + "*/dataStores/*}ZC*A/v1alpha/{name=projec"
-          + "ts/*/locations/*/collections/*/dataStore"
-          + "s/*}\022\313\002\n\017UpdateDataStore\022<.google.cloud."
-          + "discoveryengine.v1alpha.UpdateDataStoreR"
-          + "equest\032/.google.cloud.discoveryengine.v1"
-          + "alpha.DataStore\"\310\001\332A\026data_store,update_m"
-          + "ask\202\323\344\223\002\250\0012>/v1alpha/{data_store.name=pr"
-          + "ojects/*/locations/*/dataStores/*}:\ndata"
-          + "_storeZZ2L/v1alpha/{data_store.name=proj"
-          + "ects/*/locations/*/collections/*/dataSto"
-          + "res/*}:\ndata_store\032R\312A\036discoveryengine.g"
-          + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\241\002\n(com.google.cl"
-          + "oud.discoveryengine.v1alphaB\025DataStoreSe"
-          + "rviceProtoP\001ZRcloud.google.com/go/discov"
-          + "eryengine/apiv1alpha/discoveryenginepb;d"
-          + "iscoveryenginepb\242\002\017DISCOVERYENGINE\252\002$Goo"
-          + "gle.Cloud.DiscoveryEngine.V1Alpha\312\002$Goog"
-          + "le\\Cloud\\DiscoveryEngine\\V1alpha\352\002\'Googl"
-          + "e::Cloud::DiscoveryEngine::V1alphab\006prot"
-          + "o3"
+          + "engine/v1alpha/data_store.proto\032Egoogle/"
+          + "cloud/discoveryengine/v1alpha/document_p"
+          + "rocessing_config.proto\032#google/longrunni"
+          + "ng/operations.proto\032\033google/protobuf/emp"
+          + "ty.proto\032 google/protobuf/field_mask.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\346\001\n\026"
+          + "CreateDataStoreRequest\022A\n\006parent\030\001 \001(\tB1"
+          + "\340A\002\372A+\n)discoveryengine.googleapis.com/C"
+          + "ollection\022H\n\ndata_store\030\002 \001(\0132/.google.c"
+          + "loud.discoveryengine.v1alpha.DataStoreB\003"
+          + "\340A\002\022\032\n\rdata_store_id\030\003 \001(\tB\003\340A\002\022#\n\033creat"
+          + "e_advanced_site_search\030\004 \001(\010\"U\n\023GetDataS"
+          + "toreRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(disco"
+          + "veryengine.googleapis.com/DataStore\"{\n\027C"
+          + "reateDataStoreMetadata\022/\n\013create_time\030\001 "
+          + "\001(\0132\032.google.protobuf.Timestamp\022/\n\013updat"
+          + "e_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
+          + "\"\221\001\n\025ListDataStoresRequest\022A\n\006parent\030\001 \001"
+          + "(\tB1\340A\002\372A+\n)discoveryengine.googleapis.c"
+          + "om/Collection\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage"
+          + "_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"w\n\026ListData"
+          + "StoresResponse\022D\n\013data_stores\030\001 \003(\0132/.go"
+          + "ogle.cloud.discoveryengine.v1alpha.DataS"
+          + "tore\022\027\n\017next_page_token\030\002 \001(\t\"X\n\026DeleteD"
+          + "ataStoreRequest\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(d"
+          + "iscoveryengine.googleapis.com/DataStore\""
+          + "\223\001\n\026UpdateDataStoreRequest\022H\n\ndata_store"
+          + "\030\001 \001(\0132/.google.cloud.discoveryengine.v1"
+          + "alpha.DataStoreB\003\340A\002\022/\n\013update_mask\030\002 \001("
+          + "\0132\032.google.protobuf.FieldMask\"{\n\027DeleteD"
+          + "ataStoreMetadata\022/\n\013create_time\030\001 \001(\0132\032."
+          + "google.protobuf.Timestamp\022/\n\013update_time"
+          + "\030\002 \001(\0132\032.google.protobuf.Timestamp\"s\n\"Ge"
+          + "tDocumentProcessingConfigRequest\022M\n\004name"
+          + "\030\001 \001(\tB?\340A\002\372A9\n7discoveryengine.googleap"
+          + "is.com/DocumentProcessingConfig\"\301\001\n%Upda"
+          + "teDocumentProcessingConfigRequest\022g\n\032doc"
+          + "ument_processing_config\030\001 \001(\0132>.google.c"
+          + "loud.discoveryengine.v1alpha.DocumentPro"
+          + "cessingConfigB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132"
+          + "\032.google.protobuf.FieldMask2\255\024\n\020DataStor"
+          + "eService\022\235\003\n\017CreateDataStore\022<.google.cl"
+          + "oud.discoveryengine.v1alpha.CreateDataSt"
+          + "oreRequest\032\035.google.longrunning.Operatio"
+          + "n\"\254\002\312An\n.google.cloud.discoveryengine.v1"
+          + "alpha.DataStore\022<google.cloud.discoverye"
+          + "ngine.v1alpha.CreateDataStoreMetadata\332A\037"
+          + "parent,data_store,data_store_id\202\323\344\223\002\222\001\"3"
+          + "/v1alpha/{parent=projects/*/locations/*}"
+          + "/dataStores:\ndata_storeZO\"A/v1alpha/{par"
+          + "ent=projects/*/locations/*/collections/*"
+          + "}/dataStores:\ndata_store\022\204\002\n\014GetDataStor"
+          + "e\0229.google.cloud.discoveryengine.v1alpha"
+          + ".GetDataStoreRequest\032/.google.cloud.disc"
+          + "overyengine.v1alpha.DataStore\"\207\001\332A\004name\202"
+          + "\323\344\223\002z\0223/v1alpha/{name=projects/*/locatio"
+          + "ns/*/dataStores/*}ZC\022A/v1alpha/{name=pro"
+          + "jects/*/locations/*/collections/*/dataSt"
+          + "ores/*}\022\227\002\n\016ListDataStores\022;.google.clou"
+          + "d.discoveryengine.v1alpha.ListDataStores"
+          + "Request\032<.google.cloud.discoveryengine.v"
+          + "1alpha.ListDataStoresResponse\"\211\001\332A\006paren"
+          + "t\202\323\344\223\002z\0223/v1alpha/{parent=projects/*/loc"
+          + "ations/*}/dataStoresZC\022A/v1alpha/{parent"
+          + "=projects/*/locations/*/collections/*}/d"
+          + "ataStores\022\320\002\n\017DeleteDataStore\022<.google.c"
+          + "loud.discoveryengine.v1alpha.DeleteDataS"
+          + "toreRequest\032\035.google.longrunning.Operati"
+          + "on\"\337\001\312AU\n\025google.protobuf.Empty\022<google."
+          + "cloud.discoveryengine.v1alpha.DeleteData"
+          + "StoreMetadata\332A\004name\202\323\344\223\002z*3/v1alpha/{na"
+          + "me=projects/*/locations/*/dataStores/*}Z"
+          + "C*A/v1alpha/{name=projects/*/locations/*"
+          + "/collections/*/dataStores/*}\022\313\002\n\017UpdateD"
+          + "ataStore\022<.google.cloud.discoveryengine."
+          + "v1alpha.UpdateDataStoreRequest\032/.google."
+          + "cloud.discoveryengine.v1alpha.DataStore\""
+          + "\310\001\332A\026data_store,update_mask\202\323\344\223\002\250\0012>/v1a"
+          + "lpha/{data_store.name=projects/*/locatio"
+          + "ns/*/dataStores/*}:\ndata_storeZZ2L/v1alp"
+          + "ha/{data_store.name=projects/*/locations"
+          + "/*/collections/*/dataStores/*}:\ndata_sto"
+          + "re\022\344\002\n\033GetDocumentProcessingConfig\022H.goo"
+          + "gle.cloud.discoveryengine.v1alpha.GetDoc"
+          + "umentProcessingConfigRequest\032>.google.cl"
+          + "oud.discoveryengine.v1alpha.DocumentProc"
+          + "essingConfig\"\272\001\332A\004name\202\323\344\223\002\254\001\022L/v1alpha/"
+          + "{name=projects/*/locations/*/dataStores/"
+          + "*/documentProcessingConfig}Z\\\022Z/v1alpha/"
+          + "{name=projects/*/locations/*/collections"
+          + "/*/dataStores/*/documentProcessingConfig"
+          + "}\022\373\003\n\036UpdateDocumentProcessingConfig\022K.g"
+          + "oogle.cloud.discoveryengine.v1alpha.Upda"
+          + "teDocumentProcessingConfigRequest\032>.goog"
+          + "le.cloud.discoveryengine.v1alpha.Documen"
+          + "tProcessingConfig\"\313\002\332A&document_processi"
+          + "ng_config,update_mask\202\323\344\223\002\233\0022g/v1alpha/{"
+          + "document_processing_config.name=projects"
+          + "/*/locations/*/dataStores/*/documentProc"
+          + "essingConfig}:\032document_processing_confi"
+          + "gZ\223\0012u/v1alpha/{document_processing_conf"
+          + "ig.name=projects/*/locations/*/collectio"
+          + "ns/*/dataStores/*/documentProcessingConf"
+          + "ig}:\032document_processing_config\032R\312A\036disc"
+          + "overyengine.googleapis.com\322A.https://www"
+          + ".googleapis.com/auth/cloud-platformB\241\002\n("
+          + "com.google.cloud.discoveryengine.v1alpha"
+          + "B\025DataStoreServiceProtoP\001ZRcloud.google."
+          + "com/go/discoveryengine/apiv1alpha/discov"
+          + "eryenginepb;discoveryenginepb\242\002\017DISCOVER"
+          + "YENGINE\252\002$Google.Cloud.DiscoveryEngine.V"
+          + "1Alpha\312\002$Google\\Cloud\\DiscoveryEngine\\V1"
+          + "alpha\352\002\'Google::Cloud::DiscoveryEngine::"
+          + "V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -168,6 +207,8 @@ public final class DataStoreServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1alpha.DataStoreProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigProto
+                  .getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -237,6 +278,22 @@ public final class DataStoreServiceProto {
             new java.lang.String[] {
               "CreateTime", "UpdateTime",
             });
+    internal_static_google_cloud_discoveryengine_v1alpha_GetDocumentProcessingConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_discoveryengine_v1alpha_GetDocumentProcessingConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_GetDocumentProcessingConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_UpdateDocumentProcessingConfigRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_discoveryengine_v1alpha_UpdateDocumentProcessingConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_UpdateDocumentProcessingConfigRequest_descriptor,
+            new java.lang.String[] {
+              "DocumentProcessingConfig", "UpdateMask",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -253,6 +310,7 @@ public final class DataStoreServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1alpha.DataStoreProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

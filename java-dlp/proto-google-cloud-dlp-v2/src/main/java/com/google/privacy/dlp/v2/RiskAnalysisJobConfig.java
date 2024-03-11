@@ -24,7 +24,8 @@ package com.google.privacy.dlp.v2;
  *
  * <pre>
  * Configuration for a risk analysis job. See
- * https://cloud.google.com/dlp/docs/concepts-risk-analysis to learn more.
+ * https://cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.RiskAnalysisJobConfig}
@@ -435,7 +436,8 @@ public final class RiskAnalysisJobConfig extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Configuration for a risk analysis job. See
-   * https://cloud.google.com/dlp/docs/concepts-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/concepts-risk-analysis
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.RiskAnalysisJobConfig}

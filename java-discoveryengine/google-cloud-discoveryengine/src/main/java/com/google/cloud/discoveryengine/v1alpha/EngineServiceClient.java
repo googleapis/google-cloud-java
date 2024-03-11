@@ -169,7 +169,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> PauseEngine</td>
- *      <td><p> Pauses the training of an existing engine. Only applicable if [solution_type][] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td><p> Pauses the training of an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -207,7 +207,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> TuneEngine</td>
- *      <td><p> Tunes an existing engine. Only applicable if [solution_type][] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td><p> Tunes an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1064,7 +1064,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if [solution_type][] is
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1093,7 +1094,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if [solution_type][] is
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1121,7 +1123,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if [solution_type][] is
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1151,7 +1154,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if [solution_type][] is
+   * Pauses the training of an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1300,7 +1304,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if [solution_type][] is
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1330,7 +1335,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if [solution_type][] is
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1359,7 +1365,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if [solution_type][] is
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1390,7 +1397,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if [solution_type][] is
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1421,7 +1429,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if [solution_type][] is
+   * Tunes an existing engine. Only applicable if
+   * [SolutionType][google.cloud.discoveryengine.v1alpha.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1alpha.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:

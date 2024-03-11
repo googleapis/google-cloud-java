@@ -1,6 +1,6 @@
 gapic_generator_version: 2.37.0
 protobuf_version: '25.2'
-googleapis_commitish: 6500290663163ba7dc6e0a35231772f5f78c3b62
+googleapis_commitish: eebdbe402ff4d042090a018a3b984407e92f2d3b
 owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
 synthtool_commitish: 6612ab8f3afcd5e292aecd647f0fa68812c9f5b5
 template_excludes:

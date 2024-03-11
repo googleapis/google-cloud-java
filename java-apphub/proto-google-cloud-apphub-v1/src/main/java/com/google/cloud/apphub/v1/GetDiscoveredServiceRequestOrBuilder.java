@@ -28,7 +28,9 @@ public interface GetDiscoveredServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Discovered Service to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/discoveredServices/{discoveredService}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface GetDiscoveredServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Discovered Service to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/discoveredServices/{discoveredService}`.
    * </pre>
    *
    * <code>

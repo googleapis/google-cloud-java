@@ -237,6 +237,71 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec>
+      getDataStoreSpecsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec getDataStoreSpecs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  int getDataStoreSpecsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder>
+      getDataStoreSpecsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of data store specs to apply on a search call.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpec data_store_specs = 32;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.DataStoreSpecOrBuilder
+      getDataStoreSpecsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the documents being filtered. Filter
    * expression is case-sensitive.

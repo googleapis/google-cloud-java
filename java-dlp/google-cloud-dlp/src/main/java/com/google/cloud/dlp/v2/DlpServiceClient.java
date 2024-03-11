@@ -29,6 +29,8 @@ import com.google.cloud.dlp.v2.stub.DlpServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.ColumnDataProfileName;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -50,12 +52,15 @@ import com.google.privacy.dlp.v2.DiscoveryConfigName;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
+import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.GetTableDataProfileRequest;
 import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
@@ -66,6 +71,8 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.InspectTemplateName;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -78,11 +85,17 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
 import com.google.privacy.dlp.v2.LocationName;
 import com.google.privacy.dlp.v2.OrganizationLocationName;
 import com.google.privacy.dlp.v2.OrganizationName;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
+import com.google.privacy.dlp.v2.ProjectDataProfileName;
 import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
@@ -92,6 +105,8 @@ import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.StoredInfoTypeConfig;
 import com.google.privacy.dlp.v2.StoredInfoTypeName;
+import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.TableDataProfileName;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -112,7 +127,8 @@ import javax.annotation.Generated;
  * includes methods for sensitive data redaction and scheduling of data scans on Google Cloud
  * Platform based data sets.
  *
- * <p>To learn more about concepts and find how-to guides see https://cloud.google.com/dlp/docs/.
+ * <p>To learn more about concepts and find how-to guides see
+ * https://cloud.google.com/sensitive-data-protection/docs/.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -150,7 +166,7 @@ import javax.annotation.Generated;
  *      <td><p> InspectContent</td>
  *      <td><p> Finds potentially sensitive info in content. This method has limits on input size, processing time, and output size.
  * <p>  When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.
- * <p>  For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images and https://cloud.google.com/dlp/docs/inspecting-text,</td>
+ * <p>  For how to guides, see https://cloud.google.com/sensitive-data-protection/docs/inspecting-images and https://cloud.google.com/sensitive-data-protection/docs/inspecting-text,</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -164,7 +180,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RedactImage</td>
- *      <td><p> Redacts potentially sensitive info from an image. This method has limits on input size, processing time, and output size. See https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to learn more.
+ *      <td><p> Redacts potentially sensitive info from an image. This method has limits on input size, processing time, and output size. See https://cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images to learn more.
  * <p>  When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -179,7 +195,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeidentifyContent</td>
- *      <td><p> De-identifies potentially sensitive info from a ContentItem. This method has limits on input size and output size. See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to learn more.
+ *      <td><p> De-identifies potentially sensitive info from a ContentItem. This method has limits on input size and output size. See https://cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data to learn more.
  * <p>  When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -194,7 +210,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ReidentifyContent</td>
- *      <td><p> Re-identifies content that has been de-identified. See https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example to learn more.</td>
+ *      <td><p> Re-identifies content that has been de-identified. See https://cloud.google.com/sensitive-data-protection/docs/pseudonymization#re-identification_in_free_text_code_example to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -208,7 +224,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListInfoTypes</td>
- *      <td><p> Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/dlp/docs/infotypes-reference to learn more.</td>
+ *      <td><p> Returns a list of the sensitive information types that DLP API supports. See https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -226,7 +242,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateInspectTemplate</td>
- *      <td><p> Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.</td>
+ *      <td><p> Creates an InspectTemplate for reusing frequently used configuration for inspecting content, images, and storage. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -248,7 +264,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateInspectTemplate</td>
- *      <td><p> Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.</td>
+ *      <td><p> Updates the InspectTemplate. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -267,7 +283,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetInspectTemplate</td>
- *      <td><p> Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.</td>
+ *      <td><p> Gets an InspectTemplate. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -286,7 +302,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListInspectTemplates</td>
- *      <td><p> Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.</td>
+ *      <td><p> Lists InspectTemplates. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -309,7 +325,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteInspectTemplate</td>
- *      <td><p> Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn more.</td>
+ *      <td><p> Deletes an InspectTemplate. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -328,7 +344,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateDeidentifyTemplate</td>
- *      <td><p> Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.</td>
+ *      <td><p> Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying content, images, and storage. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -350,7 +366,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateDeidentifyTemplate</td>
- *      <td><p> Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.</td>
+ *      <td><p> Updates the DeidentifyTemplate. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -369,7 +385,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetDeidentifyTemplate</td>
- *      <td><p> Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.</td>
+ *      <td><p> Gets a DeidentifyTemplate. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -388,7 +404,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDeidentifyTemplates</td>
- *      <td><p> Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.</td>
+ *      <td><p> Lists DeidentifyTemplates. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -411,7 +427,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteDeidentifyTemplate</td>
- *      <td><p> Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to learn more.</td>
+ *      <td><p> Deletes a DeidentifyTemplate. See https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -430,7 +446,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateJobTrigger</td>
- *      <td><p> Creates a job trigger to run DLP actions such as scanning storage for sensitive information on a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.</td>
+ *      <td><p> Creates a job trigger to run DLP actions such as scanning storage for sensitive information on a set schedule. See https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -450,7 +466,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateJobTrigger</td>
- *      <td><p> Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.</td>
+ *      <td><p> Updates a job trigger. See https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -488,7 +504,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetJobTrigger</td>
- *      <td><p> Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.</td>
+ *      <td><p> Gets a job trigger. See https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -507,7 +523,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListJobTriggers</td>
- *      <td><p> Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.</td>
+ *      <td><p> Lists job triggers. See https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -528,7 +544,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteJobTrigger</td>
- *      <td><p> Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.</td>
+ *      <td><p> Deletes a job trigger. See https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -657,7 +673,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateDlpJob</td>
- *      <td><p> Creates a new job to inspect storage or calculate risk metrics. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+ *      <td><p> Creates a new job to inspect storage or calculate risk metrics. See https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
  * <p>  When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -681,7 +697,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDlpJobs</td>
- *      <td><p> Lists DlpJobs that match the specified filter in the request. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.</td>
+ *      <td><p> Lists DlpJobs that match the specified filter in the request. See https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -702,7 +718,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetDlpJob</td>
- *      <td><p> Gets the latest state of a long-running DlpJob. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.</td>
+ *      <td><p> Gets the latest state of a long-running DlpJob. See https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -721,7 +737,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteDlpJob</td>
- *      <td><p> Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be canceled if possible. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.</td>
+ *      <td><p> Deletes a long-running DlpJob. This method indicates that the client is no longer interested in the DlpJob result. The job will be canceled if possible. See https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -740,7 +756,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CancelDlpJob</td>
- *      <td><p> Starts asynchronous cancellation on a long-running DlpJob. The server makes a best effort to cancel the DlpJob, but success is not guaranteed. See https://cloud.google.com/dlp/docs/inspecting-storage and https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.</td>
+ *      <td><p> Starts asynchronous cancellation on a long-running DlpJob. The server makes a best effort to cancel the DlpJob, but success is not guaranteed. See https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -754,7 +770,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateStoredInfoType</td>
- *      <td><p> Creates a pre-built stored infoType to be used for inspection. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.</td>
+ *      <td><p> Creates a pre-built stored infoType to be used for inspection. See https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -776,7 +792,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateStoredInfoType</td>
- *      <td><p> Updates the stored infoType by creating a new version. The existing version will continue to be used until the new version is ready. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.</td>
+ *      <td><p> Updates the stored infoType by creating a new version. The existing version will continue to be used until the new version is ready. See https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -795,7 +811,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetStoredInfoType</td>
- *      <td><p> Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.</td>
+ *      <td><p> Gets a stored infoType. See https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -814,7 +830,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListStoredInfoTypes</td>
- *      <td><p> Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.</td>
+ *      <td><p> Lists stored infoTypes. See https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -837,7 +853,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteStoredInfoType</td>
- *      <td><p> Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.</td>
+ *      <td><p> Deletes a stored infoType. See https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn more.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -851,6 +867,126 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteStoredInfoTypeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListProjectDataProfiles</td>
+ *      <td><p> Lists data profiles for an organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listProjectDataProfiles(ListProjectDataProfilesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listProjectDataProfiles(LocationName parent)
+ *           <li><p> listProjectDataProfiles(OrganizationLocationName parent)
+ *           <li><p> listProjectDataProfiles(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listProjectDataProfilesPagedCallable()
+ *           <li><p> listProjectDataProfilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListTableDataProfiles</td>
+ *      <td><p> Lists data profiles for an organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTableDataProfiles(ListTableDataProfilesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTableDataProfiles(LocationName parent)
+ *           <li><p> listTableDataProfiles(OrganizationLocationName parent)
+ *           <li><p> listTableDataProfiles(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTableDataProfilesPagedCallable()
+ *           <li><p> listTableDataProfilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListColumnDataProfiles</td>
+ *      <td><p> Lists data profiles for an organization.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listColumnDataProfiles(ListColumnDataProfilesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listColumnDataProfiles(LocationName parent)
+ *           <li><p> listColumnDataProfiles(OrganizationLocationName parent)
+ *           <li><p> listColumnDataProfiles(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listColumnDataProfilesPagedCallable()
+ *           <li><p> listColumnDataProfilesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetProjectDataProfile</td>
+ *      <td><p> Gets a project data profile.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getProjectDataProfile(GetProjectDataProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getProjectDataProfile(ProjectDataProfileName name)
+ *           <li><p> getProjectDataProfile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getProjectDataProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTableDataProfile</td>
+ *      <td><p> Gets a table data profile.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTableDataProfile(GetTableDataProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTableDataProfile(TableDataProfileName name)
+ *           <li><p> getTableDataProfile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTableDataProfileCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetColumnDataProfile</td>
+ *      <td><p> Gets a column data profile.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getColumnDataProfile(GetColumnDataProfileRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getColumnDataProfile(ColumnDataProfileName name)
+ *           <li><p> getColumnDataProfile(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getColumnDataProfileCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -998,8 +1134,9 @@ public class DlpServiceClient implements BackgroundResource {
    * automatically choose what detectors to run. By default this may be all types, but may change
    * over time as detectors are updated.
    *
-   * <p>For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images and
-   * https://cloud.google.com/dlp/docs/inspecting-text,
+   * <p>For how to guides, see
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-images and
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text,
    *
    * <p>Sample code:
    *
@@ -1038,8 +1175,9 @@ public class DlpServiceClient implements BackgroundResource {
    * automatically choose what detectors to run. By default this may be all types, but may change
    * over time as detectors are updated.
    *
-   * <p>For how to guides, see https://cloud.google.com/dlp/docs/inspecting-images and
-   * https://cloud.google.com/dlp/docs/inspecting-text,
+   * <p>For how to guides, see
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-images and
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text,
    *
    * <p>Sample code:
    *
@@ -1074,7 +1212,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Redacts potentially sensitive info from an image. This method has limits on input size,
    * processing time, and output size. See
-   * https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images to
+   * learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -1113,7 +1252,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Redacts potentially sensitive info from an image. This method has limits on input size,
    * processing time, and output size. See
-   * https://cloud.google.com/dlp/docs/redacting-sensitive-data-images to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/redacting-sensitive-data-images to
+   * learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -1151,7 +1291,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * De-identifies potentially sensitive info from a ContentItem. This method has limits on input
-   * size and output size. See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to learn
+   * size and output size. See
+   * https://cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data to learn
    * more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
@@ -1191,7 +1332,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * De-identifies potentially sensitive info from a ContentItem. This method has limits on input
-   * size and output size. See https://cloud.google.com/dlp/docs/deidentify-sensitive-data to learn
+   * size and output size. See
+   * https://cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data to learn
    * more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in this request, the system will
@@ -1232,7 +1374,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Re-identifies content that has been de-identified. See
-   * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+   * https://cloud.google.com/sensitive-data-protection/docs/pseudonymization#re-identification_in_free_text_code_example
    * to learn more.
    *
    * <p>Sample code:
@@ -1268,7 +1410,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Re-identifies content that has been de-identified. See
-   * https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
+   * https://cloud.google.com/sensitive-data-protection/docs/pseudonymization#re-identification_in_free_text_code_example
    * to learn more.
    *
    * <p>Sample code:
@@ -1305,7 +1447,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of the sensitive information types that DLP API supports. See
-   * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
    *
@@ -1334,7 +1476,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of the sensitive information types that DLP API supports. See
-   * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
    *
@@ -1366,7 +1508,7 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of the sensitive information types that DLP API supports. See
-   * https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference to learn more.
    *
    * <p>Sample code:
    *
@@ -1398,7 +1540,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
-   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1418,7 +1561,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1446,7 +1589,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
-   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1466,7 +1610,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1494,7 +1638,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
-   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1514,7 +1659,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1542,7 +1687,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
-   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1562,7 +1708,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1590,7 +1736,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
-   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1610,7 +1757,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -1638,7 +1785,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
-   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1670,7 +1818,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an InspectTemplate for reusing frequently used configuration for inspecting content,
-   * images, and storage. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1702,8 +1851,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Updates the InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1744,8 +1893,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Updates the InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1787,8 +1936,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Updates the InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1821,8 +1970,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Updates the InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1856,8 +2005,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Gets an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1890,8 +2039,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Gets an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1923,8 +2072,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Gets an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1955,8 +2104,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Gets an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -1988,7 +2137,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2009,7 +2159,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2033,7 +2183,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2054,7 +2205,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2079,7 +2230,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2100,7 +2252,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2124,7 +2276,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2145,7 +2298,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2169,7 +2322,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2190,7 +2344,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2212,7 +2366,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2247,7 +2402,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2282,7 +2438,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists InspectTemplates. See https://cloud.google.com/dlp/docs/creating-templates to learn more.
+   * Lists InspectTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2324,8 +2481,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Deletes an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2358,8 +2515,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Deletes an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2391,8 +2548,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Deletes an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2423,8 +2580,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes an InspectTemplate. See https://cloud.google.com/dlp/docs/creating-templates to learn
-   * more.
+   * Deletes an InspectTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates to learn more.
    *
    * <p>Sample code:
    *
@@ -2456,8 +2613,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
-   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * content, images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2478,7 +2635,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2506,8 +2663,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
-   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * content, images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2528,7 +2685,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2556,8 +2713,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
-   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * content, images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2578,7 +2735,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2606,8 +2763,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
-   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * content, images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2628,7 +2785,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2656,8 +2813,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
-   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * content, images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2678,7 +2835,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -2706,8 +2863,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
-   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * content, images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2740,8 +2897,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a DeidentifyTemplate for reusing frequently used configuration for de-identifying
-   * content, images, and storage. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * content, images, and storage. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2773,8 +2930,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
-   * to learn more.
+   * Updates the DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2815,8 +2972,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
-   * to learn more.
+   * Updates the DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2858,8 +3015,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
-   * to learn more.
+   * Updates the DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2893,8 +3050,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid
-   * to learn more.
+   * Updates the DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2928,8 +3085,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Gets a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2962,8 +3119,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Gets a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -2995,8 +3152,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Gets a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3027,8 +3184,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Gets a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3060,8 +3217,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3083,7 +3240,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3107,8 +3264,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3130,7 +3287,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3155,8 +3312,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3178,7 +3335,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3203,8 +3360,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3226,7 +3383,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3250,8 +3407,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3273,7 +3430,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3295,8 +3452,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3332,8 +3489,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3368,8 +3525,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists DeidentifyTemplates. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Lists DeidentifyTemplates. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3411,8 +3568,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Deletes a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3445,8 +3602,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Deletes a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3478,8 +3635,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Deletes a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3510,8 +3667,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a DeidentifyTemplate. See https://cloud.google.com/dlp/docs/creating-templates-deid to
-   * learn more.
+   * Deletes a DeidentifyTemplate. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-templates-deid to learn more.
    *
    * <p>Sample code:
    *
@@ -3544,7 +3701,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * a set schedule. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3563,7 +3721,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3586,7 +3744,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * a set schedule. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3605,7 +3764,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3628,7 +3787,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * a set schedule. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3647,7 +3807,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -3667,7 +3827,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * a set schedule. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3699,7 +3860,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a job trigger to run DLP actions such as scanning storage for sensitive information on
-   * a set schedule. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * a set schedule. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3730,8 +3892,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Updates a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3768,8 +3930,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Updates a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3806,8 +3968,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Updates a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -3838,8 +4000,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Updates a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4000,7 +4162,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Gets a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4028,7 +4191,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Gets a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4055,7 +4219,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Gets a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4084,7 +4249,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Gets a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4112,7 +4278,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Lists job triggers. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4132,7 +4299,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4152,7 +4319,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Lists job triggers. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4172,7 +4340,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4192,7 +4360,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Lists job triggers. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4212,7 +4381,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -4229,7 +4398,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Lists job triggers. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4265,7 +4435,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Lists job triggers. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4302,7 +4473,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists job triggers. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
+   * Lists job triggers. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4345,8 +4517,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Deletes a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4374,8 +4546,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Deletes a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4402,8 +4574,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Deletes a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -4432,8 +4604,8 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a job trigger. See https://cloud.google.com/dlp/docs/creating-job-triggers to learn
-   * more.
+   * Deletes a job trigger. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-job-triggers to learn more.
    *
    * <p>Sample code:
    *
@@ -5221,8 +5393,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5245,7 +5417,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5268,8 +5440,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5292,7 +5464,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5316,8 +5488,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5340,7 +5512,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5363,8 +5535,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5387,7 +5559,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5411,8 +5583,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5435,7 +5607,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5455,8 +5627,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5479,7 +5651,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5500,8 +5672,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5536,8 +5708,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new job to inspect storage or calculate risk metrics. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>When no InfoTypes or CustomInfoTypes are specified in inspect jobs, the system will
    * automatically choose what detectors to run. By default this may be all types, but may change
@@ -5571,8 +5743,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DlpJobs that match the specified filter in the request. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5592,7 +5764,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5613,8 +5785,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DlpJobs that match the specified filter in the request. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5634,7 +5806,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5655,8 +5827,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DlpJobs that match the specified filter in the request. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5676,7 +5848,7 @@ public class DlpServiceClient implements BackgroundResource {
    *
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -5694,8 +5866,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DlpJobs that match the specified filter in the request. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5732,8 +5904,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DlpJobs that match the specified filter in the request. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5770,8 +5942,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists DlpJobs that match the specified filter in the request. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5814,8 +5986,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the latest state of a long-running DlpJob. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5843,8 +6015,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the latest state of a long-running DlpJob. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5871,8 +6043,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the latest state of a long-running DlpJob. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5901,8 +6073,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the latest state of a long-running DlpJob. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5931,8 +6103,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
    * the DlpJob result. The job will be canceled if possible. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5961,8 +6133,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
    * the DlpJob result. The job will be canceled if possible. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -5990,8 +6162,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
    * the DlpJob result. The job will be canceled if possible. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -6021,8 +6193,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Deletes a long-running DlpJob. This method indicates that the client is no longer interested in
    * the DlpJob result. The job will be canceled if possible. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -6051,8 +6223,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Starts asynchronous cancellation on a long-running DlpJob. The server makes a best effort to
    * cancel the DlpJob, but success is not guaranteed. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -6082,8 +6254,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Starts asynchronous cancellation on a long-running DlpJob. The server makes a best effort to
    * cancel the DlpJob, but success is not guaranteed. See
-   * https://cloud.google.com/dlp/docs/inspecting-storage and
-   * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-storage and
+   * https://cloud.google.com/sensitive-data-protection/docs/compute-risk-analysis to learn more.
    *
    * <p>Sample code:
    *
@@ -6111,7 +6283,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a pre-built stored infoType to be used for inspection. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6131,7 +6304,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6159,7 +6332,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a pre-built stored infoType to be used for inspection. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6179,7 +6353,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6207,7 +6381,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a pre-built stored infoType to be used for inspection. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6227,7 +6402,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6255,7 +6430,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a pre-built stored infoType to be used for inspection. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6275,7 +6451,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6303,7 +6479,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a pre-built stored infoType to be used for inspection. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6323,7 +6500,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6347,7 +6524,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a pre-built stored infoType to be used for inspection. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6379,7 +6557,8 @@ public class DlpServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a pre-built stored infoType to be used for inspection. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6413,7 +6592,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Updates the stored infoType by creating a new version. The existing version will continue to be
    * used until the new version is ready. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6456,7 +6636,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Updates the stored infoType by creating a new version. The existing version will continue to be
    * used until the new version is ready. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6500,7 +6681,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Updates the stored infoType by creating a new version. The existing version will continue to be
    * used until the new version is ready. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6535,7 +6717,8 @@ public class DlpServiceClient implements BackgroundResource {
   /**
    * Updates the stored infoType by creating a new version. The existing version will continue to be
    * used until the new version is ready. See
-   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6569,8 +6752,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Gets a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6603,8 +6787,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Gets a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6635,8 +6820,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Gets a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6667,8 +6853,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Gets a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6699,8 +6886,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6721,7 +6909,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6741,8 +6929,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6763,7 +6952,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6784,8 +6973,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6806,7 +6996,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6826,8 +7016,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6848,7 +7039,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6868,8 +7059,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6890,7 +7082,7 @@ public class DlpServiceClient implements BackgroundResource {
    * @param parent Required. Parent resource name.
    *     <p>The format of this value varies depending on the scope of the request (project or
    *     organization) and whether you have [specified a processing
-   *     location](https://cloud.google.com/dlp/docs/specifying-location):
+   *     location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *     <p>+ Projects scope, location specified:&lt;br/&gt;
    *     `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
    *     + Projects scope, no location specified (defaults to global):&lt;br/&gt;
@@ -6908,8 +7100,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6944,8 +7137,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -6980,8 +7174,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Lists stored infoTypes. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -7023,8 +7218,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Deletes a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -7057,8 +7253,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Deletes a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -7090,8 +7287,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Deletes a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -7122,8 +7320,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
-   * learn more.
+   * Deletes a stored infoType. See
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-stored-infotypes to learn
+   * more.
    *
    * <p>Sample code:
    *
@@ -7149,6 +7348,1011 @@ public class DlpServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
     return stub.deleteStoredInfoTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ProjectDataProfile element :
+   *       dlpServiceClient.listProjectDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. organizations/{org_id}/locations/{loc_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectDataProfilesPagedResponse listProjectDataProfiles(LocationName parent) {
+    ListProjectDataProfilesRequest request =
+        ListProjectDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProjectDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (ProjectDataProfile element :
+   *       dlpServiceClient.listProjectDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. organizations/{org_id}/locations/{loc_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectDataProfilesPagedResponse listProjectDataProfiles(
+      OrganizationLocationName parent) {
+    ListProjectDataProfilesRequest request =
+        ListProjectDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listProjectDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   for (ProjectDataProfile element :
+   *       dlpServiceClient.listProjectDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. organizations/{org_id}/locations/{loc_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectDataProfilesPagedResponse listProjectDataProfiles(String parent) {
+    ListProjectDataProfilesRequest request =
+        ListProjectDataProfilesRequest.newBuilder().setParent(parent).build();
+    return listProjectDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListProjectDataProfilesRequest request =
+   *       ListProjectDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (ProjectDataProfile element :
+   *       dlpServiceClient.listProjectDataProfiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListProjectDataProfilesPagedResponse listProjectDataProfiles(
+      ListProjectDataProfilesRequest request) {
+    return listProjectDataProfilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListProjectDataProfilesRequest request =
+   *       ListProjectDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<ProjectDataProfile> future =
+   *       dlpServiceClient.listProjectDataProfilesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ProjectDataProfile element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesPagedResponse>
+      listProjectDataProfilesPagedCallable() {
+    return stub.listProjectDataProfilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListProjectDataProfilesRequest request =
+   *       ListProjectDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListProjectDataProfilesResponse response =
+   *         dlpServiceClient.listProjectDataProfilesCallable().call(request);
+   *     for (ProjectDataProfile element : response.getProjectDataProfilesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
+      listProjectDataProfilesCallable() {
+    return stub.listProjectDataProfilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (TableDataProfile element : dlpServiceClient.listTableDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTableDataProfilesPagedResponse listTableDataProfiles(LocationName parent) {
+    ListTableDataProfilesRequest request =
+        ListTableDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTableDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (TableDataProfile element : dlpServiceClient.listTableDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTableDataProfilesPagedResponse listTableDataProfiles(
+      OrganizationLocationName parent) {
+    ListTableDataProfilesRequest request =
+        ListTableDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTableDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   for (TableDataProfile element : dlpServiceClient.listTableDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTableDataProfilesPagedResponse listTableDataProfiles(String parent) {
+    ListTableDataProfilesRequest request =
+        ListTableDataProfilesRequest.newBuilder().setParent(parent).build();
+    return listTableDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListTableDataProfilesRequest request =
+   *       ListTableDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (TableDataProfile element :
+   *       dlpServiceClient.listTableDataProfiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTableDataProfilesPagedResponse listTableDataProfiles(
+      ListTableDataProfilesRequest request) {
+    return listTableDataProfilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListTableDataProfilesRequest request =
+   *       ListTableDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<TableDataProfile> future =
+   *       dlpServiceClient.listTableDataProfilesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TableDataProfile element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesPagedResponse>
+      listTableDataProfilesPagedCallable() {
+    return stub.listTableDataProfilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListTableDataProfilesRequest request =
+   *       ListTableDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListTableDataProfilesResponse response =
+   *         dlpServiceClient.listTableDataProfilesCallable().call(request);
+   *     for (TableDataProfile element : response.getTableDataProfilesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
+      listTableDataProfilesCallable() {
+    return stub.listTableDataProfilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ColumnDataProfile element :
+   *       dlpServiceClient.listColumnDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListColumnDataProfilesPagedResponse listColumnDataProfiles(LocationName parent) {
+    ListColumnDataProfilesRequest request =
+        ListColumnDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listColumnDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+   *   for (ColumnDataProfile element :
+   *       dlpServiceClient.listColumnDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListColumnDataProfilesPagedResponse listColumnDataProfiles(
+      OrganizationLocationName parent) {
+    ListColumnDataProfilesRequest request =
+        ListColumnDataProfilesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listColumnDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString();
+   *   for (ColumnDataProfile element :
+   *       dlpServiceClient.listColumnDataProfiles(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the organization or project, for example
+   *     `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListColumnDataProfilesPagedResponse listColumnDataProfiles(String parent) {
+    ListColumnDataProfilesRequest request =
+        ListColumnDataProfilesRequest.newBuilder().setParent(parent).build();
+    return listColumnDataProfiles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListColumnDataProfilesRequest request =
+   *       ListColumnDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (ColumnDataProfile element :
+   *       dlpServiceClient.listColumnDataProfiles(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListColumnDataProfilesPagedResponse listColumnDataProfiles(
+      ListColumnDataProfilesRequest request) {
+    return listColumnDataProfilesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListColumnDataProfilesRequest request =
+   *       ListColumnDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<ColumnDataProfile> future =
+   *       dlpServiceClient.listColumnDataProfilesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ColumnDataProfile element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesPagedResponse>
+      listColumnDataProfilesPagedCallable() {
+    return stub.listColumnDataProfilesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists data profiles for an organization.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ListColumnDataProfilesRequest request =
+   *       ListColumnDataProfilesRequest.newBuilder()
+   *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListColumnDataProfilesResponse response =
+   *         dlpServiceClient.listColumnDataProfilesCallable().call(request);
+   *     for (ColumnDataProfile element : response.getColumnDataProfilesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
+      listColumnDataProfilesCallable() {
+    return stub.listColumnDataProfilesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a project data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ProjectDataProfileName name =
+   *       ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+   *   ProjectDataProfile response = dlpServiceClient.getProjectDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/projectDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProjectDataProfile getProjectDataProfile(ProjectDataProfileName name) {
+    GetProjectDataProfileRequest request =
+        GetProjectDataProfileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getProjectDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a project data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+   *           .toString();
+   *   ProjectDataProfile response = dlpServiceClient.getProjectDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/projectDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProjectDataProfile getProjectDataProfile(String name) {
+    GetProjectDataProfileRequest request =
+        GetProjectDataProfileRequest.newBuilder().setName(name).build();
+    return getProjectDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a project data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetProjectDataProfileRequest request =
+   *       GetProjectDataProfileRequest.newBuilder()
+   *           .setName(
+   *               ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ProjectDataProfile response = dlpServiceClient.getProjectDataProfile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ProjectDataProfile getProjectDataProfile(GetProjectDataProfileRequest request) {
+    return getProjectDataProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a project data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetProjectDataProfileRequest request =
+   *       GetProjectDataProfileRequest.newBuilder()
+   *           .setName(
+   *               ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ProjectDataProfile> future =
+   *       dlpServiceClient.getProjectDataProfileCallable().futureCall(request);
+   *   // Do something.
+   *   ProjectDataProfile response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileCallable() {
+    return stub.getProjectDataProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a table data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   TableDataProfileName name =
+   *       TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]");
+   *   TableDataProfile response = dlpServiceClient.getTableDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/tableDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TableDataProfile getTableDataProfile(TableDataProfileName name) {
+    GetTableDataProfileRequest request =
+        GetTableDataProfileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getTableDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a table data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+   *           .toString();
+   *   TableDataProfile response = dlpServiceClient.getTableDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/tableDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TableDataProfile getTableDataProfile(String name) {
+    GetTableDataProfileRequest request =
+        GetTableDataProfileRequest.newBuilder().setName(name).build();
+    return getTableDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a table data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetTableDataProfileRequest request =
+   *       GetTableDataProfileRequest.newBuilder()
+   *           .setName(
+   *               TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   TableDataProfile response = dlpServiceClient.getTableDataProfile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TableDataProfile getTableDataProfile(GetTableDataProfileRequest request) {
+    return getTableDataProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a table data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetTableDataProfileRequest request =
+   *       GetTableDataProfileRequest.newBuilder()
+   *           .setName(
+   *               TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<TableDataProfile> future =
+   *       dlpServiceClient.getTableDataProfileCallable().futureCall(request);
+   *   // Do something.
+   *   TableDataProfile response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTableDataProfileRequest, TableDataProfile>
+      getTableDataProfileCallable() {
+    return stub.getTableDataProfileCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a column data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   ColumnDataProfileName name =
+   *       ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]");
+   *   ColumnDataProfile response = dlpServiceClient.getColumnDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/columnDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ColumnDataProfile getColumnDataProfile(ColumnDataProfileName name) {
+    GetColumnDataProfileRequest request =
+        GetColumnDataProfileRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getColumnDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a column data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   String name =
+   *       ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]")
+   *           .toString();
+   *   ColumnDataProfile response = dlpServiceClient.getColumnDataProfile(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name, for example
+   *     `organizations/12345/locations/us/columnDataProfiles/53234423`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ColumnDataProfile getColumnDataProfile(String name) {
+    GetColumnDataProfileRequest request =
+        GetColumnDataProfileRequest.newBuilder().setName(name).build();
+    return getColumnDataProfile(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a column data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetColumnDataProfileRequest request =
+   *       GetColumnDataProfileRequest.newBuilder()
+   *           .setName(
+   *               ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ColumnDataProfile response = dlpServiceClient.getColumnDataProfile(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ColumnDataProfile getColumnDataProfile(GetColumnDataProfileRequest request) {
+    return getColumnDataProfileCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a column data profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   GetColumnDataProfileRequest request =
+   *       GetColumnDataProfileRequest.newBuilder()
+   *           .setName(
+   *               ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ColumnDataProfile> future =
+   *       dlpServiceClient.getColumnDataProfileCallable().futureCall(request);
+   *   // Do something.
+   *   ColumnDataProfile response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileCallable() {
+    return stub.getColumnDataProfileCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -7855,6 +9059,266 @@ public class DlpServiceClient implements BackgroundResource {
     protected ListStoredInfoTypesFixedSizeCollection createCollection(
         List<ListStoredInfoTypesPage> pages, int collectionSize) {
       return new ListStoredInfoTypesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListProjectDataProfilesPagedResponse
+      extends AbstractPagedListResponse<
+          ListProjectDataProfilesRequest,
+          ListProjectDataProfilesResponse,
+          ProjectDataProfile,
+          ListProjectDataProfilesPage,
+          ListProjectDataProfilesFixedSizeCollection> {
+
+    public static ApiFuture<ListProjectDataProfilesPagedResponse> createAsync(
+        PageContext<
+                ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
+            context,
+        ApiFuture<ListProjectDataProfilesResponse> futureResponse) {
+      ApiFuture<ListProjectDataProfilesPage> futurePage =
+          ListProjectDataProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListProjectDataProfilesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListProjectDataProfilesPagedResponse(ListProjectDataProfilesPage page) {
+      super(page, ListProjectDataProfilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListProjectDataProfilesPage
+      extends AbstractPage<
+          ListProjectDataProfilesRequest,
+          ListProjectDataProfilesResponse,
+          ProjectDataProfile,
+          ListProjectDataProfilesPage> {
+
+    private ListProjectDataProfilesPage(
+        PageContext<
+                ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
+            context,
+        ListProjectDataProfilesResponse response) {
+      super(context, response);
+    }
+
+    private static ListProjectDataProfilesPage createEmptyPage() {
+      return new ListProjectDataProfilesPage(null, null);
+    }
+
+    @Override
+    protected ListProjectDataProfilesPage createPage(
+        PageContext<
+                ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
+            context,
+        ListProjectDataProfilesResponse response) {
+      return new ListProjectDataProfilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListProjectDataProfilesPage> createPageAsync(
+        PageContext<
+                ListProjectDataProfilesRequest, ListProjectDataProfilesResponse, ProjectDataProfile>
+            context,
+        ApiFuture<ListProjectDataProfilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListProjectDataProfilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListProjectDataProfilesRequest,
+          ListProjectDataProfilesResponse,
+          ProjectDataProfile,
+          ListProjectDataProfilesPage,
+          ListProjectDataProfilesFixedSizeCollection> {
+
+    private ListProjectDataProfilesFixedSizeCollection(
+        List<ListProjectDataProfilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListProjectDataProfilesFixedSizeCollection createEmptyCollection() {
+      return new ListProjectDataProfilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListProjectDataProfilesFixedSizeCollection createCollection(
+        List<ListProjectDataProfilesPage> pages, int collectionSize) {
+      return new ListProjectDataProfilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTableDataProfilesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTableDataProfilesRequest,
+          ListTableDataProfilesResponse,
+          TableDataProfile,
+          ListTableDataProfilesPage,
+          ListTableDataProfilesFixedSizeCollection> {
+
+    public static ApiFuture<ListTableDataProfilesPagedResponse> createAsync(
+        PageContext<ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+            context,
+        ApiFuture<ListTableDataProfilesResponse> futureResponse) {
+      ApiFuture<ListTableDataProfilesPage> futurePage =
+          ListTableDataProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListTableDataProfilesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTableDataProfilesPagedResponse(ListTableDataProfilesPage page) {
+      super(page, ListTableDataProfilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTableDataProfilesPage
+      extends AbstractPage<
+          ListTableDataProfilesRequest,
+          ListTableDataProfilesResponse,
+          TableDataProfile,
+          ListTableDataProfilesPage> {
+
+    private ListTableDataProfilesPage(
+        PageContext<ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+            context,
+        ListTableDataProfilesResponse response) {
+      super(context, response);
+    }
+
+    private static ListTableDataProfilesPage createEmptyPage() {
+      return new ListTableDataProfilesPage(null, null);
+    }
+
+    @Override
+    protected ListTableDataProfilesPage createPage(
+        PageContext<ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+            context,
+        ListTableDataProfilesResponse response) {
+      return new ListTableDataProfilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTableDataProfilesPage> createPageAsync(
+        PageContext<ListTableDataProfilesRequest, ListTableDataProfilesResponse, TableDataProfile>
+            context,
+        ApiFuture<ListTableDataProfilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTableDataProfilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTableDataProfilesRequest,
+          ListTableDataProfilesResponse,
+          TableDataProfile,
+          ListTableDataProfilesPage,
+          ListTableDataProfilesFixedSizeCollection> {
+
+    private ListTableDataProfilesFixedSizeCollection(
+        List<ListTableDataProfilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTableDataProfilesFixedSizeCollection createEmptyCollection() {
+      return new ListTableDataProfilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTableDataProfilesFixedSizeCollection createCollection(
+        List<ListTableDataProfilesPage> pages, int collectionSize) {
+      return new ListTableDataProfilesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListColumnDataProfilesPagedResponse
+      extends AbstractPagedListResponse<
+          ListColumnDataProfilesRequest,
+          ListColumnDataProfilesResponse,
+          ColumnDataProfile,
+          ListColumnDataProfilesPage,
+          ListColumnDataProfilesFixedSizeCollection> {
+
+    public static ApiFuture<ListColumnDataProfilesPagedResponse> createAsync(
+        PageContext<
+                ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
+            context,
+        ApiFuture<ListColumnDataProfilesResponse> futureResponse) {
+      ApiFuture<ListColumnDataProfilesPage> futurePage =
+          ListColumnDataProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListColumnDataProfilesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListColumnDataProfilesPagedResponse(ListColumnDataProfilesPage page) {
+      super(page, ListColumnDataProfilesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListColumnDataProfilesPage
+      extends AbstractPage<
+          ListColumnDataProfilesRequest,
+          ListColumnDataProfilesResponse,
+          ColumnDataProfile,
+          ListColumnDataProfilesPage> {
+
+    private ListColumnDataProfilesPage(
+        PageContext<
+                ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
+            context,
+        ListColumnDataProfilesResponse response) {
+      super(context, response);
+    }
+
+    private static ListColumnDataProfilesPage createEmptyPage() {
+      return new ListColumnDataProfilesPage(null, null);
+    }
+
+    @Override
+    protected ListColumnDataProfilesPage createPage(
+        PageContext<
+                ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
+            context,
+        ListColumnDataProfilesResponse response) {
+      return new ListColumnDataProfilesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListColumnDataProfilesPage> createPageAsync(
+        PageContext<
+                ListColumnDataProfilesRequest, ListColumnDataProfilesResponse, ColumnDataProfile>
+            context,
+        ApiFuture<ListColumnDataProfilesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListColumnDataProfilesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListColumnDataProfilesRequest,
+          ListColumnDataProfilesResponse,
+          ColumnDataProfile,
+          ListColumnDataProfilesPage,
+          ListColumnDataProfilesFixedSizeCollection> {
+
+    private ListColumnDataProfilesFixedSizeCollection(
+        List<ListColumnDataProfilesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListColumnDataProfilesFixedSizeCollection createEmptyCollection() {
+      return new ListColumnDataProfilesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListColumnDataProfilesFixedSizeCollection createCollection(
+        List<ListColumnDataProfilesPage> pages, int collectionSize) {
+      return new ListColumnDataProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

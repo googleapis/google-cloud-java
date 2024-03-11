@@ -46,7 +46,10 @@ public final class DataStoreProto {
           + "gine.v1beta\032\037google/api/field_behavior.p"
           + "roto\032\031google/api/resource.proto\0320google/"
           + "cloud/discoveryengine/v1beta/common.prot"
-          + "o\032\037google/protobuf/timestamp.proto\"\303\005\n\tD"
+          + "o\032Dgoogle/cloud/discoveryengine/v1beta/d"
+          + "ocument_processing_config.proto\0320google/"
+          + "cloud/discoveryengine/v1beta/schema.prot"
+          + "o\032\037google/protobuf/timestamp.proto\"\354\006\n\tD"
           + "ataStore\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014display_n"
           + "ame\030\002 \001(\tB\003\340A\002\022U\n\021industry_vertical\030\003 \001("
           + "\01625.google.cloud.discoveryengine.v1beta."
@@ -56,22 +59,27 @@ public final class DataStoreProto {
           + "\001(\tB\003\340A\003\022Y\n\016content_config\030\006 \001(\0162<.googl"
           + "e.cloud.discoveryengine.v1beta.DataStore"
           + ".ContentConfigB\003\340A\005\0224\n\013create_time\030\004 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\"i\n\rCon"
-          + "tentConfig\022\036\n\032CONTENT_CONFIG_UNSPECIFIED"
-          + "\020\000\022\016\n\nNO_CONTENT\020\001\022\024\n\020CONTENT_REQUIRED\020\002"
-          + "\022\022\n\016PUBLIC_WEBSITE\020\003:\311\001\352A\305\001\n(discoveryen"
-          + "gine.googleapis.com/DataStore\022?projects/"
-          + "{project}/locations/{location}/dataStore"
-          + "s/{data_store}\022Xprojects/{project}/locat"
-          + "ions/{location}/collections/{collection}"
-          + "/dataStores/{data_store}B\225\002\n\'com.google."
-          + "cloud.discoveryengine.v1betaB\016DataStoreP"
-          + "rotoP\001ZQcloud.google.com/go/discoveryeng"
-          + "ine/apiv1beta/discoveryenginepb;discover"
-          + "yenginepb\242\002\017DISCOVERYENGINE\252\002#Google.Clo"
-          + "ud.DiscoveryEngine.V1Beta\312\002#Google\\Cloud"
-          + "\\DiscoveryEngine\\V1beta\352\002&Google::Cloud:"
-          + ":DiscoveryEngine::V1betab\006proto3"
+          + "2\032.google.protobuf.TimestampB\003\340A\003\022a\n\032doc"
+          + "ument_processing_config\030\033 \001(\0132=.google.c"
+          + "loud.discoveryengine.v1beta.DocumentProc"
+          + "essingConfig\022D\n\017starting_schema\030\034 \001(\0132+."
+          + "google.cloud.discoveryengine.v1beta.Sche"
+          + "ma\"i\n\rContentConfig\022\036\n\032CONTENT_CONFIG_UN"
+          + "SPECIFIED\020\000\022\016\n\nNO_CONTENT\020\001\022\024\n\020CONTENT_R"
+          + "EQUIRED\020\002\022\022\n\016PUBLIC_WEBSITE\020\003:\311\001\352A\305\001\n(di"
+          + "scoveryengine.googleapis.com/DataStore\022?"
+          + "projects/{project}/locations/{location}/"
+          + "dataStores/{data_store}\022Xprojects/{proje"
+          + "ct}/locations/{location}/collections/{co"
+          + "llection}/dataStores/{data_store}B\225\002\n\'co"
+          + "m.google.cloud.discoveryengine.v1betaB\016D"
+          + "ataStoreProtoP\001ZQcloud.google.com/go/dis"
+          + "coveryengine/apiv1beta/discoveryenginepb"
+          + ";discoveryenginepb\242\002\017DISCOVERYENGINE\252\002#G"
+          + "oogle.Cloud.DiscoveryEngine.V1Beta\312\002#Goo"
+          + "gle\\Cloud\\DiscoveryEngine\\V1beta\352\002&Googl"
+          + "e::Cloud::DiscoveryEngine::V1betab\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -80,6 +88,8 @@ public final class DataStoreProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1beta.CommonProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfigProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1beta.SchemaProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1beta_DataStore_descriptor =
@@ -95,6 +105,8 @@ public final class DataStoreProto {
               "DefaultSchemaId",
               "ContentConfig",
               "CreateTime",
+              "DocumentProcessingConfig",
+              "StartingSchema",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -105,6 +117,8 @@ public final class DataStoreProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1beta.CommonProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfigProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1beta.SchemaProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

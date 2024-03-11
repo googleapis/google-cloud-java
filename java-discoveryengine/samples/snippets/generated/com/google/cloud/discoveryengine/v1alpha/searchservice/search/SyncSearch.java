@@ -18,6 +18,7 @@ package com.google.cloud.discoveryengine.v1alpha.samples;
 
 // [START discoveryengine_v1alpha_generated_SearchService_Search_sync]
 import com.google.cloud.discoveryengine.v1alpha.BranchName;
+import com.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec;
 import com.google.cloud.discoveryengine.v1alpha.SearchRequest;
 import com.google.cloud.discoveryengine.v1alpha.SearchResponse;
 import com.google.cloud.discoveryengine.v1alpha.SearchServiceClient;
@@ -55,6 +56,7 @@ public class SyncSearch {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -70,6 +72,7 @@ public class SyncSearch {
               .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

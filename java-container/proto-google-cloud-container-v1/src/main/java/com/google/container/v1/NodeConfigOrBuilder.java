@@ -1610,4 +1610,56 @@ public interface NodeConfigOrBuilder
    * @return The enableConfidentialStorage.
    */
   boolean getEnableConfidentialStorage();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  java.util.List<com.google.container.v1.SecondaryBootDisk> getSecondaryBootDisksList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  com.google.container.v1.SecondaryBootDisk getSecondaryBootDisks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  int getSecondaryBootDisksCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  java.util.List<? extends com.google.container.v1.SecondaryBootDiskOrBuilder>
+      getSecondaryBootDisksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * List of secondary boot disks attached to the nodes.
+   * </pre>
+   *
+   * <code>repeated .google.container.v1.SecondaryBootDisk secondary_boot_disks = 48;</code>
+   */
+  com.google.container.v1.SecondaryBootDiskOrBuilder getSecondaryBootDisksOrBuilder(int index);
 }

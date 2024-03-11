@@ -1620,6 +1620,16 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>GREATER = 5;</code>
        */
       GREATER(5),
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is != the query's.
+       * </pre>
+       *
+       * <code>NOT_EQUAL = 6;</code>
+       */
+      NOT_EQUAL(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -1683,6 +1693,16 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        * <code>GREATER = 5;</code>
        */
       public static final int GREATER_VALUE = 5;
+      /**
+       *
+       *
+       * <pre>
+       * Datapoints are eligible iff their value is != the query's.
+       * </pre>
+       *
+       * <code>NOT_EQUAL = 6;</code>
+       */
+      public static final int NOT_EQUAL_VALUE = 6;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -1720,6 +1740,8 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
             return GREATER_EQUAL;
           case 5:
             return GREATER;
+          case 6:
+            return NOT_EQUAL;
           default:
             return null;
         }

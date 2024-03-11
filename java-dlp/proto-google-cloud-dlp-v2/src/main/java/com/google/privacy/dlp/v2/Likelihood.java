@@ -37,7 +37,7 @@ package com.google.privacy.dlp.v2;
  *
  * For more information about each likelihood level
  * and how likelihood works, see [Match
- * likelihood](https://cloud.google.com/dlp/docs/likelihood).
+ * likelihood](https://cloud.google.com/sensitive-data-protection/docs/likelihood).
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.Likelihood}

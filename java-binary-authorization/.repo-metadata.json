@@ -5,15 +5,15 @@
   "api_description": " is a service on Google Cloud that provides centralized software supply-chain security for applications that run on Google Kubernetes Engine (GKE) and Anthos clusters on VMware",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-binary-authorization/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-binary-authorization",
   "distribution_name": "com.google.cloud:google-cloud-binary-authorization",
   "api_id": "binary-authorization.googleapis.com",
+  "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes",
-  "library_type": "GAPIC_AUTO",
   "rest_documentation": "https://cloud.google.com/binary-authorization/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/binary-authorization/docs/reference/rpc"
 }

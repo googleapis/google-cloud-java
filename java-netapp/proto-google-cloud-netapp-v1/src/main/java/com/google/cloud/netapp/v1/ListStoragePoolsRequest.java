@@ -127,10 +127,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The maximum number of items to return.
+   * Optional. The maximum number of items to return.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -147,11 +147,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The next_page_token value to use if there are additional
+   * Optional. The next_page_token value to use if there are additional
    * results to retrieve for this list request.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -171,11 +171,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The next_page_token value to use if there are additional
+   * Optional. The next_page_token value to use if there are additional
    * results to retrieve for this list request.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -200,10 +200,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+   * Optional. Sort results. Supported values are "name", "name desc" or ""
+   * (unsorted).
    * </pre>
    *
-   * <code>string order_by = 4;</code>
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -223,10 +224,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+   * Optional. Sort results. Supported values are "name", "name desc" or ""
+   * (unsorted).
    * </pre>
    *
-   * <code>string order_by = 4;</code>
+   * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -251,10 +253,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * List filter.
+   * Optional. List filter.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -274,10 +276,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * List filter.
+   * Optional. List filter.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -851,10 +853,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of items to return.
+     * Optional. The maximum number of items to return.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -866,10 +868,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of items to return.
+     * Optional. The maximum number of items to return.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -885,10 +887,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The maximum number of items to return.
+     * Optional. The maximum number of items to return.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -904,11 +906,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The next_page_token value to use if there are additional
+     * Optional. The next_page_token value to use if there are additional
      * results to retrieve for this list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -927,11 +929,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The next_page_token value to use if there are additional
+     * Optional. The next_page_token value to use if there are additional
      * results to retrieve for this list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -950,11 +952,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The next_page_token value to use if there are additional
+     * Optional. The next_page_token value to use if there are additional
      * results to retrieve for this list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -972,11 +974,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The next_page_token value to use if there are additional
+     * Optional. The next_page_token value to use if there are additional
      * results to retrieve for this list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -990,11 +992,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The next_page_token value to use if there are additional
+     * Optional. The next_page_token value to use if there are additional
      * results to retrieve for this list request.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -1015,10 +1017,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+     * Optional. Sort results. Supported values are "name", "name desc" or ""
+     * (unsorted).
      * </pre>
      *
-     * <code>string order_by = 4;</code>
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderBy.
      */
@@ -1037,10 +1040,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+     * Optional. Sort results. Supported values are "name", "name desc" or ""
+     * (unsorted).
      * </pre>
      *
-     * <code>string order_by = 4;</code>
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1059,10 +1063,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+     * Optional. Sort results. Supported values are "name", "name desc" or ""
+     * (unsorted).
      * </pre>
      *
-     * <code>string order_by = 4;</code>
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1080,10 +1085,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+     * Optional. Sort results. Supported values are "name", "name desc" or ""
+     * (unsorted).
      * </pre>
      *
-     * <code>string order_by = 4;</code>
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1097,10 +1103,11 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Sort results. Supported values are "name", "name desc" or "" (unsorted).
+     * Optional. Sort results. Supported values are "name", "name desc" or ""
+     * (unsorted).
      * </pre>
      *
-     * <code>string order_by = 4;</code>
+     * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.
@@ -1121,10 +1128,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * List filter.
+     * Optional. List filter.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -1143,10 +1150,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * List filter.
+     * Optional. List filter.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1165,10 +1172,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * List filter.
+     * Optional. List filter.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1186,10 +1193,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * List filter.
+     * Optional. List filter.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1203,10 +1210,10 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * List filter.
+     * Optional. List filter.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.

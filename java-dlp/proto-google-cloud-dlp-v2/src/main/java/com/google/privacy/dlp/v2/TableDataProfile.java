@@ -301,6 +301,56 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DATA_SOURCE_TYPE_FIELD_NUMBER = 36;
+  private com.google.privacy.dlp.v2.DataSourceType dataSourceType_;
+  /**
+   *
+   *
+   * <pre>
+   * The resource type that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+   *
+   * @return Whether the dataSourceType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataSourceType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource type that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+   *
+   * @return The dataSourceType.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataSourceType getDataSourceType() {
+    return dataSourceType_ == null
+        ? com.google.privacy.dlp.v2.DataSourceType.getDefaultInstance()
+        : dataSourceType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The resource type that was profiled.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DataSourceTypeOrBuilder getDataSourceTypeOrBuilder() {
+    return dataSourceType_ == null
+        ? com.google.privacy.dlp.v2.DataSourceType.getDefaultInstance()
+        : dataSourceType_;
+  }
+
   public static final int PROJECT_DATA_PROFILE_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
@@ -360,7 +410,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Google Cloud project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the resource.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>
@@ -383,7 +433,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Google Cloud project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the resource.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>
@@ -411,7 +461,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BigQuery location where the dataset's data is stored.
+   * If supported, the location where the dataset's data is stored.
    * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
@@ -436,7 +486,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BigQuery location where the dataset's data is stored.
+   * If supported, the location where the dataset's data is stored.
    * See https://cloud.google.com/bigquery/docs/locations for supported
    * locations.
    * </pre>
@@ -466,7 +516,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BigQuery dataset ID.
+   * If the resource is BigQuery, the  dataset ID.
    * </pre>
    *
    * <code>string dataset_id = 25;</code>
@@ -489,7 +539,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BigQuery dataset ID.
+   * If the resource is BigQuery, the  dataset ID.
    * </pre>
    *
    * <code>string dataset_id = 25;</code>
@@ -517,7 +567,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BigQuery table ID.
+   * If the resource is BigQuery, the BigQuery table ID.
    * </pre>
    *
    * <code>string table_id = 26;</code>
@@ -540,7 +590,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The BigQuery table ID.
+   * If the resource is BigQuery, the BigQuery table ID.
    * </pre>
    *
    * <code>string table_id = 26;</code>
@@ -568,7 +618,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name of the table.
+   * The resource name of the resource profiled.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * </pre>
    *
@@ -592,7 +642,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name of the table.
+   * The resource name of the resource profiled.
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
    * </pre>
    *
@@ -629,7 +679,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasProfileStatus() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
@@ -716,7 +766,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSensitivityScore() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -766,7 +816,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDataRiskLevel() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -960,7 +1010,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasConfigSnapshot() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -1010,7 +1060,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLastModifiedTime() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1060,7 +1110,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasExpirationTime() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1253,7 +1303,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasProfileLastGenerated() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1407,7 +1457,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -1461,19 +1511,19 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fullResource_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getSensitivityScore());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(6, getDataRiskLevel());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(7, getConfigSnapshot());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(8, getLastModifiedTime());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(9, getExpirationTime());
     }
     if (scannedColumnCount_ != 0L) {
@@ -1497,18 +1547,18 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(15, resourceVisibility_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(16, getProfileLastGenerated());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetResourceLabels(), ResourceLabelsDefaultEntryHolder.defaultEntry, 17);
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(21, getProfileStatus());
     }
     if (state_ != com.google.privacy.dlp.v2.TableDataProfile.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(22, state_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(23, getCreateTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetProjectId_)) {
@@ -1529,6 +1579,9 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetLocation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, datasetLocation_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(36, getDataSourceType());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1547,19 +1600,19 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullResource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fullResource_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSensitivityScore());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDataRiskLevel());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getConfigSnapshot());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getLastModifiedTime());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExpirationTime());
     }
     if (scannedColumnCount_ != 0L) {
@@ -1583,7 +1636,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, resourceVisibility_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(16, getProfileLastGenerated());
     }
@@ -1597,13 +1650,13 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, resourceLabels__);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getProfileStatus());
     }
     if (state_ != com.google.privacy.dlp.v2.TableDataProfile.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, state_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getCreateTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetProjectId_)) {
@@ -1625,6 +1678,9 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(datasetLocation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, datasetLocation_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getDataSourceType());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1642,6 +1698,10 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         (com.google.privacy.dlp.v2.TableDataProfile) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasDataSourceType() != other.hasDataSourceType()) return false;
+    if (hasDataSourceType()) {
+      if (!getDataSourceType().equals(other.getDataSourceType())) return false;
+    }
     if (!getProjectDataProfile().equals(other.getProjectDataProfile())) return false;
     if (!getDatasetProjectId().equals(other.getDatasetProjectId())) return false;
     if (!getDatasetLocation().equals(other.getDatasetLocation())) return false;
@@ -1703,6 +1763,10 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasDataSourceType()) {
+      hash = (37 * hash) + DATA_SOURCE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getDataSourceType().hashCode();
+    }
     hash = (37 * hash) + PROJECT_DATA_PROFILE_FIELD_NUMBER;
     hash = (53 * hash) + getProjectDataProfile().hashCode();
     hash = (37 * hash) + DATASET_PROJECT_ID_FIELD_NUMBER;
@@ -1935,6 +1999,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDataSourceTypeFieldBuilder();
         getProfileStatusFieldBuilder();
         getSensitivityScoreFieldBuilder();
         getDataRiskLevelFieldBuilder();
@@ -1953,6 +2018,11 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      dataSourceType_ = null;
+      if (dataSourceTypeBuilder_ != null) {
+        dataSourceTypeBuilder_.dispose();
+        dataSourceTypeBuilder_ = null;
+      }
       projectDataProfile_ = "";
       datasetProjectId_ = "";
       datasetLocation_ = "";
@@ -1981,14 +2051,14 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         predictedInfoTypes_ = null;
         predictedInfoTypesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (otherInfoTypesBuilder_ == null) {
         otherInfoTypes_ = java.util.Collections.emptyList();
       } else {
         otherInfoTypes_ = null;
         otherInfoTypesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       configSnapshot_ = null;
       if (configSnapshotBuilder_ != null) {
         configSnapshotBuilder_.dispose();
@@ -2058,18 +2128,18 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.TableDataProfile result) {
       if (predictedInfoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           predictedInfoTypes_ = java.util.Collections.unmodifiableList(predictedInfoTypes_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.predictedInfoTypes_ = predictedInfoTypes_;
       } else {
         result.predictedInfoTypes_ = predictedInfoTypesBuilder_.build();
       }
       if (otherInfoTypesBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           otherInfoTypes_ = java.util.Collections.unmodifiableList(otherInfoTypes_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.otherInfoTypes_ = otherInfoTypes_;
       } else {
@@ -2082,90 +2152,95 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.projectDataProfile_ = projectDataProfile_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.datasetProjectId_ = datasetProjectId_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.datasetLocation_ = datasetLocation_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.datasetId_ = datasetId_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.tableId_ = tableId_;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.fullResource_ = fullResource_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.profileStatus_ =
-            profileStatusBuilder_ == null ? profileStatus_ : profileStatusBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataSourceType_ =
+            dataSourceTypeBuilder_ == null ? dataSourceType_ : dataSourceTypeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.state_ = state_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.projectDataProfile_ = projectDataProfile_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.sensitivityScore_ =
-            sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.datasetProjectId_ = datasetProjectId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.datasetLocation_ = datasetLocation_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.datasetId_ = datasetId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tableId_ = tableId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.fullResource_ = fullResource_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.profileStatus_ =
+            profileStatusBuilder_ == null ? profileStatus_ : profileStatusBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.state_ = state_;
+      }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.dataRiskLevel_ =
-            dataRiskLevelBuilder_ == null ? dataRiskLevel_ : dataRiskLevelBuilder_.build();
+        result.sensitivityScore_ =
+            sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.configSnapshot_ =
-            configSnapshotBuilder_ == null ? configSnapshot_ : configSnapshotBuilder_.build();
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.dataRiskLevel_ =
+            dataRiskLevelBuilder_ == null ? dataRiskLevel_ : dataRiskLevelBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.lastModifiedTime_ =
-            lastModifiedTimeBuilder_ == null ? lastModifiedTime_ : lastModifiedTimeBuilder_.build();
+        result.configSnapshot_ =
+            configSnapshotBuilder_ == null ? configSnapshot_ : configSnapshotBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.expirationTime_ =
-            expirationTimeBuilder_ == null ? expirationTime_ : expirationTimeBuilder_.build();
+        result.lastModifiedTime_ =
+            lastModifiedTimeBuilder_ == null ? lastModifiedTime_ : lastModifiedTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.scannedColumnCount_ = scannedColumnCount_;
+        result.expirationTime_ =
+            expirationTimeBuilder_ == null ? expirationTime_ : expirationTimeBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.failedColumnCount_ = failedColumnCount_;
+        result.scannedColumnCount_ = scannedColumnCount_;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.tableSizeBytes_ = tableSizeBytes_;
+        result.failedColumnCount_ = failedColumnCount_;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.rowCount_ = rowCount_;
+        result.tableSizeBytes_ = tableSizeBytes_;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.encryptionStatus_ = encryptionStatus_;
+        result.rowCount_ = rowCount_;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.resourceVisibility_ = resourceVisibility_;
+        result.encryptionStatus_ = encryptionStatus_;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.resourceVisibility_ = resourceVisibility_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.profileLastGenerated_ =
             profileLastGeneratedBuilder_ == null
                 ? profileLastGenerated_
                 : profileLastGeneratedBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.resourceLabels_ = internalGetResourceLabels();
         result.resourceLabels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2220,34 +2295,37 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasDataSourceType()) {
+        mergeDataSourceType(other.getDataSourceType());
+      }
       if (!other.getProjectDataProfile().isEmpty()) {
         projectDataProfile_ = other.projectDataProfile_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDatasetProjectId().isEmpty()) {
         datasetProjectId_ = other.datasetProjectId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDatasetLocation().isEmpty()) {
         datasetLocation_ = other.datasetLocation_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDatasetId().isEmpty()) {
         datasetId_ = other.datasetId_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getTableId().isEmpty()) {
         tableId_ = other.tableId_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getFullResource().isEmpty()) {
         fullResource_ = other.fullResource_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasProfileStatus()) {
@@ -2266,7 +2344,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         if (!other.predictedInfoTypes_.isEmpty()) {
           if (predictedInfoTypes_.isEmpty()) {
             predictedInfoTypes_ = other.predictedInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensurePredictedInfoTypesIsMutable();
             predictedInfoTypes_.addAll(other.predictedInfoTypes_);
@@ -2279,7 +2357,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
             predictedInfoTypesBuilder_.dispose();
             predictedInfoTypesBuilder_ = null;
             predictedInfoTypes_ = other.predictedInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             predictedInfoTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPredictedInfoTypesFieldBuilder()
@@ -2293,7 +2371,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         if (!other.otherInfoTypes_.isEmpty()) {
           if (otherInfoTypes_.isEmpty()) {
             otherInfoTypes_ = other.otherInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureOtherInfoTypesIsMutable();
             otherInfoTypes_.addAll(other.otherInfoTypes_);
@@ -2306,7 +2384,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
             otherInfoTypesBuilder_.dispose();
             otherInfoTypesBuilder_ = null;
             otherInfoTypes_ = other.otherInfoTypes_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             otherInfoTypesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOtherInfoTypesFieldBuilder()
@@ -2347,7 +2425,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         mergeProfileLastGenerated(other.getProfileLastGenerated());
       }
       internalGetMutableResourceLabels().mergeFrom(other.internalGetResourceLabels());
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -2386,88 +2464,88 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 projectDataProfile_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 fullResource_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 42:
               {
                 input.readMessage(
                     getSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getDataRiskLevelFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getConfigSnapshotFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getLastModifiedTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 74
             case 80:
               {
                 scannedColumnCount_ = input.readInt64();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 80
             case 88:
               {
                 failedColumnCount_ = input.readInt64();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 88
             case 96:
               {
                 tableSizeBytes_ = input.readInt64();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 96
             case 104:
               {
                 rowCount_ = input.readInt64();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 104
             case 112:
               {
                 encryptionStatus_ = input.readEnum();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 112
             case 120:
               {
                 resourceVisibility_ = input.readEnum();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 120
             case 130:
               {
                 input.readMessage(
                     getProfileLastGeneratedFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 130
             case 138:
@@ -2479,43 +2557,43 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
                 internalGetMutableResourceLabels()
                     .getMutableMap()
                     .put(resourceLabels__.getKey(), resourceLabels__.getValue());
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 138
             case 170:
               {
                 input.readMessage(getProfileStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 170
             case 176:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 176
             case 186:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 186
             case 194:
               {
                 datasetProjectId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 194
             case 202:
               {
                 datasetId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 202
             case 210:
               {
                 tableId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 210
             case 218:
@@ -2547,9 +2625,15 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
             case 234:
               {
                 datasetLocation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 234
+            case 290:
+              {
+                input.readMessage(getDataSourceTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 290
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2675,6 +2759,192 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.privacy.dlp.v2.DataSourceType dataSourceType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataSourceType,
+            com.google.privacy.dlp.v2.DataSourceType.Builder,
+            com.google.privacy.dlp.v2.DataSourceTypeOrBuilder>
+        dataSourceTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     *
+     * @return Whether the dataSourceType field is set.
+     */
+    public boolean hasDataSourceType() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     *
+     * @return The dataSourceType.
+     */
+    public com.google.privacy.dlp.v2.DataSourceType getDataSourceType() {
+      if (dataSourceTypeBuilder_ == null) {
+        return dataSourceType_ == null
+            ? com.google.privacy.dlp.v2.DataSourceType.getDefaultInstance()
+            : dataSourceType_;
+      } else {
+        return dataSourceTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     */
+    public Builder setDataSourceType(com.google.privacy.dlp.v2.DataSourceType value) {
+      if (dataSourceTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataSourceType_ = value;
+      } else {
+        dataSourceTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     */
+    public Builder setDataSourceType(
+        com.google.privacy.dlp.v2.DataSourceType.Builder builderForValue) {
+      if (dataSourceTypeBuilder_ == null) {
+        dataSourceType_ = builderForValue.build();
+      } else {
+        dataSourceTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     */
+    public Builder mergeDataSourceType(com.google.privacy.dlp.v2.DataSourceType value) {
+      if (dataSourceTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataSourceType_ != null
+            && dataSourceType_ != com.google.privacy.dlp.v2.DataSourceType.getDefaultInstance()) {
+          getDataSourceTypeBuilder().mergeFrom(value);
+        } else {
+          dataSourceType_ = value;
+        }
+      } else {
+        dataSourceTypeBuilder_.mergeFrom(value);
+      }
+      if (dataSourceType_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     */
+    public Builder clearDataSourceType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataSourceType_ = null;
+      if (dataSourceTypeBuilder_ != null) {
+        dataSourceTypeBuilder_.dispose();
+        dataSourceTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     */
+    public com.google.privacy.dlp.v2.DataSourceType.Builder getDataSourceTypeBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getDataSourceTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     */
+    public com.google.privacy.dlp.v2.DataSourceTypeOrBuilder getDataSourceTypeOrBuilder() {
+      if (dataSourceTypeBuilder_ != null) {
+        return dataSourceTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return dataSourceType_ == null
+            ? com.google.privacy.dlp.v2.DataSourceType.getDefaultInstance()
+            : dataSourceType_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The resource type that was profiled.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DataSourceType data_source_type = 36;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DataSourceType,
+            com.google.privacy.dlp.v2.DataSourceType.Builder,
+            com.google.privacy.dlp.v2.DataSourceTypeOrBuilder>
+        getDataSourceTypeFieldBuilder() {
+      if (dataSourceTypeBuilder_ == null) {
+        dataSourceTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DataSourceType,
+                com.google.privacy.dlp.v2.DataSourceType.Builder,
+                com.google.privacy.dlp.v2.DataSourceTypeOrBuilder>(
+                getDataSourceType(), getParentForChildren(), isClean());
+        dataSourceType_ = null;
+      }
+      return dataSourceTypeBuilder_;
+    }
+
     private java.lang.Object projectDataProfile_ = "";
     /**
      *
@@ -2737,7 +3007,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       projectDataProfile_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2754,7 +3024,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearProjectDataProfile() {
       projectDataProfile_ = getDefaultInstance().getProjectDataProfile();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2776,7 +3046,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       projectDataProfile_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2786,7 +3056,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the resource.
      * </pre>
      *
      * <code>string dataset_project_id = 24;</code>
@@ -2808,7 +3078,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the resource.
      * </pre>
      *
      * <code>string dataset_project_id = 24;</code>
@@ -2830,7 +3100,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the resource.
      * </pre>
      *
      * <code>string dataset_project_id = 24;</code>
@@ -2843,7 +3113,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       datasetProjectId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2851,7 +3121,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the resource.
      * </pre>
      *
      * <code>string dataset_project_id = 24;</code>
@@ -2860,7 +3130,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDatasetProjectId() {
       datasetProjectId_ = getDefaultInstance().getDatasetProjectId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2868,7 +3138,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Google Cloud project ID that owns the BigQuery dataset.
+     * The Google Cloud project ID that owns the resource.
      * </pre>
      *
      * <code>string dataset_project_id = 24;</code>
@@ -2882,7 +3152,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       datasetProjectId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2892,7 +3162,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery location where the dataset's data is stored.
+     * If supported, the location where the dataset's data is stored.
      * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
@@ -2916,7 +3186,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery location where the dataset's data is stored.
+     * If supported, the location where the dataset's data is stored.
      * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
@@ -2940,7 +3210,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery location where the dataset's data is stored.
+     * If supported, the location where the dataset's data is stored.
      * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
@@ -2955,7 +3225,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       datasetLocation_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2963,7 +3233,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery location where the dataset's data is stored.
+     * If supported, the location where the dataset's data is stored.
      * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
@@ -2974,7 +3244,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDatasetLocation() {
       datasetLocation_ = getDefaultInstance().getDatasetLocation();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2982,7 +3252,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery location where the dataset's data is stored.
+     * If supported, the location where the dataset's data is stored.
      * See https://cloud.google.com/bigquery/docs/locations for supported
      * locations.
      * </pre>
@@ -2998,7 +3268,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       datasetLocation_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3008,7 +3278,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery dataset ID.
+     * If the resource is BigQuery, the  dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3030,7 +3300,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery dataset ID.
+     * If the resource is BigQuery, the  dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3052,7 +3322,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery dataset ID.
+     * If the resource is BigQuery, the  dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3065,7 +3335,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       datasetId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3073,7 +3343,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery dataset ID.
+     * If the resource is BigQuery, the  dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3082,7 +3352,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDatasetId() {
       datasetId_ = getDefaultInstance().getDatasetId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3090,7 +3360,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery dataset ID.
+     * If the resource is BigQuery, the  dataset ID.
      * </pre>
      *
      * <code>string dataset_id = 25;</code>
@@ -3104,7 +3374,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       datasetId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3114,7 +3384,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery table ID.
+     * If the resource is BigQuery, the BigQuery table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3136,7 +3406,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery table ID.
+     * If the resource is BigQuery, the BigQuery table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3158,7 +3428,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery table ID.
+     * If the resource is BigQuery, the BigQuery table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3171,7 +3441,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       tableId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3179,7 +3449,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery table ID.
+     * If the resource is BigQuery, the BigQuery table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3188,7 +3458,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTableId() {
       tableId_ = getDefaultInstance().getTableId();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3196,7 +3466,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The BigQuery table ID.
+     * If the resource is BigQuery, the BigQuery table ID.
      * </pre>
      *
      * <code>string table_id = 26;</code>
@@ -3210,7 +3480,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       tableId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3220,7 +3490,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the table.
+     * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3243,7 +3513,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the table.
+     * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3266,7 +3536,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the table.
+     * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3280,7 +3550,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       fullResource_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3288,7 +3558,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the table.
+     * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3298,7 +3568,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFullResource() {
       fullResource_ = getDefaultInstance().getFullResource();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3306,7 +3576,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the table.
+     * The resource name of the resource profiled.
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      *
@@ -3321,7 +3591,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       fullResource_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3345,7 +3615,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the profileStatus field is set.
      */
     public boolean hasProfileStatus() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3387,7 +3657,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         profileStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3408,7 +3678,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         profileStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3424,7 +3694,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeProfileStatus(com.google.privacy.dlp.v2.ProfileStatus value) {
       if (profileStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && profileStatus_ != null
             && profileStatus_ != com.google.privacy.dlp.v2.ProfileStatus.getDefaultInstance()) {
           getProfileStatusBuilder().mergeFrom(value);
@@ -3435,7 +3705,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         profileStatusBuilder_.mergeFrom(value);
       }
       if (profileStatus_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3451,7 +3721,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.ProfileStatus profile_status = 21;</code>
      */
     public Builder clearProfileStatus() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       profileStatus_ = null;
       if (profileStatusBuilder_ != null) {
         profileStatusBuilder_.dispose();
@@ -3471,7 +3741,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.ProfileStatus profile_status = 21;</code>
      */
     public com.google.privacy.dlp.v2.ProfileStatus.Builder getProfileStatusBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getProfileStatusFieldBuilder().getBuilder();
     }
@@ -3551,7 +3821,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3590,7 +3860,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3607,7 +3877,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       state_ = 0;
       onChanged();
       return this;
@@ -3631,7 +3901,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the sensitivityScore field is set.
      */
     public boolean hasSensitivityScore() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3671,7 +3941,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         sensitivityScoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3691,7 +3961,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         sensitivityScoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3706,7 +3976,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
       if (sensitivityScoreBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && sensitivityScore_ != null
             && sensitivityScore_
                 != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
@@ -3718,7 +3988,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         sensitivityScoreBuilder_.mergeFrom(value);
       }
       if (sensitivityScore_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3733,7 +4003,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 5;</code>
      */
     public Builder clearSensitivityScore() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
         sensitivityScoreBuilder_.dispose();
@@ -3752,7 +4022,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 5;</code>
      */
     public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getSensitivityScoreFieldBuilder().getBuilder();
     }
@@ -3818,7 +4088,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the dataRiskLevel field is set.
      */
     public boolean hasDataRiskLevel() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3858,7 +4128,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         dataRiskLevelBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3878,7 +4148,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         dataRiskLevelBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3893,7 +4163,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDataRiskLevel(com.google.privacy.dlp.v2.DataRiskLevel value) {
       if (dataRiskLevelBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && dataRiskLevel_ != null
             && dataRiskLevel_ != com.google.privacy.dlp.v2.DataRiskLevel.getDefaultInstance()) {
           getDataRiskLevelBuilder().mergeFrom(value);
@@ -3904,7 +4174,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         dataRiskLevelBuilder_.mergeFrom(value);
       }
       if (dataRiskLevel_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3919,7 +4189,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.DataRiskLevel data_risk_level = 6;</code>
      */
     public Builder clearDataRiskLevel() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       dataRiskLevel_ = null;
       if (dataRiskLevelBuilder_ != null) {
         dataRiskLevelBuilder_.dispose();
@@ -3938,7 +4208,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.DataRiskLevel data_risk_level = 6;</code>
      */
     public com.google.privacy.dlp.v2.DataRiskLevel.Builder getDataRiskLevelBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getDataRiskLevelFieldBuilder().getBuilder();
     }
@@ -3990,10 +4260,10 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensurePredictedInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         predictedInfoTypes_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeSummary>(predictedInfoTypes_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -4211,7 +4481,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public Builder clearPredictedInfoTypes() {
       if (predictedInfoTypesBuilder_ == null) {
         predictedInfoTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         predictedInfoTypesBuilder_.clear();
@@ -4337,7 +4607,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.InfoTypeSummary.Builder,
                 com.google.privacy.dlp.v2.InfoTypeSummaryOrBuilder>(
                 predictedInfoTypes_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         predictedInfoTypes_ = null;
@@ -4349,11 +4619,11 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureOtherInfoTypesIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         otherInfoTypes_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.OtherInfoTypeSummary>(
                 otherInfoTypes_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -4571,7 +4841,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public Builder clearOtherInfoTypes() {
       if (otherInfoTypesBuilder_ == null) {
         otherInfoTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         otherInfoTypesBuilder_.clear();
@@ -4697,7 +4967,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.OtherInfoTypeSummary.Builder,
                 com.google.privacy.dlp.v2.OtherInfoTypeSummaryOrBuilder>(
                 otherInfoTypes_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         otherInfoTypes_ = null;
@@ -4723,7 +4993,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the configSnapshot field is set.
      */
     public boolean hasConfigSnapshot() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4763,7 +5033,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         configSnapshotBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4783,7 +5053,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         configSnapshotBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4798,7 +5068,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeConfigSnapshot(com.google.privacy.dlp.v2.DataProfileConfigSnapshot value) {
       if (configSnapshotBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && configSnapshot_ != null
             && configSnapshot_
                 != com.google.privacy.dlp.v2.DataProfileConfigSnapshot.getDefaultInstance()) {
@@ -4810,7 +5080,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         configSnapshotBuilder_.mergeFrom(value);
       }
       if (configSnapshot_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -4825,7 +5095,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.DataProfileConfigSnapshot config_snapshot = 7;</code>
      */
     public Builder clearConfigSnapshot() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       configSnapshot_ = null;
       if (configSnapshotBuilder_ != null) {
         configSnapshotBuilder_.dispose();
@@ -4844,7 +5114,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.DataProfileConfigSnapshot config_snapshot = 7;</code>
      */
     public com.google.privacy.dlp.v2.DataProfileConfigSnapshot.Builder getConfigSnapshotBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getConfigSnapshotFieldBuilder().getBuilder();
     }
@@ -4911,7 +5181,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the lastModifiedTime field is set.
      */
     public boolean hasLastModifiedTime() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4951,7 +5221,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         lastModifiedTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4970,7 +5240,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         lastModifiedTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4985,7 +5255,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeLastModifiedTime(com.google.protobuf.Timestamp value) {
       if (lastModifiedTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && lastModifiedTime_ != null
             && lastModifiedTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastModifiedTimeBuilder().mergeFrom(value);
@@ -4996,7 +5266,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         lastModifiedTimeBuilder_.mergeFrom(value);
       }
       if (lastModifiedTime_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5011,7 +5281,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp last_modified_time = 8;</code>
      */
     public Builder clearLastModifiedTime() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       lastModifiedTime_ = null;
       if (lastModifiedTimeBuilder_ != null) {
         lastModifiedTimeBuilder_.dispose();
@@ -5030,7 +5300,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp last_modified_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastModifiedTimeBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getLastModifiedTimeFieldBuilder().getBuilder();
     }
@@ -5096,7 +5366,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the expirationTime field is set.
      */
     public boolean hasExpirationTime() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -5136,7 +5406,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         expirationTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5155,7 +5425,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         expirationTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5170,7 +5440,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeExpirationTime(com.google.protobuf.Timestamp value) {
       if (expirationTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && expirationTime_ != null
             && expirationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getExpirationTimeBuilder().mergeFrom(value);
@@ -5181,7 +5451,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         expirationTimeBuilder_.mergeFrom(value);
       }
       if (expirationTime_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5196,7 +5466,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp expiration_time = 9;</code>
      */
     public Builder clearExpirationTime() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       expirationTime_ = null;
       if (expirationTimeBuilder_ != null) {
         expirationTimeBuilder_.dispose();
@@ -5215,7 +5485,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp expiration_time = 9;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpirationTimeBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }
@@ -5294,7 +5564,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public Builder setScannedColumnCount(long value) {
 
       scannedColumnCount_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5310,7 +5580,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearScannedColumnCount() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       scannedColumnCount_ = 0L;
       onChanged();
       return this;
@@ -5347,7 +5617,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public Builder setFailedColumnCount(long value) {
 
       failedColumnCount_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5363,7 +5633,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFailedColumnCount() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       failedColumnCount_ = 0L;
       onChanged();
       return this;
@@ -5400,7 +5670,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public Builder setTableSizeBytes(long value) {
 
       tableSizeBytes_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5416,7 +5686,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTableSizeBytes() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       tableSizeBytes_ = 0L;
       onChanged();
       return this;
@@ -5455,7 +5725,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     public Builder setRowCount(long value) {
 
       rowCount_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5472,7 +5742,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       rowCount_ = 0L;
       onChanged();
       return this;
@@ -5508,7 +5778,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder setEncryptionStatusValue(int value) {
       encryptionStatus_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5545,7 +5815,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       encryptionStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -5562,7 +5832,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEncryptionStatus() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       encryptionStatus_ = 0;
       onChanged();
       return this;
@@ -5598,7 +5868,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder setResourceVisibilityValue(int value) {
       resourceVisibility_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5635,7 +5905,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       resourceVisibility_ = value.getNumber();
       onChanged();
       return this;
@@ -5652,7 +5922,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearResourceVisibility() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       resourceVisibility_ = 0;
       onChanged();
       return this;
@@ -5676,7 +5946,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the profileLastGenerated field is set.
      */
     public boolean hasProfileLastGenerated() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -5716,7 +5986,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         profileLastGeneratedBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5735,7 +6005,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         profileLastGeneratedBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5750,7 +6020,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeProfileLastGenerated(com.google.protobuf.Timestamp value) {
       if (profileLastGeneratedBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && profileLastGenerated_ != null
             && profileLastGenerated_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getProfileLastGeneratedBuilder().mergeFrom(value);
@@ -5761,7 +6031,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         profileLastGeneratedBuilder_.mergeFrom(value);
       }
       if (profileLastGenerated_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -5776,7 +6046,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp profile_last_generated = 16;</code>
      */
     public Builder clearProfileLastGenerated() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       profileLastGenerated_ = null;
       if (profileLastGeneratedBuilder_ != null) {
         profileLastGeneratedBuilder_.dispose();
@@ -5795,7 +6065,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp profile_last_generated = 16;</code>
      */
     public com.google.protobuf.Timestamp.Builder getProfileLastGeneratedBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getProfileLastGeneratedFieldBuilder().getBuilder();
     }
@@ -5863,7 +6133,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       if (!resourceLabels_.isMutable()) {
         resourceLabels_ = resourceLabels_.copy();
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return resourceLabels_;
     }
@@ -5948,7 +6218,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearResourceLabels() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       internalGetMutableResourceLabels().getMutableMap().clear();
       return this;
     }
@@ -5971,7 +6241,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLabels() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return internalGetMutableResourceLabels().getMutableMap();
     }
     /**
@@ -5991,7 +6261,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableResourceLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return this;
     }
     /**
@@ -6005,7 +6275,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllResourceLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourceLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       return this;
     }
 
@@ -6027,7 +6297,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -6067,7 +6337,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -6086,7 +6356,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -6101,7 +6371,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -6112,7 +6382,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -6127,7 +6397,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 23;</code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -6146,7 +6416,7 @@ public final class TableDataProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 23;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

@@ -25,12 +25,24 @@ public interface StorageMetadataLabelOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Label name.
+   * </pre>
+   *
    * <code>string key = 1;</code>
    *
    * @return The key.
    */
   java.lang.String getKey();
   /**
+   *
+   *
+   * <pre>
+   * Label name.
+   * </pre>
+   *
    * <code>string key = 1;</code>
    *
    * @return The bytes for key.

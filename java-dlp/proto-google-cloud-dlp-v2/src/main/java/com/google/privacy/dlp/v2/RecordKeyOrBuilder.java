@@ -25,33 +25,73 @@ public interface RecordKeyOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * BigQuery key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
    *
    * @return Whether the datastoreKey field is set.
    */
   boolean hasDatastoreKey();
   /**
+   *
+   *
+   * <pre>
+   * BigQuery key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
    *
    * @return The datastoreKey.
    */
   com.google.privacy.dlp.v2.DatastoreKey getDatastoreKey();
-  /** <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * BigQuery key
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DatastoreKey datastore_key = 2;</code>
+   */
   com.google.privacy.dlp.v2.DatastoreKeyOrBuilder getDatastoreKeyOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Datastore key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
    *
    * @return Whether the bigQueryKey field is set.
    */
   boolean hasBigQueryKey();
   /**
+   *
+   *
+   * <pre>
+   * Datastore key
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
    *
    * @return The bigQueryKey.
    */
   com.google.privacy.dlp.v2.BigQueryKey getBigQueryKey();
-  /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Datastore key
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code>
+   */
   com.google.privacy.dlp.v2.BigQueryKeyOrBuilder getBigQueryKeyOrBuilder();
 
   /**

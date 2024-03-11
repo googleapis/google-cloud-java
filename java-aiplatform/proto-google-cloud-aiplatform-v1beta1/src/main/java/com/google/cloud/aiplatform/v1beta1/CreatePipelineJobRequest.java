@@ -240,25 +240,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
     }
   }
 
-  public static final int PREFLIGHT_VALIDATIONS_FIELD_NUMBER = 4;
-  private boolean preflightValidations_ = false;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether to do component level validations before job creation.
-   * Currently we only support Google First Party Component/Pipelines.
-   * </pre>
-   *
-   * <code>bool preflight_validations = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The preflightValidations.
-   */
-  @java.lang.Override
-  public boolean getPreflightValidations() {
-    return preflightValidations_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -282,9 +263,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineJobId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pipelineJobId_);
     }
-    if (preflightValidations_ != false) {
-      output.writeBool(4, preflightValidations_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -302,9 +280,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pipelineJobId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pipelineJobId_);
-    }
-    if (preflightValidations_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, preflightValidations_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -328,7 +303,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
       if (!getPipelineJob().equals(other.getPipelineJob())) return false;
     }
     if (!getPipelineJobId().equals(other.getPipelineJobId())) return false;
-    if (getPreflightValidations() != other.getPreflightValidations()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -348,8 +322,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
     }
     hash = (37 * hash) + PIPELINE_JOB_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPipelineJobId().hashCode();
-    hash = (37 * hash) + PREFLIGHT_VALIDATIONS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreflightValidations());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -507,7 +479,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
         pipelineJobBuilder_ = null;
       }
       pipelineJobId_ = "";
-      preflightValidations_ = false;
       return this;
     }
 
@@ -557,9 +528,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pipelineJobId_ = pipelineJobId_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.preflightValidations_ = preflightValidations_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -624,9 +592,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.getPreflightValidations() != false) {
-        setPreflightValidations(other.getPreflightValidations());
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -671,12 +636,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-            case 32:
-              {
-                preflightValidations_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1149,62 +1108,6 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       pipelineJobId_ = value;
       bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private boolean preflightValidations_;
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether to do component level validations before job creation.
-     * Currently we only support Google First Party Component/Pipelines.
-     * </pre>
-     *
-     * <code>bool preflight_validations = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The preflightValidations.
-     */
-    @java.lang.Override
-    public boolean getPreflightValidations() {
-      return preflightValidations_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether to do component level validations before job creation.
-     * Currently we only support Google First Party Component/Pipelines.
-     * </pre>
-     *
-     * <code>bool preflight_validations = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The preflightValidations to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPreflightValidations(boolean value) {
-
-      preflightValidations_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether to do component level validations before job creation.
-     * Currently we only support Google First Party Component/Pipelines.
-     * </pre>
-     *
-     * <code>bool preflight_validations = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearPreflightValidations() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      preflightValidations_ = false;
       onChanged();
       return this;
     }

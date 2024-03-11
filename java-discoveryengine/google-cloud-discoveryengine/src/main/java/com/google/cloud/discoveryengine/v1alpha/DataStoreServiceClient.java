@@ -169,6 +169,43 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> GetDocumentProcessingConfig</td>
+ *      <td><p> Gets a [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDocumentProcessingConfig(GetDocumentProcessingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDocumentProcessingConfig(DocumentProcessingConfigName name)
+ *           <li><p> getDocumentProcessingConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDocumentProcessingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDocumentProcessingConfig</td>
+ *      <td><p> Updates the [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]. [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig] is a singleon resource of [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is created. The first call to this method will set up [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDocumentProcessingConfig(UpdateDocumentProcessingConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateDocumentProcessingConfig(DocumentProcessingConfig documentProcessingConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDocumentProcessingConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -661,7 +698,8 @@ public class DataStoreServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent branch resource name, such as
    *     `projects/{project}/locations/{location}/collections/{collection_id}`.
-   *     <p>If the caller does not have permission to list [DataStores][]s under this location,
+   *     <p>If the caller does not have permission to list
+   *     [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]s under this location,
    *     regardless of whether or not this data store exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -696,7 +734,8 @@ public class DataStoreServiceClient implements BackgroundResource {
    *
    * @param parent Required. The parent branch resource name, such as
    *     `projects/{project}/locations/{location}/collections/{collection_id}`.
-   *     <p>If the caller does not have permission to list [DataStores][]s under this location,
+   *     <p>If the caller does not have permission to list
+   *     [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]s under this location,
    *     regardless of whether or not this data store exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1078,6 +1117,268 @@ public class DataStoreServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable() {
     return stub.updateDataStoreCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+   *   DocumentProcessingConfigName name =
+   *       DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+   *   DocumentProcessingConfig response = dataStoreServiceClient.getDocumentProcessingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full DocumentProcessingConfig resource name. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/documentProcessingConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DocumentProcessingConfig getDocumentProcessingConfig(
+      DocumentProcessingConfigName name) {
+    GetDocumentProcessingConfigRequest request =
+        GetDocumentProcessingConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDocumentProcessingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+   *   String name =
+   *       DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *           .toString();
+   *   DocumentProcessingConfig response = dataStoreServiceClient.getDocumentProcessingConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full DocumentProcessingConfig resource name. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/documentProcessingConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DocumentProcessingConfig getDocumentProcessingConfig(String name) {
+    GetDocumentProcessingConfigRequest request =
+        GetDocumentProcessingConfigRequest.newBuilder().setName(name).build();
+    return getDocumentProcessingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+   *   GetDocumentProcessingConfigRequest request =
+   *       GetDocumentProcessingConfigRequest.newBuilder()
+   *           .setName(
+   *               DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   DocumentProcessingConfig response =
+   *       dataStoreServiceClient.getDocumentProcessingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DocumentProcessingConfig getDocumentProcessingConfig(
+      GetDocumentProcessingConfigRequest request) {
+    return getDocumentProcessingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+   *   GetDocumentProcessingConfigRequest request =
+   *       GetDocumentProcessingConfigRequest.newBuilder()
+   *           .setName(
+   *               DocumentProcessingConfigName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DocumentProcessingConfig> future =
+   *       dataStoreServiceClient.getDocumentProcessingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   DocumentProcessingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigCallable() {
+    return stub.getDocumentProcessingConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig] is a
+   * singleon resource of [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty
+   * when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is created. The first call to
+   * this method will set up
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+   *   DocumentProcessingConfig documentProcessingConfig =
+   *       DocumentProcessingConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DocumentProcessingConfig response =
+   *       dataStoreServiceClient.updateDocumentProcessingConfig(
+   *           documentProcessingConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param documentProcessingConfig Required. The
+   *     [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]
+   *     to update.
+   *     <p>If the caller does not have permission to update the
+   *     [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig],
+   *     then a PERMISSION_DENIED error is returned.
+   *     <p>If the
+   *     [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]
+   *     to update does not exist, a NOT_FOUND error is returned.
+   * @param updateMask Indicates which fields in the provided
+   *     [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]
+   *     to update. The following are the only supported fields:
+   *     <ul>
+   *       <li>[DocumentProcessingConfig.ocr_config][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ocr_config]
+   *     </ul>
+   *     <p>If not set, all supported fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DocumentProcessingConfig updateDocumentProcessingConfig(
+      DocumentProcessingConfig documentProcessingConfig, FieldMask updateMask) {
+    UpdateDocumentProcessingConfigRequest request =
+        UpdateDocumentProcessingConfigRequest.newBuilder()
+            .setDocumentProcessingConfig(documentProcessingConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDocumentProcessingConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig] is a
+   * singleon resource of [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty
+   * when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is created. The first call to
+   * this method will set up
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+   *   UpdateDocumentProcessingConfigRequest request =
+   *       UpdateDocumentProcessingConfigRequest.newBuilder()
+   *           .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DocumentProcessingConfig response =
+   *       dataStoreServiceClient.updateDocumentProcessingConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DocumentProcessingConfig updateDocumentProcessingConfig(
+      UpdateDocumentProcessingConfigRequest request) {
+    return updateDocumentProcessingConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig] is a
+   * singleon resource of [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty
+   * when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is created. The first call to
+   * this method will set up
+   * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataStoreServiceClient dataStoreServiceClient = DataStoreServiceClient.create()) {
+   *   UpdateDocumentProcessingConfigRequest request =
+   *       UpdateDocumentProcessingConfigRequest.newBuilder()
+   *           .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DocumentProcessingConfig> future =
+   *       dataStoreServiceClient.updateDocumentProcessingConfigCallable().futureCall(request);
+   *   // Do something.
+   *   DocumentProcessingConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigCallable() {
+    return stub.updateDocumentProcessingConfigCallable();
   }
 
   @Override

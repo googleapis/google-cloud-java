@@ -28,7 +28,9 @@ public interface DeleteServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Service to delete from an
+   * Application. Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface DeleteServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Service to delete from an
+   * Application. Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * </pre>
    *
    * <code>

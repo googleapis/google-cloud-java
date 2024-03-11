@@ -28,7 +28,7 @@ public interface TrainCustomModelRequestOrBuilder
    *
    *
    * <pre>
-   * Gcs training input.
+   * Cloud Storage training input.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface TrainCustomModelRequestOrBuilder
    *
    *
    * <pre>
-   * Gcs training input.
+   * Cloud Storage training input.
    * </pre>
    *
    * <code>
@@ -57,7 +57,7 @@ public interface TrainCustomModelRequestOrBuilder
    *
    *
    * <pre>
-   * Gcs training input.
+   * Cloud Storage training input.
    * </pre>
    *
    * <code>

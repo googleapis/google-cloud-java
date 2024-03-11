@@ -152,6 +152,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>GEOLOCATION = 6;</code>
      */
     GEOLOCATION(6),
+    /**
+     *
+     *
+     * <pre>
+     * Field value type is Datetime.
+     * </pre>
+     *
+     * <code>DATETIME = 7;</code>
+     */
+    DATETIME(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -225,6 +235,16 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>GEOLOCATION = 6;</code>
      */
     public static final int GEOLOCATION_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Field value type is Datetime.
+     * </pre>
+     *
+     * <code>DATETIME = 7;</code>
+     */
+    public static final int DATETIME_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -264,6 +284,8 @@ public final class FieldConfig extends com.google.protobuf.GeneratedMessageV3
           return BOOLEAN;
         case 6:
           return GEOLOCATION;
+        case 7:
+          return DATETIME;
         default:
           return null;
       }

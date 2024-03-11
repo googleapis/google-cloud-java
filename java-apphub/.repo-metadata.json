@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "both",
   "language": "java",
-  "repo": "googleapis/java-apphub",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-apphub",
   "distribution_name": "com.google.cloud:google-cloud-apphub",
   "api_id": "apphub.googleapis.com",

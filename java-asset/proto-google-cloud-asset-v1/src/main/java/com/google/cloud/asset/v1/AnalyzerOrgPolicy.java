@@ -229,6 +229,68 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      */
     com.google.type.ExprOrBuilder getConditionOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * The condition evaluation result for this rule.
+     * Only populated if it meets all the following criteria:
+     * * there is a
+     * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+     * defined for this rule
+     * * this rule is within a consolidated_policy
+     * * the consolidated_policy is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     *   or
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+     *
+     * @return Whether the conditionEvaluation field is set.
+     */
+    boolean hasConditionEvaluation();
+    /**
+     *
+     *
+     * <pre>
+     * The condition evaluation result for this rule.
+     * Only populated if it meets all the following criteria:
+     * * there is a
+     * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+     * defined for this rule
+     * * this rule is within a consolidated_policy
+     * * the consolidated_policy is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     *   or
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+     *
+     * @return The conditionEvaluation.
+     */
+    com.google.cloud.asset.v1.ConditionEvaluation getConditionEvaluation();
+    /**
+     *
+     *
+     * <pre>
+     * The condition evaluation result for this rule.
+     * Only populated if it meets all the following criteria:
+     * * there is a
+     * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+     * defined for this rule
+     * * this rule is within a consolidated_policy
+     * * the consolidated_policy is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     *   or
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+     */
+    com.google.cloud.asset.v1.ConditionEvaluationOrBuilder getConditionEvaluationOrBuilder();
+
     com.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.KindCase getKindCase();
   }
   /**
@@ -1647,6 +1709,84 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
     }
 
+    public static final int CONDITION_EVALUATION_FIELD_NUMBER = 8;
+    private com.google.cloud.asset.v1.ConditionEvaluation conditionEvaluation_;
+    /**
+     *
+     *
+     * <pre>
+     * The condition evaluation result for this rule.
+     * Only populated if it meets all the following criteria:
+     * * there is a
+     * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+     * defined for this rule
+     * * this rule is within a consolidated_policy
+     * * the consolidated_policy is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     *   or
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+     *
+     * @return Whether the conditionEvaluation field is set.
+     */
+    @java.lang.Override
+    public boolean hasConditionEvaluation() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition evaluation result for this rule.
+     * Only populated if it meets all the following criteria:
+     * * there is a
+     * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+     * defined for this rule
+     * * this rule is within a consolidated_policy
+     * * the consolidated_policy is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     *   or
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+     *
+     * @return The conditionEvaluation.
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.ConditionEvaluation getConditionEvaluation() {
+      return conditionEvaluation_ == null
+          ? com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance()
+          : conditionEvaluation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The condition evaluation result for this rule.
+     * Only populated if it meets all the following criteria:
+     * * there is a
+     * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+     * defined for this rule
+     * * this rule is within a consolidated_policy
+     * * the consolidated_policy is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     *   or
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.ConditionEvaluationOrBuilder
+        getConditionEvaluationOrBuilder() {
+      return conditionEvaluation_ == null
+          ? com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance()
+          : conditionEvaluation_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1676,6 +1816,9 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(7, getCondition());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(8, getConditionEvaluation());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1709,6 +1852,10 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCondition());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(8, getConditionEvaluation());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1728,6 +1875,10 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       if (hasCondition() != other.hasCondition()) return false;
       if (hasCondition()) {
         if (!getCondition().equals(other.getCondition())) return false;
+      }
+      if (hasConditionEvaluation() != other.hasConditionEvaluation()) return false;
+      if (hasConditionEvaluation()) {
+        if (!getConditionEvaluation().equals(other.getConditionEvaluation())) return false;
       }
       if (!getKindCase().equals(other.getKindCase())) return false;
       switch (kindCase_) {
@@ -1760,6 +1911,10 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       if (hasCondition()) {
         hash = (37 * hash) + CONDITION_FIELD_NUMBER;
         hash = (53 * hash) + getCondition().hashCode();
+      }
+      if (hasConditionEvaluation()) {
+        hash = (37 * hash) + CONDITION_EVALUATION_FIELD_NUMBER;
+        hash = (53 * hash) + getConditionEvaluation().hashCode();
       }
       switch (kindCase_) {
         case 3:
@@ -1927,6 +2082,7 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getConditionFieldBuilder();
+          getConditionEvaluationFieldBuilder();
         }
       }
 
@@ -1941,6 +2097,11 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
         if (conditionBuilder_ != null) {
           conditionBuilder_.dispose();
           conditionBuilder_ = null;
+        }
+        conditionEvaluation_ = null;
+        if (conditionEvaluationBuilder_ != null) {
+          conditionEvaluationBuilder_.dispose();
+          conditionEvaluationBuilder_ = null;
         }
         kindCase_ = 0;
         kind_ = null;
@@ -1985,6 +2146,13 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.conditionEvaluation_ =
+              conditionEvaluationBuilder_ == null
+                  ? conditionEvaluation_
+                  : conditionEvaluationBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2047,6 +2215,9 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           return this;
         if (other.hasCondition()) {
           mergeCondition(other.getCondition());
+        }
+        if (other.hasConditionEvaluation()) {
+          mergeConditionEvaluation(other.getConditionEvaluation());
         }
         switch (other.getKindCase()) {
           case VALUES:
@@ -2130,6 +2301,13 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      getConditionEvaluationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2788,6 +2966,275 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
           condition_ = null;
         }
         return conditionBuilder_;
+      }
+
+      private com.google.cloud.asset.v1.ConditionEvaluation conditionEvaluation_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.asset.v1.ConditionEvaluation,
+              com.google.cloud.asset.v1.ConditionEvaluation.Builder,
+              com.google.cloud.asset.v1.ConditionEvaluationOrBuilder>
+          conditionEvaluationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       *
+       * @return Whether the conditionEvaluation field is set.
+       */
+      public boolean hasConditionEvaluation() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       *
+       * @return The conditionEvaluation.
+       */
+      public com.google.cloud.asset.v1.ConditionEvaluation getConditionEvaluation() {
+        if (conditionEvaluationBuilder_ == null) {
+          return conditionEvaluation_ == null
+              ? com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance()
+              : conditionEvaluation_;
+        } else {
+          return conditionEvaluationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       */
+      public Builder setConditionEvaluation(com.google.cloud.asset.v1.ConditionEvaluation value) {
+        if (conditionEvaluationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          conditionEvaluation_ = value;
+        } else {
+          conditionEvaluationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       */
+      public Builder setConditionEvaluation(
+          com.google.cloud.asset.v1.ConditionEvaluation.Builder builderForValue) {
+        if (conditionEvaluationBuilder_ == null) {
+          conditionEvaluation_ = builderForValue.build();
+        } else {
+          conditionEvaluationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       */
+      public Builder mergeConditionEvaluation(com.google.cloud.asset.v1.ConditionEvaluation value) {
+        if (conditionEvaluationBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && conditionEvaluation_ != null
+              && conditionEvaluation_
+                  != com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance()) {
+            getConditionEvaluationBuilder().mergeFrom(value);
+          } else {
+            conditionEvaluation_ = value;
+          }
+        } else {
+          conditionEvaluationBuilder_.mergeFrom(value);
+        }
+        if (conditionEvaluation_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       */
+      public Builder clearConditionEvaluation() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        conditionEvaluation_ = null;
+        if (conditionEvaluationBuilder_ != null) {
+          conditionEvaluationBuilder_.dispose();
+          conditionEvaluationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       */
+      public com.google.cloud.asset.v1.ConditionEvaluation.Builder getConditionEvaluationBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getConditionEvaluationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       */
+      public com.google.cloud.asset.v1.ConditionEvaluationOrBuilder
+          getConditionEvaluationOrBuilder() {
+        if (conditionEvaluationBuilder_ != null) {
+          return conditionEvaluationBuilder_.getMessageOrBuilder();
+        } else {
+          return conditionEvaluation_ == null
+              ? com.google.cloud.asset.v1.ConditionEvaluation.getDefaultInstance()
+              : conditionEvaluation_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The condition evaluation result for this rule.
+       * Only populated if it meets all the following criteria:
+       * * there is a
+       * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
+       * defined for this rule
+       * * this rule is within a consolidated_policy
+       * * the consolidated_policy is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       *   or
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       * </pre>
+       *
+       * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.asset.v1.ConditionEvaluation,
+              com.google.cloud.asset.v1.ConditionEvaluation.Builder,
+              com.google.cloud.asset.v1.ConditionEvaluationOrBuilder>
+          getConditionEvaluationFieldBuilder() {
+        if (conditionEvaluationBuilder_ == null) {
+          conditionEvaluationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.asset.v1.ConditionEvaluation,
+                  com.google.cloud.asset.v1.ConditionEvaluation.Builder,
+                  com.google.cloud.asset.v1.ConditionEvaluationOrBuilder>(
+                  getConditionEvaluation(), getParentForChildren(), isClean());
+          conditionEvaluation_ = null;
+        }
+        return conditionEvaluationBuilder_;
       }
 
       @java.lang.Override

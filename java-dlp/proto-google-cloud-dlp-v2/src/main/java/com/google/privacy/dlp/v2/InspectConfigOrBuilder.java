@@ -30,7 +30,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
-   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference.
    *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose a default list of detectors to run, which
@@ -50,7 +50,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
-   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference.
    *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose a default list of detectors to run, which
@@ -70,7 +70,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
-   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference.
    *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose a default list of detectors to run, which
@@ -90,7 +90,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
-   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference.
    *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose a default list of detectors to run, which
@@ -110,7 +110,7 @@ public interface InspectConfigOrBuilder
    * <pre>
    * Restricts what info_types to look for. The values must correspond to
    * InfoType values returned by ListInfoTypes or listed at
-   * https://cloud.google.com/dlp/docs/infotypes-reference.
+   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference.
    *
    * When no InfoTypes or CustomInfoTypes are specified in a request, the
    * system may automatically choose a default list of detectors to run, which
@@ -134,7 +134,8 @@ public interface InspectConfigOrBuilder
    *
    * In general, the highest likelihood setting yields the fewest findings in
    * results and the lowest chance of a false positive. For more information,
-   * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
+   * see [Match
+   * likelihood](https://cloud.google.com/sensitive-data-protection/docs/likelihood).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -151,7 +152,8 @@ public interface InspectConfigOrBuilder
    *
    * In general, the highest likelihood setting yields the fewest findings in
    * results and the lowest chance of a false positive. For more information,
-   * see [Match likelihood](https://cloud.google.com/dlp/docs/likelihood).
+   * see [Match
+   * likelihood](https://cloud.google.com/sensitive-data-protection/docs/likelihood).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Likelihood min_likelihood = 2;</code>
@@ -351,7 +353,8 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * CustomInfoTypes provided by the user. See
-   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes
+   * to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -362,7 +365,8 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * CustomInfoTypes provided by the user. See
-   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes
+   * to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -373,7 +377,8 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * CustomInfoTypes provided by the user. See
-   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes
+   * to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -384,7 +389,8 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * CustomInfoTypes provided by the user. See
-   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes
+   * to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>
@@ -396,7 +402,8 @@ public interface InspectConfigOrBuilder
    *
    * <pre>
    * CustomInfoTypes provided by the user. See
-   * https://cloud.google.com/dlp/docs/creating-custom-infotypes to learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes
+   * to learn more.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType custom_info_types = 6;</code>

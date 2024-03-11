@@ -869,6 +869,33 @@
         }
       }
     },
+    "ModelGardenService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ModelGardenServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPublisherModel": {
+              "methods": ["getPublisherModel", "getPublisherModel", "getPublisherModel", "getPublisherModelCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "ModelService": {
       "clients": {
         "grpc": {
@@ -947,38 +974,17 @@
         }
       }
     },
-    "ModelGardenService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "ModelGardenServiceClient",
-          "rpcs": {
-            "GetIamPolicy": {
-              "methods": ["getIamPolicy", "getIamPolicyCallable"]
-            },
-            "GetLocation": {
-              "methods": ["getLocation", "getLocationCallable"]
-            },
-            "GetPublisherModel": {
-              "methods": ["getPublisherModel", "getPublisherModel", "getPublisherModel", "getPublisherModelCallable"]
-            },
-            "ListLocations": {
-              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
-            },
-            "SetIamPolicy": {
-              "methods": ["setIamPolicy", "setIamPolicyCallable"]
-            },
-            "TestIamPermissions": {
-              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
-            }
-          }
-        }
-      }
-    },
     "PipelineService": {
       "clients": {
         "grpc": {
           "libraryClient": "PipelineServiceClient",
           "rpcs": {
+            "BatchCancelPipelineJobs": {
+              "methods": ["batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsAsync", "batchCancelPipelineJobsOperationCallable", "batchCancelPipelineJobsCallable"]
+            },
+            "BatchDeletePipelineJobs": {
+              "methods": ["batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsAsync", "batchDeletePipelineJobsOperationCallable", "batchDeletePipelineJobsCallable"]
+            },
             "CancelPipelineJob": {
               "methods": ["cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJob", "cancelPipelineJobCallable"]
             },

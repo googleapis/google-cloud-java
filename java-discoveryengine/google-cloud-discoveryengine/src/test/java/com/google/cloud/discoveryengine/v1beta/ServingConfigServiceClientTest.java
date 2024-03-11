@@ -45,6 +45,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class ServingConfigServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private static MockServingConfigService mockServingConfigService;
   private LocalChannelProvider channelProvider;
@@ -53,9 +54,11 @@ public class ServingConfigServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockServingConfigService = new MockServingConfigService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockServingConfigService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockServingConfigService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -315,6 +318,50 @@ public class ServingConfigServiceClientTest {
             .build();
     mockServingConfigService.addResponse(expectedResponse);
 
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+
+    ListServingConfigsPagedResponse pagedListResponse = client.listServingConfigs(parent);
+
+    List<ServingConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListServingConfigsRequest actualRequest = ((ListServingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listServingConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.listServingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listServingConfigsTest3() throws Exception {
+    ServingConfig responsesElement = ServingConfig.newBuilder().build();
+    ListServingConfigsResponse expectedResponse =
+        ListServingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListServingConfigsPagedResponse pagedListResponse = client.listServingConfigs(parent);
@@ -336,7 +383,7 @@ public class ServingConfigServiceClientTest {
   }
 
   @Test
-  public void listServingConfigsExceptionTest2() throws Exception {
+  public void listServingConfigsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockServingConfigService.addException(exception);
 

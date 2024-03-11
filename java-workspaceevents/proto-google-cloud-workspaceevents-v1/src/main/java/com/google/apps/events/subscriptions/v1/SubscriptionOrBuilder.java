@@ -171,8 +171,9 @@ public interface SubscriptionOrBuilder
    * Required. Immutable. The Google Workspace resource that's monitored for
    * events, formatted as the [full resource
    * name](https://google.aip.dev/122#full-resource-names). To learn about
-   * target resources, see [Supported Google Workspace
-   * resources](https://developers.google.com/workspace/events/guides#supported-resources).
+   * target resources and the events that they support, see [Supported Google
+   * Workspace
+   * events](https://developers.google.com/workspace/events#supported-events).
    *
    * A user can only authorize your app to create one subscription for a given
    * target resource. If your app tries to create another subscription with the
@@ -193,8 +194,9 @@ public interface SubscriptionOrBuilder
    * Required. Immutable. The Google Workspace resource that's monitored for
    * events, formatted as the [full resource
    * name](https://google.aip.dev/122#full-resource-names). To learn about
-   * target resources, see [Supported Google Workspace
-   * resources](https://developers.google.com/workspace/events/guides#supported-resources).
+   * target resources and the events that they support, see [Supported Google
+   * Workspace
+   * events](https://developers.google.com/workspace/events#supported-events).
    *
    * A user can only authorize your app to create one subscription for a given
    * target resource. If your app tries to create another subscription with the
@@ -217,12 +219,9 @@ public interface SubscriptionOrBuilder
    * Otherwise, output only. One or more types of events to receive about the
    * target resource. Formatted according to the CloudEvents specification.
    *
-   * For a list of supported event types, see the following documentation:
-   *
-   * * [Google Chat
-   * events](https://developers.google.com/workspace/events/guides/events-chat)
-   * * [Google Meet
-   * events](https://developers.google.com/workspace/events/guides/events-meet)
+   * The supported event types depend on the target resource of your
+   * subscription. For details, see [Supported Google Workspace
+   * events](https://developers.google.com/workspace/events/guides#supported-events).
    *
    * By default, you also receive events about the [lifecycle of your
    * subscription](https://developers.google.com/workspace/events/guides/events-lifecycle).
@@ -247,12 +246,9 @@ public interface SubscriptionOrBuilder
    * Otherwise, output only. One or more types of events to receive about the
    * target resource. Formatted according to the CloudEvents specification.
    *
-   * For a list of supported event types, see the following documentation:
-   *
-   * * [Google Chat
-   * events](https://developers.google.com/workspace/events/guides/events-chat)
-   * * [Google Meet
-   * events](https://developers.google.com/workspace/events/guides/events-meet)
+   * The supported event types depend on the target resource of your
+   * subscription. For details, see [Supported Google Workspace
+   * events](https://developers.google.com/workspace/events/guides#supported-events).
    *
    * By default, you also receive events about the [lifecycle of your
    * subscription](https://developers.google.com/workspace/events/guides/events-lifecycle).
@@ -277,12 +273,9 @@ public interface SubscriptionOrBuilder
    * Otherwise, output only. One or more types of events to receive about the
    * target resource. Formatted according to the CloudEvents specification.
    *
-   * For a list of supported event types, see the following documentation:
-   *
-   * * [Google Chat
-   * events](https://developers.google.com/workspace/events/guides/events-chat)
-   * * [Google Meet
-   * events](https://developers.google.com/workspace/events/guides/events-meet)
+   * The supported event types depend on the target resource of your
+   * subscription. For details, see [Supported Google Workspace
+   * events](https://developers.google.com/workspace/events/guides#supported-events).
    *
    * By default, you also receive events about the [lifecycle of your
    * subscription](https://developers.google.com/workspace/events/guides/events-lifecycle).
@@ -308,12 +301,9 @@ public interface SubscriptionOrBuilder
    * Otherwise, output only. One or more types of events to receive about the
    * target resource. Formatted according to the CloudEvents specification.
    *
-   * For a list of supported event types, see the following documentation:
-   *
-   * * [Google Chat
-   * events](https://developers.google.com/workspace/events/guides/events-chat)
-   * * [Google Meet
-   * events](https://developers.google.com/workspace/events/guides/events-meet)
+   * The supported event types depend on the target resource of your
+   * subscription. For details, see [Supported Google Workspace
+   * events](https://developers.google.com/workspace/events/guides#supported-events).
    *
    * By default, you also receive events about the [lifecycle of your
    * subscription](https://developers.google.com/workspace/events/guides/events-lifecycle).

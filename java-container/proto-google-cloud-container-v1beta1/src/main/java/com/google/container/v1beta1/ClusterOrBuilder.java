@@ -2804,4 +2804,39 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.EnterpriseConfig enterprise_config = 149;</code>
    */
   com.google.container.v1beta1.EnterpriseConfigOrBuilder getEnterpriseConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return Whether the secretManagerConfig field is set.
+   */
+  boolean hasSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+   *
+   * @return The secretManagerConfig.
+   */
+  com.google.container.v1beta1.SecretManagerConfig getSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Secret CSI driver configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.SecretManagerConfig secret_manager_config = 150;</code>
+   */
+  com.google.container.v1beta1.SecretManagerConfigOrBuilder getSecretManagerConfigOrBuilder();
 }

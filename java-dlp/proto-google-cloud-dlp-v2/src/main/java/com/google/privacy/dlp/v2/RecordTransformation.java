@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.privacy.dlp.v2;
 
-/** Protobuf type {@code google.privacy.dlp.v2.RecordTransformation} */
+/**
+ *
+ *
+ * <pre>
+ * The field in a record to transform.
+ * </pre>
+ *
+ * Protobuf type {@code google.privacy.dlp.v2.RecordTransformation}
+ */
 public final class RecordTransformation extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.RecordTransformation)
@@ -390,7 +398,15 @@ public final class RecordTransformation extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.RecordTransformation} */
+  /**
+   *
+   *
+   * <pre>
+   * The field in a record to transform.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.RecordTransformation}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.RecordTransformation)

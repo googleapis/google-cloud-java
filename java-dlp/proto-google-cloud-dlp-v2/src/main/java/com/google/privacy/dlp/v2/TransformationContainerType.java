@@ -29,24 +29,88 @@ package com.google.privacy.dlp.v2;
  * Protobuf enum {@code google.privacy.dlp.v2.TransformationContainerType}
  */
 public enum TransformationContainerType implements com.google.protobuf.ProtocolMessageEnum {
-  /** <code>TRANSFORM_UNKNOWN_CONTAINER = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused.
+   * </pre>
+   *
+   * <code>TRANSFORM_UNKNOWN_CONTAINER = 0;</code>
+   */
   TRANSFORM_UNKNOWN_CONTAINER(0),
-  /** <code>TRANSFORM_BODY = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Body of a file.
+   * </pre>
+   *
+   * <code>TRANSFORM_BODY = 1;</code>
+   */
   TRANSFORM_BODY(1),
-  /** <code>TRANSFORM_METADATA = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a file.
+   * </pre>
+   *
+   * <code>TRANSFORM_METADATA = 2;</code>
+   */
   TRANSFORM_METADATA(2),
-  /** <code>TRANSFORM_TABLE = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * A table.
+   * </pre>
+   *
+   * <code>TRANSFORM_TABLE = 3;</code>
+   */
   TRANSFORM_TABLE(3),
   UNRECOGNIZED(-1),
   ;
 
-  /** <code>TRANSFORM_UNKNOWN_CONTAINER = 0;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Unused.
+   * </pre>
+   *
+   * <code>TRANSFORM_UNKNOWN_CONTAINER = 0;</code>
+   */
   public static final int TRANSFORM_UNKNOWN_CONTAINER_VALUE = 0;
-  /** <code>TRANSFORM_BODY = 1;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Body of a file.
+   * </pre>
+   *
+   * <code>TRANSFORM_BODY = 1;</code>
+   */
   public static final int TRANSFORM_BODY_VALUE = 1;
-  /** <code>TRANSFORM_METADATA = 2;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for a file.
+   * </pre>
+   *
+   * <code>TRANSFORM_METADATA = 2;</code>
+   */
   public static final int TRANSFORM_METADATA_VALUE = 2;
-  /** <code>TRANSFORM_TABLE = 3;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * A table.
+   * </pre>
+   *
+   * <code>TRANSFORM_TABLE = 3;</code>
+   */
   public static final int TRANSFORM_TABLE_VALUE = 3;
 
   public final int getNumber() {

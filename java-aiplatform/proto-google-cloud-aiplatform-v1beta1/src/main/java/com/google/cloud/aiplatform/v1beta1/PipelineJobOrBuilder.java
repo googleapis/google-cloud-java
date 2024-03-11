@@ -826,4 +826,17 @@ public interface PipelineJobOrBuilder
    * @return The bytes for scheduleName.
    */
   com.google.protobuf.ByteString getScheduleNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to do component level validations before job creation.
+   * </pre>
+   *
+   * <code>bool preflight_validations = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The preflightValidations.
+   */
+  boolean getPreflightValidations();
 }
