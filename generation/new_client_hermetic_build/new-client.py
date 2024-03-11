@@ -212,7 +212,7 @@ def add_new_library(
     client_documentation = f"https://cloud.google.com/java/docs/reference/{distribution_name_short}/latest/overview"
 
     if library_name is None:
-        library_name = f"java-{api_shortname}"
+        library_name = api_shortname
 
     if api_shortname == "":
         sys.exit("api_shortname is empty")
