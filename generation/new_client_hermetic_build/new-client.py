@@ -43,7 +43,7 @@ def main(ctx):
 
 @main.command()
 @click.option(
-    "--api_shortname",
+    "--api-shortname",
     required=True,
     type=str,
     prompt="Service name? (e.g. automl)",
