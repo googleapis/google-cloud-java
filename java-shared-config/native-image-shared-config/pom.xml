@@ -58,7 +58,7 @@
   </licenses>
 
   <properties>
-    <surefire.version>3.2.1</surefire.version>
+    <surefire.version>3.2.5</surefire.version>
     <graal-sdk.version>22.3.5</graal-sdk.version>
   </properties>
 
