@@ -41,6 +41,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
   private SafetyRating() {
     category_ = 0;
     probability_ = 0;
+    severity_ = 0;
   }
 
   @java.lang.Override
@@ -267,6 +268,207 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.SafetyRating.HarmProbability)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Harm severity levels.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity}
+   */
+  public enum HarmSeverity implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Harm severity unspecified.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    HARM_SEVERITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Negligible level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_NEGLIGIBLE = 1;</code>
+     */
+    HARM_SEVERITY_NEGLIGIBLE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Low level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_LOW = 2;</code>
+     */
+    HARM_SEVERITY_LOW(2),
+    /**
+     *
+     *
+     * <pre>
+     * Medium level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_MEDIUM = 3;</code>
+     */
+    HARM_SEVERITY_MEDIUM(3),
+    /**
+     *
+     *
+     * <pre>
+     * High level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_HIGH = 4;</code>
+     */
+    HARM_SEVERITY_HIGH(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Harm severity unspecified.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int HARM_SEVERITY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Negligible level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_NEGLIGIBLE = 1;</code>
+     */
+    public static final int HARM_SEVERITY_NEGLIGIBLE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Low level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_LOW = 2;</code>
+     */
+    public static final int HARM_SEVERITY_LOW_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Medium level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_MEDIUM = 3;</code>
+     */
+    public static final int HARM_SEVERITY_MEDIUM_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * High level of harm severity.
+     * </pre>
+     *
+     * <code>HARM_SEVERITY_HIGH = 4;</code>
+     */
+    public static final int HARM_SEVERITY_HIGH_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static HarmSeverity valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static HarmSeverity forNumber(int value) {
+      switch (value) {
+        case 0:
+          return HARM_SEVERITY_UNSPECIFIED;
+        case 1:
+          return HARM_SEVERITY_NEGLIGIBLE;
+        case 2:
+          return HARM_SEVERITY_LOW;
+        case 3:
+          return HARM_SEVERITY_MEDIUM;
+        case 4:
+          return HARM_SEVERITY_HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<HarmSeverity> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<HarmSeverity> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<HarmSeverity>() {
+          public HarmSeverity findValueByNumber(int number) {
+            return HarmSeverity.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.SafetyRating.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final HarmSeverity[] VALUES = values();
+
+    public static HarmSeverity valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private HarmSeverity(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity)
+  }
+
   public static final int CATEGORY_FIELD_NUMBER = 1;
   private int category_ = 0;
   /**
@@ -347,6 +549,83 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int PROBABILITY_SCORE_FIELD_NUMBER = 5;
+  private float probabilityScore_ = 0F;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Harm probability score.
+   * </pre>
+   *
+   * <code>float probability_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The probabilityScore.
+   */
+  @java.lang.Override
+  public float getProbabilityScore() {
+    return probabilityScore_;
+  }
+
+  public static final int SEVERITY_FIELD_NUMBER = 6;
+  private int severity_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Harm severity levels in the content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  @java.lang.Override
+  public int getSeverityValue() {
+    return severity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Harm severity levels in the content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The severity.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity getSeverity() {
+    com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity result =
+        com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity.forNumber(severity_);
+    return result == null
+        ? com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SEVERITY_SCORE_FIELD_NUMBER = 7;
+  private float severityScore_ = 0F;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Harm severity score.
+   * </pre>
+   *
+   * <code>float severity_score = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The severityScore.
+   */
+  @java.lang.Override
+  public float getSeverityScore() {
+    return severityScore_;
+  }
+
   public static final int BLOCKED_FIELD_NUMBER = 3;
   private boolean blocked_ = false;
   /**
@@ -393,6 +672,17 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     if (blocked_ != false) {
       output.writeBool(3, blocked_);
     }
+    if (java.lang.Float.floatToRawIntBits(probabilityScore_) != 0) {
+      output.writeFloat(5, probabilityScore_);
+    }
+    if (severity_
+        != com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity.HARM_SEVERITY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, severity_);
+    }
+    if (java.lang.Float.floatToRawIntBits(severityScore_) != 0) {
+      output.writeFloat(7, severityScore_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -415,6 +705,17 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     if (blocked_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, blocked_);
     }
+    if (java.lang.Float.floatToRawIntBits(probabilityScore_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, probabilityScore_);
+    }
+    if (severity_
+        != com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity.HARM_SEVERITY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, severity_);
+    }
+    if (java.lang.Float.floatToRawIntBits(severityScore_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, severityScore_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -433,6 +734,11 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
 
     if (category_ != other.category_) return false;
     if (probability_ != other.probability_) return false;
+    if (java.lang.Float.floatToIntBits(getProbabilityScore())
+        != java.lang.Float.floatToIntBits(other.getProbabilityScore())) return false;
+    if (severity_ != other.severity_) return false;
+    if (java.lang.Float.floatToIntBits(getSeverityScore())
+        != java.lang.Float.floatToIntBits(other.getSeverityScore())) return false;
     if (getBlocked() != other.getBlocked()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -449,6 +755,12 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + category_;
     hash = (37 * hash) + PROBABILITY_FIELD_NUMBER;
     hash = (53 * hash) + probability_;
+    hash = (37 * hash) + PROBABILITY_SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getProbabilityScore());
+    hash = (37 * hash) + SEVERITY_FIELD_NUMBER;
+    hash = (53 * hash) + severity_;
+    hash = (37 * hash) + SEVERITY_SCORE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getSeverityScore());
     hash = (37 * hash) + BLOCKED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBlocked());
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -592,6 +904,9 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       category_ = 0;
       probability_ = 0;
+      probabilityScore_ = 0F;
+      severity_ = 0;
+      severityScore_ = 0F;
       blocked_ = false;
       return this;
     }
@@ -636,6 +951,15 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
         result.probability_ = probability_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.probabilityScore_ = probabilityScore_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.severityScore_ = severityScore_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.blocked_ = blocked_;
       }
     }
@@ -692,6 +1016,15 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       if (other.probability_ != 0) {
         setProbabilityValue(other.getProbabilityValue());
       }
+      if (other.getProbabilityScore() != 0F) {
+        setProbabilityScore(other.getProbabilityScore());
+      }
+      if (other.severity_ != 0) {
+        setSeverityValue(other.getSeverityValue());
+      }
+      if (other.getSeverityScore() != 0F) {
+        setSeverityScore(other.getSeverityScore());
+      }
       if (other.getBlocked() != false) {
         setBlocked(other.getBlocked());
       }
@@ -736,9 +1069,27 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 blocked_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 24
+            case 45:
+              {
+                probabilityScore_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 45
+            case 48:
+              {
+                severity_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+            case 61:
+              {
+                severityScore_ = input.readFloat();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 61
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -963,6 +1314,215 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private float probabilityScore_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm probability score.
+     * </pre>
+     *
+     * <code>float probability_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The probabilityScore.
+     */
+    @java.lang.Override
+    public float getProbabilityScore() {
+      return probabilityScore_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm probability score.
+     * </pre>
+     *
+     * <code>float probability_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The probabilityScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProbabilityScore(float value) {
+
+      probabilityScore_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm probability score.
+     * </pre>
+     *
+     * <code>float probability_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProbabilityScore() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      probabilityScore_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int severity_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity levels in the content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for severity.
+     */
+    @java.lang.Override
+    public int getSeverityValue() {
+      return severity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity levels in the content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverityValue(int value) {
+      severity_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity levels in the content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The severity.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity getSeverity() {
+      com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity result =
+          com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity.forNumber(severity_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity levels in the content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The severity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverity(
+        com.google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      severity_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity levels in the content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSeverity() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      severity_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private float severityScore_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity score.
+     * </pre>
+     *
+     * <code>float severity_score = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The severityScore.
+     */
+    @java.lang.Override
+    public float getSeverityScore() {
+      return severityScore_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity score.
+     * </pre>
+     *
+     * <code>float severity_score = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The severityScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSeverityScore(float value) {
+
+      severityScore_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Harm severity score.
+     * </pre>
+     *
+     * <code>float severity_score = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSeverityScore() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      severityScore_ = 0F;
+      onChanged();
+      return this;
+    }
+
     private boolean blocked_;
     /**
      *
@@ -996,7 +1556,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
     public Builder setBlocked(boolean value) {
 
       blocked_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1013,7 +1573,7 @@ public final class SafetyRating extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlocked() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       blocked_ = false;
       onChanged();
       return this;

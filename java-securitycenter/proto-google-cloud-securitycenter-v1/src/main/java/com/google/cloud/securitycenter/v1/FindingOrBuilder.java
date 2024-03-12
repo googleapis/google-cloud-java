@@ -1763,6 +1763,41 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   *
+   * @return Whether the securityPosture field is set.
+   */
+  boolean hasSecurityPosture();
+  /**
+   *
+   *
+   * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   *
+   * @return The securityPosture.
+   */
+  com.google.cloud.securitycenter.v1.SecurityPosture getSecurityPosture();
+  /**
+   *
+   *
+   * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   */
+  com.google.cloud.securitycenter.v1.SecurityPostureOrBuilder getSecurityPostureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Log entries that are relevant to the finding.
    * </pre>
    *

@@ -463,6 +463,56 @@ public final class PipelineServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest,
+          com.google.longrunning.Operation>
+      getBatchDeletePipelineJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeletePipelineJobs",
+      requestType = com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest,
+          com.google.longrunning.Operation>
+      getBatchDeletePipelineJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest,
+            com.google.longrunning.Operation>
+        getBatchDeletePipelineJobsMethod;
+    if ((getBatchDeletePipelineJobsMethod = PipelineServiceGrpc.getBatchDeletePipelineJobsMethod)
+        == null) {
+      synchronized (PipelineServiceGrpc.class) {
+        if ((getBatchDeletePipelineJobsMethod =
+                PipelineServiceGrpc.getBatchDeletePipelineJobsMethod)
+            == null) {
+          PipelineServiceGrpc.getBatchDeletePipelineJobsMethod =
+              getBatchDeletePipelineJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchDeletePipelineJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PipelineServiceMethodDescriptorSupplier("BatchDeletePipelineJobs"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeletePipelineJobsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.CancelPipelineJobRequest, com.google.protobuf.Empty>
       getCancelPipelineJobMethod;
 
@@ -503,6 +553,56 @@ public final class PipelineServiceGrpc {
       }
     }
     return getCancelPipelineJobMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest,
+          com.google.longrunning.Operation>
+      getBatchCancelPipelineJobsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCancelPipelineJobs",
+      requestType = com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest,
+          com.google.longrunning.Operation>
+      getBatchCancelPipelineJobsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest,
+            com.google.longrunning.Operation>
+        getBatchCancelPipelineJobsMethod;
+    if ((getBatchCancelPipelineJobsMethod = PipelineServiceGrpc.getBatchCancelPipelineJobsMethod)
+        == null) {
+      synchronized (PipelineServiceGrpc.class) {
+        if ((getBatchCancelPipelineJobsMethod =
+                PipelineServiceGrpc.getBatchCancelPipelineJobsMethod)
+            == null) {
+          PipelineServiceGrpc.getBatchCancelPipelineJobsMethod =
+              getBatchCancelPipelineJobsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchCancelPipelineJobs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PipelineServiceMethodDescriptorSupplier("BatchCancelPipelineJobs"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCancelPipelineJobsMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -705,6 +805,22 @@ public final class PipelineServiceGrpc {
      *
      *
      * <pre>
+     * Batch deletes PipelineJobs
+     * The Operation is atomic. If it fails, none of the PipelineJobs are deleted.
+     * If it succeeds, all of the PipelineJobs are deleted.
+     * </pre>
+     */
+    default void batchDeletePipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeletePipelineJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Cancels a PipelineJob.
      * Starts asynchronous cancellation on the PipelineJob. The server
      * makes a best effort to cancel the pipeline, but success is not
@@ -725,6 +841,26 @@ public final class PipelineServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCancelPipelineJobMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch cancel PipelineJobs.
+     * Firstly the server will check if all the jobs are in non-terminal states,
+     * and skip the jobs that are already terminated.
+     * If the operation failed, none of the pipeline jobs are cancelled.
+     * The server will poll the states of all the pipeline jobs periodically
+     * to check the cancellation status.
+     * This operation will return an LRO.
+     * </pre>
+     */
+    default void batchCancelPipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCancelPipelineJobsMethod(), responseObserver);
     }
   }
 
@@ -932,6 +1068,24 @@ public final class PipelineServiceGrpc {
      *
      *
      * <pre>
+     * Batch deletes PipelineJobs
+     * The Operation is atomic. If it fails, none of the PipelineJobs are deleted.
+     * If it succeeds, all of the PipelineJobs are deleted.
+     * </pre>
+     */
+    public void batchDeletePipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeletePipelineJobsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Cancels a PipelineJob.
      * Starts asynchronous cancellation on the PipelineJob. The server
      * makes a best effort to cancel the pipeline, but success is not
@@ -952,6 +1106,28 @@ public final class PipelineServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelPipelineJobMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch cancel PipelineJobs.
+     * Firstly the server will check if all the jobs are in non-terminal states,
+     * and skip the jobs that are already terminated.
+     * If the operation failed, none of the pipeline jobs are cancelled.
+     * The server will poll the states of all the pipeline jobs periodically
+     * to check the cancellation status.
+     * This operation will return an LRO.
+     * </pre>
+     */
+    public void batchCancelPipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCancelPipelineJobsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1113,6 +1289,21 @@ public final class PipelineServiceGrpc {
      *
      *
      * <pre>
+     * Batch deletes PipelineJobs
+     * The Operation is atomic. If it fails, none of the PipelineJobs are deleted.
+     * If it succeeds, all of the PipelineJobs are deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeletePipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeletePipelineJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Cancels a PipelineJob.
      * Starts asynchronous cancellation on the PipelineJob. The server
      * makes a best effort to cancel the pipeline, but success is not
@@ -1132,6 +1323,25 @@ public final class PipelineServiceGrpc {
         com.google.cloud.aiplatform.v1.CancelPipelineJobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelPipelineJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch cancel PipelineJobs.
+     * Firstly the server will check if all the jobs are in non-terminal states,
+     * and skip the jobs that are already terminated.
+     * If the operation failed, none of the pipeline jobs are cancelled.
+     * The server will poll the states of all the pipeline jobs periodically
+     * to check the cancellation status.
+     * This operation will return an LRO.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCancelPipelineJobs(
+        com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCancelPipelineJobsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1300,6 +1510,22 @@ public final class PipelineServiceGrpc {
      *
      *
      * <pre>
+     * Batch deletes PipelineJobs
+     * The Operation is atomic. If it fails, none of the PipelineJobs are deleted.
+     * If it succeeds, all of the PipelineJobs are deleted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchDeletePipelineJobs(
+            com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeletePipelineJobsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Cancels a PipelineJob.
      * Starts asynchronous cancellation on the PipelineJob. The server
      * makes a best effort to cancel the pipeline, but success is not
@@ -1320,6 +1546,26 @@ public final class PipelineServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelPipelineJobMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batch cancel PipelineJobs.
+     * Firstly the server will check if all the jobs are in non-terminal states,
+     * and skip the jobs that are already terminated.
+     * If the operation failed, none of the pipeline jobs are cancelled.
+     * The server will poll the states of all the pipeline jobs periodically
+     * to check the cancellation status.
+     * This operation will return an LRO.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchCancelPipelineJobs(
+            com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCancelPipelineJobsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TRAINING_PIPELINE = 0;
@@ -1331,7 +1577,9 @@ public final class PipelineServiceGrpc {
   private static final int METHODID_GET_PIPELINE_JOB = 6;
   private static final int METHODID_LIST_PIPELINE_JOBS = 7;
   private static final int METHODID_DELETE_PIPELINE_JOB = 8;
-  private static final int METHODID_CANCEL_PIPELINE_JOB = 9;
+  private static final int METHODID_BATCH_DELETE_PIPELINE_JOBS = 9;
+  private static final int METHODID_CANCEL_PIPELINE_JOB = 10;
+  private static final int METHODID_BATCH_CANCEL_PIPELINE_JOBS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1402,10 +1650,20 @@ public final class PipelineServiceGrpc {
               (com.google.cloud.aiplatform.v1.DeletePipelineJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_BATCH_DELETE_PIPELINE_JOBS:
+          serviceImpl.batchDeletePipelineJobs(
+              (com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_CANCEL_PIPELINE_JOB:
           serviceImpl.cancelPipelineJob(
               (com.google.cloud.aiplatform.v1.CancelPipelineJobRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_CANCEL_PIPELINE_JOBS:
+          serviceImpl.batchCancelPipelineJobs(
+              (com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1486,11 +1744,25 @@ public final class PipelineServiceGrpc {
                     com.google.cloud.aiplatform.v1.DeletePipelineJobRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_PIPELINE_JOB)))
         .addMethod(
+            getBatchDeletePipelineJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.BatchDeletePipelineJobsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_BATCH_DELETE_PIPELINE_JOBS)))
+        .addMethod(
             getCancelPipelineJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1.CancelPipelineJobRequest,
                     com.google.protobuf.Empty>(service, METHODID_CANCEL_PIPELINE_JOB)))
+        .addMethod(
+            getBatchCancelPipelineJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.BatchCancelPipelineJobsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_BATCH_CANCEL_PIPELINE_JOBS)))
         .build();
   }
 
@@ -1551,7 +1823,9 @@ public final class PipelineServiceGrpc {
                       .addMethod(getGetPipelineJobMethod())
                       .addMethod(getListPipelineJobsMethod())
                       .addMethod(getDeletePipelineJobMethod())
+                      .addMethod(getBatchDeletePipelineJobsMethod())
                       .addMethod(getCancelPipelineJobMethod())
+                      .addMethod(getBatchCancelPipelineJobsMethod())
                       .build();
         }
       }

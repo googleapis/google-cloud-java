@@ -62,6 +62,7 @@ import javax.annotation.Generated;
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
@@ -77,6 +78,7 @@ import javax.annotation.Generated;
  *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
+ *           .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -243,6 +245,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
+   *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -258,6 +261,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -300,6 +304,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
+   *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -315,6 +320,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -357,6 +363,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
+   *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -372,6 +379,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setRankingExpression("rankingExpression2110320494")
    *           .setSafeSearch(true)
    *           .putAllUserLabels(new HashMap<String, String>())
+   *           .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);

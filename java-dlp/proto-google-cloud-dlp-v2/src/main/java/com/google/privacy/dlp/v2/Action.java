@@ -24,7 +24,8 @@ package com.google.privacy.dlp.v2;
  *
  * <pre>
  * A task to execute on the completion of a job.
- * See https://cloud.google.com/dlp/docs/concepts-actions to learn more.
+ * See https://cloud.google.com/sensitive-data-protection/docs/concepts-actions
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.Action}
@@ -860,7 +861,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    * Publish a message into a given Pub/Sub topic when DlpJob has completed. The
    * message contains a single field, `DlpJobName`, which is equal to the
    * finished job's
-   * [`DlpJob.name`](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
+   * [`DlpJob.name`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
    * Compatible with: Inspect, Risk
    * </pre>
    *
@@ -1125,7 +1126,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      * Publish a message into a given Pub/Sub topic when DlpJob has completed. The
      * message contains a single field, `DlpJobName`, which is equal to the
      * finished job's
-     * [`DlpJob.name`](https://cloud.google.com/dlp/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
+     * [`DlpJob.name`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
      * Compatible with: Inspect, Risk
      * </pre>
      *
@@ -6215,7 +6216,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A task to execute on the completion of a job.
-   * See https://cloud.google.com/dlp/docs/concepts-actions to learn more.
+   * See https://cloud.google.com/sensitive-data-protection/docs/concepts-actions
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Action}

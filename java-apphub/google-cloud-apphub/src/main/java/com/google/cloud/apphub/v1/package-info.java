@@ -21,8 +21,7 @@
  *
  * <p>======================= AppHubClient =======================
  *
- * <p>Service Description: The AppHub services allows users to enable toplogy and telemetry
- * configuration.
+ * <p>Service Description: The App Hub API allows you to manage App Hub resources.
  *
  * <p>Sample for AppHubClient:
  *

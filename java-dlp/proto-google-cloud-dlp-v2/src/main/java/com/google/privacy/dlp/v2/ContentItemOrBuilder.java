@@ -66,8 +66,8 @@ public interface ContentItemOrBuilder
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-   * learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -80,8 +80,8 @@ public interface ContentItemOrBuilder
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-   * learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -94,8 +94,8 @@ public interface ContentItemOrBuilder
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-   * learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>

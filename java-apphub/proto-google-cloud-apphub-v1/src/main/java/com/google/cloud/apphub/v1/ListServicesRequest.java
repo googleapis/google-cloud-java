@@ -74,7 +74,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Fully qualified name of the parent Application to list Services
+   * for. Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -99,7 +101,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Fully qualified name of the parent Application to list Services
+   * for. Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -733,7 +737,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the parent Application to list Services
+     * for. Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -757,7 +763,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the parent Application to list Services
+     * for. Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -781,7 +789,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the parent Application to list Services
+     * for. Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -804,7 +814,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the parent Application to list Services
+     * for. Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -823,7 +835,9 @@ public final class ListServicesRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Fully qualified name of the parent Application to list Services
+     * for. Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>

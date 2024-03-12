@@ -69,7 +69,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Discovered workload if exists, empty otherwise.
+   * Discovered Workload if exists, empty otherwise.
    * </pre>
    *
    * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -84,7 +84,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Discovered workload if exists, empty otherwise.
+   * Discovered Workload if exists, empty otherwise.
    * </pre>
    *
    * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -101,7 +101,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Discovered workload if exists, empty otherwise.
+   * Discovered Workload if exists, empty otherwise.
    * </pre>
    *
    * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -489,7 +489,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -503,7 +503,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -523,7 +523,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -545,7 +545,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -565,7 +565,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -593,7 +593,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -612,7 +612,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -626,7 +626,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>
@@ -644,7 +644,7 @@ public final class LookupDiscoveredWorkloadResponse extends com.google.protobuf.
      *
      *
      * <pre>
-     * Discovered workload if exists, empty otherwise.
+     * Discovered Workload if exists, empty otherwise.
      * </pre>
      *
      * <code>.google.cloud.apphub.v1.DiscoveredWorkload discovered_workload = 1;</code>

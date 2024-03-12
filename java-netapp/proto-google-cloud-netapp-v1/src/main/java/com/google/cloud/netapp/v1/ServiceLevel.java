@@ -23,7 +23,7 @@ package com.google.cloud.netapp.v1;
  *
  *
  * <pre>
- * The service levels - Storage Pool, Volumes
+ * The service level of a storage pool and its volumes.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.netapp.v1.ServiceLevel}
@@ -63,7 +63,7 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Standard (Software offering)
+   * Standard service level.
    * </pre>
    *
    * <code>STANDARD = 3;</code>
@@ -106,7 +106,7 @@ public enum ServiceLevel implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Standard (Software offering)
+   * Standard service level.
    * </pre>
    *
    * <code>STANDARD = 3;</code>

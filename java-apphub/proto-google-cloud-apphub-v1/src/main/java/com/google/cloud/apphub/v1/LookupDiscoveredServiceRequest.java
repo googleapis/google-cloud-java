@@ -73,7 +73,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to lookup Discovered Service in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -98,7 +99,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to lookup Discovered Service in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -128,8 +130,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. GCP resource URI to find service for
-   * Accepts both project number and project id and does translation when
+   * Required. Resource URI to find DiscoveredService for.
+   * Accepts both project number and project ID and does translation when
    * needed.
    * </pre>
    *
@@ -153,8 +155,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. GCP resource URI to find service for
-   * Accepts both project number and project id and does translation when
+   * Required. Resource URI to find DiscoveredService for.
+   * Accepts both project number and project ID and does translation when
    * needed.
    * </pre>
    *
@@ -547,7 +549,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Host project ID and location to lookup Discovered Service in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -571,7 +574,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Host project ID and location to lookup Discovered Service in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -595,7 +599,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Host project ID and location to lookup Discovered Service in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -618,7 +623,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Host project ID and location to lookup Discovered Service in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -637,7 +643,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Value for parent.
+     * Required. Host project ID and location to lookup Discovered Service in.
+     * Expected format: `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -663,8 +670,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. GCP resource URI to find service for
-     * Accepts both project number and project id and does translation when
+     * Required. Resource URI to find DiscoveredService for.
+     * Accepts both project number and project ID and does translation when
      * needed.
      * </pre>
      *
@@ -687,8 +694,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. GCP resource URI to find service for
-     * Accepts both project number and project id and does translation when
+     * Required. Resource URI to find DiscoveredService for.
+     * Accepts both project number and project ID and does translation when
      * needed.
      * </pre>
      *
@@ -711,8 +718,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. GCP resource URI to find service for
-     * Accepts both project number and project id and does translation when
+     * Required. Resource URI to find DiscoveredService for.
+     * Accepts both project number and project ID and does translation when
      * needed.
      * </pre>
      *
@@ -734,8 +741,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. GCP resource URI to find service for
-     * Accepts both project number and project id and does translation when
+     * Required. Resource URI to find DiscoveredService for.
+     * Accepts both project number and project ID and does translation when
      * needed.
      * </pre>
      *
@@ -753,8 +760,8 @@ public final class LookupDiscoveredServiceRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. GCP resource URI to find service for
-     * Accepts both project number and project id and does translation when
+     * Required. Resource URI to find DiscoveredService for.
+     * Accepts both project number and project ID and does translation when
      * needed.
      * </pre>
      *

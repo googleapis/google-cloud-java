@@ -28,7 +28,9 @@ public interface GetServiceProjectAttachmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the service project attachment to
+   * retrieve. Expected format:
+   * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface GetServiceProjectAttachmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the service project attachment to
+   * retrieve. Expected format:
+   * `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * </pre>
    *
    * <code>

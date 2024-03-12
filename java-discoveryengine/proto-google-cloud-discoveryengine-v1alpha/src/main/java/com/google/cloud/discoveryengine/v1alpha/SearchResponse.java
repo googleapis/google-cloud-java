@@ -146,6 +146,50 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    boolean hasChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    com.google.cloud.discoveryengine.v1alpha.Chunk getChunk();
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+     */
+    com.google.cloud.discoveryengine.v1alpha.ChunkOrBuilder getChunkOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Google provided available scores.
      * </pre>
      *
@@ -370,6 +414,65 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           : document_;
     }
 
+    public static final int CHUNK_FIELD_NUMBER = 18;
+    private com.google.cloud.discoveryengine.v1alpha.Chunk chunk_;
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+     *
+     * @return Whether the chunk field is set.
+     */
+    @java.lang.Override
+    public boolean hasChunk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+     *
+     * @return The chunk.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1alpha.Chunk getChunk() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1alpha.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The chunk data in the search response if the
+     * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+     * is set to
+     * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1alpha.ChunkOrBuilder getChunkOrBuilder() {
+      return chunk_ == null
+          ? com.google.cloud.discoveryengine.v1alpha.Chunk.getDefaultInstance()
+          : chunk_;
+    }
+
     public static final int MODEL_SCORES_FIELD_NUMBER = 4;
 
     private static final class ModelScoresDefaultEntryHolder {
@@ -513,6 +616,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 4);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(18, getChunk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -541,6 +647,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, modelScores__);
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunk());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -562,6 +671,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         if (!getDocument().equals(other.getDocument())) return false;
       }
+      if (hasChunk() != other.hasChunk()) return false;
+      if (hasChunk()) {
+        if (!getChunk().equals(other.getChunk())) return false;
+      }
       if (!internalGetModelScores().equals(other.internalGetModelScores())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -579,6 +692,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getDocument().hashCode();
+      }
+      if (hasChunk()) {
+        hash = (37 * hash) + CHUNK_FIELD_NUMBER;
+        hash = (53 * hash) + getChunk().hashCode();
       }
       if (!internalGetModelScores().getMap().isEmpty()) {
         hash = (37 * hash) + MODEL_SCORES_FIELD_NUMBER;
@@ -752,6 +869,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getDocumentFieldBuilder();
+          getChunkFieldBuilder();
         }
       }
 
@@ -764,6 +882,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (documentBuilder_ != null) {
           documentBuilder_.dispose();
           documentBuilder_ = null;
+        }
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
         }
         internalGetMutableModelScores().clear();
         return this;
@@ -815,6 +938,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.chunk_ = chunkBuilder_ == null ? chunk_ : chunkBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.modelScores_ =
               internalGetModelScores().build(ModelScoresDefaultEntryHolder.defaultEntry);
         }
@@ -880,8 +1007,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDocument()) {
           mergeDocument(other.getDocument());
         }
+        if (other.hasChunk()) {
+          mergeChunk(other.getChunk());
+        }
         internalGetMutableModelScores().mergeFrom(other.internalGetModelScores());
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -931,9 +1061,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   internalGetMutableModelScores()
                       .ensureBuilderMap()
                       .put(modelScores__.getKey(), modelScores__.getValue());
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 146:
+                {
+                  input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 146
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1260,6 +1396,219 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return documentBuilder_;
       }
 
+      private com.google.cloud.discoveryengine.v1alpha.Chunk chunk_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1alpha.Chunk,
+              com.google.cloud.discoveryengine.v1alpha.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1alpha.ChunkOrBuilder>
+          chunkBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       *
+       * @return Whether the chunk field is set.
+       */
+      public boolean hasChunk() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       *
+       * @return The chunk.
+       */
+      public com.google.cloud.discoveryengine.v1alpha.Chunk getChunk() {
+        if (chunkBuilder_ == null) {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1alpha.Chunk.getDefaultInstance()
+              : chunk_;
+        } else {
+          return chunkBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(com.google.cloud.discoveryengine.v1alpha.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunk_ = value;
+        } else {
+          chunkBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       */
+      public Builder setChunk(
+          com.google.cloud.discoveryengine.v1alpha.Chunk.Builder builderForValue) {
+        if (chunkBuilder_ == null) {
+          chunk_ = builderForValue.build();
+        } else {
+          chunkBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       */
+      public Builder mergeChunk(com.google.cloud.discoveryengine.v1alpha.Chunk value) {
+        if (chunkBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && chunk_ != null
+              && chunk_ != com.google.cloud.discoveryengine.v1alpha.Chunk.getDefaultInstance()) {
+            getChunkBuilder().mergeFrom(value);
+          } else {
+            chunk_ = value;
+          }
+        } else {
+          chunkBuilder_.mergeFrom(value);
+        }
+        if (chunk_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       */
+      public Builder clearChunk() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        chunk_ = null;
+        if (chunkBuilder_ != null) {
+          chunkBuilder_.dispose();
+          chunkBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1alpha.Chunk.Builder getChunkBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getChunkFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       */
+      public com.google.cloud.discoveryengine.v1alpha.ChunkOrBuilder getChunkOrBuilder() {
+        if (chunkBuilder_ != null) {
+          return chunkBuilder_.getMessageOrBuilder();
+        } else {
+          return chunk_ == null
+              ? com.google.cloud.discoveryengine.v1alpha.Chunk.getDefaultInstance()
+              : chunk_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The chunk data in the search response if the
+       * [SearchRequest.ContentSearchSpec.search_result_mode][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.search_result_mode]
+       * is set to
+       * [CHUNKS][google.cloud.discoveryengine.v1alpha.SearchRequest.ContentSearchSpec.SearchResultMode.CHUNKS].
+       * </pre>
+       *
+       * <code>.google.cloud.discoveryengine.v1alpha.Chunk chunk = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1alpha.Chunk,
+              com.google.cloud.discoveryengine.v1alpha.Chunk.Builder,
+              com.google.cloud.discoveryengine.v1alpha.ChunkOrBuilder>
+          getChunkFieldBuilder() {
+        if (chunkBuilder_ == null) {
+          chunkBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1alpha.Chunk,
+                  com.google.cloud.discoveryengine.v1alpha.Chunk.Builder,
+                  com.google.cloud.discoveryengine.v1alpha.ChunkOrBuilder>(
+                  getChunk(), getParentForChildren(), isClean());
+          chunk_ = null;
+        }
+        return chunkBuilder_;
+      }
+
       private static final class ModelScoresConverter
           implements com.google.protobuf.MapFieldBuilder.Converter<
               java.lang.String,
@@ -1312,7 +1661,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (modelScores_ == null) {
           modelScores_ = new com.google.protobuf.MapFieldBuilder<>(modelScoresConverter);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return modelScores_;
       }
@@ -1409,7 +1758,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
 
       public Builder clearModelScores() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableModelScores().clear();
         return this;
       }
@@ -1434,7 +1783,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1alpha.DoubleList>
           getMutableModelScores() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return internalGetMutableModelScores().ensureMessageMap();
       }
       /**
@@ -1456,7 +1805,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException("map value");
         }
         internalGetMutableModelScores().ensureBuilderMap().put(key, value);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1480,7 +1829,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
         }
         internalGetMutableModelScores().ensureBuilderMap().putAll(values);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -6827,6 +7176,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         getSafetyAttributesOrBuilder();
 
     /**
+     *
+     *
+     * <pre>
+     * Summary with metadata information.
+     * </pre>
+     *
      * <code>
      * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
      * </code>
@@ -6835,6 +7190,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     boolean hasSummaryWithMetadata();
     /**
+     *
+     *
+     * <pre>
+     * Summary with metadata information.
+     * </pre>
+     *
      * <code>
      * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
      * </code>
@@ -6844,6 +7205,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata
         getSummaryWithMetadata();
     /**
+     *
+     *
+     * <pre>
+     * Summary with metadata information.
+     * </pre>
+     *
      * <code>
      * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
      * </code>
@@ -11400,7 +11767,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GCS or HTTP uri for the document.
+       * Cloud Storage or HTTP uri for the document.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -11412,7 +11779,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GCS or HTTP uri for the document.
+       * Cloud Storage or HTTP uri for the document.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -11590,7 +11957,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GCS or HTTP uri for the document.
+       * Cloud Storage or HTTP uri for the document.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -11613,7 +11980,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * GCS or HTTP uri for the document.
+       * Cloud Storage or HTTP uri for the document.
        * </pre>
        *
        * <code>string uri = 3;</code>
@@ -12296,7 +12663,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * GCS or HTTP uri for the document.
+         * Cloud Storage or HTTP uri for the document.
          * </pre>
          *
          * <code>string uri = 3;</code>
@@ -12318,7 +12685,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * GCS or HTTP uri for the document.
+         * Cloud Storage or HTTP uri for the document.
          * </pre>
          *
          * <code>string uri = 3;</code>
@@ -12340,7 +12707,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * GCS or HTTP uri for the document.
+         * Cloud Storage or HTTP uri for the document.
          * </pre>
          *
          * <code>string uri = 3;</code>
@@ -12361,7 +12728,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * GCS or HTTP uri for the document.
+         * Cloud Storage or HTTP uri for the document.
          * </pre>
          *
          * <code>string uri = 3;</code>
@@ -12378,7 +12745,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * GCS or HTTP uri for the document.
+         * Cloud Storage or HTTP uri for the document.
          * </pre>
          *
          * <code>string uri = 3;</code>
@@ -14449,6 +14816,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     private com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata
         summaryWithMetadata_;
     /**
+     *
+     *
+     * <pre>
+     * Summary with metadata information.
+     * </pre>
+     *
      * <code>
      * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
      * </code>
@@ -14460,6 +14833,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * Summary with metadata information.
+     * </pre>
+     *
      * <code>
      * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
      * </code>
@@ -14475,6 +14854,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           : summaryWithMetadata_;
     }
     /**
+     *
+     *
+     * <pre>
+     * Summary with metadata information.
+     * </pre>
+     *
      * <code>
      * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
      * </code>
@@ -15617,6 +16002,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   .SummaryWithMetadataOrBuilder>
           summaryWithMetadataBuilder_;
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15627,6 +16018,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15645,6 +16042,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15665,6 +16068,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15683,6 +16092,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15710,6 +16125,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15725,6 +16146,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15737,6 +16164,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return getSummaryWithMetadataFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>
@@ -15754,6 +16187,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
       }
       /**
+       *
+       *
+       * <pre>
+       * Summary with metadata information.
+       * </pre>
+       *
        * <code>
        * .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.SummaryWithMetadata summary_with_metadata = 4;
        * </code>

@@ -28,7 +28,9 @@ public interface DeleteApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Application to delete.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface DeleteApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Application to delete.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>

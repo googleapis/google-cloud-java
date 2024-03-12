@@ -46,33 +46,42 @@ public final class DataStoreProto {
           + "ngine.v1alpha\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\0321googl"
           + "e/cloud/discoveryengine/v1alpha/common.p"
-          + "roto\032\037google/protobuf/timestamp.proto\"\306\005"
-          + "\n\tDataStore\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014displa"
-          + "y_name\030\002 \001(\tB\003\340A\002\022V\n\021industry_vertical\030\003"
-          + " \001(\01626.google.cloud.discoveryengine.v1al"
-          + "pha.IndustryVerticalB\003\340A\005\022J\n\016solution_ty"
-          + "pes\030\005 \003(\01622.google.cloud.discoveryengine"
-          + ".v1alpha.SolutionType\022\036\n\021default_schema_"
-          + "id\030\007 \001(\tB\003\340A\003\022Z\n\016content_config\030\006 \001(\0162=."
-          + "google.cloud.discoveryengine.v1alpha.Dat"
-          + "aStore.ContentConfigB\003\340A\005\0224\n\013create_time"
-          + "\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\""
-          + "i\n\rContentConfig\022\036\n\032CONTENT_CONFIG_UNSPE"
-          + "CIFIED\020\000\022\016\n\nNO_CONTENT\020\001\022\024\n\020CONTENT_REQU"
-          + "IRED\020\002\022\022\n\016PUBLIC_WEBSITE\020\003:\311\001\352A\305\001\n(disco"
-          + "veryengine.googleapis.com/DataStore\022?pro"
-          + "jects/{project}/locations/{location}/dat"
-          + "aStores/{data_store}\022Xprojects/{project}"
-          + "/locations/{location}/collections/{colle"
-          + "ction}/dataStores/{data_store}B\232\002\n(com.g"
-          + "oogle.cloud.discoveryengine.v1alphaB\016Dat"
-          + "aStoreProtoP\001ZRcloud.google.com/go/disco"
-          + "veryengine/apiv1alpha/discoveryenginepb;"
-          + "discoveryenginepb\242\002\017DISCOVERYENGINE\252\002$Go"
-          + "ogle.Cloud.DiscoveryEngine.V1Alpha\312\002$Goo"
-          + "gle\\Cloud\\DiscoveryEngine\\V1alpha\352\002\'Goog"
-          + "le::Cloud::DiscoveryEngine::V1alphab\006pro"
-          + "to3"
+          + "roto\032Egoogle/cloud/discoveryengine/v1alp"
+          + "ha/document_processing_config.proto\0321goo"
+          + "gle/cloud/discoveryengine/v1alpha/schema"
+          + ".proto\032\037google/protobuf/timestamp.proto\""
+          + "\325\007\n\tDataStore\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\031\n\014disp"
+          + "lay_name\030\002 \001(\tB\003\340A\002\022V\n\021industry_vertical"
+          + "\030\003 \001(\01626.google.cloud.discoveryengine.v1"
+          + "alpha.IndustryVerticalB\003\340A\005\022J\n\016solution_"
+          + "types\030\005 \003(\01622.google.cloud.discoveryengi"
+          + "ne.v1alpha.SolutionType\022\036\n\021default_schem"
+          + "a_id\030\007 \001(\tB\003\340A\003\022Z\n\016content_config\030\006 \001(\0162"
+          + "=.google.cloud.discoveryengine.v1alpha.D"
+          + "ataStore.ContentConfigB\003\340A\005\0224\n\013create_ti"
+          + "me\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\022H\n\nidp_config\030\025 \001(\0132/.google.cloud.dis"
+          + "coveryengine.v1alpha.IdpConfigB\003\340A\003\022\030\n\013a"
+          + "cl_enabled\030\030 \001(\010B\003\340A\005\022b\n\032document_proces"
+          + "sing_config\030\033 \001(\0132>.google.cloud.discove"
+          + "ryengine.v1alpha.DocumentProcessingConfi"
+          + "g\022E\n\017starting_schema\030\034 \001(\0132,.google.clou"
+          + "d.discoveryengine.v1alpha.Schema\"i\n\rCont"
+          + "entConfig\022\036\n\032CONTENT_CONFIG_UNSPECIFIED\020"
+          + "\000\022\016\n\nNO_CONTENT\020\001\022\024\n\020CONTENT_REQUIRED\020\002\022"
+          + "\022\n\016PUBLIC_WEBSITE\020\003:\311\001\352A\305\001\n(discoveryeng"
+          + "ine.googleapis.com/DataStore\022?projects/{"
+          + "project}/locations/{location}/dataStores"
+          + "/{data_store}\022Xprojects/{project}/locati"
+          + "ons/{location}/collections/{collection}/"
+          + "dataStores/{data_store}B\232\002\n(com.google.c"
+          + "loud.discoveryengine.v1alphaB\016DataStoreP"
+          + "rotoP\001ZRcloud.google.com/go/discoveryeng"
+          + "ine/apiv1alpha/discoveryenginepb;discove"
+          + "ryenginepb\242\002\017DISCOVERYENGINE\252\002$Google.Cl"
+          + "oud.DiscoveryEngine.V1Alpha\312\002$Google\\Clo"
+          + "ud\\DiscoveryEngine\\V1alpha\352\002\'Google::Clo"
+          + "ud::DiscoveryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,6 +90,9 @@ public final class DataStoreProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigProto
+                  .getDescriptor(),
+              com.google.cloud.discoveryengine.v1alpha.SchemaProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1alpha_DataStore_descriptor =
@@ -96,6 +108,10 @@ public final class DataStoreProto {
               "DefaultSchemaId",
               "ContentConfig",
               "CreateTime",
+              "IdpConfig",
+              "AclEnabled",
+              "DocumentProcessingConfig",
+              "StartingSchema",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -106,6 +122,8 @@ public final class DataStoreProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1alpha.CommonProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1alpha.SchemaProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

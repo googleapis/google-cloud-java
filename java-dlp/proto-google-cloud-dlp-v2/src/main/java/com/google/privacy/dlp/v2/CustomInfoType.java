@@ -66,7 +66,15 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.CustomInfoType.Builder.class);
   }
 
-  /** Protobuf enum {@code google.privacy.dlp.v2.CustomInfoType.ExclusionType} */
+  /**
+   *
+   *
+   * <pre>
+   * Type of exclusion rule.
+   * </pre>
+   *
+   * Protobuf enum {@code google.privacy.dlp.v2.CustomInfoType.ExclusionType}
+   */
   public enum ExclusionType implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
@@ -298,10 +306,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * Dictionary words containing a large number of characters that are not
    * letters or digits may result in unexpected findings because such characters
    * are treated as whitespace. The
-   * [limits](https://cloud.google.com/dlp/limits) page contains details about
-   * the size limits of dictionaries. For dictionaries that do not fit within
-   * these constraints, consider using `LargeCustomDictionaryConfig` in the
-   * `StoredInfoType` API.
+   * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+   * contains details about the size limits of dictionaries. For dictionaries
+   * that do not fit within these constraints, consider using
+   * `LargeCustomDictionaryConfig` in the `StoredInfoType` API.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
@@ -1513,10 +1521,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * Dictionary words containing a large number of characters that are not
      * letters or digits may result in unexpected findings because such characters
      * are treated as whitespace. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries. For dictionaries that do not fit within
-     * these constraints, consider using `LargeCustomDictionaryConfig` in the
-     * `StoredInfoType` API.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries. For dictionaries
+     * that do not fit within these constraints, consider using
+     * `LargeCustomDictionaryConfig` in the `StoredInfoType` API.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
@@ -3206,7 +3214,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Message for detecting output from deidentification transformations
    * such as
-   * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
+   * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
    * These types of transformations are
    * those that perform pseudonymization, thereby producing a "surrogate" as
    * output. This should be used in conjunction with a field on the
@@ -3407,7 +3415,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Message for detecting output from deidentification transformations
      * such as
-     * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
+     * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
      * These types of transformations are
      * those that perform pseudonymization, thereby producing a "surrogate" as
      * output. This should be used in conjunction with a field on the
@@ -3737,7 +3745,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * if you want to modify the likelihood of an entire column of findngs,
        * set this to 1. For more information, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
@@ -3812,7 +3820,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * if you want to modify the likelihood of an entire column of findngs,
        * set this to 1. For more information, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
@@ -4228,7 +4236,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * if you want to modify the likelihood of an entire column of findngs,
          * set this to 1. For more information, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
@@ -4247,7 +4255,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * if you want to modify the likelihood of an entire column of findngs,
          * set this to 1. For more information, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
@@ -4270,7 +4278,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * if you want to modify the likelihood of an entire column of findngs,
          * set this to 1. For more information, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
@@ -5456,7 +5464,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -5480,7 +5488,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -5504,7 +5512,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -5667,7 +5675,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -5694,7 +5702,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -5723,7 +5731,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6457,7 +6465,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6483,7 +6491,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6516,7 +6524,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6551,7 +6559,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6584,7 +6592,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6626,7 +6634,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6657,7 +6665,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6684,7 +6692,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6716,7 +6724,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>

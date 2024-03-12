@@ -122,4 +122,17 @@ public interface PurgeDocumentsMetadataOrBuilder
    * @return The failureCount.
    */
   long getFailureCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Count of entries that were ignored as entries were not found.
+   * </pre>
+   *
+   * <code>int64 ignored_count = 5;</code>
+   *
+   * @return The ignoredCount.
+   */
+  long getIgnoredCount();
 }

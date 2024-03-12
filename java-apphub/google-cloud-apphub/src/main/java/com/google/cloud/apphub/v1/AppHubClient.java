@@ -50,8 +50,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: The AppHub services allows users to enable toplogy and telemetry
- * configuration.
+ * Service Description: The App Hub API allows you to manage App Hub resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -81,7 +80,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> LookupServiceProjectAttachment</td>
- *      <td><p> Looks up a service project attachment. You can call this API from either a host or service project.</td>
+ *      <td><p> Lists a service project attachment for a given service project. You can call this API from any project to find if it is attached to a host project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -100,7 +99,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListServiceProjectAttachments</td>
- *      <td><p> List service projects attached to the host project.</td>
+ *      <td><p> Lists service projects attached to the host project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +139,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetServiceProjectAttachment</td>
- *      <td><p> Gets a service project attached to the host project.</td>
+ *      <td><p> Gets a service project attachment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -159,7 +158,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteServiceProjectAttachment</td>
- *      <td><p> Deletes a service project attached to the host project.</td>
+ *      <td><p> Deletes a service project attachment.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -179,7 +178,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DetachServiceProjectAttachment</td>
- *      <td><p> Detaches a service project from a host project. You can call this API from either a host or service project.</td>
+ *      <td><p> Detaches a service project from a host project. You can call this API from any service project without needing access to the host project that it is attached to.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -198,7 +197,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDiscoveredServices</td>
- *      <td><p> Lists discovered services that can be added to an application in a host project and location.</td>
+ *      <td><p> Lists Discovered Services that can be added to an Application in a host project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -218,7 +217,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetDiscoveredService</td>
- *      <td><p> Gets a discovered service in a host project and location.</td>
+ *      <td><p> Gets a Discovered Service in a host project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -237,7 +236,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> LookupDiscoveredService</td>
- *      <td><p> Looks up a discovered service in a host project and location and with a given resource URI.</td>
+ *      <td><p> Lists a Discovered Service in a host project and location, with a given resource URI.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -256,7 +255,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListServices</td>
- *      <td><p> List Services in an Application.</td>
+ *      <td><p> Lists Services in an Application.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -334,7 +333,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteService</td>
- *      <td><p> Deletes a Service in an Application.</td>
+ *      <td><p> Deletes a Service from an Application.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -354,7 +353,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListDiscoveredWorkloads</td>
- *      <td><p> Lists discovered workloads that can be added to an application in a host project and location.</td>
+ *      <td><p> Lists Discovered Workloads that can be added to an Application in a host project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -374,7 +373,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetDiscoveredWorkload</td>
- *      <td><p> Gets a discovered workload in a host project and location.</td>
+ *      <td><p> Gets a Discovered Workload in a host project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -393,7 +392,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> LookupDiscoveredWorkload</td>
- *      <td><p> Looks up a discovered Workload in a host project and location and with a given resource URI.</td>
+ *      <td><p> Lists a Discovered Workload in a host project and location, with a given resource URI.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -490,7 +489,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteWorkload</td>
- *      <td><p> Deletes a Workload in an Application.</td>
+ *      <td><p> Deletes a Workload from an Application.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -807,8 +806,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a service project attachment. You can call this API from either a host or service
-   * project.
+   * Lists a service project attachment for a given service project. You can call this API from any
+   * project to find if it is attached to a host project.
    *
    * <p>Sample code:
    *
@@ -825,7 +824,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Service project ID and location to lookup service project attachment for.
+   *     Only global location is supported. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupServiceProjectAttachmentResponse lookupServiceProjectAttachment(
@@ -839,8 +840,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a service project attachment. You can call this API from either a host or service
-   * project.
+   * Lists a service project attachment for a given service project. You can call this API from any
+   * project to find if it is attached to a host project.
    *
    * <p>Sample code:
    *
@@ -857,7 +858,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Service project ID and location to lookup service project attachment for.
+   *     Only global location is supported. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupServiceProjectAttachmentResponse lookupServiceProjectAttachment(String name) {
@@ -868,8 +871,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a service project attachment. You can call this API from either a host or service
-   * project.
+   * Lists a service project attachment for a given service project. You can call this API from any
+   * project to find if it is attached to a host project.
    *
    * <p>Sample code:
    *
@@ -899,8 +902,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a service project attachment. You can call this API from either a host or service
-   * project.
+   * Lists a service project attachment for a given service project. You can call this API from any
+   * project to find if it is attached to a host project.
    *
    * <p>Sample code:
    *
@@ -930,7 +933,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List service projects attached to the host project.
+   * Lists service projects attached to the host project.
    *
    * <p>Sample code:
    *
@@ -949,7 +952,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Host project ID and location to list service project attachments. Only
+   *     global location is supported. Expected format: `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceProjectAttachmentsPagedResponse listServiceProjectAttachments(
@@ -963,7 +967,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List service projects attached to the host project.
+   * Lists service projects attached to the host project.
    *
    * <p>Sample code:
    *
@@ -982,7 +986,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Host project ID and location to list service project attachments. Only
+   *     global location is supported. Expected format: `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceProjectAttachmentsPagedResponse listServiceProjectAttachments(
@@ -994,7 +999,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List service projects attached to the host project.
+   * Lists service projects attached to the host project.
    *
    * <p>Sample code:
    *
@@ -1030,7 +1035,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List service projects attached to the host project.
+   * Lists service projects attached to the host project.
    *
    * <p>Sample code:
    *
@@ -1066,7 +1071,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List service projects attached to the host project.
+   * Lists service projects attached to the host project.
    *
    * <p>Sample code:
    *
@@ -1132,11 +1137,13 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Host project ID and location to which service project is being
+   *     attached. Only global location is supported. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @param serviceProjectAttachment Required. The resource being created.
    * @param serviceProjectAttachmentId Required. The service project attachment identifier must
-   *     contain the project_id of the service project specified in the
-   *     service_project_attachment.service_project field. Hint: "projects/{project_id}"
+   *     contain the project id of the service project specified in the
+   *     service_project_attachment.service_project field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ServiceProjectAttachment, OperationMetadata>
@@ -1178,11 +1185,13 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Host project ID and location to which service project is being
+   *     attached. Only global location is supported. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @param serviceProjectAttachment Required. The resource being created.
    * @param serviceProjectAttachmentId Required. The service project attachment identifier must
-   *     contain the project_id of the service project specified in the
-   *     service_project_attachment.service_project field. Hint: "projects/{project_id}"
+   *     contain the project id of the service project specified in the
+   *     service_project_attachment.service_project field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ServiceProjectAttachment, OperationMetadata>
@@ -1299,7 +1308,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a service project attached to the host project.
+   * Gets a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1317,7 +1326,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the service project attachment to retrieve.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceProjectAttachment getServiceProjectAttachment(
@@ -1331,7 +1342,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a service project attached to the host project.
+   * Gets a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1349,7 +1360,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the service project attachment to retrieve.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceProjectAttachment getServiceProjectAttachment(String name) {
@@ -1360,7 +1373,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a service project attached to the host project.
+   * Gets a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1392,7 +1405,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a service project attached to the host project.
+   * Gets a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1424,7 +1437,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a service project attached to the host project.
+   * Deletes a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1442,7 +1455,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the service project attachment to delete.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceProjectAttachmentAsync(
@@ -1456,7 +1471,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a service project attached to the host project.
+   * Deletes a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1474,7 +1489,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the service project attachment to delete.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/serviceProjectAttachments/{serviceProjectAttachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceProjectAttachmentAsync(
@@ -1486,7 +1503,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a service project attached to the host project.
+   * Deletes a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1519,7 +1536,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a service project attached to the host project.
+   * Deletes a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1552,7 +1569,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a service project attached to the host project.
+   * Deletes a service project attachment.
    *
    * <p>Sample code:
    *
@@ -1585,8 +1602,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Detaches a service project from a host project. You can call this API from either a host or
-   * service project.
+   * Detaches a service project from a host project. You can call this API from any service project
+   * without needing access to the host project that it is attached to.
    *
    * <p>Sample code:
    *
@@ -1603,7 +1620,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Service project id and location to detach from a host project. Only
+   *     global location is supported. Expected format: `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetachServiceProjectAttachmentResponse detachServiceProjectAttachment(
@@ -1617,8 +1635,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Detaches a service project from a host project. You can call this API from either a host or
-   * service project.
+   * Detaches a service project from a host project. You can call this API from any service project
+   * without needing access to the host project that it is attached to.
    *
    * <p>Sample code:
    *
@@ -1635,7 +1653,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Service project id and location to detach from a host project. Only
+   *     global location is supported. Expected format: `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetachServiceProjectAttachmentResponse detachServiceProjectAttachment(String name) {
@@ -1646,8 +1665,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Detaches a service project from a host project. You can call this API from either a host or
-   * service project.
+   * Detaches a service project from a host project. You can call this API from any service project
+   * without needing access to the host project that it is attached to.
    *
    * <p>Sample code:
    *
@@ -1677,8 +1696,8 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Detaches a service project from a host project. You can call this API from either a host or
-   * service project.
+   * Detaches a service project from a host project. You can call this API from any service project
+   * without needing access to the host project that it is attached to.
    *
    * <p>Sample code:
    *
@@ -1708,7 +1727,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered services that can be added to an application in a host project and location.
+   * Lists Discovered Services that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1726,7 +1745,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to list Discovered Services on. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDiscoveredServicesPagedResponse listDiscoveredServices(LocationName parent) {
@@ -1739,7 +1759,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered services that can be added to an application in a host project and location.
+   * Lists Discovered Services that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1757,7 +1777,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to list Discovered Services on. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDiscoveredServicesPagedResponse listDiscoveredServices(String parent) {
@@ -1768,7 +1789,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered services that can be added to an application in a host project and location.
+   * Lists Discovered Services that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1803,7 +1824,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered services that can be added to an application in a host project and location.
+   * Lists Discovered Services that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1838,7 +1859,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered services that can be added to an application in a host project and location.
+   * Lists Discovered Services that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1880,7 +1901,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered service in a host project and location.
+   * Gets a Discovered Service in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1897,7 +1918,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Discovered Service to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/discoveredServices/{discoveredService}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DiscoveredService getDiscoveredService(DiscoveredServiceName name) {
@@ -1910,7 +1932,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered service in a host project and location.
+   * Gets a Discovered Service in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1927,7 +1949,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Discovered Service to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/discoveredServices/{discoveredService}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DiscoveredService getDiscoveredService(String name) {
@@ -1938,7 +1961,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered service in a host project and location.
+   * Gets a Discovered Service in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1968,7 +1991,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered service in a host project and location.
+   * Gets a Discovered Service in a host project and location.
    *
    * <p>Sample code:
    *
@@ -1999,7 +2022,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered service in a host project and location and with a given resource URI.
+   * Lists a Discovered Service in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -2016,9 +2039,10 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
-   * @param uri Required. GCP resource URI to find service for Accepts both project number and
-   *     project id and does translation when needed.
+   * @param parent Required. Host project ID and location to lookup Discovered Service in. Expected
+   *     format: `projects/{project}/locations/{location}`.
+   * @param uri Required. Resource URI to find DiscoveredService for. Accepts both project number
+   *     and project ID and does translation when needed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupDiscoveredServiceResponse lookupDiscoveredService(
@@ -2033,7 +2057,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered service in a host project and location and with a given resource URI.
+   * Lists a Discovered Service in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -2050,9 +2074,10 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
-   * @param uri Required. GCP resource URI to find service for Accepts both project number and
-   *     project id and does translation when needed.
+   * @param parent Required. Host project ID and location to lookup Discovered Service in. Expected
+   *     format: `projects/{project}/locations/{location}`.
+   * @param uri Required. Resource URI to find DiscoveredService for. Accepts both project number
+   *     and project ID and does translation when needed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupDiscoveredServiceResponse lookupDiscoveredService(String parent, String uri) {
@@ -2063,7 +2088,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered service in a host project and location and with a given resource URI.
+   * Lists a Discovered Service in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -2093,7 +2118,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered service in a host project and location and with a given resource URI.
+   * Lists a Discovered Service in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -2123,7 +2148,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services in an Application.
+   * Lists Services in an Application.
    *
    * <p>Sample code:
    *
@@ -2141,7 +2166,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the parent Application to list Services for.
+   *     Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(ApplicationName parent) {
@@ -2154,7 +2180,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services in an Application.
+   * Lists Services in an Application.
    *
    * <p>Sample code:
    *
@@ -2172,7 +2198,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the parent Application to list Services for.
+   *     Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServicesPagedResponse listServices(String parent) {
@@ -2182,7 +2209,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services in an Application.
+   * Lists Services in an Application.
    *
    * <p>Sample code:
    *
@@ -2216,7 +2243,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services in an Application.
+   * Lists Services in an Application.
    *
    * <p>Sample code:
    *
@@ -2250,7 +2277,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * List Services in an Application.
+   * Lists Services in an Application.
    *
    * <p>Sample code:
    *
@@ -2308,7 +2335,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the parent Application to create the Service
+   *     in. Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @param service Required. The resource being created.
    * @param serviceId Required. The Service identifier. Must contain only lowercase letters, numbers
    *     or hyphens, with the first character a letter, the last a letter or a number, and a 63
@@ -2346,7 +2374,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the parent Application to create the Service
+   *     in. Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @param service Required. The resource being created.
    * @param serviceId Required. The Service identifier. Must contain only lowercase letters, numbers
    *     or hyphens, with the first character a letter, the last a letter or a number, and a 63
@@ -2476,7 +2505,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Service to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(ServiceName name) {
@@ -2504,7 +2534,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Service to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Service getService(String name) {
@@ -2699,7 +2730,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Service in an Application.
+   * Deletes a Service from an Application.
    *
    * <p>Sample code:
    *
@@ -2715,7 +2746,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Service to delete from an Application.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(ServiceName name) {
@@ -2726,7 +2759,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Service in an Application.
+   * Deletes a Service from an Application.
    *
    * <p>Sample code:
    *
@@ -2743,7 +2776,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Service to delete from an Application.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(String name) {
@@ -2753,7 +2788,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Service in an Application.
+   * Deletes a Service from an Application.
    *
    * <p>Sample code:
    *
@@ -2785,7 +2820,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Service in an Application.
+   * Deletes a Service from an Application.
    *
    * <p>Sample code:
    *
@@ -2817,7 +2852,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Service in an Application.
+   * Deletes a Service from an Application.
    *
    * <p>Sample code:
    *
@@ -2847,7 +2882,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered workloads that can be added to an application in a host project and location.
+   * Lists Discovered Workloads that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -2865,7 +2900,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to list Discovered Workloads on. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDiscoveredWorkloadsPagedResponse listDiscoveredWorkloads(LocationName parent) {
@@ -2878,7 +2914,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered workloads that can be added to an application in a host project and location.
+   * Lists Discovered Workloads that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -2896,7 +2932,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to list Discovered Workloads on. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDiscoveredWorkloadsPagedResponse listDiscoveredWorkloads(String parent) {
@@ -2907,7 +2944,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered workloads that can be added to an application in a host project and location.
+   * Lists Discovered Workloads that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -2943,7 +2980,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered workloads that can be added to an application in a host project and location.
+   * Lists Discovered Workloads that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -2978,7 +3015,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists discovered workloads that can be added to an application in a host project and location.
+   * Lists Discovered Workloads that can be added to an Application in a host project and location.
    *
    * <p>Sample code:
    *
@@ -3020,7 +3057,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered workload in a host project and location.
+   * Gets a Discovered Workload in a host project and location.
    *
    * <p>Sample code:
    *
@@ -3037,7 +3074,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Discovered Workload to fetch. Expected
+   *     format: `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DiscoveredWorkload getDiscoveredWorkload(DiscoveredWorkloadName name) {
@@ -3050,7 +3088,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered workload in a host project and location.
+   * Gets a Discovered Workload in a host project and location.
    *
    * <p>Sample code:
    *
@@ -3067,7 +3105,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Discovered Workload to fetch. Expected
+   *     format: `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DiscoveredWorkload getDiscoveredWorkload(String name) {
@@ -3078,7 +3117,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered workload in a host project and location.
+   * Gets a Discovered Workload in a host project and location.
    *
    * <p>Sample code:
    *
@@ -3108,7 +3147,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a discovered workload in a host project and location.
+   * Gets a Discovered Workload in a host project and location.
    *
    * <p>Sample code:
    *
@@ -3139,7 +3178,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered Workload in a host project and location and with a given resource URI.
+   * Lists a Discovered Workload in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -3157,9 +3196,10 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
-   * @param uri Required. GCP resource URI to find workload for. Accepts both project number and
-   *     project id and does translation when needed.
+   * @param parent Required. Host project ID and location to lookup Discovered Workload in. Expected
+   *     format: `projects/{project}/locations/{location}`.
+   * @param uri Required. Resource URI to find Discovered Workload for. Accepts both project number
+   *     and project ID and does translation when needed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupDiscoveredWorkloadResponse lookupDiscoveredWorkload(
@@ -3174,7 +3214,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered Workload in a host project and location and with a given resource URI.
+   * Lists a Discovered Workload in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -3192,9 +3232,10 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
-   * @param uri Required. GCP resource URI to find workload for. Accepts both project number and
-   *     project id and does translation when needed.
+   * @param parent Required. Host project ID and location to lookup Discovered Workload in. Expected
+   *     format: `projects/{project}/locations/{location}`.
+   * @param uri Required. Resource URI to find Discovered Workload for. Accepts both project number
+   *     and project ID and does translation when needed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupDiscoveredWorkloadResponse lookupDiscoveredWorkload(
@@ -3206,7 +3247,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered Workload in a host project and location and with a given resource URI.
+   * Lists a Discovered Workload in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -3236,7 +3277,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up a discovered Workload in a host project and location and with a given resource URI.
+   * Lists a Discovered Workload in a host project and location, with a given resource URI.
    *
    * <p>Sample code:
    *
@@ -3284,7 +3325,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the parent Application to list Workloads for.
+   *     Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListWorkloadsPagedResponse listWorkloads(ApplicationName parent) {
@@ -3315,7 +3357,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the parent Application to list Workloads for.
+   *     Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListWorkloadsPagedResponse listWorkloads(String parent) {
@@ -3451,7 +3494,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the Application to create Workload in. Expected
+   *     format: `projects/{project}/locations/{location}/applications/{application}`.
    * @param workload Required. The resource being created.
    * @param workloadId Required. The Workload identifier. Must contain only lowercase letters,
    *     numbers or hyphens, with the first character a letter, the last a letter or a number, and a
@@ -3489,7 +3533,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Fully qualified name of the Application to create Workload in. Expected
+   *     format: `projects/{project}/locations/{location}/applications/{application}`.
    * @param workload Required. The resource being created.
    * @param workloadId Required. The Workload identifier. Must contain only lowercase letters,
    *     numbers or hyphens, with the first character a letter, the last a letter or a number, and a
@@ -3619,7 +3664,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Workload to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Workload getWorkload(WorkloadName name) {
@@ -3647,7 +3693,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Workload to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Workload getWorkload(String name) {
@@ -3842,7 +3889,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Workload in an Application.
+   * Deletes a Workload from an Application.
    *
    * <p>Sample code:
    *
@@ -3858,7 +3905,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Workload to delete from an Application.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteWorkloadAsync(WorkloadName name) {
@@ -3869,7 +3918,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Workload in an Application.
+   * Deletes a Workload from an Application.
    *
    * <p>Sample code:
    *
@@ -3886,7 +3935,9 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Workload to delete from an Application.
+   *     Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteWorkloadAsync(String name) {
@@ -3896,7 +3947,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Workload in an Application.
+   * Deletes a Workload from an Application.
    *
    * <p>Sample code:
    *
@@ -3928,7 +3979,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Workload in an Application.
+   * Deletes a Workload from an Application.
    *
    * <p>Sample code:
    *
@@ -3960,7 +4011,7 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a Workload in an Application.
+   * Deletes a Workload from an Application.
    *
    * <p>Sample code:
    *
@@ -4008,7 +4059,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to list Applications on. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApplicationsPagedResponse listApplications(LocationName parent) {
@@ -4039,7 +4091,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to list Applications on. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListApplicationsPagedResponse listApplications(String parent) {
@@ -4179,7 +4232,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to create Application in. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @param application Required. The resource being created
    * @param applicationId Required. The Application identifier. Must contain only lowercase letters,
    *     numbers or hyphens, with the first character a letter, the last a letter or a number, and a
@@ -4218,7 +4272,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Project and location to create Application in. Expected format:
+   *     `projects/{project}/locations/{location}`.
    * @param application Required. The resource being created
    * @param applicationId Required. The Application identifier. Must contain only lowercase letters,
    *     numbers or hyphens, with the first character a letter, the last a letter or a number, and a
@@ -4348,7 +4403,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Application to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application getApplication(ApplicationName name) {
@@ -4375,7 +4431,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Application to fetch. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Application getApplication(String name) {
@@ -4585,7 +4642,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Application to delete. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteApplicationAsync(
@@ -4615,7 +4673,8 @@ public class AppHubClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Value for name.
+   * @param name Required. Fully qualified name of the Application to delete. Expected format:
+   *     `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteApplicationAsync(String name) {

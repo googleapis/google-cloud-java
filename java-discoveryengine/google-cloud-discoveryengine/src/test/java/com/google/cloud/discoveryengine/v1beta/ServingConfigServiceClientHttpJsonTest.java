@@ -381,7 +381,7 @@ public class ServingConfigServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
 
     ListServingConfigsPagedResponse pagedListResponse = client.listServingConfigs(parent);
 
@@ -407,6 +407,56 @@ public class ServingConfigServiceClientHttpJsonTest {
 
   @Test
   public void listServingConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.listServingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listServingConfigsTest3() throws Exception {
+    ServingConfig responsesElement = ServingConfig.newBuilder().build();
+    ListServingConfigsResponse expectedResponse =
+        ListServingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-3005/locations/location-3005/dataStores/dataStore-3005";
+
+    ListServingConfigsPagedResponse pagedListResponse = client.listServingConfigs(parent);
+
+    List<ServingConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServingConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listServingConfigsExceptionTest3() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);

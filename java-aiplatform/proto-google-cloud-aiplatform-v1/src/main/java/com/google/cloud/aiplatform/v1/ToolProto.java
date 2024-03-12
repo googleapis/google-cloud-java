@@ -44,6 +44,18 @@ public final class ToolProto {
       internal_static_google_cloud_aiplatform_v1_FunctionResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_FunctionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_Retrieval_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_Retrieval_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_VertexAISearch_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_VertexAISearch_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_GoogleSearchRetrieval_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_GoogleSearchRetrieval_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -55,30 +67,41 @@ public final class ToolProto {
     java.lang.String[] descriptorData = {
       "\n%google/cloud/aiplatform/v1/tool.proto\022"
           + "\032google.cloud.aiplatform.v1\032\037google/api/"
-          + "field_behavior.proto\032(google/cloud/aipla"
-          + "tform/v1/openapi.proto\032\034google/protobuf/"
-          + "struct.proto\"[\n\004Tool\022S\n\025function_declara"
-          + "tions\030\001 \003(\0132/.google.cloud.aiplatform.v1"
-          + ".FunctionDeclarationB\003\340A\001\"\177\n\023FunctionDec"
-          + "laration\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\030\n\013descripti"
-          + "on\030\002 \001(\tB\003\340A\001\022;\n\nparameters\030\003 \001(\0132\".goog"
-          + "le.cloud.aiplatform.v1.SchemaB\003\340A\001\"M\n\014Fu"
-          + "nctionCall\022\021\n\004name\030\001 \001(\tB\003\340A\002\022*\n\004args\030\002 "
-          + "\001(\0132\027.google.protobuf.StructB\003\340A\001\"U\n\020Fun"
-          + "ctionResponse\022\021\n\004name\030\001 \001(\tB\003\340A\002\022.\n\010resp"
-          + "onse\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\002"
-          + "B\307\001\n\036com.google.cloud.aiplatform.v1B\tToo"
-          + "lProtoP\001Z>cloud.google.com/go/aiplatform"
-          + "/apiv1/aiplatformpb;aiplatformpb\252\002\032Googl"
-          + "e.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIP"
-          + "latform\\V1\352\002\035Google::Cloud::AIPlatform::"
-          + "V1b\006proto3"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\032(google/cloud/aiplatform/v1/open"
+          + "api.proto\032\034google/protobuf/struct.proto\""
+          + "\363\001\n\004Tool\022S\n\025function_declarations\030\001 \003(\0132"
+          + "/.google.cloud.aiplatform.v1.FunctionDec"
+          + "larationB\003\340A\001\022=\n\tretrieval\030\002 \001(\0132%.googl"
+          + "e.cloud.aiplatform.v1.RetrievalB\003\340A\001\022W\n\027"
+          + "google_search_retrieval\030\003 \001(\01321.google.c"
+          + "loud.aiplatform.v1.GoogleSearchRetrieval"
+          + "B\003\340A\001\"\177\n\023FunctionDeclaration\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\002\022\030\n\013description\030\002 \001(\tB\003\340A\001\022;\n\npar"
+          + "ameters\030\003 \001(\0132\".google.cloud.aiplatform."
+          + "v1.SchemaB\003\340A\001\"M\n\014FunctionCall\022\021\n\004name\030\001"
+          + " \001(\tB\003\340A\002\022*\n\004args\030\002 \001(\0132\027.google.protobu"
+          + "f.StructB\003\340A\001\"U\n\020FunctionResponse\022\021\n\004nam"
+          + "e\030\001 \001(\tB\003\340A\002\022.\n\010response\030\002 \001(\0132\027.google."
+          + "protobuf.StructB\003\340A\002\"\177\n\tRetrieval\022F\n\020ver"
+          + "tex_ai_search\030\002 \001(\0132*.google.cloud.aipla"
+          + "tform.v1.VertexAISearchH\000\022 \n\023disable_att"
+          + "ribution\030\003 \001(\010B\003\340A\001B\010\n\006source\"(\n\016VertexA"
+          + "ISearch\022\026\n\tdatastore\030\001 \001(\tB\003\340A\002\"9\n\025Googl"
+          + "eSearchRetrieval\022 \n\023disable_attribution\030"
+          + "\001 \001(\010B\003\340A\001B\307\001\n\036com.google.cloud.aiplatfo"
+          + "rm.v1B\tToolProtoP\001Z>cloud.google.com/go/"
+          + "aiplatform/apiv1/aiplatformpb;aiplatform"
+          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
+          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AI"
+          + "Platform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1.OpenApiProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -88,7 +111,7 @@ public final class ToolProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Tool_descriptor,
             new java.lang.String[] {
-              "FunctionDeclarations",
+              "FunctionDeclarations", "Retrieval", "GoogleSearchRetrieval",
             });
     internal_static_google_cloud_aiplatform_v1_FunctionDeclaration_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -114,12 +137,37 @@ public final class ToolProto {
             new java.lang.String[] {
               "Name", "Response",
             });
+    internal_static_google_cloud_aiplatform_v1_Retrieval_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1_Retrieval_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_Retrieval_descriptor,
+            new java.lang.String[] {
+              "VertexAiSearch", "DisableAttribution", "Source",
+            });
+    internal_static_google_cloud_aiplatform_v1_VertexAISearch_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_aiplatform_v1_VertexAISearch_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_VertexAISearch_descriptor,
+            new java.lang.String[] {
+              "Datastore",
+            });
+    internal_static_google_cloud_aiplatform_v1_GoogleSearchRetrieval_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1_GoogleSearchRetrieval_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_GoogleSearchRetrieval_descriptor,
+            new java.lang.String[] {
+              "DisableAttribution",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1.OpenApiProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

@@ -221,6 +221,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "allowMissing", request.getAllowMissing());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

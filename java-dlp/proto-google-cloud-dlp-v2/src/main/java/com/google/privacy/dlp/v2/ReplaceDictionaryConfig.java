@@ -113,8 +113,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
    *
    * <pre>
    * A list of words to select from for random replacement. The
-   * [limits](https://cloud.google.com/dlp/limits) page contains details about
-   * the size limits of dictionaries.
+   * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+   * contains details about the size limits of dictionaries.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -130,8 +130,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
    *
    * <pre>
    * A list of words to select from for random replacement. The
-   * [limits](https://cloud.google.com/dlp/limits) page contains details about
-   * the size limits of dictionaries.
+   * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+   * contains details about the size limits of dictionaries.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -150,8 +150,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
    *
    * <pre>
    * A list of words to select from for random replacement. The
-   * [limits](https://cloud.google.com/dlp/limits) page contains details about
-   * the size limits of dictionaries.
+   * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+   * contains details about the size limits of dictionaries.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -562,8 +562,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -579,8 +579,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -606,8 +606,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -630,8 +630,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -652,8 +652,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -689,8 +689,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -716,8 +716,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -731,8 +731,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
@@ -754,8 +754,8 @@ public final class ReplaceDictionaryConfig extends com.google.protobuf.Generated
      *
      * <pre>
      * A list of words to select from for random replacement. The
-     * [limits](https://cloud.google.com/dlp/limits) page contains details about
-     * the size limits of dictionaries.
+     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
+     * contains details about the size limits of dictionaries.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>

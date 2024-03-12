@@ -16,17 +16,21 @@
 
 package com.google.cloud.dlp.v2.stub;
 
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -45,12 +49,15 @@ import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
+import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetProjectDataProfileRequest;
 import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.GetTableDataProfileRequest;
 import com.google.privacy.dlp.v2.HybridInspectDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
@@ -58,6 +65,8 @@ import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -70,13 +79,19 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesRequest;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
+import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -284,6 +299,53 @@ public abstract class DlpServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteStoredInfoTypeCallable()");
+  }
+
+  public UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesPagedResponse>
+      listProjectDataProfilesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listProjectDataProfilesPagedCallable()");
+  }
+
+  public UnaryCallable<ListProjectDataProfilesRequest, ListProjectDataProfilesResponse>
+      listProjectDataProfilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProjectDataProfilesCallable()");
+  }
+
+  public UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesPagedResponse>
+      listTableDataProfilesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listTableDataProfilesPagedCallable()");
+  }
+
+  public UnaryCallable<ListTableDataProfilesRequest, ListTableDataProfilesResponse>
+      listTableDataProfilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTableDataProfilesCallable()");
+  }
+
+  public UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesPagedResponse>
+      listColumnDataProfilesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listColumnDataProfilesPagedCallable()");
+  }
+
+  public UnaryCallable<ListColumnDataProfilesRequest, ListColumnDataProfilesResponse>
+      listColumnDataProfilesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listColumnDataProfilesCallable()");
+  }
+
+  public UnaryCallable<GetProjectDataProfileRequest, ProjectDataProfile>
+      getProjectDataProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: getProjectDataProfileCallable()");
+  }
+
+  public UnaryCallable<GetTableDataProfileRequest, TableDataProfile> getTableDataProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTableDataProfileCallable()");
+  }
+
+  public UnaryCallable<GetColumnDataProfileRequest, ColumnDataProfile>
+      getColumnDataProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: getColumnDataProfileCallable()");
   }
 
   public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
