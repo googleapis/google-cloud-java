@@ -332,12 +332,9 @@ public class SubscriptionsServiceClientTest {
             .build();
     mockSubscriptionsService.addResponse(expectedResponse);
 
-    int pageSize = 883849137;
-    String pageToken = "pageToken873572522";
     String filter = "filter-1274492040";
 
-    ListSubscriptionsPagedResponse pagedListResponse =
-        client.listSubscriptions(pageSize, pageToken, filter);
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(filter);
 
     List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -348,8 +345,6 @@ public class SubscriptionsServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSubscriptionsRequest actualRequest = ((ListSubscriptionsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(pageSize, actualRequest.getPageSize());
-    Assert.assertEquals(pageToken, actualRequest.getPageToken());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -363,10 +358,8 @@ public class SubscriptionsServiceClientTest {
     mockSubscriptionsService.addException(exception);
 
     try {
-      int pageSize = 883849137;
-      String pageToken = "pageToken873572522";
       String filter = "filter-1274492040";
-      client.listSubscriptions(pageSize, pageToken, filter);
+      client.listSubscriptions(filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

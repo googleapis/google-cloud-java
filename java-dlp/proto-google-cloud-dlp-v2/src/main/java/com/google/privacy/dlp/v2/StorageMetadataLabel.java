@@ -68,6 +68,12 @@ public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private volatile java.lang.Object key_ = "";
   /**
+   *
+   *
+   * <pre>
+   * Label name.
+   * </pre>
+   *
    * <code>string key = 1;</code>
    *
    * @return The key.
@@ -85,6 +91,12 @@ public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMes
     }
   }
   /**
+   *
+   *
+   * <pre>
+   * Label name.
+   * </pre>
+   *
    * <code>string key = 1;</code>
    *
    * @return The bytes for key.
@@ -445,6 +457,12 @@ public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object key_ = "";
     /**
+     *
+     *
+     * <pre>
+     * Label name.
+     * </pre>
+     *
      * <code>string key = 1;</code>
      *
      * @return The key.
@@ -461,6 +479,12 @@ public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Label name.
+     * </pre>
+     *
      * <code>string key = 1;</code>
      *
      * @return The bytes for key.
@@ -477,6 +501,12 @@ public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Label name.
+     * </pre>
+     *
      * <code>string key = 1;</code>
      *
      * @param value The key to set.
@@ -492,6 +522,12 @@ public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Label name.
+     * </pre>
+     *
      * <code>string key = 1;</code>
      *
      * @return This builder for chaining.
@@ -503,6 +539,12 @@ public final class StorageMetadataLabel extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Label name.
+     * </pre>
+     *
      * <code>string key = 1;</code>
      *
      * @param value The bytes for key to set.

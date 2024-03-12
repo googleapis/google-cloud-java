@@ -110,7 +110,8 @@ public interface ExternalSystemOrBuilder
    *
    *
    * <pre>
-   * Identifier that's used to track the given finding in the external system.
+   * The identifier that's used to track the finding's corresponding case in the
+   * external system.
    * </pre>
    *
    * <code>string external_uid = 3;</code>
@@ -122,7 +123,8 @@ public interface ExternalSystemOrBuilder
    *
    *
    * <pre>
-   * Identifier that's used to track the given finding in the external system.
+   * The identifier that's used to track the finding's corresponding case in the
+   * external system.
    * </pre>
    *
    * <code>string external_uid = 3;</code>
@@ -135,8 +137,8 @@ public interface ExternalSystemOrBuilder
    *
    *
    * <pre>
-   * Most recent status of the corresponding finding's ticket/tracker in the
-   * external system.
+   * The most recent status of the finding's corresponding case, as reported by
+   * the external system.
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -148,8 +150,8 @@ public interface ExternalSystemOrBuilder
    *
    *
    * <pre>
-   * Most recent status of the corresponding finding's ticket/tracker in the
-   * external system.
+   * The most recent status of the finding's corresponding case, as reported by
+   * the external system.
    * </pre>
    *
    * <code>string status = 4;</code>
@@ -162,8 +164,8 @@ public interface ExternalSystemOrBuilder
    *
    *
    * <pre>
-   * The most recent time when the corresponding finding's ticket/tracker was
-   * updated in the external system.
+   * The time when the case was last updated, as reported by the external
+   * system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp external_system_update_time = 5;</code>
@@ -175,8 +177,8 @@ public interface ExternalSystemOrBuilder
    *
    *
    * <pre>
-   * The most recent time when the corresponding finding's ticket/tracker was
-   * updated in the external system.
+   * The time when the case was last updated, as reported by the external
+   * system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp external_system_update_time = 5;</code>
@@ -188,11 +190,204 @@ public interface ExternalSystemOrBuilder
    *
    *
    * <pre>
-   * The most recent time when the corresponding finding's ticket/tracker was
-   * updated in the external system.
+   * The time when the case was last updated, as reported by the external
+   * system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp external_system_update_time = 5;</code>
    */
   com.google.protobuf.TimestampOrBuilder getExternalSystemUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The link to the finding's corresponding case in the external system.
+   * </pre>
+   *
+   * <code>string case_uri = 6;</code>
+   *
+   * @return The caseUri.
+   */
+  java.lang.String getCaseUri();
+  /**
+   *
+   *
+   * <pre>
+   * The link to the finding's corresponding case in the external system.
+   * </pre>
+   *
+   * <code>string case_uri = 6;</code>
+   *
+   * @return The bytes for caseUri.
+   */
+  com.google.protobuf.ByteString getCaseUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the finding's corresponding case in the external system.
+   * </pre>
+   *
+   * <code>string case_priority = 7;</code>
+   *
+   * @return The casePriority.
+   */
+  java.lang.String getCasePriority();
+  /**
+   *
+   *
+   * <pre>
+   * The priority of the finding's corresponding case in the external system.
+   * </pre>
+   *
+   * <code>string case_priority = 7;</code>
+   *
+   * @return The bytes for casePriority.
+   */
+  com.google.protobuf.ByteString getCasePriorityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The SLA of the finding's corresponding case in the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_sla = 9;</code>
+   *
+   * @return Whether the caseSla field is set.
+   */
+  boolean hasCaseSla();
+  /**
+   *
+   *
+   * <pre>
+   * The SLA of the finding's corresponding case in the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_sla = 9;</code>
+   *
+   * @return The caseSla.
+   */
+  com.google.protobuf.Timestamp getCaseSla();
+  /**
+   *
+   *
+   * <pre>
+   * The SLA of the finding's corresponding case in the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_sla = 9;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCaseSlaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the case was created, as reported by the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_create_time = 10;</code>
+   *
+   * @return Whether the caseCreateTime field is set.
+   */
+  boolean hasCaseCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time when the case was created, as reported by the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_create_time = 10;</code>
+   *
+   * @return The caseCreateTime.
+   */
+  com.google.protobuf.Timestamp getCaseCreateTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time when the case was created, as reported by the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_create_time = 10;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCaseCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the case was closed, as reported by the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_close_time = 11;</code>
+   *
+   * @return Whether the caseCloseTime field is set.
+   */
+  boolean hasCaseCloseTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time when the case was closed, as reported by the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_close_time = 11;</code>
+   *
+   * @return The caseCloseTime.
+   */
+  com.google.protobuf.Timestamp getCaseCloseTime();
+  /**
+   *
+   *
+   * <pre>
+   * The time when the case was closed, as reported by the external system.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp case_close_time = 11;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCaseCloseTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the ticket, if any, that is being used to track the
+   * resolution of the issue that is identified by this finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalSystem.TicketInfo ticket_info = 8;</code>
+   *
+   * @return Whether the ticketInfo field is set.
+   */
+  boolean hasTicketInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the ticket, if any, that is being used to track the
+   * resolution of the issue that is identified by this finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalSystem.TicketInfo ticket_info = 8;</code>
+   *
+   * @return The ticketInfo.
+   */
+  com.google.cloud.securitycenter.v1.ExternalSystem.TicketInfo getTicketInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about the ticket, if any, that is being used to track the
+   * resolution of the issue that is identified by this finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.ExternalSystem.TicketInfo ticket_info = 8;</code>
+   */
+  com.google.cloud.securitycenter.v1.ExternalSystem.TicketInfoOrBuilder getTicketInfoOrBuilder();
 }

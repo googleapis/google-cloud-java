@@ -75,12 +75,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The gcs corpus data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The Cloud Storage corpus data which could be associated in train data.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id, title
-     *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     *  "relevant text"}
+     *
+     * For search-tuning model, each line should have the _id, title
+     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+     * "relevant text"}
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -92,12 +93,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The gcs corpus data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The Cloud Storage corpus data which could be associated in train data.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id, title
-     *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     *  "relevant text"}
+     *
+     * For search-tuning model, each line should have the _id, title
+     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+     * "relevant text"}
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -111,10 +113,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The gcs query data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id
-     *  and text. Example: {"_id": "query1",  "text": "example query"}
+     *
+     * For search-tuning model, each line should have the _id
+     * and text. Example: {"_id": "query1",  "text": "example query"}
      * </pre>
      *
      * <code>string query_data_path = 2;</code>
@@ -127,10 +130,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The gcs query data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id
-     *  and text. Example: {"_id": "query1",  "text": "example query"}
+     *
+     * For search-tuning model, each line should have the _id
+     * and text. Example: {"_id": "query1",  "text": "example query"}
      * </pre>
      *
      * <code>string query_data_path = 2;</code>
@@ -143,14 +147,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training data path whose format should be
-     * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-     * Each line should have the doc_id and query_id and score (number).
-     *  * For search-tuning model, it should have the query-id corpus-id
-     *  score as tsv file header. The score should be a number in [0, inf+). The
-     *  larger the number is, the more relevant the pair is. Example:
-     *  query-id&#92;tcorpus-id&#92;tscore
-     *  query1&#92;tdoc1&#92;t1
+     * Cloud Storage training data path whose format should be
+     * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+     * format. Each line should have the doc_id and query_id and score (number).
+     *
+     * For search-tuning model, it should have the query-id corpus-id
+     * score as tsv file header. The score should be a number in `[0, inf+)`.
+     * The larger the number is, the more relevant the pair is. Example:
+     *
+     * * `query-id&#92;tcorpus-id&#92;tscore`
+     * * `query1&#92;tdoc1&#92;t1`
      * </pre>
      *
      * <code>string train_data_path = 3;</code>
@@ -162,14 +168,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training data path whose format should be
-     * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-     * Each line should have the doc_id and query_id and score (number).
-     *  * For search-tuning model, it should have the query-id corpus-id
-     *  score as tsv file header. The score should be a number in [0, inf+). The
-     *  larger the number is, the more relevant the pair is. Example:
-     *  query-id&#92;tcorpus-id&#92;tscore
-     *  query1&#92;tdoc1&#92;t1
+     * Cloud Storage training data path whose format should be
+     * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+     * format. Each line should have the doc_id and query_id and score (number).
+     *
+     * For search-tuning model, it should have the query-id corpus-id
+     * score as tsv file header. The score should be a number in `[0, inf+)`.
+     * The larger the number is, the more relevant the pair is. Example:
+     *
+     * * `query-id&#92;tcorpus-id&#92;tscore`
+     * * `query1&#92;tdoc1&#92;t1`
      * </pre>
      *
      * <code>string train_data_path = 3;</code>
@@ -182,8 +190,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs test data. Same format as train_data_path. If not provided, a
-     * random 80/20 train/test split will be performed on train_data_path.
+     * Cloud Storage test data. Same format as train_data_path. If not provided,
+     * a random 80/20 train/test split will be performed on train_data_path.
      * </pre>
      *
      * <code>string test_data_path = 4;</code>
@@ -195,8 +203,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs test data. Same format as train_data_path. If not provided, a
-     * random 80/20 train/test split will be performed on train_data_path.
+     * Cloud Storage test data. Same format as train_data_path. If not provided,
+     * a random 80/20 train/test split will be performed on train_data_path.
      * </pre>
      *
      * <code>string test_data_path = 4;</code>
@@ -209,7 +217,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Gcs training data input.
+   * Cloud Storage training data input.
    * </pre>
    *
    * Protobuf type {@code
@@ -263,12 +271,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The gcs corpus data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The Cloud Storage corpus data which could be associated in train data.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id, title
-     *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     *  "relevant text"}
+     *
+     * For search-tuning model, each line should have the _id, title
+     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+     * "relevant text"}
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -291,12 +300,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The gcs corpus data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The Cloud Storage corpus data which could be associated in train data.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id, title
-     *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     *  "relevant text"}
+     *
+     * For search-tuning model, each line should have the _id, title
+     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+     * "relevant text"}
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -325,10 +335,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The gcs query data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id
-     *  and text. Example: {"_id": "query1",  "text": "example query"}
+     *
+     * For search-tuning model, each line should have the _id
+     * and text. Example: {"_id": "query1",  "text": "example query"}
      * </pre>
      *
      * <code>string query_data_path = 2;</code>
@@ -352,10 +363,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The gcs query data which could be associated in train data.
-     * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+     * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
      * A newline delimited jsonl/ndjson file.
-     *  * For search-tuning model, each line should have the _id
-     *  and text. Example: {"_id": "query1",  "text": "example query"}
+     *
+     * For search-tuning model, each line should have the _id
+     * and text. Example: {"_id": "query1",  "text": "example query"}
      * </pre>
      *
      * <code>string query_data_path = 2;</code>
@@ -383,14 +395,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training data path whose format should be
-     * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-     * Each line should have the doc_id and query_id and score (number).
-     *  * For search-tuning model, it should have the query-id corpus-id
-     *  score as tsv file header. The score should be a number in [0, inf+). The
-     *  larger the number is, the more relevant the pair is. Example:
-     *  query-id&#92;tcorpus-id&#92;tscore
-     *  query1&#92;tdoc1&#92;t1
+     * Cloud Storage training data path whose format should be
+     * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+     * format. Each line should have the doc_id and query_id and score (number).
+     *
+     * For search-tuning model, it should have the query-id corpus-id
+     * score as tsv file header. The score should be a number in `[0, inf+)`.
+     * The larger the number is, the more relevant the pair is. Example:
+     *
+     * * `query-id&#92;tcorpus-id&#92;tscore`
+     * * `query1&#92;tdoc1&#92;t1`
      * </pre>
      *
      * <code>string train_data_path = 3;</code>
@@ -413,14 +427,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training data path whose format should be
-     * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-     * Each line should have the doc_id and query_id and score (number).
-     *  * For search-tuning model, it should have the query-id corpus-id
-     *  score as tsv file header. The score should be a number in [0, inf+). The
-     *  larger the number is, the more relevant the pair is. Example:
-     *  query-id&#92;tcorpus-id&#92;tscore
-     *  query1&#92;tdoc1&#92;t1
+     * Cloud Storage training data path whose format should be
+     * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+     * format. Each line should have the doc_id and query_id and score (number).
+     *
+     * For search-tuning model, it should have the query-id corpus-id
+     * score as tsv file header. The score should be a number in `[0, inf+)`.
+     * The larger the number is, the more relevant the pair is. Example:
+     *
+     * * `query-id&#92;tcorpus-id&#92;tscore`
+     * * `query1&#92;tdoc1&#92;t1`
      * </pre>
      *
      * <code>string train_data_path = 3;</code>
@@ -448,8 +464,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs test data. Same format as train_data_path. If not provided, a
-     * random 80/20 train/test split will be performed on train_data_path.
+     * Cloud Storage test data. Same format as train_data_path. If not provided,
+     * a random 80/20 train/test split will be performed on train_data_path.
      * </pre>
      *
      * <code>string test_data_path = 4;</code>
@@ -472,8 +488,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs test data. Same format as train_data_path. If not provided, a
-     * random 80/20 train/test split will be performed on train_data_path.
+     * Cloud Storage test data. Same format as train_data_path. If not provided,
+     * a random 80/20 train/test split will be performed on train_data_path.
      * </pre>
      *
      * <code>string test_data_path = 4;</code>
@@ -694,7 +710,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training data input.
+     * Cloud Storage training data input.
      * </pre>
      *
      * Protobuf type {@code
@@ -944,12 +960,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The gcs corpus data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The Cloud Storage corpus data which could be associated in train data.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id, title
-       *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       *  "relevant text"}
+       *
+       * For search-tuning model, each line should have the _id, title
+       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+       * "relevant text"}
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -971,12 +988,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The gcs corpus data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The Cloud Storage corpus data which could be associated in train data.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id, title
-       *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       *  "relevant text"}
+       *
+       * For search-tuning model, each line should have the _id, title
+       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+       * "relevant text"}
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -998,12 +1016,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The gcs corpus data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The Cloud Storage corpus data which could be associated in train data.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id, title
-       *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       *  "relevant text"}
+       *
+       * For search-tuning model, each line should have the _id, title
+       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+       * "relevant text"}
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -1024,12 +1043,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The gcs corpus data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The Cloud Storage corpus data which could be associated in train data.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id, title
-       *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       *  "relevant text"}
+       *
+       * For search-tuning model, each line should have the _id, title
+       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+       * "relevant text"}
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -1046,12 +1066,13 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The gcs corpus data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The Cloud Storage corpus data which could be associated in train data.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id, title
-       *  and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       *  "relevant text"}
+       *
+       * For search-tuning model, each line should have the _id, title
+       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
+       * "relevant text"}
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -1076,10 +1097,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        * <pre>
        * The gcs query data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id
-       *  and text. Example: {"_id": "query1",  "text": "example query"}
+       *
+       * For search-tuning model, each line should have the _id
+       * and text. Example: {"_id": "query1",  "text": "example query"}
        * </pre>
        *
        * <code>string query_data_path = 2;</code>
@@ -1102,10 +1124,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        * <pre>
        * The gcs query data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id
-       *  and text. Example: {"_id": "query1",  "text": "example query"}
+       *
+       * For search-tuning model, each line should have the _id
+       * and text. Example: {"_id": "query1",  "text": "example query"}
        * </pre>
        *
        * <code>string query_data_path = 2;</code>
@@ -1128,10 +1151,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        * <pre>
        * The gcs query data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id
-       *  and text. Example: {"_id": "query1",  "text": "example query"}
+       *
+       * For search-tuning model, each line should have the _id
+       * and text. Example: {"_id": "query1",  "text": "example query"}
        * </pre>
        *
        * <code>string query_data_path = 2;</code>
@@ -1153,10 +1177,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        * <pre>
        * The gcs query data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id
-       *  and text. Example: {"_id": "query1",  "text": "example query"}
+       *
+       * For search-tuning model, each line should have the _id
+       * and text. Example: {"_id": "query1",  "text": "example query"}
        * </pre>
        *
        * <code>string query_data_path = 2;</code>
@@ -1174,10 +1199,11 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        * <pre>
        * The gcs query data which could be associated in train data.
-       * The data path format is gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;.
+       * The data path format is `gs://&lt;bucket_to_data&gt;/&lt;jsonl_file_name&gt;`.
        * A newline delimited jsonl/ndjson file.
-       *  * For search-tuning model, each line should have the _id
-       *  and text. Example: {"_id": "query1",  "text": "example query"}
+       *
+       * For search-tuning model, each line should have the _id
+       * and text. Example: {"_id": "query1",  "text": "example query"}
        * </pre>
        *
        * <code>string query_data_path = 2;</code>
@@ -1201,14 +1227,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs training data path whose format should be
-       * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-       * Each line should have the doc_id and query_id and score (number).
-       *  * For search-tuning model, it should have the query-id corpus-id
-       *  score as tsv file header. The score should be a number in [0, inf+). The
-       *  larger the number is, the more relevant the pair is. Example:
-       *  query-id&#92;tcorpus-id&#92;tscore
-       *  query1&#92;tdoc1&#92;t1
+       * Cloud Storage training data path whose format should be
+       * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+       * format. Each line should have the doc_id and query_id and score (number).
+       *
+       * For search-tuning model, it should have the query-id corpus-id
+       * score as tsv file header. The score should be a number in `[0, inf+)`.
+       * The larger the number is, the more relevant the pair is. Example:
+       *
+       * * `query-id&#92;tcorpus-id&#92;tscore`
+       * * `query1&#92;tdoc1&#92;t1`
        * </pre>
        *
        * <code>string train_data_path = 3;</code>
@@ -1230,14 +1258,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs training data path whose format should be
-       * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-       * Each line should have the doc_id and query_id and score (number).
-       *  * For search-tuning model, it should have the query-id corpus-id
-       *  score as tsv file header. The score should be a number in [0, inf+). The
-       *  larger the number is, the more relevant the pair is. Example:
-       *  query-id&#92;tcorpus-id&#92;tscore
-       *  query1&#92;tdoc1&#92;t1
+       * Cloud Storage training data path whose format should be
+       * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+       * format. Each line should have the doc_id and query_id and score (number).
+       *
+       * For search-tuning model, it should have the query-id corpus-id
+       * score as tsv file header. The score should be a number in `[0, inf+)`.
+       * The larger the number is, the more relevant the pair is. Example:
+       *
+       * * `query-id&#92;tcorpus-id&#92;tscore`
+       * * `query1&#92;tdoc1&#92;t1`
        * </pre>
        *
        * <code>string train_data_path = 3;</code>
@@ -1259,14 +1289,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs training data path whose format should be
-       * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-       * Each line should have the doc_id and query_id and score (number).
-       *  * For search-tuning model, it should have the query-id corpus-id
-       *  score as tsv file header. The score should be a number in [0, inf+). The
-       *  larger the number is, the more relevant the pair is. Example:
-       *  query-id&#92;tcorpus-id&#92;tscore
-       *  query1&#92;tdoc1&#92;t1
+       * Cloud Storage training data path whose format should be
+       * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+       * format. Each line should have the doc_id and query_id and score (number).
+       *
+       * For search-tuning model, it should have the query-id corpus-id
+       * score as tsv file header. The score should be a number in `[0, inf+)`.
+       * The larger the number is, the more relevant the pair is. Example:
+       *
+       * * `query-id&#92;tcorpus-id&#92;tscore`
+       * * `query1&#92;tdoc1&#92;t1`
        * </pre>
        *
        * <code>string train_data_path = 3;</code>
@@ -1287,14 +1319,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs training data path whose format should be
-       * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-       * Each line should have the doc_id and query_id and score (number).
-       *  * For search-tuning model, it should have the query-id corpus-id
-       *  score as tsv file header. The score should be a number in [0, inf+). The
-       *  larger the number is, the more relevant the pair is. Example:
-       *  query-id&#92;tcorpus-id&#92;tscore
-       *  query1&#92;tdoc1&#92;t1
+       * Cloud Storage training data path whose format should be
+       * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+       * format. Each line should have the doc_id and query_id and score (number).
+       *
+       * For search-tuning model, it should have the query-id corpus-id
+       * score as tsv file header. The score should be a number in `[0, inf+)`.
+       * The larger the number is, the more relevant the pair is. Example:
+       *
+       * * `query-id&#92;tcorpus-id&#92;tscore`
+       * * `query1&#92;tdoc1&#92;t1`
        * </pre>
        *
        * <code>string train_data_path = 3;</code>
@@ -1311,14 +1345,16 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs training data path whose format should be
-       * gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;. The file should be in tsv format.
-       * Each line should have the doc_id and query_id and score (number).
-       *  * For search-tuning model, it should have the query-id corpus-id
-       *  score as tsv file header. The score should be a number in [0, inf+). The
-       *  larger the number is, the more relevant the pair is. Example:
-       *  query-id&#92;tcorpus-id&#92;tscore
-       *  query1&#92;tdoc1&#92;t1
+       * Cloud Storage training data path whose format should be
+       * `gs://&lt;bucket_to_data&gt;/&lt;tsv_file_name&gt;`. The file should be in tsv
+       * format. Each line should have the doc_id and query_id and score (number).
+       *
+       * For search-tuning model, it should have the query-id corpus-id
+       * score as tsv file header. The score should be a number in `[0, inf+)`.
+       * The larger the number is, the more relevant the pair is. Example:
+       *
+       * * `query-id&#92;tcorpus-id&#92;tscore`
+       * * `query1&#92;tdoc1&#92;t1`
        * </pre>
        *
        * <code>string train_data_path = 3;</code>
@@ -1342,8 +1378,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs test data. Same format as train_data_path. If not provided, a
-       * random 80/20 train/test split will be performed on train_data_path.
+       * Cloud Storage test data. Same format as train_data_path. If not provided,
+       * a random 80/20 train/test split will be performed on train_data_path.
        * </pre>
        *
        * <code>string test_data_path = 4;</code>
@@ -1365,8 +1401,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs test data. Same format as train_data_path. If not provided, a
-       * random 80/20 train/test split will be performed on train_data_path.
+       * Cloud Storage test data. Same format as train_data_path. If not provided,
+       * a random 80/20 train/test split will be performed on train_data_path.
        * </pre>
        *
        * <code>string test_data_path = 4;</code>
@@ -1388,8 +1424,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs test data. Same format as train_data_path. If not provided, a
-       * random 80/20 train/test split will be performed on train_data_path.
+       * Cloud Storage test data. Same format as train_data_path. If not provided,
+       * a random 80/20 train/test split will be performed on train_data_path.
        * </pre>
        *
        * <code>string test_data_path = 4;</code>
@@ -1410,8 +1446,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs test data. Same format as train_data_path. If not provided, a
-       * random 80/20 train/test split will be performed on train_data_path.
+       * Cloud Storage test data. Same format as train_data_path. If not provided,
+       * a random 80/20 train/test split will be performed on train_data_path.
        * </pre>
        *
        * <code>string test_data_path = 4;</code>
@@ -1428,8 +1464,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Gcs test data. Same format as train_data_path. If not provided, a
-       * random 80/20 train/test split will be performed on train_data_path.
+       * Cloud Storage test data. Same format as train_data_path. If not provided,
+       * a random 80/20 train/test split will be performed on train_data_path.
        * </pre>
        *
        * <code>string test_data_path = 4;</code>
@@ -1569,7 +1605,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Gcs training input.
+   * Cloud Storage training input.
    * </pre>
    *
    * <code>
@@ -1586,7 +1622,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Gcs training input.
+   * Cloud Storage training input.
    * </pre>
    *
    * <code>
@@ -1609,7 +1645,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Gcs training input.
+   * Cloud Storage training input.
    * </pre>
    *
    * <code>
@@ -2299,7 +2335,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2316,7 +2352,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2347,7 +2383,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2372,7 +2408,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2395,7 +2431,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2435,7 +2471,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2462,7 +2498,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2477,7 +2513,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>
@@ -2503,7 +2539,7 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Gcs training input.
+     * Cloud Storage training input.
      * </pre>
      *
      * <code>

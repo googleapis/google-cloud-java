@@ -1108,6 +1108,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
+            .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 
@@ -1156,6 +1157,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setRunTime(Interval.newBuilder().build())
             .setFinalStatus(Status.newBuilder().build())
+            .setSyncSummary(FeatureViewSync.SyncSummary.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
 

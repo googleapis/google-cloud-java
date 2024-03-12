@@ -762,6 +762,8 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -818,6 +820,8 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -962,6 +966,8 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1008,6 +1014,8 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -1140,6 +1148,8 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1195,6 +1205,8 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setBigQueryDatasetName("bigQueryDatasetName1406937691")
+            .setDisplayName("displayName1714148973")
+            .setMetadata(Value.newBuilder().setBoolValue(true).build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

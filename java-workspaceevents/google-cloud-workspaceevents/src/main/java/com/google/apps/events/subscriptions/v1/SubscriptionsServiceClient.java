@@ -138,7 +138,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li><p> listSubscriptions(int pageSize, String pageToken, String filter)
+ *           <li><p> listSubscriptions(String filter)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -760,25 +760,14 @@ public class SubscriptionsServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (SubscriptionsServiceClient subscriptionsServiceClient =
    *     SubscriptionsServiceClient.create()) {
-   *   int pageSize = 883849137;
-   *   String pageToken = "pageToken873572522";
    *   String filter = "filter-1274492040";
    *   for (Subscription element :
-   *       subscriptionsServiceClient.listSubscriptions(pageSize, pageToken, filter).iterateAll()) {
+   *       subscriptionsServiceClient.listSubscriptions(filter).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
    * }</pre>
    *
-   * @param pageSize Optional. The maximum number of subscriptions to return. The service might
-   *     return fewer than this value.
-   *     <p>If unspecified or set to `0`, up to 50 subscriptions are returned.
-   *     <p>The maximum value is 100. If you specify a value more than 100, the system only returns
-   *     100 subscriptions.
-   * @param pageToken Optional. A page token, received from a previous list subscriptions call.
-   *     Provide this parameter to retrieve the subsequent page.
-   *     <p>When paginating, the filter value should match the call that provided the page token.
-   *     Passing a different value might lead to unexpected results.
    * @param filter Required. A query filter.
    *     <p>You can filter subscriptions by event type (`event_types`) and target resource
    *     (`target_resource`).
@@ -797,14 +786,9 @@ public class SubscriptionsServiceClient implements BackgroundResource {
    *     <p>The server rejects invalid queries with an `INVALID_ARGUMENT` error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubscriptionsPagedResponse listSubscriptions(
-      int pageSize, String pageToken, String filter) {
+  public final ListSubscriptionsPagedResponse listSubscriptions(String filter) {
     ListSubscriptionsRequest request =
-        ListSubscriptionsRequest.newBuilder()
-            .setPageSize(pageSize)
-            .setPageToken(pageToken)
-            .setFilter(filter)
-            .build();
+        ListSubscriptionsRequest.newBuilder().setFilter(filter).build();
     return listSubscriptions(request);
   }
 

@@ -28,7 +28,7 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -38,7 +38,7 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -48,7 +48,7 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -58,7 +58,7 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -69,7 +69,7 @@ public interface ListDiscoveredWorkloadsResponseOrBuilder
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>

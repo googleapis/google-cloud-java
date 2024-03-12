@@ -193,6 +193,123 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 2;</code>
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicyOrBuilder getPolicyBundleOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The project that this consolidated policy belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+     * policy belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 3;</code>
+     *
+     * @return The project.
+     */
+    java.lang.String getProject();
+    /**
+     *
+     *
+     * <pre>
+     * The project that this consolidated policy belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+     * policy belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 3;</code>
+     *
+     * @return The bytes for project.
+     */
+    com.google.protobuf.ByteString getProjectBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @return A list containing the folders.
+     */
+    java.util.List<java.lang.String> getFoldersList();
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @return The count of folders.
+     */
+    int getFoldersCount();
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The folders at the given index.
+     */
+    java.lang.String getFolders(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the folders at the given index.
+     */
+    com.google.protobuf.ByteString getFoldersBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this consolidated policy belongs to, in the format
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * consolidated policy belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 5;</code>
+     *
+     * @return The organization.
+     */
+    java.lang.String getOrganization();
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this consolidated policy belongs to, in the format
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * consolidated policy belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 5;</code>
+     *
+     * @return The bytes for organization.
+     */
+    com.google.protobuf.ByteString getOrganizationBytes();
   }
   /**
    *
@@ -215,6 +332,9 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
 
     private OrgPolicyResult() {
       policyBundle_ = java.util.Collections.emptyList();
+      project_ = "";
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      organization_ = "";
     }
 
     @java.lang.Override
@@ -398,6 +518,188 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       return policyBundle_.get(index);
     }
 
+    public static final int PROJECT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object project_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The project that this consolidated policy belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+     * policy belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 3;</code>
+     *
+     * @return The project.
+     */
+    @java.lang.Override
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The project that this consolidated policy belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+     * policy belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 3;</code>
+     *
+     * @return The bytes for project.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FOLDERS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList folders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @return A list containing the folders.
+     */
+    public com.google.protobuf.ProtocolStringList getFoldersList() {
+      return folders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @return The count of folders.
+     */
+    public int getFoldersCount() {
+      return folders_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The folders at the given index.
+     */
+    public java.lang.String getFolders(int index) {
+      return folders_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this consolidated policy belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+     * policy belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 4;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the folders at the given index.
+     */
+    public com.google.protobuf.ByteString getFoldersBytes(int index) {
+      return folders_.getByteString(index);
+    }
+
+    public static final int ORGANIZATION_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object organization_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this consolidated policy belongs to, in the format
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * consolidated policy belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 5;</code>
+     *
+     * @return The organization.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganization() {
+      java.lang.Object ref = organization_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organization_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this consolidated policy belongs to, in the format
+     * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * consolidated policy belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 5;</code>
+     *
+     * @return The bytes for organization.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOrganizationBytes() {
+      java.lang.Object ref = organization_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        organization_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -418,6 +720,15 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       for (int i = 0; i < policyBundle_.size(); i++) {
         output.writeMessage(2, policyBundle_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, project_);
+      }
+      for (int i = 0; i < folders_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, folders_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, organization_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -433,6 +744,20 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
       }
       for (int i = 0; i < policyBundle_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, policyBundle_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, project_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < folders_.size(); i++) {
+          dataSize += computeStringSizeNoTag(folders_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFoldersList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, organization_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -455,6 +780,9 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         if (!getConsolidatedPolicy().equals(other.getConsolidatedPolicy())) return false;
       }
       if (!getPolicyBundleList().equals(other.getPolicyBundleList())) return false;
+      if (!getProject().equals(other.getProject())) return false;
+      if (!getFoldersList().equals(other.getFoldersList())) return false;
+      if (!getOrganization().equals(other.getOrganization())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -474,6 +802,14 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
         hash = (37 * hash) + POLICY_BUNDLE_FIELD_NUMBER;
         hash = (53 * hash) + getPolicyBundleList().hashCode();
       }
+      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getProject().hashCode();
+      if (getFoldersCount() > 0) {
+        hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
+        hash = (53 * hash) + getFoldersList().hashCode();
+      }
+      hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganization().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -640,6 +976,9 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           policyBundleBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        project_ = "";
+        folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        organization_ = "";
         return this;
       }
 
@@ -701,6 +1040,16 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
                   ? consolidatedPolicy_
                   : consolidatedPolicyBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.project_ = project_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          folders_.makeImmutable();
+          result.folders_ = folders_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.organization_ = organization_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -786,6 +1135,26 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
             }
           }
         }
+        if (!other.getProject().isEmpty()) {
+          project_ = other.project_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.folders_.isEmpty()) {
+          if (folders_.isEmpty()) {
+            folders_ = other.folders_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensureFoldersIsMutable();
+            folders_.addAll(other.folders_);
+          }
+          onChanged();
+        }
+        if (!other.getOrganization().isEmpty()) {
+          organization_ = other.organization_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -832,6 +1201,25 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
                   }
                   break;
                 } // case 18
+              case 26:
+                {
+                  project_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFoldersIsMutable();
+                  folders_.add(s);
+                  break;
+                } // case 34
+              case 42:
+                {
+                  organization_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1517,6 +1905,430 @@ public final class AnalyzeOrgPoliciesResponse extends com.google.protobuf.Genera
           policyBundle_ = null;
         }
         return policyBundleBuilder_;
+      }
+
+      private java.lang.Object project_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The project that this consolidated policy belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+       * policy belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 3;</code>
+       *
+       * @return The project.
+       */
+      public java.lang.String getProject() {
+        java.lang.Object ref = project_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          project_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this consolidated policy belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+       * policy belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 3;</code>
+       *
+       * @return The bytes for project.
+       */
+      public com.google.protobuf.ByteString getProjectBytes() {
+        java.lang.Object ref = project_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          project_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this consolidated policy belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+       * policy belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 3;</code>
+       *
+       * @param value The project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProject(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        project_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this consolidated policy belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+       * policy belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProject() {
+        project_ = getDefaultInstance().getProject();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this consolidated policy belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the consolidated
+       * policy belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 3;</code>
+       *
+       * @param value The bytes for project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        project_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList folders_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureFoldersIsMutable() {
+        if (!folders_.isModifiable()) {
+          folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @return A list containing the folders.
+       */
+      public com.google.protobuf.ProtocolStringList getFoldersList() {
+        folders_.makeImmutable();
+        return folders_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @return The count of folders.
+       */
+      public int getFoldersCount() {
+        return folders_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The folders at the given index.
+       */
+      public java.lang.String getFolders(int index) {
+        return folders_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the folders at the given index.
+       */
+      public com.google.protobuf.ByteString getFoldersBytes(int index) {
+        return folders_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The folders to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFolders(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFoldersIsMutable();
+        folders_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @param value The folders to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFolders(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFoldersIsMutable();
+        folders_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @param values The folders to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFolders(java.lang.Iterable<java.lang.String> values) {
+        ensureFoldersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folders_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFolders() {
+        folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this consolidated policy belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the consolidated
+       * policy belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 4;</code>
+       *
+       * @param value The bytes of the folders to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFoldersBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFoldersIsMutable();
+        folders_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object organization_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this consolidated policy belongs to, in the format
+       * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * consolidated policy belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 5;</code>
+       *
+       * @return The organization.
+       */
+      public java.lang.String getOrganization() {
+        java.lang.Object ref = organization_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organization_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this consolidated policy belongs to, in the format
+       * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * consolidated policy belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 5;</code>
+       *
+       * @return The bytes for organization.
+       */
+      public com.google.protobuf.ByteString getOrganizationBytes() {
+        java.lang.Object ref = organization_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          organization_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this consolidated policy belongs to, in the format
+       * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * consolidated policy belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 5;</code>
+       *
+       * @param value The organization to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganization(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        organization_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this consolidated policy belongs to, in the format
+       * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * consolidated policy belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganization() {
+        organization_ = getDefaultInstance().getOrganization();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this consolidated policy belongs to, in the format
+       * of organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * consolidated policy belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 5;</code>
+       *
+       * @param value The bytes for organization to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        organization_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

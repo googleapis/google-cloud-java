@@ -51,6 +51,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class DataStoreServiceClientTest {
   private static MockDataStoreService mockDataStoreService;
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
   private DataStoreServiceClient client;
@@ -58,9 +59,11 @@ public class DataStoreServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockDataStoreService = new MockDataStoreService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDataStoreService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockDataStoreService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -99,6 +102,8 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -159,6 +164,8 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -219,6 +226,8 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -267,6 +276,8 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -487,6 +498,8 @@ public class DataStoreServiceClientTest {
             .addAllSolutionTypes(new ArrayList<SolutionType>())
             .setDefaultSchemaId("defaultSchemaId1300415485")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
+            .setStartingSchema(Schema.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 

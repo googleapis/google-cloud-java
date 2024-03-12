@@ -72,7 +72,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the ServingConfig to get. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The resource name of the ServingConfig to get. Format:
-   * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+   * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * </pre>
    *
    * <code>
@@ -473,7 +473,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -498,7 +498,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -523,7 +523,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -547,7 +547,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>
@@ -567,7 +567,7 @@ public final class GetServingConfigRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The resource name of the ServingConfig to get. Format:
-     * `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+     * `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
      * </pre>
      *
      * <code>

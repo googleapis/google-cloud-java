@@ -309,4 +309,123 @@ public interface DataStoreOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return Whether the documentProcessingConfig field is set.
+   */
+  boolean hasDocumentProcessingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return The documentProcessingConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfig getDocumentProcessingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.DocumentProcessingConfigOrBuilder
+      getDocumentProcessingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
+   *
+   * @return Whether the startingSchema field is set.
+   */
+  boolean hasStartingSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
+   *
+   * @return The startingSchema.
+   */
+  com.google.cloud.discoveryengine.v1beta.Schema getStartingSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1beta.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1beta.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Schema starting_schema = 28;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SchemaOrBuilder getStartingSchemaOrBuilder();
 }

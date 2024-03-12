@@ -255,6 +255,175 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
      * <code>repeated .google.cloud.asset.v1.AnalyzerOrgPolicy policy_bundle = 4;</code>
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicyOrBuilder getPolicyBundleOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The project that this resource belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 5;</code>
+     *
+     * @return The project.
+     */
+    java.lang.String getProject();
+    /**
+     *
+     *
+     * <pre>
+     * The project that this resource belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 5;</code>
+     *
+     * @return The bytes for project.
+     */
+    com.google.protobuf.ByteString getProjectBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @return A list containing the folders.
+     */
+    java.util.List<java.lang.String> getFoldersList();
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @return The count of folders.
+     */
+    int getFoldersCount();
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The folders at the given index.
+     */
+    java.lang.String getFolders(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the folders at the given index.
+     */
+    com.google.protobuf.ByteString getFoldersBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this resource belongs to, in the format of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     *
+     * @return The organization.
+     */
+    java.lang.String getOrganization();
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this resource belongs to, in the format of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     *
+     * @return The bytes for organization.
+     */
+    com.google.protobuf.ByteString getOrganizationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList();
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    int getEffectiveTagsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+        getEffectiveTagsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(int index);
   }
   /**
    *
@@ -282,6 +451,10 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       fullResourceName_ = "";
       parent_ = "";
       policyBundle_ = java.util.Collections.emptyList();
+      project_ = "";
+      folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      organization_ = "";
+      effectiveTags_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -579,6 +752,260 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       return policyBundle_.get(index);
     }
 
+    public static final int PROJECT_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object project_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The project that this resource belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 5;</code>
+     *
+     * @return The project.
+     */
+    @java.lang.Override
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The project that this resource belongs to, in the format of
+     * projects/{PROJECT_NUMBER}. This field is available when the resource
+     * belongs to a project.
+     * </pre>
+     *
+     * <code>string project = 5;</code>
+     *
+     * @return The bytes for project.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FOLDERS_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList folders_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @return A list containing the folders.
+     */
+    public com.google.protobuf.ProtocolStringList getFoldersList() {
+      return folders_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @return The count of folders.
+     */
+    public int getFoldersCount() {
+      return folders_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The folders at the given index.
+     */
+    public java.lang.String getFolders(int index) {
+      return folders_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The folder(s) that this resource belongs to, in the format of
+     * folders/{FOLDER_NUMBER}. This field is available when the resource
+     * belongs (directly or cascadingly) to one or more folders.
+     * </pre>
+     *
+     * <code>repeated string folders = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the folders at the given index.
+     */
+    public com.google.protobuf.ByteString getFoldersBytes(int index) {
+      return folders_.getByteString(index);
+    }
+
+    public static final int ORGANIZATION_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object organization_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this resource belongs to, in the format of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     *
+     * @return The organization.
+     */
+    @java.lang.Override
+    public java.lang.String getOrganization() {
+      java.lang.Object ref = organization_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organization_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The organization that this resource belongs to, in the format of
+     * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+     * resource belongs (directly or cascadingly) to an organization.
+     * </pre>
+     *
+     * <code>string organization = 7;</code>
+     *
+     * @return The bytes for organization.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOrganizationBytes() {
+      java.lang.Object ref = organization_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        organization_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EFFECTIVE_TAGS_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> effectiveTags_;
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList() {
+      return effectiveTags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+        getEffectiveTagsOrBuilderList() {
+      return effectiveTags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    @java.lang.Override
+    public int getEffectiveTagsCount() {
+      return effectiveTags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index) {
+      return effectiveTags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The effective tags on this resource.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(
+        int index) {
+      return effectiveTags_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -605,6 +1032,18 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       for (int i = 0; i < policyBundle_.size(); i++) {
         output.writeMessage(4, policyBundle_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, project_);
+      }
+      for (int i = 0; i < folders_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, folders_.getRaw(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, organization_);
+      }
+      for (int i = 0; i < effectiveTags_.size(); i++) {
+        output.writeMessage(8, effectiveTags_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -626,6 +1065,23 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       }
       for (int i = 0; i < policyBundle_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, policyBundle_.get(i));
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, project_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < folders_.size(); i++) {
+          dataSize += computeStringSizeNoTag(folders_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFoldersList().size();
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organization_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, organization_);
+      }
+      for (int i = 0; i < effectiveTags_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, effectiveTags_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -653,6 +1109,10 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         if (!getConsolidatedPolicy().equals(other.getConsolidatedPolicy())) return false;
       }
       if (!getPolicyBundleList().equals(other.getPolicyBundleList())) return false;
+      if (!getProject().equals(other.getProject())) return false;
+      if (!getFoldersList().equals(other.getFoldersList())) return false;
+      if (!getOrganization().equals(other.getOrganization())) return false;
+      if (!getEffectiveTagsList().equals(other.getEffectiveTagsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -675,6 +1135,18 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
       if (getPolicyBundleCount() > 0) {
         hash = (37 * hash) + POLICY_BUNDLE_FIELD_NUMBER;
         hash = (53 * hash) + getPolicyBundleList().hashCode();
+      }
+      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getProject().hashCode();
+      if (getFoldersCount() > 0) {
+        hash = (37 * hash) + FOLDERS_FIELD_NUMBER;
+        hash = (53 * hash) + getFoldersList().hashCode();
+      }
+      hash = (37 * hash) + ORGANIZATION_FIELD_NUMBER;
+      hash = (53 * hash) + getOrganization().hashCode();
+      if (getEffectiveTagsCount() > 0) {
+        hash = (37 * hash) + EFFECTIVE_TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getEffectiveTagsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -847,6 +1319,7 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getConsolidatedPolicyFieldBuilder();
           getPolicyBundleFieldBuilder();
+          getEffectiveTagsFieldBuilder();
         }
       }
 
@@ -868,6 +1341,16 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           policyBundleBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
+        project_ = "";
+        folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        organization_ = "";
+        if (effectiveTagsBuilder_ == null) {
+          effectiveTags_ = java.util.Collections.emptyList();
+        } else {
+          effectiveTags_ = null;
+          effectiveTagsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -922,6 +1405,15 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
         } else {
           result.policyBundle_ = policyBundleBuilder_.build();
         }
+        if (effectiveTagsBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            effectiveTags_ = java.util.Collections.unmodifiableList(effectiveTags_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.effectiveTags_ = effectiveTags_;
+        } else {
+          result.effectiveTags_ = effectiveTagsBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -941,6 +1433,16 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
                   ? consolidatedPolicy_
                   : consolidatedPolicyBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.project_ = project_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          folders_.makeImmutable();
+          result.folders_ = folders_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.organization_ = organization_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1042,6 +1544,53 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
             }
           }
         }
+        if (!other.getProject().isEmpty()) {
+          project_ = other.project_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.folders_.isEmpty()) {
+          if (folders_.isEmpty()) {
+            folders_ = other.folders_;
+            bitField0_ |= 0x00000020;
+          } else {
+            ensureFoldersIsMutable();
+            folders_.addAll(other.folders_);
+          }
+          onChanged();
+        }
+        if (!other.getOrganization().isEmpty()) {
+          organization_ = other.organization_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (effectiveTagsBuilder_ == null) {
+          if (!other.effectiveTags_.isEmpty()) {
+            if (effectiveTags_.isEmpty()) {
+              effectiveTags_ = other.effectiveTags_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureEffectiveTagsIsMutable();
+              effectiveTags_.addAll(other.effectiveTags_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.effectiveTags_.isEmpty()) {
+            if (effectiveTagsBuilder_.isEmpty()) {
+              effectiveTagsBuilder_.dispose();
+              effectiveTagsBuilder_ = null;
+              effectiveTags_ = other.effectiveTags_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              effectiveTagsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getEffectiveTagsFieldBuilder()
+                      : null;
+            } else {
+              effectiveTagsBuilder_.addAllMessages(other.effectiveTags_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1100,6 +1649,39 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
                   }
                   break;
                 } // case 34
+              case 42:
+                {
+                  project_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFoldersIsMutable();
+                  folders_.add(s);
+                  break;
+                } // case 50
+              case 58:
+                {
+                  organization_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  com.google.cloud.asset.v1.EffectiveTagDetails m =
+                      input.readMessage(
+                          com.google.cloud.asset.v1.EffectiveTagDetails.parser(),
+                          extensionRegistry);
+                  if (effectiveTagsBuilder_ == null) {
+                    ensureEffectiveTagsIsMutable();
+                    effectiveTags_.add(m);
+                  } else {
+                    effectiveTagsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2022,6 +2604,790 @@ public final class AnalyzeOrgPolicyGovernedContainersResponse
           policyBundle_ = null;
         }
         return policyBundleBuilder_;
+      }
+
+      private java.lang.Object project_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The project that this resource belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the resource
+       * belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 5;</code>
+       *
+       * @return The project.
+       */
+      public java.lang.String getProject() {
+        java.lang.Object ref = project_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          project_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this resource belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the resource
+       * belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 5;</code>
+       *
+       * @return The bytes for project.
+       */
+      public com.google.protobuf.ByteString getProjectBytes() {
+        java.lang.Object ref = project_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          project_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this resource belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the resource
+       * belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 5;</code>
+       *
+       * @param value The project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProject(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        project_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this resource belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the resource
+       * belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProject() {
+        project_ = getDefaultInstance().getProject();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The project that this resource belongs to, in the format of
+       * projects/{PROJECT_NUMBER}. This field is available when the resource
+       * belongs to a project.
+       * </pre>
+       *
+       * <code>string project = 5;</code>
+       *
+       * @param value The bytes for project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        project_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList folders_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureFoldersIsMutable() {
+        if (!folders_.isModifiable()) {
+          folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
+        }
+        bitField0_ |= 0x00000020;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @return A list containing the folders.
+       */
+      public com.google.protobuf.ProtocolStringList getFoldersList() {
+        folders_.makeImmutable();
+        return folders_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @return The count of folders.
+       */
+      public int getFoldersCount() {
+        return folders_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The folders at the given index.
+       */
+      public java.lang.String getFolders(int index) {
+        return folders_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the folders at the given index.
+       */
+      public com.google.protobuf.ByteString getFoldersBytes(int index) {
+        return folders_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The folders to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFolders(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFoldersIsMutable();
+        folders_.set(index, value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @param value The folders to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFolders(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFoldersIsMutable();
+        folders_.add(value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @param values The folders to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFolders(java.lang.Iterable<java.lang.String> values) {
+        ensureFoldersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, folders_);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFolders() {
+        folders_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The folder(s) that this resource belongs to, in the format of
+       * folders/{FOLDER_NUMBER}. This field is available when the resource
+       * belongs (directly or cascadingly) to one or more folders.
+       * </pre>
+       *
+       * <code>repeated string folders = 6;</code>
+       *
+       * @param value The bytes of the folders to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFoldersBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFoldersIsMutable();
+        folders_.add(value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object organization_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this resource belongs to, in the format of
+       * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * resource belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 7;</code>
+       *
+       * @return The organization.
+       */
+      public java.lang.String getOrganization() {
+        java.lang.Object ref = organization_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organization_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this resource belongs to, in the format of
+       * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * resource belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 7;</code>
+       *
+       * @return The bytes for organization.
+       */
+      public com.google.protobuf.ByteString getOrganizationBytes() {
+        java.lang.Object ref = organization_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          organization_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this resource belongs to, in the format of
+       * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * resource belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 7;</code>
+       *
+       * @param value The organization to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganization(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        organization_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this resource belongs to, in the format of
+       * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * resource belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOrganization() {
+        organization_ = getDefaultInstance().getOrganization();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The organization that this resource belongs to, in the format of
+       * organizations/{ORGANIZATION_NUMBER}. This field is available when the
+       * resource belongs (directly or cascadingly) to an organization.
+       * </pre>
+       *
+       * <code>string organization = 7;</code>
+       *
+       * @param value The bytes for organization to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        organization_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> effectiveTags_ =
+          java.util.Collections.emptyList();
+
+      private void ensureEffectiveTagsIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          effectiveTags_ =
+              new java.util.ArrayList<com.google.cloud.asset.v1.EffectiveTagDetails>(
+                  effectiveTags_);
+          bitField0_ |= 0x00000080;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.asset.v1.EffectiveTagDetails,
+              com.google.cloud.asset.v1.EffectiveTagDetails.Builder,
+              com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+          effectiveTagsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList() {
+        if (effectiveTagsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(effectiveTags_);
+        } else {
+          return effectiveTagsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public int getEffectiveTagsCount() {
+        if (effectiveTagsBuilder_ == null) {
+          return effectiveTags_.size();
+        } else {
+          return effectiveTagsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index) {
+        if (effectiveTagsBuilder_ == null) {
+          return effectiveTags_.get(index);
+        } else {
+          return effectiveTagsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder setEffectiveTags(
+          int index, com.google.cloud.asset.v1.EffectiveTagDetails value) {
+        if (effectiveTagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEffectiveTagsIsMutable();
+          effectiveTags_.set(index, value);
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder setEffectiveTags(
+          int index, com.google.cloud.asset.v1.EffectiveTagDetails.Builder builderForValue) {
+        if (effectiveTagsBuilder_ == null) {
+          ensureEffectiveTagsIsMutable();
+          effectiveTags_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder addEffectiveTags(com.google.cloud.asset.v1.EffectiveTagDetails value) {
+        if (effectiveTagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEffectiveTagsIsMutable();
+          effectiveTags_.add(value);
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder addEffectiveTags(
+          int index, com.google.cloud.asset.v1.EffectiveTagDetails value) {
+        if (effectiveTagsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEffectiveTagsIsMutable();
+          effectiveTags_.add(index, value);
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder addEffectiveTags(
+          com.google.cloud.asset.v1.EffectiveTagDetails.Builder builderForValue) {
+        if (effectiveTagsBuilder_ == null) {
+          ensureEffectiveTagsIsMutable();
+          effectiveTags_.add(builderForValue.build());
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder addEffectiveTags(
+          int index, com.google.cloud.asset.v1.EffectiveTagDetails.Builder builderForValue) {
+        if (effectiveTagsBuilder_ == null) {
+          ensureEffectiveTagsIsMutable();
+          effectiveTags_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder addAllEffectiveTags(
+          java.lang.Iterable<? extends com.google.cloud.asset.v1.EffectiveTagDetails> values) {
+        if (effectiveTagsBuilder_ == null) {
+          ensureEffectiveTagsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectiveTags_);
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder clearEffectiveTags() {
+        if (effectiveTagsBuilder_ == null) {
+          effectiveTags_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public Builder removeEffectiveTags(int index) {
+        if (effectiveTagsBuilder_ == null) {
+          ensureEffectiveTagsIsMutable();
+          effectiveTags_.remove(index);
+          onChanged();
+        } else {
+          effectiveTagsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public com.google.cloud.asset.v1.EffectiveTagDetails.Builder getEffectiveTagsBuilder(
+          int index) {
+        return getEffectiveTagsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(
+          int index) {
+        if (effectiveTagsBuilder_ == null) {
+          return effectiveTags_.get(index);
+        } else {
+          return effectiveTagsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+          getEffectiveTagsOrBuilderList() {
+        if (effectiveTagsBuilder_ != null) {
+          return effectiveTagsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(effectiveTags_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public com.google.cloud.asset.v1.EffectiveTagDetails.Builder addEffectiveTagsBuilder() {
+        return getEffectiveTagsFieldBuilder()
+            .addBuilder(com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public com.google.cloud.asset.v1.EffectiveTagDetails.Builder addEffectiveTagsBuilder(
+          int index) {
+        return getEffectiveTagsFieldBuilder()
+            .addBuilder(index, com.google.cloud.asset.v1.EffectiveTagDetails.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The effective tags on this resource.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 8;</code>
+       */
+      public java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails.Builder>
+          getEffectiveTagsBuilderList() {
+        return getEffectiveTagsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.asset.v1.EffectiveTagDetails,
+              com.google.cloud.asset.v1.EffectiveTagDetails.Builder,
+              com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+          getEffectiveTagsFieldBuilder() {
+        if (effectiveTagsBuilder_ == null) {
+          effectiveTagsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.asset.v1.EffectiveTagDetails,
+                  com.google.cloud.asset.v1.EffectiveTagDetails.Builder,
+                  com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>(
+                  effectiveTags_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          effectiveTags_ = null;
+        }
+        return effectiveTagsBuilder_;
       }
 
       @java.lang.Override

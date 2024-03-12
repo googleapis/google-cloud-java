@@ -28,7 +28,7 @@ public interface LookupDiscoveredServiceResponseOrBuilder
    *
    *
    * <pre>
-   * Discovered service if exists, empty otherwise.
+   * Discovered Service if exists, empty otherwise.
    * </pre>
    *
    * <code>.google.cloud.apphub.v1.DiscoveredService discovered_service = 1;</code>
@@ -40,7 +40,7 @@ public interface LookupDiscoveredServiceResponseOrBuilder
    *
    *
    * <pre>
-   * Discovered service if exists, empty otherwise.
+   * Discovered Service if exists, empty otherwise.
    * </pre>
    *
    * <code>.google.cloud.apphub.v1.DiscoveredService discovered_service = 1;</code>
@@ -52,7 +52,7 @@ public interface LookupDiscoveredServiceResponseOrBuilder
    *
    *
    * <pre>
-   * Discovered service if exists, empty otherwise.
+   * Discovered Service if exists, empty otherwise.
    * </pre>
    *
    * <code>.google.cloud.apphub.v1.DiscoveredService discovered_service = 1;</code>

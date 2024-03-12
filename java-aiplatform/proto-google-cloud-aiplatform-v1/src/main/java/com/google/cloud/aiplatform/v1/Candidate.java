@@ -139,6 +139,39 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 5;</code>
      */
     OTHER(5),
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for the
+     * terms which are included from the terminology blocklist.
+     * </pre>
+     *
+     * <code>BLOCKLIST = 6;</code>
+     */
+    BLOCKLIST(6),
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * the prohibited contents.
+     * </pre>
+     *
+     * <code>PROHIBITED_CONTENT = 7;</code>
+     */
+    PROHIBITED_CONTENT(7),
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * Sensitive Personally Identifiable Information (SPII) contents.
+     * </pre>
+     *
+     * <code>SPII = 8;</code>
+     */
+    SPII(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -205,6 +238,39 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 5;</code>
      */
     public static final int OTHER_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for the
+     * terms which are included from the terminology blocklist.
+     * </pre>
+     *
+     * <code>BLOCKLIST = 6;</code>
+     */
+    public static final int BLOCKLIST_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * the prohibited contents.
+     * </pre>
+     *
+     * <code>PROHIBITED_CONTENT = 7;</code>
+     */
+    public static final int PROHIBITED_CONTENT_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The token generation was stopped as the response was flagged for
+     * Sensitive Personally Identifiable Information (SPII) contents.
+     * </pre>
+     *
+     * <code>SPII = 8;</code>
+     */
+    public static final int SPII_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -242,6 +308,12 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
           return RECITATION;
         case 5:
           return OTHER;
+        case 6:
+          return BLOCKLIST;
+        case 7:
+          return PROHIBITED_CONTENT;
+        case 8:
+          return SPII;
         default:
           return null;
       }
@@ -629,6 +701,62 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         : citationMetadata_;
   }
 
+  public static final int GROUNDING_METADATA_FIELD_NUMBER = 7;
+  private com.google.cloud.aiplatform.v1.GroundingMetadata groundingMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the groundingMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroundingMetadata() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The groundingMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GroundingMetadata getGroundingMetadata() {
+    return groundingMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.GroundingMetadata.getDefaultInstance()
+        : groundingMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GroundingMetadataOrBuilder getGroundingMetadataOrBuilder() {
+    return groundingMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.GroundingMetadata.getDefaultInstance()
+        : groundingMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -663,6 +791,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getCitationMetadata());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(7, getGroundingMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -691,6 +822,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCitationMetadata());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGroundingMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -722,6 +856,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (hasCitationMetadata()) {
       if (!getCitationMetadata().equals(other.getCitationMetadata())) return false;
     }
+    if (hasGroundingMetadata() != other.hasGroundingMetadata()) return false;
+    if (hasGroundingMetadata()) {
+      if (!getGroundingMetadata().equals(other.getGroundingMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -752,6 +890,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (hasCitationMetadata()) {
       hash = (37 * hash) + CITATION_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getCitationMetadata().hashCode();
+    }
+    if (hasGroundingMetadata()) {
+      hash = (37 * hash) + GROUNDING_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundingMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -896,6 +1038,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         getContentFieldBuilder();
         getSafetyRatingsFieldBuilder();
         getCitationMetadataFieldBuilder();
+        getGroundingMetadataFieldBuilder();
       }
     }
 
@@ -922,6 +1065,11 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (citationMetadataBuilder_ != null) {
         citationMetadataBuilder_.dispose();
         citationMetadataBuilder_ = null;
+      }
+      groundingMetadata_ = null;
+      if (groundingMetadataBuilder_ != null) {
+        groundingMetadataBuilder_.dispose();
+        groundingMetadataBuilder_ = null;
       }
       return this;
     }
@@ -991,6 +1139,13 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         result.citationMetadata_ =
             citationMetadataBuilder_ == null ? citationMetadata_ : citationMetadataBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.groundingMetadata_ =
+            groundingMetadataBuilder_ == null
+                ? groundingMetadata_
+                : groundingMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1084,6 +1239,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCitationMetadata()) {
         mergeCitationMetadata(other.getCitationMetadata());
       }
+      if (other.hasGroundingMetadata()) {
+        mergeGroundingMetadata(other.getGroundingMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1154,6 +1312,13 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getGroundingMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2292,6 +2457,212 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         citationMetadata_ = null;
       }
       return citationMetadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.GroundingMetadata groundingMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.GroundingMetadata,
+            com.google.cloud.aiplatform.v1.GroundingMetadata.Builder,
+            com.google.cloud.aiplatform.v1.GroundingMetadataOrBuilder>
+        groundingMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the groundingMetadata field is set.
+     */
+    public boolean hasGroundingMetadata() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The groundingMetadata.
+     */
+    public com.google.cloud.aiplatform.v1.GroundingMetadata getGroundingMetadata() {
+      if (groundingMetadataBuilder_ == null) {
+        return groundingMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.GroundingMetadata.getDefaultInstance()
+            : groundingMetadata_;
+      } else {
+        return groundingMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGroundingMetadata(com.google.cloud.aiplatform.v1.GroundingMetadata value) {
+      if (groundingMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        groundingMetadata_ = value;
+      } else {
+        groundingMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGroundingMetadata(
+        com.google.cloud.aiplatform.v1.GroundingMetadata.Builder builderForValue) {
+      if (groundingMetadataBuilder_ == null) {
+        groundingMetadata_ = builderForValue.build();
+      } else {
+        groundingMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGroundingMetadata(com.google.cloud.aiplatform.v1.GroundingMetadata value) {
+      if (groundingMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && groundingMetadata_ != null
+            && groundingMetadata_
+                != com.google.cloud.aiplatform.v1.GroundingMetadata.getDefaultInstance()) {
+          getGroundingMetadataBuilder().mergeFrom(value);
+        } else {
+          groundingMetadata_ = value;
+        }
+      } else {
+        groundingMetadataBuilder_.mergeFrom(value);
+      }
+      if (groundingMetadata_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGroundingMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      groundingMetadata_ = null;
+      if (groundingMetadataBuilder_ != null) {
+        groundingMetadataBuilder_.dispose();
+        groundingMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.GroundingMetadata.Builder getGroundingMetadataBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getGroundingMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.GroundingMetadataOrBuilder
+        getGroundingMetadataOrBuilder() {
+      if (groundingMetadataBuilder_ != null) {
+        return groundingMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return groundingMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.GroundingMetadata.getDefaultInstance()
+            : groundingMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata specifies sources used to ground generated content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.GroundingMetadata,
+            com.google.cloud.aiplatform.v1.GroundingMetadata.Builder,
+            com.google.cloud.aiplatform.v1.GroundingMetadataOrBuilder>
+        getGroundingMetadataFieldBuilder() {
+      if (groundingMetadataBuilder_ == null) {
+        groundingMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.GroundingMetadata,
+                com.google.cloud.aiplatform.v1.GroundingMetadata.Builder,
+                com.google.cloud.aiplatform.v1.GroundingMetadataOrBuilder>(
+                getGroundingMetadata(), getParentForChildren(), isClean());
+        groundingMetadata_ = null;
+      }
+      return groundingMetadataBuilder_;
     }
 
     @java.lang.Override

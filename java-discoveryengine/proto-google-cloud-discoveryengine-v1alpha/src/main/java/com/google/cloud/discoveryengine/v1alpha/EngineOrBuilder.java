@@ -503,7 +503,7 @@ public interface EngineOrBuilder
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>
@@ -534,7 +534,7 @@ public interface EngineOrBuilder
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>
@@ -565,7 +565,7 @@ public interface EngineOrBuilder
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>
@@ -597,7 +597,7 @@ public interface EngineOrBuilder
    * Note that when used in
    * [CreateEngineRequest][google.cloud.discoveryengine.v1alpha.CreateEngineRequest],
    * one DataStore id must be provided as the system will use it for necessary
-   * intializations.
+   * initializations.
    * </pre>
    *
    * <code>repeated string data_store_ids = 5;</code>

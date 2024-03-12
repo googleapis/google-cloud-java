@@ -18,6 +18,7 @@ package com.google.cloud.discoveryengine.v1alpha;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.discoveryengine.v1alpha.CompletionServiceGrpc.CompletionServiceImplBase;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -75,6 +76,48 @@ public class MockCompletionServiceImpl extends CompletionServiceImplBase {
                   "Unrecognized response type %s for method CompleteQuery, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CompleteQueryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void importSuggestionDenyListEntries(
+      ImportSuggestionDenyListEntriesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportSuggestionDenyListEntries, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void purgeSuggestionDenyListEntries(
+      PurgeSuggestionDenyListEntriesRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PurgeSuggestionDenyListEntries, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

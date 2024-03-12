@@ -86,6 +86,61 @@ public interface SafetyRatingOrBuilder
    *
    *
    * <pre>
+   * Output only. Harm probability score.
+   * </pre>
+   *
+   * <code>float probability_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The probabilityScore.
+   */
+  float getProbabilityScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Harm severity levels in the content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for severity.
+   */
+  int getSeverityValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Harm severity levels in the content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.SafetyRating.HarmSeverity severity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The severity.
+   */
+  com.google.cloud.aiplatform.v1.SafetyRating.HarmSeverity getSeverity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Harm severity score.
+   * </pre>
+   *
+   * <code>float severity_score = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The severityScore.
+   */
+  float getSeverityScore();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Indicates whether the content was filtered out because of this
    * rating.
    * </pre>

@@ -188,8 +188,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Selects data model of query suggestions for serving. Currently supported
-   * values:
+   * Specifies the autocomplete data model. This overrides any model specified
+   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+   * supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -226,8 +227,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Selects data model of query suggestions for serving. Currently supported
-   * values:
+   * Specifies the autocomplete data model. This overrides any model specified
+   * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+   * supported values:
    *
    * * `document` - Using suggestions generated from user-imported documents.
    * * `search-history` - Using suggestions generated from the past history of
@@ -1043,8 +1045,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1080,8 +1083,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1117,8 +1121,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1153,8 +1158,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of
@@ -1185,8 +1191,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Selects data model of query suggestions for serving. Currently supported
-     * values:
+     * Specifies the autocomplete data model. This overrides any model specified
+     * in the Configuration &gt; Autocomplete section of the Cloud console. Currently
+     * supported values:
      *
      * * `document` - Using suggestions generated from user-imported documents.
      * * `search-history` - Using suggestions generated from the past history of

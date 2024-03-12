@@ -32,6 +32,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
+import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -51,6 +52,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class DocumentServiceClientTest {
   private static MockDocumentService mockDocumentService;
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
   private DocumentServiceClient client;
@@ -58,9 +60,11 @@ public class DocumentServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockDocumentService = new MockDocumentService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockDocumentService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockDocumentService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -99,6 +103,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -149,6 +154,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -287,6 +293,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -343,6 +350,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -395,6 +403,7 @@ public class DocumentServiceClientTest {
             .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
             .setDerivedStructData(Struct.newBuilder().build())
+            .setIndexTime(Timestamp.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 

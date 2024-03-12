@@ -177,6 +177,16 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVERLESS_NEG = 9;</code>
      */
     SERVERLESS_NEG(9),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>STORAGE_BUCKET = 10;</code>
+     */
+    STORAGE_BUCKET(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -283,6 +293,16 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVERLESS_NEG = 9;</code>
      */
     public static final int SERVERLESS_NEG_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Cloud Storage bucket.
+     * </pre>
+     *
+     * <code>STORAGE_BUCKET = 10;</code>
+     */
+    public static final int STORAGE_BUCKET_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -328,6 +348,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
           return PSC_VPC_SC;
         case 9:
           return SERVERLESS_NEG;
+        case 10:
+          return STORAGE_BUCKET;
         default:
           return null;
       }

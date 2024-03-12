@@ -1902,6 +1902,67 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         : derivedStructData_;
   }
 
+  public static final int INDEX_TIME_FIELD_NUMBER = 13;
+  private com.google.protobuf.Timestamp indexTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time the document was indexed. If this field is set,
+   * the document could be returned in search results.
+   *
+   * This field is OUTPUT_ONLY. If this field is not populated, it means the
+   * document has never been indexed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the indexTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasIndexTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time the document was indexed. If this field is set,
+   * the document could be returned in search results.
+   *
+   * This field is OUTPUT_ONLY. If this field is not populated, it means the
+   * document has never been indexed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The indexTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getIndexTime() {
+    return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time the document was indexed. If this field is set,
+   * the document could be returned in search results.
+   *
+   * This field is OUTPUT_ONLY. If this field is not populated, it means the
+   * document has never been indexed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
+    return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1940,6 +2001,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(10, getContent());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(13, getIndexTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1975,6 +2039,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getContent());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getIndexTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2002,6 +2069,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (hasDerivedStructData() != other.hasDerivedStructData()) return false;
     if (hasDerivedStructData()) {
       if (!getDerivedStructData().equals(other.getDerivedStructData())) return false;
+    }
+    if (hasIndexTime() != other.hasIndexTime()) return false;
+    if (hasIndexTime()) {
+      if (!getIndexTime().equals(other.getIndexTime())) return false;
     }
     if (!getDataCase().equals(other.getDataCase())) return false;
     switch (dataCase_) {
@@ -2040,6 +2111,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (hasDerivedStructData()) {
       hash = (37 * hash) + DERIVED_STRUCT_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getDerivedStructData().hashCode();
+    }
+    if (hasIndexTime()) {
+      hash = (37 * hash) + INDEX_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexTime().hashCode();
     }
     switch (dataCase_) {
       case 4:
@@ -2196,6 +2271,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getContentFieldBuilder();
         getDerivedStructDataFieldBuilder();
+        getIndexTimeFieldBuilder();
       }
     }
 
@@ -2219,6 +2295,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (derivedStructDataBuilder_ != null) {
         derivedStructDataBuilder_.dispose();
         derivedStructDataBuilder_ = null;
+      }
+      indexTime_ = null;
+      if (indexTimeBuilder_ != null) {
+        indexTimeBuilder_.dispose();
+        indexTimeBuilder_ = null;
       }
       dataCase_ = 0;
       data_ = null;
@@ -2282,6 +2363,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 ? derivedStructData_
                 : derivedStructDataBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.indexTime_ = indexTimeBuilder_ == null ? indexTime_ : indexTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2365,6 +2450,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDerivedStructData()) {
         mergeDerivedStructData(other.getDerivedStructData());
+      }
+      if (other.hasIndexTime()) {
+        mergeIndexTime(other.getIndexTime());
       }
       switch (other.getDataCase()) {
         case STRUCT_DATA:
@@ -2460,6 +2548,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 82
+            case 106:
+              {
+                input.readMessage(getIndexTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3760,6 +3854,241 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         derivedStructData_ = null;
       }
       return derivedStructDataBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp indexTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        indexTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the indexTime field is set.
+     */
+    public boolean hasIndexTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The indexTime.
+     */
+    public com.google.protobuf.Timestamp getIndexTime() {
+      if (indexTimeBuilder_ == null) {
+        return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
+      } else {
+        return indexTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIndexTime(com.google.protobuf.Timestamp value) {
+      if (indexTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        indexTime_ = value;
+      } else {
+        indexTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIndexTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (indexTimeBuilder_ == null) {
+        indexTime_ = builderForValue.build();
+      } else {
+        indexTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIndexTime(com.google.protobuf.Timestamp value) {
+      if (indexTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && indexTime_ != null
+            && indexTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getIndexTimeBuilder().mergeFrom(value);
+        } else {
+          indexTime_ = value;
+        }
+      } else {
+        indexTimeBuilder_.mergeFrom(value);
+      }
+      if (indexTime_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIndexTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      indexTime_ = null;
+      if (indexTimeBuilder_ != null) {
+        indexTimeBuilder_.dispose();
+        indexTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getIndexTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getIndexTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder() {
+      if (indexTimeBuilder_ != null) {
+        return indexTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return indexTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : indexTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The last time the document was indexed. If this field is set,
+     * the document could be returned in search results.
+     *
+     * This field is OUTPUT_ONLY. If this field is not populated, it means the
+     * document has never been indexed.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getIndexTimeFieldBuilder() {
+      if (indexTimeBuilder_ == null) {
+        indexTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getIndexTime(), getParentForChildren(), isClean());
+        indexTime_ = null;
+      }
+      return indexTimeBuilder_;
     }
 
     @java.lang.Override

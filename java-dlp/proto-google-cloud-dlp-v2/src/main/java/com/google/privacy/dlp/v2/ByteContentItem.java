@@ -70,7 +70,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The type of data being sent for inspection. To learn more, see
    * [Supported file
-   * types](https://cloud.google.com/dlp/docs/supported-file-types).
+   * types](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types).
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.ByteContentItem.BytesType}

@@ -156,6 +156,11 @@ public interface BigQueryOptionsOrBuilder
    * 100 means no limit. Defaults to 0. Only one of rows_limit and
    * rows_limit_percent can be specified. Cannot be used in conjunction with
    * TimespanConfig.
+   *
+   * Caution: A [known
+   * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+   * is causing the `rowsLimitPercent` field to behave unexpectedly. We
+   * recommend using `rowsLimit` instead.
    * </pre>
    *
    * <code>int32 rows_limit_percent = 6;</code>
@@ -165,12 +170,24 @@ public interface BigQueryOptionsOrBuilder
   int getRowsLimitPercent();
 
   /**
+   *
+   *
+   * <pre>
+   * How to sample the data.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
    *
    * @return The enum numeric value on the wire for sampleMethod.
    */
   int getSampleMethodValue();
   /**
+   *
+   *
+   * <pre>
+   * How to sample the data.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
    *
    * @return The sampleMethod.

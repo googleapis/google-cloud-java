@@ -19,6 +19,7 @@ package com.google.cloud.discoveryengine.v1alpha.samples;
 // [START discoveryengine_v1alpha_generated_SearchService_Search_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.discoveryengine.v1alpha.BranchName;
+import com.google.cloud.discoveryengine.v1alpha.CustomFineTuningSpec;
 import com.google.cloud.discoveryengine.v1alpha.SearchRequest;
 import com.google.cloud.discoveryengine.v1alpha.SearchResponse;
 import com.google.cloud.discoveryengine.v1alpha.SearchServiceClient;
@@ -56,6 +57,7 @@ public class AsyncSearch {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -71,6 +73,7 @@ public class AsyncSearch {
               .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

@@ -18,9 +18,13 @@ package com.google.cloud.discoveryengine.v1alpha;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1alpha.stub.CompletionServiceStub;
 import com.google.cloud.discoveryengine.v1alpha.stub.CompletionServiceStubSettings;
+import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -76,6 +80,36 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> completeQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ImportSuggestionDenyListEntries</td>
+ *      <td><p> Imports all [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a DataStore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importSuggestionDenyListEntriesAsync(ImportSuggestionDenyListEntriesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importSuggestionDenyListEntriesOperationCallable()
+ *           <li><p> importSuggestionDenyListEntriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PurgeSuggestionDenyListEntries</td>
+ *      <td><p> Permanently deletes all [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a DataStore.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> purgeSuggestionDenyListEntriesAsync(PurgeSuggestionDenyListEntriesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> purgeSuggestionDenyListEntriesOperationCallable()
+ *           <li><p> purgeSuggestionDenyListEntriesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -142,6 +176,8 @@ import javax.annotation.Generated;
 public class CompletionServiceClient implements BackgroundResource {
   private final CompletionServiceSettings settings;
   private final CompletionServiceStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of CompletionServiceClient with default settings. */
   public static final CompletionServiceClient create() throws IOException {
@@ -173,11 +209,17 @@ public class CompletionServiceClient implements BackgroundResource {
   protected CompletionServiceClient(CompletionServiceSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((CompletionServiceStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected CompletionServiceClient(CompletionServiceStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final CompletionServiceSettings getSettings() {
@@ -186,6 +228,23 @@ public class CompletionServiceClient implements BackgroundResource {
 
   public CompletionServiceStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -256,6 +315,228 @@ public class CompletionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return stub.completeQueryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports all
+   * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   ImportSuggestionDenyListEntriesRequest request =
+   *       ImportSuggestionDenyListEntriesRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ImportSuggestionDenyListEntriesResponse response =
+   *       completionServiceClient.importSuggestionDenyListEntriesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          ImportSuggestionDenyListEntriesResponse, ImportSuggestionDenyListEntriesMetadata>
+      importSuggestionDenyListEntriesAsync(ImportSuggestionDenyListEntriesRequest request) {
+    return importSuggestionDenyListEntriesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports all
+   * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   ImportSuggestionDenyListEntriesRequest request =
+   *       ImportSuggestionDenyListEntriesRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<
+   *           ImportSuggestionDenyListEntriesResponse, ImportSuggestionDenyListEntriesMetadata>
+   *       future =
+   *           completionServiceClient
+   *               .importSuggestionDenyListEntriesOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   ImportSuggestionDenyListEntriesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ImportSuggestionDenyListEntriesRequest,
+          ImportSuggestionDenyListEntriesResponse,
+          ImportSuggestionDenyListEntriesMetadata>
+      importSuggestionDenyListEntriesOperationCallable() {
+    return stub.importSuggestionDenyListEntriesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports all
+   * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   ImportSuggestionDenyListEntriesRequest request =
+   *       ImportSuggestionDenyListEntriesRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       completionServiceClient.importSuggestionDenyListEntriesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
+      importSuggestionDenyListEntriesCallable() {
+    return stub.importSuggestionDenyListEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all
+   * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   PurgeSuggestionDenyListEntriesRequest request =
+   *       PurgeSuggestionDenyListEntriesRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   PurgeSuggestionDenyListEntriesResponse response =
+   *       completionServiceClient.purgeSuggestionDenyListEntriesAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<
+          PurgeSuggestionDenyListEntriesResponse, PurgeSuggestionDenyListEntriesMetadata>
+      purgeSuggestionDenyListEntriesAsync(PurgeSuggestionDenyListEntriesRequest request) {
+    return purgeSuggestionDenyListEntriesOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all
+   * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   PurgeSuggestionDenyListEntriesRequest request =
+   *       PurgeSuggestionDenyListEntriesRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<
+   *           PurgeSuggestionDenyListEntriesResponse, PurgeSuggestionDenyListEntriesMetadata>
+   *       future =
+   *           completionServiceClient
+   *               .purgeSuggestionDenyListEntriesOperationCallable()
+   *               .futureCall(request);
+   *   // Do something.
+   *   PurgeSuggestionDenyListEntriesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PurgeSuggestionDenyListEntriesRequest,
+          PurgeSuggestionDenyListEntriesResponse,
+          PurgeSuggestionDenyListEntriesMetadata>
+      purgeSuggestionDenyListEntriesOperationCallable() {
+    return stub.purgeSuggestionDenyListEntriesOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all
+   * [SuggestionDenyListEntry][google.cloud.discoveryengine.v1alpha.SuggestionDenyListEntry] for a
+   * DataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompletionServiceClient completionServiceClient = CompletionServiceClient.create()) {
+   *   PurgeSuggestionDenyListEntriesRequest request =
+   *       PurgeSuggestionDenyListEntriesRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationCollectionDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       completionServiceClient.purgeSuggestionDenyListEntriesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeSuggestionDenyListEntriesRequest, Operation>
+      purgeSuggestionDenyListEntriesCallable() {
+    return stub.purgeSuggestionDenyListEntriesCallable();
   }
 
   @Override

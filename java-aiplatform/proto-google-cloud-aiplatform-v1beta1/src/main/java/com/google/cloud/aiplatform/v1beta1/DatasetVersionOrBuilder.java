@@ -176,4 +176,74 @@ public interface DatasetVersionOrBuilder
    * @return The bytes for bigQueryDatasetName.
    */
   com.google.protobuf.ByteString getBigQueryDatasetNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined name of the DatasetVersion.
+   * The name can be up to 128 characters long and can consist of any UTF-8
+   * characters.
+   * </pre>
+   *
+   * <code>string display_name = 7;</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined name of the DatasetVersion.
+   * The name can be up to 128 characters long and can consist of any UTF-8
+   * characters.
+   * </pre>
+   *
+   * <code>string display_name = 7;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Output only. Additional information about the DatasetVersion.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Output only. Additional information about the DatasetVersion.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The metadata.
+   */
+  com.google.protobuf.Value getMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Output only. Additional information about the DatasetVersion.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.protobuf.ValueOrBuilder getMetadataOrBuilder();
 }
