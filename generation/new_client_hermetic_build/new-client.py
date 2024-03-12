@@ -323,6 +323,8 @@ def __is_releasable_version(versioned_proto_path):
                 if gradle_pkg_matcher.search(line) != None
             ]
         )
+        # Two lines should match, the gapic assembly import statement and the
+        # gapic assembly build rule
         return matched_lines == 2
 
 

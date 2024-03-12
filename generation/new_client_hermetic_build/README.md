@@ -1,9 +1,9 @@
 # New client generation (GitHub Action)
 This new generation workflow enables generation of new libraries by
- - appending a new library to our [generation_config.yaml](https://github.com/googleapis/google-cloud-java/blob/c7429c0eec419c01d4e2fe14d063b9335efb810b/generation_config.yaml).
- - running the hermetic build scripts docker image and
+ 1. appending a new library to our [generation_config.yaml](https://github.com/googleapis/google-cloud-java/blob/c7429c0eec419c01d4e2fe14d063b9335efb810b/generation_config.yaml).
+ 2. running the hermetic build scripts docker image and
  generate the newly added library.
- - create a PR with the changes.
+ 3. create a PR with the changes.
 
 
 ## Components
@@ -21,7 +21,7 @@ to generate a new library. It also creates the pull request.
 
 ## Execute the Github Action
 
-You in order to run the
+In order to run the
 [Github Action](https://github.com/googleapis/google-cloud-java/actions/workflows/generate_new_client_hermetic_build.yaml)
 , you need to specify a few parameters.
 These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
@@ -32,7 +32,6 @@ The example in this README uses AlloyDB's [Cloud Drop](https://github.com/google
 For convenience of the subsequent commands, define a variable for API short name.
 This value will be used by default to generate the following:
 * `--distribution-name`
-* `--destination-name`
 
 The corresponding value in the Cloud Drop page is `api_short_name`.
 
@@ -57,7 +56,8 @@ then the corresponding external mirrored proto is here: https://github.com/googl
 
 Therefore, the "proto path" value we supply to the command is `google/cloud/alloydb`.
 
-We will publish a single module for a service that includes all versions in this path. Once the service has been published once, any future additional versions will automatically be generated via OwlBot.
+We will publish a single module for a service that includes all versions in this path. Any future version must be manually added to
+the configuration yaml (`google-cloud-java/generation_config.yaml`)
 
 ### Name pretty (`name_pretty`)
 
@@ -79,7 +79,8 @@ The value must starts with "https://".
 
 Example: `https://cloud.google.com/alloydb/docs/reference/rest`
 
-If they exist, add them as a flag to the python command below like:
+If the value exists, add it as a flag to the python command below (see [Advanced
+Options](#advanced-options]):
 `--rest-docs="https://cloud.google.com/alloydb/docs/reference/rest" \`
 
 ### RPC Docs (`rpc_docs`)
@@ -89,7 +90,8 @@ The value must starts with "https://".
 
 Example: `https://cloud.google.com/speech-to-text/docs/reference/rpc`
 
-If they exist, add them as a flag to the python command below like:
+If the value exists, add it as a flag to the python command below (see [Advanced
+Options](#advanced-options]):
 `--rpc-docs="https://cloud.google.com/speech-to-text/docs/reference/rpc" \`
 
 ### API description (`api_description`)
@@ -103,19 +105,6 @@ Example:
     provides a powerful option for migrating, modernizing, or building
     commercial-grade applications.
  ```
-
-### Transport (`transport`)
-
-This variable represents the type of requests the library will make to
-its corresponding service. It can be `grpc` (default), `http` or `both`. In
-practice, it is mainly used to create a `.repo-metadata.json` file.
-
-### Destination Name (`destination_name`)
-
-This variable represents the folder name to be created in the root of the
-monorepo. For example, if it is `java-example-library`, then a new folder
-with the generated library will be created in
-`google-cloud-java/java-example/library`.
 
 ### Distribution Name (`distribution_name`)
 
