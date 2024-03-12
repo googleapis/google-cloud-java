@@ -5,12 +5,12 @@
   "api_description": "is an infrastructure service of Google Cloud that lets you list and manage other APIs and services in your Cloud projects.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-service-usage/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-service-usage",
   "distribution_name": "com.google.cloud:google-cloud-service-usage",
   "api_id": "serviceusage.googleapis.com",
-  "requires_billing": true,
-  "library_type": "GAPIC_AUTO"
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
 }

@@ -31,7 +31,9 @@ package com.google.privacy.dlp.v2;
  * If the bound `Value` type differs from the type of data being transformed, we
  * will first attempt converting the type of the data to be transformed to match
  * the type of the bound before comparing.
- * See https://cloud.google.com/dlp/docs/concepts-bucketing to learn more.
+ * See
+ * https://cloud.google.com/sensitive-data-protection/docs/concepts-bucketing to
+ * learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.BucketingConfig}
@@ -1701,7 +1703,9 @@ public final class BucketingConfig extends com.google.protobuf.GeneratedMessageV
    * If the bound `Value` type differs from the type of data being transformed, we
    * will first attempt converting the type of the data to be transformed to match
    * the type of the bound before comparing.
-   * See https://cloud.google.com/dlp/docs/concepts-bucketing to learn more.
+   * See
+   * https://cloud.google.com/sensitive-data-protection/docs/concepts-bucketing to
+   * learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.BucketingConfig}

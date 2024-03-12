@@ -47,6 +47,7 @@ import org.junit.Test;
 @Generated("by gapic-generator-java")
 public class ConversationalSearchServiceClientTest {
   private static MockConversationalSearchService mockConversationalSearchService;
+  private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
   private ConversationalSearchServiceClient client;
@@ -54,10 +55,11 @@ public class ConversationalSearchServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockConversationalSearchService = new MockConversationalSearchService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockConversationalSearchService));
+            Arrays.<MockGrpcService>asList(mockConversationalSearchService, mockLocations));
     mockServiceHelper.start();
   }
 

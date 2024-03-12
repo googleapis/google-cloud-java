@@ -97,7 +97,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    * config. For example, for Engine
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
-   * for your [Recommend][] requests.
+   * for your
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend]
+   * requests.
    * </pre>
    *
    * <code>
@@ -132,7 +134,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
    * config. For example, for Engine
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
    * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
-   * for your [Recommend][] requests.
+   * for your
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend]
+   * requests.
    * </pre>
    *
    * <code>
@@ -1341,7 +1345,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * config. For example, for Engine
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
-     * for your [Recommend][] requests.
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1375,7 +1381,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * config. For example, for Engine
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
-     * for your [Recommend][] requests.
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1409,7 +1417,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * config. For example, for Engine
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
-     * for your [Recommend][] requests.
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1442,7 +1452,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * config. For example, for Engine
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
-     * for your [Recommend][] requests.
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>
@@ -1471,7 +1483,9 @@ public final class RecommendRequest extends com.google.protobuf.GeneratedMessage
      * config. For example, for Engine
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine`, you can use
      * `projects/&#42;&#47;locations/global/collections/&#42;&#47;engines/my-engine/servingConfigs/my-engine`
-     * for your [Recommend][] requests.
+     * for your
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1alpha.RecommendationService.Recommend]
+     * requests.
      * </pre>
      *
      * <code>

@@ -27,10 +27,13 @@ import com.google.cloud.discoveryengine.v1alpha.CreateDataStoreRequest;
 import com.google.cloud.discoveryengine.v1alpha.DataStore;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreMetadata;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig;
 import com.google.cloud.discoveryengine.v1alpha.GetDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresResponse;
 import com.google.cloud.discoveryengine.v1alpha.UpdateDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -87,6 +90,18 @@ public abstract class DataStoreServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDataStoreCallable()");
+  }
+
+  public UnaryCallable<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getDocumentProcessingConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDocumentProcessingConfigCallable()");
   }
 
   @Override

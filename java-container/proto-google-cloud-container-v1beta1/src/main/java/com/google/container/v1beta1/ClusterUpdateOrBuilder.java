@@ -1651,7 +1651,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2607
+   *     google/container/v1beta1/cluster_service.proto;l=2610
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Deprecated
@@ -1669,7 +1669,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2607
+   *     google/container/v1beta1/cluster_service.proto;l=2610
    * @return The desiredProtectConfig.
    */
   @java.lang.Deprecated
@@ -2295,4 +2295,71 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredInTransitEncryptionConfig.
    */
   com.google.container.v1beta1.InTransitEncryptionConfig getDesiredInTransitEncryptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return Whether the desiredEnableCiliumClusterwideNetworkPolicy field is set.
+   */
+  boolean hasDesiredEnableCiliumClusterwideNetworkPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return The desiredEnableCiliumClusterwideNetworkPolicy.
+   */
+  boolean getDesiredEnableCiliumClusterwideNetworkPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   *
+   * @return Whether the desiredSecretManagerConfig field is set.
+   */
+  boolean hasDesiredSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   *
+   * @return The desiredSecretManagerConfig.
+   */
+  com.google.container.v1beta1.SecretManagerConfig getDesiredSecretManagerConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Secret Manager Config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.container.v1beta1.SecretManagerConfig desired_secret_manager_config = 139;
+   * </code>
+   */
+  com.google.container.v1beta1.SecretManagerConfigOrBuilder
+      getDesiredSecretManagerConfigOrBuilder();
 }

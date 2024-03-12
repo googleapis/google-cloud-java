@@ -1918,4 +1918,29 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredInTransitEncryptionConfig.
    */
   com.google.container.v1.InTransitEncryptionConfig getDesiredInTransitEncryptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return Whether the desiredEnableCiliumClusterwideNetworkPolicy field is set.
+   */
+  boolean hasDesiredEnableCiliumClusterwideNetworkPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Cilium Clusterwide Network Policy for the cluster.
+   * </pre>
+   *
+   * <code>optional bool desired_enable_cilium_clusterwide_network_policy = 138;</code>
+   *
+   * @return The desiredEnableCiliumClusterwideNetworkPolicy.
+   */
+  boolean getDesiredEnableCiliumClusterwideNetworkPolicy();
 }

@@ -25,22 +25,46 @@ public interface ImageTransformationsOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation>
       getTransformsList();
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
   com.google.privacy.dlp.v2.ImageTransformations.ImageTransformation getTransforms(int index);
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
   int getTransformsCount();
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */
@@ -48,6 +72,12 @@ public interface ImageTransformationsOrBuilder
           ? extends com.google.privacy.dlp.v2.ImageTransformations.ImageTransformationOrBuilder>
       getTransformsOrBuilderList();
   /**
+   *
+   *
+   * <pre>
+   * List of transforms to make.
+   * </pre>
+   *
    * <code>repeated .google.privacy.dlp.v2.ImageTransformations.ImageTransformation transforms = 2;
    * </code>
    */

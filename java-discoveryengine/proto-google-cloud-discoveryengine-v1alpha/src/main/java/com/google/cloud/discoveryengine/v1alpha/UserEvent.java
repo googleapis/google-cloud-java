@@ -619,9 +619,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * conforming to https://google.aip.dev/160#filtering.
    *
    * Similarly, for `view-item-list` events that are generated from a
-   * [RecommendationService.RecommendRequest][], this field may be populated
-   * directly from [RecommendationService.RecommendRequest.filter][] conforming
-   * to https://google.aip.dev/160#filtering.
+   * [RecommendRequest][google.cloud.discoveryengine.v1alpha.RecommendRequest],
+   * this field may be populated directly from
+   * [RecommendRequest.filter][google.cloud.discoveryengine.v1alpha.RecommendRequest.filter]
+   * conforming to https://google.aip.dev/160#filtering.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -657,9 +658,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * conforming to https://google.aip.dev/160#filtering.
    *
    * Similarly, for `view-item-list` events that are generated from a
-   * [RecommendationService.RecommendRequest][], this field may be populated
-   * directly from [RecommendationService.RecommendRequest.filter][] conforming
-   * to https://google.aip.dev/160#filtering.
+   * [RecommendRequest][google.cloud.discoveryengine.v1alpha.RecommendRequest],
+   * this field may be populated directly from
+   * [RecommendRequest.filter][google.cloud.discoveryengine.v1alpha.RecommendRequest.filter]
+   * conforming to https://google.aip.dev/160#filtering.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3852,9 +3854,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendationService.RecommendRequest][], this field may be populated
-     * directly from [RecommendationService.RecommendRequest.filter][] conforming
-     * to https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1alpha.RecommendRequest],
+     * this field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1alpha.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3889,9 +3892,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendationService.RecommendRequest][], this field may be populated
-     * directly from [RecommendationService.RecommendRequest.filter][] conforming
-     * to https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1alpha.RecommendRequest],
+     * this field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1alpha.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3926,9 +3930,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendationService.RecommendRequest][], this field may be populated
-     * directly from [RecommendationService.RecommendRequest.filter][] conforming
-     * to https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1alpha.RecommendRequest],
+     * this field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1alpha.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3962,9 +3967,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendationService.RecommendRequest][], this field may be populated
-     * directly from [RecommendationService.RecommendRequest.filter][] conforming
-     * to https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1alpha.RecommendRequest],
+     * this field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1alpha.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3994,9 +4000,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendationService.RecommendRequest][], this field may be populated
-     * directly from [RecommendationService.RecommendRequest.filter][] conforming
-     * to https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1alpha.RecommendRequest],
+     * this field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1alpha.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.

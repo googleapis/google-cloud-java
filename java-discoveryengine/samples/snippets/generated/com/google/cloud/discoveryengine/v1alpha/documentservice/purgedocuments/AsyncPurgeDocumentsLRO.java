@@ -23,6 +23,7 @@ import com.google.cloud.discoveryengine.v1alpha.DocumentServiceClient;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsResponse;
+import com.google.cloud.discoveryengine.v1alpha.PurgeErrorConfig;
 
 public class AsyncPurgeDocumentsLRO {
 
@@ -44,6 +45,7 @@ public class AsyncPurgeDocumentsLRO {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setErrorConfig(PurgeErrorConfig.newBuilder().build())
               .setForce(true)
               .build();
       OperationFuture<PurgeDocumentsResponse, PurgeDocumentsMetadata> future =

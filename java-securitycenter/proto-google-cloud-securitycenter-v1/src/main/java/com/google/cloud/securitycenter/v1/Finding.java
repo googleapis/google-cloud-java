@@ -803,6 +803,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>SCC_ERROR = 5;</code>
      */
     SCC_ERROR(5),
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk due to a change in the security
+     * posture.
+     * </pre>
+     *
+     * <code>POSTURE_VIOLATION = 6;</code>
+     */
+    POSTURE_VIOLATION(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -868,6 +879,17 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>SCC_ERROR = 5;</code>
      */
     public static final int SCC_ERROR_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Describes a potential security risk due to a change in the security
+     * posture.
+     * </pre>
+     *
+     * <code>POSTURE_VIOLATION = 6;</code>
+     */
+    public static final int POSTURE_VIOLATION_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -905,6 +927,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           return OBSERVATION;
         case 5:
           return SCC_ERROR;
+        case 6:
+          return POSTURE_VIOLATION;
         default:
           return null;
       }
@@ -3531,6 +3555,56 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         : backupDisasterRecovery_;
   }
 
+  public static final int SECURITY_POSTURE_FIELD_NUMBER = 56;
+  private com.google.cloud.securitycenter.v1.SecurityPosture securityPosture_;
+  /**
+   *
+   *
+   * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   *
+   * @return Whether the securityPosture field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecurityPosture() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   *
+   * @return The securityPosture.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.SecurityPosture getSecurityPosture() {
+    return securityPosture_ == null
+        ? com.google.cloud.securitycenter.v1.SecurityPosture.getDefaultInstance()
+        : securityPosture_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The security posture associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.SecurityPostureOrBuilder getSecurityPostureOrBuilder() {
+    return securityPosture_ == null
+        ? com.google.cloud.securitycenter.v1.SecurityPosture.getDefaultInstance()
+        : securityPosture_;
+  }
+
   public static final int LOG_ENTRIES_FIELD_NUMBER = 57;
 
   @SuppressWarnings("serial")
@@ -3811,6 +3885,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(55, getBackupDisasterRecovery());
     }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(56, getSecurityPosture());
+    }
     for (int i = 0; i < logEntries_.size(); i++) {
       output.writeMessage(57, logEntries_.get(i));
     }
@@ -3979,6 +4056,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(55, getBackupDisasterRecovery());
     }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(56, getSecurityPosture());
+    }
     for (int i = 0; i < logEntries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(57, logEntries_.get(i));
     }
@@ -4089,6 +4169,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasBackupDisasterRecovery() != other.hasBackupDisasterRecovery()) return false;
     if (hasBackupDisasterRecovery()) {
       if (!getBackupDisasterRecovery().equals(other.getBackupDisasterRecovery())) return false;
+    }
+    if (hasSecurityPosture() != other.hasSecurityPosture()) return false;
+    if (hasSecurityPosture()) {
+      if (!getSecurityPosture().equals(other.getSecurityPosture())) return false;
     }
     if (!getLogEntriesList().equals(other.getLogEntriesList())) return false;
     if (!getLoadBalancersList().equals(other.getLoadBalancersList())) return false;
@@ -4236,6 +4320,10 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (hasBackupDisasterRecovery()) {
       hash = (37 * hash) + BACKUP_DISASTER_RECOVERY_FIELD_NUMBER;
       hash = (53 * hash) + getBackupDisasterRecovery().hashCode();
+    }
+    if (hasSecurityPosture()) {
+      hash = (37 * hash) + SECURITY_POSTURE_FIELD_NUMBER;
+      hash = (53 * hash) + getSecurityPosture().hashCode();
     }
     if (getLogEntriesCount() > 0) {
       hash = (37 * hash) + LOG_ENTRIES_FIELD_NUMBER;
@@ -4444,6 +4532,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         getOrgPoliciesFieldBuilder();
         getApplicationFieldBuilder();
         getBackupDisasterRecoveryFieldBuilder();
+        getSecurityPostureFieldBuilder();
         getLogEntriesFieldBuilder();
         getLoadBalancersFieldBuilder();
       }
@@ -4601,20 +4690,25 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         backupDisasterRecoveryBuilder_.dispose();
         backupDisasterRecoveryBuilder_ = null;
       }
+      securityPosture_ = null;
+      if (securityPostureBuilder_ != null) {
+        securityPostureBuilder_.dispose();
+        securityPostureBuilder_ = null;
+      }
       if (logEntriesBuilder_ == null) {
         logEntries_ = java.util.Collections.emptyList();
       } else {
         logEntries_ = null;
         logEntriesBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000400);
       if (loadBalancersBuilder_ == null) {
         loadBalancers_ = java.util.Collections.emptyList();
       } else {
         loadBalancers_ = null;
         loadBalancersBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00000800);
       return this;
     }
 
@@ -4718,18 +4812,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.orgPolicies_ = orgPoliciesBuilder_.build();
       }
       if (logEntriesBuilder_ == null) {
-        if (((bitField1_ & 0x00000200) != 0)) {
+        if (((bitField1_ & 0x00000400) != 0)) {
           logEntries_ = java.util.Collections.unmodifiableList(logEntries_);
-          bitField1_ = (bitField1_ & ~0x00000200);
+          bitField1_ = (bitField1_ & ~0x00000400);
         }
         result.logEntries_ = logEntries_;
       } else {
         result.logEntries_ = logEntriesBuilder_.build();
       }
       if (loadBalancersBuilder_ == null) {
-        if (((bitField1_ & 0x00000400) != 0)) {
+        if (((bitField1_ & 0x00000800) != 0)) {
           loadBalancers_ = java.util.Collections.unmodifiableList(loadBalancers_);
-          bitField1_ = (bitField1_ & ~0x00000400);
+          bitField1_ = (bitField1_ & ~0x00000800);
         }
         result.loadBalancers_ = loadBalancers_;
       } else {
@@ -4881,6 +4975,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 ? backupDisasterRecovery_
                 : backupDisasterRecoveryBuilder_.build();
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField1_ & 0x00000200) != 0)) {
+        result.securityPosture_ =
+            securityPostureBuilder_ == null ? securityPosture_ : securityPostureBuilder_.build();
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5240,11 +5339,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (other.hasBackupDisasterRecovery()) {
         mergeBackupDisasterRecovery(other.getBackupDisasterRecovery());
       }
+      if (other.hasSecurityPosture()) {
+        mergeSecurityPosture(other.getSecurityPosture());
+      }
       if (logEntriesBuilder_ == null) {
         if (!other.logEntries_.isEmpty()) {
           if (logEntries_.isEmpty()) {
             logEntries_ = other.logEntries_;
-            bitField1_ = (bitField1_ & ~0x00000200);
+            bitField1_ = (bitField1_ & ~0x00000400);
           } else {
             ensureLogEntriesIsMutable();
             logEntries_.addAll(other.logEntries_);
@@ -5257,7 +5359,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             logEntriesBuilder_.dispose();
             logEntriesBuilder_ = null;
             logEntries_ = other.logEntries_;
-            bitField1_ = (bitField1_ & ~0x00000200);
+            bitField1_ = (bitField1_ & ~0x00000400);
             logEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLogEntriesFieldBuilder()
@@ -5271,7 +5373,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         if (!other.loadBalancers_.isEmpty()) {
           if (loadBalancers_.isEmpty()) {
             loadBalancers_ = other.loadBalancers_;
-            bitField1_ = (bitField1_ & ~0x00000400);
+            bitField1_ = (bitField1_ & ~0x00000800);
           } else {
             ensureLoadBalancersIsMutable();
             loadBalancers_.addAll(other.loadBalancers_);
@@ -5284,7 +5386,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             loadBalancersBuilder_.dispose();
             loadBalancersBuilder_ = null;
             loadBalancers_ = other.loadBalancers_;
-            bitField1_ = (bitField1_ & ~0x00000400);
+            bitField1_ = (bitField1_ & ~0x00000800);
             loadBalancersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLoadBalancersFieldBuilder()
@@ -5641,6 +5743,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000100;
                 break;
               } // case 442
+            case 450:
+              {
+                input.readMessage(getSecurityPostureFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000200;
+                break;
+              } // case 450
             case 458:
               {
                 com.google.cloud.securitycenter.v1.LogEntry m =
@@ -13949,14 +14057,202 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return backupDisasterRecoveryBuilder_;
     }
 
+    private com.google.cloud.securitycenter.v1.SecurityPosture securityPosture_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.SecurityPosture,
+            com.google.cloud.securitycenter.v1.SecurityPosture.Builder,
+            com.google.cloud.securitycenter.v1.SecurityPostureOrBuilder>
+        securityPostureBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     *
+     * @return Whether the securityPosture field is set.
+     */
+    public boolean hasSecurityPosture() {
+      return ((bitField1_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     *
+     * @return The securityPosture.
+     */
+    public com.google.cloud.securitycenter.v1.SecurityPosture getSecurityPosture() {
+      if (securityPostureBuilder_ == null) {
+        return securityPosture_ == null
+            ? com.google.cloud.securitycenter.v1.SecurityPosture.getDefaultInstance()
+            : securityPosture_;
+      } else {
+        return securityPostureBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     */
+    public Builder setSecurityPosture(com.google.cloud.securitycenter.v1.SecurityPosture value) {
+      if (securityPostureBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        securityPosture_ = value;
+      } else {
+        securityPostureBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     */
+    public Builder setSecurityPosture(
+        com.google.cloud.securitycenter.v1.SecurityPosture.Builder builderForValue) {
+      if (securityPostureBuilder_ == null) {
+        securityPosture_ = builderForValue.build();
+      } else {
+        securityPostureBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     */
+    public Builder mergeSecurityPosture(com.google.cloud.securitycenter.v1.SecurityPosture value) {
+      if (securityPostureBuilder_ == null) {
+        if (((bitField1_ & 0x00000200) != 0)
+            && securityPosture_ != null
+            && securityPosture_
+                != com.google.cloud.securitycenter.v1.SecurityPosture.getDefaultInstance()) {
+          getSecurityPostureBuilder().mergeFrom(value);
+        } else {
+          securityPosture_ = value;
+        }
+      } else {
+        securityPostureBuilder_.mergeFrom(value);
+      }
+      if (securityPosture_ != null) {
+        bitField1_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     */
+    public Builder clearSecurityPosture() {
+      bitField1_ = (bitField1_ & ~0x00000200);
+      securityPosture_ = null;
+      if (securityPostureBuilder_ != null) {
+        securityPostureBuilder_.dispose();
+        securityPostureBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     */
+    public com.google.cloud.securitycenter.v1.SecurityPosture.Builder getSecurityPostureBuilder() {
+      bitField1_ |= 0x00000200;
+      onChanged();
+      return getSecurityPostureFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     */
+    public com.google.cloud.securitycenter.v1.SecurityPostureOrBuilder
+        getSecurityPostureOrBuilder() {
+      if (securityPostureBuilder_ != null) {
+        return securityPostureBuilder_.getMessageOrBuilder();
+      } else {
+        return securityPosture_ == null
+            ? com.google.cloud.securitycenter.v1.SecurityPosture.getDefaultInstance()
+            : securityPosture_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The security posture associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.SecurityPosture security_posture = 56;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.SecurityPosture,
+            com.google.cloud.securitycenter.v1.SecurityPosture.Builder,
+            com.google.cloud.securitycenter.v1.SecurityPostureOrBuilder>
+        getSecurityPostureFieldBuilder() {
+      if (securityPostureBuilder_ == null) {
+        securityPostureBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.SecurityPosture,
+                com.google.cloud.securitycenter.v1.SecurityPosture.Builder,
+                com.google.cloud.securitycenter.v1.SecurityPostureOrBuilder>(
+                getSecurityPosture(), getParentForChildren(), isClean());
+        securityPosture_ = null;
+      }
+      return securityPostureBuilder_;
+    }
+
     private java.util.List<com.google.cloud.securitycenter.v1.LogEntry> logEntries_ =
         java.util.Collections.emptyList();
 
     private void ensureLogEntriesIsMutable() {
-      if (!((bitField1_ & 0x00000200) != 0)) {
+      if (!((bitField1_ & 0x00000400) != 0)) {
         logEntries_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.LogEntry>(logEntries_);
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000400;
       }
     }
 
@@ -14172,7 +14468,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLogEntries() {
       if (logEntriesBuilder_ == null) {
         logEntries_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000200);
+        bitField1_ = (bitField1_ & ~0x00000400);
         onChanged();
       } else {
         logEntriesBuilder_.clear();
@@ -14294,7 +14590,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.LogEntry,
                 com.google.cloud.securitycenter.v1.LogEntry.Builder,
                 com.google.cloud.securitycenter.v1.LogEntryOrBuilder>(
-                logEntries_, ((bitField1_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                logEntries_, ((bitField1_ & 0x00000400) != 0), getParentForChildren(), isClean());
         logEntries_ = null;
       }
       return logEntriesBuilder_;
@@ -14304,11 +14600,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureLoadBalancersIsMutable() {
-      if (!((bitField1_ & 0x00000400) != 0)) {
+      if (!((bitField1_ & 0x00000800) != 0)) {
         loadBalancers_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.LoadBalancer>(
                 loadBalancers_);
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000800;
       }
     }
 
@@ -14526,7 +14822,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLoadBalancers() {
       if (loadBalancersBuilder_ == null) {
         loadBalancers_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000400);
+        bitField1_ = (bitField1_ & ~0x00000800);
         onChanged();
       } else {
         loadBalancersBuilder_.clear();
@@ -14652,7 +14948,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.LoadBalancer.Builder,
                 com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder>(
                 loadBalancers_,
-                ((bitField1_ & 0x00000400) != 0),
+                ((bitField1_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         loadBalancers_ = null;

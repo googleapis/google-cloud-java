@@ -28,7 +28,9 @@ public interface ListServiceProjectAttachmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to list service project attachments.
+   * Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface ListServiceProjectAttachmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to list service project attachments.
+   * Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -96,7 +100,7 @@ public interface ListServiceProjectAttachmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filtering results
+   * Optional. Filtering results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -108,7 +112,7 @@ public interface ListServiceProjectAttachmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filtering results
+   * Optional. Filtering results.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -121,7 +125,7 @@ public interface ListServiceProjectAttachmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results
+   * Optional. Hint for how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -133,7 +137,7 @@ public interface ListServiceProjectAttachmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Hint for how to order the results
+   * Optional. Hint for how to order the results.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

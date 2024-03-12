@@ -36,7 +36,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service for modifying ServingConfig.
+ * Service Description: Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1beta.ServingConfig].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -117,6 +118,7 @@ import javax.annotation.Generated;
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
  *           <li><p> listServingConfigs(DataStoreName parent)
+ *           <li><p> listServingConfigs(EngineName parent)
  *           <li><p> listServingConfigs(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -367,7 +369,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(ServingConfigName name) {
@@ -401,7 +403,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the ServingConfig to get. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config_id}`
+   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig getServingConfig(String name) {
@@ -500,11 +502,45 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The dataStore resource name. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+   * @param parent Required. Full resource name of the parent resource. Format:
+   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(DataStoreName parent) {
+    ListServingConfigsRequest request =
+        ListServingConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listServingConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ServingConfigs linked to this dataStore.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ServingConfigServiceClient servingConfigServiceClient =
+   *     ServingConfigServiceClient.create()) {
+   *   EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   for (ServingConfig element :
+   *       servingConfigServiceClient.listServingConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Full resource name of the parent resource. Format:
+   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListServingConfigsPagedResponse listServingConfigs(EngineName parent) {
     ListServingConfigsRequest request =
         ListServingConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -536,8 +572,8 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The dataStore resource name. Format:
-   *     `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}`
+   * @param parent Required. Full resource name of the parent resource. Format:
+   *     `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServingConfigsPagedResponse listServingConfigs(String parent) {

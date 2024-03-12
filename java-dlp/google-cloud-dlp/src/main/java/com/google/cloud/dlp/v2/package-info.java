@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Cloud Data Loss Prevention (DLP)
+ * A client to Sensitive Data Protection (DLP)
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -27,7 +27,8 @@
  * includes methods for sensitive data redaction and scheduling of data scans on Google Cloud
  * Platform based data sets.
  *
- * <p>To learn more about concepts and find how-to guides see https://cloud.google.com/dlp/docs/.
+ * <p>To learn more about concepts and find how-to guides see
+ * https://cloud.google.com/sensitive-data-protection/docs/.
  *
  * <p>Sample for DlpServiceClient:
  *

@@ -309,4 +309,193 @@ public interface DataStoreOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data store level identity provider config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the idpConfig field is set.
+   */
+  boolean hasIdpConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data store level identity provider config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The idpConfig.
+   */
+  com.google.cloud.discoveryengine.v1alpha.IdpConfig getIdpConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Data store level identity provider config.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.IdpConfig idp_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.IdpConfigOrBuilder getIdpConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Whether data in the
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] has ACL
+   * information. If set to `true`, the source data must have ACL. ACL will be
+   * ingested when data is ingested by
+   * [DocumentService.ImportDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ImportDocuments]
+   * methods.
+   *
+   * When ACL is enabled for the
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore],
+   * [Document][google.cloud.discoveryengine.v1alpha.Document] can't be accessed
+   * by calling
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1alpha.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1alpha.DocumentService.ListDocuments].
+   *
+   * Currently ACL is only supported in `GENERIC` industry vertical with
+   * non-`PUBLIC_WEBSITE` content config.
+   * </pre>
+   *
+   * <code>bool acl_enabled = 24 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The aclEnabled.
+   */
+  boolean getAclEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return Whether the documentProcessingConfig field is set.
+   */
+  boolean hasDocumentProcessingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   *
+   * @return The documentProcessingConfig.
+   */
+  com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig getDocumentProcessingConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Document understanding and enrichment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig document_processing_config = 27;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfigOrBuilder
+      getDocumentProcessingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+   *
+   * @return Whether the startingSchema field is set.
+   */
+  boolean hasStartingSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+   *
+   * @return The startingSchema.
+   */
+  com.google.cloud.discoveryengine.v1alpha.Schema getStartingSchema();
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] when
+   * provisioning it. If unset, a default vertical specialized schema will be
+   * used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1alpha.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Schema starting_schema = 28;</code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.SchemaOrBuilder getStartingSchemaOrBuilder();
 }

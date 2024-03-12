@@ -16,12 +16,15 @@
 
 package com.google.cloud.dlp.v2;
 
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListProjectDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListTableDataProfilesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -38,8 +41,13 @@ import com.google.privacy.dlp.v2.ActionDetails;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.ByteContentItem;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
+import com.google.privacy.dlp.v2.ColumnDataProfile;
+import com.google.privacy.dlp.v2.ColumnDataProfileName;
 import com.google.privacy.dlp.v2.ContentItem;
 import com.google.privacy.dlp.v2.DataProfileAction;
+import com.google.privacy.dlp.v2.DataProfileConfigSnapshot;
+import com.google.privacy.dlp.v2.DataRiskLevel;
+import com.google.privacy.dlp.v2.DataSourceType;
 import com.google.privacy.dlp.v2.DeidentifyConfig;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
@@ -51,10 +59,12 @@ import com.google.privacy.dlp.v2.DiscoveryTarget;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
+import com.google.privacy.dlp.v2.EncryptionStatus;
 import com.google.privacy.dlp.v2.Error;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.HybridInspectResponse;
 import com.google.privacy.dlp.v2.InfoTypeDescription;
+import com.google.privacy.dlp.v2.InfoTypeSummary;
 import com.google.privacy.dlp.v2.InspectConfig;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
@@ -64,27 +74,40 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.InspectTemplateName;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
+import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesResponse;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListProjectDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
+import com.google.privacy.dlp.v2.ListTableDataProfilesResponse;
 import com.google.privacy.dlp.v2.LocationName;
+import com.google.privacy.dlp.v2.NullPercentageLevel;
 import com.google.privacy.dlp.v2.OrganizationLocationName;
 import com.google.privacy.dlp.v2.OrganizationName;
+import com.google.privacy.dlp.v2.OtherInfoTypeSummary;
+import com.google.privacy.dlp.v2.ProfileStatus;
+import com.google.privacy.dlp.v2.ProjectDataProfile;
+import com.google.privacy.dlp.v2.ProjectDataProfileName;
 import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.ResourceVisibility;
 import com.google.privacy.dlp.v2.RiskAnalysisJobConfig;
+import com.google.privacy.dlp.v2.SensitivityScore;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.StoredInfoTypeConfig;
 import com.google.privacy.dlp.v2.StoredInfoTypeName;
 import com.google.privacy.dlp.v2.StoredInfoTypeVersion;
+import com.google.privacy.dlp.v2.TableDataProfile;
+import com.google.privacy.dlp.v2.TableDataProfileName;
 import com.google.privacy.dlp.v2.TransformationOverview;
+import com.google.privacy.dlp.v2.UniquenessScoreLevel;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -92,6 +115,7 @@ import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -4862,6 +4886,846 @@ public class DlpServiceClientHttpJsonTest {
     try {
       String name = "organizations/organization-6364/storedInfoTypes/storedInfoType-6364";
       client.deleteStoredInfoType(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProjectDataProfilesTest() throws Exception {
+    ProjectDataProfile responsesElement = ProjectDataProfile.newBuilder().build();
+    ListProjectDataProfilesResponse expectedResponse =
+        ListProjectDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProjectDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListProjectDataProfilesPagedResponse pagedListResponse = client.listProjectDataProfiles(parent);
+
+    List<ProjectDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProjectDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProjectDataProfilesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listProjectDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProjectDataProfilesTest2() throws Exception {
+    ProjectDataProfile responsesElement = ProjectDataProfile.newBuilder().build();
+    ListProjectDataProfilesResponse expectedResponse =
+        ListProjectDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProjectDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListProjectDataProfilesPagedResponse pagedListResponse = client.listProjectDataProfiles(parent);
+
+    List<ProjectDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProjectDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProjectDataProfilesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listProjectDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listProjectDataProfilesTest3() throws Exception {
+    ProjectDataProfile responsesElement = ProjectDataProfile.newBuilder().build();
+    ListProjectDataProfilesResponse expectedResponse =
+        ListProjectDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllProjectDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-9365/locations/location-9365";
+
+    ListProjectDataProfilesPagedResponse pagedListResponse = client.listProjectDataProfiles(parent);
+
+    List<ProjectDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getProjectDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listProjectDataProfilesExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-9365/locations/location-9365";
+      client.listProjectDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTableDataProfilesTest() throws Exception {
+    TableDataProfile responsesElement = TableDataProfile.newBuilder().build();
+    ListTableDataProfilesResponse expectedResponse =
+        ListTableDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTableDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListTableDataProfilesPagedResponse pagedListResponse = client.listTableDataProfiles(parent);
+
+    List<TableDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTableDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTableDataProfilesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listTableDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTableDataProfilesTest2() throws Exception {
+    TableDataProfile responsesElement = TableDataProfile.newBuilder().build();
+    ListTableDataProfilesResponse expectedResponse =
+        ListTableDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTableDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListTableDataProfilesPagedResponse pagedListResponse = client.listTableDataProfiles(parent);
+
+    List<TableDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTableDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTableDataProfilesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listTableDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTableDataProfilesTest3() throws Exception {
+    TableDataProfile responsesElement = TableDataProfile.newBuilder().build();
+    ListTableDataProfilesResponse expectedResponse =
+        ListTableDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTableDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-9365/locations/location-9365";
+
+    ListTableDataProfilesPagedResponse pagedListResponse = client.listTableDataProfiles(parent);
+
+    List<TableDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTableDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTableDataProfilesExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-9365/locations/location-9365";
+      client.listTableDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listColumnDataProfilesTest() throws Exception {
+    ColumnDataProfile responsesElement = ColumnDataProfile.newBuilder().build();
+    ListColumnDataProfilesResponse expectedResponse =
+        ListColumnDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllColumnDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListColumnDataProfilesPagedResponse pagedListResponse = client.listColumnDataProfiles(parent);
+
+    List<ColumnDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getColumnDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listColumnDataProfilesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listColumnDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listColumnDataProfilesTest2() throws Exception {
+    ColumnDataProfile responsesElement = ColumnDataProfile.newBuilder().build();
+    ListColumnDataProfilesResponse expectedResponse =
+        ListColumnDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllColumnDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListColumnDataProfilesPagedResponse pagedListResponse = client.listColumnDataProfiles(parent);
+
+    List<ColumnDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getColumnDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listColumnDataProfilesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listColumnDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listColumnDataProfilesTest3() throws Exception {
+    ColumnDataProfile responsesElement = ColumnDataProfile.newBuilder().build();
+    ListColumnDataProfilesResponse expectedResponse =
+        ListColumnDataProfilesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllColumnDataProfiles(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "organizations/organization-9365/locations/location-9365";
+
+    ListColumnDataProfilesPagedResponse pagedListResponse = client.listColumnDataProfiles(parent);
+
+    List<ColumnDataProfile> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getColumnDataProfilesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listColumnDataProfilesExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "organizations/organization-9365/locations/location-9365";
+      client.listColumnDataProfiles(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectDataProfileTest() throws Exception {
+    ProjectDataProfile expectedResponse =
+        ProjectDataProfile.newBuilder()
+            .setName(
+                ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+                    .toString())
+            .setProjectId("projectId-894832108")
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectDataProfileName name =
+        ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+
+    ProjectDataProfile actualResponse = client.getProjectDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProjectDataProfileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectDataProfileName name =
+          ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]");
+      client.getProjectDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProjectDataProfileTest2() throws Exception {
+    ProjectDataProfile expectedResponse =
+        ProjectDataProfile.newBuilder()
+            .setName(
+                ProjectDataProfileName.ofOrganizationLocationProjectDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[PROJECT_DATA_PROFILE]")
+                    .toString())
+            .setProjectId("projectId-894832108")
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-541/locations/location-541/projectDataProfiles/projectDataProfile-541";
+
+    ProjectDataProfile actualResponse = client.getProjectDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProjectDataProfileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-541/locations/location-541/projectDataProfiles/projectDataProfile-541";
+      client.getProjectDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTableDataProfileTest() throws Exception {
+    TableDataProfile expectedResponse =
+        TableDataProfile.newBuilder()
+            .setName(
+                TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setDatasetProjectId("datasetProjectId128836732")
+            .setDatasetLocation("datasetLocation-1806712755")
+            .setDatasetId("datasetId-345342029")
+            .setTableId("tableId-1552905847")
+            .setFullResource("fullResource-1464972355")
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .addAllPredictedInfoTypes(new ArrayList<InfoTypeSummary>())
+            .addAllOtherInfoTypes(new ArrayList<OtherInfoTypeSummary>())
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setScannedColumnCount(-787756843)
+            .setFailedColumnCount(-706572376)
+            .setTableSizeBytes(927763390)
+            .setRowCount(1340416618)
+            .setEncryptionStatus(EncryptionStatus.forNumber(0))
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TableDataProfileName name =
+        TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]");
+
+    TableDataProfile actualResponse = client.getTableDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTableDataProfileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TableDataProfileName name =
+          TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]");
+      client.getTableDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTableDataProfileTest2() throws Exception {
+    TableDataProfile expectedResponse =
+        TableDataProfile.newBuilder()
+            .setName(
+                TableDataProfileName.ofOrganizationLocationTableDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[TABLE_DATA_PROFILE]")
+                    .toString())
+            .setDataSourceType(DataSourceType.newBuilder().build())
+            .setProjectDataProfile("projectDataProfile-1125465658")
+            .setDatasetProjectId("datasetProjectId128836732")
+            .setDatasetLocation("datasetLocation-1806712755")
+            .setDatasetId("datasetId-345342029")
+            .setTableId("tableId-1552905847")
+            .setFullResource("fullResource-1464972355")
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .addAllPredictedInfoTypes(new ArrayList<InfoTypeSummary>())
+            .addAllOtherInfoTypes(new ArrayList<OtherInfoTypeSummary>())
+            .setConfigSnapshot(DataProfileConfigSnapshot.newBuilder().build())
+            .setLastModifiedTime(Timestamp.newBuilder().build())
+            .setExpirationTime(Timestamp.newBuilder().build())
+            .setScannedColumnCount(-787756843)
+            .setFailedColumnCount(-706572376)
+            .setTableSizeBytes(927763390)
+            .setRowCount(1340416618)
+            .setEncryptionStatus(EncryptionStatus.forNumber(0))
+            .setResourceVisibility(ResourceVisibility.forNumber(0))
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .putAllResourceLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-2552/locations/location-2552/tableDataProfiles/tableDataProfile-2552";
+
+    TableDataProfile actualResponse = client.getTableDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTableDataProfileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-2552/locations/location-2552/tableDataProfiles/tableDataProfile-2552";
+      client.getTableDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getColumnDataProfileTest() throws Exception {
+    ColumnDataProfile expectedResponse =
+        ColumnDataProfile.newBuilder()
+            .setName(
+                ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]")
+                    .toString())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setTableDataProfile("tableDataProfile1513012721")
+            .setTableFullResource("tableFullResource-2131192149")
+            .setDatasetProjectId("datasetProjectId128836732")
+            .setDatasetLocation("datasetLocation-1806712755")
+            .setDatasetId("datasetId-345342029")
+            .setTableId("tableId-1552905847")
+            .setColumn("column-1354837162")
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setColumnInfoType(InfoTypeSummary.newBuilder().build())
+            .addAllOtherMatches(new ArrayList<OtherInfoTypeSummary>())
+            .setEstimatedNullPercentage(NullPercentageLevel.forNumber(0))
+            .setEstimatedUniquenessScore(UniquenessScoreLevel.forNumber(0))
+            .setFreeTextScore(1218237619)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ColumnDataProfileName name =
+        ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+            "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]");
+
+    ColumnDataProfile actualResponse = client.getColumnDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getColumnDataProfileExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ColumnDataProfileName name =
+          ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+              "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]");
+      client.getColumnDataProfile(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getColumnDataProfileTest2() throws Exception {
+    ColumnDataProfile expectedResponse =
+        ColumnDataProfile.newBuilder()
+            .setName(
+                ColumnDataProfileName.ofOrganizationLocationColumnDataProfileName(
+                        "[ORGANIZATION]", "[LOCATION]", "[COLUMN_DATA_PROFILE]")
+                    .toString())
+            .setProfileStatus(ProfileStatus.newBuilder().build())
+            .setProfileLastGenerated(Timestamp.newBuilder().build())
+            .setTableDataProfile("tableDataProfile1513012721")
+            .setTableFullResource("tableFullResource-2131192149")
+            .setDatasetProjectId("datasetProjectId128836732")
+            .setDatasetLocation("datasetLocation-1806712755")
+            .setDatasetId("datasetId-345342029")
+            .setTableId("tableId-1552905847")
+            .setColumn("column-1354837162")
+            .setSensitivityScore(SensitivityScore.newBuilder().build())
+            .setDataRiskLevel(DataRiskLevel.newBuilder().build())
+            .setColumnInfoType(InfoTypeSummary.newBuilder().build())
+            .addAllOtherMatches(new ArrayList<OtherInfoTypeSummary>())
+            .setEstimatedNullPercentage(NullPercentageLevel.forNumber(0))
+            .setEstimatedUniquenessScore(UniquenessScoreLevel.forNumber(0))
+            .setFreeTextScore(1218237619)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-902/locations/location-902/columnDataProfiles/columnDataProfile-902";
+
+    ColumnDataProfile actualResponse = client.getColumnDataProfile(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getColumnDataProfileExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-902/locations/location-902/columnDataProfiles/columnDataProfile-902";
+      client.getColumnDataProfile(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

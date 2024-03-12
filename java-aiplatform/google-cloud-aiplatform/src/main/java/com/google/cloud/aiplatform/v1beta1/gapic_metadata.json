@@ -233,6 +233,36 @@
         }
       }
     },
+    "FeatureOnlineStoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeatureOnlineStoreServiceClient",
+          "rpcs": {
+            "FetchFeatureValues": {
+              "methods": ["fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValuesCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SearchNearestEntities": {
+              "methods": ["searchNearestEntities", "searchNearestEntitiesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "FeatureRegistryService": {
       "clients": {
         "grpc": {
@@ -282,36 +312,6 @@
             },
             "UpdateFeatureGroup": {
               "methods": ["updateFeatureGroupAsync", "updateFeatureGroupAsync", "updateFeatureGroupOperationCallable", "updateFeatureGroupCallable"]
-            }
-          }
-        }
-      }
-    },
-    "FeatureOnlineStoreService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "FeatureOnlineStoreServiceClient",
-          "rpcs": {
-            "FetchFeatureValues": {
-              "methods": ["fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValuesCallable"]
-            },
-            "GetIamPolicy": {
-              "methods": ["getIamPolicy", "getIamPolicyCallable"]
-            },
-            "GetLocation": {
-              "methods": ["getLocation", "getLocationCallable"]
-            },
-            "ListLocations": {
-              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
-            },
-            "SearchNearestEntities": {
-              "methods": ["searchNearestEntities", "searchNearestEntitiesCallable"]
-            },
-            "SetIamPolicy": {
-              "methods": ["setIamPolicy", "setIamPolicyCallable"]
-            },
-            "TestIamPermissions": {
-              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

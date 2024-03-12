@@ -78,7 +78,15 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * Protobuf enum {@code google.privacy.dlp.v2.BigQueryOptions.SampleMethod}
    */
   public enum SampleMethod implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No sampling.
+     * </pre>
+     *
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
     SAMPLE_METHOD_UNSPECIFIED(0),
     /**
      *
@@ -105,7 +113,15 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No sampling.
+     * </pre>
+     *
+     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
+     */
     public static final int SAMPLE_METHOD_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -387,6 +403,11 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    * 100 means no limit. Defaults to 0. Only one of rows_limit and
    * rows_limit_percent can be specified. Cannot be used in conjunction with
    * TimespanConfig.
+   *
+   * Caution: A [known
+   * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+   * is causing the `rowsLimitPercent` field to behave unexpectedly. We
+   * recommend using `rowsLimit` instead.
    * </pre>
    *
    * <code>int32 rows_limit_percent = 6;</code>
@@ -401,6 +422,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
   public static final int SAMPLE_METHOD_FIELD_NUMBER = 4;
   private int sampleMethod_ = 0;
   /**
+   *
+   *
+   * <pre>
+   * How to sample the data.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
    *
    * @return The enum numeric value on the wire for sampleMethod.
@@ -410,6 +437,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
     return sampleMethod_;
   }
   /**
+   *
+   *
+   * <pre>
+   * How to sample the data.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
    *
    * @return The sampleMethod.
@@ -1923,6 +1956,11 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * 100 means no limit. Defaults to 0. Only one of rows_limit and
      * rows_limit_percent can be specified. Cannot be used in conjunction with
      * TimespanConfig.
+     *
+     * Caution: A [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+     * is causing the `rowsLimitPercent` field to behave unexpectedly. We
+     * recommend using `rowsLimit` instead.
      * </pre>
      *
      * <code>int32 rows_limit_percent = 6;</code>
@@ -1942,6 +1980,11 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * 100 means no limit. Defaults to 0. Only one of rows_limit and
      * rows_limit_percent can be specified. Cannot be used in conjunction with
      * TimespanConfig.
+     *
+     * Caution: A [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+     * is causing the `rowsLimitPercent` field to behave unexpectedly. We
+     * recommend using `rowsLimit` instead.
      * </pre>
      *
      * <code>int32 rows_limit_percent = 6;</code>
@@ -1965,6 +2008,11 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
      * 100 means no limit. Defaults to 0. Only one of rows_limit and
      * rows_limit_percent can be specified. Cannot be used in conjunction with
      * TimespanConfig.
+     *
+     * Caution: A [known
+     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+     * is causing the `rowsLimitPercent` field to behave unexpectedly. We
+     * recommend using `rowsLimit` instead.
      * </pre>
      *
      * <code>int32 rows_limit_percent = 6;</code>
@@ -1980,6 +2028,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
 
     private int sampleMethod_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
      *
      * @return The enum numeric value on the wire for sampleMethod.
@@ -1989,6 +2043,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return sampleMethod_;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
      *
      * @param value The enum numeric value on the wire for sampleMethod to set.
@@ -2001,6 +2061,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
      *
      * @return The sampleMethod.
@@ -2014,6 +2080,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
           : result;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
      *
      * @param value The sampleMethod to set.
@@ -2029,6 +2101,12 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * How to sample the data.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
      *
      * @return This builder for chaining.

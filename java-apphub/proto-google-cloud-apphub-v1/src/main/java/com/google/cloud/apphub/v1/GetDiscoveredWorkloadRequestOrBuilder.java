@@ -28,7 +28,9 @@ public interface GetDiscoveredWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Discovered Workload to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface GetDiscoveredWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Discovered Workload to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
    * </pre>
    *
    * <code>

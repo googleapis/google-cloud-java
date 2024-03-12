@@ -72,7 +72,9 @@ public final class DeleteApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Application to delete.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -97,7 +99,9 @@ public final class DeleteApplicationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Application to delete.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}`.
    * </pre>
    *
    * <code>
@@ -565,7 +569,9 @@ public final class DeleteApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -589,7 +595,9 @@ public final class DeleteApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -613,7 +621,9 @@ public final class DeleteApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -636,7 +646,9 @@ public final class DeleteApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>
@@ -655,7 +667,9 @@ public final class DeleteApplicationRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Application to delete.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}`.
      * </pre>
      *
      * <code>

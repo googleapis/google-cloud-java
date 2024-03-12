@@ -23,7 +23,7 @@ package com.google.cloud.netapp.v1;
  *
  *
  * <pre>
- * Defined the current volume encryption key source.
+ * The volume encryption key source.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.netapp.v1.EncryptionType}
@@ -33,7 +33,7 @@ public enum EncryptionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The source of encryption key is not specified.
+   * The source of the encryption key is not specified.
    * </pre>
    *
    * <code>ENCRYPTION_TYPE_UNSPECIFIED = 0;</code>
@@ -66,7 +66,7 @@ public enum EncryptionType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The source of encryption key is not specified.
+   * The source of the encryption key is not specified.
    * </pre>
    *
    * <code>ENCRYPTION_TYPE_UNSPECIFIED = 0;</code>

@@ -23,7 +23,9 @@ package com.google.cloud.discoveryengine.v1alpha;
  *
  *
  * <pre>
- * Request message for [SiteSearchEngineService.s][] method.
+ * Request message for
+ * [SiteSearchEngineService.BatchCreateTargetSites][google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.BatchCreateTargetSites]
+ * method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1alpha.BatchCreateTargetSitesRequest}
@@ -391,7 +393,9 @@ public final class BatchCreateTargetSitesRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Request message for [SiteSearchEngineService.s][] method.
+   * Request message for
+   * [SiteSearchEngineService.BatchCreateTargetSites][google.cloud.discoveryengine.v1alpha.SiteSearchEngineService.BatchCreateTargetSites]
+   * method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1alpha.BatchCreateTargetSitesRequest}

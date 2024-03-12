@@ -7,11 +7,11 @@
   "release_level": "preview",
   "transport": "both",
   "language": "java",
-  "repo": "googleapis/java-workspaceevents",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-workspaceevents",
   "distribution_name": "com.google.cloud:google-cloud-workspaceevents",
   "api_id": "workspaceevents.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
-  "rest_documentation": "https://developers.google.com/workspace/events/reference/rest/"
+  "rest_documentation": "https://developers.google.com/workspace/events/reference/rest"
 }

@@ -42,6 +42,7 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     etag_ = "";
     bigQueryDatasetName_ = "";
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -319,6 +320,113 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined name of the DatasetVersion.
+   * The name can be up to 128 characters long and can consist of any UTF-8
+   * characters.
+   * </pre>
+   *
+   * <code>string display_name = 7;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The user-defined name of the DatasetVersion.
+   * The name can be up to 128 characters long and can consist of any UTF-8
+   * characters.
+   * </pre>
+   *
+   * <code>string display_name = 7;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 8;
+  private com.google.protobuf.Value metadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Required. Output only. Additional information about the DatasetVersion.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadata() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Output only. Additional information about the DatasetVersion.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The metadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getMetadata() {
+    return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Output only. Additional information about the DatasetVersion.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getMetadataOrBuilder() {
+    return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -348,6 +456,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getUpdateTime());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, displayName_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(8, getMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -371,6 +485,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, displayName_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -399,6 +519,11 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getBigQueryDatasetName().equals(other.getBigQueryDatasetName())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (hasMetadata() != other.hasMetadata()) return false;
+    if (hasMetadata()) {
+      if (!getMetadata().equals(other.getMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -424,6 +549,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getEtag().hashCode();
     hash = (37 * hash) + BIG_QUERY_DATASET_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getBigQueryDatasetName().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
+    if (hasMetadata()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -566,6 +697,7 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getMetadataFieldBuilder();
       }
     }
 
@@ -586,6 +718,12 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
       }
       etag_ = "";
       bigQueryDatasetName_ = "";
+      displayName_ = "";
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -639,6 +777,13 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.bigQueryDatasetName_ = bigQueryDatasetName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -709,6 +854,14 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasMetadata()) {
+        mergeMetadata(other.getMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -765,6 +918,18 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 50
+            case 58:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
+            case 66:
+              {
+                input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1511,6 +1676,321 @@ public final class DatasetVersion extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined name of the DatasetVersion.
+     * The name can be up to 128 characters long and can consist of any UTF-8
+     * characters.
+     * </pre>
+     *
+     * <code>string display_name = 7;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined name of the DatasetVersion.
+     * The name can be up to 128 characters long and can consist of any UTF-8
+     * characters.
+     * </pre>
+     *
+     * <code>string display_name = 7;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined name of the DatasetVersion.
+     * The name can be up to 128 characters long and can consist of any UTF-8
+     * characters.
+     * </pre>
+     *
+     * <code>string display_name = 7;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined name of the DatasetVersion.
+     * The name can be up to 128 characters long and can consist of any UTF-8
+     * characters.
+     * </pre>
+     *
+     * <code>string display_name = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The user-defined name of the DatasetVersion.
+     * The name can be up to 128 characters long and can consist of any UTF-8
+     * characters.
+     * </pre>
+     *
+     * <code>string display_name = 7;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Value metadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        metadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    public boolean hasMetadata() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The metadata.
+     */
+    public com.google.protobuf.Value getMetadata() {
+      if (metadataBuilder_ == null) {
+        return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+      } else {
+        return metadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setMetadata(com.google.protobuf.Value value) {
+      if (metadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+      } else {
+        metadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setMetadata(com.google.protobuf.Value.Builder builderForValue) {
+      if (metadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+      } else {
+        metadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder mergeMetadata(com.google.protobuf.Value value) {
+      if (metadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
+        } else {
+          metadata_ = value;
+        }
+      } else {
+        metadataBuilder_.mergeFrom(value);
+      }
+      if (metadata_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
+        metadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.protobuf.Value.Builder getMetadataBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.protobuf.ValueOrBuilder getMetadataOrBuilder() {
+      if (metadataBuilder_ != null) {
+        return metadataBuilder_.getMessageOrBuilder();
+      } else {
+        return metadata_ == null ? com.google.protobuf.Value.getDefaultInstance() : metadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Output only. Additional information about the DatasetVersion.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Value metadata = 8 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getMetadataFieldBuilder() {
+      if (metadataBuilder_ == null) {
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      return metadataBuilder_;
     }
 
     @java.lang.Override

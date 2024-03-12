@@ -71,7 +71,9 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Workload to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * </pre>
    *
    * <code>
@@ -96,7 +98,9 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Fully qualified name of the Workload to fetch.
+   * Expected format:
+   * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * </pre>
    *
    * <code>
@@ -464,7 +468,9 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
      * </pre>
      *
      * <code>
@@ -488,7 +494,9 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
      * </pre>
      *
      * <code>
@@ -512,7 +520,9 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
      * </pre>
      *
      * <code>
@@ -535,7 +545,9 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
      * </pre>
      *
      * <code>
@@ -554,7 +566,9 @@ public final class GetWorkloadRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Fully qualified name of the Workload to fetch.
+     * Expected format:
+     * `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
      * </pre>
      *
      * <code>

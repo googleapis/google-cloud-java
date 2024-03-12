@@ -422,4 +422,45 @@ public interface ConverseConversationRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents in search results which may
+   * affect the converse response. For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return Whether the boostSpec field is set.
+   */
+  boolean hasBoostSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents in search results which may
+   * affect the converse response. For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return The boostSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec getBoostSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents in search results which may
+   * affect the converse response. For more information on boosting, see
+   * [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpec boost_spec = 10;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.BoostSpecOrBuilder getBoostSpecOrBuilder();
 }
