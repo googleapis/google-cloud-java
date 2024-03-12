@@ -11,6 +11,6 @@
   "repo_short": "java-gke-connect-gateway",
   "distribution_name": "com.google.cloud:google-cloud-gke-connect-gateway",
   "api_id": "connectgateway.googleapis.com",
-  "requires_billing": true,
-  "library_type": "GAPIC_AUTO"
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
 }

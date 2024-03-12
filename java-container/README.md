@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.33.0</version>
+      <version>26.34.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -72,7 +72,7 @@ The client application making API calls must be granted [authorization scopes][a
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Kubernetes Engine [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Kubernetes Engine.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -195,7 +195,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-container.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-container/2.39.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-container/2.40.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
@@ -207,7 +207,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=container.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png

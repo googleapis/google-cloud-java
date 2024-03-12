@@ -5,7 +5,7 @@
   "api_description": "enables you to provision and manage GKE clusters running on AWS and Azure infrastructure through a centralized Google Cloud backed control plane.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-gke-multi-cloud/latest/overview",
   "release_level": "preview",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-gke-multi-cloud",
