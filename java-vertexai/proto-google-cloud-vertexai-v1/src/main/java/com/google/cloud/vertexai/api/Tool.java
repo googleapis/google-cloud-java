@@ -27,7 +27,8 @@ package com.google.cloud.vertexai.api;
  *
  * A `Tool` is a piece of code that enables the system to interact with
  * external systems to perform an action, or set of actions, outside of
- * knowledge and scope of the model.
+ * knowledge and scope of the model. A Tool object should contain exactly
+ * one type of Tool.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vertexai.v1.Tool}
@@ -67,6 +68,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.Tool.Builder.class);
   }
 
+  private int bitField0_;
   public static final int FUNCTION_DECLARATIONS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -185,6 +187,125 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     return functionDeclarations_.get(index);
   }
 
+  public static final int RETRIEVAL_FIELD_NUMBER = 2;
+  private com.google.cloud.vertexai.api.Retrieval retrieval_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System will always execute the provided retrieval tool(s) to get
+   * external knowledge to answer the prompt. Retrieval results are presented to
+   * the model for generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retrieval field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetrieval() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System will always execute the provided retrieval tool(s) to get
+   * external knowledge to answer the prompt. Retrieval results are presented to
+   * the model for generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retrieval.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.Retrieval getRetrieval() {
+    return retrieval_ == null
+        ? com.google.cloud.vertexai.api.Retrieval.getDefaultInstance()
+        : retrieval_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System will always execute the provided retrieval tool(s) to get
+   * external knowledge to answer the prompt. Retrieval results are presented to
+   * the model for generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.RetrievalOrBuilder getRetrievalOrBuilder() {
+    return retrieval_ == null
+        ? com.google.cloud.vertexai.api.Retrieval.getDefaultInstance()
+        : retrieval_;
+  }
+
+  public static final int GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER = 3;
+  private com.google.cloud.vertexai.api.GoogleSearchRetrieval googleSearchRetrieval_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specialized retrieval tool that is powered by Google search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleSearchRetrieval field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleSearchRetrieval() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specialized retrieval tool that is powered by Google search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleSearchRetrieval.
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.GoogleSearchRetrieval getGoogleSearchRetrieval() {
+    return googleSearchRetrieval_ == null
+        ? com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance()
+        : googleSearchRetrieval_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specialized retrieval tool that is powered by Google search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vertexai.api.GoogleSearchRetrievalOrBuilder
+      getGoogleSearchRetrievalOrBuilder() {
+    return googleSearchRetrieval_ == null
+        ? com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance()
+        : googleSearchRetrieval_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -202,6 +323,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < functionDeclarations_.size(); i++) {
       output.writeMessage(1, functionDeclarations_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getRetrieval());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getGoogleSearchRetrieval());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -214,6 +341,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < functionDeclarations_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, functionDeclarations_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRetrieval());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGoogleSearchRetrieval());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -231,6 +365,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.vertexai.api.Tool other = (com.google.cloud.vertexai.api.Tool) obj;
 
     if (!getFunctionDeclarationsList().equals(other.getFunctionDeclarationsList())) return false;
+    if (hasRetrieval() != other.hasRetrieval()) return false;
+    if (hasRetrieval()) {
+      if (!getRetrieval().equals(other.getRetrieval())) return false;
+    }
+    if (hasGoogleSearchRetrieval() != other.hasGoogleSearchRetrieval()) return false;
+    if (hasGoogleSearchRetrieval()) {
+      if (!getGoogleSearchRetrieval().equals(other.getGoogleSearchRetrieval())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -245,6 +387,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (getFunctionDeclarationsCount() > 0) {
       hash = (37 * hash) + FUNCTION_DECLARATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getFunctionDeclarationsList().hashCode();
+    }
+    if (hasRetrieval()) {
+      hash = (37 * hash) + RETRIEVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getRetrieval().hashCode();
+    }
+    if (hasGoogleSearchRetrieval()) {
+      hash = (37 * hash) + GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleSearchRetrieval().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -353,7 +503,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    *
    * A `Tool` is a piece of code that enables the system to interact with
    * external systems to perform an action, or set of actions, outside of
-   * knowledge and scope of the model.
+   * knowledge and scope of the model. A Tool object should contain exactly
+   * one type of Tool.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vertexai.v1.Tool}
@@ -378,10 +529,21 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.vertexai.api.Tool.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getFunctionDeclarationsFieldBuilder();
+        getRetrievalFieldBuilder();
+        getGoogleSearchRetrievalFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -395,6 +557,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         functionDeclarationsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      retrieval_ = null;
+      if (retrievalBuilder_ != null) {
+        retrievalBuilder_.dispose();
+        retrievalBuilder_ = null;
+      }
+      googleSearchRetrieval_ = null;
+      if (googleSearchRetrievalBuilder_ != null) {
+        googleSearchRetrievalBuilder_.dispose();
+        googleSearchRetrievalBuilder_ = null;
+      }
       return this;
     }
 
@@ -443,6 +615,19 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.vertexai.api.Tool result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.retrieval_ = retrievalBuilder_ == null ? retrieval_ : retrievalBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.googleSearchRetrieval_ =
+            googleSearchRetrievalBuilder_ == null
+                ? googleSearchRetrieval_
+                : googleSearchRetrievalBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -517,6 +702,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasRetrieval()) {
+        mergeRetrieval(other.getRetrieval());
+      }
+      if (other.hasGoogleSearchRetrieval()) {
+        mergeGoogleSearchRetrieval(other.getGoogleSearchRetrieval());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -557,6 +748,19 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getRetrievalFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getGoogleSearchRetrievalFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1100,6 +1304,436 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         functionDeclarations_ = null;
       }
       return functionDeclarationsBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.Retrieval retrieval_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Retrieval,
+            com.google.cloud.vertexai.api.Retrieval.Builder,
+            com.google.cloud.vertexai.api.RetrievalOrBuilder>
+        retrievalBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retrieval field is set.
+     */
+    public boolean hasRetrieval() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retrieval.
+     */
+    public com.google.cloud.vertexai.api.Retrieval getRetrieval() {
+      if (retrievalBuilder_ == null) {
+        return retrieval_ == null
+            ? com.google.cloud.vertexai.api.Retrieval.getDefaultInstance()
+            : retrieval_;
+      } else {
+        return retrievalBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetrieval(com.google.cloud.vertexai.api.Retrieval value) {
+      if (retrievalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retrieval_ = value;
+      } else {
+        retrievalBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetrieval(com.google.cloud.vertexai.api.Retrieval.Builder builderForValue) {
+      if (retrievalBuilder_ == null) {
+        retrieval_ = builderForValue.build();
+      } else {
+        retrievalBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRetrieval(com.google.cloud.vertexai.api.Retrieval value) {
+      if (retrievalBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && retrieval_ != null
+            && retrieval_ != com.google.cloud.vertexai.api.Retrieval.getDefaultInstance()) {
+          getRetrievalBuilder().mergeFrom(value);
+        } else {
+          retrieval_ = value;
+        }
+      } else {
+        retrievalBuilder_.mergeFrom(value);
+      }
+      if (retrieval_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRetrieval() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      retrieval_ = null;
+      if (retrievalBuilder_ != null) {
+        retrievalBuilder_.dispose();
+        retrievalBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.Retrieval.Builder getRetrievalBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRetrievalFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.RetrievalOrBuilder getRetrievalOrBuilder() {
+      if (retrievalBuilder_ != null) {
+        return retrievalBuilder_.getMessageOrBuilder();
+      } else {
+        return retrieval_ == null
+            ? com.google.cloud.vertexai.api.Retrieval.getDefaultInstance()
+            : retrieval_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System will always execute the provided retrieval tool(s) to get
+     * external knowledge to answer the prompt. Retrieval results are presented to
+     * the model for generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.Retrieval,
+            com.google.cloud.vertexai.api.Retrieval.Builder,
+            com.google.cloud.vertexai.api.RetrievalOrBuilder>
+        getRetrievalFieldBuilder() {
+      if (retrievalBuilder_ == null) {
+        retrievalBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.Retrieval,
+                com.google.cloud.vertexai.api.Retrieval.Builder,
+                com.google.cloud.vertexai.api.RetrievalOrBuilder>(
+                getRetrieval(), getParentForChildren(), isClean());
+        retrieval_ = null;
+      }
+      return retrievalBuilder_;
+    }
+
+    private com.google.cloud.vertexai.api.GoogleSearchRetrieval googleSearchRetrieval_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.GoogleSearchRetrieval,
+            com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder,
+            com.google.cloud.vertexai.api.GoogleSearchRetrievalOrBuilder>
+        googleSearchRetrievalBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the googleSearchRetrieval field is set.
+     */
+    public boolean hasGoogleSearchRetrieval() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The googleSearchRetrieval.
+     */
+    public com.google.cloud.vertexai.api.GoogleSearchRetrieval getGoogleSearchRetrieval() {
+      if (googleSearchRetrievalBuilder_ == null) {
+        return googleSearchRetrieval_ == null
+            ? com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance()
+            : googleSearchRetrieval_;
+      } else {
+        return googleSearchRetrievalBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleSearchRetrieval(
+        com.google.cloud.vertexai.api.GoogleSearchRetrieval value) {
+      if (googleSearchRetrievalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        googleSearchRetrieval_ = value;
+      } else {
+        googleSearchRetrievalBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleSearchRetrieval(
+        com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder builderForValue) {
+      if (googleSearchRetrievalBuilder_ == null) {
+        googleSearchRetrieval_ = builderForValue.build();
+      } else {
+        googleSearchRetrievalBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGoogleSearchRetrieval(
+        com.google.cloud.vertexai.api.GoogleSearchRetrieval value) {
+      if (googleSearchRetrievalBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && googleSearchRetrieval_ != null
+            && googleSearchRetrieval_
+                != com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance()) {
+          getGoogleSearchRetrievalBuilder().mergeFrom(value);
+        } else {
+          googleSearchRetrieval_ = value;
+        }
+      } else {
+        googleSearchRetrievalBuilder_.mergeFrom(value);
+      }
+      if (googleSearchRetrieval_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGoogleSearchRetrieval() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      googleSearchRetrieval_ = null;
+      if (googleSearchRetrievalBuilder_ != null) {
+        googleSearchRetrievalBuilder_.dispose();
+        googleSearchRetrievalBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder
+        getGoogleSearchRetrievalBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getGoogleSearchRetrievalFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vertexai.api.GoogleSearchRetrievalOrBuilder
+        getGoogleSearchRetrievalOrBuilder() {
+      if (googleSearchRetrievalBuilder_ != null) {
+        return googleSearchRetrievalBuilder_.getMessageOrBuilder();
+      } else {
+        return googleSearchRetrieval_ == null
+            ? com.google.cloud.vertexai.api.GoogleSearchRetrieval.getDefaultInstance()
+            : googleSearchRetrieval_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specialized retrieval tool that is powered by Google search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vertexai.api.GoogleSearchRetrieval,
+            com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder,
+            com.google.cloud.vertexai.api.GoogleSearchRetrievalOrBuilder>
+        getGoogleSearchRetrievalFieldBuilder() {
+      if (googleSearchRetrievalBuilder_ == null) {
+        googleSearchRetrievalBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vertexai.api.GoogleSearchRetrieval,
+                com.google.cloud.vertexai.api.GoogleSearchRetrieval.Builder,
+                com.google.cloud.vertexai.api.GoogleSearchRetrievalOrBuilder>(
+                getGoogleSearchRetrieval(), getParentForChildren(), isClean());
+        googleSearchRetrieval_ = null;
+      }
+      return googleSearchRetrievalBuilder_;
     }
 
     @java.lang.Override
