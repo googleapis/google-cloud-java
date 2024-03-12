@@ -29,9 +29,11 @@ The example in this README uses AlloyDB's [Cloud Drop](https://github.com/google
 
 ### API short name (`api_shortname`)
 
-For convenience of the subsequent commands, define a variable for API short name.
-This value will be used by default to generate the following:
+As a convenience for the subsequent commands, we need an identifier for the
+library, called `api_shortname`.
+This identifier will be used by default to generate the following:
 * `--distribution-name`
+* `--library_name`
 
 The corresponding value in the Cloud Drop page is `api_short_name`.
 
@@ -39,8 +41,10 @@ Example: `alloydb`
 
 > [!IMPORTANT]
 > `api_short_name` is not always unique across client libraries.
-> In the instance that the `api_short_name` is already in use by an existing client library, you will need to determine a unique name.
-> See example under [Advanced Options](#Example with duplicate api_short_name).
+> In the instance that the `api_short_name` is already in use by an existing
+> client library, you will need to determine a unique name OR to pass a unique
+> `library_name`.
+> See [Advanced Options](#advanced-options).
 
 ### Proto path (`proto_path`)
 
