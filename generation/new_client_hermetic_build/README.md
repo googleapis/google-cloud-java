@@ -112,6 +112,15 @@ This variable determines the Maven coordinates of the generated library. It
 defaults to `com.google.cloud:google-cloud-{api_shortname}`. This mainly affect
 the values in the generated `pom.xml` files.
 
+### Library Name (`library_name`)
+
+This variable indicates the output folder of the library. For example you can
+have two libraries with `alloydb` (AlloyDB and AlloyDB Connectors)
+as `api_shortname`. In order to avoid both
+libraries going to the default `java-alloydb` folder, we can override this
+behavior by specifying a value like `alloydb-connectors` so the AlloyDB
+Connectors goes to `java-alloydb-connectors`.
+
 ## Advanced Options
 
 In case the steps above don't show you how to specify the desired options, you can
@@ -146,4 +155,4 @@ docker run --rm \
 This docker container will run the generation scripts and generate the library
 in your repo. You can create a PR explaining what commands you used (the docker
 command is not as informative as the `new-client.py` call, so make sure at least
-the new-client arguments were listed.
+the new-client arguments were listed).
