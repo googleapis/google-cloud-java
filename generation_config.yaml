@@ -1,6 +1,6 @@
 gapic_generator_version: 2.37.0
 protobuf_version: '25.2'
-googleapis_commitish: 20c357f6f5c7b995b617b15cab61999e6574bdab
+googleapis_commitish: 6500290663163ba7dc6e0a35231772f5f78c3b62
 owlbot_cli_image: sha256:623647ee79ac605858d09e60c1382a716c125fb776f69301b72de1cd35d49409
 synthtool_commitish: 6612ab8f3afcd5e292aecd647f0fa68812c9f5b5
 template_excludes:
@@ -166,6 +166,14 @@ libraries:
   codeowner_team: '@googleapis/aap-dpes'
   GAPICs:
   - proto_path: google/appengine/v1
+
+- api_shortname: apphub
+  name_pretty: App Hub API
+  product_documentation: https://cloud.google.com/app-hub/docs/overview
+  api_description: App Hub simplifies the process of building, running, and managing applications on Google Cloud.
+  rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
+  GAPICs:
+  - proto_path: google/cloud/apphub/v1
 
 - api_shortname: area120tables
   name_pretty: Area 120 Tables
@@ -434,6 +442,14 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/channel/v1
 
+- api_shortname: chat
+  name_pretty: Google Chat API
+  product_documentation: https://developers.google.com/chat/concepts
+  api_description: The Google Chat API lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.
+  rest_documentation: https://developers.google.com/chat/api/reference/rest
+  GAPICs:
+  - proto_path: google/chat/v1
+
 - api_shortname: cloudbuild
   name_pretty: Cloud Build
   product_documentation: https://cloud.google.com/cloud-build/
@@ -458,6 +474,14 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/commerce/consumer/procurement/v1
   - proto_path: google/cloud/commerce/consumer/procurement/v1alpha1
+
+- api_shortname: cloudcontrolspartner
+  name_pretty: Cloud Controls Partner API
+  product_documentation: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
+  api_description: Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.
+  GAPICs:
+  - proto_path: google/cloud/cloudcontrolspartner/v1
+  - proto_path: google/cloud/cloudcontrolspartner/v1beta
 
 - api_shortname: cloudquotas
   name_pretty: Cloud Quotas API
@@ -490,7 +514,6 @@ libraries:
   excluded_dependencies: grpc-google-cloud-compute-v1
   GAPICs:
   - proto_path: google/cloud/compute/v1
-  - proto_path: google/cloud/compute/v1small
 
 - api_shortname: confidentialcomputing
   name_pretty: Confidential Computing API
@@ -922,7 +945,6 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/gkehub/v1
   - proto_path: google/cloud/gkehub/v1alpha
-  - proto_path: google/cloud/gkehub/v1alpha2
   - proto_path: google/cloud/gkehub/v1beta
   - proto_path: google/cloud/gkehub/v1beta1
 
@@ -1336,6 +1358,7 @@ libraries:
   api_id: policy-troubleshooter.googleapis.com
   GAPICs:
   - proto_path: google/cloud/policytroubleshooter/v1
+  - proto_path: google/cloud/policytroubleshooter/iam/v3
 
 - api_shortname: policysimulator
   name_pretty: Policy Simulator API
@@ -1530,7 +1553,7 @@ libraries:
   - proto_path: google/cloud/security/privateca/v1
   - proto_path: google/cloud/security/privateca/v1beta1
 
- # duplicated api_shortname
+# duplicated api_shortname
 - api_shortname: securitycenter
   name_pretty: Security Command Center
   product_documentation: https://cloud.google.com/security-command-center
@@ -1549,6 +1572,7 @@ libraries:
   - proto_path: google/cloud/securitycenter/v1
   - proto_path: google/cloud/securitycenter/v1beta1
   - proto_path: google/cloud/securitycenter/v1p1beta1
+  - proto_path: google/cloud/securitycenter/v2
 
 - api_shortname: securitycenter
   name_pretty: Security Command Center Settings API
@@ -1569,6 +1593,13 @@ libraries:
   api_description: Security Center Management API
   GAPICs:
   - proto_path: google/cloud/securitycentermanagement/v1
+
+- api_shortname: securityposture
+  name_pretty: Security Posture API
+  product_documentation: https://cloud.google.com/security-command-center/docs/security-posture-overview
+  api_description: Security Posture is a comprehensive framework of policy sets that empowers organizations to define, assess early, deploy, and monitor their security measures in a unified way and helps simplify governance and reduces administrative toil.
+  GAPICs:
+  - proto_path: google/cloud/securityposture/v1
 
 - api_shortname: servicecontrol
   name_pretty: Service Control API
@@ -1963,6 +1994,14 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workflows/v1
   - proto_path: google/cloud/workflows/v1beta
+
+- api_shortname: workspaceevents
+  name_pretty: Google Workspace Events API
+  product_documentation: https://developers.google.com/workspace/events
+  api_description: The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.
+  rest_documentation: https://developers.google.com/workspace/events/reference/rest
+  GAPICs:
+  - proto_path: google/apps/events/subscriptions/v1
 
 - api_shortname: workstations
   name_pretty: Cloud Workstations

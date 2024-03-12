@@ -1,0 +1,113 @@
+name: Generate GAPIC libraries from configuration
+on:
+  schedule:
+  - cron: '0 2 * * *' # nightly at 2 am UTC
+  workflow_dispatch:
+
+
+jobs:
+  generate-from-configuration:
+    runs-on: ubuntu-22.04
+    env:
+      # the branch into which pull request is created.
+      base_branch: main
+      # the branch with which the pull request is associated.
+      branch_name: generate-libraries-main
+      library_generation_image_tag: latest
+      repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
+    steps:
+    - uses: actions/checkout@v4
+    - name: get baseline commit
+      id: get-baseline
+      shell: bash
+      run: |
+        echo "baseline_commit=$(grep googleapis_commitish generation_config.yaml | cut -d " " -f2 | xargs)" >> "$GITHUB_ENV"
+    - name: setup branch for pull request
+      id: setup-branch
+      shell: bash
+      run: |
+        [ -z "`git config user.email`" ] && git config --global user.email "cloud-java-bot@google.com"
+        [ -z "`git config user.name`" ] && git config --global user.name "cloud-java-bot"
+        # try to find a open pull request associated with the branch
+        pr_num=$(gh pr list -s open -H "${branch_name}" -q . --json number | jq ".[] | .number")
+        # create a branch if there's no open pull request associated with the
+        # branch; otherwise checkout the pull request.
+        if [ -z "${pr_num}" ]; then
+          git checkout -b "${branch_name}"
+        else
+          gh pr checkout "${pr_num}"
+        fi
+        echo "pr_num=${pr_num}" >> "$GITHUB_ENV"
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+    - name: setup docker environment
+      shell: bash
+      run: |
+        # we create a volume pointing to `pwd` (google-cloud-java) that will
+        # be referenced by the container and its children
+        if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
+          docker volume rm repo-google-cloud-java
+        fi
+        docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
+    - name: update googleapis commit to latest
+      id: update-commit
+      shell: bash
+      run: |
+        mkdir tmp-googleapis
+        # use partial clone because only commit history is needed.
+        git clone --filter=blob:none https://github.com/googleapis/googleapis.git tmp-googleapis
+        pushd tmp-googleapis
+        git pull
+        latest_commit=$(git rev-parse HEAD)
+        popd
+        rm -rf tmp-googleapis
+        sed -i -e "s/^googleapis_commitish.*$/googleapis_commitish: ${latest_commit}/" generation_config.yaml
+    - name: generate from configuration
+      shell: bash
+      run: |
+        docker run --rm \
+          ${repo_volumes} \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          python /src/generate_repo.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --repository-path=/workspace/google-cloud-java
+    - name: generate pull request description
+      id: generate-description
+      shell: bash
+      run: |
+        # the pr description (body) will be available in pr-description.txt after
+        # running this command.
+        set -x
+        docker run --rm \
+          ${repo_volumes} \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          python /src/generate_pr_description.py generate --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml --baseline-commit="${baseline_commit}"
+      env:
+        baseline_commit: ${{ env.baseline_commit }}
+    - name: create or update the pull request
+      shell: bash
+      run: |
+        title="chore: generate libraries at $(date)"
+        git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt generation_config.yaml
+        # use --allow-empty because (rarely) there's no change.
+        git commit --allow-empty -m "${title}"
+        if [ -z "${pr_num}" ]; then
+          git remote add monorepo https://cloud-java-bot:${GH_TOKEN}@github.com/${{ github.repository }}.git
+          git fetch -q --unshallow monorepo
+          git push -f monorepo "${branch_name}"
+          set -x
+          gh pr create --base "${base_branch}" --title "${title}" --head "${branch_name}" --body "$(cat pr_description.txt)"
+        else
+          git push
+          gh pr edit "${pr_num}" --title "${title}"
+          gh pr edit "${pr_num}" --body "$(cat pr_description.txt)"
+        fi
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+        pr_num: ${{ env.pr_num }}
