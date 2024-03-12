@@ -19,6 +19,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
@@ -824,10 +825,14 @@ public class StreamWriter implements AutoCloseable {
     }
 
     String getFullTraceId() {
-      if (traceId == null) {
-        return clientId;
+      String clientWithVersion =
+          GaxProperties.getLibraryVersion(StreamWriter.class).isEmpty()
+              ? clientId
+              : clientId + ":" + GaxProperties.getLibraryVersion(StreamWriter.class);
+      if (traceId == null || traceId.isEmpty()) {
+        return clientWithVersion;
       } else {
-        return clientId + " " + traceId;
+        return clientWithVersion + " " + traceId;
       }
     }
   }
