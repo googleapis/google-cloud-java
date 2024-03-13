@@ -353,7 +353,8 @@ class ConnectionWorker implements AutoCloseable {
           } finally {
             lock.unlock();
           }
-          cleanupInflightRequests();
+          cleanupConnectionAndRequests(
+              /* avoidBlocking= */ true); // don't perform blocking operations while on user thread
         });
     this.appendThread.start();
   }
@@ -812,7 +813,10 @@ class ConnectionWorker implements AutoCloseable {
         this.streamConnection.send(originalRequestBuilder.build());
       }
     }
+    cleanupConnectionAndRequests(/* avoidBlocking= */ false);
+  }
 
+  private void cleanupConnectionAndRequests(boolean avoidBlocking) {
     log.info(
         "Cleanup starts. Stream: "
             + streamName
@@ -828,7 +832,9 @@ class ConnectionWorker implements AutoCloseable {
     // We can close the stream connection and handle the remaining inflight requests.
     if (streamConnection != null) {
       this.streamConnection.close();
-      waitForDoneCallback(3, TimeUnit.MINUTES);
+      if (!avoidBlocking) {
+        waitForDoneCallback(3, TimeUnit.MINUTES);
+      }
     }
 
     // At this point, there cannot be more callback. It is safe to clean up all inflight requests.

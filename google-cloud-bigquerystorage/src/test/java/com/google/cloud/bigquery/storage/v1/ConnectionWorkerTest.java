@@ -650,14 +650,15 @@ public class ConnectionWorkerTest {
             null,
             client.getSettings(),
             retrySettings);
-    testBigQueryWrite.setResponseSleep(org.threeten.bp.Duration.ofSeconds(3));
+    org.threeten.bp.Duration durationSleep = org.threeten.bp.Duration.ofSeconds(2);
+    testBigQueryWrite.setResponseSleep(durationSleep);
 
-    long appendCount = 10;
+    long appendCount = 2;
     for (int i = 0; i < appendCount; i++) {
       testBigQueryWrite.addResponse(createAppendResponse(i));
     }
 
-    // In total insert 5 requests,
+    // In total insert 'appendCount' requests,
     List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
     for (int i = 0; i < appendCount; i++) {
       futures.add(
@@ -691,6 +692,18 @@ public class ConnectionWorkerTest {
                         100)
                     .get());
     assertThat(ex.getCause()).hasMessageThat().contains("Request has waited in inflight queue");
+
+    // Verify we can shutdown normally within the expected time.
+    long startCloseTime = System.currentTimeMillis();
+    connectionWorker.close();
+    long timeDiff = System.currentTimeMillis() - startCloseTime;
+    assertTrue(
+        "timeDiff: "
+            + timeDiff
+            + " is more than total durationSleep: "
+            + (appendCount * durationSleep.toMillis()),
+        timeDiff <= (appendCount * durationSleep.toMillis()));
+    assertTrue(connectionWorker.isUserClosed());
   }
 
   @Test
