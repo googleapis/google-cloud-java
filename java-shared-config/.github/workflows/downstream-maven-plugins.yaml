@@ -26,7 +26,7 @@ jobs:
         - javadoc-with-doclet # test javadoc generation with doclet
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-    - uses: actions/setup-java@v3
+    - uses: actions/setup-java@v4
       with:
         distribution: zulu
         java-version: ${{matrix.java}}
@@ -55,7 +55,7 @@ jobs:
         - java-bigquerystorage
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-    - uses: actions/setup-java@v3
+    - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 17
