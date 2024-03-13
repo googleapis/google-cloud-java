@@ -211,9 +211,6 @@ def add_new_library(
 
     client_documentation = f"https://cloud.google.com/java/docs/reference/{distribution_name_short}/latest/overview"
 
-    if library_name is None:
-        library_name = api_shortname
-
     if api_shortname == "":
         sys.exit("api_shortname is empty")
 
@@ -231,7 +228,6 @@ def add_new_library(
         "client_documentation": client_documentation,
         "release_level": release_level,
         "distribution_name": distribution_name,
-        "library_name": library_name,
         "api_id": api_id,
         "library_type": library_type,
         "group_id": group_id,
@@ -239,6 +235,7 @@ def add_new_library(
         "GAPICs": [{"proto_path": p} for p in proto_paths],
     }
 
+    __add_item_if_set(new_library, "library_name", library_name)
     __add_item_if_set(new_library, "requires_billing", requires_billing)
     __add_item_if_set(new_library, "rest_documentation", rest_docs)
     __add_item_if_set(new_library, "rpc_documentation", rpc_docs)
