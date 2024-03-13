@@ -58,7 +58,7 @@ jobs:
         with:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
-      - name: Install new-client.py dependencies
+      - name: Install add-new-client-config.py dependencies
         run: pip install --require-hashes -r generation/new_client_hermetic_build/requirements.txt
       - name: Add entry to generation_config.yaml
         id: config_generation
@@ -67,7 +67,7 @@ jobs:
           arguments=$(python generation/new_client_hermetic_build/generate-arguments.py)
           echo "::set-output name=new_library_args::${arguments}"
           echo "${arguments}" \
-                | xargs python generation/new_client_hermetic_build/new-client.py add-new-library
+                | xargs python generation/new_client_hermetic_build/add-new-client-config.py add-new-library
         env:
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
           NAME_PRETTY: ${{ github.event.inputs.name_pretty }}
@@ -132,7 +132,7 @@ jobs:
           Command used:
 
           \`\`\`
-          python generation/new_client_hermetic_build/new-client.py add-new-client ${GENERATION_ARGUMENTS}
+          python generation/new_client_hermetic_build/add-new-client-config.py add-new-client ${GENERATION_ARGUMENTS}
 
           docker run --rm \\
             ${DOCKER_VOLUMES} \\

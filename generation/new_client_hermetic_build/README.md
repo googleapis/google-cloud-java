@@ -7,13 +7,13 @@ This new generation workflow enables generation of new libraries by
 
 
 ## Components
-### `new_library_hermetic_build/new-client.py`
+### `new_library_hermetic_build/add-new-client-config.py`
 This script takes 10 arguments that map to items in the newly added library that
 goes in `generation_config.yaml`. A new entry will be added to `libraries` with
 the necessary generation configuration.
 
 ### `.github/workflows/generate_new_client_hermetic_build.yaml`
-This workflow orchestrates the `new-client.py` script and also uses our docker
+This workflow orchestrates the `add-new-client-config.py` script and also uses our docker
 image
 ([gcr.io/cloud-devrel-public-resources/java-library-generation](https://pantheon.corp.google.com/gcr/images/cloud-devrel-public-resources/global/java-library-generation))
 to generate a new library. It also creates the pull request.
@@ -128,12 +128,12 @@ Connectors goes to `java-alloydb-connectors`.
 ## Advanced Options
 
 In case the steps above don't show you how to specify the desired options, you can
-run the `new-client.py` script in your local evironment. The advanced options
+run the `add-new-client-config.py` script in your local evironment. The advanced options
 not shown in the section above **cannot be specified in the Github Action**,
 hence the need for a local run (refer to the "Prerequisites
 (for local environment)" section).
 For the explanation of the available parameters, run:
-`python3.9 generation/new_client_hermetic_build/new-client.py generate  --help`.
+`python3.9 generation/new_client_hermetic_build/add-new-client-config.py generate  --help`.
 
 After you run the script, you will see that the `generation_config.yaml` file
 was modified (or the script exited because the library already existed)
@@ -158,5 +158,5 @@ docker run --rm \
 
 This docker container will run the generation scripts and generate the library
 in your repo. You can create a PR explaining what commands you used (the docker
-command is not as informative as the `new-client.py` call, so make sure at least
-the new-client arguments were listed).
+command is not as informative as the `add-new-client-config.py` call, so make sure at least
+the add-new-client-config.py arguments were listed).
