@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-vertexai</artifactId>
-  <version>0.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vertexai:current} -->
+  <version>0.7.0</version><!-- {x-version-update:google-cloud-vertexai:current} -->
   <packaging>jar</packaging>
   <name>Google VertexAI API</name>
   <description>VertexAI API Vertex AI is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-vertexai-parent</artifactId>
-    <version>0.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-vertexai:current} -->
+    <version>0.7.0</version><!-- {x-version-update:google-cloud-vertexai:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-vertexai</site.installationModule>
