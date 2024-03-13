@@ -79,7 +79,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
-   * location](https://cloud.google.com/dlp/docs/specifying-location):
+   * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
@@ -123,7 +123,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
    *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
-   * location](https://cloud.google.com/dlp/docs/specifying-location):
+   * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
    * + Projects scope, location specified:&lt;br/&gt;
    *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
@@ -771,7 +771,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
-     * location](https://cloud.google.com/dlp/docs/specifying-location):
+     * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
@@ -814,7 +814,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
-     * location](https://cloud.google.com/dlp/docs/specifying-location):
+     * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
@@ -857,7 +857,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
-     * location](https://cloud.google.com/dlp/docs/specifying-location):
+     * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
@@ -899,7 +899,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
-     * location](https://cloud.google.com/dlp/docs/specifying-location):
+     * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;
@@ -937,7 +937,7 @@ public final class CreateDeidentifyTemplateRequest extends com.google.protobuf.G
      *
      * The format of this value varies depending on the scope of the request
      * (project or organization) and whether you have [specified a processing
-     * location](https://cloud.google.com/dlp/docs/specifying-location):
+     * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
      *
      * + Projects scope, location specified:&lt;br/&gt;
      *   `projects/`&lt;var&gt;PROJECT_ID&lt;/var&gt;`/locations/`&lt;var&gt;LOCATION_ID&lt;/var&gt;

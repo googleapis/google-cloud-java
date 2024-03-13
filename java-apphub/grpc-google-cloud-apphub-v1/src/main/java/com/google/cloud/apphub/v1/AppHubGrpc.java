@@ -21,8 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The AppHub services allows users to enable toplogy and telemetry
- * configuration.
+ * The App Hub API allows you to manage App Hub resources.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -1313,8 +1312,7 @@ public final class AppHubGrpc {
    *
    *
    * <pre>
-   * The AppHub services allows users to enable toplogy and telemetry
-   * configuration.
+   * The App Hub API allows you to manage App Hub resources.
    * </pre>
    */
   public interface AsyncService {
@@ -1323,8 +1321,8 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a service project attachment. You can call this API from either a
-     * host or service project.
+     * Lists a service project attachment for a given service project. You can
+     * call this API from any project to find if it is attached to a host project.
      * </pre>
      */
     default void lookupServiceProjectAttachment(
@@ -1340,7 +1338,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List service projects attached to the host project.
+     * Lists service projects attached to the host project.
      * </pre>
      */
     default void listServiceProjectAttachments(
@@ -1370,7 +1368,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a service project attached to the host project.
+     * Gets a service project attachment.
      * </pre>
      */
     default void getServiceProjectAttachment(
@@ -1385,7 +1383,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a service project attached to the host project.
+     * Deletes a service project attachment.
      * </pre>
      */
     default void deleteServiceProjectAttachment(
@@ -1399,8 +1397,9 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Detaches a service project from a host project. You can call this API from
-     * either a host or service project.
+     * Detaches a service project from a host project.
+     * You can call this API from any service project without needing access to
+     * the host project that it is attached to.
      * </pre>
      */
     default void detachServiceProjectAttachment(
@@ -1416,7 +1415,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered services that can be added to an application in a host
+     * Lists Discovered Services that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -1432,7 +1431,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered service in a host project and location.
+     * Gets a Discovered Service in a host project and location.
      * </pre>
      */
     default void getDiscoveredService(
@@ -1447,7 +1446,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered service in a host project and location and with a
+     * Lists a Discovered Service in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -1463,7 +1462,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List Services in an Application.
+     * Lists Services in an Application.
      * </pre>
      */
     default void listServices(
@@ -1519,7 +1518,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Service in an Application.
+     * Deletes a Service from an Application.
      * </pre>
      */
     default void deleteService(
@@ -1533,7 +1532,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered workloads that can be added to an application in a host
+     * Lists Discovered Workloads that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -1549,7 +1548,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered workload in a host project and location.
+     * Gets a Discovered Workload in a host project and location.
      * </pre>
      */
     default void getDiscoveredWorkload(
@@ -1564,7 +1563,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered Workload in a host project and location and with a
+     * Lists a Discovered Workload in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -1637,7 +1636,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Workload in an Application.
+     * Deletes a Workload from an Application.
      * </pre>
      */
     default void deleteWorkload(
@@ -1723,8 +1722,7 @@ public final class AppHubGrpc {
    * Base class for the server implementation of the service AppHub.
    *
    * <pre>
-   * The AppHub services allows users to enable toplogy and telemetry
-   * configuration.
+   * The App Hub API allows you to manage App Hub resources.
    * </pre>
    */
   public abstract static class AppHubImplBase implements io.grpc.BindableService, AsyncService {
@@ -1739,8 +1737,7 @@ public final class AppHubGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service AppHub.
    *
    * <pre>
-   * The AppHub services allows users to enable toplogy and telemetry
-   * configuration.
+   * The App Hub API allows you to manage App Hub resources.
    * </pre>
    */
   public static final class AppHubStub extends io.grpc.stub.AbstractAsyncStub<AppHubStub> {
@@ -1757,8 +1754,8 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a service project attachment. You can call this API from either a
-     * host or service project.
+     * Lists a service project attachment for a given service project. You can
+     * call this API from any project to find if it is attached to a host project.
      * </pre>
      */
     public void lookupServiceProjectAttachment(
@@ -1776,7 +1773,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List service projects attached to the host project.
+     * Lists service projects attached to the host project.
      * </pre>
      */
     public void listServiceProjectAttachments(
@@ -1810,7 +1807,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a service project attached to the host project.
+     * Gets a service project attachment.
      * </pre>
      */
     public void getServiceProjectAttachment(
@@ -1827,7 +1824,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a service project attached to the host project.
+     * Deletes a service project attachment.
      * </pre>
      */
     public void deleteServiceProjectAttachment(
@@ -1843,8 +1840,9 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Detaches a service project from a host project. You can call this API from
-     * either a host or service project.
+     * Detaches a service project from a host project.
+     * You can call this API from any service project without needing access to
+     * the host project that it is attached to.
      * </pre>
      */
     public void detachServiceProjectAttachment(
@@ -1862,7 +1860,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered services that can be added to an application in a host
+     * Lists Discovered Services that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -1880,7 +1878,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered service in a host project and location.
+     * Gets a Discovered Service in a host project and location.
      * </pre>
      */
     public void getDiscoveredService(
@@ -1897,7 +1895,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered service in a host project and location and with a
+     * Lists a Discovered Service in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -1915,7 +1913,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List Services in an Application.
+     * Lists Services in an Application.
      * </pre>
      */
     public void listServices(
@@ -1978,7 +1976,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Service in an Application.
+     * Deletes a Service from an Application.
      * </pre>
      */
     public void deleteService(
@@ -1994,7 +1992,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered workloads that can be added to an application in a host
+     * Lists Discovered Workloads that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -2012,7 +2010,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered workload in a host project and location.
+     * Gets a Discovered Workload in a host project and location.
      * </pre>
      */
     public void getDiscoveredWorkload(
@@ -2029,7 +2027,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered Workload in a host project and location and with a
+     * Lists a Discovered Workload in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -2112,7 +2110,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Workload in an Application.
+     * Deletes a Workload from an Application.
      * </pre>
      */
     public void deleteWorkload(
@@ -2210,8 +2208,7 @@ public final class AppHubGrpc {
    * A stub to allow clients to do synchronous rpc calls to service AppHub.
    *
    * <pre>
-   * The AppHub services allows users to enable toplogy and telemetry
-   * configuration.
+   * The App Hub API allows you to manage App Hub resources.
    * </pre>
    */
   public static final class AppHubBlockingStub
@@ -2229,8 +2226,8 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a service project attachment. You can call this API from either a
-     * host or service project.
+     * Lists a service project attachment for a given service project. You can
+     * call this API from any project to find if it is attached to a host project.
      * </pre>
      */
     public com.google.cloud.apphub.v1.LookupServiceProjectAttachmentResponse
@@ -2244,7 +2241,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List service projects attached to the host project.
+     * Lists service projects attached to the host project.
      * </pre>
      */
     public com.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse
@@ -2271,7 +2268,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a service project attached to the host project.
+     * Gets a service project attachment.
      * </pre>
      */
     public com.google.cloud.apphub.v1.ServiceProjectAttachment getServiceProjectAttachment(
@@ -2284,7 +2281,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a service project attached to the host project.
+     * Deletes a service project attachment.
      * </pre>
      */
     public com.google.longrunning.Operation deleteServiceProjectAttachment(
@@ -2297,8 +2294,9 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Detaches a service project from a host project. You can call this API from
-     * either a host or service project.
+     * Detaches a service project from a host project.
+     * You can call this API from any service project without needing access to
+     * the host project that it is attached to.
      * </pre>
      */
     public com.google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse
@@ -2312,7 +2310,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered services that can be added to an application in a host
+     * Lists Discovered Services that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -2326,7 +2324,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered service in a host project and location.
+     * Gets a Discovered Service in a host project and location.
      * </pre>
      */
     public com.google.cloud.apphub.v1.DiscoveredService getDiscoveredService(
@@ -2339,7 +2337,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered service in a host project and location and with a
+     * Lists a Discovered Service in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -2353,7 +2351,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List Services in an Application.
+     * Lists Services in an Application.
      * </pre>
      */
     public com.google.cloud.apphub.v1.ListServicesResponse listServices(
@@ -2405,7 +2403,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Service in an Application.
+     * Deletes a Service from an Application.
      * </pre>
      */
     public com.google.longrunning.Operation deleteService(
@@ -2418,7 +2416,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered workloads that can be added to an application in a host
+     * Lists Discovered Workloads that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -2432,7 +2430,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered workload in a host project and location.
+     * Gets a Discovered Workload in a host project and location.
      * </pre>
      */
     public com.google.cloud.apphub.v1.DiscoveredWorkload getDiscoveredWorkload(
@@ -2445,7 +2443,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered Workload in a host project and location and with a
+     * Lists a Discovered Workload in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -2511,7 +2509,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Workload in an Application.
+     * Deletes a Workload from an Application.
      * </pre>
      */
     public com.google.longrunning.Operation deleteWorkload(
@@ -2590,8 +2588,7 @@ public final class AppHubGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service AppHub.
    *
    * <pre>
-   * The AppHub services allows users to enable toplogy and telemetry
-   * configuration.
+   * The App Hub API allows you to manage App Hub resources.
    * </pre>
    */
   public static final class AppHubFutureStub
@@ -2609,8 +2606,8 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a service project attachment. You can call this API from either a
-     * host or service project.
+     * Lists a service project attachment for a given service project. You can
+     * call this API from any project to find if it is attached to a host project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2626,7 +2623,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List service projects attached to the host project.
+     * Lists service projects attached to the host project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2657,7 +2654,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a service project attached to the host project.
+     * Gets a service project attachment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2672,7 +2669,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a service project attached to the host project.
+     * Deletes a service project attachment.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2687,8 +2684,9 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Detaches a service project from a host project. You can call this API from
-     * either a host or service project.
+     * Detaches a service project from a host project.
+     * You can call this API from any service project without needing access to
+     * the host project that it is attached to.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2704,7 +2702,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered services that can be added to an application in a host
+     * Lists Discovered Services that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -2719,7 +2717,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered service in a host project and location.
+     * Gets a Discovered Service in a host project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2733,7 +2731,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered service in a host project and location and with a
+     * Lists a Discovered Service in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -2748,7 +2746,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * List Services in an Application.
+     * Lists Services in an Application.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2801,7 +2799,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Service in an Application.
+     * Deletes a Service from an Application.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2814,7 +2812,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Lists discovered workloads that can be added to an application in a host
+     * Lists Discovered Workloads that can be added to an Application in a host
      * project and location.
      * </pre>
      */
@@ -2829,7 +2827,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Gets a discovered workload in a host project and location.
+     * Gets a Discovered Workload in a host project and location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -2843,7 +2841,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Looks up a discovered Workload in a host project and location and with a
+     * Lists a Discovered Workload in a host project and location, with a
      * given resource URI.
      * </pre>
      */
@@ -2912,7 +2910,7 @@ public final class AppHubGrpc {
      *
      *
      * <pre>
-     * Deletes a Workload in an Application.
+     * Deletes a Workload from an Application.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

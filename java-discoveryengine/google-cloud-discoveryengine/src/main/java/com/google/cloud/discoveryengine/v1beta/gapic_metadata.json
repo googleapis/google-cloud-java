@@ -176,6 +176,18 @@
         }
       }
     },
+    "SearchTuningService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchTuningServiceClient",
+          "rpcs": {
+            "TrainCustomModel": {
+              "methods": ["trainCustomModelAsync", "trainCustomModelOperationCallable", "trainCustomModelCallable"]
+            }
+          }
+        }
+      }
+    },
     "ServingConfigService": {
       "clients": {
         "grpc": {
@@ -185,7 +197,7 @@
               "methods": ["getServingConfig", "getServingConfig", "getServingConfig", "getServingConfigCallable"]
             },
             "ListServingConfigs": {
-              "methods": ["listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigsPagedCallable", "listServingConfigsCallable"]
+              "methods": ["listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigsPagedCallable", "listServingConfigsCallable"]
             },
             "UpdateServingConfig": {
               "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]

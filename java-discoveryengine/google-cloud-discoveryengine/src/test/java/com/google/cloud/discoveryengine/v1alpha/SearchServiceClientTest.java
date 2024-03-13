@@ -109,6 +109,7 @@ public class SearchServiceClientTest {
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
+            .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
             .setFilter("filter-1274492040")
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
@@ -124,6 +125,7 @@ public class SearchServiceClientTest {
             .setRankingExpression("rankingExpression2110320494")
             .setSafeSearch(true)
             .putAllUserLabels(new HashMap<String, String>())
+            .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -145,6 +147,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
+    Assert.assertEquals(request.getDataStoreSpecsList(), actualRequest.getDataStoreSpecsList());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getCanonicalFilter(), actualRequest.getCanonicalFilter());
     Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
@@ -160,6 +163,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
     Assert.assertEquals(request.getSafeSearch(), actualRequest.getSafeSearch());
     Assert.assertEquals(request.getUserLabelsMap(), actualRequest.getUserLabelsMap());
+    Assert.assertEquals(request.getCustomFineTuningSpec(), actualRequest.getCustomFineTuningSpec());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -187,6 +191,7 @@ public class SearchServiceClientTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -202,6 +207,7 @@ public class SearchServiceClientTest {
               .setRankingExpression("rankingExpression2110320494")
               .setSafeSearch(true)
               .putAllUserLabels(new HashMap<String, String>())
+              .setCustomFineTuningSpec(CustomFineTuningSpec.newBuilder().build())
               .build();
       client.search(request);
       Assert.fail("No exception raised");

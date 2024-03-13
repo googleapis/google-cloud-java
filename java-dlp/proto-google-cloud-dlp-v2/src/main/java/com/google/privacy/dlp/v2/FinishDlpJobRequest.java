@@ -71,7 +71,7 @@ public final class FinishDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the DlpJob resource to be cancelled.
+   * Required. The name of the DlpJob resource to be finished.
    * </pre>
    *
    * <code>
@@ -96,7 +96,7 @@ public final class FinishDlpJobRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The name of the DlpJob resource to be cancelled.
+   * Required. The name of the DlpJob resource to be finished.
    * </pre>
    *
    * <code>
@@ -464,7 +464,7 @@ public final class FinishDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the DlpJob resource to be cancelled.
+     * Required. The name of the DlpJob resource to be finished.
      * </pre>
      *
      * <code>
@@ -488,7 +488,7 @@ public final class FinishDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the DlpJob resource to be cancelled.
+     * Required. The name of the DlpJob resource to be finished.
      * </pre>
      *
      * <code>
@@ -512,7 +512,7 @@ public final class FinishDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the DlpJob resource to be cancelled.
+     * Required. The name of the DlpJob resource to be finished.
      * </pre>
      *
      * <code>
@@ -535,7 +535,7 @@ public final class FinishDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the DlpJob resource to be cancelled.
+     * Required. The name of the DlpJob resource to be finished.
      * </pre>
      *
      * <code>
@@ -554,7 +554,7 @@ public final class FinishDlpJobRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The name of the DlpJob resource to be cancelled.
+     * Required. The name of the DlpJob resource to be finished.
      * </pre>
      *
      * <code>

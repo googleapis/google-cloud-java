@@ -67,41 +67,43 @@ public final class ToolProto {
     java.lang.String[] descriptorData = {
       "\n*google/cloud/aiplatform/v1beta1/tool.p"
           + "roto\022\037google.cloud.aiplatform.v1beta1\032\037g"
-          + "oogle/api/field_behavior.proto\032-google/c"
-          + "loud/aiplatform/v1beta1/openapi.proto\032\034g"
-          + "oogle/protobuf/struct.proto\"\202\002\n\004Tool\022X\n\025"
-          + "function_declarations\030\001 \003(\01324.google.clo"
-          + "ud.aiplatform.v1beta1.FunctionDeclaratio"
-          + "nB\003\340A\001\022B\n\tretrieval\030\002 \001(\0132*.google.cloud"
-          + ".aiplatform.v1beta1.RetrievalB\003\340A\001\022\\\n\027go"
-          + "ogle_search_retrieval\030\003 \001(\01326.google.clo"
-          + "ud.aiplatform.v1beta1.GoogleSearchRetrie"
-          + "valB\003\340A\001\"\204\001\n\023FunctionDeclaration\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\002\022\030\n\013description\030\002 \001(\tB\003\340A\001\022@\n"
-          + "\nparameters\030\003 \001(\0132\'.google.cloud.aiplatf"
-          + "orm.v1beta1.SchemaB\003\340A\001\"M\n\014FunctionCall\022"
-          + "\021\n\004name\030\001 \001(\tB\003\340A\002\022*\n\004args\030\002 \001(\0132\027.googl"
-          + "e.protobuf.StructB\003\340A\001\"U\n\020FunctionRespon"
-          + "se\022\021\n\004name\030\001 \001(\tB\003\340A\002\022.\n\010response\030\002 \001(\0132"
-          + "\027.google.protobuf.StructB\003\340A\002\"\204\001\n\tRetrie"
-          + "val\022K\n\020vertex_ai_search\030\002 \001(\0132/.google.c"
-          + "loud.aiplatform.v1beta1.VertexAISearchH\000"
-          + "\022 \n\023disable_attribution\030\003 \001(\010B\003\340A\001B\010\n\006so"
-          + "urce\"(\n\016VertexAISearch\022\026\n\tdatastore\030\001 \001("
-          + "\tB\003\340A\002\"9\n\025GoogleSearchRetrieval\022 \n\023disab"
-          + "le_attribution\030\001 \001(\010B\003\340A\001B\340\001\n#com.google"
-          + ".cloud.aiplatform.v1beta1B\tToolProtoP\001ZC"
-          + "cloud.google.com/go/aiplatform/apiv1beta"
-          + "1/aiplatformpb;aiplatformpb\252\002\037Google.Clo"
-          + "ud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIP"
-          + "latform\\V1beta1\352\002\"Google::Cloud::AIPlatf"
-          + "orm::V1beta1b\006proto3"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032-google/cloud/aiplatfo"
+          + "rm/v1beta1/openapi.proto\032\034google/protobu"
+          + "f/struct.proto\"\202\002\n\004Tool\022X\n\025function_decl"
+          + "arations\030\001 \003(\01324.google.cloud.aiplatform"
+          + ".v1beta1.FunctionDeclarationB\003\340A\001\022B\n\tret"
+          + "rieval\030\002 \001(\0132*.google.cloud.aiplatform.v"
+          + "1beta1.RetrievalB\003\340A\001\022\\\n\027google_search_r"
+          + "etrieval\030\003 \001(\01326.google.cloud.aiplatform"
+          + ".v1beta1.GoogleSearchRetrievalB\003\340A\001\"\204\001\n\023"
+          + "FunctionDeclaration\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\030"
+          + "\n\013description\030\002 \001(\tB\003\340A\001\022@\n\nparameters\030\003"
+          + " \001(\0132\'.google.cloud.aiplatform.v1beta1.S"
+          + "chemaB\003\340A\001\"M\n\014FunctionCall\022\021\n\004name\030\001 \001(\t"
+          + "B\003\340A\002\022*\n\004args\030\002 \001(\0132\027.google.protobuf.St"
+          + "ructB\003\340A\001\"U\n\020FunctionResponse\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\002\022.\n\010response\030\002 \001(\0132\027.google.prot"
+          + "obuf.StructB\003\340A\002\"\204\001\n\tRetrieval\022K\n\020vertex"
+          + "_ai_search\030\002 \001(\0132/.google.cloud.aiplatfo"
+          + "rm.v1beta1.VertexAISearchH\000\022 \n\023disable_a"
+          + "ttribution\030\003 \001(\010B\003\340A\001B\010\n\006source\"(\n\016Verte"
+          + "xAISearch\022\026\n\tdatastore\030\001 \001(\tB\003\340A\002\"9\n\025Goo"
+          + "gleSearchRetrieval\022 \n\023disable_attributio"
+          + "n\030\001 \001(\010B\003\340A\001B\340\001\n#com.google.cloud.aiplat"
+          + "form.v1beta1B\tToolProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.OpenApiProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -167,6 +169,7 @@ public final class ToolProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.OpenApiProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

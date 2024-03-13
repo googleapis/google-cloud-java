@@ -88,7 +88,7 @@ public interface TargetSiteOrBuilder
    *
    *
    * <pre>
-   * The type of the target site, e.g. whether the site is to be included or
+   * The type of the target site, e.g., whether the site is to be included or
    * excluded.
    * </pre>
    *
@@ -101,7 +101,7 @@ public interface TargetSiteOrBuilder
    *
    *
    * <pre>
-   * The type of the target site, e.g. whether the site is to be included or
+   * The type of the target site, e.g., whether the site is to be included or
    * excluded.
    * </pre>
    *

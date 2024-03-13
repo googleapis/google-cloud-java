@@ -52,10 +52,13 @@ import com.google.cloud.discoveryengine.v1alpha.CreateDataStoreRequest;
 import com.google.cloud.discoveryengine.v1alpha.DataStore;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreMetadata;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig;
 import com.google.cloud.discoveryengine.v1alpha.GetDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresResponse;
 import com.google.cloud.discoveryengine.v1alpha.UpdateDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -123,6 +126,10 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
   private final OperationCallSettings<DeleteDataStoreRequest, Empty, DeleteDataStoreMetadata>
       deleteDataStoreOperationSettings;
   private final UnaryCallSettings<UpdateDataStoreRequest, DataStore> updateDataStoreSettings;
+  private final UnaryCallSettings<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigSettings;
+  private final UnaryCallSettings<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigSettings;
 
   private static final PagedListDescriptor<ListDataStoresRequest, ListDataStoresResponse, DataStore>
       LIST_DATA_STORES_PAGE_STR_DESC =
@@ -215,6 +222,18 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
   /** Returns the object with the settings used for calls to updateDataStore. */
   public UnaryCallSettings<UpdateDataStoreRequest, DataStore> updateDataStoreSettings() {
     return updateDataStoreSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDocumentProcessingConfig. */
+  public UnaryCallSettings<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigSettings() {
+    return getDocumentProcessingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDocumentProcessingConfig. */
+  public UnaryCallSettings<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigSettings() {
+    return updateDocumentProcessingConfigSettings;
   }
 
   public DataStoreServiceStub createStub() throws IOException {
@@ -343,6 +362,10 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
     deleteDataStoreSettings = settingsBuilder.deleteDataStoreSettings().build();
     deleteDataStoreOperationSettings = settingsBuilder.deleteDataStoreOperationSettings().build();
     updateDataStoreSettings = settingsBuilder.updateDataStoreSettings().build();
+    getDocumentProcessingConfigSettings =
+        settingsBuilder.getDocumentProcessingConfigSettings().build();
+    updateDocumentProcessingConfigSettings =
+        settingsBuilder.updateDocumentProcessingConfigSettings().build();
   }
 
   /** Builder for DataStoreServiceStubSettings. */
@@ -364,6 +387,12 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
         deleteDataStoreOperationSettings;
     private final UnaryCallSettings.Builder<UpdateDataStoreRequest, DataStore>
         updateDataStoreSettings;
+    private final UnaryCallSettings.Builder<
+            GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        getDocumentProcessingConfigSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        updateDocumentProcessingConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -398,6 +427,8 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
       deleteDataStoreSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDataStoreOperationSettings = OperationCallSettings.newBuilder();
       updateDataStoreSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDocumentProcessingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDocumentProcessingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -405,7 +436,9 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
               getDataStoreSettings,
               listDataStoresSettings,
               deleteDataStoreSettings,
-              updateDataStoreSettings);
+              updateDataStoreSettings,
+              getDocumentProcessingConfigSettings,
+              updateDocumentProcessingConfigSettings);
       initDefaults(this);
     }
 
@@ -419,6 +452,10 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
       deleteDataStoreSettings = settings.deleteDataStoreSettings.toBuilder();
       deleteDataStoreOperationSettings = settings.deleteDataStoreOperationSettings.toBuilder();
       updateDataStoreSettings = settings.updateDataStoreSettings.toBuilder();
+      getDocumentProcessingConfigSettings =
+          settings.getDocumentProcessingConfigSettings.toBuilder();
+      updateDocumentProcessingConfigSettings =
+          settings.updateDocumentProcessingConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -426,7 +463,9 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
               getDataStoreSettings,
               listDataStoresSettings,
               deleteDataStoreSettings,
-              updateDataStoreSettings);
+              updateDataStoreSettings,
+              getDocumentProcessingConfigSettings,
+              updateDocumentProcessingConfigSettings);
     }
 
     private static Builder createDefault() {
@@ -476,6 +515,16 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
 
       builder
           .updateDataStoreSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getDocumentProcessingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateDocumentProcessingConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -582,6 +631,19 @@ public class DataStoreServiceStubSettings extends StubSettings<DataStoreServiceS
     /** Returns the builder for the settings used for calls to updateDataStore. */
     public UnaryCallSettings.Builder<UpdateDataStoreRequest, DataStore> updateDataStoreSettings() {
       return updateDataStoreSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDocumentProcessingConfig. */
+    public UnaryCallSettings.Builder<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        getDocumentProcessingConfigSettings() {
+      return getDocumentProcessingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDocumentProcessingConfig. */
+    public UnaryCallSettings.Builder<
+            UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        updateDocumentProcessingConfigSettings() {
+      return updateDocumentProcessingConfigSettings;
     }
 
     /** Returns the endpoint set by the user or the the service's default endpoint. */

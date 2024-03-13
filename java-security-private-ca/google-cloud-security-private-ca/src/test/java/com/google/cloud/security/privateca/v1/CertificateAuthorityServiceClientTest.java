@@ -2548,6 +2548,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(
                 CertificateTemplateName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_TEMPLATE]")
                     .toString())
+            .setMaximumLifetime(Duration.newBuilder().build())
             .setPredefinedValues(X509Parameters.newBuilder().build())
             .setIdentityConstraints(CertificateIdentityConstraints.newBuilder().build())
             .setPassthroughExtensions(CertificateExtensionConstraints.newBuilder().build())
@@ -2615,6 +2616,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(
                 CertificateTemplateName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_TEMPLATE]")
                     .toString())
+            .setMaximumLifetime(Duration.newBuilder().build())
             .setPredefinedValues(X509Parameters.newBuilder().build())
             .setIdentityConstraints(CertificateIdentityConstraints.newBuilder().build())
             .setPassthroughExtensions(CertificateExtensionConstraints.newBuilder().build())
@@ -2770,6 +2772,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(
                 CertificateTemplateName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_TEMPLATE]")
                     .toString())
+            .setMaximumLifetime(Duration.newBuilder().build())
             .setPredefinedValues(X509Parameters.newBuilder().build())
             .setIdentityConstraints(CertificateIdentityConstraints.newBuilder().build())
             .setPassthroughExtensions(CertificateExtensionConstraints.newBuilder().build())
@@ -2820,6 +2823,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(
                 CertificateTemplateName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_TEMPLATE]")
                     .toString())
+            .setMaximumLifetime(Duration.newBuilder().build())
             .setPredefinedValues(X509Parameters.newBuilder().build())
             .setIdentityConstraints(CertificateIdentityConstraints.newBuilder().build())
             .setPassthroughExtensions(CertificateExtensionConstraints.newBuilder().build())
@@ -2960,6 +2964,7 @@ public class CertificateAuthorityServiceClientTest {
             .setName(
                 CertificateTemplateName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_TEMPLATE]")
                     .toString())
+            .setMaximumLifetime(Duration.newBuilder().build())
             .setPredefinedValues(X509Parameters.newBuilder().build())
             .setIdentityConstraints(CertificateIdentityConstraints.newBuilder().build())
             .setPassthroughExtensions(CertificateExtensionConstraints.newBuilder().build())

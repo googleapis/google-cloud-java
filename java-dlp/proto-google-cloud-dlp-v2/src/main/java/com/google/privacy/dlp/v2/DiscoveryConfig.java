@@ -29,7 +29,7 @@ package com.google.privacy.dlp.v2;
  *
  * The generated data profiles are retained according to the
  * [data retention policy]
- * (https://cloud.google.com/dlp/docs/data-profiles#retention).
+ * (https://cloud.google.com/sensitive-data-protection/docs/data-profiles#retention).
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DiscoveryConfig}
@@ -1390,7 +1390,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>
@@ -1419,7 +1419,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>
@@ -1448,7 +1448,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>
@@ -1478,7 +1478,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>
@@ -2211,7 +2211,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
    *
    * The generated data profiles are retained according to the
    * [data retention policy]
-   * (https://cloud.google.com/dlp/docs/data-profiles#retention).
+   * (https://cloud.google.com/sensitive-data-protection/docs/data-profiles#retention).
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DiscoveryConfig}
@@ -3137,7 +3137,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3167,7 +3167,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3196,7 +3196,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3226,7 +3226,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3256,7 +3256,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3294,7 +3294,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3331,7 +3331,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3365,7 +3365,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>
@@ -3398,7 +3398,7 @@ public final class DiscoveryConfig extends com.google.protobuf.GeneratedMessageV
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+     * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 3;</code>

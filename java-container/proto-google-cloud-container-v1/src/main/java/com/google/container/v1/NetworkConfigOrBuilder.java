@@ -447,4 +447,29 @@ public interface NetworkConfigOrBuilder
    * @return The inTransitEncryptionConfig.
    */
   com.google.container.v1.InTransitEncryptionConfig getInTransitEncryptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether CiliumClusterwideNetworkPolicy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_cilium_clusterwide_network_policy = 21;</code>
+   *
+   * @return Whether the enableCiliumClusterwideNetworkPolicy field is set.
+   */
+  boolean hasEnableCiliumClusterwideNetworkPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Whether CiliumClusterwideNetworkPolicy is enabled on this cluster.
+   * </pre>
+   *
+   * <code>optional bool enable_cilium_clusterwide_network_policy = 21;</code>
+   *
+   * @return The enableCiliumClusterwideNetworkPolicy.
+   */
+  boolean getEnableCiliumClusterwideNetworkPolicy();
 }

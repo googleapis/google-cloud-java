@@ -325,7 +325,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at Experimental launch stage.
+     * Used to indicate the PublisherModel is at Experimental launch stage,
+     * available to a small set of customers.
      * </pre>
      *
      * <code>EXPERIMENTAL = 1;</code>
@@ -335,7 +336,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at Private Preview launch stage.
+     * Used to indicate the PublisherModel is at Private Preview launch stage,
+     * only available to a small set of customers, although a larger set of
+     * customers than an Experimental launch. Previews are the first launch
+     * stage used to get feedback from customers.
      * </pre>
      *
      * <code>PRIVATE_PREVIEW = 2;</code>
@@ -345,7 +349,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at Public Preview launch stage.
+     * Used to indicate the PublisherModel is at Public Preview launch stage,
+     * available to all customers, although not supported for production
+     * workloads.
      * </pre>
      *
      * <code>PUBLIC_PREVIEW = 3;</code>
@@ -355,7 +361,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at GA launch stage.
+     * Used to indicate the PublisherModel is at GA launch stage, available to
+     * all customers and ready for production workload.
      * </pre>
      *
      * <code>GA = 4;</code>
@@ -378,7 +385,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at Experimental launch stage.
+     * Used to indicate the PublisherModel is at Experimental launch stage,
+     * available to a small set of customers.
      * </pre>
      *
      * <code>EXPERIMENTAL = 1;</code>
@@ -388,7 +396,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at Private Preview launch stage.
+     * Used to indicate the PublisherModel is at Private Preview launch stage,
+     * only available to a small set of customers, although a larger set of
+     * customers than an Experimental launch. Previews are the first launch
+     * stage used to get feedback from customers.
      * </pre>
      *
      * <code>PRIVATE_PREVIEW = 2;</code>
@@ -398,7 +409,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at Public Preview launch stage.
+     * Used to indicate the PublisherModel is at Public Preview launch stage,
+     * available to all customers, although not supported for production
+     * workloads.
      * </pre>
      *
      * <code>PUBLIC_PREVIEW = 3;</code>
@@ -408,7 +421,8 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Used to indicate the PublisherModel is at GA launch stage.
+     * Used to indicate the PublisherModel is at GA launch stage, available to
+     * all customers and ready for production workload.
      * </pre>
      *
      * <code>GA = 4;</code>

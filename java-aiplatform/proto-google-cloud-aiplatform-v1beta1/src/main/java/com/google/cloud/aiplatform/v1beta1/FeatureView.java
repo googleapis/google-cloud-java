@@ -282,8 +282,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -295,8 +294,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -308,8 +306,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -322,8 +319,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -432,8 +428,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -447,8 +442,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -462,8 +456,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -478,8 +471,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Columns to construct entity_id / row keys. Start by supporting
-     * 1 only.
+     * Required. Columns to construct entity_id / row keys.
      * </pre>
      *
      * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -996,8 +988,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1013,8 +1004,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1029,8 +1019,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1046,8 +1035,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1063,8 +1051,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1088,8 +1075,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1112,8 +1098,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1133,8 +1118,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1153,8 +1137,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. Columns to construct entity_id / row keys. Start by supporting
-       * 1 only.
+       * Required. Columns to construct entity_id / row keys.
        * </pre>
        *
        * <code>repeated string entity_id_columns = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1933,6 +1916,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  @java.lang.Deprecated
   public interface VectorSearchConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig)
@@ -2218,11 +2202,14 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration for vector search.
+   * Deprecated. Use
+   * [IndexConfig][google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig]
+   * instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig}
    */
+  @java.lang.Deprecated
   public static final class VectorSearchConfig extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig)
@@ -4280,7 +4267,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration for vector search.
+     * Deprecated. Use
+     * [IndexConfig][google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig]
+     * instead.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig}
@@ -5898,6 +5887,31 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1beta1.FeatureView.FeatureRegistrySource.FeatureGroupOrBuilder
         getFeatureGroupsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the projectNumber field is set.
+     */
+    boolean hasProjectNumber();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectNumber.
+     */
+    long getProjectNumber();
   }
   /**
    *
@@ -6971,6 +6985,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    private int bitField0_;
     public static final int FEATURE_GROUPS_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -7062,6 +7077,39 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       return featureGroups_.get(index);
     }
 
+    public static final int PROJECT_NUMBER_FIELD_NUMBER = 2;
+    private long projectNumber_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the projectNumber field is set.
+     */
+    @java.lang.Override
+    public boolean hasProjectNumber() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project number of the parent project of the Feature Groups.
+     * </pre>
+     *
+     * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The projectNumber.
+     */
+    @java.lang.Override
+    public long getProjectNumber() {
+      return projectNumber_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7079,6 +7127,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < featureGroups_.size(); i++) {
         output.writeMessage(1, featureGroups_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(2, projectNumber_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7090,6 +7141,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       for (int i = 0; i < featureGroups_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, featureGroups_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, projectNumber_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7108,6 +7162,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.FeatureView.FeatureRegistrySource) obj;
 
       if (!getFeatureGroupsList().equals(other.getFeatureGroupsList())) return false;
+      if (hasProjectNumber() != other.hasProjectNumber()) return false;
+      if (hasProjectNumber()) {
+        if (getProjectNumber() != other.getProjectNumber()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7122,6 +7180,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       if (getFeatureGroupsCount() > 0) {
         hash = (37 * hash) + FEATURE_GROUPS_FIELD_NUMBER;
         hash = (53 * hash) + getFeatureGroupsList().hashCode();
+      }
+      if (hasProjectNumber()) {
+        hash = (37 * hash) + PROJECT_NUMBER_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProjectNumber());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -7276,6 +7338,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           featureGroupsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        projectNumber_ = 0L;
         return this;
       }
 
@@ -7330,6 +7393,12 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.FeatureView.FeatureRegistrySource result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.projectNumber_ = projectNumber_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -7411,6 +7480,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (other.hasProjectNumber()) {
+          setProjectNumber(other.getProjectNumber());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7453,6 +7525,12 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 10
+              case 16:
+                {
+                  projectNumber_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7908,6 +7986,74 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
           featureGroups_ = null;
         }
         return featureGroupsBuilder_;
+      }
+
+      private long projectNumber_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the projectNumber field is set.
+       */
+      @java.lang.Override
+      public boolean hasProjectNumber() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The projectNumber.
+       */
+      @java.lang.Override
+      public long getProjectNumber() {
+        return projectNumber_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The projectNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectNumber(long value) {
+
+        projectNumber_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project number of the parent project of the Feature Groups.
+       * </pre>
+       *
+       * <code>optional int64 project_number = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectNumber() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        projectNumber_ = 0L;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override
@@ -8562,19 +8708,21 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
    * @return Whether the vectorSearchConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasVectorSearchConfig() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -8582,19 +8730,21 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
    * @return The vectorSearchConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig
       getVectorSearchConfig() {
     return vectorSearchConfig_ == null
@@ -8605,17 +8755,17 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Configuration for vector search. It contains the required
-   * configurations to create an index from source data, so that approximate
-   * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-   * online serving.
+   * Optional. Deprecated: please use
+   * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfigOrBuilder
       getVectorSearchConfigOrBuilder() {
     return vectorSearchConfig_ == null
@@ -11030,18 +11180,20 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
      * @return Whether the vectorSearchConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasVectorSearchConfig() {
       return ((bitField0_ & 0x00000100) != 0);
     }
@@ -11049,18 +11201,20 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated.
+     *     See google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
      * @return The vectorSearchConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig
         getVectorSearchConfig() {
       if (vectorSearchConfigBuilder_ == null) {
@@ -11076,16 +11230,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setVectorSearchConfig(
         com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig value) {
       if (vectorSearchConfigBuilder_ == null) {
@@ -11104,16 +11258,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setVectorSearchConfig(
         com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig.Builder
             builderForValue) {
@@ -11130,16 +11284,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeVectorSearchConfig(
         com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig value) {
       if (vectorSearchConfigBuilder_ == null) {
@@ -11165,16 +11319,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearVectorSearchConfig() {
       bitField0_ = (bitField0_ & ~0x00000100);
       vectorSearchConfig_ = null;
@@ -11189,16 +11343,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig.Builder
         getVectorSearchConfigBuilder() {
       bitField0_ |= 0x00000100;
@@ -11209,16 +11363,16 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfigOrBuilder
         getVectorSearchConfigOrBuilder() {
       if (vectorSearchConfigBuilder_ != null) {
@@ -11234,14 +11388,13 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Configuration for vector search. It contains the required
-     * configurations to create an index from source data, so that approximate
-     * nearest neighbor (a.k.a ANN) algorithms search can be performed during
-     * online serving.
+     * Optional. Deprecated: please use
+     * [FeatureView.index_config][google.cloud.aiplatform.v1beta1.FeatureView.index_config]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfig vector_search_config = 8 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

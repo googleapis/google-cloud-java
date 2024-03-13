@@ -28,7 +28,9 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to which service project is being
+   * attached. Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Host project ID and location to which service project is being
+   * attached. Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -58,9 +62,8 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    *
    * <pre>
    * Required. The service project attachment identifier must contain the
-   * project_id of the service project specified in the
-   * service_project_attachment.service_project field. Hint:
-   * "projects/{project_id}"
+   * project id of the service project specified in the
+   * service_project_attachment.service_project field.
    * </pre>
    *
    * <code>string service_project_attachment_id = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -74,9 +77,8 @@ public interface CreateServiceProjectAttachmentRequestOrBuilder
    *
    * <pre>
    * Required. The service project attachment identifier must contain the
-   * project_id of the service project specified in the
-   * service_project_attachment.service_project field. Hint:
-   * "projects/{project_id}"
+   * project id of the service project specified in the
+   * service_project_attachment.service_project field.
    * </pre>
    *
    * <code>string service_project_attachment_id = 2 [(.google.api.field_behavior) = REQUIRED];

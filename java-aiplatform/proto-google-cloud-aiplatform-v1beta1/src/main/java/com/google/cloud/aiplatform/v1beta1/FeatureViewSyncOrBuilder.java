@@ -164,4 +164,46 @@ public interface FeatureViewSyncOrBuilder
    * <code>.google.rpc.Status final_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getFinalStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of the sync job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the syncSummary field is set.
+   */
+  boolean hasSyncSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of the sync job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The syncSummary.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary getSyncSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of the sync job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder
+      getSyncSummaryOrBuilder();
 }

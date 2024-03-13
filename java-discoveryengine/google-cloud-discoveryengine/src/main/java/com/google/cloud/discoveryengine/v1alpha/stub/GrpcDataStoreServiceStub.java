@@ -32,10 +32,13 @@ import com.google.cloud.discoveryengine.v1alpha.CreateDataStoreRequest;
 import com.google.cloud.discoveryengine.v1alpha.DataStore;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreMetadata;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig;
 import com.google.cloud.discoveryengine.v1alpha.GetDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDataStoresResponse;
 import com.google.cloud.discoveryengine.v1alpha.UpdateDataStoreRequest;
+import com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -109,6 +112,34 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(DataStore.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigMethodDescriptor =
+          MethodDescriptor
+              .<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DataStoreService/GetDocumentProcessingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDocumentProcessingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DocumentProcessingConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigMethodDescriptor =
+          MethodDescriptor
+              .<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DataStoreService/UpdateDocumentProcessingConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDocumentProcessingConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DocumentProcessingConfig.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateDataStoreRequest, Operation> createDataStoreCallable;
   private final OperationCallable<CreateDataStoreRequest, DataStore, CreateDataStoreMetadata>
       createDataStoreOperationCallable;
@@ -120,6 +151,10 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
   private final OperationCallable<DeleteDataStoreRequest, Empty, DeleteDataStoreMetadata>
       deleteDataStoreOperationCallable;
   private final UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable;
+  private final UnaryCallable<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigCallable;
+  private final UnaryCallable<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -216,6 +251,32 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        getDocumentProcessingConfigTransportSettings =
+            GrpcCallSettings
+                .<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+                .setMethodDescriptor(getDocumentProcessingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+        updateDocumentProcessingConfigTransportSettings =
+            GrpcCallSettings
+                .<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>newBuilder()
+                .setMethodDescriptor(updateDocumentProcessingConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "document_processing_config.name",
+                          String.valueOf(request.getDocumentProcessingConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createDataStoreCallable =
         callableFactory.createUnaryCallable(
@@ -247,6 +308,16 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
     this.updateDataStoreCallable =
         callableFactory.createUnaryCallable(
             updateDataStoreTransportSettings, settings.updateDataStoreSettings(), clientContext);
+    this.getDocumentProcessingConfigCallable =
+        callableFactory.createUnaryCallable(
+            getDocumentProcessingConfigTransportSettings,
+            settings.getDocumentProcessingConfigSettings(),
+            clientContext);
+    this.updateDocumentProcessingConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateDocumentProcessingConfigTransportSettings,
+            settings.updateDocumentProcessingConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -297,6 +368,18 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
   @Override
   public UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable() {
     return updateDataStoreCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      getDocumentProcessingConfigCallable() {
+    return getDocumentProcessingConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDocumentProcessingConfigRequest, DocumentProcessingConfig>
+      updateDocumentProcessingConfigCallable() {
+    return updateDocumentProcessingConfigCallable;
   }
 
   @Override

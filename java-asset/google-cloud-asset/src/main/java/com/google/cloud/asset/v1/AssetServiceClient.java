@@ -468,18 +468,49 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AnalyzeOrgPolicyGovernedAssets</td>
- *      <td><p> Analyzes organization policies governed assets (Google Cloud resources or policies) under a scope. This RPC supports custom constraints and the following 10 canned constraints:
+ *      <td><p> Analyzes organization policies governed assets (Google Cloud resources or policies) under a scope. This RPC supports custom constraints and the following canned constraints:
  * <ul>
- * <li>  storage.uniformBucketLevelAccess
- * <li>  iam.disableServiceAccountKeyCreation
- * <li>  iam.allowedPolicyMemberDomains
- * <li>  compute.vmExternalIpAccess
- * <li>  appengine.enforceServiceAccountActAsCheck
- * <li>  gcp.resourceLocations
- * <li>  compute.trustedImageProjects
- * <li>  compute.skipDefaultNetworkCreation
- * <li>  compute.requireOsLogin
- * <li>  compute.disableNestedVirtualization
+ * <li>  constraints/ainotebooks.accessMode
+ * <li>  constraints/ainotebooks.disableFileDownloads
+ * <li>  constraints/ainotebooks.disableRootAccess
+ * <li>  constraints/ainotebooks.disableTerminal
+ * <li>  constraints/ainotebooks.environmentOptions
+ * <li>  constraints/ainotebooks.requireAutoUpgradeSchedule
+ * <li>  constraints/ainotebooks.restrictVpcNetworks
+ * <li>  constraints/compute.disableGuestAttributesAccess
+ * <li>  constraints/compute.disableInstanceDataAccessApis
+ * <li>  constraints/compute.disableNestedVirtualization
+ * <li>  constraints/compute.disableSerialPortAccess
+ * <li>  constraints/compute.disableSerialPortLogging
+ * <li>  constraints/compute.disableVpcExternalIpv6
+ * <li>  constraints/compute.requireOsLogin
+ * <li>  constraints/compute.requireShieldedVm
+ * <li>  constraints/compute.restrictLoadBalancerCreationForTypes
+ * <li>  constraints/compute.restrictProtocolForwardingCreationForTypes
+ * <li>  constraints/compute.restrictXpnProjectLienRemoval
+ * <li>  constraints/compute.setNewProjectDefaultToZonalDNSOnly
+ * <li>  constraints/compute.skipDefaultNetworkCreation
+ * <li>  constraints/compute.trustedImageProjects
+ * <li>  constraints/compute.vmCanIpForward
+ * <li>  constraints/compute.vmExternalIpAccess
+ * <li>  constraints/gcp.detailedAuditLoggingMode
+ * <li>  constraints/gcp.resourceLocations
+ * <li>  constraints/iam.allowedPolicyMemberDomains
+ * <li>  constraints/iam.automaticIamGrantsForDefaultServiceAccounts
+ * <li>  constraints/iam.disableServiceAccountCreation
+ * <li>  constraints/iam.disableServiceAccountKeyCreation
+ * <li>  constraints/iam.disableServiceAccountKeyUpload
+ * <li>  constraints/iam.restrictCrossProjectServiceAccountLienRemoval
+ * <li>  constraints/iam.serviceAccountKeyExpiryHours
+ * <li>  constraints/resourcemanager.accessBoundaries
+ * <li>  constraints/resourcemanager.allowedExportDestinations
+ * <li>  constraints/sql.restrictAuthorizedNetworks
+ * <li>  constraints/sql.restrictNoncompliantDiagnosticDataAccess
+ * <li>  constraints/sql.restrictNoncompliantResourceCreation
+ * <li>  constraints/sql.restrictPublicIp
+ * <li>  constraints/storage.publicAccessPrevention
+ * <li>  constraints/storage.restrictAuthTypes
+ * <li>  constraints/storage.uniformBucketLevelAccess
  * </ul>
  * <p>  This RPC only returns either resources of types [supported by search APIs](https://cloud.google.com/asset-inventory/docs/supported-asset-types) or IAM policies.</td>
  *      <td>
@@ -3503,19 +3534,50 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
-   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   * scope. This RPC supports custom constraints and the following canned constraints:
    *
    * <ul>
-   *   <li>storage.uniformBucketLevelAccess
-   *   <li>iam.disableServiceAccountKeyCreation
-   *   <li>iam.allowedPolicyMemberDomains
-   *   <li>compute.vmExternalIpAccess
-   *   <li>appengine.enforceServiceAccountActAsCheck
-   *   <li>gcp.resourceLocations
-   *   <li>compute.trustedImageProjects
-   *   <li>compute.skipDefaultNetworkCreation
-   *   <li>compute.requireOsLogin
-   *   <li>compute.disableNestedVirtualization
+   *   <li>constraints/ainotebooks.accessMode
+   *   <li>constraints/ainotebooks.disableFileDownloads
+   *   <li>constraints/ainotebooks.disableRootAccess
+   *   <li>constraints/ainotebooks.disableTerminal
+   *   <li>constraints/ainotebooks.environmentOptions
+   *   <li>constraints/ainotebooks.requireAutoUpgradeSchedule
+   *   <li>constraints/ainotebooks.restrictVpcNetworks
+   *   <li>constraints/compute.disableGuestAttributesAccess
+   *   <li>constraints/compute.disableInstanceDataAccessApis
+   *   <li>constraints/compute.disableNestedVirtualization
+   *   <li>constraints/compute.disableSerialPortAccess
+   *   <li>constraints/compute.disableSerialPortLogging
+   *   <li>constraints/compute.disableVpcExternalIpv6
+   *   <li>constraints/compute.requireOsLogin
+   *   <li>constraints/compute.requireShieldedVm
+   *   <li>constraints/compute.restrictLoadBalancerCreationForTypes
+   *   <li>constraints/compute.restrictProtocolForwardingCreationForTypes
+   *   <li>constraints/compute.restrictXpnProjectLienRemoval
+   *   <li>constraints/compute.setNewProjectDefaultToZonalDNSOnly
+   *   <li>constraints/compute.skipDefaultNetworkCreation
+   *   <li>constraints/compute.trustedImageProjects
+   *   <li>constraints/compute.vmCanIpForward
+   *   <li>constraints/compute.vmExternalIpAccess
+   *   <li>constraints/gcp.detailedAuditLoggingMode
+   *   <li>constraints/gcp.resourceLocations
+   *   <li>constraints/iam.allowedPolicyMemberDomains
+   *   <li>constraints/iam.automaticIamGrantsForDefaultServiceAccounts
+   *   <li>constraints/iam.disableServiceAccountCreation
+   *   <li>constraints/iam.disableServiceAccountKeyCreation
+   *   <li>constraints/iam.disableServiceAccountKeyUpload
+   *   <li>constraints/iam.restrictCrossProjectServiceAccountLienRemoval
+   *   <li>constraints/iam.serviceAccountKeyExpiryHours
+   *   <li>constraints/resourcemanager.accessBoundaries
+   *   <li>constraints/resourcemanager.allowedExportDestinations
+   *   <li>constraints/sql.restrictAuthorizedNetworks
+   *   <li>constraints/sql.restrictNoncompliantDiagnosticDataAccess
+   *   <li>constraints/sql.restrictNoncompliantResourceCreation
+   *   <li>constraints/sql.restrictPublicIp
+   *   <li>constraints/storage.publicAccessPrevention
+   *   <li>constraints/storage.restrictAuthTypes
+   *   <li>constraints/storage.uniformBucketLevelAccess
    * </ul>
    *
    * <p>This RPC only returns either resources of types [supported by search
@@ -3593,19 +3655,50 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
-   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   * scope. This RPC supports custom constraints and the following canned constraints:
    *
    * <ul>
-   *   <li>storage.uniformBucketLevelAccess
-   *   <li>iam.disableServiceAccountKeyCreation
-   *   <li>iam.allowedPolicyMemberDomains
-   *   <li>compute.vmExternalIpAccess
-   *   <li>appengine.enforceServiceAccountActAsCheck
-   *   <li>gcp.resourceLocations
-   *   <li>compute.trustedImageProjects
-   *   <li>compute.skipDefaultNetworkCreation
-   *   <li>compute.requireOsLogin
-   *   <li>compute.disableNestedVirtualization
+   *   <li>constraints/ainotebooks.accessMode
+   *   <li>constraints/ainotebooks.disableFileDownloads
+   *   <li>constraints/ainotebooks.disableRootAccess
+   *   <li>constraints/ainotebooks.disableTerminal
+   *   <li>constraints/ainotebooks.environmentOptions
+   *   <li>constraints/ainotebooks.requireAutoUpgradeSchedule
+   *   <li>constraints/ainotebooks.restrictVpcNetworks
+   *   <li>constraints/compute.disableGuestAttributesAccess
+   *   <li>constraints/compute.disableInstanceDataAccessApis
+   *   <li>constraints/compute.disableNestedVirtualization
+   *   <li>constraints/compute.disableSerialPortAccess
+   *   <li>constraints/compute.disableSerialPortLogging
+   *   <li>constraints/compute.disableVpcExternalIpv6
+   *   <li>constraints/compute.requireOsLogin
+   *   <li>constraints/compute.requireShieldedVm
+   *   <li>constraints/compute.restrictLoadBalancerCreationForTypes
+   *   <li>constraints/compute.restrictProtocolForwardingCreationForTypes
+   *   <li>constraints/compute.restrictXpnProjectLienRemoval
+   *   <li>constraints/compute.setNewProjectDefaultToZonalDNSOnly
+   *   <li>constraints/compute.skipDefaultNetworkCreation
+   *   <li>constraints/compute.trustedImageProjects
+   *   <li>constraints/compute.vmCanIpForward
+   *   <li>constraints/compute.vmExternalIpAccess
+   *   <li>constraints/gcp.detailedAuditLoggingMode
+   *   <li>constraints/gcp.resourceLocations
+   *   <li>constraints/iam.allowedPolicyMemberDomains
+   *   <li>constraints/iam.automaticIamGrantsForDefaultServiceAccounts
+   *   <li>constraints/iam.disableServiceAccountCreation
+   *   <li>constraints/iam.disableServiceAccountKeyCreation
+   *   <li>constraints/iam.disableServiceAccountKeyUpload
+   *   <li>constraints/iam.restrictCrossProjectServiceAccountLienRemoval
+   *   <li>constraints/iam.serviceAccountKeyExpiryHours
+   *   <li>constraints/resourcemanager.accessBoundaries
+   *   <li>constraints/resourcemanager.allowedExportDestinations
+   *   <li>constraints/sql.restrictAuthorizedNetworks
+   *   <li>constraints/sql.restrictNoncompliantDiagnosticDataAccess
+   *   <li>constraints/sql.restrictNoncompliantResourceCreation
+   *   <li>constraints/sql.restrictPublicIp
+   *   <li>constraints/storage.publicAccessPrevention
+   *   <li>constraints/storage.restrictAuthTypes
+   *   <li>constraints/storage.uniformBucketLevelAccess
    * </ul>
    *
    * <p>This RPC only returns either resources of types [supported by search
@@ -3646,19 +3739,50 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
-   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   * scope. This RPC supports custom constraints and the following canned constraints:
    *
    * <ul>
-   *   <li>storage.uniformBucketLevelAccess
-   *   <li>iam.disableServiceAccountKeyCreation
-   *   <li>iam.allowedPolicyMemberDomains
-   *   <li>compute.vmExternalIpAccess
-   *   <li>appengine.enforceServiceAccountActAsCheck
-   *   <li>gcp.resourceLocations
-   *   <li>compute.trustedImageProjects
-   *   <li>compute.skipDefaultNetworkCreation
-   *   <li>compute.requireOsLogin
-   *   <li>compute.disableNestedVirtualization
+   *   <li>constraints/ainotebooks.accessMode
+   *   <li>constraints/ainotebooks.disableFileDownloads
+   *   <li>constraints/ainotebooks.disableRootAccess
+   *   <li>constraints/ainotebooks.disableTerminal
+   *   <li>constraints/ainotebooks.environmentOptions
+   *   <li>constraints/ainotebooks.requireAutoUpgradeSchedule
+   *   <li>constraints/ainotebooks.restrictVpcNetworks
+   *   <li>constraints/compute.disableGuestAttributesAccess
+   *   <li>constraints/compute.disableInstanceDataAccessApis
+   *   <li>constraints/compute.disableNestedVirtualization
+   *   <li>constraints/compute.disableSerialPortAccess
+   *   <li>constraints/compute.disableSerialPortLogging
+   *   <li>constraints/compute.disableVpcExternalIpv6
+   *   <li>constraints/compute.requireOsLogin
+   *   <li>constraints/compute.requireShieldedVm
+   *   <li>constraints/compute.restrictLoadBalancerCreationForTypes
+   *   <li>constraints/compute.restrictProtocolForwardingCreationForTypes
+   *   <li>constraints/compute.restrictXpnProjectLienRemoval
+   *   <li>constraints/compute.setNewProjectDefaultToZonalDNSOnly
+   *   <li>constraints/compute.skipDefaultNetworkCreation
+   *   <li>constraints/compute.trustedImageProjects
+   *   <li>constraints/compute.vmCanIpForward
+   *   <li>constraints/compute.vmExternalIpAccess
+   *   <li>constraints/gcp.detailedAuditLoggingMode
+   *   <li>constraints/gcp.resourceLocations
+   *   <li>constraints/iam.allowedPolicyMemberDomains
+   *   <li>constraints/iam.automaticIamGrantsForDefaultServiceAccounts
+   *   <li>constraints/iam.disableServiceAccountCreation
+   *   <li>constraints/iam.disableServiceAccountKeyCreation
+   *   <li>constraints/iam.disableServiceAccountKeyUpload
+   *   <li>constraints/iam.restrictCrossProjectServiceAccountLienRemoval
+   *   <li>constraints/iam.serviceAccountKeyExpiryHours
+   *   <li>constraints/resourcemanager.accessBoundaries
+   *   <li>constraints/resourcemanager.allowedExportDestinations
+   *   <li>constraints/sql.restrictAuthorizedNetworks
+   *   <li>constraints/sql.restrictNoncompliantDiagnosticDataAccess
+   *   <li>constraints/sql.restrictNoncompliantResourceCreation
+   *   <li>constraints/sql.restrictPublicIp
+   *   <li>constraints/storage.publicAccessPrevention
+   *   <li>constraints/storage.restrictAuthTypes
+   *   <li>constraints/storage.uniformBucketLevelAccess
    * </ul>
    *
    * <p>This RPC only returns either resources of types [supported by search
@@ -3700,19 +3824,50 @@ public class AssetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
-   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   * scope. This RPC supports custom constraints and the following canned constraints:
    *
    * <ul>
-   *   <li>storage.uniformBucketLevelAccess
-   *   <li>iam.disableServiceAccountKeyCreation
-   *   <li>iam.allowedPolicyMemberDomains
-   *   <li>compute.vmExternalIpAccess
-   *   <li>appengine.enforceServiceAccountActAsCheck
-   *   <li>gcp.resourceLocations
-   *   <li>compute.trustedImageProjects
-   *   <li>compute.skipDefaultNetworkCreation
-   *   <li>compute.requireOsLogin
-   *   <li>compute.disableNestedVirtualization
+   *   <li>constraints/ainotebooks.accessMode
+   *   <li>constraints/ainotebooks.disableFileDownloads
+   *   <li>constraints/ainotebooks.disableRootAccess
+   *   <li>constraints/ainotebooks.disableTerminal
+   *   <li>constraints/ainotebooks.environmentOptions
+   *   <li>constraints/ainotebooks.requireAutoUpgradeSchedule
+   *   <li>constraints/ainotebooks.restrictVpcNetworks
+   *   <li>constraints/compute.disableGuestAttributesAccess
+   *   <li>constraints/compute.disableInstanceDataAccessApis
+   *   <li>constraints/compute.disableNestedVirtualization
+   *   <li>constraints/compute.disableSerialPortAccess
+   *   <li>constraints/compute.disableSerialPortLogging
+   *   <li>constraints/compute.disableVpcExternalIpv6
+   *   <li>constraints/compute.requireOsLogin
+   *   <li>constraints/compute.requireShieldedVm
+   *   <li>constraints/compute.restrictLoadBalancerCreationForTypes
+   *   <li>constraints/compute.restrictProtocolForwardingCreationForTypes
+   *   <li>constraints/compute.restrictXpnProjectLienRemoval
+   *   <li>constraints/compute.setNewProjectDefaultToZonalDNSOnly
+   *   <li>constraints/compute.skipDefaultNetworkCreation
+   *   <li>constraints/compute.trustedImageProjects
+   *   <li>constraints/compute.vmCanIpForward
+   *   <li>constraints/compute.vmExternalIpAccess
+   *   <li>constraints/gcp.detailedAuditLoggingMode
+   *   <li>constraints/gcp.resourceLocations
+   *   <li>constraints/iam.allowedPolicyMemberDomains
+   *   <li>constraints/iam.automaticIamGrantsForDefaultServiceAccounts
+   *   <li>constraints/iam.disableServiceAccountCreation
+   *   <li>constraints/iam.disableServiceAccountKeyCreation
+   *   <li>constraints/iam.disableServiceAccountKeyUpload
+   *   <li>constraints/iam.restrictCrossProjectServiceAccountLienRemoval
+   *   <li>constraints/iam.serviceAccountKeyExpiryHours
+   *   <li>constraints/resourcemanager.accessBoundaries
+   *   <li>constraints/resourcemanager.allowedExportDestinations
+   *   <li>constraints/sql.restrictAuthorizedNetworks
+   *   <li>constraints/sql.restrictNoncompliantDiagnosticDataAccess
+   *   <li>constraints/sql.restrictNoncompliantResourceCreation
+   *   <li>constraints/sql.restrictPublicIp
+   *   <li>constraints/storage.publicAccessPrevention
+   *   <li>constraints/storage.restrictAuthTypes
+   *   <li>constraints/storage.uniformBucketLevelAccess
    * </ul>
    *
    * <p>This RPC only returns either resources of types [supported by search

@@ -73,7 +73,9 @@ public final class DetachServiceProjectAttachmentRequest
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Service project id and location to detach from a host project.
+   * Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -98,7 +100,9 @@ public final class DetachServiceProjectAttachmentRequest
    *
    *
    * <pre>
-   * Required. Value for name.
+   * Required. Service project id and location to detach from a host project.
+   * Only global location is supported. Expected format:
+   * `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -472,7 +476,9 @@ public final class DetachServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Service project id and location to detach from a host project.
+     * Only global location is supported. Expected format:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -496,7 +502,9 @@ public final class DetachServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Service project id and location to detach from a host project.
+     * Only global location is supported. Expected format:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -520,7 +528,9 @@ public final class DetachServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Service project id and location to detach from a host project.
+     * Only global location is supported. Expected format:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -543,7 +553,9 @@ public final class DetachServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Service project id and location to detach from a host project.
+     * Only global location is supported. Expected format:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>
@@ -562,7 +574,9 @@ public final class DetachServiceProjectAttachmentRequest
      *
      *
      * <pre>
-     * Required. Value for name.
+     * Required. Service project id and location to detach from a host project.
+     * Only global location is supported. Expected format:
+     * `projects/{project}/locations/{location}`.
      * </pre>
      *
      * <code>

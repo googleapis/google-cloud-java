@@ -74,7 +74,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -88,7 +88,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -102,7 +102,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -115,7 +115,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -128,7 +128,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
    *
    *
    * <pre>
-   * List of discovered workloads.
+   * List of Discovered Workloads.
    * </pre>
    *
    * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -730,7 +730,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -747,7 +747,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -763,7 +763,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -779,7 +779,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -802,7 +802,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -822,7 +822,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -844,7 +844,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -867,7 +867,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -887,7 +887,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -907,7 +907,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -927,7 +927,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -946,7 +946,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -965,7 +965,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -978,7 +978,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -995,7 +995,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -1012,7 +1012,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -1025,7 +1025,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>
@@ -1039,7 +1039,7 @@ public final class ListDiscoveredWorkloadsResponse extends com.google.protobuf.G
      *
      *
      * <pre>
-     * List of discovered workloads.
+     * List of Discovered Workloads.
      * </pre>
      *
      * <code>repeated .google.cloud.apphub.v1.DiscoveredWorkload discovered_workloads = 1;</code>

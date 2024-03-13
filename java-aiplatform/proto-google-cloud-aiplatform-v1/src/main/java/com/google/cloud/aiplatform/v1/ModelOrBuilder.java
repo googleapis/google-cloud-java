@@ -1861,4 +1861,48 @@ public interface ModelOrBuilder
    * @return The bytes for metadataArtifact.
    */
   com.google.protobuf.ByteString getMetadataArtifactBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User input field to specify the base model source. Currently it
+   * only supports specifing the Model Garden models and Genie models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the baseModelSource field is set.
+   */
+  boolean hasBaseModelSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User input field to specify the base model source. Currently it
+   * only supports specifing the Model Garden models and Genie models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The baseModelSource.
+   */
+  com.google.cloud.aiplatform.v1.Model.BaseModelSource getBaseModelSource();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User input field to specify the base model source. Currently it
+   * only supports specifing the Model Garden models and Genie models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Model.BaseModelSource base_model_source = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.Model.BaseModelSourceOrBuilder getBaseModelSourceOrBuilder();
 }

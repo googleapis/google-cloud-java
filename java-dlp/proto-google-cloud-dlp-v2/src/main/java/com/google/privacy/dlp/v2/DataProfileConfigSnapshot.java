@@ -38,7 +38,9 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     super(builder);
   }
 
-  private DataProfileConfigSnapshot() {}
+  private DataProfileConfigSnapshot() {
+    inspectTemplateName_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -121,14 +123,22 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A copy of the configuration used to generate this profile.
+   * A copy of the configuration used to generate this profile. This is
+   * deprecated, and the DiscoveryConfig field is preferred moving forward.
+   * DataProfileJobConfig will still be written here for Discovery in BigQuery
+   * for backwards compatibility, but will not be updated with new fields, while
+   * DiscoveryConfig will.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+   * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
+   *     google/privacy/dlp/v2/dlp.proto;l=6262
    * @return Whether the dataProfileJob field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDataProfileJob() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -136,14 +146,22 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A copy of the configuration used to generate this profile.
+   * A copy of the configuration used to generate this profile. This is
+   * deprecated, and the DiscoveryConfig field is preferred moving forward.
+   * DataProfileJobConfig will still be written here for Discovery in BigQuery
+   * for backwards compatibility, but will not be updated with new fields, while
+   * DiscoveryConfig will.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+   * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated. See
+   *     google/privacy/dlp/v2/dlp.proto;l=6262
    * @return The dataProfileJob.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.privacy.dlp.v2.DataProfileJobConfig getDataProfileJob() {
     return dataProfileJob_ == null
         ? com.google.privacy.dlp.v2.DataProfileJobConfig.getDefaultInstance()
@@ -153,16 +171,173 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A copy of the configuration used to generate this profile.
+   * A copy of the configuration used to generate this profile. This is
+   * deprecated, and the DiscoveryConfig field is preferred moving forward.
+   * DataProfileJobConfig will still be written here for Discovery in BigQuery
+   * for backwards compatibility, but will not be updated with new fields, while
+   * DiscoveryConfig will.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+   * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.privacy.dlp.v2.DataProfileJobConfigOrBuilder getDataProfileJobOrBuilder() {
     return dataProfileJob_ == null
         ? com.google.privacy.dlp.v2.DataProfileJobConfig.getDefaultInstance()
         : dataProfileJob_;
+  }
+
+  public static final int DISCOVERY_CONFIG_FIELD_NUMBER = 4;
+  private com.google.privacy.dlp.v2.DiscoveryConfig discoveryConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the configuration used to generate this profile.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+   *
+   * @return Whether the discoveryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiscoveryConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the configuration used to generate this profile.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+   *
+   * @return The discoveryConfig.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig() {
+    return discoveryConfig_ == null
+        ? com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()
+        : discoveryConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A copy of the configuration used to generate this profile.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder getDiscoveryConfigOrBuilder() {
+    return discoveryConfig_ == null
+        ? com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()
+        : discoveryConfig_;
+  }
+
+  public static final int INSPECT_TEMPLATE_NAME_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inspectTemplateName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Name of the inspection template used to generate this profile
+   * </pre>
+   *
+   * <code>string inspect_template_name = 5;</code>
+   *
+   * @return The inspectTemplateName.
+   */
+  @java.lang.Override
+  public java.lang.String getInspectTemplateName() {
+    java.lang.Object ref = inspectTemplateName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      inspectTemplateName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the inspection template used to generate this profile
+   * </pre>
+   *
+   * <code>string inspect_template_name = 5;</code>
+   *
+   * @return The bytes for inspectTemplateName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
+    java.lang.Object ref = inspectTemplateName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      inspectTemplateName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INSPECT_TEMPLATE_MODIFIED_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp inspectTemplateModifiedTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp when the template was modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+   *
+   * @return Whether the inspectTemplateModifiedTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasInspectTemplateModifiedTime() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp when the template was modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+   *
+   * @return The inspectTemplateModifiedTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getInspectTemplateModifiedTime() {
+    return inspectTemplateModifiedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : inspectTemplateModifiedTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Timestamp when the template was modified
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getInspectTemplateModifiedTimeOrBuilder() {
+    return inspectTemplateModifiedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : inspectTemplateModifiedTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -185,6 +360,15 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getDataProfileJob());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(4, getDiscoveryConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplateName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inspectTemplateName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getInspectTemplateModifiedTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +383,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDataProfileJob());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDiscoveryConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplateName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inspectTemplateName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getInspectTemplateModifiedTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -224,6 +419,16 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     if (hasDataProfileJob()) {
       if (!getDataProfileJob().equals(other.getDataProfileJob())) return false;
     }
+    if (hasDiscoveryConfig() != other.hasDiscoveryConfig()) return false;
+    if (hasDiscoveryConfig()) {
+      if (!getDiscoveryConfig().equals(other.getDiscoveryConfig())) return false;
+    }
+    if (!getInspectTemplateName().equals(other.getInspectTemplateName())) return false;
+    if (hasInspectTemplateModifiedTime() != other.hasInspectTemplateModifiedTime()) return false;
+    if (hasInspectTemplateModifiedTime()) {
+      if (!getInspectTemplateModifiedTime().equals(other.getInspectTemplateModifiedTime()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -242,6 +447,16 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
     if (hasDataProfileJob()) {
       hash = (37 * hash) + DATA_PROFILE_JOB_FIELD_NUMBER;
       hash = (53 * hash) + getDataProfileJob().hashCode();
+    }
+    if (hasDiscoveryConfig()) {
+      hash = (37 * hash) + DISCOVERY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDiscoveryConfig().hashCode();
+    }
+    hash = (37 * hash) + INSPECT_TEMPLATE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getInspectTemplateName().hashCode();
+    if (hasInspectTemplateModifiedTime()) {
+      hash = (37 * hash) + INSPECT_TEMPLATE_MODIFIED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getInspectTemplateModifiedTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -385,6 +600,8 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInspectConfigFieldBuilder();
         getDataProfileJobFieldBuilder();
+        getDiscoveryConfigFieldBuilder();
+        getInspectTemplateModifiedTimeFieldBuilder();
       }
     }
 
@@ -401,6 +618,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       if (dataProfileJobBuilder_ != null) {
         dataProfileJobBuilder_.dispose();
         dataProfileJobBuilder_ = null;
+      }
+      discoveryConfig_ = null;
+      if (discoveryConfigBuilder_ != null) {
+        discoveryConfigBuilder_.dispose();
+        discoveryConfigBuilder_ = null;
+      }
+      inspectTemplateName_ = "";
+      inspectTemplateModifiedTime_ = null;
+      if (inspectTemplateModifiedTimeBuilder_ != null) {
+        inspectTemplateModifiedTimeBuilder_.dispose();
+        inspectTemplateModifiedTimeBuilder_ = null;
       }
       return this;
     }
@@ -448,6 +676,21 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         result.dataProfileJob_ =
             dataProfileJobBuilder_ == null ? dataProfileJob_ : dataProfileJobBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.discoveryConfig_ =
+            discoveryConfigBuilder_ == null ? discoveryConfig_ : discoveryConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inspectTemplateName_ = inspectTemplateName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.inspectTemplateModifiedTime_ =
+            inspectTemplateModifiedTimeBuilder_ == null
+                ? inspectTemplateModifiedTime_
+                : inspectTemplateModifiedTimeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -504,6 +747,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
       if (other.hasDataProfileJob()) {
         mergeDataProfileJob(other.getDataProfileJob());
       }
+      if (other.hasDiscoveryConfig()) {
+        mergeDiscoveryConfig(other.getDiscoveryConfig());
+      }
+      if (!other.getInspectTemplateName().isEmpty()) {
+        inspectTemplateName_ = other.inspectTemplateName_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasInspectTemplateModifiedTime()) {
+        mergeInspectTemplateModifiedTime(other.getInspectTemplateModifiedTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -542,6 +796,25 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getDiscoveryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            case 42:
+              {
+                inspectTemplateName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getInspectTemplateModifiedTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -766,13 +1039,21 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated.
+     *     See google/privacy/dlp/v2/dlp.proto;l=6262
      * @return Whether the dataProfileJob field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDataProfileJob() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -780,13 +1061,21 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.privacy.dlp.v2.DataProfileConfigSnapshot.data_profile_job is deprecated.
+     *     See google/privacy/dlp/v2/dlp.proto;l=6262
      * @return The dataProfileJob.
      */
+    @java.lang.Deprecated
     public com.google.privacy.dlp.v2.DataProfileJobConfig getDataProfileJob() {
       if (dataProfileJobBuilder_ == null) {
         return dataProfileJob_ == null
@@ -800,11 +1089,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDataProfileJob(com.google.privacy.dlp.v2.DataProfileJobConfig value) {
       if (dataProfileJobBuilder_ == null) {
         if (value == null) {
@@ -822,11 +1117,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDataProfileJob(
         com.google.privacy.dlp.v2.DataProfileJobConfig.Builder builderForValue) {
       if (dataProfileJobBuilder_ == null) {
@@ -842,11 +1143,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeDataProfileJob(com.google.privacy.dlp.v2.DataProfileJobConfig value) {
       if (dataProfileJobBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)
@@ -870,11 +1177,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDataProfileJob() {
       bitField0_ = (bitField0_ & ~0x00000002);
       dataProfileJob_ = null;
@@ -889,11 +1202,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.privacy.dlp.v2.DataProfileJobConfig.Builder getDataProfileJobBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
@@ -903,11 +1222,17 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.privacy.dlp.v2.DataProfileJobConfigOrBuilder getDataProfileJobOrBuilder() {
       if (dataProfileJobBuilder_ != null) {
         return dataProfileJobBuilder_.getMessageOrBuilder();
@@ -921,10 +1246,15 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A copy of the configuration used to generate this profile.
+     * A copy of the configuration used to generate this profile. This is
+     * deprecated, and the DiscoveryConfig field is preferred moving forward.
+     * DataProfileJobConfig will still be written here for Discovery in BigQuery
+     * for backwards compatibility, but will not be updated with new fields, while
+     * DiscoveryConfig will.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3;</code>
+     * <code>.google.privacy.dlp.v2.DataProfileJobConfig data_profile_job = 3 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DataProfileJobConfig,
@@ -941,6 +1271,484 @@ public final class DataProfileConfigSnapshot extends com.google.protobuf.Generat
         dataProfileJob_ = null;
       }
       return dataProfileJobBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.DiscoveryConfig discoveryConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DiscoveryConfig,
+            com.google.privacy.dlp.v2.DiscoveryConfig.Builder,
+            com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder>
+        discoveryConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     *
+     * @return Whether the discoveryConfig field is set.
+     */
+    public boolean hasDiscoveryConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     *
+     * @return The discoveryConfig.
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig() {
+      if (discoveryConfigBuilder_ == null) {
+        return discoveryConfig_ == null
+            ? com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()
+            : discoveryConfig_;
+      } else {
+        return discoveryConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     */
+    public Builder setDiscoveryConfig(com.google.privacy.dlp.v2.DiscoveryConfig value) {
+      if (discoveryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        discoveryConfig_ = value;
+      } else {
+        discoveryConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     */
+    public Builder setDiscoveryConfig(
+        com.google.privacy.dlp.v2.DiscoveryConfig.Builder builderForValue) {
+      if (discoveryConfigBuilder_ == null) {
+        discoveryConfig_ = builderForValue.build();
+      } else {
+        discoveryConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     */
+    public Builder mergeDiscoveryConfig(com.google.privacy.dlp.v2.DiscoveryConfig value) {
+      if (discoveryConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && discoveryConfig_ != null
+            && discoveryConfig_ != com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()) {
+          getDiscoveryConfigBuilder().mergeFrom(value);
+        } else {
+          discoveryConfig_ = value;
+        }
+      } else {
+        discoveryConfigBuilder_.mergeFrom(value);
+      }
+      if (discoveryConfig_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     */
+    public Builder clearDiscoveryConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      discoveryConfig_ = null;
+      if (discoveryConfigBuilder_ != null) {
+        discoveryConfigBuilder_.dispose();
+        discoveryConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfig.Builder getDiscoveryConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getDiscoveryConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     */
+    public com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder getDiscoveryConfigOrBuilder() {
+      if (discoveryConfigBuilder_ != null) {
+        return discoveryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return discoveryConfig_ == null
+            ? com.google.privacy.dlp.v2.DiscoveryConfig.getDefaultInstance()
+            : discoveryConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A copy of the configuration used to generate this profile.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.DiscoveryConfig discovery_config = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.DiscoveryConfig,
+            com.google.privacy.dlp.v2.DiscoveryConfig.Builder,
+            com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder>
+        getDiscoveryConfigFieldBuilder() {
+      if (discoveryConfigBuilder_ == null) {
+        discoveryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DiscoveryConfig,
+                com.google.privacy.dlp.v2.DiscoveryConfig.Builder,
+                com.google.privacy.dlp.v2.DiscoveryConfigOrBuilder>(
+                getDiscoveryConfig(), getParentForChildren(), isClean());
+        discoveryConfig_ = null;
+      }
+      return discoveryConfigBuilder_;
+    }
+
+    private java.lang.Object inspectTemplateName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the inspection template used to generate this profile
+     * </pre>
+     *
+     * <code>string inspect_template_name = 5;</code>
+     *
+     * @return The inspectTemplateName.
+     */
+    public java.lang.String getInspectTemplateName() {
+      java.lang.Object ref = inspectTemplateName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inspectTemplateName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the inspection template used to generate this profile
+     * </pre>
+     *
+     * <code>string inspect_template_name = 5;</code>
+     *
+     * @return The bytes for inspectTemplateName.
+     */
+    public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
+      java.lang.Object ref = inspectTemplateName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        inspectTemplateName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the inspection template used to generate this profile
+     * </pre>
+     *
+     * <code>string inspect_template_name = 5;</code>
+     *
+     * @param value The inspectTemplateName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInspectTemplateName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      inspectTemplateName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the inspection template used to generate this profile
+     * </pre>
+     *
+     * <code>string inspect_template_name = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInspectTemplateName() {
+      inspectTemplateName_ = getDefaultInstance().getInspectTemplateName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the inspection template used to generate this profile
+     * </pre>
+     *
+     * <code>string inspect_template_name = 5;</code>
+     *
+     * @param value The bytes for inspectTemplateName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInspectTemplateNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      inspectTemplateName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp inspectTemplateModifiedTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        inspectTemplateModifiedTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     *
+     * @return Whether the inspectTemplateModifiedTime field is set.
+     */
+    public boolean hasInspectTemplateModifiedTime() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     *
+     * @return The inspectTemplateModifiedTime.
+     */
+    public com.google.protobuf.Timestamp getInspectTemplateModifiedTime() {
+      if (inspectTemplateModifiedTimeBuilder_ == null) {
+        return inspectTemplateModifiedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : inspectTemplateModifiedTime_;
+      } else {
+        return inspectTemplateModifiedTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     */
+    public Builder setInspectTemplateModifiedTime(com.google.protobuf.Timestamp value) {
+      if (inspectTemplateModifiedTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inspectTemplateModifiedTime_ = value;
+      } else {
+        inspectTemplateModifiedTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     */
+    public Builder setInspectTemplateModifiedTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (inspectTemplateModifiedTimeBuilder_ == null) {
+        inspectTemplateModifiedTime_ = builderForValue.build();
+      } else {
+        inspectTemplateModifiedTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     */
+    public Builder mergeInspectTemplateModifiedTime(com.google.protobuf.Timestamp value) {
+      if (inspectTemplateModifiedTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && inspectTemplateModifiedTime_ != null
+            && inspectTemplateModifiedTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getInspectTemplateModifiedTimeBuilder().mergeFrom(value);
+        } else {
+          inspectTemplateModifiedTime_ = value;
+        }
+      } else {
+        inspectTemplateModifiedTimeBuilder_.mergeFrom(value);
+      }
+      if (inspectTemplateModifiedTime_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     */
+    public Builder clearInspectTemplateModifiedTime() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      inspectTemplateModifiedTime_ = null;
+      if (inspectTemplateModifiedTimeBuilder_ != null) {
+        inspectTemplateModifiedTimeBuilder_.dispose();
+        inspectTemplateModifiedTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getInspectTemplateModifiedTimeBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getInspectTemplateModifiedTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getInspectTemplateModifiedTimeOrBuilder() {
+      if (inspectTemplateModifiedTimeBuilder_ != null) {
+        return inspectTemplateModifiedTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return inspectTemplateModifiedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : inspectTemplateModifiedTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timestamp when the template was modified
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp inspect_template_modified_time = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getInspectTemplateModifiedTimeFieldBuilder() {
+      if (inspectTemplateModifiedTimeBuilder_ == null) {
+        inspectTemplateModifiedTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getInspectTemplateModifiedTime(), getParentForChildren(), isClean());
+        inspectTemplateModifiedTime_ = null;
+      }
+      return inspectTemplateModifiedTimeBuilder_;
     }
 
     @java.lang.Override
