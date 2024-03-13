@@ -433,6 +433,65 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     return com.google.datastore.v1.GqlQuery.getDefaultInstance();
   }
 
+  public static final int EXPLAIN_OPTIONS_FIELD_NUMBER = 12;
+  private com.google.datastore.v1.ExplainOptions explainOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Explain options for the query. If set, additional query
+   * statistics will be returned. If not, only query results will be returned.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the explainOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasExplainOptions() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Explain options for the query. If set, additional query
+   * statistics will be returned. If not, only query results will be returned.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The explainOptions.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.ExplainOptions getExplainOptions() {
+    return explainOptions_ == null
+        ? com.google.datastore.v1.ExplainOptions.getDefaultInstance()
+        : explainOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Explain options for the query. If set, additional query
+   * statistics will be returned. If not, only query results will be returned.
+   * </pre>
+   *
+   * <code>
+   * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.ExplainOptionsOrBuilder getExplainOptionsOrBuilder() {
+    return explainOptions_ == null
+        ? com.google.datastore.v1.ExplainOptions.getDefaultInstance()
+        : explainOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -465,6 +524,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, databaseId_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(12, getExplainOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -496,6 +558,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, databaseId_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getExplainOptions());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -520,6 +585,10 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     if (hasReadOptions() != other.hasReadOptions()) return false;
     if (hasReadOptions()) {
       if (!getReadOptions().equals(other.getReadOptions())) return false;
+    }
+    if (hasExplainOptions() != other.hasExplainOptions()) return false;
+    if (hasExplainOptions()) {
+      if (!getExplainOptions().equals(other.getExplainOptions())) return false;
     }
     if (!getQueryTypeCase().equals(other.getQueryTypeCase())) return false;
     switch (queryTypeCase_) {
@@ -554,6 +623,10 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
     if (hasReadOptions()) {
       hash = (37 * hash) + READ_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getReadOptions().hashCode();
+    }
+    if (hasExplainOptions()) {
+      hash = (37 * hash) + EXPLAIN_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getExplainOptions().hashCode();
     }
     switch (queryTypeCase_) {
       case 3:
@@ -709,6 +782,7 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPartitionIdFieldBuilder();
         getReadOptionsFieldBuilder();
+        getExplainOptionsFieldBuilder();
       }
     }
 
@@ -733,6 +807,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (gqlQueryBuilder_ != null) {
         gqlQueryBuilder_.clear();
+      }
+      explainOptions_ = null;
+      if (explainOptionsBuilder_ != null) {
+        explainOptionsBuilder_.dispose();
+        explainOptionsBuilder_ = null;
       }
       queryTypeCase_ = 0;
       queryType_ = null;
@@ -789,6 +868,11 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
         result.readOptions_ =
             readOptionsBuilder_ == null ? readOptions_ : readOptionsBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.explainOptions_ =
+            explainOptionsBuilder_ == null ? explainOptions_ : explainOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -864,6 +948,9 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasReadOptions()) {
         mergeReadOptions(other.getReadOptions());
+      }
+      if (other.hasExplainOptions()) {
+        mergeExplainOptions(other.getExplainOptions());
       }
       switch (other.getQueryTypeCase()) {
         case QUERY:
@@ -943,6 +1030,12 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000002;
                 break;
               } // case 74
+            case 98:
+              {
+                input.readMessage(getExplainOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2009,6 +2102,219 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
       queryTypeCase_ = 7;
       onChanged();
       return gqlQueryBuilder_;
+    }
+
+    private com.google.datastore.v1.ExplainOptions explainOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.ExplainOptions,
+            com.google.datastore.v1.ExplainOptions.Builder,
+            com.google.datastore.v1.ExplainOptionsOrBuilder>
+        explainOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the explainOptions field is set.
+     */
+    public boolean hasExplainOptions() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The explainOptions.
+     */
+    public com.google.datastore.v1.ExplainOptions getExplainOptions() {
+      if (explainOptionsBuilder_ == null) {
+        return explainOptions_ == null
+            ? com.google.datastore.v1.ExplainOptions.getDefaultInstance()
+            : explainOptions_;
+      } else {
+        return explainOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExplainOptions(com.google.datastore.v1.ExplainOptions value) {
+      if (explainOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        explainOptions_ = value;
+      } else {
+        explainOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExplainOptions(
+        com.google.datastore.v1.ExplainOptions.Builder builderForValue) {
+      if (explainOptionsBuilder_ == null) {
+        explainOptions_ = builderForValue.build();
+      } else {
+        explainOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExplainOptions(com.google.datastore.v1.ExplainOptions value) {
+      if (explainOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && explainOptions_ != null
+            && explainOptions_ != com.google.datastore.v1.ExplainOptions.getDefaultInstance()) {
+          getExplainOptionsBuilder().mergeFrom(value);
+        } else {
+          explainOptions_ = value;
+        }
+      } else {
+        explainOptionsBuilder_.mergeFrom(value);
+      }
+      if (explainOptions_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExplainOptions() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      explainOptions_ = null;
+      if (explainOptionsBuilder_ != null) {
+        explainOptionsBuilder_.dispose();
+        explainOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.ExplainOptions.Builder getExplainOptionsBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getExplainOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.datastore.v1.ExplainOptionsOrBuilder getExplainOptionsOrBuilder() {
+      if (explainOptionsBuilder_ != null) {
+        return explainOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return explainOptions_ == null
+            ? com.google.datastore.v1.ExplainOptions.getDefaultInstance()
+            : explainOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Explain options for the query. If set, additional query
+     * statistics will be returned. If not, only query results will be returned.
+     * </pre>
+     *
+     * <code>
+     * .google.datastore.v1.ExplainOptions explain_options = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.ExplainOptions,
+            com.google.datastore.v1.ExplainOptions.Builder,
+            com.google.datastore.v1.ExplainOptionsOrBuilder>
+        getExplainOptionsFieldBuilder() {
+      if (explainOptionsBuilder_ == null) {
+        explainOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.ExplainOptions,
+                com.google.datastore.v1.ExplainOptions.Builder,
+                com.google.datastore.v1.ExplainOptionsOrBuilder>(
+                getExplainOptions(), getParentForChildren(), isClean());
+        explainOptions_ = null;
+      }
+      return explainOptionsBuilder_;
     }
 
     @java.lang.Override

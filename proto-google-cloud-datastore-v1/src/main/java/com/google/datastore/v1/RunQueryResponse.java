@@ -181,6 +181,62 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     return transaction_;
   }
 
+  public static final int EXPLAIN_METRICS_FIELD_NUMBER = 9;
+  private com.google.datastore.v1.ExplainMetrics explainMetrics_;
+  /**
+   *
+   *
+   * <pre>
+   * Query explain metrics. This is only present when the
+   * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+   * is provided, and it is sent only once with the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+   *
+   * @return Whether the explainMetrics field is set.
+   */
+  @java.lang.Override
+  public boolean hasExplainMetrics() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Query explain metrics. This is only present when the
+   * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+   * is provided, and it is sent only once with the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+   *
+   * @return The explainMetrics.
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.ExplainMetrics getExplainMetrics() {
+    return explainMetrics_ == null
+        ? com.google.datastore.v1.ExplainMetrics.getDefaultInstance()
+        : explainMetrics_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Query explain metrics. This is only present when the
+   * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+   * is provided, and it is sent only once with the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.datastore.v1.ExplainMetricsOrBuilder getExplainMetricsOrBuilder() {
+    return explainMetrics_ == null
+        ? com.google.datastore.v1.ExplainMetrics.getDefaultInstance()
+        : explainMetrics_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -204,6 +260,9 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     if (!transaction_.isEmpty()) {
       output.writeBytes(5, transaction_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(9, getExplainMetrics());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -221,6 +280,9 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
     if (!transaction_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, transaction_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExplainMetrics());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -246,6 +308,10 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       if (!getQuery().equals(other.getQuery())) return false;
     }
     if (!getTransaction().equals(other.getTransaction())) return false;
+    if (hasExplainMetrics() != other.hasExplainMetrics()) return false;
+    if (hasExplainMetrics()) {
+      if (!getExplainMetrics().equals(other.getExplainMetrics())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -267,6 +333,10 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + TRANSACTION_FIELD_NUMBER;
     hash = (53 * hash) + getTransaction().hashCode();
+    if (hasExplainMetrics()) {
+      hash = (37 * hash) + EXPLAIN_METRICS_FIELD_NUMBER;
+      hash = (53 * hash) + getExplainMetrics().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -410,6 +480,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBatchFieldBuilder();
         getQueryFieldBuilder();
+        getExplainMetricsFieldBuilder();
       }
     }
 
@@ -428,6 +499,11 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         queryBuilder_ = null;
       }
       transaction_ = com.google.protobuf.ByteString.EMPTY;
+      explainMetrics_ = null;
+      if (explainMetricsBuilder_ != null) {
+        explainMetricsBuilder_.dispose();
+        explainMetricsBuilder_ = null;
+      }
       return this;
     }
 
@@ -475,6 +551,11 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.transaction_ = transaction_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.explainMetrics_ =
+            explainMetricsBuilder_ == null ? explainMetrics_ : explainMetricsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -533,6 +614,9 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       if (other.getTransaction() != com.google.protobuf.ByteString.EMPTY) {
         setTransaction(other.getTransaction());
       }
+      if (other.hasExplainMetrics()) {
+        mergeExplainMetrics(other.getExplainMetrics());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -577,6 +661,12 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 74:
+              {
+                input.readMessage(getExplainMetricsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1033,6 +1123,210 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       transaction_ = getDefaultInstance().getTransaction();
       onChanged();
       return this;
+    }
+
+    private com.google.datastore.v1.ExplainMetrics explainMetrics_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.ExplainMetrics,
+            com.google.datastore.v1.ExplainMetrics.Builder,
+            com.google.datastore.v1.ExplainMetricsOrBuilder>
+        explainMetricsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     *
+     * @return Whether the explainMetrics field is set.
+     */
+    public boolean hasExplainMetrics() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     *
+     * @return The explainMetrics.
+     */
+    public com.google.datastore.v1.ExplainMetrics getExplainMetrics() {
+      if (explainMetricsBuilder_ == null) {
+        return explainMetrics_ == null
+            ? com.google.datastore.v1.ExplainMetrics.getDefaultInstance()
+            : explainMetrics_;
+      } else {
+        return explainMetricsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     */
+    public Builder setExplainMetrics(com.google.datastore.v1.ExplainMetrics value) {
+      if (explainMetricsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        explainMetrics_ = value;
+      } else {
+        explainMetricsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     */
+    public Builder setExplainMetrics(
+        com.google.datastore.v1.ExplainMetrics.Builder builderForValue) {
+      if (explainMetricsBuilder_ == null) {
+        explainMetrics_ = builderForValue.build();
+      } else {
+        explainMetricsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     */
+    public Builder mergeExplainMetrics(com.google.datastore.v1.ExplainMetrics value) {
+      if (explainMetricsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && explainMetrics_ != null
+            && explainMetrics_ != com.google.datastore.v1.ExplainMetrics.getDefaultInstance()) {
+          getExplainMetricsBuilder().mergeFrom(value);
+        } else {
+          explainMetrics_ = value;
+        }
+      } else {
+        explainMetricsBuilder_.mergeFrom(value);
+      }
+      if (explainMetrics_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     */
+    public Builder clearExplainMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      explainMetrics_ = null;
+      if (explainMetricsBuilder_ != null) {
+        explainMetricsBuilder_.dispose();
+        explainMetricsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     */
+    public com.google.datastore.v1.ExplainMetrics.Builder getExplainMetricsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getExplainMetricsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     */
+    public com.google.datastore.v1.ExplainMetricsOrBuilder getExplainMetricsOrBuilder() {
+      if (explainMetricsBuilder_ != null) {
+        return explainMetricsBuilder_.getMessageOrBuilder();
+      } else {
+        return explainMetrics_ == null
+            ? com.google.datastore.v1.ExplainMetrics.getDefaultInstance()
+            : explainMetrics_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query explain metrics. This is only present when the
+     * [RunQueryRequest.explain_options][google.datastore.v1.RunQueryRequest.explain_options]
+     * is provided, and it is sent only once with the last response in the stream.
+     * </pre>
+     *
+     * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.datastore.v1.ExplainMetrics,
+            com.google.datastore.v1.ExplainMetrics.Builder,
+            com.google.datastore.v1.ExplainMetricsOrBuilder>
+        getExplainMetricsFieldBuilder() {
+      if (explainMetricsBuilder_ == null) {
+        explainMetricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.ExplainMetrics,
+                com.google.datastore.v1.ExplainMetrics.Builder,
+                com.google.datastore.v1.ExplainMetricsOrBuilder>(
+                getExplainMetrics(), getParentForChildren(), isClean());
+        explainMetrics_ = null;
+      }
+      return explainMetricsBuilder_;
     }
 
     @java.lang.Override

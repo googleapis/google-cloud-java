@@ -112,4 +112,45 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Query explain metrics. This is only present when the
+   * [RunAggregationQueryRequest.explain_options][google.datastore.v1.RunAggregationQueryRequest.explain_options]
+   * is provided, and it is sent only once with the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+   *
+   * @return Whether the explainMetrics field is set.
+   */
+  boolean hasExplainMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Query explain metrics. This is only present when the
+   * [RunAggregationQueryRequest.explain_options][google.datastore.v1.RunAggregationQueryRequest.explain_options]
+   * is provided, and it is sent only once with the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+   *
+   * @return The explainMetrics.
+   */
+  com.google.datastore.v1.ExplainMetrics getExplainMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * Query explain metrics. This is only present when the
+   * [RunAggregationQueryRequest.explain_options][google.datastore.v1.RunAggregationQueryRequest.explain_options]
+   * is provided, and it is sent only once with the last response in the stream.
+   * </pre>
+   *
+   * <code>.google.datastore.v1.ExplainMetrics explain_metrics = 9;</code>
+   */
+  com.google.datastore.v1.ExplainMetricsOrBuilder getExplainMetricsOrBuilder();
 }
