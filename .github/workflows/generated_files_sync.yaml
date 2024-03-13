@@ -76,7 +76,7 @@ jobs:
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           python /src/cli/generate_monorepo_gapic_bom.py generate --repository-path=/workspace/google-cloud-java --versions-file=/workspace/google-cloud-java/versions.txt
-    - name: Fail if there's any difference (To fix, run generation/apply_current_versions.sh)
+    - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
   owlbot-py:
