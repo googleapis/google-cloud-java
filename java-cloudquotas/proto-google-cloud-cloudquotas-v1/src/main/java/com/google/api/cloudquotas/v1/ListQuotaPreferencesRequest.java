@@ -221,11 +221,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
    * create/update time range.
    *
    * Example filters:
-   * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED`
-   * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED AND
-   *  creation_time&gt;2022-12-03T10:30:00`
-   *
-   * If no filter is provided, returns all pending quota preferences.
+   * `reconciling=true AND request_type=CLOUD_CONSOLE`,
+   * `reconciling=true OR creation_time&gt;2022-12-03T10:30:00`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -252,11 +249,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
    * create/update time range.
    *
    * Example filters:
-   * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED`
-   * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED AND
-   *  creation_time&gt;2022-12-03T10:30:00`
-   *
-   * If no filter is provided, returns all pending quota preferences.
+   * `reconciling=true AND request_type=CLOUD_CONSOLE`,
+   * `reconciling=true OR creation_time&gt;2022-12-03T10:30:00`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -288,8 +282,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
    * by create time.
    *
    * Example orders:
-   * `type`
-   * `state, create_time`
+   * `quota_id`,
+   * `service, create_time`
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -316,8 +310,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
    * by create time.
    *
    * Example orders:
-   * `type`
-   * `state, create_time`
+   * `quota_id`,
+   * `service, create_time`
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1106,11 +1100,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * create/update time range.
      *
      * Example filters:
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED`
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED AND
-     *  creation_time&gt;2022-12-03T10:30:00`
-     *
-     * If no filter is provided, returns all pending quota preferences.
+     * `reconciling=true AND request_type=CLOUD_CONSOLE`,
+     * `reconciling=true OR creation_time&gt;2022-12-03T10:30:00`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1136,11 +1127,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * create/update time range.
      *
      * Example filters:
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED`
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED AND
-     *  creation_time&gt;2022-12-03T10:30:00`
-     *
-     * If no filter is provided, returns all pending quota preferences.
+     * `reconciling=true AND request_type=CLOUD_CONSOLE`,
+     * `reconciling=true OR creation_time&gt;2022-12-03T10:30:00`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1166,11 +1154,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * create/update time range.
      *
      * Example filters:
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED`
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED AND
-     *  creation_time&gt;2022-12-03T10:30:00`
-     *
-     * If no filter is provided, returns all pending quota preferences.
+     * `reconciling=true AND request_type=CLOUD_CONSOLE`,
+     * `reconciling=true OR creation_time&gt;2022-12-03T10:30:00`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1195,11 +1180,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * create/update time range.
      *
      * Example filters:
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED`
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED AND
-     *  creation_time&gt;2022-12-03T10:30:00`
-     *
-     * If no filter is provided, returns all pending quota preferences.
+     * `reconciling=true AND request_type=CLOUD_CONSOLE`,
+     * `reconciling=true OR creation_time&gt;2022-12-03T10:30:00`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1220,11 +1202,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * create/update time range.
      *
      * Example filters:
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED`
-     * `state=PENDING OR state=PENDING_PARTIALLY_GRANTED AND
-     *  creation_time&gt;2022-12-03T10:30:00`
-     *
-     * If no filter is provided, returns all pending quota preferences.
+     * `reconciling=true AND request_type=CLOUD_CONSOLE`,
+     * `reconciling=true OR creation_time&gt;2022-12-03T10:30:00`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1252,8 +1231,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * by create time.
      *
      * Example orders:
-     * `type`
-     * `state, create_time`
+     * `quota_id`,
+     * `service, create_time`
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1279,8 +1258,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * by create time.
      *
      * Example orders:
-     * `type`
-     * `state, create_time`
+     * `quota_id`,
+     * `service, create_time`
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1306,8 +1285,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * by create time.
      *
      * Example orders:
-     * `type`
-     * `state, create_time`
+     * `quota_id`,
+     * `service, create_time`
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1332,8 +1311,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * by create time.
      *
      * Example orders:
-     * `type`
-     * `state, create_time`
+     * `quota_id`,
+     * `service, create_time`
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1354,8 +1333,8 @@ public final class ListQuotaPreferencesRequest extends com.google.protobuf.Gener
      * by create time.
      *
      * Example orders:
-     * `type`
-     * `state, create_time`
+     * `quota_id`,
+     * `service, create_time`
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

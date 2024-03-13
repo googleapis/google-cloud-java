@@ -61,6 +61,86 @@ public interface CertificateTemplateOrBuilder
    *
    *
    * <pre>
+   * Optional. The maximum lifetime allowed for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+   * this template. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * specifies a
+   * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+   * the minimum of the two durations will be the maximum lifetime for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+   * if the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * expires before a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+   * maximum_lifetime, the effective lifetime will be explicitly truncated
+   *  to match it.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maximumLifetime field is set.
+   */
+  boolean hasMaximumLifetime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum lifetime allowed for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+   * this template. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * specifies a
+   * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+   * the minimum of the two durations will be the maximum lifetime for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+   * if the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * expires before a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+   * maximum_lifetime, the effective lifetime will be explicitly truncated
+   *  to match it.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maximumLifetime.
+   */
+  com.google.protobuf.Duration getMaximumLifetime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maximum lifetime allowed for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
+   * this template. If the issuing
+   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
+   * specifies a
+   * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
+   * the minimum of the two durations will be the maximum lifetime for issued
+   * [Certificates][google.cloud.security.privateca.v1.Certificate]. Note that
+   * if the issuing
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+   * expires before a
+   * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
+   * maximum_lifetime, the effective lifetime will be explicitly truncated
+   *  to match it.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration maximum_lifetime = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getMaximumLifetimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A set of X.509 values that will be applied to all issued
    * certificates that use this template. If the certificate request includes
    * conflicting values for the same properties, they will be overwritten by the
