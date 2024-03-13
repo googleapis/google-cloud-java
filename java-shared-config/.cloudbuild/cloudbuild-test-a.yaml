@@ -15,18 +15,17 @@
 timeout: 7200s # 2 hours
 substitutions:
   _JAVA_SHARED_CONFIG_VERSION: '1.7.5-SNAPSHOT' # {x-version-update:google-cloud-shared-config:current}
-  _GRAALVM_A: 'graalvm22_3_jdk11'
 
 steps:
   # GraalVM A build
   - name: gcr.io/cloud-builders/docker
-    args: ["build", "-t", "gcr.io/cloud-devrel-public-resources/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}", "--file", "${_GRAALVM_A}.Dockerfile", "."]
+    args: ["build", "-t", "gcr.io/cloud-devrel-public-resources/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}", "--file", "graalvm-a.Dockerfile", "."]
     dir: .cloudbuild
     id: graalvm-a-build
     waitFor: ["-"]
   - name: gcr.io/gcp-runtimes/structure_test
     args:
-      ["-i", "gcr.io/cloud-devrel-public-resources/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}", "--config", ".cloudbuild/${_GRAALVM_A}.yaml", "-v"]
+      ["-i", "gcr.io/cloud-devrel-public-resources/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}", "--config", ".cloudbuild/graalvm-a.yaml", "-v"]
     waitFor: ["graalvm-a-build"]
   - name: gcr.io/cloud-devrel-public-resources/graalvm_a:${_JAVA_SHARED_CONFIG_VERSION}
     entrypoint: bash
