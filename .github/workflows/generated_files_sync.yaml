@@ -28,6 +28,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: setup docker environment
+      shell: bash
+      run: |
+        # we create a volume pointing to `pwd` (google-cloud-java) that will
+        # be referenced by the container and its children
+        if [[ $(docker volume inspect repo-google-cloud-java) != '[]' ]]; then
+          docker volume rm repo-google-cloud-java
+        fi
+        docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
     - name: Generate root pom.xml file
       shell: bash
       run: |
