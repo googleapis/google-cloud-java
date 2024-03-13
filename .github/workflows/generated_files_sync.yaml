@@ -47,7 +47,7 @@ jobs:
           -e "RUNNING_IN_DOCKER=true" \
           -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          python src/cli/generate_monorepo_root_pom.py generate --repository-path=/workspace/google-cloud-java
+          python /src/cli/generate_monorepo_root_pom.py generate --repository-path=/workspace/google-cloud-java
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
