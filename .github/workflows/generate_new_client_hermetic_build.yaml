@@ -19,9 +19,9 @@ on:
           type: string
           description: |
             `proto_path`: Path to proto file from the root of the googleapis repository to the
-            directory that contains the proto files (without the version).
-            For example, to generate the library for 'google/maps/routing/v2',
-            then you specify this value as 'google/maps/routing'
+            directory that contains the proto files (with the version).
+            For example, to generate `v2` of google/cloud/library,
+            you must pass google/cloud/library/v2
         product_docs:
           required: true
           type: string

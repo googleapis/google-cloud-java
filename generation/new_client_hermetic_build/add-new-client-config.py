@@ -218,7 +218,13 @@ def add_new_library(
     with open(path_to_yaml, "r") as file_stream:
         config = yaml.load(file_stream)
 
-    proto_paths = __get_proto_paths(proto_path, config["googleapis_commitish"])
+    version_re = re.compile(r"v\d[\w\d]*")
+    is_library_version = lambda p: version_re.match(p.split("/")[-1]) is not None
+    if not is_library_version(proto_path):
+        raise ValueError(
+            "Only versioned proto_paths are supported. "
+            "For example `google/datastore/v1` instead of `google/datastore`."
+        )
 
     new_library = {
         "api_shortname": api_shortname,
@@ -232,7 +238,7 @@ def add_new_library(
         "library_type": library_type,
         "group_id": group_id,
         "cloud_api": cloud_api,
-        "GAPICs": [{"proto_path": p} for p in proto_paths],
+        "GAPICs": [{"proto_path": proto_path}],
     }
 
     __add_item_if_set(new_library, "library_name", library_name)
@@ -265,64 +271,6 @@ def __compute_library_name(library: dict) -> str:
         return f'java-{library["library_name"]}'
     return f'java-{library["api_shortname"]}'
 
-
-def __get_proto_paths(proto_path: str, committish: str) -> List[str]:
-    version_re = re.compile(r"v\d[\w\d]*")
-    is_library_version = lambda p: version_re.match(p.split("/")[-1]) is not None
-
-    if is_library_version(proto_path):
-        raise ValueError(
-            "Versioned proto_paths are not supported, please provide the root"
-            " proto_path. For example `google/datastore` instead of `google/datastore/v1`."
-            " If all you need is to add a new version to an existing library,"
-            " you need to manually add the new version to `generation_config.yaml`"
-        )
-
-    # if the proto path is not versioned, we must search for all versions
-    # in googleapis
-    if os.path.isdir("./googleapis"):
-        googleapis_repo = Repo("./googleapis")
-    else:
-        googleapis_repo = Repo.clone_from(
-            "https://github.com/googleapis/googleapis", "./googleapis"
-        )
-    googleapis_repo.git.checkout(committish)
-    subdirs = os.walk(f"./googleapis/{proto_path}")
-    proto_paths = []
-    for subdir_path, _, _ in subdirs:
-        if is_library_version(subdir_path) and __is_releasable_version(subdir_path):
-            print(subdir_path)
-            proto_paths.append(subdir_path.replace("./googleapis/", ""))
-    shutil.rmtree("./googleapis")
-    return proto_paths
-
-
-def __is_releasable_version(versioned_proto_path):
-    """true if the library definition found in `versioned_proto_path`:
-    - has a BUILD file
-    - the BUILD file has a `java_gapic_assembly_gradle_pkg` rule
-    """
-    build_files = [
-        file for file in os.listdir(versioned_proto_path) if "BUILD.bazel" in file
-    ]
-    if len(build_files) == 0:
-        print(f"BUILD file not found in {versioned_proto_path}")
-        return False
-
-    build_file = versioned_proto_path + "/" + build_files[0]
-    with open(build_file) as build_file_stream:
-        build_file_contents = build_file_stream.read()
-        gradle_pkg_matcher = re.compile(r"java_gapic_assembly_gradle_pkg")
-        matched_lines = len(
-            [
-                line
-                for line in build_file_contents.split("\n")
-                if gradle_pkg_matcher.search(line) != None
-            ]
-        )
-        # Two lines should match, the gapic assembly import statement and the
-        # gapic assembly build rule
-        return matched_lines == 2
 
 
 if __name__ == "__main__":

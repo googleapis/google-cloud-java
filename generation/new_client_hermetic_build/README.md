@@ -48,19 +48,23 @@ Example: `alloydb`
 
 ### Proto path (`proto_path`)
 
-The script takes "proto path" parameter. This is the path from the internal `google3/third_party/googleapis/stable` root to the
-directory that contains versions (e.g., "v1" or "v2").
+This is the path from the internal `google3/third_party/googleapis/stable` root to the
+directory that contains the proto definitions for a specific version.
+For example: `google/datastore/v2`. Root-level proto paths like
+`google/datastore` are not supported.
 Note that the internal `google3/third_party/googleapis/stable` directory is mirrored externally in https://github.com/googleapis/googleapis/blob/master/.
 
 For example, if the buganizer ticket includes:
 
 > Link to protos: `http://...(omit).../google/cloud/alloydb/v1alpha/alloydb_v1alpha.yaml`.
 
-then the corresponding external mirrored proto is here: https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1alpha/alloydb_v1alpha.yaml.
+then the corresponding external mirrored proto is here: `https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1alpha/alloydb_v1alpha.yaml`.
 
-Therefore, the "proto path" value we supply to the command is `google/cloud/alloydb`.
+Therefore, the "proto path" value we supply to the command is
+`google/cloud/alloydb/v1alpha`.
 
-We will publish a single module for a service that includes all versions in this path. Any future version must be manually added to
+We will publish a single module for a service that includes the specified version
+(in the example, `v1alpha`). Any future version must be manually added to
 the configuration yaml (`google-cloud-java/generation_config.yaml`)
 
 ### Name pretty (`name_pretty`)
