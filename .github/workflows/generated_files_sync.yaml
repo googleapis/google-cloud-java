@@ -19,10 +19,10 @@ on:
     - main
   pull_request:
 name: generation diff
+env:
+  library_generation_image_tag: latest
+  repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
 jobs:
-  env:
-    library_generation_image_tag: latest
-    repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
   root-pom:
     # root pom.xml does not have diff from generated one
     runs-on: ubuntu-latest
