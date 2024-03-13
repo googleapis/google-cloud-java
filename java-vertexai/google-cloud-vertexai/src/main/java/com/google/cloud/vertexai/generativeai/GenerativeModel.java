@@ -32,7 +32,6 @@ import com.google.cloud.vertexai.api.Tool;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -41,9 +40,9 @@ public final class GenerativeModel {
   private final String modelName;
   private final String resourceName;
   private final VertexAI vertexAi;
-  private GenerationConfig generationConfig = GenerationConfig.getDefaultInstance();
-  private ImmutableList<SafetySetting> safetySettings = ImmutableList.of();
-  private ImmutableList<Tool> tools = ImmutableList.of();
+  private final GenerationConfig generationConfig;
+  private final ImmutableList<SafetySetting> safetySettings;
+  private final ImmutableList<Tool> tools;
 
   /**
    * Constructs a GenerativeModel instance.
@@ -59,8 +58,8 @@ public final class GenerativeModel {
     this(
         modelName,
         GenerationConfig.getDefaultInstance(),
-        new ArrayList<SafetySetting>(),
-        new ArrayList<Tool>(),
+        ImmutableList.of(),
+        ImmutableList.of(),
         vertexAi);
   }
 
@@ -81,22 +80,29 @@ public final class GenerativeModel {
   private GenerativeModel(
       String modelName,
       GenerationConfig generationConfig,
-      List<SafetySetting> safetySettings,
-      List<Tool> tools,
+      ImmutableList<SafetySetting> safetySettings,
+      ImmutableList<Tool> tools,
       VertexAI vertexAi) {
+    checkArgument(
+        !Strings.isNullOrEmpty(modelName),
+        "modelName can't be null or empty. Please refer to"
+            + " https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models"
+            + " to find the right model name.");
+    checkNotNull(vertexAi, "VertexAI can't be null.");
+    checkNotNull(generationConfig, "GenerationConfig can't be null.");
+    checkNotNull(safetySettings, "ImmutableList<SafetySettings> can't be null.");
+    checkNotNull(tools, "ImmutableList<Tool> can't be null.");
+
     modelName = reconcileModelName(modelName);
     this.modelName = modelName;
     this.resourceName =
         String.format(
             "projects/%s/locations/%s/publishers/google/models/%s",
             vertexAi.getProjectId(), vertexAi.getLocation(), modelName);
-    checkNotNull(generationConfig, "GenerationConfig can't be null.");
-    checkNotNull(safetySettings, "List<SafetySettings> can't be null.");
-    checkNotNull(tools, "List<Tool> can't be null.");
     this.vertexAi = vertexAi;
     this.generationConfig = generationConfig;
-    this.safetySettings = ImmutableList.copyOf(safetySettings);
-    this.tools = ImmutableList.copyOf(tools);
+    this.safetySettings = safetySettings;
+    this.tools = tools;
   }
 
   /** Builder class for {@link GenerativeModel}. */
@@ -163,7 +169,6 @@ public final class GenerativeModel {
       checkNotNull(
           safetySettings,
           "safetySettings can't be null. Use an empty list if no safety settings is intended.");
-      safetySettings.removeIf(safetySetting -> safetySetting == null);
       this.safetySettings = ImmutableList.copyOf(safetySettings);
       return this;
     }
@@ -175,7 +180,6 @@ public final class GenerativeModel {
     @BetaApi
     public Builder setTools(List<Tool> tools) {
       checkNotNull(tools, "tools can't be null. Use an empty list if no tool is to be used.");
-      tools.removeIf(tool -> tool == null);
       this.tools = ImmutableList.copyOf(tools);
       return this;
     }
