@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.7.5](https://github.com/googleapis/java-shared-config/compare/v1.7.4...v1.7.5) (2024-03-13)
+
+
+### Dependencies
+
+* Update actions/github-script action to v7 ([#753](https://github.com/googleapis/java-shared-config/issues/753)) ([863c03e](https://github.com/googleapis/java-shared-config/commit/863c03e21e23e8c1d4ba6f81f55df234fc4d8931))
+* Update actions/setup-java action to v4 ([#782](https://github.com/googleapis/java-shared-config/issues/782)) ([cecc8bb](https://github.com/googleapis/java-shared-config/commit/cecc8bb13076be2e398851bd4b567f594dcc5fbc))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.14.1 ([#780](https://github.com/googleapis/java-shared-config/issues/780)) ([0b787c6](https://github.com/googleapis/java-shared-config/commit/0b787c618486abfcbb171d89d4b7b682200f42e8))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.10.1 ([#781](https://github.com/googleapis/java-shared-config/issues/781)) ([9dcac17](https://github.com/googleapis/java-shared-config/commit/9dcac17c1824ae33c3adee7cb2d0acb7087d4e3b))
+
 ## [1.7.4](https://github.com/googleapis/java-shared-config/compare/v1.7.3...v1.7.4) (2024-02-28)
 
 
