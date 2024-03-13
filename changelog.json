@@ -5,6 +5,338 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "cb6b3d2103b230ee8d741e3f5a6efe46b81971d4",
+          "message": "Add getFunctionCalls to ResponseHanlder",
+          "issues": [
+            "10499"
+          ]
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vertexai",
+      "id": "3afaf8f8-2842-43a3-94a0-6f5cce7ba229",
+      "createTime": "2024-03-13T18:25:44.479Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workspaceevents",
+      "id": "5b279cd3-d79a-4d0a-82cd-b6e5423280e5",
+      "createTime": "2024-03-13T18:25:44.380Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "69569617-cbde-476d-8166-c3fba1cb47ae",
+      "createTime": "2024-03-13T18:25:44.272Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-security-private-ca",
+      "id": "b6ff60f0-cb87-4e46-ae85-c05175f490e4",
+      "createTime": "2024-03-13T18:25:44.176Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recaptchaenterprise",
+      "id": "c21346f6-b493-42ea-8dd5-dff0dfdabf33",
+      "createTime": "2024-03-13T18:25:44.007Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "eca27080-5f62-4f6f-b2ed-ffdb3694212e",
+      "createTime": "2024-03-13T18:25:43.975Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-netapp",
+      "id": "17a92335-deff-4f63-969c-eef7647ed041",
+      "createTime": "2024-03-13T18:25:43.956Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dlp",
+      "id": "06cf607c-d22f-4c27-8908-63621c9296ad",
+      "createTime": "2024-03-13T18:25:43.942Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "c4cd2033-3e09-403a-aba8-3b00d491bb2b",
+      "createTime": "2024-03-13T18:25:43.925Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "f6211351-feb1-4957-a262-8a91c5e0e1c9",
+      "createTime": "2024-03-13T18:25:43.911Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "135cc8d1-cc07-4478-a1f5-ed721d4a0c12",
+      "createTime": "2024-03-13T18:25:43.898Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "cc018da7-4165-4310-ae65-c8d0a457b398",
+      "createTime": "2024-03-13T18:25:43.883Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudquotas",
+      "id": "a1794327-d217-45a2-a7aa-2a692a4b6197",
+      "createTime": "2024-03-13T18:25:43.865Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-asset",
+      "id": "83cb7fe2-352b-4188-a77f-1b34264b7c03",
+      "createTime": "2024-03-13T18:25:43.851Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apphub",
+      "id": "65784796-b0e8-4744-a736-db6495589550",
+      "createTime": "2024-03-13T18:25:43.838Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "392ff2db6665c3aa998ea94da1dfbc70c47df0f2",
+          "message": "[cloudquotas] A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed",
+          "issues": []
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "b731de2b-3f3d-44f0-b381-1b4173bf9182",
+      "createTime": "2024-03-13T18:25:43.819Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9",
           "message": "[container] add secondary boot disks field to NodePool API",
           "issues": [
@@ -29273,5 +29605,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2024-03-06T23:56:35.426Z"
+  "updateTime": "2024-03-13T18:25:44.479Z"
 }
