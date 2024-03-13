@@ -2224,4 +2224,14 @@ public class StreamWriterTest {
         Status.Code.INVALID_ARGUMENT,
         ((StatusRuntimeException) ex.getCause()).getStatus().getCode());
   }
+
+  @Test
+  public void testGetDefaultStreamName() {
+    TableName tableName = TableName.of("projectId", "datasetId", "tableId");
+
+    String actualDefaultName = StreamWriter.getDefaultStreamName(tableName);
+
+    assertEquals(
+        "projects/projectId/datasets/datasetId/tables/tableId/_default", actualDefaultName);
+  }
 }

@@ -561,6 +561,11 @@ public class StreamWriter implements AutoCloseable {
     ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
   }
 
+  /** @return the default stream name associated with tableName */
+  public static String getDefaultStreamName(TableName tableName) {
+    return tableName + defaultStreamMatching;
+  }
+
   long getCreationTimestamp() {
     return creationTimestamp;
   }
