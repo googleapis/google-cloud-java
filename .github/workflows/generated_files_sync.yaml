@@ -20,17 +20,25 @@ on:
   pull_request:
 name: generation diff
 jobs:
+  env:
+    library_generation_image_tag: latest
+    repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
   root-pom:
     # root pom.xml does not have diff from generated one
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Generate root pom.xml file
+      shell: bash
       run: |
-        bash generation/generate_root_pom.sh
-    - name: Apply versions from versions.txt files
-      run: |
-        bash generation/apply_current_versions.sh
+        docker run --rm \
+          ${repo_volumes} \
+          -v /tmp:/tmp \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -e "RUNNING_IN_DOCKER=true" \
+          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
+          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          python library_generation/cli/generate_monorepo_root_pom.py generate --repository-path=/workspace/google-cloud-java
     - name: Fail if there's any difference
       run: git --no-pager diff --exit-code
 
