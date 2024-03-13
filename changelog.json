@@ -5,6 +5,23 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "cb6b3d2103b230ee8d741e3f5a6efe46b81971d4",
+          "message": "Add getFunctionCalls to ResponseHanlder",
+          "issues": [
+            "10499"
+          ]
+        }
+      ],
+      "version": "1.32.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vertexai",
+      "id": "5948e85f-cbfd-4f7c-8ec7-d74854175013",
+      "createTime": "2024-03-13T15:46:37.782Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "7d0f1cc61f2ba6b3f3e9f4b7b22c8397a570b1d9",
           "message": "[container] add secondary boot disks field to NodePool API",
           "issues": [
@@ -29273,5 +29290,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2024-03-06T23:56:35.426Z"
+  "updateTime": "2024-03-13T15:46:37.782Z"
 }

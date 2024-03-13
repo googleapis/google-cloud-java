@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.32.0](https://github.com/googleapis/google-cloud-java/compare/v1.31.0...v1.32.0) (2024-03-13)
+
+
+### Features
+
+* Add getFunctionCalls to ResponseHanlder ([#10499](https://github.com/googleapis/google-cloud-java/issues/10499)) ([cb6b3d2](https://github.com/googleapis/google-cloud-java/commit/cb6b3d2103b230ee8d741e3f5a6efe46b81971d4))
+* create pr after library generation ([#10503](https://github.com/googleapis/google-cloud-java/issues/10503)) ([cd29fa9](https://github.com/googleapis/google-cloud-java/commit/cd29fa94816cc3398f3924485037514274e8b6fb))
+
 ## [1.31.0](https://github.com/googleapis/google-cloud-java/compare/v1.30.0...v1.31.0) (2024-03-06)
 
 
