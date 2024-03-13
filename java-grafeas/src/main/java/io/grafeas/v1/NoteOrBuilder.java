@@ -727,5 +727,40 @@ public interface NoteOrBuilder
    */
   io.grafeas.v1.VulnerabilityAssessmentNoteOrBuilder getVulnerabilityAssessmentOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * A note describing an SBOM reference.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SBOMReferenceNote sbom_reference = 21;</code>
+   *
+   * @return Whether the sbomReference field is set.
+   */
+  boolean hasSbomReference();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing an SBOM reference.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SBOMReferenceNote sbom_reference = 21;</code>
+   *
+   * @return The sbomReference.
+   */
+  io.grafeas.v1.SBOMReferenceNote getSbomReference();
+  /**
+   *
+   *
+   * <pre>
+   * A note describing an SBOM reference.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SBOMReferenceNote sbom_reference = 21;</code>
+   */
+  io.grafeas.v1.SBOMReferenceNoteOrBuilder getSbomReferenceOrBuilder();
+
   io.grafeas.v1.Note.TypeCase getTypeCase();
 }

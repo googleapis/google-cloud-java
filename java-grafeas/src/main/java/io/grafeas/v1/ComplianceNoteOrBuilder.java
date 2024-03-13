@@ -204,5 +204,26 @@ public interface ComplianceNoteOrBuilder
    */
   com.google.protobuf.ByteString getScanInstructions();
 
+  /**
+   * <code>string impact = 8;</code>
+   *
+   * @return Whether the impact field is set.
+   */
+  boolean hasImpact();
+  /**
+   * <code>string impact = 8;</code>
+   *
+   * @return The impact.
+   */
+  java.lang.String getImpact();
+  /**
+   * <code>string impact = 8;</code>
+   *
+   * @return The bytes for impact.
+   */
+  com.google.protobuf.ByteString getImpactBytes();
+
   io.grafeas.v1.ComplianceNote.ComplianceTypeCase getComplianceTypeCase();
+
+  io.grafeas.v1.ComplianceNote.PotentialImpactCase getPotentialImpactCase();
 }

@@ -41,6 +41,46 @@ public final class InTotoStatementProto {
       internal_static_grafeas_v1_Subject_DigestEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_grafeas_v1_Subject_DigestEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_SlsaProvenanceV1_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_SlsaProvenanceV1_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildDefinition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildDefinition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_DigestEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_DigestEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_AnnotationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_RunDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_RunDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_VersionEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_VersionEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -51,28 +91,72 @@ public final class InTotoStatementProto {
   static {
     java.lang.String[] descriptorData = {
       "\n!grafeas/v1/intoto_statement.proto\022\ngra"
-          + "feas.v1\032\"grafeas/v1/intoto_provenance.pr"
-          + "oto\032 grafeas/v1/slsa_provenance.proto\032)g"
-          + "rafeas/v1/slsa_provenance_zero_two.proto"
-          + "\"\243\002\n\017InTotoStatement\022\023\n\004type\030\001 \001(\tR\005_typ"
-          + "e\022$\n\007subject\030\002 \003(\0132\023.grafeas.v1.Subject\022"
-          + "\026\n\016predicate_type\030\003 \001(\t\0222\n\nprovenance\030\004 "
-          + "\001(\0132\034.grafeas.v1.InTotoProvenanceH\000\0225\n\017s"
-          + "lsa_provenance\030\005 \001(\0132\032.grafeas.v1.SlsaPr"
-          + "ovenanceH\000\022E\n\030slsa_provenance_zero_two\030\006"
-          + " \001(\0132!.grafeas.v1.SlsaProvenanceZeroTwoH"
-          + "\000B\013\n\tpredicate\"w\n\007Subject\022\014\n\004name\030\001 \001(\t\022"
-          + "/\n\006digest\030\002 \003(\0132\037.grafeas.v1.Subject.Dig"
-          + "estEntry\032-\n\013DigestEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001Bg\n\rio.grafeas.v1B\024InToto"
-          + "StatementProtoP\001Z8google.golang.org/genp"
-          + "roto/googleapis/grafeas/v1;grafeas\242\002\003GRA"
-          + "b\006proto3"
+          + "feas.v1\032\034google/protobuf/struct.proto\032\037g"
+          + "oogle/protobuf/timestamp.proto\032\"grafeas/"
+          + "v1/intoto_provenance.proto\032 grafeas/v1/s"
+          + "lsa_provenance.proto\032)grafeas/v1/slsa_pr"
+          + "ovenance_zero_two.proto\"\243\002\n\017InTotoStatem"
+          + "ent\022\023\n\004type\030\001 \001(\tR\005_type\022$\n\007subject\030\002 \003("
+          + "\0132\023.grafeas.v1.Subject\022\026\n\016predicate_type"
+          + "\030\003 \001(\t\0222\n\nprovenance\030\004 \001(\0132\034.grafeas.v1."
+          + "InTotoProvenanceH\000\0225\n\017slsa_provenance\030\005 "
+          + "\001(\0132\032.grafeas.v1.SlsaProvenanceH\000\022E\n\030sls"
+          + "a_provenance_zero_two\030\006 \001(\0132!.grafeas.v1"
+          + ".SlsaProvenanceZeroTwoH\000B\013\n\tpredicate\"w\n"
+          + "\007Subject\022\014\n\004name\030\001 \001(\t\022/\n\006digest\030\002 \003(\0132\037"
+          + ".grafeas.v1.Subject.DigestEntry\032-\n\013Diges"
+          + "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\313"
+          + "\014\n\026InTotoSlsaProvenanceV1\022\023\n\004type\030\001 \001(\tR"
+          + "\005_type\022$\n\007subject\030\002 \003(\0132\023.grafeas.v1.Sub"
+          + "ject\022\026\n\016predicate_type\030\003 \001(\t\022F\n\tpredicat"
+          + "e\030\004 \001(\01323.grafeas.v1.InTotoSlsaProvenanc"
+          + "eV1.SlsaProvenanceV1\032\244\001\n\020SlsaProvenanceV"
+          + "1\022L\n\020build_definition\030\001 \001(\01322.grafeas.v1"
+          + ".InTotoSlsaProvenanceV1.BuildDefinition\022"
+          + "B\n\013run_details\030\002 \001(\0132-.grafeas.v1.InToto"
+          + "SlsaProvenanceV1.RunDetails\032\347\001\n\017BuildDef"
+          + "inition\022\022\n\nbuild_type\030\001 \001(\t\0224\n\023external_"
+          + "parameters\030\002 \001(\0132\027.google.protobuf.Struc"
+          + "t\0224\n\023internal_parameters\030\003 \001(\0132\027.google."
+          + "protobuf.Struct\022T\n\025resolved_dependencies"
+          + "\030\004 \003(\01325.grafeas.v1.InTotoSlsaProvenance"
+          + "V1.ResourceDescriptor\032\232\003\n\022ResourceDescri"
+          + "ptor\022\014\n\004name\030\001 \001(\t\022\013\n\003uri\030\002 \001(\t\022Q\n\006diges"
+          + "t\030\003 \003(\0132A.grafeas.v1.InTotoSlsaProvenanc"
+          + "eV1.ResourceDescriptor.DigestEntry\022\017\n\007co"
+          + "ntent\030\004 \001(\014\022\031\n\021download_location\030\005 \001(\t\022\022"
+          + "\n\nmedia_type\030\006 \001(\t\022[\n\013annotations\030\007 \003(\0132"
+          + "F.grafeas.v1.InTotoSlsaProvenanceV1.Reso"
+          + "urceDescriptor.AnnotationsEntry\032-\n\013Diges"
+          + "tEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032J"
+          + "\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value"
+          + "\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\032\342\001\n\nR"
+          + "unDetails\022E\n\007builder\030\001 \001(\01324.grafeas.v1."
+          + "InTotoSlsaProvenanceV1.ProvenanceBuilder"
+          + "\022B\n\010metadata\030\002 \001(\01320.grafeas.v1.InTotoSl"
+          + "saProvenanceV1.BuildMetadata\022I\n\nbyproduc"
+          + "ts\030\003 \003(\01325.grafeas.v1.InTotoSlsaProvenan"
+          + "ceV1.ResourceDescriptor\032\370\001\n\021ProvenanceBu"
+          + "ilder\022\n\n\002id\030\001 \001(\t\022R\n\007version\030\002 \003(\0132A.gra"
+          + "feas.v1.InTotoSlsaProvenanceV1.Provenanc"
+          + "eBuilder.VersionEntry\022S\n\024builder_depende"
+          + "ncies\030\003 \003(\01325.grafeas.v1.InTotoSlsaProve"
+          + "nanceV1.ResourceDescriptor\032.\n\014VersionEnt"
+          + "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\207\001\n\rB"
+          + "uildMetadata\022\025\n\rinvocation_id\030\001 \001(\t\022.\n\ns"
+          + "tarted_on\030\002 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022/\n\013finished_on\030\003 \001(\0132\032.google.protob"
+          + "uf.TimestampBg\n\rio.grafeas.v1B\024InTotoSta"
+          + "tementProtoP\001Z8google.golang.org/genprot"
+          + "o/googleapis/grafeas/v1;grafeas\242\002\003GRAb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
               io.grafeas.v1.InTotoProvenanceProto.getDescriptor(),
               io.grafeas.v1.SlsaProvenanceProto.getDescriptor(),
               io.grafeas.v1.SlsaProvenanceZeroTwoProto.getDescriptor(),
@@ -106,6 +190,94 @@ public final class InTotoStatementProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor,
+            new java.lang.String[] {
+              "Type", "Subject", "PredicateType", "Predicate",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_SlsaProvenanceV1_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor.getNestedTypes().get(0);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_SlsaProvenanceV1_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_SlsaProvenanceV1_descriptor,
+            new java.lang.String[] {
+              "BuildDefinition", "RunDetails",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildDefinition_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor.getNestedTypes().get(1);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildDefinition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildDefinition_descriptor,
+            new java.lang.String[] {
+              "BuildType", "ExternalParameters", "InternalParameters", "ResolvedDependencies",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor.getNestedTypes().get(2);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_descriptor,
+            new java.lang.String[] {
+              "Name", "Uri", "Digest", "Content", "DownloadLocation", "MediaType", "Annotations",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_DigestEntry_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_DigestEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_DigestEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_AnnotationsEntry_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_AnnotationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ResourceDescriptor_AnnotationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_RunDetails_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor.getNestedTypes().get(3);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_RunDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_RunDetails_descriptor,
+            new java.lang.String[] {
+              "Builder", "Metadata", "Byproducts",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor.getNestedTypes().get(4);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_descriptor,
+            new java.lang.String[] {
+              "Id", "Version", "BuilderDependencies",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_VersionEntry_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_VersionEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_ProvenanceBuilder_VersionEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildMetadata_descriptor =
+        internal_static_grafeas_v1_InTotoSlsaProvenanceV1_descriptor.getNestedTypes().get(5);
+    internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_grafeas_v1_InTotoSlsaProvenanceV1_BuildMetadata_descriptor,
+            new java.lang.String[] {
+              "InvocationId", "StartedOn", "FinishedOn",
+            });
+    com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     io.grafeas.v1.InTotoProvenanceProto.getDescriptor();
     io.grafeas.v1.SlsaProvenanceProto.getDescriptor();
     io.grafeas.v1.SlsaProvenanceZeroTwoProto.getDescriptor();

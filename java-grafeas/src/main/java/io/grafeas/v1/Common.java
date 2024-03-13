@@ -76,15 +76,15 @@ public final class Common {
           + "\002 \001(\t\"!\n\014FileLocation\022\021\n\tfile_path\030\001 \001(\t"
           + "\"/\n\007License\022\022\n\nexpression\030\001 \001(\t\022\020\n\010comme"
           + "nts\030\002 \001(\t\",\n\006Digest\022\014\n\004algo\030\001 \001(\t\022\024\n\014dig"
-          + "est_bytes\030\002 \001(\014*\334\001\n\010NoteKind\022\031\n\025NOTE_KIN"
+          + "est_bytes\030\002 \001(\014*\360\001\n\010NoteKind\022\031\n\025NOTE_KIN"
           + "D_UNSPECIFIED\020\000\022\021\n\rVULNERABILITY\020\001\022\t\n\005BU"
           + "ILD\020\002\022\t\n\005IMAGE\020\003\022\013\n\007PACKAGE\020\004\022\016\n\nDEPLOYM"
           + "ENT\020\005\022\r\n\tDISCOVERY\020\006\022\017\n\013ATTESTATION\020\007\022\013\n"
           + "\007UPGRADE\020\010\022\016\n\nCOMPLIANCE\020\t\022\024\n\020DSSE_ATTES"
-          + "TATION\020\n\022\034\n\030VULNERABILITY_ASSESSMENT\020\013BQ"
-          + "\n\rio.grafeas.v1P\001Z8google.golang.org/gen"
-          + "proto/googleapis/grafeas/v1;grafeas\242\002\003GR"
-          + "Ab\006proto3"
+          + "TATION\020\n\022\034\n\030VULNERABILITY_ASSESSMENT\020\013\022\022"
+          + "\n\016SBOM_REFERENCE\020\014BQ\n\rio.grafeas.v1P\001Z8g"
+          + "oogle.golang.org/genproto/googleapis/gra"
+          + "feas/v1;grafeas\242\002\003GRAb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

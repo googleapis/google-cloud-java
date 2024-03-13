@@ -284,4 +284,39 @@ public interface DiscoveryOccurrenceOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getArchiveTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of an SBOM generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.SBOMStatus sbom_status = 9;</code>
+   *
+   * @return Whether the sbomStatus field is set.
+   */
+  boolean hasSbomStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The status of an SBOM generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.SBOMStatus sbom_status = 9;</code>
+   *
+   * @return The sbomStatus.
+   */
+  io.grafeas.v1.DiscoveryOccurrence.SBOMStatus getSbomStatus();
+  /**
+   *
+   *
+   * <pre>
+   * The status of an SBOM generation.
+   * </pre>
+   *
+   * <code>.grafeas.v1.DiscoveryOccurrence.SBOMStatus sbom_status = 9;</code>
+   */
+  io.grafeas.v1.DiscoveryOccurrence.SBOMStatusOrBuilder getSbomStatusOrBuilder();
 }

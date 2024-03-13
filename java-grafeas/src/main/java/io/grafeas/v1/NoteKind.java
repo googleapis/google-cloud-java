@@ -150,6 +150,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VULNERABILITY_ASSESSMENT = 11;</code>
    */
   VULNERABILITY_ASSESSMENT(11),
+  /**
+   *
+   *
+   * <pre>
+   * This represents an SBOM Reference.
+   * </pre>
+   *
+   * <code>SBOM_REFERENCE = 12;</code>
+   */
+  SBOM_REFERENCE(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -273,6 +283,16 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VULNERABILITY_ASSESSMENT = 11;</code>
    */
   public static final int VULNERABILITY_ASSESSMENT_VALUE = 11;
+  /**
+   *
+   *
+   * <pre>
+   * This represents an SBOM Reference.
+   * </pre>
+   *
+   * <code>SBOM_REFERENCE = 12;</code>
+   */
+  public static final int SBOM_REFERENCE_VALUE = 12;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -322,6 +342,8 @@ public enum NoteKind implements com.google.protobuf.ProtocolMessageEnum {
         return DSSE_ATTESTATION;
       case 11:
         return VULNERABILITY_ASSESSMENT;
+      case 12:
+        return SBOM_REFERENCE;
       default:
         return null;
     }

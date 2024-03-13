@@ -589,6 +589,41 @@ public interface OccurrenceOrBuilder
    *
    *
    * <pre>
+   * Describes a specific SBOM reference occurrences.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SBOMReferenceOccurrence sbom_reference = 19;</code>
+   *
+   * @return Whether the sbomReference field is set.
+   */
+  boolean hasSbomReference();
+  /**
+   *
+   *
+   * <pre>
+   * Describes a specific SBOM reference occurrences.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SBOMReferenceOccurrence sbom_reference = 19;</code>
+   *
+   * @return The sbomReference.
+   */
+  io.grafeas.v1.SBOMReferenceOccurrence getSbomReference();
+  /**
+   *
+   *
+   * <pre>
+   * Describes a specific SBOM reference occurrences.
+   * </pre>
+   *
+   * <code>.grafeas.v1.SBOMReferenceOccurrence sbom_reference = 19;</code>
+   */
+  io.grafeas.v1.SBOMReferenceOccurrenceOrBuilder getSbomReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * https://github.com/secure-systems-lab/dsse
    * </pre>
    *

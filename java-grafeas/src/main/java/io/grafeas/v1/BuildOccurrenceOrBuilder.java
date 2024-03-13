@@ -186,4 +186,48 @@ public interface BuildOccurrenceOrBuilder
    * <code>.grafeas.v1.InTotoStatement intoto_statement = 4;</code>
    */
   io.grafeas.v1.InTotoStatementOrBuilder getIntotoStatementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * In-Toto Slsa Provenance V1 represents a slsa provenance meeting the slsa
+   * spec, wrapped in an in-toto statement. This allows for direct
+   * jsonification of a to-spec in-toto slsa statement with a to-spec
+   * slsa provenance.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoSlsaProvenanceV1 in_toto_slsa_provenance_v1 = 5;</code>
+   *
+   * @return Whether the inTotoSlsaProvenanceV1 field is set.
+   */
+  boolean hasInTotoSlsaProvenanceV1();
+  /**
+   *
+   *
+   * <pre>
+   * In-Toto Slsa Provenance V1 represents a slsa provenance meeting the slsa
+   * spec, wrapped in an in-toto statement. This allows for direct
+   * jsonification of a to-spec in-toto slsa statement with a to-spec
+   * slsa provenance.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoSlsaProvenanceV1 in_toto_slsa_provenance_v1 = 5;</code>
+   *
+   * @return The inTotoSlsaProvenanceV1.
+   */
+  io.grafeas.v1.InTotoSlsaProvenanceV1 getInTotoSlsaProvenanceV1();
+  /**
+   *
+   *
+   * <pre>
+   * In-Toto Slsa Provenance V1 represents a slsa provenance meeting the slsa
+   * spec, wrapped in an in-toto statement. This allows for direct
+   * jsonification of a to-spec in-toto slsa statement with a to-spec
+   * slsa provenance.
+   * </pre>
+   *
+   * <code>.grafeas.v1.InTotoSlsaProvenanceV1 in_toto_slsa_provenance_v1 = 5;</code>
+   */
+  io.grafeas.v1.InTotoSlsaProvenanceV1OrBuilder getInTotoSlsaProvenanceV1OrBuilder();
 }
