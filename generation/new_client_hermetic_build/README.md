@@ -67,6 +67,11 @@ We will publish a single module for a service that includes the specified versio
 (in the example, `v1alpha`). Any future version must be manually added to
 the configuration yaml (`google-cloud-java/generation_config.yaml`)
 
+#### More than one `proto_path`
+
+If you need another `proto_path` in the library, you must manually add it
+to `google-cloud-java/generation_config.yaml` after generating the new client.
+
 ### Name pretty (`name_pretty`)
 
 The corresponding value in the Cloud Drop page is `title`.
