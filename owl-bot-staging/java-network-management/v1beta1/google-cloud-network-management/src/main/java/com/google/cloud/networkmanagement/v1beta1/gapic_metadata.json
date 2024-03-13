@@ -1,0 +1,51 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.networkmanagement.v1beta1",
+  "libraryPackage": "com.google.cloud.networkmanagement.v1beta1",
+  "services": {
+    "ReachabilityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReachabilityServiceClient",
+          "rpcs": {
+            "CreateConnectivityTest": {
+              "methods": ["createConnectivityTestAsync", "createConnectivityTestOperationCallable", "createConnectivityTestCallable"]
+            },
+            "DeleteConnectivityTest": {
+              "methods": ["deleteConnectivityTestAsync", "deleteConnectivityTestOperationCallable", "deleteConnectivityTestCallable"]
+            },
+            "GetConnectivityTest": {
+              "methods": ["getConnectivityTest", "getConnectivityTestCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListConnectivityTests": {
+              "methods": ["listConnectivityTests", "listConnectivityTestsPagedCallable", "listConnectivityTestsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RerunConnectivityTest": {
+              "methods": ["rerunConnectivityTestAsync", "rerunConnectivityTestOperationCallable", "rerunConnectivityTestCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateConnectivityTest": {
+              "methods": ["updateConnectivityTestAsync", "updateConnectivityTestOperationCallable", "updateConnectivityTestCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
