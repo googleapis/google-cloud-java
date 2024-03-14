@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.aiplatform.v1beta1.stub.FeatureOnlineStoreServiceStubSettings;
@@ -90,6 +91,14 @@ public class FeatureOnlineStoreServiceSettings
   public UnaryCallSettings<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesSettings() {
     return ((FeatureOnlineStoreServiceStubSettings) getStubSettings()).fetchFeatureValuesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamingFetchFeatureValues. */
+  public StreamingCallSettings<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesSettings() {
+    return ((FeatureOnlineStoreServiceStubSettings) getStubSettings())
+        .streamingFetchFeatureValuesSettings();
   }
 
   /** Returns the object with the settings used for calls to searchNearestEntities. */
@@ -227,6 +236,13 @@ public class FeatureOnlineStoreServiceSettings
     public UnaryCallSettings.Builder<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
         fetchFeatureValuesSettings() {
       return getStubSettingsBuilder().fetchFeatureValuesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamingFetchFeatureValues. */
+    public StreamingCallSettings.Builder<
+            StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        streamingFetchFeatureValuesSettings() {
+      return getStubSettingsBuilder().streamingFetchFeatureValuesSettings();
     }
 
     /** Returns the builder for the settings used for calls to searchNearestEntities. */

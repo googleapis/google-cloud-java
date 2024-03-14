@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -44,6 +45,8 @@ import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -109,6 +112,9 @@ public class FeatureOnlineStoreServiceStubSettings
 
   private final UnaryCallSettings<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesSettings;
+  private final StreamingCallSettings<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesSettings;
   private final UnaryCallSettings<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
       searchNearestEntitiesSettings;
   private final PagedCallSettings<
@@ -177,6 +183,13 @@ public class FeatureOnlineStoreServiceStubSettings
   public UnaryCallSettings<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesSettings() {
     return fetchFeatureValuesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingFetchFeatureValues. */
+  public StreamingCallSettings<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesSettings() {
+    return streamingFetchFeatureValuesSettings;
   }
 
   /** Returns the object with the settings used for calls to searchNearestEntities. */
@@ -302,6 +315,8 @@ public class FeatureOnlineStoreServiceStubSettings
     super(settingsBuilder);
 
     fetchFeatureValuesSettings = settingsBuilder.fetchFeatureValuesSettings().build();
+    streamingFetchFeatureValuesSettings =
+        settingsBuilder.streamingFetchFeatureValuesSettings().build();
     searchNearestEntitiesSettings = settingsBuilder.searchNearestEntitiesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -316,6 +331,9 @@ public class FeatureOnlineStoreServiceStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
         fetchFeatureValuesSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        streamingFetchFeatureValuesSettings;
     private final UnaryCallSettings.Builder<
             SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
         searchNearestEntitiesSettings;
@@ -355,6 +373,7 @@ public class FeatureOnlineStoreServiceStubSettings
       super(clientContext);
 
       fetchFeatureValuesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamingFetchFeatureValuesSettings = StreamingCallSettings.newBuilder();
       searchNearestEntitiesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -378,6 +397,8 @@ public class FeatureOnlineStoreServiceStubSettings
       super(settings);
 
       fetchFeatureValuesSettings = settings.fetchFeatureValuesSettings.toBuilder();
+      streamingFetchFeatureValuesSettings =
+          settings.streamingFetchFeatureValuesSettings.toBuilder();
       searchNearestEntitiesSettings = settings.searchNearestEntitiesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -466,6 +487,13 @@ public class FeatureOnlineStoreServiceStubSettings
     public UnaryCallSettings.Builder<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
         fetchFeatureValuesSettings() {
       return fetchFeatureValuesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingFetchFeatureValues. */
+    public StreamingCallSettings.Builder<
+            StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+        streamingFetchFeatureValuesSettings() {
+      return streamingFetchFeatureValuesSettings;
     }
 
     /** Returns the builder for the settings used for calls to searchNearestEntities. */

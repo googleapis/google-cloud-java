@@ -20,11 +20,14 @@ import static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreServiceClien
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest;
 import com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -49,6 +52,13 @@ public abstract class FeatureOnlineStoreServiceStub implements BackgroundResourc
   public UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchFeatureValuesCallable()");
+  }
+
+  public BidiStreamingCallable<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingFetchFeatureValuesCallable()");
   }
 
   public UnaryCallable<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>

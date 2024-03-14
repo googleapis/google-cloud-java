@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.stub.FeatureOnlineStoreServiceStub;
@@ -92,6 +93,16 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> fetchFeatureValuesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamingFetchFeatureValues</td>
+ *      <td><p> Bidirectional streaming RPC to fetch feature values under a FeatureView. Requests may not have a one-to-one mapping to responses and responses may be returned out-of-order to reduce latency.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamingFetchFeatureValuesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -421,6 +432,45 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
   public final UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>
       fetchFeatureValuesCallable() {
     return stub.fetchFeatureValuesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional streaming RPC to fetch feature values under a FeatureView. Requests may not have
+   * a one-to-one mapping to responses and responses may be returned out-of-order to reduce latency.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+   *     FeatureOnlineStoreServiceClient.create()) {
+   *   BidiStream<StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+   *       bidiStream = featureOnlineStoreServiceClient.streamingFetchFeatureValuesCallable().call();
+   *   StreamingFetchFeatureValuesRequest request =
+   *       StreamingFetchFeatureValuesRequest.newBuilder()
+   *           .setFeatureView(
+   *               FeatureViewName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]")
+   *                   .toString())
+   *           .addAllDataKeys(new ArrayList<FeatureViewDataKey>())
+   *           .setDataFormat(FeatureViewDataFormat.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamingFetchFeatureValuesResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          StreamingFetchFeatureValuesRequest, StreamingFetchFeatureValuesResponse>
+      streamingFetchFeatureValuesCallable() {
+    return stub.streamingFetchFeatureValuesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

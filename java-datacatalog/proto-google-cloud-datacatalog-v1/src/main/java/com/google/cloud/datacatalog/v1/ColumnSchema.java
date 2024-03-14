@@ -1142,6 +1142,665 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface FieldElementTypeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datacatalog.v1.ColumnSchema.FieldElementType)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element. See
+     * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element. See
+     * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString getTypeBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the type of a field element.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datacatalog.v1.ColumnSchema.FieldElementType}
+   */
+  public static final class FieldElementType extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ColumnSchema.FieldElementType)
+      FieldElementTypeOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use FieldElementType.newBuilder() to construct.
+    private FieldElementType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FieldElementType() {
+      type_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new FieldElementType();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datacatalog.v1.SchemaOuterClass
+          .internal_static_google_cloud_datacatalog_v1_ColumnSchema_FieldElementType_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datacatalog.v1.SchemaOuterClass
+          .internal_static_google_cloud_datacatalog_v1_ColumnSchema_FieldElementType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.class,
+              com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element. See
+     * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of a field element. See
+     * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+     * </pre>
+     *
+     * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType other =
+          (com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType) obj;
+
+      if (!getType().equals(other.getType())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the type of a field element.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datacatalog.v1.ColumnSchema.FieldElementType}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datacatalog.v1.ColumnSchema.FieldElementType)
+        com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datacatalog.v1.SchemaOuterClass
+            .internal_static_google_cloud_datacatalog_v1_ColumnSchema_FieldElementType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datacatalog.v1.SchemaOuterClass
+            .internal_static_google_cloud_datacatalog_v1_ColumnSchema_FieldElementType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.class,
+                com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder.class);
+      }
+
+      // Construct using com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datacatalog.v1.SchemaOuterClass
+            .internal_static_google_cloud_datacatalog_v1_ColumnSchema_FieldElementType_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType
+          getDefaultInstanceForType() {
+        return com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType build() {
+        com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType buildPartial() {
+        com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType result =
+            new com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType) {
+          return mergeFrom((com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType other) {
+        if (other
+            == com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.getDefaultInstance())
+          return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  type_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object type_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element. See
+       * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element. See
+       * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element. See
+       * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element. See
+       * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of a field element. See
+       * [ColumnSchema.type][google.cloud.datacatalog.v1.ColumnSchema.type].
+       * </pre>
+       *
+       * <code>string type = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datacatalog.v1.ColumnSchema.FieldElementType)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datacatalog.v1.ColumnSchema.FieldElementType)
+    private static final com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType();
+    }
+
+    public static com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FieldElementType> PARSER =
+        new com.google.protobuf.AbstractParser<FieldElementType>() {
+          @java.lang.Override
+          public FieldElementType parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FieldElementType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FieldElementType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   private int systemSpecCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1667,6 +2326,78 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec.getDefaultInstance();
   }
 
+  public static final int RANGE_ELEMENT_TYPE_FIELD_NUMBER = 19;
+  private com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType rangeElementType_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rangeElementType field is set.
+   */
+  @java.lang.Override
+  public boolean hasRangeElementType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rangeElementType.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType getRangeElementType() {
+    return rangeElementType_ == null
+        ? com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.getDefaultInstance()
+        : rangeElementType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder
+      getRangeElementTypeOrBuilder() {
+    return rangeElementType_ == null
+        ? com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.getDefaultInstance()
+        : rangeElementType_;
+  }
+
   public static final int GC_RULE_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -1767,6 +2498,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           18, (com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec) systemSpec_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(19, getRangeElementType());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1810,6 +2544,9 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, (com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec) systemSpec_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getRangeElementType());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1834,6 +2571,10 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     if (getOrdinalPosition() != other.getOrdinalPosition()) return false;
     if (highestIndexingType_ != other.highestIndexingType_) return false;
     if (!getSubcolumnsList().equals(other.getSubcolumnsList())) return false;
+    if (hasRangeElementType() != other.hasRangeElementType()) return false;
+    if (hasRangeElementType()) {
+      if (!getRangeElementType().equals(other.getRangeElementType())) return false;
+    }
     if (!getGcRule().equals(other.getGcRule())) return false;
     if (!getSystemSpecCase().equals(other.getSystemSpecCase())) return false;
     switch (systemSpecCase_) {
@@ -1871,6 +2612,10 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     if (getSubcolumnsCount() > 0) {
       hash = (37 * hash) + SUBCOLUMNS_FIELD_NUMBER;
       hash = (53 * hash) + getSubcolumnsList().hashCode();
+    }
+    if (hasRangeElementType()) {
+      hash = (37 * hash) + RANGE_ELEMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getRangeElementType().hashCode();
     }
     hash = (37 * hash) + GC_RULE_FIELD_NUMBER;
     hash = (53 * hash) + getGcRule().hashCode();
@@ -2012,10 +2757,20 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.datacatalog.v1.ColumnSchema.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSubcolumnsFieldBuilder();
+        getRangeElementTypeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -2038,6 +2793,11 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000080);
       if (lookerColumnSpecBuilder_ != null) {
         lookerColumnSpecBuilder_.clear();
+      }
+      rangeElementType_ = null;
+      if (rangeElementTypeBuilder_ != null) {
+        rangeElementTypeBuilder_.dispose();
+        rangeElementTypeBuilder_ = null;
       }
       gcRule_ = "";
       systemSpecCase_ = 0;
@@ -2113,9 +2873,16 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.highestIndexingType_ = highestIndexingType_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.rangeElementType_ =
+            rangeElementTypeBuilder_ == null ? rangeElementType_ : rangeElementTypeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.gcRule_ = gcRule_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.cloud.datacatalog.v1.ColumnSchema result) {
@@ -2229,9 +2996,12 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasRangeElementType()) {
+        mergeRangeElementType(other.getRangeElementType());
+      }
       if (!other.getGcRule().isEmpty()) {
         gcRule_ = other.gcRule_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       switch (other.getSystemSpecCase()) {
@@ -2329,7 +3099,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 gcRule_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 146:
@@ -2339,6 +3109,13 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
                 systemSpecCase_ = 18;
                 break;
               } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    getRangeElementTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3748,6 +4525,261 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       return lookerColumnSpecBuilder_;
     }
 
+    private com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType rangeElementType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType,
+            com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder,
+            com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder>
+        rangeElementTypeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rangeElementType field is set.
+     */
+    public boolean hasRangeElementType() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rangeElementType.
+     */
+    public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType getRangeElementType() {
+      if (rangeElementTypeBuilder_ == null) {
+        return rangeElementType_ == null
+            ? com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.getDefaultInstance()
+            : rangeElementType_;
+      } else {
+        return rangeElementTypeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRangeElementType(
+        com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType value) {
+      if (rangeElementTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rangeElementType_ = value;
+      } else {
+        rangeElementTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRangeElementType(
+        com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder builderForValue) {
+      if (rangeElementTypeBuilder_ == null) {
+        rangeElementType_ = builderForValue.build();
+      } else {
+        rangeElementTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRangeElementType(
+        com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType value) {
+      if (rangeElementTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && rangeElementType_ != null
+            && rangeElementType_
+                != com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType
+                    .getDefaultInstance()) {
+          getRangeElementTypeBuilder().mergeFrom(value);
+        } else {
+          rangeElementType_ = value;
+        }
+      } else {
+        rangeElementTypeBuilder_.mergeFrom(value);
+      }
+      if (rangeElementType_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRangeElementType() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      rangeElementType_ = null;
+      if (rangeElementTypeBuilder_ != null) {
+        rangeElementTypeBuilder_.dispose();
+        rangeElementTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder
+        getRangeElementTypeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getRangeElementTypeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder
+        getRangeElementTypeOrBuilder() {
+      if (rangeElementTypeBuilder_ != null) {
+        return rangeElementTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return rangeElementType_ == null
+            ? com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.getDefaultInstance()
+            : rangeElementType_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+     * the type is RANGE, this field is required. Possible values for the field
+     * element type of a RANGE include:
+     * * DATE
+     * * DATETIME
+     * * TIMESTAMP
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType,
+            com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder,
+            com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder>
+        getRangeElementTypeFieldBuilder() {
+      if (rangeElementTypeBuilder_ == null) {
+        rangeElementTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType,
+                com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType.Builder,
+                com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder>(
+                getRangeElementType(), getParentForChildren(), isClean());
+        rangeElementType_ = null;
+      }
+      return rangeElementTypeBuilder_;
+    }
+
     private java.lang.Object gcRule_ = "";
     /**
      *
@@ -3813,7 +4845,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       gcRule_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3831,7 +4863,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGcRule() {
       gcRule_ = getDefaultInstance().getGcRule();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3854,7 +4886,7 @@ public final class ColumnSchema extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       gcRule_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

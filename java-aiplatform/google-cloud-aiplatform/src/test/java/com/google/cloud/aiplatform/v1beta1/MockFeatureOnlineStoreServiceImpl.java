@@ -81,6 +81,43 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
   }
 
   @Override
+  public StreamObserver<StreamingFetchFeatureValuesRequest> streamingFetchFeatureValues(
+      final StreamObserver<StreamingFetchFeatureValuesResponse> responseObserver) {
+    StreamObserver<StreamingFetchFeatureValuesRequest> requestObserver =
+        new StreamObserver<StreamingFetchFeatureValuesRequest>() {
+          @Override
+          public void onNext(StreamingFetchFeatureValuesRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamingFetchFeatureValuesResponse) {
+              responseObserver.onNext(((StreamingFetchFeatureValuesResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamingFetchFeatureValues, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamingFetchFeatureValuesResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
   public void searchNearestEntities(
       SearchNearestEntitiesRequest request,
       StreamObserver<SearchNearestEntitiesResponse> responseObserver) {
