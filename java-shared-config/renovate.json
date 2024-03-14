@@ -11,6 +11,7 @@
     ":autodetectPinVersions"
   ],
   "ignorePaths": [".kokoro/requirements.txt"],
+  "ignoreDeps": ["org.codehaus.mojo:flatten-maven-plugin"],
   "packageRules": [
     {
       "packagePatterns": [
