@@ -6,7 +6,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-shared-config</artifactId>
   <packaging>pom</packaging>
-  <version>1.7.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+  <version>1.7.6</version><!-- {x-version-update:google-cloud-shared-config:current} -->
   <name>Google Cloud Shared Config</name>
   <url>https://github.com/googleapis/java-shared-config</url>
   <description>
@@ -16,7 +16,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>native-image-shared-config</artifactId>
-    <version>1.7.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <version>1.7.6</version><!-- {x-version-update:google-cloud-shared-config:current} -->
     <relativePath>../native-image-shared-config</relativePath>
   </parent>
 

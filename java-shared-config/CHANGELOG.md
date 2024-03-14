@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.6](https://github.com/googleapis/java-shared-config/compare/v1.7.5...v1.7.6) (2024-03-14)
+
+
+### Bug Fixes
+
+* Revert update dependency `org.codehaus.mojo:flatten-maven-plugin` to `v1.6.0` ([597683f](https://github.com/googleapis/java-shared-config/commit/597683fb59047d92c86b728885433163f736590e))
+
 ## [1.7.5](https://github.com/googleapis/java-shared-config/compare/v1.7.4...v1.7.5) (2024-03-13)
 
 
