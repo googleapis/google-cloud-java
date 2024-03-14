@@ -16,28 +16,27 @@ import synthtool as s
 from synthtool.languages import java
 
 file_name = "owl-bot-staging/v1/google-cloud-service-management/src/test/java/com/google/cloud/api/servicemanagement/v1/ServiceManagerClientHttpJsonTest.java"
-ignore_annotation = '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")'
 
 for library in s.get_staging_dirs():
     # put any special-case replacements here
     s.replace(
         file_name,
-        'import org.junit.Test;',
+        r'^import org.junit.Test;',
         'import org.junit.Ignore;\nimport org.junit.Test;'
     )
     s.replace(
         file_name,
-        '@Test\npublic void setIamPolicyTest() throws Exception {',
+        r"\s+@Test\n\s+public void setIamPolicyTest\(\) throws Exception.*",
         '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")\n@Test\npublic void setIamPolicyTest() throws Exception {'
     )
     s.replace(
         file_name,
-        '@Test\npublic void getIamPolicyTest() throws Exception {',
+        r'\s+@Test\n\s+public void getIamPolicyTest\(\) throws Exception.*',
         '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")\n@Test\npublic void getIamPolicyTest() throws Exception {'
     )
     s.replace(
         file_name,
-        '@Test\npublic void testIamPermissionsTest() throws Exception {',
+        r'\s+@Test\n\s+public void testIamPermissionsTest\(\) throws Exception.*',
         '@Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")@Test\npublic void testIamPermissionsTest() throws Exception {'
     )
     s.move(library)
