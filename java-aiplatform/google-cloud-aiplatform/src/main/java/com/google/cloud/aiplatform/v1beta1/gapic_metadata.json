@@ -256,6 +256,9 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
+            "StreamingFetchFeatureValues": {
+              "methods": ["streamingFetchFeatureValuesCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }

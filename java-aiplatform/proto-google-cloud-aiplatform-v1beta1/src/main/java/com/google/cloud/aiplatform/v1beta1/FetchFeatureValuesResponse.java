@@ -2376,6 +2376,7 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     }
   }
 
+  private int bitField0_;
   private int formatCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2542,6 +2543,65 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     return com.google.protobuf.Struct.getDefaultInstance();
   }
 
+  public static final int DATA_KEY_FIELD_NUMBER = 4;
+  private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
+  /**
+   *
+   *
+   * <pre>
+   * The data key associated with this response.
+   * Will only be populated for
+   * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+   * RPCs.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+   *
+   * @return Whether the dataKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataKey() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The data key associated with this response.
+   * Will only be populated for
+   * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+   * RPCs.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+   *
+   * @return The dataKey.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey() {
+    return dataKey_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+        : dataKey_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The data key associated with this response.
+   * Will only be populated for
+   * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+   * RPCs.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeyOrBuilder() {
+    return dataKey_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+        : dataKey_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2565,6 +2625,9 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
           (com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.FeatureNameValuePairList)
               format_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getDataKey());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2587,6 +2650,9 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
                       .FeatureNameValuePairList)
                   format_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDataKey());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2603,6 +2669,10 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse other =
         (com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse) obj;
 
+    if (hasDataKey() != other.hasDataKey()) return false;
+    if (hasDataKey()) {
+      if (!getDataKey().equals(other.getDataKey())) return false;
+    }
     if (!getFormatCase().equals(other.getFormatCase())) return false;
     switch (formatCase_) {
       case 3:
@@ -2625,6 +2695,10 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDataKey()) {
+      hash = (37 * hash) + DATA_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getDataKey().hashCode();
+    }
     switch (formatCase_) {
       case 3:
         hash = (37 * hash) + KEY_VALUES_FIELD_NUMBER;
@@ -2768,10 +2842,19 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDataKeyFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -2783,6 +2866,11 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       }
       if (protoStructBuilder_ != null) {
         protoStructBuilder_.clear();
+      }
+      dataKey_ = null;
+      if (dataKeyBuilder_ != null) {
+        dataKeyBuilder_.dispose();
+        dataKeyBuilder_ = null;
       }
       formatCase_ = 0;
       format_ = null;
@@ -2825,6 +2913,12 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dataKey_ = dataKeyBuilder_ == null ? dataKey_ : dataKeyBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -2886,6 +2980,9 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       if (other
           == com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse.getDefaultInstance())
         return this;
+      if (other.hasDataKey()) {
+        mergeDataKey(other.getDataKey());
+      }
       switch (other.getFormatCase()) {
         case KEY_VALUES:
           {
@@ -2940,6 +3037,12 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
                 formatCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getDataKeyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3436,6 +3539,220 @@ public final class FetchFeatureValuesResponse extends com.google.protobuf.Genera
       formatCase_ = 2;
       onChanged();
       return protoStructBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey dataKey_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
+        dataKeyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     *
+     * @return Whether the dataKey field is set.
+     */
+    public boolean hasDataKey() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     *
+     * @return The dataKey.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey getDataKey() {
+      if (dataKeyBuilder_ == null) {
+        return dataKey_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+            : dataKey_;
+      } else {
+        return dataKeyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     */
+    public Builder setDataKey(com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey value) {
+      if (dataKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataKey_ = value;
+      } else {
+        dataKeyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     */
+    public Builder setDataKey(
+        com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder builderForValue) {
+      if (dataKeyBuilder_ == null) {
+        dataKey_ = builderForValue.build();
+      } else {
+        dataKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     */
+    public Builder mergeDataKey(com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey value) {
+      if (dataKeyBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && dataKey_ != null
+            && dataKey_
+                != com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()) {
+          getDataKeyBuilder().mergeFrom(value);
+        } else {
+          dataKey_ = value;
+        }
+      } else {
+        dataKeyBuilder_.mergeFrom(value);
+      }
+      if (dataKey_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     */
+    public Builder clearDataKey() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dataKey_ = null;
+      if (dataKeyBuilder_ != null) {
+        dataKeyBuilder_.dispose();
+        dataKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder getDataKeyBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getDataKeyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder getDataKeyOrBuilder() {
+      if (dataKeyBuilder_ != null) {
+        return dataKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return dataKey_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.getDefaultInstance()
+            : dataKey_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The data key associated with this response.
+     * Will only be populated for
+     * [FeatureOnlineStoreService.StreamingFetchFeatureValues][google.cloud.aiplatform.v1beta1.FeatureOnlineStoreService.StreamingFetchFeatureValues]
+     * RPCs.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.FeatureViewDataKey data_key = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>
+        getDataKeyFieldBuilder() {
+      if (dataKeyBuilder_ == null) {
+        dataKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey,
+                com.google.cloud.aiplatform.v1beta1.FeatureViewDataKey.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureViewDataKeyOrBuilder>(
+                getDataKey(), getParentForChildren(), isClean());
+        dataKey_ = null;
+      }
+      return dataKeyBuilder_;
     }
 
     @java.lang.Override

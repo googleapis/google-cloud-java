@@ -297,6 +297,92 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * The intent to be triggered on V3 agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string input_intent = 17;</code>
+   *
+   * @return Whether the inputIntent field is set.
+   */
+  boolean hasInputIntent();
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string input_intent = 17;</code>
+   *
+   * @return The inputIntent.
+   */
+  java.lang.String getInputIntent();
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string input_intent = 17;</code>
+   *
+   * @return The bytes for inputIntent.
+   */
+  com.google.protobuf.ByteString getInputIntentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The input event name.
+   * This can only be sent once and would cancel the ongoing speech
+   * recognition if any.
+   * </pre>
+   *
+   * <code>string input_event = 20;</code>
+   *
+   * @return Whether the inputEvent field is set.
+   */
+  boolean hasInputEvent();
+  /**
+   *
+   *
+   * <pre>
+   * The input event name.
+   * This can only be sent once and would cancel the ongoing speech
+   * recognition if any.
+   * </pre>
+   *
+   * <code>string input_event = 20;</code>
+   *
+   * @return The inputEvent.
+   */
+  java.lang.String getInputEvent();
+  /**
+   *
+   *
+   * <pre>
+   * The input event name.
+   * This can only be sent once and would cancel the ongoing speech
+   * recognition if any.
+   * </pre>
+   *
+   * <code>string input_event = 20;</code>
+   *
+   * @return The bytes for inputEvent.
+   */
+  com.google.protobuf.ByteString getInputEventBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Parameters for a Dialogflow virtual-agent query.
    * </pre>
    *

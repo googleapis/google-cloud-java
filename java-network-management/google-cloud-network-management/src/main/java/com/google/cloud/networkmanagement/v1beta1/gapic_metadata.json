@@ -19,11 +19,26 @@
             "GetConnectivityTest": {
               "methods": ["getConnectivityTest", "getConnectivityTestCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListConnectivityTests": {
               "methods": ["listConnectivityTests", "listConnectivityTestsPagedCallable", "listConnectivityTestsCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
             "RerunConnectivityTest": {
               "methods": ["rerunConnectivityTestAsync", "rerunConnectivityTestOperationCallable", "rerunConnectivityTestCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateConnectivityTest": {
               "methods": ["updateConnectivityTestAsync", "updateConnectivityTestOperationCallable", "updateConnectivityTestCallable"]

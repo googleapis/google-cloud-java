@@ -242,6 +242,83 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Configuration for connections to Bitbucket Data Center.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+   * </code>
+   *
+   * @return Whether the bitbucketDataCenterConfig field is set.
+   */
+  boolean hasBitbucketDataCenterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Data Center.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+   * </code>
+   *
+   * @return The bitbucketDataCenterConfig.
+   */
+  com.google.cloudbuild.v2.BitbucketDataCenterConfig getBitbucketDataCenterConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Data Center.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+   * </code>
+   */
+  com.google.cloudbuild.v2.BitbucketDataCenterConfigOrBuilder
+      getBitbucketDataCenterConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Cloud.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+   *
+   * @return Whether the bitbucketCloudConfig field is set.
+   */
+  boolean hasBitbucketCloudConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Cloud.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+   *
+   * @return The bitbucketCloudConfig.
+   */
+  com.google.cloudbuild.v2.BitbucketCloudConfig getBitbucketCloudConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Cloud.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+   */
+  com.google.cloudbuild.v2.BitbucketCloudConfigOrBuilder getBitbucketCloudConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Installation state of the Connection.
    * </pre>
    *

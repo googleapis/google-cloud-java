@@ -201,6 +201,41 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * The intent to be triggered on V3 agent.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+   *
+   * @return Whether the intentInput field is set.
+   */
+  boolean hasIntentInput();
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+   *
+   * @return The intentInput.
+   */
+  com.google.cloud.dialogflow.v2beta1.IntentInput getIntentInput();
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 13;</code>
+   */
+  com.google.cloud.dialogflow.v2beta1.IntentInputOrBuilder getIntentInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Speech synthesis configuration.
    * The speech synthesis settings for a virtual agent that may be configured
    * for the associated conversation profile are not used when calling

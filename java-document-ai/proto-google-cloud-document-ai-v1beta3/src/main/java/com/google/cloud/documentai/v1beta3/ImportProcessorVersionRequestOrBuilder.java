@@ -30,6 +30,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    * <pre>
    * The source processor version to import from. The source processor version
    * and destination processor need to be in the same environment and region.
+   * Note that ProcessorVersions with `model_type` `MODEL_TYPE_LLM` are not
+   * supported.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -43,6 +45,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    * <pre>
    * The source processor version to import from. The source processor version
    * and destination processor need to be in the same environment and region.
+   * Note that ProcessorVersions with `model_type` `MODEL_TYPE_LLM` are not
+   * supported.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>
@@ -56,6 +60,8 @@ public interface ImportProcessorVersionRequestOrBuilder
    * <pre>
    * The source processor version to import from. The source processor version
    * and destination processor need to be in the same environment and region.
+   * Note that ProcessorVersions with `model_type` `MODEL_TYPE_LLM` are not
+   * supported.
    * </pre>
    *
    * <code>string processor_version_source = 2 [(.google.api.resource_reference) = { ... }</code>

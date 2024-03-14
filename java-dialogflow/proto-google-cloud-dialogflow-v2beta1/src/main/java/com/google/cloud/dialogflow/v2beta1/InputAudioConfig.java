@@ -627,6 +627,27 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return enableAutomaticPunctuation_;
   }
 
+  public static final int OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER = 26;
+  private boolean optOutConformerModelMigration_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If `true`, the request will opt out for STT conformer model migration.
+   * This field will be deprecated once force migration takes place in June
+   * 2024. Please refer to [Dialogflow ES Speech model
+   * migration](https://cloud.google.com/dialogflow/es/docs/speech-model-migration).
+   * </pre>
+   *
+   * <code>bool opt_out_conformer_model_migration = 26;</code>
+   *
+   * @return The optOutConformerModelMigration.
+   */
+  @java.lang.Override
+  public boolean getOptOutConformerModelMigration() {
+    return optOutConformerModelMigration_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -680,6 +701,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (enableAutomaticPunctuation_ != false) {
       output.writeBool(17, enableAutomaticPunctuation_);
+    }
+    if (optOutConformerModelMigration_ != false) {
+      output.writeBool(26, optOutConformerModelMigration_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -738,6 +762,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableAutomaticPunctuation_);
     }
+    if (optOutConformerModelMigration_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(26, optOutConformerModelMigration_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -770,6 +798,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!getBargeInConfig().equals(other.getBargeInConfig())) return false;
     }
     if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
+    if (getOptOutConformerModelMigration() != other.getOptOutConformerModelMigration())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -812,6 +842,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
+    hash = (37 * hash) + OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOptOutConformerModelMigration());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -983,6 +1016,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         bargeInConfigBuilder_ = null;
       }
       enableAutomaticPunctuation_ = false;
+      optOutConformerModelMigration_ = false;
       return this;
     }
 
@@ -1069,6 +1103,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.optOutConformerModelMigration_ = optOutConformerModelMigration_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1190,6 +1227,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (other.getEnableAutomaticPunctuation() != false) {
         setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
       }
+      if (other.getOptOutConformerModelMigration() != false) {
+        setOptOutConformerModelMigration(other.getOptOutConformerModelMigration());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1297,6 +1337,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 136
+            case 208:
+              {
+                optOutConformerModelMigration_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2987,6 +3033,68 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearEnableAutomaticPunctuation() {
       bitField0_ = (bitField0_ & ~0x00000800);
       enableAutomaticPunctuation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean optOutConformerModelMigration_;
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, the request will opt out for STT conformer model migration.
+     * This field will be deprecated once force migration takes place in June
+     * 2024. Please refer to [Dialogflow ES Speech model
+     * migration](https://cloud.google.com/dialogflow/es/docs/speech-model-migration).
+     * </pre>
+     *
+     * <code>bool opt_out_conformer_model_migration = 26;</code>
+     *
+     * @return The optOutConformerModelMigration.
+     */
+    @java.lang.Override
+    public boolean getOptOutConformerModelMigration() {
+      return optOutConformerModelMigration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, the request will opt out for STT conformer model migration.
+     * This field will be deprecated once force migration takes place in June
+     * 2024. Please refer to [Dialogflow ES Speech model
+     * migration](https://cloud.google.com/dialogflow/es/docs/speech-model-migration).
+     * </pre>
+     *
+     * <code>bool opt_out_conformer_model_migration = 26;</code>
+     *
+     * @param value The optOutConformerModelMigration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptOutConformerModelMigration(boolean value) {
+
+      optOutConformerModelMigration_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If `true`, the request will opt out for STT conformer model migration.
+     * This field will be deprecated once force migration takes place in June
+     * 2024. Please refer to [Dialogflow ES Speech model
+     * migration](https://cloud.google.com/dialogflow/es/docs/speech-model-migration).
+     * </pre>
+     *
+     * <code>bool opt_out_conformer_model_migration = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOptOutConformerModelMigration() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      optOutConformerModelMigration_ = false;
       onChanged();
       return this;
     }

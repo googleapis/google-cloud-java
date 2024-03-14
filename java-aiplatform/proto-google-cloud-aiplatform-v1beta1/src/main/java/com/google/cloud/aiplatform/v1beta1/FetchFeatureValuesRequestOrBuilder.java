@@ -35,7 +35,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=116
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=129
    * @return Whether the id field is set.
    */
   @java.lang.Deprecated
@@ -51,7 +51,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=116
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=129
    * @return The id.
    */
   @java.lang.Deprecated
@@ -67,7 +67,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=116
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=129
    * @return The bytes for id.
    */
   @java.lang.Deprecated
@@ -192,7 +192,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=140
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=153
    * @return The enum numeric value on the wire for format.
    */
   @java.lang.Deprecated
@@ -211,7 +211,7 @@ public interface FetchFeatureValuesRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=140
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=153
    * @return The format.
    */
   @java.lang.Deprecated
