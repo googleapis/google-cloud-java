@@ -16,6 +16,7 @@
 
 package com.google.cloud.vertexai;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
@@ -221,10 +222,29 @@ public class VertexAI implements AutoCloseable {
   }
 
   /**
+   * Returns the {@link PredictionServiceClient} with GRPC or REST, based on the Transport type. The
+   * client will be instantiated when the first prediction API call is made.
+   *
+   * @return {@link PredictionServiceClient} that send requests to the backing service through
+   *     method calls that map to the API methods.
+   */
+  @InternalApi
+  public PredictionServiceClient getPredictionServiceClient() throws IOException {
+    if (this.transport == Transport.GRPC) {
+      return getPredictionServiceGrpcClient();
+    } else {
+      return getPredictionServiceRestClient();
+    }
+  }
+
+  /**
    * Returns the {@link PredictionServiceClient} with GRPC. The client will be instantiated when the
    * first prediction API call is made.
+   *
+   * @return {@link PredictionServiceClient} that send GRPC requests to the backing service through
+   *     method calls that map to the API methods.
    */
-  public PredictionServiceClient getPredictionServiceClient() throws IOException {
+  private PredictionServiceClient getPredictionServiceGrpcClient() throws IOException {
     if (predictionServiceClient == null) {
       PredictionServiceSettings.Builder settingsBuilder = PredictionServiceSettings.newBuilder();
       settingsBuilder.setEndpoint(String.format("%s:443", this.apiEndpoint));
@@ -257,7 +277,7 @@ public class VertexAI implements AutoCloseable {
    * @return {@link PredictionServiceClient} that send REST requests to the backing service through
    *     method calls that map to the API methods.
    */
-  public PredictionServiceClient getPredictionServiceRestClient() throws IOException {
+  private PredictionServiceClient getPredictionServiceRestClient() throws IOException {
     if (predictionServiceRestClient == null) {
       PredictionServiceSettings.Builder settingsBuilder =
           PredictionServiceSettings.newHttpJsonBuilder();
@@ -285,13 +305,29 @@ public class VertexAI implements AutoCloseable {
   }
 
   /**
+   * Returns the {@link LlmUtilityServiceClient} with GRPC or REST, based on the Transport type. The
+   * client will be instantiated when the first API call is made.
+   *
+   * @return {@link LlmUtilityServiceClient} that makes calls to the backing service through method
+   *     calls that map to the API methods.
+   */
+  @InternalApi
+  public LlmUtilityServiceClient getLlmUtilityClient() throws IOException {
+    if (this.transport == Transport.GRPC) {
+      return getLlmUtilityGrpcClient();
+    } else {
+      return getLlmUtilityRestClient();
+    }
+  }
+
+  /**
    * Returns the {@link LlmUtilityServiceClient} with GRPC. The client will be instantiated when the
-   * first prediction API call is made.
+   * first API call is made.
    *
    * @return {@link LlmUtilityServiceClient} that makes gRPC calls to the backing service through
    *     method calls that map to the API methods.
    */
-  public LlmUtilityServiceClient getLlmUtilityClient() throws IOException {
+  private LlmUtilityServiceClient getLlmUtilityGrpcClient() throws IOException {
     if (llmUtilityClient == null) {
       LlmUtilityServiceSettings.Builder settingsBuilder = LlmUtilityServiceSettings.newBuilder();
       settingsBuilder.setEndpoint(String.format("%s:443", this.apiEndpoint));
@@ -319,12 +355,12 @@ public class VertexAI implements AutoCloseable {
 
   /**
    * Returns the {@link LlmUtilityServiceClient} with REST. The client will be instantiated when the
-   * first prediction API call is made.
+   * first API call is made.
    *
    * @return {@link LlmUtilityServiceClient} that makes REST requests to the backing service through
    *     method calls that map to the API methods.
    */
-  public LlmUtilityServiceClient getLlmUtilityRestClient() throws IOException {
+  private LlmUtilityServiceClient getLlmUtilityRestClient() throws IOException {
     if (llmUtilityRestClient == null) {
       LlmUtilityServiceSettings.Builder settingsBuilder =
           LlmUtilityServiceSettings.newHttpJsonBuilder();
