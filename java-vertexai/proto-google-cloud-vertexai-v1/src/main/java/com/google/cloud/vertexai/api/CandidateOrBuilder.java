@@ -261,4 +261,45 @@ public interface CandidateOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.CitationMetadataOrBuilder getCitationMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the groundingMetadata field is set.
+   */
+  boolean hasGroundingMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The groundingMetadata.
+   */
+  com.google.cloud.vertexai.api.GroundingMetadata getGroundingMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata specifies sources used to ground generated content.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GroundingMetadata grounding_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.GroundingMetadataOrBuilder getGroundingMetadataOrBuilder();
 }
