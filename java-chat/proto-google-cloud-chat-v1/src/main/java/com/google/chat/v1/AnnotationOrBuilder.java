@@ -160,5 +160,40 @@ public interface AnnotationOrBuilder
    */
   com.google.chat.v1.SlashCommandMetadataOrBuilder getSlashCommandOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a rich link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+   *
+   * @return Whether the richLinkMetadata field is set.
+   */
+  boolean hasRichLinkMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a rich link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+   *
+   * @return The richLinkMetadata.
+   */
+  com.google.chat.v1.RichLinkMetadata getRichLinkMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a rich link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+   */
+  com.google.chat.v1.RichLinkMetadataOrBuilder getRichLinkMetadataOrBuilder();
+
   com.google.chat.v1.Annotation.MetadataCase getMetadataCase();
 }
