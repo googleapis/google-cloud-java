@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.36.0](https://github.com/googleapis/java-bigtable/compare/v2.35.1...v2.36.0) (2024-03-13)
+
+
+### Features
+
+* Add models for type APIs ([#2160](https://github.com/googleapis/java-bigtable/issues/2160)) ([8277ea8](https://github.com/googleapis/java-bigtable/commit/8277ea828491d39b9c3c2e67c1a03927e2a744d9))
+* Publish new bigtable APIs for types and aggregates ([#2158](https://github.com/googleapis/java-bigtable/issues/2158)) ([430dffe](https://github.com/googleapis/java-bigtable/commit/430dffe0ff5916d9c3d7cfd7d35ca13514fd8934))
+
 ## [2.35.1](https://github.com/googleapis/java-bigtable/compare/v2.35.0...v2.35.1) (2024-03-07)
 
 
