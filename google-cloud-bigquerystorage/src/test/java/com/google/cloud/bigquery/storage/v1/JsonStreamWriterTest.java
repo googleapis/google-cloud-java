@@ -37,6 +37,7 @@ import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterp
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema.Mode;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import com.google.protobuf.Int64Value;
@@ -1415,8 +1416,8 @@ public class JsonStreamWriterTest {
     // put a vaild value into the field
     foo1.put("foo", "allen");
     JSONObject foo2 = new JSONObject();
-    // put a number into a string field
-    foo2.put("foo", 666);
+    // put a field which is not part of the expected schema
+    foo2.put("not_bar", "woody");
     JSONArray jsonArr = new JSONArray();
     jsonArr.put(foo);
     jsonArr.put(foo1);
@@ -1434,14 +1435,11 @@ public class JsonStreamWriterTest {
       } catch (AppendSerializationError appendSerializationError) {
         Map<Integer, String> rowIndexToErrorMessage =
             appendSerializationError.getRowIndexToErrorMessage();
-        assertEquals(2, rowIndexToErrorMessage.size());
         assertEquals(
-            "The source object has fields unknown to BigQuery: root.not_foo.",
-            rowIndexToErrorMessage.get(0));
-        assertEquals(
-            "Field root.foo failed to convert to STRING. Error: JSONObject does not have a string"
-                + " field at root.foo.",
-            rowIndexToErrorMessage.get(2));
+            ImmutableMap.of(
+                0, "The source object has fields unknown to BigQuery: root.not_foo.",
+                2, "The source object has fields unknown to BigQuery: root.not_bar."),
+            rowIndexToErrorMessage);
       }
     }
   }

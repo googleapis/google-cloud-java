@@ -87,7 +87,12 @@ public class JsonToProtoMessageTest {
               })
           .put(
               StringType.getDescriptor(),
-              new Message[] {StringType.newBuilder().setTestFieldType("test").build()})
+              new Message[] {
+                StringType.newBuilder().setTestFieldType("9223372036854775807").build(),
+                StringType.newBuilder().setTestFieldType("2147483647").build(),
+                StringType.newBuilder().setTestFieldType("true").build(),
+                StringType.newBuilder().setTestFieldType("test").build()
+              })
           .put(
               RepeatedType.getDescriptor(),
               new Message[] {
@@ -147,6 +152,9 @@ public class JsonToProtoMessageTest {
           .put(
               RepeatedString.getDescriptor(),
               new Message[] {
+                RepeatedString.newBuilder().addTestRepeated("9223372036854775807").build(),
+                RepeatedString.newBuilder().addTestRepeated("2147483647").build(),
+                RepeatedString.newBuilder().addTestRepeated("true").build(),
                 RepeatedString.newBuilder().addTestRepeated("hello").addTestRepeated("test").build()
               })
           .put(
@@ -925,6 +933,8 @@ public class JsonToProtoMessageTest {
       } else if (entry.getKey() == Int64Type.getDescriptor()
           || entry.getKey() == BytesType.getDescriptor()) {
         assertEquals(entry.getKey().getFullName(), 2, success);
+      } else if (entry.getKey() == StringType.getDescriptor()) {
+        assertEquals(entry.getKey().getFullName(), 4, success);
       } else {
         assertEquals(entry.getKey().getFullName(), 1, success);
       }
@@ -962,6 +972,8 @@ public class JsonToProtoMessageTest {
         assertEquals(entry.getKey().getFullName(), 4, success);
       } else if (entry.getKey() == RepeatedInt64.getDescriptor()) {
         assertEquals(entry.getKey().getFullName(), 2, success);
+      } else if (entry.getKey() == RepeatedString.getDescriptor()) {
+        assertEquals(entry.getKey().getFullName(), 4, success);
       } else {
         assertEquals(entry.getKey().getFullName(), 1, success);
       }
@@ -1009,14 +1021,20 @@ public class JsonToProtoMessageTest {
 
   @Test
   public void testStructSimple() throws Exception {
+    structSimple("test", "test");
+    structSimple(true, "true");
+    structSimple(1, "1");
+    structSimple((short) 1, "1");
+    structSimple((long) 1, "1");
+  }
+
+  private void structSimple(Object value, String expected) throws Exception {
     MessageType expectedProto =
         MessageType.newBuilder()
-            .setTestFieldType(StringType.newBuilder().setTestFieldType("test").build())
+            .setTestFieldType(StringType.newBuilder().setTestFieldType(expected).build())
             .build();
-    JSONObject stringType = new JSONObject();
-    stringType.put("test_field_type", "test");
-    JSONObject json = new JSONObject();
-    json.put("test_field_type", stringType);
+    JSONObject stringType = new JSONObject(ImmutableMap.of("test_field_type", value));
+    JSONObject json = new JSONObject(ImmutableMap.of("test_field_type", stringType));
 
     DynamicMessage protoMsg =
         JsonToProtoMessage.INSTANCE.convertToProtoMessage(MessageType.getDescriptor(), json);
@@ -1026,7 +1044,7 @@ public class JsonToProtoMessageTest {
   @Test
   public void testStructSimpleFail() throws Exception {
     JSONObject stringType = new JSONObject();
-    stringType.put("test_field_type", 1);
+    stringType.put("test_field_type", new boolean[0]);
     JSONObject json = new JSONObject();
     json.put("test_field_type", stringType);
     try {
@@ -1268,7 +1286,7 @@ public class JsonToProtoMessageTest {
   @Test
   public void testNestedRepeatedComplexFail() throws Exception {
     double[] doubleArr = {1.1, 2.2, 3.3, 4.4, 5.5};
-    Boolean[] fakeStringArr = {true, false};
+    Boolean[][] fakeStringArr = {new Boolean[0], new Boolean[0]};
     int[] intArr = {1, 2, 3, 4, 5};
 
     JSONObject json = new JSONObject();
