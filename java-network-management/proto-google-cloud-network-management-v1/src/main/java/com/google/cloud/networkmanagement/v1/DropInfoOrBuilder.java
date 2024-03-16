@@ -73,4 +73,79 @@ public interface DropInfoOrBuilder
    * @return The bytes for resourceUri.
    */
   com.google.protobuf.ByteString getResourceUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string source_ip = 3;</code>
+   *
+   * @return The sourceIp.
+   */
+  java.lang.String getSourceIp();
+  /**
+   *
+   *
+   * <pre>
+   * Source IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string source_ip = 3;</code>
+   *
+   * @return The bytes for sourceIp.
+   */
+  com.google.protobuf.ByteString getSourceIpBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Destination IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string destination_ip = 4;</code>
+   *
+   * @return The destinationIp.
+   */
+  java.lang.String getDestinationIp();
+  /**
+   *
+   *
+   * <pre>
+   * Destination IP address of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string destination_ip = 4;</code>
+   *
+   * @return The bytes for destinationIp.
+   */
+  com.google.protobuf.ByteString getDestinationIpBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Region of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string region = 5;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   *
+   *
+   * <pre>
+   * Region of the dropped packet (if relevant).
+   * </pre>
+   *
+   * <code>string region = 5;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
 }

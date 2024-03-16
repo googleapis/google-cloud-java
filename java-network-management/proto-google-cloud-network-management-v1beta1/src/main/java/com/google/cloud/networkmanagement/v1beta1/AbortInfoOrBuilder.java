@@ -78,9 +78,33 @@ public interface AbortInfoOrBuilder
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * IP address that caused the abort.
+   * </pre>
+   *
+   * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The ipAddress.
+   */
+  java.lang.String getIpAddress();
+  /**
+   *
+   *
+   * <pre>
+   * IP address that caused the abort.
+   * </pre>
+   *
+   * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>
@@ -92,9 +116,8 @@ public interface AbortInfoOrBuilder
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>
@@ -106,9 +129,8 @@ public interface AbortInfoOrBuilder
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>
@@ -121,9 +143,8 @@ public interface AbortInfoOrBuilder
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>

@@ -457,6 +457,87 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for dataset.
      */
     com.google.protobuf.ByteString getDatasetBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource>
+        getSelectedResourcesList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+        getSelectedResources(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getSelectedResourcesCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .SelectedResourceOrBuilder>
+        getSelectedResourcesOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+            .SelectedResourceOrBuilder
+        getSelectedResourcesOrBuilder(int index);
   }
   /**
    *
@@ -485,6 +566,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     private BigQueryDatasetSource() {
       dataset_ = "";
+      selectedResources_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -507,6 +589,921 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.class,
               com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Builder
                   .class);
+    }
+
+    public interface SelectedResourceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Format:
+       * For table:
+       * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+       * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+       * </pre>
+       *
+       * <code>
+       * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return Whether the table field is set.
+       */
+      boolean hasTable();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Format:
+       * For table:
+       * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+       * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+       * </pre>
+       *
+       * <code>
+       * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The table.
+       */
+      java.lang.String getTable();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Format:
+       * For table:
+       * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+       * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+       * </pre>
+       *
+       * <code>
+       * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for table.
+       */
+      com.google.protobuf.ByteString getTableBytes();
+
+      com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+              .ResourceCase
+          getResourceCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource in this dataset that are selectively shared.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource}
+     */
+    public static final class SelectedResource extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource)
+        SelectedResourceOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use SelectedResource.newBuilder() to construct.
+      private SelectedResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SelectedResource() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SelectedResource();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_SelectedResource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_SelectedResource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .SelectedResource.class,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .SelectedResource.Builder.class);
+      }
+
+      private int resourceCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object resource_;
+
+      public enum ResourceCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        TABLE(1),
+        RESOURCE_NOT_SET(0);
+        private final int value;
+
+        private ResourceCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ResourceCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ResourceCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return TABLE;
+            case 0:
+              return RESOURCE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public ResourceCase getResourceCase() {
+        return ResourceCase.forNumber(resourceCase_);
+      }
+
+      public static final int TABLE_FIELD_NUMBER = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Format:
+       * For table:
+       * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+       * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+       * </pre>
+       *
+       * <code>
+       * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return Whether the table field is set.
+       */
+      public boolean hasTable() {
+        return resourceCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Format:
+       * For table:
+       * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+       * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+       * </pre>
+       *
+       * <code>
+       * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The table.
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = "";
+        if (resourceCase_ == 1) {
+          ref = resource_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (resourceCase_ == 1) {
+            resource_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Format:
+       * For table:
+       * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+       * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+       * </pre>
+       *
+       * <code>
+       * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for table.
+       */
+      public com.google.protobuf.ByteString getTableBytes() {
+        java.lang.Object ref = "";
+        if (resourceCase_ == 1) {
+          ref = resource_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (resourceCase_ == 1) {
+            resource_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (resourceCase_ == 1) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resource_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (resourceCase_ == 1) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, resource_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+            other =
+                (com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                        .SelectedResource)
+                    obj;
+
+        if (!getResourceCase().equals(other.getResourceCase())) return false;
+        switch (resourceCase_) {
+          case 1:
+            if (!getTable().equals(other.getTable())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (resourceCase_) {
+          case 1:
+            hash = (37 * hash) + TABLE_FIELD_NUMBER;
+            hash = (53 * hash) + getTable().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource in this dataset that are selectively shared.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource)
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResourceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_SelectedResource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_SelectedResource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResource.class,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResource.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          resourceCase_ = 0;
+          resource_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_SelectedResource_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource
+            getDefaultInstanceForType() {
+          return com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource
+            build() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource
+            buildPartial() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+              result =
+                  new com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResource(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+                result) {
+          result.resourceCase_ = resourceCase_;
+          result.resource_ = this.resource_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource) {
+            return mergeFrom(
+                (com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                        .SelectedResource)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+                other) {
+          if (other
+              == com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource.getDefaultInstance()) return this;
+          switch (other.getResourceCase()) {
+            case TABLE:
+              {
+                resourceCase_ = 1;
+                resource_ = other.resource_;
+                onChanged();
+                break;
+              }
+            case RESOURCE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    resourceCase_ = 1;
+                    resource_ = s;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int resourceCase_ = 0;
+        private java.lang.Object resource_;
+
+        public ResourceCase getResourceCase() {
+          return ResourceCase.forNumber(resourceCase_);
+        }
+
+        public Builder clearResource() {
+          resourceCase_ = 0;
+          resource_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Format:
+         * For table:
+         * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+         * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+         * </pre>
+         *
+         * <code>
+         * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return Whether the table field is set.
+         */
+        @java.lang.Override
+        public boolean hasTable() {
+          return resourceCase_ == 1;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Format:
+         * For table:
+         * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+         * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+         * </pre>
+         *
+         * <code>
+         * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The table.
+         */
+        @java.lang.Override
+        public java.lang.String getTable() {
+          java.lang.Object ref = "";
+          if (resourceCase_ == 1) {
+            ref = resource_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (resourceCase_ == 1) {
+              resource_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Format:
+         * For table:
+         * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+         * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+         * </pre>
+         *
+         * <code>
+         * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for table.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTableBytes() {
+          java.lang.Object ref = "";
+          if (resourceCase_ == 1) {
+            ref = resource_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (resourceCase_ == 1) {
+              resource_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Format:
+         * For table:
+         * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+         * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+         * </pre>
+         *
+         * <code>
+         * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The table to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTable(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resourceCase_ = 1;
+          resource_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Format:
+         * For table:
+         * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+         * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+         * </pre>
+         *
+         * <code>
+         * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTable() {
+          if (resourceCase_ == 1) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Format:
+         * For table:
+         * `projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
+         * Example:"projects/test_project/datasets/test_dataset/tables/test_table"
+         * </pre>
+         *
+         * <code>
+         * string table = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for table to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTableBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resourceCase_ = 1;
+          resource_ = value;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource)
+      private static final com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource();
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SelectedResource> PARSER =
+          new com.google.protobuf.AbstractParser<SelectedResource>() {
+            @java.lang.Override
+            public SelectedResource parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SelectedResource> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SelectedResource> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
@@ -562,6 +1559,109 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int SELECTED_RESOURCES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource>
+        selectedResources_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                .SelectedResource>
+        getSelectedResourcesList() {
+      return selectedResources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .SelectedResourceOrBuilder>
+        getSelectedResourcesOrBuilderList() {
+      return selectedResources_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSelectedResourcesCount() {
+      return selectedResources_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+        getSelectedResources(int index) {
+      return selectedResources_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resources in this dataset that are selectively shared.
+     * If this field is empty, then the entire dataset (all resources) are
+     * shared. This field is only valid for data clean room exchanges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+            .SelectedResourceOrBuilder
+        getSelectedResourcesOrBuilder(int index) {
+      return selectedResources_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -579,6 +1679,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataset_);
       }
+      for (int i = 0; i < selectedResources_.size(); i++) {
+        output.writeMessage(2, selectedResources_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -590,6 +1693,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataset_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataset_);
+      }
+      for (int i = 0; i < selectedResources_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, selectedResources_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -609,6 +1716,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource) obj;
 
       if (!getDataset().equals(other.getDataset())) return false;
+      if (!getSelectedResourcesList().equals(other.getSelectedResourcesList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -622,6 +1730,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DATASET_FIELD_NUMBER;
       hash = (53 * hash) + getDataset().hashCode();
+      if (getSelectedResourcesCount() > 0) {
+        hash = (37 * hash) + SELECTED_RESOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getSelectedResourcesList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -774,6 +1886,13 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         dataset_ = "";
+        if (selectedResourcesBuilder_ == null) {
+          selectedResources_ = java.util.Collections.emptyList();
+        } else {
+          selectedResources_ = null;
+          selectedResourcesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -805,11 +1924,25 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource result =
             new com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource result) {
+        if (selectedResourcesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            selectedResources_ = java.util.Collections.unmodifiableList(selectedResources_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.selectedResources_ = selectedResources_;
+        } else {
+          result.selectedResources_ = selectedResourcesBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -877,6 +2010,33 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (selectedResourcesBuilder_ == null) {
+          if (!other.selectedResources_.isEmpty()) {
+            if (selectedResources_.isEmpty()) {
+              selectedResources_ = other.selectedResources_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSelectedResourcesIsMutable();
+              selectedResources_.addAll(other.selectedResources_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.selectedResources_.isEmpty()) {
+            if (selectedResourcesBuilder_.isEmpty()) {
+              selectedResourcesBuilder_.dispose();
+              selectedResourcesBuilder_ = null;
+              selectedResources_ = other.selectedResources_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              selectedResourcesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getSelectedResourcesFieldBuilder()
+                      : null;
+            } else {
+              selectedResourcesBuilder_.addAllMessages(other.selectedResources_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -909,6 +2069,23 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                          .SelectedResource
+                      m =
+                          input.readMessage(
+                              com.google.cloud.bigquery.analyticshub.v1.Listing
+                                  .BigQueryDatasetSource.SelectedResource.parser(),
+                              extensionRegistry);
+                  if (selectedResourcesBuilder_ == null) {
+                    ensureSelectedResourcesIsMutable();
+                    selectedResources_.add(m);
+                  } else {
+                    selectedResourcesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1037,6 +2214,488 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
+      }
+
+      private java.util.List<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource>
+          selectedResources_ = java.util.Collections.emptyList();
+
+      private void ensureSelectedResourcesIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          selectedResources_ =
+              new java.util.ArrayList<
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResource>(selectedResources_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource.Builder,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResourceOrBuilder>
+          selectedResourcesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource>
+          getSelectedResourcesList() {
+        if (selectedResourcesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(selectedResources_);
+        } else {
+          return selectedResourcesBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getSelectedResourcesCount() {
+        if (selectedResourcesBuilder_ == null) {
+          return selectedResources_.size();
+        } else {
+          return selectedResourcesBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource
+          getSelectedResources(int index) {
+        if (selectedResourcesBuilder_ == null) {
+          return selectedResources_.get(index);
+        } else {
+          return selectedResourcesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSelectedResources(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+              value) {
+        if (selectedResourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelectedResourcesIsMutable();
+          selectedResources_.set(index, value);
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSelectedResources(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+                  .Builder
+              builderForValue) {
+        if (selectedResourcesBuilder_ == null) {
+          ensureSelectedResourcesIsMutable();
+          selectedResources_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSelectedResources(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+              value) {
+        if (selectedResourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelectedResourcesIsMutable();
+          selectedResources_.add(value);
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSelectedResources(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+              value) {
+        if (selectedResourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSelectedResourcesIsMutable();
+          selectedResources_.add(index, value);
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSelectedResources(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+                  .Builder
+              builderForValue) {
+        if (selectedResourcesBuilder_ == null) {
+          ensureSelectedResourcesIsMutable();
+          selectedResources_.add(builderForValue.build());
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addSelectedResources(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource
+                  .Builder
+              builderForValue) {
+        if (selectedResourcesBuilder_ == null) {
+          ensureSelectedResourcesIsMutable();
+          selectedResources_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllSelectedResources(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                          .SelectedResource>
+              values) {
+        if (selectedResourcesBuilder_ == null) {
+          ensureSelectedResourcesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, selectedResources_);
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSelectedResources() {
+        if (selectedResourcesBuilder_ == null) {
+          selectedResources_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeSelectedResources(int index) {
+        if (selectedResourcesBuilder_ == null) {
+          ensureSelectedResourcesIsMutable();
+          selectedResources_.remove(index);
+          onChanged();
+        } else {
+          selectedResourcesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource.Builder
+          getSelectedResourcesBuilder(int index) {
+        return getSelectedResourcesFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResourceOrBuilder
+          getSelectedResourcesOrBuilder(int index) {
+        if (selectedResourcesBuilder_ == null) {
+          return selectedResources_.get(index);
+        } else {
+          return selectedResourcesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResourceOrBuilder>
+          getSelectedResourcesOrBuilderList() {
+        if (selectedResourcesBuilder_ != null) {
+          return selectedResourcesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(selectedResources_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource.Builder
+          addSelectedResourcesBuilder() {
+        return getSelectedResourcesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .SelectedResource.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .SelectedResource.Builder
+          addSelectedResourcesBuilder(int index) {
+        return getSelectedResourcesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .SelectedResource.getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resources in this dataset that are selectively shared.
+       * If this field is empty, then the entire dataset (all resources) are
+       * shared. This field is only valid for data clean room exchanges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResource selected_resources = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource.Builder>
+          getSelectedResourcesBuilderList() {
+        return getSelectedResourcesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResource.Builder,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .SelectedResourceOrBuilder>
+          getSelectedResourcesFieldBuilder() {
+        if (selectedResourcesBuilder_ == null) {
+          selectedResourcesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResource,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResource.Builder,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .SelectedResourceOrBuilder>(
+                  selectedResources_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          selectedResources_ = null;
+        }
+        return selectedResourcesBuilder_;
       }
 
       @java.lang.Override
