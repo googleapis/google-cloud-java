@@ -828,7 +828,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:getIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/subscriptions/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -867,7 +868,8 @@ public class HttpJsonAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataExchanges/*/listings/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/subscriptions/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

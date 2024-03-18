@@ -41,6 +41,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
   private DeliverInfo() {
     target_ = 0;
     resourceUri_ = "";
+    ipAddress_ = "";
   }
 
   @java.lang.Override
@@ -187,6 +188,46 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>STORAGE_BUCKET = 10;</code>
      */
     STORAGE_BUCKET(10),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a private network. Used only for return traces.
+     * </pre>
+     *
+     * <code>PRIVATE_NETWORK = 11;</code>
+     */
+    PRIVATE_NETWORK(11),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Cloud Function. Used only for return traces.
+     * </pre>
+     *
+     * <code>CLOUD_FUNCTION = 12;</code>
+     */
+    CLOUD_FUNCTION(12),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a App Engine service version. Used only for return traces.
+     * </pre>
+     *
+     * <code>APP_ENGINE_VERSION = 13;</code>
+     */
+    APP_ENGINE_VERSION(13),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Cloud Run revision. Used only for return traces.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_REVISION = 14;</code>
+     */
+    CLOUD_RUN_REVISION(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -303,6 +344,46 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>STORAGE_BUCKET = 10;</code>
      */
     public static final int STORAGE_BUCKET_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a private network. Used only for return traces.
+     * </pre>
+     *
+     * <code>PRIVATE_NETWORK = 11;</code>
+     */
+    public static final int PRIVATE_NETWORK_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Cloud Function. Used only for return traces.
+     * </pre>
+     *
+     * <code>CLOUD_FUNCTION = 12;</code>
+     */
+    public static final int CLOUD_FUNCTION_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a App Engine service version. Used only for return traces.
+     * </pre>
+     *
+     * <code>APP_ENGINE_VERSION = 13;</code>
+     */
+    public static final int APP_ENGINE_VERSION_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Target is a Cloud Run revision. Used only for return traces.
+     * </pre>
+     *
+     * <code>CLOUD_RUN_REVISION = 14;</code>
+     */
+    public static final int CLOUD_RUN_REVISION_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -350,6 +431,14 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
           return SERVERLESS_NEG;
         case 10:
           return STORAGE_BUCKET;
+        case 11:
+          return PRIVATE_NETWORK;
+        case 12:
+          return CLOUD_FUNCTION;
+        case 13:
+          return APP_ENGINE_VERSION;
+        case 14:
+          return CLOUD_RUN_REVISION;
         default:
           return null;
       }
@@ -493,6 +582,57 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IP_ADDRESS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the target (if applicable).
+   * </pre>
+   *
+   * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The ipAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getIpAddress() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP address of the target (if applicable).
+   * </pre>
+   *
+   * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpAddressBytes() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -515,6 +655,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, resourceUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, ipAddress_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -531,6 +674,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, resourceUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, ipAddress_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -550,6 +696,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (target_ != other.target_) return false;
     if (!getResourceUri().equals(other.getResourceUri())) return false;
+    if (!getIpAddress().equals(other.getIpAddress())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -565,6 +712,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + target_;
     hash = (37 * hash) + RESOURCE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getResourceUri().hashCode();
+    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getIpAddress().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -707,6 +856,7 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       target_ = 0;
       resourceUri_ = "";
+      ipAddress_ = "";
       return this;
     }
 
@@ -748,6 +898,9 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resourceUri_ = resourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipAddress_ = ipAddress_;
       }
     }
 
@@ -805,6 +958,11 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getIpAddress().isEmpty()) {
+        ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -843,6 +1001,12 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                ipAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1056,6 +1220,112 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       resourceUri_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ipAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IP address of the target (if applicable).
+     * </pre>
+     *
+     * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+     *
+     * @return The ipAddress.
+     */
+    public java.lang.String getIpAddress() {
+      java.lang.Object ref = ipAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address of the target (if applicable).
+     * </pre>
+     *
+     * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+     *
+     * @return The bytes for ipAddress.
+     */
+    public com.google.protobuf.ByteString getIpAddressBytes() {
+      java.lang.Object ref = ipAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address of the target (if applicable).
+     * </pre>
+     *
+     * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+     *
+     * @param value The ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipAddress_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address of the target (if applicable).
+     * </pre>
+     *
+     * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpAddress() {
+      ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address of the target (if applicable).
+     * </pre>
+     *
+     * <code>string ip_address = 3 [(.google.api.field_info) = { ... }</code>
+     *
+     * @param value The bytes for ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
