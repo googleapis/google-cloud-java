@@ -20,7 +20,7 @@ on:
   pull_request:
 name: generation diff
 env:
-  library_generation_image_tag: latest
+  library_generation_image_tag: 73ac484cf75ea418d510abc5b229f44ab8f0490023ea2d3c11a08c729977fcfe
   repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
 jobs:
   root-pom:
