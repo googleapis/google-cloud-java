@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.18.6](https://github.com/googleapis/java-datastore/compare/v2.18.5...v2.18.6) (2024-03-18)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.37.0 ([#1355](https://github.com/googleapis/java-datastore/issues/1355)) ([bcc5668](https://github.com/googleapis/java-datastore/commit/bcc5668039d4dd2055e9666a65fcda3984fc33b5))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.28.0 ([#1372](https://github.com/googleapis/java-datastore/issues/1372)) ([09db2a7](https://github.com/googleapis/java-datastore/commit/09db2a75fa714a909bc6fa9b43a9213ae6467c84))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 ([#1373](https://github.com/googleapis/java-datastore/issues/1373)) ([c6e63e5](https://github.com/googleapis/java-datastore/commit/c6e63e5f876fdda953935d09f0536a90a98a812c))
+* Update dependency com.google.errorprone:error_prone_core to v2.26.0 ([#1361](https://github.com/googleapis/java-datastore/issues/1361)) ([9442766](https://github.com/googleapis/java-datastore/commit/9442766ad61b0c1001d36ecfc0668308838b4a83))
+* Update dependency com.google.errorprone:error_prone_core to v2.26.1 ([#1363](https://github.com/googleapis/java-datastore/issues/1363)) ([05fe5bc](https://github.com/googleapis/java-datastore/commit/05fe5bccf97dae92c00f2eead98424771cb321fd))
+* Update dependency com.google.guava:guava-testlib to v33.1.0-jre ([#1368](https://github.com/googleapis/java-datastore/issues/1368)) ([0195345](https://github.com/googleapis/java-datastore/commit/0195345630f404bbcaf1601ded8a8e2011fc3e6e))
+
 ## [2.18.5](https://github.com/googleapis/java-datastore/compare/v2.18.4...v2.18.5) (2024-03-04)
 
 
