@@ -17,7 +17,6 @@
 package com.google.cloud.vertexai.generativeai;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.vertexai.Transport;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.CountTokensRequest;
@@ -289,11 +288,7 @@ public class GenerativeModel {
   @BetaApi
   private CountTokensResponse countTokensFromRequest(CountTokensRequest request)
       throws IOException {
-    if (vertexAi.getTransport() == Transport.REST) {
-      return vertexAi.getLlmUtilityRestClient().countTokens(request);
-    } else {
-      return vertexAi.getLlmUtilityClient().countTokens(request);
-    }
+    return vertexAi.getLlmUtilityClient().countTokens(request);
   }
 
   /**
@@ -520,11 +515,7 @@ public class GenerativeModel {
    */
   private GenerateContentResponse generateContent(GenerateContentRequest request)
       throws IOException {
-    if (vertexAi.getTransport() == Transport.REST) {
-      return vertexAi.getPredictionServiceRestClient().generateContentCallable().call(request);
-    } else {
-      return vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
-    }
+    return vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
   }
 
   /**
@@ -932,23 +923,13 @@ public class GenerativeModel {
    */
   private ResponseStream<GenerateContentResponse> generateContentStream(
       GenerateContentRequest request) throws IOException {
-    if (vertexAi.getTransport() == Transport.REST) {
-      return new ResponseStream(
-          new ResponseStreamIteratorWithHistory(
-              vertexAi
-                  .getPredictionServiceRestClient()
-                  .streamGenerateContentCallable()
-                  .call(request)
-                  .iterator()));
-    } else {
-      return new ResponseStream(
-          new ResponseStreamIteratorWithHistory(
-              vertexAi
-                  .getPredictionServiceClient()
-                  .streamGenerateContentCallable()
-                  .call(request)
-                  .iterator()));
-    }
+    return new ResponseStream(
+        new ResponseStreamIteratorWithHistory(
+            vertexAi
+                .getPredictionServiceClient()
+                .streamGenerateContentCallable()
+                .call(request)
+                .iterator()));
   }
 
   /**
