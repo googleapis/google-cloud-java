@@ -26,7 +26,6 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.vertexai.Transport;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.CountTokensRequest;
@@ -35,15 +34,18 @@ import com.google.cloud.vertexai.api.FunctionDeclaration;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
+import com.google.cloud.vertexai.api.GoogleSearchRetrieval;
 import com.google.cloud.vertexai.api.HarmCategory;
 import com.google.cloud.vertexai.api.LlmUtilityServiceClient;
 import com.google.cloud.vertexai.api.Part;
 import com.google.cloud.vertexai.api.PredictionServiceClient;
+import com.google.cloud.vertexai.api.Retrieval;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.SafetySetting.HarmBlockThreshold;
 import com.google.cloud.vertexai.api.Schema;
 import com.google.cloud.vertexai.api.Tool;
 import com.google.cloud.vertexai.api.Type;
+import com.google.cloud.vertexai.api.VertexAISearch;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -96,6 +98,22 @@ public final class GenerativeModelTest {
                                   .build())
                           .addRequired("location")))
           .build();
+  private static final Tool GOOGLE_SEARCH_TOOL =
+      Tool.newBuilder()
+          .setGoogleSearchRetrieval(GoogleSearchRetrieval.newBuilder().setDisableAttribution(false))
+          .build();
+  private static final Tool VERTEX_AI_SEARCH_TOOL =
+      Tool.newBuilder()
+          .setRetrieval(
+              Retrieval.newBuilder()
+                  .setVertexAiSearch(
+                      VertexAISearch.newBuilder()
+                          .setDatastore(
+                              String.format(
+                                  "projects/%s/locations/%s/collections/%s/dataStores/%s",
+                                  PROJECT, "global", "default_collection", "test_123")))
+                  .setDisableAttribution(false))
+          .build();
 
   private static final String TEXT = "What is your name?";
 
@@ -103,7 +121,7 @@ public final class GenerativeModelTest {
   private GenerativeModel model;
   private List<SafetySetting> safetySettings = Arrays.asList(SAFETY_SETTING);
   private List<SafetySetting> defaultSafetySettings = Arrays.asList(DEFAULT_SAFETY_SETTING);
-  private List<Tool> tools = Arrays.asList(TOOL);
+  private List<Tool> tools = Arrays.asList(TOOL, GOOGLE_SEARCH_TOOL, VERTEX_AI_SEARCH_TOOL);
 
   @Rule public final MockitoRule mocksRule = MockitoJUnit.rule();
 
@@ -169,7 +187,6 @@ public final class GenerativeModelTest {
     assertThat(model.getGenerationConfig()).isNull();
     assertThat(model.getSafetySettings()).isNull();
     assertThat(model.getTools()).isNull();
-    assertThat(model.getTransport()).isEqualTo(Transport.GRPC);
   }
 
   @Test
@@ -181,13 +198,11 @@ public final class GenerativeModelTest {
             .setGenerationConfig(GENERATION_CONFIG)
             .setSafetySettings(safetySettings)
             .setTools(tools)
-            .setTransport(Transport.REST)
             .build();
     assertThat(model.getModelName()).isEqualTo(MODEL_NAME);
     assertThat(model.getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(model.getSafetySettings()).isEqualTo(safetySettings);
     assertThat(model.getTools()).isEqualTo(tools);
-    assertThat(model.getTransport()).isEqualTo(Transport.REST);
   }
 
   @Test

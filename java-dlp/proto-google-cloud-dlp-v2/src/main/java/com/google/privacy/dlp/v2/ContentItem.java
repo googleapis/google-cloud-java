@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.privacy.dlp.v2;
 
-/** Protobuf type {@code google.privacy.dlp.v2.ContentItem} */
+/**
+ *
+ *
+ * <pre>
+ * Type of content to inspect.
+ * </pre>
+ *
+ * Protobuf type {@code google.privacy.dlp.v2.ContentItem}
+ */
 public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ContentItem)
@@ -181,8 +189,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-   * learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -198,8 +206,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-   * learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -218,8 +226,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-   * learn more.
+   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * to learn more.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -483,7 +491,15 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.privacy.dlp.v2.ContentItem} */
+  /**
+   *
+   *
+   * <pre>
+   * Type of content to inspect.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.ContentItem}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.ContentItem)
@@ -862,8 +878,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -879,8 +895,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -906,8 +922,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -930,8 +946,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -951,8 +967,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -985,8 +1001,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -1012,8 +1028,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -1026,8 +1042,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>
@@ -1048,8 +1064,8 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
-     * learn more.
+     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * to learn more.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Table table = 4;</code>

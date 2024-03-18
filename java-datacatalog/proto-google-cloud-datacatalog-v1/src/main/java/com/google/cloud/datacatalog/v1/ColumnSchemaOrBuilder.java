@@ -325,6 +325,63 @@ public interface ColumnSchemaOrBuilder
    *
    *
    * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the rangeElementType field is set.
+   */
+  boolean hasRangeElementType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rangeElementType.
+   */
+  com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType getRangeElementType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The subtype of the RANGE, if the type of this field is RANGE. If
+   * the type is RANGE, this field is required. Possible values for the field
+   * element type of a RANGE include:
+   * * DATE
+   * * DATETIME
+   * * TIMESTAMP
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datacatalog.v1.ColumnSchema.FieldElementType range_element_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementTypeOrBuilder
+      getRangeElementTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Garbage collection policy for the column or column family.
    * Applies to systems like Cloud Bigtable.
    * </pre>

@@ -270,6 +270,115 @@ public final class DataStoreServiceGrpc {
     return getUpdateDataStoreMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest,
+          com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+      getGetDocumentProcessingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDocumentProcessingConfig",
+      requestType =
+          com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest,
+          com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+      getGetDocumentProcessingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest,
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+        getGetDocumentProcessingConfigMethod;
+    if ((getGetDocumentProcessingConfigMethod =
+            DataStoreServiceGrpc.getGetDocumentProcessingConfigMethod)
+        == null) {
+      synchronized (DataStoreServiceGrpc.class) {
+        if ((getGetDocumentProcessingConfigMethod =
+                DataStoreServiceGrpc.getGetDocumentProcessingConfigMethod)
+            == null) {
+          DataStoreServiceGrpc.getGetDocumentProcessingConfigMethod =
+              getGetDocumentProcessingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest,
+                          com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDocumentProcessingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha
+                                  .GetDocumentProcessingConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataStoreServiceMethodDescriptorSupplier(
+                              "GetDocumentProcessingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetDocumentProcessingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest,
+          com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+      getUpdateDocumentProcessingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDocumentProcessingConfig",
+      requestType =
+          com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest,
+          com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+      getUpdateDocumentProcessingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest,
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+        getUpdateDocumentProcessingConfigMethod;
+    if ((getUpdateDocumentProcessingConfigMethod =
+            DataStoreServiceGrpc.getUpdateDocumentProcessingConfigMethod)
+        == null) {
+      synchronized (DataStoreServiceGrpc.class) {
+        if ((getUpdateDocumentProcessingConfigMethod =
+                DataStoreServiceGrpc.getUpdateDocumentProcessingConfigMethod)
+            == null) {
+          DataStoreServiceGrpc.getUpdateDocumentProcessingConfigMethod =
+              getUpdateDocumentProcessingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1alpha
+                              .UpdateDocumentProcessingConfigRequest,
+                          com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDocumentProcessingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha
+                                  .UpdateDocumentProcessingConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataStoreServiceMethodDescriptorSupplier(
+                              "UpdateDocumentProcessingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDocumentProcessingConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataStoreServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataStoreServiceStub> factory =
@@ -399,6 +508,46 @@ public final class DataStoreServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateDataStoreMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    default void getDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDocumentProcessingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]
+     * is a singleon resource of
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty
+     * when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is
+     * created. The first call to this method will set up
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    default void updateDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDocumentProcessingConfigMethod(), responseObserver);
+    }
   }
 
   /**
@@ -525,6 +674,50 @@ public final class DataStoreServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    public void getDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDocumentProcessingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]
+     * is a singleon resource of
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty
+     * when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is
+     * created. The first call to this method will set up
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    public void updateDocumentProcessingConfig(
+        com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDocumentProcessingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -616,6 +809,43 @@ public final class DataStoreServiceGrpc {
         com.google.cloud.discoveryengine.v1alpha.UpdateDataStoreRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDataStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+        getDocumentProcessingConfig(
+            com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDocumentProcessingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]
+     * is a singleon resource of
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty
+     * when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is
+     * created. The first call to this method will set up
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig
+        updateDocumentProcessingConfig(
+            com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDocumentProcessingConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -712,6 +942,46 @@ public final class DataStoreServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDataStoreMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+        getDocumentProcessingConfig(
+            com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDocumentProcessingConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig]
+     * is a singleon resource of
+     * [DataStore][google.cloud.discoveryengine.v1alpha.DataStore]. It's empty
+     * when [DataStore][google.cloud.discoveryengine.v1alpha.DataStore] is
+     * created. The first call to this method will set up
+     * [DocumentProcessingConfig][google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>
+        updateDocumentProcessingConfig(
+            com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDocumentProcessingConfigMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_CREATE_DATA_STORE = 0;
@@ -719,6 +989,8 @@ public final class DataStoreServiceGrpc {
   private static final int METHODID_LIST_DATA_STORES = 2;
   private static final int METHODID_DELETE_DATA_STORE = 3;
   private static final int METHODID_UPDATE_DATA_STORE = 4;
+  private static final int METHODID_GET_DOCUMENT_PROCESSING_CONFIG = 5;
+  private static final int METHODID_UPDATE_DOCUMENT_PROCESSING_CONFIG = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -764,6 +1036,21 @@ public final class DataStoreServiceGrpc {
           serviceImpl.updateDataStore(
               (com.google.cloud.discoveryengine.v1alpha.UpdateDataStoreRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1alpha.DataStore>)
+                  responseObserver);
+          break;
+        case METHODID_GET_DOCUMENT_PROCESSING_CONFIG:
+          serviceImpl.getDocumentProcessingConfig(
+              (com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_DOCUMENT_PROCESSING_CONFIG:
+          serviceImpl.updateDocumentProcessingConfig(
+              (com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>)
                   responseObserver);
           break;
         default:
@@ -817,6 +1104,20 @@ public final class DataStoreServiceGrpc {
                     com.google.cloud.discoveryengine.v1alpha.UpdateDataStoreRequest,
                     com.google.cloud.discoveryengine.v1alpha.DataStore>(
                     service, METHODID_UPDATE_DATA_STORE)))
+        .addMethod(
+            getGetDocumentProcessingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1alpha.GetDocumentProcessingConfigRequest,
+                    com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>(
+                    service, METHODID_GET_DOCUMENT_PROCESSING_CONFIG)))
+        .addMethod(
+            getUpdateDocumentProcessingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1alpha.UpdateDocumentProcessingConfigRequest,
+                    com.google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig>(
+                    service, METHODID_UPDATE_DOCUMENT_PROCESSING_CONFIG)))
         .build();
   }
 
@@ -873,6 +1174,8 @@ public final class DataStoreServiceGrpc {
                       .addMethod(getListDataStoresMethod())
                       .addMethod(getDeleteDataStoreMethod())
                       .addMethod(getUpdateDataStoreMethod())
+                      .addMethod(getGetDocumentProcessingConfigMethod())
+                      .addMethod(getUpdateDocumentProcessingConfigMethod())
                       .build();
         }
       }

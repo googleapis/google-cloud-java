@@ -41,6 +41,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
   private AbortInfo() {
     cause_ = 0;
     resourceUri_ = "";
+    ipAddress_ = "";
     projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
@@ -89,21 +90,104 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted due to unknown network.
-     * The reachability analysis cannot proceed because the user does not have
-     * access to the host project's network configurations, including firewall
-     * rules and routes. This happens when the project is a service project and
-     * the endpoints being traced are in the host project's network.
+     * Aborted due to unknown network. Deprecated, not used in the new tests.
      * </pre>
      *
-     * <code>UNKNOWN_NETWORK = 1;</code>
+     * <code>UNKNOWN_NETWORK = 1 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     UNKNOWN_NETWORK(1),
     /**
      *
      *
      * <pre>
-     * Aborted because the IP address(es) are unknown.
+     * Aborted because no project information can be derived from the test
+     * input. Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>UNKNOWN_PROJECT = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    UNKNOWN_PROJECT(3),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because traffic is sent from a public IP to an instance without
+     * an external IP. Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>NO_EXTERNAL_IP = 7 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    NO_EXTERNAL_IP(7),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because none of the traces matches destination information
+     * specified in the input test request. Deprecated, not used in the new
+     * tests.
+     * </pre>
+     *
+     * <code>UNINTENDED_DESTINATION = 8 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    UNINTENDED_DESTINATION(8),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source endpoint could not be found. Deprecated, not
+     * used in the new tests.
+     * </pre>
+     *
+     * <code>SOURCE_ENDPOINT_NOT_FOUND = 11 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    SOURCE_ENDPOINT_NOT_FOUND(11),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source network does not match the source endpoint.
+     * Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>MISMATCHED_SOURCE_NETWORK = 12 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    MISMATCHED_SOURCE_NETWORK(12),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the destination endpoint could not be found. Deprecated,
+     * not used in the new tests.
+     * </pre>
+     *
+     * <code>DESTINATION_ENDPOINT_NOT_FOUND = 13 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    DESTINATION_ENDPOINT_NOT_FOUND(13),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the destination network does not match the destination
+     * endpoint. Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>MISMATCHED_DESTINATION_NETWORK = 14 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    MISMATCHED_DESTINATION_NETWORK(14),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because no endpoint with the packet's destination IP address is
+     * found.
      * </pre>
      *
      * <code>UNKNOWN_IP = 2;</code>
@@ -113,19 +197,19 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because no project information can be derived from the test
-     * input.
+     * Aborted because the source IP address doesn't belong to any of the
+     * subnets of the source VPC network.
      * </pre>
      *
-     * <code>UNKNOWN_PROJECT = 3;</code>
+     * <code>SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK = 23;</code>
      */
-    UNKNOWN_PROJECT(3),
+    SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK(23),
     /**
      *
      *
      * <pre>
-     * Aborted because the user lacks the permission to access all or part of
-     * the network configurations required to run the test.
+     * Aborted because user lacks permission to access all or part of the
+     * network configurations required to run the test.
      * </pre>
      *
      * <code>PERMISSION_DENIED = 4;</code>
@@ -135,8 +219,30 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because no valid source endpoint is derived from the input test
-     * request.
+     * Aborted because user lacks permission to access Cloud NAT configs
+     * required to run the test.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS = 28;</code>
+     */
+    PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS(28),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because user lacks permission to access Network endpoint group
+     * endpoint configs required to run the test.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS = 29;</code>
+     */
+    PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS(29),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because no valid source or destination endpoint is derived from
+     * the input test request.
      * </pre>
      *
      * <code>NO_SOURCE_LOCATION = 5;</code>
@@ -146,11 +252,13 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because the source and/or destination endpoint specified in
-     * the test are invalid. The possible reasons that an endpoint is
-     * invalid include: malformed IP address; nonexistent instance or
-     * network URI; IP address not in the range of specified network URI; and
-     * instance not owning the network interface in the specified network.
+     * Aborted because the source or destination endpoint specified in
+     * the request is invalid. Some examples:
+     * - The request might contain malformed resource URI, project ID, or IP
+     * address.
+     * - The request might contain inconsistent information (for example, the
+     * request might include both the instance and the network, but the instance
+     * might not have a NIC in that network).
      * </pre>
      *
      * <code>INVALID_ARGUMENT = 6;</code>
@@ -160,30 +268,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because traffic is sent from a public IP to an instance without
-     * an external IP.
-     * </pre>
-     *
-     * <code>NO_EXTERNAL_IP = 7;</code>
-     */
-    NO_EXTERNAL_IP(7),
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because none of the traces matches destination information
-     * specified in the input test request.
-     * </pre>
-     *
-     * <code>UNINTENDED_DESTINATION = 8;</code>
-     */
-    UNINTENDED_DESTINATION(8),
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the number of steps in the trace exceeding a certain
-     * limit which may be caused by routing loop.
+     * Aborted because the number of steps in the trace exceeds a certain
+     * limit. It might be caused by a routing loop.
      * </pre>
      *
      * <code>TRACE_TOO_LONG = 9;</code>
@@ -199,47 +285,6 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERNAL_ERROR = 10;</code>
      */
     INTERNAL_ERROR(10),
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the source endpoint could not be found.
-     * </pre>
-     *
-     * <code>SOURCE_ENDPOINT_NOT_FOUND = 11;</code>
-     */
-    SOURCE_ENDPOINT_NOT_FOUND(11),
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the source network does not match the source endpoint.
-     * </pre>
-     *
-     * <code>MISMATCHED_SOURCE_NETWORK = 12;</code>
-     */
-    MISMATCHED_SOURCE_NETWORK(12),
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the destination endpoint could not be found.
-     * </pre>
-     *
-     * <code>DESTINATION_ENDPOINT_NOT_FOUND = 13;</code>
-     */
-    DESTINATION_ENDPOINT_NOT_FOUND(13),
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the destination network does not match the destination
-     * endpoint.
-     * </pre>
-     *
-     * <code>MISMATCHED_DESTINATION_NETWORK = 14;</code>
-     */
-    MISMATCHED_DESTINATION_NETWORK(14),
     /**
      *
      *
@@ -287,6 +332,46 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Aborted because expected VM instance configuration was missing.
+     * </pre>
+     *
+     * <code>VM_INSTANCE_CONFIG_NOT_FOUND = 24;</code>
+     */
+    VM_INSTANCE_CONFIG_NOT_FOUND(24),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected network configuration was missing.
+     * </pre>
+     *
+     * <code>NETWORK_CONFIG_NOT_FOUND = 25;</code>
+     */
+    NETWORK_CONFIG_NOT_FOUND(25),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected firewall configuration was missing.
+     * </pre>
+     *
+     * <code>FIREWALL_CONFIG_NOT_FOUND = 26;</code>
+     */
+    FIREWALL_CONFIG_NOT_FOUND(26),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected route configuration was missing.
+     * </pre>
+     *
+     * <code>ROUTE_CONFIG_NOT_FOUND = 27;</code>
+     */
+    ROUTE_CONFIG_NOT_FOUND(27),
+    /**
+     *
+     *
+     * <pre>
      * Aborted because a PSC endpoint selection for the Google-managed service
      * is ambiguous (several PSC endpoints satisfy test input).
      * </pre>
@@ -316,6 +401,38 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_FORWARDING_RULE_UNSUPPORTED = 21;</code>
      */
     SOURCE_FORWARDING_RULE_UNSUPPORTED(21),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because one of the endpoints is a non-routable IP address
+     * (loopback, link-local, etc).
+     * </pre>
+     *
+     * <code>NON_ROUTABLE_IP_ADDRESS = 22;</code>
+     */
+    NON_ROUTABLE_IP_ADDRESS(22),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted due to an unknown issue in the Google-managed project.
+     * </pre>
+     *
+     * <code>UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT = 30;</code>
+     */
+    UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT(30),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted due to an unsupported configuration of the Google-managed
+     * project.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG = 31;</code>
+     */
+    UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG(31),
     UNRECOGNIZED(-1),
     ;
 
@@ -333,21 +450,96 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted due to unknown network.
-     * The reachability analysis cannot proceed because the user does not have
-     * access to the host project's network configurations, including firewall
-     * rules and routes. This happens when the project is a service project and
-     * the endpoints being traced are in the host project's network.
+     * Aborted due to unknown network. Deprecated, not used in the new tests.
      * </pre>
      *
-     * <code>UNKNOWN_NETWORK = 1;</code>
+     * <code>UNKNOWN_NETWORK = 1 [deprecated = true];</code>
      */
-    public static final int UNKNOWN_NETWORK_VALUE = 1;
+    @java.lang.Deprecated public static final int UNKNOWN_NETWORK_VALUE = 1;
     /**
      *
      *
      * <pre>
-     * Aborted because the IP address(es) are unknown.
+     * Aborted because no project information can be derived from the test
+     * input. Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>UNKNOWN_PROJECT = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int UNKNOWN_PROJECT_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because traffic is sent from a public IP to an instance without
+     * an external IP. Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>NO_EXTERNAL_IP = 7 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int NO_EXTERNAL_IP_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because none of the traces matches destination information
+     * specified in the input test request. Deprecated, not used in the new
+     * tests.
+     * </pre>
+     *
+     * <code>UNINTENDED_DESTINATION = 8 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int UNINTENDED_DESTINATION_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source endpoint could not be found. Deprecated, not
+     * used in the new tests.
+     * </pre>
+     *
+     * <code>SOURCE_ENDPOINT_NOT_FOUND = 11 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int SOURCE_ENDPOINT_NOT_FOUND_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source network does not match the source endpoint.
+     * Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>MISMATCHED_SOURCE_NETWORK = 12 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int MISMATCHED_SOURCE_NETWORK_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the destination endpoint could not be found. Deprecated,
+     * not used in the new tests.
+     * </pre>
+     *
+     * <code>DESTINATION_ENDPOINT_NOT_FOUND = 13 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int DESTINATION_ENDPOINT_NOT_FOUND_VALUE = 13;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the destination network does not match the destination
+     * endpoint. Deprecated, not used in the new tests.
+     * </pre>
+     *
+     * <code>MISMATCHED_DESTINATION_NETWORK = 14 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int MISMATCHED_DESTINATION_NETWORK_VALUE = 14;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because no endpoint with the packet's destination IP address is
+     * found.
      * </pre>
      *
      * <code>UNKNOWN_IP = 2;</code>
@@ -357,19 +549,19 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because no project information can be derived from the test
-     * input.
+     * Aborted because the source IP address doesn't belong to any of the
+     * subnets of the source VPC network.
      * </pre>
      *
-     * <code>UNKNOWN_PROJECT = 3;</code>
+     * <code>SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK = 23;</code>
      */
-    public static final int UNKNOWN_PROJECT_VALUE = 3;
+    public static final int SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK_VALUE = 23;
     /**
      *
      *
      * <pre>
-     * Aborted because the user lacks the permission to access all or part of
-     * the network configurations required to run the test.
+     * Aborted because user lacks permission to access all or part of the
+     * network configurations required to run the test.
      * </pre>
      *
      * <code>PERMISSION_DENIED = 4;</code>
@@ -379,8 +571,30 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because no valid source endpoint is derived from the input test
-     * request.
+     * Aborted because user lacks permission to access Cloud NAT configs
+     * required to run the test.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS = 28;</code>
+     */
+    public static final int PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS_VALUE = 28;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because user lacks permission to access Network endpoint group
+     * endpoint configs required to run the test.
+     * </pre>
+     *
+     * <code>PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS = 29;</code>
+     */
+    public static final int PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because no valid source or destination endpoint is derived from
+     * the input test request.
      * </pre>
      *
      * <code>NO_SOURCE_LOCATION = 5;</code>
@@ -390,11 +604,13 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because the source and/or destination endpoint specified in
-     * the test are invalid. The possible reasons that an endpoint is
-     * invalid include: malformed IP address; nonexistent instance or
-     * network URI; IP address not in the range of specified network URI; and
-     * instance not owning the network interface in the specified network.
+     * Aborted because the source or destination endpoint specified in
+     * the request is invalid. Some examples:
+     * - The request might contain malformed resource URI, project ID, or IP
+     * address.
+     * - The request might contain inconsistent information (for example, the
+     * request might include both the instance and the network, but the instance
+     * might not have a NIC in that network).
      * </pre>
      *
      * <code>INVALID_ARGUMENT = 6;</code>
@@ -404,30 +620,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Aborted because traffic is sent from a public IP to an instance without
-     * an external IP.
-     * </pre>
-     *
-     * <code>NO_EXTERNAL_IP = 7;</code>
-     */
-    public static final int NO_EXTERNAL_IP_VALUE = 7;
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because none of the traces matches destination information
-     * specified in the input test request.
-     * </pre>
-     *
-     * <code>UNINTENDED_DESTINATION = 8;</code>
-     */
-    public static final int UNINTENDED_DESTINATION_VALUE = 8;
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the number of steps in the trace exceeding a certain
-     * limit which may be caused by routing loop.
+     * Aborted because the number of steps in the trace exceeds a certain
+     * limit. It might be caused by a routing loop.
      * </pre>
      *
      * <code>TRACE_TOO_LONG = 9;</code>
@@ -443,47 +637,6 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>INTERNAL_ERROR = 10;</code>
      */
     public static final int INTERNAL_ERROR_VALUE = 10;
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the source endpoint could not be found.
-     * </pre>
-     *
-     * <code>SOURCE_ENDPOINT_NOT_FOUND = 11;</code>
-     */
-    public static final int SOURCE_ENDPOINT_NOT_FOUND_VALUE = 11;
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the source network does not match the source endpoint.
-     * </pre>
-     *
-     * <code>MISMATCHED_SOURCE_NETWORK = 12;</code>
-     */
-    public static final int MISMATCHED_SOURCE_NETWORK_VALUE = 12;
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the destination endpoint could not be found.
-     * </pre>
-     *
-     * <code>DESTINATION_ENDPOINT_NOT_FOUND = 13;</code>
-     */
-    public static final int DESTINATION_ENDPOINT_NOT_FOUND_VALUE = 13;
-    /**
-     *
-     *
-     * <pre>
-     * Aborted because the destination network does not match the destination
-     * endpoint.
-     * </pre>
-     *
-     * <code>MISMATCHED_DESTINATION_NETWORK = 14;</code>
-     */
-    public static final int MISMATCHED_DESTINATION_NETWORK_VALUE = 14;
     /**
      *
      *
@@ -531,6 +684,46 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Aborted because expected VM instance configuration was missing.
+     * </pre>
+     *
+     * <code>VM_INSTANCE_CONFIG_NOT_FOUND = 24;</code>
+     */
+    public static final int VM_INSTANCE_CONFIG_NOT_FOUND_VALUE = 24;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected network configuration was missing.
+     * </pre>
+     *
+     * <code>NETWORK_CONFIG_NOT_FOUND = 25;</code>
+     */
+    public static final int NETWORK_CONFIG_NOT_FOUND_VALUE = 25;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected firewall configuration was missing.
+     * </pre>
+     *
+     * <code>FIREWALL_CONFIG_NOT_FOUND = 26;</code>
+     */
+    public static final int FIREWALL_CONFIG_NOT_FOUND_VALUE = 26;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected route configuration was missing.
+     * </pre>
+     *
+     * <code>ROUTE_CONFIG_NOT_FOUND = 27;</code>
+     */
+    public static final int ROUTE_CONFIG_NOT_FOUND_VALUE = 27;
+    /**
+     *
+     *
+     * <pre>
      * Aborted because a PSC endpoint selection for the Google-managed service
      * is ambiguous (several PSC endpoints satisfy test input).
      * </pre>
@@ -560,6 +753,38 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SOURCE_FORWARDING_RULE_UNSUPPORTED = 21;</code>
      */
     public static final int SOURCE_FORWARDING_RULE_UNSUPPORTED_VALUE = 21;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because one of the endpoints is a non-routable IP address
+     * (loopback, link-local, etc).
+     * </pre>
+     *
+     * <code>NON_ROUTABLE_IP_ADDRESS = 22;</code>
+     */
+    public static final int NON_ROUTABLE_IP_ADDRESS_VALUE = 22;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted due to an unknown issue in the Google-managed project.
+     * </pre>
+     *
+     * <code>UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT = 30;</code>
+     */
+    public static final int UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted due to an unsupported configuration of the Google-managed
+     * project.
+     * </pre>
+     *
+     * <code>UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG = 31;</code>
+     */
+    public static final int UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG_VALUE = 31;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -589,24 +814,12 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return CAUSE_UNSPECIFIED;
         case 1:
           return UNKNOWN_NETWORK;
-        case 2:
-          return UNKNOWN_IP;
         case 3:
           return UNKNOWN_PROJECT;
-        case 4:
-          return PERMISSION_DENIED;
-        case 5:
-          return NO_SOURCE_LOCATION;
-        case 6:
-          return INVALID_ARGUMENT;
         case 7:
           return NO_EXTERNAL_IP;
         case 8:
           return UNINTENDED_DESTINATION;
-        case 9:
-          return TRACE_TOO_LONG;
-        case 10:
-          return INTERNAL_ERROR;
         case 11:
           return SOURCE_ENDPOINT_NOT_FOUND;
         case 12:
@@ -615,6 +828,24 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return DESTINATION_ENDPOINT_NOT_FOUND;
         case 14:
           return MISMATCHED_DESTINATION_NETWORK;
+        case 2:
+          return UNKNOWN_IP;
+        case 23:
+          return SOURCE_IP_ADDRESS_NOT_IN_SOURCE_NETWORK;
+        case 4:
+          return PERMISSION_DENIED;
+        case 28:
+          return PERMISSION_DENIED_NO_CLOUD_NAT_CONFIGS;
+        case 29:
+          return PERMISSION_DENIED_NO_NEG_ENDPOINT_CONFIGS;
+        case 5:
+          return NO_SOURCE_LOCATION;
+        case 6:
+          return INVALID_ARGUMENT;
+        case 9:
+          return TRACE_TOO_LONG;
+        case 10:
+          return INTERNAL_ERROR;
         case 15:
           return UNSUPPORTED;
         case 16:
@@ -623,12 +854,26 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return GKE_KONNECTIVITY_PROXY_UNSUPPORTED;
         case 18:
           return RESOURCE_CONFIG_NOT_FOUND;
+        case 24:
+          return VM_INSTANCE_CONFIG_NOT_FOUND;
+        case 25:
+          return NETWORK_CONFIG_NOT_FOUND;
+        case 26:
+          return FIREWALL_CONFIG_NOT_FOUND;
+        case 27:
+          return ROUTE_CONFIG_NOT_FOUND;
         case 19:
           return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT;
         case 20:
           return SOURCE_PSC_CLOUD_SQL_UNSUPPORTED;
         case 21:
           return SOURCE_FORWARDING_RULE_UNSUPPORTED;
+        case 22:
+          return NON_ROUTABLE_IP_ADDRESS;
+        case 30:
+          return UNKNOWN_ISSUE_IN_GOOGLE_MANAGED_PROJECT;
+        case 31:
+          return UNSUPPORTED_GOOGLE_MANAGED_PROJECT_CONFIG;
         default:
           return null;
       }
@@ -772,6 +1017,57 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IP_ADDRESS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * IP address that caused the abort.
+   * </pre>
+   *
+   * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The ipAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getIpAddress() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * IP address that caused the abort.
+   * </pre>
+   *
+   * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpAddressBytes() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PROJECTS_MISSING_PERMISSION_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -781,9 +1077,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>
@@ -797,9 +1092,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>
@@ -813,9 +1107,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>
@@ -830,9 +1123,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of project IDs that the user has specified in the request but does
-   * not have permission to access network configs. Analysis is aborted in this
-   * case with the PERMISSION_DENIED cause.
+   * List of project IDs the user specified in the request but lacks access to.
+   * In this case, analysis is aborted with the PERMISSION_DENIED cause.
    * </pre>
    *
    * <code>repeated string projects_missing_permission = 3;</code>
@@ -870,6 +1162,9 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 3, projectsMissingPermission_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, ipAddress_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -895,6 +1190,9 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getProjectsMissingPermissionList().size();
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, ipAddress_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -913,6 +1211,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
 
     if (cause_ != other.cause_) return false;
     if (!getResourceUri().equals(other.getResourceUri())) return false;
+    if (!getIpAddress().equals(other.getIpAddress())) return false;
     if (!getProjectsMissingPermissionList().equals(other.getProjectsMissingPermissionList()))
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -930,6 +1229,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + cause_;
     hash = (37 * hash) + RESOURCE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getResourceUri().hashCode();
+    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getIpAddress().hashCode();
     if (getProjectsMissingPermissionCount() > 0) {
       hash = (37 * hash) + PROJECTS_MISSING_PERMISSION_FIELD_NUMBER;
       hash = (53 * hash) + getProjectsMissingPermissionList().hashCode();
@@ -1075,6 +1376,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       cause_ = 0;
       resourceUri_ = "";
+      ipAddress_ = "";
       projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
@@ -1119,6 +1421,9 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         result.resourceUri_ = resourceUri_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         projectsMissingPermission_.makeImmutable();
         result.projectsMissingPermission_ = projectsMissingPermission_;
       }
@@ -1178,10 +1483,15 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getIpAddress().isEmpty()) {
+        ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.projectsMissingPermission_.isEmpty()) {
         if (projectsMissingPermission_.isEmpty()) {
           projectsMissingPermission_ = other.projectsMissingPermission_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         } else {
           ensureProjectsMissingPermissionIsMutable();
           projectsMissingPermission_.addAll(other.projectsMissingPermission_);
@@ -1233,6 +1543,12 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
                 projectsMissingPermission_.add(s);
                 break;
               } // case 26
+            case 34:
+              {
+                ipAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1450,6 +1766,112 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object ipAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * IP address that caused the abort.
+     * </pre>
+     *
+     * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+     *
+     * @return The ipAddress.
+     */
+    public java.lang.String getIpAddress() {
+      java.lang.Object ref = ipAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that caused the abort.
+     * </pre>
+     *
+     * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+     *
+     * @return The bytes for ipAddress.
+     */
+    public com.google.protobuf.ByteString getIpAddressBytes() {
+      java.lang.Object ref = ipAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that caused the abort.
+     * </pre>
+     *
+     * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+     *
+     * @param value The ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipAddress_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that caused the abort.
+     * </pre>
+     *
+     * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpAddress() {
+      ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * IP address that caused the abort.
+     * </pre>
+     *
+     * <code>string ip_address = 4 [(.google.api.field_info) = { ... }</code>
+     *
+     * @param value The bytes for ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipAddress_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList projectsMissingPermission_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1458,15 +1880,14 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
         projectsMissingPermission_ =
             new com.google.protobuf.LazyStringArrayList(projectsMissingPermission_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
     }
     /**
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1481,9 +1902,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1497,9 +1917,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1514,9 +1933,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1531,9 +1949,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1548,7 +1965,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1556,9 +1973,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1572,7 +1988,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1580,9 +1996,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1593,7 +2008,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllProjectsMissingPermission(java.lang.Iterable<java.lang.String> values) {
       ensureProjectsMissingPermissionIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projectsMissingPermission_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1601,9 +2016,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1612,7 +2026,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProjectsMissingPermission() {
       projectsMissingPermission_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       ;
       onChanged();
       return this;
@@ -1621,9 +2035,8 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of project IDs that the user has specified in the request but does
-     * not have permission to access network configs. Analysis is aborted in this
-     * case with the PERMISSION_DENIED cause.
+     * List of project IDs the user specified in the request but lacks access to.
+     * In this case, analysis is aborted with the PERMISSION_DENIED cause.
      * </pre>
      *
      * <code>repeated string projects_missing_permission = 3;</code>
@@ -1638,7 +2051,7 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureProjectsMissingPermissionIsMutable();
       projectsMissingPermission_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

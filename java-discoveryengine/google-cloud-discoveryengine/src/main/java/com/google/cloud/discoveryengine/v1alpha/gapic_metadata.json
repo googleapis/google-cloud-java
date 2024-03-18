@@ -5,6 +5,36 @@
   "protoPackage": "google.cloud.discoveryengine.v1alpha",
   "libraryPackage": "com.google.cloud.discoveryengine.v1alpha",
   "services": {
+    "AclConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AclConfigServiceClient",
+          "rpcs": {
+            "GetAclConfig": {
+              "methods": ["getAclConfig", "getAclConfig", "getAclConfig", "getAclConfigCallable"]
+            },
+            "UpdateAclConfig": {
+              "methods": ["updateAclConfig", "updateAclConfigCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ChunkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ChunkServiceClient",
+          "rpcs": {
+            "GetChunk": {
+              "methods": ["getChunk", "getChunk", "getChunk", "getChunkCallable"]
+            },
+            "ListChunks": {
+              "methods": ["listChunks", "listChunks", "listChunks", "listChunksPagedCallable", "listChunksCallable"]
+            }
+          }
+        }
+      }
+    },
     "CompletionService": {
       "clients": {
         "grpc": {
@@ -12,6 +42,12 @@
           "rpcs": {
             "CompleteQuery": {
               "methods": ["completeQuery", "completeQueryCallable"]
+            },
+            "ImportSuggestionDenyListEntries": {
+              "methods": ["importSuggestionDenyListEntriesAsync", "importSuggestionDenyListEntriesOperationCallable", "importSuggestionDenyListEntriesCallable"]
+            },
+            "PurgeSuggestionDenyListEntries": {
+              "methods": ["purgeSuggestionDenyListEntriesAsync", "purgeSuggestionDenyListEntriesOperationCallable", "purgeSuggestionDenyListEntriesCallable"]
             }
           }
         }
@@ -58,11 +94,17 @@
             "GetDataStore": {
               "methods": ["getDataStore", "getDataStore", "getDataStore", "getDataStoreCallable"]
             },
+            "GetDocumentProcessingConfig": {
+              "methods": ["getDocumentProcessingConfig", "getDocumentProcessingConfig", "getDocumentProcessingConfig", "getDocumentProcessingConfigCallable"]
+            },
             "ListDataStores": {
               "methods": ["listDataStores", "listDataStores", "listDataStores", "listDataStoresPagedCallable", "listDataStoresCallable"]
             },
             "UpdateDataStore": {
               "methods": ["updateDataStore", "updateDataStore", "updateDataStoreCallable"]
+            },
+            "UpdateDocumentProcessingConfig": {
+              "methods": ["updateDocumentProcessingConfig", "updateDocumentProcessingConfig", "updateDocumentProcessingConfigCallable"]
             }
           }
         }
@@ -92,7 +134,7 @@
               "methods": ["purgeDocumentsAsync", "purgeDocumentsOperationCallable", "purgeDocumentsCallable"]
             },
             "UpdateDocument": {
-              "methods": ["updateDocument", "updateDocumentCallable"]
+              "methods": ["updateDocument", "updateDocument", "updateDocumentCallable"]
             }
           }
         }
@@ -126,6 +168,18 @@
             },
             "UpdateEngine": {
               "methods": ["updateEngine", "updateEngine", "updateEngineCallable"]
+            }
+          }
+        }
+      }
+    },
+    "EstimateBillingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "EstimateBillingServiceClient",
+          "rpcs": {
+            "EstimateDataSize": {
+              "methods": ["estimateDataSizeAsync", "estimateDataSizeOperationCallable", "estimateDataSizeCallable"]
             }
           }
         }
@@ -186,6 +240,24 @@
           "rpcs": {
             "TrainCustomModel": {
               "methods": ["trainCustomModelAsync", "trainCustomModelOperationCallable", "trainCustomModelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServingConfigService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServingConfigServiceClient",
+          "rpcs": {
+            "GetServingConfig": {
+              "methods": ["getServingConfig", "getServingConfig", "getServingConfig", "getServingConfigCallable"]
+            },
+            "ListServingConfigs": {
+              "methods": ["listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigs", "listServingConfigsPagedCallable", "listServingConfigsCallable"]
+            },
+            "UpdateServingConfig": {
+              "methods": ["updateServingConfig", "updateServingConfig", "updateServingConfigCallable"]
             }
           }
         }

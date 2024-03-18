@@ -108,7 +108,7 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Site exempt from verification, e.g. a public website that opens to all.
+     * Site exempt from verification, e.g., a public website that opens to all.
      * </pre>
      *
      * <code>EXEMPTED = 3;</code>
@@ -151,7 +151,7 @@ public final class SiteVerificationInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Site exempt from verification, e.g. a public website that opens to all.
+     * Site exempt from verification, e.g., a public website that opens to all.
      * </pre>
      *
      * <code>EXEMPTED = 3;</code>

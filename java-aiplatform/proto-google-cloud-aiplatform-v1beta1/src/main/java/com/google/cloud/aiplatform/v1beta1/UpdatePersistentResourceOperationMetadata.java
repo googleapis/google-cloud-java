@@ -40,7 +40,9 @@ public final class UpdatePersistentResourceOperationMetadata
     super(builder);
   }
 
-  private UpdatePersistentResourceOperationMetadata() {}
+  private UpdatePersistentResourceOperationMetadata() {
+    progressMessage_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -116,6 +118,57 @@ public final class UpdatePersistentResourceOperationMetadata
         : genericMetadata_;
   }
 
+  public static final int PROGRESS_MESSAGE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object progressMessage_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Progress Message for Update LRO
+   * </pre>
+   *
+   * <code>string progress_message = 2;</code>
+   *
+   * @return The progressMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getProgressMessage() {
+    java.lang.Object ref = progressMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      progressMessage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Progress Message for Update LRO
+   * </pre>
+   *
+   * <code>string progress_message = 2;</code>
+   *
+   * @return The bytes for progressMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getProgressMessageBytes() {
+    java.lang.Object ref = progressMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      progressMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -133,6 +186,9 @@ public final class UpdatePersistentResourceOperationMetadata
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getGenericMetadata());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(progressMessage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, progressMessage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -144,6 +200,9 @@ public final class UpdatePersistentResourceOperationMetadata
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getGenericMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(progressMessage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, progressMessage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,6 +225,7 @@ public final class UpdatePersistentResourceOperationMetadata
     if (hasGenericMetadata()) {
       if (!getGenericMetadata().equals(other.getGenericMetadata())) return false;
     }
+    if (!getProgressMessage().equals(other.getProgressMessage())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -181,6 +241,8 @@ public final class UpdatePersistentResourceOperationMetadata
       hash = (37 * hash) + GENERIC_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getGenericMetadata().hashCode();
     }
+    hash = (37 * hash) + PROGRESS_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getProgressMessage().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,6 +405,7 @@ public final class UpdatePersistentResourceOperationMetadata
         genericMetadataBuilder_.dispose();
         genericMetadataBuilder_ = null;
       }
+      progressMessage_ = "";
       return this;
     }
 
@@ -389,6 +452,9 @@ public final class UpdatePersistentResourceOperationMetadata
         result.genericMetadata_ =
             genericMetadataBuilder_ == null ? genericMetadata_ : genericMetadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.progressMessage_ = progressMessage_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -447,6 +513,11 @@ public final class UpdatePersistentResourceOperationMetadata
       if (other.hasGenericMetadata()) {
         mergeGenericMetadata(other.getGenericMetadata());
       }
+      if (!other.getProgressMessage().isEmpty()) {
+        progressMessage_ = other.progressMessage_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -479,6 +550,12 @@ public final class UpdatePersistentResourceOperationMetadata
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                progressMessage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -688,6 +765,112 @@ public final class UpdatePersistentResourceOperationMetadata
         genericMetadata_ = null;
       }
       return genericMetadataBuilder_;
+    }
+
+    private java.lang.Object progressMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Progress Message for Update LRO
+     * </pre>
+     *
+     * <code>string progress_message = 2;</code>
+     *
+     * @return The progressMessage.
+     */
+    public java.lang.String getProgressMessage() {
+      java.lang.Object ref = progressMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        progressMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Progress Message for Update LRO
+     * </pre>
+     *
+     * <code>string progress_message = 2;</code>
+     *
+     * @return The bytes for progressMessage.
+     */
+    public com.google.protobuf.ByteString getProgressMessageBytes() {
+      java.lang.Object ref = progressMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        progressMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Progress Message for Update LRO
+     * </pre>
+     *
+     * <code>string progress_message = 2;</code>
+     *
+     * @param value The progressMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProgressMessage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      progressMessage_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Progress Message for Update LRO
+     * </pre>
+     *
+     * <code>string progress_message = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProgressMessage() {
+      progressMessage_ = getDefaultInstance().getProgressMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Progress Message for Update LRO
+     * </pre>
+     *
+     * <code>string progress_message = 2;</code>
+     *
+     * @param value The bytes for progressMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProgressMessageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      progressMessage_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

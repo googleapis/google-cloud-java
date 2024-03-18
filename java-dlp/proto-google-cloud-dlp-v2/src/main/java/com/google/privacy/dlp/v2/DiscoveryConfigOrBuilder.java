@@ -132,7 +132,7 @@ public interface DiscoveryConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>
@@ -159,7 +159,7 @@ public interface DiscoveryConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>
@@ -186,7 +186,7 @@ public interface DiscoveryConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>
@@ -214,7 +214,7 @@ public interface DiscoveryConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
+   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 3;</code>

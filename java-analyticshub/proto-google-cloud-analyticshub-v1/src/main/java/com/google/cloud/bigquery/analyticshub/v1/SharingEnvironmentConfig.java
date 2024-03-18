@@ -547,7 +547,84 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
   public interface DcrExchangeConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfig)
-      com.google.protobuf.MessageOrBuilder {}
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, this DCR restricts the contributors to sharing
+     * only a single resource in a Listing. And no two resources should have the
+     * same IDs. So if a contributor adds a view with a conflicting name, the
+     * CreateListing API will reject the request. if False, the data contributor
+     * can publish an entire dataset (as before). This is not configurable, and
+     * by default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the singleSelectedResourceSharingRestriction field is set.
+     */
+    boolean hasSingleSelectedResourceSharingRestriction();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, this DCR restricts the contributors to sharing
+     * only a single resource in a Listing. And no two resources should have the
+     * same IDs. So if a contributor adds a view with a conflicting name, the
+     * CreateListing API will reject the request. if False, the data contributor
+     * can publish an entire dataset (as before). This is not configurable, and
+     * by default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The singleSelectedResourceSharingRestriction.
+     */
+    boolean getSingleSelectedResourceSharingRestriction();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, when subscribing to this DCR, it will create only
+     * one linked dataset containing all resources shared within the
+     * cleanroom. If False, when subscribing to this DCR, it will
+     * create 1 linked dataset per listing. This is not configurable, and by
+     * default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the singleLinkedDatasetPerCleanroom field is set.
+     */
+    boolean hasSingleLinkedDatasetPerCleanroom();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, when subscribing to this DCR, it will create only
+     * one linked dataset containing all resources shared within the
+     * cleanroom. If False, when subscribing to this DCR, it will
+     * create 1 linked dataset per listing. This is not configurable, and by
+     * default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The singleLinkedDatasetPerCleanroom.
+     */
+    boolean getSingleLinkedDatasetPerCleanroom();
+  }
   /**
    *
    *
@@ -593,6 +670,99 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
                   .Builder.class);
     }
 
+    private int bitField0_;
+    public static final int SINGLE_SELECTED_RESOURCE_SHARING_RESTRICTION_FIELD_NUMBER = 1;
+    private boolean singleSelectedResourceSharingRestriction_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, this DCR restricts the contributors to sharing
+     * only a single resource in a Listing. And no two resources should have the
+     * same IDs. So if a contributor adds a view with a conflicting name, the
+     * CreateListing API will reject the request. if False, the data contributor
+     * can publish an entire dataset (as before). This is not configurable, and
+     * by default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the singleSelectedResourceSharingRestriction field is set.
+     */
+    @java.lang.Override
+    public boolean hasSingleSelectedResourceSharingRestriction() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, this DCR restricts the contributors to sharing
+     * only a single resource in a Listing. And no two resources should have the
+     * same IDs. So if a contributor adds a view with a conflicting name, the
+     * CreateListing API will reject the request. if False, the data contributor
+     * can publish an entire dataset (as before). This is not configurable, and
+     * by default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The singleSelectedResourceSharingRestriction.
+     */
+    @java.lang.Override
+    public boolean getSingleSelectedResourceSharingRestriction() {
+      return singleSelectedResourceSharingRestriction_;
+    }
+
+    public static final int SINGLE_LINKED_DATASET_PER_CLEANROOM_FIELD_NUMBER = 2;
+    private boolean singleLinkedDatasetPerCleanroom_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, when subscribing to this DCR, it will create only
+     * one linked dataset containing all resources shared within the
+     * cleanroom. If False, when subscribing to this DCR, it will
+     * create 1 linked dataset per listing. This is not configurable, and by
+     * default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the singleLinkedDatasetPerCleanroom field is set.
+     */
+    @java.lang.Override
+    public boolean hasSingleLinkedDatasetPerCleanroom() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If True, when subscribing to this DCR, it will create only
+     * one linked dataset containing all resources shared within the
+     * cleanroom. If False, when subscribing to this DCR, it will
+     * create 1 linked dataset per listing. This is not configurable, and by
+     * default, all new DCRs will have the restriction set to True.
+     * </pre>
+     *
+     * <code>
+     * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The singleLinkedDatasetPerCleanroom.
+     */
+    @java.lang.Override
+    public boolean getSingleLinkedDatasetPerCleanroom() {
+      return singleLinkedDatasetPerCleanroom_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -607,6 +777,12 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, singleSelectedResourceSharingRestriction_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeBool(2, singleLinkedDatasetPerCleanroom_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -616,6 +792,16 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                1, singleSelectedResourceSharingRestriction_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                2, singleLinkedDatasetPerCleanroom_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -635,6 +821,18 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
           (com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfig)
               obj;
 
+      if (hasSingleSelectedResourceSharingRestriction()
+          != other.hasSingleSelectedResourceSharingRestriction()) return false;
+      if (hasSingleSelectedResourceSharingRestriction()) {
+        if (getSingleSelectedResourceSharingRestriction()
+            != other.getSingleSelectedResourceSharingRestriction()) return false;
+      }
+      if (hasSingleLinkedDatasetPerCleanroom() != other.hasSingleLinkedDatasetPerCleanroom())
+        return false;
+      if (hasSingleLinkedDatasetPerCleanroom()) {
+        if (getSingleLinkedDatasetPerCleanroom() != other.getSingleLinkedDatasetPerCleanroom())
+          return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -646,6 +844,19 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSingleSelectedResourceSharingRestriction()) {
+        hash = (37 * hash) + SINGLE_SELECTED_RESOURCE_SHARING_RESTRICTION_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(
+                    getSingleSelectedResourceSharingRestriction());
+      }
+      if (hasSingleLinkedDatasetPerCleanroom()) {
+        hash = (37 * hash) + SINGLE_LINKED_DATASET_PER_CLEANROOM_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getSingleLinkedDatasetPerCleanroom());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -811,6 +1022,9 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        singleSelectedResourceSharingRestriction_ = false;
+        singleLinkedDatasetPerCleanroom_ = false;
         return this;
       }
 
@@ -845,8 +1059,28 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
             result =
                 new com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig
                     .DcrExchangeConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfig
+              result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.singleSelectedResourceSharingRestriction_ =
+              singleSelectedResourceSharingRestriction_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.singleLinkedDatasetPerCleanroom_ = singleLinkedDatasetPerCleanroom_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -904,6 +1138,13 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
         if (other
             == com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfig
                 .getDefaultInstance()) return this;
+        if (other.hasSingleSelectedResourceSharingRestriction()) {
+          setSingleSelectedResourceSharingRestriction(
+              other.getSingleSelectedResourceSharingRestriction());
+        }
+        if (other.hasSingleLinkedDatasetPerCleanroom()) {
+          setSingleLinkedDatasetPerCleanroom(other.getSingleLinkedDatasetPerCleanroom());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -930,6 +1171,18 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
               case 0:
                 done = true;
                 break;
+              case 8:
+                {
+                  singleSelectedResourceSharingRestriction_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  singleLinkedDatasetPerCleanroom_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -944,6 +1197,196 @@ public final class SharingEnvironmentConfig extends com.google.protobuf.Generate
         } finally {
           onChanged();
         } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean singleSelectedResourceSharingRestriction_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, this DCR restricts the contributors to sharing
+       * only a single resource in a Listing. And no two resources should have the
+       * same IDs. So if a contributor adds a view with a conflicting name, the
+       * CreateListing API will reject the request. if False, the data contributor
+       * can publish an entire dataset (as before). This is not configurable, and
+       * by default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the singleSelectedResourceSharingRestriction field is set.
+       */
+      @java.lang.Override
+      public boolean hasSingleSelectedResourceSharingRestriction() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, this DCR restricts the contributors to sharing
+       * only a single resource in a Listing. And no two resources should have the
+       * same IDs. So if a contributor adds a view with a conflicting name, the
+       * CreateListing API will reject the request. if False, the data contributor
+       * can publish an entire dataset (as before). This is not configurable, and
+       * by default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The singleSelectedResourceSharingRestriction.
+       */
+      @java.lang.Override
+      public boolean getSingleSelectedResourceSharingRestriction() {
+        return singleSelectedResourceSharingRestriction_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, this DCR restricts the contributors to sharing
+       * only a single resource in a Listing. And no two resources should have the
+       * same IDs. So if a contributor adds a view with a conflicting name, the
+       * CreateListing API will reject the request. if False, the data contributor
+       * can publish an entire dataset (as before). This is not configurable, and
+       * by default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The singleSelectedResourceSharingRestriction to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSingleSelectedResourceSharingRestriction(boolean value) {
+
+        singleSelectedResourceSharingRestriction_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, this DCR restricts the contributors to sharing
+       * only a single resource in a Listing. And no two resources should have the
+       * same IDs. So if a contributor adds a view with a conflicting name, the
+       * CreateListing API will reject the request. if False, the data contributor
+       * can publish an entire dataset (as before). This is not configurable, and
+       * by default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_selected_resource_sharing_restriction = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSingleSelectedResourceSharingRestriction() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        singleSelectedResourceSharingRestriction_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean singleLinkedDatasetPerCleanroom_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, when subscribing to this DCR, it will create only
+       * one linked dataset containing all resources shared within the
+       * cleanroom. If False, when subscribing to this DCR, it will
+       * create 1 linked dataset per listing. This is not configurable, and by
+       * default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the singleLinkedDatasetPerCleanroom field is set.
+       */
+      @java.lang.Override
+      public boolean hasSingleLinkedDatasetPerCleanroom() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, when subscribing to this DCR, it will create only
+       * one linked dataset containing all resources shared within the
+       * cleanroom. If False, when subscribing to this DCR, it will
+       * create 1 linked dataset per listing. This is not configurable, and by
+       * default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The singleLinkedDatasetPerCleanroom.
+       */
+      @java.lang.Override
+      public boolean getSingleLinkedDatasetPerCleanroom() {
+        return singleLinkedDatasetPerCleanroom_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, when subscribing to this DCR, it will create only
+       * one linked dataset containing all resources shared within the
+       * cleanroom. If False, when subscribing to this DCR, it will
+       * create 1 linked dataset per listing. This is not configurable, and by
+       * default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The singleLinkedDatasetPerCleanroom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSingleLinkedDatasetPerCleanroom(boolean value) {
+
+        singleLinkedDatasetPerCleanroom_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. If True, when subscribing to this DCR, it will create only
+       * one linked dataset containing all resources shared within the
+       * cleanroom. If False, when subscribing to this DCR, it will
+       * create 1 linked dataset per listing. This is not configurable, and by
+       * default, all new DCRs will have the restriction set to True.
+       * </pre>
+       *
+       * <code>
+       * optional bool single_linked_dataset_per_cleanroom = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSingleLinkedDatasetPerCleanroom() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        singleLinkedDatasetPerCleanroom_ = false;
+        onChanged();
         return this;
       }
 

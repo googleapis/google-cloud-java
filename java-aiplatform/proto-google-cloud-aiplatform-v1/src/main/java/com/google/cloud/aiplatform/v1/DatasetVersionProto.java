@@ -44,22 +44,24 @@ public final class DatasetVersionProto {
       "\n0google/cloud/aiplatform/v1/dataset_ver"
           + "sion.proto\022\032google.cloud.aiplatform.v1\032\037"
           + "google/api/field_behavior.proto\032\031google/"
-          + "api/resource.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\321\002\n\016DatasetVersion\022\021\n\004name\030\001"
-          + " \001(\tB\003\340A\003\0224\n\013create_time\030\002 \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003\0224\n\013update_time\030\006"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\014\n"
-          + "\004etag\030\003 \001(\t\022#\n\026big_query_dataset_name\030\004 "
-          + "\001(\tB\003\340A\003:\214\001\352A\210\001\n(aiplatform.googleapis.c"
-          + "om/DatasetVersion\022\\projects/{project}/lo"
-          + "cations/{location}/datasets/{dataset}/da"
-          + "tasetVersions/{dataset_version}B\321\001\n\036com."
-          + "google.cloud.aiplatform.v1B\023DatasetVersi"
-          + "onProtoP\001Z>cloud.google.com/go/aiplatfor"
-          + "m/apiv1/aiplatformpb;aiplatformpb\252\002\032Goog"
-          + "le.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AI"
-          + "Platform\\V1\352\002\035Google::Cloud::AIPlatform:"
-          + ":V1b\006proto3"
+          + "api/resource.proto\032\034google/protobuf/stru"
+          + "ct.proto\032\037google/protobuf/timestamp.prot"
+          + "o\"\231\003\n\016DatasetVersion\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
+          + "4\n\013create_time\030\002 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\022\014\n\004etag\030\003 \001("
+          + "\t\022#\n\026big_query_dataset_name\030\004 \001(\tB\003\340A\003\022\024"
+          + "\n\014display_name\030\007 \001(\t\0220\n\010metadata\030\010 \001(\0132\026"
+          + ".google.protobuf.ValueB\006\340A\003\340A\002:\214\001\352A\210\001\n(a"
+          + "iplatform.googleapis.com/DatasetVersion\022"
+          + "\\projects/{project}/locations/{location}"
+          + "/datasets/{dataset}/datasetVersions/{dat"
+          + "aset_version}B\321\001\n\036com.google.cloud.aipla"
+          + "tform.v1B\023DatasetVersionProtoP\001Z>cloud.g"
+          + "oogle.com/go/aiplatform/apiv1/aiplatform"
+          + "pb;aiplatformpb\252\002\032Google.Cloud.AIPlatfor"
+          + "m.V1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Goog"
+          + "le::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -67,6 +69,7 @@ public final class DatasetVersionProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_aiplatform_v1_DatasetVersion_descriptor =
@@ -75,7 +78,13 @@ public final class DatasetVersionProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_DatasetVersion_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "Etag", "BigQueryDatasetName",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Etag",
+              "BigQueryDatasetName",
+              "DisplayName",
+              "Metadata",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -85,6 +94,7 @@ public final class DatasetVersionProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

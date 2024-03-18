@@ -23,7 +23,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.33.0</version>
+      <version>26.34.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -104,7 +104,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-Cloud Batch uses gRPC for the transport layer.
+Cloud Batch uses both gRPC and HTTP/JSON for the transport layer.
 
 ## Supported Java Versions
 
@@ -201,7 +201,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-batch.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-batch/0.36.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-batch/0.37.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

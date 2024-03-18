@@ -99,6 +99,7 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     USER_MENTION(4),
     SLASH_COMMAND(5),
+    RICH_LINK_METADATA(6),
     METADATA_NOT_SET(0);
     private final int value;
 
@@ -121,6 +122,8 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
           return USER_MENTION;
         case 5:
           return SLASH_COMMAND;
+        case 6:
+          return RICH_LINK_METADATA;
         case 0:
           return METADATA_NOT_SET;
         default:
@@ -327,6 +330,57 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     return com.google.chat.v1.SlashCommandMetadata.getDefaultInstance();
   }
 
+  public static final int RICH_LINK_METADATA_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a rich link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+   *
+   * @return Whether the richLinkMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasRichLinkMetadata() {
+    return metadataCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a rich link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+   *
+   * @return The richLinkMetadata.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.RichLinkMetadata getRichLinkMetadata() {
+    if (metadataCase_ == 6) {
+      return (com.google.chat.v1.RichLinkMetadata) metadata_;
+    }
+    return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The metadata for a rich link.
+   * </pre>
+   *
+   * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.RichLinkMetadataOrBuilder getRichLinkMetadataOrBuilder() {
+    if (metadataCase_ == 6) {
+      return (com.google.chat.v1.RichLinkMetadata) metadata_;
+    }
+    return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -356,6 +410,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
     if (metadataCase_ == 5) {
       output.writeMessage(5, (com.google.chat.v1.SlashCommandMetadata) metadata_);
     }
+    if (metadataCase_ == 6) {
+      output.writeMessage(6, (com.google.chat.v1.RichLinkMetadata) metadata_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -383,6 +440,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.chat.v1.SlashCommandMetadata) metadata_);
+    }
+    if (metadataCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.chat.v1.RichLinkMetadata) metadata_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -412,6 +474,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getSlashCommand().equals(other.getSlashCommand())) return false;
+        break;
+      case 6:
+        if (!getRichLinkMetadata().equals(other.getRichLinkMetadata())) return false;
         break;
       case 0:
       default:
@@ -443,6 +508,10 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + SLASH_COMMAND_FIELD_NUMBER;
         hash = (53 * hash) + getSlashCommand().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + RICH_LINK_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getRichLinkMetadata().hashCode();
         break;
       case 0:
       default:
@@ -619,6 +688,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       if (slashCommandBuilder_ != null) {
         slashCommandBuilder_.clear();
       }
+      if (richLinkMetadataBuilder_ != null) {
+        richLinkMetadataBuilder_.clear();
+      }
       metadataCase_ = 0;
       metadata_ = null;
       return this;
@@ -679,6 +751,9 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       }
       if (metadataCase_ == 5 && slashCommandBuilder_ != null) {
         result.metadata_ = slashCommandBuilder_.build();
+      }
+      if (metadataCase_ == 6 && richLinkMetadataBuilder_ != null) {
+        result.metadata_ = richLinkMetadataBuilder_.build();
       }
     }
 
@@ -747,6 +822,11 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
             mergeSlashCommand(other.getSlashCommand());
             break;
           }
+        case RICH_LINK_METADATA:
+          {
+            mergeRichLinkMetadata(other.getRichLinkMetadata());
+            break;
+          }
         case METADATA_NOT_SET:
           {
             break;
@@ -808,6 +888,13 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
                 metadataCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getRichLinkMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                metadataCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1473,6 +1560,213 @@ public final class Annotation extends com.google.protobuf.GeneratedMessageV3
       metadataCase_ = 5;
       onChanged();
       return slashCommandBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.RichLinkMetadata,
+            com.google.chat.v1.RichLinkMetadata.Builder,
+            com.google.chat.v1.RichLinkMetadataOrBuilder>
+        richLinkMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     *
+     * @return Whether the richLinkMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasRichLinkMetadata() {
+      return metadataCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     *
+     * @return The richLinkMetadata.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.RichLinkMetadata getRichLinkMetadata() {
+      if (richLinkMetadataBuilder_ == null) {
+        if (metadataCase_ == 6) {
+          return (com.google.chat.v1.RichLinkMetadata) metadata_;
+        }
+        return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
+      } else {
+        if (metadataCase_ == 6) {
+          return richLinkMetadataBuilder_.getMessage();
+        }
+        return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     */
+    public Builder setRichLinkMetadata(com.google.chat.v1.RichLinkMetadata value) {
+      if (richLinkMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadata_ = value;
+        onChanged();
+      } else {
+        richLinkMetadataBuilder_.setMessage(value);
+      }
+      metadataCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     */
+    public Builder setRichLinkMetadata(
+        com.google.chat.v1.RichLinkMetadata.Builder builderForValue) {
+      if (richLinkMetadataBuilder_ == null) {
+        metadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        richLinkMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      metadataCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     */
+    public Builder mergeRichLinkMetadata(com.google.chat.v1.RichLinkMetadata value) {
+      if (richLinkMetadataBuilder_ == null) {
+        if (metadataCase_ == 6
+            && metadata_ != com.google.chat.v1.RichLinkMetadata.getDefaultInstance()) {
+          metadata_ =
+              com.google.chat.v1.RichLinkMetadata.newBuilder(
+                      (com.google.chat.v1.RichLinkMetadata) metadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          metadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (metadataCase_ == 6) {
+          richLinkMetadataBuilder_.mergeFrom(value);
+        } else {
+          richLinkMetadataBuilder_.setMessage(value);
+        }
+      }
+      metadataCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     */
+    public Builder clearRichLinkMetadata() {
+      if (richLinkMetadataBuilder_ == null) {
+        if (metadataCase_ == 6) {
+          metadataCase_ = 0;
+          metadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (metadataCase_ == 6) {
+          metadataCase_ = 0;
+          metadata_ = null;
+        }
+        richLinkMetadataBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     */
+    public com.google.chat.v1.RichLinkMetadata.Builder getRichLinkMetadataBuilder() {
+      return getRichLinkMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.RichLinkMetadataOrBuilder getRichLinkMetadataOrBuilder() {
+      if ((metadataCase_ == 6) && (richLinkMetadataBuilder_ != null)) {
+        return richLinkMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (metadataCase_ == 6) {
+          return (com.google.chat.v1.RichLinkMetadata) metadata_;
+        }
+        return com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The metadata for a rich link.
+     * </pre>
+     *
+     * <code>.google.chat.v1.RichLinkMetadata rich_link_metadata = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.chat.v1.RichLinkMetadata,
+            com.google.chat.v1.RichLinkMetadata.Builder,
+            com.google.chat.v1.RichLinkMetadataOrBuilder>
+        getRichLinkMetadataFieldBuilder() {
+      if (richLinkMetadataBuilder_ == null) {
+        if (!(metadataCase_ == 6)) {
+          metadata_ = com.google.chat.v1.RichLinkMetadata.getDefaultInstance();
+        }
+        richLinkMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.chat.v1.RichLinkMetadata,
+                com.google.chat.v1.RichLinkMetadata.Builder,
+                com.google.chat.v1.RichLinkMetadataOrBuilder>(
+                (com.google.chat.v1.RichLinkMetadata) metadata_, getParentForChildren(), isClean());
+        metadata_ = null;
+      }
+      metadataCase_ = 6;
+      onChanged();
+      return richLinkMetadataBuilder_;
     }
 
     @java.lang.Override

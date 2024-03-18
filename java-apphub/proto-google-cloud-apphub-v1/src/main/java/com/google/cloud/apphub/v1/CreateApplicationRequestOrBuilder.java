@@ -28,7 +28,8 @@ public interface CreateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to create Application in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>
@@ -42,7 +43,8 @@ public interface CreateApplicationRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Project and location to create Application in.
+   * Expected format: `projects/{project}/locations/{location}`.
    * </pre>
    *
    * <code>

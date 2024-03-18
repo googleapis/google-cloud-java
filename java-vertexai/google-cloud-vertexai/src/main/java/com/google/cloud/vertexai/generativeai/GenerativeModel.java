@@ -42,7 +42,6 @@ public class GenerativeModel {
   private GenerationConfig generationConfig = null;
   private List<SafetySetting> safetySettings = null;
   private List<Tool> tools = null;
-  private Transport transport;
 
   public static Builder newBuilder() {
     return new Builder();
@@ -67,12 +66,6 @@ public class GenerativeModel {
     if (builder.tools != null) {
       this.tools = builder.tools;
     }
-
-    if (builder.transport != null) {
-      this.transport = builder.transport;
-    } else {
-      this.transport = this.vertexAi.getTransport();
-    }
   }
 
   /** Builder class for {@link GenerativeModel}. */
@@ -82,7 +75,6 @@ public class GenerativeModel {
     private GenerationConfig generationConfig;
     private List<SafetySetting> safetySettings;
     private List<Tool> tools;
-    private Transport transport;
 
     private Builder() {}
 
@@ -158,15 +150,6 @@ public class GenerativeModel {
       }
       return this;
     }
-
-    /**
-     * Sets the {@link Transport} layer for API calls in the generative model. It overrides the
-     * transport setting in {@link com.google.cloud.vertexai.VertexAI}
-     */
-    public Builder setTransport(Transport transport) {
-      this.transport = transport;
-      return this;
-    }
   }
 
   /**
@@ -180,21 +163,7 @@ public class GenerativeModel {
    *     for the generative model
    */
   public GenerativeModel(String modelName, VertexAI vertexAi) {
-    this(modelName, null, null, vertexAi, null);
-  }
-
-  /**
-   * Constructs a GenerativeModel instance.
-   *
-   * @param modelName the name of the generative model. Supported format: "gemini-pro",
-   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
-   * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
-   *     for the generative model
-   * @param transport the {@link Transport} layer for API calls in the generative model. It
-   *     overrides the transport setting in {@link com.google.cloud.vertexai.VertexAI}
-   */
-  public GenerativeModel(String modelName, VertexAI vertexAi, Transport transport) {
-    this(modelName, null, null, vertexAi, transport);
+    this(modelName, null, null, vertexAi);
   }
 
   /**
@@ -209,25 +178,7 @@ public class GenerativeModel {
    */
   @BetaApi
   public GenerativeModel(String modelName, GenerationConfig generationConfig, VertexAI vertexAi) {
-    this(modelName, generationConfig, null, vertexAi, null);
-  }
-
-  /**
-   * Constructs a GenerativeModel instance with default generation config.
-   *
-   * @param modelName the name of the generative model. Supported format: "gemini-pro",
-   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
-   *     will be used by default for generating response
-   * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
-   *     for the generative model
-   * @param transport the {@link Transport} layer for API calls in the generative model. It
-   *     overrides the transport setting in {@link com.google.cloud.vertexai.VertexAI}
-   */
-  @BetaApi
-  public GenerativeModel(
-      String modelName, GenerationConfig generationConfig, VertexAI vertexAi, Transport transport) {
-    this(modelName, generationConfig, null, vertexAi, transport);
+    this(modelName, generationConfig, null, vertexAi);
   }
 
   /**
@@ -242,28 +193,7 @@ public class GenerativeModel {
    */
   @BetaApi("safetySettings is a preview feature.")
   public GenerativeModel(String modelName, List<SafetySetting> safetySettings, VertexAI vertexAi) {
-    this(modelName, null, safetySettings, vertexAi, null);
-  }
-
-  /**
-   * Constructs a GenerativeModel instance with default safety settings.
-   *
-   * @param modelName the name of the generative model. Supported format: "gemini-pro",
-   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
-   *     that will be used by default for generating response
-   * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
-   *     for the generative model
-   * @param transport the {@link Transport} layer for API calls in the generative model. It
-   *     overrides the transport setting in {@link com.google.cloud.vertexai.VertexAI}
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  public GenerativeModel(
-      String modelName,
-      List<SafetySetting> safetySettings,
-      VertexAI vertexAi,
-      Transport transport) {
-    this(modelName, null, safetySettings, vertexAi, transport);
+    this(modelName, null, safetySettings, vertexAi);
   }
 
   /**
@@ -284,30 +214,6 @@ public class GenerativeModel {
       GenerationConfig generationConfig,
       List<SafetySetting> safetySettings,
       VertexAI vertexAi) {
-    this(modelName, generationConfig, safetySettings, vertexAi, null);
-  }
-
-  /**
-   * Constructs a GenerativeModel instance with default generation config and safety settings.
-   *
-   * @param modelName the name of the generative model. Supported format: "gemini-pro",
-   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
-   *     will be used by default for generating response
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
-   *     that will be used by default for generating response
-   * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
-   *     for the generative model
-   * @param transport the {@link Transport} layer for API calls in the generative model. It
-   *     overrides the transport setting in {@link com.google.cloud.vertexai.VertexAI}
-   */
-  @BetaApi
-  public GenerativeModel(
-      String modelName,
-      GenerationConfig generationConfig,
-      List<SafetySetting> safetySettings,
-      VertexAI vertexAi,
-      Transport transport) {
     modelName = reconcileModelName(modelName);
     this.modelName = modelName;
     this.resourceName =
@@ -324,11 +230,6 @@ public class GenerativeModel {
       }
     }
     this.vertexAi = vertexAi;
-    if (transport != null) {
-      this.transport = transport;
-    } else {
-      this.transport = vertexAi.getTransport();
-    }
   }
 
   /**
@@ -388,7 +289,7 @@ public class GenerativeModel {
   @BetaApi
   private CountTokensResponse countTokensFromRequest(CountTokensRequest request)
       throws IOException {
-    if (this.transport == Transport.REST) {
+    if (vertexAi.getTransport() == Transport.REST) {
       return vertexAi.getLlmUtilityRestClient().countTokens(request);
     } else {
       return vertexAi.getLlmUtilityClient().countTokens(request);
@@ -619,7 +520,7 @@ public class GenerativeModel {
    */
   private GenerateContentResponse generateContent(GenerateContentRequest request)
       throws IOException {
-    if (this.transport == Transport.REST) {
+    if (vertexAi.getTransport() == Transport.REST) {
       return vertexAi.getPredictionServiceRestClient().generateContentCallable().call(request);
     } else {
       return vertexAi.getPredictionServiceClient().generateContentCallable().call(request);
@@ -1031,7 +932,7 @@ public class GenerativeModel {
    */
   private ResponseStream<GenerateContentResponse> generateContentStream(
       GenerateContentRequest request) throws IOException {
-    if (this.transport == Transport.REST) {
+    if (vertexAi.getTransport() == Transport.REST) {
       return new ResponseStream(
           new ResponseStreamIteratorWithHistory(
               vertexAi
@@ -1082,22 +983,9 @@ public class GenerativeModel {
     }
   }
 
-  /**
-   * Sets the value for {@link #getTransport}, which defines the layer for API calls in this
-   * generative model.
-   */
-  public void setTransport(Transport transport) {
-    this.transport = transport;
-  }
-
   /** Returns the model name of this generative model. */
   public String getModelName() {
     return this.modelName;
-  }
-
-  /** Returns the {@link Transport} layer for API calls in this generative model. */
-  public Transport getTransport() {
-    return this.transport;
   }
 
   /**

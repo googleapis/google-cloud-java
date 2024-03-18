@@ -39,7 +39,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-pubsub-bom</artifactId>
-        <version>1.126.6</version>
+        <version>1.127.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -66,7 +66,7 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-storage</artifactId>
-        <version>v1-rev20240209-2.0.0</version>
+        <version>v1-rev20240311-2.0.0</version>
       </dependency>
 
       <!-- Test dependencies -->
@@ -85,7 +85,7 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>1.4.1</version>
+        <version>1.4.2</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>

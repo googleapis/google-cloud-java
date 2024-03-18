@@ -170,6 +170,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     INPUT_AUDIO(5),
     INPUT_TEXT(6),
     INPUT_DTMF(9),
+    INPUT_INTENT(17),
+    INPUT_EVENT(20),
     INPUT_NOT_SET(0);
     private final int value;
 
@@ -194,6 +196,10 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
           return INPUT_TEXT;
         case 9:
           return INPUT_DTMF;
+        case 17:
+          return INPUT_INTENT;
+        case 20:
+          return INPUT_EVENT;
         case 0:
           return INPUT_NOT_SET;
         default:
@@ -612,6 +618,158 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     return com.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents.getDefaultInstance();
   }
 
+  public static final int INPUT_INTENT_FIELD_NUMBER = 17;
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string input_intent = 17;</code>
+   *
+   * @return Whether the inputIntent field is set.
+   */
+  public boolean hasInputIntent() {
+    return inputCase_ == 17;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string input_intent = 17;</code>
+   *
+   * @return The inputIntent.
+   */
+  public java.lang.String getInputIntent() {
+    java.lang.Object ref = "";
+    if (inputCase_ == 17) {
+      ref = input_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (inputCase_ == 17) {
+        input_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The intent to be triggered on V3 agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string input_intent = 17;</code>
+   *
+   * @return The bytes for inputIntent.
+   */
+  public com.google.protobuf.ByteString getInputIntentBytes() {
+    java.lang.Object ref = "";
+    if (inputCase_ == 17) {
+      ref = input_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (inputCase_ == 17) {
+        input_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INPUT_EVENT_FIELD_NUMBER = 20;
+  /**
+   *
+   *
+   * <pre>
+   * The input event name.
+   * This can only be sent once and would cancel the ongoing speech
+   * recognition if any.
+   * </pre>
+   *
+   * <code>string input_event = 20;</code>
+   *
+   * @return Whether the inputEvent field is set.
+   */
+  public boolean hasInputEvent() {
+    return inputCase_ == 20;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The input event name.
+   * This can only be sent once and would cancel the ongoing speech
+   * recognition if any.
+   * </pre>
+   *
+   * <code>string input_event = 20;</code>
+   *
+   * @return The inputEvent.
+   */
+  public java.lang.String getInputEvent() {
+    java.lang.Object ref = "";
+    if (inputCase_ == 20) {
+      ref = input_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (inputCase_ == 20) {
+        input_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The input event name.
+   * This can only be sent once and would cancel the ongoing speech
+   * recognition if any.
+   * </pre>
+   *
+   * <code>string input_event = 20;</code>
+   *
+   * @return The bytes for inputEvent.
+   */
+  public com.google.protobuf.ByteString getInputEventBytes() {
+    java.lang.Object ref = "";
+    if (inputCase_ == 20) {
+      ref = input_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (inputCase_ == 20) {
+        input_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int QUERY_PARAMS_FIELD_NUMBER = 7;
   private com.google.cloud.dialogflow.v2beta1.QueryParameters queryParams_;
   /**
@@ -980,8 +1138,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, cxCurrentPage_);
     }
+    if (inputCase_ == 17) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, input_);
+    }
     if (enableDebuggingInfo_ != false) {
       output.writeBool(19, enableDebuggingInfo_);
+    }
+    if (inputCase_ == 20) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, input_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1041,8 +1205,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, cxCurrentPage_);
     }
+    if (inputCase_ == 17) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, input_);
+    }
     if (enableDebuggingInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, enableDebuggingInfo_);
+    }
+    if (inputCase_ == 20) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, input_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1103,6 +1273,12 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         break;
       case 9:
         if (!getInputDtmf().equals(other.getInputDtmf())) return false;
+        break;
+      case 17:
+        if (!getInputIntent().equals(other.getInputIntent())) return false;
+        break;
+      case 20:
+        if (!getInputEvent().equals(other.getInputEvent())) return false;
         break;
       case 0:
       default:
@@ -1170,6 +1346,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       case 9:
         hash = (37 * hash) + INPUT_DTMF_FIELD_NUMBER;
         hash = (53 * hash) + getInputDtmf().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + INPUT_INTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getInputIntent().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + INPUT_EVENT_FIELD_NUMBER;
+        hash = (53 * hash) + getInputEvent().hashCode();
         break;
       case 0:
       default:
@@ -1458,33 +1642,33 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             replyAudioConfigBuilder_ == null ? replyAudioConfig_ : replyAudioConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.queryParams_ =
             queryParamsBuilder_ == null ? queryParams_ : queryParamsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.assistQueryParams_ =
             assistQueryParamsBuilder_ == null
                 ? assistQueryParams_
                 : assistQueryParamsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.cxParameters_ =
             cxParametersBuilder_ == null ? cxParameters_ : cxParametersBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.cxCurrentPage_ = cxCurrentPage_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.enableExtendedStreaming_ = enableExtendedStreaming_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.enablePartialAutomatedAgentReply_ = enablePartialAutomatedAgentReply_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.enableDebuggingInfo_ = enableDebuggingInfo_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1575,7 +1759,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       if (!other.getCxCurrentPage().isEmpty()) {
         cxCurrentPage_ = other.cxCurrentPage_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.getEnableExtendedStreaming() != false) {
@@ -1619,6 +1803,20 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         case INPUT_DTMF:
           {
             mergeInputDtmf(other.getInputDtmf());
+            break;
+          }
+        case INPUT_INTENT:
+          {
+            inputCase_ = 17;
+            input_ = other.input_;
+            onChanged();
+            break;
+          }
+        case INPUT_EVENT:
+          {
+            inputCase_ = 20;
+            input_ = other.input_;
+            onChanged();
             break;
           }
         case INPUT_NOT_SET:
@@ -1693,14 +1891,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             case 58:
               {
                 input.readMessage(getQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     getAssistQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 66
             case 74:
@@ -1712,33 +1910,47 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             case 88:
               {
                 enableExtendedStreaming_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 88
             case 96:
               {
                 enablePartialAutomatedAgentReply_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 96
             case 106:
               {
                 input.readMessage(getCxParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
             case 122:
               {
                 cxCurrentPage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
+            case 138:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                inputCase_ = 17;
+                input_ = s;
+                break;
+              } // case 138
             case 152:
               {
                 enableDebuggingInfo_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 152
+            case 162:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                inputCase_ = 20;
+                input_ = s;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3029,6 +3241,298 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return inputDtmfBuilder_;
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string input_intent = 17;</code>
+     *
+     * @return Whether the inputIntent field is set.
+     */
+    @java.lang.Override
+    public boolean hasInputIntent() {
+      return inputCase_ == 17;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string input_intent = 17;</code>
+     *
+     * @return The inputIntent.
+     */
+    @java.lang.Override
+    public java.lang.String getInputIntent() {
+      java.lang.Object ref = "";
+      if (inputCase_ == 17) {
+        ref = input_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (inputCase_ == 17) {
+          input_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string input_intent = 17;</code>
+     *
+     * @return The bytes for inputIntent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInputIntentBytes() {
+      java.lang.Object ref = "";
+      if (inputCase_ == 17) {
+        ref = input_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (inputCase_ == 17) {
+          input_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string input_intent = 17;</code>
+     *
+     * @param value The inputIntent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputIntent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      inputCase_ = 17;
+      input_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string input_intent = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInputIntent() {
+      if (inputCase_ == 17) {
+        inputCase_ = 0;
+        input_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The intent to be triggered on V3 agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string input_intent = 17;</code>
+     *
+     * @param value The bytes for inputIntent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputIntentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      inputCase_ = 17;
+      input_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The input event name.
+     * This can only be sent once and would cancel the ongoing speech
+     * recognition if any.
+     * </pre>
+     *
+     * <code>string input_event = 20;</code>
+     *
+     * @return Whether the inputEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasInputEvent() {
+      return inputCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input event name.
+     * This can only be sent once and would cancel the ongoing speech
+     * recognition if any.
+     * </pre>
+     *
+     * <code>string input_event = 20;</code>
+     *
+     * @return The inputEvent.
+     */
+    @java.lang.Override
+    public java.lang.String getInputEvent() {
+      java.lang.Object ref = "";
+      if (inputCase_ == 20) {
+        ref = input_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (inputCase_ == 20) {
+          input_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input event name.
+     * This can only be sent once and would cancel the ongoing speech
+     * recognition if any.
+     * </pre>
+     *
+     * <code>string input_event = 20;</code>
+     *
+     * @return The bytes for inputEvent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInputEventBytes() {
+      java.lang.Object ref = "";
+      if (inputCase_ == 20) {
+        ref = input_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (inputCase_ == 20) {
+          input_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input event name.
+     * This can only be sent once and would cancel the ongoing speech
+     * recognition if any.
+     * </pre>
+     *
+     * <code>string input_event = 20;</code>
+     *
+     * @param value The inputEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputEvent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      inputCase_ = 20;
+      input_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input event name.
+     * This can only be sent once and would cancel the ongoing speech
+     * recognition if any.
+     * </pre>
+     *
+     * <code>string input_event = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInputEvent() {
+      if (inputCase_ == 20) {
+        inputCase_ = 0;
+        input_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input event name.
+     * This can only be sent once and would cancel the ongoing speech
+     * recognition if any.
+     * </pre>
+     *
+     * <code>string input_event = 20;</code>
+     *
+     * @param value The bytes for inputEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInputEventBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      inputCase_ = 20;
+      input_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.dialogflow.v2beta1.QueryParameters queryParams_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.QueryParameters,
@@ -3047,7 +3551,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return Whether the queryParams field is set.
      */
     public boolean hasQueryParams() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3087,7 +3591,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         queryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3107,7 +3611,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         queryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3122,7 +3626,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      */
     public Builder mergeQueryParams(com.google.cloud.dialogflow.v2beta1.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && queryParams_ != null
             && queryParams_
                 != com.google.cloud.dialogflow.v2beta1.QueryParameters.getDefaultInstance()) {
@@ -3134,7 +3638,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         queryParamsBuilder_.mergeFrom(value);
       }
       if (queryParams_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3149,7 +3653,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 7;</code>
      */
     public Builder clearQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       queryParams_ = null;
       if (queryParamsBuilder_ != null) {
         queryParamsBuilder_.dispose();
@@ -3168,7 +3672,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.cloud.dialogflow.v2beta1.QueryParameters query_params = 7;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.QueryParameters.Builder getQueryParamsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getQueryParamsFieldBuilder().getBuilder();
     }
@@ -3234,7 +3738,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return Whether the assistQueryParams field is set.
      */
     public boolean hasAssistQueryParams() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3275,7 +3779,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         assistQueryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3295,7 +3799,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         assistQueryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3311,7 +3815,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder mergeAssistQueryParams(
         com.google.cloud.dialogflow.v2beta1.AssistQueryParameters value) {
       if (assistQueryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && assistQueryParams_ != null
             && assistQueryParams_
                 != com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.getDefaultInstance()) {
@@ -3323,7 +3827,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         assistQueryParamsBuilder_.mergeFrom(value);
       }
       if (assistQueryParams_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3338,7 +3842,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.cloud.dialogflow.v2beta1.AssistQueryParameters assist_query_params = 8;</code>
      */
     public Builder clearAssistQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       assistQueryParams_ = null;
       if (assistQueryParamsBuilder_ != null) {
         assistQueryParamsBuilder_.dispose();
@@ -3358,7 +3862,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.dialogflow.v2beta1.AssistQueryParameters.Builder
         getAssistQueryParamsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getAssistQueryParamsFieldBuilder().getBuilder();
     }
@@ -3430,7 +3934,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return Whether the cxParameters field is set.
      */
     public boolean hasCxParameters() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3480,7 +3984,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         cxParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3504,7 +4008,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         cxParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3524,7 +4028,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      */
     public Builder mergeCxParameters(com.google.protobuf.Struct value) {
       if (cxParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && cxParameters_ != null
             && cxParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getCxParametersBuilder().mergeFrom(value);
@@ -3535,7 +4039,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         cxParametersBuilder_.mergeFrom(value);
       }
       if (cxParameters_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3555,7 +4059,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.Struct cx_parameters = 13;</code>
      */
     public Builder clearCxParameters() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       cxParameters_ = null;
       if (cxParametersBuilder_ != null) {
         cxParametersBuilder_.dispose();
@@ -3579,7 +4083,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.Struct cx_parameters = 13;</code>
      */
     public com.google.protobuf.Struct.Builder getCxParametersBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getCxParametersFieldBuilder().getBuilder();
     }
@@ -3738,7 +4242,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3768,7 +4272,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      */
     public Builder clearCxCurrentPage() {
       cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3803,7 +4307,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       checkByteStringIsUtf8(value);
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3875,7 +4379,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnableExtendedStreaming(boolean value) {
 
       enableExtendedStreaming_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3909,7 +4413,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnableExtendedStreaming() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       enableExtendedStreaming_ = false;
       onChanged();
       return this;
@@ -3952,7 +4456,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnablePartialAutomatedAgentReply(boolean value) {
 
       enablePartialAutomatedAgentReply_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3971,7 +4475,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnablePartialAutomatedAgentReply() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       enablePartialAutomatedAgentReply_ = false;
       onChanged();
       return this;
@@ -4010,7 +4514,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnableDebuggingInfo(boolean value) {
 
       enableDebuggingInfo_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4027,7 +4531,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnableDebuggingInfo() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       enableDebuggingInfo_ = false;
       onChanged();
       return this;

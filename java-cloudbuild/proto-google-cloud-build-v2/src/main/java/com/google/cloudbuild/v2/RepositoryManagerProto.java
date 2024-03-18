@@ -61,6 +61,14 @@ public final class RepositoryManagerProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v2_GitLabConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v2_BitbucketDataCenterConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v2_BitbucketDataCenterConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_cloudbuild_v2_BitbucketCloudConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v2_BitbucketCloudConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_cloudbuild_v2_ServiceDirectoryConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v2_ServiceDirectoryConfig_fieldAccessorTable;
@@ -174,250 +182,276 @@ public final class RepositoryManagerProto {
           + "2\032\034google/api/annotations.proto\032\027google/"
           + "api/client.proto\032\037google/api/field_behav"
           + "ior.proto\032\031google/api/httpbody.proto\032\031go"
-          + "ogle/api/resource.proto\032#google/longrunn"
-          + "ing/operations.proto\032\033google/protobuf/em"
-          + "pty.proto\032 google/protobuf/field_mask.pr"
-          + "oto\032\037google/protobuf/timestamp.proto\"\244\006\n"
-          + "\nConnection\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224\n\013create"
-          + "_time\030\003 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\022D\n\rgithub_config\030\005 \001("
-          + "\0132+.google.devtools.cloudbuild.v2.GitHub"
-          + "ConfigH\000\022Y\n\030github_enterprise_config\030\006 \001"
-          + "(\01325.google.devtools.cloudbuild.v2.GitHu"
-          + "bEnterpriseConfigH\000\022D\n\rgitlab_config\030\007 \001"
-          + "(\0132+.google.devtools.cloudbuild.v2.GitLa"
-          + "bConfigH\000\022Q\n\022installation_state\030\014 \001(\01320."
-          + "google.devtools.cloudbuild.v2.Installati"
-          + "onStateB\003\340A\003\022\020\n\010disabled\030\r \001(\010\022\030\n\013reconc"
-          + "iling\030\016 \001(\010B\003\340A\003\022O\n\013annotations\030\017 \003(\0132:."
-          + "google.devtools.cloudbuild.v2.Connection"
-          + ".AnnotationsEntry\022\014\n\004etag\030\020 \001(\t\0322\n\020Annot"
-          + "ationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
-          + "\0028\001:\210\001\352A\204\001\n$cloudbuild.googleapis.com/Co"
-          + "nnection\022@projects/{project}/locations/{"
-          + "location}/connections/{connection}*\013conn"
-          + "ections2\nconnectionR\001\001B\023\n\021connection_con"
-          + "fig\"\205\002\n\021InstallationState\022J\n\005stage\030\001 \001(\016"
-          + "26.google.devtools.cloudbuild.v2.Install"
-          + "ationState.StageB\003\340A\003\022\024\n\007message\030\002 \001(\tB\003"
-          + "\340A\003\022\027\n\naction_uri\030\003 \001(\tB\003\340A\003\"u\n\005Stage\022\025\n"
-          + "\021STAGE_UNSPECIFIED\020\000\022\026\n\022PENDING_CREATE_A"
-          + "PP\020\001\022\026\n\022PENDING_USER_OAUTH\020\002\022\027\n\023PENDING_"
-          + "INSTALL_APP\020\003\022\014\n\010COMPLETE\020\n\"\213\001\n FetchLin"
-          + "kableRepositoriesRequest\022@\n\nconnection\030\001"
-          + " \001(\tB,\340A\002\372A&\n$cloudbuild.googleapis.com/"
-          + "Connection\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to"
-          + "ken\030\003 \001(\t\"}\n!FetchLinkableRepositoriesRe"
-          + "sponse\022?\n\014repositories\030\001 \003(\0132).google.de"
-          + "vtools.cloudbuild.v2.Repository\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"z\n\014GitHubConfig\022M\n\025auth"
-          + "orizer_credential\030\001 \001(\0132..google.devtool"
-          + "s.cloudbuild.v2.OAuthCredential\022\033\n\023app_i"
-          + "nstallation_id\030\002 \001(\003\"\267\003\n\026GitHubEnterpris"
-          + "eConfig\022\025\n\010host_uri\030\001 \001(\tB\003\340A\002\022\024\n\007api_ke"
-          + "y\030\014 \001(\tB\003\340A\002\022\016\n\006app_id\030\002 \001(\003\022\020\n\010app_slug"
-          + "\030\r \001(\t\022S\n\032private_key_secret_version\030\004 \001"
-          + "(\tB/\372A,\n*secretmanager.googleapis.com/Se"
-          + "cretVersion\022V\n\035webhook_secret_secret_ver"
-          + "sion\030\005 \001(\tB/\372A,\n*secretmanager.googleapi"
-          + "s.com/SecretVersion\022\033\n\023app_installation_"
-          + "id\030\t \001(\003\022W\n\030service_directory_config\030\n \001"
-          + "(\01325.google.devtools.cloudbuild.v2.Servi"
-          + "ceDirectoryConfig\022\016\n\006ssl_ca\030\013 \001(\t\022\033\n\016ser"
-          + "ver_version\030\016 \001(\tB\003\340A\003\"\257\003\n\014GitLabConfig\022"
-          + "\020\n\010host_uri\030\001 \001(\t\022\\\n\035webhook_secret_secr"
-          + "et_version\030\002 \001(\tB5\340A\002\340A\005\372A,\n*secretmanag"
-          + "er.googleapis.com/SecretVersion\022V\n\032read_"
-          + "authorizer_credential\030\003 \001(\0132-.google.dev"
-          + "tools.cloudbuild.v2.UserCredentialB\003\340A\002\022"
-          + "Q\n\025authorizer_credential\030\004 \001(\0132-.google."
-          + "devtools.cloudbuild.v2.UserCredentialB\003\340"
-          + "A\002\022W\n\030service_directory_config\030\005 \001(\01325.g"
-          + "oogle.devtools.cloudbuild.v2.ServiceDire"
-          + "ctoryConfig\022\016\n\006ssl_ca\030\006 \001(\t\022\033\n\016server_ve"
-          + "rsion\030\007 \001(\tB\003\340A\003\"Z\n\026ServiceDirectoryConf"
-          + "ig\022@\n\007service\030\001 \001(\tB/\340A\002\372A)\n\'servicedire"
-          + "ctory.googleapis.com/Service\"\366\003\n\nReposit"
-          + "ory\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\027\n\nremote_uri\030\002 \001"
-          + "(\tB\003\340A\002\0224\n\013create_time\030\004 \001(\0132\032.google.pr"
-          + "otobuf.TimestampB\003\340A\003\0224\n\013update_time\030\005 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022O\n\013a"
-          + "nnotations\030\006 \003(\0132:.google.devtools.cloud"
-          + "build.v2.Repository.AnnotationsEntry\022\014\n\004"
-          + "etag\030\007 \001(\t\022\027\n\nwebhook_id\030\010 \001(\tB\003\340A\003\0322\n\020A"
-          + "nnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\t:\0028\001:\243\001\352A\237\001\n$cloudbuild.googleapis.co"
-          + "m/Repository\022Zprojects/{project}/locatio"
-          + "ns/{location}/connections/{connection}/r"
-          + "epositories/{repository}*\014repositories2\n"
-          + "repositoryR\001\001\"}\n\017OAuthCredential\022S\n\032oaut"
-          + "h_token_secret_version\030\001 \001(\tB/\372A,\n*secre"
-          + "tmanager.googleapis.com/SecretVersion\022\025\n"
-          + "\010username\030\002 \001(\tB\003\340A\003\"~\n\016UserCredential\022U"
-          + "\n\031user_token_secret_version\030\001 \001(\tB2\340A\002\372A"
-          + ",\n*secretmanager.googleapis.com/SecretVe"
-          + "rsion\022\025\n\010username\030\002 \001(\tB\003\340A\003\"\267\001\n\027CreateC"
-          + "onnectionRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&"
-          + "\022$cloudbuild.googleapis.com/Connection\022B"
-          + "\n\nconnection\030\002 \001(\0132).google.devtools.clo"
-          + "udbuild.v2.ConnectionB\003\340A\002\022\032\n\rconnection"
-          + "_id\030\003 \001(\tB\003\340A\002\"R\n\024GetConnectionRequest\022:"
-          + "\n\004name\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.googlea"
-          + "pis.com/Connection\"}\n\026ListConnectionsReq"
-          + "uest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$cloudbuild"
-          + ".googleapis.com/Connection\022\021\n\tpage_size\030"
-          + "\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"r\n\027ListConnect"
-          + "ionsResponse\022>\n\013connections\030\001 \003(\0132).goog"
-          + "le.devtools.cloudbuild.v2.Connection\022\027\n\017"
-          + "next_page_token\030\002 \001(\t\"\263\001\n\027UpdateConnecti"
-          + "onRequest\022B\n\nconnection\030\001 \001(\0132).google.d"
-          + "evtools.cloudbuild.v2.ConnectionB\003\340A\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
-          + "ldMask\022\025\n\rallow_missing\030\003 \001(\010\022\014\n\004etag\030\004 "
-          + "\001(\t\"z\n\027DeleteConnectionRequest\022:\n\004name\030\001"
-          + " \001(\tB,\340A\002\372A&\n$cloudbuild.googleapis.com/"
-          + "Connection\022\014\n\004etag\030\002 \001(\t\022\025\n\rvalidate_onl"
-          + "y\030\003 \001(\010\"\267\001\n\027CreateRepositoryRequest\022<\n\006p"
-          + "arent\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.googleap"
-          + "is.com/Connection\022B\n\nrepository\030\002 \001(\0132)."
-          + "google.devtools.cloudbuild.v2.Repository"
-          + "B\003\340A\002\022\032\n\rrepository_id\030\003 \001(\tB\003\340A\002\"\255\001\n\036Ba"
-          + "tchCreateRepositoriesRequest\022<\n\006parent\030\001"
-          + " \001(\tB,\340A\002\372A&\n$cloudbuild.googleapis.com/"
-          + "Connection\022M\n\010requests\030\002 \003(\01326.google.de"
-          + "vtools.cloudbuild.v2.CreateRepositoryReq"
-          + "uestB\003\340A\002\"b\n\037BatchCreateRepositoriesResp"
-          + "onse\022?\n\014repositories\030\001 \003(\0132).google.devt"
-          + "ools.cloudbuild.v2.Repository\"R\n\024GetRepo"
-          + "sitoryRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$clo"
-          + "udbuild.googleapis.com/Repository\"\216\001\n\027Li"
-          + "stRepositoriesRequest\022<\n\006parent\030\001 \001(\tB,\340"
-          + "A\002\372A&\022$cloudbuild.googleapis.com/Reposit"
-          + "ory\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
-          + "(\t\022\016\n\006filter\030\004 \001(\t\"t\n\030ListRepositoriesRe"
-          + "sponse\022?\n\014repositories\030\001 \003(\0132).google.de"
-          + "vtools.cloudbuild.v2.Repository\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"z\n\027DeleteRepositoryRequ"
-          + "est\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.go"
-          + "ogleapis.com/Repository\022\014\n\004etag\030\002 \001(\t\022\025\n"
-          + "\rvalidate_only\030\003 \001(\010\"^\n\032FetchReadWriteTo"
-          + "kenRequest\022@\n\nrepository\030\001 \001(\tB,\340A\002\372A&\n$"
-          + "cloudbuild.googleapis.com/Repository\"Y\n\025"
-          + "FetchReadTokenRequest\022@\n\nrepository\030\001 \001("
-          + "\tB,\340A\002\372A&\n$cloudbuild.googleapis.com/Rep"
-          + "ository\"\\\n\026FetchReadTokenResponse\022\r\n\005tok"
-          + "en\030\001 \001(\t\0223\n\017expiration_time\030\002 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\"a\n\033FetchReadWriteT"
-          + "okenResponse\022\r\n\005token\030\001 \001(\t\0223\n\017expiratio"
-          + "n_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
-          + "\"\216\001\n\025ProcessWebhookRequest\022<\n\006parent\030\001 \001"
-          + "(\tB,\340A\002\372A&\022$cloudbuild.googleapis.com/Co"
-          + "nnection\022\"\n\004body\030\002 \001(\0132\024.google.api.Http"
-          + "Body\022\023\n\013webhook_key\030\003 \001(\t\"\337\001\n\023FetchGitRe"
-          + "fsRequest\022@\n\nrepository\030\001 \001(\tB,\340A\002\372A&\n$c"
-          + "loudbuild.googleapis.com/Repository\022L\n\010r"
-          + "ef_type\030\002 \001(\0162:.google.devtools.cloudbui"
-          + "ld.v2.FetchGitRefsRequest.RefType\"8\n\007Ref"
-          + "Type\022\030\n\024REF_TYPE_UNSPECIFIED\020\000\022\007\n\003TAG\020\001\022"
-          + "\n\n\006BRANCH\020\002\")\n\024FetchGitRefsResponse\022\021\n\tr"
-          + "ef_names\030\001 \003(\t2\302\033\n\021RepositoryManager\022\221\002\n"
-          + "\020CreateConnection\0226.google.devtools.clou"
-          + "dbuild.v2.CreateConnectionRequest\032\035.goog"
-          + "le.longrunning.Operation\"\245\001\312A=\n\nConnecti"
-          + "on\022/google.devtools.cloudbuild.v2.Operat"
-          + "ionMetadata\332A\037parent,connection,connecti"
-          + "on_id\202\323\344\223\002=\"//v2/{parent=projects/*/loca"
-          + "tions/*}/connections:\nconnection\022\257\001\n\rGet"
-          + "Connection\0223.google.devtools.cloudbuild."
-          + "v2.GetConnectionRequest\032).google.devtool"
-          + "s.cloudbuild.v2.Connection\">\332A\004name\202\323\344\223\002"
-          + "1\022//v2/{name=projects/*/locations/*/conn"
-          + "ections/*}\022\302\001\n\017ListConnections\0225.google."
-          + "devtools.cloudbuild.v2.ListConnectionsRe"
-          + "quest\0326.google.devtools.cloudbuild.v2.Li"
-          + "stConnectionsResponse\"@\332A\006parent\202\323\344\223\0021\022/"
-          + "/v2/{parent=projects/*/locations/*}/conn"
-          + "ections\022\223\002\n\020UpdateConnection\0226.google.de"
-          + "vtools.cloudbuild.v2.UpdateConnectionReq"
-          + "uest\032\035.google.longrunning.Operation\"\247\001\312A"
-          + "=\n\nConnection\022/google.devtools.cloudbuil"
-          + "d.v2.OperationMetadata\332A\026connection,upda"
-          + "te_mask\202\323\344\223\002H2:/v2/{connection.name=proj"
-          + "ects/*/locations/*/connections/*}:\nconne"
-          + "ction\022\365\001\n\020DeleteConnection\0226.google.devt"
-          + "ools.cloudbuild.v2.DeleteConnectionReque"
-          + "st\032\035.google.longrunning.Operation\"\211\001\312AH\n"
-          + "\025google.protobuf.Empty\022/google.devtools."
-          + "cloudbuild.v2.OperationMetadata\332A\004name\202\323"
-          + "\344\223\0021*//v2/{name=projects/*/locations/*/c"
-          + "onnections/*}\022\240\002\n\020CreateRepository\0226.goo"
+          + "ogle/api/resource.proto\032.google/devtools"
+          + "/cloudbuild/v2/cloudbuild.proto\032#google/"
+          + "longrunning/operations.proto\032\033google/pro"
+          + "tobuf/empty.proto\032 google/protobuf/field"
+          + "_mask.proto\032\037google/protobuf/timestamp.p"
+          + "roto\"\335\007\n\nConnection\022\021\n\004name\030\001 \001(\tB\003\340A\005\0224"
+          + "\n\013create_time\030\003 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\0224\n\013update_time\030\004 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\022D\n\rgithub_con"
+          + "fig\030\005 \001(\0132+.google.devtools.cloudbuild.v"
+          + "2.GitHubConfigH\000\022Y\n\030github_enterprise_co"
+          + "nfig\030\006 \001(\01325.google.devtools.cloudbuild."
+          + "v2.GitHubEnterpriseConfigH\000\022D\n\rgitlab_co"
+          + "nfig\030\007 \001(\0132+.google.devtools.cloudbuild."
+          + "v2.GitLabConfigH\000\022`\n\034bitbucket_data_cent"
+          + "er_config\030\010 \001(\01328.google.devtools.cloudb"
+          + "uild.v2.BitbucketDataCenterConfigH\000\022U\n\026b"
+          + "itbucket_cloud_config\030\t \001(\01323.google.dev"
+          + "tools.cloudbuild.v2.BitbucketCloudConfig"
+          + "H\000\022Q\n\022installation_state\030\014 \001(\01320.google."
+          + "devtools.cloudbuild.v2.InstallationState"
+          + "B\003\340A\003\022\020\n\010disabled\030\r \001(\010\022\030\n\013reconciling\030\016"
+          + " \001(\010B\003\340A\003\022O\n\013annotations\030\017 \003(\0132:.google."
+          + "devtools.cloudbuild.v2.Connection.Annota"
+          + "tionsEntry\022\014\n\004etag\030\020 \001(\t\0322\n\020AnnotationsE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\210\001\352"
+          + "A\204\001\n$cloudbuild.googleapis.com/Connectio"
+          + "n\022@projects/{project}/locations/{locatio"
+          + "n}/connections/{connection}*\013connections"
+          + "2\nconnectionR\001\001B\023\n\021connection_config\"\205\002\n"
+          + "\021InstallationState\022J\n\005stage\030\001 \001(\01626.goog"
+          + "le.devtools.cloudbuild.v2.InstallationSt"
+          + "ate.StageB\003\340A\003\022\024\n\007message\030\002 \001(\tB\003\340A\003\022\027\n\n"
+          + "action_uri\030\003 \001(\tB\003\340A\003\"u\n\005Stage\022\025\n\021STAGE_"
+          + "UNSPECIFIED\020\000\022\026\n\022PENDING_CREATE_APP\020\001\022\026\n"
+          + "\022PENDING_USER_OAUTH\020\002\022\027\n\023PENDING_INSTALL"
+          + "_APP\020\003\022\014\n\010COMPLETE\020\n\"\213\001\n FetchLinkableRe"
+          + "positoriesRequest\022@\n\nconnection\030\001 \001(\tB,\340"
+          + "A\002\372A&\n$cloudbuild.googleapis.com/Connect"
+          + "ion\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001"
+          + "(\t\"}\n!FetchLinkableRepositoriesResponse\022"
+          + "?\n\014repositories\030\001 \003(\0132).google.devtools."
+          + "cloudbuild.v2.Repository\022\027\n\017next_page_to"
+          + "ken\030\002 \001(\t\"z\n\014GitHubConfig\022M\n\025authorizer_"
+          + "credential\030\001 \001(\0132..google.devtools.cloud"
+          + "build.v2.OAuthCredential\022\033\n\023app_installa"
+          + "tion_id\030\002 \001(\003\"\267\003\n\026GitHubEnterpriseConfig"
+          + "\022\025\n\010host_uri\030\001 \001(\tB\003\340A\002\022\024\n\007api_key\030\014 \001(\t"
+          + "B\003\340A\002\022\016\n\006app_id\030\002 \001(\003\022\020\n\010app_slug\030\r \001(\t\022"
+          + "S\n\032private_key_secret_version\030\004 \001(\tB/\372A,"
+          + "\n*secretmanager.googleapis.com/SecretVer"
+          + "sion\022V\n\035webhook_secret_secret_version\030\005 "
+          + "\001(\tB/\372A,\n*secretmanager.googleapis.com/S"
+          + "ecretVersion\022\033\n\023app_installation_id\030\t \001("
+          + "\003\022W\n\030service_directory_config\030\n \001(\01325.go"
+          + "ogle.devtools.cloudbuild.v2.ServiceDirec"
+          + "toryConfig\022\016\n\006ssl_ca\030\013 \001(\t\022\033\n\016server_ver"
+          + "sion\030\016 \001(\tB\003\340A\003\"\257\003\n\014GitLabConfig\022\020\n\010host"
+          + "_uri\030\001 \001(\t\022\\\n\035webhook_secret_secret_vers"
+          + "ion\030\002 \001(\tB5\340A\002\340A\005\372A,\n*secretmanager.goog"
+          + "leapis.com/SecretVersion\022V\n\032read_authori"
+          + "zer_credential\030\003 \001(\0132-.google.devtools.c"
+          + "loudbuild.v2.UserCredentialB\003\340A\002\022Q\n\025auth"
+          + "orizer_credential\030\004 \001(\0132-.google.devtool"
+          + "s.cloudbuild.v2.UserCredentialB\003\340A\002\022W\n\030s"
+          + "ervice_directory_config\030\005 \001(\01325.google.d"
+          + "evtools.cloudbuild.v2.ServiceDirectoryCo"
+          + "nfig\022\016\n\006ssl_ca\030\006 \001(\t\022\033\n\016server_version\030\007"
+          + " \001(\tB\003\340A\003\"\313\003\n\031BitbucketDataCenterConfig\022"
+          + "\025\n\010host_uri\030\001 \001(\tB\003\340A\002\022\\\n\035webhook_secret"
+          + "_secret_version\030\002 \001(\tB5\340A\002\340A\005\372A,\n*secret"
+          + "manager.googleapis.com/SecretVersion\022V\n\032"
+          + "read_authorizer_credential\030\003 \001(\0132-.googl"
+          + "e.devtools.cloudbuild.v2.UserCredentialB"
+          + "\003\340A\002\022Q\n\025authorizer_credential\030\004 \001(\0132-.go"
+          + "ogle.devtools.cloudbuild.v2.UserCredenti"
+          + "alB\003\340A\002\022\\\n\030service_directory_config\030\005 \001("
+          + "\01325.google.devtools.cloudbuild.v2.Servic"
+          + "eDirectoryConfigB\003\340A\001\022\023\n\006ssl_ca\030\006 \001(\tB\003\340"
+          + "A\001\022\033\n\016server_version\030\007 \001(\tB\003\340A\003\"\264\002\n\024Bitb"
+          + "ucketCloudConfig\022\026\n\tworkspace\030\001 \001(\tB\003\340A\002"
+          + "\022Y\n\035webhook_secret_secret_version\030\002 \001(\tB"
+          + "2\340A\002\372A,\n*secretmanager.googleapis.com/Se"
+          + "cretVersion\022V\n\032read_authorizer_credentia"
+          + "l\030\003 \001(\0132-.google.devtools.cloudbuild.v2."
+          + "UserCredentialB\003\340A\002\022Q\n\025authorizer_creden"
+          + "tial\030\004 \001(\0132-.google.devtools.cloudbuild."
+          + "v2.UserCredentialB\003\340A\002\"Z\n\026ServiceDirecto"
+          + "ryConfig\022@\n\007service\030\001 \001(\tB/\340A\002\372A)\n\'servi"
+          + "cedirectory.googleapis.com/Service\"\366\003\n\nR"
+          + "epository\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\027\n\nremote_u"
+          + "ri\030\002 \001(\tB\003\340A\002\0224\n\013create_time\030\004 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013update_ti"
+          + "me\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\022O\n\013annotations\030\006 \003(\0132:.google.devtools"
+          + ".cloudbuild.v2.Repository.AnnotationsEnt"
+          + "ry\022\014\n\004etag\030\007 \001(\t\022\027\n\nwebhook_id\030\010 \001(\tB\003\340A"
+          + "\003\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
+          + "lue\030\002 \001(\t:\0028\001:\243\001\352A\237\001\n$cloudbuild.googlea"
+          + "pis.com/Repository\022Zprojects/{project}/l"
+          + "ocations/{location}/connections/{connect"
+          + "ion}/repositories/{repository}*\014reposito"
+          + "ries2\nrepositoryR\001\001\"}\n\017OAuthCredential\022S"
+          + "\n\032oauth_token_secret_version\030\001 \001(\tB/\372A,\n"
+          + "*secretmanager.googleapis.com/SecretVers"
+          + "ion\022\025\n\010username\030\002 \001(\tB\003\340A\003\"~\n\016UserCreden"
+          + "tial\022U\n\031user_token_secret_version\030\001 \001(\tB"
+          + "2\340A\002\372A,\n*secretmanager.googleapis.com/Se"
+          + "cretVersion\022\025\n\010username\030\002 \001(\tB\003\340A\003\"\267\001\n\027C"
+          + "reateConnectionRequest\022<\n\006parent\030\001 \001(\tB,"
+          + "\340A\002\372A&\022$cloudbuild.googleapis.com/Connec"
+          + "tion\022B\n\nconnection\030\002 \001(\0132).google.devtoo"
+          + "ls.cloudbuild.v2.ConnectionB\003\340A\002\022\032\n\rconn"
+          + "ection_id\030\003 \001(\tB\003\340A\002\"R\n\024GetConnectionReq"
+          + "uest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.g"
+          + "oogleapis.com/Connection\"}\n\026ListConnecti"
+          + "onsRequest\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\022$clou"
+          + "dbuild.googleapis.com/Connection\022\021\n\tpage"
+          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"r\n\027ListC"
+          + "onnectionsResponse\022>\n\013connections\030\001 \003(\0132"
+          + ").google.devtools.cloudbuild.v2.Connecti"
+          + "on\022\027\n\017next_page_token\030\002 \001(\t\"\263\001\n\027UpdateCo"
+          + "nnectionRequest\022B\n\nconnection\030\001 \001(\0132).go"
+          + "ogle.devtools.cloudbuild.v2.ConnectionB\003"
+          + "\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
+          + "uf.FieldMask\022\025\n\rallow_missing\030\003 \001(\010\022\014\n\004e"
+          + "tag\030\004 \001(\t\"z\n\027DeleteConnectionRequest\022:\n\004"
+          + "name\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.googleapi"
+          + "s.com/Connection\022\014\n\004etag\030\002 \001(\t\022\025\n\rvalida"
+          + "te_only\030\003 \001(\010\"\267\001\n\027CreateRepositoryReques"
+          + "t\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.go"
+          + "ogleapis.com/Connection\022B\n\nrepository\030\002 "
+          + "\001(\0132).google.devtools.cloudbuild.v2.Repo"
+          + "sitoryB\003\340A\002\022\032\n\rrepository_id\030\003 \001(\tB\003\340A\002\""
+          + "\255\001\n\036BatchCreateRepositoriesRequest\022<\n\006pa"
+          + "rent\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.googleapi"
+          + "s.com/Connection\022M\n\010requests\030\002 \003(\01326.goo"
           + "gle.devtools.cloudbuild.v2.CreateReposit"
-          + "oryRequest\032\035.google.longrunning.Operatio"
-          + "n\"\264\001\312A=\n\nRepository\022/google.devtools.clo"
-          + "udbuild.v2.OperationMetadata\332A\037parent,re"
-          + "pository,repository_id\202\323\344\223\002L\">/v2/{paren"
-          + "t=projects/*/locations/*/connections/*}/"
-          + "repositories:\nrepository\022\266\002\n\027BatchCreate"
-          + "Repositories\022=.google.devtools.cloudbuil"
-          + "d.v2.BatchCreateRepositoriesRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\274\001\312AR\n\037BatchC"
-          + "reateRepositoriesResponse\022/google.devtoo"
-          + "ls.cloudbuild.v2.OperationMetadata\332A\017par"
-          + "ent,requests\202\323\344\223\002O\"J/v2/{parent=projects"
-          + "/*/locations/*/connections/*}/repositori"
-          + "es:batchCreate:\001*\022\276\001\n\rGetRepository\0223.go"
-          + "ogle.devtools.cloudbuild.v2.GetRepositor"
-          + "yRequest\032).google.devtools.cloudbuild.v2"
-          + ".Repository\"M\332A\004name\202\323\344\223\002@\022>/v2/{name=pr"
-          + "ojects/*/locations/*/connections/*/repos"
-          + "itories/*}\022\324\001\n\020ListRepositories\0226.google"
-          + ".devtools.cloudbuild.v2.ListRepositories"
-          + "Request\0327.google.devtools.cloudbuild.v2."
-          + "ListRepositoriesResponse\"O\332A\006parent\202\323\344\223\002"
-          + "@\022>/v2/{parent=projects/*/locations/*/co"
-          + "nnections/*}/repositories\022\204\002\n\020DeleteRepo"
-          + "sitory\0226.google.devtools.cloudbuild.v2.D"
-          + "eleteRepositoryRequest\032\035.google.longrunn"
-          + "ing.Operation\"\230\001\312AH\n\025google.protobuf.Emp"
-          + "ty\022/google.devtools.cloudbuild.v2.Operat"
-          + "ionMetadata\332A\004name\202\323\344\223\002@*>/v2/{name=proj"
+          + "oryRequestB\003\340A\002\"b\n\037BatchCreateRepositori"
+          + "esResponse\022?\n\014repositories\030\001 \003(\0132).googl"
+          + "e.devtools.cloudbuild.v2.Repository\"R\n\024G"
+          + "etRepositoryRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A"
+          + "&\n$cloudbuild.googleapis.com/Repository\""
+          + "\216\001\n\027ListRepositoriesRequest\022<\n\006parent\030\001 "
+          + "\001(\tB,\340A\002\372A&\022$cloudbuild.googleapis.com/R"
+          + "epository\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+          + "en\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"t\n\030ListReposito"
+          + "riesResponse\022?\n\014repositories\030\001 \003(\0132).goo"
+          + "gle.devtools.cloudbuild.v2.Repository\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"z\n\027DeleteReposito"
+          + "ryRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&\n$cloudbu"
+          + "ild.googleapis.com/Repository\022\014\n\004etag\030\002 "
+          + "\001(\t\022\025\n\rvalidate_only\030\003 \001(\010\"^\n\032FetchReadW"
+          + "riteTokenRequest\022@\n\nrepository\030\001 \001(\tB,\340A"
+          + "\002\372A&\n$cloudbuild.googleapis.com/Reposito"
+          + "ry\"Y\n\025FetchReadTokenRequest\022@\n\nrepositor"
+          + "y\030\001 \001(\tB,\340A\002\372A&\n$cloudbuild.googleapis.c"
+          + "om/Repository\"\\\n\026FetchReadTokenResponse\022"
+          + "\r\n\005token\030\001 \001(\t\0223\n\017expiration_time\030\002 \001(\0132"
+          + "\032.google.protobuf.Timestamp\"a\n\033FetchRead"
+          + "WriteTokenResponse\022\r\n\005token\030\001 \001(\t\0223\n\017exp"
+          + "iration_time\030\002 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\"\216\001\n\025ProcessWebhookRequest\022<\n\006pare"
+          + "nt\030\001 \001(\tB,\340A\002\372A&\022$cloudbuild.googleapis."
+          + "com/Connection\022\"\n\004body\030\002 \001(\0132\024.google.ap"
+          + "i.HttpBody\022\023\n\013webhook_key\030\003 \001(\t\"\337\001\n\023Fetc"
+          + "hGitRefsRequest\022@\n\nrepository\030\001 \001(\tB,\340A\002"
+          + "\372A&\n$cloudbuild.googleapis.com/Repositor"
+          + "y\022L\n\010ref_type\030\002 \001(\0162:.google.devtools.cl"
+          + "oudbuild.v2.FetchGitRefsRequest.RefType\""
+          + "8\n\007RefType\022\030\n\024REF_TYPE_UNSPECIFIED\020\000\022\007\n\003"
+          + "TAG\020\001\022\n\n\006BRANCH\020\002\")\n\024FetchGitRefsRespons"
+          + "e\022\021\n\tref_names\030\001 \003(\t2\302\033\n\021RepositoryManag"
+          + "er\022\221\002\n\020CreateConnection\0226.google.devtool"
+          + "s.cloudbuild.v2.CreateConnectionRequest\032"
+          + "\035.google.longrunning.Operation\"\245\001\312A=\n\nCo"
+          + "nnection\022/google.devtools.cloudbuild.v2."
+          + "OperationMetadata\332A\037parent,connection,co"
+          + "nnection_id\202\323\344\223\002=\"//v2/{parent=projects/"
+          + "*/locations/*}/connections:\nconnection\022\257"
+          + "\001\n\rGetConnection\0223.google.devtools.cloud"
+          + "build.v2.GetConnectionRequest\032).google.d"
+          + "evtools.cloudbuild.v2.Connection\">\332A\004nam"
+          + "e\202\323\344\223\0021\022//v2/{name=projects/*/locations/"
+          + "*/connections/*}\022\302\001\n\017ListConnections\0225.g"
+          + "oogle.devtools.cloudbuild.v2.ListConnect"
+          + "ionsRequest\0326.google.devtools.cloudbuild"
+          + ".v2.ListConnectionsResponse\"@\332A\006parent\202\323"
+          + "\344\223\0021\022//v2/{parent=projects/*/locations/*"
+          + "}/connections\022\223\002\n\020UpdateConnection\0226.goo"
+          + "gle.devtools.cloudbuild.v2.UpdateConnect"
+          + "ionRequest\032\035.google.longrunning.Operatio"
+          + "n\"\247\001\312A=\n\nConnection\022/google.devtools.clo"
+          + "udbuild.v2.OperationMetadata\332A\026connectio"
+          + "n,update_mask\202\323\344\223\002H2:/v2/{connection.nam"
+          + "e=projects/*/locations/*/connections/*}:"
+          + "\nconnection\022\365\001\n\020DeleteConnection\0226.googl"
+          + "e.devtools.cloudbuild.v2.DeleteConnectio"
+          + "nRequest\032\035.google.longrunning.Operation\""
+          + "\211\001\312AH\n\025google.protobuf.Empty\022/google.dev"
+          + "tools.cloudbuild.v2.OperationMetadata\332A\004"
+          + "name\202\323\344\223\0021*//v2/{name=projects/*/locatio"
+          + "ns/*/connections/*}\022\240\002\n\020CreateRepository"
+          + "\0226.google.devtools.cloudbuild.v2.CreateR"
+          + "epositoryRequest\032\035.google.longrunning.Op"
+          + "eration\"\264\001\312A=\n\nRepository\022/google.devtoo"
+          + "ls.cloudbuild.v2.OperationMetadata\332A\037par"
+          + "ent,repository,repository_id\202\323\344\223\002L\">/v2/"
+          + "{parent=projects/*/locations/*/connectio"
+          + "ns/*}/repositories:\nrepository\022\266\002\n\027Batch"
+          + "CreateRepositories\022=.google.devtools.clo"
+          + "udbuild.v2.BatchCreateRepositoriesReques"
+          + "t\032\035.google.longrunning.Operation\"\274\001\312AR\n\037"
+          + "BatchCreateRepositoriesResponse\022/google."
+          + "devtools.cloudbuild.v2.OperationMetadata"
+          + "\332A\017parent,requests\202\323\344\223\002O\"J/v2/{parent=pr"
+          + "ojects/*/locations/*/connections/*}/repo"
+          + "sitories:batchCreate:\001*\022\276\001\n\rGetRepositor"
+          + "y\0223.google.devtools.cloudbuild.v2.GetRep"
+          + "ositoryRequest\032).google.devtools.cloudbu"
+          + "ild.v2.Repository\"M\332A\004name\202\323\344\223\002@\022>/v2/{n"
+          + "ame=projects/*/locations/*/connections/*"
+          + "/repositories/*}\022\324\001\n\020ListRepositories\0226."
+          + "google.devtools.cloudbuild.v2.ListReposi"
+          + "toriesRequest\0327.google.devtools.cloudbui"
+          + "ld.v2.ListRepositoriesResponse\"O\332A\006paren"
+          + "t\202\323\344\223\002@\022>/v2/{parent=projects/*/location"
+          + "s/*/connections/*}/repositories\022\204\002\n\020Dele"
+          + "teRepository\0226.google.devtools.cloudbuil"
+          + "d.v2.DeleteRepositoryRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\230\001\312AH\n\025google.protob"
+          + "uf.Empty\022/google.devtools.cloudbuild.v2."
+          + "OperationMetadata\332A\004name\202\323\344\223\002@*>/v2/{nam"
+          + "e=projects/*/locations/*/connections/*/r"
+          + "epositories/*}\022\377\001\n\023FetchReadWriteToken\0229"
+          + ".google.devtools.cloudbuild.v2.FetchRead"
+          + "WriteTokenRequest\032:.google.devtools.clou"
+          + "dbuild.v2.FetchReadWriteTokenResponse\"q\332"
+          + "A\nrepository\202\323\344\223\002^\"Y/v2/{repository=proj"
           + "ects/*/locations/*/connections/*/reposit"
-          + "ories/*}\022\377\001\n\023FetchReadWriteToken\0229.googl"
-          + "e.devtools.cloudbuild.v2.FetchReadWriteT"
-          + "okenRequest\032:.google.devtools.cloudbuild"
-          + ".v2.FetchReadWriteTokenResponse\"q\332A\nrepo"
-          + "sitory\202\323\344\223\002^\"Y/v2/{repository=projects/*"
-          + "/locations/*/connections/*/repositories/"
-          + "*}:accessReadWriteToken:\001*\022\353\001\n\016FetchRead"
-          + "Token\0224.google.devtools.cloudbuild.v2.Fe"
-          + "tchReadTokenRequest\0325.google.devtools.cl"
-          + "oudbuild.v2.FetchReadTokenResponse\"l\332A\nr"
-          + "epository\202\323\344\223\002Y\"T/v2/{repository=project"
-          + "s/*/locations/*/connections/*/repositori"
-          + "es/*}:accessReadToken:\001*\022\367\001\n\031FetchLinkab"
-          + "leRepositories\022?.google.devtools.cloudbu"
-          + "ild.v2.FetchLinkableRepositoriesRequest\032"
-          + "@.google.devtools.cloudbuild.v2.FetchLin"
-          + "kableRepositoriesResponse\"W\202\323\344\223\002Q\022O/v2/{"
-          + "connection=projects/*/locations/*/connec"
-          + "tions/*}:fetchLinkableRepositories\022\337\001\n\014F"
-          + "etchGitRefs\0222.google.devtools.cloudbuild"
-          + ".v2.FetchGitRefsRequest\0323.google.devtool"
-          + "s.cloudbuild.v2.FetchGitRefsResponse\"f\332A"
-          + "\nrepository\202\323\344\223\002S\022Q/v2/{repository=proje"
-          + "cts/*/locations/*/connections/*/reposito"
-          + "ries/*}:fetchGitRefs\032M\312A\031cloudbuild.goog"
-          + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformB\311\002\n\030com.google.cloud"
-          + "build.v2B\026RepositoryManagerProtoP\001Z>clou"
-          + "d.google.com/go/cloudbuild/apiv2/cloudbu"
-          + "ildpb;cloudbuildpb\242\002\003GCB\252\002\032Google.Cloud."
-          + "CloudBuild.V2\312\002\025Google\\Cloud\\Build\\V2\352\002\030"
-          + "Google::Cloud::Build::V2\352A|\n\'servicedire"
-          + "ctory.googleapis.com/Service\022Qprojects/{"
-          + "project}/locations/{location}/namespaces"
-          + "/{namespace}/services/{service}b\006proto3"
+          + "ories/*}:accessReadWriteToken:\001*\022\353\001\n\016Fet"
+          + "chReadToken\0224.google.devtools.cloudbuild"
+          + ".v2.FetchReadTokenRequest\0325.google.devto"
+          + "ols.cloudbuild.v2.FetchReadTokenResponse"
+          + "\"l\332A\nrepository\202\323\344\223\002Y\"T/v2/{repository=p"
+          + "rojects/*/locations/*/connections/*/repo"
+          + "sitories/*}:accessReadToken:\001*\022\367\001\n\031Fetch"
+          + "LinkableRepositories\022?.google.devtools.c"
+          + "loudbuild.v2.FetchLinkableRepositoriesRe"
+          + "quest\032@.google.devtools.cloudbuild.v2.Fe"
+          + "tchLinkableRepositoriesResponse\"W\202\323\344\223\002Q\022"
+          + "O/v2/{connection=projects/*/locations/*/"
+          + "connections/*}:fetchLinkableRepositories"
+          + "\022\337\001\n\014FetchGitRefs\0222.google.devtools.clou"
+          + "dbuild.v2.FetchGitRefsRequest\0323.google.d"
+          + "evtools.cloudbuild.v2.FetchGitRefsRespon"
+          + "se\"f\332A\nrepository\202\323\344\223\002S\022Q/v2/{repository"
+          + "=projects/*/locations/*/connections/*/re"
+          + "positories/*}:fetchGitRefs\032M\312A\031cloudbuil"
+          + "d.googleapis.com\322A.https://www.googleapi"
+          + "s.com/auth/cloud-platformB\311\002\n\030com.google"
+          + ".cloudbuild.v2B\026RepositoryManagerProtoP\001"
+          + "Z>cloud.google.com/go/cloudbuild/apiv2/c"
+          + "loudbuildpb;cloudbuildpb\242\002\003GCB\252\002\032Google."
+          + "Cloud.CloudBuild.V2\312\002\025Google\\Cloud\\Build"
+          + "\\V2\352\002\030Google::Cloud::Build::V2\352A|\n\'servi"
+          + "cedirectory.googleapis.com/Service\022Qproj"
+          + "ects/{project}/locations/{location}/name"
+          + "spaces/{namespace}/services/{service}b\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -428,6 +462,7 @@ public final class RepositoryManagerProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.HttpBodyProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloudbuild.v2.CloudBuildProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -445,6 +480,8 @@ public final class RepositoryManagerProto {
               "GithubConfig",
               "GithubEnterpriseConfig",
               "GitlabConfig",
+              "BitbucketDataCenterConfig",
+              "BitbucketCloudConfig",
               "InstallationState",
               "Disabled",
               "Reconciling",
@@ -523,8 +560,33 @@ public final class RepositoryManagerProto {
               "SslCa",
               "ServerVersion",
             });
-    internal_static_google_devtools_cloudbuild_v2_ServiceDirectoryConfig_descriptor =
+    internal_static_google_devtools_cloudbuild_v2_BitbucketDataCenterConfig_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_devtools_cloudbuild_v2_BitbucketDataCenterConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v2_BitbucketDataCenterConfig_descriptor,
+            new java.lang.String[] {
+              "HostUri",
+              "WebhookSecretSecretVersion",
+              "ReadAuthorizerCredential",
+              "AuthorizerCredential",
+              "ServiceDirectoryConfig",
+              "SslCa",
+              "ServerVersion",
+            });
+    internal_static_google_devtools_cloudbuild_v2_BitbucketCloudConfig_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_devtools_cloudbuild_v2_BitbucketCloudConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_cloudbuild_v2_BitbucketCloudConfig_descriptor,
+            new java.lang.String[] {
+              "Workspace",
+              "WebhookSecretSecretVersion",
+              "ReadAuthorizerCredential",
+              "AuthorizerCredential",
+            });
+    internal_static_google_devtools_cloudbuild_v2_ServiceDirectoryConfig_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_devtools_cloudbuild_v2_ServiceDirectoryConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_ServiceDirectoryConfig_descriptor,
@@ -532,7 +594,7 @@ public final class RepositoryManagerProto {
               "Service",
             });
     internal_static_google_devtools_cloudbuild_v2_Repository_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_devtools_cloudbuild_v2_Repository_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_Repository_descriptor,
@@ -548,7 +610,7 @@ public final class RepositoryManagerProto {
               "Key", "Value",
             });
     internal_static_google_devtools_cloudbuild_v2_OAuthCredential_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_devtools_cloudbuild_v2_OAuthCredential_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_OAuthCredential_descriptor,
@@ -556,7 +618,7 @@ public final class RepositoryManagerProto {
               "OauthTokenSecretVersion", "Username",
             });
     internal_static_google_devtools_cloudbuild_v2_UserCredential_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_devtools_cloudbuild_v2_UserCredential_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_UserCredential_descriptor,
@@ -564,7 +626,7 @@ public final class RepositoryManagerProto {
               "UserTokenSecretVersion", "Username",
             });
     internal_static_google_devtools_cloudbuild_v2_CreateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_devtools_cloudbuild_v2_CreateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_CreateConnectionRequest_descriptor,
@@ -572,7 +634,7 @@ public final class RepositoryManagerProto {
               "Parent", "Connection", "ConnectionId",
             });
     internal_static_google_devtools_cloudbuild_v2_GetConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_devtools_cloudbuild_v2_GetConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_GetConnectionRequest_descriptor,
@@ -580,7 +642,7 @@ public final class RepositoryManagerProto {
               "Name",
             });
     internal_static_google_devtools_cloudbuild_v2_ListConnectionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_devtools_cloudbuild_v2_ListConnectionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_ListConnectionsRequest_descriptor,
@@ -588,7 +650,7 @@ public final class RepositoryManagerProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_devtools_cloudbuild_v2_ListConnectionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_devtools_cloudbuild_v2_ListConnectionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_ListConnectionsResponse_descriptor,
@@ -596,7 +658,7 @@ public final class RepositoryManagerProto {
               "Connections", "NextPageToken",
             });
     internal_static_google_devtools_cloudbuild_v2_UpdateConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_devtools_cloudbuild_v2_UpdateConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_UpdateConnectionRequest_descriptor,
@@ -604,7 +666,7 @@ public final class RepositoryManagerProto {
               "Connection", "UpdateMask", "AllowMissing", "Etag",
             });
     internal_static_google_devtools_cloudbuild_v2_DeleteConnectionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_devtools_cloudbuild_v2_DeleteConnectionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_DeleteConnectionRequest_descriptor,
@@ -612,7 +674,7 @@ public final class RepositoryManagerProto {
               "Name", "Etag", "ValidateOnly",
             });
     internal_static_google_devtools_cloudbuild_v2_CreateRepositoryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_devtools_cloudbuild_v2_CreateRepositoryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_CreateRepositoryRequest_descriptor,
@@ -620,7 +682,7 @@ public final class RepositoryManagerProto {
               "Parent", "Repository", "RepositoryId",
             });
     internal_static_google_devtools_cloudbuild_v2_BatchCreateRepositoriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_devtools_cloudbuild_v2_BatchCreateRepositoriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_BatchCreateRepositoriesRequest_descriptor,
@@ -628,7 +690,7 @@ public final class RepositoryManagerProto {
               "Parent", "Requests",
             });
     internal_static_google_devtools_cloudbuild_v2_BatchCreateRepositoriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_devtools_cloudbuild_v2_BatchCreateRepositoriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_BatchCreateRepositoriesResponse_descriptor,
@@ -636,7 +698,7 @@ public final class RepositoryManagerProto {
               "Repositories",
             });
     internal_static_google_devtools_cloudbuild_v2_GetRepositoryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_devtools_cloudbuild_v2_GetRepositoryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_GetRepositoryRequest_descriptor,
@@ -644,7 +706,7 @@ public final class RepositoryManagerProto {
               "Name",
             });
     internal_static_google_devtools_cloudbuild_v2_ListRepositoriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_devtools_cloudbuild_v2_ListRepositoriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_ListRepositoriesRequest_descriptor,
@@ -652,7 +714,7 @@ public final class RepositoryManagerProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_devtools_cloudbuild_v2_ListRepositoriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_devtools_cloudbuild_v2_ListRepositoriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_ListRepositoriesResponse_descriptor,
@@ -660,7 +722,7 @@ public final class RepositoryManagerProto {
               "Repositories", "NextPageToken",
             });
     internal_static_google_devtools_cloudbuild_v2_DeleteRepositoryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_devtools_cloudbuild_v2_DeleteRepositoryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_DeleteRepositoryRequest_descriptor,
@@ -668,7 +730,7 @@ public final class RepositoryManagerProto {
               "Name", "Etag", "ValidateOnly",
             });
     internal_static_google_devtools_cloudbuild_v2_FetchReadWriteTokenRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_devtools_cloudbuild_v2_FetchReadWriteTokenRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_FetchReadWriteTokenRequest_descriptor,
@@ -676,7 +738,7 @@ public final class RepositoryManagerProto {
               "Repository",
             });
     internal_static_google_devtools_cloudbuild_v2_FetchReadTokenRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_devtools_cloudbuild_v2_FetchReadTokenRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_FetchReadTokenRequest_descriptor,
@@ -684,7 +746,7 @@ public final class RepositoryManagerProto {
               "Repository",
             });
     internal_static_google_devtools_cloudbuild_v2_FetchReadTokenResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_devtools_cloudbuild_v2_FetchReadTokenResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_FetchReadTokenResponse_descriptor,
@@ -692,7 +754,7 @@ public final class RepositoryManagerProto {
               "Token", "ExpirationTime",
             });
     internal_static_google_devtools_cloudbuild_v2_FetchReadWriteTokenResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_devtools_cloudbuild_v2_FetchReadWriteTokenResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_FetchReadWriteTokenResponse_descriptor,
@@ -700,7 +762,7 @@ public final class RepositoryManagerProto {
               "Token", "ExpirationTime",
             });
     internal_static_google_devtools_cloudbuild_v2_ProcessWebhookRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_devtools_cloudbuild_v2_ProcessWebhookRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_ProcessWebhookRequest_descriptor,
@@ -708,7 +770,7 @@ public final class RepositoryManagerProto {
               "Parent", "Body", "WebhookKey",
             });
     internal_static_google_devtools_cloudbuild_v2_FetchGitRefsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_devtools_cloudbuild_v2_FetchGitRefsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_FetchGitRefsRequest_descriptor,
@@ -716,7 +778,7 @@ public final class RepositoryManagerProto {
               "Repository", "RefType",
             });
     internal_static_google_devtools_cloudbuild_v2_FetchGitRefsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_devtools_cloudbuild_v2_FetchGitRefsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_cloudbuild_v2_FetchGitRefsResponse_descriptor,
@@ -741,6 +803,7 @@ public final class RepositoryManagerProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.HttpBodyProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloudbuild.v2.CloudBuildProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

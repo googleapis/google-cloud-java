@@ -88,6 +88,59 @@ public final class FeatureOnlineStoreServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest,
+          com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>
+      getStreamingFetchFeatureValuesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamingFetchFeatureValues",
+      requestType = com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest.class,
+      responseType = com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest,
+          com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>
+      getStreamingFetchFeatureValuesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest,
+            com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>
+        getStreamingFetchFeatureValuesMethod;
+    if ((getStreamingFetchFeatureValuesMethod =
+            FeatureOnlineStoreServiceGrpc.getStreamingFetchFeatureValuesMethod)
+        == null) {
+      synchronized (FeatureOnlineStoreServiceGrpc.class) {
+        if ((getStreamingFetchFeatureValuesMethod =
+                FeatureOnlineStoreServiceGrpc.getStreamingFetchFeatureValuesMethod)
+            == null) {
+          FeatureOnlineStoreServiceGrpc.getStreamingFetchFeatureValuesMethod =
+              getStreamingFetchFeatureValuesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest,
+                          com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamingFetchFeatureValues"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1
+                                  .StreamingFetchFeatureValuesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FeatureOnlineStoreServiceMethodDescriptorSupplier(
+                              "StreamingFetchFeatureValues"))
+                      .build();
+        }
+      }
+    }
+    return getStreamingFetchFeatureValuesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesRequest,
           com.google.cloud.aiplatform.v1beta1.SearchNearestEntitiesResponse>
       getSearchNearestEntitiesMethod;
@@ -209,6 +262,25 @@ public final class FeatureOnlineStoreServiceGrpc {
      *
      *
      * <pre>
+     * Bidirectional streaming RPC to fetch feature values under a FeatureView.
+     * Requests may not have a one-to-one mapping to responses and responses may
+     * be returned out-of-order to reduce latency.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest>
+        streamingFetchFeatureValues(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamingFetchFeatureValuesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Search the nearest entities under a FeatureView.
      * Search only works for indexable feature view; if a feature view isn't
      * indexable, returns Invalid argument response.
@@ -274,6 +346,26 @@ public final class FeatureOnlineStoreServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFetchFeatureValuesMethod(), getCallOptions()),
           request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional streaming RPC to fetch feature values under a FeatureView.
+     * Requests may not have a one-to-one mapping to responses and responses may
+     * be returned out-of-order to reduce latency.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest>
+        streamingFetchFeatureValues(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamingFetchFeatureValuesMethod(), getCallOptions()),
           responseObserver);
     }
 
@@ -402,6 +494,7 @@ public final class FeatureOnlineStoreServiceGrpc {
 
   private static final int METHODID_FETCH_FEATURE_VALUES = 0;
   private static final int METHODID_SEARCH_NEAREST_ENTITIES = 1;
+  private static final int METHODID_STREAMING_FETCH_FEATURE_VALUES = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -444,6 +537,12 @@ public final class FeatureOnlineStoreServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_STREAMING_FETCH_FEATURE_VALUES:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamingFetchFeatureValues(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -459,6 +558,13 @@ public final class FeatureOnlineStoreServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest,
                     com.google.cloud.aiplatform.v1beta1.FetchFeatureValuesResponse>(
                     service, METHODID_FETCH_FEATURE_VALUES)))
+        .addMethod(
+            getStreamingFetchFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesRequest,
+                    com.google.cloud.aiplatform.v1beta1.StreamingFetchFeatureValuesResponse>(
+                    service, METHODID_STREAMING_FETCH_FEATURE_VALUES)))
         .addMethod(
             getSearchNearestEntitiesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -518,6 +624,7 @@ public final class FeatureOnlineStoreServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new FeatureOnlineStoreServiceFileDescriptorSupplier())
                       .addMethod(getFetchFeatureValuesMethod())
+                      .addMethod(getStreamingFetchFeatureValuesMethod())
                       .addMethod(getSearchNearestEntitiesMethod())
                       .build();
         }

@@ -5,7 +5,7 @@
   "api_description": "allows users to control and modify the behavior of their GCP resources (e.g., VM, firewall, Project, etc.) across the Cloud Resource Hierarchy.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-resource-settings/latest/overview",
   "release_level": "stable",
-  "transport": "grpc",
+  "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-resource-settings",

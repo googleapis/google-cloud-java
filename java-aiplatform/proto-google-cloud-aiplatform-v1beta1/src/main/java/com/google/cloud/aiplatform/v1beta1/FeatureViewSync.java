@@ -64,6 +64,663 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.FeatureViewSync.Builder.class);
   }
 
+  public interface SyncSummaryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total number of rows synced.
+     * </pre>
+     *
+     * <code>int64 row_synced = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The rowSynced.
+     */
+    long getRowSynced();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. BigQuery slot milliseconds consumed for the sync job.
+     * </pre>
+     *
+     * <code>int64 total_slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalSlot.
+     */
+    long getTotalSlot();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Summary from the Sync job. For continuous syncs, the summary is updated
+   * periodically. For batch syncs, it gets updated on completion of the sync.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary}
+   */
+  public static final class SyncSummary extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary)
+      SyncSummaryOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SyncSummary.newBuilder() to construct.
+    private SyncSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SyncSummary() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SyncSummary();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewSyncProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureViewSync_SyncSummary_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewSyncProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureViewSync_SyncSummary_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.class,
+              com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder.class);
+    }
+
+    public static final int ROW_SYNCED_FIELD_NUMBER = 1;
+    private long rowSynced_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total number of rows synced.
+     * </pre>
+     *
+     * <code>int64 row_synced = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The rowSynced.
+     */
+    @java.lang.Override
+    public long getRowSynced() {
+      return rowSynced_;
+    }
+
+    public static final int TOTAL_SLOT_FIELD_NUMBER = 2;
+    private long totalSlot_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. BigQuery slot milliseconds consumed for the sync job.
+     * </pre>
+     *
+     * <code>int64 total_slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalSlot.
+     */
+    @java.lang.Override
+    public long getTotalSlot() {
+      return totalSlot_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (rowSynced_ != 0L) {
+        output.writeInt64(1, rowSynced_);
+      }
+      if (totalSlot_ != 0L) {
+        output.writeInt64(2, totalSlot_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (rowSynced_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, rowSynced_);
+      }
+      if (totalSlot_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, totalSlot_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary other =
+          (com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary) obj;
+
+      if (getRowSynced() != other.getRowSynced()) return false;
+      if (getTotalSlot() != other.getTotalSlot()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROW_SYNCED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRowSynced());
+      hash = (37 * hash) + TOTAL_SLOT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalSlot());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Summary from the Sync job. For continuous syncs, the summary is updated
+     * periodically. For batch syncs, it gets updated on completion of the sync.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary)
+        com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewSyncProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureViewSync_SyncSummary_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewSyncProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureViewSync_SyncSummary_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.class,
+                com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        rowSynced_ = 0L;
+        totalSlot_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewSyncProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureViewSync_SyncSummary_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary build() {
+        com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary result =
+            new com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rowSynced_ = rowSynced_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.totalSlot_ = totalSlot_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.getDefaultInstance())
+          return this;
+        if (other.getRowSynced() != 0L) {
+          setRowSynced(other.getRowSynced());
+        }
+        if (other.getTotalSlot() != 0L) {
+          setTotalSlot(other.getTotalSlot());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  rowSynced_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  totalSlot_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long rowSynced_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total number of rows synced.
+       * </pre>
+       *
+       * <code>int64 row_synced = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The rowSynced.
+       */
+      @java.lang.Override
+      public long getRowSynced() {
+        return rowSynced_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total number of rows synced.
+       * </pre>
+       *
+       * <code>int64 row_synced = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The rowSynced to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowSynced(long value) {
+
+        rowSynced_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Total number of rows synced.
+       * </pre>
+       *
+       * <code>int64 row_synced = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRowSynced() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rowSynced_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalSlot_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. BigQuery slot milliseconds consumed for the sync job.
+       * </pre>
+       *
+       * <code>int64 total_slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The totalSlot.
+       */
+      @java.lang.Override
+      public long getTotalSlot() {
+        return totalSlot_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. BigQuery slot milliseconds consumed for the sync job.
+       * </pre>
+       *
+       * <code>int64 total_slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The totalSlot to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalSlot(long value) {
+
+        totalSlot_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. BigQuery slot milliseconds consumed for the sync job.
+       * </pre>
+       *
+       * <code>int64 total_slot = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalSlot() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        totalSlot_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary)
+    private static final com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SyncSummary> PARSER =
+        new com.google.protobuf.AbstractParser<SyncSummary>() {
+          @java.lang.Override
+          public SyncSummary parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SyncSummary> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SyncSummary> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -265,6 +922,63 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     return finalStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : finalStatus_;
   }
 
+  public static final int SYNC_SUMMARY_FIELD_NUMBER = 6;
+  private com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary syncSummary_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of the sync job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the syncSummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasSyncSummary() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of the sync job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The syncSummary.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary getSyncSummary() {
+    return syncSummary_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.getDefaultInstance()
+        : syncSummary_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Summary of the sync job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder
+      getSyncSummaryOrBuilder() {
+    return syncSummary_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.getDefaultInstance()
+        : syncSummary_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -291,6 +1005,9 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getRunTime());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getSyncSummary());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -311,6 +1028,9 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRunTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSyncSummary());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -341,6 +1061,10 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     if (hasFinalStatus()) {
       if (!getFinalStatus().equals(other.getFinalStatus())) return false;
     }
+    if (hasSyncSummary() != other.hasSyncSummary()) return false;
+    if (hasSyncSummary()) {
+      if (!getSyncSummary().equals(other.getSyncSummary())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -365,6 +1089,10 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
     if (hasFinalStatus()) {
       hash = (37 * hash) + FINAL_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getFinalStatus().hashCode();
+    }
+    if (hasSyncSummary()) {
+      hash = (37 * hash) + SYNC_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getSyncSummary().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -510,6 +1238,7 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         getCreateTimeFieldBuilder();
         getRunTimeFieldBuilder();
         getFinalStatusFieldBuilder();
+        getSyncSummaryFieldBuilder();
       }
     }
 
@@ -532,6 +1261,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       if (finalStatusBuilder_ != null) {
         finalStatusBuilder_.dispose();
         finalStatusBuilder_ = null;
+      }
+      syncSummary_ = null;
+      if (syncSummaryBuilder_ != null) {
+        syncSummaryBuilder_.dispose();
+        syncSummaryBuilder_ = null;
       }
       return this;
     }
@@ -585,6 +1319,11 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         result.finalStatus_ =
             finalStatusBuilder_ == null ? finalStatus_ : finalStatusBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.syncSummary_ =
+            syncSummaryBuilder_ == null ? syncSummary_ : syncSummaryBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -649,6 +1388,9 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
       if (other.hasFinalStatus()) {
         mergeFinalStatus(other.getFinalStatus());
       }
+      if (other.hasSyncSummary()) {
+        mergeSyncSummary(other.getSyncSummary());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -699,6 +1441,12 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(getSyncSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1414,6 +2162,216 @@ public final class FeatureViewSync extends com.google.protobuf.GeneratedMessageV
         finalStatus_ = null;
       }
       return finalStatusBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary syncSummary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder>
+        syncSummaryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the syncSummary field is set.
+     */
+    public boolean hasSyncSummary() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The syncSummary.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary getSyncSummary() {
+      if (syncSummaryBuilder_ == null) {
+        return syncSummary_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.getDefaultInstance()
+            : syncSummary_;
+      } else {
+        return syncSummaryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSyncSummary(
+        com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary value) {
+      if (syncSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        syncSummary_ = value;
+      } else {
+        syncSummaryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSyncSummary(
+        com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder builderForValue) {
+      if (syncSummaryBuilder_ == null) {
+        syncSummary_ = builderForValue.build();
+      } else {
+        syncSummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeSyncSummary(
+        com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary value) {
+      if (syncSummaryBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && syncSummary_ != null
+            && syncSummary_
+                != com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary
+                    .getDefaultInstance()) {
+          getSyncSummaryBuilder().mergeFrom(value);
+        } else {
+          syncSummary_ = value;
+        }
+      } else {
+        syncSummaryBuilder_.mergeFrom(value);
+      }
+      if (syncSummary_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSyncSummary() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      syncSummary_ = null;
+      if (syncSummaryBuilder_ != null) {
+        syncSummaryBuilder_.dispose();
+        syncSummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder
+        getSyncSummaryBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getSyncSummaryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder
+        getSyncSummaryOrBuilder() {
+      if (syncSummaryBuilder_ != null) {
+        return syncSummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return syncSummary_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.getDefaultInstance()
+            : syncSummary_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Summary of the sync job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary sync_summary = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder>
+        getSyncSummaryFieldBuilder() {
+      if (syncSummaryBuilder_ == null) {
+        syncSummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary,
+                com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummary.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureViewSync.SyncSummaryOrBuilder>(
+                getSyncSummary(), getParentForChildren(), isClean());
+        syncSummary_ = null;
+      }
+      return syncSummaryBuilder_;
     }
 
     @java.lang.Override

@@ -23,8 +23,8 @@ package com.google.cloudbuild.v2;
  *
  *
  * <pre>
- * A connection to a SCM like GitHub, GitHub Enterprise, Bitbucket Server or
- * GitLab.
+ * A connection to a SCM like GitHub, GitHub Enterprise, Bitbucket Data Center,
+ * Bitbucket Cloud or GitLab.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudbuild.v2.Connection}
@@ -90,6 +90,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     GITHUB_CONFIG(5),
     GITHUB_ENTERPRISE_CONFIG(6),
     GITLAB_CONFIG(7),
+    BITBUCKET_DATA_CENTER_CONFIG(8),
+    BITBUCKET_CLOUD_CONFIG(9),
     CONNECTIONCONFIG_NOT_SET(0);
     private final int value;
 
@@ -114,6 +116,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           return GITHUB_ENTERPRISE_CONFIG;
         case 7:
           return GITLAB_CONFIG;
+        case 8:
+          return BITBUCKET_DATA_CENTER_CONFIG;
+        case 9:
+          return BITBUCKET_CLOUD_CONFIG;
         case 0:
           return CONNECTIONCONFIG_NOT_SET;
         default:
@@ -441,6 +447,115 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloudbuild.v2.GitLabConfig.getDefaultInstance();
   }
 
+  public static final int BITBUCKET_DATA_CENTER_CONFIG_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Data Center.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+   * </code>
+   *
+   * @return Whether the bitbucketDataCenterConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBitbucketDataCenterConfig() {
+    return connectionConfigCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Data Center.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+   * </code>
+   *
+   * @return The bitbucketDataCenterConfig.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v2.BitbucketDataCenterConfig getBitbucketDataCenterConfig() {
+    if (connectionConfigCase_ == 8) {
+      return (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_;
+    }
+    return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Data Center.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v2.BitbucketDataCenterConfigOrBuilder
+      getBitbucketDataCenterConfigOrBuilder() {
+    if (connectionConfigCase_ == 8) {
+      return (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_;
+    }
+    return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
+  }
+
+  public static final int BITBUCKET_CLOUD_CONFIG_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Cloud.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+   *
+   * @return Whether the bitbucketCloudConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBitbucketCloudConfig() {
+    return connectionConfigCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Cloud.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+   *
+   * @return The bitbucketCloudConfig.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v2.BitbucketCloudConfig getBitbucketCloudConfig() {
+    if (connectionConfigCase_ == 9) {
+      return (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_;
+    }
+    return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for connections to Bitbucket Cloud.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v2.BitbucketCloudConfigOrBuilder getBitbucketCloudConfigOrBuilder() {
+    if (connectionConfigCase_ == 9) {
+      return (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_;
+    }
+    return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
+  }
+
   public static final int INSTALLATION_STATE_FIELD_NUMBER = 12;
   private com.google.cloudbuild.v2.InstallationState installationState_;
   /**
@@ -726,6 +841,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     if (connectionConfigCase_ == 7) {
       output.writeMessage(7, (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_);
     }
+    if (connectionConfigCase_ == 8) {
+      output.writeMessage(
+          8, (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_);
+    }
+    if (connectionConfigCase_ == 9) {
+      output.writeMessage(9, (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(12, getInstallationState());
     }
@@ -772,6 +894,16 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloudbuild.v2.GitLabConfig) connectionConfig_);
+    }
+    if (connectionConfigCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_);
+    }
+    if (connectionConfigCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getInstallationState());
@@ -838,6 +970,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 7:
         if (!getGitlabConfig().equals(other.getGitlabConfig())) return false;
         break;
+      case 8:
+        if (!getBitbucketDataCenterConfig().equals(other.getBitbucketDataCenterConfig()))
+          return false;
+        break;
+      case 9:
+        if (!getBitbucketCloudConfig().equals(other.getBitbucketCloudConfig())) return false;
+        break;
       case 0:
       default:
     }
@@ -888,6 +1027,14 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 7:
         hash = (37 * hash) + GITLAB_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getGitlabConfig().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + BITBUCKET_DATA_CENTER_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getBitbucketDataCenterConfig().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + BITBUCKET_CLOUD_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getBitbucketCloudConfig().hashCode();
         break;
       case 0:
       default:
@@ -995,8 +1142,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A connection to a SCM like GitHub, GitHub Enterprise, Bitbucket Server or
-   * GitLab.
+   * A connection to a SCM like GitHub, GitHub Enterprise, Bitbucket Data Center,
+   * Bitbucket Cloud or GitLab.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v2.Connection}
@@ -1084,6 +1231,12 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (gitlabConfigBuilder_ != null) {
         gitlabConfigBuilder_.clear();
       }
+      if (bitbucketDataCenterConfigBuilder_ != null) {
+        bitbucketDataCenterConfigBuilder_.clear();
+      }
+      if (bitbucketCloudConfigBuilder_ != null) {
+        bitbucketCloudConfigBuilder_.clear();
+      }
       installationState_ = null;
       if (installationStateBuilder_ != null) {
         installationStateBuilder_.dispose();
@@ -1143,24 +1296,24 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.installationState_ =
             installationStateBuilder_ == null
                 ? installationState_
                 : installationStateBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.disabled_ = disabled_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.reconciling_ = reconciling_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1177,6 +1330,12 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       if (connectionConfigCase_ == 7 && gitlabConfigBuilder_ != null) {
         result.connectionConfig_ = gitlabConfigBuilder_.build();
+      }
+      if (connectionConfigCase_ == 8 && bitbucketDataCenterConfigBuilder_ != null) {
+        result.connectionConfig_ = bitbucketDataCenterConfigBuilder_.build();
+      }
+      if (connectionConfigCase_ == 9 && bitbucketCloudConfigBuilder_ != null) {
+        result.connectionConfig_ = bitbucketCloudConfigBuilder_.build();
       }
     }
 
@@ -1246,10 +1405,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         setReconciling(other.getReconciling());
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getConnectionConfigCase()) {
@@ -1266,6 +1425,16 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         case GITLAB_CONFIG:
           {
             mergeGitlabConfig(other.getGitlabConfig());
+            break;
+          }
+        case BITBUCKET_DATA_CENTER_CONFIG:
+          {
+            mergeBitbucketDataCenterConfig(other.getBitbucketDataCenterConfig());
+            break;
+          }
+        case BITBUCKET_CLOUD_CONFIG:
+          {
+            mergeBitbucketCloudConfig(other.getBitbucketCloudConfig());
             break;
           }
         case CONNECTIONCONFIG_NOT_SET:
@@ -1336,23 +1505,37 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
                 connectionConfigCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getBitbucketDataCenterConfigFieldBuilder().getBuilder(), extensionRegistry);
+                connectionConfigCase_ = 8;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    getBitbucketCloudConfigFieldBuilder().getBuilder(), extensionRegistry);
+                connectionConfigCase_ = 9;
+                break;
+              } // case 74
             case 98:
               {
                 input.readMessage(
                     getInstallationStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 104:
               {
                 disabled_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 104
             case 112:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 112
             case 122:
@@ -1364,13 +1547,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 122
             case 130:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 130
             default:
@@ -2571,6 +2754,450 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return gitlabConfigBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v2.BitbucketDataCenterConfig,
+            com.google.cloudbuild.v2.BitbucketDataCenterConfig.Builder,
+            com.google.cloudbuild.v2.BitbucketDataCenterConfigOrBuilder>
+        bitbucketDataCenterConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     *
+     * @return Whether the bitbucketDataCenterConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasBitbucketDataCenterConfig() {
+      return connectionConfigCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     *
+     * @return The bitbucketDataCenterConfig.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v2.BitbucketDataCenterConfig getBitbucketDataCenterConfig() {
+      if (bitbucketDataCenterConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 8) {
+          return (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_;
+        }
+        return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
+      } else {
+        if (connectionConfigCase_ == 8) {
+          return bitbucketDataCenterConfigBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     */
+    public Builder setBitbucketDataCenterConfig(
+        com.google.cloudbuild.v2.BitbucketDataCenterConfig value) {
+      if (bitbucketDataCenterConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionConfig_ = value;
+        onChanged();
+      } else {
+        bitbucketDataCenterConfigBuilder_.setMessage(value);
+      }
+      connectionConfigCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     */
+    public Builder setBitbucketDataCenterConfig(
+        com.google.cloudbuild.v2.BitbucketDataCenterConfig.Builder builderForValue) {
+      if (bitbucketDataCenterConfigBuilder_ == null) {
+        connectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        bitbucketDataCenterConfigBuilder_.setMessage(builderForValue.build());
+      }
+      connectionConfigCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     */
+    public Builder mergeBitbucketDataCenterConfig(
+        com.google.cloudbuild.v2.BitbucketDataCenterConfig value) {
+      if (bitbucketDataCenterConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 8
+            && connectionConfig_
+                != com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance()) {
+          connectionConfig_ =
+              com.google.cloudbuild.v2.BitbucketDataCenterConfig.newBuilder(
+                      (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectionConfigCase_ == 8) {
+          bitbucketDataCenterConfigBuilder_.mergeFrom(value);
+        } else {
+          bitbucketDataCenterConfigBuilder_.setMessage(value);
+        }
+      }
+      connectionConfigCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     */
+    public Builder clearBitbucketDataCenterConfig() {
+      if (bitbucketDataCenterConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 8) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectionConfigCase_ == 8) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+        }
+        bitbucketDataCenterConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     */
+    public com.google.cloudbuild.v2.BitbucketDataCenterConfig.Builder
+        getBitbucketDataCenterConfigBuilder() {
+      return getBitbucketDataCenterConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v2.BitbucketDataCenterConfigOrBuilder
+        getBitbucketDataCenterConfigOrBuilder() {
+      if ((connectionConfigCase_ == 8) && (bitbucketDataCenterConfigBuilder_ != null)) {
+        return bitbucketDataCenterConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectionConfigCase_ == 8) {
+          return (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_;
+        }
+        return com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Data Center.
+     * </pre>
+     *
+     * <code>
+     * .google.devtools.cloudbuild.v2.BitbucketDataCenterConfig bitbucket_data_center_config = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v2.BitbucketDataCenterConfig,
+            com.google.cloudbuild.v2.BitbucketDataCenterConfig.Builder,
+            com.google.cloudbuild.v2.BitbucketDataCenterConfigOrBuilder>
+        getBitbucketDataCenterConfigFieldBuilder() {
+      if (bitbucketDataCenterConfigBuilder_ == null) {
+        if (!(connectionConfigCase_ == 8)) {
+          connectionConfig_ =
+              com.google.cloudbuild.v2.BitbucketDataCenterConfig.getDefaultInstance();
+        }
+        bitbucketDataCenterConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v2.BitbucketDataCenterConfig,
+                com.google.cloudbuild.v2.BitbucketDataCenterConfig.Builder,
+                com.google.cloudbuild.v2.BitbucketDataCenterConfigOrBuilder>(
+                (com.google.cloudbuild.v2.BitbucketDataCenterConfig) connectionConfig_,
+                getParentForChildren(),
+                isClean());
+        connectionConfig_ = null;
+      }
+      connectionConfigCase_ = 8;
+      onChanged();
+      return bitbucketDataCenterConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v2.BitbucketCloudConfig,
+            com.google.cloudbuild.v2.BitbucketCloudConfig.Builder,
+            com.google.cloudbuild.v2.BitbucketCloudConfigOrBuilder>
+        bitbucketCloudConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     *
+     * @return Whether the bitbucketCloudConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasBitbucketCloudConfig() {
+      return connectionConfigCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     *
+     * @return The bitbucketCloudConfig.
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v2.BitbucketCloudConfig getBitbucketCloudConfig() {
+      if (bitbucketCloudConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 9) {
+          return (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_;
+        }
+        return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
+      } else {
+        if (connectionConfigCase_ == 9) {
+          return bitbucketCloudConfigBuilder_.getMessage();
+        }
+        return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     */
+    public Builder setBitbucketCloudConfig(com.google.cloudbuild.v2.BitbucketCloudConfig value) {
+      if (bitbucketCloudConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionConfig_ = value;
+        onChanged();
+      } else {
+        bitbucketCloudConfigBuilder_.setMessage(value);
+      }
+      connectionConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     */
+    public Builder setBitbucketCloudConfig(
+        com.google.cloudbuild.v2.BitbucketCloudConfig.Builder builderForValue) {
+      if (bitbucketCloudConfigBuilder_ == null) {
+        connectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        bitbucketCloudConfigBuilder_.setMessage(builderForValue.build());
+      }
+      connectionConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     */
+    public Builder mergeBitbucketCloudConfig(com.google.cloudbuild.v2.BitbucketCloudConfig value) {
+      if (bitbucketCloudConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 9
+            && connectionConfig_
+                != com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance()) {
+          connectionConfig_ =
+              com.google.cloudbuild.v2.BitbucketCloudConfig.newBuilder(
+                      (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          connectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (connectionConfigCase_ == 9) {
+          bitbucketCloudConfigBuilder_.mergeFrom(value);
+        } else {
+          bitbucketCloudConfigBuilder_.setMessage(value);
+        }
+      }
+      connectionConfigCase_ = 9;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     */
+    public Builder clearBitbucketCloudConfig() {
+      if (bitbucketCloudConfigBuilder_ == null) {
+        if (connectionConfigCase_ == 9) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (connectionConfigCase_ == 9) {
+          connectionConfigCase_ = 0;
+          connectionConfig_ = null;
+        }
+        bitbucketCloudConfigBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     */
+    public com.google.cloudbuild.v2.BitbucketCloudConfig.Builder getBitbucketCloudConfigBuilder() {
+      return getBitbucketCloudConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.cloudbuild.v2.BitbucketCloudConfigOrBuilder
+        getBitbucketCloudConfigOrBuilder() {
+      if ((connectionConfigCase_ == 9) && (bitbucketCloudConfigBuilder_ != null)) {
+        return bitbucketCloudConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (connectionConfigCase_ == 9) {
+          return (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_;
+        }
+        return com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for connections to Bitbucket Cloud.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v2.BitbucketCloudConfig bitbucket_cloud_config = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloudbuild.v2.BitbucketCloudConfig,
+            com.google.cloudbuild.v2.BitbucketCloudConfig.Builder,
+            com.google.cloudbuild.v2.BitbucketCloudConfigOrBuilder>
+        getBitbucketCloudConfigFieldBuilder() {
+      if (bitbucketCloudConfigBuilder_ == null) {
+        if (!(connectionConfigCase_ == 9)) {
+          connectionConfig_ = com.google.cloudbuild.v2.BitbucketCloudConfig.getDefaultInstance();
+        }
+        bitbucketCloudConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloudbuild.v2.BitbucketCloudConfig,
+                com.google.cloudbuild.v2.BitbucketCloudConfig.Builder,
+                com.google.cloudbuild.v2.BitbucketCloudConfigOrBuilder>(
+                (com.google.cloudbuild.v2.BitbucketCloudConfig) connectionConfig_,
+                getParentForChildren(),
+                isClean());
+        connectionConfig_ = null;
+      }
+      connectionConfigCase_ = 9;
+      onChanged();
+      return bitbucketCloudConfigBuilder_;
+    }
+
     private com.google.cloudbuild.v2.InstallationState installationState_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloudbuild.v2.InstallationState,
@@ -2591,7 +3218,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the installationState field is set.
      */
     public boolean hasInstallationState() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2635,7 +3262,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         installationStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2657,7 +3284,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } else {
         installationStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2674,7 +3301,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInstallationState(com.google.cloudbuild.v2.InstallationState value) {
       if (installationStateBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && installationState_ != null
             && installationState_
                 != com.google.cloudbuild.v2.InstallationState.getDefaultInstance()) {
@@ -2686,7 +3313,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         installationStateBuilder_.mergeFrom(value);
       }
       if (installationState_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2703,7 +3330,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInstallationState() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       installationState_ = null;
       if (installationStateBuilder_ != null) {
         installationStateBuilder_.dispose();
@@ -2724,7 +3351,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloudbuild.v2.InstallationState.Builder getInstallationStateBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getInstallationStateFieldBuilder().getBuilder();
     }
@@ -2811,7 +3438,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2829,7 +3456,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       disabled_ = false;
       onChanged();
       return this;
@@ -2868,7 +3495,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2885,7 +3512,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       reconciling_ = false;
       onChanged();
       return this;
@@ -2911,7 +3538,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return annotations_;
     }
@@ -2996,7 +3623,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -3019,7 +3646,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -3039,7 +3666,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -3053,7 +3680,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -3125,7 +3752,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3144,7 +3771,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3168,7 +3795,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

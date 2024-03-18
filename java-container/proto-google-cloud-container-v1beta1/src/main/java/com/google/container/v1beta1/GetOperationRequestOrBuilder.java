@@ -37,7 +37,7 @@ public interface GetOperationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3470
+   *     google/container/v1beta1/cluster_service.proto;l=3479
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -55,7 +55,7 @@ public interface GetOperationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3470
+   *     google/container/v1beta1/cluster_service.proto;l=3479
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -74,7 +74,7 @@ public interface GetOperationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3477
+   *     google/container/v1beta1/cluster_service.proto;l=3486
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface GetOperationRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3477
+   *     google/container/v1beta1/cluster_service.proto;l=3486
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -110,7 +110,7 @@ public interface GetOperationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3481
+   *     google/container/v1beta1/cluster_service.proto;l=3490
    * @return The operationId.
    */
   @java.lang.Deprecated
@@ -127,7 +127,7 @@ public interface GetOperationRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.GetOperationRequest.operation_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3481
+   *     google/container/v1beta1/cluster_service.proto;l=3490
    * @return The bytes for operationId.
    */
   @java.lang.Deprecated

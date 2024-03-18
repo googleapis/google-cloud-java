@@ -121,4 +121,92 @@ public interface ToolOrBuilder
    */
   com.google.cloud.vertexai.api.FunctionDeclarationOrBuilder getFunctionDeclarationsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System will always execute the provided retrieval tool(s) to get
+   * external knowledge to answer the prompt. Retrieval results are presented to
+   * the model for generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retrieval field is set.
+   */
+  boolean hasRetrieval();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System will always execute the provided retrieval tool(s) to get
+   * external knowledge to answer the prompt. Retrieval results are presented to
+   * the model for generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retrieval.
+   */
+  com.google.cloud.vertexai.api.Retrieval getRetrieval();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System will always execute the provided retrieval tool(s) to get
+   * external knowledge to answer the prompt. Retrieval results are presented to
+   * the model for generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.Retrieval retrieval = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.RetrievalOrBuilder getRetrievalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specialized retrieval tool that is powered by Google search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleSearchRetrieval field is set.
+   */
+  boolean hasGoogleSearchRetrieval();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specialized retrieval tool that is powered by Google search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleSearchRetrieval.
+   */
+  com.google.cloud.vertexai.api.GoogleSearchRetrieval getGoogleSearchRetrieval();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specialized retrieval tool that is powered by Google search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vertexai.v1.GoogleSearchRetrieval google_search_retrieval = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vertexai.api.GoogleSearchRetrievalOrBuilder getGoogleSearchRetrievalOrBuilder();
 }
