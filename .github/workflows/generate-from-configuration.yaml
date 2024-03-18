@@ -13,7 +13,7 @@ jobs:
       base_branch: main
       # the branch with which the pull request is associated.
       branch_name: generate-libraries-main
-      library_generation_image_tag: 7a6993b81c8e940488fcf24e7e13569bb3333602db20ebbb2d29871368a776ef
+      library_generation_image_tag: 2.38.1
       repo_volumes: "-v repo-google-cloud-java:/workspace/google-cloud-java"
     steps:
     - uses: actions/checkout@v4
