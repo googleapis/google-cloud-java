@@ -358,27 +358,6 @@ public final class GenerativeModelTest {
   }
 
   @Test
-  public void testGenerateContentwithGenerationConfig() throws Exception {
-    model = new GenerativeModel(MODEL_NAME, vertexAi);
-
-    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
-    field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
-
-    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
-    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockGenerateContentResponse);
-
-    GenerateContentResponse unused = model.generateContent(TEXT, GENERATION_CONFIG);
-
-    ArgumentCaptor<GenerateContentRequest> request =
-        ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockUnaryCallable).call(request.capture());
-    assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
-    assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
-  }
-
-  @Test
   public void testGenerateContentwithDefaultGenerationConfig() throws Exception {
     model = new GenerativeModel(MODEL_NAME, DEFAULT_GENERATION_CONFIG, vertexAi);
 
@@ -397,27 +376,6 @@ public final class GenerativeModelTest {
     verify(mockUnaryCallable).call(request.capture());
     assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(DEFAULT_GENERATION_CONFIG);
-  }
-
-  @Test
-  public void testGenerateContentwithSafetySettings() throws Exception {
-    model = new GenerativeModel(MODEL_NAME, vertexAi);
-
-    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
-    field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
-
-    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
-    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockGenerateContentResponse);
-
-    GenerateContentResponse unused = model.generateContent(TEXT, safetySettings);
-
-    ArgumentCaptor<GenerateContentRequest> request =
-        ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockUnaryCallable).call(request.capture());
-    assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
-    assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
   }
 
   @Test
@@ -571,28 +529,6 @@ public final class GenerativeModelTest {
   }
 
   @Test
-  public void testGenerateContentStreamwithGenerationConfig() throws Exception {
-    model = new GenerativeModel(MODEL_NAME, vertexAi);
-
-    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
-    field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
-
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
-
-    ResponseStream unused = model.generateContentStream(TEXT, GENERATION_CONFIG);
-
-    ArgumentCaptor<GenerateContentRequest> request =
-        ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
-    assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
-  }
-
-  @Test
   public void testGenerateContentStreamwithDefaultGenerationConfig() throws Exception {
     model = new GenerativeModel(MODEL_NAME, DEFAULT_GENERATION_CONFIG, vertexAi);
 
@@ -612,28 +548,6 @@ public final class GenerativeModelTest {
         ArgumentCaptor.forClass(GenerateContentRequest.class);
     verify(mockServerStreamCallable).call(request.capture());
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(DEFAULT_GENERATION_CONFIG);
-  }
-
-  @Test
-  public void testGenerateContentStreamwithSafetySettings() throws Exception {
-    model = new GenerativeModel(MODEL_NAME, vertexAi);
-
-    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
-    field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
-
-    when(mockPredictionServiceClient.streamGenerateContentCallable())
-        .thenReturn(mockServerStreamCallable);
-    when(mockServerStreamCallable.call(any(GenerateContentRequest.class)))
-        .thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(mockServerStreamIterator);
-
-    ResponseStream unused = model.generateContentStream(TEXT, safetySettings);
-
-    ArgumentCaptor<GenerateContentRequest> request =
-        ArgumentCaptor.forClass(GenerateContentRequest.class);
-    verify(mockServerStreamCallable).call(request.capture());
-    assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
   }
 
   @Test
