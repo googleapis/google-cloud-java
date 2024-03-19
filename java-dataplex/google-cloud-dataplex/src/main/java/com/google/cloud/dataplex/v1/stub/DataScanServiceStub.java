@@ -27,6 +27,8 @@ import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
 import com.google.cloud.dataplex.v1.DeleteDataScanRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse;
 import com.google.cloud.dataplex.v1.GetDataScanJobRequest;
 import com.google.cloud.dataplex.v1.GetDataScanRequest;
 import com.google.cloud.dataplex.v1.ListDataScanJobsRequest;
@@ -119,6 +121,11 @@ public abstract class DataScanServiceStub implements BackgroundResource {
   public UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsResponse>
       listDataScanJobsCallable() {
     throw new UnsupportedOperationException("Not implemented: listDataScanJobsCallable()");
+  }
+
+  public UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateDataQualityRulesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

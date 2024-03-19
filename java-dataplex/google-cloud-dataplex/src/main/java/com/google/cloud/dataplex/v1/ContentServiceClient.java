@@ -836,8 +836,7 @@ public class ContentServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
-   *   String resource =
-   *       AssetName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ASSET]").toString();
+   *   String resource = AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString();
    *   Policy response = contentServiceClient.getIamPolicy(resource);
    * }
    * }</pre>

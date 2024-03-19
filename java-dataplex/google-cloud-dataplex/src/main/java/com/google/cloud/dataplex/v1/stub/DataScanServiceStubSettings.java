@@ -53,6 +53,8 @@ import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
 import com.google.cloud.dataplex.v1.DeleteDataScanRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse;
 import com.google.cloud.dataplex.v1.GetDataScanJobRequest;
 import com.google.cloud.dataplex.v1.GetDataScanRequest;
 import com.google.cloud.dataplex.v1.ListDataScanJobsRequest;
@@ -139,6 +141,8 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
   private final PagedCallSettings<
           ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
       listDataScanJobsSettings;
+  private final UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -370,6 +374,12 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     return listDataScanJobsSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateDataQualityRules. */
+  public UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesSettings() {
+    return generateDataQualityRulesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -511,6 +521,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     runDataScanSettings = settingsBuilder.runDataScanSettings().build();
     getDataScanJobSettings = settingsBuilder.getDataScanJobSettings().build();
     listDataScanJobsSettings = settingsBuilder.listDataScanJobsSettings().build();
+    generateDataQualityRulesSettings = settingsBuilder.generateDataQualityRulesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -541,6 +552,9 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
     private final PagedCallSettings.Builder<
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+        generateDataQualityRulesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -583,6 +597,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       runDataScanSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDataScanJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDataScanJobsSettings = PagedCallSettings.newBuilder(LIST_DATA_SCAN_JOBS_PAGE_STR_FACT);
+      generateDataQualityRulesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -596,6 +611,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
               runDataScanSettings,
               getDataScanJobSettings,
               listDataScanJobsSettings,
+              generateDataQualityRulesSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -615,6 +631,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
       runDataScanSettings = settings.runDataScanSettings.toBuilder();
       getDataScanJobSettings = settings.getDataScanJobSettings.toBuilder();
       listDataScanJobsSettings = settings.listDataScanJobsSettings.toBuilder();
+      generateDataQualityRulesSettings = settings.generateDataQualityRulesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -628,6 +645,7 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
               runDataScanSettings,
               getDataScanJobSettings,
               listDataScanJobsSettings,
+              generateDataQualityRulesSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -694,6 +712,11 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
 
       builder
           .listDataScanJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .generateDataQualityRulesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -858,6 +881,13 @@ public class DataScanServiceStubSettings extends StubSettings<DataScanServiceStu
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings() {
       return listDataScanJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateDataQualityRules. */
+    public UnaryCallSettings.Builder<
+            GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+        generateDataQualityRulesSettings() {
+      return generateDataQualityRulesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

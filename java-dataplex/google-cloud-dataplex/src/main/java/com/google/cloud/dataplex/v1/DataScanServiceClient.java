@@ -232,6 +232,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GenerateDataQualityRules</td>
+ *      <td><p> Generates recommended DataQualityRule from a data profiling DataScan.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateDataQualityRules(GenerateDataQualityRulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> generateDataQualityRules(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateDataQualityRulesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1543,6 +1561,94 @@ public class DataScanServiceClient implements BackgroundResource {
   public final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsResponse>
       listDataScanJobsCallable() {
     return stub.listDataScanJobsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates recommended DataQualityRule from a data profiling DataScan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   String name = "name3373707";
+   *   GenerateDataQualityRulesResponse response =
+   *       dataScanServiceClient.generateDataQualityRules(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name should be either
+   *     <ul>
+   *       <li>the name of a datascan with at least one successful completed data profiling job, or
+   *       <li>the name of a successful completed data profiling datascan job.
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateDataQualityRulesResponse generateDataQualityRules(String name) {
+    GenerateDataQualityRulesRequest request =
+        GenerateDataQualityRulesRequest.newBuilder().setName(name).build();
+    return generateDataQualityRules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates recommended DataQualityRule from a data profiling DataScan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   GenerateDataQualityRulesRequest request =
+   *       GenerateDataQualityRulesRequest.newBuilder().setName("name3373707").build();
+   *   GenerateDataQualityRulesResponse response =
+   *       dataScanServiceClient.generateDataQualityRules(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateDataQualityRulesResponse generateDataQualityRules(
+      GenerateDataQualityRulesRequest request) {
+    return generateDataQualityRulesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates recommended DataQualityRule from a data profiling DataScan.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
+   *   GenerateDataQualityRulesRequest request =
+   *       GenerateDataQualityRulesRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<GenerateDataQualityRulesResponse> future =
+   *       dataScanServiceClient.generateDataQualityRulesCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateDataQualityRulesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesCallable() {
+    return stub.generateDataQualityRulesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -41,6 +41,26 @@ public final class DataQualityProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_BigQueryExport_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataQualityResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataQualityResult_fieldAccessorTable;
@@ -117,97 +137,114 @@ public final class DataQualityProto {
           + "proto\022\030google.cloud.dataplex.v1\032\037google/"
           + "api/field_behavior.proto\032\031google/api/res"
           + "ource.proto\032)google/cloud/dataplex/v1/pr"
-          + "ocessing.proto\"\215\003\n\017DataQualitySpec\022=\n\005ru"
+          + "ocessing.proto\"\300\010\n\017DataQualitySpec\022=\n\005ru"
           + "les\030\001 \003(\0132).google.cloud.dataplex.v1.Dat"
           + "aQualityRuleB\003\340A\002\022\035\n\020sampling_percent\030\004 "
           + "\001(\002B\003\340A\001\022\027\n\nrow_filter\030\005 \001(\tB\003\340A\001\022Y\n\021pos"
           + "t_scan_actions\030\006 \001(\01329.google.cloud.data"
           + "plex.v1.DataQualitySpec.PostScanActionsB"
-          + "\003\340A\001\032\247\001\n\017PostScanActions\022f\n\017bigquery_exp"
+          + "\003\340A\001\032\332\006\n\017PostScanActions\022f\n\017bigquery_exp"
           + "ort\030\001 \001(\0132H.google.cloud.dataplex.v1.Dat"
           + "aQualitySpec.PostScanActions.BigQueryExp"
-          + "ortB\003\340A\001\032,\n\016BigQueryExport\022\032\n\rresults_ta"
-          + "ble\030\001 \001(\tB\003\340A\001\"\323\006\n\021DataQualityResult\022\016\n\006"
-          + "passed\030\005 \001(\010\022\027\n\005score\030\t \001(\002B\003\340A\003H\000\210\001\001\022H\n"
-          + "\ndimensions\030\002 \003(\01324.google.cloud.dataple"
-          + "x.v1.DataQualityDimensionResult\022G\n\007colum"
-          + "ns\030\n \003(\01321.google.cloud.dataplex.v1.Data"
-          + "QualityColumnResultB\003\340A\003\022>\n\005rules\030\003 \003(\0132"
-          + "/.google.cloud.dataplex.v1.DataQualityRu"
-          + "leResult\022\021\n\trow_count\030\004 \001(\003\022;\n\014scanned_d"
-          + "ata\030\007 \001(\0132%.google.cloud.dataplex.v1.Sca"
-          + "nnedData\022h\n\030post_scan_actions_result\030\010 \001"
-          + "(\0132A.google.cloud.dataplex.v1.DataQualit"
-          + "yResult.PostScanActionsResultB\003\340A\003\032\375\002\n\025P"
-          + "ostScanActionsResult\022{\n\026bigquery_export_"
-          + "result\030\001 \001(\0132V.google.cloud.dataplex.v1."
-          + "DataQualityResult.PostScanActionsResult."
-          + "BigQueryExportResultB\003\340A\003\032\346\001\n\024BigQueryEx"
-          + "portResult\022p\n\005state\030\001 \001(\0162\\.google.cloud"
-          + ".dataplex.v1.DataQualityResult.PostScanA"
-          + "ctionsResult.BigQueryExportResult.StateB"
-          + "\003\340A\003\022\024\n\007message\030\002 \001(\tB\003\340A\003\"F\n\005State\022\025\n\021S"
-          + "TATE_UNSPECIFIED\020\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAI"
-          + "LED\020\002\022\013\n\007SKIPPED\020\003B\010\n\006_score\"\323\001\n\025DataQua"
-          + "lityRuleResult\0227\n\004rule\030\001 \001(\0132).google.cl"
-          + "oud.dataplex.v1.DataQualityRule\022\016\n\006passe"
-          + "d\030\007 \001(\010\022\027\n\017evaluated_count\030\t \001(\003\022\024\n\014pass"
-          + "ed_count\030\010 \001(\003\022\022\n\nnull_count\030\005 \001(\003\022\022\n\npa"
-          + "ss_ratio\030\006 \001(\001\022\032\n\022failing_rows_query\030\n \001"
-          + "(\t\"\227\001\n\032DataQualityDimensionResult\022F\n\tdim"
-          + "ension\030\001 \001(\0132..google.cloud.dataplex.v1."
-          + "DataQualityDimensionB\003\340A\003\022\016\n\006passed\030\003 \001("
-          + "\010\022\027\n\005score\030\004 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_score\"$\n\024"
-          + "DataQualityDimension\022\014\n\004name\030\001 \001(\t\"\366\014\n\017D"
-          + "ataQualityRule\022W\n\021range_expectation\030\001 \001("
-          + "\0132:.google.cloud.dataplex.v1.DataQuality"
-          + "Rule.RangeExpectationH\000\022\\\n\024non_null_expe"
-          + "ctation\030\002 \001(\0132<.google.cloud.dataplex.v1"
-          + ".DataQualityRule.NonNullExpectationH\000\022S\n"
-          + "\017set_expectation\030\003 \001(\01328.google.cloud.da"
-          + "taplex.v1.DataQualityRule.SetExpectation"
-          + "H\000\022W\n\021regex_expectation\030\004 \001(\0132:.google.c"
-          + "loud.dataplex.v1.DataQualityRule.RegexEx"
-          + "pectationH\000\022a\n\026uniqueness_expectation\030d "
-          + "\001(\0132?.google.cloud.dataplex.v1.DataQuali"
-          + "tyRule.UniquenessExpectationH\000\022j\n\033statis"
-          + "tic_range_expectation\030e \001(\0132C.google.clo"
-          + "ud.dataplex.v1.DataQualityRule.Statistic"
-          + "RangeExpectationH\000\022g\n\031row_condition_expe"
-          + "ctation\030\310\001 \001(\0132A.google.cloud.dataplex.v"
-          + "1.DataQualityRule.RowConditionExpectatio"
-          + "nH\000\022k\n\033table_condition_expectation\030\311\001 \001("
-          + "\0132C.google.cloud.dataplex.v1.DataQuality"
-          + "Rule.TableConditionExpectationH\000\022\024\n\006colu"
-          + "mn\030\364\003 \001(\tB\003\340A\001\022\031\n\013ignore_null\030\365\003 \001(\010B\003\340A"
-          + "\001\022\027\n\tdimension\030\366\003 \001(\tB\003\340A\002\022\027\n\tthreshold\030"
-          + "\367\003 \001(\001B\003\340A\001\022\022\n\004name\030\370\003 \001(\tB\003\340A\001\022\031\n\013descr"
-          + "iption\030\371\003 \001(\tB\003\340A\001\032\204\001\n\020RangeExpectation\022"
-          + "\026\n\tmin_value\030\001 \001(\tB\003\340A\001\022\026\n\tmax_value\030\002 \001"
-          + "(\tB\003\340A\001\022\037\n\022strict_min_enabled\030\003 \001(\010B\003\340A\001"
-          + "\022\037\n\022strict_max_enabled\030\004 \001(\010B\003\340A\001\032\024\n\022Non"
-          + "NullExpectation\032%\n\016SetExpectation\022\023\n\006val"
-          + "ues\030\001 \003(\tB\003\340A\001\032&\n\020RegexExpectation\022\022\n\005re"
-          + "gex\030\001 \001(\tB\003\340A\001\032\027\n\025UniquenessExpectation\032"
-          + "\302\002\n\031StatisticRangeExpectation\022k\n\tstatist"
-          + "ic\030\001 \001(\0162S.google.cloud.dataplex.v1.Data"
-          + "QualityRule.StatisticRangeExpectation.Co"
-          + "lumnStatisticB\003\340A\001\022\026\n\tmin_value\030\002 \001(\tB\003\340"
-          + "A\001\022\026\n\tmax_value\030\003 \001(\tB\003\340A\001\022\037\n\022strict_min"
-          + "_enabled\030\004 \001(\010B\003\340A\001\022\037\n\022strict_max_enable"
-          + "d\030\005 \001(\010B\003\340A\001\"F\n\017ColumnStatistic\022\027\n\023STATI"
-          + "STIC_UNDEFINED\020\000\022\010\n\004MEAN\020\001\022\007\n\003MIN\020\002\022\007\n\003M"
-          + "AX\020\003\0326\n\027RowConditionExpectation\022\033\n\016sql_e"
-          + "xpression\030\001 \001(\tB\003\340A\001\0328\n\031TableConditionEx"
-          + "pectation\022\033\n\016sql_expression\030\001 \001(\tB\003\340A\001B\013"
-          + "\n\trule_type\"Q\n\027DataQualityColumnResult\022\023"
-          + "\n\006column\030\001 \001(\tB\003\340A\003\022\027\n\005score\030\002 \001(\002B\003\340A\003H"
-          + "\000\210\001\001B\010\n\006_scoreB\304\001\n\034com.google.cloud.data"
-          + "plex.v1B\020DataQualityProtoP\001Z8cloud.googl"
-          + "e.com/go/dataplex/apiv1/dataplexpb;datap"
-          + "lexpb\352AU\n\035bigquery.googleapis.com/Table\022"
-          + "4projects/{project}/datasets/{dataset}/t"
-          + "ables/{table}b\006proto3"
+          + "ortB\003\340A\001\022n\n\023notification_report\030\002 \001(\0132L."
+          + "google.cloud.dataplex.v1.DataQualitySpec"
+          + ".PostScanActions.NotificationReportB\003\340A\001"
+          + "\032,\n\016BigQueryExport\022\032\n\rresults_table\030\001 \001("
+          + "\tB\003\340A\001\032!\n\nRecipients\022\023\n\006emails\030\001 \003(\tB\003\340A"
+          + "\001\0325\n\025ScoreThresholdTrigger\022\034\n\017score_thre"
+          + "shold\030\002 \001(\002B\003\340A\001\032\023\n\021JobFailureTrigger\032\017\n"
+          + "\rJobEndTrigger\032\300\003\n\022NotificationReport\022]\n"
+          + "\nrecipients\030\001 \001(\0132D.google.cloud.dataple"
+          + "x.v1.DataQualitySpec.PostScanActions.Rec"
+          + "ipientsB\003\340A\002\022u\n\027score_threshold_trigger\030"
+          + "\002 \001(\0132O.google.cloud.dataplex.v1.DataQua"
+          + "litySpec.PostScanActions.ScoreThresholdT"
+          + "riggerB\003\340A\001\022m\n\023job_failure_trigger\030\004 \001(\013"
+          + "2K.google.cloud.dataplex.v1.DataQualityS"
+          + "pec.PostScanActions.JobFailureTriggerB\003\340"
+          + "A\001\022e\n\017job_end_trigger\030\005 \001(\0132G.google.clo"
+          + "ud.dataplex.v1.DataQualitySpec.PostScanA"
+          + "ctions.JobEndTriggerB\003\340A\001\"\323\006\n\021DataQualit"
+          + "yResult\022\016\n\006passed\030\005 \001(\010\022\027\n\005score\030\t \001(\002B\003"
+          + "\340A\003H\000\210\001\001\022H\n\ndimensions\030\002 \003(\01324.google.cl"
+          + "oud.dataplex.v1.DataQualityDimensionResu"
+          + "lt\022G\n\007columns\030\n \003(\01321.google.cloud.datap"
+          + "lex.v1.DataQualityColumnResultB\003\340A\003\022>\n\005r"
+          + "ules\030\003 \003(\0132/.google.cloud.dataplex.v1.Da"
+          + "taQualityRuleResult\022\021\n\trow_count\030\004 \001(\003\022;"
+          + "\n\014scanned_data\030\007 \001(\0132%.google.cloud.data"
+          + "plex.v1.ScannedData\022h\n\030post_scan_actions"
+          + "_result\030\010 \001(\0132A.google.cloud.dataplex.v1"
+          + ".DataQualityResult.PostScanActionsResult"
+          + "B\003\340A\003\032\375\002\n\025PostScanActionsResult\022{\n\026bigqu"
+          + "ery_export_result\030\001 \001(\0132V.google.cloud.d"
+          + "ataplex.v1.DataQualityResult.PostScanAct"
+          + "ionsResult.BigQueryExportResultB\003\340A\003\032\346\001\n"
+          + "\024BigQueryExportResult\022p\n\005state\030\001 \001(\0162\\.g"
+          + "oogle.cloud.dataplex.v1.DataQualityResul"
+          + "t.PostScanActionsResult.BigQueryExportRe"
+          + "sult.StateB\003\340A\003\022\024\n\007message\030\002 \001(\tB\003\340A\003\"F\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tSUCCEED"
+          + "ED\020\001\022\n\n\006FAILED\020\002\022\013\n\007SKIPPED\020\003B\010\n\006_score\""
+          + "\323\001\n\025DataQualityRuleResult\0227\n\004rule\030\001 \001(\0132"
+          + ").google.cloud.dataplex.v1.DataQualityRu"
+          + "le\022\016\n\006passed\030\007 \001(\010\022\027\n\017evaluated_count\030\t "
+          + "\001(\003\022\024\n\014passed_count\030\010 \001(\003\022\022\n\nnull_count\030"
+          + "\005 \001(\003\022\022\n\npass_ratio\030\006 \001(\001\022\032\n\022failing_row"
+          + "s_query\030\n \001(\t\"\227\001\n\032DataQualityDimensionRe"
+          + "sult\022F\n\tdimension\030\001 \001(\0132..google.cloud.d"
+          + "ataplex.v1.DataQualityDimensionB\003\340A\003\022\016\n\006"
+          + "passed\030\003 \001(\010\022\027\n\005score\030\004 \001(\002B\003\340A\003H\000\210\001\001B\010\n"
+          + "\006_score\"$\n\024DataQualityDimension\022\014\n\004name\030"
+          + "\001 \001(\t\"\366\014\n\017DataQualityRule\022W\n\021range_expec"
+          + "tation\030\001 \001(\0132:.google.cloud.dataplex.v1."
+          + "DataQualityRule.RangeExpectationH\000\022\\\n\024no"
+          + "n_null_expectation\030\002 \001(\0132<.google.cloud."
+          + "dataplex.v1.DataQualityRule.NonNullExpec"
+          + "tationH\000\022S\n\017set_expectation\030\003 \001(\01328.goog"
+          + "le.cloud.dataplex.v1.DataQualityRule.Set"
+          + "ExpectationH\000\022W\n\021regex_expectation\030\004 \001(\013"
+          + "2:.google.cloud.dataplex.v1.DataQualityR"
+          + "ule.RegexExpectationH\000\022a\n\026uniqueness_exp"
+          + "ectation\030d \001(\0132?.google.cloud.dataplex.v"
+          + "1.DataQualityRule.UniquenessExpectationH"
+          + "\000\022j\n\033statistic_range_expectation\030e \001(\0132C"
+          + ".google.cloud.dataplex.v1.DataQualityRul"
+          + "e.StatisticRangeExpectationH\000\022g\n\031row_con"
+          + "dition_expectation\030\310\001 \001(\0132A.google.cloud"
+          + ".dataplex.v1.DataQualityRule.RowConditio"
+          + "nExpectationH\000\022k\n\033table_condition_expect"
+          + "ation\030\311\001 \001(\0132C.google.cloud.dataplex.v1."
+          + "DataQualityRule.TableConditionExpectatio"
+          + "nH\000\022\024\n\006column\030\364\003 \001(\tB\003\340A\001\022\031\n\013ignore_null"
+          + "\030\365\003 \001(\010B\003\340A\001\022\027\n\tdimension\030\366\003 \001(\tB\003\340A\002\022\027\n"
+          + "\tthreshold\030\367\003 \001(\001B\003\340A\001\022\022\n\004name\030\370\003 \001(\tB\003\340"
+          + "A\001\022\031\n\013description\030\371\003 \001(\tB\003\340A\001\032\204\001\n\020RangeE"
+          + "xpectation\022\026\n\tmin_value\030\001 \001(\tB\003\340A\001\022\026\n\tma"
+          + "x_value\030\002 \001(\tB\003\340A\001\022\037\n\022strict_min_enabled"
+          + "\030\003 \001(\010B\003\340A\001\022\037\n\022strict_max_enabled\030\004 \001(\010B"
+          + "\003\340A\001\032\024\n\022NonNullExpectation\032%\n\016SetExpecta"
+          + "tion\022\023\n\006values\030\001 \003(\tB\003\340A\001\032&\n\020RegexExpect"
+          + "ation\022\022\n\005regex\030\001 \001(\tB\003\340A\001\032\027\n\025UniquenessE"
+          + "xpectation\032\302\002\n\031StatisticRangeExpectation"
+          + "\022k\n\tstatistic\030\001 \001(\0162S.google.cloud.datap"
+          + "lex.v1.DataQualityRule.StatisticRangeExp"
+          + "ectation.ColumnStatisticB\003\340A\001\022\026\n\tmin_val"
+          + "ue\030\002 \001(\tB\003\340A\001\022\026\n\tmax_value\030\003 \001(\tB\003\340A\001\022\037\n"
+          + "\022strict_min_enabled\030\004 \001(\010B\003\340A\001\022\037\n\022strict"
+          + "_max_enabled\030\005 \001(\010B\003\340A\001\"F\n\017ColumnStatist"
+          + "ic\022\027\n\023STATISTIC_UNDEFINED\020\000\022\010\n\004MEAN\020\001\022\007\n"
+          + "\003MIN\020\002\022\007\n\003MAX\020\003\0326\n\027RowConditionExpectati"
+          + "on\022\033\n\016sql_expression\030\001 \001(\tB\003\340A\001\0328\n\031Table"
+          + "ConditionExpectation\022\033\n\016sql_expression\030\001"
+          + " \001(\tB\003\340A\001B\013\n\trule_type\"Q\n\027DataQualityCol"
+          + "umnResult\022\023\n\006column\030\001 \001(\tB\003\340A\003\022\027\n\005score\030"
+          + "\002 \001(\002B\003\340A\003H\000\210\001\001B\010\n\006_scoreB\304\001\n\034com.google"
+          + ".cloud.dataplex.v1B\020DataQualityProtoP\001Z8"
+          + "cloud.google.com/go/dataplex/apiv1/datap"
+          + "lexpb;dataplexpb\352AU\n\035bigquery.googleapis"
+          + ".com/Table\0224projects/{project}/datasets/"
+          + "{dataset}/tables/{table}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -231,7 +268,7 @@ public final class DataQualityProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor,
             new java.lang.String[] {
-              "BigqueryExport",
+              "BigqueryExport", "NotificationReport",
             });
     internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_BigQueryExport_descriptor =
         internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor
@@ -242,6 +279,52 @@ public final class DataQualityProto {
             internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_BigQueryExport_descriptor,
             new java.lang.String[] {
               "ResultsTable",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_descriptor,
+            new java.lang.String[] {
+              "Emails",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_descriptor,
+            new java.lang.String[] {
+              "ScoreThreshold",
+            });
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_descriptor
+            .getNestedTypes()
+            .get(5);
+    internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_descriptor,
+            new java.lang.String[] {
+              "Recipients", "ScoreThresholdTrigger", "JobFailureTrigger", "JobEndTrigger",
             });
     internal_static_google_cloud_dataplex_v1_DataQualityResult_descriptor =
         getDescriptor().getMessageTypes().get(1);

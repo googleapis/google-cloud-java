@@ -400,8 +400,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is currently not implemented. Currently values
-   * provided in this field will be ignored.
+   * Optional. This field is not implemented. The values provided in this field
+   * are ignored.
    * </pre>
    *
    * <code>string psa_range = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -413,8 +413,8 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. This field is currently not implemented. Currently values
-   * provided in this field will be ignored.
+   * Optional. This field is not implemented. The values provided in this field
+   * are ignored.
    * </pre>
    *
    * <code>string psa_range = 15 [(.google.api.field_behavior) = OPTIONAL];</code>

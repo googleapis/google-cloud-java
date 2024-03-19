@@ -41,6 +41,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -795,6 +796,45 @@ public class DataScanServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listDataScanJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateDataQualityRulesTest() throws Exception {
+    GenerateDataQualityRulesResponse expectedResponse =
+        GenerateDataQualityRulesResponse.newBuilder()
+            .addAllRule(new ArrayList<DataQualityRule>())
+            .build();
+    mockDataScanService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GenerateDataQualityRulesResponse actualResponse = client.generateDataQualityRules(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataScanService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateDataQualityRulesRequest actualRequest =
+        ((GenerateDataQualityRulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateDataQualityRulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataScanService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.generateDataQualityRules(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

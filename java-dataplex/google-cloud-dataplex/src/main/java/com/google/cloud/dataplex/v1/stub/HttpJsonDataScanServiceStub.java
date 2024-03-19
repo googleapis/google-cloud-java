@@ -40,6 +40,8 @@ import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
 import com.google.cloud.dataplex.v1.DeleteDataScanRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse;
 import com.google.cloud.dataplex.v1.GetDataScanJobRequest;
 import com.google.cloud.dataplex.v1.GetDataScanRequest;
 import com.google.cloud.dataplex.v1.ListDataScanJobsRequest;
@@ -387,6 +389,48 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dataplex.v1.DataScanService/GenerateDataQualityRules")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateDataQualityRulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataScans/*}:generateDataQualityRules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateDataQualityRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/dataScans/*/jobs/*}:generateDataQualityRules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateDataQualityRulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateDataQualityRulesResponse>newBuilder()
+                      .setDefaultInstance(GenerateDataQualityRulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -474,6 +518,8 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
       listDataScanJobsCallable;
   private final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable;
+  private final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -639,6 +685,19 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+        generateDataQualityRulesTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>newBuilder()
+                .setMethodDescriptor(generateDataQualityRulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -711,6 +770,11 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
     this.listDataScanJobsPagedCallable =
         callableFactory.createPagedCallable(
             listDataScanJobsTransportSettings, settings.listDataScanJobsSettings(), clientContext);
+    this.generateDataQualityRulesCallable =
+        callableFactory.createUnaryCallable(
+            generateDataQualityRulesTransportSettings,
+            settings.generateDataQualityRulesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -736,6 +800,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
     methodDescriptors.add(runDataScanMethodDescriptor);
     methodDescriptors.add(getDataScanJobMethodDescriptor);
     methodDescriptors.add(listDataScanJobsMethodDescriptor);
+    methodDescriptors.add(generateDataQualityRulesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -814,6 +879,12 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
   public UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable() {
     return listDataScanJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesCallable() {
+    return generateDataQualityRulesCallable;
   }
 
   @Override
