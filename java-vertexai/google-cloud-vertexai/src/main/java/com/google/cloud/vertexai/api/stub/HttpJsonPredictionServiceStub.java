@@ -19,7 +19,6 @@ package com.google.cloud.vertexai.api.stub;
 import static com.google.cloud.vertexai.api.PredictionServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.HttpBody;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -79,7 +78,6 @@ import javax.annotation.Generated;
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator-java")
-@BetaApi
 public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
@@ -513,7 +511,9 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/models/*}:setIamPolicy",
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:setIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:setIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:setIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -559,7 +559,9 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/ui/{resource=projects/*/locations/*/models/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:getIamPolicy",
                           "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:getIamPolicy",
-                          "/ui/{resource=projects/*/locations/*/publishers/*/models/*}:getIamPolicy")
+                          "/ui/{resource=projects/*/locations/*/publishers/*/models/*}:getIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:getIamPolicy",
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -601,7 +603,9 @@ public class HttpJsonPredictionServiceStub extends PredictionServiceStub {
                           "/ui/{resource=projects/*/locations/*/featurestores/*/entityTypes/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/models/*}:testIamPermissions",
                           "/ui/{resource=projects/*/locations/*/endpoints/*}:testIamPermissions",
-                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions")
+                          "/ui/{resource=projects/*/locations/*/notebookRuntimeTemplates/*}:testIamPermissions",
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*}:testIamPermissions",
+                          "/ui/{resource=projects/*/locations/*/featureOnlineStores/*/featureViews/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
