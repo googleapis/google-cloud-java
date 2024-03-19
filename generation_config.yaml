@@ -170,7 +170,8 @@ libraries:
 - api_shortname: apphub
   name_pretty: App Hub API
   product_documentation: https://cloud.google.com/app-hub/docs/overview
-  api_description: App Hub simplifies the process of building, running, and managing applications on Google Cloud.
+  api_description: App Hub simplifies the process of building, running, and managing
+    applications on Google Cloud.
   rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
   GAPICs:
   - proto_path: google/cloud/apphub/v1
@@ -446,7 +447,9 @@ libraries:
 - api_shortname: chat
   name_pretty: Google Chat API
   product_documentation: https://developers.google.com/chat/concepts
-  api_description: The Google Chat API lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.
+  api_description: The Google Chat API lets you build Chat apps to integrate your
+    services with Google Chat and manage Chat resources such as spaces, members, and
+    messages.
   rest_documentation: https://developers.google.com/chat/api/reference/rest
   GAPICs:
   - proto_path: google/chat/v1
@@ -479,7 +482,8 @@ libraries:
 - api_shortname: cloudcontrolspartner
   name_pretty: Cloud Controls Partner API
   product_documentation: https://cloud.google.com/sovereign-controls-by-partners/docs/sovereign-partners
-  api_description: Provides insights about your customers and their Assured Workloads based on your Sovereign Controls by Partners offering.
+  api_description: Provides insights about your customers and their Assured Workloads
+    based on your Sovereign Controls by Partners offering.
   GAPICs:
   - proto_path: google/cloud/cloudcontrolspartner/v1
   - proto_path: google/cloud/cloudcontrolspartner/v1beta
@@ -1600,7 +1604,10 @@ libraries:
 - api_shortname: securityposture
   name_pretty: Security Posture API
   product_documentation: https://cloud.google.com/security-command-center/docs/security-posture-overview
-  api_description: Security Posture is a comprehensive framework of policy sets that empowers organizations to define, assess early, deploy, and monitor their security measures in a unified way and helps simplify governance and reduces administrative toil.
+  api_description: Security Posture is a comprehensive framework of policy sets that
+    empowers organizations to define, assess early, deploy, and monitor their security
+    measures in a unified way and helps simplify governance and reduces administrative
+    toil.
   GAPICs:
   - proto_path: google/cloud/securityposture/v1
 
@@ -1698,6 +1705,21 @@ libraries:
   GAPICs:
   - proto_path: google/shopping/merchant/inventories/v1beta
 
+- api_shortname: shopping-merchant-quota
+  name_pretty: Merchant Quota API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
+  release_level: preview
+  distribution_name: com.google.shopping:google-shopping-merchant-quota
+  api_id: shopping-merchant-quota.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/quota/v1beta
+  requires_billing: true
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
@@ -2001,7 +2023,8 @@ libraries:
 - api_shortname: workspaceevents
   name_pretty: Google Workspace Events API
   product_documentation: https://developers.google.com/workspace/events
-  api_description: The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.
+  api_description: The Google Workspace Events API lets you subscribe to events and
+    manage change notifications across Google Workspace applications.
   rest_documentation: https://developers.google.com/workspace/events/reference/rest
   GAPICs:
   - proto_path: google/apps/events/subscriptions/v1
