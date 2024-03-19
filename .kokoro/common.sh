@@ -237,6 +237,7 @@ function generate_graalvm_modules_list() {
 function install_modules() {
   initial_install_modules=( \
     'java-resourcemanager' \
+    'java-asset' \
     'java-document-ai' \
     )
 
