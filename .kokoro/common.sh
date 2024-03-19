@@ -228,19 +228,30 @@ function generate_graalvm_modules_list() {
   )
 }
 
+# Preinstall modules that will cause build failures if they aren't available in the local maven
+# repository at the time of other modules' builds. Add to the initial_install_modules list if
+# build failures occur:
+# "Failed to execute goal on project [A]: Could not resolve dependencies for project [B]: Could
+# not find artifact [C] in ..."
+# The project associated with artifact C should be added to the initial_install_modules list.
 function install_modules() {
-  retry_with_backoff 3 10 \
-    mvn -B \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+  initial_install_modules=( \
+    'java-resourcemanager' \
+    'java-document-ai' \
+    )
+
+  for module in ${initial_install_modules[*]}; do
+    echo "Preinstalling $module"
+    mvn -pl "$module" install \
+      --also-make-dependents \
+      -DskipTests \
+      -Dclirr.skip \
+      -Denforcer.skip \
+      -Dcheckstyle.skip \
+      -Dflatten.skip \
+      -Danimal.sniffer.skip \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -B -ntp
+  done
 }
