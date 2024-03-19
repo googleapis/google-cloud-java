@@ -30,7 +30,7 @@ import java.util.Collections;
 import java.util.List;
 
 /** Represents a conversation between the user and the model */
-public class ChatSession {
+public final class ChatSession {
   private final GenerativeModel model;
   private List<Content> history = new ArrayList<>();
   private ResponseStream<GenerateContentResponse> currentResponseStream = null;

@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 /** This class holds a generative model that can complete what you provided. */
-public class GenerativeModel {
+public final class GenerativeModel {
   private final String modelName;
   private final String resourceName;
   private final VertexAI vertexAi;
