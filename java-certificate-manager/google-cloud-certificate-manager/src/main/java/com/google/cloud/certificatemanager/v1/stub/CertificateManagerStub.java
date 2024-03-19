@@ -22,6 +22,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListTrustConfigsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -35,17 +36,20 @@ import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
 import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.GetTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
@@ -56,11 +60,15 @@ import com.google.cloud.certificatemanager.v1.ListCertificatesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificatesResponse;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
+import com.google.cloud.certificatemanager.v1.TrustConfig;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -312,6 +320,50 @@ public abstract class CertificateManagerStub implements BackgroundResource {
       deleteCertificateIssuanceConfigCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteCertificateIssuanceConfigCallable()");
+  }
+
+  public UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsPagedResponse>
+      listTrustConfigsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTrustConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTrustConfigsCallable()");
+  }
+
+  public UnaryCallable<GetTrustConfigRequest, TrustConfig> getTrustConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTrustConfigCallable()");
+  }
+
+  public OperationCallable<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createTrustConfigOperationCallable()");
+  }
+
+  public UnaryCallable<CreateTrustConfigRequest, Operation> createTrustConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createTrustConfigCallable()");
+  }
+
+  public OperationCallable<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateTrustConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateTrustConfigRequest, Operation> updateTrustConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTrustConfigCallable()");
+  }
+
+  public OperationCallable<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteTrustConfigOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteTrustConfigRequest, Operation> deleteTrustConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTrustConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -19,6 +19,7 @@
 // Protobuf Java Version: 3.25.2
 package com.google.cloud.edgenetwork.v1;
 
+@java.lang.Deprecated
 public interface GetZoneRequestOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.edgenetwork.v1.GetZoneRequest)

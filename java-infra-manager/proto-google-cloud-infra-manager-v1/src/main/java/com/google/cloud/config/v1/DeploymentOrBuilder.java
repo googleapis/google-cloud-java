@@ -763,5 +763,108 @@ public interface DeploymentOrBuilder
    */
   com.google.cloud.config.v1.Deployment.LockState getLockState();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tfVersionConstraint field is set.
+   */
+  boolean hasTfVersionConstraint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tfVersionConstraint.
+   */
+  java.lang.String getTfVersionConstraint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for tfVersionConstraint.
+   */
+  com.google.protobuf.ByteString getTfVersionConstraintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current Terraform version set on the deployment.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The tfVersion.
+   */
+  java.lang.String getTfVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current Terraform version set on the deployment.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for tfVersion.
+   */
+  com.google.protobuf.ByteString getTfVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input to control quota checks for resources in terraform
+   * configuration files. There are limited resources on which quota validation
+   * applies.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for quotaValidation.
+   */
+  int getQuotaValidationValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input to control quota checks for resources in terraform
+   * configuration files. There are limited resources on which quota validation
+   * applies.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The quotaValidation.
+   */
+  com.google.cloud.config.v1.QuotaValidation getQuotaValidation();
+
   com.google.cloud.config.v1.Deployment.BlueprintCase getBlueprintCase();
 }

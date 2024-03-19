@@ -569,6 +569,104 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListTrustConfigs</td>
+ *      <td><p> Lists TrustConfigs in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTrustConfigs(ListTrustConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTrustConfigs(LocationName parent)
+ *           <li><p> listTrustConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTrustConfigsPagedCallable()
+ *           <li><p> listTrustConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTrustConfig</td>
+ *      <td><p> Gets details of a single TrustConfig.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTrustConfig(GetTrustConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTrustConfig(TrustConfigName name)
+ *           <li><p> getTrustConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTrustConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTrustConfig</td>
+ *      <td><p> Creates a new TrustConfig in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTrustConfigAsync(CreateTrustConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createTrustConfigAsync(LocationName parent, TrustConfig trustConfig, String trustConfigId)
+ *           <li><p> createTrustConfigAsync(String parent, TrustConfig trustConfig, String trustConfigId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTrustConfigOperationCallable()
+ *           <li><p> createTrustConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateTrustConfig</td>
+ *      <td><p> Updates a TrustConfig.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateTrustConfigAsync(UpdateTrustConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateTrustConfigAsync(TrustConfig trustConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateTrustConfigOperationCallable()
+ *           <li><p> updateTrustConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTrustConfig</td>
+ *      <td><p> Deletes a single TrustConfig.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTrustConfigAsync(DeleteTrustConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteTrustConfigAsync(TrustConfigName name)
+ *           <li><p> deleteTrustConfigAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTrustConfigOperationCallable()
+ *           <li><p> deleteTrustConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -4410,6 +4508,732 @@ public class CertificateManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists TrustConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (TrustConfig element : certificateManagerClient.listTrustConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the TrustConfigs should be listed,
+   *     specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTrustConfigsPagedResponse listTrustConfigs(LocationName parent) {
+    ListTrustConfigsRequest request =
+        ListTrustConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTrustConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TrustConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (TrustConfig element : certificateManagerClient.listTrustConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location from which the TrustConfigs should be listed,
+   *     specified in the format `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTrustConfigsPagedResponse listTrustConfigs(String parent) {
+    ListTrustConfigsRequest request =
+        ListTrustConfigsRequest.newBuilder().setParent(parent).build();
+    return listTrustConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TrustConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   ListTrustConfigsRequest request =
+   *       ListTrustConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (TrustConfig element : certificateManagerClient.listTrustConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTrustConfigsPagedResponse listTrustConfigs(ListTrustConfigsRequest request) {
+    return listTrustConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TrustConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   ListTrustConfigsRequest request =
+   *       ListTrustConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<TrustConfig> future =
+   *       certificateManagerClient.listTrustConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TrustConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsPagedResponse>
+      listTrustConfigsPagedCallable() {
+    return stub.listTrustConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TrustConfigs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   ListTrustConfigsRequest request =
+   *       ListTrustConfigsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListTrustConfigsResponse response =
+   *         certificateManagerClient.listTrustConfigsCallable().call(request);
+   *     for (TrustConfig element : response.getTrustConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsCallable() {
+    return stub.listTrustConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   TrustConfigName name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]");
+   *   TrustConfig response = certificateManagerClient.getTrustConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the TrustConfig to describe. Must be in the format
+   *     `projects/&#42;/locations/&#42;/trustConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TrustConfig getTrustConfig(TrustConfigName name) {
+    GetTrustConfigRequest request =
+        GetTrustConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getTrustConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString();
+   *   TrustConfig response = certificateManagerClient.getTrustConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the TrustConfig to describe. Must be in the format
+   *     `projects/&#42;/locations/&#42;/trustConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TrustConfig getTrustConfig(String name) {
+    GetTrustConfigRequest request = GetTrustConfigRequest.newBuilder().setName(name).build();
+    return getTrustConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   GetTrustConfigRequest request =
+   *       GetTrustConfigRequest.newBuilder()
+   *           .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+   *           .build();
+   *   TrustConfig response = certificateManagerClient.getTrustConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TrustConfig getTrustConfig(GetTrustConfigRequest request) {
+    return getTrustConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   GetTrustConfigRequest request =
+   *       GetTrustConfigRequest.newBuilder()
+   *           .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+   *           .build();
+   *   ApiFuture<TrustConfig> future =
+   *       certificateManagerClient.getTrustConfigCallable().futureCall(request);
+   *   // Do something.
+   *   TrustConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTrustConfigRequest, TrustConfig> getTrustConfigCallable() {
+    return stub.getTrustConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TrustConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   TrustConfig trustConfig = TrustConfig.newBuilder().build();
+   *   String trustConfigId = "trustConfigId1514573429";
+   *   TrustConfig response =
+   *       certificateManagerClient.createTrustConfigAsync(parent, trustConfig, trustConfigId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the TrustConfig. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param trustConfig Required. A definition of the TrustConfig to create.
+   * @param trustConfigId Required. A user-provided name of the TrustConfig. Must match the regexp
+   *     `[a-z0-9-]{1,63}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrustConfig, OperationMetadata> createTrustConfigAsync(
+      LocationName parent, TrustConfig trustConfig, String trustConfigId) {
+    CreateTrustConfigRequest request =
+        CreateTrustConfigRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTrustConfig(trustConfig)
+            .setTrustConfigId(trustConfigId)
+            .build();
+    return createTrustConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TrustConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   TrustConfig trustConfig = TrustConfig.newBuilder().build();
+   *   String trustConfigId = "trustConfigId1514573429";
+   *   TrustConfig response =
+   *       certificateManagerClient.createTrustConfigAsync(parent, trustConfig, trustConfigId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the TrustConfig. Must be in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @param trustConfig Required. A definition of the TrustConfig to create.
+   * @param trustConfigId Required. A user-provided name of the TrustConfig. Must match the regexp
+   *     `[a-z0-9-]{1,63}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrustConfig, OperationMetadata> createTrustConfigAsync(
+      String parent, TrustConfig trustConfig, String trustConfigId) {
+    CreateTrustConfigRequest request =
+        CreateTrustConfigRequest.newBuilder()
+            .setParent(parent)
+            .setTrustConfig(trustConfig)
+            .setTrustConfigId(trustConfigId)
+            .build();
+    return createTrustConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TrustConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CreateTrustConfigRequest request =
+   *       CreateTrustConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTrustConfigId("trustConfigId1514573429")
+   *           .setTrustConfig(TrustConfig.newBuilder().build())
+   *           .build();
+   *   TrustConfig response = certificateManagerClient.createTrustConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrustConfig, OperationMetadata> createTrustConfigAsync(
+      CreateTrustConfigRequest request) {
+    return createTrustConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TrustConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CreateTrustConfigRequest request =
+   *       CreateTrustConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTrustConfigId("trustConfigId1514573429")
+   *           .setTrustConfig(TrustConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<TrustConfig, OperationMetadata> future =
+   *       certificateManagerClient.createTrustConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   TrustConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationCallable() {
+    return stub.createTrustConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TrustConfig in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CreateTrustConfigRequest request =
+   *       CreateTrustConfigRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTrustConfigId("trustConfigId1514573429")
+   *           .setTrustConfig(TrustConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       certificateManagerClient.createTrustConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateTrustConfigRequest, Operation> createTrustConfigCallable() {
+    return stub.createTrustConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   TrustConfig trustConfig = TrustConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   TrustConfig response =
+   *       certificateManagerClient.updateTrustConfigAsync(trustConfig, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param trustConfig Required. A definition of the TrustConfig to update.
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   *     definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrustConfig, OperationMetadata> updateTrustConfigAsync(
+      TrustConfig trustConfig, FieldMask updateMask) {
+    UpdateTrustConfigRequest request =
+        UpdateTrustConfigRequest.newBuilder()
+            .setTrustConfig(trustConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateTrustConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   UpdateTrustConfigRequest request =
+   *       UpdateTrustConfigRequest.newBuilder()
+   *           .setTrustConfig(TrustConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   TrustConfig response = certificateManagerClient.updateTrustConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TrustConfig, OperationMetadata> updateTrustConfigAsync(
+      UpdateTrustConfigRequest request) {
+    return updateTrustConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   UpdateTrustConfigRequest request =
+   *       UpdateTrustConfigRequest.newBuilder()
+   *           .setTrustConfig(TrustConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<TrustConfig, OperationMetadata> future =
+   *       certificateManagerClient.updateTrustConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   TrustConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationCallable() {
+    return stub.updateTrustConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   UpdateTrustConfigRequest request =
+   *       UpdateTrustConfigRequest.newBuilder()
+   *           .setTrustConfig(TrustConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       certificateManagerClient.updateTrustConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateTrustConfigRequest, Operation> updateTrustConfigCallable() {
+    return stub.updateTrustConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   TrustConfigName name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]");
+   *   certificateManagerClient.deleteTrustConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the TrustConfig to delete. Must be in the format
+   *     `projects/&#42;/locations/&#42;/trustConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteTrustConfigAsync(
+      TrustConfigName name) {
+    DeleteTrustConfigRequest request =
+        DeleteTrustConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteTrustConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   String name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString();
+   *   certificateManagerClient.deleteTrustConfigAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. A name of the TrustConfig to delete. Must be in the format
+   *     `projects/&#42;/locations/&#42;/trustConfigs/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteTrustConfigAsync(String name) {
+    DeleteTrustConfigRequest request = DeleteTrustConfigRequest.newBuilder().setName(name).build();
+    return deleteTrustConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   DeleteTrustConfigRequest request =
+   *       DeleteTrustConfigRequest.newBuilder()
+   *           .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   certificateManagerClient.deleteTrustConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteTrustConfigAsync(
+      DeleteTrustConfigRequest request) {
+    return deleteTrustConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   DeleteTrustConfigRequest request =
+   *       DeleteTrustConfigRequest.newBuilder()
+   *           .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       certificateManagerClient.deleteTrustConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationCallable() {
+    return stub.deleteTrustConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TrustConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   DeleteTrustConfigRequest request =
+   *       DeleteTrustConfigRequest.newBuilder()
+   *           .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       certificateManagerClient.deleteTrustConfigCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTrustConfigRequest, Operation> deleteTrustConfigCallable() {
+    return stub.deleteTrustConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -5030,6 +5854,83 @@ public class CertificateManagerClient implements BackgroundResource {
     protected ListCertificateIssuanceConfigsFixedSizeCollection createCollection(
         List<ListCertificateIssuanceConfigsPage> pages, int collectionSize) {
       return new ListCertificateIssuanceConfigsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTrustConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListTrustConfigsRequest,
+          ListTrustConfigsResponse,
+          TrustConfig,
+          ListTrustConfigsPage,
+          ListTrustConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListTrustConfigsPagedResponse> createAsync(
+        PageContext<ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig> context,
+        ApiFuture<ListTrustConfigsResponse> futureResponse) {
+      ApiFuture<ListTrustConfigsPage> futurePage =
+          ListTrustConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListTrustConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTrustConfigsPagedResponse(ListTrustConfigsPage page) {
+      super(page, ListTrustConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTrustConfigsPage
+      extends AbstractPage<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig, ListTrustConfigsPage> {
+
+    private ListTrustConfigsPage(
+        PageContext<ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig> context,
+        ListTrustConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListTrustConfigsPage createEmptyPage() {
+      return new ListTrustConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListTrustConfigsPage createPage(
+        PageContext<ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig> context,
+        ListTrustConfigsResponse response) {
+      return new ListTrustConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTrustConfigsPage> createPageAsync(
+        PageContext<ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig> context,
+        ApiFuture<ListTrustConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTrustConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTrustConfigsRequest,
+          ListTrustConfigsResponse,
+          TrustConfig,
+          ListTrustConfigsPage,
+          ListTrustConfigsFixedSizeCollection> {
+
+    private ListTrustConfigsFixedSizeCollection(
+        List<ListTrustConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTrustConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListTrustConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTrustConfigsFixedSizeCollection createCollection(
+        List<ListTrustConfigsPage> pages, int collectionSize) {
+      return new ListTrustConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

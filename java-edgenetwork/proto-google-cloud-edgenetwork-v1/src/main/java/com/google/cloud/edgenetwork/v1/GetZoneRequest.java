@@ -23,11 +23,13 @@ package com.google.cloud.edgenetwork.v1;
  *
  *
  * <pre>
+ * Deprecated: not implemented.
  * Message for getting a Zone
  * </pre>
  *
  * Protobuf type {@code google.cloud.edgenetwork.v1.GetZoneRequest}
  */
+@java.lang.Deprecated
 public final class GetZoneRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.GetZoneRequest)
@@ -281,6 +283,7 @@ public final class GetZoneRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: not implemented.
    * Message for getting a Zone
    * </pre>
    *

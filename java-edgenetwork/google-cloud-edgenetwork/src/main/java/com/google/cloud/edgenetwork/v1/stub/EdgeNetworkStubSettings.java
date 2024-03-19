@@ -633,13 +633,23 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     return initializeZoneSettings;
   }
 
-  /** Returns the object with the settings used for calls to listZones. */
+  /**
+   * Returns the object with the settings used for calls to listZones.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListZonesRequest, ListZonesResponse, ListZonesPagedResponse>
       listZonesSettings() {
     return listZonesSettings;
   }
 
-  /** Returns the object with the settings used for calls to getZone. */
+  /**
+   * Returns the object with the settings used for calls to getZone.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetZoneRequest, Zone> getZoneSettings() {
     return getZoneSettings;
   }
@@ -1722,13 +1732,23 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
       return initializeZoneSettings;
     }
 
-    /** Returns the builder for the settings used for calls to listZones. */
+    /**
+     * Returns the builder for the settings used for calls to listZones.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<ListZonesRequest, ListZonesResponse, ListZonesPagedResponse>
         listZonesSettings() {
       return listZonesSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getZone. */
+    /**
+     * Returns the builder for the settings used for calls to getZone.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetZoneRequest, Zone> getZoneSettings() {
       return getZoneSettings;
     }

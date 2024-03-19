@@ -21,6 +21,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -217,6 +218,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -269,6 +273,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -321,6 +328,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -388,6 +398,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -455,6 +468,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -518,6 +534,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -578,6 +597,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -724,6 +746,10 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidationResults("quotaValidationResults-1396407899")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -774,6 +800,10 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidationResults("quotaValidationResults-1396407899")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1237,6 +1267,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1297,6 +1330,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1357,6 +1393,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1420,6 +1459,9 @@ public class ConfigClientTest {
             .setServiceAccount("serviceAccount1079137720")
             .setImportExistingResources(true)
             .setWorkerPool("workerPool-384405318")
+            .setTfVersionConstraint("tfVersionConstraint-1530231677")
+            .setTfVersion("tfVersion182968838")
+            .setQuotaValidation(QuotaValidation.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2014,6 +2056,184 @@ public class ConfigClientTest {
               .setParent(PreviewName.of("[PROJECT]", "[LOCATION]", "[PREVIEW]").toString())
               .build();
       client.exportPreviewResult(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTerraformVersionsTest() throws Exception {
+    TerraformVersion responsesElement = TerraformVersion.newBuilder().build();
+    ListTerraformVersionsResponse expectedResponse =
+        ListTerraformVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTerraformVersions(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListTerraformVersionsPagedResponse pagedListResponse = client.listTerraformVersions(parent);
+
+    List<TerraformVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTerraformVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTerraformVersionsRequest actualRequest =
+        ((ListTerraformVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listTerraformVersionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listTerraformVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTerraformVersionsTest2() throws Exception {
+    TerraformVersion responsesElement = TerraformVersion.newBuilder().build();
+    ListTerraformVersionsResponse expectedResponse =
+        ListTerraformVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTerraformVersions(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListTerraformVersionsPagedResponse pagedListResponse = client.listTerraformVersions(parent);
+
+    List<TerraformVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTerraformVersionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTerraformVersionsRequest actualRequest =
+        ((ListTerraformVersionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listTerraformVersionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listTerraformVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTerraformVersionTest() throws Exception {
+    TerraformVersion expectedResponse =
+        TerraformVersion.newBuilder()
+            .setName(
+                TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]")
+                    .toString())
+            .setSupportTime(Timestamp.newBuilder().build())
+            .setDeprecateTime(Timestamp.newBuilder().build())
+            .setObsoleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    TerraformVersionName name =
+        TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]");
+
+    TerraformVersion actualResponse = client.getTerraformVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTerraformVersionRequest actualRequest = ((GetTerraformVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTerraformVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      TerraformVersionName name =
+          TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]");
+      client.getTerraformVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTerraformVersionTest2() throws Exception {
+    TerraformVersion expectedResponse =
+        TerraformVersion.newBuilder()
+            .setName(
+                TerraformVersionName.of("[PROJECT]", "[LOCATION]", "[TERRAFORM_VERSION]")
+                    .toString())
+            .setSupportTime(Timestamp.newBuilder().build())
+            .setDeprecateTime(Timestamp.newBuilder().build())
+            .setObsoleteTime(Timestamp.newBuilder().build())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TerraformVersion actualResponse = client.getTerraformVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetTerraformVersionRequest actualRequest = ((GetTerraformVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getTerraformVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getTerraformVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -257,7 +257,7 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
    * <pre>
    * A list of Certificate field names used to specify the order of the returned
    * results. The default sorting order is ascending. To specify descending
-   * order for a field, add a suffix " desc".
+   * order for a field, add a suffix `" desc"`.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -282,7 +282,7 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
    * <pre>
    * A list of Certificate field names used to specify the order of the returned
    * results. The default sorting order is ascending. To specify descending
-   * order for a field, add a suffix " desc".
+   * order for a field, add a suffix `" desc"`.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -1145,7 +1145,7 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
      * <pre>
      * A list of Certificate field names used to specify the order of the returned
      * results. The default sorting order is ascending. To specify descending
-     * order for a field, add a suffix " desc".
+     * order for a field, add a suffix `" desc"`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1169,7 +1169,7 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
      * <pre>
      * A list of Certificate field names used to specify the order of the returned
      * results. The default sorting order is ascending. To specify descending
-     * order for a field, add a suffix " desc".
+     * order for a field, add a suffix `" desc"`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1193,7 +1193,7 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
      * <pre>
      * A list of Certificate field names used to specify the order of the returned
      * results. The default sorting order is ascending. To specify descending
-     * order for a field, add a suffix " desc".
+     * order for a field, add a suffix `" desc"`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1216,7 +1216,7 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
      * <pre>
      * A list of Certificate field names used to specify the order of the returned
      * results. The default sorting order is ascending. To specify descending
-     * order for a field, add a suffix " desc".
+     * order for a field, add a suffix `" desc"`.
      * </pre>
      *
      * <code>string order_by = 5;</code>
@@ -1235,7 +1235,7 @@ public final class ListCertificatesRequest extends com.google.protobuf.Generated
      * <pre>
      * A list of Certificate field names used to specify the order of the returned
      * results. The default sorting order is ascending. To specify descending
-     * order for a field, add a suffix " desc".
+     * order for a field, add a suffix `" desc"`.
      * </pre>
      *
      * <code>string order_by = 5;</code>

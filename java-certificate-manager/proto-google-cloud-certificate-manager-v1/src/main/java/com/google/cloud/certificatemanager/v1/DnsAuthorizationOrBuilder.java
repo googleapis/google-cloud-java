@@ -291,4 +291,37 @@ public interface DnsAuthorizationOrBuilder
    */
   com.google.cloud.certificatemanager.v1.DnsAuthorization.DnsResourceRecordOrBuilder
       getDnsResourceRecordOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Type of DnsAuthorization. If unset during resource creation the
+   * following default will be used:
+   * - in location global: FIXED_RECORD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Type of DnsAuthorization. If unset during resource creation the
+   * following default will be used:
+   * - in location global: FIXED_RECORD.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.certificatemanager.v1.DnsAuthorization.Type getType();
 }

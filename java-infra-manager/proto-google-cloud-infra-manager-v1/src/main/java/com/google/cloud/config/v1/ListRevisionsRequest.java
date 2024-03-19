@@ -132,8 +132,8 @@ public final class ListRevisionsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * When requesting a page of resources, `page_size` specifies number of
-   * resources to return. If unspecified or set to 0, all resources will be
-   * returned.
+   * resources to return. If unspecified, at most 500 will be returned. The
+   * maximum value is 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -908,8 +908,8 @@ public final class ListRevisionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * When requesting a page of resources, `page_size` specifies number of
-     * resources to return. If unspecified or set to 0, all resources will be
-     * returned.
+     * resources to return. If unspecified, at most 500 will be returned. The
+     * maximum value is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -925,8 +925,8 @@ public final class ListRevisionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * When requesting a page of resources, `page_size` specifies number of
-     * resources to return. If unspecified or set to 0, all resources will be
-     * returned.
+     * resources to return. If unspecified, at most 500 will be returned. The
+     * maximum value is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -946,8 +946,8 @@ public final class ListRevisionsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * When requesting a page of resources, `page_size` specifies number of
-     * resources to return. If unspecified or set to 0, all resources will be
-     * returned.
+     * resources to return. If unspecified, at most 500 will be returned. The
+     * maximum value is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>

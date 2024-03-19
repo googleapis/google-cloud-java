@@ -22,6 +22,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListTrustConfigsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -40,17 +41,20 @@ import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
 import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.GetTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
@@ -61,11 +65,15 @@ import com.google.cloud.certificatemanager.v1.ListCertificatesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificatesResponse;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
+import com.google.cloud.certificatemanager.v1.TrustConfig;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -368,6 +376,62 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsMethodDescriptor =
+          MethodDescriptor.<ListTrustConfigsRequest, ListTrustConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/ListTrustConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListTrustConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListTrustConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetTrustConfigRequest, TrustConfig>
+      getTrustConfigMethodDescriptor =
+          MethodDescriptor.<GetTrustConfigRequest, TrustConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/GetTrustConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetTrustConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TrustConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CreateTrustConfigRequest, Operation>
+      createTrustConfigMethodDescriptor =
+          MethodDescriptor.<CreateTrustConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/CreateTrustConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTrustConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateTrustConfigRequest, Operation>
+      updateTrustConfigMethodDescriptor =
+          MethodDescriptor.<UpdateTrustConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/UpdateTrustConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateTrustConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteTrustConfigRequest, Operation>
+      deleteTrustConfigMethodDescriptor =
+          MethodDescriptor.<DeleteTrustConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/DeleteTrustConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTrustConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -473,6 +537,20 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
       deleteCertificateIssuanceConfigCallable;
   private final OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
       deleteCertificateIssuanceConfigOperationCallable;
+  private final UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsCallable;
+  private final UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsPagedResponse>
+      listTrustConfigsPagedCallable;
+  private final UnaryCallable<GetTrustConfigRequest, TrustConfig> getTrustConfigCallable;
+  private final UnaryCallable<CreateTrustConfigRequest, Operation> createTrustConfigCallable;
+  private final OperationCallable<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationCallable;
+  private final UnaryCallable<UpdateTrustConfigRequest, Operation> updateTrustConfigCallable;
+  private final OperationCallable<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationCallable;
+  private final UnaryCallable<DeleteTrustConfigRequest, Operation> deleteTrustConfigCallable;
+  private final OperationCallable<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -790,6 +868,58 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListTrustConfigsRequest, ListTrustConfigsResponse>
+        listTrustConfigsTransportSettings =
+            GrpcCallSettings.<ListTrustConfigsRequest, ListTrustConfigsResponse>newBuilder()
+                .setMethodDescriptor(listTrustConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigTransportSettings =
+        GrpcCallSettings.<GetTrustConfigRequest, TrustConfig>newBuilder()
+            .setMethodDescriptor(getTrustConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigTransportSettings =
+        GrpcCallSettings.<CreateTrustConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(createTrustConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigTransportSettings =
+        GrpcCallSettings.<UpdateTrustConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateTrustConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "trust_config.name", String.valueOf(request.getTrustConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteTrustConfigRequest, Operation> deleteTrustConfigTransportSettings =
+        GrpcCallSettings.<DeleteTrustConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteTrustConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1032,6 +1162,48 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
         callableFactory.createOperationCallable(
             deleteCertificateIssuanceConfigTransportSettings,
             settings.deleteCertificateIssuanceConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listTrustConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listTrustConfigsTransportSettings, settings.listTrustConfigsSettings(), clientContext);
+    this.listTrustConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTrustConfigsTransportSettings, settings.listTrustConfigsSettings(), clientContext);
+    this.getTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            getTrustConfigTransportSettings, settings.getTrustConfigSettings(), clientContext);
+    this.createTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            createTrustConfigTransportSettings,
+            settings.createTrustConfigSettings(),
+            clientContext);
+    this.createTrustConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            createTrustConfigTransportSettings,
+            settings.createTrustConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateTrustConfigTransportSettings,
+            settings.updateTrustConfigSettings(),
+            clientContext);
+    this.updateTrustConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTrustConfigTransportSettings,
+            settings.updateTrustConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteTrustConfigTransportSettings,
+            settings.deleteTrustConfigSettings(),
+            clientContext);
+    this.deleteTrustConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTrustConfigTransportSettings,
+            settings.deleteTrustConfigOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -1299,6 +1471,56 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
   public OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
       deleteCertificateIssuanceConfigOperationCallable() {
     return deleteCertificateIssuanceConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsCallable() {
+    return listTrustConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsPagedResponse>
+      listTrustConfigsPagedCallable() {
+    return listTrustConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTrustConfigRequest, TrustConfig> getTrustConfigCallable() {
+    return getTrustConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTrustConfigRequest, Operation> createTrustConfigCallable() {
+    return createTrustConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationCallable() {
+    return createTrustConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTrustConfigRequest, Operation> updateTrustConfigCallable() {
+    return updateTrustConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationCallable() {
+    return updateTrustConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTrustConfigRequest, Operation> deleteTrustConfigCallable() {
+    return deleteTrustConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationCallable() {
+    return deleteTrustConfigOperationCallable;
   }
 
   @Override

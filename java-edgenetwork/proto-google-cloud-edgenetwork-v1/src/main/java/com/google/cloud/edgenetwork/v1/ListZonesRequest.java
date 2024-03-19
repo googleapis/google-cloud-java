@@ -23,11 +23,13 @@ package com.google.cloud.edgenetwork.v1;
  *
  *
  * <pre>
+ * Deprecated: not implemented.
  * Message for requesting list of Zones
  * </pre>
  *
  * Protobuf type {@code google.cloud.edgenetwork.v1.ListZonesRequest}
  */
+@java.lang.Deprecated
 public final class ListZonesRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.edgenetwork.v1.ListZonesRequest)
@@ -492,6 +494,7 @@ public final class ListZonesRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Deprecated: not implemented.
    * Message for requesting list of Zones
    * </pre>
    *

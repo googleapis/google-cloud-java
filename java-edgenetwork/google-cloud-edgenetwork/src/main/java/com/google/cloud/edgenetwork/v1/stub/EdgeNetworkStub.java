@@ -100,14 +100,17 @@ public abstract class EdgeNetworkStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: initializeZoneCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListZonesRequest, ListZonesPagedResponse> listZonesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listZonesPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListZonesRequest, ListZonesResponse> listZonesCallable() {
     throw new UnsupportedOperationException("Not implemented: listZonesCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetZoneRequest, Zone> getZoneCallable() {
     throw new UnsupportedOperationException("Not implemented: getZoneCallable()");
   }

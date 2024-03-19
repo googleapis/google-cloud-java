@@ -281,9 +281,9 @@ public interface PreviewOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional service account. If omitted, the deployment resource
-   * reference must be provided, and the service account attached to the
-   * deployment will be used.
+   * Optional. User-specified Service Account (SA) credentials to be used when
+   * previewing resources.
+   * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>
@@ -297,9 +297,9 @@ public interface PreviewOrBuilder
    *
    *
    * <pre>
-   * Optional. Optional service account. If omitted, the deployment resource
-   * reference must be provided, and the service account attached to the
-   * deployment will be used.
+   * Optional. User-specified Service Account (SA) credentials to be used when
+   * previewing resources.
+   * Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
    * </pre>
    *
    * <code>

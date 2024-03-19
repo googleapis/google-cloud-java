@@ -22,6 +22,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListTrustConfigsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -2577,6 +2578,491 @@ public class CertificateManagerClientHttpJsonTest {
       String name =
           "projects/project-3905/locations/location-3905/certificateIssuanceConfigs/certificateIssuanceConfig-3905";
       client.deleteCertificateIssuanceConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listTrustConfigsTest() throws Exception {
+    TrustConfig responsesElement = TrustConfig.newBuilder().build();
+    ListTrustConfigsResponse expectedResponse =
+        ListTrustConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTrustConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListTrustConfigsPagedResponse pagedListResponse = client.listTrustConfigs(parent);
+
+    List<TrustConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTrustConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTrustConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listTrustConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTrustConfigsTest2() throws Exception {
+    TrustConfig responsesElement = TrustConfig.newBuilder().build();
+    ListTrustConfigsResponse expectedResponse =
+        ListTrustConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTrustConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListTrustConfigsPagedResponse pagedListResponse = client.listTrustConfigs(parent);
+
+    List<TrustConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTrustConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTrustConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listTrustConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTrustConfigTest() throws Exception {
+    TrustConfig expectedResponse =
+        TrustConfig.newBuilder()
+            .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TrustConfigName name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]");
+
+    TrustConfig actualResponse = client.getTrustConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTrustConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TrustConfigName name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]");
+      client.getTrustConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTrustConfigTest2() throws Exception {
+    TrustConfig expectedResponse =
+        TrustConfig.newBuilder()
+            .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-2775/locations/location-2775/trustConfigs/trustConfig-2775";
+
+    TrustConfig actualResponse = client.getTrustConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTrustConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-2775/locations/location-2775/trustConfigs/trustConfig-2775";
+      client.getTrustConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTrustConfigTest() throws Exception {
+    TrustConfig expectedResponse =
+        TrustConfig.newBuilder()
+            .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createTrustConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    TrustConfig trustConfig = TrustConfig.newBuilder().build();
+    String trustConfigId = "trustConfigId1514573429";
+
+    TrustConfig actualResponse =
+        client.createTrustConfigAsync(parent, trustConfig, trustConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTrustConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      TrustConfig trustConfig = TrustConfig.newBuilder().build();
+      String trustConfigId = "trustConfigId1514573429";
+      client.createTrustConfigAsync(parent, trustConfig, trustConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createTrustConfigTest2() throws Exception {
+    TrustConfig expectedResponse =
+        TrustConfig.newBuilder()
+            .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createTrustConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    TrustConfig trustConfig = TrustConfig.newBuilder().build();
+    String trustConfigId = "trustConfigId1514573429";
+
+    TrustConfig actualResponse =
+        client.createTrustConfigAsync(parent, trustConfig, trustConfigId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTrustConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      TrustConfig trustConfig = TrustConfig.newBuilder().build();
+      String trustConfigId = "trustConfigId1514573429";
+      client.createTrustConfigAsync(parent, trustConfig, trustConfigId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateTrustConfigTest() throws Exception {
+    TrustConfig expectedResponse =
+        TrustConfig.newBuilder()
+            .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateTrustConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TrustConfig trustConfig =
+        TrustConfig.newBuilder()
+            .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    TrustConfig actualResponse = client.updateTrustConfigAsync(trustConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateTrustConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TrustConfig trustConfig =
+          TrustConfig.newBuilder()
+              .setName(TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setDescription("description-1724546052")
+              .setEtag("etag3123477")
+              .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTrustConfigAsync(trustConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTrustConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTrustConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TrustConfigName name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]");
+
+    client.deleteTrustConfigAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTrustConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TrustConfigName name = TrustConfigName.of("[PROJECT]", "[LOCATION]", "[TRUST_CONFIG]");
+      client.deleteTrustConfigAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTrustConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTrustConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-2775/locations/location-2775/trustConfigs/trustConfig-2775";
+
+    client.deleteTrustConfigAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTrustConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-2775/locations/location-2775/trustConfigs/trustConfig-2775";
+      client.deleteTrustConfigAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

@@ -53,6 +53,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     serviceAccount_ = "";
     workerPool_ = "";
     lockState_ = 0;
+    tfVersionConstraint_ = "";
+    tfVersion_ = "";
+    quotaValidation_ = 0;
   }
 
   @java.lang.Override
@@ -2036,6 +2039,174 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.config.v1.Deployment.LockState.UNRECOGNIZED : result;
   }
 
+  public static final int TF_VERSION_CONSTRAINT_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tfVersionConstraint_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tfVersionConstraint field is set.
+   */
+  @java.lang.Override
+  public boolean hasTfVersionConstraint() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tfVersionConstraint.
+   */
+  @java.lang.Override
+  public java.lang.String getTfVersionConstraint() {
+    java.lang.Object ref = tfVersionConstraint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tfVersionConstraint_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for tfVersionConstraint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTfVersionConstraintBytes() {
+    java.lang.Object ref = tfVersionConstraint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tfVersionConstraint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TF_VERSION_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tfVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current Terraform version set on the deployment.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The tfVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getTfVersion() {
+    java.lang.Object ref = tfVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tfVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current Terraform version set on the deployment.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for tfVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTfVersionBytes() {
+    java.lang.Object ref = tfVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tfVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int QUOTA_VALIDATION_FIELD_NUMBER = 23;
+  private int quotaValidation_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input to control quota checks for resources in terraform
+   * configuration files. There are limited resources on which quota validation
+   * applies.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for quotaValidation.
+   */
+  @java.lang.Override
+  public int getQuotaValidationValue() {
+    return quotaValidation_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input to control quota checks for resources in terraform
+   * configuration files. There are limited resources on which quota validation
+   * applies.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The quotaValidation.
+   */
+  @java.lang.Override
+  public com.google.cloud.config.v1.QuotaValidation getQuotaValidation() {
+    com.google.cloud.config.v1.QuotaValidation result =
+        com.google.cloud.config.v1.QuotaValidation.forNumber(quotaValidation_);
+    return result == null ? com.google.cloud.config.v1.QuotaValidation.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2107,6 +2278,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     if (lockState_
         != com.google.cloud.config.v1.Deployment.LockState.LOCK_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(20, lockState_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, tfVersionConstraint_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tfVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, tfVersion_);
+    }
+    if (quotaValidation_
+        != com.google.cloud.config.v1.QuotaValidation.QUOTA_VALIDATION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(23, quotaValidation_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2185,6 +2366,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.config.v1.Deployment.LockState.LOCK_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, lockState_);
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, tfVersionConstraint_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tfVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, tfVersion_);
+    }
+    if (quotaValidation_
+        != com.google.cloud.config.v1.QuotaValidation.QUOTA_VALIDATION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(23, quotaValidation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2239,6 +2430,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (!getWorkerPool().equals(other.getWorkerPool())) return false;
     }
     if (lockState_ != other.lockState_) return false;
+    if (hasTfVersionConstraint() != other.hasTfVersionConstraint()) return false;
+    if (hasTfVersionConstraint()) {
+      if (!getTfVersionConstraint().equals(other.getTfVersionConstraint())) return false;
+    }
+    if (!getTfVersion().equals(other.getTfVersion())) return false;
+    if (quotaValidation_ != other.quotaValidation_) return false;
     if (!getBlueprintCase().equals(other.getBlueprintCase())) return false;
     switch (blueprintCase_) {
       case 6:
@@ -2312,6 +2509,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + LOCK_STATE_FIELD_NUMBER;
     hash = (53 * hash) + lockState_;
+    if (hasTfVersionConstraint()) {
+      hash = (37 * hash) + TF_VERSION_CONSTRAINT_FIELD_NUMBER;
+      hash = (53 * hash) + getTfVersionConstraint().hashCode();
+    }
+    hash = (37 * hash) + TF_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getTfVersion().hashCode();
+    hash = (37 * hash) + QUOTA_VALIDATION_FIELD_NUMBER;
+    hash = (53 * hash) + quotaValidation_;
     switch (blueprintCase_) {
       case 6:
         hash = (37 * hash) + TERRAFORM_BLUEPRINT_FIELD_NUMBER;
@@ -2532,6 +2737,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       importExistingResources_ = false;
       workerPool_ = "";
       lockState_ = 0;
+      tfVersionConstraint_ = "";
+      tfVersion_ = "";
+      quotaValidation_ = 0;
       blueprintCase_ = 0;
       blueprint_ = null;
       return this;
@@ -2644,6 +2852,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.lockState_ = lockState_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.tfVersionConstraint_ = tfVersionConstraint_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.tfVersion_ = tfVersion_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.quotaValidation_ = quotaValidation_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2795,6 +3013,19 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.lockState_ != 0) {
         setLockStateValue(other.getLockStateValue());
+      }
+      if (other.hasTfVersionConstraint()) {
+        tfVersionConstraint_ = other.tfVersionConstraint_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      if (!other.getTfVersion().isEmpty()) {
+        tfVersion_ = other.tfVersion_;
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      if (other.quotaValidation_ != 0) {
+        setQuotaValidationValue(other.getQuotaValidationValue());
       }
       switch (other.getBlueprintCase()) {
         case TERRAFORM_BLUEPRINT:
@@ -2961,6 +3192,24 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 160
+            case 170:
+              {
+                tfVersionConstraint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 170
+            case 178:
+              {
+                tfVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 178
+            case 184:
+              {
+                quotaValidation_ = input.readEnum();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 184
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5934,6 +6183,359 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLockState() {
       bitField0_ = (bitField0_ & ~0x00040000);
       lockState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tfVersionConstraint_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified Terraform version constraint.
+     * Example: "=1.3.10".
+     * </pre>
+     *
+     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the tfVersionConstraint field is set.
+     */
+    public boolean hasTfVersionConstraint() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified Terraform version constraint.
+     * Example: "=1.3.10".
+     * </pre>
+     *
+     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tfVersionConstraint.
+     */
+    public java.lang.String getTfVersionConstraint() {
+      java.lang.Object ref = tfVersionConstraint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tfVersionConstraint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified Terraform version constraint.
+     * Example: "=1.3.10".
+     * </pre>
+     *
+     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for tfVersionConstraint.
+     */
+    public com.google.protobuf.ByteString getTfVersionConstraintBytes() {
+      java.lang.Object ref = tfVersionConstraint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tfVersionConstraint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified Terraform version constraint.
+     * Example: "=1.3.10".
+     * </pre>
+     *
+     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The tfVersionConstraint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTfVersionConstraint(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tfVersionConstraint_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified Terraform version constraint.
+     * Example: "=1.3.10".
+     * </pre>
+     *
+     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTfVersionConstraint() {
+      tfVersionConstraint_ = getDefaultInstance().getTfVersionConstraint();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-specified Terraform version constraint.
+     * Example: "=1.3.10".
+     * </pre>
+     *
+     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for tfVersionConstraint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTfVersionConstraintBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tfVersionConstraint_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object tfVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current Terraform version set on the deployment.
+     * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+     * </pre>
+     *
+     * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The tfVersion.
+     */
+    public java.lang.String getTfVersion() {
+      java.lang.Object ref = tfVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tfVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current Terraform version set on the deployment.
+     * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+     * </pre>
+     *
+     * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for tfVersion.
+     */
+    public com.google.protobuf.ByteString getTfVersionBytes() {
+      java.lang.Object ref = tfVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tfVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current Terraform version set on the deployment.
+     * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+     * </pre>
+     *
+     * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The tfVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTfVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tfVersion_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current Terraform version set on the deployment.
+     * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+     * </pre>
+     *
+     * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTfVersion() {
+      tfVersion_ = getDefaultInstance().getTfVersion();
+      bitField0_ = (bitField0_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current Terraform version set on the deployment.
+     * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+     * </pre>
+     *
+     * <code>string tf_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for tfVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTfVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tfVersion_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    private int quotaValidation_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input to control quota checks for resources in terraform
+     * configuration files. There are limited resources on which quota validation
+     * applies.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for quotaValidation.
+     */
+    @java.lang.Override
+    public int getQuotaValidationValue() {
+      return quotaValidation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input to control quota checks for resources in terraform
+     * configuration files. There are limited resources on which quota validation
+     * applies.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for quotaValidation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuotaValidationValue(int value) {
+      quotaValidation_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input to control quota checks for resources in terraform
+     * configuration files. There are limited resources on which quota validation
+     * applies.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The quotaValidation.
+     */
+    @java.lang.Override
+    public com.google.cloud.config.v1.QuotaValidation getQuotaValidation() {
+      com.google.cloud.config.v1.QuotaValidation result =
+          com.google.cloud.config.v1.QuotaValidation.forNumber(quotaValidation_);
+      return result == null ? com.google.cloud.config.v1.QuotaValidation.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input to control quota checks for resources in terraform
+     * configuration files. There are limited resources on which quota validation
+     * applies.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The quotaValidation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuotaValidation(com.google.cloud.config.v1.QuotaValidation value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00200000;
+      quotaValidation_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input to control quota checks for resources in terraform
+     * configuration files. There are limited resources on which quota validation
+     * applies.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.QuotaValidation quota_validation = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQuotaValidation() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      quotaValidation_ = 0;
       onChanged();
       return this;
     }
