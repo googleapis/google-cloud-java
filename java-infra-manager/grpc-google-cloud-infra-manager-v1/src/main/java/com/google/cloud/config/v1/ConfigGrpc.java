@@ -943,6 +943,101 @@ public final class ConfigGrpc {
     return getExportPreviewResultMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListTerraformVersionsRequest,
+          com.google.cloud.config.v1.ListTerraformVersionsResponse>
+      getListTerraformVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTerraformVersions",
+      requestType = com.google.cloud.config.v1.ListTerraformVersionsRequest.class,
+      responseType = com.google.cloud.config.v1.ListTerraformVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListTerraformVersionsRequest,
+          com.google.cloud.config.v1.ListTerraformVersionsResponse>
+      getListTerraformVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListTerraformVersionsRequest,
+            com.google.cloud.config.v1.ListTerraformVersionsResponse>
+        getListTerraformVersionsMethod;
+    if ((getListTerraformVersionsMethod = ConfigGrpc.getListTerraformVersionsMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListTerraformVersionsMethod = ConfigGrpc.getListTerraformVersionsMethod) == null) {
+          ConfigGrpc.getListTerraformVersionsMethod =
+              getListTerraformVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListTerraformVersionsRequest,
+                          com.google.cloud.config.v1.ListTerraformVersionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListTerraformVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListTerraformVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListTerraformVersionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ListTerraformVersions"))
+                      .build();
+        }
+      }
+    }
+    return getListTerraformVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetTerraformVersionRequest,
+          com.google.cloud.config.v1.TerraformVersion>
+      getGetTerraformVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTerraformVersion",
+      requestType = com.google.cloud.config.v1.GetTerraformVersionRequest.class,
+      responseType = com.google.cloud.config.v1.TerraformVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetTerraformVersionRequest,
+          com.google.cloud.config.v1.TerraformVersion>
+      getGetTerraformVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetTerraformVersionRequest,
+            com.google.cloud.config.v1.TerraformVersion>
+        getGetTerraformVersionMethod;
+    if ((getGetTerraformVersionMethod = ConfigGrpc.getGetTerraformVersionMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetTerraformVersionMethod = ConfigGrpc.getGetTerraformVersionMethod) == null) {
+          ConfigGrpc.getGetTerraformVersionMethod =
+              getGetTerraformVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetTerraformVersionRequest,
+                          com.google.cloud.config.v1.TerraformVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetTerraformVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetTerraformVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.TerraformVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("GetTerraformVersion"))
+                      .build();
+        }
+      }
+    }
+    return getGetTerraformVersionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfigStub> factory =
@@ -1293,6 +1388,37 @@ public final class ConfigGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExportPreviewResultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a
+     * given project and location.
+     * </pre>
+     */
+    default void listTerraformVersions(
+        com.google.cloud.config.v1.ListTerraformVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListTerraformVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTerraformVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+     * </pre>
+     */
+    default void getTerraformVersion(
+        com.google.cloud.config.v1.GetTerraformVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.TerraformVersion> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTerraformVersionMethod(), responseObserver);
     }
   }
 
@@ -1672,6 +1798,41 @@ public final class ConfigGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a
+     * given project and location.
+     * </pre>
+     */
+    public void listTerraformVersions(
+        com.google.cloud.config.v1.ListTerraformVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListTerraformVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTerraformVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+     * </pre>
+     */
+    public void getTerraformVersion(
+        com.google.cloud.config.v1.GetTerraformVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.TerraformVersion> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTerraformVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1968,6 +2129,34 @@ public final class ConfigGrpc {
         com.google.cloud.config.v1.ExportPreviewResultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportPreviewResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a
+     * given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListTerraformVersionsResponse listTerraformVersions(
+        com.google.cloud.config.v1.ListTerraformVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTerraformVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.TerraformVersion getTerraformVersion(
+        com.google.cloud.config.v1.GetTerraformVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTerraformVersionMethod(), getCallOptions(), request);
     }
   }
 
@@ -2272,6 +2461,36 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportPreviewResultMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [TerraformVersion][google.cloud.config.v1.TerraformVersion]s in a
+     * given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListTerraformVersionsResponse>
+        listTerraformVersions(com.google.cloud.config.v1.ListTerraformVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTerraformVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [TerraformVersion][google.cloud.config.v1.TerraformVersion].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.TerraformVersion>
+        getTerraformVersion(com.google.cloud.config.v1.GetTerraformVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTerraformVersionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DEPLOYMENTS = 0;
@@ -2295,6 +2514,8 @@ public final class ConfigGrpc {
   private static final int METHODID_LIST_PREVIEWS = 18;
   private static final int METHODID_DELETE_PREVIEW = 19;
   private static final int METHODID_EXPORT_PREVIEW_RESULT = 20;
+  private static final int METHODID_LIST_TERRAFORM_VERSIONS = 21;
+  private static final int METHODID_GET_TERRAFORM_VERSION = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2422,6 +2643,19 @@ public final class ConfigGrpc {
           serviceImpl.exportPreviewResult(
               (com.google.cloud.config.v1.ExportPreviewResultRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ExportPreviewResultResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_TERRAFORM_VERSIONS:
+          serviceImpl.listTerraformVersions(
+              (com.google.cloud.config.v1.ListTerraformVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.config.v1.ListTerraformVersionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TERRAFORM_VERSION:
+          serviceImpl.getTerraformVersion(
+              (com.google.cloud.config.v1.GetTerraformVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.TerraformVersion>)
                   responseObserver);
           break;
         default:
@@ -2575,6 +2809,20 @@ public final class ConfigGrpc {
                     com.google.cloud.config.v1.ExportPreviewResultRequest,
                     com.google.cloud.config.v1.ExportPreviewResultResponse>(
                     service, METHODID_EXPORT_PREVIEW_RESULT)))
+        .addMethod(
+            getListTerraformVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListTerraformVersionsRequest,
+                    com.google.cloud.config.v1.ListTerraformVersionsResponse>(
+                    service, METHODID_LIST_TERRAFORM_VERSIONS)))
+        .addMethod(
+            getGetTerraformVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetTerraformVersionRequest,
+                    com.google.cloud.config.v1.TerraformVersion>(
+                    service, METHODID_GET_TERRAFORM_VERSION)))
         .build();
   }
 
@@ -2645,6 +2893,8 @@ public final class ConfigGrpc {
                       .addMethod(getListPreviewsMethod())
                       .addMethod(getDeletePreviewMethod())
                       .addMethod(getExportPreviewResultMethod())
+                      .addMethod(getListTerraformVersionsMethod())
+                      .addMethod(getGetTerraformVersionMethod())
                       .build();
         }
       }

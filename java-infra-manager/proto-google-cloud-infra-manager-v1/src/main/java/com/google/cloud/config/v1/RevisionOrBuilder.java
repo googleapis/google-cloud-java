@@ -566,5 +566,121 @@ public interface RevisionOrBuilder
    */
   com.google.protobuf.ByteString getWorkerPoolBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version_constraint = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The tfVersionConstraint.
+   */
+  java.lang.String getTfVersionConstraint();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user-specified Terraform version constraint.
+   * Example: "=1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version_constraint = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for tfVersionConstraint.
+   */
+  com.google.protobuf.ByteString getTfVersionConstraintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version of Terraform used to create the Revision.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The tfVersion.
+   */
+  java.lang.String getTfVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The version of Terraform used to create the Revision.
+   * It is in the format of "Major.Minor.Patch", for example, "1.3.10".
+   * </pre>
+   *
+   * <code>string tf_version = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for tfVersion.
+   */
+  com.google.protobuf.ByteString getTfVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage path containing quota validation results. This
+   * field is set when a user sets Deployment.quota_validation field to ENABLED
+   * or ENFORCED. Format: `gs://{bucket}/{object}`.
+   * </pre>
+   *
+   * <code>string quota_validation_results = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The quotaValidationResults.
+   */
+  java.lang.String getQuotaValidationResults();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud Storage path containing quota validation results. This
+   * field is set when a user sets Deployment.quota_validation field to ENABLED
+   * or ENFORCED. Format: `gs://{bucket}/{object}`.
+   * </pre>
+   *
+   * <code>string quota_validation_results = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for quotaValidationResults.
+   */
+  com.google.protobuf.ByteString getQuotaValidationResultsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input to control quota checks for resources in terraform
+   * configuration files. There are limited resources on which quota validation
+   * applies.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.QuotaValidation quota_validation = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for quotaValidation.
+   */
+  int getQuotaValidationValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input to control quota checks for resources in terraform
+   * configuration files. There are limited resources on which quota validation
+   * applies.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.QuotaValidation quota_validation = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The quotaValidation.
+   */
+  com.google.cloud.config.v1.QuotaValidation getQuotaValidation();
+
   com.google.cloud.config.v1.Revision.BlueprintCase getBlueprintCase();
 }

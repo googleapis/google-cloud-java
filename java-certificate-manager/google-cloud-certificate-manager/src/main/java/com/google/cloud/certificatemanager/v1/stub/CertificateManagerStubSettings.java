@@ -22,6 +22,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListTrustConfigsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -61,17 +62,20 @@ import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
 import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.GetTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
@@ -82,11 +86,15 @@ import com.google.cloud.certificatemanager.v1.ListCertificatesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificatesResponse;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
+import com.google.cloud.certificatemanager.v1.TrustConfig;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -238,6 +246,19 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
   private final OperationCallSettings<
           DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
       deleteCertificateIssuanceConfigOperationSettings;
+  private final PagedCallSettings<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+      listTrustConfigsSettings;
+  private final UnaryCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings;
+  private final UnaryCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigSettings;
+  private final OperationCallSettings<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationSettings;
+  private final UnaryCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigSettings;
+  private final OperationCallSettings<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationSettings;
+  private final UnaryCallSettings<DeleteTrustConfigRequest, Operation> deleteTrustConfigSettings;
+  private final OperationCallSettings<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -460,6 +481,46 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             }
           };
 
+  private static final PagedListDescriptor<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig>
+      LIST_TRUST_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTrustConfigsRequest injectToken(
+                ListTrustConfigsRequest payload, String token) {
+              return ListTrustConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTrustConfigsRequest injectPageSize(
+                ListTrustConfigsRequest payload, int pageSize) {
+              return ListTrustConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTrustConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTrustConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TrustConfig> extractResources(ListTrustConfigsResponse payload) {
+              return payload.getTrustConfigsList() == null
+                  ? ImmutableList.<TrustConfig>of()
+                  : payload.getTrustConfigsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -618,6 +679,25 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
                           context);
               return ListCertificateIssuanceConfigsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+      LIST_TRUST_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTrustConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse> callable,
+                ListTrustConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTrustConfigsResponse> futureResponse) {
+              PageContext<ListTrustConfigsRequest, ListTrustConfigsResponse, TrustConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TRUST_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListTrustConfigsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -872,6 +952,51 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return deleteCertificateIssuanceConfigOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listTrustConfigs. */
+  public PagedCallSettings<
+          ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+      listTrustConfigsSettings() {
+    return listTrustConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTrustConfig. */
+  public UnaryCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings() {
+    return getTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTrustConfig. */
+  public UnaryCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigSettings() {
+    return createTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTrustConfig. */
+  public OperationCallSettings<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationSettings() {
+    return createTrustConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTrustConfig. */
+  public UnaryCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigSettings() {
+    return updateTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTrustConfig. */
+  public OperationCallSettings<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationSettings() {
+    return updateTrustConfigOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTrustConfig. */
+  public UnaryCallSettings<DeleteTrustConfigRequest, Operation> deleteTrustConfigSettings() {
+    return deleteTrustConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTrustConfig. */
+  public OperationCallSettings<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationSettings() {
+    return deleteTrustConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1058,6 +1183,17 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
         settingsBuilder.deleteCertificateIssuanceConfigSettings().build();
     deleteCertificateIssuanceConfigOperationSettings =
         settingsBuilder.deleteCertificateIssuanceConfigOperationSettings().build();
+    listTrustConfigsSettings = settingsBuilder.listTrustConfigsSettings().build();
+    getTrustConfigSettings = settingsBuilder.getTrustConfigSettings().build();
+    createTrustConfigSettings = settingsBuilder.createTrustConfigSettings().build();
+    createTrustConfigOperationSettings =
+        settingsBuilder.createTrustConfigOperationSettings().build();
+    updateTrustConfigSettings = settingsBuilder.updateTrustConfigSettings().build();
+    updateTrustConfigOperationSettings =
+        settingsBuilder.updateTrustConfigOperationSettings().build();
+    deleteTrustConfigSettings = settingsBuilder.deleteTrustConfigSettings().build();
+    deleteTrustConfigOperationSettings =
+        settingsBuilder.deleteTrustConfigOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1170,6 +1306,25 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
         deleteCertificateIssuanceConfigOperationSettings;
     private final PagedCallSettings.Builder<
+            ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+        listTrustConfigsSettings;
+    private final UnaryCallSettings.Builder<GetTrustConfigRequest, TrustConfig>
+        getTrustConfigSettings;
+    private final UnaryCallSettings.Builder<CreateTrustConfigRequest, Operation>
+        createTrustConfigSettings;
+    private final OperationCallSettings.Builder<
+            CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+        createTrustConfigOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateTrustConfigRequest, Operation>
+        updateTrustConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+        updateTrustConfigOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteTrustConfigRequest, Operation>
+        deleteTrustConfigSettings;
+    private final OperationCallSettings.Builder<DeleteTrustConfigRequest, Empty, OperationMetadata>
+        deleteTrustConfigOperationSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -1256,6 +1411,14 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       createCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
       deleteCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
+      listTrustConfigsSettings = PagedCallSettings.newBuilder(LIST_TRUST_CONFIGS_PAGE_STR_FACT);
+      getTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTrustConfigOperationSettings = OperationCallSettings.newBuilder();
+      updateTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateTrustConfigOperationSettings = OperationCallSettings.newBuilder();
+      deleteTrustConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTrustConfigOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1285,6 +1448,11 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               getCertificateIssuanceConfigSettings,
               createCertificateIssuanceConfigSettings,
               deleteCertificateIssuanceConfigSettings,
+              listTrustConfigsSettings,
+              getTrustConfigSettings,
+              createTrustConfigSettings,
+              updateTrustConfigSettings,
+              deleteTrustConfigSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1346,6 +1514,14 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           settings.deleteCertificateIssuanceConfigSettings.toBuilder();
       deleteCertificateIssuanceConfigOperationSettings =
           settings.deleteCertificateIssuanceConfigOperationSettings.toBuilder();
+      listTrustConfigsSettings = settings.listTrustConfigsSettings.toBuilder();
+      getTrustConfigSettings = settings.getTrustConfigSettings.toBuilder();
+      createTrustConfigSettings = settings.createTrustConfigSettings.toBuilder();
+      createTrustConfigOperationSettings = settings.createTrustConfigOperationSettings.toBuilder();
+      updateTrustConfigSettings = settings.updateTrustConfigSettings.toBuilder();
+      updateTrustConfigOperationSettings = settings.updateTrustConfigOperationSettings.toBuilder();
+      deleteTrustConfigSettings = settings.deleteTrustConfigSettings.toBuilder();
+      deleteTrustConfigOperationSettings = settings.deleteTrustConfigOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1375,6 +1551,11 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               getCertificateIssuanceConfigSettings,
               createCertificateIssuanceConfigSettings,
               deleteCertificateIssuanceConfigSettings,
+              listTrustConfigsSettings,
+              getTrustConfigSettings,
+              createTrustConfigSettings,
+              updateTrustConfigSettings,
+              deleteTrustConfigSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1523,6 +1704,31 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .deleteCertificateIssuanceConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listTrustConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTrustConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -1876,6 +2082,78 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createTrustConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateTrustConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TrustConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateTrustConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateTrustConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TrustConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteTrustConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTrustConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -2140,6 +2418,54 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
         deleteCertificateIssuanceConfigOperationSettings() {
       return deleteCertificateIssuanceConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTrustConfigs. */
+    public PagedCallSettings.Builder<
+            ListTrustConfigsRequest, ListTrustConfigsResponse, ListTrustConfigsPagedResponse>
+        listTrustConfigsSettings() {
+      return listTrustConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTrustConfig. */
+    public UnaryCallSettings.Builder<GetTrustConfigRequest, TrustConfig> getTrustConfigSettings() {
+      return getTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTrustConfig. */
+    public UnaryCallSettings.Builder<CreateTrustConfigRequest, Operation>
+        createTrustConfigSettings() {
+      return createTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTrustConfig. */
+    public OperationCallSettings.Builder<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+        createTrustConfigOperationSettings() {
+      return createTrustConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTrustConfig. */
+    public UnaryCallSettings.Builder<UpdateTrustConfigRequest, Operation>
+        updateTrustConfigSettings() {
+      return updateTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTrustConfig. */
+    public OperationCallSettings.Builder<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+        updateTrustConfigOperationSettings() {
+      return updateTrustConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrustConfig. */
+    public UnaryCallSettings.Builder<DeleteTrustConfigRequest, Operation>
+        deleteTrustConfigSettings() {
+      return deleteTrustConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTrustConfig. */
+    public OperationCallSettings.Builder<DeleteTrustConfigRequest, Empty, OperationMetadata>
+        deleteTrustConfigOperationSettings() {
+      return deleteTrustConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

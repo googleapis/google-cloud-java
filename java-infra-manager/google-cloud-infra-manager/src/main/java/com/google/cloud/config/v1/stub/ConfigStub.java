@@ -21,6 +21,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -40,6 +41,7 @@ import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
+import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
@@ -49,6 +51,8 @@ import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
 import com.google.cloud.config.v1.ListRevisionsResponse;
+import com.google.cloud.config.v1.ListTerraformVersionsRequest;
+import com.google.cloud.config.v1.ListTerraformVersionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
@@ -56,6 +60,7 @@ import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
+import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -228,6 +233,21 @@ public abstract class ConfigStub implements BackgroundResource {
   public UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
       exportPreviewResultCallable() {
     throw new UnsupportedOperationException("Not implemented: exportPreviewResultCallable()");
+  }
+
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsPagedResponse>
+      listTerraformVersionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listTerraformVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTerraformVersionsCallable()");
+  }
+
+  public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTerraformVersionCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

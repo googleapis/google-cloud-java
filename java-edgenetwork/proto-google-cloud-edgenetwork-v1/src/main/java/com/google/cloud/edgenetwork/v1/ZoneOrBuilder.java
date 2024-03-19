@@ -129,21 +129,25 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
@@ -152,22 +156,25 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
-  /* nullable */
+  @java.lang.Deprecated /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
       /* nullable */
@@ -176,35 +183,45 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * Labels as key value pairs
+   * Deprecated: not implemented.
+   * Labels as key value pairs.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
    *
    *
    * <pre>
+   * Deprecated: not implemented.
    * The deployment layout type.
    * </pre>
    *
-   * <code>string layout_name = 5;</code>
+   * <code>string layout_name = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+   *     google/cloud/edgenetwork/v1/resources.proto;l=79
    * @return The layoutName.
    */
+  @java.lang.Deprecated
   java.lang.String getLayoutName();
   /**
    *
    *
    * <pre>
+   * Deprecated: not implemented.
    * The deployment layout type.
    * </pre>
    *
-   * <code>string layout_name = 5;</code>
+   * <code>string layout_name = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
+   *     google/cloud/edgenetwork/v1/resources.proto;l=79
    * @return The bytes for layoutName.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getLayoutNameBytes();
 }

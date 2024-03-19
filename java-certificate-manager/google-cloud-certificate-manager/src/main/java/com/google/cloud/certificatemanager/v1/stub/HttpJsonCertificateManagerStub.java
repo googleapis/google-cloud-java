@@ -22,6 +22,7 @@ import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.Li
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListCertificatesPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListDnsAuthorizationsPagedResponse;
 import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListLocationsPagedResponse;
+import static com.google.cloud.certificatemanager.v1.CertificateManagerClient.ListTrustConfigsPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
@@ -48,17 +49,20 @@ import com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.CreateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.CreateTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.DeleteCertificateRequest;
 import com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.DeleteTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.DnsAuthorization;
 import com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.GetCertificateRequest;
 import com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.GetTrustConfigRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse;
 import com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest;
@@ -69,11 +73,15 @@ import com.google.cloud.certificatemanager.v1.ListCertificatesRequest;
 import com.google.cloud.certificatemanager.v1.ListCertificatesResponse;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest;
 import com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
+import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
+import com.google.cloud.certificatemanager.v1.TrustConfig;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
 import com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest;
+import com.google.cloud.certificatemanager.v1.UpdateTrustConfigRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -103,6 +111,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
           .add(Empty.getDescriptor())
           .add(CertificateMap.getDescriptor())
           .add(Certificate.getDescriptor())
+          .add(TrustConfig.getDescriptor())
           .add(CertificateMapEntry.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(CertificateIssuanceConfig.getDescriptor())
@@ -1085,6 +1094,205 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsMethodDescriptor =
+          ApiMethodDescriptor.<ListTrustConfigsRequest, ListTrustConfigsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/ListTrustConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTrustConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/trustConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTrustConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTrustConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTrustConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListTrustConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTrustConfigRequest, TrustConfig>
+      getTrustConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetTrustConfigRequest, TrustConfig>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/GetTrustConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTrustConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/trustConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TrustConfig>newBuilder()
+                      .setDefaultInstance(TrustConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateTrustConfigRequest, Operation>
+      createTrustConfigMethodDescriptor =
+          ApiMethodDescriptor.<CreateTrustConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/CreateTrustConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateTrustConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/trustConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "trustConfigId", request.getTrustConfigId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("trustConfig", request.getTrustConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateTrustConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateTrustConfigRequest, Operation>
+      updateTrustConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateTrustConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/UpdateTrustConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateTrustConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{trustConfig.name=projects/*/locations/*/trustConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "trustConfig.name", request.getTrustConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("trustConfig", request.getTrustConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateTrustConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTrustConfigRequest, Operation>
+      deleteTrustConfigMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTrustConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/DeleteTrustConfig")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTrustConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/trustConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTrustConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTrustConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1239,6 +1447,20 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
       deleteCertificateIssuanceConfigCallable;
   private final OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
       deleteCertificateIssuanceConfigOperationCallable;
+  private final UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsCallable;
+  private final UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsPagedResponse>
+      listTrustConfigsPagedCallable;
+  private final UnaryCallable<GetTrustConfigRequest, TrustConfig> getTrustConfigCallable;
+  private final UnaryCallable<CreateTrustConfigRequest, Operation> createTrustConfigCallable;
+  private final OperationCallable<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationCallable;
+  private final UnaryCallable<UpdateTrustConfigRequest, Operation> updateTrustConfigCallable;
+  private final OperationCallable<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationCallable;
+  private final UnaryCallable<DeleteTrustConfigRequest, Operation> deleteTrustConfigCallable;
+  private final OperationCallable<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1614,6 +1836,63 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListTrustConfigsRequest, ListTrustConfigsResponse>
+        listTrustConfigsTransportSettings =
+            HttpJsonCallSettings.<ListTrustConfigsRequest, ListTrustConfigsResponse>newBuilder()
+                .setMethodDescriptor(listTrustConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetTrustConfigRequest, TrustConfig> getTrustConfigTransportSettings =
+        HttpJsonCallSettings.<GetTrustConfigRequest, TrustConfig>newBuilder()
+            .setMethodDescriptor(getTrustConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<CreateTrustConfigRequest, Operation> createTrustConfigTransportSettings =
+        HttpJsonCallSettings.<CreateTrustConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(createTrustConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateTrustConfigRequest, Operation> updateTrustConfigTransportSettings =
+        HttpJsonCallSettings.<UpdateTrustConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateTrustConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "trust_config.name", String.valueOf(request.getTrustConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteTrustConfigRequest, Operation> deleteTrustConfigTransportSettings =
+        HttpJsonCallSettings.<DeleteTrustConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteTrustConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1861,6 +2140,48 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
             settings.deleteCertificateIssuanceConfigOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listTrustConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listTrustConfigsTransportSettings, settings.listTrustConfigsSettings(), clientContext);
+    this.listTrustConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTrustConfigsTransportSettings, settings.listTrustConfigsSettings(), clientContext);
+    this.getTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            getTrustConfigTransportSettings, settings.getTrustConfigSettings(), clientContext);
+    this.createTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            createTrustConfigTransportSettings,
+            settings.createTrustConfigSettings(),
+            clientContext);
+    this.createTrustConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            createTrustConfigTransportSettings,
+            settings.createTrustConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateTrustConfigTransportSettings,
+            settings.updateTrustConfigSettings(),
+            clientContext);
+    this.updateTrustConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTrustConfigTransportSettings,
+            settings.updateTrustConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteTrustConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteTrustConfigTransportSettings,
+            settings.deleteTrustConfigSettings(),
+            clientContext);
+    this.deleteTrustConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTrustConfigTransportSettings,
+            settings.deleteTrustConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1902,6 +2223,11 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
     methodDescriptors.add(getCertificateIssuanceConfigMethodDescriptor);
     methodDescriptors.add(createCertificateIssuanceConfigMethodDescriptor);
     methodDescriptors.add(deleteCertificateIssuanceConfigMethodDescriptor);
+    methodDescriptors.add(listTrustConfigsMethodDescriptor);
+    methodDescriptors.add(getTrustConfigMethodDescriptor);
+    methodDescriptors.add(createTrustConfigMethodDescriptor);
+    methodDescriptors.add(updateTrustConfigMethodDescriptor);
+    methodDescriptors.add(deleteTrustConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2158,6 +2484,56 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
   public OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
       deleteCertificateIssuanceConfigOperationCallable() {
     return deleteCertificateIssuanceConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsResponse>
+      listTrustConfigsCallable() {
+    return listTrustConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTrustConfigsRequest, ListTrustConfigsPagedResponse>
+      listTrustConfigsPagedCallable() {
+    return listTrustConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTrustConfigRequest, TrustConfig> getTrustConfigCallable() {
+    return getTrustConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTrustConfigRequest, Operation> createTrustConfigCallable() {
+    return createTrustConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateTrustConfigRequest, TrustConfig, OperationMetadata>
+      createTrustConfigOperationCallable() {
+    return createTrustConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTrustConfigRequest, Operation> updateTrustConfigCallable() {
+    return updateTrustConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateTrustConfigRequest, TrustConfig, OperationMetadata>
+      updateTrustConfigOperationCallable() {
+    return updateTrustConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTrustConfigRequest, Operation> deleteTrustConfigCallable() {
+    return deleteTrustConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTrustConfigRequest, Empty, OperationMetadata>
+      deleteTrustConfigOperationCallable() {
+    return deleteTrustConfigOperationCallable;
   }
 
   @Override

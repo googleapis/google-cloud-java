@@ -21,6 +21,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
@@ -53,6 +54,7 @@ import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
+import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
@@ -62,6 +64,8 @@ import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
 import com.google.cloud.config.v1.ListRevisionsResponse;
+import com.google.cloud.config.v1.ListTerraformVersionsRequest;
+import com.google.cloud.config.v1.ListTerraformVersionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
@@ -69,6 +73,7 @@ import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
+import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -900,6 +905,80 @@ public class HttpJsonConfigStub extends ConfigStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListTerraformVersionsRequest, ListTerraformVersionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/ListTerraformVersions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTerraformVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/terraformVersions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTerraformVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTerraformVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTerraformVersionsResponse>newBuilder()
+                      .setDefaultInstance(ListTerraformVersionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionMethodDescriptor =
+          ApiMethodDescriptor.<GetTerraformVersionRequest, TerraformVersion>newBuilder()
+              .setFullMethodName("google.cloud.config.v1.Config/GetTerraformVersion")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTerraformVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/terraformVersions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTerraformVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTerraformVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TerraformVersion>newBuilder()
+                      .setDefaultInstance(TerraformVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1123,6 +1202,12 @@ public class HttpJsonConfigStub extends ConfigStub {
       deletePreviewOperationCallable;
   private final UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
       exportPreviewResultCallable;
+  private final UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsCallable;
+  private final UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsPagedResponse>
+      listTerraformVersionsPagedCallable;
+  private final UnaryCallable<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1437,6 +1522,31 @@ public class HttpJsonConfigStub extends ConfigStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+        listTerraformVersionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListTerraformVersionsRequest, ListTerraformVersionsResponse>newBuilder()
+                .setMethodDescriptor(listTerraformVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionTransportSettings =
+            HttpJsonCallSettings.<GetTerraformVersionRequest, TerraformVersion>newBuilder()
+                .setMethodDescriptor(getTerraformVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1618,6 +1728,21 @@ public class HttpJsonConfigStub extends ConfigStub {
             exportPreviewResultTransportSettings,
             settings.exportPreviewResultSettings(),
             clientContext);
+    this.listTerraformVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listTerraformVersionsTransportSettings,
+            settings.listTerraformVersionsSettings(),
+            clientContext);
+    this.listTerraformVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTerraformVersionsTransportSettings,
+            settings.listTerraformVersionsSettings(),
+            clientContext);
+    this.getTerraformVersionCallable =
+        callableFactory.createUnaryCallable(
+            getTerraformVersionTransportSettings,
+            settings.getTerraformVersionSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1667,6 +1792,8 @@ public class HttpJsonConfigStub extends ConfigStub {
     methodDescriptors.add(listPreviewsMethodDescriptor);
     methodDescriptors.add(deletePreviewMethodDescriptor);
     methodDescriptors.add(exportPreviewResultMethodDescriptor);
+    methodDescriptors.add(listTerraformVersionsMethodDescriptor);
+    methodDescriptors.add(getTerraformVersionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1850,6 +1977,23 @@ public class HttpJsonConfigStub extends ConfigStub {
   public UnaryCallable<ExportPreviewResultRequest, ExportPreviewResultResponse>
       exportPreviewResultCallable() {
     return exportPreviewResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
+      listTerraformVersionsCallable() {
+    return listTerraformVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsPagedResponse>
+      listTerraformVersionsPagedCallable() {
+    return listTerraformVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTerraformVersionRequest, TerraformVersion> getTerraformVersionCallable() {
+    return getTerraformVersionCallable;
   }
 
   @Override

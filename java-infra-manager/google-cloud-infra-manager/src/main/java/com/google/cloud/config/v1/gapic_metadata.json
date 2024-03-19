@@ -55,6 +55,9 @@
             "GetRevision": {
               "methods": ["getRevision", "getRevision", "getRevision", "getRevisionCallable"]
             },
+            "GetTerraformVersion": {
+              "methods": ["getTerraformVersion", "getTerraformVersion", "getTerraformVersion", "getTerraformVersionCallable"]
+            },
             "ImportStatefile": {
               "methods": ["importStatefile", "importStatefile", "importStatefile", "importStatefileCallable"]
             },
@@ -72,6 +75,9 @@
             },
             "ListRevisions": {
               "methods": ["listRevisions", "listRevisions", "listRevisions", "listRevisionsPagedCallable", "listRevisionsCallable"]
+            },
+            "ListTerraformVersions": {
+              "methods": ["listTerraformVersions", "listTerraformVersions", "listTerraformVersions", "listTerraformVersionsPagedCallable", "listTerraformVersionsCallable"]
             },
             "LockDeployment": {
               "methods": ["lockDeploymentAsync", "lockDeploymentAsync", "lockDeploymentAsync", "lockDeploymentOperationCallable", "lockDeploymentCallable"]

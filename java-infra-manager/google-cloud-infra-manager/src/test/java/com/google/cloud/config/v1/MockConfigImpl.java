@@ -498,4 +498,47 @@ public class MockConfigImpl extends ConfigImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listTerraformVersions(
+      ListTerraformVersionsRequest request,
+      StreamObserver<ListTerraformVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListTerraformVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListTerraformVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTerraformVersions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListTerraformVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getTerraformVersion(
+      GetTerraformVersionRequest request, StreamObserver<TerraformVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TerraformVersion) {
+      requests.add(request);
+      responseObserver.onNext(((TerraformVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTerraformVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TerraformVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

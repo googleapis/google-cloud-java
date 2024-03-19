@@ -96,7 +96,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListZones</td>
- *      <td><p> Lists Zones in a given project and location.</td>
+ *      <td><p> Deprecated: not implemented. Lists Zones in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -116,7 +116,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetZone</td>
- *      <td><p> Gets details of a single Zone.</td>
+ *      <td><p> Deprecated: not implemented. Gets details of a single Zone.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -852,7 +852,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Zones in a given project and location.
+   * Deprecated: not implemented. Lists Zones in a given project and location.
    *
    * <p>Sample code:
    *
@@ -872,7 +872,9 @@ public class EdgeNetworkClient implements BackgroundResource {
    *
    * @param parent Required. Parent value for ListZonesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListZonesPagedResponse listZones(LocationName parent) {
     ListZonesRequest request =
         ListZonesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
@@ -881,7 +883,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Zones in a given project and location.
+   * Deprecated: not implemented. Lists Zones in a given project and location.
    *
    * <p>Sample code:
    *
@@ -901,7 +903,9 @@ public class EdgeNetworkClient implements BackgroundResource {
    *
    * @param parent Required. Parent value for ListZonesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListZonesPagedResponse listZones(String parent) {
     ListZonesRequest request = ListZonesRequest.newBuilder().setParent(parent).build();
     return listZones(request);
@@ -909,7 +913,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Zones in a given project and location.
+   * Deprecated: not implemented. Lists Zones in a given project and location.
    *
    * <p>Sample code:
    *
@@ -936,14 +940,16 @@ public class EdgeNetworkClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListZonesPagedResponse listZones(ListZonesRequest request) {
     return listZonesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Zones in a given project and location.
+   * Deprecated: not implemented. Lists Zones in a given project and location.
    *
    * <p>Sample code:
    *
@@ -969,14 +975,17 @@ public class EdgeNetworkClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListZonesRequest, ListZonesPagedResponse> listZonesPagedCallable() {
     return stub.listZonesPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Zones in a given project and location.
+   * Deprecated: not implemented. Lists Zones in a given project and location.
    *
    * <p>Sample code:
    *
@@ -1009,14 +1018,17 @@ public class EdgeNetworkClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListZonesRequest, ListZonesResponse> listZonesCallable() {
     return stub.listZonesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Zone.
+   * Deprecated: not implemented. Gets details of a single Zone.
    *
    * <p>Sample code:
    *
@@ -1034,7 +1046,9 @@ public class EdgeNetworkClient implements BackgroundResource {
    *
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Zone getZone(ZoneName name) {
     GetZoneRequest request =
         GetZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -1043,7 +1057,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Zone.
+   * Deprecated: not implemented. Gets details of a single Zone.
    *
    * <p>Sample code:
    *
@@ -1061,7 +1075,9 @@ public class EdgeNetworkClient implements BackgroundResource {
    *
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Zone getZone(String name) {
     GetZoneRequest request = GetZoneRequest.newBuilder().setName(name).build();
     return getZone(request);
@@ -1069,7 +1085,7 @@ public class EdgeNetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Zone.
+   * Deprecated: not implemented. Gets details of a single Zone.
    *
    * <p>Sample code:
    *
@@ -1090,14 +1106,16 @@ public class EdgeNetworkClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final Zone getZone(GetZoneRequest request) {
     return getZoneCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Zone.
+   * Deprecated: not implemented. Gets details of a single Zone.
    *
    * <p>Sample code:
    *
@@ -1117,7 +1135,10 @@ public class EdgeNetworkClient implements BackgroundResource {
    *   Zone response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetZoneRequest, Zone> getZoneCallable() {
     return stub.getZoneCallable();
   }

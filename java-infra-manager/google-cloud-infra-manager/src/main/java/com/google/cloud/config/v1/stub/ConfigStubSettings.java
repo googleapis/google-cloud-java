@@ -21,6 +21,7 @@ import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListResourcesPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListTerraformVersionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -66,6 +67,7 @@ import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
+import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
@@ -75,6 +77,8 @@ import com.google.cloud.config.v1.ListResourcesRequest;
 import com.google.cloud.config.v1.ListResourcesResponse;
 import com.google.cloud.config.v1.ListRevisionsRequest;
 import com.google.cloud.config.v1.ListRevisionsResponse;
+import com.google.cloud.config.v1.ListTerraformVersionsRequest;
+import com.google.cloud.config.v1.ListTerraformVersionsResponse;
 import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
@@ -82,6 +86,7 @@ import com.google.cloud.config.v1.Preview;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.Revision;
 import com.google.cloud.config.v1.Statefile;
+import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -192,6 +197,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       deletePreviewOperationSettings;
   private final UnaryCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
       exportPreviewResultSettings;
+  private final PagedCallSettings<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      listTerraformVersionsSettings;
+  private final UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -348,6 +360,47 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+      LIST_TERRAFORM_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTerraformVersionsRequest injectToken(
+                ListTerraformVersionsRequest payload, String token) {
+              return ListTerraformVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTerraformVersionsRequest injectPageSize(
+                ListTerraformVersionsRequest payload, int pageSize) {
+              return ListTerraformVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTerraformVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTerraformVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TerraformVersion> extractResources(
+                ListTerraformVersionsResponse payload) {
+              return payload.getTerraformVersionsList() == null
+                  ? ImmutableList.<TerraformVersion>of()
+                  : payload.getTerraformVersionsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -449,6 +502,30 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> pageContext =
                   PageContext.create(callable, LIST_PREVIEWS_PAGE_STR_DESC, request, context);
               return ListPreviewsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      LIST_TERRAFORM_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTerraformVersionsRequest,
+              ListTerraformVersionsResponse,
+              ListTerraformVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTerraformVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTerraformVersionsRequest, ListTerraformVersionsResponse> callable,
+                ListTerraformVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTerraformVersionsResponse> futureResponse) {
+              PageContext<
+                      ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TERRAFORM_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListTerraformVersionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -624,6 +701,21 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     return exportPreviewResultSettings;
   }
 
+  /** Returns the object with the settings used for calls to listTerraformVersions. */
+  public PagedCallSettings<
+          ListTerraformVersionsRequest,
+          ListTerraformVersionsResponse,
+          ListTerraformVersionsPagedResponse>
+      listTerraformVersionsSettings() {
+    return listTerraformVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTerraformVersion. */
+  public UnaryCallSettings<GetTerraformVersionRequest, TerraformVersion>
+      getTerraformVersionSettings() {
+    return getTerraformVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -796,6 +888,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     deletePreviewSettings = settingsBuilder.deletePreviewSettings().build();
     deletePreviewOperationSettings = settingsBuilder.deletePreviewOperationSettings().build();
     exportPreviewResultSettings = settingsBuilder.exportPreviewResultSettings().build();
+    listTerraformVersionsSettings = settingsBuilder.listTerraformVersionsSettings().build();
+    getTerraformVersionSettings = settingsBuilder.getTerraformVersionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -864,6 +958,13 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     private final UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
         exportPreviewResultSettings;
     private final PagedCallSettings.Builder<
+            ListTerraformVersionsRequest,
+            ListTerraformVersionsResponse,
+            ListTerraformVersionsPagedResponse>
+        listTerraformVersionsSettings;
+    private final UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -926,6 +1027,9 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       deletePreviewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deletePreviewOperationSettings = OperationCallSettings.newBuilder();
       exportPreviewResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listTerraformVersionsSettings =
+          PagedCallSettings.newBuilder(LIST_TERRAFORM_VERSIONS_PAGE_STR_FACT);
+      getTerraformVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -955,6 +1059,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               listPreviewsSettings,
               deletePreviewSettings,
               exportPreviewResultSettings,
+              listTerraformVersionsSettings,
+              getTerraformVersionSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -994,6 +1100,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       deletePreviewSettings = settings.deletePreviewSettings.toBuilder();
       deletePreviewOperationSettings = settings.deletePreviewOperationSettings.toBuilder();
       exportPreviewResultSettings = settings.exportPreviewResultSettings.toBuilder();
+      listTerraformVersionsSettings = settings.listTerraformVersionsSettings.toBuilder();
+      getTerraformVersionSettings = settings.getTerraformVersionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1023,6 +1131,8 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               listPreviewsSettings,
               deletePreviewSettings,
               exportPreviewResultSettings,
+              listTerraformVersionsSettings,
+              getTerraformVersionSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1157,6 +1267,16 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
       builder
           .exportPreviewResultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listTerraformVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTerraformVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1531,6 +1651,21 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     public UnaryCallSettings.Builder<ExportPreviewResultRequest, ExportPreviewResultResponse>
         exportPreviewResultSettings() {
       return exportPreviewResultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTerraformVersions. */
+    public PagedCallSettings.Builder<
+            ListTerraformVersionsRequest,
+            ListTerraformVersionsResponse,
+            ListTerraformVersionsPagedResponse>
+        listTerraformVersionsSettings() {
+      return listTerraformVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTerraformVersion. */
+    public UnaryCallSettings.Builder<GetTerraformVersionRequest, TerraformVersion>
+        getTerraformVersionSettings() {
+      return getTerraformVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

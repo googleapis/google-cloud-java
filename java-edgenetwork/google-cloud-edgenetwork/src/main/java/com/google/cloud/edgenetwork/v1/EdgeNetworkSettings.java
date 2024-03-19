@@ -92,13 +92,23 @@ public class EdgeNetworkSettings extends ClientSettings<EdgeNetworkSettings> {
     return ((EdgeNetworkStubSettings) getStubSettings()).initializeZoneSettings();
   }
 
-  /** Returns the object with the settings used for calls to listZones. */
+  /**
+   * Returns the object with the settings used for calls to listZones.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<ListZonesRequest, ListZonesResponse, ListZonesPagedResponse>
       listZonesSettings() {
     return ((EdgeNetworkStubSettings) getStubSettings()).listZonesSettings();
   }
 
-  /** Returns the object with the settings used for calls to getZone. */
+  /**
+   * Returns the object with the settings used for calls to getZone.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetZoneRequest, Zone> getZoneSettings() {
     return ((EdgeNetworkStubSettings) getStubSettings()).getZoneSettings();
   }
@@ -423,13 +433,23 @@ public class EdgeNetworkSettings extends ClientSettings<EdgeNetworkSettings> {
       return getStubSettingsBuilder().initializeZoneSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listZones. */
+    /**
+     * Returns the builder for the settings used for calls to listZones.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<ListZonesRequest, ListZonesResponse, ListZonesPagedResponse>
         listZonesSettings() {
       return getStubSettingsBuilder().listZonesSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getZone. */
+    /**
+     * Returns the builder for the settings used for calls to getZone.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetZoneRequest, Zone> getZoneSettings() {
       return getStubSettingsBuilder().getZoneSettings();
     }
