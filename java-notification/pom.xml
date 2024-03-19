@@ -53,6 +53,12 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.guava</groupId>
+          <artifactId>failureaccess</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!--  Test dependencies  -->
