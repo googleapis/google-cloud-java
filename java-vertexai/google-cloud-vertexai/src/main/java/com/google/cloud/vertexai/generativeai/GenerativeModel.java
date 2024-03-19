@@ -33,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 /** This class holds a generative model that can complete what you provided. */
-public class GenerativeModel {
+public final class GenerativeModel {
   private final String modelName;
   private final String resourceName;
   private final VertexAI vertexAi;
@@ -300,23 +300,7 @@ public class GenerativeModel {
    */
   @BetaApi
   public GenerateContentResponse generateContent(String text) throws IOException {
-    return generateContent(text, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Generates content from generative model given a text and configs.
-   *
-   * @param text a text message to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  @BetaApi
-  public GenerateContentResponse generateContent(String text, GenerateContentConfig config)
-      throws IOException {
-    return generateContent(ContentMaker.fromString(text), config);
+    return generateContent(ContentMaker.fromString(text));
   }
 
   /**
@@ -329,23 +313,7 @@ public class GenerativeModel {
    */
   @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(Content content) throws IOException {
-    return generateContent(content, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Generates content from generative model given a single content and configs.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  @BetaApi
-  public GenerateContentResponse generateContent(Content content, GenerateContentConfig config)
-      throws IOException {
-    return generateContent(Arrays.asList(content), config);
+    return generateContent(Arrays.asList(content));
   }
 
   /**
@@ -359,38 +327,15 @@ public class GenerativeModel {
    */
   @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(List<Content> contents) throws IOException {
-    return generateContent(contents, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Generates content from generative model given a list of contents and configs.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  @BetaApi
-  public GenerateContentResponse generateContent(
-      List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    if (config.getGenerationConfig() != null) {
-      requestBuilder.setGenerationConfig(config.getGenerationConfig());
-    } else if (this.generationConfig != null) {
+    if (this.generationConfig != null) {
       requestBuilder.setGenerationConfig(this.generationConfig);
     }
-    if (config.getSafetySettings().isEmpty() == false) {
-      requestBuilder.addAllSafetySettings(config.getSafetySettings());
-    } else if (this.safetySettings != null) {
+    if (this.safetySettings != null) {
       requestBuilder.addAllSafetySettings(this.safetySettings);
     }
-    if (config.getTools().isEmpty() == false) {
-      requestBuilder.addAllTools(config.getTools());
-    } else if (this.tools != null) {
+    if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
 
@@ -420,22 +365,7 @@ public class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(String text)
       throws IOException {
-    return generateContentStream(text, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a text and configs.
-   *
-   * @param text a text message to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      String text, GenerateContentConfig config) throws IOException {
-    return generateContentStream(ContentMaker.fromString(text), config);
+    return generateContentStream(ContentMaker.fromString(text));
   }
 
   /**
@@ -449,23 +379,7 @@ public class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(Content content)
       throws IOException {
-    return generateContentStream(content, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a single content and
-   * configs.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      Content content, GenerateContentConfig config) throws IOException {
-    return generateContentStream(Arrays.asList(content), config);
+    return generateContentStream(Arrays.asList(content));
   }
 
   /**
@@ -479,38 +393,15 @@ public class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(List<Content> contents)
       throws IOException {
-    return generateContentStream(contents, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a list of contents and
-   * configs.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    if (config.getGenerationConfig() != null) {
-      requestBuilder.setGenerationConfig(config.getGenerationConfig());
-    } else if (this.generationConfig != null) {
+    if (this.generationConfig != null) {
       requestBuilder.setGenerationConfig(this.generationConfig);
     }
-    if (config.getSafetySettings().isEmpty() == false) {
-      requestBuilder.addAllSafetySettings(config.getSafetySettings());
-    } else if (this.safetySettings != null) {
+    if (this.safetySettings != null) {
       requestBuilder.addAllSafetySettings(this.safetySettings);
     }
-    if (config.getTools().isEmpty() == false) {
-      requestBuilder.addAllTools(config.getTools());
-    } else if (this.tools != null) {
+    if (this.tools != null) {
       requestBuilder.addAllTools(this.tools);
     }
 
