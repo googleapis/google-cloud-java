@@ -237,13 +237,13 @@ function generate_graalvm_modules_list() {
 function install_modules() {
   initial_install_modules=( \
     'java-resourcemanager' \
-    'java-asset' \
     'java-document-ai' \
     )
 
   for module in ${initial_install_modules[*]}; do
     echo "Preinstalling $module"
-    mvn -pl "$module" install \
+    pushd "$module"
+    mvn install \
       --also-make-dependents \
       -DskipTests \
       -Dclirr.skip \
@@ -254,5 +254,6 @@ function install_modules() {
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -B -ntp
+    popd
   done
 }
