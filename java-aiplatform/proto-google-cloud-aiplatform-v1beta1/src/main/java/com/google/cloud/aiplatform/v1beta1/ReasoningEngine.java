@@ -23,7 +23,8 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * ReasoningEngine provides customized orchestration over extensions and tools.
+ * ReasoningEngine provides a customizable runtime for models to determine
+ * which actions to take and in which order.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReasoningEngine}
@@ -659,7 +660,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * ReasoningEngine provides customized orchestration over extensions and tools.
+   * ReasoningEngine provides a customizable runtime for models to determine
+   * which actions to take and in which order.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ReasoningEngine}
