@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-secretmanager/google-.*/src"
 
 deep-preserve-regex:
-- "/java-secretmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-secretmanager/google-.*/src/test/java/com/google/cloud/.*/v1/it/IT.*Test.java"
 - "/java-secretmanager/proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/TopicName.java"
 
 
