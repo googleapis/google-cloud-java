@@ -37,6 +37,7 @@ libraries:
   distribution_name: com.google.cloud:google-identity-accesscontextmanager
   GAPICs:
   - proto_path: google/identity/accesscontextmanager/v1
+  - proto_path: google/identity/accesscontextmanager/type
 
 - api_shortname: advisorynotifications
   name_pretty: Advisory Notifications API
