@@ -1139,6 +1139,69 @@
         }
       }
     },
+    "ReasoningEngineExecutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReasoningEngineExecutionServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryReasoningEngine": {
+              "methods": ["queryReasoningEngine", "queryReasoningEngineCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ReasoningEngineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReasoningEngineServiceClient",
+          "rpcs": {
+            "CreateReasoningEngine": {
+              "methods": ["createReasoningEngineAsync", "createReasoningEngineAsync", "createReasoningEngineAsync", "createReasoningEngineOperationCallable", "createReasoningEngineCallable"]
+            },
+            "DeleteReasoningEngine": {
+              "methods": ["deleteReasoningEngineAsync", "deleteReasoningEngineAsync", "deleteReasoningEngineAsync", "deleteReasoningEngineOperationCallable", "deleteReasoningEngineCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetReasoningEngine": {
+              "methods": ["getReasoningEngine", "getReasoningEngine", "getReasoningEngine", "getReasoningEngineCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListReasoningEngines": {
+              "methods": ["listReasoningEngines", "listReasoningEngines", "listReasoningEngines", "listReasoningEnginesPagedCallable", "listReasoningEnginesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "ScheduleService": {
       "clients": {
         "grpc": {

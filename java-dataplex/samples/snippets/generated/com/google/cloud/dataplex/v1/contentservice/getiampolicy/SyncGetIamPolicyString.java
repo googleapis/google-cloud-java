@@ -17,7 +17,7 @@
 package com.google.cloud.dataplex.v1.samples;
 
 // [START dataplex_v1_generated_ContentService_GetIamPolicy_String_sync]
-import com.google.cloud.dataplex.v1.AssetName;
+import com.google.cloud.dataplex.v1.AspectTypeName;
 import com.google.cloud.dataplex.v1.ContentServiceClient;
 import com.google.iam.v1.Policy;
 
@@ -34,8 +34,7 @@ public class SyncGetIamPolicyString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ContentServiceClient contentServiceClient = ContentServiceClient.create()) {
-      String resource =
-          AssetName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[ZONE]", "[ASSET]").toString();
+      String resource = AspectTypeName.of("[PROJECT]", "[LOCATION]", "[ASPECT_TYPE]").toString();
       Policy response = contentServiceClient.getIamPolicy(resource);
     }
   }

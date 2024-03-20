@@ -73,6 +73,14 @@ public final class DataScansProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_ListDataScanJobsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataScan_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataScan_fieldAccessorTable;
@@ -155,108 +163,120 @@ public final class DataScansProto {
           + "\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\"r\n\030ListDataScan"
           + "JobsResponse\022=\n\016data_scan_jobs\030\001 \003(\0132%.g"
           + "oogle.cloud.dataplex.v1.DataScanJob\022\027\n\017n"
-          + "ext_page_token\030\002 \001(\t\"\261\n\n\010DataScan\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\030\n\013descri"
-          + "ption\030\003 \001(\tB\003\340A\001\022\031\n\014display_name\030\004 \001(\tB\003"
-          + "\340A\001\022C\n\006labels\030\005 \003(\0132..google.cloud.datap"
-          + "lex.v1.DataScan.LabelsEntryB\003\340A\001\0223\n\005stat"
-          + "e\030\006 \001(\0162\037.google.cloud.dataplex.v1.State"
-          + "B\003\340A\003\0224\n\013create_time\030\007 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\003\340A\003\0224\n\013update_time\030\010 \001(\013"
-          + "2\032.google.protobuf.TimestampB\003\340A\003\0227\n\004dat"
-          + "a\030\t \001(\0132$.google.cloud.dataplex.v1.DataS"
-          + "ourceB\003\340A\002\022M\n\016execution_spec\030\n \001(\01320.goo"
-          + "gle.cloud.dataplex.v1.DataScan.Execution"
-          + "SpecB\003\340A\001\022Q\n\020execution_status\030\013 \001(\01322.go"
-          + "ogle.cloud.dataplex.v1.DataScan.Executio"
-          + "nStatusB\003\340A\003\0229\n\004type\030\014 \001(\0162&.google.clou"
-          + "d.dataplex.v1.DataScanTypeB\003\340A\003\022F\n\021data_"
-          + "quality_spec\030d \001(\0132).google.cloud.datapl"
-          + "ex.v1.DataQualitySpecH\000\022F\n\021data_profile_"
-          + "spec\030e \001(\0132).google.cloud.dataplex.v1.Da"
-          + "taProfileSpecH\000\022P\n\023data_quality_result\030\310"
-          + "\001 \001(\0132+.google.cloud.dataplex.v1.DataQua"
-          + "lityResultB\003\340A\003H\001\022P\n\023data_profile_result"
-          + "\030\311\001 \001(\0132+.google.cloud.dataplex.v1.DataP"
-          + "rofileResultB\003\340A\003H\001\032m\n\rExecutionSpec\0227\n\007"
-          + "trigger\030\001 \001(\0132!.google.cloud.dataplex.v1"
-          + ".TriggerB\003\340A\001\022\024\n\005field\030d \001(\tB\003\340A\005H\000B\r\n\013i"
-          + "ncremental\032\205\001\n\017ExecutionStatus\0229\n\025latest"
-          + "_job_start_time\030\004 \001(\0132\032.google.protobuf."
-          + "Timestamp\0227\n\023latest_job_end_time\030\005 \001(\0132\032"
-          + ".google.protobuf.Timestamp\032-\n\013LabelsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:c\352A`\n "
-          + "dataplex.googleapis.com/DataScan\022<projec"
-          + "ts/{project}/locations/{location}/dataSc"
-          + "ans/{dataScan}B\006\n\004specB\010\n\006result\"\342\006\n\013Dat"
-          + "aScanJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\t"
-          + "B\003\340A\003\0223\n\nstart_time\030\003 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003\0221\n\010end_time\030\004 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\022?\n\005state\030\005"
-          + " \001(\0162+.google.cloud.dataplex.v1.DataScan"
-          + "Job.StateB\003\340A\003\022\024\n\007message\030\006 \001(\tB\003\340A\003\0229\n\004"
-          + "type\030\007 \001(\0162&.google.cloud.dataplex.v1.Da"
-          + "taScanTypeB\003\340A\003\022K\n\021data_quality_spec\030d \001"
-          + "(\0132).google.cloud.dataplex.v1.DataQualit"
-          + "ySpecB\003\340A\003H\000\022K\n\021data_profile_spec\030e \001(\0132"
-          + ").google.cloud.dataplex.v1.DataProfileSp"
-          + "ecB\003\340A\003H\000\022P\n\023data_quality_result\030\310\001 \001(\0132"
-          + "+.google.cloud.dataplex.v1.DataQualityRe"
-          + "sultB\003\340A\003H\001\022P\n\023data_profile_result\030\311\001 \001("
-          + "\0132+.google.cloud.dataplex.v1.DataProfile"
-          + "ResultB\003\340A\003H\001\"q\n\005State\022\025\n\021STATE_UNSPECIF"
-          + "IED\020\000\022\013\n\007RUNNING\020\001\022\r\n\tCANCELING\020\002\022\r\n\tCAN"
-          + "CELLED\020\003\022\r\n\tSUCCEEDED\020\004\022\n\n\006FAILED\020\005\022\013\n\007P"
-          + "ENDING\020\007:q\352An\n#dataplex.googleapis.com/D"
-          + "ataScanJob\022Gprojects/{project}/locations"
-          + "/{location}/dataScans/{dataScan}/jobs/{j"
-          + "ob}B\006\n\004specB\010\n\006result*R\n\014DataScanType\022\036\n"
-          + "\032DATA_SCAN_TYPE_UNSPECIFIED\020\000\022\020\n\014DATA_QU"
-          + "ALITY\020\001\022\020\n\014DATA_PROFILE\020\0022\362\014\n\017DataScanSe"
-          + "rvice\022\343\001\n\016CreateDataScan\022/.google.cloud."
-          + "dataplex.v1.CreateDataScanRequest\032\035.goog"
-          + "le.longrunning.Operation\"\200\001\312A\035\n\010DataScan"
-          + "\022\021OperationMetadata\332A\035parent,data_scan,d"
-          + "ata_scan_id\202\323\344\223\002:\"-/v1/{parent=projects/"
-          + "*/locations/*}/dataScans:\tdata_scan\022\345\001\n\016"
-          + "UpdateDataScan\022/.google.cloud.dataplex.v"
-          + "1.UpdateDataScanRequest\032\035.google.longrun"
-          + "ning.Operation\"\202\001\312A\035\n\010DataScan\022\021Operatio"
-          + "nMetadata\332A\025data_scan,update_mask\202\323\344\223\002D2"
-          + "7/v1/{data_scan.name=projects/*/location"
-          + "s/*/dataScans/*}:\tdata_scan\022\313\001\n\016DeleteDa"
-          + "taScan\022/.google.cloud.dataplex.v1.Delete"
-          + "DataScanRequest\032\035.google.longrunning.Ope"
-          + "ration\"i\312A*\n\025google.protobuf.Empty\022\021Oper"
-          + "ationMetadata\332A\004name\202\323\344\223\002/*-/v1/{name=pr"
-          + "ojects/*/locations/*/dataScans/*}\022\235\001\n\013Ge"
-          + "tDataScan\022,.google.cloud.dataplex.v1.Get"
-          + "DataScanRequest\032\".google.cloud.dataplex."
-          + "v1.DataScan\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=pr"
-          + "ojects/*/locations/*/dataScans/*}\022\260\001\n\rLi"
-          + "stDataScans\022..google.cloud.dataplex.v1.L"
-          + "istDataScansRequest\032/.google.cloud.datap"
-          + "lex.v1.ListDataScansResponse\">\332A\006parent\202"
-          + "\323\344\223\002/\022-/v1/{parent=projects/*/locations/"
-          + "*}/dataScans\022\257\001\n\013RunDataScan\022,.google.cl"
-          + "oud.dataplex.v1.RunDataScanRequest\032-.goo"
-          + "gle.cloud.dataplex.v1.RunDataScanRespons"
-          + "e\"C\332A\004name\202\323\344\223\0026\"1/v1/{name=projects/*/l"
-          + "ocations/*/dataScans/*}:run:\001*\022\255\001\n\016GetDa"
-          + "taScanJob\022/.google.cloud.dataplex.v1.Get"
-          + "DataScanJobRequest\032%.google.cloud.datapl"
-          + "ex.v1.DataScanJob\"C\332A\004name\202\323\344\223\0026\0224/v1/{n"
-          + "ame=projects/*/locations/*/dataScans/*/j"
-          + "obs/*}\022\300\001\n\020ListDataScanJobs\0221.google.clo"
-          + "ud.dataplex.v1.ListDataScanJobsRequest\0322"
-          + ".google.cloud.dataplex.v1.ListDataScanJo"
-          + "bsResponse\"E\332A\006parent\202\323\344\223\0026\0224/v1/{parent"
-          + "=projects/*/locations/*/dataScans/*}/job"
-          + "s\032K\312A\027dataplex.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformBj"
-          + "\n\034com.google.cloud.dataplex.v1B\016DataScan"
-          + "sProtoP\001Z8cloud.google.com/go/dataplex/a"
-          + "piv1/dataplexpb;dataplexpbb\006proto3"
+          + "ext_page_token\030\002 \001(\t\"4\n\037GenerateDataQual"
+          + "ityRulesRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\"[\n Ge"
+          + "nerateDataQualityRulesResponse\0227\n\004rule\030\001"
+          + " \003(\0132).google.cloud.dataplex.v1.DataQual"
+          + "ityRule\"\261\n\n\010DataScan\022\021\n\004name\030\001 \001(\tB\003\340A\003\022"
+          + "\020\n\003uid\030\002 \001(\tB\003\340A\003\022\030\n\013description\030\003 \001(\tB\003"
+          + "\340A\001\022\031\n\014display_name\030\004 \001(\tB\003\340A\001\022C\n\006labels"
+          + "\030\005 \003(\0132..google.cloud.dataplex.v1.DataSc"
+          + "an.LabelsEntryB\003\340A\001\0223\n\005state\030\006 \001(\0162\037.goo"
+          + "gle.cloud.dataplex.v1.StateB\003\340A\003\0224\n\013crea"
+          + "te_time\030\007 \001(\0132\032.google.protobuf.Timestam"
+          + "pB\003\340A\003\0224\n\013update_time\030\010 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003\0227\n\004data\030\t \001(\0132$.goo"
+          + "gle.cloud.dataplex.v1.DataSourceB\003\340A\002\022M\n"
+          + "\016execution_spec\030\n \001(\01320.google.cloud.dat"
+          + "aplex.v1.DataScan.ExecutionSpecB\003\340A\001\022Q\n\020"
+          + "execution_status\030\013 \001(\01322.google.cloud.da"
+          + "taplex.v1.DataScan.ExecutionStatusB\003\340A\003\022"
+          + "9\n\004type\030\014 \001(\0162&.google.cloud.dataplex.v1"
+          + ".DataScanTypeB\003\340A\003\022F\n\021data_quality_spec\030"
+          + "d \001(\0132).google.cloud.dataplex.v1.DataQua"
+          + "litySpecH\000\022F\n\021data_profile_spec\030e \001(\0132)."
+          + "google.cloud.dataplex.v1.DataProfileSpec"
+          + "H\000\022P\n\023data_quality_result\030\310\001 \001(\0132+.googl"
+          + "e.cloud.dataplex.v1.DataQualityResultB\003\340"
+          + "A\003H\001\022P\n\023data_profile_result\030\311\001 \001(\0132+.goo"
+          + "gle.cloud.dataplex.v1.DataProfileResultB"
+          + "\003\340A\003H\001\032m\n\rExecutionSpec\0227\n\007trigger\030\001 \001(\013"
+          + "2!.google.cloud.dataplex.v1.TriggerB\003\340A\001"
+          + "\022\024\n\005field\030d \001(\tB\003\340A\005H\000B\r\n\013incremental\032\205\001"
+          + "\n\017ExecutionStatus\0229\n\025latest_job_start_ti"
+          + "me\030\004 \001(\0132\032.google.protobuf.Timestamp\0227\n\023"
+          + "latest_job_end_time\030\005 \001(\0132\032.google.proto"
+          + "buf.Timestamp\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001:c\352A`\n dataplex.goog"
+          + "leapis.com/DataScan\022<projects/{project}/"
+          + "locations/{location}/dataScans/{dataScan"
+          + "}B\006\n\004specB\010\n\006result\"\342\006\n\013DataScanJob\022\021\n\004n"
+          + "ame\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0223\n\nstar"
+          + "t_time\030\003 \001(\0132\032.google.protobuf.Timestamp"
+          + "B\003\340A\003\0221\n\010end_time\030\004 \001(\0132\032.google.protobu"
+          + "f.TimestampB\003\340A\003\022?\n\005state\030\005 \001(\0162+.google"
+          + ".cloud.dataplex.v1.DataScanJob.StateB\003\340A"
+          + "\003\022\024\n\007message\030\006 \001(\tB\003\340A\003\0229\n\004type\030\007 \001(\0162&."
+          + "google.cloud.dataplex.v1.DataScanTypeB\003\340"
+          + "A\003\022K\n\021data_quality_spec\030d \001(\0132).google.c"
+          + "loud.dataplex.v1.DataQualitySpecB\003\340A\003H\000\022"
+          + "K\n\021data_profile_spec\030e \001(\0132).google.clou"
+          + "d.dataplex.v1.DataProfileSpecB\003\340A\003H\000\022P\n\023"
+          + "data_quality_result\030\310\001 \001(\0132+.google.clou"
+          + "d.dataplex.v1.DataQualityResultB\003\340A\003H\001\022P"
+          + "\n\023data_profile_result\030\311\001 \001(\0132+.google.cl"
+          + "oud.dataplex.v1.DataProfileResultB\003\340A\003H\001"
+          + "\"q\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNN"
+          + "ING\020\001\022\r\n\tCANCELING\020\002\022\r\n\tCANCELLED\020\003\022\r\n\tS"
+          + "UCCEEDED\020\004\022\n\n\006FAILED\020\005\022\013\n\007PENDING\020\007:q\352An"
+          + "\n#dataplex.googleapis.com/DataScanJob\022Gp"
+          + "rojects/{project}/locations/{location}/d"
+          + "ataScans/{dataScan}/jobs/{job}B\006\n\004specB\010"
+          + "\n\006result*R\n\014DataScanType\022\036\n\032DATA_SCAN_TY"
+          + "PE_UNSPECIFIED\020\000\022\020\n\014DATA_QUALITY\020\001\022\020\n\014DA"
+          + "TA_PROFILE\020\0022\266\017\n\017DataScanService\022\343\001\n\016Cre"
+          + "ateDataScan\022/.google.cloud.dataplex.v1.C"
+          + "reateDataScanRequest\032\035.google.longrunnin"
+          + "g.Operation\"\200\001\312A\035\n\010DataScan\022\021OperationMe"
+          + "tadata\332A\035parent,data_scan,data_scan_id\202\323"
+          + "\344\223\002:\"-/v1/{parent=projects/*/locations/*"
+          + "}/dataScans:\tdata_scan\022\345\001\n\016UpdateDataSca"
+          + "n\022/.google.cloud.dataplex.v1.UpdateDataS"
+          + "canRequest\032\035.google.longrunning.Operatio"
+          + "n\"\202\001\312A\035\n\010DataScan\022\021OperationMetadata\332A\025d"
+          + "ata_scan,update_mask\202\323\344\223\002D27/v1/{data_sc"
+          + "an.name=projects/*/locations/*/dataScans"
+          + "/*}:\tdata_scan\022\313\001\n\016DeleteDataScan\022/.goog"
+          + "le.cloud.dataplex.v1.DeleteDataScanReque"
+          + "st\032\035.google.longrunning.Operation\"i\312A*\n\025"
+          + "google.protobuf.Empty\022\021OperationMetadata"
+          + "\332A\004name\202\323\344\223\002/*-/v1/{name=projects/*/loca"
+          + "tions/*/dataScans/*}\022\235\001\n\013GetDataScan\022,.g"
+          + "oogle.cloud.dataplex.v1.GetDataScanReque"
+          + "st\032\".google.cloud.dataplex.v1.DataScan\"<"
+          + "\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/loca"
+          + "tions/*/dataScans/*}\022\260\001\n\rListDataScans\022."
+          + ".google.cloud.dataplex.v1.ListDataScansR"
+          + "equest\032/.google.cloud.dataplex.v1.ListDa"
+          + "taScansResponse\">\332A\006parent\202\323\344\223\002/\022-/v1/{p"
+          + "arent=projects/*/locations/*}/dataScans\022"
+          + "\257\001\n\013RunDataScan\022,.google.cloud.dataplex."
+          + "v1.RunDataScanRequest\032-.google.cloud.dat"
+          + "aplex.v1.RunDataScanResponse\"C\332A\004name\202\323\344"
+          + "\223\0026\"1/v1/{name=projects/*/locations/*/da"
+          + "taScans/*}:run:\001*\022\255\001\n\016GetDataScanJob\022/.g"
+          + "oogle.cloud.dataplex.v1.GetDataScanJobRe"
+          + "quest\032%.google.cloud.dataplex.v1.DataSca"
+          + "nJob\"C\332A\004name\202\323\344\223\0026\0224/v1/{name=projects/"
+          + "*/locations/*/dataScans/*/jobs/*}\022\300\001\n\020Li"
+          + "stDataScanJobs\0221.google.cloud.dataplex.v"
+          + "1.ListDataScanJobsRequest\0322.google.cloud"
+          + ".dataplex.v1.ListDataScanJobsResponse\"E\332"
+          + "A\006parent\202\323\344\223\0026\0224/v1/{parent=projects/*/l"
+          + "ocations/*/dataScans/*}/jobs\022\301\002\n\030Generat"
+          + "eDataQualityRules\0229.google.cloud.dataple"
+          + "x.v1.GenerateDataQualityRulesRequest\032:.g"
+          + "oogle.cloud.dataplex.v1.GenerateDataQual"
+          + "ityRulesResponse\"\255\001\332A\004name\202\323\344\223\002\237\001\"F/v1/{"
+          + "name=projects/*/locations/*/dataScans/*}"
+          + ":generateDataQualityRules:\001*ZR\"M/v1/{nam"
+          + "e=projects/*/locations/*/dataScans/*/job"
+          + "s/*}:generateDataQualityRules:\001*\032K\312A\027dat"
+          + "aplex.googleapis.com\322A.https://www.googl"
+          + "eapis.com/auth/cloud-platformBj\n\034com.goo"
+          + "gle.cloud.dataplex.v1B\016DataScansProtoP\001Z"
+          + "8cloud.google.com/go/dataplex/apiv1/data"
+          + "plexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -364,8 +384,24 @@ public final class DataScansProto {
             new java.lang.String[] {
               "DataScanJobs", "NextPageToken",
             });
-    internal_static_google_cloud_dataplex_v1_DataScan_descriptor =
+    internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesRequest_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_GenerateDataQualityRulesResponse_descriptor,
+            new java.lang.String[] {
+              "Rule",
+            });
+    internal_static_google_cloud_dataplex_v1_DataScan_descriptor =
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_dataplex_v1_DataScan_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataScan_descriptor,
@@ -414,7 +450,7 @@ public final class DataScansProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dataplex_v1_DataScanJob_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_dataplex_v1_DataScanJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataScanJob_descriptor,

@@ -145,6 +145,12 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
     return ((DataScanServiceStubSettings) getStubSettings()).listDataScanJobsSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateDataQualityRules. */
+  public UnaryCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesSettings() {
+    return ((DataScanServiceStubSettings) getStubSettings()).generateDataQualityRulesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -329,6 +335,13 @@ public class DataScanServiceSettings extends ClientSettings<DataScanServiceSetti
             ListDataScanJobsRequest, ListDataScanJobsResponse, ListDataScanJobsPagedResponse>
         listDataScanJobsSettings() {
       return getStubSettingsBuilder().listDataScanJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateDataQualityRules. */
+    public UnaryCallSettings.Builder<
+            GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+        generateDataQualityRulesSettings() {
+      return getStubSettingsBuilder().generateDataQualityRulesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
