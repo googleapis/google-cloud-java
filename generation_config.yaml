@@ -962,6 +962,11 @@ libraries:
   release_level: stable
   GAPICs:
   - proto_path: google/cloud/gsuiteaddons/v1
+  - proto_path: google/apps/script/type/docs
+  - proto_path: google/apps/script/type/drive
+  - proto_path: google/apps/script/type/gmail
+  - proto_path: google/apps/script/type/sheets
+  - proto_path: google/apps/script/type/slides
 
 - api_shortname: iam
   name_pretty: IAM
