@@ -29,5 +29,3 @@ updates:
       prefix: "deps"
     open-pull-requests-limit: 10
     target-branch: "V3-experimental"
-    labels:
-      - "V3 dependencies"
