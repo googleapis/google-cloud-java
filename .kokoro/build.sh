@@ -59,8 +59,7 @@ case ${JOB_TYPE} in
         echo "${modified_module_list[*]}"
       )
       setup_cloud "$module_list"
-      install_modules
-      run_integration_tests "$module_list"
+      execute_with_lazy_install run_integration_tests "$module_list"
     else
       echo "No Integration Tests to run"
     fi
@@ -69,16 +68,14 @@ case ${JOB_TYPE} in
     generate_graalvm_presubmit_modules_list
     printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
     setup_cloud "$module_list"
-    install_modules
-    run_graalvm_tests "$module_list"
+    execute_with_lazy_install run_graalvm_tests "$module_list"
     ;;
   graalvm)
     generate_graalvm_modules_list
     if [ ! -z "${module_list}" ]; then
       printf "Running GraalVM checks for:\n%s\n" "${module_list}"
       setup_cloud "$module_list"
-      install_modules
-      run_graalvm_tests "$module_list"
+      execute_with_lazy_install run_graalvm_tests "$module_list"
     else
       echo "Not running GraalVM checks -- No changes in relevant modules"
     fi
@@ -88,8 +85,7 @@ case ${JOB_TYPE} in
     if [ ! -z "${module_list}" ]; then
       printf "Running GraalVM 17 checks for:\n%s\n" "${module_list}"
       setup_cloud "$module_list"
-      install_modules
-      run_graalvm_tests "$module_list"
+      execute_with_lazy_install run_graalvm_tests "$module_list"
     else
       echo "Not running GraalVM 17 checks -- No changes in relevant modules"
     fi

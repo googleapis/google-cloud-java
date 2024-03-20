@@ -136,7 +136,8 @@ function run_integration_tests() {
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
@@ -161,7 +162,8 @@ function run_graalvm_tests() {
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
@@ -228,32 +230,31 @@ function generate_graalvm_modules_list() {
   )
 }
 
-# Preinstall modules that will cause build failures if they aren't available in the local maven
-# repository at the time of other modules' builds. Add to the initial_install_modules list if
-# build failures occur:
-# "Failed to execute goal on project [A]: Could not resolve dependencies for project [B]: Could
-# not find artifact [C] in ..."
-# The project associated with artifact C should be added to the initial_install_modules list.
-function install_modules() {
-  initial_install_modules=( \
-    'java-resourcemanager' \
-    'java-document-ai' \
-    )
+# Attempts to execute the command provided as the argument to this function.
+# If the command fails due to dependency resolution, performs a full mvn install on the repository,
+# then tries the command one more time.
+function execute_with_lazy_install() {
+  if ("$@" | tee lazy-install-output.txt); then
+    echo "Success without full installation."
+  elif grep -q "Could not resolve dependencies for project" console-output.txt; then
+    echo "Initial attempt failed: could not resolve dependencies. Fully installing repository..."
+    install_modules
+    echo "Attempting retry after fully installing repository."
+    ("$@")
+  fi
+  rm lazy-install-output.txt
+}
 
-  for module in ${initial_install_modules[*]}; do
-    echo "Preinstalling $module"
-    pushd "$module"
-    mvn install \
-      --also-make-dependents \
-      -DskipTests \
-      -Dclirr.skip \
-      -Denforcer.skip \
-      -Dcheckstyle.skip \
-      -Dflatten.skip \
-      -Danimal.sniffer.skip \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -B -ntp
-    popd
-  done
+function install_modules() {
+  mvn install \
+    --also-make-dependents \
+    -DskipTests \
+    -Dclirr.skip \
+    -Denforcer.skip \
+    -Dcheckstyle.skip \
+    -Dflatten.skip \
+    -Danimal.sniffer.skip \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -B -ntp
 }
