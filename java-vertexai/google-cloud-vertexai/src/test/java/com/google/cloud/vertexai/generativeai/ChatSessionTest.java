@@ -18,6 +18,8 @@ package com.google.cloud.vertexai.generativeai;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 import com.google.cloud.vertexai.api.Candidate;
@@ -113,7 +115,8 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContentStream
     when(mockGenerativeModel.generateContentStream(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            eq(Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))),
+            any(GenerateContentConfig.class)))
         .thenReturn(responseStream);
 
     // (Act) send request, consume response and get history
@@ -138,7 +141,8 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContentStream
     when(mockGenerativeModel.generateContentStream(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            eq(Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))),
+            any(GenerateContentConfig.class)))
         .thenReturn(responseStream);
 
     // (Act & Assert) Send request, consume response and get history, but not consume the response
@@ -156,7 +160,8 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContent
     when(mockGenerativeModel.generateContent(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            eq(Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))),
+            any(GenerateContentConfig.class)))
         .thenReturn(RESPONSE_FROM_UNARY_CALL);
 
     // (Act) Send text message via sendMessage and get the history.
@@ -174,7 +179,8 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContent
     when(mockGenerativeModel.generateContent(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            eq(Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))),
+            any(GenerateContentConfig.class)))
         .thenReturn(RESPONSE_FROM_UNARY_CALL);
 
     // (Act) Send text message via sendMessage and get the history.
@@ -204,7 +210,8 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContentStream
     when(mockGenerativeModel.generateContentStream(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            eq(Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))),
+            any(GenerateContentConfig.class)))
         .thenReturn(responseStream);
 
     // (Act) send request, consume response
@@ -228,7 +235,8 @@ public final class ChatSessionTest {
       throws IOException {
     // (Arrange) Set up the return value of the generateContent
     when(mockGenerativeModel.generateContent(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            eq(Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))),
+            any(GenerateContentConfig.class)))
         .thenReturn(RESPONSE_FROM_UNARY_CALL_WITH_OTHER_FINISH_REASON);
 
     // (Act) Send text message via sendMessage
