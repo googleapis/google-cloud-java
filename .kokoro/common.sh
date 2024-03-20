@@ -232,8 +232,11 @@ function generate_graalvm_modules_list() {
 
 # Attempts to execute the command provided as the argument to this function.
 # If the command fails: performs a full mvn install on the repository, then retries the command.
+# NOTE: This function expects the result of the given argument will be stored in the RETURN_CODE
+# variable, as demonstrated by run_graalvm_tests() and run_integration_tests() in this file.
 function execute_with_lazy_install() {
-  if ("$@"); then
+  ("$@")
+  if [ $RETURN_CODE -eq 0 ]; then
     echo "Success without full installation."
   else
     echo "Initial attempt failed. Fully installing repository, then retrying."
