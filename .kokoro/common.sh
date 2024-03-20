@@ -235,7 +235,9 @@ function generate_graalvm_modules_list() {
 # NOTE: This function expects the result of the given argument will be stored in the RETURN_CODE
 # variable, as demonstrated by run_graalvm_tests() and run_integration_tests() in this file.
 function execute_with_lazy_install() {
+  set +e
   ("$@")
+  set -e
   if [ $RETURN_CODE -eq 0 ]; then
     echo "Success without full installation."
   else
