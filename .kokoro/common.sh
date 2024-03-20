@@ -234,6 +234,7 @@ function generate_graalvm_modules_list() {
 # If the command fails due to dependency resolution, performs a full mvn install on the repository,
 # then tries the command one more time.
 function execute_with_lazy_install() {
+  set -eo pipefail
   if ("$@" | tee lazy-install-output.txt); then
     echo "Success without full installation."
   elif grep -q "Could not resolve dependencies for project" console-output.txt; then
