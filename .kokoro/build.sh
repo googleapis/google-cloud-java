@@ -39,7 +39,8 @@ case ${JOB_TYPE} in
   test)
     retry_with_backoff 3 10 \
       mvn -B -ntp \
-      -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
       -Dclirr.skip=true \
       -Denforcer.skip=true \
       -Dcheckstyle.skip=true \

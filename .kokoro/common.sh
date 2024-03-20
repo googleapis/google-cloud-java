@@ -231,19 +231,16 @@ function generate_graalvm_modules_list() {
 }
 
 # Attempts to execute the command provided as the argument to this function.
-# If the command fails due to dependency resolution, performs a full mvn install on the repository,
-# then tries the command one more time.
+# If the command fails: performs a full mvn install on the repository, then retries the command.
 function execute_with_lazy_install() {
-  set -eo pipefail
-  if ("$@" | tee lazy-install-output.txt); then
+  if ("$@"); then
     echo "Success without full installation."
-  elif grep -q "Could not resolve dependencies for project" console-output.txt; then
-    echo "Initial attempt failed: could not resolve dependencies. Fully installing repository..."
+  else
+    echo "Initial attempt failed. Fully installing repository, then retrying."
     install_modules
     echo "Attempting retry after fully installing repository."
     ("$@")
   fi
-  rm lazy-install-output.txt
 }
 
 function install_modules() {
