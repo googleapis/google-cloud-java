@@ -53,22 +53,7 @@ public final class ChatSession {
    */
   @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(String text) throws IOException {
-    return sendMessageStream(text, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param text the message to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   */
-  @BetaApi
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      String text, GenerateContentConfig config) throws IOException {
-    return sendMessageStream(ContentMaker.fromString(text), config);
+    return sendMessageStream(ContentMaker.fromString(text));
   }
 
   /**
@@ -81,25 +66,9 @@ public final class ChatSession {
   @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(Content content)
       throws IOException, IllegalArgumentException {
-    return sendMessageStream(content, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param content the content to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   */
-  @BetaApi
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, GenerateContentConfig config) throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
-    ResponseStream<GenerateContentResponse> respStream =
-        model.generateContentStream(history, config);
+    ResponseStream<GenerateContentResponse> respStream = model.generateContentStream(history);
     currentResponseStream = respStream;
     currentResponse = null;
     return respStream;
@@ -113,21 +82,7 @@ public final class ChatSession {
    */
   @BetaApi
   public GenerateContentResponse sendMessage(String text) throws IOException {
-    return sendMessage(text, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param text the message to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return a response.
-   */
-  @BetaApi
-  public GenerateContentResponse sendMessage(String text, GenerateContentConfig config)
-      throws IOException {
-    return sendMessage(ContentMaker.fromString(text), config);
+    return sendMessage(ContentMaker.fromString(text));
   }
 
   /**
@@ -138,23 +93,9 @@ public final class ChatSession {
    */
   @BetaApi
   public GenerateContentResponse sendMessage(Content content) throws IOException {
-    return sendMessage(content, GenerateContentConfig.newBuilder().build());
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param content the content to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return a response.
-   */
-  @BetaApi
-  public GenerateContentResponse sendMessage(Content content, GenerateContentConfig config)
-      throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
-    GenerateContentResponse response = model.generateContent(history, config);
+    GenerateContentResponse response = model.generateContent(history);
     currentResponse = response;
     currentResponseStream = null;
     return response;
