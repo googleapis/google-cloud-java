@@ -19,6 +19,27 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= CatalogServiceClient =======================
+ *
+ * <p>Service Description: The primary resources offered by this service are EntryGroups,
+ * EntryTypes, AspectTypes, Entry and Aspect which collectively allow a data administrator to
+ * organize, manage, secure and catalog data across their organization located across cloud projects
+ * in a variety of storage systems including Cloud Storage and BigQuery.
+ *
+ * <p>Sample for CatalogServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+ *   EntryTypeName name = EntryTypeName.of("[PROJECT]", "[LOCATION]", "[ENTRY_TYPE]");
+ *   EntryType response = catalogServiceClient.getEntryType(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ContentServiceClient =======================
  *
  * <p>Service Description: ContentService manages Notebook and SQL Scripts for Dataplex.

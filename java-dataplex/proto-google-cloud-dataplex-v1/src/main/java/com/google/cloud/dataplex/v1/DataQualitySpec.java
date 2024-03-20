@@ -113,6 +113,52 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.BigQueryExportOrBuilder
         getBigqueryExportOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be sent to the provided notification
+     * receipts upon triggers.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the notificationReport field is set.
+     */
+    boolean hasNotificationReport();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be sent to the provided notification
+     * receipts upon triggers.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The notificationReport.
+     */
+    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+        getNotificationReport();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be sent to the provided notification
+     * receipts upon triggers.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReportOrBuilder
+        getNotificationReportOrBuilder();
   }
   /**
    *
@@ -846,6 +892,4247 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
       }
     }
 
+    public interface RecipientsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the emails.
+       */
+      java.util.List<java.lang.String> getEmailsList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of emails.
+       */
+      int getEmailsCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The emails at the given index.
+       */
+      java.lang.String getEmails(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the emails at the given index.
+       */
+      com.google.protobuf.ByteString getEmailsBytes(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The individuals or groups who are designated to receive notifications
+     * upon triggers.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients}
+     */
+    public static final class Recipients extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients)
+        RecipientsOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Recipients.newBuilder() to construct.
+      private Recipients(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Recipients() {
+        emails_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Recipients();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.class,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.Builder
+                    .class);
+      }
+
+      public static final int EMAILS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList emails_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the emails.
+       */
+      public com.google.protobuf.ProtocolStringList getEmailsList() {
+        return emails_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of emails.
+       */
+      public int getEmailsCount() {
+        return emails_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The emails at the given index.
+       */
+      public java.lang.String getEmails(int index) {
+        return emails_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The email recipients who will receive the DataQualityScan
+       * results report.
+       * </pre>
+       *
+       * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the emails at the given index.
+       */
+      public com.google.protobuf.ByteString getEmailsBytes(int index) {
+        return emails_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < emails_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, emails_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < emails_.size(); i++) {
+            dataSize += computeStringSizeNoTag(emails_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getEmailsList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients other =
+            (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients) obj;
+
+        if (!getEmailsList().equals(other.getEmailsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getEmailsCount() > 0) {
+          hash = (37 * hash) + EMAILS_FIELD_NUMBER;
+          hash = (53 * hash) + getEmailsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The individuals or groups who are designated to receive notifications
+       * upon triggers.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients)
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.class,
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          emails_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_Recipients_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients build() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients result =
+              new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            emails_.makeImmutable();
+            result.emails_ = emails_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+                  .getDefaultInstance()) return this;
+          if (!other.emails_.isEmpty()) {
+            if (emails_.isEmpty()) {
+              emails_ = other.emails_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureEmailsIsMutable();
+              emails_.addAll(other.emails_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureEmailsIsMutable();
+                    emails_.add(s);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList emails_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureEmailsIsMutable() {
+          if (!emails_.isModifiable()) {
+            emails_ = new com.google.protobuf.LazyStringArrayList(emails_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return A list containing the emails.
+         */
+        public com.google.protobuf.ProtocolStringList getEmailsList() {
+          emails_.makeImmutable();
+          return emails_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The count of emails.
+         */
+        public int getEmailsCount() {
+          return emails_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The emails at the given index.
+         */
+        public java.lang.String getEmails(int index) {
+          return emails_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the emails at the given index.
+         */
+        public com.google.protobuf.ByteString getEmailsBytes(int index) {
+          return emails_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The emails to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEmails(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmailsIsMutable();
+          emails_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The emails to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEmails(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmailsIsMutable();
+          emails_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param values The emails to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllEmails(java.lang.Iterable<java.lang.String> values) {
+          ensureEmailsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, emails_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEmails() {
+          emails_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The email recipients who will receive the DataQualityScan
+         * results report.
+         * </pre>
+         *
+         * <code>repeated string emails = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes of the emails to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEmailsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureEmailsIsMutable();
+          emails_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients)
+      private static final com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Recipients> PARSER =
+          new com.google.protobuf.AbstractParser<Recipients>() {
+            @java.lang.Override
+            public Recipients parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Recipients> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Recipients> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ScoreThresholdTriggerOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The score range is in [0,100].
+       * </pre>
+       *
+       * <code>float score_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The scoreThreshold.
+       */
+      float getScoreThreshold();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This trigger is triggered when the DQ score in the job result is less
+     * than a specified input score.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger}
+     */
+    public static final class ScoreThresholdTrigger extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)
+        ScoreThresholdTriggerOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use ScoreThresholdTrigger.newBuilder() to construct.
+      private ScoreThresholdTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ScoreThresholdTrigger() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ScoreThresholdTrigger();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                    .class,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                    .Builder.class);
+      }
+
+      public static final int SCORE_THRESHOLD_FIELD_NUMBER = 2;
+      private float scoreThreshold_ = 0F;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The score range is in [0,100].
+       * </pre>
+       *
+       * <code>float score_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The scoreThreshold.
+       */
+      @java.lang.Override
+      public float getScoreThreshold() {
+        return scoreThreshold_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (java.lang.Float.floatToRawIntBits(scoreThreshold_) != 0) {
+          output.writeFloat(2, scoreThreshold_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (java.lang.Float.floatToRawIntBits(scoreThreshold_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, scoreThreshold_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger other =
+            (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)
+                obj;
+
+        if (java.lang.Float.floatToIntBits(getScoreThreshold())
+            != java.lang.Float.floatToIntBits(other.getScoreThreshold())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SCORE_THRESHOLD_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getScoreThreshold());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This trigger is triggered when the DQ score in the job result is less
+       * than a specified input score.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTriggerOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                      .class,
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          scoreThreshold_ = 0F;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_ScoreThresholdTrigger_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+            build() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+              result =
+                  new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                      .ScoreThresholdTrigger(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.scoreThreshold_ = scoreThreshold_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                  .getDefaultInstance()) return this;
+          if (other.getScoreThreshold() != 0F) {
+            setScoreThreshold(other.getScoreThreshold());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 21:
+                  {
+                    scoreThreshold_ = input.readFloat();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 21
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private float scoreThreshold_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The score range is in [0,100].
+         * </pre>
+         *
+         * <code>float score_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The scoreThreshold.
+         */
+        @java.lang.Override
+        public float getScoreThreshold() {
+          return scoreThreshold_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The score range is in [0,100].
+         * </pre>
+         *
+         * <code>float score_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The scoreThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setScoreThreshold(float value) {
+
+          scoreThreshold_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The score range is in [0,100].
+         * </pre>
+         *
+         * <code>float score_threshold = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearScoreThreshold() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          scoreThreshold_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger)
+      private static final com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                .ScoreThresholdTrigger();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTrigger
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ScoreThresholdTrigger> PARSER =
+          new com.google.protobuf.AbstractParser<ScoreThresholdTrigger>() {
+            @java.lang.Override
+            public ScoreThresholdTrigger parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ScoreThresholdTrigger> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ScoreThresholdTrigger> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface JobFailureTriggerOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * This trigger is triggered when the scan job itself fails, regardless of
+     * the result.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger}
+     */
+    public static final class JobFailureTrigger extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger)
+        JobFailureTriggerOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use JobFailureTrigger.newBuilder() to construct.
+      private JobFailureTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private JobFailureTrigger() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new JobFailureTrigger();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                    .class,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                    .Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger other =
+            (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This trigger is triggered when the scan job itself fails, regardless of
+       * the result.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger)
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTriggerOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                      .class,
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobFailureTrigger_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+            build() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger result =
+              new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger(
+                  this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                  .getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger)
+      private static final com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .JobFailureTrigger
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<JobFailureTrigger> PARSER =
+          new com.google.protobuf.AbstractParser<JobFailureTrigger>() {
+            @java.lang.Override
+            public JobFailureTrigger parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<JobFailureTrigger> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<JobFailureTrigger> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface JobEndTriggerOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger)
+        com.google.protobuf.MessageOrBuilder {}
+    /**
+     *
+     *
+     * <pre>
+     * This trigger is triggered whenever a scan job run ends, regardless
+     * of the result.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger}
+     */
+    public static final class JobEndTrigger extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger)
+        JobEndTriggerOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use JobEndTrigger.newBuilder() to construct.
+      private JobEndTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private JobEndTrigger() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new JobEndTrigger();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.class,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.Builder
+                    .class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger other =
+            (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * This trigger is triggered whenever a scan job run ends, regardless
+       * of the result.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger)
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.class,
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_JobEndTrigger_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger build() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger result =
+              new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+                  .getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger)
+      private static final com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .JobEndTrigger
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<JobEndTrigger> PARSER =
+          new com.google.protobuf.AbstractParser<JobEndTrigger>() {
+            @java.lang.Override
+            public JobEndTrigger parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<JobEndTrigger> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<JobEndTrigger> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface NotificationReportOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The recipients who will receive the notification report.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the recipients field is set.
+       */
+      boolean hasRecipients();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The recipients who will receive the notification report.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The recipients.
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients getRecipients();
+      /**
+       *
+       *
+       * <pre>
+       * Required. The recipients who will receive the notification report.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsOrBuilder
+          getRecipientsOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when score threshold is met.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the scoreThresholdTrigger field is set.
+       */
+      boolean hasScoreThresholdTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when score threshold is met.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The scoreThresholdTrigger.
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+          getScoreThresholdTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when score threshold is met.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTriggerOrBuilder
+          getScoreThresholdTriggerOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job fails.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the jobFailureTrigger field is set.
+       */
+      boolean hasJobFailureTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job fails.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The jobFailureTrigger.
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          getJobFailureTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job fails.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTriggerOrBuilder
+          getJobFailureTriggerOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job ends.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the jobEndTrigger field is set.
+       */
+      boolean hasJobEndTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job ends.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The jobEndTrigger.
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger getJobEndTrigger();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job ends.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerOrBuilder
+          getJobEndTriggerOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration of notification report post scan action.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport}
+     */
+    public static final class NotificationReport extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport)
+        NotificationReportOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use NotificationReport.newBuilder() to construct.
+      private NotificationReport(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private NotificationReport() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new NotificationReport();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataQualityProto
+            .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                    .class,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                    .Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int RECIPIENTS_FIELD_NUMBER = 1;
+      private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients_;
+      /**
+       *
+       *
+       * <pre>
+       * Required. The recipients who will receive the notification report.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the recipients field is set.
+       */
+      @java.lang.Override
+      public boolean hasRecipients() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The recipients who will receive the notification report.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The recipients.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+          getRecipients() {
+        return recipients_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+                .getDefaultInstance()
+            : recipients_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Required. The recipients who will receive the notification report.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsOrBuilder
+          getRecipientsOrBuilder() {
+        return recipients_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+                .getDefaultInstance()
+            : recipients_;
+      }
+
+      public static final int SCORE_THRESHOLD_TRIGGER_FIELD_NUMBER = 2;
+      private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+          scoreThresholdTrigger_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when score threshold is met.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the scoreThresholdTrigger field is set.
+       */
+      @java.lang.Override
+      public boolean hasScoreThresholdTrigger() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when score threshold is met.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The scoreThresholdTrigger.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+          getScoreThresholdTrigger() {
+        return scoreThresholdTrigger_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                .getDefaultInstance()
+            : scoreThresholdTrigger_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when score threshold is met.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .ScoreThresholdTriggerOrBuilder
+          getScoreThresholdTriggerOrBuilder() {
+        return scoreThresholdTrigger_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                .getDefaultInstance()
+            : scoreThresholdTrigger_;
+      }
+
+      public static final int JOB_FAILURE_TRIGGER_FIELD_NUMBER = 4;
+      private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          jobFailureTrigger_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job fails.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the jobFailureTrigger field is set.
+       */
+      @java.lang.Override
+      public boolean hasJobFailureTrigger() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job fails.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The jobFailureTrigger.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+          getJobFailureTrigger() {
+        return jobFailureTrigger_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                .getDefaultInstance()
+            : jobFailureTrigger_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job fails.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTriggerOrBuilder
+          getJobFailureTriggerOrBuilder() {
+        return jobFailureTrigger_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                .getDefaultInstance()
+            : jobFailureTrigger_;
+      }
+
+      public static final int JOB_END_TRIGGER_FIELD_NUMBER = 5;
+      private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          jobEndTrigger_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job ends.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the jobEndTrigger field is set.
+       */
+      @java.lang.Override
+      public boolean hasJobEndTrigger() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job ends.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The jobEndTrigger.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+          getJobEndTrigger() {
+        return jobEndTrigger_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+                .getDefaultInstance()
+            : jobEndTrigger_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, report will be sent when a scan job ends.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerOrBuilder
+          getJobEndTriggerOrBuilder() {
+        return jobEndTrigger_ == null
+            ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+                .getDefaultInstance()
+            : jobEndTrigger_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getRecipients());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(2, getScoreThresholdTrigger());
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          output.writeMessage(4, getJobFailureTrigger());
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          output.writeMessage(5, getJobEndTrigger());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getRecipients());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, getScoreThresholdTrigger());
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(4, getJobFailureTrigger());
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getJobEndTrigger());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport other =
+            (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport) obj;
+
+        if (hasRecipients() != other.hasRecipients()) return false;
+        if (hasRecipients()) {
+          if (!getRecipients().equals(other.getRecipients())) return false;
+        }
+        if (hasScoreThresholdTrigger() != other.hasScoreThresholdTrigger()) return false;
+        if (hasScoreThresholdTrigger()) {
+          if (!getScoreThresholdTrigger().equals(other.getScoreThresholdTrigger())) return false;
+        }
+        if (hasJobFailureTrigger() != other.hasJobFailureTrigger()) return false;
+        if (hasJobFailureTrigger()) {
+          if (!getJobFailureTrigger().equals(other.getJobFailureTrigger())) return false;
+        }
+        if (hasJobEndTrigger() != other.hasJobEndTrigger()) return false;
+        if (hasJobEndTrigger()) {
+          if (!getJobEndTrigger().equals(other.getJobEndTrigger())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasRecipients()) {
+          hash = (37 * hash) + RECIPIENTS_FIELD_NUMBER;
+          hash = (53 * hash) + getRecipients().hashCode();
+        }
+        if (hasScoreThresholdTrigger()) {
+          hash = (37 * hash) + SCORE_THRESHOLD_TRIGGER_FIELD_NUMBER;
+          hash = (53 * hash) + getScoreThresholdTrigger().hashCode();
+        }
+        if (hasJobFailureTrigger()) {
+          hash = (37 * hash) + JOB_FAILURE_TRIGGER_FIELD_NUMBER;
+          hash = (53 * hash) + getJobFailureTrigger().hashCode();
+        }
+        if (hasJobEndTrigger()) {
+          hash = (37 * hash) + JOB_END_TRIGGER_FIELD_NUMBER;
+          hash = (53 * hash) + getJobEndTrigger().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The configuration of notification report post scan action.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport)
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReportOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                      .class,
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getRecipientsFieldBuilder();
+            getScoreThresholdTriggerFieldBuilder();
+            getJobFailureTriggerFieldBuilder();
+            getJobEndTriggerFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          recipients_ = null;
+          if (recipientsBuilder_ != null) {
+            recipientsBuilder_.dispose();
+            recipientsBuilder_ = null;
+          }
+          scoreThresholdTrigger_ = null;
+          if (scoreThresholdTriggerBuilder_ != null) {
+            scoreThresholdTriggerBuilder_.dispose();
+            scoreThresholdTriggerBuilder_ = null;
+          }
+          jobFailureTrigger_ = null;
+          if (jobFailureTriggerBuilder_ != null) {
+            jobFailureTriggerBuilder_.dispose();
+            jobFailureTriggerBuilder_ = null;
+          }
+          jobEndTrigger_ = null;
+          if (jobEndTriggerBuilder_ != null) {
+            jobEndTriggerBuilder_.dispose();
+            jobEndTriggerBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataQualityProto
+              .internal_static_google_cloud_dataplex_v1_DataQualitySpec_PostScanActions_NotificationReport_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+            build() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport result =
+              new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.recipients_ =
+                recipientsBuilder_ == null ? recipients_ : recipientsBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.scoreThresholdTrigger_ =
+                scoreThresholdTriggerBuilder_ == null
+                    ? scoreThresholdTrigger_
+                    : scoreThresholdTriggerBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.jobFailureTrigger_ =
+                jobFailureTriggerBuilder_ == null
+                    ? jobFailureTrigger_
+                    : jobFailureTriggerBuilder_.build();
+            to_bitField0_ |= 0x00000004;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.jobEndTrigger_ =
+                jobEndTriggerBuilder_ == null ? jobEndTrigger_ : jobEndTriggerBuilder_.build();
+            to_bitField0_ |= 0x00000008;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                  .getDefaultInstance()) return this;
+          if (other.hasRecipients()) {
+            mergeRecipients(other.getRecipients());
+          }
+          if (other.hasScoreThresholdTrigger()) {
+            mergeScoreThresholdTrigger(other.getScoreThresholdTrigger());
+          }
+          if (other.hasJobFailureTrigger()) {
+            mergeJobFailureTrigger(other.getJobFailureTrigger());
+          }
+          if (other.hasJobEndTrigger()) {
+            mergeJobEndTrigger(other.getJobEndTrigger());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(getRecipientsFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getScoreThresholdTriggerFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 34:
+                  {
+                    input.readMessage(
+                        getJobFailureTriggerFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    input.readMessage(
+                        getJobEndTriggerFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsOrBuilder>
+            recipientsBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return Whether the recipients field is set.
+         */
+        public boolean hasRecipients() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The recipients.
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+            getRecipients() {
+          if (recipientsBuilder_ == null) {
+            return recipients_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+                    .getDefaultInstance()
+                : recipients_;
+          } else {
+            return recipientsBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setRecipients(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients value) {
+          if (recipientsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            recipients_ = value;
+          } else {
+            recipientsBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder setRecipients(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.Builder
+                builderForValue) {
+          if (recipientsBuilder_ == null) {
+            recipients_ = builderForValue.build();
+          } else {
+            recipientsBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder mergeRecipients(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients value) {
+          if (recipientsBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && recipients_ != null
+                && recipients_
+                    != com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+                        .getDefaultInstance()) {
+              getRecipientsBuilder().mergeFrom(value);
+            } else {
+              recipients_ = value;
+            }
+          } else {
+            recipientsBuilder_.mergeFrom(value);
+          }
+          if (recipients_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public Builder clearRecipients() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          recipients_ = null;
+          if (recipientsBuilder_ != null) {
+            recipientsBuilder_.dispose();
+            recipientsBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.Builder
+            getRecipientsBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getRecipientsFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsOrBuilder
+            getRecipientsOrBuilder() {
+          if (recipientsBuilder_ != null) {
+            return recipientsBuilder_.getMessageOrBuilder();
+          } else {
+            return recipients_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients
+                    .getDefaultInstance()
+                : recipients_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Required. The recipients who will receive the notification report.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients recipients = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.RecipientsOrBuilder>
+            getRecipientsFieldBuilder() {
+          if (recipientsBuilder_ == null) {
+            recipientsBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.Recipients.Builder,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .RecipientsOrBuilder>(getRecipients(), getParentForChildren(), isClean());
+            recipients_ = null;
+          }
+          return recipientsBuilder_;
+        }
+
+        private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+            scoreThresholdTrigger_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                    .Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                    .ScoreThresholdTriggerOrBuilder>
+            scoreThresholdTriggerBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the scoreThresholdTrigger field is set.
+         */
+        public boolean hasScoreThresholdTrigger() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The scoreThresholdTrigger.
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+            getScoreThresholdTrigger() {
+          if (scoreThresholdTriggerBuilder_ == null) {
+            return scoreThresholdTrigger_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                    .getDefaultInstance()
+                : scoreThresholdTrigger_;
+          } else {
+            return scoreThresholdTriggerBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setScoreThresholdTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                value) {
+          if (scoreThresholdTriggerBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            scoreThresholdTrigger_ = value;
+          } else {
+            scoreThresholdTriggerBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setScoreThresholdTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                    .Builder
+                builderForValue) {
+          if (scoreThresholdTriggerBuilder_ == null) {
+            scoreThresholdTrigger_ = builderForValue.build();
+          } else {
+            scoreThresholdTriggerBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeScoreThresholdTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                value) {
+          if (scoreThresholdTriggerBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && scoreThresholdTrigger_ != null
+                && scoreThresholdTrigger_
+                    != com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .ScoreThresholdTrigger.getDefaultInstance()) {
+              getScoreThresholdTriggerBuilder().mergeFrom(value);
+            } else {
+              scoreThresholdTrigger_ = value;
+            }
+          } else {
+            scoreThresholdTriggerBuilder_.mergeFrom(value);
+          }
+          if (scoreThresholdTrigger_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearScoreThresholdTrigger() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          scoreThresholdTrigger_ = null;
+          if (scoreThresholdTriggerBuilder_ != null) {
+            scoreThresholdTriggerBuilder_.dispose();
+            scoreThresholdTriggerBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                .Builder
+            getScoreThresholdTriggerBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getScoreThresholdTriggerFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                .ScoreThresholdTriggerOrBuilder
+            getScoreThresholdTriggerOrBuilder() {
+          if (scoreThresholdTriggerBuilder_ != null) {
+            return scoreThresholdTriggerBuilder_.getMessageOrBuilder();
+          } else {
+            return scoreThresholdTrigger_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                    .getDefaultInstance()
+                : scoreThresholdTrigger_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when score threshold is met.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger score_threshold_trigger = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.ScoreThresholdTrigger
+                    .Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                    .ScoreThresholdTriggerOrBuilder>
+            getScoreThresholdTriggerFieldBuilder() {
+          if (scoreThresholdTriggerBuilder_ == null) {
+            scoreThresholdTriggerBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .ScoreThresholdTrigger,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .ScoreThresholdTrigger.Builder,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .ScoreThresholdTriggerOrBuilder>(
+                    getScoreThresholdTrigger(), getParentForChildren(), isClean());
+            scoreThresholdTrigger_ = null;
+          }
+          return scoreThresholdTriggerBuilder_;
+        }
+
+        private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+            jobFailureTrigger_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                    .Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                    .JobFailureTriggerOrBuilder>
+            jobFailureTriggerBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the jobFailureTrigger field is set.
+         */
+        public boolean hasJobFailureTrigger() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The jobFailureTrigger.
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+            getJobFailureTrigger() {
+          if (jobFailureTriggerBuilder_ == null) {
+            return jobFailureTrigger_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                    .getDefaultInstance()
+                : jobFailureTrigger_;
+          } else {
+            return jobFailureTriggerBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setJobFailureTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger value) {
+          if (jobFailureTriggerBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            jobFailureTrigger_ = value;
+          } else {
+            jobFailureTriggerBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setJobFailureTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger.Builder
+                builderForValue) {
+          if (jobFailureTriggerBuilder_ == null) {
+            jobFailureTrigger_ = builderForValue.build();
+          } else {
+            jobFailureTriggerBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeJobFailureTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger value) {
+          if (jobFailureTriggerBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && jobFailureTrigger_ != null
+                && jobFailureTrigger_
+                    != com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .JobFailureTrigger.getDefaultInstance()) {
+              getJobFailureTriggerBuilder().mergeFrom(value);
+            } else {
+              jobFailureTrigger_ = value;
+            }
+          } else {
+            jobFailureTriggerBuilder_.mergeFrom(value);
+          }
+          if (jobFailureTrigger_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearJobFailureTrigger() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          jobFailureTrigger_ = null;
+          if (jobFailureTriggerBuilder_ != null) {
+            jobFailureTriggerBuilder_.dispose();
+            jobFailureTriggerBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                .Builder
+            getJobFailureTriggerBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getJobFailureTriggerFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                .JobFailureTriggerOrBuilder
+            getJobFailureTriggerOrBuilder() {
+          if (jobFailureTriggerBuilder_ != null) {
+            return jobFailureTriggerBuilder_.getMessageOrBuilder();
+          } else {
+            return jobFailureTrigger_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                    .getDefaultInstance()
+                : jobFailureTrigger_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job fails.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger job_failure_trigger = 4 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                    .Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                    .JobFailureTriggerOrBuilder>
+            getJobFailureTriggerFieldBuilder() {
+          if (jobFailureTriggerBuilder_ == null) {
+            jobFailureTriggerBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobFailureTrigger
+                        .Builder,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .JobFailureTriggerOrBuilder>(
+                    getJobFailureTrigger(), getParentForChildren(), isClean());
+            jobFailureTrigger_ = null;
+          }
+          return jobFailureTriggerBuilder_;
+        }
+
+        private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+            jobEndTrigger_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerOrBuilder>
+            jobEndTriggerBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the jobEndTrigger field is set.
+         */
+        public boolean hasJobEndTrigger() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The jobEndTrigger.
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+            getJobEndTrigger() {
+          if (jobEndTriggerBuilder_ == null) {
+            return jobEndTrigger_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+                    .getDefaultInstance()
+                : jobEndTrigger_;
+          } else {
+            return jobEndTriggerBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setJobEndTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger value) {
+          if (jobEndTriggerBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            jobEndTrigger_ = value;
+          } else {
+            jobEndTriggerBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setJobEndTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.Builder
+                builderForValue) {
+          if (jobEndTriggerBuilder_ == null) {
+            jobEndTrigger_ = builderForValue.build();
+          } else {
+            jobEndTriggerBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeJobEndTrigger(
+            com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger value) {
+          if (jobEndTriggerBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)
+                && jobEndTrigger_ != null
+                && jobEndTrigger_
+                    != com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+                        .getDefaultInstance()) {
+              getJobEndTriggerBuilder().mergeFrom(value);
+            } else {
+              jobEndTrigger_ = value;
+            }
+          } else {
+            jobEndTriggerBuilder_.mergeFrom(value);
+          }
+          if (jobEndTrigger_ != null) {
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearJobEndTrigger() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          jobEndTrigger_ = null;
+          if (jobEndTriggerBuilder_ != null) {
+            jobEndTriggerBuilder_.dispose();
+            jobEndTriggerBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.Builder
+            getJobEndTriggerBuilder() {
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return getJobEndTriggerFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerOrBuilder
+            getJobEndTriggerOrBuilder() {
+          if (jobEndTriggerBuilder_ != null) {
+            return jobEndTriggerBuilder_.getMessageOrBuilder();
+          } else {
+            return jobEndTrigger_ == null
+                ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+                    .getDefaultInstance()
+                : jobEndTrigger_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If set, report will be sent when a scan job ends.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger job_end_trigger = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger.Builder,
+                com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTriggerOrBuilder>
+            getJobEndTriggerFieldBuilder() {
+          if (jobEndTriggerBuilder_ == null) {
+            jobEndTriggerBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.JobEndTrigger
+                        .Builder,
+                    com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                        .JobEndTriggerOrBuilder>(
+                    getJobEndTrigger(), getParentForChildren(), isClean());
+            jobEndTrigger_ = null;
+          }
+          return jobEndTriggerBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport)
+      private static final com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .NotificationReport
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<NotificationReport> PARSER =
+          new com.google.protobuf.AbstractParser<NotificationReport>() {
+            @java.lang.Override
+            public NotificationReport parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<NotificationReport> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<NotificationReport> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int BIGQUERY_EXPORT_FIELD_NUMBER = 1;
     private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.BigQueryExport
@@ -911,6 +5198,70 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
           : bigqueryExport_;
     }
 
+    public static final int NOTIFICATION_REPORT_FIELD_NUMBER = 2;
+    private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+        notificationReport_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be sent to the provided notification
+     * receipts upon triggers.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the notificationReport field is set.
+     */
+    @java.lang.Override
+    public boolean hasNotificationReport() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be sent to the provided notification
+     * receipts upon triggers.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The notificationReport.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+        getNotificationReport() {
+      return notificationReport_ == null
+          ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+              .getDefaultInstance()
+          : notificationReport_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, results will be sent to the provided notification
+     * receipts upon triggers.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReportOrBuilder
+        getNotificationReportOrBuilder() {
+      return notificationReport_ == null
+          ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+              .getDefaultInstance()
+          : notificationReport_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -928,6 +5279,9 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getBigqueryExport());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getNotificationReport());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -939,6 +5293,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBigqueryExport());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getNotificationReport());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -960,6 +5318,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
       if (hasBigqueryExport()) {
         if (!getBigqueryExport().equals(other.getBigqueryExport())) return false;
       }
+      if (hasNotificationReport() != other.hasNotificationReport()) return false;
+      if (hasNotificationReport()) {
+        if (!getNotificationReport().equals(other.getNotificationReport())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -974,6 +5336,10 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
       if (hasBigqueryExport()) {
         hash = (37 * hash) + BIGQUERY_EXPORT_FIELD_NUMBER;
         hash = (53 * hash) + getBigqueryExport().hashCode();
+      }
+      if (hasNotificationReport()) {
+        hash = (37 * hash) + NOTIFICATION_REPORT_FIELD_NUMBER;
+        hash = (53 * hash) + getNotificationReport().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1119,6 +5485,7 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getBigqueryExportFieldBuilder();
+          getNotificationReportFieldBuilder();
         }
       }
 
@@ -1130,6 +5497,11 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
         if (bigqueryExportBuilder_ != null) {
           bigqueryExportBuilder_.dispose();
           bigqueryExportBuilder_ = null;
+        }
+        notificationReport_ = null;
+        if (notificationReportBuilder_ != null) {
+          notificationReportBuilder_.dispose();
+          notificationReportBuilder_ = null;
         }
         return this;
       }
@@ -1174,6 +5546,13 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
           result.bigqueryExport_ =
               bigqueryExportBuilder_ == null ? bigqueryExport_ : bigqueryExportBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.notificationReport_ =
+              notificationReportBuilder_ == null
+                  ? notificationReport_
+                  : notificationReportBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1230,6 +5609,9 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
         if (other.hasBigqueryExport()) {
           mergeBigqueryExport(other.getBigqueryExport());
         }
+        if (other.hasNotificationReport()) {
+          mergeNotificationReport(other.getNotificationReport());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1263,6 +5645,13 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getNotificationReportFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1506,6 +5895,237 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
           bigqueryExport_ = null;
         }
         return bigqueryExportBuilder_;
+      }
+
+      private com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          notificationReport_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport,
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                  .NotificationReportOrBuilder>
+          notificationReportBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the notificationReport field is set.
+       */
+      public boolean hasNotificationReport() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The notificationReport.
+       */
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+          getNotificationReport() {
+        if (notificationReportBuilder_ == null) {
+          return notificationReport_ == null
+              ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                  .getDefaultInstance()
+              : notificationReport_;
+        } else {
+          return notificationReportBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setNotificationReport(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport value) {
+        if (notificationReportBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          notificationReport_ = value;
+        } else {
+          notificationReportBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setNotificationReport(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport.Builder
+              builderForValue) {
+        if (notificationReportBuilder_ == null) {
+          notificationReport_ = builderForValue.build();
+        } else {
+          notificationReportBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeNotificationReport(
+          com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport value) {
+        if (notificationReportBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && notificationReport_ != null
+              && notificationReport_
+                  != com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                      .getDefaultInstance()) {
+            getNotificationReportBuilder().mergeFrom(value);
+          } else {
+            notificationReport_ = value;
+          }
+        } else {
+          notificationReportBuilder_.mergeFrom(value);
+        }
+        if (notificationReport_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearNotificationReport() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        notificationReport_ = null;
+        if (notificationReportBuilder_ != null) {
+          notificationReportBuilder_.dispose();
+          notificationReportBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport.Builder
+          getNotificationReportBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getNotificationReportFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+              .NotificationReportOrBuilder
+          getNotificationReportOrBuilder() {
+        if (notificationReportBuilder_ != null) {
+          return notificationReportBuilder_.getMessageOrBuilder();
+        } else {
+          return notificationReport_ == null
+              ? com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                  .getDefaultInstance()
+              : notificationReport_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, results will be sent to the provided notification
+       * receipts upon triggers.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport notification_report = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport,
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                  .NotificationReportOrBuilder>
+          getNotificationReportFieldBuilder() {
+        if (notificationReportBuilder_ == null) {
+          notificationReportBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport,
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions.NotificationReport
+                      .Builder,
+                  com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActions
+                      .NotificationReportOrBuilder>(
+                  getNotificationReport(), getParentForChildren(), isClean());
+          notificationReport_ = null;
+        }
+        return notificationReportBuilder_;
       }
 
       @java.lang.Override
