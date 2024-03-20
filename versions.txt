@@ -747,3 +747,5 @@ grpc-google-cloud-chat-v1:0.1.0:0.2.0-SNAPSHOT
 google-shopping-merchant-quota:0.0.0:0.0.1-SNAPSHOT
 proto-google-shopping-merchant-quota-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-quota-v1beta:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-secretmanager-v1beta2:2.37.0:2.38.0-SNAPSHOT
+grpc-google-cloud-secretmanager-v1beta2:2.37.0:2.38.0-SNAPSHOT
