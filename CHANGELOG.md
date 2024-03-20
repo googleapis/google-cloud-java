@@ -1,5 +1,29 @@
 # Changelog
 
+## [3.4.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.3.1...v3.4.0) (2024-03-19)
+
+
+### Features
+
+* Add short, integer, long, boolean conversions into string ([#2437](https://github.com/googleapis/java-bigquerystorage/issues/2437)) ([4f4216e](https://github.com/googleapis/java-bigquerystorage/commit/4f4216e21b1949da096c9d180c64086ba1edfd8f))
+* Provide the default stream name ([#2444](https://github.com/googleapis/java-bigquerystorage/issues/2444)) ([fe9c3ae](https://github.com/googleapis/java-bigquerystorage/commit/fe9c3ae6d9459cf5273cf9440bd6eecc27b71a7d))
+
+
+### Bug Fixes
+
+* Accept default stream name ([#2432](https://github.com/googleapis/java-bigquerystorage/issues/2432)) ([d58a314](https://github.com/googleapis/java-bigquerystorage/commit/d58a3146458a4593876e1bb62d3c2b6d0bfb1c05))
+* Add version id to the client lib header ([#2447](https://github.com/googleapis/java-bigquerystorage/issues/2447)) ([43fd699](https://github.com/googleapis/java-bigquerystorage/commit/43fd699798db8053c2248d3d0506387a1f695b5f))
+* Also shutdown the stream connection in case the timeout exception is ([#2445](https://github.com/googleapis/java-bigquerystorage/issues/2445)) ([6e267fb](https://github.com/googleapis/java-bigquerystorage/commit/6e267fb4aaadf8bd61192a709b97cb9b799983db))
+* Fix WriteToDefaultStream example code to close the client properly ([#2433](https://github.com/googleapis/java-bigquerystorage/issues/2433)) ([d8a52f8](https://github.com/googleapis/java-bigquerystorage/commit/d8a52f886aef174bf01147e81728de6b2f09f4c3))
+
+
+### Dependencies
+
+* Update arrow.version to v15.0.1 ([#2442](https://github.com/googleapis/java-bigquerystorage/issues/2442)) ([d629194](https://github.com/googleapis/java-bigquerystorage/commit/d629194c97b75279cfa07e8dc4520868375d1c3e))
+* Update arrow.version to v15.0.2 ([#2449](https://github.com/googleapis/java-bigquerystorage/issues/2449)) ([27ded96](https://github.com/googleapis/java-bigquerystorage/commit/27ded96d7935467f61d0aefe2bd524590ea3e973))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.38.1 ([#2434](https://github.com/googleapis/java-bigquerystorage/issues/2434)) ([d99b6bd](https://github.com/googleapis/java-bigquerystorage/commit/d99b6bd31653bcc07302c089f87af88796af5bad))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.28.1 ([#2448](https://github.com/googleapis/java-bigquerystorage/issues/2448)) ([6ae3d07](https://github.com/googleapis/java-bigquerystorage/commit/6ae3d07ffda047bd8288bd00d01f14aa37ce36f8))
+
 ## [3.3.1](https://github.com/googleapis/java-bigquerystorage/compare/v3.3.0...v3.3.1) (2024-03-06)
 
 
