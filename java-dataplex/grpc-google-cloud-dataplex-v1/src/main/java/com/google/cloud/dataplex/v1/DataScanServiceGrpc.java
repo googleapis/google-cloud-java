@@ -394,6 +394,57 @@ public final class DataScanServiceGrpc {
     return getListDataScanJobsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest,
+          com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
+      getGenerateDataQualityRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateDataQualityRules",
+      requestType = com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest.class,
+      responseType = com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest,
+          com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
+      getGenerateDataQualityRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest,
+            com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
+        getGenerateDataQualityRulesMethod;
+    if ((getGenerateDataQualityRulesMethod = DataScanServiceGrpc.getGenerateDataQualityRulesMethod)
+        == null) {
+      synchronized (DataScanServiceGrpc.class) {
+        if ((getGenerateDataQualityRulesMethod =
+                DataScanServiceGrpc.getGenerateDataQualityRulesMethod)
+            == null) {
+          DataScanServiceGrpc.getGenerateDataQualityRulesMethod =
+              getGenerateDataQualityRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest,
+                          com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateDataQualityRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataScanServiceMethodDescriptorSupplier("GenerateDataQualityRules"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateDataQualityRulesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataScanServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataScanServiceStub> factory =
@@ -559,6 +610,21 @@ public final class DataScanServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListDataScanJobsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * </pre>
+     */
+    default void generateDataQualityRules(
+        com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateDataQualityRulesMethod(), responseObserver);
     }
   }
 
@@ -730,6 +796,23 @@ public final class DataScanServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * </pre>
+     */
+    public void generateDataQualityRules(
+        com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateDataQualityRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -855,6 +938,19 @@ public final class DataScanServiceGrpc {
         com.google.cloud.dataplex.v1.ListDataScanJobsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDataScanJobsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse generateDataQualityRules(
+        com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateDataQualityRulesMethod(), getCallOptions(), request);
     }
   }
 
@@ -986,6 +1082,21 @@ public final class DataScanServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDataScanJobsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates recommended DataQualityRule from a data profiling DataScan.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>
+        generateDataQualityRules(
+            com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateDataQualityRulesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_DATA_SCAN = 0;
@@ -996,6 +1107,7 @@ public final class DataScanServiceGrpc {
   private static final int METHODID_RUN_DATA_SCAN = 5;
   private static final int METHODID_GET_DATA_SCAN_JOB = 6;
   private static final int METHODID_LIST_DATA_SCAN_JOBS = 7;
+  private static final int METHODID_GENERATE_DATA_QUALITY_RULES = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1057,6 +1169,13 @@ public final class DataScanServiceGrpc {
           serviceImpl.listDataScanJobs(
               (com.google.cloud.dataplex.v1.ListDataScanJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataScanJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_DATA_QUALITY_RULES:
+          serviceImpl.generateDataQualityRules(
+              (com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>)
                   responseObserver);
           break;
         default:
@@ -1128,6 +1247,13 @@ public final class DataScanServiceGrpc {
                     com.google.cloud.dataplex.v1.ListDataScanJobsRequest,
                     com.google.cloud.dataplex.v1.ListDataScanJobsResponse>(
                     service, METHODID_LIST_DATA_SCAN_JOBS)))
+        .addMethod(
+            getGenerateDataQualityRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest,
+                    com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse>(
+                    service, METHODID_GENERATE_DATA_QUALITY_RULES)))
         .build();
   }
 
@@ -1187,6 +1313,7 @@ public final class DataScanServiceGrpc {
                       .addMethod(getRunDataScanMethod())
                       .addMethod(getGetDataScanJobMethod())
                       .addMethod(getListDataScanJobsMethod())
+                      .addMethod(getGenerateDataQualityRulesMethod())
                       .build();
         }
       }

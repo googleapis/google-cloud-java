@@ -16,6 +16,9 @@
 
 package com.google.cloud.vertexai.generativeai;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.core.BetaApi;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
@@ -24,132 +27,23 @@ import com.google.cloud.vertexai.api.CountTokensResponse;
 import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
-import com.google.cloud.vertexai.api.Part;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /** This class holds a generative model that can complete what you provided. */
-public class GenerativeModel {
+public final class GenerativeModel {
   private final String modelName;
   private final String resourceName;
   private final VertexAI vertexAi;
-  private GenerationConfig generationConfig = null;
-  private List<SafetySetting> safetySettings = null;
-  private List<Tool> tools = null;
-
-  public static Builder newBuilder() {
-    return new Builder();
-  }
-
-  private GenerativeModel(Builder builder) {
-    this.modelName = builder.modelName;
-
-    this.vertexAi = builder.vertexAi;
-
-    this.resourceName =
-        String.format(
-            "projects/%s/locations/%s/publishers/google/models/%s",
-            this.vertexAi.getProjectId(), this.vertexAi.getLocation(), this.modelName);
-
-    if (builder.generationConfig != null) {
-      this.generationConfig = builder.generationConfig;
-    }
-    if (builder.safetySettings != null) {
-      this.safetySettings = builder.safetySettings;
-    }
-    if (builder.tools != null) {
-      this.tools = builder.tools;
-    }
-  }
-
-  /** Builder class for {@link GenerativeModel}. */
-  public static class Builder {
-    private String modelName;
-    private VertexAI vertexAi;
-    private GenerationConfig generationConfig;
-    private List<SafetySetting> safetySettings;
-    private List<Tool> tools;
-
-    private Builder() {}
-
-    public GenerativeModel build() {
-      if (this.modelName == null) {
-        throw new IllegalArgumentException(
-            "modelName is required. Please call setModelName() before building.");
-      }
-      if (this.vertexAi == null) {
-        throw new IllegalArgumentException(
-            "vertexAi is required. Please call setVertexAi() before building.");
-      }
-      return new GenerativeModel(this);
-    }
-
-    /**
-     * Sets the name of the generative model. This is required for building a GenerativeModel
-     * instance. Supported format: "gemini-pro", "models/gemini-pro",
-     * "publishers/google/models/gemini-pro", where "gemini-pro" is the model name. Valid model
-     * names can be found at
-     * https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
-     */
-    public Builder setModelName(String modelName) {
-      this.modelName = reconcileModelName(modelName);
-      return this;
-    }
-
-    /**
-     * Sets {@link com.google.cloud.vertexai.VertexAI} that contains the default configs for the
-     * generative model. This is required for building a GenerativeModel instance.
-     */
-    public Builder setVertexAi(VertexAI vertexAi) {
-      this.vertexAi = vertexAi;
-      return this;
-    }
-
-    /**
-     * Sets {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used by default to
-     * interact with the generative model.
-     */
-    @BetaApi
-    public Builder setGenerationConfig(GenerationConfig generationConfig) {
-      this.generationConfig = generationConfig;
-      return this;
-    }
-
-    /**
-     * Sets a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used by
-     * default to interact with the generative model.
-     */
-    @BetaApi
-    public Builder setSafetySettings(List<SafetySetting> safetySettings) {
-      this.safetySettings = new ArrayList<>();
-      for (SafetySetting safetySetting : safetySettings) {
-        if (safetySetting != null) {
-          this.safetySettings.add(safetySetting);
-        }
-      }
-      return this;
-    }
-
-    /**
-     * Sets a list of {@link com.google.cloud.vertexai.api.Tool} that will be used by default to
-     * interact with the generative model.
-     */
-    @BetaApi
-    public Builder setTools(List<Tool> tools) {
-      this.tools = new ArrayList<>();
-      for (Tool tool : tools) {
-        if (tool != null) {
-          this.tools.add(tool);
-        }
-      }
-      return this;
-    }
-  }
+  private GenerationConfig generationConfig = GenerationConfig.getDefaultInstance();
+  private ImmutableList<SafetySetting> safetySettings = ImmutableList.of();
+  private ImmutableList<Tool> tools = ImmutableList.of();
 
   /**
    * Constructs a GenerativeModel instance.
@@ -162,37 +56,12 @@ public class GenerativeModel {
    *     for the generative model
    */
   public GenerativeModel(String modelName, VertexAI vertexAi) {
-    this(modelName, null, null, vertexAi);
-  }
-
-  /**
-   * Constructs a GenerativeModel instance with default generation config.
-   *
-   * @param modelName the name of the generative model. Supported format: "gemini-pro",
-   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance that
-   *     will be used by default for generating response
-   * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
-   *     for the generative model
-   */
-  @BetaApi
-  public GenerativeModel(String modelName, GenerationConfig generationConfig, VertexAI vertexAi) {
-    this(modelName, generationConfig, null, vertexAi);
-  }
-
-  /**
-   * Constructs a GenerativeModel instance with default safety settings.
-   *
-   * @param modelName the name of the generative model. Supported format: "gemini-pro",
-   *     "models/gemini-pro", "publishers/google/models/gemini-pro"
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
-   *     that will be used by default for generating response
-   * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
-   *     for the generative model
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  public GenerativeModel(String modelName, List<SafetySetting> safetySettings, VertexAI vertexAi) {
-    this(modelName, null, safetySettings, vertexAi);
+    this(
+        modelName,
+        GenerationConfig.getDefaultInstance(),
+        new ArrayList<SafetySetting>(),
+        new ArrayList<Tool>(),
+        vertexAi);
   }
 
   /**
@@ -204,14 +73,16 @@ public class GenerativeModel {
    *     will be used by default for generating response
    * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} instances
    *     that will be used by default for generating response
+   * @param tools a list of {@link com.google.cloud.vertexai.api.Tool} instances that can be used by
+   *     the model as auxiliary tools to generate content.
    * @param vertexAI a {@link com.google.cloud.vertexai.VertexAI} that contains the default configs
    *     for the generative model
    */
-  @BetaApi("safetySettings is a preview feature.")
-  public GenerativeModel(
+  private GenerativeModel(
       String modelName,
       GenerationConfig generationConfig,
       List<SafetySetting> safetySettings,
+      List<Tool> tools,
       VertexAI vertexAi) {
     modelName = reconcileModelName(modelName);
     this.modelName = modelName;
@@ -219,16 +90,95 @@ public class GenerativeModel {
         String.format(
             "projects/%s/locations/%s/publishers/google/models/%s",
             vertexAi.getProjectId(), vertexAi.getLocation(), modelName);
-    if (generationConfig != null) {
-      this.generationConfig = generationConfig;
-    }
-    if (safetySettings != null) {
-      this.safetySettings = new ArrayList<>();
-      for (SafetySetting safetySetting : safetySettings) {
-        this.safetySettings.add(safetySetting);
-      }
-    }
+    checkNotNull(generationConfig, "GenerationConfig can't be null.");
+    checkNotNull(safetySettings, "List<SafetySettings> can't be null.");
+    checkNotNull(tools, "List<Tool> can't be null.");
     this.vertexAi = vertexAi;
+    this.generationConfig = generationConfig;
+    this.safetySettings = ImmutableList.copyOf(safetySettings);
+    this.tools = ImmutableList.copyOf(tools);
+  }
+
+  /** Builder class for {@link GenerativeModel}. */
+  public static class Builder {
+    private String modelName;
+    private VertexAI vertexAi;
+    private GenerationConfig generationConfig = GenerationConfig.getDefaultInstance();
+    private ImmutableList<SafetySetting> safetySettings = ImmutableList.of();
+    private ImmutableList<Tool> tools = ImmutableList.of();
+
+    public GenerativeModel build() {
+      checkArgument(
+          !Strings.isNullOrEmpty(modelName),
+          "modelName is required. Please call setModelName() before building.");
+      checkNotNull(vertexAi, "vertexAi is required. Please call setVertexAi() before building.");
+      return new GenerativeModel(modelName, generationConfig, safetySettings, tools, vertexAi);
+    }
+
+    /**
+     * Sets the name of the generative model. This is required for building a GenerativeModel
+     * instance. Supported format: "gemini-pro", "models/gemini-pro",
+     * "publishers/google/models/gemini-pro", where "gemini-pro" is the model name. Valid model
+     * names can be found at
+     * https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models
+     */
+    public Builder setModelName(String modelName) {
+      checkArgument(
+          !Strings.isNullOrEmpty(modelName),
+          "modelName can't be null or empty. Please refer to"
+              + " https://cloud.google.com/vertex-ai/docs/generative-ai/learn/models#gemini-models"
+              + " to find the right model name.");
+
+      this.modelName = reconcileModelName(modelName);
+      return this;
+    }
+
+    /**
+     * Sets {@link com.google.cloud.vertexai.VertexAI} that contains the default configs for the
+     * generative model. This is required for building a GenerativeModel instance.
+     */
+    public Builder setVertexAi(VertexAI vertexAi) {
+      checkNotNull(vertexAi, "VertexAI can't be null.");
+      this.vertexAi = vertexAi;
+      return this;
+    }
+
+    /**
+     * Sets {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used by default to
+     * interact with the generative model.
+     */
+    @BetaApi
+    public Builder setGenerationConfig(GenerationConfig generationConfig) {
+      checkNotNull(generationConfig, "GenerationConfig can't be null.");
+      this.generationConfig = generationConfig;
+      return this;
+    }
+
+    /**
+     * Sets a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used by
+     * default to interact with the generative model.
+     */
+    @BetaApi
+    public Builder setSafetySettings(List<SafetySetting> safetySettings) {
+      checkNotNull(
+          safetySettings,
+          "safetySettings can't be null. Use an empty list if no safety settings is intended.");
+      safetySettings.removeIf(safetySetting -> safetySetting == null);
+      this.safetySettings = ImmutableList.copyOf(safetySettings);
+      return this;
+    }
+
+    /**
+     * Sets a list of {@link com.google.cloud.vertexai.api.Tool} that will be used by default to
+     * interact with the generative model.
+     */
+    @BetaApi
+    public Builder setTools(List<Tool> tools) {
+      checkNotNull(tools, "tools can't be null. Use an empty list if no tool is to be used.");
+      tools.removeIf(tool -> tool == null);
+      this.tools = ImmutableList.copyOf(tools);
+      return this;
+    }
   }
 
   /**
@@ -241,6 +191,7 @@ public class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(String text) throws IOException {
+    // TODO(b/330402637): Check null and empty values for the input string.
     return countTokens(ContentMaker.fromString(text));
   }
 
@@ -301,83 +252,21 @@ public class GenerativeModel {
    */
   @BetaApi
   public GenerateContentResponse generateContent(String text) throws IOException {
-    return generateContent(text, null, null);
+    // TODO(b/330402637): Check null and empty values for the input string.
+    return generateContent(ContentMaker.fromString(text));
   }
 
   /**
-   * Generates content from generative model given a text and configs.
+   * Generates content from this model given a single content.
    *
-   * @param text a text message to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
    * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi
-  public GenerateContentResponse generateContent(String text, GenerateContentConfig config)
-      throws IOException {
-    return generateContent(ContentMaker.fromString(text), config);
-  }
-
-  /**
-   * Generates content from generative model given a text and generation config.
-   *
-   * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(String, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public GenerateContentResponse generateContent(String text, GenerationConfig generationConfig)
-      throws IOException {
-    return generateContent(text, generationConfig, null);
-  }
-
-  /**
-   * Generates content from generative model given a text and safety settings.
-   *
-   * @param text a text message to send to the generative model
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both generateContent and safetySettings are preview features.")
-  @Deprecated
-  public GenerateContentResponse generateContent(String text, List<SafetySetting> safetySettings)
-      throws IOException {
-    return generateContent(text, null, safetySettings);
-  }
-
-  /**
-   * Generates content from generative model given a text, generation config, and safety settings.
-   *
-   * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both generateContent and safetySettings are preview features.")
-  @Deprecated
-  public GenerateContentResponse generateContent(
-      String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    Part part = Part.newBuilder().setText(text).build();
-    Content content = Content.newBuilder().addParts(part).setRole("user").build();
-    List<Content> contents = Arrays.asList(content);
-    return generateContent(contents, generationConfig, safetySettings);
+  @BetaApi("generateContent is a preview feature.")
+  public GenerateContentResponse generateContent(Content content) throws IOException {
+    return generateContent(Arrays.asList(content));
   }
 
   /**
@@ -391,117 +280,11 @@ public class GenerativeModel {
    */
   @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(List<Content> contents) throws IOException {
-    return generateContent(contents, null, null);
-  }
-
-  /**
-   * Generates content from this model given a list of contents and generation config.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(List<Content>, GenerateContentConfig)} instead
-   */
-  @BetaApi("generateContent is a preview feature.")
-  @Deprecated
-  public GenerateContentResponse generateContent(
-      List<Content> contents, GenerationConfig generationConfig) throws IOException {
-    return generateContent(contents, generationConfig, null);
-  }
-
-  /**
-   * Generates content from this model given a list of contents and safety settings.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(List<Content>, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both generateContent and safetySettings are preview features")
-  @Deprecated
-  public GenerateContentResponse generateContent(
-      List<Content> contents, List<SafetySetting> safetySettings) throws IOException {
-    return generateContent(contents, null, safetySettings);
-  }
-
-  /**
-   * Generates content from generative model given a list of contents and configs.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  @BetaApi
-  public GenerateContentResponse generateContent(
-      List<Content> contents, GenerateContentConfig config) throws IOException {
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    if (config.getGenerationConfig() != null) {
-      requestBuilder.setGenerationConfig(config.getGenerationConfig());
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
-    }
-    if (config.getSafetySettings().isEmpty() == false) {
-      requestBuilder.addAllSafetySettings(config.getSafetySettings());
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
-    }
-    if (config.getTools().isEmpty() == false) {
-      requestBuilder.addAllTools(config.getTools());
-    } else if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
-    }
-
-    return generateContent(requestBuilder.build());
-  }
-
-  /**
-   * Generates content from generative model given a list of contents, generation config, and safety
-   * settings.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(List<Content>, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both generateContent and safetySettings are preview features")
-  @Deprecated
-  public GenerateContentResponse generateContent(
-      List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    if (generationConfig != null) {
-      requestBuilder.setGenerationConfig(generationConfig);
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
-    }
-    if (safetySettings != null) {
-      requestBuilder.addAllSafetySettings(safetySettings);
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
-    }
-    if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
-    }
+    requestBuilder.setGenerationConfig(this.generationConfig);
+    requestBuilder.addAllSafetySettings(this.safetySettings);
+    requestBuilder.addAllTools(this.tools);
     return generateContent(requestBuilder.build());
   }
 
@@ -519,93 +302,6 @@ public class GenerativeModel {
   }
 
   /**
-   * Generates content from this model given a single content.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  @BetaApi("generateContent is a preview feature.")
-  public GenerateContentResponse generateContent(Content content) throws IOException {
-    return generateContent(content, null, null);
-  }
-
-  /**
-   * Generates content from generative model given a single content and configs.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  @BetaApi
-  public GenerateContentResponse generateContent(Content content, GenerateContentConfig config)
-      throws IOException {
-    return generateContent(Arrays.asList(content), config);
-  }
-
-  /**
-   * Generates content from this model given a single content and generation config.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("generateContent is a preview feature.")
-  @Deprecated
-  public GenerateContentResponse generateContent(Content content, GenerationConfig generationConfig)
-      throws IOException {
-    return generateContent(content, generationConfig, null);
-  }
-
-  /**
-   * Generates content from this model given a single content and safety settings.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("generateContent is a preview feature.")
-  @Deprecated
-  public GenerateContentResponse generateContent(
-      Content content, List<SafetySetting> safetySettings) throws IOException {
-    return generateContent(content, null, safetySettings);
-  }
-
-  /**
-   * Generates content from generative model given a single content, generation config, and safety
-   * settings.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link com.google.cloud.vertexai.api.GenerateContentResponse} instance that contains
-   *     response contents and other metadata
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContent(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both generateContent and safetySettings are preview features.")
-  @Deprecated
-  public GenerateContentResponse generateContent(
-      Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    return generateContent(Arrays.asList(content), generationConfig, safetySettings);
-  }
-
-  /**
    * Generates content with streaming support from generative model given a text.
    *
    * @param text a text message to send to the generative model
@@ -615,85 +311,7 @@ public class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(String text)
       throws IOException {
-    return generateContentStream(text, null, null);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a text and configs.
-   *
-   * @param text a text message to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      String text, GenerateContentConfig config) throws IOException {
-    return generateContentStream(ContentMaker.fromString(text), config);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a text and generation
-   * config.
-   *
-   * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(String, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      String text, GenerationConfig generationConfig) throws IOException {
-    return generateContentStream(text, generationConfig, null);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a text and safety
-   * settings.
-   *
-   * @param text a text message to send to the generative model
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      String text, List<SafetySetting> safetySettings) throws IOException {
-    return generateContentStream(text, null, safetySettings);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a text, generation config,
-   * and safety settings.
-   *
-   * @param text a text message to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    Part part = Part.newBuilder().setText(text).build();
-    Content content = Content.newBuilder().addParts(part).setRole("user").build();
-    List<Content> contents = Arrays.asList(content);
-    return generateContentStream(contents, generationConfig, safetySettings);
+    return generateContentStream(ContentMaker.fromString(text));
   }
 
   /**
@@ -707,83 +325,7 @@ public class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(Content content)
       throws IOException {
-    return generateContentStream(content, null, null);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a single content and
-   * configs.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      Content content, GenerateContentConfig config) throws IOException {
-    return generateContentStream(Arrays.asList(content), config);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a single Content and
-   * generation config.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      Content content, GenerationConfig generationConfig) throws IOException {
-    return generateContentStream(content, generationConfig, null);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a single content and
-   * safety settings.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      Content content, List<SafetySetting> safetySettings) throws IOException {
-    return generateContentStream(content, null, safetySettings);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a single content,
-   * generation config, and safety settings.
-   *
-   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    return generateContentStream(Arrays.asList(content), generationConfig, safetySettings);
+    return generateContentStream(Arrays.asList(content));
   }
 
   /**
@@ -797,118 +339,11 @@ public class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(List<Content> contents)
       throws IOException {
-    return generateContentStream(contents, null, null);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a list of contents and
-   * generation config.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(List<Content>, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      List<Content> contents, GenerationConfig generationConfig) throws IOException {
-    return generateContentStream(contents, generationConfig, null);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a list of contents and
-   * safety settings.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(List<Content>, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      List<Content> contents, List<SafetySetting> safetySettings) throws IOException {
-    return generateContentStream(contents, null, safetySettings);
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a list of contents,
-   * generation config, and safety settings.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} instance for
-   *     generating response. {@link #getGenerationConfig} will not be used if this is set
-   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} for
-   *     generating response. {@link #getSafetySettings} will not be used if this is set
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   * @deprecated use {@link #generateContentStream(List<Content>, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      List<Content> contents, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
     GenerateContentRequest.Builder requestBuilder =
         GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    if (generationConfig != null) {
-      requestBuilder.setGenerationConfig(generationConfig);
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
-    }
-    if (safetySettings != null) {
-      requestBuilder.addAllSafetySettings(safetySettings);
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
-    }
-    if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
-    }
-    return generateContentStream(requestBuilder.build());
-  }
-
-  /**
-   * Generates content with streaming support from generative model given a list of contents and
-   * configs.
-   *
-   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
-   *     generative model
-   * @param config a {@link GenerateContentConfig} that contains all the configs in making a
-   *     generate content api call
-   * @return a {@link ResponseStream} that contains a streaming of {@link
-   *     com.google.cloud.vertexai.api.GenerateContentResponse}
-   * @throws IOException if an I/O error occurs while making the API call
-   */
-  public ResponseStream<GenerateContentResponse> generateContentStream(
-      List<Content> contents, GenerateContentConfig config) throws IOException {
-    GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    if (config.getGenerationConfig() != null) {
-      requestBuilder.setGenerationConfig(config.getGenerationConfig());
-    } else if (this.generationConfig != null) {
-      requestBuilder.setGenerationConfig(this.generationConfig);
-    }
-    if (config.getSafetySettings().isEmpty() == false) {
-      requestBuilder.addAllSafetySettings(config.getSafetySettings());
-    } else if (this.safetySettings != null) {
-      requestBuilder.addAllSafetySettings(this.safetySettings);
-    }
-    if (config.getTools().isEmpty() == false) {
-      requestBuilder.addAllTools(config.getTools());
-    } else if (this.tools != null) {
-      requestBuilder.addAllTools(this.tools);
-    }
+    requestBuilder.setGenerationConfig(this.generationConfig);
+    requestBuilder.addAllSafetySettings(this.safetySettings);
+    requestBuilder.addAllTools(this.tools);
 
     return generateContentStream(requestBuilder.build());
   }
@@ -932,38 +367,6 @@ public class GenerativeModel {
                 .iterator()));
   }
 
-  /**
-   * Sets the value for {@link #getGenerationConfig}, which will be used by default for generating
-   * response.
-   */
-  @BetaApi
-  public void setGenerationConfig(GenerationConfig generationConfig) {
-    this.generationConfig = generationConfig;
-  }
-
-  /**
-   * Sets the value for {@link #getSafetySettings}, which will be used by default for generating
-   * response.
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  public void setSafetySettings(List<SafetySetting> safetySettings) {
-    this.safetySettings = new ArrayList<>();
-    for (SafetySetting safetySetting : safetySettings) {
-      this.safetySettings.add(safetySetting);
-    }
-  }
-
-  /**
-   * Sets the value for {@link #getTools}, which will be used by default for generating response.
-   */
-  @BetaApi("tools is a preview feature.")
-  public void setTools(List<Tool> tools) {
-    this.tools = new ArrayList<>();
-    for (Tool tool : tools) {
-      this.tools.add(tool);
-    }
-  }
-
   /** Returns the model name of this generative model. */
   public String getModelName() {
     return this.modelName;
@@ -982,22 +385,14 @@ public class GenerativeModel {
    * model.
    */
   @BetaApi("safetySettings is a preview feature.")
-  public List<SafetySetting> getSafetySettings() {
-    if (this.safetySettings != null) {
-      return Collections.unmodifiableList(this.safetySettings);
-    } else {
-      return null;
-    }
+  public ImmutableList<SafetySetting> getSafetySettings() {
+    return safetySettings;
   }
 
   /** Returns a list of {@link com.google.cloud.vertexai.api.Tool} of this generative model. */
   @BetaApi("tools is a preview feature.")
-  public List<Tool> getTools() {
-    if (this.tools != null) {
-      return Collections.unmodifiableList(this.tools);
-    } else {
-      return null;
-    }
+  public ImmutableList<Tool> getTools() {
+    return tools;
   }
 
   public ChatSession startChat() {

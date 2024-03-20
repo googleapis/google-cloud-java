@@ -24,15 +24,13 @@ import com.google.api.core.BetaApi;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.api.GenerationConfig;
-import com.google.cloud.vertexai.api.SafetySetting;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /** Represents a conversation between the user and the model */
-public class ChatSession {
+public final class ChatSession {
   private final GenerativeModel model;
   private List<Content> history = new ArrayList<>();
   private ResponseStream<GenerateContentResponse> currentResponseStream = null;
@@ -55,80 +53,7 @@ public class ChatSession {
    */
   @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(String text) throws IOException {
-    return sendMessageStream(text, null, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param text the message to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   */
-  @BetaApi
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      String text, GenerateContentConfig config) throws IOException {
-    return sendMessageStream(ContentMaker.fromString(text), config);
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param text the message to be sent.
-   * @param generationConfig the generation config.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   * @deprecated use {@link #sendMessageStream(String, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      String text, GenerationConfig generationConfig) throws IOException {
-    return sendMessageStream(text, generationConfig, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param text the message to be sent.
-   * @param safetySettings the safety settings.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   * @deprecated use {@link #sendMessageStream(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      String text, List<SafetySetting> safetySettings) throws IOException {
-    return sendMessageStream(text, null, safetySettings);
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param text the message to be sent.
-   * @param generationConfig the generation config.
-   * @param safetySettings the safety settings.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   * @deprecated use {@link #sendMessageStream(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    checkLastResponseAndEditHistory();
-
-    history.add(ContentMaker.fromString(text));
-
-    ResponseStream<GenerateContentResponse> respStream =
-        model.generateContentStream(history, generationConfig, safetySettings);
-    currentResponseStream = respStream;
-    currentResponse = null;
-    return respStream;
+    return sendMessageStream(ContentMaker.fromString(text));
   }
 
   /**
@@ -141,84 +66,9 @@ public class ChatSession {
   @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(Content content)
       throws IOException, IllegalArgumentException {
-    return sendMessageStream(content, null, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param content the content to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   */
-  @BetaApi
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, GenerateContentConfig config) throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
-    ResponseStream<GenerateContentResponse> respStream =
-        model.generateContentStream(history, config);
-    currentResponseStream = respStream;
-    currentResponse = null;
-    return respStream;
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param content the content to be sent.
-   * @param generationConfig the generation config.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   * @deprecated use {@link #sendMessageStream(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, GenerationConfig generationConfig)
-      throws IOException, IllegalArgumentException {
-    return sendMessageStream(content, generationConfig, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param content the content to be sent.
-   * @param safetySettings the safety settings.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   * @deprecated use {@link #sendMessageStream(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, List<SafetySetting> safetySettings)
-      throws IOException, IllegalArgumentException {
-    return sendMessageStream(content, null, safetySettings);
-  }
-
-  /**
-   * Sends a message to the model and returns a stream of responses.
-   *
-   * @param content the content to be sent.
-   * @param generationConfig the generation config.
-   * @param safetySettings the safety settings.
-   * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
-   *     stream by stream() method.
-   * @deprecated use {@link #sendMessageStream(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public ResponseStream<GenerateContentResponse> sendMessageStream(
-      Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    checkLastResponseAndEditHistory();
-
-    history.add(content);
-    ResponseStream<GenerateContentResponse> respStream =
-        model.generateContentStream(history, generationConfig, safetySettings);
+    ResponseStream<GenerateContentResponse> respStream = model.generateContentStream(history);
     currentResponseStream = respStream;
     currentResponse = null;
     return respStream;
@@ -232,75 +82,7 @@ public class ChatSession {
    */
   @BetaApi
   public GenerateContentResponse sendMessage(String text) throws IOException {
-    return sendMessage(text, null, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param text the message to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return a response.
-   */
-  @BetaApi
-  public GenerateContentResponse sendMessage(String text, GenerateContentConfig config)
-      throws IOException {
-    return sendMessage(ContentMaker.fromString(text), config);
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param text the message to be sent.
-   * @param generationConfig the generation config.
-   * @return a response.
-   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public GenerateContentResponse sendMessage(String text, GenerationConfig generationConfig)
-      throws IOException {
-    return sendMessage(text, generationConfig, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param text the message to be sent.
-   * @param safetySettings the safety settings.
-   * @return a response.
-   * @deprecated use {@link #sendMessage(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("safetySettings is a preview feature.")
-  @Deprecated
-  public GenerateContentResponse sendMessage(String text, List<SafetySetting> safetySettings)
-      throws IOException {
-    return sendMessage(text, null, safetySettings);
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param text the message to be sent.
-   * @param generationConfig the generation config.
-   * @param safetySettings the safety settings.
-   * @return a response.
-   * @deprecated use {@link #sendMessage(String, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both sendMessage and safetySettings are preview features.")
-  @Deprecated
-  public GenerateContentResponse sendMessage(
-      String text, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-
-    checkLastResponseAndEditHistory();
-    history.add(ContentMaker.fromString(text));
-    GenerateContentResponse response =
-        model.generateContent(history, generationConfig, safetySettings);
-    currentResponse = response;
-    currentResponseStream = null;
-    return response;
+    return sendMessage(ContentMaker.fromString(text));
   }
 
   /**
@@ -311,76 +93,9 @@ public class ChatSession {
    */
   @BetaApi
   public GenerateContentResponse sendMessage(Content content) throws IOException {
-    return sendMessage(content, null, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param content the content to be sent.
-   * @param config a {@link GenerateContentConfig} that contains all the configs for sending message
-   *     in a chat session.
-   * @return a response.
-   */
-  @BetaApi
-  public GenerateContentResponse sendMessage(Content content, GenerateContentConfig config)
-      throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
-    GenerateContentResponse response = model.generateContent(history, config);
-    currentResponse = response;
-    currentResponseStream = null;
-    return response;
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param content the content to be sent.
-   * @param generationConfig the generation config.
-   * @return a response.
-   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi
-  @Deprecated
-  public GenerateContentResponse sendMessage(Content content, GenerationConfig generationConfig)
-      throws IOException {
-    return sendMessage(content, generationConfig, null);
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param content the content to be sent.
-   * @param safetySettings the safety settings.
-   * @return a response.
-   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both sendMessage and safetySettings are preview features.")
-  @Deprecated
-  public GenerateContentResponse sendMessage(Content content, List<SafetySetting> safetySettings)
-      throws IOException {
-    return sendMessage(content, null, safetySettings);
-  }
-
-  /**
-   * Sends a message to the model and returns a response.
-   *
-   * @param content the content to be sent.
-   * @param generationConfig the generation config.
-   * @param safetySettings the safety settings.
-   * @return a response.
-   * @deprecated use {@link #sendMessage(Content, GenerateContentConfig)} instead
-   */
-  @BetaApi("Both sendMessage and safetySettings are preview features.")
-  @Deprecated
-  public GenerateContentResponse sendMessage(
-      Content content, GenerationConfig generationConfig, List<SafetySetting> safetySettings)
-      throws IOException {
-    checkLastResponseAndEditHistory();
-    history.add(content);
-    GenerateContentResponse response =
-        model.generateContent(history, generationConfig, safetySettings);
+    GenerateContentResponse response = model.generateContent(history);
     currentResponse = response;
     currentResponseStream = null;
     return response;

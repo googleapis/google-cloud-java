@@ -53,7 +53,7 @@ public enum SecurityStyle implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * SecurityStyle uses NTFS
+   * SecurityStyle uses UNIX
    * </pre>
    *
    * <code>UNIX = 2;</code>
@@ -86,7 +86,7 @@ public enum SecurityStyle implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * SecurityStyle uses NTFS
+   * SecurityStyle uses UNIX
    * </pre>
    *
    * <code>UNIX = 2;</code>

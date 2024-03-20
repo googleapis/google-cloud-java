@@ -225,4 +225,26 @@ public class MockDataScanServiceImpl extends DataScanServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void generateDataQualityRules(
+      GenerateDataQualityRulesRequest request,
+      StreamObserver<GenerateDataQualityRulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateDataQualityRulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateDataQualityRulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateDataQualityRules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateDataQualityRulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

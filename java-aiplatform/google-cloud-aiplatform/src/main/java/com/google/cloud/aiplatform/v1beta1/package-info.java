@@ -417,6 +417,52 @@
  * }
  * }</pre>
  *
+ * <p>======================= ReasoningEngineExecutionServiceClient =======================
+ *
+ * <p>Service Description: A service for executing queries on Reasoning Engine.
+ *
+ * <p>Sample for ReasoningEngineExecutionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReasoningEngineExecutionServiceClient reasoningEngineExecutionServiceClient =
+ *     ReasoningEngineExecutionServiceClient.create()) {
+ *   QueryReasoningEngineRequest request =
+ *       QueryReasoningEngineRequest.newBuilder()
+ *           .setName(
+ *               ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+ *                   .toString())
+ *           .setInput(Struct.newBuilder().build())
+ *           .build();
+ *   QueryReasoningEngineResponse response =
+ *       reasoningEngineExecutionServiceClient.queryReasoningEngine(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ReasoningEngineServiceClient =======================
+ *
+ * <p>Service Description: A service for managing Vertex AI's Reasoning Engines.
+ *
+ * <p>Sample for ReasoningEngineServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReasoningEngineServiceClient reasoningEngineServiceClient =
+ *     ReasoningEngineServiceClient.create()) {
+ *   ReasoningEngineName name =
+ *       ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]");
+ *   ReasoningEngine response = reasoningEngineServiceClient.getReasoningEngine(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ScheduleServiceClient =======================
  *
  * <p>Service Description: A service for creating and managing Vertex AI's Schedule resources to

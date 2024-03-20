@@ -113,7 +113,7 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContentStream
     when(mockGenerativeModel.generateContentStream(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))))
         .thenReturn(responseStream);
 
     // (Act) send request, consume response and get history
@@ -138,7 +138,7 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContentStream
     when(mockGenerativeModel.generateContentStream(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))))
         .thenReturn(responseStream);
 
     // (Act & Assert) Send request, consume response and get history, but not consume the response
@@ -156,7 +156,7 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContent
     when(mockGenerativeModel.generateContent(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))))
         .thenReturn(RESPONSE_FROM_UNARY_CALL);
 
     // (Act) Send text message via sendMessage and get the history.
@@ -174,7 +174,7 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContent
     when(mockGenerativeModel.generateContent(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))))
         .thenReturn(RESPONSE_FROM_UNARY_CALL);
 
     // (Act) Send text message via sendMessage and get the history.
@@ -204,7 +204,7 @@ public final class ChatSessionTest {
 
     // (Arrange) Set up the return value of the generateContentStream
     when(mockGenerativeModel.generateContentStream(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))))
         .thenReturn(responseStream);
 
     // (Act) send request, consume response
@@ -228,7 +228,7 @@ public final class ChatSessionTest {
       throws IOException {
     // (Arrange) Set up the return value of the generateContent
     when(mockGenerativeModel.generateContent(
-            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1)), null, null))
+            Arrays.asList(ContentMaker.fromString(SAMPLE_MESSAGE1))))
         .thenReturn(RESPONSE_FROM_UNARY_CALL_WITH_OTHER_FINISH_REASON);
 
     // (Act) Send text message via sendMessage

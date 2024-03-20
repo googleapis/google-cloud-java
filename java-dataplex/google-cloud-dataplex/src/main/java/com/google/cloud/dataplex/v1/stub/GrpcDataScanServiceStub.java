@@ -32,6 +32,8 @@ import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
 import com.google.cloud.dataplex.v1.DeleteDataScanRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesRequest;
+import com.google.cloud.dataplex.v1.GenerateDataQualityRulesResponse;
 import com.google.cloud.dataplex.v1.GetDataScanJobRequest;
 import com.google.cloud.dataplex.v1.GetDataScanRequest;
 import com.google.cloud.dataplex.v1.ListDataScanJobsRequest;
@@ -143,6 +145,20 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                   ProtoUtils.marshaller(ListDataScanJobsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesMethodDescriptor =
+          MethodDescriptor
+              .<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataplex.v1.DataScanService/GenerateDataQualityRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateDataQualityRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateDataQualityRulesResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -181,6 +197,8 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
       listDataScanJobsCallable;
   private final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable;
+  private final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -311,6 +329,18 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+        generateDataQualityRulesTransportSettings =
+            GrpcCallSettings
+                .<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>newBuilder()
+                .setMethodDescriptor(generateDataQualityRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -380,6 +410,11 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
     this.listDataScanJobsPagedCallable =
         callableFactory.createPagedCallable(
             listDataScanJobsTransportSettings, settings.listDataScanJobsSettings(), clientContext);
+    this.generateDataQualityRulesCallable =
+        callableFactory.createUnaryCallable(
+            generateDataQualityRulesTransportSettings,
+            settings.generateDataQualityRulesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -467,6 +502,12 @@ public class GrpcDataScanServiceStub extends DataScanServiceStub {
   public UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable() {
     return listDataScanJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
+      generateDataQualityRulesCallable() {
+    return generateDataQualityRulesCallable;
   }
 
   @Override
