@@ -451,12 +451,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -475,12 +476,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -490,12 +492,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -512,12 +515,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -1606,12 +1610,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The annotations map for clients to store small amounts of arbitrary data.
-     * Do not put PII or other sensitive information here.
-     * See https://google.aip.dev/128#annotations
+     * Optional. The annotations map for clients to store small amounts of
+     * arbitrary data. Do not put PII or other sensitive information here. See
+     * https://google.aip.dev/128#annotations
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -1630,12 +1635,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The annotations map for clients to store small amounts of arbitrary data.
-     * Do not put PII or other sensitive information here.
-     * See https://google.aip.dev/128#annotations
+     * Optional. The annotations map for clients to store small amounts of
+     * arbitrary data. Do not put PII or other sensitive information here. See
+     * https://google.aip.dev/128#annotations
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -1645,12 +1651,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The annotations map for clients to store small amounts of arbitrary data.
-     * Do not put PII or other sensitive information here.
-     * See https://google.aip.dev/128#annotations
+     * Optional. The annotations map for clients to store small amounts of
+     * arbitrary data. Do not put PII or other sensitive information here. See
+     * https://google.aip.dev/128#annotations
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -1667,12 +1674,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The annotations map for clients to store small amounts of arbitrary data.
-     * Do not put PII or other sensitive information here.
-     * See https://google.aip.dev/128#annotations
+     * Optional. The annotations map for clients to store small amounts of
+     * arbitrary data. Do not put PII or other sensitive information here. See
+     * https://google.aip.dev/128#annotations
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -1695,12 +1703,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The annotations map for clients to store small amounts of arbitrary data.
-     * Do not put PII or other sensitive information here.
-     * See https://google.aip.dev/128#annotations
+     * Optional. The annotations map for clients to store small amounts of
+     * arbitrary data. Do not put PII or other sensitive information here. See
+     * https://google.aip.dev/128#annotations
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -1719,12 +1728,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The annotations map for clients to store small amounts of arbitrary data.
-     * Do not put PII or other sensitive information here.
-     * See https://google.aip.dev/128#annotations
+     * Optional. The annotations map for clients to store small amounts of
+     * arbitrary data. Do not put PII or other sensitive information here. See
+     * https://google.aip.dev/128#annotations
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1741,12 +1751,13 @@ public final class QuotaConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The annotations map for clients to store small amounts of arbitrary data.
-     * Do not put PII or other sensitive information here.
-     * See https://google.aip.dev/128#annotations
+     * Optional. The annotations map for clients to store small amounts of
+     * arbitrary data. Do not put PII or other sensitive information here. See
+     * https://google.aip.dev/128#annotations
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);

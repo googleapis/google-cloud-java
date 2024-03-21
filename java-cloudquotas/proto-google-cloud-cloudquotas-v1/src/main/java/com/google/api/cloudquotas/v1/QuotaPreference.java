@@ -172,9 +172,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -188,7 +188,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public boolean containsDimensions(java.lang.String key) {
@@ -207,9 +208,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -223,7 +224,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
@@ -233,9 +235,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -249,7 +251,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getDimensionsOrDefault(
@@ -266,9 +269,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -282,7 +285,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getDimensionsOrThrow(java.lang.String key) {
@@ -1559,9 +1563,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1575,7 +1579,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public boolean containsDimensions(java.lang.String key) {
@@ -1594,9 +1599,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1610,7 +1615,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
@@ -1620,9 +1626,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1636,7 +1642,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getDimensionsOrDefault(
@@ -1653,9 +1660,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1669,7 +1676,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getDimensionsOrThrow(java.lang.String key) {
@@ -1692,9 +1700,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1708,7 +1716,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     public Builder removeDimensions(java.lang.String key) {
       if (key == null) {
@@ -1727,9 +1736,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1743,7 +1752,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     public Builder putDimensions(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1760,9 +1770,9 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The dimensions that this quota preference applies to. The key of the map
-     * entry is the name of a dimension, such as "region", "zone", "network_id",
-     * and the value of the map entry is the dimension value.
+     * Immutable. The dimensions that this quota preference applies to. The key of
+     * the map entry is the name of a dimension, such as "region", "zone",
+     * "network_id", and the value of the map entry is the dimension value.
      *
      * If a dimension is missing from the map of dimensions, the quota preference
      * applies to all the dimension values except for those that have other quota
@@ -1776,7 +1786,8 @@ public final class QuotaPreference extends com.google.protobuf.GeneratedMessageV
      * dimension.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      */
     public Builder putAllDimensions(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDimensions().getMutableMap().putAll(values);

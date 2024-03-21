@@ -24,7 +24,7 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * The key and value for a
- * [tag](https://cloud.google.com/resource-manager/docs/tags/tags-overview),
+ * [tag](https://cloud.google.com/resource-manager/docs/tags/tags-overview).
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.Tag}
@@ -462,7 +462,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The key and value for a
-   * [tag](https://cloud.google.com/resource-manager/docs/tags/tags-overview),
+   * [tag](https://cloud.google.com/resource-manager/docs/tags/tags-overview).
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.Tag}

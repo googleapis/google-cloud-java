@@ -82,7 +82,7 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Unspecified Google Service. Includes most of Google APIs and services.
+     * Unspecified Google Service.
      * </pre>
      *
      * <code>GOOGLE_SERVICE_TYPE_UNSPECIFIED = 0;</code>
@@ -125,6 +125,38 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>CLOUD_DNS = 3;</code>
      */
     CLOUD_DNS(3),
+    /**
+     *
+     *
+     * <pre>
+     * private.googleapis.com and restricted.googleapis.com
+     * </pre>
+     *
+     * <code>GOOGLE_API = 4;</code>
+     */
+    GOOGLE_API(4),
+    /**
+     *
+     *
+     * <pre>
+     * Google API via Private Service Connect.
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-apis
+     * </pre>
+     *
+     * <code>GOOGLE_API_PSC = 5;</code>
+     */
+    GOOGLE_API_PSC(5),
+    /**
+     *
+     *
+     * <pre>
+     * Google API via VPC Service Controls.
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-apis
+     * </pre>
+     *
+     * <code>GOOGLE_API_VPC_SC = 6;</code>
+     */
+    GOOGLE_API_VPC_SC(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -132,7 +164,7 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Unspecified Google Service. Includes most of Google APIs and services.
+     * Unspecified Google Service.
      * </pre>
      *
      * <code>GOOGLE_SERVICE_TYPE_UNSPECIFIED = 0;</code>
@@ -175,6 +207,38 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
      * <code>CLOUD_DNS = 3;</code>
      */
     public static final int CLOUD_DNS_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * private.googleapis.com and restricted.googleapis.com
+     * </pre>
+     *
+     * <code>GOOGLE_API = 4;</code>
+     */
+    public static final int GOOGLE_API_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Google API via Private Service Connect.
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-apis
+     * </pre>
+     *
+     * <code>GOOGLE_API_PSC = 5;</code>
+     */
+    public static final int GOOGLE_API_PSC_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Google API via VPC Service Controls.
+     * https://cloud.google.com/vpc/docs/configure-private-service-connect-apis
+     * </pre>
+     *
+     * <code>GOOGLE_API_VPC_SC = 6;</code>
+     */
+    public static final int GOOGLE_API_VPC_SC_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -208,6 +272,12 @@ public final class GoogleServiceInfo extends com.google.protobuf.GeneratedMessag
           return GFE_PROXY_OR_HEALTH_CHECK_PROBER;
         case 3:
           return CLOUD_DNS;
+        case 4:
+          return GOOGLE_API;
+        case 5:
+          return GOOGLE_API_PSC;
+        case 6:
+          return GOOGLE_API_VPC_SC;
         default:
           return null;
       }
