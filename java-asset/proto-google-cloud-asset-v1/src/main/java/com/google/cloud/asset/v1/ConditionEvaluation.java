@@ -23,7 +23,7 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * The Condition evaluation.
+ * The condition evaluation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.ConditionEvaluation}
@@ -109,7 +109,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      * <pre>
      * The evaluation result is `conditional` when the condition expression
      * contains variables that are either missing input values or have not been
-     * supported by Analyzer yet.
+     * supported by Policy Analyzer yet.
      * </pre>
      *
      * <code>CONDITIONAL = 3;</code>
@@ -154,7 +154,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      * <pre>
      * The evaluation result is `conditional` when the condition expression
      * contains variables that are either missing input values or have not been
-     * supported by Analyzer yet.
+     * supported by Policy Analyzer yet.
      * </pre>
      *
      * <code>CONDITIONAL = 3;</code>
@@ -454,7 +454,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The Condition evaluation.
+   * The condition evaluation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.ConditionEvaluation}

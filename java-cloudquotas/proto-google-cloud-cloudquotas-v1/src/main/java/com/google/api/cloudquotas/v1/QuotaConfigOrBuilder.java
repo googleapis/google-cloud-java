@@ -141,24 +141,26 @@ public interface QuotaConfigOrBuilder
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -168,24 +170,26 @@ public interface QuotaConfigOrBuilder
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -196,12 +200,13 @@ public interface QuotaConfigOrBuilder
    *
    *
    * <pre>
-   * The annotations map for clients to store small amounts of arbitrary data.
-   * Do not put PII or other sensitive information here.
-   * See https://google.aip.dev/128#annotations
+   * Optional. The annotations map for clients to store small amounts of
+   * arbitrary data. Do not put PII or other sensitive information here. See
+   * https://google.aip.dev/128#annotations
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 

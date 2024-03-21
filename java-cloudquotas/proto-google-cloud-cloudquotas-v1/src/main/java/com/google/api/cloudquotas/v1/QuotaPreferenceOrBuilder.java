@@ -61,9 +61,9 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -77,16 +77,17 @@ public interface QuotaPreferenceOrBuilder
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   int getDimensionsCount();
   /**
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -100,7 +101,8 @@ public interface QuotaPreferenceOrBuilder
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   boolean containsDimensions(java.lang.String key);
   /** Use {@link #getDimensionsMap()} instead. */
@@ -110,9 +112,9 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -126,16 +128,17 @@ public interface QuotaPreferenceOrBuilder
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDimensionsMap();
   /**
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -149,7 +152,8 @@ public interface QuotaPreferenceOrBuilder
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   /* nullable */
   java.lang.String getDimensionsOrDefault(
@@ -160,9 +164,9 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * The dimensions that this quota preference applies to. The key of the map
-   * entry is the name of a dimension, such as "region", "zone", "network_id",
-   * and the value of the map entry is the dimension value.
+   * Immutable. The dimensions that this quota preference applies to. The key of
+   * the map entry is the name of a dimension, such as "region", "zone",
+   * "network_id", and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
@@ -176,7 +180,8 @@ public interface QuotaPreferenceOrBuilder
    * dimension.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    */
   java.lang.String getDimensionsOrThrow(java.lang.String key);
 

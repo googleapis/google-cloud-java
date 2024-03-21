@@ -77,8 +77,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -90,8 +90,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -103,8 +103,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -235,14 +235,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The condition evaluation result for this rule.
      * Only populated if it meets all the following criteria:
-     * * there is a
+     *
+     * * There is a
      * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-     * defined for this rule
-     * * this rule is within a consolidated_policy
-     * * the consolidated_policy is within
-     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     * defined for this rule.
+     * * This rule is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
      *   or
-     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+     *   when the
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+     *   has
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
      * </pre>
      *
      * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -256,14 +260,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The condition evaluation result for this rule.
      * Only populated if it meets all the following criteria:
-     * * there is a
+     *
+     * * There is a
      * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-     * defined for this rule
-     * * this rule is within a consolidated_policy
-     * * the consolidated_policy is within
-     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     * defined for this rule.
+     * * This rule is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
      *   or
-     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+     *   when the
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+     *   has
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
      * </pre>
      *
      * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -277,14 +285,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The condition evaluation result for this rule.
      * Only populated if it meets all the following criteria:
-     * * there is a
+     *
+     * * There is a
      * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-     * defined for this rule
-     * * this rule is within a consolidated_policy
-     * * the consolidated_policy is within
-     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     * defined for this rule.
+     * * This rule is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
      *   or
-     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+     *   when the
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+     *   has
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
      * </pre>
      *
      * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -1500,8 +1512,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -1516,8 +1528,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -1535,8 +1547,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of values to be used for this PolicyRule. This field can be set
-     * only in Policies for list constraints.
+     * List of values to be used for this policy rule. This field can be set
+     * only in policies for list constraints.
      * </pre>
      *
      * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -1717,14 +1729,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The condition evaluation result for this rule.
      * Only populated if it meets all the following criteria:
-     * * there is a
+     *
+     * * There is a
      * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-     * defined for this rule
-     * * this rule is within a consolidated_policy
-     * * the consolidated_policy is within
-     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     * defined for this rule.
+     * * This rule is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
      *   or
-     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+     *   when the
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+     *   has
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
      * </pre>
      *
      * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -1741,14 +1757,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The condition evaluation result for this rule.
      * Only populated if it meets all the following criteria:
-     * * there is a
+     *
+     * * There is a
      * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-     * defined for this rule
-     * * this rule is within a consolidated_policy
-     * * the consolidated_policy is within
-     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     * defined for this rule.
+     * * This rule is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
      *   or
-     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+     *   when the
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+     *   has
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
      * </pre>
      *
      * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -1767,14 +1787,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The condition evaluation result for this rule.
      * Only populated if it meets all the following criteria:
-     * * there is a
+     *
+     * * There is a
      * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-     * defined for this rule
-     * * this rule is within a consolidated_policy
-     * * the consolidated_policy is within
-     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+     * defined for this rule.
+     * * This rule is within
+     *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
      *   or
-     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+     *   when the
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+     *   has
+     *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
      * </pre>
      *
      * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -2350,8 +2374,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2366,8 +2390,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2392,8 +2416,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2416,8 +2440,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2437,8 +2461,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2473,8 +2497,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2499,8 +2523,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2513,8 +2537,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2535,8 +2559,8 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of values to be used for this PolicyRule. This field can be set
-       * only in Policies for list constraints.
+       * List of values to be used for this policy rule. This field can be set
+       * only in policies for list constraints.
        * </pre>
        *
        * <code>.google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.StringValues values = 3;</code>
@@ -2980,14 +3004,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3003,14 +3031,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3032,14 +3064,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3063,14 +3099,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3092,14 +3132,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3129,14 +3173,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3157,14 +3205,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3180,14 +3232,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
@@ -3208,14 +3264,18 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
        * <pre>
        * The condition evaluation result for this rule.
        * Only populated if it meets all the following criteria:
-       * * there is a
+       *
+       * * There is a
        * [condition][google.cloud.asset.v1.AnalyzerOrgPolicy.Rule.condition]
-       * defined for this rule
-       * * this rule is within a consolidated_policy
-       * * the consolidated_policy is within
-       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer]
+       * defined for this rule.
+       * * This rule is within
+       *   [AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.consolidated_policy],
        *   or
-       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedResource]
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.consolidated_policy]
+       *   when the
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset]
+       *   has
+       *   [AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource][google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.governed_resource].
        * </pre>
        *
        * <code>.google.cloud.asset.v1.ConditionEvaluation condition_evaluation = 8;</code>
