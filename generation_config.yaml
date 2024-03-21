@@ -1537,6 +1537,7 @@ libraries:
   requires_billing: false
   GAPICs:
   - proto_path: google/cloud/secretmanager/v1
+  - proto_path: google/cloud/secretmanager/v1beta2
 
 - api_shortname: securesourcemanager
   name_pretty: Secure Source Manager API

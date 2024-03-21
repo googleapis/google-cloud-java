@@ -42,15 +42,15 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-secretmanager-v1beta2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-secretmanager-v1</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-secretmanager-v1beta1</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -72,6 +72,11 @@
       <groupId>org.threeten</groupId>
       <artifactId>threetenbp</artifactId>
     </dependency>
+    <dependency>
+     <groupId>com.google.api.grpc</groupId>
+     <artifactId>grpc-google-common-protos</artifactId>
+    </dependency>
+
 
     <!-- Test dependencies -->
     <dependency>
@@ -91,7 +96,7 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-cloud-secretmanager-v1beta1</artifactId>
+      <artifactId>grpc-google-cloud-secretmanager-v1beta2</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->

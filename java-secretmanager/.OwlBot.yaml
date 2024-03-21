@@ -20,22 +20,18 @@ deep-remove-regex:
 - "/java-secretmanager/google-.*/src"
 
 deep-preserve-regex:
-- "/java-secretmanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-secretmanager/proto-google-cloud-secretmanager-v1beta1"
-- "/java-secretmanager/grpc-google-cloud-secretmanager-v1beta1"
-- "/java-secretmanager/google-cloud-secretmanager/src/main/java/com/google/cloud/secretmanager/v1beta1"
-- "/java-secretmanager/google-cloud-secretmanager/src/test/java/com/google/cloud/secretmanager/v1beta1"
+- "/java-secretmanager/google-.*/src/test/java/com/google/cloud/.*/v1/it/IT.*Test.java"
 - "/java-secretmanager/proto-google-cloud-secretmanager-v1/src/main/java/com/google/cloud/secretmanager/v1/TopicName.java"
 
 
 deep-copy-regex:
-- source: "/google/cloud/secretmanager/(v\\d)/.*-java/proto-google-.*/src"
+- source: "/google/cloud/secretmanager/(v\\d.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-secretmanager/$1/proto-google-cloud-secretmanager-$1/src"
-- source: "/google/cloud/secretmanager/(v\\d)/.*-java/grpc-google-.*/src"
+- source: "/google/cloud/secretmanager/(v\\d.*)/.*-java/grpc-google-.*/src"
   dest: "/owl-bot-staging/java-secretmanager/$1/grpc-google-cloud-secretmanager-$1/src"
-- source: "/google/cloud/secretmanager/(v\\d)/.*-java/gapic-google-.*/src"
+- source: "/google/cloud/secretmanager/(v\\d.*)/.*-java/gapic-google-.*/src"
   dest: "/owl-bot-staging/java-secretmanager/$1/google-cloud-secretmanager/src"
-- source: "/google/cloud/secretmanager/(v\\d)/.*-java/samples/snippets/generated"
+- source: "/google/cloud/secretmanager/(v\\d.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-secretmanager/$1/samples/snippets/generated"
 
 api-name: secretmanager
