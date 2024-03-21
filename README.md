@@ -405,12 +405,15 @@ A service *may* choose to only enable retries for a subset of RPCs. It is possib
 each RPC is configured differently.
 
 ### Google Cloud Client Library Retry Concepts
-Enabling retries allow RPCs multiple attempts to try and achieve a successful call. A successful call
+Enabling retries allow an RPC multiple attempts to try and achieve a successful call. A successful call
 is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
 
-Retries will occur when either of the following scenarios occur:
-- Non-successful status code is received by the library and the code is marked as retryable*
+An RPC will be retried when _both_ of the following scenarios occur:
+- Non-successful status code is received by the library and the status code is marked as retryable*
 - An RPC invocation exceeds the individual RPC bounds, but still falls within total RPC bounds**
+
+Note: If only one (or neither) of the scenarios above are true, then the RPC will not be retried.
+i.e. If the total timeout has not been exceeded, but the latest attempt receives a non-retryable status code.
 
 *The client library will mark a status code as retryable internally. It is marked as retryable if the response's
 status code matches with any of an RPC's configure retryable status codes.
@@ -420,30 +423,49 @@ total RPC's bounds. The retry algorithm will ensure that an individual attempt's
 the total RPC's bounds.
 
 #### Configurable Retry Params
-- Retry Status Code: Set of failure Status Codes to retry on
+- Retry Status Code: Set of failure status codes to retry on
 - Retry Time/ Attempt Bounds: Configurable retry settings (via RetrySettings class) to define the retry bounds
 
-#### Jitter
-Jitter is added variance via randomness to spread out when the RPCs are invoked. By default, Google Cloud
-Client Libraries enable jitter for retries. When jitter is enabled with exponential backoff, the client libraries
-are able to spread out the retry calls without overloading the server.
-
 #### RetrySettings Configurable Params
+- Max Attempts: The maximum number of attempts to perform. If this value is greater than 0, and the number of attempts reaches this limit, the logic will give up retrying even if the total retry time is still lower than TotalTimeout.
 - Total Timeout: The overall total limit before the remote call gives up completely. The higher the total timeout, the more retries can be attempted.
 - Initial Retry Delay: The delay before the first retry.
 - Retry Delay Multiplier: The change in retry delay. This value is multiplied by the previous call’s retry delay to calculate the retry delay for the next call.
 - Max Retry Delay: The limit on the value of the retry delay, so that the RetryDelayMultiplier can't increase the retry delay higher than this amount.
-- Max Attempts: The maximum number of attempts to perform. If this value is greater than 0, and the number of attempts reaches this limit, the logic will give up retrying even if the total retry time is still lower than TotalTimeout.
 - Initial RPC Timeout: The timeout for the initial RPC.
 - RPC Timeout Multiplier: The change in RPC timeout. This value is multiplied by the previous call’s timeout to calculate the timeout for the next call.
 - Max RPC Timeout: The limit of the RPC timeout, so that the RpcTimeoutMultiplier can't increase the RPC timeout higher than this amount
 
-See the Official Google Cloud Docs: https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings
+Note: It is recommended to only set _either_ the Max Attempt or the Total Timeout.
+
+See the official Google Cloud Docs: https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings
+
+#### Jitter
+Jitter is added variance via randomness to spread out when the RPCs are invoked. By default, Google Cloud
+Client Libraries enable jitter for retries. When jitter is enabled with exponential backoff, the client libraries
+are able to spread out the retry attempts without overwhelming the server.
+
+The jitter randomness is computed with on the retry delay. On every attempt, the retry algorithm will compute
+a random value with the between [1, RETRY_DELAY].
+
+For example, with the following retry configurations:
+```
+Initial Retry Delay: 100ms
+Retry Delay Multiplier: 2.0
+Max Retry Delay: 500ms
+```
+
+- Attempt 1: Random value between (1, 100]
+- Attempt 2: Random value between (1, 200]
+- Attempt 3: Random value between (1, 400]
+- Attempt 3: Random value between (1, 500]
+- ...
+- Attempt X: Random value between (1, 500]
 
 ### How to find the Retry Configurations for an RPC
 Default retry params are configured inside the client's generated StubSettings' class.
 
-#### For example, using v3.41.0 of Java-Asset:
+#### For example, using Java-Asset v3.41.0:
 Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082)
 
 Example:
@@ -481,9 +503,8 @@ Example:
 ### Retry Examples
 The following examples below show the behavior of some retry configurations.
 
-Note: These examples below assume that jitter isn't enabled and that the retry delay is computed
-to be the maximum value at the end of each round. With jitter enabled, the actual computed retry
-delay values are random.
+Note: These examples below assume that jitter is disabled. The retry delay is computed to be the maximum value
+at the end of each attempt.
 
 #### No Retry
 ```java
