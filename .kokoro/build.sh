@@ -37,18 +37,7 @@ RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
-    retry_with_backoff 3 10 \
-      mvn -B -ntp \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
-      -Dmaven.wagon.http.retryHandler.count=5 \
-      -T 1C \
-      test
+    retry_with_backoff 3 10 run_unit_tests
     RETURN_CODE=$?
     echo "Finished running unit tests"
     ;;
@@ -73,7 +62,7 @@ case ${JOB_TYPE} in
     ;;
   graalvm)
     generate_graalvm_modules_list
-    if [ ! -z "${module_list}" ]; then
+    if [ -n "${module_list}" ]; then
       printf "Running GraalVM checks for:\n%s\n" "${module_list}"
       setup_cloud "$module_list"
       execute_with_lazy_install run_graalvm_tests "$module_list"

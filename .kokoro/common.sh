@@ -125,8 +125,29 @@ function generate_modified_modules_list() {
   fi
 }
 
+function
+
+function run_unit_tests() {
+  mvn -B -ntp \
+    -DtrimStackTrace=false \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
+    -Dflatten.skip=true \
+    -Danimal.sniffer.skip=true \
+    -Dmaven.wagon.http.retryHandler.count=5 \
+    -T 1C \
+    test
+
+  export RETURN_CODE=$?
+  return $RETURN_CODE
+}
+
 function run_integration_tests() {
   printf "Running Integration Tests for:\n%s\n" "$1"
+
   # --also-make-dependents to run other modules that use the affected module
   mvn -B ${INTEGRATION_TEST_ARGS} \
     -pl "$1" \
@@ -148,8 +169,8 @@ function run_integration_tests() {
     -T 1C \
     verify
 
-  RETURN_CODE=$?
-  printf "Finished Integration Tests for:\n%s\n" "$1"
+  export RETURN_CODE=$?
+  return $RETURN_CODE
 }
 
 function run_graalvm_tests() {
@@ -171,8 +192,8 @@ function run_graalvm_tests() {
     -fae \
     test
 
-  RETURN_CODE=$?
-  printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
+  export RETURN_CODE=$?
+  return $RETURN_CODE
 }
 
 function generate_graalvm_presubmit_modules_list() {
@@ -235,17 +256,15 @@ function generate_graalvm_modules_list() {
 # NOTE: This function expects the result of the given argument will be stored in the RETURN_CODE
 # variable, as demonstrated by run_graalvm_tests() and run_integration_tests() in this file.
 function execute_with_lazy_install() {
-  set +e
-  ("$@")
-  set -e
-  if [ $RETURN_CODE -eq 0 ]; then
+  if ("$@"); then
     echo "Success without full installation."
-  else
-    echo "Initial attempt failed. Fully installing repository, then retrying."
-    install_modules
-    echo "Attempting retry after fully installing repository."
-    ("$@")
+    return
   fi
+
+  echo "Initial attempt failed. Fully installing repository, then retrying."
+  install_modules
+  echo "Attempting retry after fully installing repository."
+  ("$@")
 }
 
 function install_modules() {
@@ -260,4 +279,7 @@ function install_modules() {
     -Dorg.slf4j.simpleLogger.showDateTime=true \
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -B -ntp
+
+  export RETURN_CODE=$?
+  return $RETURN_CODE
 }
