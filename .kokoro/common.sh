@@ -125,8 +125,6 @@ function generate_modified_modules_list() {
   fi
 }
 
-function
-
 function run_unit_tests() {
   mvn -B -ntp \
     -DtrimStackTrace=false \
