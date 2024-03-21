@@ -439,9 +439,7 @@ proto-google-cloud-scheduler-v1beta1:0.122.0:0.123.0-SNAPSHOT
 proto-google-cloud-scheduler-v1:2.37.0:2.38.0-SNAPSHOT
 google-cloud-secretmanager:2.37.0:2.38.0-SNAPSHOT
 grpc-google-cloud-secretmanager-v1:2.37.0:2.38.0-SNAPSHOT
-grpc-google-cloud-secretmanager-v1beta1:2.37.0:2.38.0-SNAPSHOT
 proto-google-cloud-secretmanager-v1:2.37.0:2.38.0-SNAPSHOT
-proto-google-cloud-secretmanager-v1beta1:2.37.0:2.38.0-SNAPSHOT
 google-cloud-securitycenter:2.45.0:2.46.0-SNAPSHOT
 grpc-google-cloud-securitycenter-v1:2.45.0:2.46.0-SNAPSHOT
 grpc-google-cloud-securitycenter-v1beta1:0.140.0:0.141.0-SNAPSHOT
@@ -747,3 +745,5 @@ grpc-google-cloud-chat-v1:0.1.0:0.2.0-SNAPSHOT
 google-shopping-merchant-quota:0.0.0:0.0.1-SNAPSHOT
 proto-google-shopping-merchant-quota-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-quota-v1beta:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-secretmanager-v1beta2:2.37.0:2.38.0-SNAPSHOT
+grpc-google-cloud-secretmanager-v1beta2:2.37.0:2.38.0-SNAPSHOT
