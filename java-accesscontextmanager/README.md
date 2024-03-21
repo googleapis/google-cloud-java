@@ -11,7 +11,6 @@ Java idiomatic client for [Identity Access Context Manager][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml

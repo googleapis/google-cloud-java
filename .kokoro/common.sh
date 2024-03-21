@@ -125,8 +125,27 @@ function generate_modified_modules_list() {
   fi
 }
 
+function run_unit_tests() {
+  mvn -B -ntp \
+    -DtrimStackTrace=false \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dclirr.skip=true \
+    -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
+    -Dflatten.skip=true \
+    -Danimal.sniffer.skip=true \
+    -Dmaven.wagon.http.retryHandler.count=5 \
+    -T 1C \
+    test
+
+  export RETURN_CODE=$?
+  return $RETURN_CODE
+}
+
 function run_integration_tests() {
   printf "Running Integration Tests for:\n%s\n" "$1"
+
   # --also-make-dependents to run other modules that use the affected module
   mvn -B ${INTEGRATION_TEST_ARGS} \
     -pl "$1" \
@@ -136,7 +155,8 @@ function run_integration_tests() {
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
@@ -147,8 +167,8 @@ function run_integration_tests() {
     -T 1C \
     verify
 
-  RETURN_CODE=$?
-  printf "Finished Integration Tests for:\n%s\n" "$1"
+  export RETURN_CODE=$?
+  return $RETURN_CODE
 }
 
 function run_graalvm_tests() {
@@ -161,7 +181,8 @@ function run_graalvm_tests() {
     -DtrimStackTrace=false \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -Dcheckstyle.skip=true \
     -Dflatten.skip=true \
     -Danimal.sniffer.skip=true \
@@ -169,8 +190,8 @@ function run_graalvm_tests() {
     -fae \
     test
 
-  RETURN_CODE=$?
-  printf "Finished Unit and Integration Tests for GraalVM:\n%s\n" "$1"
+  export RETURN_CODE=$?
+  return $RETURN_CODE
 }
 
 function generate_graalvm_presubmit_modules_list() {
@@ -228,19 +249,35 @@ function generate_graalvm_modules_list() {
   )
 }
 
+# Attempts to execute the command provided as the argument to this function.
+# If the command fails: performs a full mvn install on the repository, then retries the command.
+# NOTE: This function expects the result of the given argument will be stored in the RETURN_CODE
+# variable, as demonstrated by run_graalvm_tests() and run_integration_tests() in this file.
+function execute_with_lazy_install() {
+  if ("$@"); then
+    echo "Success without full installation."
+    return
+  fi
+
+  echo "Initial attempt failed. Fully installing repository, then retrying."
+  install_modules
+  echo "Attempting retry after fully installing repository."
+  ("$@")
+}
+
 function install_modules() {
-  retry_with_backoff 3 10 \
-    mvn -B \
-    -ntp \
-    -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
-    -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -DskipTests=true \
-    -Djacoco.skip=true \
-    -T 1C \
-    install
+  mvn install \
+    --also-make-dependents \
+    -DskipTests \
+    -Dclirr.skip \
+    -Denforcer.skip \
+    -Dcheckstyle.skip \
+    -Dflatten.skip \
+    -Danimal.sniffer.skip \
+    -Dorg.slf4j.simpleLogger.showDateTime=true \
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+    -B -ntp
+
+  export RETURN_CODE=$?
+  return $RETURN_CODE
 }
