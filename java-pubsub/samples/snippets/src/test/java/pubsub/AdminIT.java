@@ -52,6 +52,7 @@ public class AdminIT {
   private static final String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String _suffix = UUID.randomUUID().toString();
   private static final String topicId = "iam-topic-" + _suffix;
+  private static final String ingestionTopicId = "ingestion-topic-" + _suffix;
   private static final String pullSubscriptionId = "iam-pull-subscription-" + _suffix;
   private static final String pushSubscriptionId = "iam-push-subscription-" + _suffix;
   private static final String orderedSubscriptionId = "iam-ordered-subscription-" + _suffix;
@@ -63,8 +64,20 @@ public class AdminIT {
       "java_samples_data_set" + _suffix.replace("-", "_");
   private static final String bigquerySubscriptionId = "iam-bigquery-subscription-" + _suffix;
   private static final String bigqueryTableId = "java_samples_table_" + _suffix;
+  private static final String streamArn =
+      "arn:aws:kinesis:us-west-2:111111111111:stream/fake-stream-name";
+  private static final String consumerArn =
+      "arn:aws:kinesis:us-west-2:111111111111:stream/fake-stream-name/"
+          + "consumer/consumer-1:1111111111";
+  private static final String consumerArn2 =
+      "arn:aws:kinesis:us-west-2:111111111111:stream/fake-stream-name/"
+          + "consumer/consumer-2:2222222222";
+  private static final String awsRoleArn = "arn:aws:iam::111111111111:role/fake-role-name";
+  private static final String gcpServiceAccount =
+      "fake-service-account@fake-gcp-project.iam.gserviceaccount.com";
 
   private static final TopicName topicName = TopicName.of(projectId, topicId);
+  private static final TopicName ingestionTopicName = TopicName.of(projectId, ingestionTopicId);
   private static final SubscriptionName pullSubscriptionName =
       SubscriptionName.of(projectId, pullSubscriptionId);
   private static final SubscriptionName pushSubscriptionName =
@@ -274,8 +287,45 @@ public class AdminIT {
     assertThat(bout.toString()).contains("Deleted subscription.");
 
     bout.reset();
+    // Update topic type to Kinesis ingestion.
+    UpdateTopicTypeExample.updateTopicTypeExample(
+        projectId, topicId, streamArn, consumerArn, awsRoleArn, gcpServiceAccount);
+    assertThat(bout.toString()).contains("google.pubsub.v1.Topic.name=" + topicName.toString());
+    assertThat(bout.toString()).contains(streamArn);
+    assertThat(bout.toString()).contains(consumerArn);
+    assertThat(bout.toString()).contains(awsRoleArn);
+    assertThat(bout.toString()).contains(gcpServiceAccount);
+
+    bout.reset();
     // Test delete topic.
     DeleteTopicExample.deleteTopicExample(projectId, topicId);
+    assertThat(bout.toString()).contains("Deleted topic.");
+
+    bout.reset();
+    // Test create topic with Kinesis ingestion settings.
+    CreateTopicWithKinesisIngestionExample.createTopicWithKinesisIngestionExample(
+        projectId, ingestionTopicId, streamArn, consumerArn, awsRoleArn, gcpServiceAccount);
+    assertThat(bout.toString())
+        .contains("google.pubsub.v1.Topic.name=" + ingestionTopicName.toString());
+    assertThat(bout.toString()).contains(streamArn);
+    assertThat(bout.toString()).contains(consumerArn);
+    assertThat(bout.toString()).contains(awsRoleArn);
+    assertThat(bout.toString()).contains(gcpServiceAccount);
+
+    bout.reset();
+    // Test update existing Kinesis ingestion settings.
+    UpdateTopicTypeExample.updateTopicTypeExample(
+        projectId, ingestionTopicId, streamArn, consumerArn2, awsRoleArn, gcpServiceAccount);
+    assertThat(bout.toString())
+        .contains("google.pubsub.v1.Topic.name=" + ingestionTopicName.toString());
+    assertThat(bout.toString()).contains(streamArn);
+    assertThat(bout.toString()).contains(consumerArn2);
+    assertThat(bout.toString()).contains(awsRoleArn);
+    assertThat(bout.toString()).contains(gcpServiceAccount);
+
+    bout.reset();
+    // Test delete Kinesis ingestion topic.
+    DeleteTopicExample.deleteTopicExample(projectId, ingestionTopicId);
     assertThat(bout.toString()).contains("Deleted topic.");
   }
 }
