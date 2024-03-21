@@ -92,11 +92,12 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
-        cache: maven
     - run: java -version
-    - name: Install Maven modules to local Maven repository
-      run: |
-        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+    - uses: actions/cache@v3
+      id: mvn-cache
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
