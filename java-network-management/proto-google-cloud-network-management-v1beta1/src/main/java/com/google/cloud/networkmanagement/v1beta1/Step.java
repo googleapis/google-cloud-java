@@ -113,10 +113,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Initial state: packet originating from a Google service. Some Google
-     * services, such as health check probers or Identity Aware Proxy use
-     * special routes, outside VPC routing configuration to reach Compute Engine
-     * Instances.
+     * Initial state: packet originating from a Google service.
+     * The google_service information is populated.
      * </pre>
      *
      * <code>START_FROM_GOOGLE_SERVICE = 27;</code>
@@ -423,10 +421,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Initial state: packet originating from a Google service. Some Google
-     * services, such as health check probers or Identity Aware Proxy use
-     * special routes, outside VPC routing configuration to reach Compute Engine
-     * Instances.
+     * Initial state: packet originating from a Google service.
+     * The google_service information is populated.
      * </pre>
      *
      * <code>START_FROM_GOOGLE_SERVICE = 27;</code>
