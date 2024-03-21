@@ -19,6 +19,7 @@ package com.google.cloud.vertexai.generativeai;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
@@ -319,12 +320,7 @@ public final class GenerativeModel {
    */
   @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(List<Content> contents) throws IOException {
-    GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    requestBuilder.setGenerationConfig(this.generationConfig);
-    requestBuilder.addAllSafetySettings(this.safetySettings);
-    requestBuilder.addAllTools(this.tools);
-    return generateContent(requestBuilder.build());
+    return generateContent(buildGenerateContentRequest(contents));
   }
 
   /**
@@ -378,13 +374,7 @@ public final class GenerativeModel {
    */
   public ResponseStream<GenerateContentResponse> generateContentStream(List<Content> contents)
       throws IOException {
-    GenerateContentRequest.Builder requestBuilder =
-        GenerateContentRequest.newBuilder().setModel(this.resourceName).addAllContents(contents);
-    requestBuilder.setGenerationConfig(this.generationConfig);
-    requestBuilder.addAllSafetySettings(this.safetySettings);
-    requestBuilder.addAllTools(this.tools);
-
-    return generateContentStream(requestBuilder.build());
+    return generateContentStream(buildGenerateContentRequest(contents));
   }
 
   /**
@@ -404,6 +394,76 @@ public final class GenerativeModel {
                 .streamGenerateContentCallable()
                 .call(request)
                 .iterator()));
+  }
+
+  /**
+   * Asynchronously generates content from generative model given a text.
+   *
+   * @param text a text message to send to the generative model
+   * @return a {@link com.google.api.core.ApiFuture} represents the response of an asynchronous
+   *     generateContent request
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  @BetaApi
+  public ApiFuture<GenerateContentResponse> generateContentAsync(String text) throws IOException {
+    return generateContentAsync(ContentMaker.fromString(text));
+  }
+
+  /**
+   * Asynchronously generates content from generative model given a single Content.
+   *
+   * @param content a {@link com.google.cloud.vertexai.api.Content} to send to the generative model.
+   *     The role of the content is "user".
+   * @return a {@link com.google.api.core.ApiFuture} represents the response of an asynchronous
+   *     generateContent request
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  @BetaApi
+  public ApiFuture<GenerateContentResponse> generateContentAsync(Content content)
+      throws IOException {
+    return generateContentAsync(Arrays.asList(content));
+  }
+
+  /**
+   * Asynchronously generates content from generative model given a list of contents.
+   *
+   * @param contents a list of {@link com.google.cloud.vertexai.api.Content} to send to the
+   *     generative model
+   * @return a {@link com.google.api.core.ApiFuture} represents the response of an asynchronous
+   *     generateContent request
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  @BetaApi
+  public ApiFuture<GenerateContentResponse> generateContentAsync(List<Content> contents)
+      throws IOException {
+    return generateContentAsync(buildGenerateContentRequest(contents));
+  }
+
+  /**
+   * A base generateContentAsync method that will be used internally.
+   *
+   * @param request a {@link com.google.cloud.vertexai.api.GenerateContentRequest} instance
+   * @return a {@link com.google.api.core.ApiFuture} represents the response of an asynchronous
+   *     generateContent request
+   * @throws IOException if an I/O error occurs while making the API call
+   */
+  private ApiFuture<GenerateContentResponse> generateContentAsync(GenerateContentRequest request)
+      throws IOException {
+    return vertexAi.getPredictionServiceClient().generateContentCallable().futureCall(request);
+  }
+
+  /**
+   * Builds a {@link com.google.cloud.vertexai.api.GenerateContentRequest} based on a list of
+   * contents and model configurations.
+   */
+  private GenerateContentRequest buildGenerateContentRequest(List<Content> contents) {
+    return GenerateContentRequest.newBuilder()
+        .setModel(resourceName)
+        .addAllContents(contents)
+        .setGenerationConfig(generationConfig)
+        .addAllSafetySettings(safetySettings)
+        .addAllTools(tools)
+        .build();
   }
 
   /** Returns the model name of this generative model. */
