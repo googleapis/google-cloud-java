@@ -144,7 +144,12 @@ public final class GenerativeModelTest {
 
   @Before
   public void doBeforeEachTest() {
-    vertexAi = new VertexAI(PROJECT, LOCATION, mockGoogleCredentials);
+    vertexAi =
+        new VertexAI.Builder()
+            .setProjectId(PROJECT)
+            .setLocation(LOCATION)
+            .setCredentials(mockGoogleCredentials)
+            .build();
   }
 
   @Test
