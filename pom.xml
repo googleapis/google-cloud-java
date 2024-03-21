@@ -133,6 +133,7 @@
     <module>java-orgpolicy</module>
     <module>java-os-config</module>
     <module>java-os-login</module>
+    <module>java-parallelstore</module>
     <module>java-phishingprotection</module>
     <module>java-policy-troubleshooter</module>
     <module>java-policysimulator</module>

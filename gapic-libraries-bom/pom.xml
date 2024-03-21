@@ -803,6 +803,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-parallelstore-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-parallelstore:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-phishingprotection-bom</artifactId>
         <version>0.69.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-phishingprotection:current} -->
         <type>pom</type>

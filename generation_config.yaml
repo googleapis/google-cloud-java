@@ -1338,6 +1338,22 @@ libraries:
   - proto_path: google/cloud/oslogin/v1
   - proto_path: google/cloud/oslogin/v1beta
 
+- api_shortname: parallelstore
+  name_pretty: Parallelstore API
+  product_documentation: https://cloud/parallelstore?hl=en
+  api_description: 'Parallelstore is based on Intel DAOS and delivers up to 6.3x greater
+    read throughput performance compared to competitive Lustre scratch offerings. '
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-parallelstore/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-parallelstore
+  api_id: parallelstore.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/parallelstore/v1beta
+  requires_billing: true
 - api_shortname: phishingprotection
   name_pretty: Phishing Protection
   product_documentation: https://cloud.google.com/phishing-protection/docs/
