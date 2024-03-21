@@ -241,7 +241,7 @@ In cases where the library may expect a project ID explicitly, we provide a help
    ```java
      import com.google.cloud.ServiceOptions;
      ...
-     String projectId = ServiceOptions.getDefaultProjectId();
+             String projectId = ServiceOptions.getDefaultProjectId();
    ```
 
 ## Authentication
@@ -304,20 +304,20 @@ access token will not be automatically refreshed):
 
 ```java
 Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
-Storage storage = StorageOptions.newBuilder()
-    .setCredentials(credentials)
-    .build()
-    .getService();
+        Storage storage = StorageOptions.newBuilder()
+        .setCredentials(credentials)
+        .build()
+        .getService();
 ```
 
 or:
 
 ```java
 Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
-CloudTasksSettings cloudTasksSettings = CloudTasksSettings.newBuilder()
-    .setCredentialProvider(FixedCredentialsProvider.create(credentials))
-    .build();
-CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
+        CloudTasksSettings cloudTasksSettings = CloudTasksSettings.newBuilder()
+        .setCredentialProvider(FixedCredentialsProvider.create(credentials))
+        .build();
+        CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
 ```
 
 ### Application Default Credentials
@@ -365,107 +365,47 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 
 public CloudTasksClient getService() throws IOException {
-  TransportChannelProvider transportChannelProvider =
-      CloudTasksStubSettings.defaultGrpcTransportProviderBuilder()
-          .setChannelConfigurator(
-              new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-                @Override
-                public ManagedChannelBuilder apply(ManagedChannelBuilder managedChannelBuilder) {
-                  return managedChannelBuilder.proxyDetector(
-                      new ProxyDetector() {
-                        @Nullable
-                        @Override
-                        public ProxiedSocketAddress proxyFor(SocketAddress socketAddress)
-                            throws IOException {
-                          return HttpConnectProxiedSocketAddress.newBuilder()
-                              .setUsername(PROXY_USERNAME)
-                              .setPassword(PROXY_PASSWORD)
-                              .setProxyAddress(new InetSocketAddress(PROXY_HOST, PROXY_PORT))
-                              .setTargetAddress((InetSocketAddress) socketAddress)
-                              .build();
-                        }
-                      });
-                }
-              })
-          .build();
-  CloudTasksSettings cloudTasksSettings =
-      CloudTasksSettings.newBuilder()
-          .setTransportChannelProvider(transportChannelProvider)
-          .build();
-  return CloudTasksClient.create(cloudTasksSettings);
-}
+        TransportChannelProvider transportChannelProvider =
+        CloudTasksStubSettings.defaultGrpcTransportProviderBuilder()
+        .setChannelConfigurator(
+        new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+@Override
+public ManagedChannelBuilder apply(ManagedChannelBuilder managedChannelBuilder) {
+        return managedChannelBuilder.proxyDetector(
+        new ProxyDetector() {
+@Nullable
+@Override
+public ProxiedSocketAddress proxyFor(SocketAddress socketAddress)
+        throws IOException {
+        return HttpConnectProxiedSocketAddress.newBuilder()
+        .setUsername(PROXY_USERNAME)
+        .setPassword(PROXY_PASSWORD)
+        .setProxyAddress(new InetSocketAddress(PROXY_HOST, PROXY_PORT))
+        .setTargetAddress((InetSocketAddress) socketAddress)
+        .build();
+        }
+        });
+        }
+        })
+        .build();
+        CloudTasksSettings cloudTasksSettings =
+        CloudTasksSettings.newBuilder()
+        .setTransportChannelProvider(transportChannelProvider)
+        .build();
+        return CloudTasksClient.create(cloudTasksSettings);
+        }
 ```
 
 ## Retries
-Client Libraries use retries to handle unexpected, transient failures (i.e. Server temporarily unavailable).
+Client Libraries use retries to handle unexpected, transient failures (i.e. server temporarily unavailable).
 Multiple attempts, hopefully, will result in a successful response from the server.
 
 By default, retries are configured by the Cloud Service. The configured retry parameters are defined per RPC.
-A service *may* choose to only enable retries for a subset of RPCs. It is possible that for a single service, 
+A service *may* choose to only enable retries for a subset of RPCs. It is possible that for a single service,
 each RPC is configured differently.
 
-### Google Cloud Client Library Retry Concepts
-Enabling retries allows an RPC multiple attempts to try and achieve a successful call. A successful call
-is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
+For example, using Java-Asset v3.41.0, the default configurations:
 
-An RPC will be retried when _both_ of the following scenarios occur:
-- Non-successful status code is received by the library and the status code is marked as retryable*
-- An RPC invocation exceeds the individual RPC bounds, but still falls within total RPC bounds**
-
-Note: If only one (or neither) of the scenarios above are true, then the RPC will not be retried.
-i.e. If the total timeout has not been exceeded, but the latest attempt receives a non-retryable status code.
-
-*The client library will mark a status code as retryable internally. It is marked as retryable if the response's
-status code matches with any of an RPC's configure retryable status codes.
-
-**When configuring the RPC bounds, you may configure the bounds for each attempt as well as the
-total RPC's bounds. The retry algorithm will ensure that an individual attempt's bounds falls within
-the total RPC's bounds.
-
-#### Configurable Retry Params
-- Retry Status Code: Set of failure status codes to retry on
-- Retry Time/ Attempt Bounds: Configurable retry settings (via RetrySettings class) to define the retry bounds
-
-#### RetrySettings Configurable Params
-- Max Attempts: The maximum number of attempts to perform. If this value is greater than 0, and the number of attempts reaches this limit, the logic will give up retrying even if the total retry time is still lower than TotalTimeout.
-- Total Timeout: The overall total limit before the remote call gives up completely. The higher the total timeout, the more retries can be attempted.
-- Initial Retry Delay: The delay before the first retry.
-- Retry Delay Multiplier: The change in retry delay. This value is multiplied by the previous call’s retry delay to calculate the retry delay for the next call.
-- Max Retry Delay: The limit on the value of the retry delay, so that the RetryDelayMultiplier can't increase the retry delay higher than this amount.
-- Initial RPC Timeout: The timeout for the initial RPC.
-- RPC Timeout Multiplier: The change in RPC timeout. This value is multiplied by the previous call’s timeout to calculate the timeout for the next call.
-- Max RPC Timeout: The limit of the RPC timeout, so that the RpcTimeoutMultiplier can't increase the RPC timeout higher than this amount
-
-Note: It is recommended to only set _either_ the Max Attempt or the Total Timeout.
-
-See the official Google Cloud Docs: https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings
-
-#### Jitter
-Jitter is added variance via randomness to spread out when the RPCs are invoked. By default, Google Cloud
-Client Libraries enable jitter for retries. When jitter is enabled with exponential backoff, the client libraries
-are able to spread out the retry attempts without overwhelming the server.
-
-The jitter randomness is computed with on the retry delay. On every attempt, the retry algorithm will compute
-a random value with the between [1, RETRY_DELAY].
-
-For example, with the following retry configurations:
-```
-Initial Retry Delay: 100ms
-Retry Delay Multiplier: 2.0
-Max Retry Delay: 500ms
-```
-
-- Attempt 1: Random value between [1, 100]
-- Attempt 2: Random value between [1, 200]
-- Attempt 3: Random value between [1, 400]
-- Attempt 3: Random value between [1, 500]
-- ...
-- Attempt X: Random value between [1, 500]
-
-### How to find the Retry Configurations for an RPC
-Default retry params are configured inside the client's generated StubSettings' class.
-
-#### For example, using Java-Asset v3.41.0:
 Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082)
 
 Example:
@@ -500,6 +440,79 @@ Example:
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 ```
 
+### Google Cloud Client Library Retry Concepts
+Enabling retries allow an RPC multiple attempts to try and achieve a successful call. A successful call
+is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
+
+#### Configurable Retry Params
+- Retry Status Code: Set of failure status codes to retry on
+- Retry Time/ Attempt Bounds: Configurable retry settings (via [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings) class) to define the retry bounds
+
+#### When is an RPC retried
+Take a sample RetrySettings configuration
+```java
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(60000L))
+              .setInitialRpcTimeout(Duration.ofMillis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(60000L))
+              .setTotalTimeout(Duration.ofMillis(60000L))
+              .build();
+```
+Individual RPC Bounds (an attempt) are controlled by the following settings:
+- setInitialRetryDelay
+- setRetryDelayMultiplier
+- setMaxRetryDelay
+- setInitialRpcTimeout
+- setRpcTimeoutMultiplier
+- setMaxRpcTimeout
+
+Total RPC Bounds are controlled by the following settings:
+- setTotalTimeout
+- setAttemptCount
+
+An RPC will be retried when _both_ of the following scenarios occur:
+- Non-successful status code is received by the library and the status code is marked as retryable*
+- An RPC invocation exceeds the individual RPC bounds, but still falls within total RPC bounds**
+
+Note: If only one (or neither) of the scenarios above are true, then the RPC will not be retried.
+i.e. If the total timeout has not been exceeded, but the latest attempt receives a non-retryable status code.
+
+*The client library will mark a status code as retryable internally. It is marked as retryable if the response's
+status code matches with any of an RPC's configure retryable status codes.
+
+**When configuring the RPC bounds, you may configure the bounds for each attempt as well as the
+total RPC's bounds. The retry algorithm will ensure that an individual attempt's bounds falls within
+the total RPC's bounds.
+
+#### Jitter
+Jitter is added variance via randomness to spread out when the RPCs are invoked. By default, Google Cloud
+Client Libraries enable jitter for retries. When jitter is enabled with exponential backoff, the client libraries
+are able to spread out the retry attempts without overwhelming the server.
+
+The jitter randomness is computed with on the retry delay. On every attempt, the retry algorithm will compute
+a random value with the between [1, RETRY_DELAY].
+
+For example, with the following retry configurations:
+```
+Initial Retry Delay: 100ms
+Retry Delay Multiplier: 2.0
+Max Retry Delay: 500ms
+```
+
+- Attempt 1: Random value between [1, 100]
+- Attempt 2: Random value between [1, 200]
+- Attempt 3: Random value between [1, 400]
+- Attempt 3: Random value between [1, 500]
+- ...
+- Attempt X: Random value between [1, 500]
+
+### How to find the Retry Configurations for an RPC
+Default retry params are configured inside the client's generated StubSettings' class.
+
 ### Retry Examples
 The following examples below show the behavior of some retry configurations.
 
@@ -520,8 +533,8 @@ RetrySettings defaultNoRetrySettings =
 The following table shows the attempts:
 
 | Attempt Number 	| RPC Timeout 	| Retry Delay 	| Call Invoked 	| Call Ended 	|
-|----------------	|-------------	|-------------	|--------------	|------------	|
-| 1              	| 5000ms      	| 0ms         	| 0ms          	| 50000ms    	|
+|----------------	|-------------	|-------------	|--------------	|-----------	|
+| 1              	| 5000ms      	| 0ms         	| 0ms          	| 5000ms    	|
 
 #### Retry
 ##### Example 1
@@ -549,6 +562,8 @@ The third retry attempt is not attempted because the computed retry delay (400ms
 the total timeout (400 + 4700 > 5000).
 
 ##### Example 2
+This example is similar to Example #1, but has a longer total timeout to showcase an additional
+retry attempt and the capped RPC Timeout for the last retry attempt.
 ```java
 RetrySettings.newBuilder()
     .setInitialRetryDelay(Duration.ofMillis(200L))
@@ -570,7 +585,7 @@ The following table shows the attempts:
 | 3 (Retry)      	| 4900ms      	| 400ms       	| 5100ms       	| 10000ms    	|
 
 The third retry’s RPC Timeout value is limited due the Total Timeout value. Using the multiplier (2.0) with the
-previous timeout value (3000ms) should result in an RPC Timeout of 6000ms. However, the RPC Timeout should not 
+previous timeout value (3000ms) should result in an RPC Timeout of 6000ms. However, the RPC Timeout should not
 exceed the Total Timeout and is reduced to be the "time left" (10000 - 5100 = 4900).
 
 ##### Example 3
@@ -607,9 +622,9 @@ RetrySettings customRetrySettings =
 ```
 2. Create the StubSettings.Builder for your client and configure it for the RPC
 ```java
-EchoStubSettings.Builder echoStubSettingsBuilder = EchoStubSettings.newBuilder();
-echoStubSettingsBuilder
-  .blockSettings()
+AssetServiceStubSettings.Builder assetStubSettingsBuilder = AssetServiceStubSettings.newBuilder();
+assetStubSettingsBuilder
+  .exportAssetsSettings()
   // Set your custom Retry Settings
   .setRetrySettings(customRetrySettings)
   // Set your custom Retryable Codes
@@ -623,30 +638,30 @@ retry settings configured in `customRetrySettings` and sets the retryable codes 
 
 3. Create the Settings for the Client
 ```java
-EchoSettings echoSettings = EchoSettings.create(echoSettingsBuilder.build());
+AssetServiceSettings assetSettings = AssetServiceSettings.create(assetStubSettingsBuilder.build());
 ```
 4. Create the Client with the Settings
 ```java
-try (EchoClient echoClient = EchoClient.create(echoSettings)) {
+try (AssetServiceClient assetClient = AssetServiceClient.create(assetSettings)) {
   ...
 }
 ```
 
 Repeat Step #2 for each RPC that you want to configure. For example:
 ```java
-EchoStubSettings.Builder echoStubSettingsBuilder = EchoStubSettings.newBuilder();
-echoStubSettingsBuilder
-  .blockSettings()
-  // Set your custom Retry Settings
-  .setRetrySettings(customRetrySettings)
-  // Set your custom Retryable Codes
-  .setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
-echoStubSettingsBuilder
-  .echoSettings()
-  // Set your custom Retry Settings
-  .setRetrySettings(customRetrySettings2)
-  // Set your custom Retryable Codes
-  .setRetryableCodes(ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
+AssetServiceStubSettings.Builder assetStubSettingsBuilder = AssetServiceStubSettings.newBuilder();
+        assetStubSettingsBuilder
+        .exportAssetsSettings()
+        // Set your custom Retry Settings
+        .setRetrySettings(customRetrySettings)
+        // Set your custom Retryable Codes
+        .setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
+        assetStubSettingsBuilder
+        .listAssetsSettings()
+        // Set your custom Retry Settings
+        .setRetrySettings(customRetrySettings2)
+        // Set your custom Retryable Codes
+        .setRetryableCodes(ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
 ```
 
 ## Long Running Operations
@@ -666,23 +681,23 @@ check the operation's status.
 For example, take a sample `createCluster` Operation in google-cloud-dataproc v4.20.0:
 ```java
 try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-  CreateClusterRequest request =
-      CreateClusterRequest.newBuilder()
-          .setProjectId("{PROJECT_ID}")
-          .setRegion("{REGION}")
-          .setCluster(Cluster.newBuilder().build())
-          .setRequestId("{REQUEST_ID}")
-          .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
-          .build();
-  OperationFuture<Cluster, ClusterOperationMetadata> future =
-      clusterControllerClient.createClusterOperationCallable().futureCall(request);
-  // Do something.
-  Cluster response = future.get();
-} catch (CancellationException e) {
-  // Exceeded the default RPC timeout without the Operation completing.
-  // Library is no longer polling for the Operation status. Consider 
-  // increasing the timeout.
-}
+        CreateClusterRequest request =
+        CreateClusterRequest.newBuilder()
+        .setProjectId("{PROJECT_ID}")
+        .setRegion("{REGION}")
+        .setCluster(Cluster.newBuilder().build())
+        .setRequestId("{REQUEST_ID}")
+        .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
+        .build();
+        OperationFuture<Cluster, ClusterOperationMetadata> future =
+        clusterControllerClient.createClusterOperationCallable().futureCall(request);
+        // Do something.
+        Cluster response = future.get();
+        } catch (CancellationException e) {
+        // Exceeded the default RPC timeout without the Operation completing.
+        // Library is no longer polling for the Operation status. Consider 
+        // increasing the timeout.
+        }
 ```
 
 ### LRO Timeouts
@@ -697,15 +712,15 @@ Note: The client library handles the Operation's polling mechanism for you. By d
 to manually poll the status yourself.
 
 ### Default LRO Values
-Each LRO RPC has a pre-configured default values. You can find these values by 
+Each LRO RPC has a pre-configured default values. You can find these values by
 searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
 inside the `initDefaults()` method in the nested Builder class.
 
-For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765) 
+For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765)
 has these default values:
 ```java
 OperationTimedPollAlgorithm.create(
-    RetrySettings.newBuilder()
+        RetrySettings.newBuilder()
         .setInitialRetryDelay(Duration.ofMillis(5000L))
         .setRetryDelayMultiplier(1.5)
         .setMaxRetryDelay(Duration.ofMillis(45000L))
@@ -729,23 +744,23 @@ To configure the LRO values, create an OperationTimedPollAlgorithm object and up
 RPC's polling algorithm. For example:
 ```java
 ClusterControllerSettings.Builder settingsBuilder = ClusterControllerSettings.newBuilder();
-TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
-		RetrySettings.newBuilder()
-				.setInitialRetryDelay(Duration.ofMillis(500L))
-				.setRetryDelayMultiplier(1.5)
-				.setMaxRetryDelay(Duration.ofMillis(5000L))
-				.setInitialRpcTimeout(Duration.ZERO) // ignored
-				.setRpcTimeoutMultiplier(1.0) // ignored
-				.setMaxRpcTimeout(Duration.ZERO) // ignored
-				.setTotalTimeout(Duration.ofHours(24L))	// set polling timeout to 24 hours
-				.build());
-settingsBuilder.createClusterOperationSettings()
-		.setPollingAlgorithm(timedRetryAlgorithm);
-ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
+        TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
+        RetrySettings.newBuilder()
+        .setInitialRetryDelay(Duration.ofMillis(500L))
+        .setRetryDelayMultiplier(1.5)
+        .setMaxRetryDelay(Duration.ofMillis(5000L))
+        .setInitialRpcTimeout(Duration.ZERO) // ignored
+        .setRpcTimeoutMultiplier(1.0) // ignored
+        .setMaxRpcTimeout(Duration.ZERO) // ignored
+        .setTotalTimeout(Duration.ofHours(24L))	// set polling timeout to 24 hours
+        .build());
+        settingsBuilder.createClusterOperationSettings()
+        .setPollingAlgorithm(timedRetryAlgorithm);
+        ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
 ```
 
 Note: The configuration above *only* modifies the LRO values for the `createClusterOperation` RPC.
-The other RPCs in the Client will still use each RPC's pre-configured LRO values. 
+The other RPCs in the Client will still use each RPC's pre-configured LRO values.
 
 ## Managing Dependencies
 
