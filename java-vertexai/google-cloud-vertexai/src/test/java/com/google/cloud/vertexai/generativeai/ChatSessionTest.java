@@ -18,14 +18,30 @@ package com.google.cloud.vertexai.generativeai;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Candidate;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
+import com.google.cloud.vertexai.api.FunctionDeclaration;
+import com.google.cloud.vertexai.api.GenerateContentRequest;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.GenerationConfig;
+import com.google.cloud.vertexai.api.HarmCategory;
 import com.google.cloud.vertexai.api.Part;
+import com.google.cloud.vertexai.api.PredictionServiceClient;
+import com.google.cloud.vertexai.api.SafetySetting;
+import com.google.cloud.vertexai.api.SafetySetting.HarmBlockThreshold;
+import com.google.cloud.vertexai.api.Schema;
+import com.google.cloud.vertexai.api.Tool;
+import com.google.cloud.vertexai.api.Type;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -34,6 +50,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -48,6 +65,8 @@ public final class ChatSessionTest {
   private static final String RESPONSE_STREAM_CHUNK2_TEXT = "But I'm happy to help you!";
   private static final String FULL_RESPONSE_TEXT =
       RESPONSE_STREAM_CHUNK1_TEXT + RESPONSE_STREAM_CHUNK2_TEXT;
+  private static final String SAMPLE_MESSAGE_2 = "What can you do for me?";
+  private static final String RESPONSE_TEXT_2 = "I can summarize a bo";
   private static final GenerateContentResponse RESPONSE_STREAM_CHUNK1_RESPONSE =
       GenerateContentResponse.newBuilder()
           .addCandidates(
@@ -82,6 +101,14 @@ public final class ChatSessionTest {
                   .setContent(
                       Content.newBuilder().addParts(Part.newBuilder().setText(FULL_RESPONSE_TEXT))))
           .build();
+  private static final GenerateContentResponse RESPONSE_FROM_UNARY_CALL_2 =
+      GenerateContentResponse.newBuilder()
+          .addCandidates(
+              Candidate.newBuilder()
+                  .setFinishReason(FinishReason.MAX_TOKENS)
+                  .setContent(
+                      Content.newBuilder().addParts(Part.newBuilder().setText(RESPONSE_TEXT_2))))
+          .build();
 
   private static final GenerateContentResponse RESPONSE_FROM_UNARY_CALL_WITH_OTHER_FINISH_REASON =
       GenerateContentResponse.newBuilder()
@@ -91,10 +118,43 @@ public final class ChatSessionTest {
                   .setContent(
                       Content.newBuilder().addParts(Part.newBuilder().setText(FULL_RESPONSE_TEXT))))
           .build();
+
+  private static final GenerationConfig GENERATION_CONFIG =
+      GenerationConfig.newBuilder().setCandidateCount(1).build();
+  private static final SafetySetting SAFETY_SETTING =
+      SafetySetting.newBuilder()
+          .setCategory(HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT)
+          .setThreshold(HarmBlockThreshold.BLOCK_LOW_AND_ABOVE)
+          .build();
+  private static final Tool TOOL =
+      Tool.newBuilder()
+          .addFunctionDeclarations(
+              FunctionDeclaration.newBuilder()
+                  .setName("getCurrentWeather")
+                  .setDescription("Get the current weather in a given location")
+                  .setParameters(
+                      Schema.newBuilder()
+                          .setType(Type.OBJECT)
+                          .putProperties(
+                              "location",
+                              Schema.newBuilder()
+                                  .setType(Type.STRING)
+                                  .setDescription("location")
+                                  .build())
+                          .addRequired("location")))
+          .build();
+
   @Rule public final MockitoRule mocksRule = MockitoJUnit.rule();
 
   @Mock private GenerativeModel mockGenerativeModel;
   @Mock private Iterator<GenerateContentResponse> mockServerStreamIterator;
+
+  @Mock private PredictionServiceClient mockPredictionServiceClient;
+
+  @Mock private UnaryCallable<GenerateContentRequest, GenerateContentResponse> mockUnaryCallable;
+
+  @Mock private GenerateContentResponse mockGenerateContentResponse;
+
   private ChatSession chat;
 
   @Before
@@ -242,5 +302,48 @@ public final class ChatSessionTest {
     // Assert that the history can be fetched again and it's empty.
     List<Content> history = chat.getHistory();
     assertThat(history.size()).isEqualTo(0);
+  }
+
+  @Test
+  public void testChatSessionMergeHistoryToRootChatSession() throws Exception {
+
+    // (Arrange) Set up the return value of the generateContent
+    VertexAI vertexAi = new VertexAI(PROJECT, LOCATION);
+    GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
+
+    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
+    field.setAccessible(true);
+    field.set(vertexAi, mockPredictionServiceClient);
+
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
+        .thenReturn(RESPONSE_FROM_UNARY_CALL)
+        .thenReturn(RESPONSE_FROM_UNARY_CALL_2);
+
+    // (Act) Send text message in root chat
+    ChatSession rootChat = model.startChat();
+    GenerateContentResponse response = rootChat.sendMessage(SAMPLE_MESSAGE1);
+    // (Act) Create a child chat session and send message again
+    ChatSession childChat =
+        rootChat
+            .withGenerationConfig(GENERATION_CONFIG)
+            .withSafetySettings(Arrays.asList(SAFETY_SETTING))
+            .withTools(Arrays.asList(TOOL));
+    response = childChat.sendMessage(SAMPLE_MESSAGE_2);
+
+    // (Assert) root chat history should contain all 4 contents
+    List<Content> history = rootChat.getHistory();
+    assertThat(history.get(0).getParts(0).getText()).isEqualTo(SAMPLE_MESSAGE1);
+    assertThat(history.get(1).getParts(0).getText()).isEqualTo(FULL_RESPONSE_TEXT);
+    assertThat(history.get(2).getParts(0).getText()).isEqualTo(SAMPLE_MESSAGE_2);
+    assertThat(history.get(3).getParts(0).getText()).isEqualTo(RESPONSE_TEXT_2);
+
+    // (Assert) the second request (from child chat) should contained updated configurations
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable, times(2)).call(request.capture());
+    assertThat(request.getAllValues().get(1).getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
+    assertThat(request.getAllValues().get(1).getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
+    assertThat(request.getAllValues().get(1).getTools(0)).isEqualTo(TOOL);
   }
 }
