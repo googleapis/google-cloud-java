@@ -405,7 +405,7 @@ A service *may* choose to only enable retries for a subset of RPCs. It is possib
 each RPC is configured differently.
 
 ### Google Cloud Client Library Retry Concepts
-Enabling retries allow an RPC multiple attempts to try and achieve a successful call. A successful call
+Enabling retries allows an RPC multiple attempts to try and achieve a successful call. A successful call
 is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
 
 An RPC will be retried when _both_ of the following scenarios occur:
