@@ -304,20 +304,20 @@ access token will not be automatically refreshed):
 
 ```java
 Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
-        Storage storage = StorageOptions.newBuilder()
-        .setCredentials(credentials)
-        .build()
-        .getService();
+Storage storage = StorageOptions.newBuilder()
+    .setCredentials(credentials)
+    .build()
+    .getService();
 ```
 
 or:
 
 ```java
 Credentials credentials = GoogleCredentials.create(new AccessToken(accessToken, expirationTime));
-        CloudTasksSettings cloudTasksSettings = CloudTasksSettings.newBuilder()
-        .setCredentialProvider(FixedCredentialsProvider.create(credentials))
-        .build();
-        CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
+CloudTasksSettings cloudTasksSettings = CloudTasksSettings.newBuilder()
+    .setCredentialProvider(FixedCredentialsProvider.create(credentials))
+    .build();
+CloudTasksClient cloudTasksClient = CloudTasksClient.create(cloudTasksSettings);
 ```
 
 ### Application Default Credentials
@@ -365,35 +365,35 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 
 public CloudTasksClient getService() throws IOException {
-        TransportChannelProvider transportChannelProvider =
-        CloudTasksStubSettings.defaultGrpcTransportProviderBuilder()
-        .setChannelConfigurator(
-        new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
-@Override
-public ManagedChannelBuilder apply(ManagedChannelBuilder managedChannelBuilder) {
-        return managedChannelBuilder.proxyDetector(
-        new ProxyDetector() {
-@Nullable
-@Override
-public ProxiedSocketAddress proxyFor(SocketAddress socketAddress)
-        throws IOException {
-        return HttpConnectProxiedSocketAddress.newBuilder()
-        .setUsername(PROXY_USERNAME)
-        .setPassword(PROXY_PASSWORD)
-        .setProxyAddress(new InetSocketAddress(PROXY_HOST, PROXY_PORT))
-        .setTargetAddress((InetSocketAddress) socketAddress)
-        .build();
-        }
-        });
-        }
-        })
-        .build();
-        CloudTasksSettings cloudTasksSettings =
-        CloudTasksSettings.newBuilder()
-        .setTransportChannelProvider(transportChannelProvider)
-        .build();
-        return CloudTasksClient.create(cloudTasksSettings);
-        }
+  TransportChannelProvider transportChannelProvider =
+      CloudTasksStubSettings.defaultGrpcTransportProviderBuilder()
+          .setChannelConfigurator(
+              new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                @Override
+                public ManagedChannelBuilder apply(ManagedChannelBuilder managedChannelBuilder) {
+                  return managedChannelBuilder.proxyDetector(
+                      new ProxyDetector() {
+                        @Nullable
+                        @Override
+                        public ProxiedSocketAddress proxyFor(SocketAddress socketAddress)
+                            throws IOException {
+                          return HttpConnectProxiedSocketAddress.newBuilder()
+                              .setUsername(PROXY_USERNAME)
+                              .setPassword(PROXY_PASSWORD)
+                              .setProxyAddress(new InetSocketAddress(PROXY_HOST, PROXY_PORT))
+                              .setTargetAddress((InetSocketAddress) socketAddress)
+                              .build();
+                        }
+                      });
+                }
+              })
+          .build();
+  CloudTasksSettings cloudTasksSettings =
+      CloudTasksSettings.newBuilder()
+          .setTransportChannelProvider(transportChannelProvider)
+          .build();
+  return CloudTasksClient.create(cloudTasksSettings);
+}
 ```
 
 ## Long Running Operations
@@ -413,23 +413,23 @@ check the operation's status.
 For example, take a sample `createCluster` Operation in google-cloud-dataproc v4.20.0:
 ```java
 try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
-        CreateClusterRequest request =
-        CreateClusterRequest.newBuilder()
-        .setProjectId("{PROJECT_ID}")
-        .setRegion("{REGION}")
-        .setCluster(Cluster.newBuilder().build())
-        .setRequestId("{REQUEST_ID}")
-        .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
-        .build();
-        OperationFuture<Cluster, ClusterOperationMetadata> future =
-        clusterControllerClient.createClusterOperationCallable().futureCall(request);
-        // Do something.
-        Cluster response = future.get();
-        } catch (CancellationException e) {
-        // Exceeded the default RPC timeout without the Operation completing.
-        // Library is no longer polling for the Operation status. Consider 
-        // increasing the timeout.
-        }
+  CreateClusterRequest request =
+      CreateClusterRequest.newBuilder()
+          .setProjectId("{PROJECT_ID}")
+          .setRegion("{REGION}")
+          .setCluster(Cluster.newBuilder().build())
+          .setRequestId("{REQUEST_ID}")
+          .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
+          .build();
+  OperationFuture<Cluster, ClusterOperationMetadata> future =
+      clusterControllerClient.createClusterOperationCallable().futureCall(request);
+  // Do something.
+  Cluster response = future.get();
+} catch (CancellationException e) {
+  // Exceeded the default RPC timeout without the Operation completing.
+  // Library is no longer polling for the Operation status. Consider 
+  // increasing the timeout.
+}
 ```
 
 ### LRO Timeouts
@@ -452,7 +452,7 @@ For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPoll
 has these default values:
 ```java
 OperationTimedPollAlgorithm.create(
-        RetrySettings.newBuilder()
+    RetrySettings.newBuilder()
         .setInitialRetryDelay(Duration.ofMillis(5000L))
         .setRetryDelayMultiplier(1.5)
         .setMaxRetryDelay(Duration.ofMillis(45000L))
@@ -476,19 +476,19 @@ To configure the LRO values, create an OperationTimedPollAlgorithm object and up
 RPC's polling algorithm. For example:
 ```java
 ClusterControllerSettings.Builder settingsBuilder = ClusterControllerSettings.newBuilder();
-        TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
-        RetrySettings.newBuilder()
-        .setInitialRetryDelay(Duration.ofMillis(500L))
-        .setRetryDelayMultiplier(1.5)
-        .setMaxRetryDelay(Duration.ofMillis(5000L))
-        .setInitialRpcTimeout(Duration.ZERO) // ignored
-        .setRpcTimeoutMultiplier(1.0) // ignored
-        .setMaxRpcTimeout(Duration.ZERO) // ignored
-        .setTotalTimeout(Duration.ofHours(24L))	// set polling timeout to 24 hours
-        .build());
-        settingsBuilder.createClusterOperationSettings()
-        .setPollingAlgorithm(timedRetryAlgorithm);
-        ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
+TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
+		RetrySettings.newBuilder()
+				.setInitialRetryDelay(Duration.ofMillis(500L))
+				.setRetryDelayMultiplier(1.5)
+				.setMaxRetryDelay(Duration.ofMillis(5000L))
+				.setInitialRpcTimeout(Duration.ZERO) // ignored
+				.setRpcTimeoutMultiplier(1.0) // ignored
+				.setMaxRpcTimeout(Duration.ZERO) // ignored
+				.setTotalTimeout(Duration.ofHours(24L))	// set polling timeout to 24 hours
+				.build());
+settingsBuilder.createClusterOperationSettings()
+		.setPollingAlgorithm(timedRetryAlgorithm);
+ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
 ```
 
 Note: The configuration above *only* modifies the LRO values for the `createClusterOperation` RPC.
