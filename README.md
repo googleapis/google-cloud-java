@@ -397,7 +397,7 @@ public CloudTasksClient getService() throws IOException {
 ```
 
 ## Retries
-Client Libraries use retries to handle unexpected, transient failures (i.e. Server temporary unavailable).
+Client Libraries use retries to handle unexpected, transient failures (i.e. Server temporarily unavailable).
 Multiple attempts, hopefully, will result in a successful response from the server.
 
 By default, retries are configured by the Cloud Service. The configured retry parameters are defined per RPC.
@@ -455,12 +455,12 @@ Retry Delay Multiplier: 2.0
 Max Retry Delay: 500ms
 ```
 
-- Attempt 1: Random value between (1, 100]
-- Attempt 2: Random value between (1, 200]
-- Attempt 3: Random value between (1, 400]
-- Attempt 3: Random value between (1, 500]
+- Attempt 1: Random value between [1, 100]
+- Attempt 2: Random value between [1, 200]
+- Attempt 3: Random value between [1, 400]
+- Attempt 3: Random value between [1, 500]
 - ...
-- Attempt X: Random value between (1, 500]
+- Attempt X: Random value between [1, 500]
 
 ### How to find the Retry Configurations for an RPC
 Default retry params are configured inside the client's generated StubSettings' class.
