@@ -18,6 +18,12 @@ package com.example.bigtable;
 
 import static org.junit.Assert.assertThat;
 
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import java.io.IOException;
 import org.hamcrest.CoreMatchers;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -28,8 +34,25 @@ public class QuickstartTest extends BigtableBaseTest {
   private static final String TABLE_ID = "quickstart-table";
 
   @BeforeClass
-  public static void beforeClass() {
+  public static void beforeClass() throws IOException {
     initializeVariables();
+
+    // set up required table and row data if not present
+    try (BigtableTableAdminClient tableAdminClient =
+        BigtableTableAdminClient.create(projectId, instanceId)) {
+      String columnFamily = "cf1";
+      if (!tableAdminClient.exists(TABLE_ID)) {
+        tableAdminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(columnFamily));
+      }
+      try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
+        String rowKey = "r1";
+        Row row = dataClient.readRow(TABLE_ID, rowKey);
+        if (row == null) {
+          dataClient.mutateRow(
+              RowMutation.create(TABLE_ID, rowKey).setCell(columnFamily, "c1", "quickstart"));
+        }
+      }
+    }
   }
 
   @Test
