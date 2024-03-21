@@ -16,7 +16,6 @@
 
 package com.google.cloud.vertexai.api;
 
-import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
@@ -97,12 +96,10 @@ public class EndpointName implements ResourceName {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static Builder newProjectLocationEndpointBuilder() {
     return new Builder();
   }
 
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static ProjectLocationPublisherModelBuilder newProjectLocationPublisherModelBuilder() {
     return new ProjectLocationPublisherModelBuilder();
   }
@@ -115,13 +112,11 @@ public class EndpointName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EndpointName ofProjectLocationEndpointName(
       String project, String location, String endpoint) {
     return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
   }
 
-  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static EndpointName ofProjectLocationPublisherModelName(
       String project, String location, String publisher, String model) {
     return newProjectLocationPublisherModelBuilder()
@@ -141,7 +136,6 @@ public class EndpointName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationEndpointName(
       String project, String location, String endpoint) {
     return newBuilder()
@@ -152,7 +146,6 @@ public class EndpointName implements ResourceName {
         .toString();
   }
 
-  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
   public static String formatProjectLocationPublisherModelName(
       String project, String location, String publisher, String model) {
     return newProjectLocationPublisherModelBuilder()
@@ -329,7 +322,6 @@ public class EndpointName implements ResourceName {
   }
 
   /** Builder for projects/{project}/locations/{location}/publishers/{publisher}/models/{model}. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationPublisherModelBuilder {
     private String project;
     private String location;

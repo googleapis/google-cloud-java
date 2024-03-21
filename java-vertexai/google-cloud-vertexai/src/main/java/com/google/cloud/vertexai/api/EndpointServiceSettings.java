@@ -242,7 +242,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
   }
 
   /** Returns a new REST builder for this class. */
-  @BetaApi
   public static Builder newHttpJsonBuilder() {
     return Builder.createHttpJsonDefault();
   }
@@ -284,7 +283,6 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
       return new Builder(EndpointServiceStubSettings.newBuilder());
     }
 
-    @BetaApi
     private static Builder createHttpJsonDefault() {
       return new Builder(EndpointServiceStubSettings.newHttpJsonBuilder());
     }
