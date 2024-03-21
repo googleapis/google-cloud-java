@@ -65,47 +65,43 @@ public final class ToolProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "#google/cloud/vertexai/v1/tool.proto\022\030g"
+      "\n#google/cloud/vertexai/v1/tool.proto\022\030g"
           + "oogle.cloud.vertexai.v1\032\037google/api/fiel"
-          + "d_behavior.proto\032&google/cloud/vertexai/"
-          + "v1/openapi.proto\032\034google/protobuf/struct.proto\"\355\001\n"
-          + "\004Tool\022Q\n"
-          + "\025function_declarations\030\001"
-          + " \003(\0132-.google.cloud.vertexai.v1.FunctionDeclarationB\003\340A\001\022;\n"
-          + "\tretrieval\030\002 \001(\0132#."
-          + "google.cloud.vertexai.v1.RetrievalB\003\340A\001\022U\n"
-          + "\027google_search_retrieval\030\003 \001(\0132/.googl"
-          + "e.cloud.vertexai.v1.GoogleSearchRetrievalB\003\340A\001\"}\n"
-          + "\023FunctionDeclaration\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
-          + "\013description\030\002 \001(\tB\003\340A\001\0229\n\n"
-          + "parameters\030\003 \001(\0132 .google.cloud.vertexai.v1.SchemaB\003\340A\001\"M\n"
-          + "\014FunctionCall\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022*\n"
-          + "\004args\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\"U\n"
-          + "\020FunctionResponse\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022.\n"
-          + "\010response\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\002\"}\n"
-          + "\tRetrieval\022D\n"
-          + "\020vertex_ai_search\030\002"
-          + " \001(\0132(.google.cloud.vertexai.v1.VertexAISearchH\000\022 \n"
-          + "\023disable_attribution\030\003 \001(\010B\003\340A\001B\010\n"
-          + "\006source\"(\n"
-          + "\016VertexAISearch\022\026\n"
-          + "\tdatastore\030\001 \001(\tB\003\340A\002\"9\n"
-          + "\025GoogleSearchRetrieval\022 \n"
-          + "\023disable_attribution\030\001 \001(\010B\003\340A\001B\306\001\n"
-          + "\035com.google.cloud.vertexai.apiB\tToolProtoP\001Z>cloud.google.com/go/aipl"
-          + "atform/apiv1/aiplatformpb;aiplatformpb\252\002"
-          + "\032Google.Cloud.AIPlatform.V1\312\002\032Google\\Clo"
-          + "ud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "d_behavior.proto\032\031google/api/resource.pr"
+          + "oto\032&google/cloud/vertexai/v1/openapi.pr"
+          + "oto\032\034google/protobuf/struct.proto\"\355\001\n\004To"
+          + "ol\022Q\n\025function_declarations\030\001 \003(\0132-.goog"
+          + "le.cloud.vertexai.v1.FunctionDeclaration"
+          + "B\003\340A\001\022;\n\tretrieval\030\002 \001(\0132#.google.cloud."
+          + "vertexai.v1.RetrievalB\003\340A\001\022U\n\027google_sea"
+          + "rch_retrieval\030\003 \001(\0132/.google.cloud.verte"
+          + "xai.v1.GoogleSearchRetrievalB\003\340A\001\"}\n\023Fun"
+          + "ctionDeclaration\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\030\n\013d"
+          + "escription\030\002 \001(\tB\003\340A\001\0229\n\nparameters\030\003 \001("
+          + "\0132 .google.cloud.vertexai.v1.SchemaB\003\340A\001"
+          + "\"M\n\014FunctionCall\022\021\n\004name\030\001 \001(\tB\003\340A\002\022*\n\004a"
+          + "rgs\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\""
+          + "U\n\020FunctionResponse\022\021\n\004name\030\001 \001(\tB\003\340A\002\022."
+          + "\n\010response\030\002 \001(\0132\027.google.protobuf.Struc"
+          + "tB\003\340A\002\"}\n\tRetrieval\022D\n\020vertex_ai_search\030"
+          + "\002 \001(\0132(.google.cloud.vertexai.v1.VertexA"
+          + "ISearchH\000\022 \n\023disable_attribution\030\003 \001(\010B\003"
+          + "\340A\001B\010\n\006source\"(\n\016VertexAISearch\022\026\n\tdatas"
+          + "tore\030\001 \001(\tB\003\340A\002\"9\n\025GoogleSearchRetrieval"
+          + "\022 \n\023disable_attribution\030\001 \001(\010B\003\340A\001B\306\001\n\035c"
+          + "om.google.cloud.vertexai.apiB\tToolProtoP"
+          + "\001Z>cloud.google.com/go/aiplatform/apiv1/"
+          + "aiplatformpb;aiplatformpb\252\002\032Google.Cloud"
+          + ".AIPlatform.V1\312\002\032Google\\Cloud\\AIPlatform"
+          + "\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.vertexai.api.OpenApiProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
@@ -171,6 +167,7 @@ public final class ToolProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.vertexai.api.OpenApiProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
   }

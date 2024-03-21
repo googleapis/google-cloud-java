@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2023 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -52,6 +52,9 @@ enum AcceleratorType {
 
   // Nvidia L4 GPU.
   NVIDIA_L4 = 11;
+
+  // Nvidia H100 80Gb GPU.
+  NVIDIA_H100_80GB = 13;
 
   // TPU v2.
   TPU_V2 = 6;

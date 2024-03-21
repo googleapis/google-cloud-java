@@ -182,6 +182,41 @@ public final class GenerativeModel {
   }
 
   /**
+   * Creates a copy of the current model with updated GenerationConfig.
+   *
+   * @param generationConfig a {@link com.google.cloud.vertexai.api.GenerationConfig} that will be
+   *     used in the new model.
+   * @return a new {@link GenerativeModel} instance with the specified GenerationConfig.
+   */
+  public GenerativeModel withGenerationConfig(GenerationConfig generationConfig) {
+    return new GenerativeModel(modelName, generationConfig, safetySettings, tools, vertexAi);
+  }
+
+  /**
+   * Creates a copy of the current model with updated safetySettings.
+   *
+   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will
+   *     be used in the new model.
+   * @return a new {@link GenerativeModel} instance with the specified safetySettings.
+   */
+  public GenerativeModel withSafetySettings(List<SafetySetting> safetySettings) {
+    return new GenerativeModel(
+        modelName, generationConfig, ImmutableList.copyOf(safetySettings), tools, vertexAi);
+  }
+
+  /**
+   * Creates a copy of the current model with updated tools.
+   *
+   * @param safetySettings a list of {@link com.google.cloud.vertexai.api.Tool} that will be used in
+   *     the new model.
+   * @return a new {@link GenerativeModel} instance with the specified tools.
+   */
+  public GenerativeModel withTools(List<Tool> tools) {
+    return new GenerativeModel(
+        modelName, generationConfig, safetySettings, ImmutableList.copyOf(tools), vertexAi);
+  }
+
+  /**
    * Counts tokens in a text message.
    *
    * @param text a text message to count tokens
