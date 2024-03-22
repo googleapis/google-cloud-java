@@ -97,7 +97,7 @@ public final class ChatSession {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession =
         new ChatSession(model.withSafetySettings(safetySettings), Optional.of(rootChat));
-    newChatSession.setHistory(history);
+    newChatSession.history = history;
     return newChatSession;
   }
 
@@ -112,7 +112,7 @@ public final class ChatSession {
   public ChatSession withTools(List<Tool> tools) {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession = new ChatSession(model.withTools(tools), Optional.of(rootChat));
-    newChatSession.setHistory(history);
+    newChatSession.history = history;
     return newChatSession;
   }
 
@@ -265,7 +265,7 @@ public final class ChatSession {
   /** Set the history to a list of Content */
   @BetaApi
   public void setHistory(List<Content> history) {
-    this.history = history;
+    this.history = new ArrayList<>(history);
   }
 
   /** Sets the current response of the root chat session (if exists) or the current chat session. */
