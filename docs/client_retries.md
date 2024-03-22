@@ -6,7 +6,8 @@ By default, retries are configured by the Cloud Service. The configured retry pa
 A service *may* choose to only enable retries for a subset of RPCs. It is possible that for a single service,
 each RPC is configured differently.
 
-For example, using Java-Asset v3.41.0, the default configurations are configured in the following files:
+## RPC Retry Configurations
+Using Java-Asset v3.41.0 as an example, the default configurations are configured in the following files:
 
 Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082)
 
@@ -53,16 +54,16 @@ is a response from a server that returns an `OK` Status Code (from gRPC) or a `2
 ### When is an RPC retried
 Take a sample RetrySettings configuration
 ```java
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
+settings =
+  RetrySettings.newBuilder()
+      .setInitialRetryDelay(Duration.ofMillis(100L))
+      .setRetryDelayMultiplier(1.3)
+      .setMaxRetryDelay(Duration.ofMillis(60000L))
+      .setInitialRpcTimeout(Duration.ofMillis(60000L))
+      .setRpcTimeoutMultiplier(1.0)
+      .setMaxRpcTimeout(Duration.ofMillis(60000L))
+      .setTotalTimeout(Duration.ofMillis(60000L))
+      .build();
 ```
 Individual RPC Bounds (an attempt) are controlled by the following settings:
 - setInitialRetryDelay
@@ -84,7 +85,7 @@ Note: If only one (or neither) of the scenarios above are true, then the RPC wil
 i.e. If the total timeout has not been exceeded, but the latest attempt receives a non-retryable status code.
 
 *The client library will mark a status code as retryable internally. It is marked as retryable if the response's
-status code matches with any of an RPC's configure retryable status codes.
+status code matches with any of an RPC's configured retryable status codes.
 
 **When configuring the RPC bounds, you may configure the bounds for each attempt as well as the
 total RPC's bounds. The retry algorithm will ensure that an individual attempt's bounds falls within
@@ -95,8 +96,9 @@ Jitter is added variance via randomness to spread out when the RPCs are invoked.
 Client Libraries enable jitter for retries. When jitter is enabled with exponential backoff, the client libraries
 are able to spread out the retry attempts without overwhelming the server.
 
-The jitter randomness is computed with on the retry delay. On every attempt, the retry algorithm will compute
-a random value with the between [1, RETRY_DELAY].
+The jitter randomness is computed on the retry delay. Before each attempt, the retry algorithm will compute
+a random value with the between [1, RETRY_DELAY]. This computed value is the *approximate* delay before the request
+is sent to the server.
 
 For example, with the following retry configurations:
 ```
@@ -112,9 +114,6 @@ Max Retry Delay: 500ms
 - ...
 - Attempt X: Random value between [1, 500]
 
-## How to find the Retry Configurations for an RPC
-Default retry params are configured inside the client's generated StubSettings' class.
-
 ## Retry Examples
 The following examples below show the behavior of some retry configurations.
 
@@ -124,12 +123,12 @@ at the end of each attempt.
 ### No Retry
 ```java
 RetrySettings defaultNoRetrySettings =
-        RetrySettings.newBuilder()
-        // ... Other configurations do not matter
-        .setTotalTimeout(Duration.ofMillis(5000L))
-        // Explicitly set retries as disabled (maxAttempts == 1)
-        .setMaxAttempts(1)
-        .build();
+    RetrySettings.newBuilder()
+    // ... Other configurations do not matter
+    .setTotalTimeout(Duration.ofMillis(5000L))
+    // Explicitly set retries as disabled (maxAttempts == 1)
+    .setMaxAttempts(1)
+    .build();
 ```
 
 The following table shows the attempts:
