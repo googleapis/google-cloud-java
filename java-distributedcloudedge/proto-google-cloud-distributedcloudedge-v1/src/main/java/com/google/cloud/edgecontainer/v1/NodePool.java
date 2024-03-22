@@ -43,6 +43,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     nodeLocation_ = "";
     machineFilter_ = "";
+    nodeVersion_ = "";
   }
 
   @java.lang.Override
@@ -122,8 +123,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-     * disks. Only applicable if kms_key is set.
+     * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+     * protecting node local disks. Only applicable if kms_key is set.
      * </pre>
      *
      * <code>
@@ -137,8 +138,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-     * disks. Only applicable if kms_key is set.
+     * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+     * protecting node local disks. Only applicable if kms_key is set.
      * </pre>
      *
      * <code>
@@ -153,10 +154,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-     * nodes may go offline as they cannot access their local data. This can be
-     * caused by a lack of permissions to use the key, or if the key is disabled
-     * or deleted.
+     * Output only. Availability of the Cloud KMS CryptoKey. If not
+     * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+     * local data. This can be caused by a lack of permissions to use the key,
+     * or if the key is disabled or deleted.
      * </pre>
      *
      * <code>
@@ -170,10 +171,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-     * nodes may go offline as they cannot access their local data. This can be
-     * caused by a lack of permissions to use the key, or if the key is disabled
-     * or deleted.
+     * Output only. Availability of the Cloud KMS CryptoKey. If not
+     * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+     * local data. This can be caused by a lack of permissions to use the key,
+     * or if the key is disabled or deleted.
      * </pre>
      *
      * <code>
@@ -188,9 +189,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Error status returned by Cloud KMS when using this key. This field may be
-     * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-     * If populated, this field contains the error status reported by Cloud KMS.
+     * Output only. Error status returned by Cloud KMS when using this key. This
+     * field may be populated only if `kms_key_state` is not
+     * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+     * error status reported by Cloud KMS.
      * </pre>
      *
      * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -202,9 +204,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Error status returned by Cloud KMS when using this key. This field may be
-     * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-     * If populated, this field contains the error status reported by Cloud KMS.
+     * Output only. Error status returned by Cloud KMS when using this key. This
+     * field may be populated only if `kms_key_state` is not
+     * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+     * error status reported by Cloud KMS.
      * </pre>
      *
      * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -216,9 +219,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Error status returned by Cloud KMS when using this key. This field may be
-     * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-     * If populated, this field contains the error status reported by Cloud KMS.
+     * Output only. Error status returned by Cloud KMS when using this key. This
+     * field may be populated only if `kms_key_state` is not
+     * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+     * error status reported by Cloud KMS.
      * </pre>
      *
      * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -341,8 +345,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-     * disks. Only applicable if kms_key is set.
+     * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+     * protecting node local disks. Only applicable if kms_key is set.
      * </pre>
      *
      * <code>
@@ -367,8 +371,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-     * disks. Only applicable if kms_key is set.
+     * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+     * protecting node local disks. Only applicable if kms_key is set.
      * </pre>
      *
      * <code>
@@ -396,10 +400,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-     * nodes may go offline as they cannot access their local data. This can be
-     * caused by a lack of permissions to use the key, or if the key is disabled
-     * or deleted.
+     * Output only. Availability of the Cloud KMS CryptoKey. If not
+     * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+     * local data. This can be caused by a lack of permissions to use the key,
+     * or if the key is disabled or deleted.
      * </pre>
      *
      * <code>
@@ -416,10 +420,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-     * nodes may go offline as they cannot access their local data. This can be
-     * caused by a lack of permissions to use the key, or if the key is disabled
-     * or deleted.
+     * Output only. Availability of the Cloud KMS CryptoKey. If not
+     * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+     * local data. This can be caused by a lack of permissions to use the key,
+     * or if the key is disabled or deleted.
      * </pre>
      *
      * <code>
@@ -441,9 +445,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Error status returned by Cloud KMS when using this key. This field may be
-     * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-     * If populated, this field contains the error status reported by Cloud KMS.
+     * Output only. Error status returned by Cloud KMS when using this key. This
+     * field may be populated only if `kms_key_state` is not
+     * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+     * error status reported by Cloud KMS.
      * </pre>
      *
      * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -458,9 +463,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Error status returned by Cloud KMS when using this key. This field may be
-     * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-     * If populated, this field contains the error status reported by Cloud KMS.
+     * Output only. Error status returned by Cloud KMS when using this key. This
+     * field may be populated only if `kms_key_state` is not
+     * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+     * error status reported by Cloud KMS.
      * </pre>
      *
      * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -475,9 +481,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Error status returned by Cloud KMS when using this key. This field may be
-     * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-     * If populated, this field contains the error status reported by Cloud KMS.
+     * Output only. Error status returned by Cloud KMS when using this key. This
+     * field may be populated only if `kms_key_state` is not
+     * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+     * error status reported by Cloud KMS.
      * </pre>
      *
      * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1065,8 +1072,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-       * disks. Only applicable if kms_key is set.
+       * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+       * protecting node local disks. Only applicable if kms_key is set.
        * </pre>
        *
        * <code>
@@ -1090,8 +1097,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-       * disks. Only applicable if kms_key is set.
+       * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+       * protecting node local disks. Only applicable if kms_key is set.
        * </pre>
        *
        * <code>
@@ -1115,8 +1122,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-       * disks. Only applicable if kms_key is set.
+       * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+       * protecting node local disks. Only applicable if kms_key is set.
        * </pre>
        *
        * <code>
@@ -1139,8 +1146,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-       * disks. Only applicable if kms_key is set.
+       * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+       * protecting node local disks. Only applicable if kms_key is set.
        * </pre>
        *
        * <code>
@@ -1159,8 +1166,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The Cloud KMS CryptoKeyVersion currently in use for protecting node local
-       * disks. Only applicable if kms_key is set.
+       * Output only. The Cloud KMS CryptoKeyVersion currently in use for
+       * protecting node local disks. Only applicable if kms_key is set.
        * </pre>
        *
        * <code>
@@ -1186,10 +1193,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-       * nodes may go offline as they cannot access their local data. This can be
-       * caused by a lack of permissions to use the key, or if the key is disabled
-       * or deleted.
+       * Output only. Availability of the Cloud KMS CryptoKey. If not
+       * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+       * local data. This can be caused by a lack of permissions to use the key,
+       * or if the key is disabled or deleted.
        * </pre>
        *
        * <code>
@@ -1206,10 +1213,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-       * nodes may go offline as they cannot access their local data. This can be
-       * caused by a lack of permissions to use the key, or if the key is disabled
-       * or deleted.
+       * Output only. Availability of the Cloud KMS CryptoKey. If not
+       * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+       * local data. This can be caused by a lack of permissions to use the key,
+       * or if the key is disabled or deleted.
        * </pre>
        *
        * <code>
@@ -1229,10 +1236,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-       * nodes may go offline as they cannot access their local data. This can be
-       * caused by a lack of permissions to use the key, or if the key is disabled
-       * or deleted.
+       * Output only. Availability of the Cloud KMS CryptoKey. If not
+       * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+       * local data. This can be caused by a lack of permissions to use the key,
+       * or if the key is disabled or deleted.
        * </pre>
        *
        * <code>
@@ -1251,10 +1258,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-       * nodes may go offline as they cannot access their local data. This can be
-       * caused by a lack of permissions to use the key, or if the key is disabled
-       * or deleted.
+       * Output only. Availability of the Cloud KMS CryptoKey. If not
+       * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+       * local data. This can be caused by a lack of permissions to use the key,
+       * or if the key is disabled or deleted.
        * </pre>
        *
        * <code>
@@ -1277,10 +1284,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Availability of the Cloud KMS CryptoKey. If not `KEY_AVAILABLE`, then
-       * nodes may go offline as they cannot access their local data. This can be
-       * caused by a lack of permissions to use the key, or if the key is disabled
-       * or deleted.
+       * Output only. Availability of the Cloud KMS CryptoKey. If not
+       * `KEY_AVAILABLE`, then nodes may go offline as they cannot access their
+       * local data. This can be caused by a lack of permissions to use the key,
+       * or if the key is disabled or deleted.
        * </pre>
        *
        * <code>
@@ -1304,9 +1311,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1321,9 +1329,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1342,9 +1351,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1367,9 +1377,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1389,9 +1400,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1419,9 +1431,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1441,9 +1454,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1458,9 +1472,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1477,9 +1492,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Error status returned by Cloud KMS when using this key. This field may be
-       * populated only if `kms_key_state` is not `KMS_KEY_STATE_KEY_AVAILABLE`.
-       * If populated, this field contains the error status reported by Cloud KMS.
+       * Output only. Error status returned by Cloud KMS when using this key. This
+       * field may be populated only if `kms_key_state` is not
+       * `KMS_KEY_STATE_KEY_AVAILABLE`. If populated, this field contains the
+       * error status reported by Cloud KMS.
        * </pre>
        *
        * <code>.google.rpc.Status kms_status = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1563,6 +1579,840 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption
         getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface NodeConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.edgecontainer.v1.NodePool.NodeConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    int getLabelsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    boolean containsLabels(java.lang.String key);
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getLabels();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    /* nullable */
+    java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    java.lang.String getLabelsOrThrow(java.lang.String key);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for each node in the NodePool
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.edgecontainer.v1.NodePool.NodeConfig}
+   */
+  public static final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.edgecontainer.v1.NodePool.NodeConfig)
+      NodeConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NodeConfig.newBuilder() to construct.
+    private NodeConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NodeConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NodeConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.edgecontainer.v1.ResourcesProto
+          .internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.edgecontainer.v1.ResourcesProto
+          .internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.class,
+              com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.Builder.class);
+    }
+
+    public static final int LABELS_FIELD_NUMBER = 1;
+
+    private static final class LabelsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.edgecontainer.v1.ResourcesProto
+                  .internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_LabelsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Kubernetes node labels
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 1);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetLabels().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+            LabelsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, labels__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.edgecontainer.v1.NodePool.NodeConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.edgecontainer.v1.NodePool.NodeConfig other =
+          (com.google.cloud.edgecontainer.v1.NodePool.NodeConfig) obj;
+
+      if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetLabels().getMap().isEmpty()) {
+        hash = (37 * hash) + LABELS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetLabels().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.edgecontainer.v1.NodePool.NodeConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for each node in the NodePool
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.edgecontainer.v1.NodePool.NodeConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.edgecontainer.v1.NodePool.NodeConfig)
+        com.google.cloud.edgecontainer.v1.NodePool.NodeConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetLabels();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableLabels();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.class,
+                com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        internalGetMutableLabels().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.edgecontainer.v1.ResourcesProto
+            .internal_static_google_cloud_edgecontainer_v1_NodePool_NodeConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.NodePool.NodeConfig getDefaultInstanceForType() {
+        return com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.NodePool.NodeConfig build() {
+        com.google.cloud.edgecontainer.v1.NodePool.NodeConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.edgecontainer.v1.NodePool.NodeConfig buildPartial() {
+        com.google.cloud.edgecontainer.v1.NodePool.NodeConfig result =
+            new com.google.cloud.edgecontainer.v1.NodePool.NodeConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.edgecontainer.v1.NodePool.NodeConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.labels_ = internalGetLabels();
+          result.labels_.makeImmutable();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.edgecontainer.v1.NodePool.NodeConfig) {
+          return mergeFrom((com.google.cloud.edgecontainer.v1.NodePool.NodeConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.edgecontainer.v1.NodePool.NodeConfig other) {
+        if (other == com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.getDefaultInstance())
+          return this;
+        internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                      input.readMessage(
+                          LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableLabels()
+                      .getMutableMap()
+                      .put(labels__.getKey(), labels__.getValue());
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+        if (labels_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+        }
+        return labels_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableLabels() {
+        if (labels_ == null) {
+          labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+        }
+        if (!labels_.isMutable()) {
+          labels_ = labels_.copy();
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return labels_;
+      }
+
+      public int getLabelsCount() {
+        return internalGetLabels().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Kubernetes node labels
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsLabels(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetLabels().getMap().containsKey(key);
+      }
+      /** Use {@link #getLabelsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+        return getLabelsMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Kubernetes node labels
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+        return internalGetLabels().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Kubernetes node labels
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getLabelsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Kubernetes node labels
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getLabelsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearLabels() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableLabels().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Kubernetes node labels
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeLabels(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableLabels().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableLabels().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Kubernetes node labels
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putLabels(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableLabels().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Kubernetes node labels
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; labels = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableLabels().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.edgecontainer.v1.NodePool.NodeConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.edgecontainer.v1.NodePool.NodeConfig)
+    private static final com.google.cloud.edgecontainer.v1.NodePool.NodeConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.edgecontainer.v1.NodePool.NodeConfig();
+    }
+
+    public static com.google.cloud.edgecontainer.v1.NodePool.NodeConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NodeConfig> PARSER =
+        new com.google.protobuf.AbstractParser<NodeConfig>() {
+          @java.lang.Override
+          public NodeConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NodeConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NodeConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.NodePool.NodeConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -1955,8 +2805,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Local disk encryption options. This field is only used when enabling CMEK
-   * support.
+   * Optional. Local disk encryption options. This field is only used when
+   * enabling CMEK support.
    * </pre>
    *
    * <code>
@@ -1973,8 +2823,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Local disk encryption options. This field is only used when enabling CMEK
-   * support.
+   * Optional. Local disk encryption options. This field is only used when
+   * enabling CMEK support.
    * </pre>
    *
    * <code>
@@ -1993,8 +2843,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Local disk encryption options. This field is only used when enabling CMEK
-   * support.
+   * Optional. Local disk encryption options. This field is only used when
+   * enabling CMEK support.
    * </pre>
    *
    * <code>
@@ -2007,6 +2857,113 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     return localDiskEncryption_ == null
         ? com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption.getDefaultInstance()
         : localDiskEncryption_;
+  }
+
+  public static final int NODE_VERSION_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The lowest release version among all worker nodes.
+   * </pre>
+   *
+   * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The nodeVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getNodeVersion() {
+    java.lang.Object ref = nodeVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nodeVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The lowest release version among all worker nodes.
+   * </pre>
+   *
+   * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for nodeVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNodeVersionBytes() {
+    java.lang.Object ref = nodeVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nodeVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NODE_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.edgecontainer.v1.NodePool.NodeConfig nodeConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for each node in the NodePool
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for each node in the NodePool
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.NodePool.NodeConfig getNodeConfig() {
+    return nodeConfig_ == null
+        ? com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.getDefaultInstance()
+        : nodeConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for each node in the NodePool
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.NodePool.NodeConfigOrBuilder getNodeConfigOrBuilder() {
+    return nodeConfig_ == null
+        ? com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.getDefaultInstance()
+        : nodeConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2045,6 +3002,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(9, getLocalDiskEncryption());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, nodeVersion_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(11, getNodeConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2086,6 +3049,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLocalDiskEncryption());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, nodeVersion_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getNodeConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2118,6 +3087,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasLocalDiskEncryption() != other.hasLocalDiskEncryption()) return false;
     if (hasLocalDiskEncryption()) {
       if (!getLocalDiskEncryption().equals(other.getLocalDiskEncryption())) return false;
+    }
+    if (!getNodeVersion().equals(other.getNodeVersion())) return false;
+    if (hasNodeConfig() != other.hasNodeConfig()) return false;
+    if (hasNodeConfig()) {
+      if (!getNodeConfig().equals(other.getNodeConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2153,6 +3127,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     if (hasLocalDiskEncryption()) {
       hash = (37 * hash) + LOCAL_DISK_ENCRYPTION_FIELD_NUMBER;
       hash = (53 * hash) + getLocalDiskEncryption().hashCode();
+    }
+    hash = (37 * hash) + NODE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getNodeVersion().hashCode();
+    if (hasNodeConfig()) {
+      hash = (37 * hash) + NODE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2320,6 +3300,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getLocalDiskEncryptionFieldBuilder();
+        getNodeConfigFieldBuilder();
       }
     }
 
@@ -2346,6 +3327,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (localDiskEncryptionBuilder_ != null) {
         localDiskEncryptionBuilder_.dispose();
         localDiskEncryptionBuilder_ = null;
+      }
+      nodeVersion_ = "";
+      nodeConfig_ = null;
+      if (nodeConfigBuilder_ != null) {
+        nodeConfigBuilder_.dispose();
+        nodeConfigBuilder_ = null;
       }
       return this;
     }
@@ -2414,6 +3401,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 ? localDiskEncryption_
                 : localDiskEncryptionBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.nodeVersion_ = nodeVersion_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.nodeConfig_ = nodeConfigBuilder_ == null ? nodeConfig_ : nodeConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2491,6 +3485,14 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasLocalDiskEncryption()) {
         mergeLocalDiskEncryption(other.getLocalDiskEncryption());
+      }
+      if (!other.getNodeVersion().isEmpty()) {
+        nodeVersion_ = other.nodeVersion_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (other.hasNodeConfig()) {
+        mergeNodeConfig(other.getNodeConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2573,6 +3575,18 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 82:
+              {
+                nodeVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getNodeConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3567,8 +4581,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3584,8 +4598,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3607,8 +4621,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3633,8 +4647,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3656,8 +4670,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3689,8 +4703,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3711,8 +4725,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3729,8 +4743,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3751,8 +4765,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Local disk encryption options. This field is only used when enabling CMEK
-     * support.
+     * Optional. Local disk encryption options. This field is only used when
+     * enabling CMEK support.
      * </pre>
      *
      * <code>
@@ -3774,6 +4788,317 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         localDiskEncryption_ = null;
       }
       return localDiskEncryptionBuilder_;
+    }
+
+    private java.lang.Object nodeVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The lowest release version among all worker nodes.
+     * </pre>
+     *
+     * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The nodeVersion.
+     */
+    public java.lang.String getNodeVersion() {
+      java.lang.Object ref = nodeVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nodeVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The lowest release version among all worker nodes.
+     * </pre>
+     *
+     * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for nodeVersion.
+     */
+    public com.google.protobuf.ByteString getNodeVersionBytes() {
+      java.lang.Object ref = nodeVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nodeVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The lowest release version among all worker nodes.
+     * </pre>
+     *
+     * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The nodeVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nodeVersion_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The lowest release version among all worker nodes.
+     * </pre>
+     *
+     * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNodeVersion() {
+      nodeVersion_ = getDefaultInstance().getNodeVersion();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The lowest release version among all worker nodes.
+     * </pre>
+     *
+     * <code>string node_version = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for nodeVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNodeVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nodeVersion_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.edgecontainer.v1.NodePool.NodeConfig nodeConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.NodePool.NodeConfig,
+            com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.Builder,
+            com.google.cloud.edgecontainer.v1.NodePool.NodeConfigOrBuilder>
+        nodeConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nodeConfig field is set.
+     */
+    public boolean hasNodeConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nodeConfig.
+     */
+    public com.google.cloud.edgecontainer.v1.NodePool.NodeConfig getNodeConfig() {
+      if (nodeConfigBuilder_ == null) {
+        return nodeConfig_ == null
+            ? com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.getDefaultInstance()
+            : nodeConfig_;
+      } else {
+        return nodeConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeConfig(com.google.cloud.edgecontainer.v1.NodePool.NodeConfig value) {
+      if (nodeConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeConfig_ = value;
+      } else {
+        nodeConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeConfig(
+        com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.Builder builderForValue) {
+      if (nodeConfigBuilder_ == null) {
+        nodeConfig_ = builderForValue.build();
+      } else {
+        nodeConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNodeConfig(com.google.cloud.edgecontainer.v1.NodePool.NodeConfig value) {
+      if (nodeConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && nodeConfig_ != null
+            && nodeConfig_
+                != com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.getDefaultInstance()) {
+          getNodeConfigBuilder().mergeFrom(value);
+        } else {
+          nodeConfig_ = value;
+        }
+      } else {
+        nodeConfigBuilder_.mergeFrom(value);
+      }
+      if (nodeConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNodeConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      nodeConfig_ = null;
+      if (nodeConfigBuilder_ != null) {
+        nodeConfigBuilder_.dispose();
+        nodeConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.Builder getNodeConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getNodeConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.edgecontainer.v1.NodePool.NodeConfigOrBuilder getNodeConfigOrBuilder() {
+      if (nodeConfigBuilder_ != null) {
+        return nodeConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeConfig_ == null
+            ? com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.getDefaultInstance()
+            : nodeConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for each node in the NodePool
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.edgecontainer.v1.NodePool.NodeConfig node_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.edgecontainer.v1.NodePool.NodeConfig,
+            com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.Builder,
+            com.google.cloud.edgecontainer.v1.NodePool.NodeConfigOrBuilder>
+        getNodeConfigFieldBuilder() {
+      if (nodeConfigBuilder_ == null) {
+        nodeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.edgecontainer.v1.NodePool.NodeConfig,
+                com.google.cloud.edgecontainer.v1.NodePool.NodeConfig.Builder,
+                com.google.cloud.edgecontainer.v1.NodePool.NodeConfigOrBuilder>(
+                getNodeConfig(), getParentForChildren(), isClean());
+        nodeConfig_ = null;
+      }
+      return nodeConfigBuilder_;
     }
 
     @java.lang.Override

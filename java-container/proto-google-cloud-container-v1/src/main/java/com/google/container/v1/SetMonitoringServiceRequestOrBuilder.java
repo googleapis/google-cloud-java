@@ -36,7 +36,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2850
+   *     google/container/v1/cluster_service.proto;l=2857
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -53,7 +53,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2850
+   *     google/container/v1/cluster_service.proto;l=2857
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -72,7 +72,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2856
+   *     google/container/v1/cluster_service.proto;l=2863
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -90,7 +90,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2856
+   *     google/container/v1/cluster_service.proto;l=2863
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2860
+   *     google/container/v1/cluster_service.proto;l=2867
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface SetMonitoringServiceRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.SetMonitoringServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2860
+   *     google/container/v1/cluster_service.proto;l=2867
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated

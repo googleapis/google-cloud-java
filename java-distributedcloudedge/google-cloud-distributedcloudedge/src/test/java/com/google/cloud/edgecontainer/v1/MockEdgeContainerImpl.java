@@ -143,6 +143,27 @@ public class MockEdgeContainerImpl extends EdgeContainerImplBase {
   }
 
   @Override
+  public void upgradeCluster(
+      UpgradeClusterRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpgradeCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteCluster(
       DeleteClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -181,6 +202,28 @@ public class MockEdgeContainerImpl extends EdgeContainerImplBase {
                   "Unrecognized response type %s for method GenerateAccessToken, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateAccessTokenResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateOfflineCredential(
+      GenerateOfflineCredentialRequest request,
+      StreamObserver<GenerateOfflineCredentialResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateOfflineCredentialResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateOfflineCredentialResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateOfflineCredential, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateOfflineCredentialResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -411,6 +454,27 @@ public class MockEdgeContainerImpl extends EdgeContainerImplBase {
                   "Unrecognized response type %s for method DeleteVpnConnection, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getServerConfig(
+      GetServerConfigRequest request, StreamObserver<ServerConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ServerConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ServerConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServerConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ServerConfig.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -44,6 +44,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     bgpRoutingMode_ = 0;
     cluster_ = "";
     vpc_ = "";
+    router_ = "";
   }
 
   @java.lang.Override
@@ -272,35 +273,45 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It is used to
-     * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-     * SA is changed during/after a VPN connection is created, you need to
-     * remove the Cloud Router and Cloud VPN resources in |project_id|.
-     * It is in the form of
+     * Optional. The service account in the VPC project configured by user. It
+     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+     * connection. If this SA is changed during/after a VPN connection is
+     * created, you need to remove the Cloud Router and Cloud VPN resources in
+     * |project_id|. It is in the form of
      * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
      * </pre>
      *
-     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
      * @return The serviceAccount.
      */
+    @java.lang.Deprecated
     java.lang.String getServiceAccount();
     /**
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It is used to
-     * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-     * SA is changed during/after a VPN connection is created, you need to
-     * remove the Cloud Router and Cloud VPN resources in |project_id|.
-     * It is in the form of
+     * Optional. The service account in the VPC project configured by user. It
+     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+     * connection. If this SA is changed during/after a VPN connection is
+     * created, you need to remove the Cloud Router and Cloud VPN resources in
+     * |project_id|. It is in the form of
      * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
      * </pre>
      *
-     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
      * @return The bytes for serviceAccount.
      */
+    @java.lang.Deprecated
     com.google.protobuf.ByteString getServiceAccountBytes();
   }
   /**
@@ -409,19 +420,24 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It is used to
-     * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-     * SA is changed during/after a VPN connection is created, you need to
-     * remove the Cloud Router and Cloud VPN resources in |project_id|.
-     * It is in the form of
+     * Optional. The service account in the VPC project configured by user. It
+     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+     * connection. If this SA is changed during/after a VPN connection is
+     * created, you need to remove the Cloud Router and Cloud VPN resources in
+     * |project_id|. It is in the form of
      * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
      * </pre>
      *
-     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
      * @return The serviceAccount.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.lang.String getServiceAccount() {
       java.lang.Object ref = serviceAccount_;
       if (ref instanceof java.lang.String) {
@@ -437,19 +453,24 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The service account in the VPC project configured by user. It is used to
-     * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-     * SA is changed during/after a VPN connection is created, you need to
-     * remove the Cloud Router and Cloud VPN resources in |project_id|.
-     * It is in the form of
+     * Optional. The service account in the VPC project configured by user. It
+     * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+     * connection. If this SA is changed during/after a VPN connection is
+     * created, you need to remove the Cloud Router and Cloud VPN resources in
+     * |project_id|. It is in the form of
      * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
      * </pre>
      *
-     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+     *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
      * @return The bytes for serviceAccount.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getServiceAccountBytes() {
       java.lang.Object ref = serviceAccount_;
       if (ref instanceof java.lang.String) {
@@ -952,18 +973,23 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It is used to
-       * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-       * SA is changed during/after a VPN connection is created, you need to
-       * remove the Cloud Router and Cloud VPN resources in |project_id|.
-       * It is in the form of
+       * Optional. The service account in the VPC project configured by user. It
+       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+       * connection. If this SA is changed during/after a VPN connection is
+       * created, you need to remove the Cloud Router and Cloud VPN resources in
+       * |project_id|. It is in the form of
        * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
        * </pre>
        *
-       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
        * @return The serviceAccount.
        */
+      @java.lang.Deprecated
       public java.lang.String getServiceAccount() {
         java.lang.Object ref = serviceAccount_;
         if (!(ref instanceof java.lang.String)) {
@@ -979,18 +1005,23 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It is used to
-       * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-       * SA is changed during/after a VPN connection is created, you need to
-       * remove the Cloud Router and Cloud VPN resources in |project_id|.
-       * It is in the form of
+       * Optional. The service account in the VPC project configured by user. It
+       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+       * connection. If this SA is changed during/after a VPN connection is
+       * created, you need to remove the Cloud Router and Cloud VPN resources in
+       * |project_id|. It is in the form of
        * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
        * </pre>
        *
-       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
        * @return The bytes for serviceAccount.
        */
+      @java.lang.Deprecated
       public com.google.protobuf.ByteString getServiceAccountBytes() {
         java.lang.Object ref = serviceAccount_;
         if (ref instanceof String) {
@@ -1006,19 +1037,24 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It is used to
-       * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-       * SA is changed during/after a VPN connection is created, you need to
-       * remove the Cloud Router and Cloud VPN resources in |project_id|.
-       * It is in the form of
+       * Optional. The service account in the VPC project configured by user. It
+       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+       * connection. If this SA is changed during/after a VPN connection is
+       * created, you need to remove the Cloud Router and Cloud VPN resources in
+       * |project_id|. It is in the form of
        * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
        * </pre>
        *
-       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
        * @param value The serviceAccount to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setServiceAccount(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1032,18 +1068,23 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It is used to
-       * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-       * SA is changed during/after a VPN connection is created, you need to
-       * remove the Cloud Router and Cloud VPN resources in |project_id|.
-       * It is in the form of
+       * Optional. The service account in the VPC project configured by user. It
+       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+       * connection. If this SA is changed during/after a VPN connection is
+       * created, you need to remove the Cloud Router and Cloud VPN resources in
+       * |project_id|. It is in the form of
        * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
        * </pre>
        *
-       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearServiceAccount() {
         serviceAccount_ = getDefaultInstance().getServiceAccount();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1054,19 +1095,24 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. The service account in the VPC project configured by user. It is used to
-       * create/delete Cloud Router and Cloud HA VPNs for VPN connection. If this
-       * SA is changed during/after a VPN connection is created, you need to
-       * remove the Cloud Router and Cloud VPN resources in |project_id|.
-       * It is in the form of
+       * Optional. The service account in the VPC project configured by user. It
+       * is used to create/delete Cloud Router and Cloud HA VPNs for VPN
+       * connection. If this SA is changed during/after a VPN connection is
+       * created, you need to remove the Cloud Router and Cloud VPN resources in
+       * |project_id|. It is in the form of
        * service-{project_number}&#64;gcp-sa-edgecontainer.iam.gserviceaccount.com.
        * </pre>
        *
-       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * string service_account = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated google.cloud.edgecontainer.v1.VpnConnection.VpcProject.service_account is
+       *     deprecated. See google/cloud/edgecontainer/v1/resources.proto;l=607
        * @param value The bytes for serviceAccount to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1533,7 +1579,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The created Cloud Router name.
+       * The associated Cloud Router name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -1545,7 +1591,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The created Cloud Router name.
+       * The associated Cloud Router name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -1606,7 +1652,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The created Cloud Router name.
+       * The associated Cloud Router name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -1629,7 +1675,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The created Cloud Router name.
+       * The associated Cloud Router name.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -2013,7 +2059,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The created Cloud Router name.
+         * The associated Cloud Router name.
          * </pre>
          *
          * <code>string name = 1;</code>
@@ -2035,7 +2081,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The created Cloud Router name.
+         * The associated Cloud Router name.
          * </pre>
          *
          * <code>string name = 1;</code>
@@ -2057,7 +2103,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The created Cloud Router name.
+         * The associated Cloud Router name.
          * </pre>
          *
          * <code>string name = 1;</code>
@@ -2078,7 +2124,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The created Cloud Router name.
+         * The associated Cloud Router name.
          * </pre>
          *
          * <code>string name = 1;</code>
@@ -2095,7 +2141,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The created Cloud Router name.
+         * The associated Cloud Router name.
          * </pre>
          *
          * <code>string name = 1;</code>
@@ -4753,7 +4799,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=361
+   *     google/cloud/edgecontainer/v1/resources.proto;l=690
    * @return The enum numeric value on the wire for bgpRoutingMode.
    */
   @java.lang.Override
@@ -4773,7 +4819,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=361
+   *     google/cloud/edgecontainer/v1/resources.proto;l=690
    * @return The bgpRoutingMode.
    */
   @java.lang.Override
@@ -4896,8 +4942,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Project detail of the VPC network. Required if VPC is in a different
-   * project than the cluster project.
+   * Optional. Project detail of the VPC network. Required if VPC is in a
+   * different project than the cluster project.
    * </pre>
    *
    * <code>
@@ -4914,8 +4960,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Project detail of the VPC network. Required if VPC is in a different
-   * project than the cluster project.
+   * Optional. Project detail of the VPC network. Required if VPC is in a
+   * different project than the cluster project.
    * </pre>
    *
    * <code>
@@ -4934,8 +4980,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Project detail of the VPC network. Required if VPC is in a different
-   * project than the cluster project.
+   * Optional. Project detail of the VPC network. Required if VPC is in a
+   * different project than the cluster project.
    * </pre>
    *
    * <code>
@@ -4967,6 +5013,57 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableHighAvailability() {
     return enableHighAvailability_;
+  }
+
+  public static final int ROUTER_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object router_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The VPN connection Cloud Router name.
+   * </pre>
+   *
+   * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The router.
+   */
+  @java.lang.Override
+  public java.lang.String getRouter() {
+    java.lang.Object ref = router_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      router_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The VPN connection Cloud Router name.
+   * </pre>
+   *
+   * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for router.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRouterBytes() {
+    java.lang.Object ref = router_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      router_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DETAILS_FIELD_NUMBER = 10;
@@ -5074,6 +5171,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(11, getVpcProject());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(router_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, router_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5126,6 +5226,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getVpcProject());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(router_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, router_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5161,6 +5264,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       if (!getVpcProject().equals(other.getVpcProject())) return false;
     }
     if (getEnableHighAvailability() != other.getEnableHighAvailability()) return false;
+    if (!getRouter().equals(other.getRouter())) return false;
     if (hasDetails() != other.hasDetails()) return false;
     if (hasDetails()) {
       if (!getDetails().equals(other.getDetails())) return false;
@@ -5204,6 +5308,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENABLE_HIGH_AVAILABILITY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableHighAvailability());
+    hash = (37 * hash) + ROUTER_FIELD_NUMBER;
+    hash = (53 * hash) + getRouter().hashCode();
     if (hasDetails()) {
       hash = (37 * hash) + DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getDetails().hashCode();
@@ -5403,6 +5509,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         vpcProjectBuilder_ = null;
       }
       enableHighAvailability_ = false;
+      router_ = "";
       details_ = null;
       if (detailsBuilder_ != null) {
         detailsBuilder_.dispose();
@@ -5480,6 +5587,9 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         result.enableHighAvailability_ = enableHighAvailability_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.router_ = router_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
@@ -5568,6 +5678,11 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEnableHighAvailability() != false) {
         setEnableHighAvailability(other.getEnableHighAvailability());
+      }
+      if (!other.getRouter().isEmpty()) {
+        router_ = other.router_;
+        bitField0_ |= 0x00000400;
+        onChanged();
       }
       if (other.hasDetails()) {
         mergeDetails(other.getDetails());
@@ -5661,7 +5776,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getDetailsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
@@ -5670,6 +5785,12 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                router_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6503,7 +6624,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=361
+     *     google/cloud/edgecontainer/v1/resources.proto;l=690
      * @return The enum numeric value on the wire for bgpRoutingMode.
      */
     @java.lang.Override
@@ -6523,7 +6644,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=361
+     *     google/cloud/edgecontainer/v1/resources.proto;l=690
      * @param value The enum numeric value on the wire for bgpRoutingMode to set.
      * @return This builder for chaining.
      */
@@ -6546,7 +6667,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=361
+     *     google/cloud/edgecontainer/v1/resources.proto;l=690
      * @return The bgpRoutingMode.
      */
     @java.lang.Override
@@ -6570,7 +6691,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=361
+     *     google/cloud/edgecontainer/v1/resources.proto;l=690
      * @param value The bgpRoutingMode to set.
      * @return This builder for chaining.
      */
@@ -6597,7 +6718,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-     *     google/cloud/edgecontainer/v1/resources.proto;l=361
+     *     google/cloud/edgecontainer/v1/resources.proto;l=690
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -6835,8 +6956,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -6852,8 +6973,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -6875,8 +6996,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -6900,8 +7021,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -6923,8 +7044,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -6956,8 +7077,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -6978,8 +7099,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -6996,8 +7117,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -7018,8 +7139,8 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Project detail of the VPC network. Required if VPC is in a different
-     * project than the cluster project.
+     * Optional. Project detail of the VPC network. Required if VPC is in a
+     * different project than the cluster project.
      * </pre>
      *
      * <code>
@@ -7099,6 +7220,112 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object router_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The VPN connection Cloud Router name.
+     * </pre>
+     *
+     * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The router.
+     */
+    public java.lang.String getRouter() {
+      java.lang.Object ref = router_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        router_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The VPN connection Cloud Router name.
+     * </pre>
+     *
+     * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for router.
+     */
+    public com.google.protobuf.ByteString getRouterBytes() {
+      java.lang.Object ref = router_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        router_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The VPN connection Cloud Router name.
+     * </pre>
+     *
+     * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The router to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      router_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The VPN connection Cloud Router name.
+     * </pre>
+     *
+     * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRouter() {
+      router_ = getDefaultInstance().getRouter();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The VPN connection Cloud Router name.
+     * </pre>
+     *
+     * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for router to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRouterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      router_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.edgecontainer.v1.VpnConnection.Details details_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.edgecontainer.v1.VpnConnection.Details,
@@ -7119,7 +7346,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the details field is set.
      */
     public boolean hasDetails() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -7163,7 +7390,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       } else {
         detailsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -7185,7 +7412,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
       } else {
         detailsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -7202,7 +7429,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDetails(com.google.cloud.edgecontainer.v1.VpnConnection.Details value) {
       if (detailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && details_ != null
             && details_
                 != com.google.cloud.edgecontainer.v1.VpnConnection.Details.getDefaultInstance()) {
@@ -7214,7 +7441,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
         detailsBuilder_.mergeFrom(value);
       }
       if (details_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -7231,7 +7458,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDetails() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       details_ = null;
       if (detailsBuilder_ != null) {
         detailsBuilder_.dispose();
@@ -7252,7 +7479,7 @@ public final class VpnConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.edgecontainer.v1.VpnConnection.Details.Builder getDetailsBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getDetailsFieldBuilder().getBuilder();
     }

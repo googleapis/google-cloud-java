@@ -228,7 +228,7 @@ public interface VpnConnectionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=361
+   *     google/cloud/edgecontainer/v1/resources.proto;l=690
    * @return The enum numeric value on the wire for bgpRoutingMode.
    */
   @java.lang.Deprecated
@@ -245,7 +245,7 @@ public interface VpnConnectionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.edgecontainer.v1.VpnConnection.bgp_routing_mode is deprecated. See
-   *     google/cloud/edgecontainer/v1/resources.proto;l=361
+   *     google/cloud/edgecontainer/v1/resources.proto;l=690
    * @return The bgpRoutingMode.
    */
   @java.lang.Deprecated
@@ -307,8 +307,8 @@ public interface VpnConnectionOrBuilder
    *
    *
    * <pre>
-   * Optional. Project detail of the VPC network. Required if VPC is in a different
-   * project than the cluster project.
+   * Optional. Project detail of the VPC network. Required if VPC is in a
+   * different project than the cluster project.
    * </pre>
    *
    * <code>
@@ -322,8 +322,8 @@ public interface VpnConnectionOrBuilder
    *
    *
    * <pre>
-   * Optional. Project detail of the VPC network. Required if VPC is in a different
-   * project than the cluster project.
+   * Optional. Project detail of the VPC network. Required if VPC is in a
+   * different project than the cluster project.
    * </pre>
    *
    * <code>
@@ -337,8 +337,8 @@ public interface VpnConnectionOrBuilder
    *
    *
    * <pre>
-   * Optional. Project detail of the VPC network. Required if VPC is in a different
-   * project than the cluster project.
+   * Optional. Project detail of the VPC network. Required if VPC is in a
+   * different project than the cluster project.
    * </pre>
    *
    * <code>
@@ -360,6 +360,31 @@ public interface VpnConnectionOrBuilder
    * @return The enableHighAvailability.
    */
   boolean getEnableHighAvailability();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The VPN connection Cloud Router name.
+   * </pre>
+   *
+   * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The router.
+   */
+  java.lang.String getRouter();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The VPN connection Cloud Router name.
+   * </pre>
+   *
+   * <code>string router = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for router.
+   */
+  com.google.protobuf.ByteString getRouterBytes();
 
   /**
    *

@@ -1651,7 +1651,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2610
+   *     google/container/v1beta1/cluster_service.proto;l=2614
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Deprecated
@@ -1669,7 +1669,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2610
+   *     google/container/v1beta1/cluster_service.proto;l=2614
    * @return The desiredProtectConfig.
    */
   @java.lang.Deprecated
@@ -2206,6 +2206,31 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
       getDesiredHostMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Multi-Networking for the cluster
+   * </pre>
+   *
+   * <code>optional bool desired_enable_multi_networking = 135;</code>
+   *
+   * @return Whether the desiredEnableMultiNetworking field is set.
+   */
+  boolean hasDesiredEnableMultiNetworking();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Multi-Networking for the cluster
+   * </pre>
+   *
+   * <code>optional bool desired_enable_multi_networking = 135;</code>
+   *
+   * @return The desiredEnableMultiNetworking.
+   */
+  boolean getDesiredEnableMultiNetworking();
 
   /**
    *

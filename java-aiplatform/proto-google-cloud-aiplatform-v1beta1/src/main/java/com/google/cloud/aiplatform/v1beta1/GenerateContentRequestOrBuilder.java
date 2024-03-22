@@ -226,6 +226,47 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
+   * Tool config. This config is shared for all tools provided in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the toolConfig field is set.
+   */
+  boolean hasToolConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Tool config. This config is shared for all tools provided in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The toolConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ToolConfig getToolConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Tool config. This config is shared for all tools provided in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ToolConfig tool_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ToolConfigOrBuilder getToolConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Per request settings for blocking unsafe content.
    * Enforced on GenerateContentResponse.candidates.
    * </pre>

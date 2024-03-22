@@ -17,6 +17,7 @@
 package com.google.cloud.edgecontainer.v1.stub;
 
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListClustersPagedResponse;
+import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListLocationsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListMachinesPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListNodePoolsPagedResponse;
 import static com.google.cloud.edgecontainer.v1.EdgeContainerClient.ListVpnConnectionsPagedResponse;
@@ -38,9 +39,12 @@ import com.google.cloud.edgecontainer.v1.DeleteNodePoolRequest;
 import com.google.cloud.edgecontainer.v1.DeleteVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenRequest;
 import com.google.cloud.edgecontainer.v1.GenerateAccessTokenResponse;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialRequest;
+import com.google.cloud.edgecontainer.v1.GenerateOfflineCredentialResponse;
 import com.google.cloud.edgecontainer.v1.GetClusterRequest;
 import com.google.cloud.edgecontainer.v1.GetMachineRequest;
 import com.google.cloud.edgecontainer.v1.GetNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.GetServerConfigRequest;
 import com.google.cloud.edgecontainer.v1.GetVpnConnectionRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersRequest;
 import com.google.cloud.edgecontainer.v1.ListClustersResponse;
@@ -53,9 +57,15 @@ import com.google.cloud.edgecontainer.v1.ListVpnConnectionsResponse;
 import com.google.cloud.edgecontainer.v1.Machine;
 import com.google.cloud.edgecontainer.v1.NodePool;
 import com.google.cloud.edgecontainer.v1.OperationMetadata;
+import com.google.cloud.edgecontainer.v1.ServerConfig;
 import com.google.cloud.edgecontainer.v1.UpdateClusterRequest;
 import com.google.cloud.edgecontainer.v1.UpdateNodePoolRequest;
+import com.google.cloud.edgecontainer.v1.UpgradeClusterRequest;
 import com.google.cloud.edgecontainer.v1.VpnConnection;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -111,6 +121,16 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpgradeClusterRequest, Operation>
+      upgradeClusterMethodDescriptor =
+          MethodDescriptor.<UpgradeClusterRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/UpgradeCluster")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpgradeClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<DeleteClusterRequest, Operation>
       deleteClusterMethodDescriptor =
           MethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
@@ -130,6 +150,20 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   ProtoUtils.marshaller(GenerateAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAccessTokenResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialMethodDescriptor =
+          MethodDescriptor
+              .<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.edgecontainer.v1.EdgeContainer/GenerateOfflineCredential")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateOfflineCredentialRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateOfflineCredentialResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListNodePoolsRequest, ListNodePoolsResponse>
@@ -240,6 +274,35 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetServerConfigRequest, ServerConfig>
+      getServerConfigMethodDescriptor =
+          MethodDescriptor.<GetServerConfigRequest, ServerConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.edgecontainer.v1.EdgeContainer/GetServerConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetServerConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ServerConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
@@ -250,11 +313,16 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, OperationMetadata>
       updateClusterOperationCallable;
+  private final UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable;
+  private final OperationCallable<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable;
   private final UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable;
+  private final UnaryCallable<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialCallable;
   private final UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable;
   private final UnaryCallable<ListNodePoolsRequest, ListNodePoolsPagedResponse>
       listNodePoolsPagedCallable;
@@ -283,6 +351,11 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
   private final UnaryCallable<DeleteVpnConnectionRequest, Operation> deleteVpnConnectionCallable;
   private final OperationCallable<DeleteVpnConnectionRequest, Empty, OperationMetadata>
       deleteVpnConnectionOperationCallable;
+  private final UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -366,6 +439,16 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpgradeClusterRequest, Operation> upgradeClusterTransportSettings =
+        GrpcCallSettings.<UpgradeClusterRequest, Operation>newBuilder()
+            .setMethodDescriptor(upgradeClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
@@ -380,6 +463,18 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
         generateAccessTokenTransportSettings =
             GrpcCallSettings.<GenerateAccessTokenRequest, GenerateAccessTokenResponse>newBuilder()
                 .setMethodDescriptor(generateAccessTokenMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("cluster", String.valueOf(request.getCluster()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+        generateOfflineCredentialTransportSettings =
+            GrpcCallSettings
+                .<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>newBuilder()
+                .setMethodDescriptor(generateOfflineCredentialMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -498,6 +593,36 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetServerConfigRequest, ServerConfig> getServerConfigTransportSettings =
+        GrpcCallSettings.<GetServerConfigRequest, ServerConfig>newBuilder()
+            .setMethodDescriptor(getServerConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -526,6 +651,15 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
             settings.updateClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.upgradeClusterCallable =
+        callableFactory.createUnaryCallable(
+            upgradeClusterTransportSettings, settings.upgradeClusterSettings(), clientContext);
+    this.upgradeClusterOperationCallable =
+        callableFactory.createOperationCallable(
+            upgradeClusterTransportSettings,
+            settings.upgradeClusterOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteClusterCallable =
         callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
@@ -539,6 +673,11 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
         callableFactory.createUnaryCallable(
             generateAccessTokenTransportSettings,
             settings.generateAccessTokenSettings(),
+            clientContext);
+    this.generateOfflineCredentialCallable =
+        callableFactory.createUnaryCallable(
+            generateOfflineCredentialTransportSettings,
+            settings.generateOfflineCredentialSettings(),
             clientContext);
     this.listNodePoolsCallable =
         callableFactory.createUnaryCallable(
@@ -620,6 +759,18 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
             settings.deleteVpnConnectionOperationSettings(),
             clientContext,
             operationsStub);
+    this.getServerConfigCallable =
+        callableFactory.createUnaryCallable(
+            getServerConfigTransportSettings, settings.getServerConfigSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -667,6 +818,17 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
   }
 
   @Override
+  public UnaryCallable<UpgradeClusterRequest, Operation> upgradeClusterCallable() {
+    return upgradeClusterCallable;
+  }
+
+  @Override
+  public OperationCallable<UpgradeClusterRequest, Cluster, OperationMetadata>
+      upgradeClusterOperationCallable() {
+    return upgradeClusterOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
@@ -681,6 +843,12 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     return generateAccessTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateOfflineCredentialRequest, GenerateOfflineCredentialResponse>
+      generateOfflineCredentialCallable() {
+    return generateOfflineCredentialCallable;
   }
 
   @Override
@@ -784,6 +952,27 @@ public class GrpcEdgeContainerStub extends EdgeContainerStub {
   public OperationCallable<DeleteVpnConnectionRequest, Empty, OperationMetadata>
       deleteVpnConnectionOperationCallable() {
     return deleteVpnConnectionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable() {
+    return getServerConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
   }
 
   @Override
