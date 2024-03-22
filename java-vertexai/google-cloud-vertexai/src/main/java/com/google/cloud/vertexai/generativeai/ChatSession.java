@@ -27,9 +27,9 @@ import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -210,9 +210,9 @@ public final class ChatSession {
   /**
    * Returns the history of the conversation.
    *
-   * @return an unmodifiable history of the conversation.
+   * @return a history of the conversation as an immutable list of {@link Content}.
    */
-  public List<Content> getHistory() {
+  public ImmutableList<Content> getHistory() {
     try {
       checkLastResponseAndEditHistory();
     } catch (IllegalStateException e) {
@@ -225,7 +225,7 @@ public final class ChatSession {
       }
       throw e;
     }
-    return Collections.unmodifiableList(history);
+    return ImmutableList.copyOf(history);
   }
 
   /**
