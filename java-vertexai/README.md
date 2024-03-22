@@ -237,7 +237,6 @@ import com.google.cloud.vertexai.generativeai.GenerativeModel;
 import com.google.cloud.vertexai.generativeai.ChatSession;
 import com.google.cloud.vertexai.generativeai.ResponseStream;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
-import com.google.cloud.vertexai.api.GenerationConfig;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -295,23 +294,57 @@ public class Main {
   public static void main(String[] args) throws IOException {
     try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
       // Declare a function to be used in a request.
-      // More convinient method to simplify this declaration will be coming :)
+      // We construct a jsonString that corresponds to the following function
+      // declaration.
+      // {
+      //   "name": "getCurrentWeather",
+      //   "description": "Get the current weather in a given location",
+      //   "parameters": {
+      //     "type": "OBJECT",
+      //     "properties": {
+      //       "location": {
+      //         "type": "STRING",
+      //         "description": "location"
+      //       }
+      //     }
+      //   }
+      // }
+      // With JDK 15 and above, you can do
+      //
+      // String jsonString = """
+      //   {
+      //     "name": "getCurrentWeather",
+      //     "description": "Get the current weather in a given location",
+      //     "parameters": {
+      //       "type": "OBJECT",
+      //       "properties": {
+      //         "location": {
+      //           "type": "STRING",
+      //           "description": "location"
+      //         }
+      //       }
+      //     }
+      //   }
+      //  """
+      String jsonString =
+              "{\n"
+            + " \"name\": \"getCurrentWeather\",\n"
+            + " \"description\": \"Get the current weather in a given location\",\n"
+            + " \"parameters\": {\n"
+            + "   \"type\": \"OBJECT\", \n"
+            + "   \"properties\": {\n"
+            + "     \"location\": {\n"
+            + "       \"type\": \"STRING\",\n"
+            + "       \"description\": \"location\"\n"
+            + "     }\n"
+            + "   }\n"
+            + " }\n"
+            + "}";
       Tool tool =
           Tool.newBuilder()
               .addFunctionDeclarations(
-                  FunctionDeclaration.newBuilder()
-                      .setName("getCurrentWeather")
-                      .setDescription("Get the current weather in a given location")
-                      .setParameters(
-                          Schema.newBuilder()
-                              .setType(Type.OBJECT)
-                              .putProperties(
-                                  "location",
-                                  Schema.newBuilder()
-                                      .setType(Type.STRING)
-                                      .setDescription("location")
-                                      .build())
-                              .addRequired("location")))
+                FunctionDeclarationMaker.fromJsonString(jsonString)
+              )
               .build();
 
       // Start a chat session from a model, with the use of the declared
@@ -361,7 +394,8 @@ See the [Vertex AI SDK docs][javadocs] to learn more about how to use this Verte
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
 
 ## Other Configurations
-### Transport
+### Vertex-scoped Configurations
+#### Transport
 
 Vertex AI uses gRPC and rest for the transport layer. By default, we use gRPC transport. To use rest, passing a `Transport.REST` to the `VertexAI` constructor as the example below:
 
@@ -379,7 +413,10 @@ public class Main {
   private static final String LOCATION = <location>;
 
   public static void main(String[] args) throws IOException {
-    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION, Transport.REST);) {
+    try (VertexAI vertexAi = new VertexAI.Builder()
+                                  .setProjectId(PROJECT_ID)
+                                  .setLocation(LOCATION)
+                                  .setTransport(Transport.REST);) {
 
       GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
 
@@ -389,6 +426,40 @@ public class Main {
   }
 }
 ```
+
+#### ApiEndpoint
+To use a different API endpoint, one can set it when instantiating `VertexAI`.
+
+```java
+package <your package name>
+
+import com.google.cloud.vertexai.VertexAI;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import java.io.IOException;
+
+public class Main {
+  private static final String PROJECT_ID = <your project id>;
+  private static final String LOCATION = <location>;
+
+  public static void main(String[] args) throws IOException {
+    try (VertexAI vertexAi = new VertexAI.Builder()
+                                  .setProjectId(PROJECT_ID)
+                                  .setLocation(LOCATION)
+                                  .setApiEndpoint(<new_endpoint>);) {
+
+      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
+
+      GenerateContentResponse response = model.generateContent("How are you?");
+      // Do something with the response
+    }
+  }
+}
+```
+
+#### Model/Chat-level configurations
+
+TODO(jayceeli)
 
 ## Supported Java Versions
 
