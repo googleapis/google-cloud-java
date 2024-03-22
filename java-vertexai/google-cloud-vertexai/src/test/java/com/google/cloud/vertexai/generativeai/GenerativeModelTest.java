@@ -22,6 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -139,6 +140,7 @@ public final class GenerativeModelTest {
   @Mock private GenerateContentResponse mockGenerateContentResponse;
   @Mock private ServerStream<GenerateContentResponse> mockServerStream;
   @Mock private Iterator<GenerateContentResponse> mockServerStreamIterator;
+  @Mock private ApiFuture<GenerateContentResponse> mockApiFuture;
 
   @Before
   public void doBeforeEachTest() {
@@ -626,5 +628,68 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
     assertThat(request.getValue().getTools(0)).isEqualTo(TOOL);
+  }
+
+  @Test
+  public void generateContentAsync_withText_sendsCorrectRequest() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+
+    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
+    field.setAccessible(true);
+    field.set(vertexAi, mockPredictionServiceClient);
+
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.futureCall(any(GenerateContentRequest.class))).thenReturn(mockApiFuture);
+
+    Content content =
+        Content.newBuilder().setRole("user").addParts(Part.newBuilder().setText(TEXT)).build();
+    ApiFuture<GenerateContentResponse> unused = model.generateContentAsync(TEXT);
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).futureCall(request.capture());
+    assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
+  }
+
+  @Test
+  public void generateContentAsync_withContent_sendsCorrectRequest() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+
+    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
+    field.setAccessible(true);
+    field.set(vertexAi, mockPredictionServiceClient);
+
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.futureCall(any(GenerateContentRequest.class))).thenReturn(mockApiFuture);
+
+    Content content =
+        Content.newBuilder().setRole("user").addParts(Part.newBuilder().setText(TEXT)).build();
+    ApiFuture<GenerateContentResponse> unused = model.generateContentAsync(content);
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).futureCall(request.capture());
+    assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
+  }
+
+  @Test
+  public void generateContentAsync_withContents_sendsCorrectRequest() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+
+    Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
+    field.setAccessible(true);
+    field.set(vertexAi, mockPredictionServiceClient);
+
+    when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
+    when(mockUnaryCallable.futureCall(any(GenerateContentRequest.class))).thenReturn(mockApiFuture);
+
+    Content content =
+        Content.newBuilder().setRole("user").addParts(Part.newBuilder().setText(TEXT)).build();
+    ApiFuture<GenerateContentResponse> unused = model.generateContentAsync(Arrays.asList(content));
+
+    ArgumentCaptor<GenerateContentRequest> request =
+        ArgumentCaptor.forClass(GenerateContentRequest.class);
+    verify(mockUnaryCallable).futureCall(request.capture());
+    assertThat(request.getValue().getContents(0).getParts(0).getText()).isEqualTo(TEXT);
   }
 }
