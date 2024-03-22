@@ -21,7 +21,6 @@ import static com.google.cloud.vertexai.generativeai.ResponseHandler.getContent;
 import static com.google.cloud.vertexai.generativeai.ResponseHandler.getFinishReason;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.core.BetaApi;
 import com.google.cloud.vertexai.api.Candidate.FinishReason;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
@@ -46,7 +45,6 @@ public final class ChatSession {
    * Creates a new chat session given a GenerativeModel instance. Configurations of the chat (e.g.,
    * GenerationConfig) inherits from the model.
    */
-  @BetaApi
   public ChatSession(GenerativeModel model) {
     this(model, Optional.empty());
   }
@@ -60,7 +58,6 @@ public final class ChatSession {
    *     chat session will be merged to the root chat session.
    * @return a {@link ChatSession} instance.
    */
-  @BetaApi
   private ChatSession(GenerativeModel model, Optional<ChatSession> rootChatSession) {
     checkNotNull(model, "model should not be null");
     this.model = model;
@@ -76,7 +73,6 @@ public final class ChatSession {
    *     used in the new ChatSession.
    * @return a new {@link ChatSession} instance with the specified GenerationConfig.
    */
-  @BetaApi
   public ChatSession withGenerationConfig(GenerationConfig generationConfig) {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession =
@@ -92,7 +88,6 @@ public final class ChatSession {
    *     in the new ChatSession.
    * @return a new {@link ChatSession} instance with the specified SafetySettings.
    */
-  @BetaApi
   public ChatSession withSafetySettings(List<SafetySetting> safetySettings) {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession =
@@ -108,7 +103,6 @@ public final class ChatSession {
    *     ChatSession.
    * @return a new {@link ChatSession} instance with the specified Tools.
    */
-  @BetaApi
   public ChatSession withTools(List<Tool> tools) {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession = new ChatSession(model.withTools(tools), Optional.of(rootChat));
@@ -123,7 +117,6 @@ public final class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
-  @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(String text) throws IOException {
     return sendMessageStream(ContentMaker.fromString(text));
   }
@@ -135,7 +128,6 @@ public final class ChatSession {
    * @return an iterable in which each element is a GenerateContentResponse. Can be converted to
    *     stream by stream() method.
    */
-  @BetaApi
   public ResponseStream<GenerateContentResponse> sendMessageStream(Content content)
       throws IOException, IllegalArgumentException {
     checkLastResponseAndEditHistory();
@@ -152,7 +144,6 @@ public final class ChatSession {
    * @param text the message to be sent.
    * @return a response.
    */
-  @BetaApi
   public GenerateContentResponse sendMessage(String text) throws IOException {
     return sendMessage(ContentMaker.fromString(text));
   }
@@ -163,7 +154,6 @@ public final class ChatSession {
    * @param content the content to be sent.
    * @return a response.
    */
-  @BetaApi
   public GenerateContentResponse sendMessage(Content content) throws IOException {
     checkLastResponseAndEditHistory();
     history.add(content);
@@ -222,7 +212,6 @@ public final class ChatSession {
    *
    * @return an unmodifiable history of the conversation.
    */
-  @BetaApi
   public List<Content> getHistory() {
     try {
       checkLastResponseAndEditHistory();
@@ -263,7 +252,6 @@ public final class ChatSession {
   }
 
   /** Set the history to a list of Content */
-  @BetaApi
   public void setHistory(List<Content> history) {
     this.history = history;
   }

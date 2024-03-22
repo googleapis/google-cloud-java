@@ -154,7 +154,6 @@ public final class GenerativeModel {
      * Sets {@link com.google.cloud.vertexai.api.GenerationConfig} that will be used by default to
      * interact with the generative model.
      */
-    @BetaApi
     public Builder setGenerationConfig(GenerationConfig generationConfig) {
       checkNotNull(generationConfig, "GenerationConfig can't be null.");
       this.generationConfig = generationConfig;
@@ -165,7 +164,6 @@ public final class GenerativeModel {
      * Sets a list of {@link com.google.cloud.vertexai.api.SafetySetting} that will be used by
      * default to interact with the generative model.
      */
-    @BetaApi
     public Builder setSafetySettings(List<SafetySetting> safetySettings) {
       checkNotNull(
           safetySettings,
@@ -178,7 +176,6 @@ public final class GenerativeModel {
      * Sets a list of {@link com.google.cloud.vertexai.api.Tool} that will be used by default to
      * interact with the generative model.
      */
-    @BetaApi
     public Builder setTools(List<Tool> tools) {
       checkNotNull(tools, "tools can't be null. Use an empty list if no tool is to be used.");
       this.tools = ImmutableList.copyOf(tools);
@@ -276,7 +273,6 @@ public final class GenerativeModel {
    *     total tokens and total billable characters of the given list of contents
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi
   private CountTokensResponse countTokensFromRequest(CountTokensRequest request)
       throws IOException {
     return vertexAi.getLlmUtilityClient().countTokens(request);
@@ -290,7 +286,6 @@ public final class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi
   public GenerateContentResponse generateContent(String text) throws IOException {
     // TODO(b/330402637): Check null and empty values for the input string.
     return generateContent(ContentMaker.fromString(text));
@@ -304,7 +299,6 @@ public final class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(Content content) throws IOException {
     return generateContent(Arrays.asList(content));
   }
@@ -318,7 +312,6 @@ public final class GenerativeModel {
    *     response contents and other metadata
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi("generateContent is a preview feature.")
   public GenerateContentResponse generateContent(List<Content> contents) throws IOException {
     return generateContent(buildGenerateContentRequest(contents));
   }
@@ -404,7 +397,6 @@ public final class GenerativeModel {
    *     generateContent request
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi
   public ApiFuture<GenerateContentResponse> generateContentAsync(String text) throws IOException {
     return generateContentAsync(ContentMaker.fromString(text));
   }
@@ -418,7 +410,6 @@ public final class GenerativeModel {
    *     generateContent request
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi
   public ApiFuture<GenerateContentResponse> generateContentAsync(Content content)
       throws IOException {
     return generateContentAsync(Arrays.asList(content));
@@ -433,7 +424,6 @@ public final class GenerativeModel {
    *     generateContent request
    * @throws IOException if an I/O error occurs while making the API call
    */
-  @BetaApi
   public ApiFuture<GenerateContentResponse> generateContentAsync(List<Content> contents)
       throws IOException {
     return generateContentAsync(buildGenerateContentRequest(contents));
@@ -474,7 +464,6 @@ public final class GenerativeModel {
   /**
    * Returns the {@link com.google.cloud.vertexai.api.GenerationConfig} of this generative model.
    */
-  @BetaApi
   public GenerationConfig getGenerationConfig() {
     return this.generationConfig;
   }
@@ -483,13 +472,11 @@ public final class GenerativeModel {
    * Returns a list of {@link com.google.cloud.vertexai.api.SafetySettings} of this generative
    * model.
    */
-  @BetaApi("safetySettings is a preview feature.")
   public ImmutableList<SafetySetting> getSafetySettings() {
     return safetySettings;
   }
 
   /** Returns a list of {@link com.google.cloud.vertexai.api.Tool} of this generative model. */
-  @BetaApi("tools is a preview feature.")
   public ImmutableList<Tool> getTools() {
     return tools;
   }
