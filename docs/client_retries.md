@@ -1,4 +1,4 @@
-# Retries
+# Client Side Retries
 Client Libraries use retries to handle unexpected, transient failures (i.e. server temporarily unavailable).
 Multiple attempts, hopefully, will result in a successful response from the server.
 
@@ -233,9 +233,9 @@ assetStubSettingsBuilder
   .setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
 ```
 
-The snippet above is using a mock service (i.e. EchoClient). The code snippet above is setting
-custom retry configurations for EchoClient's Block RPC. It configures the Block RPC to use the
-retry settings configured in `customRetrySettings` and sets the retryable codes to be
+The example above is configuring the java-asset library. The code snippet above is setting custom
+retry configurations for AssetServiceClient's ExportAssets RPC. It configures the ExportAssets RPC
+to use the retry settings configured in `customRetrySettings` and sets the retryable codes to be
 `DEADLINE_EXCEEDED`.
 
 3. Create the Settings for the Client
@@ -252,16 +252,17 @@ try (AssetServiceClient assetClient = AssetServiceClient.create(assetSettings)) 
 Repeat Step #2 for each RPC that you want to configure. For example:
 ```java
 AssetServiceStubSettings.Builder assetStubSettingsBuilder = AssetServiceStubSettings.newBuilder();
-        assetStubSettingsBuilder
-        .exportAssetsSettings()
-        // Set your custom Retry Settings
-        .setRetrySettings(customRetrySettings)
-        // Set your custom Retryable Codes
-        .setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
-        assetStubSettingsBuilder
-        .listAssetsSettings()
-        // Set your custom Retry Settings
-        .setRetrySettings(customRetrySettings2)
-        // Set your custom Retryable Codes
-        .setRetryableCodes(ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
+  assetStubSettingsBuilder
+  .exportAssetsSettings()
+  // Set your custom Retry Settings
+  .setRetrySettings(customRetrySettings)
+  // Set your custom Retryable Codes
+  .setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
+  
+  assetStubSettingsBuilder
+  .listAssetsSettings()
+  // Set your custom Retry Settings
+  .setRetrySettings(customRetrySettings2)
+  // Set your custom Retryable Codes
+  .setRetryableCodes(ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
 ```
