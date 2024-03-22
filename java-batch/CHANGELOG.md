@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.38.0 (2024-03-22)
+
+### Features
+
+* changed retry settings for UpdateJob ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* changed retry settings for UpdateJob ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 0.37.0 (2024-03-06)
 
 ### Features

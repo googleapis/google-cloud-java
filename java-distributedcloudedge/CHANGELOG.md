@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.35.0 (2024-03-22)
+
+### Features
+
+* add GetServerConfig rpc and message ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* add UpgradeCluster ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+
+
+
 ## 0.34.0 (2024-03-06)
 
 * No change

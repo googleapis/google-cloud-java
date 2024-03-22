@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.38.0 (2024-03-22)
+
+### Features
+
+* Update go_package and Go importpath:
+* Update go_package and Go importpath: ([b5e8e3d](https://github.com/googleapis/google-cloud-java/commit/b5e8e3d989558a941897d7eedf196778bf0629ad))
+
+
+
 ## 1.37.0 (2024-03-06)
 
 * No change

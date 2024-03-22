@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2024-03-22)
+
+### Features
+
+* Updated wording on App Hub service ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 0.1.0 (2024-03-06)
 
 ### Features

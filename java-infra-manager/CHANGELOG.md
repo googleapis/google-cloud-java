@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.15.0 (2024-03-22)
+
+### Features
+
+* Infrastructure Manager can validate and enforce quota limits, preventing infrastructure that exceeds quota limits from being deployed ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+* Infrastructure Manager supports the deployment of infrastructure from Terraform configurations in a private Git repository ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+* Infrastructure manager supports the following versions of Terraform when creating a deployment: Terraform version 1.2.3, 1.3.10, 1.4.7, 1.5.7 ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+* A comment for field `page_size` in message `.google.cloud.config.v1.ListDeploymentsRequest` is changed ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+* A comment for field `page_size` in message `.google.cloud.config.v1.ListPreviewsRequest` is changed ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+* A comment for field `page_size` in message `.google.cloud.config.v1.ListResourcesRequest` is changed ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+* A comment for field `page_size` in message `.google.cloud.config.v1.ListRevisionsRequest` is changed ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+* A comment for field `service_account` in message `.google.cloud.config.v1.Preview` is changed ([3f89544](https://github.com/googleapis/google-cloud-java/commit/3f895447dec5d79d7b60907a629873de5dbdfa16))
+
+
+
 ## 0.14.0 (2024-03-06)
 
 * No change

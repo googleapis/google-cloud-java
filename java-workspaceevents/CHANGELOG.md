@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0 (2024-03-22)
+
+### Features
+
+* `ListSubscription` overloaded method parameters changed from `page_size,page_token,filter` to just `filter` in some languages
+* `ListSubscription` overloaded method parameters changed from `page_size,page_token,filter` to just `filter` in some languages ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A comment for field `event_types` in message `.google.apps.events.subscriptions.v1.Subscription` is changed ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A comment for field `target_resource` in message `.google.apps.events.subscriptions.v1.Subscription` is changed ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A comment for message `Subscription` is changed ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 0.1.0 (2024-03-06)
 
 ### Features

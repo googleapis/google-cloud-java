@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.6.0 (2024-03-22)
+
+### Features
+
+* annotate EffectiveEventThreatDetectionCustomModule.name as IDENTIFIER ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* annotate EffectiveSecurityHealthAnalyticsCustomModule.name as IDENTIFIER ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* annotate EventThreatDetectionCustomModule.name as IDENTIFIER ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* annotate SecurityHealthAnalyticsCustomModule.name as IDENTIFIER ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+* updated comments ([1be133f](https://github.com/googleapis/google-cloud-java/commit/1be133f4dc818dece35518a8df15813dbb68052c))
+
+
+
 ## 0.5.0 (2024-03-06)
 
 ### Features
