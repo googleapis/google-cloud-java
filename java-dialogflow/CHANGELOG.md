@@ -1,5 +1,19 @@
 # Changelog
 
+## 4.44.0 (2024-03-22)
+
+### Features
+
+* added conformer model migration opt out flag ([43b143a](https://github.com/googleapis/google-cloud-java/commit/43b143a3db8c20484289b3cbb7c7cee0815078a0))
+* added conformer model migration opt out flag ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* added intent input to StreamingAnalyzeContentRequest ([43b143a](https://github.com/googleapis/google-cloud-java/commit/43b143a3db8c20484289b3cbb7c7cee0815078a0))
+* added text sections to the submitted summary ([43b143a](https://github.com/googleapis/google-cloud-java/commit/43b143a3db8c20484289b3cbb7c7cee0815078a0))
+* added text sections to the submitted summary ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* clarified wording around END_OF_SINGLE_UTTERANCE ([43b143a](https://github.com/googleapis/google-cloud-java/commit/43b143a3db8c20484289b3cbb7c7cee0815078a0))
+* clarified wording around END_OF_SINGLE_UTTERANCE ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 4.43.0 (2024-03-06)
 
 * No change

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.6.0 (2024-03-22)
+
+### Features
+
+* A comment for field `filter` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* A comment for field `order_by` in message `.google.api.cloudquotas.v1.ListQuotaPreferencesRequest` is changed ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* annotate QuotaPreference.dimensions field as immutable, annotate QuotaPreference.QuotaConfig.annotations field as optional ([b5e8e3d](https://github.com/googleapis/google-cloud-java/commit/b5e8e3d989558a941897d7eedf196778bf0629ad))
+
+
+
 ## 0.5.0 (2024-03-06)
 
 * No change

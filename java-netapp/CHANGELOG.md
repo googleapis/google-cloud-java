@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.17.0 (2024-03-22)
+
+### Features
+
+* change comments of the psa_range field to note it is currently not implemented ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* Fix comment for UNIX of SecurityStyle ([d514d9a](https://github.com/googleapis/google-cloud-java/commit/d514d9a31c38829bca636af5f1d94e7143e4db5c))
+* mark optional fields explicitly in Storage Pool ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+* Rephrase comment on psa_range ([d514d9a](https://github.com/googleapis/google-cloud-java/commit/d514d9a31c38829bca636af5f1d94e7143e4db5c))
+* update comments of ServiceLevel and EncryptionType ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 0.16.0 (2024-03-06)
 
 * No change

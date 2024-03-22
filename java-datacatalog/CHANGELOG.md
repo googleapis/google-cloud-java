@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.44.0 (2024-03-22)
+
+### Features
+
+* Add RANGE type to Data Catalog ([43b143a](https://github.com/googleapis/google-cloud-java/commit/43b143a3db8c20484289b3cbb7c7cee0815078a0))
+
+
+
 ## 1.43.0 (2024-03-06)
 
 * No change
