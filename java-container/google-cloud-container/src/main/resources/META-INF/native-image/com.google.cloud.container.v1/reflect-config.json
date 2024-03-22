@@ -3204,6 +3204,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.container.v1.SecondaryBootDiskUpdateStrategy",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.container.v1.SecondaryBootDiskUpdateStrategy$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.container.v1.SecurityBulletinEvent",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

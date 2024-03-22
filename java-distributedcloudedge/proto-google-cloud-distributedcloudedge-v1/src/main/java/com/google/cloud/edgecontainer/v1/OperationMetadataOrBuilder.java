@@ -175,8 +175,8 @@ public interface OperationMetadataOrBuilder
    * <pre>
    * Identifies whether the user has requested cancellation of the operation.
    * Operations that have successfully been cancelled have [Operation.error][]
-   * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-   * `Code.CANCELLED`.
+   * value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
+   * corresponding to `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool requested_cancellation = 6;</code>
@@ -209,4 +209,59 @@ public interface OperationMetadataOrBuilder
    * @return The bytes for apiVersion.
    */
   com.google.protobuf.ByteString getApiVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @return A list containing the warnings.
+   */
+  java.util.List<java.lang.String> getWarningsList();
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @return The count of warnings.
+   */
+  int getWarningsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The warnings at the given index.
+   */
+  java.lang.String getWarnings(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Warnings that do not block the operation, but still hold relevant
+   * information for the end user to receive.
+   * </pre>
+   *
+   * <code>repeated string warnings = 8;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the warnings at the given index.
+   */
+  com.google.protobuf.ByteString getWarningsBytes(int index);
 }

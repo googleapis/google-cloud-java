@@ -1517,6 +1517,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .addAllTools(new ArrayList<Tool>())
+   *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
@@ -1549,6 +1550,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .addAllTools(new ArrayList<Tool>())
+   *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();
@@ -1582,6 +1584,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
    *           .addAllTools(new ArrayList<Tool>())
+   *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
    *           .setGenerationConfig(GenerationConfig.newBuilder().build())
    *           .build();

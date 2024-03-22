@@ -84,7 +84,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3205
+   *     google/container/v1beta1/cluster_service.proto;l=3212
    * @return The projectId.
    */
   @java.lang.Override
@@ -113,7 +113,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3205
+   *     google/container/v1beta1/cluster_service.proto;l=3212
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -147,7 +147,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3212
+   *     google/container/v1beta1/cluster_service.proto;l=3219
    * @return The zone.
    */
   @java.lang.Override
@@ -176,7 +176,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3212
+   *     google/container/v1beta1/cluster_service.proto;l=3219
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -209,7 +209,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3216
+   *     google/container/v1beta1/cluster_service.proto;l=3223
    * @return The clusterId.
    */
   @java.lang.Override
@@ -237,7 +237,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3216
+   *     google/container/v1beta1/cluster_service.proto;l=3223
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -831,7 +831,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3205
+     *     google/container/v1beta1/cluster_service.proto;l=3212
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -859,7 +859,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3205
+     *     google/container/v1beta1/cluster_service.proto;l=3212
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -887,7 +887,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3205
+     *     google/container/v1beta1/cluster_service.proto;l=3212
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -914,7 +914,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3205
+     *     google/container/v1beta1/cluster_service.proto;l=3212
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -937,7 +937,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3205
+     *     google/container/v1beta1/cluster_service.proto;l=3212
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -967,7 +967,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3212
+     *     google/container/v1beta1/cluster_service.proto;l=3219
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -995,7 +995,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3212
+     *     google/container/v1beta1/cluster_service.proto;l=3219
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -1023,7 +1023,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3212
+     *     google/container/v1beta1/cluster_service.proto;l=3219
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -1050,7 +1050,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3212
+     *     google/container/v1beta1/cluster_service.proto;l=3219
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1073,7 +1073,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3212
+     *     google/container/v1beta1/cluster_service.proto;l=3219
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1102,7 +1102,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3216
+     *     google/container/v1beta1/cluster_service.proto;l=3223
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -1129,7 +1129,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3216
+     *     google/container/v1beta1/cluster_service.proto;l=3223
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -1156,7 +1156,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3216
+     *     google/container/v1beta1/cluster_service.proto;l=3223
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -1182,7 +1182,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3216
+     *     google/container/v1beta1/cluster_service.proto;l=3223
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1204,7 +1204,7 @@ public final class SetLoggingServiceRequest extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.container.v1beta1.SetLoggingServiceRequest.cluster_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3216
+     *     google/container/v1beta1/cluster_service.proto;l=3223
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */

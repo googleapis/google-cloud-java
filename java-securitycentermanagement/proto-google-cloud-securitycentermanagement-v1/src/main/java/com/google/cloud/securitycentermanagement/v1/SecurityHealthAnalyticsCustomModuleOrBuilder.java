@@ -28,7 +28,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the custom module.
+   * Identifier. The resource name of the custom module.
    * Its format is
    * "organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}",
    * or
@@ -40,7 +40,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * It will be a numeric id containing 1-20 digits.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -49,7 +49,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    *
    *
    * <pre>
-   * Immutable. The resource name of the custom module.
+   * Identifier. The resource name of the custom module.
    * Its format is
    * "organizations/{organization}/locations/{location}/securityHealthAnalyticsCustomModules/{security_health_analytics_custom_module}",
    * or
@@ -61,7 +61,7 @@ public interface SecurityHealthAnalyticsCustomModuleOrBuilder
    * It will be a numeric id containing 1-20 digits.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

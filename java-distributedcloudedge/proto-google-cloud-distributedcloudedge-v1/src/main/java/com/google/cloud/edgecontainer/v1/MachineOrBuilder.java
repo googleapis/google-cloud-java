@@ -195,6 +195,10 @@ public interface MachineOrBuilder
    * hosting e.g.
    * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
    * Or empty if the machine is not assigned to assume the role of a node.
+   *
+   * For control plane nodes hosted on edge machines, this will return
+   * the following format:
+   *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
    * </pre>
    *
    * <code>string hosted_node = 5;</code>
@@ -210,6 +214,10 @@ public interface MachineOrBuilder
    * hosting e.g.
    * projects/{project}/locations/{location}/clusters/{cluster_id}/nodePools/{pool_id}/{node},
    * Or empty if the machine is not assigned to assume the role of a node.
+   *
+   * For control plane nodes hosted on edge machines, this will return
+   * the following format:
+   *   "projects/{project}/locations/{location}/clusters/{cluster_id}/controlPlaneNodes/{node}".
    * </pre>
    *
    * <code>string hosted_node = 5;</code>
@@ -247,8 +255,33 @@ public interface MachineOrBuilder
    *
    *
    * <pre>
-   * Output only. Whether the machine is disabled. If disabled, the machine is unable to
-   * enter service.
+   * Output only. The software version of the machine.
+   * </pre>
+   *
+   * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The version.
+   */
+  java.lang.String getVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The software version of the machine.
+   * </pre>
+   *
+   * <code>string version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for version.
+   */
+  com.google.protobuf.ByteString getVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the machine is disabled. If disabled, the machine is
+   * unable to enter service.
    * </pre>
    *
    * <code>bool disabled = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

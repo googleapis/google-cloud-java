@@ -2681,6 +2681,39 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredK8SBetaApis_;
   }
 
+  public static final int DESIRED_ENABLE_MULTI_NETWORKING_FIELD_NUMBER = 135;
+  private boolean desiredEnableMultiNetworking_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Multi-Networking for the cluster
+   * </pre>
+   *
+   * <code>optional bool desired_enable_multi_networking = 135;</code>
+   *
+   * @return Whether the desiredEnableMultiNetworking field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredEnableMultiNetworking() {
+    return ((bitField1_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Multi-Networking for the cluster
+   * </pre>
+   *
+   * <code>optional bool desired_enable_multi_networking = 135;</code>
+   *
+   * @return The desiredEnableMultiNetworking.
+   */
+  @java.lang.Override
+  public boolean getDesiredEnableMultiNetworking() {
+    return desiredEnableMultiNetworking_;
+  }
+
   public static final int DESIRED_NODE_POOL_AUTO_CONFIG_RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 136;
   private com.google.container.v1.ResourceManagerTags desiredNodePoolAutoConfigResourceManagerTags_;
   /**
@@ -2699,7 +2732,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
-    return ((bitField1_ & 0x00000040) != 0);
+    return ((bitField1_ & 0x00000080) != 0);
   }
   /**
    *
@@ -2759,7 +2792,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDesiredInTransitEncryptionConfig() {
-    return ((bitField1_ & 0x00000080) != 0);
+    return ((bitField1_ & 0x00000100) != 0);
   }
   /**
    *
@@ -2814,7 +2847,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
-    return ((bitField1_ & 0x00000100) != 0);
+    return ((bitField1_ & 0x00000200) != 0);
   }
   /**
    *
@@ -2997,12 +3030,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(131, getDesiredK8SBetaApis());
     }
     if (((bitField1_ & 0x00000040) != 0)) {
-      output.writeMessage(136, getDesiredNodePoolAutoConfigResourceManagerTags());
+      output.writeBool(135, desiredEnableMultiNetworking_);
     }
     if (((bitField1_ & 0x00000080) != 0)) {
-      output.writeEnum(137, desiredInTransitEncryptionConfig_);
+      output.writeMessage(136, getDesiredNodePoolAutoConfigResourceManagerTags());
     }
     if (((bitField1_ & 0x00000100) != 0)) {
+      output.writeEnum(137, desiredInTransitEncryptionConfig_);
+    }
+    if (((bitField1_ & 0x00000200) != 0)) {
       output.writeBool(138, desiredEnableCiliumClusterwideNetworkPolicy_);
     }
     getUnknownFields().writeTo(output);
@@ -3235,15 +3271,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00000040) != 0)) {
       size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(135, desiredEnableMultiNetworking_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               136, getDesiredNodePoolAutoConfigResourceManagerTags());
     }
-    if (((bitField1_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               137, desiredInTransitEncryptionConfig_);
     }
-    if (((bitField1_ & 0x00000100) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               138, desiredEnableCiliumClusterwideNetworkPolicy_);
@@ -3463,6 +3503,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredK8SBetaApis()) {
       if (!getDesiredK8SBetaApis().equals(other.getDesiredK8SBetaApis())) return false;
     }
+    if (hasDesiredEnableMultiNetworking() != other.hasDesiredEnableMultiNetworking()) return false;
+    if (hasDesiredEnableMultiNetworking()) {
+      if (getDesiredEnableMultiNetworking() != other.getDesiredEnableMultiNetworking())
+        return false;
+    }
     if (hasDesiredNodePoolAutoConfigResourceManagerTags()
         != other.hasDesiredNodePoolAutoConfigResourceManagerTags()) return false;
     if (hasDesiredNodePoolAutoConfigResourceManagerTags()) {
@@ -3670,6 +3715,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredK8SBetaApis()) {
       hash = (37 * hash) + DESIRED_K8S_BETA_APIS_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredK8SBetaApis().hashCode();
+    }
+    if (hasDesiredEnableMultiNetworking()) {
+      hash = (37 * hash) + DESIRED_ENABLE_MULTI_NETWORKING_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDesiredEnableMultiNetworking());
     }
     if (hasDesiredNodePoolAutoConfigResourceManagerTags()) {
       hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
@@ -4065,6 +4115,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredK8SBetaApisBuilder_.dispose();
         desiredK8SBetaApisBuilder_ = null;
       }
+      desiredEnableMultiNetworking_ = false;
       desiredNodePoolAutoConfigResourceManagerTags_ = null;
       if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ != null) {
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.dispose();
@@ -4410,20 +4461,24 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         to_bitField1_ |= 0x00000020;
       }
       if (((from_bitField1_ & 0x00020000) != 0)) {
+        result.desiredEnableMultiNetworking_ = desiredEnableMultiNetworking_;
+        to_bitField1_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x00040000) != 0)) {
         result.desiredNodePoolAutoConfigResourceManagerTags_ =
             desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null
                 ? desiredNodePoolAutoConfigResourceManagerTags_
                 : desiredNodePoolAutoConfigResourceManagerTagsBuilder_.build();
-        to_bitField1_ |= 0x00000040;
-      }
-      if (((from_bitField1_ & 0x00040000) != 0)) {
-        result.desiredInTransitEncryptionConfig_ = desiredInTransitEncryptionConfig_;
         to_bitField1_ |= 0x00000080;
       }
       if (((from_bitField1_ & 0x00080000) != 0)) {
+        result.desiredInTransitEncryptionConfig_ = desiredInTransitEncryptionConfig_;
+        to_bitField1_ |= 0x00000100;
+      }
+      if (((from_bitField1_ & 0x00100000) != 0)) {
         result.desiredEnableCiliumClusterwideNetworkPolicy_ =
             desiredEnableCiliumClusterwideNetworkPolicy_;
-        to_bitField1_ |= 0x00000100;
+        to_bitField1_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -4642,6 +4697,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredK8SBetaApis()) {
         mergeDesiredK8SBetaApis(other.getDesiredK8SBetaApis());
+      }
+      if (other.hasDesiredEnableMultiNetworking()) {
+        setDesiredEnableMultiNetworking(other.getDesiredEnableMultiNetworking());
       }
       if (other.hasDesiredNodePoolAutoConfigResourceManagerTags()) {
         mergeDesiredNodePoolAutoConfigResourceManagerTags(
@@ -5019,24 +5077,30 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00010000;
                 break;
               } // case 1050
+            case 1080:
+              {
+                desiredEnableMultiNetworking_ = input.readBool();
+                bitField1_ |= 0x00020000;
+                break;
+              } // case 1080
             case 1090:
               {
                 input.readMessage(
                     getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00020000;
+                bitField1_ |= 0x00040000;
                 break;
               } // case 1090
             case 1096:
               {
                 desiredInTransitEncryptionConfig_ = input.readEnum();
-                bitField1_ |= 0x00040000;
+                bitField1_ |= 0x00080000;
                 break;
               } // case 1096
             case 1104:
               {
                 desiredEnableCiliumClusterwideNetworkPolicy_ = input.readBool();
-                bitField1_ |= 0x00080000;
+                bitField1_ |= 0x00100000;
                 break;
               } // case 1104
             default:
@@ -13780,6 +13844,74 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredK8SBetaApisBuilder_;
     }
 
+    private boolean desiredEnableMultiNetworking_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Multi-Networking for the cluster
+     * </pre>
+     *
+     * <code>optional bool desired_enable_multi_networking = 135;</code>
+     *
+     * @return Whether the desiredEnableMultiNetworking field is set.
+     */
+    @java.lang.Override
+    public boolean hasDesiredEnableMultiNetworking() {
+      return ((bitField1_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Multi-Networking for the cluster
+     * </pre>
+     *
+     * <code>optional bool desired_enable_multi_networking = 135;</code>
+     *
+     * @return The desiredEnableMultiNetworking.
+     */
+    @java.lang.Override
+    public boolean getDesiredEnableMultiNetworking() {
+      return desiredEnableMultiNetworking_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Multi-Networking for the cluster
+     * </pre>
+     *
+     * <code>optional bool desired_enable_multi_networking = 135;</code>
+     *
+     * @param value The desiredEnableMultiNetworking to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredEnableMultiNetworking(boolean value) {
+
+      desiredEnableMultiNetworking_ = value;
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable/Disable Multi-Networking for the cluster
+     * </pre>
+     *
+     * <code>optional bool desired_enable_multi_networking = 135;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredEnableMultiNetworking() {
+      bitField1_ = (bitField1_ & ~0x00020000);
+      desiredEnableMultiNetworking_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.container.v1.ResourceManagerTags
         desiredNodePoolAutoConfigResourceManagerTags_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -13802,7 +13934,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
      */
     public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
-      return ((bitField1_ & 0x00020000) != 0);
+      return ((bitField1_ & 0x00040000) != 0);
     }
     /**
      *
@@ -13850,7 +13982,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -13873,7 +14005,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -13892,7 +14024,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDesiredNodePoolAutoConfigResourceManagerTags(
         com.google.container.v1.ResourceManagerTags value) {
       if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null) {
-        if (((bitField1_ & 0x00020000) != 0)
+        if (((bitField1_ & 0x00040000) != 0)
             && desiredNodePoolAutoConfigResourceManagerTags_ != null
             && desiredNodePoolAutoConfigResourceManagerTags_
                 != com.google.container.v1.ResourceManagerTags.getDefaultInstance()) {
@@ -13904,7 +14036,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.mergeFrom(value);
       }
       if (desiredNodePoolAutoConfigResourceManagerTags_ != null) {
-        bitField1_ |= 0x00020000;
+        bitField1_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -13922,7 +14054,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDesiredNodePoolAutoConfigResourceManagerTags() {
-      bitField1_ = (bitField1_ & ~0x00020000);
+      bitField1_ = (bitField1_ & ~0x00040000);
       desiredNodePoolAutoConfigResourceManagerTags_ = null;
       if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ != null) {
         desiredNodePoolAutoConfigResourceManagerTagsBuilder_.dispose();
@@ -13945,7 +14077,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1.ResourceManagerTags.Builder
         getDesiredNodePoolAutoConfigResourceManagerTagsBuilder() {
-      bitField1_ |= 0x00020000;
+      bitField1_ |= 0x00040000;
       onChanged();
       return getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder().getBuilder();
     }
@@ -14018,7 +14150,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDesiredInTransitEncryptionConfig() {
-      return ((bitField1_ & 0x00040000) != 0);
+      return ((bitField1_ & 0x00080000) != 0);
     }
     /**
      *
@@ -14053,7 +14185,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDesiredInTransitEncryptionConfigValue(int value) {
       desiredInTransitEncryptionConfig_ = value;
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -14098,7 +14230,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00040000;
+      bitField1_ |= 0x00080000;
       desiredInTransitEncryptionConfig_ = value.getNumber();
       onChanged();
       return this;
@@ -14117,7 +14249,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesiredInTransitEncryptionConfig() {
-      bitField1_ = (bitField1_ & ~0x00040000);
+      bitField1_ = (bitField1_ & ~0x00080000);
       desiredInTransitEncryptionConfig_ = 0;
       onChanged();
       return this;
@@ -14137,7 +14269,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasDesiredEnableCiliumClusterwideNetworkPolicy() {
-      return ((bitField1_ & 0x00080000) != 0);
+      return ((bitField1_ & 0x00100000) != 0);
     }
     /**
      *
@@ -14169,7 +14301,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder setDesiredEnableCiliumClusterwideNetworkPolicy(boolean value) {
 
       desiredEnableCiliumClusterwideNetworkPolicy_ = value;
-      bitField1_ |= 0x00080000;
+      bitField1_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -14185,7 +14317,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesiredEnableCiliumClusterwideNetworkPolicy() {
-      bitField1_ = (bitField1_ & ~0x00080000);
+      bitField1_ = (bitField1_ & ~0x00100000);
       desiredEnableCiliumClusterwideNetworkPolicy_ = false;
       onChanged();
       return this;

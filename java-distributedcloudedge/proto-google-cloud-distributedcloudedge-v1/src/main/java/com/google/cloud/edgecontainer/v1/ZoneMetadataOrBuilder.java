@@ -75,4 +75,105 @@ public interface ZoneMetadataOrBuilder
    * <code>repeated .google.cloud.edgecontainer.v1.Quota quota = 1;</code>
    */
   com.google.cloud.edgecontainer.v1.QuotaOrBuilder getQuotaOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  int getRackTypesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  boolean containsRackTypes(java.lang.String key);
+  /** Use {@link #getRackTypesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+      getRackTypes();
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+      getRackTypesMap();
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType getRackTypesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType getRackTypesOrThrow(java.lang.String key);
+  /** Use {@link #getRackTypesValueMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValue();
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValueMap();
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  int getRackTypesValueOrDefault(java.lang.String key, int defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  int getRackTypesValueOrThrow(java.lang.String key);
 }

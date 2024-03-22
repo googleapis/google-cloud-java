@@ -53,6 +53,18 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_edgecontainer_v1_ZoneMetadata_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 2:
+        return internalGetRackTypes();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -61,6 +73,167 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.edgecontainer.v1.ZoneMetadata.class,
             com.google.cloud.edgecontainer.v1.ZoneMetadata.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of the rack.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.edgecontainer.v1.ZoneMetadata.RackType}
+   */
+  public enum RackType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified rack type, single rack also belongs to this type.
+     * </pre>
+     *
+     * <code>RACK_TYPE_UNSPECIFIED = 0;</code>
+     */
+    RACK_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Base rack type, a pair of two modified Config-1 racks containing
+     * Aggregation switches.
+     * </pre>
+     *
+     * <code>BASE = 1;</code>
+     */
+    BASE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Expansion rack type, also known as standalone racks,
+     * added by customers on demand.
+     * </pre>
+     *
+     * <code>EXPANSION = 2;</code>
+     */
+    EXPANSION(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified rack type, single rack also belongs to this type.
+     * </pre>
+     *
+     * <code>RACK_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int RACK_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Base rack type, a pair of two modified Config-1 racks containing
+     * Aggregation switches.
+     * </pre>
+     *
+     * <code>BASE = 1;</code>
+     */
+    public static final int BASE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Expansion rack type, also known as standalone racks,
+     * added by customers on demand.
+     * </pre>
+     *
+     * <code>EXPANSION = 2;</code>
+     */
+    public static final int EXPANSION_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RackType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RackType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RACK_TYPE_UNSPECIFIED;
+        case 1:
+          return BASE;
+        case 2:
+          return EXPANSION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RackType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RackType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<RackType>() {
+          public RackType findValueByNumber(int number) {
+            return RackType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.edgecontainer.v1.ZoneMetadata.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RackType[] VALUES = values();
+
+    public static RackType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RackType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.edgecontainer.v1.ZoneMetadata.RackType)
   }
 
   public static final int QUOTA_FIELD_NUMBER = 1;
@@ -134,6 +307,192 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     return quota_.get(index);
   }
 
+  public static final int RACK_TYPES_FIELD_NUMBER = 2;
+
+  private static final class RackTypesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.Integer>newDefaultInstance(
+            com.google.cloud.edgecontainer.v1.ResourcesProto
+                .internal_static_google_cloud_edgecontainer_v1_ZoneMetadata_RackTypesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.ENUM,
+            com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType.RACK_TYPE_UNSPECIFIED
+                .getNumber());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> rackTypes_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> internalGetRackTypes() {
+    if (rackTypes_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(RackTypesDefaultEntryHolder.defaultEntry);
+    }
+    return rackTypes_;
+  }
+
+  private static final com.google.protobuf.Internal.MapAdapter.Converter<
+          java.lang.Integer, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+      rackTypesValueConverter =
+          com.google.protobuf.Internal.MapAdapter.newEnumConverter(
+              com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType.internalGetValueMap(),
+              com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType.UNRECOGNIZED);
+
+  private static final java.util.Map<
+          java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+      internalGetAdaptedRackTypesMap(java.util.Map<java.lang.String, java.lang.Integer> map) {
+    return new com.google.protobuf.Internal.MapAdapter<
+        java.lang.String,
+        com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType,
+        java.lang.Integer>(map, rackTypesValueConverter);
+  }
+
+  public int getRackTypesCount() {
+    return internalGetRackTypes().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsRackTypes(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetRackTypes().getMap().containsKey(key);
+  }
+  /** Use {@link #getRackTypesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+      getRackTypes() {
+    return getRackTypesMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+      getRackTypesMap() {
+    return internalGetAdaptedRackTypesMap(internalGetRackTypes().getMap());
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType
+      getRackTypesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+    return map.containsKey(key) ? rackTypesValueConverter.doForward(map.get(key)) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType getRackTypesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return rackTypesValueConverter.doForward(map.get(key));
+  }
+  /** Use {@link #getRackTypesValueMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValue() {
+    return getRackTypesValueMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValueMap() {
+    return internalGetRackTypes().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public int getRackTypesValueOrDefault(java.lang.String key, int defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The map keyed by rack name and has value of RackType.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public int getRackTypesValueOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -151,6 +510,8 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < quota_.size(); i++) {
       output.writeMessage(1, quota_.get(i));
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetRackTypes(), RackTypesDefaultEntryHolder.defaultEntry, 2);
     getUnknownFields().writeTo(output);
   }
 
@@ -162,6 +523,16 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     for (int i = 0; i < quota_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, quota_.get(i));
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry :
+        internalGetRackTypes().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> rackTypes__ =
+          RackTypesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, rackTypes__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -180,6 +551,7 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.edgecontainer.v1.ZoneMetadata) obj;
 
     if (!getQuotaList().equals(other.getQuotaList())) return false;
+    if (!internalGetRackTypes().equals(other.internalGetRackTypes())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -194,6 +566,10 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
     if (getQuotaCount() > 0) {
       hash = (37 * hash) + QUOTA_FIELD_NUMBER;
       hash = (53 * hash) + getQuotaList().hashCode();
+    }
+    if (!internalGetRackTypes().getMap().isEmpty()) {
+      hash = (37 * hash) + RACK_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetRackTypes().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -313,6 +689,28 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_edgecontainer_v1_ZoneMetadata_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetRackTypes();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetMutableRackTypes();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -341,6 +739,7 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         quotaBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      internalGetMutableRackTypes().clear();
       return this;
     }
 
@@ -390,6 +789,10 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.edgecontainer.v1.ZoneMetadata result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rackTypes_ = internalGetRackTypes();
+        result.rackTypes_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -464,6 +867,8 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      internalGetMutableRackTypes().mergeFrom(other.internalGetRackTypes());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -503,6 +908,18 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer> rackTypes__ =
+                    input.readMessage(
+                        RackTypesDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableRackTypes()
+                    .getMutableMap()
+                    .put(rackTypes__.getKey(), rackTypes__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -868,6 +1285,285 @@ public final class ZoneMetadata extends com.google.protobuf.GeneratedMessageV3
         quota_ = null;
       }
       return quotaBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> rackTypes_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetRackTypes() {
+      if (rackTypes_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(RackTypesDefaultEntryHolder.defaultEntry);
+      }
+      return rackTypes_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+        internalGetMutableRackTypes() {
+      if (rackTypes_ == null) {
+        rackTypes_ =
+            com.google.protobuf.MapField.newMapField(RackTypesDefaultEntryHolder.defaultEntry);
+      }
+      if (!rackTypes_.isMutable()) {
+        rackTypes_ = rackTypes_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return rackTypes_;
+    }
+
+    public int getRackTypesCount() {
+      return internalGetRackTypes().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsRackTypes(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetRackTypes().getMap().containsKey(key);
+    }
+    /** Use {@link #getRackTypesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+        getRackTypes() {
+      return getRackTypesMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+        getRackTypesMap() {
+      return internalGetAdaptedRackTypesMap(internalGetRackTypes().getMap());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType
+        getRackTypesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+      return map.containsKey(key) ? rackTypesValueConverter.doForward(map.get(key)) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType getRackTypesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return rackTypesValueConverter.doForward(map.get(key));
+    }
+    /** Use {@link #getRackTypesValueMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValue() {
+      return getRackTypesValueMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Integer> getRackTypesValueMap() {
+      return internalGetRackTypes().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getRackTypesValueOrDefault(java.lang.String key, int defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public int getRackTypesValueOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.Integer> map = internalGetRackTypes().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearRackTypes() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableRackTypes().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    public Builder removeRackTypes(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableRackTypes().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+        getMutableRackTypes() {
+      bitField0_ |= 0x00000002;
+      return internalGetAdaptedRackTypesMap(internalGetMutableRackTypes().getMutableMap());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    public Builder putRackTypes(
+        java.lang.String key, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableRackTypes()
+          .getMutableMap()
+          .put(key, rackTypesValueConverter.doBackward(value));
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    public Builder putAllRackTypes(
+        java.util.Map<java.lang.String, com.google.cloud.edgecontainer.v1.ZoneMetadata.RackType>
+            values) {
+      internalGetAdaptedRackTypesMap(internalGetMutableRackTypes().getMutableMap()).putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Integer> getMutableRackTypesValue() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableRackTypes().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    public Builder putRackTypesValue(java.lang.String key, int value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+
+      internalGetMutableRackTypes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The map keyed by rack name and has value of RackType.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.edgecontainer.v1.ZoneMetadata.RackType&gt; rack_types = 2;
+     * </code>
+     */
+    public Builder putAllRackTypesValue(java.util.Map<java.lang.String, java.lang.Integer> values) {
+      internalGetMutableRackTypes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
     }
 
     @java.lang.Override

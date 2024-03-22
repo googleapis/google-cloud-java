@@ -74,7 +74,8 @@ public final class ListVpnConnectionsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The parent location, which owns this collection of VPN connections.
+   * Required. The parent location, which owns this collection of VPN
+   * connections.
    * </pre>
    *
    * <code>
@@ -99,7 +100,8 @@ public final class ListVpnConnectionsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Required. The parent location, which owns this collection of VPN connections.
+   * Required. The parent location, which owns this collection of VPN
+   * connections.
    * </pre>
    *
    * <code>
@@ -734,7 +736,8 @@ public final class ListVpnConnectionsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent location, which owns this collection of VPN connections.
+     * Required. The parent location, which owns this collection of VPN
+     * connections.
      * </pre>
      *
      * <code>
@@ -758,7 +761,8 @@ public final class ListVpnConnectionsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent location, which owns this collection of VPN connections.
+     * Required. The parent location, which owns this collection of VPN
+     * connections.
      * </pre>
      *
      * <code>
@@ -782,7 +786,8 @@ public final class ListVpnConnectionsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent location, which owns this collection of VPN connections.
+     * Required. The parent location, which owns this collection of VPN
+     * connections.
      * </pre>
      *
      * <code>
@@ -805,7 +810,8 @@ public final class ListVpnConnectionsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent location, which owns this collection of VPN connections.
+     * Required. The parent location, which owns this collection of VPN
+     * connections.
      * </pre>
      *
      * <code>
@@ -824,7 +830,8 @@ public final class ListVpnConnectionsRequest extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Required. The parent location, which owns this collection of VPN connections.
+     * Required. The parent location, which owns this collection of VPN
+     * connections.
      * </pre>
      *
      * <code>

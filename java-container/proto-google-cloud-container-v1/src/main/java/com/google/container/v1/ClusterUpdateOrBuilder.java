@@ -1835,6 +1835,31 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Enable/Disable Multi-Networking for the cluster
+   * </pre>
+   *
+   * <code>optional bool desired_enable_multi_networking = 135;</code>
+   *
+   * @return Whether the desiredEnableMultiNetworking field is set.
+   */
+  boolean hasDesiredEnableMultiNetworking();
+  /**
+   *
+   *
+   * <pre>
+   * Enable/Disable Multi-Networking for the cluster
+   * </pre>
+   *
+   * <code>optional bool desired_enable_multi_networking = 135;</code>
+   *
+   * @return The desiredEnableMultiNetworking.
+   */
+  boolean getDesiredEnableMultiNetworking();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired resource manager tags that apply to all auto-provisioned node
    * pools in autopilot clusters and node auto-provisioning enabled clusters.
    * </pre>
