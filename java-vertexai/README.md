@@ -144,6 +144,40 @@ public class Main {
 }
 ```
 
+#### Text Generation with Async
+To get a future response, you can use the `generateContentAsync` method
+
+```java
+package <your package name>
+
+import com.google.api.core.ApiFuture;
+import com.google.cloud.vertexai.VertexAI;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import java.io.IOException;
+
+public class Main {
+  private static final String PROJECT_ID = <your project id>;
+  private static final String LOCATION = <location>;
+
+  public static void main(String[] args) throws IOException {
+    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
+
+      GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
+
+      ApiFuture<GenerateContentResponse> future = model.generateContentAsync("How are you?");
+
+      // Do something else.
+
+      // Get the response from Future
+      GenerateContentResponse response = future.get();
+
+      // Do something with the response.
+    }
+  }
+}
+```
+
 #### Text Generation from Multi-modal Input
 To generate text based on data of multiple modalities, one needs to make a `Content`, which is made easier by `ContentMaker`:
 
@@ -271,6 +305,151 @@ public class Main {
 }
 ```
 
+#### Generation with customized configurations
+
+The Vertex AI SDK for Java provides configurations for customizing content
+generation. You can configure options like
+[GenerationConfig][generationconfig-ref] and [SafetySetting][safetysetting-ref],
+or add [Tool][tool-ref] for function calling.
+
+You can choose between two configuration approaches: set configs during model
+instantiation for consistency across all text generations, or adjust them on a
+per-request basis for fine-grained control.
+
+##### Model level configurations
+
+```java
+package <PACKAGE_NAME>
+
+import com.google.cloud.vertexai.VertexAI;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.GenerationConfig;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.ResponseHandler;
+import java.io.IOException;
+
+public class Main {
+  private static final String PROJECT_ID = <PROJECT_ID>;
+  private static final String LOCATION = <LOCATION>;
+
+  public static void main(String[] args) throws IOException {
+    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
+      // Build a GenerationConfig instance.
+      GenerationConfig generationConfig =
+          GenerationConfig.newBuilder().setMaxOutputTokens(50).build();
+
+      // Use the builder to instantialize the model with the configuration.
+      GenerativeModel model =
+          new GenerativeModel.Builder()
+              .setModelName("gemino-pro")
+              .setVertexAi(vertexAi)
+              .setGenerationConfig(generationConfig)
+              .build();
+
+      // Generate the response.
+      GenerateContentResponse response = model.generateContent("Please explain LLM?");
+
+      // Do something with the response.
+    }
+  }
+}
+```
+
+##### Request level configurations
+
+Our SDK provides fluent APIs to control request level configurations.
+
+```java
+package <PACKAGE_NAME>
+
+import com.google.cloud.vertexai.VertexAI;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.HarmCategory;
+import com.google.cloud.vertexai.api.SafetySetting;
+import com.google.cloud.vertexai.api.SafetySetting.HarmBlockThreshold;
+import com.google.cloud.vertexai.generativeai.GenerateContentConfig;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import java.io.IOException;
+import java.util.Arrays;
+
+public class Main {
+  private static final String PROJECT_ID = <PROJECT_ID>;
+  private static final String LOCATION = <LOCATION>;
+
+  public static void main(String[] args) throws IOException {
+    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION); ) {
+      // Build a SafetySetting instance.
+      SafetySetting safetySetting =
+          SafetySetting.newBuilder()
+              .setCategory(HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT)
+              .setThreshold(HarmBlockThreshold.BLOCK_LOW_AND_ABOVE)
+              .build();
+
+      // Generate the response with the fluent API `withSafetySetting`.
+      GenerateContentResponse response =
+          model
+              .withSafetySetting(Arrays.asList(SafetySetting))
+              .generateContent("Please explain LLM?");
+
+      // Do something with the response.
+    }
+  }
+}
+```
+
+#### Configurations for ChatSession
+
+When a chat session is started (`ChatSesson chat = model.startChat()`),
+it inherits all configurations from the model. You can also use fluent APIs
+to update these settings during the chat.
+
+```java
+package <PACKAGE_NAME>
+
+import com.google.cloud.vertexai.VertexAI;
+import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.GenerationConfig;
+import com.google.cloud.vertexai.generativeai.ChatSession;
+import com.google.cloud.vertexai.generativeai.GenerativeModel;
+import com.google.cloud.vertexai.generativeai.ResponseHandler;
+import java.io.IOException;
+
+public class Main {
+  private static final String PROJECT_ID = <PROJECT_ID>;
+  private static final String LOCATION = <LOCATION>;
+
+  public static void main(String[] args) throws IOException {
+    try (VertexAI vertexAi = new VertexAI(PROJECT_ID, LOCATION);) {
+      // Instantiate a model with GenerationConfig
+      GenerationConfig generationConfig =
+          GenerationConfig.newBuilder().setMaxOutputTokens(50).build();
+      GenerativeModel model =
+          new GenerativeModel.Builder()
+              .setModelName("gemino-pro")
+              .setVertexAi(vertexAi)
+              .setGenerationConfig(generationConfig)
+              .build();
+
+      // Start a chat session
+      ChatSession chat = model.startChat();
+
+      // Send a message. The model level GenerationConfig will be applied here
+      GenerateContentResponse response = chat.sendMessage("Please explain LLM?");
+
+      // Do something with the response
+
+      // Send another message, using Fluent API to update the GenerationConfig
+      response =
+          chat.withGenerationConfig(GenerationConfig.getDefaultInstance())
+              .sendMessage("Tell me more about what you can do.");
+
+      // Do something with the response
+    }
+  }
+}
+```
+
+
 #### Using ChatSession for Function-calling
 In a chat, we can also do function calling.
 
@@ -350,7 +529,7 @@ public class Main {
       // Start a chat session from a model, with the use of the declared
       // function.
       GenerativeModel model =
-          GenerativeModel.newBuilder()
+          new GenerativeModel.Builder()
               .setModelName(MODEL_NAME)
               .setVertexAi(vertexAi)
               .setTools(Arrays.asList(tool))
@@ -457,9 +636,6 @@ public class Main {
 }
 ```
 
-#### Model/Chat-level configurations
-
-TODO(jayceeli)
 
 ## Supported Java Versions
 
@@ -577,3 +753,6 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [oracle]: https://www.oracle.com/java/technologies/java-se-support-roadmap.html
 [g-c-j]: http://github.com/googleapis/google-cloud-java
 [generative-ai-studio]: https://cloud.google.com/generative-ai-studio?hl=en
+[generationconfig-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.GenerationConfig.Builder
+[safetysetting-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.SafetySetting.Builder
+[tool-ref]: https://cloud.google.com/java/docs/reference/google-cloud-vertexai/latest/com.google.cloud.vertexai.api.Tool.Builder
