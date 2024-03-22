@@ -963,6 +963,7 @@ public class PredictionServiceClientTest {
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .addAllTools(new ArrayList<Tool>())
+            .setToolConfig(ToolConfig.newBuilder().build())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
@@ -987,6 +988,7 @@ public class PredictionServiceClientTest {
             .setModel("model104069929")
             .addAllContents(new ArrayList<Content>())
             .addAllTools(new ArrayList<Tool>())
+            .setToolConfig(ToolConfig.newBuilder().build())
             .addAllSafetySettings(new ArrayList<SafetySetting>())
             .setGenerationConfig(GenerationConfig.newBuilder().build())
             .build();
