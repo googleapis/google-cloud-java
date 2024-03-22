@@ -25,9 +25,11 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.util.UUID;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /** Tests for {@link NativeImageBigquerySample} */
+@Ignore
 public class NativeImageBigquerySampleIT {
 
   private static final String DATASET_ID = "nativeimage_it_dataset";

@@ -1,0 +1,25 @@
+on:
+  pull_request:
+name: Unmanaged dependency check
+jobs:
+  unmanaged_dependency_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 11
+      - name: Install modules
+        shell: bash
+        run: |
+          # No argument to build.sh installs the modules in local Maven
+          # repository
+          .kokoro/build.sh
+      - name: Unmanaged dependency check
+        uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.27.0
+        with:
+          # java-bigquery does not produce a BOM. Fortunately the root pom.xml
+          # defines google-cloud-bigquery in dependencyManagement section. So
+          # we can treat this as the BOM to run with the check.
+          bom-path: ./google-cloud-bigquery-bom/pom.xml
