@@ -22,6 +22,7 @@ steps:
   - 'JOB_TYPE=samples'
   - 'GOOGLE_CLOUD_PROJECT=cloud-java-ci-sample'
   - 'BIGTABLE_TESTING_INSTANCE=instance'
+  - 'KOKORO_GITHUB_PULL_REQUEST_NUMBER=$_PR_NUMBER'
 - name: gcr.io/cloud-devrel-public-resources/java8
   entrypoint: echo
   args: [
@@ -30,5 +31,3 @@ steps:
 timeout: 3600s
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
-
-
