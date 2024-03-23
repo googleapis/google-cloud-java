@@ -57,25 +57,35 @@ public interface LoadBalancerInfoOrBuilder
    *
    *
    * <pre>
-   * URI of the health check for the load balancer.
+   * URI of the health check for the load balancer. Deprecated and no longer
+   * populated as different load balancer backends might have different health
+   * checks.
    * </pre>
    *
-   * <code>string health_check_uri = 2;</code>
+   * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=632
    * @return The healthCheckUri.
    */
+  @java.lang.Deprecated
   java.lang.String getHealthCheckUri();
   /**
    *
    *
    * <pre>
-   * URI of the health check for the load balancer.
+   * URI of the health check for the load balancer. Deprecated and no longer
+   * populated as different load balancer backends might have different health
+   * checks.
    * </pre>
    *
-   * <code>string health_check_uri = 2;</code>
+   * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=632
    * @return The bytes for healthCheckUri.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getHealthCheckUriBytes();
 
   /**

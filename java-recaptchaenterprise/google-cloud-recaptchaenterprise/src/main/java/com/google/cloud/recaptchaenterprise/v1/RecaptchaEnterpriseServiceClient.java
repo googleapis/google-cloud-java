@@ -455,7 +455,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
- *           <li><p> searchRelatedAccountGroupMemberships(RelatedAccountGroupName project, ByteString hashedAccountId)
+ *           <li><p> searchRelatedAccountGroupMemberships(ProjectName project, ByteString hashedAccountId)
  *           <li><p> searchRelatedAccountGroupMemberships(String project, ByteString hashedAccountId)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -2913,8 +2913,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   RelatedAccountGroupName project =
-   *       RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+   *   ProjectName project = ProjectName.of("[PROJECT]");
    *   ByteString hashedAccountId = ByteString.EMPTY;
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
@@ -2934,8 +2933,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
-      searchRelatedAccountGroupMemberships(
-          RelatedAccountGroupName project, ByteString hashedAccountId) {
+      searchRelatedAccountGroupMemberships(ProjectName project, ByteString hashedAccountId) {
     SearchRelatedAccountGroupMembershipsRequest request =
         SearchRelatedAccountGroupMembershipsRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -2958,7 +2956,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
-   *   String project = RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString();
+   *   String project = ProjectName.of("[PROJECT]").toString();
    *   ByteString hashedAccountId = ByteString.EMPTY;
    *   for (RelatedAccountGroupMembership element :
    *       recaptchaEnterpriseServiceClient
@@ -3003,8 +3001,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setProject(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setProject(ProjectName.of("[PROJECT]").toString())
    *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
@@ -3043,8 +3040,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setProject(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setProject(ProjectName.of("[PROJECT]").toString())
    *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
@@ -3084,8 +3080,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     RecaptchaEnterpriseServiceClient.create()) {
    *   SearchRelatedAccountGroupMembershipsRequest request =
    *       SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-   *           .setProject(
-   *               RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+   *           .setProject(ProjectName.of("[PROJECT]").toString())
    *           .setAccountId("accountId-1827029976")
    *           .setHashedAccountId(ByteString.EMPTY)
    *           .setPageSize(883849137)
