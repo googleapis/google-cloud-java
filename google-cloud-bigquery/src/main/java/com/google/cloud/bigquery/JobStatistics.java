@@ -21,6 +21,7 @@ import com.google.api.services.bigquery.model.JobConfiguration;
 import com.google.api.services.bigquery.model.JobStatistics2;
 import com.google.api.services.bigquery.model.JobStatistics3;
 import com.google.api.services.bigquery.model.JobStatistics4;
+import com.google.api.services.bigquery.model.JobStatistics5;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
@@ -51,14 +52,36 @@ public abstract class JobStatistics implements Serializable {
   /** A Google BigQuery Copy Job statistics. */
   public static class CopyStatistics extends JobStatistics {
 
-    private static final long serialVersionUID = 8218325588441660938L;
+    private static final long serialVersionUID = 8218325588441660939L;
+
+    private final Long copiedLogicalBytes;
+
+    private final Long copiedRows;
 
     static final class Builder extends JobStatistics.Builder<CopyStatistics, Builder> {
+
+      private Long copiedLogicalBytes;
+
+      private Long copiedRows;
 
       private Builder() {}
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
         super(statisticsPb);
+        if (statisticsPb.getCopy() != null) {
+          this.copiedLogicalBytes = statisticsPb.getCopy().getCopiedLogicalBytes();
+          this.copiedRows = statisticsPb.getCopy().getCopiedRows();
+        }
+      }
+
+      Builder setCopiedLogicalBytes(long copiedLogicalBytes) {
+        this.copiedLogicalBytes = copiedLogicalBytes;
+        return self();
+      }
+
+      Builder setCopiedRows(long copiedRows) {
+        this.copiedRows = copiedRows;
+        return self();
       }
 
       @Override
@@ -69,6 +92,25 @@ public abstract class JobStatistics implements Serializable {
 
     private CopyStatistics(Builder builder) {
       super(builder);
+      this.copiedLogicalBytes = builder.copiedLogicalBytes;
+      this.copiedRows = builder.copiedRows;
+    }
+
+    /** Returns number of logical bytes copied to the destination table. */
+    public Long getCopiedLogicalBytes() {
+      return copiedLogicalBytes;
+    }
+
+    /** Returns number of rows copied to the destination table. */
+    public Long getCopiedRows() {
+      return copiedRows;
+    }
+
+    @Override
+    ToStringHelper toStringHelper() {
+      return super.toStringHelper()
+          .add("copiedLogicalBytes", copiedLogicalBytes)
+          .add("copiedRows", copiedRows);
     }
 
     @Override
@@ -81,7 +123,15 @@ public abstract class JobStatistics implements Serializable {
 
     @Override
     public final int hashCode() {
-      return baseHashCode();
+      return Objects.hash(baseHashCode(), copiedLogicalBytes, copiedRows);
+    }
+
+    @Override
+    com.google.api.services.bigquery.model.JobStatistics toPb() {
+      JobStatistics5 copyStatisticsPb = new JobStatistics5();
+      copyStatisticsPb.setCopiedLogicalBytes(copiedLogicalBytes);
+      copyStatisticsPb.setCopiedRows(copiedRows);
+      return super.toPb().setCopy(copyStatisticsPb);
     }
 
     static Builder newBuilder() {

@@ -85,11 +85,15 @@ public class JobStatisticsTest {
   private static final Long SLOTMS = 12545L;
   private static final String TRANSACTION_ID = UUID.randomUUID().toString().substring(0, 8);
   private static final String SESSION_ID = UUID.randomUUID().toString().substring(0, 8);
+  private static final Long COPIED_ROW = 1L;
+  private static final Long COPIED_LOGICAL_BYTES = 2L;
   private static final CopyStatistics COPY_STATISTICS =
       CopyStatistics.newBuilder()
           .setCreationTimestamp(CREATION_TIME)
           .setEndTime(END_TIME)
           .setStartTime(START_TIME)
+          .setCopiedRows(COPIED_ROW)
+          .setCopiedLogicalBytes(COPIED_LOGICAL_BYTES)
           .build();
   private static final ExtractStatistics EXTRACT_STATISTICS =
       ExtractStatistics.newBuilder()
@@ -262,6 +266,12 @@ public class JobStatisticsTest {
     assertEquals(FILE_COUNT, EXTRACT_STATISTICS.getDestinationUriFileCounts());
     assertEquals(INPUT_BYTES, EXTRACT_STATISTICS.getInputBytes());
 
+    assertEquals(CREATION_TIME, COPY_STATISTICS.getCreationTime());
+    assertEquals(START_TIME, COPY_STATISTICS.getStartTime());
+    assertEquals(END_TIME, COPY_STATISTICS.getEndTime());
+    assertEquals(COPIED_LOGICAL_BYTES, COPY_STATISTICS.getCopiedLogicalBytes());
+    assertEquals(COPIED_ROW, COPY_STATISTICS.getCopiedRows());
+
     assertEquals(CREATION_TIME, LOAD_STATISTICS.getCreationTime());
     assertEquals(START_TIME, LOAD_STATISTICS.getStartTime());
     assertEquals(END_TIME, LOAD_STATISTICS.getEndTime());
@@ -334,6 +344,7 @@ public class JobStatisticsTest {
   public void testToPbAndFromPb() {
     compareExtractStatistics(
         EXTRACT_STATISTICS, ExtractStatistics.fromPb(EXTRACT_STATISTICS.toPb()));
+    compareCopyStatistics(COPY_STATISTICS, CopyStatistics.fromPb(COPY_STATISTICS.toPb()));
     compareLoadStatistics(LOAD_STATISTICS, LoadStatistics.fromPb(LOAD_STATISTICS.toPb()));
     compareQueryStatistics(QUERY_STATISTICS, QueryStatistics.fromPb(QUERY_STATISTICS.toPb()));
     compareStatistics(COPY_STATISTICS, CopyStatistics.fromPb(COPY_STATISTICS.toPb()));
@@ -398,6 +409,13 @@ public class JobStatisticsTest {
     compareStatistics(expected, value);
     assertEquals(expected.getDestinationUriFileCounts(), value.getDestinationUriFileCounts());
     assertEquals(expected.getInputBytes(), value.getInputBytes());
+  }
+
+  private void compareCopyStatistics(CopyStatistics expected, CopyStatistics value) {
+    assertEquals(expected, value);
+    compareStatistics(expected, value);
+    assertEquals(expected.getCopiedLogicalBytes(), value.getCopiedLogicalBytes());
+    assertEquals(expected.getCopiedRows(), value.getCopiedRows());
   }
 
   private void compareLoadStatistics(LoadStatistics expected, LoadStatistics value) {
