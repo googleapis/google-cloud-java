@@ -7,7 +7,7 @@
   "release_level": "preview",
   "transport": "both",
   "language": "java",
-  "repo": "googleapis/java-vertexai",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-vertexai",
   "distribution_name": "com.google.cloud:google-cloud-vertexai",
   "api_id": "vertexai.googleapis.com",
