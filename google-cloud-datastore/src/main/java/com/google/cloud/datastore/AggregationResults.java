@@ -17,11 +17,14 @@ package com.google.cloud.datastore;
 
 import static com.google.api.client.util.Preconditions.checkNotNull;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
+import com.google.cloud.datastore.models.ExplainMetrics;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * The result of an {@link AggregationQuery} query submission. Contains a List&lt;{@link
@@ -34,11 +37,22 @@ public class AggregationResults implements Iterable<AggregationResult> {
   private final List<AggregationResult> aggregationResults;
   private final Timestamp readTime;
 
-  public AggregationResults(List<AggregationResult> aggregationResults, Timestamp readTime) {
+  private final ExplainMetrics explainMetrics;
+
+  @BetaApi
+  public AggregationResults(
+      List<AggregationResult> aggregationResults,
+      Timestamp readTime,
+      ExplainMetrics explainMetrics) {
     checkNotNull(aggregationResults, "Aggregation results cannot be null");
     checkNotNull(readTime, "readTime cannot be null");
     this.aggregationResults = aggregationResults;
     this.readTime = readTime;
+    this.explainMetrics = explainMetrics;
+  }
+
+  public AggregationResults(List<AggregationResult> aggregationResults, Timestamp readTime) {
+    this(aggregationResults, readTime, null);
   }
 
   /** Returns {@link Iterator} for underlying List&lt;{@link AggregationResult}&gt;. */
@@ -49,6 +63,14 @@ public class AggregationResults implements Iterable<AggregationResult> {
 
   public int size() {
     return this.aggregationResults.size();
+  }
+
+  /**
+   * Returns {@code ExplainMetrics} if {@code ExplainOptions} were enabled. Otherwise, returns null.
+   */
+  @BetaApi
+  public Optional<ExplainMetrics> getExplainMetrics() {
+    return Optional.ofNullable(this.explainMetrics);
   }
 
   @InternalApi
@@ -70,11 +92,13 @@ public class AggregationResults implements Iterable<AggregationResult> {
       return false;
     }
     AggregationResults that = (AggregationResults) o;
-    return Objects.equals(aggregationResults, that.aggregationResults);
+    return Objects.equals(aggregationResults, that.aggregationResults)
+        && Objects.equals(readTime, that.readTime)
+        && Objects.equals(explainMetrics, that.explainMetrics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregationResults);
+    return Objects.hash(aggregationResults, readTime, explainMetrics);
   }
 }

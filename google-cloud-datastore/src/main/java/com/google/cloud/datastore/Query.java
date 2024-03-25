@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.InternalApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
@@ -115,6 +116,11 @@ public abstract class Query<V> implements Serializable {
 
     public Class<V> resultClass() {
       return resultClass;
+    }
+
+    @InternalApi
+    public com.google.datastore.v1.EntityResult.ResultType getQueryType() {
+      return this.queryType;
     }
 
     @Override

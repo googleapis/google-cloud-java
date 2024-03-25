@@ -18,6 +18,7 @@ package com.google.cloud.datastore.execution;
 import com.google.api.core.InternalApi;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.ReadOption;
+import com.google.cloud.datastore.models.ExplainOptions;
 
 /**
  * An internal functional interface whose implementation has the responsibility to execute a {@link
@@ -34,7 +35,9 @@ public interface QueryExecutor<INPUT extends Query<OUTPUT>, OUTPUT> {
 
   /**
    * @param query A {@link Query} to execute.
+   * @param explainOptions {@link com.google.cloud.datastore.models.ExplainOptions}s to be used when
+   *     executing {@link Query}.
    * @param readOptions Optional {@link ReadOption}s to be used when executing {@link Query}.
    */
-  OUTPUT execute(INPUT query, ReadOption... readOptions);
+  OUTPUT execute(INPUT query, ExplainOptions explainOptions, ReadOption... readOptions);
 }

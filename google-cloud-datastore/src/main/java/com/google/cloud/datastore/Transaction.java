@@ -16,6 +16,8 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
+import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.protobuf.ByteString;
 import java.util.Iterator;
 import java.util.List;
@@ -175,6 +177,11 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    */
   @Override
   <T> QueryResults<T> run(Query<T> query);
+
+  @BetaApi
+  default <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions) {
+    throw new UnsupportedOperationException("Not implemented.");
+  }
 
   /**
    * Datastore add operation. This method will also allocate id for any entity with an incomplete

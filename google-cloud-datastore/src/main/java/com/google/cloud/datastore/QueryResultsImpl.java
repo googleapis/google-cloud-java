@@ -16,9 +16,12 @@
 
 package com.google.cloud.datastore;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.datastore.Query.ResultType;
+import com.google.cloud.datastore.models.ExplainMetrics;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
+import com.google.datastore.v1.ExplainOptions;
 import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
 import com.google.datastore.v1.ReadOptions;
 import com.google.protobuf.ByteString;
@@ -40,16 +43,20 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private Iterator<com.google.datastore.v1.EntityResult> entityResultPbIter;
   private ByteString cursor;
   private MoreResultsType moreResults;
+  private final ExplainOptions explainOptions;
+  private ExplainMetrics explainMetrics;
 
   QueryResultsImpl(
       DatastoreImpl datastore,
       Optional<ReadOptions> readOptionsPb,
       RecordQuery<T> query,
-      String namespace) {
+      String namespace,
+      ExplainOptions explainOptions) {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
     queryResultType = query.getType();
+    this.explainOptions = explainOptions;
     com.google.datastore.v1.PartitionId.Builder pbBuilder =
         com.google.datastore.v1.PartitionId.newBuilder();
     pbBuilder.setProjectId(datastore.getOptions().getProjectId());
@@ -75,6 +82,9 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     requestPb.setPartitionId(partitionIdPb);
     requestPb.setProjectId(datastore.getOptions().getProjectId());
     requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
+    if (explainOptions != null) {
+      requestPb.setExplainOptions(explainOptions);
+    }
     query.populatePb(requestPb);
     runQueryResponsePb = datastore.runQuery(requestPb.build());
     mostRecentQueryPb = requestPb.getQuery();
@@ -86,9 +96,20 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
       // projection entity can represent all type of results
       actualResultType = ResultType.PROJECTION_ENTITY;
     }
+    boolean isExplain =
+        explainOptions != null
+            && actualResultType.getQueryType() == null
+            && !explainOptions.getAnalyze();
     Preconditions.checkState(
-        queryResultType.isAssignableFrom(actualResultType),
-        "Unexpected result type " + actualResultType + " vs " + queryResultType);
+        queryResultType.isAssignableFrom(actualResultType) || isExplain,
+        "Unexpected result type or explain options set "
+            + actualResultType
+            + " vs "
+            + queryResultType
+            + ", explain options = false");
+    if (runQueryResponsePb.hasExplainMetrics()) {
+      this.explainMetrics = new ExplainMetrics(runQueryResponsePb.getExplainMetrics());
+    }
   }
 
   @Override
@@ -126,5 +147,11 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   @Override
   public MoreResultsType getMoreResults() {
     return moreResults;
+  }
+
+  @Override
+  @BetaApi
+  public Optional<ExplainMetrics> getExplainMetrics() {
+    return Optional.ofNullable(this.explainMetrics);
   }
 }

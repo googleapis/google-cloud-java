@@ -23,6 +23,7 @@ import com.google.cloud.datastore.ReadOption;
 import com.google.cloud.datastore.ReadOption.QueryConfig;
 import com.google.cloud.datastore.execution.request.AggregationQueryRequestProtoPreparer;
 import com.google.cloud.datastore.execution.response.AggregationQueryResponseTransformer;
+import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
@@ -47,20 +48,24 @@ public class AggregationQueryExecutor
   }
 
   @Override
-  public AggregationResults execute(AggregationQuery query, ReadOption... readOptions) {
+  public AggregationResults execute(
+      AggregationQuery query, ExplainOptions explainOptions, ReadOption... readOptions) {
     RunAggregationQueryRequest runAggregationQueryRequest =
-        getRunAggregationQueryRequest(query, readOptions);
+        getRunAggregationQueryRequest(
+            query, explainOptions == null ? null : explainOptions.toPb(), readOptions);
     RunAggregationQueryResponse runAggregationQueryResponse =
         this.datastoreRpc.runAggregationQuery(runAggregationQueryRequest);
     return this.responseTransformer.transform(runAggregationQueryResponse);
   }
 
   private RunAggregationQueryRequest getRunAggregationQueryRequest(
-      AggregationQuery query, ReadOption... readOptions) {
+      AggregationQuery query,
+      com.google.datastore.v1.ExplainOptions explainOptions,
+      ReadOption... readOptions) {
     QueryConfig<AggregationQuery> queryConfig =
         readOptions == null
-            ? QueryConfig.create(query)
-            : QueryConfig.create(query, Arrays.asList(readOptions));
+            ? QueryConfig.create(query, explainOptions)
+            : QueryConfig.create(query, explainOptions, Arrays.asList(readOptions));
     return this.protoPreparer.prepare(queryConfig);
   }
 }

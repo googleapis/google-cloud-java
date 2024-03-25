@@ -18,6 +18,8 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.ReadOption.transactionId;
 
+import com.google.api.core.BetaApi;
+import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.common.collect.ImmutableList;
 import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.TransactionOptions;
@@ -102,12 +104,27 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     validateActive();
     Optional<ReadOptions> readOptions =
         this.readOptionProtoPreparer.prepare(ImmutableList.of(transactionId(transactionId)));
-    return datastore.run(readOptions, query);
+    return datastore.run(readOptions, query, null);
+  }
+
+  @Override
+  @BetaApi
+  public <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions) {
+    validateActive();
+    Optional<ReadOptions> readOptions =
+        this.readOptionProtoPreparer.prepare(ImmutableList.of(transactionId(transactionId)));
+    return datastore.run(readOptions, query, explainOptions.toPb());
   }
 
   @Override
   public AggregationResults runAggregation(AggregationQuery query) {
     return datastore.runAggregation(query, transactionId(transactionId));
+  }
+
+  @Override
+  @BetaApi
+  public AggregationResults runAggregation(AggregationQuery query, ExplainOptions explainOptions) {
+    return datastore.runAggregation(query, explainOptions, transactionId(transactionId));
   }
 
   @Override

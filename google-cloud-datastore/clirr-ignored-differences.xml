@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://mojo.codehaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-    <!-- renaming internal only class-->
+    <!--  added a default method to an interface-->
     <difference>
-        <className>com/google/cloud/datastore/ReadOption$QueryAndReadOptions</className>
-        <method>*</method>
-        <differenceType>8001</differenceType>
+        <className>com/google/cloud/datastore/Datastore</className>
+        <method>com.google.cloud.datastore.QueryResults run(com.google.cloud.datastore.Query, com.google.cloud.datastore.models.ExplainOptions, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7012</differenceType>
     </difference>
     <difference>
-        <className>com/google/cloud/datastore/execution/request/AggregationQueryRequestProtoPreparer</className>
-        <method>*QueryAndReadOptions*</method>
-        <to>*QueryConfig*</to>
+        <className>com/google/cloud/datastore/Datastore</className>
+        <method>com.google.cloud.datastore.AggregationResults runAggregation(com.google.cloud.datastore.AggregationQuery, com.google.cloud.datastore.models.ExplainOptions, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/DatastoreReader</className>
+        <method> com.google.cloud.datastore.AggregationResults runAggregation(com.google.cloud.datastore.AggregationQuery, com.google.cloud.datastore.models.ExplainOptions)</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/QueryResults</className>
+        <method>java.util.Optional getExplainMetrics()</method>
+        <differenceType>7012</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/Transaction</className>
+        <method>com.google.cloud.datastore.QueryResults run(com.google.cloud.datastore.Query, com.google.cloud.datastore.models.ExplainOptions)</method>
+        <differenceType>7012</differenceType>
+    </difference>
+
+    <!-- changed parmeters on internal only class-->
+    <difference>
+        <className>com/google/cloud/datastore/ReadOption$QueryConfig</className>
+        <method>com.google.cloud.datastore.ReadOption$QueryConfig create(com.google.cloud.datastore.Query, java.util.List)</method>
+        <to>*com.google.datastore.v1.ExplainOptions*</to>
         <differenceType>7005</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/ReadOption$QueryConfig</className>
+        <method>com.google.cloud.datastore.ReadOption$QueryConfig create(com.google.cloud.datastore.Query)</method>
+        <differenceType>7004</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/execution/AggregationQueryExecutor</className>
+        <method>com.google.cloud.datastore.AggregationResults execute(com.google.cloud.datastore.AggregationQuery, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7004</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/execution/AggregationQueryExecutor</className>
+        <method>java.lang.Object execute(com.google.cloud.datastore.Query, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7004</differenceType>
+    </difference>
+    <difference>
+        <className>com/google/cloud/datastore/execution/QueryExecutor</className>
+        <method>java.lang.Object execute(com.google.cloud.datastore.Query, com.google.cloud.datastore.ReadOption[])</method>
+        <differenceType>7004</differenceType>
     </difference>
 </differences>

@@ -88,7 +88,7 @@ public class AggregationQueryExecutorTest {
 
     replay(mockRpc);
 
-    AggregationResults aggregationResults = queryExecutor.execute(aggregationQuery);
+    AggregationResults aggregationResults = queryExecutor.execute(aggregationQuery, null);
 
     verify(mockRpc);
     assertThat(aggregationResults)
@@ -101,7 +101,8 @@ public class AggregationQueryExecutorTest {
                     new AggregationResult(
                         ImmutableMap.of(
                             "count", LongValue.of(509), "property_2", LongValue.of(100)))),
-                Timestamp.fromProto(runAggregationQueryResponse.getBatch().getReadTime())));
+                Timestamp.fromProto(runAggregationQueryResponse.getBatch().getReadTime()),
+                null));
   }
 
   @Test
@@ -127,7 +128,7 @@ public class AggregationQueryExecutorTest {
     replay(mockRpc);
 
     AggregationResults aggregationResults =
-        queryExecutor.execute(aggregationQuery, eventualConsistency());
+        queryExecutor.execute(aggregationQuery, null, eventualConsistency());
 
     verify(mockRpc);
     assertThat(aggregationResults)
@@ -140,7 +141,8 @@ public class AggregationQueryExecutorTest {
                     new AggregationResult(
                         ImmutableMap.of(
                             "count", LongValue.of(509), "property_2", LongValue.of(100)))),
-                Timestamp.fromProto(runAggregationQueryResponse.getBatch().getReadTime())));
+                Timestamp.fromProto(runAggregationQueryResponse.getBatch().getReadTime()),
+                null));
   }
 
   private RunAggregationQueryResponse placeholderAggregationQueryResponse() {
