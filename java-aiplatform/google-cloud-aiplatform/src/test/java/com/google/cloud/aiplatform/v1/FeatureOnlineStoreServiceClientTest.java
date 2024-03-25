@@ -103,7 +103,10 @@ public class FeatureOnlineStoreServiceClientTest {
 
   @Test
   public void fetchFeatureValuesTest() throws Exception {
-    FetchFeatureValuesResponse expectedResponse = FetchFeatureValuesResponse.newBuilder().build();
+    FetchFeatureValuesResponse expectedResponse =
+        FetchFeatureValuesResponse.newBuilder()
+            .setDataKey(FeatureViewDataKey.newBuilder().build())
+            .build();
     mockFeatureOnlineStoreService.addResponse(expectedResponse);
 
     FeatureViewName featureView =
@@ -143,7 +146,10 @@ public class FeatureOnlineStoreServiceClientTest {
 
   @Test
   public void fetchFeatureValuesTest2() throws Exception {
-    FetchFeatureValuesResponse expectedResponse = FetchFeatureValuesResponse.newBuilder().build();
+    FetchFeatureValuesResponse expectedResponse =
+        FetchFeatureValuesResponse.newBuilder()
+            .setDataKey(FeatureViewDataKey.newBuilder().build())
+            .build();
     mockFeatureOnlineStoreService.addResponse(expectedResponse);
 
     String featureView = "featureView-376914245";

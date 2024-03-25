@@ -20,8 +20,8 @@ package com.google.cloud.recaptchaenterprise.v1.samples;
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.common.base.Strings;
 import com.google.protobuf.ByteString;
+import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
-import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 
@@ -41,8 +41,7 @@ public class AsyncSearchRelatedAccountGroupMembershipsPaged {
         RecaptchaEnterpriseServiceClient.create()) {
       SearchRelatedAccountGroupMembershipsRequest request =
           SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-              .setProject(
-                  RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+              .setProject(ProjectName.of("[PROJECT]").toString())
               .setAccountId("accountId-1827029976")
               .setHashedAccountId(ByteString.EMPTY)
               .setPageSize(883849137)

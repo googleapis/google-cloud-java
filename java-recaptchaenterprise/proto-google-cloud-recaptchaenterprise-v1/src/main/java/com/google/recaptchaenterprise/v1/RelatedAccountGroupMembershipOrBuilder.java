@@ -33,7 +33,7 @@ public interface RelatedAccountGroupMembershipOrBuilder
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The name.
@@ -48,7 +48,7 @@ public interface RelatedAccountGroupMembershipOrBuilder
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for name.
@@ -97,7 +97,7 @@ public interface RelatedAccountGroupMembershipOrBuilder
    * <code>bytes hashed_account_id = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMembership.hashed_account_id
-   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=1880
+   *     is deprecated. See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=1891
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated

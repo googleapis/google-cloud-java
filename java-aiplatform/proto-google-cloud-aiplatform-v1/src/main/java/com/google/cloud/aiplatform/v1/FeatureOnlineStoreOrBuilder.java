@@ -69,6 +69,53 @@ public interface FeatureOnlineStoreOrBuilder
    *
    *
    * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   *
+   * @return Whether the optimized field is set.
+   */
+  boolean hasOptimized();
+  /**
+   *
+   *
+   * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   *
+   * @return The optimized.
+   */
+  com.google.cloud.aiplatform.v1.FeatureOnlineStore.Optimized getOptimized();
+  /**
+   *
+   *
+   * <pre>
+   * Contains settings for the Optimized store that will be created
+   * to serve featureValues for all FeatureViews under this
+   * FeatureOnlineStore. When choose Optimized storage type, need to set
+   * [PrivateServiceConnectConfig.enable_private_service_connect][google.cloud.aiplatform.v1.PrivateServiceConnectConfig.enable_private_service_connect]
+   * to use private endpoint. Otherwise will use public endpoint by default.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FeatureOnlineStore.Optimized optimized = 12;</code>
+   */
+  com.google.cloud.aiplatform.v1.FeatureOnlineStore.OptimizedOrBuilder getOptimizedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. Name of the FeatureOnlineStore. Format:
    * `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
    * </pre>
@@ -331,6 +378,52 @@ public interface FeatureOnlineStoreOrBuilder
    * @return The state.
    */
   com.google.cloud.aiplatform.v1.FeatureOnlineStore.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedServingEndpoint field is set.
+   */
+  boolean hasDedicatedServingEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedServingEndpoint.
+   */
+  com.google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpoint
+      getDedicatedServingEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder
+      getDedicatedServingEndpointOrBuilder();
 
   com.google.cloud.aiplatform.v1.FeatureOnlineStore.StorageTypeCase getStorageTypeCase();
 }

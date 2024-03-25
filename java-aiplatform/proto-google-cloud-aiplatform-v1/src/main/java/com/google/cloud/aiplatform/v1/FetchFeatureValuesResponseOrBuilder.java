@@ -101,5 +101,46 @@ public interface FetchFeatureValuesResponseOrBuilder
    */
   com.google.protobuf.StructOrBuilder getProtoStructOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The data key associated with this response.
+   * Will only be populated for
+   * [FeatureOnlineStoreService.StreamingFetchFeatureValues][] RPCs.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FeatureViewDataKey data_key = 4;</code>
+   *
+   * @return Whether the dataKey field is set.
+   */
+  boolean hasDataKey();
+  /**
+   *
+   *
+   * <pre>
+   * The data key associated with this response.
+   * Will only be populated for
+   * [FeatureOnlineStoreService.StreamingFetchFeatureValues][] RPCs.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FeatureViewDataKey data_key = 4;</code>
+   *
+   * @return The dataKey.
+   */
+  com.google.cloud.aiplatform.v1.FeatureViewDataKey getDataKey();
+  /**
+   *
+   *
+   * <pre>
+   * The data key associated with this response.
+   * Will only be populated for
+   * [FeatureOnlineStoreService.StreamingFetchFeatureValues][] RPCs.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.FeatureViewDataKey data_key = 4;</code>
+   */
+  com.google.cloud.aiplatform.v1.FeatureViewDataKeyOrBuilder getDataKeyOrBuilder();
+
   com.google.cloud.aiplatform.v1.FetchFeatureValuesResponse.FormatCase getFormatCase();
 }

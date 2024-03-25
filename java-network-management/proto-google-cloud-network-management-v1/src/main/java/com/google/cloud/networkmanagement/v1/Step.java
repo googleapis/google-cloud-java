@@ -266,8 +266,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * Forwarding state: arriving at a Compute Engine internal load balancer.
      * </pre>
      *
-     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10;</code>
+     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     ARRIVE_AT_INTERNAL_LOAD_BALANCER(10),
     /**
      *
@@ -276,8 +277,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * Forwarding state: arriving at a Compute Engine external load balancer.
      * </pre>
      *
-     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11;</code>
+     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     ARRIVE_AT_EXTERNAL_LOAD_BALANCER(11),
     /**
      *
@@ -574,9 +576,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * Forwarding state: arriving at a Compute Engine internal load balancer.
      * </pre>
      *
-     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10;</code>
+     * <code>ARRIVE_AT_INTERNAL_LOAD_BALANCER = 10 [deprecated = true];</code>
      */
-    public static final int ARRIVE_AT_INTERNAL_LOAD_BALANCER_VALUE = 10;
+    @java.lang.Deprecated public static final int ARRIVE_AT_INTERNAL_LOAD_BALANCER_VALUE = 10;
     /**
      *
      *
@@ -584,9 +586,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * Forwarding state: arriving at a Compute Engine external load balancer.
      * </pre>
      *
-     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11;</code>
+     * <code>ARRIVE_AT_EXTERNAL_LOAD_BALANCER = 11 [deprecated = true];</code>
      */
-    public static final int ARRIVE_AT_EXTERNAL_LOAD_BALANCER_VALUE = 11;
+    @java.lang.Deprecated public static final int ARRIVE_AT_EXTERNAL_LOAD_BALANCER_VALUE = 11;
     /**
      *
      *
@@ -848,6 +850,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     FORWARD(13),
     ABORT(14),
     DROP(15),
+    @java.lang.Deprecated
     LOAD_BALANCER(16),
     NETWORK(17),
     GKE_MASTER(18),
@@ -1776,14 +1779,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
+   *     google/cloud/networkmanagement/v1/trace.proto;l=227
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasLoadBalancer() {
     return stepInfoCase_ == 16;
   }
@@ -1791,14 +1800,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
+   *     google/cloud/networkmanagement/v1/trace.proto;l=227
    * @return The loadBalancer.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.networkmanagement.v1.LoadBalancerInfo getLoadBalancer() {
     if (stepInfoCase_ == 16) {
       return (com.google.cloud.networkmanagement.v1.LoadBalancerInfo) stepInfo_;
@@ -1809,12 +1824,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.networkmanagement.v1.LoadBalancerInfoOrBuilder
       getLoadBalancerOrBuilder() {
     if (stepInfoCase_ == 16) {
@@ -6698,14 +6717,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
+     *     google/cloud/networkmanagement/v1/trace.proto;l=227
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasLoadBalancer() {
       return stepInfoCase_ == 16;
     }
@@ -6713,14 +6738,20 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
+     *     google/cloud/networkmanagement/v1/trace.proto;l=227
      * @return The loadBalancer.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.networkmanagement.v1.LoadBalancerInfo getLoadBalancer() {
       if (loadBalancerBuilder_ == null) {
         if (stepInfoCase_ == 16) {
@@ -6738,11 +6769,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setLoadBalancer(com.google.cloud.networkmanagement.v1.LoadBalancerInfo value) {
       if (loadBalancerBuilder_ == null) {
         if (value == null) {
@@ -6760,11 +6795,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setLoadBalancer(
         com.google.cloud.networkmanagement.v1.LoadBalancerInfo.Builder builderForValue) {
       if (loadBalancerBuilder_ == null) {
@@ -6780,11 +6819,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeLoadBalancer(com.google.cloud.networkmanagement.v1.LoadBalancerInfo value) {
       if (loadBalancerBuilder_ == null) {
         if (stepInfoCase_ == 16
@@ -6813,11 +6856,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearLoadBalancer() {
       if (loadBalancerBuilder_ == null) {
         if (stepInfoCase_ == 16) {
@@ -6838,11 +6885,15 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.networkmanagement.v1.LoadBalancerInfo.Builder getLoadBalancerBuilder() {
       return getLoadBalancerFieldBuilder().getBuilder();
     }
@@ -6850,12 +6901,16 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.networkmanagement.v1.LoadBalancerInfoOrBuilder
         getLoadBalancerOrBuilder() {
       if ((stepInfoCase_ == 16) && (loadBalancerBuilder_ != null)) {
@@ -6871,10 +6926,13 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Display information of the load balancers.
+     * Display information of the load balancers. Deprecated in favor of the
+     * `load_balancer_backend_info` field, not used in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.networkmanagement.v1.LoadBalancerInfo,

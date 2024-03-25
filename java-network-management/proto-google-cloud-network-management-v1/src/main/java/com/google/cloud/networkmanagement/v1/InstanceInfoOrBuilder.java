@@ -235,7 +235,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=284
+   *     google/cloud/networkmanagement/v1/trace.proto;l=285
    * @return The serviceAccount.
    */
   @java.lang.Deprecated
@@ -250,7 +250,7 @@ public interface InstanceInfoOrBuilder
    * <code>string service_account = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.InstanceInfo.service_account is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=284
+   *     google/cloud/networkmanagement/v1/trace.proto;l=285
    * @return The bytes for serviceAccount.
    */
   @java.lang.Deprecated

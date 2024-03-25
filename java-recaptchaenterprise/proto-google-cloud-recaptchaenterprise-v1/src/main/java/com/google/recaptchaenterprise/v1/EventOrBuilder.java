@@ -113,7 +113,9 @@ public interface EventOrBuilder
    * this event.
    * </pre>
    *
-   * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The userIpAddress.
    */
@@ -126,7 +128,9 @@ public interface EventOrBuilder
    * this event.
    * </pre>
    *
-   * <code>string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string user_ip_address = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for userIpAddress.
    */
@@ -174,7 +178,7 @@ public interface EventOrBuilder
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=676
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=682
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated
