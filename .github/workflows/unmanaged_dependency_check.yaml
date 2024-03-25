@@ -17,7 +17,7 @@ jobs:
           # repository
           .kokoro/build.sh
       - name: Unmanaged dependency check
-        uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.27.0
+        uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v3.28.1
         with:
           # java-bigquery does not produce a BOM. Fortunately the root pom.xml
           # defines google-cloud-bigquery in dependencyManagement section. So
