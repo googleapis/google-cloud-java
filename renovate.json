@@ -24,7 +24,8 @@
     ".kokoro/nightly/graalvm-sub-jobs/native*/common.cfg",
     ".kokoro/presubmit/graalvm-native*.cfg",
     "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg",
-    "generation_config.yaml"
+    "generation_config.yaml",
+    ".github/workflows/unmanaged_dependency_check.yaml"
   ],
   "regexManagers": [
     {
@@ -58,6 +59,15 @@
         "gapic_generator_version\\s*:\\s*(?<currentValue>.*?)\\n"
       ],
       "depNameTemplate": "com.google.api:gapic-generator-java",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^.github/workflows/unmanaged_dependency_check.yaml$"
+      ],
+      "matchStrings": ["uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"],
+      "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
       "datasourceTemplate": "maven"
     }
   ]
