@@ -5,6 +5,7 @@
   <artifactId>google-shopping-merchant-quota-bom</artifactId>
   <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-quota:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>

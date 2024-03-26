@@ -1,6 +1,6 @@
-# Google API Keys API Client for Java
+# Google API Keys Client for Java
 
-Java idiomatic client for [API Keys API][product-docs].
+Java idiomatic client for [API Keys][product-docs].
 
 [![Maven][maven-version-image]][maven-version-link]
 ![Stability][stability-image]
@@ -68,14 +68,14 @@ See the [Authentication][authentication] section in the base directory's README.
 
 ## Authorization
 
-The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired API Keys API APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the API Keys API API calls.
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired API Keys APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the API Keys API calls.
 
 ## Getting Started
 
 ### Prerequisites
 
-You will need a [Google Cloud Platform Console][developer-console] project with the API Keys API [API enabled][enable-api].
-You will need to [enable billing][enable-billing] to use Google API Keys API.
+You will need a [Google Cloud Platform Console][developer-console] project with the API Keys [API enabled][enable-api].
+You will need to [enable billing][enable-billing] to use Google API Keys.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -85,13 +85,13 @@ You will need to [enable billing][enable-billing] to use Google API Keys API.
 You'll need to obtain the `google-cloud-apikeys` library.  See the [Quickstart](#quickstart) section
 to add `google-cloud-apikeys` as a dependency in your code.
 
-## About API Keys API
+## About API Keys
 
 
-[API Keys API][product-docs] API Keys lets you create and manage your API keys for your projects.
+[API Keys][product-docs] API Keys Client lets you use API Keys API.
 
-See the [API Keys API client library docs][javadocs] to learn how to
-use this API Keys API Client Library.
+See the [API Keys client library docs][javadocs] to learn how to
+use this API Keys Client Library.
 
 
 
@@ -104,7 +104,7 @@ To get help, follow the instructions in the [shared Troubleshooting document][tr
 
 ## Transport
 
-API Keys API uses both gRPC and HTTP/JSON for the transport layer.
+API Keys uses gRPC for the transport layer.
 
 ## Supported Java Versions
 
@@ -187,18 +187,18 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/api-keys/
+[product-docs]: https://github.com/googleapis/google-cloud-java/tree/main/java-apikeys
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-apikeys/latest/overview
-[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.svg
-[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java7.html
-[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.svg
-[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8.html
-[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.svg
-[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-osx.html
-[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.svg
-[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
-[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
-[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
+[kokoro-badge-image-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java7.svg
+[kokoro-badge-link-1]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java7.html
+[kokoro-badge-image-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java8.svg
+[kokoro-badge-link-2]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java8.html
+[kokoro-badge-image-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java8-osx.svg
+[kokoro-badge-link-3]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java8-osx.html
+[kokoro-badge-image-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java8-win.svg
+[kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java8-win.html
+[kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java11.svg
+[kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-apikeys/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-apikeys.svg
 [maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-apikeys/0.36.0
@@ -210,9 +210,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-cli]: https://cloud.google.com/cli
 [troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
-[contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
+[contributing]: https://github.com/googleapis/java-apikeys/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/java-apikeys/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[license]: https://github.com/googleapis/java-apikeys/blob/main/LICENSE
 [enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=apikeys.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
