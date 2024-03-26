@@ -115,6 +115,35 @@ public interface CloudStorageConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. User-provided format string specifying how to represent datetimes
+   * in Cloud Storage filenames. See the [datetime format
+   * guidance](https://cloud.google.com/pubsub/docs/create-cloudstorage-subscription#file_names).
+   * </pre>
+   *
+   * <code>string filename_datetime_format = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filenameDatetimeFormat.
+   */
+  java.lang.String getFilenameDatetimeFormat();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-provided format string specifying how to represent datetimes
+   * in Cloud Storage filenames. See the [datetime format
+   * guidance](https://cloud.google.com/pubsub/docs/create-cloudstorage-subscription#file_names).
+   * </pre>
+   *
+   * <code>string filename_datetime_format = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filenameDatetimeFormat.
+   */
+  com.google.protobuf.ByteString getFilenameDatetimeFormatBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. If set, message data will be written to Cloud Storage in text
    * format.
    * </pre>
