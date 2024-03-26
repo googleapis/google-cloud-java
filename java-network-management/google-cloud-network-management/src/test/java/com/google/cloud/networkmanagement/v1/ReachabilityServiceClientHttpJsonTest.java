@@ -164,6 +164,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -220,6 +221,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -285,6 +287,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -310,6 +313,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
 
     ConnectivityTest actualResponse =
@@ -355,6 +359,7 @@ public class ReachabilityServiceClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
               .setProbingDetails(ProbingDetails.newBuilder().build())
+              .setBypassFirewallChecks(true)
               .build();
       client.updateConnectivityTestAsync(updateMask, resource).get();
       Assert.fail("No exception raised");
@@ -378,6 +383,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
             .setProbingDetails(ProbingDetails.newBuilder().build())
+            .setBypassFirewallChecks(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -549,6 +549,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetBackupIndexDownloadUrl</td>
+ *      <td><p> Retrieve the link to the backupIndex.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBackupIndexDownloadUrl(GetBackupIndexDownloadUrlRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBackupIndexDownloadUrl(BackupName backup)
+ *           <li><p> getBackupIndexDownloadUrl(String backup)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBackupIndexDownloadUrlCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1228,10 +1247,10 @@ public class BackupForGKEClient implements BackgroundResource {
    *
    * @param backupPlan Required. A new version of the BackupPlan resource that contains updated
    *     fields. This may be sparsely populated if an `update_mask` is provided.
-   * @param updateMask This is used to specify the fields to be overwritten in the BackupPlan
-   *     targeted for update. The values for each of these updated fields will be taken from the
-   *     `backup_plan` provided with this request. Field names are relative to the root of the
-   *     resource (e.g., `description`, `backup_config.include_volume_data`, etc.) If no
+   * @param updateMask Optional. This is used to specify the fields to be overwritten in the
+   *     BackupPlan targeted for update. The values for each of these updated fields will be taken
+   *     from the `backup_plan` provided with this request. Field names are relative to the root of
+   *     the resource (e.g., `description`, `backup_config.include_volume_data`, etc.) If no
    *     `update_mask` is provided, all fields in `backup_plan` will be written to the target
    *     BackupPlan resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `backup_plan` are
    *     ignored and are not used to update the target BackupPlan.
@@ -1503,8 +1522,9 @@ public class BackupForGKEClient implements BackgroundResource {
    *
    * @param parent Required. The BackupPlan within which to create the Backup. Format:
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
-   * @param backup The Backup resource to create.
-   * @param backupId The client-provided short name for the Backup resource. This name must:
+   * @param backup Optional. The Backup resource to create.
+   * @param backupId Optional. The client-provided short name for the Backup resource. This name
+   *     must:
    *     <p>- be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII
    *     letters, numbers, and dashes - start with a lower-case letter - end with a lower-case
    *     letter or number - be unique within the set of Backups in this BackupPlan
@@ -1543,8 +1563,9 @@ public class BackupForGKEClient implements BackgroundResource {
    *
    * @param parent Required. The BackupPlan within which to create the Backup. Format:
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
-   * @param backup The Backup resource to create.
-   * @param backupId The client-provided short name for the Backup resource. This name must:
+   * @param backup Optional. The Backup resource to create.
+   * @param backupId Optional. The client-provided short name for the Backup resource. This name
+   *     must:
    *     <p>- be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII
    *     letters, numbers, and dashes - start with a lower-case letter - end with a lower-case
    *     letter or number - be unique within the set of Backups in this BackupPlan
@@ -1955,8 +1976,8 @@ public class BackupForGKEClient implements BackgroundResource {
    *
    * @param backup Required. A new version of the Backup resource that contains updated fields. This
    *     may be sparsely populated if an `update_mask` is provided.
-   * @param updateMask This is used to specify the fields to be overwritten in the Backup targeted
-   *     for update. The values for each of these updated fields will be taken from the
+   * @param updateMask Optional. This is used to specify the fields to be overwritten in the Backup
+   *     targeted for update. The values for each of these updated fields will be taken from the
    *     `backup_plan` provided with this request. Field names are relative to the root of the
    *     resource. If no `update_mask` is provided, all fields in `backup` will be written to the
    *     target Backup resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `backup` are ignored
@@ -2989,11 +3010,11 @@ public class BackupForGKEClient implements BackgroundResource {
    *
    * @param restorePlan Required. A new version of the RestorePlan resource that contains updated
    *     fields. This may be sparsely populated if an `update_mask` is provided.
-   * @param updateMask This is used to specify the fields to be overwritten in the RestorePlan
-   *     targeted for update. The values for each of these updated fields will be taken from the
-   *     `restore_plan` provided with this request. Field names are relative to the root of the
-   *     resource. If no `update_mask` is provided, all fields in `restore_plan` will be written to
-   *     the target RestorePlan resource. Note that OUTPUT_ONLY and IMMUTABLE fields in
+   * @param updateMask Optional. This is used to specify the fields to be overwritten in the
+   *     RestorePlan targeted for update. The values for each of these updated fields will be taken
+   *     from the `restore_plan` provided with this request. Field names are relative to the root of
+   *     the resource. If no `update_mask` is provided, all fields in `restore_plan` will be written
+   *     to the target RestorePlan resource. Note that OUTPUT_ONLY and IMMUTABLE fields in
    *     `restore_plan` are ignored and are not used to update the target RestorePlan.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3725,12 +3746,12 @@ public class BackupForGKEClient implements BackgroundResource {
    *
    * @param restore Required. A new version of the Restore resource that contains updated fields.
    *     This may be sparsely populated if an `update_mask` is provided.
-   * @param updateMask This is used to specify the fields to be overwritten in the Restore targeted
-   *     for update. The values for each of these updated fields will be taken from the `restore`
-   *     provided with this request. Field names are relative to the root of the resource. If no
-   *     `update_mask` is provided, all fields in `restore` will be written to the target Restore
-   *     resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `restore` are ignored and are not
-   *     used to update the target Restore.
+   * @param updateMask Optional. This is used to specify the fields to be overwritten in the Restore
+   *     targeted for update. The values for each of these updated fields will be taken from the
+   *     `restore` provided with this request. Field names are relative to the root of the resource.
+   *     If no `update_mask` is provided, all fields in `restore` will be written to the target
+   *     Restore resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `restore` are ignored and
+   *     are not used to update the target Restore.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> updateRestoreAsync(
@@ -4290,6 +4311,128 @@ public class BackupForGKEClient implements BackgroundResource {
    */
   public final UnaryCallable<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreCallable() {
     return stub.getVolumeRestoreCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve the link to the backupIndex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]");
+   *   GetBackupIndexDownloadUrlResponse response =
+   *       backupForGKEClient.getBackupIndexDownloadUrl(backup);
+   * }
+   * }</pre>
+   *
+   * @param backup Required. Full name of Backup resource. Format:
+   *     projects/{project}/locations/{location}/backupPlans/{backup_plan}/backups/{backup}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetBackupIndexDownloadUrlResponse getBackupIndexDownloadUrl(BackupName backup) {
+    GetBackupIndexDownloadUrlRequest request =
+        GetBackupIndexDownloadUrlRequest.newBuilder()
+            .setBackup(backup == null ? null : backup.toString())
+            .build();
+    return getBackupIndexDownloadUrl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve the link to the backupIndex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   String backup =
+   *       BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString();
+   *   GetBackupIndexDownloadUrlResponse response =
+   *       backupForGKEClient.getBackupIndexDownloadUrl(backup);
+   * }
+   * }</pre>
+   *
+   * @param backup Required. Full name of Backup resource. Format:
+   *     projects/{project}/locations/{location}/backupPlans/{backup_plan}/backups/{backup}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetBackupIndexDownloadUrlResponse getBackupIndexDownloadUrl(String backup) {
+    GetBackupIndexDownloadUrlRequest request =
+        GetBackupIndexDownloadUrlRequest.newBuilder().setBackup(backup).build();
+    return getBackupIndexDownloadUrl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve the link to the backupIndex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   GetBackupIndexDownloadUrlRequest request =
+   *       GetBackupIndexDownloadUrlRequest.newBuilder()
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .build();
+   *   GetBackupIndexDownloadUrlResponse response =
+   *       backupForGKEClient.getBackupIndexDownloadUrl(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetBackupIndexDownloadUrlResponse getBackupIndexDownloadUrl(
+      GetBackupIndexDownloadUrlRequest request) {
+    return getBackupIndexDownloadUrlCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve the link to the backupIndex.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupForGKEClient backupForGKEClient = BackupForGKEClient.create()) {
+   *   GetBackupIndexDownloadUrlRequest request =
+   *       GetBackupIndexDownloadUrlRequest.newBuilder()
+   *           .setBackup(
+   *               BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]").toString())
+   *           .build();
+   *   ApiFuture<GetBackupIndexDownloadUrlResponse> future =
+   *       backupForGKEClient.getBackupIndexDownloadUrlCallable().futureCall(request);
+   *   // Do something.
+   *   GetBackupIndexDownloadUrlResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlCallable() {
+    return stub.getBackupIndexDownloadUrlCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

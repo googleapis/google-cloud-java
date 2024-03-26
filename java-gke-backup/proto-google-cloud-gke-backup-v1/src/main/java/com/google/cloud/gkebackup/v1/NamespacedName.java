@@ -72,10 +72,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Namespace of the Kubernetes resource.
+   * Optional. The Namespace of the Kubernetes resource.
    * </pre>
    *
-   * <code>string namespace = 1;</code>
+   * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The namespace.
    */
@@ -95,10 +95,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Namespace of the Kubernetes resource.
+   * Optional. The Namespace of the Kubernetes resource.
    * </pre>
    *
-   * <code>string namespace = 1;</code>
+   * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for namespace.
    */
@@ -123,10 +123,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the Kubernetes resource.
+   * Optional. The name of the Kubernetes resource.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -146,10 +146,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the Kubernetes resource.
+   * Optional. The name of the Kubernetes resource.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */
@@ -536,10 +536,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Namespace of the Kubernetes resource.
+     * Optional. The Namespace of the Kubernetes resource.
      * </pre>
      *
-     * <code>string namespace = 1;</code>
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The namespace.
      */
@@ -558,10 +558,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Namespace of the Kubernetes resource.
+     * Optional. The Namespace of the Kubernetes resource.
      * </pre>
      *
-     * <code>string namespace = 1;</code>
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for namespace.
      */
@@ -580,10 +580,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Namespace of the Kubernetes resource.
+     * Optional. The Namespace of the Kubernetes resource.
      * </pre>
      *
-     * <code>string namespace = 1;</code>
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The namespace to set.
      * @return This builder for chaining.
@@ -601,10 +601,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Namespace of the Kubernetes resource.
+     * Optional. The Namespace of the Kubernetes resource.
      * </pre>
      *
-     * <code>string namespace = 1;</code>
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -618,10 +618,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Namespace of the Kubernetes resource.
+     * Optional. The Namespace of the Kubernetes resource.
      * </pre>
      *
-     * <code>string namespace = 1;</code>
+     * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for namespace to set.
      * @return This builder for chaining.
@@ -642,10 +642,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the Kubernetes resource.
+     * Optional. The name of the Kubernetes resource.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The name.
      */
@@ -664,10 +664,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the Kubernetes resource.
+     * Optional. The name of the Kubernetes resource.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for name.
      */
@@ -686,10 +686,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the Kubernetes resource.
+     * Optional. The name of the Kubernetes resource.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -707,10 +707,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the Kubernetes resource.
+     * Optional. The name of the Kubernetes resource.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -724,10 +724,10 @@ public final class NamespacedName extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the Kubernetes resource.
+     * Optional. The name of the Kubernetes resource.
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -128,10 +128,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The Backup resource to create.
+   * Optional. The Backup resource to create.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+   * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the backup field is set.
    */
@@ -143,10 +144,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The Backup resource to create.
+   * Optional. The Backup resource to create.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+   * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The backup.
    */
@@ -158,10 +160,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The Backup resource to create.
+   * Optional. The Backup resource to create.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+   * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.BackupOrBuilder getBackupOrBuilder() {
@@ -176,7 +179,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The client-provided short name for the Backup resource.
+   * Optional. The client-provided short name for the Backup resource.
    * This name must:
    *
    * - be between 1 and 63 characters long (inclusive)
@@ -186,7 +189,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * - be unique within the set of Backups in this BackupPlan
    * </pre>
    *
-   * <code>string backup_id = 3;</code>
+   * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The backupId.
    */
@@ -206,7 +209,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The client-provided short name for the Backup resource.
+   * Optional. The client-provided short name for the Backup resource.
    * This name must:
    *
    * - be between 1 and 63 characters long (inclusive)
@@ -216,7 +219,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * - be unique within the set of Backups in this BackupPlan
    * </pre>
    *
-   * <code>string backup_id = 3;</code>
+   * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for backupId.
    */
@@ -773,10 +776,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the backup field is set.
      */
@@ -787,10 +791,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The backup.
      */
@@ -807,10 +812,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBackup(com.google.cloud.gkebackup.v1.Backup value) {
       if (backupBuilder_ == null) {
@@ -829,10 +835,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setBackup(com.google.cloud.gkebackup.v1.Backup.Builder builderForValue) {
       if (backupBuilder_ == null) {
@@ -848,10 +855,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeBackup(com.google.cloud.gkebackup.v1.Backup value) {
       if (backupBuilder_ == null) {
@@ -875,10 +883,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearBackup() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -894,10 +903,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.Backup.Builder getBackupBuilder() {
       bitField0_ |= 0x00000002;
@@ -908,10 +918,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupOrBuilder getBackupOrBuilder() {
       if (backupBuilder_ != null) {
@@ -926,10 +937,11 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Backup resource to create.
+     * Optional. The Backup resource to create.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+     * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkebackup.v1.Backup,
@@ -953,7 +965,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The client-provided short name for the Backup resource.
+     * Optional. The client-provided short name for the Backup resource.
      * This name must:
      *
      * - be between 1 and 63 characters long (inclusive)
@@ -963,7 +975,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
-     * <code>string backup_id = 3;</code>
+     * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The backupId.
      */
@@ -982,7 +994,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The client-provided short name for the Backup resource.
+     * Optional. The client-provided short name for the Backup resource.
      * This name must:
      *
      * - be between 1 and 63 characters long (inclusive)
@@ -992,7 +1004,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
-     * <code>string backup_id = 3;</code>
+     * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for backupId.
      */
@@ -1011,7 +1023,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The client-provided short name for the Backup resource.
+     * Optional. The client-provided short name for the Backup resource.
      * This name must:
      *
      * - be between 1 and 63 characters long (inclusive)
@@ -1021,7 +1033,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
-     * <code>string backup_id = 3;</code>
+     * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The backupId to set.
      * @return This builder for chaining.
@@ -1039,7 +1051,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The client-provided short name for the Backup resource.
+     * Optional. The client-provided short name for the Backup resource.
      * This name must:
      *
      * - be between 1 and 63 characters long (inclusive)
@@ -1049,7 +1061,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
-     * <code>string backup_id = 3;</code>
+     * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1063,7 +1075,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The client-provided short name for the Backup resource.
+     * Optional. The client-provided short name for the Backup resource.
      * This name must:
      *
      * - be between 1 and 63 characters long (inclusive)
@@ -1073,7 +1085,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * - be unique within the set of Backups in this BackupPlan
      * </pre>
      *
-     * <code>string backup_id = 3;</code>
+     * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for backupId to set.
      * @return This builder for chaining.

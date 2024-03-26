@@ -129,6 +129,8 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -195,6 +197,8 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -349,6 +353,8 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -400,6 +406,8 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     mockBackupForGKE.addResponse(expectedResponse);
 
@@ -451,6 +459,8 @@ public class BackupForGKEClientTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2422,6 +2432,80 @@ public class BackupForGKEClientTest {
     try {
       String name = "name3373707";
       client.getVolumeRestore(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlTest() throws Exception {
+    GetBackupIndexDownloadUrlResponse expectedResponse =
+        GetBackupIndexDownloadUrlResponse.newBuilder().setSignedUrl("signedUrl1076770995").build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]");
+
+    GetBackupIndexDownloadUrlResponse actualResponse = client.getBackupIndexDownloadUrl(backup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupIndexDownloadUrlRequest actualRequest =
+        ((GetBackupIndexDownloadUrlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(backup.toString(), actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]");
+      client.getBackupIndexDownloadUrl(backup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlTest2() throws Exception {
+    GetBackupIndexDownloadUrlResponse expectedResponse =
+        GetBackupIndexDownloadUrlResponse.newBuilder().setSignedUrl("signedUrl1076770995").build();
+    mockBackupForGKE.addResponse(expectedResponse);
+
+    String backup = "backup-1396673086";
+
+    GetBackupIndexDownloadUrlResponse actualResponse = client.getBackupIndexDownloadUrl(backup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBackupForGKE.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBackupIndexDownloadUrlRequest actualRequest =
+        ((GetBackupIndexDownloadUrlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(backup, actualRequest.getBackup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupForGKE.addException(exception);
+
+    try {
+      String backup = "backup-1396673086";
+      client.getBackupIndexDownloadUrl(backup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

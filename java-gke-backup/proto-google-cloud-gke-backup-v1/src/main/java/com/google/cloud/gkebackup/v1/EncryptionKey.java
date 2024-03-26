@@ -72,11 +72,13 @@ public final class EncryptionKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud KMS encryption key. Format:
+   * Optional. Google Cloud KMS encryption key. Format:
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
    * </pre>
    *
-   * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string gcp_kms_encryption_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The gcpKmsEncryptionKey.
    */
@@ -96,11 +98,13 @@ public final class EncryptionKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud KMS encryption key. Format:
+   * Optional. Google Cloud KMS encryption key. Format:
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
    * </pre>
    *
-   * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string gcp_kms_encryption_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for gcpKmsEncryptionKey.
    */
@@ -464,11 +468,13 @@ public final class EncryptionKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud KMS encryption key. Format:
+     * Optional. Google Cloud KMS encryption key. Format:
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
      * </pre>
      *
-     * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string gcp_kms_encryption_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The gcpKmsEncryptionKey.
      */
@@ -487,11 +493,13 @@ public final class EncryptionKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud KMS encryption key. Format:
+     * Optional. Google Cloud KMS encryption key. Format:
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
      * </pre>
      *
-     * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string gcp_kms_encryption_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for gcpKmsEncryptionKey.
      */
@@ -510,11 +518,13 @@ public final class EncryptionKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud KMS encryption key. Format:
+     * Optional. Google Cloud KMS encryption key. Format:
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
      * </pre>
      *
-     * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string gcp_kms_encryption_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The gcpKmsEncryptionKey to set.
      * @return This builder for chaining.
@@ -532,11 +542,13 @@ public final class EncryptionKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud KMS encryption key. Format:
+     * Optional. Google Cloud KMS encryption key. Format:
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
      * </pre>
      *
-     * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string gcp_kms_encryption_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -550,11 +562,13 @@ public final class EncryptionKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud KMS encryption key. Format:
+     * Optional. Google Cloud KMS encryption key. Format:
      * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`
      * </pre>
      *
-     * <code>string gcp_kms_encryption_key = 1 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string gcp_kms_encryption_key = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for gcpKmsEncryptionKey to set.
      * @return This builder for chaining.

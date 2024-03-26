@@ -24,7 +24,6 @@ package com.google.cloud.gkebackup.v1;
  *
  * <pre>
  * Represents the operation of restoring a volume from a VolumeBackup.
- * Next id: 13
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.VolumeRestore}
@@ -1344,7 +1343,6 @@ public final class VolumeRestore extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents the operation of restoring a volume from a VolumeBackup.
-   * Next id: 13
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.VolumeRestore}

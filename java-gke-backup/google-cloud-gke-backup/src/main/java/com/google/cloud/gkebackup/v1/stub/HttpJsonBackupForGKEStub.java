@@ -50,6 +50,8 @@ import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
@@ -1035,6 +1037,42 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>newBuilder()
+              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetBackupIndexDownloadUrl")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBackupIndexDownloadUrlRequest>newBuilder()
+                      .setPath(
+                          "/v1/{backup=projects/*/locations/*/backupPlans/*/backups/*}:getBackupIndexDownloadUrl",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupIndexDownloadUrlRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "backup", request.getBackup());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBackupIndexDownloadUrlRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GetBackupIndexDownloadUrlResponse>newBuilder()
+                      .setDefaultInstance(GetBackupIndexDownloadUrlResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1293,6 +1331,8 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
   private final UnaryCallable<ListVolumeRestoresRequest, ListVolumeRestoresPagedResponse>
       listVolumeRestoresPagedCallable;
   private final UnaryCallable<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreCallable;
+  private final UnaryCallable<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1358,7 +1398,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                 .put(
                     "google.longrunning.Operations.DeleteOperation",
                     HttpRule.newBuilder()
-                        .setDelete("/v1/{name=projects/*/locations/*}/operations")
+                        .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
                         .build())
                 .put(
                     "google.longrunning.Operations.GetOperation",
@@ -1642,6 +1682,19 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+        getBackupIndexDownloadUrlTransportSettings =
+            HttpJsonCallSettings
+                .<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>newBuilder()
+                .setMethodDescriptor(getBackupIndexDownloadUrlMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backup", String.valueOf(request.getBackup()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1876,6 +1929,11 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
     this.getVolumeRestoreCallable =
         callableFactory.createUnaryCallable(
             getVolumeRestoreTransportSettings, settings.getVolumeRestoreSettings(), clientContext);
+    this.getBackupIndexDownloadUrlCallable =
+        callableFactory.createUnaryCallable(
+            getBackupIndexDownloadUrlTransportSettings,
+            settings.getBackupIndexDownloadUrlSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1928,6 +1986,7 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
     methodDescriptors.add(deleteRestoreMethodDescriptor);
     methodDescriptors.add(listVolumeRestoresMethodDescriptor);
     methodDescriptors.add(getVolumeRestoreMethodDescriptor);
+    methodDescriptors.add(getBackupIndexDownloadUrlMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2167,6 +2226,12 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
   @Override
   public UnaryCallable<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreCallable() {
     return getVolumeRestoreCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlCallable() {
+    return getBackupIndexDownloadUrlCallable;
   }
 
   @Override

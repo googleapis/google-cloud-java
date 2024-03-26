@@ -59,12 +59,12 @@ public interface DeleteRestoreRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
    * the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -73,12 +73,12 @@ public interface DeleteRestoreRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target Restore's [etag][google.cloud.gkebackup.v1.Restore.etag] field or
    * the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -88,12 +88,12 @@ public interface DeleteRestoreRequestOrBuilder
    *
    *
    * <pre>
-   * If set to true, any VolumeRestores below this restore will also be deleted.
-   * Otherwise, the request will only succeed if the restore has no
+   * Optional. If set to true, any VolumeRestores below this restore will also
+   * be deleted. Otherwise, the request will only succeed if the restore has no
    * VolumeRestores.
    * </pre>
    *
-   * <code>bool force = 3;</code>
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */

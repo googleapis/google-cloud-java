@@ -1098,6 +1098,57 @@ public final class BackupForGKEGrpc {
     return getGetVolumeRestoreMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+      getGetBackupIndexDownloadUrlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBackupIndexDownloadUrl",
+      requestType = com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest.class,
+      responseType = com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+      getGetBackupIndexDownloadUrlMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+        getGetBackupIndexDownloadUrlMethod;
+    if ((getGetBackupIndexDownloadUrlMethod = BackupForGKEGrpc.getGetBackupIndexDownloadUrlMethod)
+        == null) {
+      synchronized (BackupForGKEGrpc.class) {
+        if ((getGetBackupIndexDownloadUrlMethod =
+                BackupForGKEGrpc.getGetBackupIndexDownloadUrlMethod)
+            == null) {
+          BackupForGKEGrpc.getGetBackupIndexDownloadUrlMethod =
+              getGetBackupIndexDownloadUrlMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+                          com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetBackupIndexDownloadUrl"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupForGKEMethodDescriptorSupplier("GetBackupIndexDownloadUrl"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupIndexDownloadUrlMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BackupForGKEStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BackupForGKEStub> factory =
@@ -1487,6 +1538,21 @@ public final class BackupForGKEGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.VolumeRestore> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetVolumeRestoreMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    default void getBackupIndexDownloadUrl(
+        com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBackupIndexDownloadUrlMethod(), responseObserver);
     }
   }
 
@@ -1911,6 +1977,23 @@ public final class BackupForGKEGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public void getBackupIndexDownloadUrl(
+        com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBackupIndexDownloadUrlMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2243,6 +2326,20 @@ public final class BackupForGKEGrpc {
         com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetVolumeRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse
+        getBackupIndexDownloadUrl(
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupIndexDownloadUrlMethod(), getCallOptions(), request);
     }
   }
 
@@ -2587,6 +2684,21 @@ public final class BackupForGKEGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetVolumeRestoreMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>
+        getBackupIndexDownloadUrl(
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBackupIndexDownloadUrlMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_BACKUP_PLAN = 0;
@@ -2613,6 +2725,7 @@ public final class BackupForGKEGrpc {
   private static final int METHODID_DELETE_RESTORE = 21;
   private static final int METHODID_LIST_VOLUME_RESTORES = 22;
   private static final int METHODID_GET_VOLUME_RESTORE = 23;
+  private static final int METHODID_GET_BACKUP_INDEX_DOWNLOAD_URL = 24;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2761,6 +2874,13 @@ public final class BackupForGKEGrpc {
           serviceImpl.getVolumeRestore(
               (com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.VolumeRestore>)
+                  responseObserver);
+          break;
+        case METHODID_GET_BACKUP_INDEX_DOWNLOAD_URL:
+          serviceImpl.getBackupIndexDownloadUrl(
+              (com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>)
                   responseObserver);
           break;
         default:
@@ -2933,6 +3053,13 @@ public final class BackupForGKEGrpc {
                     com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest,
                     com.google.cloud.gkebackup.v1.VolumeRestore>(
                     service, METHODID_GET_VOLUME_RESTORE)))
+        .addMethod(
+            getGetBackupIndexDownloadUrlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest,
+                    com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse>(
+                    service, METHODID_GET_BACKUP_INDEX_DOWNLOAD_URL)))
         .build();
   }
 
@@ -3008,6 +3135,7 @@ public final class BackupForGKEGrpc {
                       .addMethod(getDeleteRestoreMethod())
                       .addMethod(getListVolumeRestoresMethod())
                       .addMethod(getGetVolumeRestoreMethod())
+                      .addMethod(getGetBackupIndexDownloadUrlMethod())
                       .build();
         }
       }

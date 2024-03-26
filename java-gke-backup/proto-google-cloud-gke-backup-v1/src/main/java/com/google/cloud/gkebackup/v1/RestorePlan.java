@@ -25,7 +25,6 @@ package com.google.cloud.gkebackup.v1;
  * <pre>
  * The configuration of a potential series of Restore operations to be performed
  * against Backups belong to a particular BackupPlan.
- * Next id: 13
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.RestorePlan}
@@ -504,10 +503,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User specified descriptive string for this RestorePlan.
+   * Optional. User specified descriptive string for this RestorePlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -527,10 +526,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User specified descriptive string for this RestorePlan.
+   * Optional. User specified descriptive string for this RestorePlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -759,10 +758,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -781,10 +780,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -794,10 +793,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -814,10 +813,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1279,7 +1278,6 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The configuration of a potential series of Restore operations to be performed
    * against Backups belong to a particular BackupPlan.
-   * Next id: 13
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.RestorePlan}
@@ -2320,10 +2318,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this RestorePlan.
+     * Optional. User specified descriptive string for this RestorePlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -2342,10 +2340,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this RestorePlan.
+     * Optional. User specified descriptive string for this RestorePlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -2364,10 +2362,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this RestorePlan.
+     * Optional. User specified descriptive string for this RestorePlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2385,10 +2383,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this RestorePlan.
+     * Optional. User specified descriptive string for this RestorePlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2402,10 +2400,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User specified descriptive string for this RestorePlan.
+     * Optional. User specified descriptive string for this RestorePlan.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2926,10 +2924,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 9;</code>
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2948,10 +2946,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 9;</code>
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2961,10 +2959,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 9;</code>
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -2981,10 +2979,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 9;</code>
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3007,10 +3005,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 9;</code>
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3029,10 +3027,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 9;</code>
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3049,10 +3047,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A set of custom labels supplied by user.
+     * Optional. A set of custom labels supplied by user.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 9;</code>
+     * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

@@ -28,13 +28,13 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the mechanism to be used to restore volume data.
+   * Optional. Specifies the mechanism to be used to restore volume data.
    * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
    * NO_VOLUME_DATA_RESTORATION).
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for volumeDataRestorePolicy.
@@ -44,13 +44,13 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the mechanism to be used to restore volume data.
+   * Optional. Specifies the mechanism to be used to restore volume data.
    * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
    * NO_VOLUME_DATA_RESTORATION).
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The volumeDataRestorePolicy.
@@ -61,15 +61,16 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where cluster-scoped
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+   * Optional. Defines the behavior for handling the situation where
+   * cluster-scoped resources being restored already exist in the target
+   * cluster. This MUST be set to a value other than
+   * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
    * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
    * is not empty.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for clusterResourceConflictPolicy.
@@ -79,15 +80,16 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where cluster-scoped
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+   * Optional. Defines the behavior for handling the situation where
+   * cluster-scoped resources being restored already exist in the target
+   * cluster. This MUST be set to a value other than
+   * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
    * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
    * is not empty.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The clusterResourceConflictPolicy.
@@ -99,13 +101,14 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where sets of namespaced
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+   * Optional. Defines the behavior for handling the situation where sets of
+   * namespaced resources being restored already exist in the target cluster.
+   * This MUST be set to a value other than
+   * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for namespacedResourceRestoreMode.
@@ -115,13 +118,14 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where sets of namespaced
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+   * Optional. Defines the behavior for handling the situation where sets of
+   * namespaced resources being restored already exist in the target cluster.
+   * This MUST be set to a value other than
+   * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The namespacedResourceRestoreMode.
@@ -133,12 +137,12 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Identifies the cluster-scoped resources to restore from the Backup.
-   * Not specifying it means NO cluster resource will be restored.
+   * Optional. Identifies the cluster-scoped resources to restore from the
+   * Backup. Not specifying it means NO cluster resource will be restored.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the clusterResourceRestoreScope field is set.
@@ -148,12 +152,12 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Identifies the cluster-scoped resources to restore from the Backup.
-   * Not specifying it means NO cluster resource will be restored.
+   * Optional. Identifies the cluster-scoped resources to restore from the
+   * Backup. Not specifying it means NO cluster resource will be restored.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The clusterResourceRestoreScope.
@@ -164,12 +168,12 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * Identifies the cluster-scoped resources to restore from the Backup.
-   * Not specifying it means NO cluster resource will be restored.
+   * Optional. Identifies the cluster-scoped resources to restore from the
+   * Backup. Not specifying it means NO cluster resource will be restored.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScopeOrBuilder
@@ -350,15 +354,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule>
@@ -367,15 +371,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule getSubstitutionRules(int index);
@@ -383,15 +387,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getSubstitutionRulesCount();
@@ -399,15 +403,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRuleOrBuilder>
@@ -416,15 +420,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRuleOrBuilder
@@ -434,15 +438,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
@@ -451,15 +455,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule getTransformationRules(int index);
@@ -467,15 +471,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getTransformationRulesCount();
@@ -483,15 +487,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder>
@@ -500,15 +504,15 @@ public interface RestoreConfigOrBuilder
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder
