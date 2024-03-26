@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.19.0](https://github.com/googleapis/java-datastore/compare/v2.18.6...v2.19.0) (2024-03-25)
+
+
+### Features
+
+* Implement query profile ([#1365](https://github.com/googleapis/java-datastore/issues/1365)) ([2515ed6](https://github.com/googleapis/java-datastore/commit/2515ed6cf733df84069309a3055a21cdd65c9c90))
+
 ## [2.18.6](https://github.com/googleapis/java-datastore/compare/v2.18.5...v2.18.6) (2024-03-18)
 
 
