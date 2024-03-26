@@ -1,10 +1,10 @@
 # Client Side Retries
-Client Libraries use retries to handle unexpected, transient failures (i.e. server temporarily unavailable).
+Client Libraries use retries to handle unexpected, transient failures (i.e. server is temporarily unavailable).
 Multiple attempts, hopefully, will result in a successful response from the server.
 
-By default, retries are configured by the Cloud Service. The configured retry parameters are defined per RPC.
-A service *may* choose to only enable retries for a subset of RPCs. It is possible that for a single service,
-each RPC is configured differently.
+Default retry values are selected by the team operating the cloud service. These retry parameters are defined
+for each RPC. A service *may* choose to only enable retries for a subset of RPCs. It is possible that for a single
+service, each RPC is configured differently.
 
 ## RPC Retry Configurations
 Using Java-Asset v3.41.0 as an example, the default configurations are configured in the following files:
@@ -20,7 +20,7 @@ Example:
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
 ```
 
-Retry Params are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155)
+Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155)
 
 Example:
 ```java
@@ -33,7 +33,7 @@ Example:
               .build();
 ```
 
-The default configurations are mapping [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474)
+The default configurations are mapped [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474)
 
 Example:
 ```java
@@ -65,6 +65,10 @@ settings =
       .setTotalTimeout(Duration.ofMillis(60000L))
       .build();
 ```
+The configuration above modifies the retry settings for both an RPC's operation and attempt. An RPC operation
+is collection of all attempts made and an RPC attempt is the individual attempt made. A single RPC invocation will
+have a single operation and one or more attempts.
+
 Individual RPC Bounds (an attempt) are controlled by the following settings:
 - setInitialRetryDelay
 - setRetryDelayMultiplier
@@ -73,7 +77,7 @@ Individual RPC Bounds (an attempt) are controlled by the following settings:
 - setRpcTimeoutMultiplier
 - setMaxRpcTimeout
 
-Total RPC Bounds are controlled by the following settings:
+Total RPC Bounds (an operation) are controlled by the following settings:
 - setTotalTimeout
 - setAttemptCount
 
@@ -84,8 +88,9 @@ An RPC will be retried when _both_ of the following scenarios occur:
 Note: If only one (or neither) of the scenarios above are true, then the RPC will not be retried.
 i.e. If the total timeout has not been exceeded, but the latest attempt receives a non-retryable status code.
 
-*The client library will mark a status code as retryable internally. It is marked as retryable if the response's
-status code matches with any of an RPC's configured retryable status codes.
+*The client library will check RPC's list of retryable status codes and mark a status code accordingly. 
+It is marked as retryable if the response's status code matches with any of the RPC's configured retryable status
+codes.
 
 **When configuring the RPC bounds, you may configure the bounds for each attempt as well as the
 total RPC's bounds. The retry algorithm will ensure that an individual attempt's bounds falls within

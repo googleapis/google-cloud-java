@@ -444,7 +444,7 @@ Note: The client library handles the Operation's polling mechanism for you. By d
 to manually poll the status yourself.
 
 ### Default LRO Values
-Each LRO RPC has a pre-configured default values. You can find these values by
+Each LRO RPC has a set of pre-configured default values. You can find these values by
 searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
 inside the `initDefaults()` method in the nested Builder class.
 
