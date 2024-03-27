@@ -11,22 +11,23 @@ Client libraries have two types of retry parameters to configure:
 1. Retry Status Code: Set of failure status codes to retry on
 2. Retry Time/ Attempt Bounds: Configurable [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings) to define the bounds
 
-### RPC Retry Configurations
-Using Java-Asset v3.41.0 as an example, the default retry configurations are defined in the following places:
-
-Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082)
-
+### Default RPC Retry Configuration Location
+The default retry configurations are defined in the generated {Client}StubSettings file. Using Java-Asset v3.41.0 as
+an example, the default retry configurations are defined in the following places:
+<br>
+- Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082)
+<br>
 Example:
 ```java
-definitions.put(
+defimnitions.put(
   "retry_policy_1_codes",
   ImmutableSet.copyOf(
       Lists.<StatusCode.Code>newArrayList(
           StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
 ```
 
-Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155)
-
+- Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155)
+<br>
 Example:
 ```java
 settings =
@@ -38,8 +39,8 @@ settings =
       .build();
 ```
 
-The configurations above are set [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474)
-
+- The configurations above are mapped to the RPC [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474)
+<br>
 Example:
 ```java
 builder
