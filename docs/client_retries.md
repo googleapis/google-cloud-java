@@ -6,50 +6,51 @@ Default retry values are selected by the team operating the cloud service. These
 for each RPC. A service *may* choose to only enable retries for a subset of RPCs. It is possible that for a single
 service, each RPC is configured differently.
 
-## RPC Retry Configurations
+## Retry Parameters
+Client libraries have two types of retry parameters to configure:
+1. Retry Status Code: Set of failure status codes to retry on
+2. Retry Time/ Attempt Bounds: Configurable [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings) to define the bounds
+
+### RPC Retry Configurations
 Using Java-Asset v3.41.0 as an example, the default configurations are configured in the following files:
 
 Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082)
 
 Example:
 ```java
-      definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+definitions.put(
+  "retry_policy_1_codes",
+  ImmutableSet.copyOf(
+      Lists.<StatusCode.Code>newArrayList(
+          StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
 ```
 
 Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155)
 
 Example:
 ```java
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
+settings =
+  RetrySettings.newBuilder()
+      .setInitialRpcTimeout(Duration.ofMillis(60000L))
+      .setRpcTimeoutMultiplier(1.0)
+      .setMaxRpcTimeout(Duration.ofMillis(60000L))
+      .setTotalTimeout(Duration.ofMillis(60000L))
+      .build();
 ```
 
 The default configurations are mapped [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474)
 
 Example:
 ```java
-      builder
-          .exportAssetsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+builder
+  .exportAssetsSettings()
+  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 ```
 
-## Google Cloud Client Library Retry Concepts
+## Client Library Retry Concepts
 Enabling retries allow an RPC multiple attempts to try and achieve a successful call. A successful call
 is a response from a server that returns an `OK` Status Code (from gRPC) or a `2xx` Status Code (from HttpJson).
-
-### Configurable Retry Params
-- Retry Status Code: Set of failure status codes to retry on
-- Retry Time/ Attempt Bounds: Configurable retry settings (via [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings) class) to define the retry bounds
 
 ### When is an RPC retried
 Take a sample RetrySettings configuration
@@ -246,7 +247,7 @@ to use the retry settings configured in `customRetrySettings` and sets the retry
 ```java
 AssetServiceSettings assetSettings = AssetServiceSettings.create(assetStubSettingsBuilder.build());
 ```
-4. Create the Client with the Settings
+4.Create the Client with the Settings
 ```java
 try (AssetServiceClient assetClient = AssetServiceClient.create(assetSettings)) {
   ...
@@ -256,17 +257,16 @@ try (AssetServiceClient assetClient = AssetServiceClient.create(assetSettings)) 
 Repeat Step #2 for each RPC that you want to configure. For example:
 ```java
 AssetServiceStubSettings.Builder assetStubSettingsBuilder = AssetServiceStubSettings.newBuilder();
-  assetStubSettingsBuilder
-  .exportAssetsSettings()
-  // Set your custom Retry Settings
-  .setRetrySettings(customRetrySettings)
-  // Set your custom Retryable Codes
-  .setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
   
-  assetStubSettingsBuilder
-  .listAssetsSettings()
-  // Set your custom Retry Settings
-  .setRetrySettings(customRetrySettings2)
-  // Set your custom Retryable Codes
-  .setRetryableCodes(ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
+// Modify the retry params for ExportAssets RPC
+assetStubSettingsBuilder
+.exportAssetsSettings()
+.setRetrySettings(customRetrySettings)
+.setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
+
+// Modify the retry params for ListAssets RPC
+assetStubSettingsBuilder
+.listAssetsSettings()
+.setRetrySettings(customRetrySettings2)
+.setRetryableCodes(ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
 ```
