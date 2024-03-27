@@ -273,6 +273,9 @@ public interface SecuritySettingsOrBuilder
    * for Agent Assist traffic), higher value will be ignored and use default.
    * Setting a value higher than that has no effect. A missing value or
    * setting to 0 also means we use default TTL.
+   * When data retention configuration is changed, it only applies to the data
+   * created after the change; the TTL of existing data created before the
+   * change stays intact.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>
@@ -291,6 +294,9 @@ public interface SecuritySettingsOrBuilder
    * for Agent Assist traffic), higher value will be ignored and use default.
    * Setting a value higher than that has no effect. A missing value or
    * setting to 0 also means we use default TTL.
+   * When data retention configuration is changed, it only applies to the data
+   * created after the change; the TTL of existing data created before the
+   * change stays intact.
    * </pre>
    *
    * <code>int32 retention_window_days = 6;</code>

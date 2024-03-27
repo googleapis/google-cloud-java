@@ -428,18 +428,19 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. An email address that can be used for quota related
+   * Input only. An email address that can be used for quota related
    * communication between the Google Cloud and the user in case the Google
    * Cloud needs further information to make a decision on whether the user
    * preferred quota can be granted.
    *
+   * The email address is optional for decrease quota preferences. In another
+   * word, QuotaConfig.preferred_value is smaller than the
+   * QuotaDetails.reset_value. It is required for increase quota preferences.
    * The Google account for the email address must have quota update permission
    * for the project, folder or organization this quota preference is for.
    * </pre>
    *
-   * <code>
-   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The contactEmail.
    */
@@ -448,18 +449,19 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Input only. An email address that can be used for quota related
+   * Input only. An email address that can be used for quota related
    * communication between the Google Cloud and the user in case the Google
    * Cloud needs further information to make a decision on whether the user
    * preferred quota can be granted.
    *
+   * The email address is optional for decrease quota preferences. In another
+   * word, QuotaConfig.preferred_value is smaller than the
+   * QuotaDetails.reset_value. It is required for increase quota preferences.
    * The Google account for the email address must have quota update permission
    * for the project, folder or organization this quota preference is for.
    * </pre>
    *
-   * <code>
-   * string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>string contact_email = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    *
    * @return The bytes for contactEmail.
    */

@@ -71,6 +71,1453 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder.class);
   }
 
+  public interface SpeechSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity of the speech model that detects the end of speech.
+     * Scale from 0 to 100.
+     * </pre>
+     *
+     * <code>int32 endpointer_sensitivity = 1;</code>
+     *
+     * @return The endpointerSensitivity.
+     */
+    int getEndpointerSensitivity();
+
+    /**
+     *
+     *
+     * <pre>
+     * Timeout before detecting no speech.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+     *
+     * @return Whether the noSpeechTimeout field is set.
+     */
+    boolean hasNoSpeechTimeout();
+    /**
+     *
+     *
+     * <pre>
+     * Timeout before detecting no speech.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+     *
+     * @return The noSpeechTimeout.
+     */
+    com.google.protobuf.Duration getNoSpeechTimeout();
+    /**
+     *
+     *
+     * <pre>
+     * Timeout before detecting no speech.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getNoSpeechTimeoutOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * seconds of timeout value.
+     * </pre>
+     *
+     * <code>bool use_timeout_based_endpointing = 3;</code>
+     *
+     * @return The useTimeoutBasedEndpointing.
+     */
+    boolean getUseTimeoutBasedEndpointing();
+
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    int getModelsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    boolean containsModels(java.lang.String key);
+    /** Use {@link #getModelsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getModels();
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getModelsMap();
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    /* nullable */
+    java.lang.String getModelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    java.lang.String getModelsOrThrow(java.lang.String key);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Define behaviors of speech to text detection.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings}
+   */
+  public static final class SpeechSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings)
+      SpeechSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SpeechSettings.newBuilder() to construct.
+    private SpeechSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SpeechSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SpeechSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_SpeechSettings_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetModels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_SpeechSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ENDPOINTER_SENSITIVITY_FIELD_NUMBER = 1;
+    private int endpointerSensitivity_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity of the speech model that detects the end of speech.
+     * Scale from 0 to 100.
+     * </pre>
+     *
+     * <code>int32 endpointer_sensitivity = 1;</code>
+     *
+     * @return The endpointerSensitivity.
+     */
+    @java.lang.Override
+    public int getEndpointerSensitivity() {
+      return endpointerSensitivity_;
+    }
+
+    public static final int NO_SPEECH_TIMEOUT_FIELD_NUMBER = 2;
+    private com.google.protobuf.Duration noSpeechTimeout_;
+    /**
+     *
+     *
+     * <pre>
+     * Timeout before detecting no speech.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+     *
+     * @return Whether the noSpeechTimeout field is set.
+     */
+    @java.lang.Override
+    public boolean hasNoSpeechTimeout() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout before detecting no speech.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+     *
+     * @return The noSpeechTimeout.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getNoSpeechTimeout() {
+      return noSpeechTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : noSpeechTimeout_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Timeout before detecting no speech.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getNoSpeechTimeoutOrBuilder() {
+      return noSpeechTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : noSpeechTimeout_;
+    }
+
+    public static final int USE_TIMEOUT_BASED_ENDPOINTING_FIELD_NUMBER = 3;
+    private boolean useTimeoutBasedEndpointing_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * seconds of timeout value.
+     * </pre>
+     *
+     * <code>bool use_timeout_based_endpointing = 3;</code>
+     *
+     * @return The useTimeoutBasedEndpointing.
+     */
+    @java.lang.Override
+    public boolean getUseTimeoutBasedEndpointing() {
+      return useTimeoutBasedEndpointing_;
+    }
+
+    public static final int MODELS_FIELD_NUMBER = 5;
+
+    private static final class ModelsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto
+                  .internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_SpeechSettings_ModelsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> models_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetModels() {
+      if (models_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(ModelsDefaultEntryHolder.defaultEntry);
+      }
+      return models_;
+    }
+
+    public int getModelsCount() {
+      return internalGetModels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    @java.lang.Override
+    public boolean containsModels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetModels().getMap().containsKey(key);
+    }
+    /** Use {@link #getModelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getModels() {
+      return getModelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
+      return internalGetModels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getModelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetModels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+     * model will be selected for requests from its corresponding language.
+     * For more information, see
+     * [Speech
+     * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; models = 5;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getModelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetModels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (endpointerSensitivity_ != 0) {
+        output.writeInt32(1, endpointerSensitivity_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getNoSpeechTimeout());
+      }
+      if (useTimeoutBasedEndpointing_ != false) {
+        output.writeBool(3, useTimeoutBasedEndpointing_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetModels(), ModelsDefaultEntryHolder.defaultEntry, 5);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (endpointerSensitivity_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, endpointerSensitivity_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getNoSpeechTimeout());
+      }
+      if (useTimeoutBasedEndpointing_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, useTimeoutBasedEndpointing_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetModels().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> models__ =
+            ModelsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, models__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings) obj;
+
+      if (getEndpointerSensitivity() != other.getEndpointerSensitivity()) return false;
+      if (hasNoSpeechTimeout() != other.hasNoSpeechTimeout()) return false;
+      if (hasNoSpeechTimeout()) {
+        if (!getNoSpeechTimeout().equals(other.getNoSpeechTimeout())) return false;
+      }
+      if (getUseTimeoutBasedEndpointing() != other.getUseTimeoutBasedEndpointing()) return false;
+      if (!internalGetModels().equals(other.internalGetModels())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENDPOINTER_SENSITIVITY_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointerSensitivity();
+      if (hasNoSpeechTimeout()) {
+        hash = (37 * hash) + NO_SPEECH_TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getNoSpeechTimeout().hashCode();
+      }
+      hash = (37 * hash) + USE_TIMEOUT_BASED_ENDPOINTING_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTimeoutBasedEndpointing());
+      if (!internalGetModels().getMap().isEmpty()) {
+        hash = (37 * hash) + MODELS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetModels().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Define behaviors of speech to text detection.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings)
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_SpeechSettings_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetModels();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableModels();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_SpeechSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getNoSpeechTimeoutFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        endpointerSensitivity_ = 0;
+        noSpeechTimeout_ = null;
+        if (noSpeechTimeoutBuilder_ != null) {
+          noSpeechTimeoutBuilder_.dispose();
+          noSpeechTimeoutBuilder_ = null;
+        }
+        useTimeoutBasedEndpointing_ = false;
+        internalGetMutableModels().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_AdvancedSettings_SpeechSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.endpointerSensitivity_ = endpointerSensitivity_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.noSpeechTimeout_ =
+              noSpeechTimeoutBuilder_ == null ? noSpeechTimeout_ : noSpeechTimeoutBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.useTimeoutBasedEndpointing_ = useTimeoutBasedEndpointing_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.models_ = internalGetModels();
+          result.models_.makeImmutable();
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+                .getDefaultInstance()) return this;
+        if (other.getEndpointerSensitivity() != 0) {
+          setEndpointerSensitivity(other.getEndpointerSensitivity());
+        }
+        if (other.hasNoSpeechTimeout()) {
+          mergeNoSpeechTimeout(other.getNoSpeechTimeout());
+        }
+        if (other.getUseTimeoutBasedEndpointing() != false) {
+          setUseTimeoutBasedEndpointing(other.getUseTimeoutBasedEndpointing());
+        }
+        internalGetMutableModels().mergeFrom(other.internalGetModels());
+        bitField0_ |= 0x00000008;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  endpointerSensitivity_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      getNoSpeechTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  useTimeoutBasedEndpointing_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 42:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> models__ =
+                      input.readMessage(
+                          ModelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableModels()
+                      .getMutableMap()
+                      .put(models__.getKey(), models__.getValue());
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int endpointerSensitivity_;
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity of the speech model that detects the end of speech.
+       * Scale from 0 to 100.
+       * </pre>
+       *
+       * <code>int32 endpointer_sensitivity = 1;</code>
+       *
+       * @return The endpointerSensitivity.
+       */
+      @java.lang.Override
+      public int getEndpointerSensitivity() {
+        return endpointerSensitivity_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity of the speech model that detects the end of speech.
+       * Scale from 0 to 100.
+       * </pre>
+       *
+       * <code>int32 endpointer_sensitivity = 1;</code>
+       *
+       * @param value The endpointerSensitivity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointerSensitivity(int value) {
+
+        endpointerSensitivity_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity of the speech model that detects the end of speech.
+       * Scale from 0 to 100.
+       * </pre>
+       *
+       * <code>int32 endpointer_sensitivity = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndpointerSensitivity() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        endpointerSensitivity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Duration noSpeechTimeout_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          noSpeechTimeoutBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       *
+       * @return Whether the noSpeechTimeout field is set.
+       */
+      public boolean hasNoSpeechTimeout() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       *
+       * @return The noSpeechTimeout.
+       */
+      public com.google.protobuf.Duration getNoSpeechTimeout() {
+        if (noSpeechTimeoutBuilder_ == null) {
+          return noSpeechTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : noSpeechTimeout_;
+        } else {
+          return noSpeechTimeoutBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       */
+      public Builder setNoSpeechTimeout(com.google.protobuf.Duration value) {
+        if (noSpeechTimeoutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          noSpeechTimeout_ = value;
+        } else {
+          noSpeechTimeoutBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       */
+      public Builder setNoSpeechTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+        if (noSpeechTimeoutBuilder_ == null) {
+          noSpeechTimeout_ = builderForValue.build();
+        } else {
+          noSpeechTimeoutBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       */
+      public Builder mergeNoSpeechTimeout(com.google.protobuf.Duration value) {
+        if (noSpeechTimeoutBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && noSpeechTimeout_ != null
+              && noSpeechTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getNoSpeechTimeoutBuilder().mergeFrom(value);
+          } else {
+            noSpeechTimeout_ = value;
+          }
+        } else {
+          noSpeechTimeoutBuilder_.mergeFrom(value);
+        }
+        if (noSpeechTimeout_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       */
+      public Builder clearNoSpeechTimeout() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        noSpeechTimeout_ = null;
+        if (noSpeechTimeoutBuilder_ != null) {
+          noSpeechTimeoutBuilder_.dispose();
+          noSpeechTimeoutBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       */
+      public com.google.protobuf.Duration.Builder getNoSpeechTimeoutBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getNoSpeechTimeoutFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getNoSpeechTimeoutOrBuilder() {
+        if (noSpeechTimeoutBuilder_ != null) {
+          return noSpeechTimeoutBuilder_.getMessageOrBuilder();
+        } else {
+          return noSpeechTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : noSpeechTimeout_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Timeout before detecting no speech.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration no_speech_timeout = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getNoSpeechTimeoutFieldBuilder() {
+        if (noSpeechTimeoutBuilder_ == null) {
+          noSpeechTimeoutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getNoSpeechTimeout(), getParentForChildren(), isClean());
+          noSpeechTimeout_ = null;
+        }
+        return noSpeechTimeoutBuilder_;
+      }
+
+      private boolean useTimeoutBasedEndpointing_;
+      /**
+       *
+       *
+       * <pre>
+       * Use timeout based endpointing, interpreting endpointer sensitivy as
+       * seconds of timeout value.
+       * </pre>
+       *
+       * <code>bool use_timeout_based_endpointing = 3;</code>
+       *
+       * @return The useTimeoutBasedEndpointing.
+       */
+      @java.lang.Override
+      public boolean getUseTimeoutBasedEndpointing() {
+        return useTimeoutBasedEndpointing_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use timeout based endpointing, interpreting endpointer sensitivy as
+       * seconds of timeout value.
+       * </pre>
+       *
+       * <code>bool use_timeout_based_endpointing = 3;</code>
+       *
+       * @param value The useTimeoutBasedEndpointing to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUseTimeoutBasedEndpointing(boolean value) {
+
+        useTimeoutBasedEndpointing_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Use timeout based endpointing, interpreting endpointer sensitivy as
+       * seconds of timeout value.
+       * </pre>
+       *
+       * <code>bool use_timeout_based_endpointing = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUseTimeoutBasedEndpointing() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        useTimeoutBasedEndpointing_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> models_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetModels() {
+        if (models_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(ModelsDefaultEntryHolder.defaultEntry);
+        }
+        return models_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableModels() {
+        if (models_ == null) {
+          models_ = com.google.protobuf.MapField.newMapField(ModelsDefaultEntryHolder.defaultEntry);
+        }
+        if (!models_.isMutable()) {
+          models_ = models_.copy();
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return models_;
+      }
+
+      public int getModelsCount() {
+        return internalGetModels().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+       * model will be selected for requests from its corresponding language.
+       * For more information, see
+       * [Speech
+       * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; models = 5;</code>
+       */
+      @java.lang.Override
+      public boolean containsModels(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetModels().getMap().containsKey(key);
+      }
+      /** Use {@link #getModelsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getModels() {
+        return getModelsMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+       * model will be selected for requests from its corresponding language.
+       * For more information, see
+       * [Speech
+       * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; models = 5;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getModelsMap() {
+        return internalGetModels().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+       * model will be selected for requests from its corresponding language.
+       * For more information, see
+       * [Speech
+       * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; models = 5;</code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getModelsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetModels().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+       * model will be selected for requests from its corresponding language.
+       * For more information, see
+       * [Speech
+       * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; models = 5;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getModelsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetModels().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearModels() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        internalGetMutableModels().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+       * model will be selected for requests from its corresponding language.
+       * For more information, see
+       * [Speech
+       * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; models = 5;</code>
+       */
+      public Builder removeModels(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableModels().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableModels() {
+        bitField0_ |= 0x00000008;
+        return internalGetMutableModels().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+       * model will be selected for requests from its corresponding language.
+       * For more information, see
+       * [Speech
+       * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; models = 5;</code>
+       */
+      public Builder putModels(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableModels().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Mapping from language to Speech-to-Text model. The mapped Speech-to-Text
+       * model will be selected for requests from its corresponding language.
+       * For more information, see
+       * [Speech
+       * models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; models = 5;</code>
+       */
+      public Builder putAllModels(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableModels().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SpeechSettings> PARSER =
+        new com.google.protobuf.AbstractParser<SpeechSettings>() {
+          @java.lang.Override
+          public SpeechSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SpeechSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SpeechSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DtmfSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings)
@@ -1693,6 +3140,78 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         : audioExportGcsDestination_;
   }
 
+  public static final int SPEECH_SETTINGS_FIELD_NUMBER = 3;
+  private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speechSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Settings for speech to text detection.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+   * </code>
+   *
+   * @return Whether the speechSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeechSettings() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for speech to text detection.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+   * </code>
+   *
+   * @return The speechSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+      getSpeechSettings() {
+    return speechSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+            .getDefaultInstance()
+        : speechSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for speech to text detection.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder
+      getSpeechSettingsOrBuilder() {
+    return speechSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+            .getDefaultInstance()
+        : speechSettings_;
+  }
+
   public static final int DTMF_SETTINGS_FIELD_NUMBER = 5;
   private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmfSettings_;
   /**
@@ -1714,7 +3233,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDtmfSettings() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -1783,7 +3302,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLoggingSettings() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -1852,9 +3371,12 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       output.writeMessage(2, getAudioExportGcsDestination());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(5, getDtmfSettings());
+      output.writeMessage(3, getSpeechSettings());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getDtmfSettings());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(6, getLoggingSettings());
     }
     getUnknownFields().writeTo(output);
@@ -1872,9 +3394,12 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
               2, getAudioExportGcsDestination());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDtmfSettings());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSpeechSettings());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDtmfSettings());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLoggingSettings());
     }
     size += getUnknownFields().getSerializedSize();
@@ -1898,6 +3423,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (!getAudioExportGcsDestination().equals(other.getAudioExportGcsDestination()))
         return false;
     }
+    if (hasSpeechSettings() != other.hasSpeechSettings()) return false;
+    if (hasSpeechSettings()) {
+      if (!getSpeechSettings().equals(other.getSpeechSettings())) return false;
+    }
     if (hasDtmfSettings() != other.hasDtmfSettings()) return false;
     if (hasDtmfSettings()) {
       if (!getDtmfSettings().equals(other.getDtmfSettings())) return false;
@@ -1920,6 +3449,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     if (hasAudioExportGcsDestination()) {
       hash = (37 * hash) + AUDIO_EXPORT_GCS_DESTINATION_FIELD_NUMBER;
       hash = (53 * hash) + getAudioExportGcsDestination().hashCode();
+    }
+    if (hasSpeechSettings()) {
+      hash = (37 * hash) + SPEECH_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechSettings().hashCode();
     }
     if (hasDtmfSettings()) {
       hash = (37 * hash) + DTMF_SETTINGS_FIELD_NUMBER;
@@ -2081,6 +3614,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAudioExportGcsDestinationFieldBuilder();
+        getSpeechSettingsFieldBuilder();
         getDtmfSettingsFieldBuilder();
         getLoggingSettingsFieldBuilder();
       }
@@ -2094,6 +3628,11 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (audioExportGcsDestinationBuilder_ != null) {
         audioExportGcsDestinationBuilder_.dispose();
         audioExportGcsDestinationBuilder_ = null;
+      }
+      speechSettings_ = null;
+      if (speechSettingsBuilder_ != null) {
+        speechSettingsBuilder_.dispose();
+        speechSettingsBuilder_ = null;
       }
       dtmfSettings_ = null;
       if (dtmfSettingsBuilder_ != null) {
@@ -2150,14 +3689,19 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.dtmfSettings_ =
-            dtmfSettingsBuilder_ == null ? dtmfSettings_ : dtmfSettingsBuilder_.build();
+        result.speechSettings_ =
+            speechSettingsBuilder_ == null ? speechSettings_ : speechSettingsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dtmfSettings_ =
+            dtmfSettingsBuilder_ == null ? dtmfSettings_ : dtmfSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.loggingSettings_ =
             loggingSettingsBuilder_ == null ? loggingSettings_ : loggingSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2211,6 +3755,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (other.hasAudioExportGcsDestination()) {
         mergeAudioExportGcsDestination(other.getAudioExportGcsDestination());
       }
+      if (other.hasSpeechSettings()) {
+        mergeSpeechSettings(other.getSpeechSettings());
+      }
       if (other.hasDtmfSettings()) {
         mergeDtmfSettings(other.getDtmfSettings());
       }
@@ -2250,16 +3797,22 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             case 42:
               {
                 input.readMessage(getDtmfSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getLoggingSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -2517,6 +4070,265 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       return audioExportGcsDestinationBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speechSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder>
+        speechSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     *
+     * @return Whether the speechSettings field is set.
+     */
+    public boolean hasSpeechSettings() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     *
+     * @return The speechSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+        getSpeechSettings() {
+      if (speechSettingsBuilder_ == null) {
+        return speechSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+                .getDefaultInstance()
+            : speechSettings_;
+      } else {
+        return speechSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     */
+    public Builder setSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings value) {
+      if (speechSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechSettings_ = value;
+      } else {
+        speechSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     */
+    public Builder setSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder
+            builderForValue) {
+      if (speechSettingsBuilder_ == null) {
+        speechSettings_ = builderForValue.build();
+      } else {
+        speechSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     */
+    public Builder mergeSpeechSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings value) {
+      if (speechSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && speechSettings_ != null
+            && speechSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+                    .getDefaultInstance()) {
+          getSpeechSettingsBuilder().mergeFrom(value);
+        } else {
+          speechSettings_ = value;
+        }
+      } else {
+        speechSettingsBuilder_.mergeFrom(value);
+      }
+      if (speechSettings_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     */
+    public Builder clearSpeechSettings() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      speechSettings_ = null;
+      if (speechSettingsBuilder_ != null) {
+        speechSettingsBuilder_.dispose();
+        speechSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder
+        getSpeechSettingsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getSpeechSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder
+        getSpeechSettingsOrBuilder() {
+      if (speechSettingsBuilder_ != null) {
+        return speechSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return speechSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings
+                .getDefaultInstance()
+            : speechSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for speech to text detection.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings speech_settings = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder>
+        getSpeechSettingsFieldBuilder() {
+      if (speechSettingsBuilder_ == null) {
+        speechSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.SpeechSettingsOrBuilder>(
+                getSpeechSettings(), getParentForChildren(), isClean());
+        speechSettings_ = null;
+      }
+      return speechSettingsBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmfSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings,
@@ -2541,7 +4353,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the dtmfSettings field is set.
      */
     public boolean hasDtmfSettings() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2595,7 +4407,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         dtmfSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2622,7 +4434,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         dtmfSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2644,7 +4456,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeDtmfSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings value) {
       if (dtmfSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && dtmfSettings_ != null
             && dtmfSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings
@@ -2657,7 +4469,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         dtmfSettingsBuilder_.mergeFrom(value);
       }
       if (dtmfSettings_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -2678,7 +4490,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDtmfSettings() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       dtmfSettings_ = null;
       if (dtmfSettingsBuilder_ != null) {
         dtmfSettingsBuilder_.dispose();
@@ -2704,7 +4516,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings.Builder
         getDtmfSettingsBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDtmfSettingsFieldBuilder().getBuilder();
     }
@@ -2791,7 +4603,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the loggingSettings field is set.
      */
     public boolean hasLoggingSettings() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2846,7 +4658,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2873,7 +4685,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2895,7 +4707,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeLoggingSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings value) {
       if (loggingSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && loggingSettings_ != null
             && loggingSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings
@@ -2908,7 +4720,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         loggingSettingsBuilder_.mergeFrom(value);
       }
       if (loggingSettings_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2929,7 +4741,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLoggingSettings() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       loggingSettings_ = null;
       if (loggingSettingsBuilder_ != null) {
         loggingSettingsBuilder_.dispose();
@@ -2955,7 +4767,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.LoggingSettings.Builder
         getLoggingSettingsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLoggingSettingsFieldBuilder().getBuilder();
     }

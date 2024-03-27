@@ -169,6 +169,19 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Firewall policy rule containing attributes not yet supported in
+     * Connectivity tests. Firewall analysis is skipped if such a rule can
+     * potentially be matched. Please see the [list of unsupported
+     * configurations](https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview#unsupported-configs).
+     * </pre>
+     *
+     * <code>UNSUPPORTED_FIREWALL_POLICY_RULE = 100;</code>
+     */
+    UNSUPPORTED_FIREWALL_POLICY_RULE(100),
+    /**
+     *
+     *
+     * <pre>
      * Tracking state for response traffic created when request traffic goes
      * through allow firewall rule.
      * For details, see [firewall rules
@@ -268,6 +281,19 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Firewall policy rule containing attributes not yet supported in
+     * Connectivity tests. Firewall analysis is skipped if such a rule can
+     * potentially be matched. Please see the [list of unsupported
+     * configurations](https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview#unsupported-configs).
+     * </pre>
+     *
+     * <code>UNSUPPORTED_FIREWALL_POLICY_RULE = 100;</code>
+     */
+    public static final int UNSUPPORTED_FIREWALL_POLICY_RULE_VALUE = 100;
+    /**
+     *
+     *
+     * <pre>
      * Tracking state for response traffic created when request traffic goes
      * through allow firewall rule.
      * For details, see [firewall rules
@@ -316,6 +342,8 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
           return NETWORK_FIREWALL_POLICY_RULE;
         case 6:
           return NETWORK_REGIONAL_FIREWALL_POLICY_RULE;
+        case 100:
+          return UNSUPPORTED_FIREWALL_POLICY_RULE;
         case 101:
           return TRACKING_STATE;
         default:
