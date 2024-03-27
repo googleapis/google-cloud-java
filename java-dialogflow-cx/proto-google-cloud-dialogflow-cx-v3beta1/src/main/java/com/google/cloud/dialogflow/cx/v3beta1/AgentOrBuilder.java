@@ -312,17 +312,14 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the start flow in this agent. A start flow will be
+   * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-   *
-   * Only one of `start_flow` or `start_playbook` should be set, but not both.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The startFlow.
@@ -332,17 +329,14 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the start flow in this agent. A start flow will be
+   * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-   *
-   * Only one of `start_flow` or `start_playbook` should be set, but not both.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for startFlow.
@@ -438,7 +432,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=342
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=353
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -457,6 +451,21 @@ public interface AgentOrBuilder
    * @return The enableSpellCorrection.
    */
   boolean getEnableSpellCorrection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable training multi-lingual models for this agent. These models
+   * will be trained on all the languages supported by the agent.
+   * </pre>
+   *
+   * <code>bool enable_multi_language_training = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableMultiLanguageTraining.
+   */
+  boolean getEnableMultiLanguageTraining();
 
   /**
    *
@@ -677,4 +686,46 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettingsOrBuilder
       getAnswerFeedbackSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the personalizationSettings field is set.
+   */
+  boolean hasPersonalizationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The personalizationSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings getPersonalizationSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder
+      getPersonalizationSettingsOrBuilder();
 }

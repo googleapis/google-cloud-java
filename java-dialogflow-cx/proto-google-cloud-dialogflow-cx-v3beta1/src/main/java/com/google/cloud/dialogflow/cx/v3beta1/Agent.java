@@ -3913,6 +3913,907 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PersonalizationSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default end user metadata, used when processing DetectIntent
+     * requests. Recommended to be filled as a template instead of hard-coded
+     * value, for example { "age": "$session.params.age" }. The data will be
+     * merged with the
+     * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+     * in
+     * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+     * during query processing.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the defaultEndUserMetadata field is set.
+     */
+    boolean hasDefaultEndUserMetadata();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default end user metadata, used when processing DetectIntent
+     * requests. Recommended to be filled as a template instead of hard-coded
+     * value, for example { "age": "$session.params.age" }. The data will be
+     * merged with the
+     * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+     * in
+     * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+     * during query processing.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultEndUserMetadata.
+     */
+    com.google.protobuf.Struct getDefaultEndUserMetadata();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default end user metadata, used when processing DetectIntent
+     * requests. Recommended to be filled as a template instead of hard-coded
+     * value, for example { "age": "$session.params.age" }. The data will be
+     * merged with the
+     * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+     * in
+     * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+     * during query processing.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.StructOrBuilder getDefaultEndUserMetadataOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for end user personalization.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings}
+   */
+  public static final class PersonalizationSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings)
+      PersonalizationSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PersonalizationSettings.newBuilder() to construct.
+    private PersonalizationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PersonalizationSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PersonalizationSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_PersonalizationSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_PersonalizationSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DEFAULT_END_USER_METADATA_FIELD_NUMBER = 1;
+    private com.google.protobuf.Struct defaultEndUserMetadata_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default end user metadata, used when processing DetectIntent
+     * requests. Recommended to be filled as a template instead of hard-coded
+     * value, for example { "age": "$session.params.age" }. The data will be
+     * merged with the
+     * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+     * in
+     * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+     * during query processing.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the defaultEndUserMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasDefaultEndUserMetadata() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default end user metadata, used when processing DetectIntent
+     * requests. Recommended to be filled as a template instead of hard-coded
+     * value, for example { "age": "$session.params.age" }. The data will be
+     * merged with the
+     * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+     * in
+     * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+     * during query processing.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The defaultEndUserMetadata.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getDefaultEndUserMetadata() {
+      return defaultEndUserMetadata_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : defaultEndUserMetadata_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default end user metadata, used when processing DetectIntent
+     * requests. Recommended to be filled as a template instead of hard-coded
+     * value, for example { "age": "$session.params.age" }. The data will be
+     * merged with the
+     * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+     * in
+     * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+     * during query processing.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getDefaultEndUserMetadataOrBuilder() {
+      return defaultEndUserMetadata_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : defaultEndUserMetadata_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getDefaultEndUserMetadata());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, getDefaultEndUserMetadata());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings) obj;
+
+      if (hasDefaultEndUserMetadata() != other.hasDefaultEndUserMetadata()) return false;
+      if (hasDefaultEndUserMetadata()) {
+        if (!getDefaultEndUserMetadata().equals(other.getDefaultEndUserMetadata())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDefaultEndUserMetadata()) {
+        hash = (37 * hash) + DEFAULT_END_USER_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getDefaultEndUserMetadata().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for end user personalization.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings)
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_PersonalizationSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_PersonalizationSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getDefaultEndUserMetadataFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        defaultEndUserMetadata_ = null;
+        if (defaultEndUserMetadataBuilder_ != null) {
+          defaultEndUserMetadataBuilder_.dispose();
+          defaultEndUserMetadataBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.AgentProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Agent_PersonalizationSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.defaultEndUserMetadata_ =
+              defaultEndUserMetadataBuilder_ == null
+                  ? defaultEndUserMetadata_
+                  : defaultEndUserMetadataBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+                .getDefaultInstance()) return this;
+        if (other.hasDefaultEndUserMetadata()) {
+          mergeDefaultEndUserMetadata(other.getDefaultEndUserMetadata());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getDefaultEndUserMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Struct defaultEndUserMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          defaultEndUserMetadataBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the defaultEndUserMetadata field is set.
+       */
+      public boolean hasDefaultEndUserMetadata() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The defaultEndUserMetadata.
+       */
+      public com.google.protobuf.Struct getDefaultEndUserMetadata() {
+        if (defaultEndUserMetadataBuilder_ == null) {
+          return defaultEndUserMetadata_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : defaultEndUserMetadata_;
+        } else {
+          return defaultEndUserMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDefaultEndUserMetadata(com.google.protobuf.Struct value) {
+        if (defaultEndUserMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          defaultEndUserMetadata_ = value;
+        } else {
+          defaultEndUserMetadataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDefaultEndUserMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+        if (defaultEndUserMetadataBuilder_ == null) {
+          defaultEndUserMetadata_ = builderForValue.build();
+        } else {
+          defaultEndUserMetadataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDefaultEndUserMetadata(com.google.protobuf.Struct value) {
+        if (defaultEndUserMetadataBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && defaultEndUserMetadata_ != null
+              && defaultEndUserMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getDefaultEndUserMetadataBuilder().mergeFrom(value);
+          } else {
+            defaultEndUserMetadata_ = value;
+          }
+        } else {
+          defaultEndUserMetadataBuilder_.mergeFrom(value);
+        }
+        if (defaultEndUserMetadata_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDefaultEndUserMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        defaultEndUserMetadata_ = null;
+        if (defaultEndUserMetadataBuilder_ != null) {
+          defaultEndUserMetadataBuilder_.dispose();
+          defaultEndUserMetadataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Struct.Builder getDefaultEndUserMetadataBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDefaultEndUserMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.StructOrBuilder getDefaultEndUserMetadataOrBuilder() {
+        if (defaultEndUserMetadataBuilder_ != null) {
+          return defaultEndUserMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return defaultEndUserMetadata_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : defaultEndUserMetadata_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Default end user metadata, used when processing DetectIntent
+       * requests. Recommended to be filled as a template instead of hard-coded
+       * value, for example { "age": "$session.params.age" }. The data will be
+       * merged with the
+       * [QueryParameters.end_user_metadata][google.cloud.dialogflow.cx.v3beta1.QueryParameters.end_user_metadata]
+       * in
+       * [DetectIntentRequest.query_params][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.query_params]
+       * during query processing.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct default_end_user_metadata = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          getDefaultEndUserMetadataFieldBuilder() {
+        if (defaultEndUserMetadataBuilder_ == null) {
+          defaultEndUserMetadataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getDefaultEndUserMetadata(), getParentForChildren(), isClean());
+          defaultEndUserMetadata_ = null;
+        }
+        return defaultEndUserMetadataBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PersonalizationSettings> PARSER =
+        new com.google.protobuf.AbstractParser<PersonalizationSettings>() {
+          @java.lang.Override
+          public PersonalizationSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PersonalizationSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PersonalizationSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -4390,17 +5291,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the start flow in this agent. A start flow will be
+   * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-   *
-   * Only one of `start_flow` or `start_playbook` should be set, but not both.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The startFlow.
@@ -4421,17 +5319,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the start flow in this agent. A start flow will be
+   * Immutable. Name of the start flow in this agent. A start flow will be
    * automatically created when the agent is created, and can only be deleted by
    * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-   * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-   *
-   * Only one of `start_flow` or `start_playbook` should be set, but not both.
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
-   * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for startFlow.
@@ -4592,7 +5487,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is deprecated.
-   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=342
+   *     See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=353
    * @return The enableStackdriverLogging.
    */
   @java.lang.Override
@@ -4618,6 +5513,26 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getEnableSpellCorrection() {
     return enableSpellCorrection_;
+  }
+
+  public static final int ENABLE_MULTI_LANGUAGE_TRAINING_FIELD_NUMBER = 40;
+  private boolean enableMultiLanguageTraining_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable training multi-lingual models for this agent. These models
+   * will be trained on all the languages supported by the agent.
+   * </pre>
+   *
+   * <code>bool enable_multi_language_training = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableMultiLanguageTraining.
+   */
+  @java.lang.Override
+  public boolean getEnableMultiLanguageTraining() {
+    return enableMultiLanguageTraining_;
   }
 
   public static final int LOCKED_FIELD_NUMBER = 27;
@@ -4926,6 +5841,65 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         : answerFeedbackSettings_;
   }
 
+  public static final int PERSONALIZATION_SETTINGS_FIELD_NUMBER = 42;
+  private com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+      personalizationSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the personalizationSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersonalizationSettings() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The personalizationSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+      getPersonalizationSettings() {
+    return personalizationSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.getDefaultInstance()
+        : personalizationSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for end user personalization.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder
+      getPersonalizationSettingsOrBuilder() {
+    return personalizationSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.getDefaultInstance()
+        : personalizationSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4997,6 +5971,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startPlaybook_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 39, startPlaybook_);
+    }
+    if (enableMultiLanguageTraining_ != false) {
+      output.writeBool(40, enableMultiLanguageTraining_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(42, getPersonalizationSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5074,6 +6054,15 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startPlaybook_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, startPlaybook_);
     }
+    if (enableMultiLanguageTraining_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(40, enableMultiLanguageTraining_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              42, getPersonalizationSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5107,6 +6096,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     if (getEnableStackdriverLogging() != other.getEnableStackdriverLogging()) return false;
     if (getEnableSpellCorrection() != other.getEnableSpellCorrection()) return false;
+    if (getEnableMultiLanguageTraining() != other.getEnableMultiLanguageTraining()) return false;
     if (getLocked() != other.getLocked()) return false;
     if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
     if (hasAdvancedSettings()) {
@@ -5127,6 +6117,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasAnswerFeedbackSettings() != other.hasAnswerFeedbackSettings()) return false;
     if (hasAnswerFeedbackSettings()) {
       if (!getAnswerFeedbackSettings().equals(other.getAnswerFeedbackSettings())) return false;
+    }
+    if (hasPersonalizationSettings() != other.hasPersonalizationSettings()) return false;
+    if (hasPersonalizationSettings()) {
+      if (!getPersonalizationSettings().equals(other.getPersonalizationSettings())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5169,6 +6163,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStackdriverLogging());
     hash = (37 * hash) + ENABLE_SPELL_CORRECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSpellCorrection());
+    hash = (37 * hash) + ENABLE_MULTI_LANGUAGE_TRAINING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMultiLanguageTraining());
     hash = (37 * hash) + LOCKED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocked());
     if (hasAdvancedSettings()) {
@@ -5190,6 +6186,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (hasAnswerFeedbackSettings()) {
       hash = (37 * hash) + ANSWER_FEEDBACK_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAnswerFeedbackSettings().hashCode();
+    }
+    if (hasPersonalizationSettings()) {
+      hash = (37 * hash) + PERSONALIZATION_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPersonalizationSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -5349,6 +6349,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         getTextToSpeechSettingsFieldBuilder();
         getGenAppBuilderSettingsFieldBuilder();
         getAnswerFeedbackSettingsFieldBuilder();
+        getPersonalizationSettingsFieldBuilder();
       }
     }
 
@@ -5373,6 +6374,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       securitySettings_ = "";
       enableStackdriverLogging_ = false;
       enableSpellCorrection_ = false;
+      enableMultiLanguageTraining_ = false;
       locked_ = false;
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
@@ -5398,6 +6400,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (answerFeedbackSettingsBuilder_ != null) {
         answerFeedbackSettingsBuilder_.dispose();
         answerFeedbackSettingsBuilder_ = null;
+      }
+      personalizationSettings_ = null;
+      if (personalizationSettingsBuilder_ != null) {
+        personalizationSettingsBuilder_.dispose();
+        personalizationSettingsBuilder_ = null;
       }
       return this;
     }
@@ -5481,40 +6488,50 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         result.enableSpellCorrection_ = enableSpellCorrection_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.locked_ = locked_;
+        result.enableMultiLanguageTraining_ = enableMultiLanguageTraining_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.locked_ = locked_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.advancedSettings_ =
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.gitIntegrationSettings_ =
             gitIntegrationSettingsBuilder_ == null
                 ? gitIntegrationSettings_
                 : gitIntegrationSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.textToSpeechSettings_ =
             textToSpeechSettingsBuilder_ == null
                 ? textToSpeechSettings_
                 : textToSpeechSettingsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.genAppBuilderSettings_ =
             genAppBuilderSettingsBuilder_ == null
                 ? genAppBuilderSettings_
                 : genAppBuilderSettingsBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.answerFeedbackSettings_ =
             answerFeedbackSettingsBuilder_ == null
                 ? answerFeedbackSettings_
                 : answerFeedbackSettingsBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.personalizationSettings_ =
+            personalizationSettingsBuilder_ == null
+                ? personalizationSettings_
+                : personalizationSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5628,6 +6645,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (other.getEnableSpellCorrection() != false) {
         setEnableSpellCorrection(other.getEnableSpellCorrection());
       }
+      if (other.getEnableMultiLanguageTraining() != false) {
+        setEnableMultiLanguageTraining(other.getEnableMultiLanguageTraining());
+      }
       if (other.getLocked() != false) {
         setLocked(other.getLocked());
       }
@@ -5645,6 +6665,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAnswerFeedbackSettings()) {
         mergeAnswerFeedbackSettings(other.getAnswerFeedbackSettings());
+      }
+      if (other.hasPersonalizationSettings()) {
+        mergePersonalizationSettings(other.getPersonalizationSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5750,41 +6773,41 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 178
             case 216:
               {
                 locked_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 216
             case 242:
               {
                 input.readMessage(
                     getGitIntegrationSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 242
             case 250:
               {
                 input.readMessage(
                     getTextToSpeechSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 250
             case 266:
               {
                 input.readMessage(
                     getGenAppBuilderSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 266
             case 306:
               {
                 input.readMessage(
                     getAnswerFeedbackSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 306
             case 314:
@@ -5793,6 +6816,19 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 314
+            case 320:
+              {
+                enableMultiLanguageTraining_ = input.readBool();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 320
+            case 338:
+              {
+                input.readMessage(
+                    getPersonalizationSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 338
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6938,17 +7974,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the start flow in this agent. A start flow will be
+     * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-     *
-     * Only one of `start_flow` or `start_playbook` should be set, but not both.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The startFlow.
@@ -6968,17 +8001,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the start flow in this agent. A start flow will be
+     * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-     *
-     * Only one of `start_flow` or `start_playbook` should be set, but not both.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for startFlow.
@@ -6998,17 +8028,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the start flow in this agent. A start flow will be
+     * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-     *
-     * Only one of `start_flow` or `start_playbook` should be set, but not both.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The startFlow to set.
@@ -7027,17 +8054,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the start flow in this agent. A start flow will be
+     * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-     *
-     * Only one of `start_flow` or `start_playbook` should be set, but not both.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -7052,17 +8076,14 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the start flow in this agent. A start flow will be
+     * Immutable. Name of the start flow in this agent. A start flow will be
      * automatically created when the agent is created, and can only be deleted by
      * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`. Currently only the default start
-     * flow with id "00000000-0000-0000-0000-000000000000" is allowed.
-     *
-     * Only one of `start_flow` or `start_playbook` should be set, but not both.
+     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
-     * string start_flow = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string start_flow = 16 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for startFlow to set.
@@ -7370,7 +8391,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=342
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=353
      * @return The enableStackdriverLogging.
      */
     @java.lang.Override
@@ -7391,7 +8412,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=342
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=353
      * @param value The enableStackdriverLogging to set.
      * @return This builder for chaining.
      */
@@ -7416,7 +8437,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.Agent.enable_stackdriver_logging is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=342
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/agent.proto;l=353
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -7483,6 +8504,65 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean enableMultiLanguageTraining_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable training multi-lingual models for this agent. These models
+     * will be trained on all the languages supported by the agent.
+     * </pre>
+     *
+     * <code>bool enable_multi_language_training = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableMultiLanguageTraining.
+     */
+    @java.lang.Override
+    public boolean getEnableMultiLanguageTraining() {
+      return enableMultiLanguageTraining_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable training multi-lingual models for this agent. These models
+     * will be trained on all the languages supported by the agent.
+     * </pre>
+     *
+     * <code>bool enable_multi_language_training = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableMultiLanguageTraining to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableMultiLanguageTraining(boolean value) {
+
+      enableMultiLanguageTraining_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable training multi-lingual models for this agent. These models
+     * will be trained on all the languages supported by the agent.
+     * </pre>
+     *
+     * <code>bool enable_multi_language_training = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableMultiLanguageTraining() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      enableMultiLanguageTraining_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean locked_;
     /**
      *
@@ -7516,7 +8596,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocked(boolean value) {
 
       locked_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -7533,7 +8613,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocked() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       locked_ = false;
       onChanged();
       return this;
@@ -7558,7 +8638,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the advancedSettings field is set.
      */
     public boolean hasAdvancedSettings() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -7601,7 +8681,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7622,7 +8702,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         advancedSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -7639,7 +8719,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAdvancedSettings(
         com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings value) {
       if (advancedSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && advancedSettings_ != null
             && advancedSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.getDefaultInstance()) {
@@ -7651,7 +8731,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_.mergeFrom(value);
       }
       if (advancedSettings_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -7667,7 +8747,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 22;</code>
      */
     public Builder clearAdvancedSettings() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
         advancedSettingsBuilder_.dispose();
@@ -7688,7 +8768,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.Builder
         getAdvancedSettingsBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getAdvancedSettingsFieldBuilder().getBuilder();
     }
@@ -7760,7 +8840,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gitIntegrationSettings field is set.
      */
     public boolean hasGitIntegrationSettings() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -7807,7 +8887,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         gitIntegrationSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7830,7 +8910,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         gitIntegrationSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7848,7 +8928,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGitIntegrationSettings(
         com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings value) {
       if (gitIntegrationSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && gitIntegrationSettings_ != null
             && gitIntegrationSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings
@@ -7861,7 +8941,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         gitIntegrationSettingsBuilder_.mergeFrom(value);
       }
       if (gitIntegrationSettings_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -7878,7 +8958,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGitIntegrationSettings() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       gitIntegrationSettings_ = null;
       if (gitIntegrationSettingsBuilder_ != null) {
         gitIntegrationSettingsBuilder_.dispose();
@@ -7900,7 +8980,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Agent.GitIntegrationSettings.Builder
         getGitIntegrationSettingsBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getGitIntegrationSettingsFieldBuilder().getBuilder();
     }
@@ -7974,7 +9054,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the textToSpeechSettings field is set.
      */
     public boolean hasTextToSpeechSettings() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -8019,7 +9099,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         textToSpeechSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8041,7 +9121,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         textToSpeechSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8059,7 +9139,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTextToSpeechSettings(
         com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings value) {
       if (textToSpeechSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && textToSpeechSettings_ != null
             && textToSpeechSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings
@@ -8072,7 +9152,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         textToSpeechSettingsBuilder_.mergeFrom(value);
       }
       if (textToSpeechSettings_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -8089,7 +9169,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTextToSpeechSettings() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       textToSpeechSettings_ = null;
       if (textToSpeechSettingsBuilder_ != null) {
         textToSpeechSettingsBuilder_.dispose();
@@ -8111,7 +9191,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings.Builder
         getTextToSpeechSettingsBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getTextToSpeechSettingsFieldBuilder().getBuilder();
     }
@@ -8185,7 +9265,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the genAppBuilderSettings field is set.
      */
     public boolean hasGenAppBuilderSettings() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -8232,7 +9312,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         genAppBuilderSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -8255,7 +9335,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         genAppBuilderSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -8273,7 +9353,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGenAppBuilderSettings(
         com.google.cloud.dialogflow.cx.v3beta1.Agent.GenAppBuilderSettings value) {
       if (genAppBuilderSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && genAppBuilderSettings_ != null
             && genAppBuilderSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.Agent.GenAppBuilderSettings
@@ -8286,7 +9366,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         genAppBuilderSettingsBuilder_.mergeFrom(value);
       }
       if (genAppBuilderSettings_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -8303,7 +9383,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGenAppBuilderSettings() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       genAppBuilderSettings_ = null;
       if (genAppBuilderSettingsBuilder_ != null) {
         genAppBuilderSettingsBuilder_.dispose();
@@ -8325,7 +9405,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Agent.GenAppBuilderSettings.Builder
         getGenAppBuilderSettingsBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getGenAppBuilderSettingsFieldBuilder().getBuilder();
     }
@@ -8400,7 +9480,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the answerFeedbackSettings field is set.
      */
     public boolean hasAnswerFeedbackSettings() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -8447,7 +9527,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         answerFeedbackSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8470,7 +9550,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       } else {
         answerFeedbackSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8488,7 +9568,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAnswerFeedbackSettings(
         com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings value) {
       if (answerFeedbackSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && answerFeedbackSettings_ != null
             && answerFeedbackSettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings
@@ -8501,7 +9581,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         answerFeedbackSettingsBuilder_.mergeFrom(value);
       }
       if (answerFeedbackSettings_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -8518,7 +9598,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAnswerFeedbackSettings() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       answerFeedbackSettings_ = null;
       if (answerFeedbackSettingsBuilder_ != null) {
         answerFeedbackSettingsBuilder_.dispose();
@@ -8540,7 +9620,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Agent.AnswerFeedbackSettings.Builder
         getAnswerFeedbackSettingsBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getAnswerFeedbackSettingsFieldBuilder().getBuilder();
     }
@@ -8592,6 +9672,221 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         answerFeedbackSettings_ = null;
       }
       return answerFeedbackSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+        personalizationSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder>
+        personalizationSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the personalizationSettings field is set.
+     */
+    public boolean hasPersonalizationSettings() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The personalizationSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+        getPersonalizationSettings() {
+      if (personalizationSettingsBuilder_ == null) {
+        return personalizationSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+                .getDefaultInstance()
+            : personalizationSettings_;
+      } else {
+        return personalizationSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersonalizationSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings value) {
+      if (personalizationSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        personalizationSettings_ = value;
+      } else {
+        personalizationSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPersonalizationSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.Builder
+            builderForValue) {
+      if (personalizationSettingsBuilder_ == null) {
+        personalizationSettings_ = builderForValue.build();
+      } else {
+        personalizationSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePersonalizationSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings value) {
+      if (personalizationSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && personalizationSettings_ != null
+            && personalizationSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+                    .getDefaultInstance()) {
+          getPersonalizationSettingsBuilder().mergeFrom(value);
+        } else {
+          personalizationSettings_ = value;
+        }
+      } else {
+        personalizationSettingsBuilder_.mergeFrom(value);
+      }
+      if (personalizationSettings_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPersonalizationSettings() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      personalizationSettings_ = null;
+      if (personalizationSettingsBuilder_ != null) {
+        personalizationSettingsBuilder_.dispose();
+        personalizationSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.Builder
+        getPersonalizationSettingsBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getPersonalizationSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder
+        getPersonalizationSettingsOrBuilder() {
+      if (personalizationSettingsBuilder_ != null) {
+        return personalizationSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return personalizationSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings
+                .getDefaultInstance()
+            : personalizationSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for end user personalization.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings personalization_settings = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder>
+        getPersonalizationSettingsFieldBuilder() {
+      if (personalizationSettingsBuilder_ == null) {
+        personalizationSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.Agent.PersonalizationSettingsOrBuilder>(
+                getPersonalizationSettings(), getParentForChildren(), isClean());
+        personalizationSettings_ = null;
+      }
+      return personalizationSettingsBuilder_;
     }
 
     @java.lang.Override

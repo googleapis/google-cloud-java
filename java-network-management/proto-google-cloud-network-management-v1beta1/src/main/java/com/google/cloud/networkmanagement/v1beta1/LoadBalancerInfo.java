@@ -534,7 +534,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.health_check_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=656
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=662
    * @return The healthCheckUri.
    */
   @java.lang.Override
@@ -562,7 +562,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.health_check_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=656
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=662
    * @return The bytes for healthCheckUri.
    */
   @java.lang.Override
@@ -1359,7 +1359,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=656
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=662
      * @return The healthCheckUri.
      */
     @java.lang.Deprecated
@@ -1386,7 +1386,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=656
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=662
      * @return The bytes for healthCheckUri.
      */
     @java.lang.Deprecated
@@ -1413,7 +1413,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=656
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=662
      * @param value The healthCheckUri to set.
      * @return This builder for chaining.
      */
@@ -1439,7 +1439,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=656
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=662
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1461,7 +1461,7 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>string health_check_uri = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1beta1.LoadBalancerInfo.health_check_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=656
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=662
      * @param value The bytes for healthCheckUri to set.
      * @return This builder for chaining.
      */

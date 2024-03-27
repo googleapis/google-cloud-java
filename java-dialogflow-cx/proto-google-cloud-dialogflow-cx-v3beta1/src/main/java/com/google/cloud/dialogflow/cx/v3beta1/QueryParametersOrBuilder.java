@@ -878,4 +878,22 @@ public interface QueryParametersOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.SearchConfigOrBuilder getSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true and data stores are involved in serving the
+   * request then
+   * DetectIntentResponse.query_result.data_store_connection_signals
+   * will be filled with data that can help evaluations.
+   * </pre>
+   *
+   * <code>
+   * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The populateDataStoreConnectionSignals.
+   */
+  boolean getPopulateDataStoreConnectionSignals();
 }

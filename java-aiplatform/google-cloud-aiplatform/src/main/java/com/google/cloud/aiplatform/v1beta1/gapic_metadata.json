@@ -197,6 +197,75 @@
         }
       }
     },
+    "ExtensionExecutionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ExtensionExecutionServiceClient",
+          "rpcs": {
+            "ExecuteExtension": {
+              "methods": ["executeExtension", "executeExtension", "executeExtension", "executeExtensionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "QueryExtension": {
+              "methods": ["queryExtension", "queryExtension", "queryExtension", "queryExtensionCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ExtensionRegistryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ExtensionRegistryServiceClient",
+          "rpcs": {
+            "DeleteExtension": {
+              "methods": ["deleteExtensionAsync", "deleteExtensionAsync", "deleteExtensionAsync", "deleteExtensionOperationCallable", "deleteExtensionCallable"]
+            },
+            "GetExtension": {
+              "methods": ["getExtension", "getExtension", "getExtension", "getExtensionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ImportExtension": {
+              "methods": ["importExtensionAsync", "importExtensionAsync", "importExtensionAsync", "importExtensionOperationCallable", "importExtensionCallable"]
+            },
+            "ListExtensions": {
+              "methods": ["listExtensions", "listExtensions", "listExtensions", "listExtensionsPagedCallable", "listExtensionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateExtension": {
+              "methods": ["updateExtension", "updateExtension", "updateExtensionCallable"]
+            }
+          }
+        }
+      }
+    },
     "FeatureOnlineStoreAdminService": {
       "clients": {
         "grpc": {

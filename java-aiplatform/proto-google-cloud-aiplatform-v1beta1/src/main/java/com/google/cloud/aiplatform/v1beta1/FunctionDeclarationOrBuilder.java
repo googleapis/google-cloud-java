@@ -30,8 +30,8 @@ public interface FunctionDeclarationOrBuilder
    * <pre>
    * Required. The name of the function to call.
    * Must start with a letter or an underscore.
-   * Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum
-   * length of 64.
+   * Must be a-z, A-Z, 0-9, or contain underscores, dots and dashes, with a
+   * maximum length of 64.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,8 +45,8 @@ public interface FunctionDeclarationOrBuilder
    * <pre>
    * Required. The name of the function to call.
    * Must start with a letter or an underscore.
-   * Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum
-   * length of 64.
+   * Must be a-z, A-Z, 0-9, or contain underscores, dots and dashes, with a
+   * maximum length of 64.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -90,8 +90,10 @@ public interface FunctionDeclarationOrBuilder
    * format. Reflects the Open API 3.03 Parameter Object. string Key: the name
    * of the parameter. Parameter names are case sensitive. Schema Value: the
    * Schema defining the type used for the parameter. For function with no
-   * parameters, this can be left unset. Example with 1 required and 1 optional
-   * parameter: type: OBJECT properties:
+   * parameters, this can be left unset. Parameter names must start with a
+   * letter or an underscore and must only contain chars a-z, A-Z, 0-9, or
+   * underscores with a maximum length of 64. Example with 1 required and 1
+   * optional parameter: type: OBJECT properties:
    *  param1:
    *    type: STRING
    *  param2:
@@ -115,8 +117,10 @@ public interface FunctionDeclarationOrBuilder
    * format. Reflects the Open API 3.03 Parameter Object. string Key: the name
    * of the parameter. Parameter names are case sensitive. Schema Value: the
    * Schema defining the type used for the parameter. For function with no
-   * parameters, this can be left unset. Example with 1 required and 1 optional
-   * parameter: type: OBJECT properties:
+   * parameters, this can be left unset. Parameter names must start with a
+   * letter or an underscore and must only contain chars a-z, A-Z, 0-9, or
+   * underscores with a maximum length of 64. Example with 1 required and 1
+   * optional parameter: type: OBJECT properties:
    *  param1:
    *    type: STRING
    *  param2:
@@ -140,8 +144,10 @@ public interface FunctionDeclarationOrBuilder
    * format. Reflects the Open API 3.03 Parameter Object. string Key: the name
    * of the parameter. Parameter names are case sensitive. Schema Value: the
    * Schema defining the type used for the parameter. For function with no
-   * parameters, this can be left unset. Example with 1 required and 1 optional
-   * parameter: type: OBJECT properties:
+   * parameters, this can be left unset. Parameter names must start with a
+   * letter or an underscore and must only contain chars a-z, A-Z, 0-9, or
+   * underscores with a maximum length of 64. Example with 1 required and 1
+   * optional parameter: type: OBJECT properties:
    *  param1:
    *    type: STRING
    *  param2:
@@ -155,4 +161,51 @@ public interface FunctionDeclarationOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder getParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the response field is set.
+   */
+  boolean hasResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The response.
+   */
+  com.google.cloud.aiplatform.v1beta1.Schema getResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the output from this function in JSON Schema format.
+   * Reflects the Open API 3.03 Response Object. The Schema defines the type
+   * used for the response value of the function.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schema response = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SchemaOrBuilder getResponseOrBuilder();
 }
