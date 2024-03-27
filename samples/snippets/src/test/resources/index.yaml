@@ -12,10 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# one time index creation is required to run AggregationQuerySampleTestIT
+# one time index creation is required to run AggregationQuerySampleTestIT and ConceptsTest
 # see https://cloud.google.com/sdk/gcloud/reference/datastore/indexes/create for more details
 indexes:
 - kind: Sales
   properties:
   - name: customerId
   - name: amount
+- kind: Task
+  properties:
+  - name: tag
+  - name: tag
