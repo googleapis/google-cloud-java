@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.times;
@@ -27,6 +28,7 @@ import com.google.api.client.util.Lists;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.Batcher;
+import com.google.api.gax.batching.BatchingException;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -74,6 +76,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.ServerCallStreamObserver;
 import io.grpc.stub.StreamObserver;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -450,6 +453,55 @@ public class BuiltinMetricsTracerTest {
   }
 
   @Test
+  public void testMutateRowsPartialError() throws InterruptedException {
+    int numMutations = 6;
+    when(mockFactory.newTracer(any(), any(), any()))
+        .thenReturn(
+            new BuiltinMetricsTracer(
+                OperationType.Unary, SpanName.of("Bigtable", "MutateRows"), statsRecorderWrapper));
+
+    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE_ID, null);
+    for (int i = 0; i < numMutations; i++) {
+      String key = i % 2 == 0 ? "key" : "fail-key";
+      batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
+    }
+
+    assertThrows(BatchingException.class, () -> batcher.close());
+
+    int expectedNumRequests = numMutations / batchElementCount;
+    verify(statsRecorderWrapper, timeout(100).times(expectedNumRequests))
+        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+
+    assertThat(zone.getAllValues()).containsExactly(ZONE, ZONE, ZONE);
+    assertThat(cluster.getAllValues()).containsExactly(CLUSTER, CLUSTER, CLUSTER);
+    assertThat(status.getAllValues()).containsExactly("OK", "OK", "OK");
+  }
+
+  @Test
+  public void testMutateRowsRpcError() {
+    int numMutations = 6;
+    when(mockFactory.newTracer(any(), any(), any()))
+        .thenReturn(
+            new BuiltinMetricsTracer(
+                OperationType.Unary, SpanName.of("Bigtable", "MutateRows"), statsRecorderWrapper));
+
+    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(BAD_TABLE_ID, null);
+    for (int i = 0; i < numMutations; i++) {
+      batcher.add(RowMutationEntry.create("key").setCell("f", "q", "v"));
+    }
+
+    assertThrows(BatchingException.class, () -> batcher.close());
+
+    int expectedNumRequests = numMutations / batchElementCount;
+    verify(statsRecorderWrapper, timeout(100).times(expectedNumRequests))
+        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+
+    assertThat(zone.getAllValues()).containsExactly("global", "global", "global");
+    assertThat(cluster.getAllValues()).containsExactly("unspecified", "unspecified", "unspecified");
+    assertThat(status.getAllValues()).containsExactly("NOT_FOUND", "NOT_FOUND", "NOT_FOUND");
+  }
+
+  @Test
   public void testReadRowsAttemptsTagValues() {
     when(mockFactory.newTracer(any(), any(), any()))
         .thenReturn(
@@ -644,12 +696,30 @@ public class BuiltinMetricsTracerTest {
     @Override
     public void mutateRows(
         MutateRowsRequest request, StreamObserver<MutateRowsResponse> responseObserver) {
+      if (request.getTableName().contains(BAD_TABLE_ID)) {
+        responseObserver.onError(new StatusRuntimeException(Status.NOT_FOUND));
+        return;
+      }
       try {
         Thread.sleep(SERVER_LATENCY);
       } catch (InterruptedException e) {
       }
       MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
       for (int i = 0; i < request.getEntriesCount(); i++) {
+        if (request
+            .getEntries(i)
+            .getRowKey()
+            .toString(Charset.availableCharsets().get("UTF-8"))
+            .startsWith("fail")) {
+          builder
+              .addEntriesBuilder()
+              .setIndex(i)
+              .setStatus(
+                  com.google.rpc.Status.newBuilder()
+                      .setCode(com.google.rpc.Code.PERMISSION_DENIED_VALUE)
+                      .build());
+          continue;
+        }
         builder.addEntriesBuilder().setIndex(i);
       }
       responseObserver.onNext(builder.build());

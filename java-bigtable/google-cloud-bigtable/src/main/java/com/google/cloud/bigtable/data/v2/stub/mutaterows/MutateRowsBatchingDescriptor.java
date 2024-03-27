@@ -37,7 +37,7 @@ import java.util.Map;
  */
 @InternalApi("For internal use only")
 public class MutateRowsBatchingDescriptor
-    implements BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> {
+    implements BatchingDescriptor<RowMutationEntry, Void, BulkMutation, MutateRowsAttemptResult> {
 
   @Override
   public BatchingRequestBuilder<RowMutationEntry, BulkMutation> newRequestBuilder(
@@ -46,7 +46,15 @@ public class MutateRowsBatchingDescriptor
   }
 
   @Override
-  public void splitResponse(Void response, List<BatchEntry<RowMutationEntry, Void>> entries) {
+  public void splitResponse(
+      MutateRowsAttemptResult response, List<BatchEntry<RowMutationEntry, Void>> entries) {
+    // For every failed mutation in the response, we set the exception on the matching requested
+    // mutation. It is important to set the correct error on the correct mutation. When the entry is
+    // later read, it resolves the exception first, and only later it goes to the value set by
+    // set().
+    for (FailedMutation mutation : response.getFailedMutations()) {
+      entries.get(mutation.getIndex()).getResultFuture().setException(mutation.getError());
+    }
     for (BatchEntry<RowMutationEntry, Void> batchResponse : entries) {
       batchResponse.getResultFuture().set(null);
     }

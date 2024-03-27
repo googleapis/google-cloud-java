@@ -44,8 +44,6 @@ import com.google.rpc.Status;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -101,14 +99,18 @@ public class MutateRowsAttemptCallableTest {
     attemptCallable.setExternalFuture(parentFuture);
     attemptCallable.call();
 
-    // Attempt completed successfully and the useless response has been suppressed
-    assertThat(parentFuture.attemptFuture.get()).isNull();
+    // Attempt completed successfully
+    MutateRowsAttemptResult result = parentFuture.attemptFuture.get();
+
+    assertThat(result).isNotNull();
+    assertThat(result.getFailedMutations()).hasSize(0);
+    assertThat(result.getIsRetryable()).isFalse();
     // innerCallable received the request
     assertThat(innerCallable.lastRequest).isEqualTo(request);
   }
 
   @Test
-  public void missingEntry() {
+  public void missingEntry() throws Exception {
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder()
             .addEntries(Entry.getDefaultInstance())
@@ -125,14 +127,10 @@ public class MutateRowsAttemptCallableTest {
     attemptCallable.setExternalFuture(parentFuture);
     attemptCallable.call();
 
-    ExecutionException executionException =
-        Assert.assertThrows(ExecutionException.class, () -> parentFuture.attemptFuture.get());
-    assertThat(executionException).hasCauseThat().isInstanceOf(MutateRowsException.class);
-    MutateRowsException e = (MutateRowsException) executionException.getCause();
+    MutateRowsAttemptResult result = parentFuture.attemptFuture.get();
 
-    assertThat(e).hasMessageThat().contains("Some mutations failed to apply");
-    assertThat(e.getFailedMutations()).hasSize(1);
-    FailedMutation failedMutation = e.getFailedMutations().get(0);
+    assertThat(result.getFailedMutations()).hasSize(1);
+    FailedMutation failedMutation = result.getFailedMutations().get(0);
     assertThat(failedMutation.getIndex()).isEqualTo(1);
     assertThat(failedMutation.getError())
         .hasMessageThat()
@@ -163,7 +161,7 @@ public class MutateRowsAttemptCallableTest {
   }
 
   @Test
-  public void mixedTest() {
+  public void mixedTest() throws Exception {
     // Setup the request & response
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder()
@@ -194,20 +192,11 @@ public class MutateRowsAttemptCallableTest {
     // Make the only call
     attemptCallable.call();
 
-    // Overall error expectations
-    Throwable actualError = null;
-    try {
-      parentFuture.attemptFuture.get();
-    } catch (Throwable t) {
-      actualError = t.getCause();
-    }
-
-    assertThat(actualError).isInstanceOf(MutateRowsException.class);
-    assertThat(((MutateRowsException) actualError).isRetryable()).isTrue();
+    MutateRowsAttemptResult result = parentFuture.attemptFuture.get();
 
     // Entry expectations
     @SuppressWarnings("ConstantConditions")
-    List<FailedMutation> failedMutations = ((MutateRowsException) actualError).getFailedMutations();
+    List<FailedMutation> failedMutations = result.getFailedMutations();
     assertThat(failedMutations).hasSize(2);
 
     assertThat(failedMutations.get(0).getIndex()).isEqualTo(1);
@@ -222,7 +211,7 @@ public class MutateRowsAttemptCallableTest {
   }
 
   @Test
-  public void nextAttemptTest() {
+  public void nextAttemptTest() throws Exception {
     // Setup the request & response for the first call
     MutateRowsRequest request =
         MutateRowsRequest.newBuilder()
@@ -267,19 +256,11 @@ public class MutateRowsAttemptCallableTest {
     assertThat(innerCallable.lastRequest.getEntries(0).getRowKey())
         .isEqualTo(ByteString.copyFromUtf8("1-unavailable"));
 
-    // Overall error expectations
-    Throwable actualError = null;
-    try {
-      parentFuture.attemptFuture.get();
-    } catch (Throwable t) {
-      actualError = t.getCause();
-    }
-    assertThat(actualError).isInstanceOf(MutateRowsException.class);
-    assertThat(((MutateRowsException) actualError).isRetryable()).isFalse();
+    MutateRowsAttemptResult result = parentFuture.attemptFuture.get();
 
     // Entry expectations
     @SuppressWarnings("ConstantConditions")
-    List<FailedMutation> failedMutations = ((MutateRowsException) actualError).getFailedMutations();
+    List<FailedMutation> failedMutations = result.getFailedMutations();
     assertThat(failedMutations).hasSize(1);
 
     assertThat(failedMutations.get(0).getIndex()).isEqualTo(2);
@@ -411,8 +392,9 @@ public class MutateRowsAttemptCallableTest {
     }
   }
 
-  static class MockRetryingFuture extends AbstractApiFuture<Void> implements RetryingFuture<Void> {
-    ApiFuture<Void> attemptFuture;
+  static class MockRetryingFuture extends AbstractApiFuture<MutateRowsAttemptResult>
+      implements RetryingFuture<MutateRowsAttemptResult> {
+    ApiFuture<MutateRowsAttemptResult> attemptFuture;
 
     TimedAttemptSettings timedAttemptSettings;
 
@@ -433,7 +415,7 @@ public class MutateRowsAttemptCallableTest {
     }
 
     @Override
-    public void setAttemptFuture(ApiFuture<Void> attemptFuture) {
+    public void setAttemptFuture(ApiFuture<MutateRowsAttemptResult> attemptFuture) {
       this.attemptFuture = attemptFuture;
     }
 
@@ -443,17 +425,17 @@ public class MutateRowsAttemptCallableTest {
     }
 
     @Override
-    public Callable<Void> getCallable() {
+    public Callable<MutateRowsAttemptResult> getCallable() {
       throw new UnsupportedOperationException("not used");
     }
 
     @Override
-    public ApiFuture<Void> peekAttemptResult() {
+    public ApiFuture<MutateRowsAttemptResult> peekAttemptResult() {
       throw new UnsupportedOperationException("not used");
     }
 
     @Override
-    public ApiFuture<Void> getAttemptResult() {
+    public ApiFuture<MutateRowsAttemptResult> getAttemptResult() {
       throw new UnsupportedOperationException("not used");
     }
   }

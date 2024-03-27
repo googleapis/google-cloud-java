@@ -140,6 +140,13 @@
         <method>*</method>
         <to>*</to>
     </difference>
+    <!-- change method argument type is ok because MutateRowsBatchingDescriptor is InternalApi -->
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/mutaterows/MutateRowsBatchingDescriptor</className>
+        <method>*</method>
+        <to>*</to>
+    </difference>
     <!-- Removed methods in an internal class -->
     <difference>
         <differenceType>7002</differenceType>

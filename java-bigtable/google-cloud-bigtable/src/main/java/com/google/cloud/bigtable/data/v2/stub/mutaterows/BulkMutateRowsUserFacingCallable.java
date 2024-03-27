@@ -30,18 +30,22 @@ import com.google.cloud.bigtable.data.v2.models.BulkMutation;
  * applications.
  */
 @InternalApi
-public final class BulkMutateRowsUserFacingCallable extends UnaryCallable<BulkMutation, Void> {
-  private final UnaryCallable<MutateRowsRequest, Void> innerCallable;
+public final class BulkMutateRowsUserFacingCallable
+    extends UnaryCallable<BulkMutation, MutateRowsAttemptResult> {
+
+  private final UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> innerCallable;
   private final RequestContext requestContext;
 
   public BulkMutateRowsUserFacingCallable(
-      UnaryCallable<MutateRowsRequest, Void> innerCallable, RequestContext requestContext) {
+      UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> innerCallable,
+      RequestContext requestContext) {
     this.innerCallable = innerCallable;
     this.requestContext = requestContext;
   }
 
   @Override
-  public ApiFuture<Void> futureCall(BulkMutation request, ApiCallContext context) {
+  public ApiFuture<MutateRowsAttemptResult> futureCall(
+      BulkMutation request, ApiCallContext context) {
     return innerCallable.futureCall(request.toProto(requestContext), context);
   }
 }

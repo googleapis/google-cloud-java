@@ -33,20 +33,6 @@ import javax.annotation.Nullable;
  * were part of that RPC.
  */
 public final class MutateRowsException extends ApiException {
-  // Synthetic status to use for this ApiException subclass.
-  private static final StatusCode LOCAL_STATUS =
-      new StatusCode() {
-        @Override
-        public Code getCode() {
-          return Code.INTERNAL;
-        }
-
-        @Override
-        public Object getTransportCode() {
-          return null;
-        }
-      };
-
   private final List<FailedMutation> failedMutations;
 
   /**
@@ -56,6 +42,7 @@ public final class MutateRowsException extends ApiException {
   @InternalApi
   public static MutateRowsException create(
       @Nullable Throwable rpcError,
+      StatusCode status,
       @Nonnull List<FailedMutation> failedMutations,
       boolean retryable) {
     ErrorDetails errorDetails = null;
@@ -63,15 +50,16 @@ public final class MutateRowsException extends ApiException {
       errorDetails = ((ApiException) rpcError).getErrorDetails();
     }
 
-    return new MutateRowsException(rpcError, failedMutations, retryable, errorDetails);
+    return new MutateRowsException(rpcError, status, failedMutations, retryable, errorDetails);
   }
 
   private MutateRowsException(
       @Nullable Throwable rpcError,
+      StatusCode status,
       @Nonnull List<FailedMutation> failedMutations,
       boolean retryable,
       @Nullable ErrorDetails errorDetails) {
-    super(rpcError, LOCAL_STATUS, retryable, errorDetails);
+    super(rpcError, status, retryable, errorDetails);
     Preconditions.checkNotNull(failedMutations);
     Preconditions.checkArgument(!failedMutations.isEmpty(), "failedMutations can't be empty");
     this.failedMutations = failedMutations;

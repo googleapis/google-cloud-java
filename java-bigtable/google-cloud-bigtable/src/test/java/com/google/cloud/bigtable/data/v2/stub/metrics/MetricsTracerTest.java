@@ -448,7 +448,7 @@ public class MetricsTracerTest {
     try (Batcher<RowMutationEntry, Void> batcher =
         new BatcherImpl<>(
             batchingDescriptor,
-            stub.bulkMutateRowsCallable().withDefaultCallContext(defaultContext),
+            stub.internalBulkMutateRowsCallable().withDefaultCallContext(defaultContext),
             BulkMutation.create(TABLE_ID),
             settings.getStubSettings().bulkMutateRowsSettings().getBatchingSettings(),
             Executors.newSingleThreadScheduledExecutor(),

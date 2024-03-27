@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsAttemptResult;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.util.Set;
@@ -57,11 +58,12 @@ import javax.annotation.Nullable;
  * @see RetrySettings for retry configuration.
  */
 @BetaApi("This surface is likely to change as the batching surface evolves.")
-public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMutation, Void> {
+public final class BigtableBatchingCallSettings
+    extends UnaryCallSettings<BulkMutation, MutateRowsAttemptResult> {
 
   // This settings is just a simple wrapper for BatchingCallSettings to allow us to add
   // additional functionality.
-  private final BatchingCallSettings<RowMutationEntry, Void, BulkMutation, Void>
+  private final BatchingCallSettings<RowMutationEntry, Void, BulkMutation, MutateRowsAttemptResult>
       batchingCallSettings;
   private final boolean isLatencyBasedThrottlingEnabled;
   private final Long targetRpcLatencyMs;
@@ -89,7 +91,8 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
   }
 
   /** Returns an adapter that packs and unpacks batching elements. */
-  BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> getBatchingDescriptor() {
+  BatchingDescriptor<RowMutationEntry, Void, BulkMutation, MutateRowsAttemptResult>
+      getBatchingDescriptor() {
     return batchingCallSettings.getBatchingDescriptor();
   }
 
@@ -120,7 +123,8 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
   }
 
   static Builder newBuilder(
-      BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> batchingDescriptor) {
+      BatchingDescriptor<RowMutationEntry, Void, BulkMutation, MutateRowsAttemptResult>
+          batchingDescriptor) {
     return new Builder(batchingDescriptor);
   }
 
@@ -148,9 +152,11 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
    * A base builder class for {@link BigtableBatchingCallSettings}. See the class documentation of
    * {@link BigtableBatchingCallSettings} for a description of the different values that can be set.
    */
-  public static class Builder extends UnaryCallSettings.Builder<BulkMutation, Void> {
+  public static class Builder
+      extends UnaryCallSettings.Builder<BulkMutation, MutateRowsAttemptResult> {
 
-    private BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> batchingDescriptor;
+    private BatchingDescriptor<RowMutationEntry, Void, BulkMutation, MutateRowsAttemptResult>
+        batchingDescriptor;
     private BatchingSettings batchingSettings;
     private boolean isLatencyBasedThrottlingEnabled;
     private Long targetRpcLatencyMs;
@@ -160,7 +166,8 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
 
     private Builder(
         @Nonnull
-            BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> batchingDescriptor) {
+            BatchingDescriptor<RowMutationEntry, Void, BulkMutation, MutateRowsAttemptResult>
+                batchingDescriptor) {
       this.batchingDescriptor =
           Preconditions.checkNotNull(batchingDescriptor, "batching descriptor can't be null");
     }
