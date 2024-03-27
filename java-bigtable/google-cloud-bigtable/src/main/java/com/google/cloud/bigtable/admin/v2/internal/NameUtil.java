@@ -34,6 +34,9 @@ public class NameUtil {
   private static final Pattern BACKUP_PATTERN =
       Pattern.compile("projects/([^/]+)/instances/([^/]+)/clusters/([^/]+)/backups/([^/]+)");
 
+  private static final Pattern AUTHORIZED_VIEW_PATTERN =
+      Pattern.compile("projects/([^/]+)/instances/([^/]+)/tables/([^/]+)/authorizedViews/([^/]+)");
+
   public static String formatProjectName(String projectId) {
     return "projects/" + projectId;
   }
@@ -55,6 +58,11 @@ public class NameUtil {
     return formatClusterName(projectId, instanceId, clusterId) + "/backups/" + backupId;
   }
 
+  public static String formatAuthorizedViewName(
+      String projectId, String instanceId, String tableId, String viewId) {
+    return formatTableName(projectId, instanceId, tableId) + "/authorizedViews/" + viewId;
+  }
+
   public static String extractTableIdFromTableName(String fullTableName) {
     Matcher matcher = TABLE_PATTERN.matcher(fullTableName);
     if (!matcher.matches()) {
@@ -67,6 +75,15 @@ public class NameUtil {
     Matcher matcher = BACKUP_PATTERN.matcher(fullBackupName);
     if (!matcher.matches()) {
       throw new IllegalArgumentException("Invalid backup name: " + fullBackupName);
+    }
+    return matcher.group(4);
+  }
+
+  public static String extractAuthorizedViewIdFromAuthorizedViewName(
+      String fullAuthorizedViewName) {
+    Matcher matcher = AUTHORIZED_VIEW_PATTERN.matcher(fullAuthorizedViewName);
+    if (!matcher.matches()) {
+      throw new IllegalArgumentException("Invalid authorized view name: " + fullAuthorizedViewName);
     }
     return matcher.group(4);
   }

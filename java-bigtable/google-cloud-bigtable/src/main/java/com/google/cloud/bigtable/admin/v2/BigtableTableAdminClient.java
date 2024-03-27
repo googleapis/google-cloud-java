@@ -22,11 +22,14 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
+import com.google.bigtable.admin.v2.GetAuthorizedViewRequest;
 import com.google.bigtable.admin.v2.GetBackupRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.ListAuthorizedViewsRequest;
 import com.google.bigtable.admin.v2.ListBackupsRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.RestoreTableMetadata;
@@ -34,13 +37,17 @@ import com.google.bigtable.admin.v2.Table.ClusterState;
 import com.google.bigtable.admin.v2.Table.View;
 import com.google.cloud.Policy;
 import com.google.cloud.Policy.DefaultMarshaller;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
 import com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
@@ -50,6 +57,7 @@ import com.google.cloud.bigtable.admin.v2.models.OptimizeRestoredTableOperationT
 import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
 import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateTableRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
@@ -1435,6 +1443,352 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
+   * Creates a new authorized view with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * CreateAuthorizedViewRequest request =
+   *     CreateAuthorizedViewRequest.of("my-table", "my-new-authorized-view")
+   *         .setDeletionProtection(true)
+   *         .setAuthorizedViewType(
+   *             SubsetView.create()
+   *                 .addRowPrefix("row#")
+   *                 .addFamilySubsets(
+   *                     "my-family", FamilySubsets.create().addQualifier("column")));
+   *
+   * AuthorizedView response = client.createAuthorizedView(request);
+   * }</pre>
+   *
+   * @see CreateAuthorizedViewRequest for available options.
+   */
+  public AuthorizedView createAuthorizedView(CreateAuthorizedViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(createAuthorizedViewAsync(request));
+  }
+
+  /**
+   * Asynchronously creates a new authorized view with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * CreateAuthorizedViewRequest request =
+   *     CreateAuthorizedViewRequest.of("my-table", "my-new-authorized-view")
+   *         .setDeletionProtection(true)
+   *         .setAuthorizedViewType(
+   *             SubsetView.create()
+   *                 .addRowPrefix("row#")
+   *                 .addFamilySubsets(
+   *                     "my-family", FamilySubsets.create().addQualifier("column")));
+   *
+   * ApiFuture<AuthorizedView> future = client.createAuthorizedViewAsync(request);
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<AuthorizedView>() {
+   *     public void onSuccess(AuthorizedView authorizedView) {
+   *       System.out.println("Successfully created the authorized view: " + authorizedView.getId());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   *
+   * @see CreateAuthorizedViewRequest for available options.
+   */
+  public ApiFuture<AuthorizedView> createAuthorizedViewAsync(CreateAuthorizedViewRequest request) {
+    return ApiFutures.transform(
+        stub.createAuthorizedViewOperationCallable()
+            .futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.AuthorizedView, AuthorizedView>() {
+          @Override
+          public AuthorizedView apply(
+              com.google.bigtable.admin.v2.AuthorizedView authorizedViewProto) {
+            return AuthorizedView.fromProto(authorizedViewProto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Updates an existing authorized view with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AuthorizedView existingAuthorizedView = client.getAuthorizedView("my-table", "my-authorized-view");
+   *
+   * UpdateAuthorizedViewRequest request =
+   *     UpdateAuthorizedViewRequest.of(existingAuthorizedView).setDeletionProtection(true);
+   *
+   * AuthorizedView response = client.updateAuthorizedView(request);
+   * }</pre>
+   *
+   * @see UpdateAuthorizedViewRequest for available options.
+   */
+  public AuthorizedView updateAuthorizedView(UpdateAuthorizedViewRequest request) {
+    return ApiExceptions.callAndTranslateApiException(updateAuthorizedViewAsync(request));
+  }
+
+  /**
+   * Asynchronously updates an existing authorized view with the specified configuration.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AuthorizedView existingAuthorizedView = client.getAuthorizedView("my-table", "my-authorized-view");
+   *
+   * UpdateAuthorizedViewRequest request =
+   *     UpdateAuthorizedViewRequest.of(existingAuthorizedView).setDeletionProtection(true);
+   *
+   * ApiFuture<AuthorizedView> future = client.updateAuthorizedViewAsync(request);
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<AuthorizedView>() {
+   *     public void onSuccess(AuthorizedView authorizedView) {
+   *       System.out.println("Successfully updated the authorized view: " + authorizedView.getId());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   *
+   * @see UpdateAuthorizedViewRequest for available options.
+   */
+  public ApiFuture<AuthorizedView> updateAuthorizedViewAsync(UpdateAuthorizedViewRequest request) {
+    return ApiFutures.transform(
+        stub.updateAuthorizedViewOperationCallable()
+            .futureCall(request.toProto(projectId, instanceId)),
+        new ApiFunction<com.google.bigtable.admin.v2.AuthorizedView, AuthorizedView>() {
+          @Override
+          public AuthorizedView apply(
+              com.google.bigtable.admin.v2.AuthorizedView authorizedViewProto) {
+            return AuthorizedView.fromProto(authorizedViewProto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Gets an authorized view with the specified authorized view ID in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * AuthorizedView authorizedView = client.getAuthorizedView("my-table", "my-authorized-view");
+   * }</pre>
+   */
+  public AuthorizedView getAuthorizedView(String tableId, String authorizedViewId) {
+    return ApiExceptions.callAndTranslateApiException(
+        getAuthorizedViewAsync(tableId, authorizedViewId));
+  }
+
+  /**
+   * Asynchronously gets an authorized view with the specified authorized view ID in the specified
+   * table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<AuthorizedView> future = client.getAuthorizedViewAsync("my-table", "my-authorized-view");
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<AuthorizedView>() {
+   *     public void onSuccess(AuthorizedView authorizedView) {
+   *       System.out.println("Successfully get the authorized view: " + authorizedView.getId());
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<AuthorizedView> getAuthorizedViewAsync(String tableId, String authorizedViewId) {
+    GetAuthorizedViewRequest request =
+        GetAuthorizedViewRequest.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(projectId, instanceId, tableId, authorizedViewId))
+            .build();
+    return ApiFutures.transform(
+        stub.getAuthorizedViewCallable().futureCall(request),
+        new ApiFunction<com.google.bigtable.admin.v2.AuthorizedView, AuthorizedView>() {
+          @Override
+          public AuthorizedView apply(
+              com.google.bigtable.admin.v2.AuthorizedView authorizedViewProto) {
+            return AuthorizedView.fromProto(authorizedViewProto);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Lists all authorized view IDs in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<String> authorizedViews = client.listAuthorizedViews("my-table");
+   * }</pre>
+   */
+  public List<String> listAuthorizedViews(String tableId) {
+    return ApiExceptions.callAndTranslateApiException(listAuthorizedViewsAsync(tableId));
+  }
+
+  /**
+   * Asynchronously lists all authorized view IDs in the specified table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> future = client.listAuthorizedViewsAsync("my-table");
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> authorizedViewIds) {
+   *       System.out.println("Successfully get list of authorized views:");
+   *       for (AuthorizedView authorizedViewId : authorizedViewIds) {
+   *         System.out.println(authorizedViewId);
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<List<String>> listAuthorizedViewsAsync(String tableId) {
+    ListAuthorizedViewsRequest request =
+        ListAuthorizedViewsRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(projectId, instanceId, tableId))
+            .build();
+
+    // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
+    // paginated responses while maintaining the wrapper facade.
+
+    // Fetches the first page.
+    ApiFuture<ListAuthorizedViewsPage> firstPageFuture =
+        ApiFutures.transform(
+            stub.listAuthorizedViewsPagedCallable().futureCall(request),
+            new ApiFunction<ListAuthorizedViewsPagedResponse, ListAuthorizedViewsPage>() {
+              @Override
+              public ListAuthorizedViewsPage apply(ListAuthorizedViewsPagedResponse response) {
+                return response.getPage();
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Fetches the rest of the pages by chaining the futures.
+    ApiFuture<List<com.google.bigtable.admin.v2.AuthorizedView>> allProtos =
+        ApiFutures.transformAsync(
+            firstPageFuture,
+            new ApiAsyncFunction<
+                ListAuthorizedViewsPage, List<com.google.bigtable.admin.v2.AuthorizedView>>() {
+              List<com.google.bigtable.admin.v2.AuthorizedView> responseAccumulator =
+                  Lists.newArrayList();
+
+              @Override
+              public ApiFuture<List<com.google.bigtable.admin.v2.AuthorizedView>> apply(
+                  ListAuthorizedViewsPage page) {
+                // Add all entries from the page
+                responseAccumulator.addAll(Lists.newArrayList(page.getValues()));
+
+                // If this is the last page, just return the accumulated responses.
+                if (!page.hasNextPage()) {
+                  return ApiFutures.immediateFuture(responseAccumulator);
+                }
+
+                // Otherwise fetch the next page.
+                return ApiFutures.transformAsync(
+                    page.getNextPageAsync(), this, MoreExecutors.directExecutor());
+              }
+            },
+            MoreExecutors.directExecutor());
+
+    // Wraps all of the accumulated protos.
+    return ApiFutures.transform(
+        allProtos,
+        new ApiFunction<List<com.google.bigtable.admin.v2.AuthorizedView>, List<String>>() {
+          @Override
+          public List<String> apply(List<com.google.bigtable.admin.v2.AuthorizedView> protos) {
+            List<String> results = Lists.newArrayListWithCapacity(protos.size());
+            for (com.google.bigtable.admin.v2.AuthorizedView proto : protos) {
+              results.add(NameUtil.extractAuthorizedViewIdFromAuthorizedViewName(proto.getName()));
+            }
+            return results;
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  /**
+   * Deletes an authorized view with the specified authorized view ID in the specified table. Note
+   * that the deletion is prohibited if the authorized view has deletion_protection field set to
+   * true.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * client.deleteAuthorizedView("my-table", "my-authorized-view");
+   * }</pre>
+   */
+  public void deleteAuthorizedView(String tableId, String authorizedViewId) {
+    ApiExceptions.callAndTranslateApiException(
+        deleteAuthorizedViewAsync(tableId, authorizedViewId));
+  }
+
+  /**
+   * Asynchronously deletes an authorized view with the specified authorized view ID in the
+   * specified table. Note that the deletion is prohibited if the authorized view has
+   * deletion_protection field set to true.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<void> future = client.deleteAuthorizedViewAsync("my-table", "my-authorized-view");
+   *
+   * ApiFutures.addCallback(
+   *   future,
+   *   new ApiFutureCallback<void>() {
+   *     public void onSuccess(Void ignored) {
+   *       System.out.println("Successfully deleted the authorized view");
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor()
+   * );
+   * }</pre>
+   */
+  public ApiFuture<Void> deleteAuthorizedViewAsync(String tableId, String authorizedViewId) {
+    DeleteAuthorizedViewRequest request =
+        DeleteAuthorizedViewRequest.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(projectId, instanceId, tableId, authorizedViewId))
+            .build();
+
+    return transformToVoid(this.stub.deleteAuthorizedViewCallable().futureCall(request));
+  }
+
+  /**
    * Helper method to construct the table name in format:
    * projects/{project}/instances/{instance}/tables/{tableId}
    */
@@ -1816,6 +2170,187 @@ public final class BigtableTableAdminClient implements AutoCloseable {
       String clusterId, String backupId, String... permissions) {
     String backupName = NameUtil.formatBackupName(projectId, instanceId, clusterId, backupId);
     return testResourceIamPermissions(backupName, permissions);
+  }
+
+  /**
+   * Gets the IAM access control policy for the specified authorized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy policy = client.getAuthorizedViewIamPolicy("my-table-id", "my-authorized-view-id");
+   * for(Map.Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *   System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   * }
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public Policy getAuthorizedViewIamPolicy(String tableId, String authorizedViewId) {
+    return ApiExceptions.callAndTranslateApiException(
+        getAuthorizedViewIamPolicyAsync(tableId, authorizedViewId));
+  }
+
+  /**
+   * Asynchronously gets the IAM access control policy for the specified authorized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> policyFuture = client.getAuthorizedViewIamPolicyAsync("my-table-id", "my-authorized-view-id");
+   *
+   * ApiFutures.addCallback(policyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Policy> getAuthorizedViewIamPolicyAsync(
+      String tableId, String authorizedViewId) {
+    String authorizedViewName =
+        NameUtil.formatAuthorizedViewName(projectId, instanceId, tableId, authorizedViewId);
+    return getResourceIamPolicy(authorizedViewName);
+  }
+
+  /**
+   * Replaces the IAM policy associated with the specified authorized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * Policy newPolicy = client.setAuthorizedViewIamPolicy("my-table-id", "my-authorized-view-id",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public Policy setAuthorizedViewIamPolicy(String tableId, String authorizedViewId, Policy policy) {
+    return ApiExceptions.callAndTranslateApiException(
+        setAuthorizedViewIamPolicyAsync(tableId, authorizedViewId, policy));
+  }
+
+  /**
+   * Asynchronously replaces the IAM policy associated with the specified authorized view.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<Policy> newPolicyFuture = client.setAuthorizedViewIamPolicyAsync("my-table-id", "my-authorized-view-id",
+   *   Policy.newBuilder()
+   *     .addIdentity(Role.of("bigtable.user"), Identity.user("someone@example.com"))
+   *     .addIdentity(Role.of("bigtable.admin"), Identity.group("admins@example.com"))
+   *     .build());
+   *
+   * ApiFutures.addCallback(newPolicyFuture,
+   *   new ApiFutureCallback<Policy>() {
+   *     public void onSuccess(Policy policy) {
+   *       for (Entry<Role, Set<Identity>> entry : policy.getBindings().entrySet()) {
+   *         System.out.printf("Role: %s Identities: %s\n", entry.getKey(), entry.getValue());
+   *       }
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigtable/docs/access-control#iam-management-table">Table-level
+   *     IAM management</a>
+   */
+  @SuppressWarnings("WeakerAccess")
+  public ApiFuture<Policy> setAuthorizedViewIamPolicyAsync(
+      String tableId, String authorizedViewId, Policy policy) {
+    String authorizedViewName =
+        NameUtil.formatAuthorizedViewName(projectId, instanceId, tableId, authorizedViewId);
+    return setResourceIamPolicy(policy, authorizedViewName);
+  }
+
+  /**
+   * Tests whether the caller has the given permissions for the specified authorized view. Returns a
+   * subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * List<String> grantedPermissions = client.testAuthorizedViewIamPermission("my-table-id", "my-authorized-view-id",
+   *   "bigtable.authorizedViews.get", "bigtable.authorizedViews.delete");
+   * }</pre>
+   *
+   * System.out.println("Has get access: " +
+   * grantedPermissions.contains("bigtable.authorizedViews.get"));
+   *
+   * <p>System.out.println("Has delete access: " +
+   * grantedPermissions.contains("bigtable.authorizedViews.delete"));
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
+   *     permissions</a>
+   */
+  @SuppressWarnings({"WeakerAccess"})
+  public List<String> testAuthorizedViewIamPermission(
+      String tableId, String authorizedViewId, String... permissions) {
+    return ApiExceptions.callAndTranslateApiException(
+        testAuthorizedViewIamPermissionAsync(tableId, authorizedViewId, permissions));
+  }
+
+  /**
+   * Asynchronously tests whether the caller has the given permissions for the specified authorized
+   * view. Returns a subset of the specified permissions that the caller has.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * ApiFuture<List<String>> grantedPermissionsFuture = client.testAuthorizedViewIamPermissionAsync("my-table-id", "my-authorized-view-id",
+   *   "bigtable.authorizedViews.get", "bigtable.authorizedViews.delete");
+   *
+   * ApiFutures.addCallback(grantedPermissionsFuture,
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> grantedPermissions) {
+   *       System.out.println("Has get access: " + grantedPermissions.contains("bigtable.authorizedViews.get"));
+   *       System.out.println("Has delete access: " + grantedPermissions.contains("bigtable.authorizedViews.delete"));
+   *     }
+   *
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *   },
+   *   MoreExecutors.directExecutor());
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
+   *     permissions</a>
+   */
+  @SuppressWarnings({"WeakerAccess"})
+  public ApiFuture<List<String>> testAuthorizedViewIamPermissionAsync(
+      String tableId, String authorizedViewId, String... permissions) {
+    String authorizedViewName =
+        NameUtil.formatAuthorizedViewName(projectId, instanceId, tableId, authorizedViewId);
+    return testResourceIamPermissions(authorizedViewName, permissions);
   }
 
   private ApiFuture<Policy> getResourceIamPolicy(String name) {

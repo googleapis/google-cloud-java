@@ -27,11 +27,13 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
+import com.google.bigtable.admin.v2.AuthorizedViewName;
 import com.google.bigtable.admin.v2.Backup.State;
 import com.google.bigtable.admin.v2.BackupInfo;
 import com.google.bigtable.admin.v2.ChangeStreamConfig;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CopyBackupMetadata;
+import com.google.bigtable.admin.v2.CreateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.CreateBackupMetadata;
 import com.google.bigtable.admin.v2.DeleteBackupRequest;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
@@ -47,25 +49,32 @@ import com.google.bigtable.admin.v2.RestoreTableMetadata;
 import com.google.bigtable.admin.v2.Table.ClusterState;
 import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.bigtable.admin.v2.UpdateAuthorizedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateTableMetadata;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPage;
+import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListAuthorizedViewsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListBackupsPagedResponse;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.admin.v2.models.Backup;
 import com.google.cloud.bigtable.admin.v2.models.CopyBackupRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.EncryptionInfo;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoreTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.RestoredTableResult;
+import com.google.cloud.bigtable.admin.v2.models.SubsetView;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.admin.v2.models.Type;
+import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.cloud.bigtable.admin.v2.models.UpdateBackupRequest;
 import com.google.cloud.bigtable.admin.v2.stub.EnhancedBigtableTableAdminStub;
 import com.google.common.collect.ImmutableList;
@@ -75,6 +84,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.Timestamps;
 import io.grpc.Status;
@@ -110,6 +120,7 @@ public class BigtableTableAdminClientTests {
   private static final String TABLE_ID = "my-table";
   private static final String CLUSTER_ID = "my-cluster";
   private static final String BACKUP_ID = "my-backup";
+  private static final String AUTHORIZED_VIEW_ID = "my-authorized-view";
 
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
   private static final String TABLE_NAME =
@@ -181,6 +192,35 @@ public class BigtableTableAdminClientTests {
           com.google.bigtable.admin.v2.Backup,
           CopyBackupMetadata>
       mockCopyBackupOperationCallable;
+
+  @Mock
+  private OperationCallable<
+          com.google.bigtable.admin.v2.CreateAuthorizedViewRequest,
+          com.google.bigtable.admin.v2.AuthorizedView,
+          CreateAuthorizedViewMetadata>
+      mockCreateAuthorizedViewOperationCallable;
+
+  @Mock
+  private OperationCallable<
+          com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest,
+          com.google.bigtable.admin.v2.AuthorizedView,
+          UpdateAuthorizedViewMetadata>
+      mockUpdateAuthorizedViewOperationCallable;
+
+  @Mock
+  private UnaryCallable<
+          com.google.bigtable.admin.v2.GetAuthorizedViewRequest,
+          com.google.bigtable.admin.v2.AuthorizedView>
+      mockGetAuthorizedViewCallable;
+
+  @Mock
+  private UnaryCallable<
+          com.google.bigtable.admin.v2.ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
+      mockListAuthorizedViewsCallable;
+
+  @Mock
+  private UnaryCallable<com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest, Empty>
+      mockDeleteAuthorizedViewCallable;
 
   @Mock
   private UnaryCallable<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
@@ -875,6 +915,227 @@ public class BigtableTableAdminClientTests {
         .isEqualTo(Instant.ofEpochMilli(Timestamps.toMillis(endTime)));
     assertThat(actualResult.getExpireTime()).isEqualTo(expireTime);
     assertThat(actualResult.getSizeBytes()).isEqualTo(sizeBytes);
+  }
+
+  @Test
+  public void testCreateAuthorizedView() {
+    // Setup
+    Mockito.when(mockStub.createAuthorizedViewOperationCallable())
+        .thenReturn(mockCreateAuthorizedViewOperationCallable);
+
+    com.google.bigtable.admin.v2.CreateAuthorizedViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateAuthorizedViewRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setAuthorizedViewId(AUTHORIZED_VIEW_ID)
+            .setAuthorizedView(
+                com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+                    .setSubsetView(
+                        com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder()
+                            .addRowPrefixes(ByteString.copyFromUtf8("row#"))
+                            .build())
+                    .setDeletionProtection(true)
+                    .build())
+            .build();
+
+    com.google.bigtable.admin.v2.AuthorizedView expectedResponse =
+        com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+            .setSubsetView(
+                com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder()
+                    .addRowPrefixes(ByteString.copyFromUtf8("row#"))
+                    .build())
+            .setDeletionProtection(true)
+            .build();
+
+    mockOperationResult(
+        mockCreateAuthorizedViewOperationCallable,
+        expectedRequest,
+        expectedResponse,
+        CreateAuthorizedViewMetadata.newBuilder().setOriginalRequest(expectedRequest).build());
+
+    CreateAuthorizedViewRequest req =
+        CreateAuthorizedViewRequest.of(TABLE_ID, AUTHORIZED_VIEW_ID)
+            .setDeletionProtection(true)
+            .setAuthorizedViewType(SubsetView.create().addRowPrefix("row#"));
+
+    // Execute
+    AuthorizedView actualResult = adminClient.createAuthorizedView(req);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AuthorizedView.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testUpdateAuthorizedView() {
+    // Setup
+    Mockito.when(mockStub.updateAuthorizedViewOperationCallable())
+        .thenReturn(mockUpdateAuthorizedViewOperationCallable);
+
+    com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest.newBuilder()
+            .setAuthorizedView(
+                com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+                    .setName(
+                        NameUtil.formatAuthorizedViewName(
+                            PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+                    .setSubsetView(
+                        com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder()
+                            .addRowPrefixes(ByteString.copyFromUtf8("row#"))
+                            .build())
+                    .setDeletionProtection(true)
+                    .build())
+            .setUpdateMask(
+                FieldMask.newBuilder().addPaths("deletion_protection").addPaths("subset_view"))
+            .build();
+
+    com.google.bigtable.admin.v2.AuthorizedView expectedResponse =
+        com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+            .setSubsetView(
+                com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder()
+                    .addRowPrefixes(ByteString.copyFromUtf8("row#"))
+                    .build())
+            .setDeletionProtection(true)
+            .build();
+
+    mockOperationResult(
+        mockUpdateAuthorizedViewOperationCallable,
+        expectedRequest,
+        expectedResponse,
+        UpdateAuthorizedViewMetadata.newBuilder().setOriginalRequest(expectedRequest).build());
+
+    UpdateAuthorizedViewRequest req =
+        UpdateAuthorizedViewRequest.of(TABLE_ID, AUTHORIZED_VIEW_ID)
+            .setDeletionProtection(true)
+            .setAuthorizedViewType(SubsetView.create().addRowPrefix("row#"));
+
+    // Execute
+    AuthorizedView actualResult = adminClient.updateAuthorizedView(req);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AuthorizedView.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testGetAuthorizedView() {
+    // Setup
+    Mockito.when(mockStub.getAuthorizedViewCallable()).thenReturn(mockGetAuthorizedViewCallable);
+
+    com.google.bigtable.admin.v2.GetAuthorizedViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.GetAuthorizedViewRequest.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+            .build();
+
+    com.google.bigtable.admin.v2.AuthorizedView expectedResponse =
+        com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+            .setSubsetView(
+                com.google.bigtable.admin.v2.AuthorizedView.SubsetView.newBuilder()
+                    .addRowPrefixes(ByteString.copyFromUtf8("row#"))
+                    .build())
+            .setDeletionProtection(true)
+            .build();
+
+    Mockito.when(mockGetAuthorizedViewCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    AuthorizedView actualResult = adminClient.getAuthorizedView(TABLE_ID, AUTHORIZED_VIEW_ID);
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AuthorizedView.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testListAuthorizedViews() {
+    // Setup
+    Mockito.when(mockStub.listAuthorizedViewsPagedCallable())
+        .thenReturn(mockListAuthorizedViewsCallable);
+
+    com.google.bigtable.admin.v2.ListAuthorizedViewsRequest expectedRequest =
+        com.google.bigtable.admin.v2.ListAuthorizedViewsRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .build();
+
+    // 3 AuthorizedViews spread across 2 pages
+    List<com.google.bigtable.admin.v2.AuthorizedView> expectedProtos = Lists.newArrayList();
+    for (int i = 0; i < 3; i++) {
+      expectedProtos.add(
+          com.google.bigtable.admin.v2.AuthorizedView.newBuilder()
+              .setName(
+                  NameUtil.formatAuthorizedViewName(
+                      PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID + i))
+              .build());
+    }
+
+    // 2 on the first page
+    ListAuthorizedViewsPage page0 = Mockito.mock(ListAuthorizedViewsPage.class);
+    Mockito.when(page0.getValues()).thenReturn(expectedProtos.subList(0, 2));
+    Mockito.when(page0.hasNextPage()).thenReturn(true);
+
+    // 1 on the last page
+    ListAuthorizedViewsPage page1 = Mockito.mock(ListAuthorizedViewsPage.class);
+    Mockito.when(page1.getValues()).thenReturn(expectedProtos.subList(2, 3));
+
+    // Link page0 to page1
+    Mockito.when(page0.getNextPageAsync()).thenReturn(ApiFutures.immediateFuture(page1));
+
+    // Link page to the response
+    ListAuthorizedViewsPagedResponse response0 =
+        Mockito.mock(ListAuthorizedViewsPagedResponse.class);
+    Mockito.when(response0.getPage()).thenReturn(page0);
+
+    Mockito.when(mockListAuthorizedViewsCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(response0));
+
+    // Execute
+    List<String> actualResults = adminClient.listAuthorizedViews(TABLE_ID);
+
+    // Verify
+    List<String> expectedResults = Lists.newArrayList();
+    for (com.google.bigtable.admin.v2.AuthorizedView expectedProto : expectedProtos) {
+      expectedResults.add(AuthorizedViewName.parse(expectedProto.getName()).getAuthorizedView());
+    }
+
+    assertThat(actualResults).containsExactlyElementsIn(expectedResults);
+  }
+
+  @Test
+  public void testDeleteAuthorizedView() {
+    // Setup
+    Mockito.when(mockStub.deleteAuthorizedViewCallable())
+        .thenReturn(mockDeleteAuthorizedViewCallable);
+
+    com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest expectedRequest =
+        com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID))
+            .build();
+
+    final AtomicBoolean wasCalled = new AtomicBoolean(false);
+
+    Mockito.when(mockDeleteAuthorizedViewCallable.futureCall(expectedRequest))
+        .thenAnswer(
+            (Answer<ApiFuture<Empty>>)
+                invocationOnMock -> {
+                  wasCalled.set(true);
+                  return ApiFutures.immediateFuture(Empty.getDefaultInstance());
+                });
+
+    // Execute
+    adminClient.deleteAuthorizedView(TABLE_ID, AUTHORIZED_VIEW_ID);
+
+    // Verify
+    assertThat(wasCalled.get()).isTrue();
   }
 
   @Test

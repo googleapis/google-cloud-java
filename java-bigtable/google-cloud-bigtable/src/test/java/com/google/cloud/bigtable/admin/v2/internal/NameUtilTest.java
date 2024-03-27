@@ -45,4 +45,27 @@ public class NameUtilTest {
     assertThat(NameUtil.formatBackupName("my-project", "my-instance", "my-cluster", "my-backup"))
         .isEqualTo(testBackupName);
   }
+
+  @Test
+  public void formatAuthorizedViewNameTest() {
+    String testAuthorizedViewName =
+        "projects/my-project/instances/my-instance/tables/my-table/authorizedViews/my-authorized-view";
+
+    assertThat(
+            NameUtil.formatAuthorizedViewName(
+                "my-project", "my-instance", "my-table", "my-authorized-view"))
+        .isEqualTo(testAuthorizedViewName);
+  }
+
+  @Test
+  public void extractAuthorizedViewIdFromAuthorizedViewNameTest() {
+    String testAuthorizedViewName =
+        "projects/my-project/instances/my-instance/tables/my-table/authorizedViews/my-authorized-view";
+
+    assertThat(NameUtil.extractAuthorizedViewIdFromAuthorizedViewName(testAuthorizedViewName))
+        .isEqualTo("my-authorized-view");
+
+    exception.expect(IllegalArgumentException.class);
+    NameUtil.extractAuthorizedViewIdFromAuthorizedViewName("bad-format");
+  }
 }
