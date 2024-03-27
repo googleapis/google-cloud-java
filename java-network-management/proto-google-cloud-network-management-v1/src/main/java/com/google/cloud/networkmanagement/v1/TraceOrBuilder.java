@@ -144,4 +144,19 @@ public interface TraceOrBuilder
    * <code>repeated .google.cloud.networkmanagement.v1.Step steps = 2;</code>
    */
   com.google.cloud.networkmanagement.v1.StepOrBuilder getStepsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * ID of trace. For forward traces, this ID is unique for each trace. For
+   * return traces, it matches ID of associated forward trace. A single forward
+   * trace can be associated with none, one or more than one return trace.
+   * </pre>
+   *
+   * <code>int32 forward_trace_id = 4;</code>
+   *
+   * @return The forwardTraceId.
+   */
+  int getForwardTraceId();
 }

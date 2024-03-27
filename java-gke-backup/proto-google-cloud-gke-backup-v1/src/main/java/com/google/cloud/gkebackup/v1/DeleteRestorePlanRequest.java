@@ -129,12 +129,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
    * field or the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -154,12 +154,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
    * field or the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -182,12 +182,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * If set to true, any Restores below this RestorePlan will also be deleted.
-   * Otherwise, the request will only succeed if the RestorePlan has no
+   * Optional. If set to true, any Restores below this RestorePlan will also be
+   * deleted. Otherwise, the request will only succeed if the RestorePlan has no
    * Restores.
    * </pre>
    *
-   * <code>bool force = 3;</code>
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
@@ -711,12 +711,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
      * field or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -735,12 +735,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
      * field or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -759,12 +759,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
      * field or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -782,12 +782,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
      * field or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -801,12 +801,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target RestorePlan's [etag][google.cloud.gkebackup.v1.RestorePlan.etag]
      * field or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -827,12 +827,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If set to true, any Restores below this RestorePlan will also be deleted.
-     * Otherwise, the request will only succeed if the RestorePlan has no
+     * Optional. If set to true, any Restores below this RestorePlan will also be
+     * deleted. Otherwise, the request will only succeed if the RestorePlan has no
      * Restores.
      * </pre>
      *
-     * <code>bool force = 3;</code>
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The force.
      */
@@ -844,12 +844,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If set to true, any Restores below this RestorePlan will also be deleted.
-     * Otherwise, the request will only succeed if the RestorePlan has no
+     * Optional. If set to true, any Restores below this RestorePlan will also be
+     * deleted. Otherwise, the request will only succeed if the RestorePlan has no
      * Restores.
      * </pre>
      *
-     * <code>bool force = 3;</code>
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The force to set.
      * @return This builder for chaining.
@@ -865,12 +865,12 @@ public final class DeleteRestorePlanRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If set to true, any Restores below this RestorePlan will also be deleted.
-     * Otherwise, the request will only succeed if the RestorePlan has no
+     * Optional. If set to true, any Restores below this RestorePlan will also be
+     * deleted. Otherwise, the request will only succeed if the RestorePlan has no
      * Restores.
      * </pre>
      *
-     * <code>bool force = 3;</code>
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

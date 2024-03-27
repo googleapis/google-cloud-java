@@ -37,6 +37,8 @@ import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
@@ -283,6 +285,11 @@ public abstract class BackupForGKEStub implements BackgroundResource {
 
   public UnaryCallable<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreCallable() {
     throw new UnsupportedOperationException("Not implemented: getVolumeRestoreCallable()");
+  }
+
+  public UnaryCallable<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupIndexDownloadUrlCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

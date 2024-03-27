@@ -42,6 +42,8 @@ import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
@@ -332,6 +334,19 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
               .setResponseMarshaller(ProtoUtils.marshaller(VolumeRestore.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlMethodDescriptor =
+          MethodDescriptor
+              .<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gkebackup.v1.BackupForGKE/GetBackupIndexDownloadUrl")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetBackupIndexDownloadUrlRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GetBackupIndexDownloadUrlResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -442,6 +457,8 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
   private final UnaryCallable<ListVolumeRestoresRequest, ListVolumeRestoresPagedResponse>
       listVolumeRestoresPagedCallable;
   private final UnaryCallable<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreCallable;
+  private final UnaryCallable<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -739,6 +756,18 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+        getBackupIndexDownloadUrlTransportSettings =
+            GrpcCallSettings
+                .<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>newBuilder()
+                .setMethodDescriptor(getBackupIndexDownloadUrlMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("backup", String.valueOf(request.getBackup()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -967,6 +996,11 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
     this.getVolumeRestoreCallable =
         callableFactory.createUnaryCallable(
             getVolumeRestoreTransportSettings, settings.getVolumeRestoreSettings(), clientContext);
+    this.getBackupIndexDownloadUrlCallable =
+        callableFactory.createUnaryCallable(
+            getBackupIndexDownloadUrlTransportSettings,
+            settings.getBackupIndexDownloadUrlSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1223,6 +1257,12 @@ public class GrpcBackupForGKEStub extends BackupForGKEStub {
   @Override
   public UnaryCallable<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreCallable() {
     return getVolumeRestoreCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlCallable() {
+    return getBackupIndexDownloadUrlCallable;
   }
 
   @Override

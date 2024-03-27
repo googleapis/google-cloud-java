@@ -589,7 +589,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=227
+   *     google/cloud/networkmanagement/v1/trace.proto;l=241
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -607,7 +607,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=227
+   *     google/cloud/networkmanagement/v1/trace.proto;l=241
    * @return The loadBalancer.
    */
   @java.lang.Deprecated

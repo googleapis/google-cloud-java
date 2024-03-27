@@ -177,7 +177,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Route's next hop instance doesn't hace a NIC in the route's network.
+     * Route's next hop instance doesn't have a NIC in the route's network.
      * </pre>
      *
      * <code>ROUTE_NEXT_HOP_INSTANCE_WRONG_NETWORK = 49;</code>
@@ -836,7 +836,7 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Route's next hop instance doesn't hace a NIC in the route's network.
+     * Route's next hop instance doesn't have a NIC in the route's network.
      * </pre>
      *
      * <code>ROUTE_NEXT_HOP_INSTANCE_WRONG_NETWORK = 49;</code>

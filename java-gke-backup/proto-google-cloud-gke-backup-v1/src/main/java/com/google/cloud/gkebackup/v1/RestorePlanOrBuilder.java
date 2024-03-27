@@ -164,10 +164,10 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * User specified descriptive string for this RestorePlan.
+   * Optional. User specified descriptive string for this RestorePlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -176,10 +176,10 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * User specified descriptive string for this RestorePlan.
+   * Optional. User specified descriptive string for this RestorePlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -304,20 +304,20 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -327,20 +327,20 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -351,10 +351,10 @@ public interface RestorePlanOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 9;</code>
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 

@@ -71,10 +71,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.gkebackup.v1.NamespacedName> getNamespacedNamesList() {
@@ -84,10 +86,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder>
@@ -98,10 +102,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getNamespacedNamesCount() {
@@ -111,10 +117,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.NamespacedName getNamespacedNames(int index) {
@@ -124,10 +132,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder getNamespacedNamesOrBuilder(
@@ -544,10 +554,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.gkebackup.v1.NamespacedName> getNamespacedNamesList() {
       if (namespacedNamesBuilder_ == null) {
@@ -560,10 +572,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getNamespacedNamesCount() {
       if (namespacedNamesBuilder_ == null) {
@@ -576,10 +590,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.NamespacedName getNamespacedNames(int index) {
       if (namespacedNamesBuilder_ == null) {
@@ -592,10 +608,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNamespacedNames(
         int index, com.google.cloud.gkebackup.v1.NamespacedName value) {
@@ -615,10 +633,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setNamespacedNames(
         int index, com.google.cloud.gkebackup.v1.NamespacedName.Builder builderForValue) {
@@ -635,10 +655,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNamespacedNames(com.google.cloud.gkebackup.v1.NamespacedName value) {
       if (namespacedNamesBuilder_ == null) {
@@ -657,10 +679,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNamespacedNames(
         int index, com.google.cloud.gkebackup.v1.NamespacedName value) {
@@ -680,10 +704,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNamespacedNames(
         com.google.cloud.gkebackup.v1.NamespacedName.Builder builderForValue) {
@@ -700,10 +726,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addNamespacedNames(
         int index, com.google.cloud.gkebackup.v1.NamespacedName.Builder builderForValue) {
@@ -720,10 +748,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllNamespacedNames(
         java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.NamespacedName> values) {
@@ -740,10 +770,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearNamespacedNames() {
       if (namespacedNamesBuilder_ == null) {
@@ -759,10 +791,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeNamespacedNames(int index) {
       if (namespacedNamesBuilder_ == null) {
@@ -778,10 +812,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.NamespacedName.Builder getNamespacedNamesBuilder(
         int index) {
@@ -791,10 +827,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder getNamespacedNamesOrBuilder(
         int index) {
@@ -808,10 +846,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder>
         getNamespacedNamesOrBuilderList() {
@@ -825,10 +865,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.NamespacedName.Builder addNamespacedNamesBuilder() {
       return getNamespacedNamesFieldBuilder()
@@ -838,10 +880,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.gkebackup.v1.NamespacedName.Builder addNamespacedNamesBuilder(
         int index) {
@@ -852,10 +896,12 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of namespaced Kubernetes resources.
+     * Optional. A list of namespaced Kubernetes resources.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.gkebackup.v1.NamespacedName.Builder>
         getNamespacedNamesBuilderList() {

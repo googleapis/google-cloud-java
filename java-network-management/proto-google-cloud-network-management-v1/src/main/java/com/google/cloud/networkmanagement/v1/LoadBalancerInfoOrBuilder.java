@@ -65,7 +65,7 @@ public interface LoadBalancerInfoOrBuilder
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
-   *     See google/cloud/networkmanagement/v1/trace.proto;l=632
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=652
    * @return The healthCheckUri.
    */
   @java.lang.Deprecated
@@ -82,7 +82,7 @@ public interface LoadBalancerInfoOrBuilder
    * <code>string health_check_uri = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.LoadBalancerInfo.health_check_uri is deprecated.
-   *     See google/cloud/networkmanagement/v1/trace.proto;l=632
+   *     See google/cloud/networkmanagement/v1/trace.proto;l=652
    * @return The bytes for healthCheckUri.
    */
   @java.lang.Deprecated

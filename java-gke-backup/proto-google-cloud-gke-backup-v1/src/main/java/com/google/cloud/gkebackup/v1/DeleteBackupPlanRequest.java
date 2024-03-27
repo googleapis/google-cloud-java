@@ -129,12 +129,12 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
    * or the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -154,12 +154,12 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
    * or the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -669,12 +669,12 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
      * or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -693,12 +693,12 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
      * or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -717,12 +717,12 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
      * or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -740,12 +740,12 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
      * or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -759,12 +759,12 @@ public final class DeleteBackupPlanRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
      * or the request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.

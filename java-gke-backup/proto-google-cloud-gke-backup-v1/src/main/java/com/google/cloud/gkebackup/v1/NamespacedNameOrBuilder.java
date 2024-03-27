@@ -28,10 +28,10 @@ public interface NamespacedNameOrBuilder
    *
    *
    * <pre>
-   * The Namespace of the Kubernetes resource.
+   * Optional. The Namespace of the Kubernetes resource.
    * </pre>
    *
-   * <code>string namespace = 1;</code>
+   * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The namespace.
    */
@@ -40,10 +40,10 @@ public interface NamespacedNameOrBuilder
    *
    *
    * <pre>
-   * The Namespace of the Kubernetes resource.
+   * Optional. The Namespace of the Kubernetes resource.
    * </pre>
    *
-   * <code>string namespace = 1;</code>
+   * <code>string namespace = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for namespace.
    */
@@ -53,10 +53,10 @@ public interface NamespacedNameOrBuilder
    *
    *
    * <pre>
-   * The name of the Kubernetes resource.
+   * Optional. The name of the Kubernetes resource.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The name.
    */
@@ -65,10 +65,10 @@ public interface NamespacedNameOrBuilder
    *
    *
    * <pre>
-   * The name of the Kubernetes resource.
+   * Optional. The name of the Kubernetes resource.
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for name.
    */

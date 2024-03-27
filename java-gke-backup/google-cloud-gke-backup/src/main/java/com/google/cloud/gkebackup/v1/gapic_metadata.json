@@ -37,6 +37,9 @@
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
             },
+            "GetBackupIndexDownloadUrl": {
+              "methods": ["getBackupIndexDownloadUrl", "getBackupIndexDownloadUrl", "getBackupIndexDownloadUrl", "getBackupIndexDownloadUrlCallable"]
+            },
             "GetBackupPlan": {
               "methods": ["getBackupPlan", "getBackupPlan", "getBackupPlan", "getBackupPlanCallable"]
             },

@@ -294,6 +294,12 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
     return ((BackupForGKEStubSettings) getStubSettings()).getVolumeRestoreSettings();
   }
 
+  /** Returns the object with the settings used for calls to getBackupIndexDownloadUrl. */
+  public UnaryCallSettings<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlSettings() {
+    return ((BackupForGKEStubSettings) getStubSettings()).getBackupIndexDownloadUrlSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -643,6 +649,13 @@ public class BackupForGKESettings extends ClientSettings<BackupForGKESettings> {
     public UnaryCallSettings.Builder<GetVolumeRestoreRequest, VolumeRestore>
         getVolumeRestoreSettings() {
       return getStubSettingsBuilder().getVolumeRestoreSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupIndexDownloadUrl. */
+    public UnaryCallSettings.Builder<
+            GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+        getBackupIndexDownloadUrlSettings() {
+      return getStubSettingsBuilder().getBackupIndexDownloadUrlSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

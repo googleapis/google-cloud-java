@@ -192,6 +192,29 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Storage Bucket. Used only for
+     * return traces.
+     * The storage_bucket information is populated.
+     * </pre>
+     *
+     * <code>START_FROM_STORAGE_BUCKET = 29;</code>
+     */
+    START_FROM_STORAGE_BUCKET(29),
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a published service that uses
+     * Private Service Connect. Used only for return traces.
+     * </pre>
+     *
+     * <code>START_FROM_PSC_PUBLISHED_SERVICE = 30;</code>
+     */
+    START_FROM_PSC_PUBLISHED_SERVICE(30),
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -502,6 +525,29 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Initial state: packet originating from a Storage Bucket. Used only for
+     * return traces.
+     * The storage_bucket information is populated.
+     * </pre>
+     *
+     * <code>START_FROM_STORAGE_BUCKET = 29;</code>
+     */
+    public static final int START_FROM_STORAGE_BUCKET_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * Initial state: packet originating from a published service that uses
+     * Private Service Connect. Used only for return traces.
+     * </pre>
+     *
+     * <code>START_FROM_PSC_PUBLISHED_SERVICE = 30;</code>
+     */
+    public static final int START_FROM_PSC_PUBLISHED_SERVICE_VALUE = 30;
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -737,6 +783,10 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
           return START_FROM_APP_ENGINE_VERSION;
         case 26:
           return START_FROM_CLOUD_RUN_REVISION;
+        case 29:
+          return START_FROM_STORAGE_BUCKET;
+        case 30:
+          return START_FROM_PSC_PUBLISHED_SERVICE;
         case 4:
           return APPLY_INGRESS_FIREWALL_RULE;
         case 5:
@@ -1788,7 +1838,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=227
+   *     google/cloud/networkmanagement/v1/trace.proto;l=241
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -1809,7 +1859,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=227
+   *     google/cloud/networkmanagement/v1/trace.proto;l=241
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -6726,7 +6776,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=227
+     *     google/cloud/networkmanagement/v1/trace.proto;l=241
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -6747,7 +6797,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=227
+     *     google/cloud/networkmanagement/v1/trace.proto;l=241
      * @return The loadBalancer.
      */
     @java.lang.Override
