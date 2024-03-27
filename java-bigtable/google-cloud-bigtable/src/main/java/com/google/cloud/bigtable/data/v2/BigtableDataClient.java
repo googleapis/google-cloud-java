@@ -44,6 +44,9 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.SampleRowKeysRequest;
+import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.models.TargetId;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
@@ -206,7 +209,9 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @deprecated Please use {@link BigtableDataClient#exists(TargetId, String)} instead.
    */
+  @Deprecated
   public boolean exists(String tableId, String rowKey) {
     return ApiExceptions.callAndTranslateApiException(existsAsync(tableId, rowKey));
   }
@@ -233,9 +238,69 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @deprecated Please use {@link BigtableDataClient#exists(TargetId, ByteString)} instead.
    */
+  @Deprecated
   public boolean exists(String tableId, ByteString rowKey) {
     return ApiExceptions.callAndTranslateApiException(existsAsync(tableId, rowKey));
+  }
+
+  /**
+   * Confirms synchronously if given row key exists or not on the specified {@link TargetId}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   String key = "key";
+   *
+   *   boolean isRowPresent = bigtableDataClient.exists(TableId.of(tableId), key);
+   *
+   *   // Do something with result, for example, display a message
+   *   if(isRowPresent) {
+   *     System.out.println(key + " is present");
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public boolean exists(TargetId targetId, String rowKey) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(targetId, rowKey));
+  }
+
+  /**
+   * Confirms synchronously if given row key exists or not on the specified {@link TargetId}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   ByteString key = ByteString.copyFromUtf8("key");
+   *
+   *   boolean isRowPresent = bigtableDataClient.exists(TableId.of(tableId), key);
+   *
+   *   // Do something with result, for example, display a message
+   *   if(isRowPresent) {
+   *     System.out.println(key.toStringUtf8() + " is present");
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public boolean exists(TargetId targetId, ByteString rowKey) {
+    return ApiExceptions.callAndTranslateApiException(existsAsync(targetId, rowKey));
   }
 
   /**
@@ -262,7 +327,10 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#existsAsync(TargetId, String)} instead.
    */
+  @Deprecated
   public ApiFuture<Boolean> existsAsync(String tableId, String rowKey) {
     return existsAsync(tableId, ByteString.copyFromUtf8(rowKey));
   }
@@ -291,10 +359,77 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#existsAsync(TargetId, ByteString)} instead.
    */
+  @Deprecated
   public ApiFuture<Boolean> existsAsync(String tableId, ByteString rowKey) {
+    return existsAsync(TableId.of(tableId), rowKey);
+  }
+
+  /**
+   * Confirms asynchronously if given row key exists or not on the specified {@link TargetId}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   final String key = "key";
+   *
+   *   ApiFuture<Boolean> futureResult = bigtableDataClient.existsAsync(TableId.of(tableId), key);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Boolean>() {
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *     public void onSuccess(Boolean isRowPresent) {
+   *       if(isRowPresent) {
+   *         System.out.println(key + " is present");
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<Boolean> existsAsync(TargetId targetId, String rowKey) {
+    return existsAsync(targetId, ByteString.copyFromUtf8(rowKey));
+  }
+
+  /**
+   * Confirms asynchronously if given row key exists or not on the specified {@link TargetId}.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *   final ByteString key = ByteString.copyFromUtf8("key");
+   *
+   *   ApiFuture<Boolean> futureResult = bigtableDataClient.existsAsync(TableId.of(tableId), key);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Boolean>() {
+   *     public void onFailure(Throwable t) {
+   *       t.printStackTrace();
+   *     }
+   *     public void onSuccess(Boolean isRowPresent) {
+   *       if(isRowPresent) {
+   *         System.out.println(key.toStringUtf8() + " is present");
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<Boolean> existsAsync(TargetId targetId, ByteString rowKey) {
     Query query =
-        Query.create(tableId)
+        Query.create(targetId)
             .rowKey(rowKey)
             .filter(
                 FILTERS
@@ -338,7 +473,9 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @deprecated Please use {@link BigtableDataClient#readRow(TargetId, ByteString)} instead.
    */
+  @Deprecated
   public Row readRow(String tableId, ByteString rowKey) {
     return ApiExceptions.callAndTranslateApiException(readRowAsync(tableId, rowKey, null));
   }
@@ -368,7 +505,9 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @deprecated Please use {@link BigtableDataClient#readRow(TargetId, String)} instead.
    */
+  @Deprecated
   public Row readRow(String tableId, String rowKey) {
     return ApiExceptions.callAndTranslateApiException(
         readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), null));
@@ -404,7 +543,9 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @deprecated Please use {@link BigtableDataClient#readRow(TargetId, String, Filter)} instead.
    */
+  @Deprecated
   public Row readRow(String tableId, String rowKey, @Nullable Filter filter) {
     return ApiExceptions.callAndTranslateApiException(
         readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), filter));
@@ -440,9 +581,152 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @deprecated Please use {@link BigtableDataClient#readRow(TargetId, ByteString, Filter)}
+   *     instead.
    */
+  @Deprecated
   public Row readRow(String tableId, ByteString rowKey, @Nullable Filter filter) {
     return ApiExceptions.callAndTranslateApiException(readRowAsync(tableId, rowKey, filter));
+  }
+
+  /**
+   * Convenience method for synchronously reading a single row on the specified {@link TargetId}. If
+   * the row does not exist, the value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Row row = bigtableDataClient.readRow(TableId.of(tableId), ByteString.copyFromUtf8("key"));
+   *   // Do something with row, for example, display all cells
+   *   if(row != null) {
+   *     System.out.println(row.getKey().toStringUtf8());
+   *      for(RowCell cell : row.getCells()) {
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+   *      }
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public Row readRow(TargetId targetId, ByteString rowKey) {
+    return ApiExceptions.callAndTranslateApiException(readRowAsync(targetId, rowKey, null));
+  }
+
+  /**
+   * Convenience method for synchronously reading a single row on the specified {@link TargetId}. If
+   * the row does not exist, the value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Row row = bigtableDataClient.readRow(TableId.of(tableId), "key");
+   *   // Do something with row, for example, display all cells
+   *   if(row != null) {
+   *     System.out.println(row.getKey().toStringUtf8());
+   *      for(RowCell cell : row.getCells()) {
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+   *      }
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public Row readRow(TargetId targetId, String rowKey) {
+    return ApiExceptions.callAndTranslateApiException(
+        readRowAsync(targetId, ByteString.copyFromUtf8(rowKey), null));
+  }
+
+  /**
+   * Convenience method for synchronously reading a single row on the specified {@link TargetId}. If
+   * the row does not exist, the value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   // Build the filter expression
+   *   Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   Row row = bigtableDataClient.readRow(TableId.of(tableId), "key", filter);
+   *   // Do something with row, for example, display all cells
+   *   if(row != null) {
+   *     System.out.println(row.getKey().toStringUtf8());
+   *      for(RowCell cell : row.getCells()) {
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+   *      }
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public Row readRow(TargetId targetId, String rowKey, @Nullable Filter filter) {
+    return ApiExceptions.callAndTranslateApiException(
+        readRowAsync(targetId, ByteString.copyFromUtf8(rowKey), filter));
+  }
+
+  /**
+   * Convenience method for synchronously reading a single row on the specified {@link TargetId}. If
+   * the row does not exist, the value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   // Build the filter expression
+   *   Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   Row row = bigtableDataClient.readRow(TableId.of(tableId), ByteString.copyFromUtf8("key"), filter);
+   *   // Do something with row, for example, display all cells
+   *   if(row != null) {
+   *     System.out.println(row.getKey().toStringUtf8());
+   *      for(RowCell cell : row.getCells()) {
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+   *      }
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public Row readRow(TargetId targetId, ByteString rowKey, @Nullable Filter filter) {
+    return ApiExceptions.callAndTranslateApiException(readRowAsync(targetId, rowKey, filter));
   }
 
   /**
@@ -473,7 +757,10 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#readRowAsync(TargetId, String)} instead.
    */
+  @Deprecated
   public ApiFuture<Row> readRowAsync(String tableId, String rowKey) {
     return readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), null);
   }
@@ -506,7 +793,10 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#readRowAsync(TargetId, ByteString)} instead.
    */
+  @Deprecated
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey) {
     return readRowAsync(tableId, rowKey, null);
   }
@@ -544,7 +834,11 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#readRowAsync(TargetId, String, Filter)}
+   *     instead.
    */
+  @Deprecated
   public ApiFuture<Row> readRowAsync(String tableId, String rowKey, @Nullable Filter filter) {
     return readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), filter);
   }
@@ -582,9 +876,168 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#readRowAsync(TargetId, ByteString, Filter)}
+   *     instead.
    */
+  @Deprecated
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey, @Nullable Filter filter) {
-    Query query = Query.create(tableId).rowKey(rowKey);
+    return readRowAsync(TableId.of(tableId), rowKey, filter);
+  }
+
+  /**
+   * Convenience method for asynchronously reading a single row on the specified {@link TargetId}.
+   * If the row does not exist, the future's value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(TableId.of(tableId), "key");
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row result) {
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<Row> readRowAsync(TargetId targetId, String rowKey) {
+    return readRowAsync(targetId, ByteString.copyFromUtf8(rowKey), null);
+  }
+
+  /**
+   * Convenience method for asynchronously reading a single row on the specified {@link TargetId}.
+   * If the row does not exist, the future's value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(TableId.of(tableId), ByteString.copyFromUtf8("key"));
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row result) {
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<Row> readRowAsync(TargetId targetId, ByteString rowKey) {
+    return readRowAsync(targetId, rowKey, null);
+  }
+
+  /**
+   * Convenience method for asynchronously reading a single row on the specified {@link TargetId}.
+   * If the row does not exist, the future's value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   // Build the filter expression
+   *   Filters.Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(TableId.of(tableId), "key", filter);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row result) {
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<Row> readRowAsync(TargetId targetId, String rowKey, @Nullable Filter filter) {
+    return readRowAsync(targetId, ByteString.copyFromUtf8(rowKey), filter);
+  }
+
+  /**
+   * Convenience method for asynchronously reading a single row on the specified {@link TargetId}.
+   * If the row does not exist, the value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE]";
+   *
+   *   // Build the filter expression
+   *   Filters.Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(TableId.of(tableId), ByteString.copyFromUtf8("key"), filter);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row result) {
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<Row> readRowAsync(
+      TargetId targetId, ByteString rowKey, @Nullable Filter filter) {
+    Query query = Query.create(targetId).rowKey(rowKey);
     if (filter != null) {
       query = query.filter(filter);
     }
@@ -878,9 +1331,39 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   * @deprecated Please use {@link BigtableDataClient#sampleRowKeys(TargetId)} instead.
    */
+  @Deprecated
   public List<KeyOffset> sampleRowKeys(String tableId) {
     return ApiExceptions.callAndTranslateApiException(sampleRowKeysAsync(tableId));
+  }
+
+  /**
+   * Convenience method to synchronously return a sample of row keys on the specified {@link
+   * TargetId}.
+   *
+   * <p>The returned row keys will delimit contiguous sections of the table of approximately equal
+   * size, which can be used to break up the data for distributed tasks like mapreduces.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE_ID]";
+   *
+   *   List<KeyOffset> keyOffsets = bigtableDataClient.sampleRowKeys(TableId.of(tableId));
+   *   for(KeyOffset keyOffset : keyOffsets) {
+   *   // Do something with keyOffset
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   */
+  public List<KeyOffset> sampleRowKeys(TargetId targetId) {
+    return ApiExceptions.callAndTranslateApiException(sampleRowKeysAsync(targetId));
   }
 
   /**
@@ -908,9 +1391,48 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#sampleRowKeysAsync(TargetId)} instead.
    */
+  @Deprecated
   public ApiFuture<List<KeyOffset>> sampleRowKeysAsync(String tableId) {
-    return sampleRowKeysCallable().futureCall(tableId);
+    return sampleRowKeysAsync(TableId.of(tableId));
+  }
+
+  /**
+   * Convenience method to asynchronously return a sample of row keys on the specified {@link
+   * TargetId}.
+   *
+   * <p>The returned row keys will delimit contiguous sections of the table of approximately equal
+   * size, which can be used to break up the data for distributed tasks like mapreduces.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableClient bigtableDataClient = BigtableClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE_ID]";
+   *   ApiFuture<List<KeyOffset>> keyOffsetsFuture = bigtableClient.sampleRowKeysAsync(TableId.of(tableId));
+   *
+   *   ApiFutures.addCallback(keyOffsetsFuture, new ApiFutureCallback<List<KeyOffset>>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to sample keys of a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(List<KeyOffset> keyOffsets) {
+   *       System.out.println("Got key offsets: " + keyOffsets);
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<List<KeyOffset>> sampleRowKeysAsync(TargetId targetId) {
+    return sampleRowKeysCallableWithRequest().futureCall(SampleRowKeysRequest.create(targetId));
   }
 
   /**
@@ -949,9 +1471,60 @@ public class BigtableDataClient implements AutoCloseable {
    *   }, MoreExecutors.directExecutor());
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#sampleRowKeysCallableWithRequest()} instead.
    */
+  @Deprecated
   public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {
     return stub.sampleRowKeysCallable();
+  }
+
+  /**
+   * Returns a sample of row keys in the table. This callable allows takes a {@link
+   * SampleRowKeysRequest} object rather than a String input, and thus can be used to sample against
+   * a specified {@link TargetId}.
+   *
+   * <p>The returned row keys will delimit contiguous sections of the table of approximately equal
+   * size, which can be used to break up the data for distributed tasks like mapreduces. The
+   * returned callable object allows for customization of api invocation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   SampleRowKeysRequest sampleRowKeys = SampleRowKeysRequest.create(TableId.of("[TABLE]"));
+   *   // Synchronous invocation
+   *   try {
+   *     List<KeyOffset> keyOffsets = bigtableDataClient.sampleRowKeysCallableWithRequest().call(sampleRowKeys);
+   *   } catch (NotFoundException e) {
+   *     System.out.println("Tried to sample keys of a non-existent table");
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // Asynchronous invocation
+   *   ApiFuture<List<KeyOffset>> keyOffsetsFuture = bigtableDataClient.sampleRowKeysCallableWithRequest().futureCall(sampleRowKeys);
+   *
+   *   ApiFutures.addCallback(keyOffsetsFuture, new ApiFutureCallback<List<KeyOffset>>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to sample keys of a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(List<KeyOffset> keyOffsets) {
+   *       System.out.println("Got key offsets: " + keyOffsets);
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public UnaryCallable<SampleRowKeysRequest, List<KeyOffset>> sampleRowKeysCallableWithRequest() {
+    return stub.sampleRowKeysCallableWithRequest();
   }
 
   /**
@@ -1087,8 +1660,10 @@ public class BigtableDataClient implements AutoCloseable {
    *   // Before `batcher` is closed, all remaining(If any) mutations are applied.
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#newBulkMutationBatcher(TargetId)} instead.
    */
-  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  @Deprecated
   public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(@Nonnull String tableId) {
     return newBulkMutationBatcher(tableId, null);
   }
@@ -1119,11 +1694,87 @@ public class BigtableDataClient implements AutoCloseable {
    *   // Before `batcher` is closed, all remaining(If any) mutations are applied.
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#newBulkMutationBatcher(TargetId,
+   *     GrpcCallContext)} instead.
    */
+  @Deprecated
   @BetaApi("This surface is likely to change as the batching surface evolves.")
   public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(
       @Nonnull String tableId, @Nullable GrpcCallContext ctx) {
     return stub.newMutateRowsBatcher(tableId, ctx);
+  }
+
+  /**
+   * Mutates multiple rows in a batch on the specified {@link TargetId}.
+   *
+   * <p>Each individual row is mutated atomically as in MutateRow, but the entire batch is not
+   * executed atomically. The returned Batcher instance is not threadsafe, it can only be used from
+   * single thread.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   try (Batcher<RowMutationEntry, Void> batcher = bigtableDataClient.newBulkMutationBatcher(TableId.of("[TABLE]"))) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Void> entryFuture =
+   *           batcher.add(
+   *               RowMutationEntry.create("[ROW KEY]")
+   *                   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
+   *     }
+   *
+   *     // Blocks until mutations are applied on all submitted row entries.
+   *     batcher.flush();
+   *   }
+   *   // Before `batcher` is closed, all remaining(If any) mutations are applied.
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(TargetId targetId) {
+    return newBulkMutationBatcher(targetId, null);
+  }
+
+  /**
+   * Mutates multiple rows in a batch on the specified {@link TargetId}.
+   *
+   * <p>Each individual row is mutated atomically as in MutateRow, but the entire batch is not
+   * executed atomically. The returned Batcher instance is not threadsafe, it can only be used from
+   * single thread. This method allows customization of the underlying RPCs by passing in a {@link
+   * com.google.api.gax.grpc.GrpcCallContext}. The same context will be reused for all batches. This
+   * can be used to customize things like per attempt timeouts.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   GrpcCallContext ctx = GrpcCallContext.createDefault().withTimeout(Duration.ofSeconds(10));
+   *   try (Batcher<RowMutationEntry, Void> batcher = bigtableDataClient.newBulkMutationBatcher(TableId.of("[TABLE]"), ctx)) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Void> entryFuture =
+   *           batcher.add(
+   *               RowMutationEntry.create("[ROW KEY]")
+   *                   .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
+   *     }
+   *
+   *     // Blocks until mutations are applied on all submitted row entries.
+   *     batcher.flush();
+   *   }
+   *   // Before `batcher` is closed, all remaining(If any) mutations are applied.
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  @BetaApi("This surface is likely to change as the batching surface evolves.")
+  public Batcher<RowMutationEntry, Void> newBulkMutationBatcher(
+      TargetId targetId, @Nullable GrpcCallContext ctx) {
+    return stub.newMutateRowsBatcher(targetId, ctx);
   }
 
   /**
@@ -1160,7 +1811,10 @@ public class BigtableDataClient implements AutoCloseable {
    *   List<Row> actualRows = ApiFutures.allAsList(rows).get();
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#newBulkReadRowsBatcher(TargetId)} instead.
    */
+  @Deprecated
   public Batcher<ByteString, Row> newBulkReadRowsBatcher(String tableId) {
     return newBulkReadRowsBatcher(tableId, null);
   }
@@ -1206,7 +1860,11 @@ public class BigtableDataClient implements AutoCloseable {
    *   List<Row> actualRows = ApiFutures.allAsList(rows).get();
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#newBulkReadRowsBatcher(TargetId, Filter)}
+   *     instead.
    */
+  @Deprecated
   public Batcher<ByteString, Row> newBulkReadRowsBatcher(
       String tableId, @Nullable Filters.Filter filter) {
     return newBulkReadRowsBatcher(tableId, filter, null);
@@ -1256,12 +1914,167 @@ public class BigtableDataClient implements AutoCloseable {
    *   List<Row> actualRows = ApiFutures.allAsList(rows).get();
    * }
    * }</pre>
+   *
+   * @deprecated Please use {@link BigtableDataClient#newBulkReadRowsBatcher(TargetId, Filter,
+   *     GrpcCallContext)} instead.
    */
+  @Deprecated
   public Batcher<ByteString, Row> newBulkReadRowsBatcher(
       String tableId, @Nullable Filters.Filter filter, @Nullable GrpcCallContext ctx) {
-    Query query = Query.create(tableId);
+    return newBulkReadRowsBatcher(TableId.of(tableId), filter, ctx);
+  }
+
+  /**
+   * Reads rows for given tableId in a batch on the specified {@link TargetId}.
+   *
+   * <p>If the row does not exist, the value will be null. The returned Batcher instance is not
+   * threadsafe, it can only be used from a single thread.
+   *
+   * <p>Performance notice: The ReadRows protocol requires that rows are sent in ascending key
+   * order, which means that the keys are processed sequentially on the server-side, so batching
+   * allows improving throughput but not latency. Lower latencies can be achieved by sending smaller
+   * requests concurrently.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *
+   *   List<ApiFuture<Row>> rows = new ArrayList<>();
+   *
+   *   try (Batcher<ByteString, Row> batcher = bigtableDataClient.newBulkReadRowsBatcher(TableId.of("[TABLE]"))) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Row> rowFuture =
+   *           batcher.add(ByteString.copyFromUtf8("[ROW KEY]"));
+   *       rows.add(rowFuture);
+   *     }
+   *
+   *     // [Optional] Sends collected elements for batching asynchronously.
+   *     batcher.sendOutstanding();
+   *
+   *     // [Optional] Invokes sendOutstanding() and awaits until all pending entries are resolved.
+   *     batcher.flush();
+   *   }
+   *   // batcher.close() invokes `flush()` which will in turn invoke `sendOutstanding()` with await for
+   *   pending batches until its resolved.
+   *
+   *   List<Row> actualRows = ApiFutures.allAsList(rows).get();
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public Batcher<ByteString, Row> newBulkReadRowsBatcher(TargetId targetId) {
+    return newBulkReadRowsBatcher(targetId, null);
+  }
+
+  /**
+   * Reads rows for given tableId and filter criteria in a batch on the specified {@link TargetId}.
+   *
+   * <p>If the row does not exist, the value will be null. The returned Batcher instance is not
+   * threadsafe, it can only be used from a single thread.
+   *
+   * <p>Performance notice: The ReadRows protocol requires that rows are sent in ascending key
+   * order, which means that the keys are processed sequentially on the server-side, so batching
+   * allows improving throughput but not latency. Lower latencies can be achieved by sending smaller
+   * requests concurrently.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *
+   *  // Build the filter expression
+   *  Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.key().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   List<ApiFuture<Row>> rows = new ArrayList<>();
+   *
+   *   try (Batcher<ByteString, Row> batcher = bigtableDataClient.newBulkReadRowsBatcher(TableId.of("[TABLE]"), filter)) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Row> rowFuture =
+   *           batcher.add(ByteString.copyFromUtf8("[ROW KEY]"));
+   *       rows.add(rowFuture);
+   *     }
+   *
+   *     // [Optional] Sends collected elements for batching asynchronously.
+   *     batcher.sendOutstanding();
+   *
+   *     // [Optional] Invokes sendOutstanding() and awaits until all pending entries are resolved.
+   *     batcher.flush();
+   *   }
+   *   // batcher.close() invokes `flush()` which will in turn invoke `sendOutstanding()` with await for
+   *   pending batches until its resolved.
+   *
+   *   List<Row> actualRows = ApiFutures.allAsList(rows).get();
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public Batcher<ByteString, Row> newBulkReadRowsBatcher(
+      TargetId targetId, @Nullable Filter filter) {
+    return newBulkReadRowsBatcher(targetId, filter, null);
+  }
+
+  /**
+   * Reads rows for given tableId and filter criteria in a batch on the specified {@link TargetId}.
+   *
+   * <p>If the row does not exist, the value will be null. The returned Batcher instance is not
+   * threadsafe, it can only be used from a single thread. This method allows customization of the
+   * underlying RPCs by passing in a {@link com.google.api.gax.grpc.GrpcCallContext}. The same
+   * context will be reused for all batches. This can be used to customize things like per attempt
+   * timeouts.
+   *
+   * <p>Performance notice: The ReadRows protocol requires that rows are sent in ascending key
+   * order, which means that the keys are processed sequentially on the server-side, so batching
+   * allows improving throughput but not latency. Lower latencies can be achieved by sending smaller
+   * requests concurrently.
+   *
+   * <p>Sample Code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *
+   *  // Build the filter expression
+   *  Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.key().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   List<ApiFuture<Row>> rows = new ArrayList<>();
+   *
+   *   try (Batcher<ByteString, Row> batcher = bigtableDataClient.newBulkReadRowsBatcher(
+   *    TableId.of("[TABLE]"), filter, GrpcCallContext.createDefault().withTimeout(Duration.ofSeconds(10)))) {
+   *     for (String someValue : someCollection) {
+   *       ApiFuture<Row> rowFuture =
+   *           batcher.add(ByteString.copyFromUtf8("[ROW KEY]"));
+   *       rows.add(rowFuture);
+   *     }
+   *
+   *     // [Optional] Sends collected elements for batching asynchronously.
+   *     batcher.sendOutstanding();
+   *
+   *     // [Optional] Invokes sendOutstanding() and awaits until all pending entries are resolved.
+   *     batcher.flush();
+   *   }
+   *   // batcher.close() invokes `flush()` which will in turn invoke `sendOutstanding()` with await for
+   *   pending batches until its resolved.
+   *
+   *   List<Row> actualRows = ApiFutures.allAsList(rows).get();
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public Batcher<ByteString, Row> newBulkReadRowsBatcher(
+      TargetId targetId, @Nullable Filter filter, @Nullable GrpcCallContext ctx) {
+    Query query = Query.create(targetId);
     if (filter != null) {
-      query.filter(filter);
+      query = query.filter(filter);
     }
     return stub.newBulkReadRowsBatcher(query, ctx);
   }

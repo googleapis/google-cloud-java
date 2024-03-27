@@ -38,16 +38,19 @@ public class RowMutationTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String TABLE_ID = "fake-table";
+  private static final String AUTHORIZED_VIEW_ID = "fake-authorized-view";
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
       RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
+  private static final ByteString TEST_KEY = ByteString.copyFromUtf8("fake-key");
 
   @Test
   public void toProtoTest() {
     long timestampMin = System.currentTimeMillis() * 1_000;
 
+    // Test RowMutation on a table.
     RowMutation rowMutation =
-        RowMutation.create("fake-table", "fake-key")
+        RowMutation.create(TABLE_ID, TEST_KEY)
             .setCell("fake-family", "fake-qualifier", "fake-value");
 
     MutateRowRequest actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
@@ -55,7 +58,29 @@ public class RowMutationTest {
         com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
 
     assertThat(actualRowMutation.getTableName())
-        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, "fake-table"));
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
+    assertThat(actualRowMutation.getAuthorizedViewName()).isEmpty();
+    assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
+    assertThat(actualRowMutation.getMutationsList()).hasSize(1);
+    assertThat(actualRowMutation.getMutations(0).getSetCell().getValue())
+        .isEqualTo(ByteString.copyFromUtf8("fake-value"));
+    assertThat(actualRowMutation.getMutations(0).getSetCell().getTimestampMicros())
+        .isIn(timestampRange);
+
+    // Test RowMutation on an authorized view.
+    rowMutation =
+        RowMutation.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), TEST_KEY)
+            .setCell("fake-family", "fake-qualifier", "fake-value");
+
+    actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
+    timestampRange =
+        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+
+    assertThat(actualRowMutation.getTableName()).isEmpty();
+    assertThat(actualRowMutation.getAuthorizedViewName())
+        .isEqualTo(
+            NameUtil.formatAuthorizedViewName(
+                PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID));
     assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
     assertThat(actualRowMutation.getMutationsList()).hasSize(1);
     assertThat(actualRowMutation.getMutations(0).getSetCell().getValue())
@@ -68,8 +93,9 @@ public class RowMutationTest {
   public void toBulkProtoTest() {
     long timestampMin = System.currentTimeMillis() * 1_000;
 
+    // Test RowMutation on a table.
     RowMutation rowMutation =
-        RowMutation.create("fake-table", "fake-key")
+        RowMutation.create(TABLE_ID, TEST_KEY)
             .setCell("fake-family", "fake-qualifier", "fake-value");
 
     MutateRowsRequest actualRowMutation = rowMutation.toBulkProto(REQUEST_CONTEXT);
@@ -79,6 +105,31 @@ public class RowMutationTest {
 
     assertThat(actualRowMutation.getTableName())
         .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
+    assertThat(actualRowMutation.getAuthorizedViewName()).isEmpty();
+    assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
+    assertThat(actualRowMutation.getEntriesList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutationsList()).hasSize(1);
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getValue())
+        .isEqualTo(ByteString.copyFromUtf8("fake-value"));
+
+    assertThat(actualRowMutation.getEntries(0).getMutations(0).getSetCell().getTimestampMicros())
+        .isIn(timestampRange);
+
+    // Test RowMutation on an authorized view.
+    rowMutation =
+        RowMutation.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), TEST_KEY)
+            .setCell("fake-family", "fake-qualifier", "fake-value");
+
+    actualRowMutation = rowMutation.toBulkProto(REQUEST_CONTEXT);
+
+    timestampRange =
+        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+
+    assertThat(actualRowMutation.getTableName()).isEmpty();
+    assertThat(actualRowMutation.getAuthorizedViewName())
+        .isEqualTo(
+            NameUtil.formatAuthorizedViewName(
+                PROJECT_ID, INSTANCE_ID, TABLE_ID, AUTHORIZED_VIEW_ID));
     assertThat(actualRowMutation.getAppProfileId()).isEqualTo(APP_PROFILE_ID);
     assertThat(actualRowMutation.getEntriesList()).hasSize(1);
     assertThat(actualRowMutation.getEntries(0).getMutationsList()).hasSize(1);
@@ -92,17 +143,27 @@ public class RowMutationTest {
   @Test
   public void toProtoTestWithProvidedMutation() {
     Mutation mutation = Mutation.create().setCell("fake-family", "fake-qualifier", "fake-value");
-    RowMutation rowMutation = RowMutation.create("fake-table", "fake-key", mutation);
+    // Test RowMutation on a table.
+    RowMutation rowMutation = RowMutation.create(TABLE_ID, TEST_KEY, mutation);
 
     MutateRowRequest actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
+
+    assertThat(actualRowMutation.getMutationsList()).isEqualTo(mutation.getMutations());
+
+    // Test RowMutation on an authorized view.
+    rowMutation =
+        RowMutation.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), TEST_KEY, mutation);
+
+    actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
 
     assertThat(actualRowMutation.getMutationsList()).isEqualTo(mutation.getMutations());
   }
 
   @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
+    // Test RowMutation on a table.
     RowMutation expected =
-        RowMutation.create("fake-table", "fake-key")
+        RowMutation.create(TABLE_ID, TEST_KEY)
             .setCell("fake-family", "fake-qualifier", 10_000, "fake-value");
 
     ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -114,12 +175,28 @@ public class RowMutationTest {
 
     RowMutation actual = (RowMutation) ois.readObject();
     assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
+
+    // Test RowMutation on an authorized view.
+    expected =
+        RowMutation.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), TEST_KEY)
+            .setCell("fake-family", "fake-qualifier", 10_000, "fake-value");
+
+    bos = new ByteArrayOutputStream();
+    oos = new ObjectOutputStream(bos);
+    oos.writeObject(expected);
+    oos.close();
+
+    ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+
+    actual = (RowMutation) ois.readObject();
+    assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
   }
 
   @Test
   public void testWithLongValue() {
+    // Test RowMutation on a table.
     RowMutation rowMutation =
-        RowMutation.create("fake-table", "fake-key")
+        RowMutation.create(TABLE_ID, TEST_KEY)
             .setCell("fake-family", "fake-qualifier", 100_000L)
             .setCell("fake-family", "fake-qualifier", 30_000L, 100_000L);
 
@@ -138,12 +215,35 @@ public class RowMutationTest {
                 .setTimestampMicros(30_000L)
                 .setValue(ByteString.copyFrom(Longs.toByteArray(100_000L)))
                 .build());
+
+    // Test RowMutation on an authorized view.
+    rowMutation =
+        RowMutation.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), TEST_KEY)
+            .setCell("fake-family", "fake-qualifier", 100_000L)
+            .setCell("fake-family", "fake-qualifier", 30_000L, 100_000L);
+
+    actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
+
+    setCell = actualRowMutation.getMutations(0).getSetCell();
+    assertThat(setCell.getFamilyName()).isEqualTo("fake-family");
+    assertThat(setCell.getColumnQualifier().toStringUtf8()).isEqualTo("fake-qualifier");
+    assertThat(setCell.getValue()).isEqualTo(ByteString.copyFrom(Longs.toByteArray(100_000L)));
+
+    assertThat(actualRowMutation.getMutations(1).getSetCell())
+        .isEqualTo(
+            SetCell.newBuilder()
+                .setFamilyName("fake-family")
+                .setColumnQualifier(ByteString.copyFromUtf8("fake-qualifier"))
+                .setTimestampMicros(30_000L)
+                .setValue(ByteString.copyFrom(Longs.toByteArray(100_000L)))
+                .build());
   }
 
   @Test
   public void fromProtoTest() {
+    // Test RowMutation on a table.
     RowMutation rowMutation =
-        RowMutation.create("fake-table", "fake-key")
+        RowMutation.create(TABLE_ID, TEST_KEY)
             .setCell("fake-family", "fake-qualifier-1", "fake-value")
             .setCell("fake-family", "fake-qualifier-2", 30_000L, "fake-value-2");
 
@@ -161,6 +261,28 @@ public class RowMutationTest {
     assertThat(overriddenRequest).isNotEqualTo(protoRequest);
     assertThat(overriddenRequest.getTableName())
         .matches(NameUtil.formatTableName(projectId, instanceId, TABLE_ID));
+    assertThat(overriddenRequest.getAuthorizedViewName()).isEmpty();
+    assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+
+    // Test RowMutation on an authorized view.
+    rowMutation =
+        RowMutation.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID), TEST_KEY)
+            .setCell("fake-family", "fake-qualifier-1", "fake-value")
+            .setCell("fake-family", "fake-qualifier-2", 30_000L, "fake-value-2");
+
+    protoRequest = rowMutation.toProto(REQUEST_CONTEXT);
+    actualRequest = RowMutation.fromProto(protoRequest);
+
+    assertThat(actualRequest.toProto(REQUEST_CONTEXT)).isEqualTo(protoRequest);
+
+    overriddenRequest =
+        actualRequest.toProto(RequestContext.create(projectId, instanceId, appProfile));
+
+    assertThat(overriddenRequest).isNotEqualTo(protoRequest);
+    assertThat(overriddenRequest.getTableName()).isEmpty();
+    assertThat(overriddenRequest.getAuthorizedViewName())
+        .matches(
+            NameUtil.formatAuthorizedViewName(projectId, instanceId, TABLE_ID, AUTHORIZED_VIEW_ID));
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
   }
 }

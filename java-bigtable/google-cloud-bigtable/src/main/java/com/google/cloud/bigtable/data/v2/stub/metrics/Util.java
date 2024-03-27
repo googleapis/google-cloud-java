@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
@@ -30,7 +31,6 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.InvalidProtocolBufferException;
 import io.grpc.CallOptions;
@@ -108,20 +108,33 @@ public class Util {
 
   static String extractTableId(Object request) {
     String tableName = null;
+    String authorizedViewName = null;
     if (request instanceof ReadRowsRequest) {
       tableName = ((ReadRowsRequest) request).getTableName();
+      authorizedViewName = ((ReadRowsRequest) request).getAuthorizedViewName();
     } else if (request instanceof MutateRowsRequest) {
       tableName = ((MutateRowsRequest) request).getTableName();
+      authorizedViewName = ((MutateRowsRequest) request).getAuthorizedViewName();
     } else if (request instanceof MutateRowRequest) {
       tableName = ((MutateRowRequest) request).getTableName();
+      authorizedViewName = ((MutateRowRequest) request).getAuthorizedViewName();
     } else if (request instanceof SampleRowKeysRequest) {
       tableName = ((SampleRowKeysRequest) request).getTableName();
+      authorizedViewName = ((SampleRowKeysRequest) request).getAuthorizedViewName();
     } else if (request instanceof CheckAndMutateRowRequest) {
       tableName = ((CheckAndMutateRowRequest) request).getTableName();
+      authorizedViewName = ((CheckAndMutateRowRequest) request).getAuthorizedViewName();
     } else if (request instanceof ReadModifyWriteRowRequest) {
       tableName = ((ReadModifyWriteRowRequest) request).getTableName();
+      authorizedViewName = ((ReadModifyWriteRowRequest) request).getAuthorizedViewName();
     }
-    return !Strings.isNullOrEmpty(tableName) ? TableName.parse(tableName).getTable() : "undefined";
+    if (tableName == null && authorizedViewName == null) return "undefined";
+    if (tableName.isEmpty() && authorizedViewName.isEmpty()) return "undefined";
+    if (!tableName.isEmpty()) {
+      return TableName.parse(tableName).getTable();
+    } else {
+      return AuthorizedViewName.parse(authorizedViewName).getTable();
+    }
   }
 
   /**

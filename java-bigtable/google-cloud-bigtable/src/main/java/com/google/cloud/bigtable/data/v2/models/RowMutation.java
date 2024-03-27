@@ -23,6 +23,7 @@ import com.google.bigtable.v2.MutateRowsRequest.Entry;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
+import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
 import javax.annotation.Nonnull;
@@ -34,60 +35,102 @@ import javax.annotation.Nonnull;
 public final class RowMutation implements MutationApi<RowMutation>, Serializable {
   private static final long serialVersionUID = 6529002234913236318L;
 
-  private final String tableId;
+  private final TargetId targetId;
   private final ByteString key;
   private final Mutation mutation;
 
-  private RowMutation(String tableId, ByteString key, Mutation mutation) {
-    this.tableId = tableId;
+  private RowMutation(TargetId targetId, ByteString key, Mutation mutation) {
+    Preconditions.checkNotNull(targetId, "target id can't be null.");
+
+    this.targetId = targetId;
     this.key = key;
     this.mutation = mutation;
   }
 
-  /** Creates a new instance of the mutation builder. */
-  public static RowMutation create(@Nonnull String tableId, @Nonnull String key) {
+  /** @deprecated Please use {@link RowMutation#create(TargetId, String)} instead. */
+  @Deprecated
+  public static RowMutation create(String tableId, String key) {
     return create(tableId, ByteString.copyFromUtf8(key));
   }
 
-  /** Creates a new instance of the mutation builder. */
-  public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key) {
-    return new RowMutation(tableId, key, Mutation.create());
+  /**
+   * Creates a new instance of the mutation builder for the given target with targetId.
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static RowMutation create(TargetId targetId, String key) {
+    Preconditions.checkNotNull(targetId, "target id can't be null.");
+    return create(targetId, ByteString.copyFromUtf8(key));
+  }
+
+  /** @deprecated Please use {@link RowMutation#create(TargetId, ByteString)} instead. */
+  @Deprecated
+  public static RowMutation create(String tableId, ByteString key) {
+    return new RowMutation(TableId.of(tableId), key, Mutation.create());
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing set of row mutations. The builder
-   * will be owned by this RowMutation and should not be used by the caller after this call. This
-   * functionality is intended for advanced usage.
+   * Creates a new instance of the mutation builder for the given target with targetId.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * Mutation mutation = Mutation.create()
-   *     .setCell("[FAMILY_NAME]", "[QUALIFIER]", [TIMESTAMP], "[VALUE]");
-   * RowMutation rowMutation = RowMutation.create("[TABLE]", "[ROW_KEY]", mutation);
-   * </code></pre>
+   * @see AuthorizedViewId
+   * @see TableId
    */
-  public static RowMutation create(
-      @Nonnull String tableId, @Nonnull String key, @Nonnull Mutation mutation) {
+  public static RowMutation create(TargetId targetId, ByteString key) {
+    Preconditions.checkNotNull(targetId, "target id can't be null.");
+    return new RowMutation(targetId, key, Mutation.create());
+  }
+
+  /** @deprecated Please use {@link RowMutation#create(TargetId, String, Mutation)} instead. */
+  @Deprecated
+  public static RowMutation create(String tableId, String key, Mutation mutation) {
     return create(tableId, ByteString.copyFromUtf8(key), mutation);
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing set of row mutations. The builder
-   * will be owned by this RowMutation and should not be used by the caller after this call. This
-   * functionality is intended for advanced usage.
+   * Creates new instance of mutation builder for the given target with targetId by wrapping
+   * existing set of row mutations. The builder will be owned by this RowMutation and should not be
+   * used by the caller after this call. This functionality is intended for advanced usage.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * Mutation mutation = Mutation.create()
    *     .setCell("[FAMILY_NAME]", "[QUALIFIER]", [TIMESTAMP], "[VALUE]");
-   * RowMutation rowMutation = RowMutation.create("[TABLE]", [BYTE_STRING_ROW_KEY], mutation);
+   * RowMutation rowMutation = RowMutation.create(TableId.of("[TABLE]"), "[ROW_KEY]", mutation);
    * </code></pre>
+   *
+   * @see AuthorizedViewId
+   * @see TableId
    */
-  public static RowMutation create(
-      @Nonnull String tableId, @Nonnull ByteString key, @Nonnull Mutation mutation) {
-    return new RowMutation(tableId, key, mutation);
+  public static RowMutation create(TargetId targetId, String key, Mutation mutation) {
+    return create(targetId, ByteString.copyFromUtf8(key), mutation);
+  }
+
+  /** @deprecated Please use {@link RowMutation#create(TargetId, ByteString, Mutation)} instead. */
+  @Deprecated
+  public static RowMutation create(String tableId, ByteString key, Mutation mutation) {
+    return new RowMutation(TableId.of(tableId), key, mutation);
+  }
+
+  /**
+   * Creates new instance of mutation builder for the given target with targetId by wrapping
+   * existing set of row mutations. The builder will be owned by this RowMutation and should not be
+   * used by the caller after this call. This functionality is intended for advanced usage.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * Mutation mutation = Mutation.create()
+   *     .setCell("[FAMILY_NAME]", "[QUALIFIER]", [TIMESTAMP], "[VALUE]");
+   * RowMutation rowMutation = RowMutation.create(TableId.of("[TABLE]"), [BYTE_STRING_ROW_KEY], mutation);
+   * </code></pre>
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static RowMutation create(TargetId targetId, ByteString key, Mutation mutation) {
+    return new RowMutation(targetId, key, mutation);
   }
 
   @Override
@@ -196,13 +239,17 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
 
   @InternalApi
   public MutateRowRequest toProto(RequestContext requestContext) {
-    String tableName =
-        NameUtil.formatTableName(
-            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
+    MutateRowRequest.Builder builder = MutateRowRequest.newBuilder();
+    String resourceName =
+        targetId.toResourceName(requestContext.getProjectId(), requestContext.getInstanceId());
+    if (targetId.scopedForAuthorizedView()) {
+      builder.setAuthorizedViewName(resourceName);
+    } else {
+      builder.setTableName(resourceName);
+    }
 
-    return MutateRowRequest.newBuilder()
+    return builder
         .setAppProfileId(requestContext.getAppProfileId())
-        .setTableName(tableName)
         .setRowKey(key)
         .addAllMutations(mutation.getMutations())
         .build();
@@ -214,13 +261,17 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    */
   @InternalApi
   public MutateRowsRequest toBulkProto(RequestContext requestContext) {
-    String tableName =
-        NameUtil.formatTableName(
-            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
+    MutateRowsRequest.Builder builder = MutateRowsRequest.newBuilder();
+    String resourceName =
+        targetId.toResourceName(requestContext.getProjectId(), requestContext.getInstanceId());
+    if (targetId.scopedForAuthorizedView()) {
+      builder.setAuthorizedViewName(resourceName);
+    } else {
+      builder.setTableName(resourceName);
+    }
 
-    return MutateRowsRequest.newBuilder()
+    return builder
         .setAppProfileId(requestContext.getAppProfileId())
-        .setTableName(tableName)
         .addEntries(
             Entry.newBuilder().setRowKey(key).addAllMutations(mutation.getMutations()).build())
         .build();
@@ -239,9 +290,12 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    */
   @BetaApi
   public static RowMutation fromProto(@Nonnull MutateRowRequest request) {
-    String tableId = NameUtil.extractTableIdFromTableName(request.getTableName());
+    String tableName = request.getTableName();
+    String authorizedViewName = request.getAuthorizedViewName();
 
     return RowMutation.create(
-        tableId, request.getRowKey(), Mutation.fromProto(request.getMutationsList()));
+        NameUtil.extractTargetId(tableName, authorizedViewName),
+        request.getRowKey(),
+        Mutation.fromProto(request.getMutationsList()));
   }
 }

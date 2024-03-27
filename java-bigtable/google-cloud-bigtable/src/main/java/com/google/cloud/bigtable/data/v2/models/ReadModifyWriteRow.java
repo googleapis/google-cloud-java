@@ -33,25 +33,49 @@ import javax.annotation.Nonnull;
 public final class ReadModifyWriteRow implements Serializable {
   private static final long serialVersionUID = -8150045424541029193L;
 
-  private final String tableId;
+  private final TargetId targetId;
   private transient ReadModifyWriteRowRequest.Builder builder =
       ReadModifyWriteRowRequest.newBuilder();
 
-  private ReadModifyWriteRow(@Nonnull String tableId, @Nonnull ByteString key) {
-    Preconditions.checkNotNull(tableId, "tableId can't be null.");
+  private ReadModifyWriteRow(TargetId targetId, ByteString key) {
+    Preconditions.checkNotNull(targetId, "target id can't be null.");
     Preconditions.checkNotNull(key, "key can't be null.");
-    this.tableId = tableId;
+    this.targetId = targetId;
 
     builder.setRowKey(key);
   }
 
-  public static ReadModifyWriteRow create(@Nonnull String tableId, @Nonnull String key) {
+  /** @deprecated Please use {@link ReadModifyWriteRow#create(TargetId, String)} instead. */
+  @Deprecated
+  public static ReadModifyWriteRow create(String tableId, String key) {
     Preconditions.checkNotNull(key, "key can't be null.");
-    return new ReadModifyWriteRow(tableId, ByteString.copyFromUtf8(key));
+    return new ReadModifyWriteRow(TableId.of(tableId), ByteString.copyFromUtf8(key));
   }
 
-  public static ReadModifyWriteRow create(@Nonnull String tableId, @Nonnull ByteString key) {
-    return new ReadModifyWriteRow(tableId, key);
+  /**
+   * Creates a new instance of the ReadModifyWriteRow for the given target with targetId.
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static ReadModifyWriteRow create(TargetId targetId, String key) {
+    return new ReadModifyWriteRow(targetId, ByteString.copyFromUtf8(key));
+  }
+
+  /** @deprecated Please use {@link ReadModifyWriteRow#create(TargetId, ByteString)} instead. */
+  @Deprecated
+  public static ReadModifyWriteRow create(String tableId, ByteString key) {
+    return new ReadModifyWriteRow(TableId.of(tableId), key);
+  }
+
+  /**
+   * Creates a new instance of the ReadModifyWriteRow for the given target with targetId.
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static ReadModifyWriteRow create(TargetId targetId, ByteString key) {
+    return new ReadModifyWriteRow(targetId, key);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
@@ -129,14 +153,14 @@ public final class ReadModifyWriteRow implements Serializable {
 
   @InternalApi
   public ReadModifyWriteRowRequest toProto(RequestContext requestContext) {
-    String tableName =
-        NameUtil.formatTableName(
-            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
-
-    return builder
-        .setTableName(tableName)
-        .setAppProfileId(requestContext.getAppProfileId())
-        .build();
+    String resourceName =
+        targetId.toResourceName(requestContext.getProjectId(), requestContext.getInstanceId());
+    if (targetId.scopedForAuthorizedView()) {
+      builder.setAuthorizedViewName(resourceName);
+    } else {
+      builder.setTableName(resourceName);
+    }
+    return builder.setAppProfileId(requestContext.getAppProfileId()).build();
   }
 
   /**
@@ -147,9 +171,12 @@ public final class ReadModifyWriteRow implements Serializable {
    */
   @BetaApi
   public static ReadModifyWriteRow fromProto(@Nonnull ReadModifyWriteRowRequest request) {
-    String tableId = NameUtil.extractTableIdFromTableName(request.getTableName());
+    String tableName = request.getTableName();
+    String authorizedViewName = request.getAuthorizedViewName();
 
-    ReadModifyWriteRow row = ReadModifyWriteRow.create(tableId, request.getRowKey());
+    ReadModifyWriteRow row =
+        ReadModifyWriteRow.create(
+            NameUtil.extractTargetId(tableName, authorizedViewName), request.getRowKey());
     row.builder = request.toBuilder();
 
     return row;

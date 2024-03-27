@@ -38,20 +38,31 @@ import javax.annotation.Nonnull;
  */
 public final class BulkMutation implements Serializable, Cloneable {
   private static final long serialVersionUID = 3522061250439399088L;
-
-  private final String tableId;
+  private final TargetId targetId;
   private transient MutateRowsRequest.Builder builder;
 
   private long mutationCountSum = 0;
 
+  /** @deprecated Please use {@link BulkMutation#create(TargetId)} instead. */
+  @Deprecated
   public static BulkMutation create(String tableId) {
-    return new BulkMutation(tableId);
+    return new BulkMutation(TableId.of(tableId));
   }
 
-  private BulkMutation(@Nonnull String tableId) {
-    Preconditions.checkNotNull(tableId);
+  /**
+   * Creates a new instance of the bulk mutation builder for the given target with targetId.
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static BulkMutation create(TargetId targetId) {
+    return new BulkMutation(targetId);
+  }
 
-    this.tableId = tableId;
+  private BulkMutation(TargetId targetId) {
+    Preconditions.checkNotNull(targetId, "target id can't be null.");
+
+    this.targetId = targetId;
     this.builder = MutateRowsRequest.newBuilder();
   }
 
@@ -117,14 +128,15 @@ public final class BulkMutation implements Serializable, Cloneable {
 
   @InternalApi
   public MutateRowsRequest toProto(RequestContext requestContext) {
-    String tableName =
-        NameUtil.formatTableName(
-            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
+    String resourceName =
+        targetId.toResourceName(requestContext.getProjectId(), requestContext.getInstanceId());
+    if (targetId.scopedForAuthorizedView()) {
+      builder.setAuthorizedViewName(resourceName);
+    } else {
+      builder.setTableName(resourceName);
+    }
 
-    return builder
-        .setTableName(tableName)
-        .setAppProfileId(requestContext.getAppProfileId())
-        .build();
+    return builder.setAppProfileId(requestContext.getAppProfileId()).build();
   }
 
   /**
@@ -140,8 +152,11 @@ public final class BulkMutation implements Serializable, Cloneable {
    */
   @BetaApi
   public static BulkMutation fromProto(@Nonnull MutateRowsRequest request) {
+    String tableName = request.getTableName();
+    String authorizedViewName = request.getAuthorizedViewName();
+
     BulkMutation bulkMutation =
-        BulkMutation.create(NameUtil.extractTableIdFromTableName(request.getTableName()));
+        BulkMutation.create(NameUtil.extractTargetId(tableName, authorizedViewName));
     bulkMutation.builder = request.toBuilder();
 
     return bulkMutation;
@@ -150,7 +165,7 @@ public final class BulkMutation implements Serializable, Cloneable {
   /** Creates a copy of {@link BulkMutation}. */
   @Override
   public BulkMutation clone() {
-    BulkMutation bulkMutation = BulkMutation.create(tableId);
+    BulkMutation bulkMutation = BulkMutation.create(targetId);
     bulkMutation.builder = this.builder.clone();
     return bulkMutation;
   }

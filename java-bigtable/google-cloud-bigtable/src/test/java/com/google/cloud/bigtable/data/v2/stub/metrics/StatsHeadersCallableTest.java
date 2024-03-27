@@ -29,7 +29,6 @@ import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
-import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
@@ -40,6 +39,8 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.SampleRowKeysRequest;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.collect.Queues;
@@ -140,6 +141,15 @@ public class StatsHeadersCallableTest {
   }
 
   @Test
+  public void testSampleRowKeysWithRequestHeaders() throws Exception {
+    long startTimestamp = System.currentTimeMillis() * 1000;
+    stub.sampleRowKeysCallableWithRequest()
+        .call(SampleRowKeysRequest.create(TableId.of(TABLE_ID)))
+        .get(0);
+    verifyHeaders(attemptCounts, startTimestamp);
+  }
+
+  @Test
   public void testCheckAndMutateHeaders() throws Exception {
     long startTimestamp = System.currentTimeMillis() * 1000;
     stub.checkAndMutateRowCallable()
@@ -233,7 +243,8 @@ public class StatsHeadersCallableTest {
 
     @Override
     public void sampleRowKeys(
-        SampleRowKeysRequest request, StreamObserver<SampleRowKeysResponse> observer) {
+        com.google.bigtable.v2.SampleRowKeysRequest request,
+        StreamObserver<SampleRowKeysResponse> observer) {
       if (callCount.get() < attemptCounts - 1) {
         callCount.incrementAndGet();
         observer.onError(new StatusRuntimeException(Status.UNAVAILABLE));

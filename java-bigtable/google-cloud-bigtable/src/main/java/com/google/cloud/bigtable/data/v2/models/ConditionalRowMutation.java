@@ -33,25 +33,49 @@ import javax.annotation.Nonnull;
 public final class ConditionalRowMutation implements Serializable {
   private static final long serialVersionUID = -3699904745621909502L;
 
-  private final String tableId;
+  private final TargetId targetId;
   private transient CheckAndMutateRowRequest.Builder builder =
       CheckAndMutateRowRequest.newBuilder();
 
-  private ConditionalRowMutation(String tableId, ByteString rowKey) {
-    this.tableId = tableId;
+  private ConditionalRowMutation(TargetId targetId, ByteString rowKey) {
+    Preconditions.checkNotNull(targetId, "target id can't be null.");
+
+    this.targetId = targetId;
     builder.setRowKey(rowKey);
   }
 
-  /** Creates a new instance of the mutation builder. */
+  /** @deprecated Please use {@link ConditionalRowMutation#create(TargetId, String)} instead. */
+  @Deprecated
   public static ConditionalRowMutation create(String tableId, String rowKey) {
     return create(tableId, ByteString.copyFromUtf8(rowKey));
   }
 
-  /** Creates a new instance of the mutation builder. */
+  /**
+   * Creates a new instance of the mutation builder for the given target with targetId.
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static ConditionalRowMutation create(TargetId targetId, String rowKey) {
+    return create(targetId, ByteString.copyFromUtf8(rowKey));
+  }
+
+  /** @deprecated Please use {@link ConditionalRowMutation#create(TargetId, ByteString)} instead. */
+  @Deprecated
   public static ConditionalRowMutation create(String tableId, ByteString rowKey) {
     Validations.validateTableId(tableId);
 
-    return new ConditionalRowMutation(tableId, rowKey);
+    return new ConditionalRowMutation(TableId.of(tableId), rowKey);
+  }
+
+  /**
+   * Creates a new instance of the mutation builder for the given target with targetId.
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static ConditionalRowMutation create(TargetId targetId, ByteString rowKey) {
+    return new ConditionalRowMutation(targetId, rowKey);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
@@ -80,7 +104,8 @@ public final class ConditionalRowMutation implements Serializable {
     Preconditions.checkNotNull(condition);
     Preconditions.checkState(
         !builder.hasPredicateFilter(),
-        "Can only have a single condition, please use a Filters#chain or Filters#interleave filter instead");
+        "Can only have a single condition, please use a Filters#chain or Filters#interleave filter"
+            + " instead");
     // TODO: verify that the condition does not use any FILTERS.condition() filters
 
     builder.setPredicateFilter(condition.toProto());
@@ -129,13 +154,16 @@ public final class ConditionalRowMutation implements Serializable {
     Preconditions.checkState(
         !builder.getTrueMutationsList().isEmpty() || !builder.getFalseMutationsList().isEmpty(),
         "ConditionalRowMutations must have `then` or `otherwise` mutations.");
-    String tableName =
-        NameUtil.formatTableName(
-            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
-    return builder
-        .setTableName(tableName.toString())
-        .setAppProfileId(requestContext.getAppProfileId())
-        .build();
+
+    String resourceName =
+        targetId.toResourceName(requestContext.getProjectId(), requestContext.getInstanceId());
+    if (targetId.scopedForAuthorizedView()) {
+      builder.setAuthorizedViewName(resourceName);
+    } else {
+      builder.setTableName(resourceName);
+    }
+
+    return builder.setAppProfileId(requestContext.getAppProfileId()).build();
   }
 
   /**
@@ -146,9 +174,12 @@ public final class ConditionalRowMutation implements Serializable {
    */
   @BetaApi
   public static ConditionalRowMutation fromProto(@Nonnull CheckAndMutateRowRequest request) {
-    String tableId = NameUtil.extractTableIdFromTableName(request.getTableName());
+    String tableName = request.getTableName();
+    String authorizedViewName = request.getAuthorizedViewName();
+
     ConditionalRowMutation rowMutation =
-        ConditionalRowMutation.create(tableId, request.getRowKey());
+        ConditionalRowMutation.create(
+            NameUtil.extractTargetId(tableName, authorizedViewName), request.getRowKey());
     rowMutation.builder = request.toBuilder();
 
     return rowMutation;

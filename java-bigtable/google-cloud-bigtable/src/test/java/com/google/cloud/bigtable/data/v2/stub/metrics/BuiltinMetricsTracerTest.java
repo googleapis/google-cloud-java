@@ -47,6 +47,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
@@ -105,7 +106,7 @@ public class BuiltinMetricsTracerTest {
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
   private static final String TABLE_ID = "fake-table";
-
+  private static final String AUTHORIZED_VIEW_ID = "fake-authorized-view";
   private static final String BAD_TABLE_ID = "non-exist-table";
   private static final String ZONE = "us-west-1";
   private static final String CLUSTER = "cluster-0";
@@ -258,6 +259,37 @@ public class BuiltinMetricsTracerTest {
 
     Stopwatch stopwatch = Stopwatch.createStarted();
     Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE_ID)).iterator());
+    long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
+
+    verify(statsRecorderWrapper).putOperationLatencies(operationLatency.capture());
+    // verify record operation is only called once
+    verify(statsRecorderWrapper)
+        .recordOperation(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+
+    assertThat(operationLatency.getValue()).isIn(Range.closed(SERVER_LATENCY, elapsed));
+    assertThat(status.getAllValues()).containsExactly("OK");
+    assertThat(tableId.getAllValues()).containsExactly(TABLE_ID);
+    assertThat(zone.getAllValues()).containsExactly(ZONE);
+    assertThat(cluster.getAllValues()).containsExactly(CLUSTER);
+  }
+
+  @Test
+  public void testReadRowsOperationLatenciesOnAuthorizedView() {
+    when(mockFactory.newTracer(any(), any(), any()))
+        .thenAnswer(
+            (Answer<BuiltinMetricsTracer>)
+                invocationOnMock ->
+                    new BuiltinMetricsTracer(
+                        OperationType.ServerStreaming,
+                        SpanName.of("Bigtable", "ReadRows"),
+                        statsRecorderWrapper));
+    ArgumentCaptor<Long> operationLatency = ArgumentCaptor.forClass(Long.class);
+
+    Stopwatch stopwatch = Stopwatch.createStarted();
+    Lists.newArrayList(
+        stub.readRowsCallable()
+            .call(Query.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID)))
+            .iterator());
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
     verify(statsRecorderWrapper).putOperationLatencies(operationLatency.capture());

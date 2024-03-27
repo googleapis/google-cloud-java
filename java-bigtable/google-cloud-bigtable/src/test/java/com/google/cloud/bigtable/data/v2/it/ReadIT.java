@@ -15,6 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.it;
 
+import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
+import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
+import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 
@@ -27,8 +30,10 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
+import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
@@ -98,6 +103,55 @@ public class ReadIT {
   }
 
   @Test
+  public void isRowExistsOnAuthorizedView() throws Exception {
+    assume()
+        .withMessage("AuthorizedView is not supported on Emulator")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+
+    BigtableDataClient dataClient = testEnvRule.env().getDataClient();
+    String tableId = testEnvRule.env().getTableId();
+    String rowKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-isRowExistsOnAuthorizedView";
+    String rowKeyOutsideAuthorizedView = prefix + "-isRowExistsOnAuthorizedView";
+
+    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+
+    dataClient.mutateRow(
+        RowMutation.create(tableId, rowKey)
+            .setCell(testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "value"));
+    dataClient.mutateRow(
+        RowMutation.create(tableId, rowKeyOutsideAuthorizedView)
+            .setCell(testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "value"));
+
+    assertThat(dataClient.exists(AuthorizedViewId.of(tableId, testAuthorizedView.getId()), rowKey))
+        .isTrue();
+    assertThat(
+            dataClient.exists(
+                AuthorizedViewId.of(tableId, testAuthorizedView.getId()),
+                rowKeyOutsideAuthorizedView))
+        .isFalse();
+
+    // Async
+    assertThat(
+            dataClient
+                .existsAsync(AuthorizedViewId.of(tableId, testAuthorizedView.getId()), rowKey)
+                .get())
+        .isTrue();
+    assertThat(
+            dataClient
+                .existsAsync(
+                    AuthorizedViewId.of(tableId, testAuthorizedView.getId()),
+                    rowKeyOutsideAuthorizedView)
+                .get())
+        .isFalse();
+
+    testEnvRule
+        .env()
+        .getTableAdminClient()
+        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
+  }
+
+  @Test
   public void readEmpty() throws Throwable {
     String uniqueKey = prefix + "-readEmpty";
 
@@ -112,6 +166,55 @@ public class ReadIT {
     testEnvRule.env().getDataClient().readRowsAsync(query, observer);
     observer.awaitCompletion();
     assertThat(observer.responses).isEmpty();
+  }
+
+  @Test
+  public void readEmptyOnAuthorizedView() throws Throwable {
+    assume()
+        .withMessage("AuthorizedView is not supported on Emulator")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+
+    String tableId = testEnvRule.env().getTableId();
+    BigtableDataClient dataClient = testEnvRule.env().getDataClient();
+    String uniqueKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-readEmptyOnAuthorizedView";
+    String uniqueKeyOutsideAuthorizedView = prefix + "-readEmptyOnAuthorizedView";
+
+    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+
+    Query query =
+        Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId())).rowKey(uniqueKey);
+    Query queryOutsideAuthorizedView =
+        Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))
+            .rowKey(uniqueKeyOutsideAuthorizedView);
+
+    // Sync
+    ArrayList<Row> rows = Lists.newArrayList(dataClient.readRows(query));
+    assertThat(rows).isEmpty();
+
+    // Row exists on the table but outside the authorized view
+    dataClient.mutateRow(
+        RowMutation.create(tableId, uniqueKeyOutsideAuthorizedView)
+            .setCell(testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "value"));
+    rows = Lists.newArrayList(dataClient.readRows(queryOutsideAuthorizedView));
+    assertThat(rows).isEmpty();
+
+    // Async
+    AccumulatingObserver observer = new AccumulatingObserver();
+    testEnvRule.env().getDataClient().readRowsAsync(query, observer);
+    observer.awaitCompletion();
+    assertThat(observer.responses).isEmpty();
+
+    // Row exists on the table but outside the authorized view
+    observer = new AccumulatingObserver();
+    testEnvRule.env().getDataClient().readRowsAsync(queryOutsideAuthorizedView, observer);
+    observer.awaitCompletion();
+    assertThat(observer.responses).isEmpty();
+
+    testEnvRule
+        .env()
+        .getTableAdminClient()
+        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
   }
 
   @Test
@@ -167,6 +270,122 @@ public class ReadIT {
     ApiFuture<Row> actualRowFuture =
         testEnvRule.env().getDataClient().readRowAsync(tableId, expectedRows.get(0).getKey());
     assertThat(actualRowFuture.get()).isEqualTo(expectedRows.get(0));
+  }
+
+  @Test
+  public void readOnAuthorizedView() throws Throwable {
+    assume()
+        .withMessage("AuthorizedView is not supported on Emulator")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+
+    int numRows = 5;
+    List<Row> expectedRows = Lists.newArrayList();
+    String uniqueKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-readOnAuthorizedView";
+    String uniqueKeyOutsideAuthorizedView = prefix + "-readOnAuthorizedView";
+    String tableId = testEnvRule.env().getTableId();
+    BigtableDataClient dataClient = testEnvRule.env().getDataClient();
+
+    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+
+    long timestampMicros = System.currentTimeMillis() * 1_000;
+
+    for (int i = 0; i < numRows; i++) {
+      dataClient
+          .mutateRowCallable()
+          .call(
+              RowMutation.create(tableId, uniqueKey + "-" + i)
+                  .setCell(
+                      testEnvRule.env().getFamilyId(),
+                      AUTHORIZED_VIEW_COLUMN_QUALIFIER,
+                      timestampMicros,
+                      "my-value"));
+
+      expectedRows.add(
+          Row.create(
+              ByteString.copyFromUtf8(uniqueKey + "-" + i),
+              ImmutableList.of(
+                  RowCell.create(
+                      testEnvRule.env().getFamilyId(),
+                      ByteString.copyFromUtf8(AUTHORIZED_VIEW_COLUMN_QUALIFIER),
+                      timestampMicros,
+                      ImmutableList.<String>of(),
+                      ByteString.copyFromUtf8("my-value")))));
+    }
+    // Add a few rows that outside the authorized view
+    for (int i = 0; i < numRows; i++) {
+      dataClient
+          .mutateRowCallable()
+          .call(
+              RowMutation.create(tableId, uniqueKeyOutsideAuthorizedView + "-" + i)
+                  .setCell(
+                      testEnvRule.env().getFamilyId(),
+                      AUTHORIZED_VIEW_COLUMN_QUALIFIER,
+                      timestampMicros,
+                      "my-value"));
+    }
+
+    // Sync
+    Query query =
+        Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))
+            .range(uniqueKey + "-0", uniqueKey + "-" + numRows);
+    Query queryOutsideAuthorizedView =
+        Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))
+            .range(
+                uniqueKeyOutsideAuthorizedView + "-0",
+                uniqueKeyOutsideAuthorizedView + "-" + numRows);
+
+    ArrayList<Row> actualResults = Lists.newArrayList(dataClient.readRows(query));
+    assertThat(actualResults).containsExactlyElementsIn(expectedRows);
+
+    // rows exist but outside the authorized view
+    ArrayList<Row> results = Lists.newArrayList(dataClient.readRows(queryOutsideAuthorizedView));
+    assertThat(results).isEmpty();
+
+    // Async
+    AccumulatingObserver observer = new AccumulatingObserver();
+    dataClient.readRowsAsync(query, observer);
+    observer.awaitCompletion();
+    assertThat(observer.responses).containsExactlyElementsIn(expectedRows);
+
+    // Rows exist but outside the authorized view
+    observer = new AccumulatingObserver();
+    dataClient.readRowsAsync(queryOutsideAuthorizedView, observer);
+    observer.awaitCompletion();
+    assertThat(observer.responses).isEmpty();
+
+    // Point Sync
+    Row actualRow =
+        dataClient.readRow(
+            AuthorizedViewId.of(tableId, testAuthorizedView.getId()), expectedRows.get(0).getKey());
+    assertThat(actualRow).isEqualTo(expectedRows.get(0));
+
+    // Row exists but outside the authorized view
+    assertThat(
+            dataClient.readRow(
+                AuthorizedViewId.of(tableId, testAuthorizedView.getId()),
+                uniqueKeyOutsideAuthorizedView + "-0"))
+        .isNull();
+
+    // Point Async
+    ApiFuture<Row> actualRowFuture =
+        dataClient.readRowAsync(
+            AuthorizedViewId.of(tableId, testAuthorizedView.getId()), expectedRows.get(0).getKey());
+    assertThat(actualRowFuture.get()).isEqualTo(expectedRows.get(0));
+
+    // Row exists but outside the authorized view
+    assertThat(
+            dataClient
+                .readRowAsync(
+                    AuthorizedViewId.of(tableId, testAuthorizedView.getId()),
+                    uniqueKeyOutsideAuthorizedView + "-0")
+                .get())
+        .isNull();
+
+    testEnvRule
+        .env()
+        .getTableAdminClient()
+        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
   }
 
   @Test
@@ -238,6 +457,101 @@ public class ReadIT {
                     Query.create(tableId)
                         .range(ByteStringRange.unbounded().startOpen(keyA).endOpen(keyZ)))))
         .isEmpty();
+  }
+
+  @Test
+  public void rangeQueriesOnAuthorizedView() {
+    assume()
+        .withMessage("AuthorizedView is not supported on Emulator")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+
+    BigtableDataClient client = testEnvRule.env().getDataClient();
+    String tableId = testEnvRule.env().getTableId();
+    String familyId = testEnvRule.env().getFamilyId();
+    String uniqueKey = AUTHORIZED_VIEW_ROW_PREFIX + prefix + "-rangeQueriesOnAuthorizedView";
+    String keyA = uniqueKey + "-" + "a";
+    String keyZ = uniqueKey + "-" + "z";
+    String keyOutsideAuthorizedView = prefix;
+
+    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+
+    long timestampMicros = System.currentTimeMillis() * 1_000;
+
+    client.bulkMutateRows(
+        BulkMutation.create(tableId)
+            .add(
+                RowMutationEntry.create(keyA)
+                    .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER, timestampMicros, "A"))
+            .add(
+                RowMutationEntry.create(keyZ)
+                    .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER, timestampMicros, "Z"))
+            .add(
+                RowMutationEntry.create(keyOutsideAuthorizedView)
+                    .setCell(
+                        familyId,
+                        AUTHORIZED_VIEW_COLUMN_QUALIFIER,
+                        timestampMicros,
+                        "outsideAuthorizedView")));
+
+    Row expectedRowA =
+        Row.create(
+            ByteString.copyFromUtf8(keyA),
+            ImmutableList.of(
+                RowCell.create(
+                    testEnvRule.env().getFamilyId(),
+                    ByteString.copyFromUtf8(AUTHORIZED_VIEW_COLUMN_QUALIFIER),
+                    timestampMicros,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("A"))));
+
+    Row expectedRowZ =
+        Row.create(
+            ByteString.copyFromUtf8(keyZ),
+            ImmutableList.of(
+                RowCell.create(
+                    testEnvRule.env().getFamilyId(),
+                    ByteString.copyFromUtf8(AUTHORIZED_VIEW_COLUMN_QUALIFIER),
+                    timestampMicros,
+                    ImmutableList.<String>of(),
+                    ByteString.copyFromUtf8("Z"))));
+
+    // Closed/Open
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))
+                        .range(ByteStringRange.unbounded().startClosed(keyA).endOpen(keyZ)))))
+        .containsExactly(expectedRowA);
+
+    // Closed/Closed
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))
+                        .range(ByteStringRange.unbounded().startClosed(keyA).endClosed(keyZ)))))
+        .containsExactly(expectedRowA, expectedRowZ);
+
+    // Open/Closed
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))
+                        .range(ByteStringRange.unbounded().startOpen(keyA).endClosed(keyZ)))))
+        .containsExactly(expectedRowZ);
+
+    // Open/Open
+    assertThat(
+            ImmutableList.copyOf(
+                client.readRows(
+                    Query.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))
+                        .range(ByteStringRange.unbounded().startOpen(keyA).endOpen(keyZ)))))
+        .isEmpty();
+
+    testEnvRule
+        .env()
+        .getTableAdminClient()
+        .deleteAuthorizedView(tableId, testAuthorizedView.getId());
   }
 
   @Test

@@ -47,20 +47,31 @@ public final class Query implements Serializable {
   // bigtable can server the largest filter size of 20KB.
   private static final int MAX_FILTER_SIZE = 20 * 1024;
 
-  private final String tableId;
+  private final TargetId targetId;
   private transient ReadRowsRequest.Builder builder = ReadRowsRequest.newBuilder();
 
-  /**
-   * Constructs a new Query object for the specified table id. The table id will be combined with
-   * the instance name specified in the {@link
-   * com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
-   */
+  /** @deprecated Please use {@link Query#create(TargetId)} instead. */
+  @Deprecated
   public static Query create(String tableId) {
-    return new Query(tableId);
+    return new Query(TableId.of(tableId));
   }
 
-  private Query(String tableId) {
-    this.tableId = tableId;
+  /**
+   * Constructs a new Query object for the given target with targetId. The target id will be
+   * combined with the instance name specified in the {@link
+   * com.google.cloud.bigtable.data.v2.BigtableDataSettings}.
+   *
+   * @see AuthorizedViewId
+   * @see TableId
+   */
+  public static Query create(TargetId targetId) {
+    return new Query(targetId);
+  }
+
+  private Query(TargetId targetId) {
+    Preconditions.checkNotNull(targetId, "target id can't be null.");
+
+    this.targetId = targetId;
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
@@ -260,7 +271,8 @@ public final class Query implements Serializable {
     List<Query> shards = Lists.newArrayListWithCapacity(shardedRowSets.size());
 
     for (RowSet rowSet : shardedRowSets) {
-      Query queryShard = new Query(tableId);
+      Query queryShard;
+      queryShard = new Query(targetId);
       queryShard.builder.mergeFrom(this.builder.build());
       queryShard.builder.setRows(rowSet);
       shards.add(queryShard);
@@ -303,14 +315,14 @@ public final class Query implements Serializable {
    */
   @InternalApi
   public ReadRowsRequest toProto(RequestContext requestContext) {
-    String tableName =
-        NameUtil.formatTableName(
-            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
-
-    return builder
-        .setTableName(tableName)
-        .setAppProfileId(requestContext.getAppProfileId())
-        .build();
+    String resourceName =
+        targetId.toResourceName(requestContext.getProjectId(), requestContext.getInstanceId());
+    if (targetId.scopedForAuthorizedView()) {
+      builder.setAuthorizedViewName(resourceName);
+    } else {
+      builder.setTableName(resourceName);
+    }
+    return builder.setAppProfileId(requestContext.getAppProfileId()).build();
   }
 
   /**
@@ -321,15 +333,17 @@ public final class Query implements Serializable {
    */
   public static Query fromProto(@Nonnull ReadRowsRequest request) {
     Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
+    String tableName = request.getTableName();
+    String authorizedViewName = request.getAuthorizedViewName();
 
-    Query query = new Query(NameUtil.extractTableIdFromTableName(request.getTableName()));
+    Query query = new Query(NameUtil.extractTargetId(tableName, authorizedViewName));
     query.builder = request.toBuilder();
 
     return query;
   }
 
   public Query clone() {
-    Query query = Query.create(tableId);
+    Query query = Query.create(targetId);
     query.builder = this.builder.clone();
     return query;
   }
@@ -424,7 +438,7 @@ public final class Query implements Serializable {
       return false;
     }
     Query query = (Query) o;
-    return Objects.equal(tableId, query.tableId)
+    return Objects.equal(targetId, query.targetId)
         && Objects.equal(builder.getRows(), query.builder.getRows())
         && Objects.equal(builder.getFilter(), query.builder.getFilter())
         && Objects.equal(builder.getRowsLimit(), query.builder.getRowsLimit());
@@ -433,7 +447,7 @@ public final class Query implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hashCode(
-        tableId, builder.getRows(), builder.getFilter(), builder.getRowsLimit());
+        targetId, builder.getRows(), builder.getFilter(), builder.getRowsLimit());
   }
 
   @Override
@@ -441,7 +455,7 @@ public final class Query implements Serializable {
     ReadRowsRequest request = builder.build();
 
     return MoreObjects.toStringHelper(this)
-        .add("tableId", tableId)
+        .add("targetId", targetId)
         .add("keys", request.getRows().getRowKeysList())
         .add("ranges", request.getRows().getRowRangesList())
         .add("filter", request.getFilter())
