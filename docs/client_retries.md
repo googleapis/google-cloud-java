@@ -2,9 +2,9 @@
 Client Libraries use retries to handle unexpected, transient failures (i.e. server is temporarily unavailable).
 Multiple attempts, hopefully, will result in a successful response from the server.
 
-Default retry values are selected by the team operating the cloud service. These retry parameters are defined
-for each RPC. A service *may* choose to only enable retries for a subset of RPCs. It is possible that for a single
-service, each RPC is configured differently.
+Default retry values are selected by the team operating the cloud service. These retry values are configured
+for each RPC. A service *may* choose to only enable retries for a subset of RPCs. It is possible that each RPC
+for a service is configured differently.
 
 ## Retry Parameters
 Client libraries have two types of retry parameters to configure:
@@ -12,7 +12,7 @@ Client libraries have two types of retry parameters to configure:
 2. Retry Time/ Attempt Bounds: Configurable [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings) to define the bounds
 
 ### RPC Retry Configurations
-Using Java-Asset v3.41.0 as an example, the default configurations are configured in the following files:
+Using Java-Asset v3.41.0 as an example, the default retry configurations are defined in the following places:
 
 Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082)
 
@@ -38,7 +38,7 @@ settings =
       .build();
 ```
 
-The default configurations are mapped [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474)
+The configurations above are set [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474)
 
 Example:
 ```java
@@ -66,27 +66,27 @@ settings =
       .setTotalTimeout(Duration.ofMillis(60000L))
       .build();
 ```
-The configuration above modifies the retry settings for both an RPC's operation and attempt. An RPC operation
-is collection of all attempts made and an RPC attempt is the individual attempt made. A single RPC invocation will
+The configuration above modifies the retry settings for both an RPC's attempt and operation. An RPC attempt is the
+individual attempt made and an RPC operation is collection of all attempts made. A single RPC invocation will
 have a single operation and one or more attempts.
 
 Individual RPC Bounds (an attempt) are controlled by the following settings:
-- setInitialRetryDelay
-- setRetryDelayMultiplier
-- setMaxRetryDelay
-- setInitialRpcTimeout
-- setRpcTimeoutMultiplier
-- setMaxRpcTimeout
+- [setInitialRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRetryDelay_org_threeten_bp_Duration_)
+- [setRetryDelayMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRetryDelayMultiplier_double_)
+- [setMaxRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRetryDelay_org_threeten_bp_Duration_)
+- [setInitialRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRpcTimeout_org_threeten_bp_Duration_)
+- [setRpcTimeoutMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRpcTimeoutMultiplier_double_)
+- [setMaxRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRpcTimeout_org_threeten_bp_Duration_)
 
 Total RPC Bounds (an operation) are controlled by the following settings:
-- setTotalTimeout
-- setAttemptCount
+- [setTotalTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setTotalTimeout_org_threeten_bp_Duration_)
+- [setMaxAttempts](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxAttempts_int_)
 
 An RPC will be retried when _both_ of the following scenarios occur:
 - Non-successful status code is received by the library and the status code is marked as retryable*
 - An RPC invocation exceeds the individual RPC bounds, but still falls within total RPC bounds**
 
-Note: If only one (or neither) of the scenarios above are true, then the RPC will not be retried.
+Note: If only one (or neither) of the scenarios above are true, then the RPC will _NOT_ be retried.
 i.e. If the total timeout has not been exceeded, but the latest attempt receives a non-retryable status code.
 
 *The client library will check RPC's list of retryable status codes and mark a status code accordingly. 
@@ -97,13 +97,30 @@ codes.
 total RPC's bounds. The retry algorithm will ensure that an individual attempt's bounds falls within
 the total RPC's bounds.
 
+### Exponential Backoff
+Exponential backoff will retry requests with an increasing delay between each retry attempt. This retry delay value
+can be capped with a maximum retry delay value.
+
+For example, with the following retry configurations:
+```
+Initial Retry Delay: 100ms
+Retry Delay Multiplier: 2.0
+Max Retry Delay: 500ms
+```
+- Attempt 1: Delay 100ms
+- Attempt 2: Delay 200ms
+- Attempt 3: Delay 400ms
+- Attempt 4: Delay 500ms
+- ...
+- Attempt X: Delay 500ms
+
 ### Jitter
 Jitter is added variance via randomness to spread out when the RPCs are invoked. By default, Google Cloud
 Client Libraries enable jitter for retries. When jitter is enabled with exponential backoff, the client libraries
 are able to spread out the retry attempts without overwhelming the server.
 
 The jitter randomness is computed on the retry delay. Before each attempt, the retry algorithm will compute
-a random value with the between [1, RETRY_DELAY]. This computed value is the *approximate* delay before the request
+a random value with the between `[1, RETRY_DELAY]`. This computed value is the *approximate* delay before the request
 is sent to the server.
 
 For example, with the following retry configurations:
@@ -112,11 +129,10 @@ Initial Retry Delay: 100ms
 Retry Delay Multiplier: 2.0
 Max Retry Delay: 500ms
 ```
-
 - Attempt 1: Random value between [1, 100]
 - Attempt 2: Random value between [1, 200]
 - Attempt 3: Random value between [1, 400]
-- Attempt 3: Random value between [1, 500]
+- Attempt 4: Random value between [1, 500]
 - ...
 - Attempt X: Random value between [1, 500]
 
@@ -134,6 +150,13 @@ RetrySettings defaultNoRetrySettings =
     .setTotalTimeout(Duration.ofMillis(5000L))
     // Explicitly set retries as disabled (maxAttempts == 1)
     .setMaxAttempts(1)
+    .build();
+```
+Alternatively, this can be configured with
+```java
+RetrySettings defaultNoRetrySettings =
+    RetrySettings.newBuilder()
+    .setLogicalTimeout(Duration.ofMillis(5000L))
     .build();
 ```
 

@@ -241,7 +241,7 @@ In cases where the library may expect a project ID explicitly, we provide a help
    ```java
      import com.google.cloud.ServiceOptions;
      ...
-             String projectId = ServiceOptions.getDefaultProjectId();
+     String projectId = ServiceOptions.getDefaultProjectId();
    ```
 
 ## Authentication
