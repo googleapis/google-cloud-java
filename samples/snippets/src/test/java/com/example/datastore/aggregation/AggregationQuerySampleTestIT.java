@@ -14,27 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.datastore;
+package com.example.datastore.aggregation;
 
 import static org.junit.Assert.assertThrows;
 
-import com.example.datastore.aggregation.AvgAggregationOnKind;
-import com.example.datastore.aggregation.AvgAggregationWithLimit;
-import com.example.datastore.aggregation.AvgAggregationWithOrderBy;
-import com.example.datastore.aggregation.AvgAggregationWithPropertyFilter;
-import com.example.datastore.aggregation.CountAggregationInTransaction;
-import com.example.datastore.aggregation.CountAggregationOnKind;
-import com.example.datastore.aggregation.CountAggregationWithGqlQuery;
-import com.example.datastore.aggregation.CountAggregationWithLimit;
-import com.example.datastore.aggregation.CountAggregationWithOrderBy;
-import com.example.datastore.aggregation.CountAggregationWithPropertyFilter;
-import com.example.datastore.aggregation.CountAggregationWithStaleRead;
-import com.example.datastore.aggregation.MultipleAggregationsInGqlQuery;
-import com.example.datastore.aggregation.MultipleAggregationsInStructuredQuery;
-import com.example.datastore.aggregation.SumAggregationOnKind;
-import com.example.datastore.aggregation.SumAggregationWithLimit;
-import com.example.datastore.aggregation.SumAggregationWithOrderBy;
-import com.example.datastore.aggregation.SumAggregationWithPropertyFilter;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
