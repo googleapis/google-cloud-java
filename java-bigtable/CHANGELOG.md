@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.37.0](https://github.com/googleapis/java-bigtable/compare/v2.36.0...v2.37.0) (2024-03-27)
+
+
+### Features
+
+* Add admin APIs for AuthorizedView ([#2175](https://github.com/googleapis/java-bigtable/issues/2175)) ([13d1df3](https://github.com/googleapis/java-bigtable/commit/13d1df3910e3041b57485a09317f717932b21727))
+* Support AuthorizedView in bigtable data client  ([#2177](https://github.com/googleapis/java-bigtable/issues/2177)) ([4b255d0](https://github.com/googleapis/java-bigtable/commit/4b255d0160b0ea30a4ab6453ccae278f40d32ee2))
+
+
+### Bug Fixes
+
+* Update the accounting of partial batch mutations ([#2149](https://github.com/googleapis/java-bigtable/issues/2149)) ([4158094](https://github.com/googleapis/java-bigtable/commit/4158094c34c85b1540197256f98e8880962fb13d))
+
+
+### Dependencies
+
+* Update shared dependencies ([#2174](https://github.com/googleapis/java-bigtable/issues/2174)) ([f313f14](https://github.com/googleapis/java-bigtable/commit/f313f1410f28df15438d83acaa74b715c752abdd))
+
 ## [2.36.0](https://github.com/googleapis/java-bigtable/compare/v2.35.1...v2.36.0) (2024-03-13)
 
 
