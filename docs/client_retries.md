@@ -3,8 +3,8 @@ Client Libraries use retries to handle unexpected, transient failures (i.e. serv
 Multiple attempts, hopefully, will result in a successful response from the server.
 
 Default retry values are selected by the team operating the cloud service. These retry values are configured
-for each RPC. A service *may* choose to only enable retries for a subset of RPCs. It is possible that each RPC
-for a service is configured differently.
+per RPC. A service *may* choose to only enable retries for a subset of RPCs. It is possible that each RPC for
+a service is configured differently.
 
 ## Retry Parameters
 Client libraries have two types of retry parameters to configure:
@@ -68,7 +68,7 @@ settings =
 ```
 The configuration above modifies the retry settings for both an RPC's attempt and operation. An RPC attempt is the
 individual attempt made and an RPC operation is collection of all attempts made. A single RPC invocation will
-have a single operation and one or more attempts.
+have one or more attempts in a single operation.
 
 Individual RPC Bounds (an attempt) are controlled by the following settings:
 - [setInitialRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRetryDelay_org_threeten_bp_Duration_)
@@ -152,7 +152,7 @@ RetrySettings defaultNoRetrySettings =
     .setMaxAttempts(1)
     .build();
 ```
-Alternatively, this can be configured with
+Alternatively, this same behavior can be configured with
 ```java
 RetrySettings defaultNoRetrySettings =
     RetrySettings.newBuilder()
@@ -166,7 +166,7 @@ The following table shows the attempts:
 |----------------	|-------------	|-------------	|--------------	|-----------	|
 | 1              	| 5000ms      	| 0ms         	| 0ms          	| 5000ms    	|
 
-### Retry
+### Retry Examples
 #### Example 1
 ```java
 RetrySettings.newBuilder()
@@ -299,16 +299,13 @@ assetStubSettingsBuilder
 ## FAQ
 ### I expected X retry attempts, but it attempted Y times
 Unless you explicitly specify the number of max attempts (along with disabling the timeout configurations),
-you will not consistently see the same number of retry attempts made.
-
-[Jitter's](#jitter) random values for RPC delay make it difficult predict when the request is actually sent.
-You should only expect that retries attempts are made and have no expectations of when the retry attempts are
-made.
+you may not consistently see the same number of retry attempts made. [Jitter's](#jitter) random values for 
+RPC delay make it difficult predict when the request is actually sent.
 
 ### The RPC returned a failure before the Total Timeout value was reached
 The retry algorithm will calculate the jittered retry delay value during each retry attempt. The calculated
 retry delay will be scheduled to run in the future (i.e. `currentTime() + jitteredRetryDelay`). If that attempt's
-scheduled attempt exceeds the total timeout, the "final" retry attempt will not be made.
+scheduled attempt time exceeds the total timeout, the "final" retry attempt will not be made.
 
 See this [example](#example-1) as an example of this behavior.
 
@@ -317,7 +314,7 @@ You may have configured the RetrySettings to run too aggressively. The default r
 the team operation the service. 
 
 Consider increasing the retry delay (initial retry delay and retry multiplier) so that the retry attempts 
-are spaced out. Note, this may result in a slower response.
+are spaced out and less frequent. Note, this may result in a slower response.
 
 Your use case may require a quicker response and/or more frequent retry attempts. If that is the case, try to
 increase the quota limits.
