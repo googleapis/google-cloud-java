@@ -251,7 +251,12 @@ public final class ChatSession {
     }
   }
 
-  /** Set the history to a list of Content */
+  /**
+   * Sets the history to a list of Content.
+   *
+   * @param history A list of {@link Content} containing interleaving conversation between "user"
+   *     and "model".
+   */
   public void setHistory(List<Content> history) {
     this.history = new ArrayList<>(history);
   }
