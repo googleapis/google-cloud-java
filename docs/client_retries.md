@@ -188,8 +188,10 @@ The following table shows the attempts:
 | 2 (Retry)               	| 3000ms      	| 200ms       	| 1700ms       	| 4700ms     	|
 | 3 (Retry Not Attempted) 	| -           	| 400ms       	| -            	| -          	|
 
-The third retry attempt is not attempted because the computed retry delay (400ms) would invoke the after
-the total timeout (400 + 4700 > 5000).
+The third retry attempt is not attempted because the computed retry delay (400ms) would invoke the
+RPC after the total timeout (400 + 4700 > 5000).
+
+The RPC will return a failed message after 4700ms.
 
 #### Example 2
 This example is similar to Example #1, but has a longer total timeout to showcase an additional
@@ -242,7 +244,9 @@ The following table shows the attempts:
 
 Another example where the RPC Timeout is capped to not exceed the total timeout.
 
-## How to configure a custom retry configuration for an RPC
+## How to configure a custom retry parameters for an RPC
+The following example is using the Java-Asset client library:
+
 1. Create the RetrySettings class with your custom configurations
 ```java
 RetrySettings customRetrySettings =
@@ -260,11 +264,9 @@ assetStubSettingsBuilder
   // Set your custom Retryable Codes
   .setRetryableCodes(ImmutableSet.of(StatusCode.Code.DEADLINE_EXCEEDED));
 ```
-
-The example above is configuring the java-asset library. The code snippet above is setting custom
-retry configurations for AssetServiceClient's ExportAssets RPC. It configures the ExportAssets RPC
-to use the retry settings configured in `customRetrySettings` and sets the retryable codes to be
-`DEADLINE_EXCEEDED`.
+The code snippet above is setting custom retry configurations for AssetServiceClient's ExportAssets
+RPC. It configures the ExportAssets RPC to use the retry settings configured in `customRetrySettings`
+and sets the retryable codes to be `DEADLINE_EXCEEDED`.
 
 3. Create the Settings for the Client
 ```java
@@ -293,3 +295,29 @@ assetStubSettingsBuilder
 .setRetrySettings(customRetrySettings2)
 .setRetryableCodes(ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
 ```
+
+## FAQ
+### I expected X retry attempts, but it attempted Y times
+Unless you explicitly specify the number of max attempts (along with disabling the timeout configurations),
+you will not consistently see the same number of retry attempts made.
+
+[Jitter's](#jitter) random values for RPC delay make it difficult predict when the request is actually sent.
+You should only expect that retries attempts are made and have no expectations of when the retry attempts are
+made.
+
+### The RPC returned a failure before the Total Timeout value was reached
+The retry algorithm will calculate the jittered retry delay value during each retry attempt. The calculated
+retry delay will be scheduled to run in the future (i.e. `currentTime() + jitteredRetryDelay`). If that attempt's
+scheduled attempt exceeds the total timeout, the "final" retry attempt will not be made.
+
+See this [example](#example-1) as an example of this behavior.
+
+### I configured custom settings and am seeing quota issues
+You may have configured the RetrySettings to run too aggressively. The default retry values are chosen by
+the team operation the service. 
+
+Consider increasing the retry delay (initial retry delay and retry multiplier) so that the retry attempts 
+are spaced out. Note, this may result in a slower response.
+
+Your use case may require a quicker response and/or more frequent retry attempts. If that is the case, try to
+increase the quota limits.
