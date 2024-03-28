@@ -24,6 +24,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 
 public class WriteConditionally {
   private static final String COLUMN_FAMILY_NAME = "stats_summary";
@@ -49,7 +50,9 @@ public class WriteConditionally {
               .filter(FILTERS.value().regex("PQ2A\\..*"));
 
       ConditionalRowMutation conditionalRowMutation =
-          ConditionalRowMutation.create(tableId, rowkey).condition(filter).then(mutation);
+          ConditionalRowMutation.create(TableId.of(tableId), rowkey)
+              .condition(filter)
+              .then(mutation);
 
       boolean success = dataClient.checkAndMutateRow(conditionalRowMutation);
 

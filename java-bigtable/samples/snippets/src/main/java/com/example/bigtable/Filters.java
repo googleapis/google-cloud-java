@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -360,7 +361,7 @@ public class Filters {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      Query query = Query.create(tableId).filter(filter);
+      Query query = Query.create(TableId.of(tableId)).filter(filter);
       ServerStream<Row> rows = dataClient.readRows(query);
       for (Row row : rows) {
         printRow(row);

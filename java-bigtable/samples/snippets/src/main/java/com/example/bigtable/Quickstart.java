@@ -23,6 +23,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 
 public class Quickstart {
 
@@ -43,7 +44,7 @@ public class Quickstart {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(settings)) {
       System.out.println("\nReading a single row by row key");
-      Row row = dataClient.readRow(tableId, "r1");
+      Row row = dataClient.readRow(TableId.of(tableId), "r1");
       System.out.println("Row: " + row.getKey().toStringUtf8());
       for (RowCell cell : row.getCells()) {
         System.out.printf(

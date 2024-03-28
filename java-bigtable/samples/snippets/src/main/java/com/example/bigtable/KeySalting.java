@@ -21,6 +21,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class KeySalting {
     BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId);
     String saltedRowKey = getSaltedRowKey(rowKey, SALT_RANGE);
     RowMutation rowMutation =
-        RowMutation.create(tableId, saltedRowKey)
+        RowMutation.create(TableId.of(tableId), saltedRowKey)
             .setCell(COLUMN_FAMILY_NAME, "os_build", "PQ2A.190405.003");
 
     dataClient.mutateRow(rowMutation);
@@ -47,7 +48,7 @@ public class KeySalting {
   public static void readSaltedRow(
       String projectId, String instanceId, String tableId, String rowKey) throws IOException {
     BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId);
-    Row row = dataClient.readRow(tableId, getSaltedRowKey(rowKey, SALT_RANGE));
+    Row row = dataClient.readRow(TableId.of(tableId), getSaltedRowKey(rowKey, SALT_RANGE));
     System.out.printf("Successfully read row %s\n", row.getKey().toStringUtf8());
   }
 
@@ -58,7 +59,7 @@ public class KeySalting {
 
     List<Query> queries = new ArrayList<>();
     for (int i = 0; i < SALT_RANGE; i++) {
-      queries.add(Query.create(tableId).prefix(i + "-" + prefix));
+      queries.add(Query.create(TableId.of(tableId)).prefix(i + "-" + prefix));
     }
 
     List<ApiFuture<List<Row>>> futures = new ArrayList<>();

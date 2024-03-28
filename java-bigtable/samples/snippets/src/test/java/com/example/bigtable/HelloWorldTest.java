@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -99,9 +100,9 @@ public class HelloWorldTest extends BigtableBaseTest {
   @Test
   public void testWriteToTable() {
     // Writes to a table.
-    assertNull(dataClient.readRow(tableId, "rowKey0"));
+    assertNull(dataClient.readRow(TableId.of(tableId), "rowKey0"));
     helloWorld.writeToTable();
-    assertNotNull(dataClient.readRow(tableId, "rowKey0"));
+    assertNotNull(dataClient.readRow(TableId.of(tableId), "rowKey0"));
   }
 
   @Test

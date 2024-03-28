@@ -23,14 +23,16 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 
 public class BatchDeleteExample {
   public void batchDelete(String projectId, String instanceId, String tableId)
       throws InterruptedException, IOException {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      try (Batcher<RowMutationEntry, Void> batcher = dataClient.newBulkMutationBatcher(tableId)) {
-        ServerStream<Row> rows = dataClient.readRows(Query.create(tableId));
+      try (Batcher<RowMutationEntry, Void> batcher =
+          dataClient.newBulkMutationBatcher(TableId.of(tableId))) {
+        ServerStream<Row> rows = dataClient.readRows(Query.create(TableId.of(tableId)));
         for (Row row : rows) {
           batcher.add(
               RowMutationEntry.create(row.getKey()).deleteCells("cell_plan", "data_plan_05gb"));

@@ -20,6 +20,7 @@ package com.example.bigtable.deletes;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 
 public class DeleteFromColumnExample {
@@ -27,7 +28,8 @@ public class DeleteFromColumnExample {
       throws IOException {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       Mutation mutation = Mutation.create().deleteCells("cell_plan", "data_plan_01gb");
-      dataClient.mutateRow(RowMutation.create(tableId, "phone#4c410523#20190501", mutation));
+      dataClient.mutateRow(
+          RowMutation.create(TableId.of(tableId), "phone#4c410523#20190501", mutation));
     }
   }
 }

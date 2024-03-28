@@ -23,6 +23,7 @@ import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 import org.hamcrest.CoreMatchers;
 import org.junit.BeforeClass;
@@ -46,10 +47,11 @@ public class QuickstartTest extends BigtableBaseTest {
       }
       try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
         String rowKey = "r1";
-        Row row = dataClient.readRow(TABLE_ID, rowKey);
+        Row row = dataClient.readRow(TableId.of(TABLE_ID), rowKey);
         if (row == null) {
           dataClient.mutateRow(
-              RowMutation.create(TABLE_ID, rowKey).setCell(columnFamily, "c1", "quickstart"));
+              RowMutation.create(TableId.of(TABLE_ID), rowKey)
+                  .setCell(columnFamily, "c1", "quickstart"));
         }
       }
     }

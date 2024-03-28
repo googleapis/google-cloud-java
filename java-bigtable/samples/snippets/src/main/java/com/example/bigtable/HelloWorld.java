@@ -32,6 +32,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -138,7 +139,7 @@ public class HelloWorld {
       for (int i = 0; i < names.length; i++) {
         String greeting = "Hello " + names[i] + "!";
         RowMutation rowMutation =
-            RowMutation.create(tableId, ROW_KEY_PREFIX + i)
+            RowMutation.create(TableId.of(tableId), ROW_KEY_PREFIX + i)
                 .setCell(COLUMN_FAMILY, COLUMN_QUALIFIER_NAME, names[i])
                 .setCell(COLUMN_FAMILY, COLUMN_QUALIFIER_GREETING, greeting);
         dataClient.mutateRow(rowMutation);
@@ -175,7 +176,7 @@ public class HelloWorld {
     // [START bigtable_hw_get_by_key]
     try {
       System.out.println("\nReading specific cells by family and qualifier");
-      Row row = dataClient.readRow(tableId, ROW_KEY_PREFIX + 0);
+      Row row = dataClient.readRow(TableId.of(tableId), ROW_KEY_PREFIX + 0);
       System.out.println("Row: " + row.getKey().toStringUtf8());
       List<RowCell> cells = row.getCells(COLUMN_FAMILY, COLUMN_QUALIFIER_NAME);
       for (RowCell cell : cells) {
@@ -196,7 +197,7 @@ public class HelloWorld {
     // [START bigtable_hw_scan_all]
     try {
       System.out.println("\nReading the entire table");
-      Query query = Query.create(tableId);
+      Query query = Query.create(TableId.of(tableId));
       ServerStream<Row> rowStream = dataClient.readRows(query);
       List<Row> tableRows = new ArrayList<>();
       for (Row r : rowStream) {
@@ -229,7 +230,7 @@ public class HelloWorld {
   private void readRowFilter(String tableId, Filter filter) {
     String rowKey =
         Base64.getEncoder().encodeToString("greeting0".getBytes(StandardCharsets.UTF_8));
-    Row row = dataClient.readRow(tableId, rowKey, filter);
+    Row row = dataClient.readRow(TableId.of(tableId), rowKey, filter);
     printRow(row);
     System.out.println("Row filter completed.");
   }
@@ -237,7 +238,7 @@ public class HelloWorld {
 
   // [START bigtable_hw_scan_with_filter]
   private void readFilter(String tableId, Filter filter) {
-    Query query = Query.create(tableId).filter(filter);
+    Query query = Query.create(TableId.of(tableId)).filter(filter);
     ServerStream<Row> rows = dataClient.readRows(query);
     for (Row row : rows) {
       printRow(row);

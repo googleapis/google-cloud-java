@@ -21,6 +21,7 @@ import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Filters;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 
 public class ConditionalDeleteExample {
@@ -30,7 +31,7 @@ public class ConditionalDeleteExample {
       Filters.Filter condition = Filters.FILTERS.value().exactMatch("PQ2A.190405.004");
       Mutation mutation = Mutation.create().deleteCells("stats_summary", "os_build");
       dataClient.checkAndMutateRow(
-          ConditionalRowMutation.create(tableId, "phone#4c410523#20190502")
+          ConditionalRowMutation.create(TableId.of(tableId), "phone#4c410523#20190502")
               .condition(condition)
               .then(mutation));
     }

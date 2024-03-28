@@ -19,6 +19,7 @@ package com.example.bigtable.deletes;
 // [START bigtable_delete_from_column_family]
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 
 public class DeleteFromColumnFamilyExample {
@@ -26,7 +27,8 @@ public class DeleteFromColumnFamilyExample {
       throws IOException {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       dataClient.mutateRow(
-          RowMutation.create(tableId, "phone#5c10102#20190501").deleteFamily("stats_summary"));
+          RowMutation.create(TableId.of(tableId), "phone#5c10102#20190501")
+              .deleteFamily("stats_summary"));
     }
   }
 }

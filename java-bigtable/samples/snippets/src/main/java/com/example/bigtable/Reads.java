@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.models.Filters;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.io.IOException;
 
 public class Reads {
@@ -48,7 +49,7 @@ public class Reads {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       String rowkey = "phone#4c410523#20190501";
 
-      Row row = dataClient.readRow(tableId, rowkey);
+      Row row = dataClient.readRow(TableId.of(tableId), rowkey);
       printRow(row);
 
     } catch (IOException e) {
@@ -79,7 +80,7 @@ public class Reads {
               .filter(FILTERS.family().exactMatch("stats_summary"))
               .filter(FILTERS.qualifier().exactMatch("os_build"));
 
-      Row row = dataClient.readRow(tableId, rowkey, filter);
+      Row row = dataClient.readRow(TableId.of(tableId), rowkey, filter);
       printRow(row);
 
     } catch (IOException e) {
@@ -104,7 +105,9 @@ public class Reads {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       Query query =
-          Query.create(tableId).rowKey("phone#4c410523#20190501").rowKey("phone#4c410523#20190502");
+          Query.create(TableId.of(tableId))
+              .rowKey("phone#4c410523#20190501")
+              .rowKey("phone#4c410523#20190502");
       ServerStream<Row> rows = dataClient.readRows(query);
       for (Row row : rows) {
         printRow(row);
@@ -133,7 +136,7 @@ public class Reads {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      Query query = Query.create(tableId).range(start, end);
+      Query query = Query.create(TableId.of(tableId)).range(start, end);
       ServerStream<Row> rows = dataClient.readRows(query);
       for (Row row : rows) {
         printRow(row);
@@ -160,7 +163,7 @@ public class Reads {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       Query query =
-          Query.create(tableId)
+          Query.create(TableId.of(tableId))
               .range("phone#4c410523#20190501", "phone#4c410523#20190601")
               .range("phone#5c10102#20190501", "phone#5c10102#20190601");
       ServerStream<Row> rows = dataClient.readRows(query);
@@ -188,7 +191,7 @@ public class Reads {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      Query query = Query.create(tableId).prefix("phone");
+      Query query = Query.create(TableId.of(tableId)).prefix("phone");
       ServerStream<Row> rows = dataClient.readRows(query);
       for (Row row : rows) {
         printRow(row);
@@ -215,7 +218,7 @@ public class Reads {
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       Query query =
-          Query.create(tableId)
+          Query.create(TableId.of(tableId))
               .reversed(true)
               .limit(3)
               .prefix("phone#4c410523")
@@ -247,7 +250,7 @@ public class Reads {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      Query query = Query.create(tableId).filter(filter);
+      Query query = Query.create(TableId.of(tableId)).filter(filter);
       ServerStream<Row> rows = dataClient.readRows(query);
       for (Row row : rows) {
         printRow(row);

@@ -21,6 +21,7 @@ package com.example.bigtable;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import java.nio.charset.Charset;
 
 public class WriteIncrement {
@@ -36,7 +37,7 @@ public class WriteIncrement {
       // if it is encoded as a 64-bit big-endian signed integer.
       String rowkey = "phone#4c410523#20190501";
       ReadModifyWriteRow mutation =
-          ReadModifyWriteRow.create(tableId, rowkey)
+          ReadModifyWriteRow.create(TableId.of(tableId), rowkey)
               .increment(COLUMN_FAMILY_NAME, "connected_cell", -1);
       Row success = dataClient.readModifyWriteRow(mutation);
 

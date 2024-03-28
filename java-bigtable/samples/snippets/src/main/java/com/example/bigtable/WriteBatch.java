@@ -23,6 +23,7 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatchingException;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,8 @@ public class WriteBatch {
 
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       List<ApiFuture<Void>> batchFutures = new ArrayList<>();
-      try (Batcher<RowMutationEntry, Void> batcher = dataClient.newBulkMutationBatcher(tableId)) {
+      try (Batcher<RowMutationEntry, Void> batcher =
+          dataClient.newBulkMutationBatcher(TableId.of(tableId))) {
         long timestamp = System.currentTimeMillis() * 1000;
         batchFutures.add(
             batcher.add(

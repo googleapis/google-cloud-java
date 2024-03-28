@@ -20,6 +20,7 @@ package com.example.bigtable;
 
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.protobuf.ByteString;
 
 public class WriteSimple {
@@ -36,7 +37,7 @@ public class WriteSimple {
       String rowkey = "phone#4c410523#20190501";
 
       RowMutation rowMutation =
-          RowMutation.create(tableId, rowkey)
+          RowMutation.create(TableId.of(tableId), rowkey)
               .setCell(
                   COLUMN_FAMILY_NAME,
                   ByteString.copyFrom("connected_cell".getBytes()),

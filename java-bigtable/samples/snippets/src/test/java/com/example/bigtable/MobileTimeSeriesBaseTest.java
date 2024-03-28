@@ -21,6 +21,7 @@ import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.time.Instant;
@@ -53,7 +54,7 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
   public static void writeStatsData() throws IOException {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       BulkMutation bulkMutation =
-          BulkMutation.create(TABLE_ID)
+          BulkMutation.create(TableId.of(TABLE_ID))
               .add(
                   "phone#4c410523#20190501",
                   Mutation.create()
@@ -135,7 +136,7 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
   public static void writePlanData() throws IOException {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       BulkMutation bulkMutation =
-          BulkMutation.create(TABLE_ID)
+          BulkMutation.create(TableId.of(TABLE_ID))
               .add(
                   "phone#4c410523#20190501",
                   Mutation.create()
