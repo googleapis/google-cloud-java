@@ -28,6 +28,11 @@ public final class NotificationProto {
     registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1alpha_Notification_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_batch_v1alpha_Notification_fieldAccessorTable;
+
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
@@ -38,13 +43,14 @@ public final class NotificationProto {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/batch/v1alpha/notificatio"
           + "n.proto\022\032google.cloud.batch.v1alpha\032\037goo"
-          + "gle/api/field_behavior.protoB\313\001\n\036com.goo"
-          + "gle.cloud.batch.v1alphaB\021NotificationPro"
-          + "toP\001Z4cloud.google.com/go/batch/apiv1alp"
-          + "ha/batchpb;batchpb\242\002\003GCB\252\002\032Google.Cloud."
-          + "Batch.V1Alpha\312\002\032Google\\Cloud\\Batch\\V1alp"
-          + "ha\352\002\035Google::Cloud::Batch::V1alphab\006prot"
-          + "o3"
+          + "gle/api/field_behavior.proto\")\n\014Notifica"
+          + "tion\022\031\n\014pubsub_topic\030\001 \001(\tB\003\340A\002B\313\001\n\036com."
+          + "google.cloud.batch.v1alphaB\021Notification"
+          + "ProtoP\001Z4cloud.google.com/go/batch/apiv1"
+          + "alpha/batchpb;batchpb\242\002\003GCB\252\002\032Google.Clo"
+          + "ud.Batch.V1Alpha\312\002\032Google\\Cloud\\Batch\\V1"
+          + "alpha\352\002\035Google::Cloud::Batch::V1alphab\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -52,6 +58,19 @@ public final class NotificationProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
+    internal_static_google_cloud_batch_v1alpha_Notification_descriptor =
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_batch_v1alpha_Notification_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1alpha_Notification_descriptor,
+            new java.lang.String[] {
+              "PubsubTopic",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
   }
 

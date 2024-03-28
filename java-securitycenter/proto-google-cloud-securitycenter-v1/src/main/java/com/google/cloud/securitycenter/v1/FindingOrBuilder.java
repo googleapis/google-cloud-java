@@ -1897,4 +1897,39 @@ public interface FindingOrBuilder
    * <code>repeated .google.cloud.securitycenter.v1.LoadBalancer load_balancers = 58;</code>
    */
   com.google.cloud.securitycenter.v1.LoadBalancerOrBuilder getLoadBalancersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Notebook notebook = 63;</code>
+   *
+   * @return Whether the notebook field is set.
+   */
+  boolean hasNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Notebook notebook = 63;</code>
+   *
+   * @return The notebook.
+   */
+  com.google.cloud.securitycenter.v1.Notebook getNotebook();
+  /**
+   *
+   *
+   * <pre>
+   * Notebook associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Notebook notebook = 63;</code>
+   */
+  com.google.cloud.securitycenter.v1.NotebookOrBuilder getNotebookOrBuilder();
 }

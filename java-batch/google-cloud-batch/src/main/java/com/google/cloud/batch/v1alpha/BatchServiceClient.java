@@ -37,6 +37,7 @@ import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -186,6 +187,102 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listTasksPagedCallable()
  *           <li><p> listTasksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateResourceAllowance</td>
+ *      <td><p> Create a Resource Allowance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createResourceAllowance(CreateResourceAllowanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createResourceAllowance(LocationName parent, ResourceAllowance resourceAllowance, String resourceAllowanceId)
+ *           <li><p> createResourceAllowance(String parent, ResourceAllowance resourceAllowance, String resourceAllowanceId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createResourceAllowanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetResourceAllowance</td>
+ *      <td><p> Get a ResourceAllowance specified by its resource name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getResourceAllowance(GetResourceAllowanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getResourceAllowance(ResourceAllowanceName name)
+ *           <li><p> getResourceAllowance(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getResourceAllowanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteResourceAllowance</td>
+ *      <td><p> Delete a ResourceAllowance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteResourceAllowanceAsync(DeleteResourceAllowanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteResourceAllowanceAsync(ResourceAllowanceName name)
+ *           <li><p> deleteResourceAllowanceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteResourceAllowanceOperationCallable()
+ *           <li><p> deleteResourceAllowanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListResourceAllowances</td>
+ *      <td><p> List all ResourceAllowances for a project within a region.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listResourceAllowances(ListResourceAllowancesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listResourceAllowances(LocationName parent)
+ *           <li><p> listResourceAllowances(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listResourceAllowancesPagedCallable()
+ *           <li><p> listResourceAllowancesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateResourceAllowance</td>
+ *      <td><p> Update a Resource Allowance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateResourceAllowance(UpdateResourceAllowanceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateResourceAllowance(ResourceAllowance resourceAllowance, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateResourceAllowanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1130,6 +1227,708 @@ public class BatchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Create a Resource Allowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ResourceAllowance resourceAllowance = ResourceAllowance.newBuilder().build();
+   *   String resourceAllowanceId = "resourceAllowanceId-786470299";
+   *   ResourceAllowance response =
+   *       batchServiceClient.createResourceAllowance(
+   *           parent, resourceAllowance, resourceAllowanceId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name where the ResourceAllowance will be created.
+   *     Pattern: "projects/{project}/locations/{location}"
+   * @param resourceAllowance Required. The ResourceAllowance to create.
+   * @param resourceAllowanceId ID used to uniquely identify the ResourceAllowance within its parent
+   *     scope. This field should contain at most 63 characters and must start with lowercase
+   *     characters. Only lowercase characters, numbers and '-' are accepted. The '-' character
+   *     cannot be the first or the last one. A system generated ID will be used if the field is not
+   *     set.
+   *     <p>The resource_allowance.name field in the request will be ignored and the created
+   *     resource name of the ResourceAllowance will be
+   *     "{parent}/resourceAllowances/{resource_allowance_id}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance createResourceAllowance(
+      LocationName parent, ResourceAllowance resourceAllowance, String resourceAllowanceId) {
+    CreateResourceAllowanceRequest request =
+        CreateResourceAllowanceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setResourceAllowance(resourceAllowance)
+            .setResourceAllowanceId(resourceAllowanceId)
+            .build();
+    return createResourceAllowance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Resource Allowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ResourceAllowance resourceAllowance = ResourceAllowance.newBuilder().build();
+   *   String resourceAllowanceId = "resourceAllowanceId-786470299";
+   *   ResourceAllowance response =
+   *       batchServiceClient.createResourceAllowance(
+   *           parent, resourceAllowance, resourceAllowanceId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name where the ResourceAllowance will be created.
+   *     Pattern: "projects/{project}/locations/{location}"
+   * @param resourceAllowance Required. The ResourceAllowance to create.
+   * @param resourceAllowanceId ID used to uniquely identify the ResourceAllowance within its parent
+   *     scope. This field should contain at most 63 characters and must start with lowercase
+   *     characters. Only lowercase characters, numbers and '-' are accepted. The '-' character
+   *     cannot be the first or the last one. A system generated ID will be used if the field is not
+   *     set.
+   *     <p>The resource_allowance.name field in the request will be ignored and the created
+   *     resource name of the ResourceAllowance will be
+   *     "{parent}/resourceAllowances/{resource_allowance_id}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance createResourceAllowance(
+      String parent, ResourceAllowance resourceAllowance, String resourceAllowanceId) {
+    CreateResourceAllowanceRequest request =
+        CreateResourceAllowanceRequest.newBuilder()
+            .setParent(parent)
+            .setResourceAllowance(resourceAllowance)
+            .setResourceAllowanceId(resourceAllowanceId)
+            .build();
+    return createResourceAllowance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Resource Allowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CreateResourceAllowanceRequest request =
+   *       CreateResourceAllowanceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResourceAllowanceId("resourceAllowanceId-786470299")
+   *           .setResourceAllowance(ResourceAllowance.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ResourceAllowance response = batchServiceClient.createResourceAllowance(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance createResourceAllowance(CreateResourceAllowanceRequest request) {
+    return createResourceAllowanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a Resource Allowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   CreateResourceAllowanceRequest request =
+   *       CreateResourceAllowanceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setResourceAllowanceId("resourceAllowanceId-786470299")
+   *           .setResourceAllowance(ResourceAllowance.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<ResourceAllowance> future =
+   *       batchServiceClient.createResourceAllowanceCallable().futureCall(request);
+   *   // Do something.
+   *   ResourceAllowance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceCallable() {
+    return stub.createResourceAllowanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceAllowance specified by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   ResourceAllowanceName name =
+   *       ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]");
+   *   ResourceAllowance response = batchServiceClient.getResourceAllowance(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. ResourceAllowance name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance getResourceAllowance(ResourceAllowanceName name) {
+    GetResourceAllowanceRequest request =
+        GetResourceAllowanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getResourceAllowance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceAllowance specified by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   String name =
+   *       ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]").toString();
+   *   ResourceAllowance response = batchServiceClient.getResourceAllowance(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. ResourceAllowance name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance getResourceAllowance(String name) {
+    GetResourceAllowanceRequest request =
+        GetResourceAllowanceRequest.newBuilder().setName(name).build();
+    return getResourceAllowance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceAllowance specified by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   GetResourceAllowanceRequest request =
+   *       GetResourceAllowanceRequest.newBuilder()
+   *           .setName(
+   *               ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+   *                   .toString())
+   *           .build();
+   *   ResourceAllowance response = batchServiceClient.getResourceAllowance(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance getResourceAllowance(GetResourceAllowanceRequest request) {
+    return getResourceAllowanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a ResourceAllowance specified by its resource name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   GetResourceAllowanceRequest request =
+   *       GetResourceAllowanceRequest.newBuilder()
+   *           .setName(
+   *               ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ResourceAllowance> future =
+   *       batchServiceClient.getResourceAllowanceCallable().futureCall(request);
+   *   // Do something.
+   *   ResourceAllowance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceCallable() {
+    return stub.getResourceAllowanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a ResourceAllowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   ResourceAllowanceName name =
+   *       ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]");
+   *   batchServiceClient.deleteResourceAllowanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. ResourceAllowance name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteResourceAllowanceAsync(
+      ResourceAllowanceName name) {
+    DeleteResourceAllowanceRequest request =
+        DeleteResourceAllowanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteResourceAllowanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a ResourceAllowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   String name =
+   *       ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]").toString();
+   *   batchServiceClient.deleteResourceAllowanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. ResourceAllowance name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteResourceAllowanceAsync(String name) {
+    DeleteResourceAllowanceRequest request =
+        DeleteResourceAllowanceRequest.newBuilder().setName(name).build();
+    return deleteResourceAllowanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a ResourceAllowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   DeleteResourceAllowanceRequest request =
+   *       DeleteResourceAllowanceRequest.newBuilder()
+   *           .setName(
+   *               ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+   *                   .toString())
+   *           .setReason("reason-934964668")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   batchServiceClient.deleteResourceAllowanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteResourceAllowanceAsync(
+      DeleteResourceAllowanceRequest request) {
+    return deleteResourceAllowanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a ResourceAllowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   DeleteResourceAllowanceRequest request =
+   *       DeleteResourceAllowanceRequest.newBuilder()
+   *           .setName(
+   *               ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+   *                   .toString())
+   *           .setReason("reason-934964668")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       batchServiceClient.deleteResourceAllowanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationCallable() {
+    return stub.deleteResourceAllowanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete a ResourceAllowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   DeleteResourceAllowanceRequest request =
+   *       DeleteResourceAllowanceRequest.newBuilder()
+   *           .setName(
+   *               ResourceAllowanceName.of("[PROJECT]", "[LOCATION]", "[RESOURCE_ALLOWANCE]")
+   *                   .toString())
+   *           .setReason("reason-934964668")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       batchServiceClient.deleteResourceAllowanceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceCallable() {
+    return stub.deleteResourceAllowanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all ResourceAllowances for a project within a region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ResourceAllowance element :
+   *       batchServiceClient.listResourceAllowances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent path.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceAllowancesPagedResponse listResourceAllowances(LocationName parent) {
+    ListResourceAllowancesRequest request =
+        ListResourceAllowancesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listResourceAllowances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all ResourceAllowances for a project within a region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ResourceAllowance element :
+   *       batchServiceClient.listResourceAllowances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent path.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceAllowancesPagedResponse listResourceAllowances(String parent) {
+    ListResourceAllowancesRequest request =
+        ListResourceAllowancesRequest.newBuilder().setParent(parent).build();
+    return listResourceAllowances(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all ResourceAllowances for a project within a region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   ListResourceAllowancesRequest request =
+   *       ListResourceAllowancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ResourceAllowance element :
+   *       batchServiceClient.listResourceAllowances(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListResourceAllowancesPagedResponse listResourceAllowances(
+      ListResourceAllowancesRequest request) {
+    return listResourceAllowancesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all ResourceAllowances for a project within a region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   ListResourceAllowancesRequest request =
+   *       ListResourceAllowancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ResourceAllowance> future =
+   *       batchServiceClient.listResourceAllowancesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ResourceAllowance element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesPagedResponse>
+      listResourceAllowancesPagedCallable() {
+    return stub.listResourceAllowancesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all ResourceAllowances for a project within a region.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   ListResourceAllowancesRequest request =
+   *       ListResourceAllowancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListResourceAllowancesResponse response =
+   *         batchServiceClient.listResourceAllowancesCallable().call(request);
+   *     for (ResourceAllowance element : response.getResourceAllowancesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+      listResourceAllowancesCallable() {
+    return stub.listResourceAllowancesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Resource Allowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   ResourceAllowance resourceAllowance = ResourceAllowance.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ResourceAllowance response =
+   *       batchServiceClient.updateResourceAllowance(resourceAllowance, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param resourceAllowance Required. The ResourceAllowance to update. Update description. Only
+   *     fields specified in `update_mask` are updated.
+   * @param updateMask Required. Mask of fields to update.
+   *     <p>Field mask is used to specify the fields to be overwritten in the ResourceAllowance
+   *     resource by the update. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask. If the
+   *     user does not provide a mask then all fields will be overwritten.
+   *     <p>UpdateResourceAllowance request now only supports update on `limit` field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance updateResourceAllowance(
+      ResourceAllowance resourceAllowance, FieldMask updateMask) {
+    UpdateResourceAllowanceRequest request =
+        UpdateResourceAllowanceRequest.newBuilder()
+            .setResourceAllowance(resourceAllowance)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateResourceAllowance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Resource Allowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   UpdateResourceAllowanceRequest request =
+   *       UpdateResourceAllowanceRequest.newBuilder()
+   *           .setResourceAllowance(ResourceAllowance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ResourceAllowance response = batchServiceClient.updateResourceAllowance(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResourceAllowance updateResourceAllowance(UpdateResourceAllowanceRequest request) {
+    return updateResourceAllowanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update a Resource Allowance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BatchServiceClient batchServiceClient = BatchServiceClient.create()) {
+   *   UpdateResourceAllowanceRequest request =
+   *       UpdateResourceAllowanceRequest.newBuilder()
+   *           .setResourceAllowance(ResourceAllowance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<ResourceAllowance> future =
+   *       batchServiceClient.updateResourceAllowanceCallable().futureCall(request);
+   *   // Do something.
+   *   ResourceAllowance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceCallable() {
+    return stub.updateResourceAllowanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -1438,6 +2237,94 @@ public class BatchServiceClient implements BackgroundResource {
     protected ListTasksFixedSizeCollection createCollection(
         List<ListTasksPage> pages, int collectionSize) {
       return new ListTasksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListResourceAllowancesPagedResponse
+      extends AbstractPagedListResponse<
+          ListResourceAllowancesRequest,
+          ListResourceAllowancesResponse,
+          ResourceAllowance,
+          ListResourceAllowancesPage,
+          ListResourceAllowancesFixedSizeCollection> {
+
+    public static ApiFuture<ListResourceAllowancesPagedResponse> createAsync(
+        PageContext<
+                ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
+            context,
+        ApiFuture<ListResourceAllowancesResponse> futureResponse) {
+      ApiFuture<ListResourceAllowancesPage> futurePage =
+          ListResourceAllowancesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListResourceAllowancesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListResourceAllowancesPagedResponse(ListResourceAllowancesPage page) {
+      super(page, ListResourceAllowancesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListResourceAllowancesPage
+      extends AbstractPage<
+          ListResourceAllowancesRequest,
+          ListResourceAllowancesResponse,
+          ResourceAllowance,
+          ListResourceAllowancesPage> {
+
+    private ListResourceAllowancesPage(
+        PageContext<
+                ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
+            context,
+        ListResourceAllowancesResponse response) {
+      super(context, response);
+    }
+
+    private static ListResourceAllowancesPage createEmptyPage() {
+      return new ListResourceAllowancesPage(null, null);
+    }
+
+    @Override
+    protected ListResourceAllowancesPage createPage(
+        PageContext<
+                ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
+            context,
+        ListResourceAllowancesResponse response) {
+      return new ListResourceAllowancesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListResourceAllowancesPage> createPageAsync(
+        PageContext<
+                ListResourceAllowancesRequest, ListResourceAllowancesResponse, ResourceAllowance>
+            context,
+        ApiFuture<ListResourceAllowancesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListResourceAllowancesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListResourceAllowancesRequest,
+          ListResourceAllowancesResponse,
+          ResourceAllowance,
+          ListResourceAllowancesPage,
+          ListResourceAllowancesFixedSizeCollection> {
+
+    private ListResourceAllowancesFixedSizeCollection(
+        List<ListResourceAllowancesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListResourceAllowancesFixedSizeCollection createEmptyCollection() {
+      return new ListResourceAllowancesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListResourceAllowancesFixedSizeCollection createCollection(
+        List<ListResourceAllowancesPage> pages, int collectionSize) {
+      return new ListResourceAllowancesFixedSizeCollection(pages, collectionSize);
     }
   }
 

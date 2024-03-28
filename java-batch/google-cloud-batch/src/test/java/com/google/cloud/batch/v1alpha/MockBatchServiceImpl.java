@@ -179,4 +179,110 @@ public class MockBatchServiceImpl extends BatchServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createResourceAllowance(
+      CreateResourceAllowanceRequest request, StreamObserver<ResourceAllowance> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ResourceAllowance) {
+      requests.add(request);
+      responseObserver.onNext(((ResourceAllowance) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateResourceAllowance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ResourceAllowance.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getResourceAllowance(
+      GetResourceAllowanceRequest request, StreamObserver<ResourceAllowance> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ResourceAllowance) {
+      requests.add(request);
+      responseObserver.onNext(((ResourceAllowance) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetResourceAllowance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ResourceAllowance.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteResourceAllowance(
+      DeleteResourceAllowanceRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteResourceAllowance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listResourceAllowances(
+      ListResourceAllowancesRequest request,
+      StreamObserver<ListResourceAllowancesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListResourceAllowancesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListResourceAllowancesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListResourceAllowances, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListResourceAllowancesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateResourceAllowance(
+      UpdateResourceAllowanceRequest request, StreamObserver<ResourceAllowance> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ResourceAllowance) {
+      requests.add(request);
+      responseObserver.onNext(((ResourceAllowance) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateResourceAllowance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ResourceAllowance.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }
