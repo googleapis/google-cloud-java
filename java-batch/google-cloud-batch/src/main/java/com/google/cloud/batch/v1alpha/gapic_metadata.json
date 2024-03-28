@@ -13,14 +13,23 @@
             "CreateJob": {
               "methods": ["createJob", "createJob", "createJob", "createJobCallable"]
             },
+            "CreateResourceAllowance": {
+              "methods": ["createResourceAllowance", "createResourceAllowance", "createResourceAllowance", "createResourceAllowanceCallable"]
+            },
             "DeleteJob": {
               "methods": ["deleteJobAsync", "deleteJobAsync", "deleteJobOperationCallable", "deleteJobCallable"]
+            },
+            "DeleteResourceAllowance": {
+              "methods": ["deleteResourceAllowanceAsync", "deleteResourceAllowanceAsync", "deleteResourceAllowanceAsync", "deleteResourceAllowanceOperationCallable", "deleteResourceAllowanceCallable"]
             },
             "GetJob": {
               "methods": ["getJob", "getJob", "getJob", "getJobCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetResourceAllowance": {
+              "methods": ["getResourceAllowance", "getResourceAllowance", "getResourceAllowance", "getResourceAllowanceCallable"]
             },
             "GetTask": {
               "methods": ["getTask", "getTask", "getTask", "getTaskCallable"]
@@ -31,8 +40,14 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListResourceAllowances": {
+              "methods": ["listResourceAllowances", "listResourceAllowances", "listResourceAllowances", "listResourceAllowancesPagedCallable", "listResourceAllowancesCallable"]
+            },
             "ListTasks": {
               "methods": ["listTasks", "listTasks", "listTasks", "listTasksPagedCallable", "listTasksCallable"]
+            },
+            "UpdateResourceAllowance": {
+              "methods": ["updateResourceAllowance", "updateResourceAllowance", "updateResourceAllowanceCallable"]
             }
           }
         }
