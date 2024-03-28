@@ -65,6 +65,55 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
             com.google.bigtable.admin.v2.CheckConsistencyRequest.Builder.class);
   }
 
+  private int modeCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object mode_;
+
+  public enum ModeCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    STANDARD_READ_REMOTE_WRITES(3),
+    DATA_BOOST_READ_LOCAL_WRITES(4),
+    MODE_NOT_SET(0);
+    private final int value;
+
+    private ModeCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ModeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ModeCase forNumber(int value) {
+      switch (value) {
+        case 3:
+          return STANDARD_READ_REMOTE_WRITES;
+        case 4:
+          return DATA_BOOST_READ_LOCAL_WRITES;
+        case 0:
+          return MODE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ModeCase getModeCase() {
+    return ModeCase.forNumber(modeCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -175,6 +224,128 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int STANDARD_READ_REMOTE_WRITES_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `StandardIsolation` can
+   * see all writes committed before the token was created, even if the
+   * read and write target different clusters.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+   * </code>
+   *
+   * @return Whether the standardReadRemoteWrites field is set.
+   */
+  @java.lang.Override
+  public boolean hasStandardReadRemoteWrites() {
+    return modeCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `StandardIsolation` can
+   * see all writes committed before the token was created, even if the
+   * read and write target different clusters.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+   * </code>
+   *
+   * @return The standardReadRemoteWrites.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.StandardReadRemoteWrites getStandardReadRemoteWrites() {
+    if (modeCase_ == 3) {
+      return (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_;
+    }
+    return com.google.bigtable.admin.v2.StandardReadRemoteWrites.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `StandardIsolation` can
+   * see all writes committed before the token was created, even if the
+   * read and write target different clusters.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.StandardReadRemoteWritesOrBuilder
+      getStandardReadRemoteWritesOrBuilder() {
+    if (modeCase_ == 3) {
+      return (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_;
+    }
+    return com.google.bigtable.admin.v2.StandardReadRemoteWrites.getDefaultInstance();
+  }
+
+  public static final int DATA_BOOST_READ_LOCAL_WRITES_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+   * can see all writes committed before the token was created, but only if
+   * the read and write target the same cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+   * </code>
+   *
+   * @return Whether the dataBoostReadLocalWrites field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataBoostReadLocalWrites() {
+    return modeCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+   * can see all writes committed before the token was created, but only if
+   * the read and write target the same cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+   * </code>
+   *
+   * @return The dataBoostReadLocalWrites.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.DataBoostReadLocalWrites getDataBoostReadLocalWrites() {
+    if (modeCase_ == 4) {
+      return (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_;
+    }
+    return com.google.bigtable.admin.v2.DataBoostReadLocalWrites.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+   * can see all writes committed before the token was created, but only if
+   * the read and write target the same cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.DataBoostReadLocalWritesOrBuilder
+      getDataBoostReadLocalWritesOrBuilder() {
+    if (modeCase_ == 4) {
+      return (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_;
+    }
+    return com.google.bigtable.admin.v2.DataBoostReadLocalWrites.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -195,6 +366,12 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consistencyToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, consistencyToken_);
     }
+    if (modeCase_ == 3) {
+      output.writeMessage(3, (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_);
+    }
+    if (modeCase_ == 4) {
+      output.writeMessage(4, (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -209,6 +386,16 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(consistencyToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, consistencyToken_);
+    }
+    if (modeCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_);
+    }
+    if (modeCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -228,6 +415,19 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
 
     if (!getName().equals(other.getName())) return false;
     if (!getConsistencyToken().equals(other.getConsistencyToken())) return false;
+    if (!getModeCase().equals(other.getModeCase())) return false;
+    switch (modeCase_) {
+      case 3:
+        if (!getStandardReadRemoteWrites().equals(other.getStandardReadRemoteWrites()))
+          return false;
+        break;
+      case 4:
+        if (!getDataBoostReadLocalWrites().equals(other.getDataBoostReadLocalWrites()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -243,6 +443,18 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + CONSISTENCY_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getConsistencyToken().hashCode();
+    switch (modeCase_) {
+      case 3:
+        hash = (37 * hash) + STANDARD_READ_REMOTE_WRITES_FIELD_NUMBER;
+        hash = (53 * hash) + getStandardReadRemoteWrites().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + DATA_BOOST_READ_LOCAL_WRITES_FIELD_NUMBER;
+        hash = (53 * hash) + getDataBoostReadLocalWrites().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -385,6 +597,14 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
       bitField0_ = 0;
       name_ = "";
       consistencyToken_ = "";
+      if (standardReadRemoteWritesBuilder_ != null) {
+        standardReadRemoteWritesBuilder_.clear();
+      }
+      if (dataBoostReadLocalWritesBuilder_ != null) {
+        dataBoostReadLocalWritesBuilder_.clear();
+      }
+      modeCase_ = 0;
+      mode_ = null;
       return this;
     }
 
@@ -415,6 +635,7 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -426,6 +647,17 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.consistencyToken_ = consistencyToken_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.bigtable.admin.v2.CheckConsistencyRequest result) {
+      result.modeCase_ = modeCase_;
+      result.mode_ = this.mode_;
+      if (modeCase_ == 3 && standardReadRemoteWritesBuilder_ != null) {
+        result.mode_ = standardReadRemoteWritesBuilder_.build();
+      }
+      if (modeCase_ == 4 && dataBoostReadLocalWritesBuilder_ != null) {
+        result.mode_ = dataBoostReadLocalWritesBuilder_.build();
       }
     }
 
@@ -485,6 +717,22 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      switch (other.getModeCase()) {
+        case STANDARD_READ_REMOTE_WRITES:
+          {
+            mergeStandardReadRemoteWrites(other.getStandardReadRemoteWrites());
+            break;
+          }
+        case DATA_BOOST_READ_LOCAL_WRITES:
+          {
+            mergeDataBoostReadLocalWrites(other.getDataBoostReadLocalWrites());
+            break;
+          }
+        case MODE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -523,6 +771,20 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getStandardReadRemoteWritesFieldBuilder().getBuilder(), extensionRegistry);
+                modeCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getDataBoostReadLocalWritesFieldBuilder().getBuilder(), extensionRegistry);
+                modeCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -537,6 +799,20 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int modeCase_ = 0;
+    private java.lang.Object mode_;
+
+    public ModeCase getModeCase() {
+      return ModeCase.forNumber(modeCase_);
+    }
+
+    public Builder clearMode() {
+      modeCase_ = 0;
+      mode_ = null;
+      onChanged();
       return this;
     }
 
@@ -772,6 +1048,488 @@ public final class CheckConsistencyRequest extends com.google.protobuf.Generated
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.StandardReadRemoteWrites,
+            com.google.bigtable.admin.v2.StandardReadRemoteWrites.Builder,
+            com.google.bigtable.admin.v2.StandardReadRemoteWritesOrBuilder>
+        standardReadRemoteWritesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     *
+     * @return Whether the standardReadRemoteWrites field is set.
+     */
+    @java.lang.Override
+    public boolean hasStandardReadRemoteWrites() {
+      return modeCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     *
+     * @return The standardReadRemoteWrites.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.StandardReadRemoteWrites getStandardReadRemoteWrites() {
+      if (standardReadRemoteWritesBuilder_ == null) {
+        if (modeCase_ == 3) {
+          return (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_;
+        }
+        return com.google.bigtable.admin.v2.StandardReadRemoteWrites.getDefaultInstance();
+      } else {
+        if (modeCase_ == 3) {
+          return standardReadRemoteWritesBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.StandardReadRemoteWrites.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     */
+    public Builder setStandardReadRemoteWrites(
+        com.google.bigtable.admin.v2.StandardReadRemoteWrites value) {
+      if (standardReadRemoteWritesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mode_ = value;
+        onChanged();
+      } else {
+        standardReadRemoteWritesBuilder_.setMessage(value);
+      }
+      modeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     */
+    public Builder setStandardReadRemoteWrites(
+        com.google.bigtable.admin.v2.StandardReadRemoteWrites.Builder builderForValue) {
+      if (standardReadRemoteWritesBuilder_ == null) {
+        mode_ = builderForValue.build();
+        onChanged();
+      } else {
+        standardReadRemoteWritesBuilder_.setMessage(builderForValue.build());
+      }
+      modeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     */
+    public Builder mergeStandardReadRemoteWrites(
+        com.google.bigtable.admin.v2.StandardReadRemoteWrites value) {
+      if (standardReadRemoteWritesBuilder_ == null) {
+        if (modeCase_ == 3
+            && mode_
+                != com.google.bigtable.admin.v2.StandardReadRemoteWrites.getDefaultInstance()) {
+          mode_ =
+              com.google.bigtable.admin.v2.StandardReadRemoteWrites.newBuilder(
+                      (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          mode_ = value;
+        }
+        onChanged();
+      } else {
+        if (modeCase_ == 3) {
+          standardReadRemoteWritesBuilder_.mergeFrom(value);
+        } else {
+          standardReadRemoteWritesBuilder_.setMessage(value);
+        }
+      }
+      modeCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     */
+    public Builder clearStandardReadRemoteWrites() {
+      if (standardReadRemoteWritesBuilder_ == null) {
+        if (modeCase_ == 3) {
+          modeCase_ = 0;
+          mode_ = null;
+          onChanged();
+        }
+      } else {
+        if (modeCase_ == 3) {
+          modeCase_ = 0;
+          mode_ = null;
+        }
+        standardReadRemoteWritesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.StandardReadRemoteWrites.Builder
+        getStandardReadRemoteWritesBuilder() {
+      return getStandardReadRemoteWritesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.StandardReadRemoteWritesOrBuilder
+        getStandardReadRemoteWritesOrBuilder() {
+      if ((modeCase_ == 3) && (standardReadRemoteWritesBuilder_ != null)) {
+        return standardReadRemoteWritesBuilder_.getMessageOrBuilder();
+      } else {
+        if (modeCase_ == 3) {
+          return (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_;
+        }
+        return com.google.bigtable.admin.v2.StandardReadRemoteWrites.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `StandardIsolation` can
+     * see all writes committed before the token was created, even if the
+     * read and write target different clusters.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.StandardReadRemoteWrites,
+            com.google.bigtable.admin.v2.StandardReadRemoteWrites.Builder,
+            com.google.bigtable.admin.v2.StandardReadRemoteWritesOrBuilder>
+        getStandardReadRemoteWritesFieldBuilder() {
+      if (standardReadRemoteWritesBuilder_ == null) {
+        if (!(modeCase_ == 3)) {
+          mode_ = com.google.bigtable.admin.v2.StandardReadRemoteWrites.getDefaultInstance();
+        }
+        standardReadRemoteWritesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.StandardReadRemoteWrites,
+                com.google.bigtable.admin.v2.StandardReadRemoteWrites.Builder,
+                com.google.bigtable.admin.v2.StandardReadRemoteWritesOrBuilder>(
+                (com.google.bigtable.admin.v2.StandardReadRemoteWrites) mode_,
+                getParentForChildren(),
+                isClean());
+        mode_ = null;
+      }
+      modeCase_ = 3;
+      onChanged();
+      return standardReadRemoteWritesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.DataBoostReadLocalWrites,
+            com.google.bigtable.admin.v2.DataBoostReadLocalWrites.Builder,
+            com.google.bigtable.admin.v2.DataBoostReadLocalWritesOrBuilder>
+        dataBoostReadLocalWritesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     *
+     * @return Whether the dataBoostReadLocalWrites field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataBoostReadLocalWrites() {
+      return modeCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     *
+     * @return The dataBoostReadLocalWrites.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.DataBoostReadLocalWrites getDataBoostReadLocalWrites() {
+      if (dataBoostReadLocalWritesBuilder_ == null) {
+        if (modeCase_ == 4) {
+          return (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_;
+        }
+        return com.google.bigtable.admin.v2.DataBoostReadLocalWrites.getDefaultInstance();
+      } else {
+        if (modeCase_ == 4) {
+          return dataBoostReadLocalWritesBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.DataBoostReadLocalWrites.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     */
+    public Builder setDataBoostReadLocalWrites(
+        com.google.bigtable.admin.v2.DataBoostReadLocalWrites value) {
+      if (dataBoostReadLocalWritesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mode_ = value;
+        onChanged();
+      } else {
+        dataBoostReadLocalWritesBuilder_.setMessage(value);
+      }
+      modeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     */
+    public Builder setDataBoostReadLocalWrites(
+        com.google.bigtable.admin.v2.DataBoostReadLocalWrites.Builder builderForValue) {
+      if (dataBoostReadLocalWritesBuilder_ == null) {
+        mode_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataBoostReadLocalWritesBuilder_.setMessage(builderForValue.build());
+      }
+      modeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     */
+    public Builder mergeDataBoostReadLocalWrites(
+        com.google.bigtable.admin.v2.DataBoostReadLocalWrites value) {
+      if (dataBoostReadLocalWritesBuilder_ == null) {
+        if (modeCase_ == 4
+            && mode_
+                != com.google.bigtable.admin.v2.DataBoostReadLocalWrites.getDefaultInstance()) {
+          mode_ =
+              com.google.bigtable.admin.v2.DataBoostReadLocalWrites.newBuilder(
+                      (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          mode_ = value;
+        }
+        onChanged();
+      } else {
+        if (modeCase_ == 4) {
+          dataBoostReadLocalWritesBuilder_.mergeFrom(value);
+        } else {
+          dataBoostReadLocalWritesBuilder_.setMessage(value);
+        }
+      }
+      modeCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     */
+    public Builder clearDataBoostReadLocalWrites() {
+      if (dataBoostReadLocalWritesBuilder_ == null) {
+        if (modeCase_ == 4) {
+          modeCase_ = 0;
+          mode_ = null;
+          onChanged();
+        }
+      } else {
+        if (modeCase_ == 4) {
+          modeCase_ = 0;
+          mode_ = null;
+        }
+        dataBoostReadLocalWritesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.DataBoostReadLocalWrites.Builder
+        getDataBoostReadLocalWritesBuilder() {
+      return getDataBoostReadLocalWritesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.DataBoostReadLocalWritesOrBuilder
+        getDataBoostReadLocalWritesOrBuilder() {
+      if ((modeCase_ == 4) && (dataBoostReadLocalWritesBuilder_ != null)) {
+        return dataBoostReadLocalWritesBuilder_.getMessageOrBuilder();
+      } else {
+        if (modeCase_ == 4) {
+          return (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_;
+        }
+        return com.google.bigtable.admin.v2.DataBoostReadLocalWrites.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+     * can see all writes committed before the token was created, but only if
+     * the read and write target the same cluster.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.DataBoostReadLocalWrites,
+            com.google.bigtable.admin.v2.DataBoostReadLocalWrites.Builder,
+            com.google.bigtable.admin.v2.DataBoostReadLocalWritesOrBuilder>
+        getDataBoostReadLocalWritesFieldBuilder() {
+      if (dataBoostReadLocalWritesBuilder_ == null) {
+        if (!(modeCase_ == 4)) {
+          mode_ = com.google.bigtable.admin.v2.DataBoostReadLocalWrites.getDefaultInstance();
+        }
+        dataBoostReadLocalWritesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.DataBoostReadLocalWrites,
+                com.google.bigtable.admin.v2.DataBoostReadLocalWrites.Builder,
+                com.google.bigtable.admin.v2.DataBoostReadLocalWritesOrBuilder>(
+                (com.google.bigtable.admin.v2.DataBoostReadLocalWrites) mode_,
+                getParentForChildren(),
+                isClean());
+        mode_ = null;
+      }
+      modeCase_ = 4;
+      onChanged();
+      return dataBoostReadLocalWritesBuilder_;
     }
 
     @java.lang.Override

@@ -77,6 +77,10 @@ public final class InstanceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_HotTablet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_HotTablet_fieldAccessorTable;
@@ -137,7 +141,7 @@ public final class InstanceProto {
           + "\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABLED\020\004:e\352Ab\n$bigt"
           + "ableadmin.googleapis.com/Cluster\022:projec"
           + "ts/{project}/instances/{instance}/cluste"
-          + "rs/{cluster}B\010\n\006config\"\350\006\n\nAppProfile\022\014\n"
+          + "rs/{cluster}B\010\n\006config\"\322\t\n\nAppProfile\022\014\n"
           + "\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001(\t\022\023\n\013description"
           + "\030\003 \001(\t\022g\n\035multi_cluster_routing_use_any\030"
           + "\005 \001(\0132>.google.bigtable.admin.v2.AppProf"
@@ -148,36 +152,46 @@ public final class InstanceProto {
           + ".admin.v2.AppProfile.PriorityB\002\030\001H\001\022T\n\022s"
           + "tandard_isolation\030\013 \001(\01326.google.bigtabl"
           + "e.admin.v2.AppProfile.StandardIsolationH"
-          + "\001\0320\n\031MultiClusterRoutingUseAny\022\023\n\013cluste"
-          + "r_ids\030\001 \003(\t\032N\n\024SingleClusterRouting\022\022\n\nc"
-          + "luster_id\030\001 \001(\t\022\"\n\032allow_transactional_w"
-          + "rites\030\002 \001(\010\032T\n\021StandardIsolation\022?\n\010prio"
-          + "rity\030\001 \001(\0162-.google.bigtable.admin.v2.Ap"
-          + "pProfile.Priority\"^\n\010Priority\022\030\n\024PRIORIT"
-          + "Y_UNSPECIFIED\020\000\022\020\n\014PRIORITY_LOW\020\001\022\023\n\017PRI"
-          + "ORITY_MEDIUM\020\002\022\021\n\rPRIORITY_HIGH\020\003:o\352Al\n\'"
-          + "bigtableadmin.googleapis.com/AppProfile\022"
-          + "Aprojects/{project}/instances/{instance}"
-          + "/appProfiles/{app_profile}B\020\n\016routing_po"
-          + "licyB\013\n\tisolation\"\210\003\n\tHotTablet\022\014\n\004name\030"
-          + "\001 \001(\t\022;\n\ntable_name\030\002 \001(\tB\'\372A$\n\"bigtable"
-          + "admin.googleapis.com/Table\0223\n\nstart_time"
-          + "\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "1\n\010end_time\030\004 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\022\021\n\tstart_key\030\005 \001(\t\022\017\n\007end_key"
-          + "\030\006 \001(\t\022#\n\026node_cpu_usage_percent\030\007 \001(\002B\003"
-          + "\340A\003:\177\352A|\n&bigtableadmin.googleapis.com/H"
-          + "otTablet\022Rprojects/{project}/instances/{"
-          + "instance}/clusters/{cluster}/hotTablets/"
-          + "{hot_tablet}B\320\002\n\034com.google.bigtable.adm"
-          + "in.v2B\rInstanceProtoP\001Z=google.golang.or"
-          + "g/genproto/googleapis/bigtable/admin/v2;"
-          + "admin\252\002\036Google.Cloud.Bigtable.Admin.V2\312\002"
-          + "\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google"
-          + "::Cloud::Bigtable::Admin::V2\352Ax\n!cloudkm"
-          + "s.googleapis.com/CryptoKey\022Sprojects/{pr"
-          + "oject}/locations/{location}/keyRings/{ke"
-          + "y_ring}/cryptoKeys/{crypto_key}b\006proto3"
+          + "\001\022i\n\036data_boost_isolation_read_only\030\n \001("
+          + "\0132?.google.bigtable.admin.v2.AppProfile."
+          + "DataBoostIsolationReadOnlyH\001\0320\n\031MultiClu"
+          + "sterRoutingUseAny\022\023\n\013cluster_ids\030\001 \003(\t\032N"
+          + "\n\024SingleClusterRouting\022\022\n\ncluster_id\030\001 \001"
+          + "(\t\022\"\n\032allow_transactional_writes\030\002 \001(\010\032T"
+          + "\n\021StandardIsolation\022?\n\010priority\030\001 \001(\0162-."
+          + "google.bigtable.admin.v2.AppProfile.Prio"
+          + "rity\032\374\001\n\032DataBoostIsolationReadOnly\022w\n\025c"
+          + "ompute_billing_owner\030\001 \001(\0162S.google.bigt"
+          + "able.admin.v2.AppProfile.DataBoostIsolat"
+          + "ionReadOnly.ComputeBillingOwnerH\000\210\001\001\"K\n\023"
+          + "ComputeBillingOwner\022%\n!COMPUTE_BILLING_O"
+          + "WNER_UNSPECIFIED\020\000\022\r\n\tHOST_PAYS\020\001B\030\n\026_co"
+          + "mpute_billing_owner\"^\n\010Priority\022\030\n\024PRIOR"
+          + "ITY_UNSPECIFIED\020\000\022\020\n\014PRIORITY_LOW\020\001\022\023\n\017P"
+          + "RIORITY_MEDIUM\020\002\022\021\n\rPRIORITY_HIGH\020\003:o\352Al"
+          + "\n\'bigtableadmin.googleapis.com/AppProfil"
+          + "e\022Aprojects/{project}/instances/{instanc"
+          + "e}/appProfiles/{app_profile}B\020\n\016routing_"
+          + "policyB\013\n\tisolation\"\210\003\n\tHotTablet\022\014\n\004nam"
+          + "e\030\001 \001(\t\022;\n\ntable_name\030\002 \001(\tB\'\372A$\n\"bigtab"
+          + "leadmin.googleapis.com/Table\0223\n\nstart_ti"
+          + "me\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0221\n\010end_time\030\004 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\022\021\n\tstart_key\030\005 \001(\t\022\017\n\007end_k"
+          + "ey\030\006 \001(\t\022#\n\026node_cpu_usage_percent\030\007 \001(\002"
+          + "B\003\340A\003:\177\352A|\n&bigtableadmin.googleapis.com"
+          + "/HotTablet\022Rprojects/{project}/instances"
+          + "/{instance}/clusters/{cluster}/hotTablet"
+          + "s/{hot_tablet}B\320\002\n\034com.google.bigtable.a"
+          + "dmin.v2B\rInstanceProtoP\001Z=google.golang."
+          + "org/genproto/googleapis/bigtable/admin/v"
+          + "2;admin\252\002\036Google.Cloud.Bigtable.Admin.V2"
+          + "\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Goog"
+          + "le::Cloud::Bigtable::Admin::V2\352Ax\n!cloud"
+          + "kms.googleapis.com/CryptoKey\022Sprojects/{"
+          + "project}/locations/{location}/keyRings/{"
+          + "key_ring}/cryptoKeys/{crypto_key}b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -272,6 +286,7 @@ public final class InstanceProto {
               "SingleClusterRouting",
               "Priority",
               "StandardIsolation",
+              "DataBoostIsolationReadOnly",
               "RoutingPolicy",
               "Isolation",
             });
@@ -298,6 +313,14 @@ public final class InstanceProto {
             internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor,
             new java.lang.String[] {
               "Priority",
+            });
+    internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor =
+        internal_static_google_bigtable_admin_v2_AppProfile_descriptor.getNestedTypes().get(3);
+    internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor,
+            new java.lang.String[] {
+              "ComputeBillingOwner",
             });
     internal_static_google_bigtable_admin_v2_HotTablet_descriptor =
         getDescriptor().getMessageTypes().get(5);

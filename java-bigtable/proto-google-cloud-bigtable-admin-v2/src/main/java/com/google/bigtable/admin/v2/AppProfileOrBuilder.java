@@ -209,7 +209,7 @@ public interface AppProfileOrBuilder
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=332
+   *     google/bigtable/admin/v2/instance.proto;l=361
    * @return Whether the priority field is set.
    */
   @java.lang.Deprecated
@@ -227,7 +227,7 @@ public interface AppProfileOrBuilder
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=332
+   *     google/bigtable/admin/v2/instance.proto;l=361
    * @return The enum numeric value on the wire for priority.
    */
   @java.lang.Deprecated
@@ -245,7 +245,7 @@ public interface AppProfileOrBuilder
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=332
+   *     google/bigtable/admin/v2/instance.proto;l=361
    * @return The priority.
    */
   @java.lang.Deprecated
@@ -289,6 +289,52 @@ public interface AppProfileOrBuilder
    */
   com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder
       getStandardIsolationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that this app profile is intended for read-only usage via the
+   * Data Boost feature.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+   * </code>
+   *
+   * @return Whether the dataBoostIsolationReadOnly field is set.
+   */
+  boolean hasDataBoostIsolationReadOnly();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that this app profile is intended for read-only usage via the
+   * Data Boost feature.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+   * </code>
+   *
+   * @return The dataBoostIsolationReadOnly.
+   */
+  com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+      getDataBoostIsolationReadOnly();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that this app profile is intended for read-only usage via the
+   * Data Boost feature.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+   * </code>
+   */
+  com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyOrBuilder
+      getDataBoostIsolationReadOnlyOrBuilder();
 
   com.google.bigtable.admin.v2.AppProfile.RoutingPolicyCase getRoutingPolicyCase();
 

@@ -184,6 +184,24 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     return retryInfo_;
   }
 
+  public static final int CLIENT_SIDE_METRICS_ENABLED_FIELD_NUMBER = 8;
+  private boolean clientSideMetricsEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client has client side metrics enabled.
+   * </pre>
+   *
+   * <code>bool client_side_metrics_enabled = 8;</code>
+   *
+   * @return The clientSideMetricsEnabled.
+   */
+  @java.lang.Override
+  public boolean getClientSideMetricsEnabled() {
+    return clientSideMetricsEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -216,6 +234,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (retryInfo_ != false) {
       output.writeBool(7, retryInfo_);
     }
+    if (clientSideMetricsEnabled_ != false) {
+      output.writeBool(8, clientSideMetricsEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -243,6 +264,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (retryInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, retryInfo_);
     }
+    if (clientSideMetricsEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, clientSideMetricsEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -264,6 +288,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     if (getLastScannedRowResponses() != other.getLastScannedRowResponses()) return false;
     if (getRoutingCookie() != other.getRoutingCookie()) return false;
     if (getRetryInfo() != other.getRetryInfo()) return false;
+    if (getClientSideMetricsEnabled() != other.getClientSideMetricsEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -287,6 +312,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRoutingCookie());
     hash = (37 * hash) + RETRY_INFO_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRetryInfo());
+    hash = (37 * hash) + CLIENT_SIDE_METRICS_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClientSideMetricsEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -438,6 +465,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       lastScannedRowResponses_ = false;
       routingCookie_ = false;
       retryInfo_ = false;
+      clientSideMetricsEnabled_ = false;
       return this;
     }
 
@@ -490,6 +518,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.retryInfo_ = retryInfo_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.clientSideMetricsEnabled_ = clientSideMetricsEnabled_;
       }
     }
 
@@ -556,6 +587,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       if (other.getRetryInfo() != false) {
         setRetryInfo(other.getRetryInfo());
       }
+      if (other.getClientSideMetricsEnabled() != false) {
+        setClientSideMetricsEnabled(other.getClientSideMetricsEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -618,6 +652,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 56
+            case 64:
+              {
+                clientSideMetricsEnabled_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -975,6 +1015,59 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRetryInfo() {
       bitField0_ = (bitField0_ & ~0x00000020);
       retryInfo_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean clientSideMetricsEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client has client side metrics enabled.
+     * </pre>
+     *
+     * <code>bool client_side_metrics_enabled = 8;</code>
+     *
+     * @return The clientSideMetricsEnabled.
+     */
+    @java.lang.Override
+    public boolean getClientSideMetricsEnabled() {
+      return clientSideMetricsEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client has client side metrics enabled.
+     * </pre>
+     *
+     * <code>bool client_side_metrics_enabled = 8;</code>
+     *
+     * @param value The clientSideMetricsEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientSideMetricsEnabled(boolean value) {
+
+      clientSideMetricsEnabled_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Notify the server that the client has client side metrics enabled.
+     * </pre>
+     *
+     * <code>bool client_side_metrics_enabled = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientSideMetricsEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      clientSideMetricsEnabled_ = false;
       onChanged();
       return this;
     }

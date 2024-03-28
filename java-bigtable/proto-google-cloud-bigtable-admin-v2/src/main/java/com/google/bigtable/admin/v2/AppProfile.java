@@ -2382,6 +2382,883 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface DataBoostIsolationReadOnlyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The Compute Billing Owner for this Data Boost App Profile.
+     * </pre>
+     *
+     * <code>
+     * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+     * </code>
+     *
+     * @return Whether the computeBillingOwner field is set.
+     */
+    boolean hasComputeBillingOwner();
+    /**
+     *
+     *
+     * <pre>
+     * The Compute Billing Owner for this Data Boost App Profile.
+     * </pre>
+     *
+     * <code>
+     * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for computeBillingOwner.
+     */
+    int getComputeBillingOwnerValue();
+    /**
+     *
+     *
+     * <pre>
+     * The Compute Billing Owner for this Data Boost App Profile.
+     * </pre>
+     *
+     * <code>
+     * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+     * </code>
+     *
+     * @return The computeBillingOwner.
+     */
+    com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+        getComputeBillingOwner();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Data Boost is a serverless compute capability that lets you run
+   * high-throughput read jobs on your Bigtable data, without impacting the
+   * performance of the clusters that handle your application traffic.
+   * Currently, Data Boost exclusively supports read-only use-cases with
+   * single-cluster routing.
+   *
+   * Data Boost reads are only guaranteed to see the results of writes that
+   * were written at least 30 minutes ago. This means newly written values may
+   * not become visible for up to 30m, and also means that old values may
+   * remain visible for up to 30m after being deleted or overwritten. To
+   * mitigate the staleness of the data, users may either wait 30m, or use
+   * CheckConsistency.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly}
+   */
+  public static final class DataBoostIsolationReadOnly
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly)
+      DataBoostIsolationReadOnlyOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DataBoostIsolationReadOnly.newBuilder() to construct.
+    private DataBoostIsolationReadOnly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataBoostIsolationReadOnly() {
+      computeBillingOwner_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DataBoostIsolationReadOnly();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.class,
+              com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Compute Billing Owner specifies how usage should be accounted when using
+     * Data Boost. Compute Billing Owner also configures which Cloud Project is
+     * charged for relevant quota.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner}
+     */
+    public enum ComputeBillingOwner implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified value.
+       * </pre>
+       *
+       * <code>COMPUTE_BILLING_OWNER_UNSPECIFIED = 0;</code>
+       */
+      COMPUTE_BILLING_OWNER_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The host Cloud Project containing the targeted Bigtable Instance /
+       * Table pays for compute.
+       * </pre>
+       *
+       * <code>HOST_PAYS = 1;</code>
+       */
+      HOST_PAYS(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified value.
+       * </pre>
+       *
+       * <code>COMPUTE_BILLING_OWNER_UNSPECIFIED = 0;</code>
+       */
+      public static final int COMPUTE_BILLING_OWNER_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The host Cloud Project containing the targeted Bigtable Instance /
+       * Table pays for compute.
+       * </pre>
+       *
+       * <code>HOST_PAYS = 1;</code>
+       */
+      public static final int HOST_PAYS_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ComputeBillingOwner valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ComputeBillingOwner forNumber(int value) {
+        switch (value) {
+          case 0:
+            return COMPUTE_BILLING_OWNER_UNSPECIFIED;
+          case 1:
+            return HOST_PAYS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ComputeBillingOwner>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ComputeBillingOwner>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ComputeBillingOwner>() {
+                public ComputeBillingOwner findValueByNumber(int number) {
+                  return ComputeBillingOwner.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final ComputeBillingOwner[] VALUES = values();
+
+      public static ComputeBillingOwner valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ComputeBillingOwner(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner)
+    }
+
+    private int bitField0_;
+    public static final int COMPUTE_BILLING_OWNER_FIELD_NUMBER = 1;
+    private int computeBillingOwner_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The Compute Billing Owner for this Data Boost App Profile.
+     * </pre>
+     *
+     * <code>
+     * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+     * </code>
+     *
+     * @return Whether the computeBillingOwner field is set.
+     */
+    @java.lang.Override
+    public boolean hasComputeBillingOwner() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Compute Billing Owner for this Data Boost App Profile.
+     * </pre>
+     *
+     * <code>
+     * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for computeBillingOwner.
+     */
+    @java.lang.Override
+    public int getComputeBillingOwnerValue() {
+      return computeBillingOwner_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Compute Billing Owner for this Data Boost App Profile.
+     * </pre>
+     *
+     * <code>
+     * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+     * </code>
+     *
+     * @return The computeBillingOwner.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+        getComputeBillingOwner() {
+      com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+          result =
+              com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+                  .forNumber(computeBillingOwner_);
+      return result == null
+          ? com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, computeBillingOwner_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, computeBillingOwner_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly other =
+          (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) obj;
+
+      if (hasComputeBillingOwner() != other.hasComputeBillingOwner()) return false;
+      if (hasComputeBillingOwner()) {
+        if (computeBillingOwner_ != other.computeBillingOwner_) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasComputeBillingOwner()) {
+        hash = (37 * hash) + COMPUTE_BILLING_OWNER_FIELD_NUMBER;
+        hash = (53 * hash) + computeBillingOwner_;
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Data Boost is a serverless compute capability that lets you run
+     * high-throughput read jobs on your Bigtable data, without impacting the
+     * performance of the clusters that handle your application traffic.
+     * Currently, Data Boost exclusively supports read-only use-cases with
+     * single-cluster routing.
+     *
+     * Data Boost reads are only guaranteed to see the results of writes that
+     * were written at least 30 minutes ago. This means newly written values may
+     * not become visible for up to 30m, and also means that old values may
+     * remain visible for up to 30m after being deleted or overwritten. To
+     * mitigate the staleness of the data, users may either wait 30m, or use
+     * CheckConsistency.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly)
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.class,
+                com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.Builder.class);
+      }
+
+      // Construct using
+      // com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        computeBillingOwner_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+          getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly build() {
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly buildPartial() {
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly result =
+            new com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.computeBillingOwner_ = computeBillingOwner_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) {
+          return mergeFrom(
+              (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly other) {
+        if (other
+            == com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+                .getDefaultInstance()) return this;
+        if (other.hasComputeBillingOwner()) {
+          setComputeBillingOwner(other.getComputeBillingOwner());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  computeBillingOwner_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int computeBillingOwner_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The Compute Billing Owner for this Data Boost App Profile.
+       * </pre>
+       *
+       * <code>
+       * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+       * </code>
+       *
+       * @return Whether the computeBillingOwner field is set.
+       */
+      @java.lang.Override
+      public boolean hasComputeBillingOwner() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Compute Billing Owner for this Data Boost App Profile.
+       * </pre>
+       *
+       * <code>
+       * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for computeBillingOwner.
+       */
+      @java.lang.Override
+      public int getComputeBillingOwnerValue() {
+        return computeBillingOwner_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Compute Billing Owner for this Data Boost App Profile.
+       * </pre>
+       *
+       * <code>
+       * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for computeBillingOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComputeBillingOwnerValue(int value) {
+        computeBillingOwner_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Compute Billing Owner for this Data Boost App Profile.
+       * </pre>
+       *
+       * <code>
+       * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+       * </code>
+       *
+       * @return The computeBillingOwner.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+          getComputeBillingOwner() {
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+            result =
+                com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+                    .ComputeBillingOwner.forNumber(computeBillingOwner_);
+        return result == null
+            ? com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Compute Billing Owner for this Data Boost App Profile.
+       * </pre>
+       *
+       * <code>
+       * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+       * </code>
+       *
+       * @param value The computeBillingOwner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setComputeBillingOwner(
+          com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        computeBillingOwner_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Compute Billing Owner for this Data Boost App Profile.
+       * </pre>
+       *
+       * <code>
+       * optional .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwner compute_billing_owner = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearComputeBillingOwner() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        computeBillingOwner_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly)
+    private static final com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly();
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataBoostIsolationReadOnly> PARSER =
+        new com.google.protobuf.AbstractParser<DataBoostIsolationReadOnly>() {
+          @java.lang.Override
+          public DataBoostIsolationReadOnly parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataBoostIsolationReadOnly> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataBoostIsolationReadOnly> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int routingPolicyCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2443,6 +3320,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     PRIORITY(7),
     STANDARD_ISOLATION(11),
+    DATA_BOOST_ISOLATION_READ_ONLY(10),
     ISOLATION_NOT_SET(0);
     private final int value;
 
@@ -2465,6 +3343,8 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
           return PRIORITY;
         case 11:
           return STANDARD_ISOLATION;
+        case 10:
+          return DATA_BOOST_ISOLATION_READ_ONLY;
         case 0:
           return ISOLATION_NOT_SET;
         default:
@@ -2778,7 +3658,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=332
+   *     google/bigtable/admin/v2/instance.proto;l=361
    * @return Whether the priority field is set.
    */
   @java.lang.Deprecated
@@ -2798,7 +3678,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=332
+   *     google/bigtable/admin/v2/instance.proto;l=361
    * @return The enum numeric value on the wire for priority.
    */
   @java.lang.Deprecated
@@ -2821,7 +3701,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=332
+   *     google/bigtable/admin/v2/instance.proto;l=361
    * @return The priority.
    */
   @java.lang.Deprecated
@@ -2892,6 +3772,68 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
   }
 
+  public static final int DATA_BOOST_ISOLATION_READ_ONLY_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that this app profile is intended for read-only usage via the
+   * Data Boost feature.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+   * </code>
+   *
+   * @return Whether the dataBoostIsolationReadOnly field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataBoostIsolationReadOnly() {
+    return isolationCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that this app profile is intended for read-only usage via the
+   * Data Boost feature.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+   * </code>
+   *
+   * @return The dataBoostIsolationReadOnly.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+      getDataBoostIsolationReadOnly() {
+    if (isolationCase_ == 10) {
+      return (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) isolation_;
+    }
+    return com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies that this app profile is intended for read-only usage via the
+   * Data Boost feature.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyOrBuilder
+      getDataBoostIsolationReadOnlyOrBuilder() {
+    if (isolationCase_ == 10) {
+      return (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) isolation_;
+    }
+    return com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2925,6 +3867,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
     if (isolationCase_ == 7) {
       output.writeEnum(7, ((java.lang.Integer) isolation_));
+    }
+    if (isolationCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) isolation_);
     }
     if (isolationCase_ == 11) {
       output.writeMessage(
@@ -2963,6 +3909,11 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               7, ((java.lang.Integer) isolation_));
+    }
+    if (isolationCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) isolation_);
     }
     if (isolationCase_ == 11) {
       size +=
@@ -3007,6 +3958,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       case 11:
         if (!getStandardIsolation().equals(other.getStandardIsolation())) return false;
         break;
+      case 10:
+        if (!getDataBoostIsolationReadOnly().equals(other.getDataBoostIsolationReadOnly()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -3047,6 +4002,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + STANDARD_ISOLATION_FIELD_NUMBER;
         hash = (53 * hash) + getStandardIsolation().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + DATA_BOOST_ISOLATION_READ_ONLY_FIELD_NUMBER;
+        hash = (53 * hash) + getDataBoostIsolationReadOnly().hashCode();
         break;
       case 0:
       default:
@@ -3203,6 +4162,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       if (standardIsolationBuilder_ != null) {
         standardIsolationBuilder_.clear();
       }
+      if (dataBoostIsolationReadOnlyBuilder_ != null) {
+        dataBoostIsolationReadOnlyBuilder_.clear();
+      }
       routingPolicyCase_ = 0;
       routingPolicy_ = null;
       isolationCase_ = 0;
@@ -3268,6 +4230,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       result.isolation_ = this.isolation_;
       if (isolationCase_ == 11 && standardIsolationBuilder_ != null) {
         result.isolation_ = standardIsolationBuilder_.build();
+      }
+      if (isolationCase_ == 10 && dataBoostIsolationReadOnlyBuilder_ != null) {
+        result.isolation_ = dataBoostIsolationReadOnlyBuilder_.build();
       }
     }
 
@@ -3358,6 +4323,11 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
             mergeStandardIsolation(other.getStandardIsolation());
             break;
           }
+        case DATA_BOOST_ISOLATION_READ_ONLY:
+          {
+            mergeDataBoostIsolationReadOnly(other.getDataBoostIsolationReadOnly());
+            break;
+          }
         case ISOLATION_NOT_SET:
           {
             break;
@@ -3428,6 +4398,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
                 isolation_ = rawValue;
                 break;
               } // case 56
+            case 82:
+              {
+                input.readMessage(
+                    getDataBoostIsolationReadOnlyFieldBuilder().getBuilder(), extensionRegistry);
+                isolationCase_ = 10;
+                break;
+              } // case 82
             case 90:
               {
                 input.readMessage(
@@ -4318,7 +5295,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=332
+     *     google/bigtable/admin/v2/instance.proto;l=361
      * @return Whether the priority field is set.
      */
     @java.lang.Override
@@ -4339,7 +5316,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=332
+     *     google/bigtable/admin/v2/instance.proto;l=361
      * @return The enum numeric value on the wire for priority.
      */
     @java.lang.Override
@@ -4363,7 +5340,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=332
+     *     google/bigtable/admin/v2/instance.proto;l=361
      * @param value The enum numeric value on the wire for priority to set.
      * @return This builder for chaining.
      */
@@ -4387,7 +5364,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=332
+     *     google/bigtable/admin/v2/instance.proto;l=361
      * @return The priority.
      */
     @java.lang.Override
@@ -4416,7 +5393,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=332
+     *     google/bigtable/admin/v2/instance.proto;l=361
      * @param value The priority to set.
      * @return This builder for chaining.
      */
@@ -4443,7 +5420,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=332
+     *     google/bigtable/admin/v2/instance.proto;l=361
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4678,6 +5655,256 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       isolationCase_ = 11;
       onChanged();
       return standardIsolationBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly,
+            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.Builder,
+            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyOrBuilder>
+        dataBoostIsolationReadOnlyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     *
+     * @return Whether the dataBoostIsolationReadOnly field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataBoostIsolationReadOnly() {
+      return isolationCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     *
+     * @return The dataBoostIsolationReadOnly.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+        getDataBoostIsolationReadOnly() {
+      if (dataBoostIsolationReadOnlyBuilder_ == null) {
+        if (isolationCase_ == 10) {
+          return (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) isolation_;
+        }
+        return com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+            .getDefaultInstance();
+      } else {
+        if (isolationCase_ == 10) {
+          return dataBoostIsolationReadOnlyBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     */
+    public Builder setDataBoostIsolationReadOnly(
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly value) {
+      if (dataBoostIsolationReadOnlyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        isolation_ = value;
+        onChanged();
+      } else {
+        dataBoostIsolationReadOnlyBuilder_.setMessage(value);
+      }
+      isolationCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     */
+    public Builder setDataBoostIsolationReadOnly(
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.Builder
+            builderForValue) {
+      if (dataBoostIsolationReadOnlyBuilder_ == null) {
+        isolation_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataBoostIsolationReadOnlyBuilder_.setMessage(builderForValue.build());
+      }
+      isolationCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     */
+    public Builder mergeDataBoostIsolationReadOnly(
+        com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly value) {
+      if (dataBoostIsolationReadOnlyBuilder_ == null) {
+        if (isolationCase_ == 10
+            && isolation_
+                != com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+                    .getDefaultInstance()) {
+          isolation_ =
+              com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.newBuilder(
+                      (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly)
+                          isolation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          isolation_ = value;
+        }
+        onChanged();
+      } else {
+        if (isolationCase_ == 10) {
+          dataBoostIsolationReadOnlyBuilder_.mergeFrom(value);
+        } else {
+          dataBoostIsolationReadOnlyBuilder_.setMessage(value);
+        }
+      }
+      isolationCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     */
+    public Builder clearDataBoostIsolationReadOnly() {
+      if (dataBoostIsolationReadOnlyBuilder_ == null) {
+        if (isolationCase_ == 10) {
+          isolationCase_ = 0;
+          isolation_ = null;
+          onChanged();
+        }
+      } else {
+        if (isolationCase_ == 10) {
+          isolationCase_ = 0;
+          isolation_ = null;
+        }
+        dataBoostIsolationReadOnlyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.Builder
+        getDataBoostIsolationReadOnlyBuilder() {
+      return getDataBoostIsolationReadOnlyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyOrBuilder
+        getDataBoostIsolationReadOnlyOrBuilder() {
+      if ((isolationCase_ == 10) && (dataBoostIsolationReadOnlyBuilder_ != null)) {
+        return dataBoostIsolationReadOnlyBuilder_.getMessageOrBuilder();
+      } else {
+        if (isolationCase_ == 10) {
+          return (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) isolation_;
+        }
+        return com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies that this app profile is intended for read-only usage via the
+     * Data Boost feature.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly data_boost_isolation_read_only = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly,
+            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.Builder,
+            com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyOrBuilder>
+        getDataBoostIsolationReadOnlyFieldBuilder() {
+      if (dataBoostIsolationReadOnlyBuilder_ == null) {
+        if (!(isolationCase_ == 10)) {
+          isolation_ =
+              com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
+                  .getDefaultInstance();
+        }
+        dataBoostIsolationReadOnlyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly,
+                com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly.Builder,
+                com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyOrBuilder>(
+                (com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly) isolation_,
+                getParentForChildren(),
+                isClean());
+        isolation_ = null;
+      }
+      isolationCase_ = 10;
+      onChanged();
+      return dataBoostIsolationReadOnlyBuilder_;
     }
 
     @java.lang.Override

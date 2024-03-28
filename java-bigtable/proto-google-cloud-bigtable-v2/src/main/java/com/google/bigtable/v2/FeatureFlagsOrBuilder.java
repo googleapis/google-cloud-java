@@ -109,4 +109,17 @@ public interface FeatureFlagsOrBuilder
    * @return The retryInfo.
    */
   boolean getRetryInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Notify the server that the client has client side metrics enabled.
+   * </pre>
+   *
+   * <code>bool client_side_metrics_enabled = 8;</code>
+   *
+   * @return The clientSideMetricsEnabled.
+   */
+  boolean getClientSideMetricsEnabled();
 }

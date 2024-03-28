@@ -81,4 +81,96 @@ public interface CheckConsistencyRequestOrBuilder
    * @return The bytes for consistencyToken.
    */
   com.google.protobuf.ByteString getConsistencyTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `StandardIsolation` can
+   * see all writes committed before the token was created, even if the
+   * read and write target different clusters.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+   * </code>
+   *
+   * @return Whether the standardReadRemoteWrites field is set.
+   */
+  boolean hasStandardReadRemoteWrites();
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `StandardIsolation` can
+   * see all writes committed before the token was created, even if the
+   * read and write target different clusters.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+   * </code>
+   *
+   * @return The standardReadRemoteWrites.
+   */
+  com.google.bigtable.admin.v2.StandardReadRemoteWrites getStandardReadRemoteWrites();
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `StandardIsolation` can
+   * see all writes committed before the token was created, even if the
+   * read and write target different clusters.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.StandardReadRemoteWrites standard_read_remote_writes = 3;
+   * </code>
+   */
+  com.google.bigtable.admin.v2.StandardReadRemoteWritesOrBuilder
+      getStandardReadRemoteWritesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+   * can see all writes committed before the token was created, but only if
+   * the read and write target the same cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+   * </code>
+   *
+   * @return Whether the dataBoostReadLocalWrites field is set.
+   */
+  boolean hasDataBoostReadLocalWrites();
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+   * can see all writes committed before the token was created, but only if
+   * the read and write target the same cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+   * </code>
+   *
+   * @return The dataBoostReadLocalWrites.
+   */
+  com.google.bigtable.admin.v2.DataBoostReadLocalWrites getDataBoostReadLocalWrites();
+  /**
+   *
+   *
+   * <pre>
+   * Checks that reads using an app profile with `DataBoostIsolationReadOnly`
+   * can see all writes committed before the token was created, but only if
+   * the read and write target the same cluster.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.DataBoostReadLocalWrites data_boost_read_local_writes = 4;
+   * </code>
+   */
+  com.google.bigtable.admin.v2.DataBoostReadLocalWritesOrBuilder
+      getDataBoostReadLocalWritesOrBuilder();
+
+  com.google.bigtable.admin.v2.CheckConsistencyRequest.ModeCase getModeCase();
 }
