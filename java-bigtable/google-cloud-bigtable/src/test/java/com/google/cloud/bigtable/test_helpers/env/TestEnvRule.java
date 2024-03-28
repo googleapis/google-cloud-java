@@ -24,6 +24,7 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
+import com.google.cloud.bigtable.admin.v2.models.UpdateAuthorizedViewRequest;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
@@ -203,10 +204,26 @@ public class TestEnvRule implements TestRule {
         continue;
       }
       if (stalePrefix.compareTo(tableId) > 0) {
+        prepTableForDelete(tableId);
         try {
           env().getTableAdminClient().deleteTable(tableId);
         } catch (NotFoundException ignored) {
 
+        }
+      }
+    }
+  }
+
+  private void prepTableForDelete(String tableId) {
+    // Unprotected views
+    if (!(env() instanceof EmulatorEnv)) {
+      for (String viewId : env().getTableAdminClient().listAuthorizedViews(tableId)) {
+        try {
+          env()
+              .getTableAdminClient()
+              .updateAuthorizedView(
+                  UpdateAuthorizedViewRequest.of(tableId, viewId).setDeletionProtection(false));
+        } catch (NotFoundException ignored) {
         }
       }
     }
