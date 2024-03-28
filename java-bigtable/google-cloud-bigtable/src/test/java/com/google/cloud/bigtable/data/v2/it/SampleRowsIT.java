@@ -15,21 +15,24 @@
  */
 package com.google.cloud.bigtable.data.v2.it;
 
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
+import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.SubsetView;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.Lists;
+import com.google.protobuf.ByteString;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -75,42 +78,50 @@ public class SampleRowsIT {
         .withMessage("AuthorizedView is not supported on Emulator")
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
-
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedView testAuthorizedView = createPreSplitTableAndAuthorizedView();
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String rowPrefix = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
-    String rowPrefixOutsideAuthorizedView = UUID.randomUUID() + "-outside-authorized-view";
 
-    // Create some data so that sample row keys has something to show
-    List<ApiFuture<?>> futures = Lists.newArrayList();
-    for (int i = 0; i < 10; i++) {
-      ApiFuture<Void> future =
-          client.mutateRowAsync(
-              RowMutation.create(testEnvRule.env().getTableId(), rowPrefix + "-" + i)
-                  .setCell(
-                      testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "value"));
-      futures.add(future);
-      ApiFuture<Void> futureOutsideAuthorizedView =
-          client.mutateRowAsync(
-              RowMutation.create(
-                      testEnvRule.env().getTableId(), rowPrefixOutsideAuthorizedView + "-" + i)
-                  .setCell(
-                      testEnvRule.env().getFamilyId(), AUTHORIZED_VIEW_COLUMN_QUALIFIER, "value"));
-      futures.add(futureOutsideAuthorizedView);
-    }
-    ApiFutures.allAsList(futures).get(1, TimeUnit.MINUTES);
-
-    ApiFuture<List<KeyOffset>> future = client.sampleRowKeysAsync(testEnvRule.env().getTableId());
+    ApiFuture<List<KeyOffset>> future =
+        client.sampleRowKeysAsync(
+            AuthorizedViewId.of(testAuthorizedView.getTableId(), testAuthorizedView.getId()));
 
     List<KeyOffset> results = future.get(1, TimeUnit.MINUTES);
 
-    assertThat(results).isNotEmpty();
-    assertThat(results.get(results.size() - 1).getOffsetBytes()).isGreaterThan(0L);
+    List<ByteString> resultKeys = new ArrayList<>();
+    for (KeyOffset keyOffset : results) {
+      resultKeys.add(keyOffset.getKey());
+    }
+
+    assertThat(resultKeys)
+        .containsExactly(
+            ByteString.copyFromUtf8("food"),
+            ByteString.copyFromUtf8("fool"),
+            ByteString.copyFromUtf8("fop"));
 
     testEnvRule
         .env()
         .getTableAdminClient()
-        .deleteAuthorizedView(testEnvRule.env().getTableId(), testAuthorizedView.getId());
+        .deleteAuthorizedView(testAuthorizedView.getTableId(), testAuthorizedView.getId());
+  }
+
+  private static AuthorizedView createPreSplitTableAndAuthorizedView() {
+    String tableId = UUID.randomUUID().toString();
+    String authorizedViewId = UUID.randomUUID().toString();
+
+    testEnvRule
+        .env()
+        .getTableAdminClient()
+        .createTable(
+            CreateTableRequest.of(tableId)
+                .addSplit(ByteString.copyFromUtf8("apple"))
+                .addSplit(ByteString.copyFromUtf8("food"))
+                .addSplit(ByteString.copyFromUtf8("fool"))
+                .addSplit(ByteString.copyFromUtf8("good")));
+    CreateAuthorizedViewRequest request =
+        CreateAuthorizedViewRequest.of(tableId, authorizedViewId)
+            .setAuthorizedViewType(SubsetView.create().addRowPrefix("foo"))
+            .setDeletionProtection(false);
+    return testEnvRule.env().getTableAdminClient().createAuthorizedView(request);
   }
 }
