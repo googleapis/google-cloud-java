@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.42.0 (2024-03-28)
+
+### Features
+
+* add several fields to manage state of database encryption update ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* add several fields to manage state of database encryption update ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+
+
+
 ## 2.41.0 (2024-03-22)
 
 ### Features

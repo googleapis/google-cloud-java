@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.33.0](https://github.com/googleapis/google-cloud-java/compare/v1.32.0...v1.33.0) (2024-03-28)
+
+
+### Features
+
+* [aiplatform] Add data_key field in feature online store service ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* [aiplatform] Add dedicated_serving_endpoint ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* [aiplatform] Add index_config field ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* [aiplatform] Add Optimized feature store proto ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* [aiplatform] add Vertex AI extension registry and execution related API and services to v1beta1 client ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [aiplatform] Evaluation Service aiplatform v1beta1 initial release ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [batch] onboard Resource Allowance API methods on v1alpha ([11b0068](https://github.com/googleapis/google-cloud-java/commit/11b006884eb99a9426cc06c25f1689a7708d4869))
+* [chat] Launch AccessoryAction for GA ([fa72d04](https://github.com/googleapis/google-cloud-java/commit/fa72d0438b8739b4a3807a982388a8e7806a18db))
+* [confidentialcomputing] Add additional `TokenType` options (`TOKEN_TYPE_PKI` and `TOKEN_TYPE_LIMITED_AWS`) ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [container] add several fields to manage state of database encryption update ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [container] add several fields to manage state of database encryption update ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [dialogflow-cx] added support for DataStoreConnection, DataStoreConnectionSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [dialogflow-cx] added support for MultiLanguageSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [dialogflow-cx] added support for PersonalizationSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [dialogflow-cx] added support for SpeechSettings ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [dialogflow-cx] added support for Webhook OAuthConfig, and ServiceAgentAuth Settings. ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [gke-backup] add backup indexing ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [gke-backup] add smart scheduling ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [network-management] add an "unsupported" type of firewall policy rule ([fa72d04](https://github.com/googleapis/google-cloud-java/commit/fa72d0438b8739b4a3807a982388a8e7806a18db))
+* [network-management] add new fields and enum values related to round-trip ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [recaptchaenterprise] Existing resource_reference option of the field name is removed from message `google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMemberShip` ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+* [securitycenter] Add Notebook field to finding's list of attributes ([11b0068](https://github.com/googleapis/google-cloud-java/commit/11b006884eb99a9426cc06c25f1689a7708d4869))
+
+
+### Documentation
+
+* [aiplatform] Update comment for `name` and `parameters` in message `.google.cloud.aiplatform.v1beta1.FunctionDeclaration` ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [chat] updated comments ([fa72d04](https://github.com/googleapis/google-cloud-java/commit/fa72d0438b8739b4a3807a982388a8e7806a18db))
+* [cloudquotas] update comment of `contact_email` to make it optional as opposed to required ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [cloudquotas] update sample URL in field for `service_request_quota_uri` ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [dialogflow-cx] clarified wording around quota usage ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [gke-backup] add output only and optional api field behavior label ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [gke-backup] remove the next id annotation ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [gke-backup] update retention policy and cron schedule comment to include new constraints from smart scheduling ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [network-management] update a few outdated comments ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* [network-management] update comments for fields related to load balancing ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+
 ## [1.32.0](https://github.com/googleapis/google-cloud-java/compare/v1.31.0...v1.32.0) (2024-03-22)
 
 

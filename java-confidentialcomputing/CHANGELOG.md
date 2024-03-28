@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.25.0 (2024-03-28)
+
+### Features
+
+* Add additional `TokenType` options (`TOKEN_TYPE_PKI` and `TOKEN_TYPE_LIMITED_AWS`) ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+
+
+
 ## 0.24.0 (2024-03-22)
 
 * No change

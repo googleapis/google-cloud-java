@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.36.0 (2024-03-28)
+
+### Features
+
+* Existing resource_reference option of the field name is removed from message `google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMemberShip` ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+
+
+
 ## 3.35.0 (2024-03-22)
 
 ### Features

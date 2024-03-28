@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.7.0 (2024-03-28)
+
+### Features
+
+* update comment of `contact_email` to make it optional as opposed to required ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* update sample URL in field for `service_request_quota_uri` ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+
+
+
 ## 0.6.0 (2024-03-22)
 
 ### Features

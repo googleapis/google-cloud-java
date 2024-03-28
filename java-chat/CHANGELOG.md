@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 (2024-03-28)
+
+### Features
+
+* Launch AccessoryAction for GA ([fa72d04](https://github.com/googleapis/google-cloud-java/commit/fa72d0438b8739b4a3807a982388a8e7806a18db))
+* updated comments ([fa72d04](https://github.com/googleapis/google-cloud-java/commit/fa72d0438b8739b4a3807a982388a8e7806a18db))
+
+
+
 ## 0.2.0 (2024-03-22)
 
 ### Features

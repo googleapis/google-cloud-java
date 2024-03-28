@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.39.0 (2024-03-28)
+
+### Features
+
+* onboard Resource Allowance API methods on v1alpha ([11b0068](https://github.com/googleapis/google-cloud-java/commit/11b006884eb99a9426cc06c25f1689a7708d4869))
+
+
+
 ## 0.38.0 (2024-03-22)
 
 ### Features
