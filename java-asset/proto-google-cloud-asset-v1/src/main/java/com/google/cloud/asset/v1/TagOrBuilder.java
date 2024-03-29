@@ -65,6 +65,43 @@ public interface TagOrBuilder
    *
    *
    * <pre>
+   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+   * </pre>
+   *
+   * <code>optional string tag_key_id = 2;</code>
+   *
+   * @return Whether the tagKeyId field is set.
+   */
+  boolean hasTagKeyId();
+  /**
+   *
+   *
+   * <pre>
+   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+   * </pre>
+   *
+   * <code>optional string tag_key_id = 2;</code>
+   *
+   * @return The tagKeyId.
+   */
+  java.lang.String getTagKeyId();
+  /**
+   *
+   *
+   * <pre>
+   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+   * </pre>
+   *
+   * <code>optional string tag_key_id = 2;</code>
+   *
+   * @return The bytes for tagKeyId.
+   */
+  com.google.protobuf.ByteString getTagKeyIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * TagValue namespaced name, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * </pre>
