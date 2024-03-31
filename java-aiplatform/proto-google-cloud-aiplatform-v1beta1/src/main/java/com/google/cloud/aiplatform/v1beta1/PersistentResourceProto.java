@@ -141,21 +141,23 @@ public final class PersistentResourceProto {
           + "d\030\007 \001(\tB\003\340A\001\022L\n\017ray_metric_spec\030\010 \001(\0132.."
           + "google.cloud.aiplatform.v1beta1.RayMetri"
           + "cSpecB\003\340A\001\0329\n\027ResourcePoolImagesEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\240\001\n\017Resour"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\376\001\n\017Resour"
           + "ceRuntime\022Z\n\013access_uris\030\001 \003(\0132@.google."
           + "cloud.aiplatform.v1beta1.ResourceRuntime"
-          + ".AccessUrisEntryB\003\340A\003\0321\n\017AccessUrisEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"^\n\022Serv"
-          + "iceAccountSpec\022*\n\035enable_custom_service_"
-          + "account\030\001 \001(\010B\003\340A\002\022\034\n\017service_account\030\002 "
-          + "\001(\tB\003\340A\001\"&\n\rRayMetricSpec\022\025\n\010disabled\030\001 "
-          + "\001(\010B\003\340A\001B\356\001\n#com.google.cloud.aiplatform"
-          + ".v1beta1B\027PersistentResourceProtoP\001ZCclo"
-          + "ud.google.com/go/aiplatform/apiv1beta1/a"
-          + "iplatformpb;aiplatformpb\252\002\037Google.Cloud."
-          + "AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlat"
-          + "form\\V1beta1\352\002\"Google::Cloud::AIPlatform"
-          + "::V1beta1b\006proto3"
+          + ".AccessUrisEntryB\003\340A\003\022\\\n\031notebook_runtim"
+          + "e_template\030\002 \001(\tB9\340A\003\372A3\n1aiplatform.goo"
+          + "gleapis.com/NotebookRuntimeTemplate\0321\n\017A"
+          + "ccessUrisEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
+          + "(\t:\0028\001\"^\n\022ServiceAccountSpec\022*\n\035enable_c"
+          + "ustom_service_account\030\001 \001(\010B\003\340A\002\022\034\n\017serv"
+          + "ice_account\030\002 \001(\tB\003\340A\001\"&\n\rRayMetricSpec\022"
+          + "\025\n\010disabled\030\001 \001(\010B\003\340A\001B\356\001\n#com.google.cl"
+          + "oud.aiplatform.v1beta1B\027PersistentResour"
+          + "ceProtoP\001ZCcloud.google.com/go/aiplatfor"
+          + "m/apiv1beta1/aiplatformpb;aiplatformpb\252\002"
+          + "\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Googl"
+          + "e\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clo"
+          + "ud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -252,7 +254,7 @@ public final class PersistentResourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_descriptor,
             new java.lang.String[] {
-              "AccessUris",
+              "AccessUris", "NotebookRuntimeTemplate",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_AccessUrisEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ResourceRuntime_descriptor

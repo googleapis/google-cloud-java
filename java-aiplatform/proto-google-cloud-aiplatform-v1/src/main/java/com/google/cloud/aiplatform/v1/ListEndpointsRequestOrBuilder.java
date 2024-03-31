@@ -63,9 +63,8 @@ public interface ListEndpointsRequestOrBuilder
    * names both snake_case and camelCase are supported.
    *
    *   * `endpoint` supports `=` and `!=`. `endpoint` represents the Endpoint
-   *   ID,
-   *     i.e. the last segment of the Endpoint's [resource
-   *     name][google.cloud.aiplatform.v1.Endpoint.name].
+   *     ID, i.e. the last segment of the Endpoint's
+   *     [resource name][google.cloud.aiplatform.v1.Endpoint.name].
    *   * `display_name` supports `=` and `!=`.
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality
@@ -94,9 +93,8 @@ public interface ListEndpointsRequestOrBuilder
    * names both snake_case and camelCase are supported.
    *
    *   * `endpoint` supports `=` and `!=`. `endpoint` represents the Endpoint
-   *   ID,
-   *     i.e. the last segment of the Endpoint's [resource
-   *     name][google.cloud.aiplatform.v1.Endpoint.name].
+   *     ID, i.e. the last segment of the Endpoint's
+   *     [resource name][google.cloud.aiplatform.v1.Endpoint.name].
    *   * `display_name` supports `=` and `!=`.
    *   * `labels` supports general map functions that is:
    *     * `labels.key=value` - key:value equality

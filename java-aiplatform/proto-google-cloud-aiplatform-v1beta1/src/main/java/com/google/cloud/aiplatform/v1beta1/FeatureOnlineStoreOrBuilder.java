@@ -429,42 +429,52 @@ public interface FeatureOnlineStoreOrBuilder
    *
    *
    * <pre>
-   * Optional. The settings for embedding management in FeatureOnlineStore.
+   * Optional. Deprecated: This field is no longer needed anymore and embedding
+   * management is automatically enabled when specifying Optimized storage type.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
    * @return Whether the embeddingManagement field is set.
    */
+  @java.lang.Deprecated
   boolean hasEmbeddingManagement();
   /**
    *
    *
    * <pre>
-   * Optional. The settings for embedding management in FeatureOnlineStore.
+   * Optional. Deprecated: This field is no longer needed anymore and embedding
+   * management is automatically enabled when specifying Optimized storage type.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
    * @return The embeddingManagement.
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
       getEmbeddingManagement();
   /**
    *
    *
    * <pre>
-   * Optional. The settings for embedding management in FeatureOnlineStore.
+   * Optional. Deprecated: This field is no longer needed anymore and embedding
+   * management is automatically enabled when specifying Optimized storage type.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagementOrBuilder
       getEmbeddingManagementOrBuilder();
 

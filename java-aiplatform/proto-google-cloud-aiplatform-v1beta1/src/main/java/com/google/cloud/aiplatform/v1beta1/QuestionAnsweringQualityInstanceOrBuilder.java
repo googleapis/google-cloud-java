@@ -102,10 +102,10 @@ public interface QuestionAnsweringQualityInstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Text to answer the question.
+   * Required. Text to answer the question.
    * </pre>
    *
-   * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the context field is set.
    */
@@ -114,10 +114,10 @@ public interface QuestionAnsweringQualityInstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Text to answer the question.
+   * Required. Text to answer the question.
    * </pre>
    *
-   * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The context.
    */
@@ -126,10 +126,10 @@ public interface QuestionAnsweringQualityInstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Text to answer the question.
+   * Required. Text to answer the question.
    * </pre>
    *
-   * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for context.
    */

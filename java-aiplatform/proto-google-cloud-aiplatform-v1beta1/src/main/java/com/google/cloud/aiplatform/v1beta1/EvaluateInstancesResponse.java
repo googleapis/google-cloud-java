@@ -78,7 +78,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     SAFETY_RESULT(7),
     GROUNDEDNESS_RESULT(8),
     FULFILLMENT_RESULT(11),
-    RESPONSE_RECALL_RESULT(12),
     SUMMARIZATION_QUALITY_RESULT(6),
     PAIRWISE_SUMMARIZATION_QUALITY_RESULT(22),
     SUMMARIZATION_HELPFULNESS_RESULT(13),
@@ -88,7 +87,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
     QUESTION_ANSWERING_RELEVANCE_RESULT(15),
     QUESTION_ANSWERING_HELPFULNESS_RESULT(16),
     QUESTION_ANSWERING_CORRECTNESS_RESULT(17),
-    RAG_CONTEXT_RECALL_RESULT(10),
     TOOL_CALL_VALID_RESULTS(18),
     TOOL_NAME_MATCH_RESULTS(19),
     TOOL_PARAMETER_KEY_MATCH_RESULTS(20),
@@ -127,8 +125,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
           return GROUNDEDNESS_RESULT;
         case 11:
           return FULFILLMENT_RESULT;
-        case 12:
-          return RESPONSE_RECALL_RESULT;
         case 6:
           return SUMMARIZATION_QUALITY_RESULT;
         case 22:
@@ -147,8 +143,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
           return QUESTION_ANSWERING_HELPFULNESS_RESULT;
         case 17:
           return QUESTION_ANSWERING_CORRECTNESS_RESULT;
-        case 10:
-          return RAG_CONTEXT_RECALL_RESULT;
         case 18:
           return TOOL_CALL_VALID_RESULTS;
         case 19:
@@ -592,58 +586,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       return (com.google.cloud.aiplatform.v1beta1.FulfillmentResult) evaluationResults_;
     }
     return com.google.cloud.aiplatform.v1beta1.FulfillmentResult.getDefaultInstance();
-  }
-
-  public static final int RESPONSE_RECALL_RESULT_FIELD_NUMBER = 12;
-  /**
-   *
-   *
-   * <pre>
-   * Result for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;</code>
-   *
-   * @return Whether the responseRecallResult field is set.
-   */
-  @java.lang.Override
-  public boolean hasResponseRecallResult() {
-    return evaluationResultsCase_ == 12;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Result for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;</code>
-   *
-   * @return The responseRecallResult.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ResponseRecallResult getResponseRecallResult() {
-    if (evaluationResultsCase_ == 12) {
-      return (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Result for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ResponseRecallResultOrBuilder
-      getResponseRecallResultOrBuilder() {
-    if (evaluationResultsCase_ == 12) {
-      return (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.getDefaultInstance();
   }
 
   public static final int SUMMARIZATION_QUALITY_RESULT_FIELD_NUMBER = 6;
@@ -1207,64 +1149,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
         .getDefaultInstance();
   }
 
-  public static final int RAG_CONTEXT_RECALL_RESULT_FIELD_NUMBER = 10;
-  /**
-   *
-   *
-   * <pre>
-   * RAG only metrics.
-   * Result for context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-   * </code>
-   *
-   * @return Whether the ragContextRecallResult field is set.
-   */
-  @java.lang.Override
-  public boolean hasRagContextRecallResult() {
-    return evaluationResultsCase_ == 10;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * RAG only metrics.
-   * Result for context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-   * </code>
-   *
-   * @return The ragContextRecallResult.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.RagContextRecallResult getRagContextRecallResult() {
-    if (evaluationResultsCase_ == 10) {
-      return (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult) evaluationResults_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * RAG only metrics.
-   * Result for context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.RagContextRecallResultOrBuilder
-      getRagContextRecallResultOrBuilder() {
-    if (evaluationResultsCase_ == 10) {
-      return (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult) evaluationResults_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.getDefaultInstance();
-  }
-
   public static final int TOOL_CALL_VALID_RESULTS_FIELD_NUMBER = 18;
   /**
    *
@@ -1544,17 +1428,9 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
           9,
           (com.google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityResult) evaluationResults_);
     }
-    if (evaluationResultsCase_ == 10) {
-      output.writeMessage(
-          10, (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult) evaluationResults_);
-    }
     if (evaluationResultsCase_ == 11) {
       output.writeMessage(
           11, (com.google.cloud.aiplatform.v1beta1.FulfillmentResult) evaluationResults_);
-    }
-    if (evaluationResultsCase_ == 12) {
-      output.writeMessage(
-          12, (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_);
     }
     if (evaluationResultsCase_ == 13) {
       output.writeMessage(
@@ -1670,20 +1546,10 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
               (com.google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityResult)
                   evaluationResults_);
     }
-    if (evaluationResultsCase_ == 10) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              10, (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult) evaluationResults_);
-    }
     if (evaluationResultsCase_ == 11) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.cloud.aiplatform.v1beta1.FulfillmentResult) evaluationResults_);
-    }
-    if (evaluationResultsCase_ == 12) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              12, (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_);
     }
     if (evaluationResultsCase_ == 13) {
       size +=
@@ -1799,9 +1665,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       case 11:
         if (!getFulfillmentResult().equals(other.getFulfillmentResult())) return false;
         break;
-      case 12:
-        if (!getResponseRecallResult().equals(other.getResponseRecallResult())) return false;
-        break;
       case 6:
         if (!getSummarizationQualityResult().equals(other.getSummarizationQualityResult()))
           return false;
@@ -1837,9 +1700,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       case 17:
         if (!getQuestionAnsweringCorrectnessResult()
             .equals(other.getQuestionAnsweringCorrectnessResult())) return false;
-        break;
-      case 10:
-        if (!getRagContextRecallResult().equals(other.getRagContextRecallResult())) return false;
         break;
       case 18:
         if (!getToolCallValidResults().equals(other.getToolCallValidResults())) return false;
@@ -1902,10 +1762,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
         hash = (37 * hash) + FULFILLMENT_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getFulfillmentResult().hashCode();
         break;
-      case 12:
-        hash = (37 * hash) + RESPONSE_RECALL_RESULT_FIELD_NUMBER;
-        hash = (53 * hash) + getResponseRecallResult().hashCode();
-        break;
       case 6:
         hash = (37 * hash) + SUMMARIZATION_QUALITY_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getSummarizationQualityResult().hashCode();
@@ -1941,10 +1797,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       case 17:
         hash = (37 * hash) + QUESTION_ANSWERING_CORRECTNESS_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getQuestionAnsweringCorrectnessResult().hashCode();
-        break;
-      case 10:
-        hash = (37 * hash) + RAG_CONTEXT_RECALL_RESULT_FIELD_NUMBER;
-        hash = (53 * hash) + getRagContextRecallResult().hashCode();
         break;
       case 18:
         hash = (37 * hash) + TOOL_CALL_VALID_RESULTS_FIELD_NUMBER;
@@ -2129,9 +1981,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       if (fulfillmentResultBuilder_ != null) {
         fulfillmentResultBuilder_.clear();
       }
-      if (responseRecallResultBuilder_ != null) {
-        responseRecallResultBuilder_.clear();
-      }
       if (summarizationQualityResultBuilder_ != null) {
         summarizationQualityResultBuilder_.clear();
       }
@@ -2158,9 +2007,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       }
       if (questionAnsweringCorrectnessResultBuilder_ != null) {
         questionAnsweringCorrectnessResultBuilder_.clear();
-      }
-      if (ragContextRecallResultBuilder_ != null) {
-        ragContextRecallResultBuilder_.clear();
       }
       if (toolCallValidResultsBuilder_ != null) {
         toolCallValidResultsBuilder_.clear();
@@ -2245,9 +2091,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       if (evaluationResultsCase_ == 11 && fulfillmentResultBuilder_ != null) {
         result.evaluationResults_ = fulfillmentResultBuilder_.build();
       }
-      if (evaluationResultsCase_ == 12 && responseRecallResultBuilder_ != null) {
-        result.evaluationResults_ = responseRecallResultBuilder_.build();
-      }
       if (evaluationResultsCase_ == 6 && summarizationQualityResultBuilder_ != null) {
         result.evaluationResults_ = summarizationQualityResultBuilder_.build();
       }
@@ -2274,9 +2117,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       }
       if (evaluationResultsCase_ == 17 && questionAnsweringCorrectnessResultBuilder_ != null) {
         result.evaluationResults_ = questionAnsweringCorrectnessResultBuilder_.build();
-      }
-      if (evaluationResultsCase_ == 10 && ragContextRecallResultBuilder_ != null) {
-        result.evaluationResults_ = ragContextRecallResultBuilder_.build();
       }
       if (evaluationResultsCase_ == 18 && toolCallValidResultsBuilder_ != null) {
         result.evaluationResults_ = toolCallValidResultsBuilder_.build();
@@ -2380,11 +2220,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
             mergeFulfillmentResult(other.getFulfillmentResult());
             break;
           }
-        case RESPONSE_RECALL_RESULT:
-          {
-            mergeResponseRecallResult(other.getResponseRecallResult());
-            break;
-          }
         case SUMMARIZATION_QUALITY_RESULT:
           {
             mergeSummarizationQualityResult(other.getSummarizationQualityResult());
@@ -2429,11 +2264,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
         case QUESTION_ANSWERING_CORRECTNESS_RESULT:
           {
             mergeQuestionAnsweringCorrectnessResult(other.getQuestionAnsweringCorrectnessResult());
-            break;
-          }
-        case RAG_CONTEXT_RECALL_RESULT:
-          {
-            mergeRagContextRecallResult(other.getRagContextRecallResult());
             break;
           }
         case TOOL_CALL_VALID_RESULTS:
@@ -2546,13 +2376,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
                 evaluationResultsCase_ = 9;
                 break;
               } // case 74
-            case 82:
-              {
-                input.readMessage(
-                    getRagContextRecallResultFieldBuilder().getBuilder(), extensionRegistry);
-                evaluationResultsCase_ = 10;
-                break;
-              } // case 82
             case 90:
               {
                 input.readMessage(
@@ -2560,13 +2383,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
                 evaluationResultsCase_ = 11;
                 break;
               } // case 90
-            case 98:
-              {
-                input.readMessage(
-                    getResponseRecallResultFieldBuilder().getBuilder(), extensionRegistry);
-                evaluationResultsCase_ = 12;
-                break;
-              } // case 98
             case 106:
               {
                 input.readMessage(
@@ -4408,230 +4224,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       evaluationResultsCase_ = 11;
       onChanged();
       return fulfillmentResultBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallResult,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.Builder,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallResultOrBuilder>
-        responseRecallResultBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     *
-     * @return Whether the responseRecallResult field is set.
-     */
-    @java.lang.Override
-    public boolean hasResponseRecallResult() {
-      return evaluationResultsCase_ == 12;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     *
-     * @return The responseRecallResult.
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ResponseRecallResult getResponseRecallResult() {
-      if (responseRecallResultBuilder_ == null) {
-        if (evaluationResultsCase_ == 12) {
-          return (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.getDefaultInstance();
-      } else {
-        if (evaluationResultsCase_ == 12) {
-          return responseRecallResultBuilder_.getMessage();
-        }
-        return com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     */
-    public Builder setResponseRecallResult(
-        com.google.cloud.aiplatform.v1beta1.ResponseRecallResult value) {
-      if (responseRecallResultBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        evaluationResults_ = value;
-        onChanged();
-      } else {
-        responseRecallResultBuilder_.setMessage(value);
-      }
-      evaluationResultsCase_ = 12;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     */
-    public Builder setResponseRecallResult(
-        com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.Builder builderForValue) {
-      if (responseRecallResultBuilder_ == null) {
-        evaluationResults_ = builderForValue.build();
-        onChanged();
-      } else {
-        responseRecallResultBuilder_.setMessage(builderForValue.build());
-      }
-      evaluationResultsCase_ = 12;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     */
-    public Builder mergeResponseRecallResult(
-        com.google.cloud.aiplatform.v1beta1.ResponseRecallResult value) {
-      if (responseRecallResultBuilder_ == null) {
-        if (evaluationResultsCase_ == 12
-            && evaluationResults_
-                != com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.getDefaultInstance()) {
-          evaluationResults_ =
-              com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.newBuilder(
-                      (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          evaluationResults_ = value;
-        }
-        onChanged();
-      } else {
-        if (evaluationResultsCase_ == 12) {
-          responseRecallResultBuilder_.mergeFrom(value);
-        } else {
-          responseRecallResultBuilder_.setMessage(value);
-        }
-      }
-      evaluationResultsCase_ = 12;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     */
-    public Builder clearResponseRecallResult() {
-      if (responseRecallResultBuilder_ == null) {
-        if (evaluationResultsCase_ == 12) {
-          evaluationResultsCase_ = 0;
-          evaluationResults_ = null;
-          onChanged();
-        }
-      } else {
-        if (evaluationResultsCase_ == 12) {
-          evaluationResultsCase_ = 0;
-          evaluationResults_ = null;
-        }
-        responseRecallResultBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.Builder
-        getResponseRecallResultBuilder() {
-      return getResponseRecallResultFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ResponseRecallResultOrBuilder
-        getResponseRecallResultOrBuilder() {
-      if ((evaluationResultsCase_ == 12) && (responseRecallResultBuilder_ != null)) {
-        return responseRecallResultBuilder_.getMessageOrBuilder();
-      } else {
-        if (evaluationResultsCase_ == 12) {
-          return (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Result for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallResult,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.Builder,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallResultOrBuilder>
-        getResponseRecallResultFieldBuilder() {
-      if (responseRecallResultBuilder_ == null) {
-        if (!(evaluationResultsCase_ == 12)) {
-          evaluationResults_ =
-              com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.getDefaultInstance();
-        }
-        responseRecallResultBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.ResponseRecallResult,
-                com.google.cloud.aiplatform.v1beta1.ResponseRecallResult.Builder,
-                com.google.cloud.aiplatform.v1beta1.ResponseRecallResultOrBuilder>(
-                (com.google.cloud.aiplatform.v1beta1.ResponseRecallResult) evaluationResults_,
-                getParentForChildren(),
-                isClean());
-        evaluationResults_ = null;
-      }
-      evaluationResultsCase_ = 12;
-      onChanged();
-      return responseRecallResultBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6840,241 +6432,6 @@ public final class EvaluateInstancesResponse extends com.google.protobuf.Generat
       evaluationResultsCase_ = 17;
       onChanged();
       return questionAnsweringCorrectnessResultBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallResult,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.Builder,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallResultOrBuilder>
-        ragContextRecallResultBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     *
-     * @return Whether the ragContextRecallResult field is set.
-     */
-    @java.lang.Override
-    public boolean hasRagContextRecallResult() {
-      return evaluationResultsCase_ == 10;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     *
-     * @return The ragContextRecallResult.
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.RagContextRecallResult getRagContextRecallResult() {
-      if (ragContextRecallResultBuilder_ == null) {
-        if (evaluationResultsCase_ == 10) {
-          return (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult) evaluationResults_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.getDefaultInstance();
-      } else {
-        if (evaluationResultsCase_ == 10) {
-          return ragContextRecallResultBuilder_.getMessage();
-        }
-        return com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     */
-    public Builder setRagContextRecallResult(
-        com.google.cloud.aiplatform.v1beta1.RagContextRecallResult value) {
-      if (ragContextRecallResultBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        evaluationResults_ = value;
-        onChanged();
-      } else {
-        ragContextRecallResultBuilder_.setMessage(value);
-      }
-      evaluationResultsCase_ = 10;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     */
-    public Builder setRagContextRecallResult(
-        com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.Builder builderForValue) {
-      if (ragContextRecallResultBuilder_ == null) {
-        evaluationResults_ = builderForValue.build();
-        onChanged();
-      } else {
-        ragContextRecallResultBuilder_.setMessage(builderForValue.build());
-      }
-      evaluationResultsCase_ = 10;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     */
-    public Builder mergeRagContextRecallResult(
-        com.google.cloud.aiplatform.v1beta1.RagContextRecallResult value) {
-      if (ragContextRecallResultBuilder_ == null) {
-        if (evaluationResultsCase_ == 10
-            && evaluationResults_
-                != com.google.cloud.aiplatform.v1beta1.RagContextRecallResult
-                    .getDefaultInstance()) {
-          evaluationResults_ =
-              com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.newBuilder(
-                      (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult)
-                          evaluationResults_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          evaluationResults_ = value;
-        }
-        onChanged();
-      } else {
-        if (evaluationResultsCase_ == 10) {
-          ragContextRecallResultBuilder_.mergeFrom(value);
-        } else {
-          ragContextRecallResultBuilder_.setMessage(value);
-        }
-      }
-      evaluationResultsCase_ = 10;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     */
-    public Builder clearRagContextRecallResult() {
-      if (ragContextRecallResultBuilder_ == null) {
-        if (evaluationResultsCase_ == 10) {
-          evaluationResultsCase_ = 0;
-          evaluationResults_ = null;
-          onChanged();
-        }
-      } else {
-        if (evaluationResultsCase_ == 10) {
-          evaluationResultsCase_ = 0;
-          evaluationResults_ = null;
-        }
-        ragContextRecallResultBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.Builder
-        getRagContextRecallResultBuilder() {
-      return getRagContextRecallResultFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.RagContextRecallResultOrBuilder
-        getRagContextRecallResultOrBuilder() {
-      if ((evaluationResultsCase_ == 10) && (ragContextRecallResultBuilder_ != null)) {
-        return ragContextRecallResultBuilder_.getMessageOrBuilder();
-      } else {
-        if (evaluationResultsCase_ == 10) {
-          return (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult) evaluationResults_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * RAG only metrics.
-     * Result for context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallResult,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.Builder,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallResultOrBuilder>
-        getRagContextRecallResultFieldBuilder() {
-      if (ragContextRecallResultBuilder_ == null) {
-        if (!(evaluationResultsCase_ == 10)) {
-          evaluationResults_ =
-              com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.getDefaultInstance();
-        }
-        ragContextRecallResultBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.RagContextRecallResult,
-                com.google.cloud.aiplatform.v1beta1.RagContextRecallResult.Builder,
-                com.google.cloud.aiplatform.v1beta1.RagContextRecallResultOrBuilder>(
-                (com.google.cloud.aiplatform.v1beta1.RagContextRecallResult) evaluationResults_,
-                getParentForChildren(),
-                isClean());
-        evaluationResults_ = null;
-      }
-      evaluationResultsCase_ = 10;
-      onChanged();
-      return ragContextRecallResultBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

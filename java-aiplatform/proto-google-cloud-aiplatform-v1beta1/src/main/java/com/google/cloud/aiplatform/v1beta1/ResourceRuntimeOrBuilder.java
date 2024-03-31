@@ -111,4 +111,41 @@ public interface ResourceRuntimeOrBuilder
    * </code>
    */
   java.lang.String getAccessUrisOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+   * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+   * (if set), and with the same Ray and Python version as the Persistent
+   * Cluster. Example:
+   *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+   * </pre>
+   *
+   * <code>
+   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The notebookRuntimeTemplate.
+   */
+  java.lang.String getNotebookRuntimeTemplate();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+   * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+   * (if set), and with the same Ray and Python version as the Persistent
+   * Cluster. Example:
+   *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+   * </pre>
+   *
+   * <code>
+   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for notebookRuntimeTemplate.
+   */
+  com.google.protobuf.ByteString getNotebookRuntimeTemplateBytes();
 }

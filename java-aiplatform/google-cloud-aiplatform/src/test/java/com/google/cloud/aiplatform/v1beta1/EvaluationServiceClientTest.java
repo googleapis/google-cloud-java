@@ -125,7 +125,6 @@ public class EvaluationServiceClientTest {
     Assert.assertEquals(request.getSafetyInput(), actualRequest.getSafetyInput());
     Assert.assertEquals(request.getGroundednessInput(), actualRequest.getGroundednessInput());
     Assert.assertEquals(request.getFulfillmentInput(), actualRequest.getFulfillmentInput());
-    Assert.assertEquals(request.getResponseRecallInput(), actualRequest.getResponseRecallInput());
     Assert.assertEquals(
         request.getSummarizationQualityInput(), actualRequest.getSummarizationQualityInput());
     Assert.assertEquals(
@@ -151,8 +150,6 @@ public class EvaluationServiceClientTest {
     Assert.assertEquals(
         request.getQuestionAnsweringCorrectnessInput(),
         actualRequest.getQuestionAnsweringCorrectnessInput());
-    Assert.assertEquals(
-        request.getRagContextRecallInput(), actualRequest.getRagContextRecallInput());
     Assert.assertEquals(request.getToolCallValidInput(), actualRequest.getToolCallValidInput());
     Assert.assertEquals(request.getToolNameMatchInput(), actualRequest.getToolNameMatchInput());
     Assert.assertEquals(

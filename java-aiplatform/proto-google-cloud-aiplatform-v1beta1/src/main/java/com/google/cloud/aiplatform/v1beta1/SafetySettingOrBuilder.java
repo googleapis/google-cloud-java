@@ -81,4 +81,35 @@ public interface SafetySettingOrBuilder
    * @return The threshold.
    */
   com.google.cloud.aiplatform.v1beta1.SafetySetting.HarmBlockThreshold getThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify if the threshold is used for probability or severity
+   * score. If not specified, the threshold is used for probability score.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SafetySetting.HarmBlockMethod method = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for method.
+   */
+  int getMethodValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify if the threshold is used for probability or severity
+   * score. If not specified, the threshold is used for probability score.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SafetySetting.HarmBlockMethod method = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The method.
+   */
+  com.google.cloud.aiplatform.v1beta1.SafetySetting.HarmBlockMethod getMethod();
 }

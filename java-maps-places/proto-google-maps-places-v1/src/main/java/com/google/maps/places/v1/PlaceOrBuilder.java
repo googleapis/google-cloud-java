@@ -650,7 +650,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * List of reviews about this place, sorted by relevance.
+   * List of reviews about this place, sorted by relevance. A maximum of 5
+   * reviews can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
@@ -660,7 +661,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * List of reviews about this place, sorted by relevance.
+   * List of reviews about this place, sorted by relevance. A maximum of 5
+   * reviews can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
@@ -670,7 +672,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * List of reviews about this place, sorted by relevance.
+   * List of reviews about this place, sorted by relevance. A maximum of 5
+   * reviews can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
@@ -680,7 +683,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * List of reviews about this place, sorted by relevance.
+   * List of reviews about this place, sorted by relevance. A maximum of 5
+   * reviews can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
@@ -690,7 +694,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * List of reviews about this place, sorted by relevance.
+   * List of reviews about this place, sorted by relevance. A maximum of 5
+   * reviews can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Review reviews = 53;</code>
@@ -765,7 +770,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Information (including references) about photos of this place.
+   * Information (including references) about photos of this place. A maximum of
+   * 10 photos can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
@@ -775,7 +781,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Information (including references) about photos of this place.
+   * Information (including references) about photos of this place. A maximum of
+   * 10 photos can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
@@ -785,7 +792,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Information (including references) about photos of this place.
+   * Information (including references) about photos of this place. A maximum of
+   * 10 photos can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
@@ -795,7 +803,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Information (including references) about photos of this place.
+   * Information (including references) about photos of this place. A maximum of
+   * 10 photos can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>
@@ -805,7 +814,8 @@ public interface PlaceOrBuilder
    *
    *
    * <pre>
-   * Information (including references) about photos of this place.
+   * Information (including references) about photos of this place. A maximum of
+   * 10 photos can be returned.
    * </pre>
    *
    * <code>repeated .google.maps.places.v1.Photo photos = 54;</code>

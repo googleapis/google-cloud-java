@@ -139,6 +139,53 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  boolean hasSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The systemInstruction.
+   */
+  com.google.cloud.aiplatform.v1beta1.Content getSystemInstruction();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user provided system instructions for the model.
+   * Note: only text should be used in parts and content in each part will be in
+   * a separate paragraph.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.Content system_instruction = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getSystemInstructionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of `Tools` the model may use to generate the next
    * response.
    *
@@ -226,7 +273,8 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
-   * Tool config. This config is shared for all tools provided in the request.
+   * Optional. Tool config. This config is shared for all tools provided in the
+   * request.
    * </pre>
    *
    * <code>
@@ -240,7 +288,8 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
-   * Tool config. This config is shared for all tools provided in the request.
+   * Optional. Tool config. This config is shared for all tools provided in the
+   * request.
    * </pre>
    *
    * <code>
@@ -254,7 +303,8 @@ public interface GenerateContentRequestOrBuilder
    *
    *
    * <pre>
-   * Tool config. This config is shared for all tools provided in the request.
+   * Optional. Tool config. This config is shared for all tools provided in the
+   * request.
    * </pre>
    *
    * <code>

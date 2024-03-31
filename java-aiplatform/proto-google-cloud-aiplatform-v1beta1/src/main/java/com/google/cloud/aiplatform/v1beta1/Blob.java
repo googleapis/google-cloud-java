@@ -23,9 +23,10 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Raw media bytes.
+ * Content blob.
  *
- * Text should not be sent as raw bytes, use the 'text' field.
+ * It's preferred to send as [text][google.cloud.aiplatform.v1beta1.Part.text]
+ * directly rather than raw bytes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.Blob}
@@ -123,7 +124,7 @@ public final class Blob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Raw bytes for media formats.
+   * Required. Raw bytes.
    * </pre>
    *
    * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -306,9 +307,10 @@ public final class Blob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Raw media bytes.
+   * Content blob.
    *
-   * Text should not be sent as raw bytes, use the 'text' field.
+   * It's preferred to send as [text][google.cloud.aiplatform.v1beta1.Part.text]
+   * directly rather than raw bytes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.Blob}
@@ -610,7 +612,7 @@ public final class Blob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Raw bytes for media formats.
+     * Required. Raw bytes.
      * </pre>
      *
      * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -625,7 +627,7 @@ public final class Blob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Raw bytes for media formats.
+     * Required. Raw bytes.
      * </pre>
      *
      * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -646,7 +648,7 @@ public final class Blob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Raw bytes for media formats.
+     * Required. Raw bytes.
      * </pre>
      *
      * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>

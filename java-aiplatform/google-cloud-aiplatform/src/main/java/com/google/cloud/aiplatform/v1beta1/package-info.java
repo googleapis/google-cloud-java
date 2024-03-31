@@ -415,6 +415,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= NotebookServiceClient =======================
+ *
+ * <p>Service Description: The interface for Vertex Notebook service (a.k.a. Colab on Workbench).
+ *
+ * <p>Sample for NotebookServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+ *   NotebookRuntimeTemplateName name =
+ *       NotebookRuntimeTemplateName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME_TEMPLATE]");
+ *   NotebookRuntimeTemplate response = notebookServiceClient.getNotebookRuntimeTemplate(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= PersistentResourceServiceClient =======================
  *
  * <p>Service Description: A service for managing Vertex AI's machine learning PersistentResource.
@@ -583,6 +602,44 @@
  * try (TensorboardServiceClient tensorboardServiceClient = TensorboardServiceClient.create()) {
  *   TensorboardName name = TensorboardName.of("[PROJECT]", "[LOCATION]", "[TENSORBOARD]");
  *   Tensorboard response = tensorboardServiceClient.getTensorboard(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= VertexRagDataServiceClient =======================
+ *
+ * <p>Service Description: A service for managing user data for RAG.
+ *
+ * <p>Sample for VertexRagDataServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (VertexRagDataServiceClient vertexRagDataServiceClient =
+ *     VertexRagDataServiceClient.create()) {
+ *   RagCorpusName name = RagCorpusName.of("[PROJECT]", "[LOCATION]", "[RAG_CORPUS]");
+ *   RagCorpus response = vertexRagDataServiceClient.getRagCorpus(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= VertexRagServiceClient =======================
+ *
+ * <p>Service Description: A service for retrieving relevant contexts.
+ *
+ * <p>Sample for VertexRagServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (VertexRagServiceClient vertexRagServiceClient = VertexRagServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   RagQuery query = RagQuery.newBuilder().build();
+ *   RetrieveContextsResponse response = vertexRagServiceClient.retrieveContexts(parent, query);
  * }
  * }</pre>
  *

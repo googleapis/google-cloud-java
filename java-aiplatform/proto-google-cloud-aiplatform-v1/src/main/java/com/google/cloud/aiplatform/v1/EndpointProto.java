@@ -97,7 +97,7 @@ public final class EndpointProto {
           + "}/locations/{location}/endpoints/{endpoi"
           + "nt}\022Mprojects/{project}/locations/{locat"
           + "ion}/publishers/{publisher}/models/{mode"
-          + "l}\"\274\005\n\rDeployedModel\022M\n\023dedicated_resour"
+          + "l}\"\332\005\n\rDeployedModel\022M\n\023dedicated_resour"
           + "ces\030\007 \001(\0132..google.cloud.aiplatform.v1.D"
           + "edicatedResourcesH\000\022M\n\023automatic_resourc"
           + "es\030\010 \001(\0132..google.cloud.aiplatform.v1.Au"
@@ -109,25 +109,26 @@ public final class EndpointProto {
           + "B\003\340A\003\022\024\n\014display_name\030\003 \001(\t\0224\n\013create_ti"
           + "me\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A"
           + "\003\022E\n\020explanation_spec\030\t \001(\0132+.google.clo"
-          + "ud.aiplatform.v1.ExplanationSpec\022\027\n\017serv"
-          + "ice_account\030\013 \001(\t\022!\n\031disable_container_l"
-          + "ogging\030\017 \001(\010\022\035\n\025enable_access_logging\030\r "
-          + "\001(\010\022L\n\021private_endpoints\030\016 \001(\0132,.google."
-          + "cloud.aiplatform.v1.PrivateEndpointsB\003\340A"
-          + "\003B\026\n\024prediction_resources\"\217\001\n\020PrivateEnd"
-          + "points\022\035\n\020predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n"
-          + "\020explain_http_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_h"
-          + "ttp_uri\030\003 \001(\tB\003\340A\003\022\037\n\022service_attachment"
-          + "\030\004 \001(\tB\003\340A\003\"\234\001\n#PredictRequestResponseLo"
-          + "ggingConfig\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling"
-          + "_rate\030\002 \001(\001\022M\n\024bigquery_destination\030\003 \001("
-          + "\0132/.google.cloud.aiplatform.v1.BigQueryD"
-          + "estinationB\313\001\n\036com.google.cloud.aiplatfo"
-          + "rm.v1B\rEndpointProtoP\001Z>cloud.google.com"
-          + "/go/aiplatform/apiv1/aiplatformpb;aiplat"
-          + "formpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Go"
-          + "ogle\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud"
-          + "::AIPlatform::V1b\006proto3"
+          + "ud.aiplatform.v1.ExplanationSpec\022\034\n\024disa"
+          + "ble_explanations\030\023 \001(\010\022\027\n\017service_accoun"
+          + "t\030\013 \001(\t\022!\n\031disable_container_logging\030\017 \001"
+          + "(\010\022\035\n\025enable_access_logging\030\r \001(\010\022L\n\021pri"
+          + "vate_endpoints\030\016 \001(\0132,.google.cloud.aipl"
+          + "atform.v1.PrivateEndpointsB\003\340A\003B\026\n\024predi"
+          + "ction_resources\"\217\001\n\020PrivateEndpoints\022\035\n\020"
+          + "predict_http_uri\030\001 \001(\tB\003\340A\003\022\035\n\020explain_h"
+          + "ttp_uri\030\002 \001(\tB\003\340A\003\022\034\n\017health_http_uri\030\003 "
+          + "\001(\tB\003\340A\003\022\037\n\022service_attachment\030\004 \001(\tB\003\340A"
+          + "\003\"\234\001\n#PredictRequestResponseLoggingConfi"
+          + "g\022\017\n\007enabled\030\001 \001(\010\022\025\n\rsampling_rate\030\002 \001("
+          + "\001\022M\n\024bigquery_destination\030\003 \001(\0132/.google"
+          + ".cloud.aiplatform.v1.BigQueryDestination"
+          + "B\313\001\n\036com.google.cloud.aiplatform.v1B\rEnd"
+          + "pointProtoP\001Z>cloud.google.com/go/aiplat"
+          + "form/apiv1/aiplatformpb;aiplatformpb\252\002\032G"
+          + "oogle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud"
+          + "\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatfo"
+          + "rm::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -193,6 +194,7 @@ public final class EndpointProto {
               "DisplayName",
               "CreateTime",
               "ExplanationSpec",
+              "DisableExplanations",
               "ServiceAccount",
               "DisableContainerLogging",
               "EnableAccessLogging",
