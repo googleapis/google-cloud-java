@@ -16,15 +16,15 @@ The default retry configurations are defined in the generated `{Client}StubSetti
 Java-Asset v3.41.0 as an example, the default retry configurations are defined in the following places:
 <br>
 - Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082). Example:
-```java
+    ```java
     ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
     definitions.put("no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
     // ... More StatusCode configurations
     RETRYABLE_CODE_DEFINITIONS = definitions.build();
-```
+    ```
 
 - Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155). Example:
-```java
+    ```java
     ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
     RetrySettings settings = null;
     settings =
@@ -37,15 +37,15 @@ Java-Asset v3.41.0 as an example, the default retry configurations are defined i
     definitions.put("no_retry_0_params", settings);
     // ... More RetrySettings configurations
     RETRY_PARAM_DEFINITIONS = definitions.build();
-```
+    ```
 
 - The configurations above are mapped to the RPC [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474). Example:
-```java
+    ```java
     builder
       .exportAssetsSettings()
       .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
       .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-```
+    ```
 
 ## Client Library Retry Concepts
 Enabling retries allow an RPC multiple attempts to try and achieve a successful call. A successful call
