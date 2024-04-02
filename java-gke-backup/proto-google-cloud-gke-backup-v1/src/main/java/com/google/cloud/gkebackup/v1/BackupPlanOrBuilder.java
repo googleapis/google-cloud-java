@@ -161,10 +161,10 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * User specified descriptive string for this BackupPlan.
+   * Optional. User specified descriptive string for this BackupPlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -173,10 +173,10 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * User specified descriptive string for this BackupPlan.
+   * Optional. User specified descriptive string for this BackupPlan.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -223,10 +223,13 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * RetentionPolicy governs lifecycle of Backups created under this plan.
+   * Optional. RetentionPolicy governs lifecycle of Backups created under this
+   * plan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the retentionPolicy field is set.
    */
@@ -235,10 +238,13 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * RetentionPolicy governs lifecycle of Backups created under this plan.
+   * Optional. RetentionPolicy governs lifecycle of Backups created under this
+   * plan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The retentionPolicy.
    */
@@ -247,10 +253,13 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * RetentionPolicy governs lifecycle of Backups created under this plan.
+   * Optional. RetentionPolicy governs lifecycle of Backups created under this
+   * plan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.RetentionPolicy retention_policy = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkebackup.v1.BackupPlan.RetentionPolicyOrBuilder getRetentionPolicyOrBuilder();
 
@@ -258,20 +267,20 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -281,20 +290,20 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -305,10 +314,10 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 8;</code>
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -316,10 +325,13 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule for automatic Backup creation via this BackupPlan.
+   * Optional. Defines a schedule for automatic Backup creation via this
+   * BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the backupSchedule field is set.
    */
@@ -328,10 +340,13 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule for automatic Backup creation via this BackupPlan.
+   * Optional. Defines a schedule for automatic Backup creation via this
+   * BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The backupSchedule.
    */
@@ -340,10 +355,13 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Defines a schedule for automatic Backup creation via this BackupPlan.
+   * Optional. Defines a schedule for automatic Backup creation via this
+   * BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.Schedule backup_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkebackup.v1.BackupPlan.ScheduleOrBuilder getBackupScheduleOrBuilder();
 
@@ -390,7 +408,7 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * This flag indicates whether this BackupPlan has been deactivated.
+   * Optional. This flag indicates whether this BackupPlan has been deactivated.
    * Setting this field to True locks the BackupPlan such that no further
    * updates will be allowed (except deletes), including the deactivated field
    * itself. It also prevents any new Backups from being created via this
@@ -399,7 +417,7 @@ public interface BackupPlanOrBuilder
    * Default: False
    * </pre>
    *
-   * <code>bool deactivated = 11;</code>
+   * <code>bool deactivated = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deactivated.
    */
@@ -409,10 +427,12 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Defines the configuration of Backups created via this BackupPlan.
+   * Optional. Defines the configuration of Backups created via this BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the backupConfig field is set.
    */
@@ -421,10 +441,12 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Defines the configuration of Backups created via this BackupPlan.
+   * Optional. Defines the configuration of Backups created via this BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The backupConfig.
    */
@@ -433,10 +455,12 @@ public interface BackupPlanOrBuilder
    *
    *
    * <pre>
-   * Defines the configuration of Backups created via this BackupPlan.
+   * Optional. Defines the configuration of Backups created via this BackupPlan.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12;</code>
+   * <code>
+   * .google.cloud.gkebackup.v1.BackupPlan.BackupConfig backup_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkebackup.v1.BackupPlan.BackupConfigOrBuilder getBackupConfigOrBuilder();
 
@@ -515,4 +539,46 @@ public interface BackupPlanOrBuilder
    * @return The bytes for stateReason.
    */
   com.google.protobuf.ByteString getStateReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A number that represents the current risk level of this
+   * BackupPlan from RPO perspective with 1 being no risk and 5 being highest
+   * risk.
+   * </pre>
+   *
+   * <code>int32 rpo_risk_level = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rpoRiskLevel.
+   */
+  int getRpoRiskLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why the BackupPlan is in the
+   * current rpo_risk_level and action items if any.
+   * </pre>
+   *
+   * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The rpoRiskReason.
+   */
+  java.lang.String getRpoRiskReason();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable description of why the BackupPlan is in the
+   * current rpo_risk_level and action items if any.
+   * </pre>
+   *
+   * <code>string rpo_risk_reason = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for rpoRiskReason.
+   */
+  com.google.protobuf.ByteString getRpoRiskReasonBytes();
 }

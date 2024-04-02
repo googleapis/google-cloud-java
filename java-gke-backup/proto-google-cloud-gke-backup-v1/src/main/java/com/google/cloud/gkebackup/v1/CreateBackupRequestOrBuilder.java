@@ -59,10 +59,11 @@ public interface CreateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * The Backup resource to create.
+   * Optional. The Backup resource to create.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+   * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the backup field is set.
    */
@@ -71,10 +72,11 @@ public interface CreateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * The Backup resource to create.
+   * Optional. The Backup resource to create.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+   * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The backup.
    */
@@ -83,10 +85,11 @@ public interface CreateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * The Backup resource to create.
+   * Optional. The Backup resource to create.
    * </pre>
    *
-   * <code>.google.cloud.gkebackup.v1.Backup backup = 2;</code>
+   * <code>.google.cloud.gkebackup.v1.Backup backup = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkebackup.v1.BackupOrBuilder getBackupOrBuilder();
 
@@ -94,7 +97,7 @@ public interface CreateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * The client-provided short name for the Backup resource.
+   * Optional. The client-provided short name for the Backup resource.
    * This name must:
    *
    * - be between 1 and 63 characters long (inclusive)
@@ -104,7 +107,7 @@ public interface CreateBackupRequestOrBuilder
    * - be unique within the set of Backups in this BackupPlan
    * </pre>
    *
-   * <code>string backup_id = 3;</code>
+   * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The backupId.
    */
@@ -113,7 +116,7 @@ public interface CreateBackupRequestOrBuilder
    *
    *
    * <pre>
-   * The client-provided short name for the Backup resource.
+   * Optional. The client-provided short name for the Backup resource.
    * This name must:
    *
    * - be between 1 and 63 characters long (inclusive)
@@ -123,7 +126,7 @@ public interface CreateBackupRequestOrBuilder
    * - be unique within the set of Backups in this BackupPlan
    * </pre>
    *
-   * <code>string backup_id = 3;</code>
+   * <code>string backup_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for backupId.
    */

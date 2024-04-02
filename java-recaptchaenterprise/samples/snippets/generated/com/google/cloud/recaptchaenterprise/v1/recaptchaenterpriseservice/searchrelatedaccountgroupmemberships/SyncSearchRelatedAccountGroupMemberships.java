@@ -19,8 +19,8 @@ package com.google.cloud.recaptchaenterprise.v1.samples;
 // [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_SearchRelatedAccountGroupMemberships_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.protobuf.ByteString;
+import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
-import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 
 public class SyncSearchRelatedAccountGroupMemberships {
@@ -39,8 +39,7 @@ public class SyncSearchRelatedAccountGroupMemberships {
         RecaptchaEnterpriseServiceClient.create()) {
       SearchRelatedAccountGroupMembershipsRequest request =
           SearchRelatedAccountGroupMembershipsRequest.newBuilder()
-              .setProject(
-                  RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]").toString())
+              .setProject(ProjectName.of("[PROJECT]").toString())
               .setAccountId("accountId-1827029976")
               .setHashedAccountId(ByteString.EMPTY)
               .setPageSize(883849137)

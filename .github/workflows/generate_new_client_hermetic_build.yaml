@@ -105,7 +105,7 @@ jobs:
             python /src/generate_repo.py generate \
             --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \
             --repository-path=/workspace/google-cloud-java \
-            --target-library-api-shortname=${API_SHORTNAME}
+            --target-library-names=${API_SHORTNAME}
         env:
           API_SHORTNAME: ${{ github.event.inputs.api_shortname }}
       - name: Push to branch and create PR
@@ -144,7 +144,7 @@ jobs:
             python /src/generate_repo.py generate \\
             --generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml \\
             --repository-path=/workspace/google-cloud-java \\
-            --target-library-api-shortname=${API_SHORTNAME}
+            --target-library-names=${API_SHORTNAME}
 
           \`\`\`"
           gh pr create --title "${commit_message}" --label "owlbot:run" --head "${branch_name}" --body "${pr_body}"

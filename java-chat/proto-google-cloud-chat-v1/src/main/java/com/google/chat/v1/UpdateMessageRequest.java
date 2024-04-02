@@ -121,7 +121,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
    * - `cards_v2`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
    *
-   * - Developer Preview: `accessory_widgets`  (Requires [app
+   * - `accessory_widgets`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
    * </pre>
    *
@@ -152,7 +152,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
    * - `cards_v2`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
    *
-   * - Developer Preview: `accessory_widgets`  (Requires [app
+   * - `accessory_widgets`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
    * </pre>
    *
@@ -183,7 +183,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
    * - `cards_v2`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
    *
-   * - Developer Preview: `accessory_widgets`  (Requires [app
+   * - `accessory_widgets`  (Requires [app
    * authentication](/chat/api/guides/auth/service-accounts).)
    * </pre>
    *
@@ -827,7 +827,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -857,7 +857,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -893,7 +893,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -931,7 +931,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -966,7 +966,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -1009,7 +1009,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -1044,7 +1044,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -1074,7 +1074,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *
@@ -1108,7 +1108,7 @@ public final class UpdateMessageRequest extends com.google.protobuf.GeneratedMes
      * - `cards_v2`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      *
-     * - Developer Preview: `accessory_widgets`  (Requires [app
+     * - `accessory_widgets`  (Requires [app
      * authentication](/chat/api/guides/auth/service-accounts).)
      * </pre>
      *

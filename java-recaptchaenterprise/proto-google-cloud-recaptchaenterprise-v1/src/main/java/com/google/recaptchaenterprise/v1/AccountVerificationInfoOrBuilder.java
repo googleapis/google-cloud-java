@@ -154,7 +154,7 @@ public interface AccountVerificationInfoOrBuilder
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=566
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=567
    * @return The username.
    */
   @java.lang.Deprecated
@@ -170,7 +170,7 @@ public interface AccountVerificationInfoOrBuilder
    * <code>string username = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.AccountVerificationInfo.username is deprecated.
-   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=566
+   *     See google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=567
    * @return The bytes for username.
    */
   @java.lang.Deprecated

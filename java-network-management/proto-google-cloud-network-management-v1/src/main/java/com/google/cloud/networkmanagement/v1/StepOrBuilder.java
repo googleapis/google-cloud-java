@@ -580,35 +580,51 @@ public interface StepOrBuilder
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
+   *     google/cloud/networkmanagement/v1/trace.proto;l=241
    * @return Whether the loadBalancer field is set.
    */
+  @java.lang.Deprecated
   boolean hasLoadBalancer();
   /**
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
+   *     google/cloud/networkmanagement/v1/trace.proto;l=241
    * @return The loadBalancer.
    */
+  @java.lang.Deprecated
   com.google.cloud.networkmanagement.v1.LoadBalancerInfo getLoadBalancer();
   /**
    *
    *
    * <pre>
-   * Display information of the load balancers.
+   * Display information of the load balancers. Deprecated in favor of the
+   * `load_balancer_backend_info` field, not used in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1.LoadBalancerInfo load_balancer = 16 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.networkmanagement.v1.LoadBalancerInfoOrBuilder getLoadBalancerOrBuilder();
 
   /**

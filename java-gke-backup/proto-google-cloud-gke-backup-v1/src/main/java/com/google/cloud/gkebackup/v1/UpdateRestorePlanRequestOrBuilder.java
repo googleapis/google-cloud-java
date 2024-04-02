@@ -72,7 +72,7 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * This is used to specify the fields to be overwritten in the
+   * Optional. This is used to specify the fields to be overwritten in the
    * RestorePlan targeted for update. The values for each of these
    * updated fields will be taken from the `restore_plan` provided
    * with this request. Field names are relative to the root of the resource.
@@ -82,7 +82,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    * and are not used to update the target RestorePlan.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -91,7 +92,7 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * This is used to specify the fields to be overwritten in the
+   * Optional. This is used to specify the fields to be overwritten in the
    * RestorePlan targeted for update. The values for each of these
    * updated fields will be taken from the `restore_plan` provided
    * with this request. Field names are relative to the root of the resource.
@@ -101,7 +102,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    * and are not used to update the target RestorePlan.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -110,7 +112,7 @@ public interface UpdateRestorePlanRequestOrBuilder
    *
    *
    * <pre>
-   * This is used to specify the fields to be overwritten in the
+   * Optional. This is used to specify the fields to be overwritten in the
    * RestorePlan targeted for update. The values for each of these
    * updated fields will be taken from the `restore_plan` provided
    * with this request. Field names are relative to the root of the resource.
@@ -120,7 +122,8 @@ public interface UpdateRestorePlanRequestOrBuilder
    * and are not used to update the target RestorePlan.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

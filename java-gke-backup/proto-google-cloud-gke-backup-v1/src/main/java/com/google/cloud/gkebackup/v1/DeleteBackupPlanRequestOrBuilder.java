@@ -59,12 +59,12 @@ public interface DeleteBackupPlanRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
    * or the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -73,12 +73,12 @@ public interface DeleteBackupPlanRequestOrBuilder
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target BackupPlan's [etag][google.cloud.gkebackup.v1.BackupPlan.etag] field
    * or the request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */

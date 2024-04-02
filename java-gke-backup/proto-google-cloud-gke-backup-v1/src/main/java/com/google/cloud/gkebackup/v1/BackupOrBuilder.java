@@ -173,20 +173,20 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -196,20 +196,20 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -220,10 +220,10 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * A set of custom labels supplied by user.
+   * Optional. A set of custom labels supplied by user.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 6;</code>
+   * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -231,9 +231,9 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Minimum age for this Backup (in days). If this field is set to a non-zero
-   * value, the Backup will be "locked" against deletion (either manual or
-   * automatic deletion) for the number of days provided (measured from the
+   * Optional. Minimum age for this Backup (in days). If this field is set to a
+   * non-zero value, the Backup will be "locked" against deletion (either manual
+   * or automatic deletion) for the number of days provided (measured from the
    * creation time of the Backup).  MUST be an integer value between 0-90
    * (inclusive).
    *
@@ -243,7 +243,7 @@ public interface BackupOrBuilder
    * (either at creation time or in a subsequent update).
    * </pre>
    *
-   * <code>int32 delete_lock_days = 7;</code>
+   * <code>int32 delete_lock_days = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deleteLockDays.
    */
@@ -300,8 +300,8 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * The age (in days) after which this Backup will be automatically deleted.
-   * Must be an integer value &gt;= 0:
+   * Optional. The age (in days) after which this Backup will be automatically
+   * deleted. Must be an integer value &gt;= 0:
    *
    * - If 0, no automatic deletion will occur for this Backup.
    * - If not 0, this must be &gt;=
@@ -315,7 +315,7 @@ public interface BackupOrBuilder
    * value.
    * </pre>
    *
-   * <code>int32 retain_days = 9;</code>
+   * <code>int32 retain_days = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The retainDays.
    */
@@ -788,10 +788,10 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * User specified descriptive string for this Backup.
+   * Optional. User specified descriptive string for this Backup.
    * </pre>
    *
-   * <code>string description = 25;</code>
+   * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -800,10 +800,10 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * User specified descriptive string for this Backup.
+   * Optional. User specified descriptive string for this Backup.
    * </pre>
    *
-   * <code>string description = 25;</code>
+   * <code>string description = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */

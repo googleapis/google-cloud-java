@@ -1521,7 +1521,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>- `attachment`
    *     <p>- `cards` (Requires [app authentication](/chat/api/guides/auth/service-accounts).)
    *     <p>- `cards_v2` (Requires [app authentication](/chat/api/guides/auth/service-accounts).)
-   *     <p>- Developer Preview: `accessory_widgets` (Requires [app
+   *     <p>- `accessory_widgets` (Requires [app
    *     authentication](/chat/api/guides/auth/service-accounts).)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

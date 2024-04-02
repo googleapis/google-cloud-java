@@ -16,19 +16,19 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_SearchRelatedAccountGroupMemberships_RelatedaccountgroupnameBytestring_sync]
+// [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_SearchRelatedAccountGroupMemberships_ProjectnameBytestring_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
 import com.google.protobuf.ByteString;
+import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
-import com.google.recaptchaenterprise.v1.RelatedAccountGroupName;
 
-public class SyncSearchRelatedAccountGroupMembershipsRelatedaccountgroupnameBytestring {
+public class SyncSearchRelatedAccountGroupMembershipsProjectnameBytestring {
 
   public static void main(String[] args) throws Exception {
-    syncSearchRelatedAccountGroupMembershipsRelatedaccountgroupnameBytestring();
+    syncSearchRelatedAccountGroupMembershipsProjectnameBytestring();
   }
 
-  public static void syncSearchRelatedAccountGroupMembershipsRelatedaccountgroupnameBytestring()
+  public static void syncSearchRelatedAccountGroupMembershipsProjectnameBytestring()
       throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
@@ -37,8 +37,7 @@ public class SyncSearchRelatedAccountGroupMembershipsRelatedaccountgroupnameByte
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
         RecaptchaEnterpriseServiceClient.create()) {
-      RelatedAccountGroupName project =
-          RelatedAccountGroupName.of("[PROJECT]", "[RELATEDACCOUNTGROUP]");
+      ProjectName project = ProjectName.of("[PROJECT]");
       ByteString hashedAccountId = ByteString.EMPTY;
       for (RelatedAccountGroupMembership element :
           recaptchaEnterpriseServiceClient
@@ -49,4 +48,4 @@ public class SyncSearchRelatedAccountGroupMembershipsRelatedaccountgroupnameByte
     }
   }
 }
-// [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_SearchRelatedAccountGroupMemberships_RelatedaccountgroupnameBytestring_sync]
+// [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_SearchRelatedAccountGroupMemberships_ProjectnameBytestring_sync]

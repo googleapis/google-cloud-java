@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.36.0 (2024-03-28)
+
+### Features
+
+* Existing resource_reference option of the field name is removed from message `google.cloud.recaptchaenterprise.v1.RelatedAccountGroupMemberShip` ([a6882fb](https://github.com/googleapis/google-cloud-java/commit/a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6))
+
+
+
+## 3.35.0 (2024-03-22)
+
+### Features
+
+* Add include_recaptcha_script for as a new action in firewall policies ([392ff2d](https://github.com/googleapis/google-cloud-java/commit/392ff2db6665c3aa998ea94da1dfbc70c47df0f2))
+
+
+
 ## 3.34.0 (2024-03-06)
 
 * No change

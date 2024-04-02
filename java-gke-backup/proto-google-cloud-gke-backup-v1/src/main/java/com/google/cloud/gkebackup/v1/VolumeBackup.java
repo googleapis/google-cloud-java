@@ -26,7 +26,6 @@ package com.google.cloud.gkebackup.v1;
  * Represents the backup of a specific persistent volume as a component of a
  * Backup - both the record of the operation and a pointer to the underlying
  * storage-specific artifacts.
- * Next id: 14
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.VolumeBackup}
@@ -1382,7 +1381,6 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    * Represents the backup of a specific persistent volume as a component of a
    * Backup - both the record of the operation and a pointer to the underlying
    * storage-specific artifacts.
-   * Next id: 14
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.VolumeBackup}

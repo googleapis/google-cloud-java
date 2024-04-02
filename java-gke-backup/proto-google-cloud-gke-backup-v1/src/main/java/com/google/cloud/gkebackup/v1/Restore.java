@@ -25,7 +25,6 @@ package com.google.cloud.gkebackup.v1;
  * <pre>
  * Represents both a request to Restore some portion of a Backup into
  * a target GKE cluster and a record of the restore operation itself.
- * Next id: 18
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.Restore}
@@ -1491,7 +1490,6 @@ public final class Restore extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents both a request to Restore some portion of a Backup into
    * a target GKE cluster and a record of the restore operation itself.
-   * Next id: 18
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.Restore}

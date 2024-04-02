@@ -28,40 +28,48 @@ public interface NamespacedNamesOrBuilder
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.NamespacedName> getNamespacedNamesList();
   /**
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkebackup.v1.NamespacedName getNamespacedNames(int index);
   /**
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getNamespacedNamesCount();
   /**
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder>
       getNamespacedNamesOrBuilderList();
@@ -69,10 +77,12 @@ public interface NamespacedNamesOrBuilder
    *
    *
    * <pre>
-   * A list of namespaced Kubernetes resources.
+   * Optional. A list of namespaced Kubernetes resources.
    * </pre>
    *
-   * <code>repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1;</code>
+   * <code>
+   * repeated .google.cloud.gkebackup.v1.NamespacedName namespaced_names = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder getNamespacedNamesOrBuilder(int index);
 }

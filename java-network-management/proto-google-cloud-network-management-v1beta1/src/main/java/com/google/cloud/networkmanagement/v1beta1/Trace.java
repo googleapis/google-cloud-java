@@ -230,6 +230,26 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     return steps_.get(index);
   }
 
+  public static final int FORWARD_TRACE_ID_FIELD_NUMBER = 4;
+  private int forwardTraceId_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * ID of trace. For forward traces, this ID is unique for each trace. For
+   * return traces, it matches ID of associated forward trace. A single forward
+   * trace can be associated with none, one or more than one return trace.
+   * </pre>
+   *
+   * <code>int32 forward_trace_id = 4;</code>
+   *
+   * @return The forwardTraceId.
+   */
+  @java.lang.Override
+  public int getForwardTraceId() {
+    return forwardTraceId_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -250,6 +270,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < steps_.size(); i++) {
       output.writeMessage(2, steps_.get(i));
     }
+    if (forwardTraceId_ != 0) {
+      output.writeInt32(4, forwardTraceId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -264,6 +287,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < steps_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, steps_.get(i));
+    }
+    if (forwardTraceId_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, forwardTraceId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -286,6 +312,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       if (!getEndpointInfo().equals(other.getEndpointInfo())) return false;
     }
     if (!getStepsList().equals(other.getStepsList())) return false;
+    if (getForwardTraceId() != other.getForwardTraceId()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -305,6 +332,8 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STEPS_FIELD_NUMBER;
       hash = (53 * hash) + getStepsList().hashCode();
     }
+    hash = (37 * hash) + FORWARD_TRACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getForwardTraceId();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -476,6 +505,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         stepsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      forwardTraceId_ = 0;
       return this;
     }
 
@@ -531,6 +561,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         result.endpointInfo_ =
             endpointInfoBuilder_ == null ? endpointInfo_ : endpointInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.forwardTraceId_ = forwardTraceId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -611,6 +644,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.getForwardTraceId() != 0) {
+        setForwardTraceId(other.getForwardTraceId());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -657,6 +693,12 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 18
+            case 32:
+              {
+                forwardTraceId_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1331,6 +1373,65 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         steps_ = null;
       }
       return stepsBuilder_;
+    }
+
+    private int forwardTraceId_;
+    /**
+     *
+     *
+     * <pre>
+     * ID of trace. For forward traces, this ID is unique for each trace. For
+     * return traces, it matches ID of associated forward trace. A single forward
+     * trace can be associated with none, one or more than one return trace.
+     * </pre>
+     *
+     * <code>int32 forward_trace_id = 4;</code>
+     *
+     * @return The forwardTraceId.
+     */
+    @java.lang.Override
+    public int getForwardTraceId() {
+      return forwardTraceId_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ID of trace. For forward traces, this ID is unique for each trace. For
+     * return traces, it matches ID of associated forward trace. A single forward
+     * trace can be associated with none, one or more than one return trace.
+     * </pre>
+     *
+     * <code>int32 forward_trace_id = 4;</code>
+     *
+     * @param value The forwardTraceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForwardTraceId(int value) {
+
+      forwardTraceId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ID of trace. For forward traces, this ID is unique for each trace. For
+     * return traces, it matches ID of associated forward trace. A single forward
+     * trace can be associated with none, one or more than one return trace.
+     * </pre>
+     *
+     * <code>int32 forward_trace_id = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForwardTraceId() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      forwardTraceId_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -27,9 +27,9 @@ import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.api.Tool;
+import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -92,7 +92,7 @@ public final class ChatSession {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession =
         new ChatSession(model.withSafetySettings(safetySettings), Optional.of(rootChat));
-    newChatSession.setHistory(history);
+    newChatSession.history = history;
     return newChatSession;
   }
 
@@ -106,7 +106,7 @@ public final class ChatSession {
   public ChatSession withTools(List<Tool> tools) {
     ChatSession rootChat = rootChatSession.orElse(this);
     ChatSession newChatSession = new ChatSession(model.withTools(tools), Optional.of(rootChat));
-    newChatSession.setHistory(history);
+    newChatSession.history = history;
     return newChatSession;
   }
 
@@ -210,9 +210,9 @@ public final class ChatSession {
   /**
    * Returns the history of the conversation.
    *
-   * @return an unmodifiable history of the conversation.
+   * @return a history of the conversation as an immutable list of {@link Content}.
    */
-  public List<Content> getHistory() {
+  public ImmutableList<Content> getHistory() {
     try {
       checkLastResponseAndEditHistory();
     } catch (IllegalStateException e) {
@@ -225,7 +225,7 @@ public final class ChatSession {
       }
       throw e;
     }
-    return Collections.unmodifiableList(history);
+    return ImmutableList.copyOf(history);
   }
 
   /**
@@ -251,9 +251,14 @@ public final class ChatSession {
     }
   }
 
-  /** Set the history to a list of Content */
+  /**
+   * Sets the history to a list of Content.
+   *
+   * @param history A list of {@link Content} containing interleaving conversation between "user"
+   *     and "model".
+   */
   public void setHistory(List<Content> history) {
-    this.history = history;
+    this.history = new ArrayList<>(history);
   }
 
   /** Sets the current response of the root chat session (if exists) or the current chat session. */

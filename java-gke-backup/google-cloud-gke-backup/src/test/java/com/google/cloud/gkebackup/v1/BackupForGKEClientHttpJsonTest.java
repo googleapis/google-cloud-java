@@ -120,6 +120,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -187,6 +189,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -354,6 +358,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -411,6 +417,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -468,6 +476,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -493,6 +503,8 @@ public class BackupForGKEClientHttpJsonTest {
             .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
             .setProtectedPodCount(-1494678716)
             .setStateReason("stateReason1148834357")
+            .setRpoRiskLevel(-1939768030)
+            .setRpoRiskReason("rpoRiskReason-1965101372")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -538,6 +550,8 @@ public class BackupForGKEClientHttpJsonTest {
               .setBackupConfig(BackupPlan.BackupConfig.newBuilder().build())
               .setProtectedPodCount(-1494678716)
               .setStateReason("stateReason1148834357")
+              .setRpoRiskLevel(-1939768030)
+              .setRpoRiskReason("rpoRiskReason-1965101372")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupPlanAsync(backupPlan, updateMask).get();
@@ -2765,6 +2779,92 @@ public class BackupForGKEClientHttpJsonTest {
       String name =
           "projects/project-5658/locations/location-5658/restorePlans/restorePlan-5658/restores/restore-5658/volumeRestores/volumeRestore-5658";
       client.getVolumeRestore(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlTest() throws Exception {
+    GetBackupIndexDownloadUrlResponse expectedResponse =
+        GetBackupIndexDownloadUrlResponse.newBuilder().setSignedUrl("signedUrl1076770995").build();
+    mockService.addResponse(expectedResponse);
+
+    BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]");
+
+    GetBackupIndexDownloadUrlResponse actualResponse = client.getBackupIndexDownloadUrl(backup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupName backup = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_PLAN]", "[BACKUP]");
+      client.getBackupIndexDownloadUrl(backup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlTest2() throws Exception {
+    GetBackupIndexDownloadUrlResponse expectedResponse =
+        GetBackupIndexDownloadUrlResponse.newBuilder().setSignedUrl("signedUrl1076770995").build();
+    mockService.addResponse(expectedResponse);
+
+    String backup =
+        "projects/project-130/locations/location-130/backupPlans/backupPlan-130/backups/backup-130";
+
+    GetBackupIndexDownloadUrlResponse actualResponse = client.getBackupIndexDownloadUrl(backup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupIndexDownloadUrlExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String backup =
+          "projects/project-130/locations/location-130/backupPlans/backupPlan-130/backups/backup-130";
+      client.getBackupIndexDownloadUrl(backup);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

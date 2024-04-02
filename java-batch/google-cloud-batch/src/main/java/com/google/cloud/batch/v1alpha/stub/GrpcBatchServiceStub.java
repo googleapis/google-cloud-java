@@ -18,6 +18,7 @@ package com.google.cloud.batch.v1alpha.stub;
 
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListJobsPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListResourceAllowancesPagedResponse;
 import static com.google.cloud.batch.v1alpha.BatchServiceClient.ListTasksPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -30,16 +31,23 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.batch.v1alpha.CreateJobRequest;
+import com.google.cloud.batch.v1alpha.CreateResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.DeleteJobRequest;
+import com.google.cloud.batch.v1alpha.DeleteResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.GetJobRequest;
+import com.google.cloud.batch.v1alpha.GetResourceAllowanceRequest;
 import com.google.cloud.batch.v1alpha.GetTaskRequest;
 import com.google.cloud.batch.v1alpha.Job;
 import com.google.cloud.batch.v1alpha.ListJobsRequest;
 import com.google.cloud.batch.v1alpha.ListJobsResponse;
+import com.google.cloud.batch.v1alpha.ListResourceAllowancesRequest;
+import com.google.cloud.batch.v1alpha.ListResourceAllowancesResponse;
 import com.google.cloud.batch.v1alpha.ListTasksRequest;
 import com.google.cloud.batch.v1alpha.ListTasksResponse;
 import com.google.cloud.batch.v1alpha.OperationMetadata;
+import com.google.cloud.batch.v1alpha.ResourceAllowance;
 import com.google.cloud.batch.v1alpha.Task;
+import com.google.cloud.batch.v1alpha.UpdateResourceAllowanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -112,6 +120,59 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceMethodDescriptor =
+          MethodDescriptor.<CreateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/CreateResourceAllowance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateResourceAllowanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ResourceAllowance.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceMethodDescriptor =
+          MethodDescriptor.<GetResourceAllowanceRequest, ResourceAllowance>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/GetResourceAllowance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetResourceAllowanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ResourceAllowance.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceMethodDescriptor =
+          MethodDescriptor.<DeleteResourceAllowanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/DeleteResourceAllowance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteResourceAllowanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+      listResourceAllowancesMethodDescriptor =
+          MethodDescriptor
+              .<ListResourceAllowancesRequest, ListResourceAllowancesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/ListResourceAllowances")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListResourceAllowancesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListResourceAllowancesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceMethodDescriptor =
+          MethodDescriptor.<UpdateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.batch.v1alpha.BatchService/UpdateResourceAllowance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateResourceAllowanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ResourceAllowance.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -141,6 +202,20 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable;
   private final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable;
+  private final UnaryCallable<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceCallable;
+  private final UnaryCallable<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceCallable;
+  private final UnaryCallable<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceCallable;
+  private final OperationCallable<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationCallable;
+  private final UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+      listResourceAllowancesCallable;
+  private final UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesPagedResponse>
+      listResourceAllowancesPagedCallable;
+  private final UnaryCallable<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -248,6 +323,64 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateResourceAllowanceRequest, ResourceAllowance>
+        createResourceAllowanceTransportSettings =
+            GrpcCallSettings.<CreateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+                .setMethodDescriptor(createResourceAllowanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetResourceAllowanceRequest, ResourceAllowance>
+        getResourceAllowanceTransportSettings =
+            GrpcCallSettings.<GetResourceAllowanceRequest, ResourceAllowance>newBuilder()
+                .setMethodDescriptor(getResourceAllowanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteResourceAllowanceRequest, Operation>
+        deleteResourceAllowanceTransportSettings =
+            GrpcCallSettings.<DeleteResourceAllowanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteResourceAllowanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+        listResourceAllowancesTransportSettings =
+            GrpcCallSettings
+                .<ListResourceAllowancesRequest, ListResourceAllowancesResponse>newBuilder()
+                .setMethodDescriptor(listResourceAllowancesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateResourceAllowanceRequest, ResourceAllowance>
+        updateResourceAllowanceTransportSettings =
+            GrpcCallSettings.<UpdateResourceAllowanceRequest, ResourceAllowance>newBuilder()
+                .setMethodDescriptor(updateResourceAllowanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "resource_allowance.name",
+                          String.valueOf(request.getResourceAllowance().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -299,6 +432,42 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
     this.listTasksPagedCallable =
         callableFactory.createPagedCallable(
             listTasksTransportSettings, settings.listTasksSettings(), clientContext);
+    this.createResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            createResourceAllowanceTransportSettings,
+            settings.createResourceAllowanceSettings(),
+            clientContext);
+    this.getResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            getResourceAllowanceTransportSettings,
+            settings.getResourceAllowanceSettings(),
+            clientContext);
+    this.deleteResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            deleteResourceAllowanceTransportSettings,
+            settings.deleteResourceAllowanceSettings(),
+            clientContext);
+    this.deleteResourceAllowanceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteResourceAllowanceTransportSettings,
+            settings.deleteResourceAllowanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listResourceAllowancesCallable =
+        callableFactory.createUnaryCallable(
+            listResourceAllowancesTransportSettings,
+            settings.listResourceAllowancesSettings(),
+            clientContext);
+    this.listResourceAllowancesPagedCallable =
+        callableFactory.createPagedCallable(
+            listResourceAllowancesTransportSettings,
+            settings.listResourceAllowancesSettings(),
+            clientContext);
+    this.updateResourceAllowanceCallable =
+        callableFactory.createUnaryCallable(
+            updateResourceAllowanceTransportSettings,
+            settings.updateResourceAllowanceSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -361,6 +530,48 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
   @Override
   public UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
     return listTasksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateResourceAllowanceRequest, ResourceAllowance>
+      createResourceAllowanceCallable() {
+    return createResourceAllowanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetResourceAllowanceRequest, ResourceAllowance>
+      getResourceAllowanceCallable() {
+    return getResourceAllowanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteResourceAllowanceRequest, Operation>
+      deleteResourceAllowanceCallable() {
+    return deleteResourceAllowanceCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteResourceAllowanceRequest, Empty, OperationMetadata>
+      deleteResourceAllowanceOperationCallable() {
+    return deleteResourceAllowanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesResponse>
+      listResourceAllowancesCallable() {
+    return listResourceAllowancesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListResourceAllowancesRequest, ListResourceAllowancesPagedResponse>
+      listResourceAllowancesPagedCallable() {
+    return listResourceAllowancesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateResourceAllowanceRequest, ResourceAllowance>
+      updateResourceAllowanceCallable() {
+    return updateResourceAllowanceCallable;
   }
 
   @Override

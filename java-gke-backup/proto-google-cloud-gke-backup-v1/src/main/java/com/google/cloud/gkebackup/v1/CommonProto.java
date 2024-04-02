@@ -54,25 +54,27 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/gkebackup/v1/common.proto"
-          + "\022\031google.cloud.gkebackup.v1\032\031google/api/"
-          + "resource.proto\" \n\nNamespaces\022\022\n\nnamespac"
-          + "es\030\001 \003(\t\"1\n\016NamespacedName\022\021\n\tnamespace\030"
-          + "\001 \001(\t\022\014\n\004name\030\002 \001(\t\"V\n\017NamespacedNames\022C"
-          + "\n\020namespaced_names\030\001 \003(\0132).google.cloud."
-          + "gkebackup.v1.NamespacedName\"W\n\rEncryptio"
-          + "nKey\022F\n\026gcp_kms_encryption_key\030\001 \001(\tB&\372A"
-          + "#\n!cloudkms.googleapis.com/CryptoKeyB\302\001\n"
-          + "\035com.google.cloud.gkebackup.v1B\013CommonPr"
-          + "otoP\001Z;cloud.google.com/go/gkebackup/api"
-          + "v1/gkebackuppb;gkebackuppb\252\002\031Google.Clou"
-          + "d.GkeBackup.V1\312\002\031Google\\Cloud\\GkeBackup\\"
-          + "V1\352\002\034Google::Cloud::GkeBackup::V1b\006proto"
-          + "3"
+          + "\022\031google.cloud.gkebackup.v1\032\037google/api/"
+          + "field_behavior.proto\032\031google/api/resourc"
+          + "e.proto\"%\n\nNamespaces\022\027\n\nnamespaces\030\001 \003("
+          + "\tB\003\340A\001\";\n\016NamespacedName\022\026\n\tnamespace\030\001 "
+          + "\001(\tB\003\340A\001\022\021\n\004name\030\002 \001(\tB\003\340A\001\"[\n\017Namespace"
+          + "dNames\022H\n\020namespaced_names\030\001 \003(\0132).googl"
+          + "e.cloud.gkebackup.v1.NamespacedNameB\003\340A\001"
+          + "\"Z\n\rEncryptionKey\022I\n\026gcp_kms_encryption_"
+          + "key\030\001 \001(\tB)\340A\001\372A#\n!cloudkms.googleapis.c"
+          + "om/CryptoKeyB\302\001\n\035com.google.cloud.gkebac"
+          + "kup.v1B\013CommonProtoP\001Z;cloud.google.com/"
+          + "go/gkebackup/apiv1/gkebackuppb;gkebackup"
+          + "pb\252\002\031Google.Cloud.GkeBackup.V1\312\002\031Google\\"
+          + "Cloud\\GkeBackup\\V1\352\002\034Google::Cloud::GkeB"
+          + "ackup::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_gkebackup_v1_Namespaces_descriptor =
@@ -109,9 +111,11 @@ public final class CommonProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }
 

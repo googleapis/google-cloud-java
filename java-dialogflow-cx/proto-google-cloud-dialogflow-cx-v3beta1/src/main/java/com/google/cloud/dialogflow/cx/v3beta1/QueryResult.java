@@ -1269,7 +1269,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
    * @return Whether the intent field is set.
    */
   @java.lang.Override
@@ -1292,7 +1292,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
    * @return The intent.
    */
   @java.lang.Override
@@ -1344,7 +1344,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1014
    * @return The intentDetectionConfidence.
    */
   @java.lang.Override
@@ -1701,6 +1701,74 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     return allowAnswerFeedback_;
   }
 
+  public static final int DATA_STORE_CONNECTION_SIGNALS_FIELD_NUMBER = 35;
+  private com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals
+      dataStoreConnectionSignals_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data store connection feature output signals.
+   * Filled only when data stores are involved in serving the query and
+   * DetectIntentRequest.populate data_store_connection_quality_signals is set
+   * to true in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataStoreConnectionSignals field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataStoreConnectionSignals() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data store connection feature output signals.
+   * Filled only when data stores are involved in serving the query and
+   * DetectIntentRequest.populate data_store_connection_quality_signals is set
+   * to true in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataStoreConnectionSignals.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals
+      getDataStoreConnectionSignals() {
+    return dataStoreConnectionSignals_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.getDefaultInstance()
+        : dataStoreConnectionSignals_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data store connection feature output signals.
+   * Filled only when data stores are involved in serving the query and
+   * DetectIntentRequest.populate data_store_connection_quality_signals is set
+   * to true in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignalsOrBuilder
+      getDataStoreConnectionSignalsOrBuilder() {
+    return dataStoreConnectionSignals_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.getDefaultInstance()
+        : dataStoreConnectionSignals_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1787,6 +1855,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(33, getGenerativeInfo());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(35, getDataStoreConnectionSignals());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1889,6 +1960,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getGenerativeInfo());
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              35, getDataStoreConnectionSignals());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1952,6 +2028,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
     }
     if (getAllowAnswerFeedback() != other.getAllowAnswerFeedback()) return false;
+    if (hasDataStoreConnectionSignals() != other.hasDataStoreConnectionSignals()) return false;
+    if (hasDataStoreConnectionSignals()) {
+      if (!getDataStoreConnectionSignals().equals(other.getDataStoreConnectionSignals()))
+        return false;
+    }
     if (!getQueryCase().equals(other.getQueryCase())) return false;
     switch (queryCase_) {
       case 1:
@@ -2053,6 +2134,10 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ALLOW_ANSWER_FEEDBACK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowAnswerFeedback());
+    if (hasDataStoreConnectionSignals()) {
+      hash = (37 * hash) + DATA_STORE_CONNECTION_SIGNALS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataStoreConnectionSignals().hashCode();
+    }
     switch (queryCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -2230,6 +2315,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         getGenerativeInfoFieldBuilder();
         getSentimentAnalysisResultFieldBuilder();
         getAdvancedSettingsFieldBuilder();
+        getDataStoreConnectionSignalsFieldBuilder();
       }
     }
 
@@ -2319,6 +2405,11 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
         advancedSettingsBuilder_ = null;
       }
       allowAnswerFeedback_ = false;
+      dataStoreConnectionSignals_ = null;
+      if (dataStoreConnectionSignalsBuilder_ != null) {
+        dataStoreConnectionSignalsBuilder_.dispose();
+        dataStoreConnectionSignalsBuilder_ = null;
+      }
       queryCase_ = 0;
       query_ = null;
       return this;
@@ -2464,6 +2555,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.allowAnswerFeedback_ = allowAnswerFeedback_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.dataStoreConnectionSignals_ =
+            dataStoreConnectionSignalsBuilder_ == null
+                ? dataStoreConnectionSignals_
+                : dataStoreConnectionSignalsBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2697,6 +2795,9 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getAllowAnswerFeedback() != false) {
         setAllowAnswerFeedback(other.getAllowAnswerFeedback());
+      }
+      if (other.hasDataStoreConnectionSignals()) {
+        mergeDataStoreConnectionSignals(other.getDataStoreConnectionSignals());
       }
       switch (other.getQueryCase()) {
         case TEXT:
@@ -2942,6 +3043,13 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00100000;
                 break;
               } // case 266
+            case 282:
+              {
+                input.readMessage(
+                    getDataStoreConnectionSignalsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 282
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6680,7 +6788,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
      * @return Whether the intent field is set.
      */
     @java.lang.Deprecated
@@ -6702,7 +6810,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
+     *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
      * @return The intent.
      */
     @java.lang.Deprecated
@@ -6921,7 +7029,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1014
      * @return The intentDetectionConfidence.
      */
     @java.lang.Override
@@ -6947,7 +7055,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1014
      * @param value The intentDetectionConfidence to set.
      * @return This builder for chaining.
      */
@@ -6977,7 +7085,7 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
      * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
+     *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1014
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8211,6 +8319,245 @@ public final class QueryResult extends com.google.protobuf.GeneratedMessageV3
       allowAnswerFeedback_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals
+        dataStoreConnectionSignals_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals,
+            com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignalsOrBuilder>
+        dataStoreConnectionSignalsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataStoreConnectionSignals field is set.
+     */
+    public boolean hasDataStoreConnectionSignals() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataStoreConnectionSignals.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals
+        getDataStoreConnectionSignals() {
+      if (dataStoreConnectionSignalsBuilder_ == null) {
+        return dataStoreConnectionSignals_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.getDefaultInstance()
+            : dataStoreConnectionSignals_;
+      } else {
+        return dataStoreConnectionSignalsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataStoreConnectionSignals(
+        com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals value) {
+      if (dataStoreConnectionSignalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataStoreConnectionSignals_ = value;
+      } else {
+        dataStoreConnectionSignalsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDataStoreConnectionSignals(
+        com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.Builder builderForValue) {
+      if (dataStoreConnectionSignalsBuilder_ == null) {
+        dataStoreConnectionSignals_ = builderForValue.build();
+      } else {
+        dataStoreConnectionSignalsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDataStoreConnectionSignals(
+        com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals value) {
+      if (dataStoreConnectionSignalsBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)
+            && dataStoreConnectionSignals_ != null
+            && dataStoreConnectionSignals_
+                != com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals
+                    .getDefaultInstance()) {
+          getDataStoreConnectionSignalsBuilder().mergeFrom(value);
+        } else {
+          dataStoreConnectionSignals_ = value;
+        }
+      } else {
+        dataStoreConnectionSignalsBuilder_.mergeFrom(value);
+      }
+      if (dataStoreConnectionSignals_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDataStoreConnectionSignals() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      dataStoreConnectionSignals_ = null;
+      if (dataStoreConnectionSignalsBuilder_ != null) {
+        dataStoreConnectionSignalsBuilder_.dispose();
+        dataStoreConnectionSignalsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.Builder
+        getDataStoreConnectionSignalsBuilder() {
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return getDataStoreConnectionSignalsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignalsOrBuilder
+        getDataStoreConnectionSignalsOrBuilder() {
+      if (dataStoreConnectionSignalsBuilder_ != null) {
+        return dataStoreConnectionSignalsBuilder_.getMessageOrBuilder();
+      } else {
+        return dataStoreConnectionSignals_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.getDefaultInstance()
+            : dataStoreConnectionSignals_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data store connection feature output signals.
+     * Filled only when data stores are involved in serving the query and
+     * DetectIntentRequest.populate data_store_connection_quality_signals is set
+     * to true in the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals,
+            com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignalsOrBuilder>
+        getDataStoreConnectionSignalsFieldBuilder() {
+      if (dataStoreConnectionSignalsBuilder_ == null) {
+        dataStoreConnectionSignalsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals,
+                com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignalsOrBuilder>(
+                getDataStoreConnectionSignals(), getParentForChildren(), isClean());
+        dataStoreConnectionSignals_ = null;
+      }
+      return dataStoreConnectionSignalsBuilder_;
     }
 
     @java.lang.Override

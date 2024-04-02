@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.41.0 (2024-03-28)
+
+* No change
+
+
+## 3.40.0 (2024-03-22)
+
+### Features
+
+* Add Bitbucket Data Center Config and Bitbucket Cloud config for Cloud Build Repositories ([43b143a](https://github.com/googleapis/google-cloud-java/commit/43b143a3db8c20484289b3cbb7c7cee0815078a0))
+
+
+
 ## 3.39.0 (2024-03-06)
 
 * No change

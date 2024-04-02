@@ -63,6 +63,8 @@ import com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteBackupRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.DeleteRestoreRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest;
+import com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse;
 import com.google.cloud.gkebackup.v1.GetBackupPlanRequest;
 import com.google.cloud.gkebackup.v1.GetBackupRequest;
 import com.google.cloud.gkebackup.v1.GetRestorePlanRequest;
@@ -212,6 +214,9 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
           ListVolumeRestoresRequest, ListVolumeRestoresResponse, ListVolumeRestoresPagedResponse>
       listVolumeRestoresSettings;
   private final UnaryCallSettings<GetVolumeRestoreRequest, VolumeRestore> getVolumeRestoreSettings;
+  private final UnaryCallSettings<
+          GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -819,6 +824,12 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     return getVolumeRestoreSettings;
   }
 
+  /** Returns the object with the settings used for calls to getBackupIndexDownloadUrl. */
+  public UnaryCallSettings<GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+      getBackupIndexDownloadUrlSettings() {
+    return getBackupIndexDownloadUrlSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1004,6 +1015,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     deleteRestoreOperationSettings = settingsBuilder.deleteRestoreOperationSettings().build();
     listVolumeRestoresSettings = settingsBuilder.listVolumeRestoresSettings().build();
     getVolumeRestoreSettings = settingsBuilder.getVolumeRestoreSettings().build();
+    getBackupIndexDownloadUrlSettings = settingsBuilder.getBackupIndexDownloadUrlSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1087,6 +1099,9 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
         listVolumeRestoresSettings;
     private final UnaryCallSettings.Builder<GetVolumeRestoreRequest, VolumeRestore>
         getVolumeRestoreSettings;
+    private final UnaryCallSettings.Builder<
+            GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+        getBackupIndexDownloadUrlSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1202,6 +1217,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       deleteRestoreOperationSettings = OperationCallSettings.newBuilder();
       listVolumeRestoresSettings = PagedCallSettings.newBuilder(LIST_VOLUME_RESTORES_PAGE_STR_FACT);
       getVolumeRestoreSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getBackupIndexDownloadUrlSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1234,6 +1250,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
               deleteRestoreSettings,
               listVolumeRestoresSettings,
               getVolumeRestoreSettings,
+              getBackupIndexDownloadUrlSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1281,6 +1298,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
       deleteRestoreOperationSettings = settings.deleteRestoreOperationSettings.toBuilder();
       listVolumeRestoresSettings = settings.listVolumeRestoresSettings.toBuilder();
       getVolumeRestoreSettings = settings.getVolumeRestoreSettings.toBuilder();
+      getBackupIndexDownloadUrlSettings = settings.getBackupIndexDownloadUrlSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1313,6 +1331,7 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
               deleteRestoreSettings,
               listVolumeRestoresSettings,
               getVolumeRestoreSettings,
+              getBackupIndexDownloadUrlSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1462,6 +1481,11 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
 
       builder
           .getVolumeRestoreSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getBackupIndexDownloadUrlSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2006,6 +2030,13 @@ public class BackupForGKEStubSettings extends StubSettings<BackupForGKEStubSetti
     public UnaryCallSettings.Builder<GetVolumeRestoreRequest, VolumeRestore>
         getVolumeRestoreSettings() {
       return getVolumeRestoreSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupIndexDownloadUrl. */
+    public UnaryCallSettings.Builder<
+            GetBackupIndexDownloadUrlRequest, GetBackupIndexDownloadUrlResponse>
+        getBackupIndexDownloadUrlSettings() {
+      return getBackupIndexDownloadUrlSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

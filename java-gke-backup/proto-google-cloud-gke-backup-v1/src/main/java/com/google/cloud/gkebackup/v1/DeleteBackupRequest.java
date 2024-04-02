@@ -129,12 +129,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
    * request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -154,12 +154,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If provided, this value must match the current value of the
+   * Optional. If provided, this value must match the current value of the
    * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
    * request is rejected.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -182,12 +182,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * If set to true, any VolumeBackups below this Backup will also be deleted.
-   * Otherwise, the request will only succeed if the Backup has no
+   * Optional. If set to true, any VolumeBackups below this Backup will also be
+   * deleted. Otherwise, the request will only succeed if the Backup has no
    * VolumeBackups.
    * </pre>
    *
-   * <code>bool force = 3;</code>
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The force.
    */
@@ -710,12 +710,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
      * request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -734,12 +734,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
      * request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -758,12 +758,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
      * request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -781,12 +781,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
      * request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -800,12 +800,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If provided, this value must match the current value of the
+     * Optional. If provided, this value must match the current value of the
      * target Backup's [etag][google.cloud.gkebackup.v1.Backup.etag] field or the
      * request is rejected.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -826,12 +826,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set to true, any VolumeBackups below this Backup will also be deleted.
-     * Otherwise, the request will only succeed if the Backup has no
+     * Optional. If set to true, any VolumeBackups below this Backup will also be
+     * deleted. Otherwise, the request will only succeed if the Backup has no
      * VolumeBackups.
      * </pre>
      *
-     * <code>bool force = 3;</code>
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The force.
      */
@@ -843,12 +843,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set to true, any VolumeBackups below this Backup will also be deleted.
-     * Otherwise, the request will only succeed if the Backup has no
+     * Optional. If set to true, any VolumeBackups below this Backup will also be
+     * deleted. Otherwise, the request will only succeed if the Backup has no
      * VolumeBackups.
      * </pre>
      *
-     * <code>bool force = 3;</code>
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The force to set.
      * @return This builder for chaining.
@@ -864,12 +864,12 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * If set to true, any VolumeBackups below this Backup will also be deleted.
-     * Otherwise, the request will only succeed if the Backup has no
+     * Optional. If set to true, any VolumeBackups below this Backup will also be
+     * deleted. Otherwise, the request will only succeed if the Backup has no
      * VolumeBackups.
      * </pre>
      *
-     * <code>bool force = 3;</code>
+     * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

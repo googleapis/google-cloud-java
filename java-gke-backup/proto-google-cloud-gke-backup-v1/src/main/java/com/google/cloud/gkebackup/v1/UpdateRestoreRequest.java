@@ -120,7 +120,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * This is used to specify the fields to be overwritten in the
+   * Optional. This is used to specify the fields to be overwritten in the
    * Restore targeted for update. The values for each of these
    * updated fields will be taken from the `restore` provided
    * with this request. Field names are relative to the root of the resource.
@@ -130,7 +130,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
    * and are not used to update the target Restore.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -142,7 +143,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * This is used to specify the fields to be overwritten in the
+   * Optional. This is used to specify the fields to be overwritten in the
    * Restore targeted for update. The values for each of these
    * updated fields will be taken from the `restore` provided
    * with this request. Field names are relative to the root of the resource.
@@ -152,7 +153,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
    * and are not used to update the target Restore.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -164,7 +166,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * This is used to specify the fields to be overwritten in the
+   * Optional. This is used to specify the fields to be overwritten in the
    * Restore targeted for update. The values for each of these
    * updated fields will be taken from the `restore` provided
    * with this request. Field names are relative to the root of the resource.
@@ -174,7 +176,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
    * and are not used to update the target Restore.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -797,7 +800,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -807,7 +810,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -818,7 +822,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -828,7 +832,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -845,7 +850,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -855,7 +860,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -874,7 +880,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -884,7 +890,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -900,7 +907,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -910,7 +917,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -934,7 +942,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -944,7 +952,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearUpdateMask() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -960,7 +969,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -970,7 +979,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       bitField0_ |= 0x00000002;
@@ -981,7 +991,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -991,7 +1001,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -1006,7 +1017,7 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * This is used to specify the fields to be overwritten in the
+     * Optional. This is used to specify the fields to be overwritten in the
      * Restore targeted for update. The values for each of these
      * updated fields will be taken from the `restore` provided
      * with this request. Field names are relative to the root of the resource.
@@ -1016,7 +1027,8 @@ public final class UpdateRestoreRequest extends com.google.protobuf.GeneratedMes
      * and are not used to update the target Restore.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,

@@ -206,12 +206,14 @@ public class AgentsClientHttpJsonTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -271,12 +273,14 @@ public class AgentsClientHttpJsonTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -336,12 +340,14 @@ public class AgentsClientHttpJsonTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -403,12 +409,14 @@ public class AgentsClientHttpJsonTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -470,12 +478,14 @@ public class AgentsClientHttpJsonTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -497,12 +507,14 @@ public class AgentsClientHttpJsonTest {
                     .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
+            .setEnableMultiLanguageTraining(true)
             .setLocked(true)
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
             .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+            .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -550,12 +562,14 @@ public class AgentsClientHttpJsonTest {
                       .toString())
               .setEnableStackdriverLogging(true)
               .setEnableSpellCorrection(true)
+              .setEnableMultiLanguageTraining(true)
               .setLocked(true)
               .setAdvancedSettings(AdvancedSettings.newBuilder().build())
               .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
               .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
               .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
               .setAnswerFeedbackSettings(Agent.AnswerFeedbackSettings.newBuilder().build())
+              .setPersonalizationSettings(Agent.PersonalizationSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAgent(agent, updateMask);

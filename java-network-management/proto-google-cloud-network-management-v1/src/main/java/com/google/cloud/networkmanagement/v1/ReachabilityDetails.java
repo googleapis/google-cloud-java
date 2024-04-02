@@ -118,7 +118,9 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * The source and destination endpoints do not uniquely identify
      * the test location in the network, and the reachability result contains
      * multiple traces. For some traces, a packet could be delivered, and for
-     * others, it would not be.
+     * others, it would not be. This result is also assigned to
+     * configuration analysis of return path if on its own it should be
+     * REACHABLE, but configuration analysis of forward path is AMBIGUOUS.
      * </pre>
      *
      * <code>AMBIGUOUS = 4;</code>
@@ -187,7 +189,9 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * The source and destination endpoints do not uniquely identify
      * the test location in the network, and the reachability result contains
      * multiple traces. For some traces, a packet could be delivered, and for
-     * others, it would not be.
+     * others, it would not be. This result is also assigned to
+     * configuration analysis of return path if on its own it should be
+     * REACHABLE, but configuration analysis of forward path is AMBIGUOUS.
      * </pre>
      *
      * <code>AMBIGUOUS = 4;</code>

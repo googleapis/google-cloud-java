@@ -1212,6 +1212,29 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         : searchConfig_;
   }
 
+  public static final int POPULATE_DATA_STORE_CONNECTION_SIGNALS_FIELD_NUMBER = 25;
+  private boolean populateDataStoreConnectionSignals_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true and data stores are involved in serving the
+   * request then
+   * DetectIntentResponse.query_result.data_store_connection_signals
+   * will be filled with data that can help evaluations.
+   * </pre>
+   *
+   * <code>
+   * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The populateDataStoreConnectionSignals.
+   */
+  @java.lang.Override
+  public boolean getPopulateDataStoreConnectionSignals() {
+    return populateDataStoreConnectionSignals_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1272,6 +1295,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(21, getLlmModelSettings());
+    }
+    if (populateDataStoreConnectionSignals_ != false) {
+      output.writeBool(25, populateDataStoreConnectionSignals_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1343,6 +1369,11 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getLlmModelSettings());
     }
+    if (populateDataStoreConnectionSignals_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              25, populateDataStoreConnectionSignals_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1396,6 +1427,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasSearchConfig()) {
       if (!getSearchConfig().equals(other.getSearchConfig())) return false;
     }
+    if (getPopulateDataStoreConnectionSignals() != other.getPopulateDataStoreConnectionSignals())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1459,6 +1492,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + SEARCH_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSearchConfig().hashCode();
     }
+    hash = (37 * hash) + POPULATE_DATA_STORE_CONNECTION_SIGNALS_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getPopulateDataStoreConnectionSignals());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1687,6 +1724,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         searchConfigBuilder_.dispose();
         searchConfigBuilder_ = null;
       }
+      populateDataStoreConnectionSignals_ = false;
       return this;
     }
 
@@ -1795,6 +1833,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         result.searchConfig_ =
             searchConfigBuilder_ == null ? searchConfig_ : searchConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.populateDataStoreConnectionSignals_ = populateDataStoreConnectionSignals_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1930,6 +1971,9 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       }
       if (other.hasSearchConfig()) {
         mergeSearchConfig(other.getSearchConfig());
+      }
+      if (other.getPopulateDataStoreConnectionSignals() != false) {
+        setPopulateDataStoreConnectionSignals(other.getPopulateDataStoreConnectionSignals());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2069,6 +2113,12 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000800;
                 break;
               } // case 170
+            case 200:
+              {
+                populateDataStoreConnectionSignals_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 200
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5498,6 +5548,74 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         searchConfig_ = null;
       }
       return searchConfigBuilder_;
+    }
+
+    private boolean populateDataStoreConnectionSignals_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true and data stores are involved in serving the
+     * request then
+     * DetectIntentResponse.query_result.data_store_connection_signals
+     * will be filled with data that can help evaluations.
+     * </pre>
+     *
+     * <code>
+     * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The populateDataStoreConnectionSignals.
+     */
+    @java.lang.Override
+    public boolean getPopulateDataStoreConnectionSignals() {
+      return populateDataStoreConnectionSignals_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true and data stores are involved in serving the
+     * request then
+     * DetectIntentResponse.query_result.data_store_connection_signals
+     * will be filled with data that can help evaluations.
+     * </pre>
+     *
+     * <code>
+     * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The populateDataStoreConnectionSignals to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPopulateDataStoreConnectionSignals(boolean value) {
+
+      populateDataStoreConnectionSignals_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true and data stores are involved in serving the
+     * request then
+     * DetectIntentResponse.query_result.data_store_connection_signals
+     * will be filled with data that can help evaluations.
+     * </pre>
+     *
+     * <code>
+     * bool populate_data_store_connection_signals = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPopulateDataStoreConnectionSignals() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      populateDataStoreConnectionSignals_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

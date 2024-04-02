@@ -57,6 +57,10 @@ public final class MessageProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_ActionResponse_UpdatedWidget_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_AccessoryWidget_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_chat_v1_AccessoryWidget_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_GetMessageRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_chat_v1_GetMessageRequest_fieldAccessorTable;
@@ -114,7 +118,7 @@ public final class MessageProto {
           + "/slash_command.proto\032\032google/chat/v1/spa"
           + "ce.proto\032\031google/chat/v1/user.proto\032 goo"
           + "gle/protobuf/field_mask.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\355\t\n\007Message\022\014\n\004na"
+          + "otobuf/timestamp.proto\"\251\n\n\007Message\022\014\n\004na"
           + "me\030\001 \001(\t\022)\n\006sender\030\002 \001(\0132\024.google.chat.v"
           + "1.UserB\003\340A\003\0227\n\013create_time\030\003 \001(\0132\032.googl"
           + "e.protobuf.TimestampB\006\340A\005\340A\001\0229\n\020last_upd"
@@ -144,69 +148,73 @@ public final class MessageProto {
           + "\340A\003\022K\n\027quoted_message_metadata\030\' \001(\0132%.g"
           + "oogle.chat.v1.QuotedMessageMetadataB\003\340A\003"
           + "\0227\n\rattached_gifs\030* \003(\0132\033.google.chat.v1"
-          + ".AttachedGifB\003\340A\003:C\352A@\n\033chat.googleapis."
-          + "com/Message\022!spaces/{space}/messages/{me"
-          + "ssage}\"\037\n\013AttachedGif\022\020\n\003uri\030\001 \001(\tB\003\340A\003\""
-          + "\211\002\n\025QuotedMessageMetadata\0221\n\004name\030\001 \001(\tB"
-          + "#\340A\003\372A\035\n\033chat.googleapis.com/Message\0229\n\020"
-          + "last_update_time\030\002 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003:\201\001\352A~\n)chat.googleapis.c"
-          + "om/QuotedMessageMetadata\022Qspaces/{space}"
-          + "/messages/{message}/quotedMessageMetadat"
-          + "a/{quoted_message_metadata}\"q\n\006Thread\022\014\n"
-          + "\004name\030\001 \001(\t\022\027\n\nthread_key\030\003 \001(\tB\003\340A\001:@\352A"
-          + "=\n\032chat.googleapis.com/Thread\022\037spaces/{s"
-          + "pace}/threads/{thread}\"\322\004\n\016ActionRespons"
-          + "e\022>\n\004type\030\001 \001(\0162+.google.chat.v1.ActionR"
-          + "esponse.ResponseTypeB\003\340A\004\022\020\n\003url\030\002 \001(\tB\003"
-          + "\340A\004\0228\n\rdialog_action\030\003 \001(\0132\034.google.chat"
-          + ".v1.DialogActionB\003\340A\004\022I\n\016updated_widget\030"
-          + "\004 \001(\0132,.google.chat.v1.ActionResponse.Up"
-          + "datedWidgetB\003\340A\004\032R\n\016SelectionItems\022@\n\005it"
-          + "ems\030\001 \003(\01321.google.apps.card.v1.Selectio"
-          + "nInput.SelectionItem\032w\n\rUpdatedWidget\022D\n"
-          + "\013suggestions\030\001 \001(\0132-.google.chat.v1.Acti"
-          + "onResponse.SelectionItemsH\000\022\016\n\006widget\030\002 "
-          + "\001(\tB\020\n\016updated_widget\"\233\001\n\014ResponseType\022\024"
-          + "\n\020TYPE_UNSPECIFIED\020\000\022\017\n\013NEW_MESSAGE\020\001\022\022\n"
-          + "\016UPDATE_MESSAGE\020\002\022\035\n\031UPDATE_USER_MESSAGE"
-          + "_CARDS\020\006\022\022\n\016REQUEST_CONFIG\020\003\022\n\n\006DIALOG\020\004"
-          + "\022\021\n\rUPDATE_WIDGET\020\007\"F\n\021GetMessageRequest"
-          + "\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033chat.googleapis."
-          + "com/Message\"X\n\024DeleteMessageRequest\0221\n\004n"
-          + "ame\030\001 \001(\tB#\340A\002\372A\035\n\033chat.googleapis.com/M"
-          + "essage\022\r\n\005force\030\002 \001(\010\"\222\001\n\024UpdateMessageR"
-          + "equest\022-\n\007message\030\001 \001(\0132\027.google.chat.v1"
-          + ".MessageB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.goo"
-          + "gle.protobuf.FieldMask\022\032\n\rallow_missing\030"
-          + "\004 \001(\010B\003\340A\001\"\244\003\n\024CreateMessageRequest\0223\n\006p"
-          + "arent\030\001 \001(\tB#\340A\002\372A\035\022\033chat.googleapis.com"
-          + "/Message\022-\n\007message\030\004 \001(\0132\027.google.chat."
-          + "v1.MessageB\003\340A\002\022\031\n\nthread_key\030\006 \001(\tB\005\030\001\340"
-          + "A\001\022\027\n\nrequest_id\030\007 \001(\tB\003\340A\001\022Z\n\024message_r"
-          + "eply_option\030\010 \001(\01627.google.chat.v1.Creat"
-          + "eMessageRequest.MessageReplyOptionB\003\340A\001\022"
-          + "\027\n\nmessage_id\030\t \001(\tB\003\340A\001\"\177\n\022MessageReply"
-          + "Option\022$\n MESSAGE_REPLY_OPTION_UNSPECIFI"
-          + "ED\020\000\022(\n$REPLY_MESSAGE_FALLBACK_TO_NEW_TH"
-          + "READ\020\001\022\031\n\025REPLY_MESSAGE_OR_FAIL\020\002\"\251\001\n\023Li"
-          + "stMessagesRequest\0223\n\006parent\030\001 \001(\tB#\340A\002\372A"
-          + "\035\022\033chat.googleapis.com/Message\022\021\n\tpage_s"
-          + "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030"
-          + "\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\022\024\n\014show_deleted\030"
-          + "\006 \001(\010\"Z\n\024ListMessagesResponse\022)\n\010message"
-          + "s\030\001 \003(\0132\027.google.chat.v1.Message\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\"\201\001\n\014DialogAction\022-\n\006di"
-          + "alog\030\001 \001(\0132\026.google.chat.v1.DialogB\003\340A\004H"
-          + "\000\0228\n\raction_status\030\002 \001(\0132\034.google.chat.v"
-          + "1.ActionStatusB\003\340A\004B\010\n\006action\"6\n\006Dialog\022"
-          + ",\n\004body\030\001 \001(\0132\031.google.apps.card.v1.Card"
-          + "B\003\340A\004\"F\n\nCardWithId\022\017\n\007card_id\030\001 \001(\t\022\'\n\004"
-          + "card\030\002 \001(\0132\031.google.apps.card.v1.CardB\227\001"
-          + "\n\022com.google.chat.v1B\014MessageProtoP\001Z,cl"
-          + "oud.google.com/go/chat/apiv1/chatpb;chat"
-          + "pb\252\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\C"
-          + "hat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + ".AttachedGifB\003\340A\003\022:\n\021accessory_widgets\030,"
+          + " \003(\0132\037.google.chat.v1.AccessoryWidget:C\352"
+          + "A@\n\033chat.googleapis.com/Message\022!spaces/"
+          + "{space}/messages/{message}\"\037\n\013AttachedGi"
+          + "f\022\020\n\003uri\030\001 \001(\tB\003\340A\003\"\211\002\n\025QuotedMessageMet"
+          + "adata\0221\n\004name\030\001 \001(\tB#\340A\003\372A\035\n\033chat.google"
+          + "apis.com/Message\0229\n\020last_update_time\030\002 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003:\201\001\352A"
+          + "~\n)chat.googleapis.com/QuotedMessageMeta"
+          + "data\022Qspaces/{space}/messages/{message}/"
+          + "quotedMessageMetadata/{quoted_message_me"
+          + "tadata}\"q\n\006Thread\022\014\n\004name\030\001 \001(\t\022\027\n\nthrea"
+          + "d_key\030\003 \001(\tB\003\340A\001:@\352A=\n\032chat.googleapis.c"
+          + "om/Thread\022\037spaces/{space}/threads/{threa"
+          + "d}\"\322\004\n\016ActionResponse\022>\n\004type\030\001 \001(\0162+.go"
+          + "ogle.chat.v1.ActionResponse.ResponseType"
+          + "B\003\340A\004\022\020\n\003url\030\002 \001(\tB\003\340A\004\0228\n\rdialog_action"
+          + "\030\003 \001(\0132\034.google.chat.v1.DialogActionB\003\340A"
+          + "\004\022I\n\016updated_widget\030\004 \001(\0132,.google.chat."
+          + "v1.ActionResponse.UpdatedWidgetB\003\340A\004\032R\n\016"
+          + "SelectionItems\022@\n\005items\030\001 \003(\01321.google.a"
+          + "pps.card.v1.SelectionInput.SelectionItem"
+          + "\032w\n\rUpdatedWidget\022D\n\013suggestions\030\001 \001(\0132-"
+          + ".google.chat.v1.ActionResponse.Selection"
+          + "ItemsH\000\022\016\n\006widget\030\002 \001(\tB\020\n\016updated_widge"
+          + "t\"\233\001\n\014ResponseType\022\024\n\020TYPE_UNSPECIFIED\020\000"
+          + "\022\017\n\013NEW_MESSAGE\020\001\022\022\n\016UPDATE_MESSAGE\020\002\022\035\n"
+          + "\031UPDATE_USER_MESSAGE_CARDS\020\006\022\022\n\016REQUEST_"
+          + "CONFIG\020\003\022\n\n\006DIALOG\020\004\022\021\n\rUPDATE_WIDGET\020\007\""
+          + "S\n\017AccessoryWidget\0226\n\013button_list\030\001 \001(\0132"
+          + "\037.google.apps.card.v1.ButtonListH\000B\010\n\006ac"
+          + "tion\"F\n\021GetMessageRequest\0221\n\004name\030\001 \001(\tB"
+          + "#\340A\002\372A\035\n\033chat.googleapis.com/Message\"X\n\024"
+          + "DeleteMessageRequest\0221\n\004name\030\001 \001(\tB#\340A\002\372"
+          + "A\035\n\033chat.googleapis.com/Message\022\r\n\005force"
+          + "\030\002 \001(\010\"\222\001\n\024UpdateMessageRequest\022-\n\007messa"
+          + "ge\030\001 \001(\0132\027.google.chat.v1.MessageB\003\340A\002\022/"
+          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
+          + "eldMask\022\032\n\rallow_missing\030\004 \001(\010B\003\340A\001\"\244\003\n\024"
+          + "CreateMessageRequest\0223\n\006parent\030\001 \001(\tB#\340A"
+          + "\002\372A\035\022\033chat.googleapis.com/Message\022-\n\007mes"
+          + "sage\030\004 \001(\0132\027.google.chat.v1.MessageB\003\340A\002"
+          + "\022\031\n\nthread_key\030\006 \001(\tB\005\030\001\340A\001\022\027\n\nrequest_i"
+          + "d\030\007 \001(\tB\003\340A\001\022Z\n\024message_reply_option\030\010 \001"
+          + "(\01627.google.chat.v1.CreateMessageRequest"
+          + ".MessageReplyOptionB\003\340A\001\022\027\n\nmessage_id\030\t"
+          + " \001(\tB\003\340A\001\"\177\n\022MessageReplyOption\022$\n MESSA"
+          + "GE_REPLY_OPTION_UNSPECIFIED\020\000\022(\n$REPLY_M"
+          + "ESSAGE_FALLBACK_TO_NEW_THREAD\020\001\022\031\n\025REPLY"
+          + "_MESSAGE_OR_FAIL\020\002\"\251\001\n\023ListMessagesReque"
+          + "st\0223\n\006parent\030\001 \001(\tB#\340A\002\372A\035\022\033chat.googlea"
+          + "pis.com/Message\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa"
+          + "ge_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_"
+          + "by\030\005 \001(\t\022\024\n\014show_deleted\030\006 \001(\010\"Z\n\024ListMe"
+          + "ssagesResponse\022)\n\010messages\030\001 \003(\0132\027.googl"
+          + "e.chat.v1.Message\022\027\n\017next_page_token\030\002 \001"
+          + "(\t\"\201\001\n\014DialogAction\022-\n\006dialog\030\001 \001(\0132\026.go"
+          + "ogle.chat.v1.DialogB\003\340A\004H\000\0228\n\raction_sta"
+          + "tus\030\002 \001(\0132\034.google.chat.v1.ActionStatusB"
+          + "\003\340A\004B\010\n\006action\"6\n\006Dialog\022,\n\004body\030\001 \001(\0132\031"
+          + ".google.apps.card.v1.CardB\003\340A\004\"F\n\nCardWi"
+          + "thId\022\017\n\007card_id\030\001 \001(\t\022\'\n\004card\030\002 \001(\0132\031.go"
+          + "ogle.apps.card.v1.CardB\227\001\n\022com.google.ch"
+          + "at.v1B\014MessageProtoP\001Z,cloud.google.com/"
+          + "go/chat/apiv1/chatpb;chatpb\252\002\023Google.App"
+          + "s.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google"
+          + "::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -258,6 +266,7 @@ public final class MessageProto {
               "DeletionMetadata",
               "QuotedMessageMetadata",
               "AttachedGifs",
+              "AccessoryWidgets",
             });
     internal_static_google_chat_v1_AttachedGif_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -306,8 +315,16 @@ public final class MessageProto {
             new java.lang.String[] {
               "Suggestions", "Widget", "UpdatedWidget",
             });
-    internal_static_google_chat_v1_GetMessageRequest_descriptor =
+    internal_static_google_chat_v1_AccessoryWidget_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_chat_v1_AccessoryWidget_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_chat_v1_AccessoryWidget_descriptor,
+            new java.lang.String[] {
+              "ButtonList", "Action",
+            });
+    internal_static_google_chat_v1_GetMessageRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_chat_v1_GetMessageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_GetMessageRequest_descriptor,
@@ -315,7 +332,7 @@ public final class MessageProto {
               "Name",
             });
     internal_static_google_chat_v1_DeleteMessageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_chat_v1_DeleteMessageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_DeleteMessageRequest_descriptor,
@@ -323,7 +340,7 @@ public final class MessageProto {
               "Name", "Force",
             });
     internal_static_google_chat_v1_UpdateMessageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_chat_v1_UpdateMessageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_UpdateMessageRequest_descriptor,
@@ -331,7 +348,7 @@ public final class MessageProto {
               "Message", "UpdateMask", "AllowMissing",
             });
     internal_static_google_chat_v1_CreateMessageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_chat_v1_CreateMessageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_CreateMessageRequest_descriptor,
@@ -339,7 +356,7 @@ public final class MessageProto {
               "Parent", "Message", "ThreadKey", "RequestId", "MessageReplyOption", "MessageId",
             });
     internal_static_google_chat_v1_ListMessagesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_chat_v1_ListMessagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_ListMessagesRequest_descriptor,
@@ -347,7 +364,7 @@ public final class MessageProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "ShowDeleted",
             });
     internal_static_google_chat_v1_ListMessagesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_chat_v1_ListMessagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_ListMessagesResponse_descriptor,
@@ -355,14 +372,14 @@ public final class MessageProto {
               "Messages", "NextPageToken",
             });
     internal_static_google_chat_v1_DialogAction_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_chat_v1_DialogAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_DialogAction_descriptor,
             new java.lang.String[] {
               "Dialog", "ActionStatus", "Action",
             });
-    internal_static_google_chat_v1_Dialog_descriptor = getDescriptor().getMessageTypes().get(12);
+    internal_static_google_chat_v1_Dialog_descriptor = getDescriptor().getMessageTypes().get(13);
     internal_static_google_chat_v1_Dialog_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_Dialog_descriptor,
@@ -370,7 +387,7 @@ public final class MessageProto {
               "Body",
             });
     internal_static_google_chat_v1_CardWithId_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_chat_v1_CardWithId_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_chat_v1_CardWithId_descriptor,

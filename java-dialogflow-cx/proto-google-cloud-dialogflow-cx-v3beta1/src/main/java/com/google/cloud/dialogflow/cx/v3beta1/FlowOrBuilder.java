@@ -567,4 +567,46 @@ public interface FlowOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.KnowledgeConnectorSettingsOrBuilder
       getKnowledgeConnectorSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiLanguageSettings field is set.
+   */
+  boolean hasMultiLanguageSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiLanguageSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings getMultiLanguageSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Multi-lingual agent settings for this flow.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettings multi_language_settings = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Flow.MultiLanguageSettingsOrBuilder
+      getMultiLanguageSettingsOrBuilder();
 }

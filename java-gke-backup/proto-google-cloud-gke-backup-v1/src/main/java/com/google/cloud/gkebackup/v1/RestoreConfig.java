@@ -24,7 +24,6 @@ package com.google.cloud.gkebackup.v1;
  *
  * <pre>
  * Configuration of a restore.
- * Next id: 12
  * </pre>
  *
  * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig}
@@ -621,12 +620,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * API group string of a Kubernetes resource, e.g.
+     * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
      * Note: use empty string for core API group
      * </pre>
      *
-     * <code>string resource_group = 1;</code>
+     * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The resourceGroup.
      */
@@ -635,12 +634,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * API group string of a Kubernetes resource, e.g.
+     * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
      * Note: use empty string for core API group
      * </pre>
      *
-     * <code>string resource_group = 1;</code>
+     * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for resourceGroup.
      */
@@ -650,11 +649,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kind of a Kubernetes resource, e.g.
-     * "CustomResourceDefinition", "StorageClass", etc.
+     * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+     * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+     * "StorageClass", etc.
      * </pre>
      *
-     * <code>string resource_kind = 2;</code>
+     * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The resourceKind.
      */
@@ -663,11 +663,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kind of a Kubernetes resource, e.g.
-     * "CustomResourceDefinition", "StorageClass", etc.
+     * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+     * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+     * "StorageClass", etc.
      * </pre>
      *
-     * <code>string resource_kind = 2;</code>
+     * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for resourceKind.
      */
@@ -728,12 +729,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * API group string of a Kubernetes resource, e.g.
+     * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
      * Note: use empty string for core API group
      * </pre>
      *
-     * <code>string resource_group = 1;</code>
+     * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The resourceGroup.
      */
@@ -753,12 +754,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * API group string of a Kubernetes resource, e.g.
+     * Optional. API group string of a Kubernetes resource, e.g.
      * "apiextensions.k8s.io", "storage.k8s.io", etc.
      * Note: use empty string for core API group
      * </pre>
      *
-     * <code>string resource_group = 1;</code>
+     * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for resourceGroup.
      */
@@ -783,11 +784,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kind of a Kubernetes resource, e.g.
-     * "CustomResourceDefinition", "StorageClass", etc.
+     * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+     * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+     * "StorageClass", etc.
      * </pre>
      *
-     * <code>string resource_kind = 2;</code>
+     * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The resourceKind.
      */
@@ -807,11 +809,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kind of a Kubernetes resource, e.g.
-     * "CustomResourceDefinition", "StorageClass", etc.
+     * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+     * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+     * "StorageClass", etc.
      * </pre>
      *
-     * <code>string resource_kind = 2;</code>
+     * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for resourceKind.
      */
@@ -1206,12 +1209,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * API group string of a Kubernetes resource, e.g.
+       * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
        * Note: use empty string for core API group
        * </pre>
        *
-       * <code>string resource_group = 1;</code>
+       * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The resourceGroup.
        */
@@ -1230,12 +1233,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * API group string of a Kubernetes resource, e.g.
+       * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
        * Note: use empty string for core API group
        * </pre>
        *
-       * <code>string resource_group = 1;</code>
+       * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for resourceGroup.
        */
@@ -1254,12 +1257,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * API group string of a Kubernetes resource, e.g.
+       * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
        * Note: use empty string for core API group
        * </pre>
        *
-       * <code>string resource_group = 1;</code>
+       * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The resourceGroup to set.
        * @return This builder for chaining.
@@ -1277,12 +1280,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * API group string of a Kubernetes resource, e.g.
+       * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
        * Note: use empty string for core API group
        * </pre>
        *
-       * <code>string resource_group = 1;</code>
+       * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1296,12 +1299,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * API group string of a Kubernetes resource, e.g.
+       * Optional. API group string of a Kubernetes resource, e.g.
        * "apiextensions.k8s.io", "storage.k8s.io", etc.
        * Note: use empty string for core API group
        * </pre>
        *
-       * <code>string resource_group = 1;</code>
+       * <code>string resource_group = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for resourceGroup to set.
        * @return This builder for chaining.
@@ -1322,11 +1325,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kind of a Kubernetes resource, e.g.
-       * "CustomResourceDefinition", "StorageClass", etc.
+       * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+       * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+       * "StorageClass", etc.
        * </pre>
        *
-       * <code>string resource_kind = 2;</code>
+       * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The resourceKind.
        */
@@ -1345,11 +1349,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kind of a Kubernetes resource, e.g.
-       * "CustomResourceDefinition", "StorageClass", etc.
+       * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+       * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+       * "StorageClass", etc.
        * </pre>
        *
-       * <code>string resource_kind = 2;</code>
+       * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for resourceKind.
        */
@@ -1368,11 +1373,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kind of a Kubernetes resource, e.g.
-       * "CustomResourceDefinition", "StorageClass", etc.
+       * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+       * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+       * "StorageClass", etc.
        * </pre>
        *
-       * <code>string resource_kind = 2;</code>
+       * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The resourceKind to set.
        * @return This builder for chaining.
@@ -1390,11 +1396,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kind of a Kubernetes resource, e.g.
-       * "CustomResourceDefinition", "StorageClass", etc.
+       * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+       * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+       * "StorageClass", etc.
        * </pre>
        *
-       * <code>string resource_kind = 2;</code>
+       * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1408,11 +1415,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Kind of a Kubernetes resource, e.g.
-       * "CustomResourceDefinition", "StorageClass", etc.
+       * Optional. Kind of a Kubernetes resource, must be in UpperCamelCase
+       * (PascalCase) and singular form. E.g. "CustomResourceDefinition",
+       * "StorageClass", etc.
        * </pre>
        *
-       * <code>string resource_kind = 2;</code>
+       * <code>string resource_kind = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for resourceKind to set.
        * @return This builder for chaining.
@@ -1501,12 +1509,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
@@ -1515,12 +1524,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSelectedGroupKinds(int index);
@@ -1528,12 +1538,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     int getSelectedGroupKindsCount();
@@ -1541,12 +1552,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
@@ -1555,12 +1567,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getSelectedGroupKindsOrBuilder(
@@ -1570,13 +1583,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
@@ -1585,13 +1599,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getExcludedGroupKinds(int index);
@@ -1599,13 +1614,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     int getExcludedGroupKindsCount();
@@ -1613,13 +1629,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
@@ -1628,13 +1645,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getExcludedGroupKindsOrBuilder(
@@ -1644,11 +1662,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If True, all valid cluster-scoped resources will be restored.
+     * Optional. If True, all valid cluster-scoped resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>bool all_group_kinds = 3;</code>
+     * <code>bool all_group_kinds = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allGroupKinds.
      */
@@ -1658,12 +1676,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If True, no cluster-scoped resources will be restored.
+     * Optional. If True, no cluster-scoped resources will be restored.
      * This has the same restore scope as if the message is not defined.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>bool no_group_kinds = 4;</code>
+     * <code>bool no_group_kinds = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The noGroupKinds.
      */
@@ -1742,12 +1760,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1759,12 +1778,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1776,12 +1796,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1792,12 +1813,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1808,12 +1830,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to restore from the
-     * backup. If specified, only the selected resources will be restored.
+     * Optional. A list of cluster-scoped resource group kinds to restore from
+     * the backup. If specified, only the selected resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1831,13 +1854,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1849,13 +1873,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1867,13 +1892,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1884,13 +1910,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1901,13 +1928,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of cluster-scoped resource group kinds to NOT restore from the
-     * backup. If specified, all valid cluster-scoped resources will be
+     * Optional. A list of cluster-scoped resource group kinds to NOT restore
+     * from the backup. If specified, all valid cluster-scoped resources will be
      * restored except for those specified in the list.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1922,11 +1950,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If True, all valid cluster-scoped resources will be restored.
+     * Optional. If True, all valid cluster-scoped resources will be restored.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>bool all_group_kinds = 3;</code>
+     * <code>bool all_group_kinds = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The allGroupKinds.
      */
@@ -1941,12 +1969,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If True, no cluster-scoped resources will be restored.
+     * Optional. If True, no cluster-scoped resources will be restored.
      * This has the same restore scope as if the message is not defined.
      * Mutually exclusive to any other field in the message.
      * </pre>
      *
-     * <code>bool no_group_kinds = 4;</code>
+     * <code>bool no_group_kinds = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The noGroupKinds.
      */
@@ -2517,12 +2545,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
@@ -2537,12 +2566,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public int getSelectedGroupKindsCount() {
@@ -2556,12 +2586,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getSelectedGroupKinds(
@@ -2576,12 +2607,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setSelectedGroupKinds(
@@ -2602,12 +2634,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setSelectedGroupKinds(
@@ -2626,12 +2659,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addSelectedGroupKinds(
@@ -2652,12 +2686,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addSelectedGroupKinds(
@@ -2678,12 +2713,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addSelectedGroupKinds(
@@ -2701,12 +2737,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addSelectedGroupKinds(
@@ -2725,12 +2762,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addAllSelectedGroupKinds(
@@ -2749,12 +2787,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearSelectedGroupKinds() {
@@ -2771,12 +2810,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder removeSelectedGroupKinds(int index) {
@@ -2793,12 +2833,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -2809,12 +2850,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
@@ -2829,12 +2871,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<
@@ -2850,12 +2893,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -2867,12 +2911,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -2885,12 +2930,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to restore from the
-       * backup. If specified, only the selected resources will be restored.
+       * Optional. A list of cluster-scoped resource group kinds to restore from
+       * the backup. If specified, only the selected resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind selected_group_kinds = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder>
@@ -2940,13 +2986,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
@@ -2961,13 +3008,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public int getExcludedGroupKindsCount() {
@@ -2981,13 +3029,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getExcludedGroupKinds(
@@ -3002,13 +3051,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setExcludedGroupKinds(
@@ -3029,13 +3079,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setExcludedGroupKinds(
@@ -3054,13 +3105,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addExcludedGroupKinds(
@@ -3081,13 +3133,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addExcludedGroupKinds(
@@ -3108,13 +3161,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addExcludedGroupKinds(
@@ -3132,13 +3186,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addExcludedGroupKinds(
@@ -3157,13 +3212,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addAllExcludedGroupKinds(
@@ -3182,13 +3238,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearExcludedGroupKinds() {
@@ -3205,13 +3262,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder removeExcludedGroupKinds(int index) {
@@ -3228,13 +3286,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -3245,13 +3304,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
@@ -3266,13 +3326,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<
@@ -3288,13 +3349,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -3306,13 +3368,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -3325,13 +3388,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A list of cluster-scoped resource group kinds to NOT restore from the
-       * backup. If specified, all valid cluster-scoped resources will be
+       * Optional. A list of cluster-scoped resource group kinds to NOT restore
+       * from the backup. If specified, all valid cluster-scoped resources will be
        * restored except for those specified in the list.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind excluded_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder>
@@ -3364,11 +3428,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If True, all valid cluster-scoped resources will be restored.
+       * Optional. If True, all valid cluster-scoped resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>bool all_group_kinds = 3;</code>
+       * <code>bool all_group_kinds = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The allGroupKinds.
        */
@@ -3380,11 +3444,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If True, all valid cluster-scoped resources will be restored.
+       * Optional. If True, all valid cluster-scoped resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>bool all_group_kinds = 3;</code>
+       * <code>bool all_group_kinds = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The allGroupKinds to set.
        * @return This builder for chaining.
@@ -3400,11 +3464,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If True, all valid cluster-scoped resources will be restored.
+       * Optional. If True, all valid cluster-scoped resources will be restored.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>bool all_group_kinds = 3;</code>
+       * <code>bool all_group_kinds = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3420,12 +3484,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If True, no cluster-scoped resources will be restored.
+       * Optional. If True, no cluster-scoped resources will be restored.
        * This has the same restore scope as if the message is not defined.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>bool no_group_kinds = 4;</code>
+       * <code>bool no_group_kinds = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The noGroupKinds.
        */
@@ -3437,12 +3501,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If True, no cluster-scoped resources will be restored.
+       * Optional. If True, no cluster-scoped resources will be restored.
        * This has the same restore scope as if the message is not defined.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>bool no_group_kinds = 4;</code>
+       * <code>bool no_group_kinds = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The noGroupKinds to set.
        * @return This builder for chaining.
@@ -3458,12 +3522,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * If True, no cluster-scoped resources will be restored.
+       * Optional. If True, no cluster-scoped resources will be restored.
        * This has the same restore scope as if the message is not defined.
        * Mutually exclusive to any other field in the message.
        * </pre>
        *
-       * <code>bool no_group_kinds = 4;</code>
+       * <code>bool no_group_kinds = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -3551,8 +3615,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3560,7 +3624,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the targetNamespaces.
      */
@@ -3569,8 +3633,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3578,7 +3642,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of targetNamespaces.
      */
@@ -3587,8 +3651,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3596,7 +3660,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The targetNamespaces at the given index.
@@ -3606,8 +3670,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3615,7 +3679,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the targetNamespaces at the given index.
@@ -3626,14 +3690,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> getTargetGroupKindsList();
@@ -3641,14 +3705,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getTargetGroupKinds(int index);
@@ -3656,14 +3720,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     int getTargetGroupKindsCount();
@@ -3671,14 +3735,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
@@ -3687,14 +3751,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getTargetGroupKindsOrBuilder(
@@ -3741,7 +3805,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) This is a [regular expression]
+     * Optional. (Filtering parameter) This is a [regular expression]
      * (https://en.wikipedia.org/wiki/Regular_expression)
      * that is compared against the fields matched by the target_json_path
      * expression (and must also have passed the previous filters).
@@ -3752,7 +3816,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value for this field will only match empty fields.
      * </pre>
      *
-     * <code>string original_value_pattern = 4;</code>
+     * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The originalValuePattern.
      */
@@ -3761,7 +3825,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) This is a [regular expression]
+     * Optional. (Filtering parameter) This is a [regular expression]
      * (https://en.wikipedia.org/wiki/Regular_expression)
      * that is compared against the fields matched by the target_json_path
      * expression (and must also have passed the previous filters).
@@ -3772,7 +3836,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value for this field will only match empty fields.
      * </pre>
      *
-     * <code>string original_value_pattern = 4;</code>
+     * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for originalValuePattern.
      */
@@ -3782,12 +3846,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the new value to set for any fields that pass the filtering and
-     * selection criteria. To remove a value from a Kubernetes resource, either
-     * leave this field unspecified, or set it to the empty string ("").
+     * Optional. This is the new value to set for any fields that pass the
+     * filtering and selection criteria. To remove a value from a Kubernetes
+     * resource, either leave this field unspecified, or set it to the empty
+     * string ("").
      * </pre>
      *
-     * <code>string new_value = 5;</code>
+     * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The newValue.
      */
@@ -3796,12 +3861,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the new value to set for any fields that pass the filtering and
-     * selection criteria. To remove a value from a Kubernetes resource, either
-     * leave this field unspecified, or set it to the empty string ("").
+     * Optional. This is the new value to set for any fields that pass the
+     * filtering and selection criteria. To remove a value from a Kubernetes
+     * resource, either leave this field unspecified, or set it to the empty
+     * string ("").
      * </pre>
      *
-     * <code>string new_value = 5;</code>
+     * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for newValue.
      */
@@ -3866,8 +3932,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3875,7 +3941,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the targetNamespaces.
      */
@@ -3886,8 +3952,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3895,7 +3961,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of targetNamespaces.
      */
@@ -3906,8 +3972,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3915,7 +3981,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The targetNamespaces at the given index.
@@ -3927,8 +3993,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * be contained within one of the listed Kubernetes Namespace in the Backup.
      * If this field is not provided, no namespace filtering will be performed
      * (all resources in all Namespaces, including all cluster-scoped resources,
      * will be candidates for substitution).
@@ -3936,7 +4002,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * empty string ("") as one of the target namespaces.
      * </pre>
      *
-     * <code>repeated string target_namespaces = 1;</code>
+     * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the targetNamespaces at the given index.
@@ -3953,14 +4019,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -3972,14 +4038,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -3991,14 +4057,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -4009,14 +4075,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -4027,14 +4093,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to substitution must belong to
-     * one of the listed "types".
-     * If this field is not provided, no type filtering will be performed (all
-     * resources of all types matching previous filtering parameters will be
-     * candidates for substitution).
+     * Optional. (Filtering parameter) Any resource subject to substitution must
+     * belong to one of the listed "types". If this field is not provided, no
+     * type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for substitution).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -4114,7 +4180,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) This is a [regular expression]
+     * Optional. (Filtering parameter) This is a [regular expression]
      * (https://en.wikipedia.org/wiki/Regular_expression)
      * that is compared against the fields matched by the target_json_path
      * expression (and must also have passed the previous filters).
@@ -4125,7 +4191,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value for this field will only match empty fields.
      * </pre>
      *
-     * <code>string original_value_pattern = 4;</code>
+     * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The originalValuePattern.
      */
@@ -4145,7 +4211,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) This is a [regular expression]
+     * Optional. (Filtering parameter) This is a [regular expression]
      * (https://en.wikipedia.org/wiki/Regular_expression)
      * that is compared against the fields matched by the target_json_path
      * expression (and must also have passed the previous filters).
@@ -4156,7 +4222,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * value for this field will only match empty fields.
      * </pre>
      *
-     * <code>string original_value_pattern = 4;</code>
+     * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for originalValuePattern.
      */
@@ -4181,12 +4247,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the new value to set for any fields that pass the filtering and
-     * selection criteria. To remove a value from a Kubernetes resource, either
-     * leave this field unspecified, or set it to the empty string ("").
+     * Optional. This is the new value to set for any fields that pass the
+     * filtering and selection criteria. To remove a value from a Kubernetes
+     * resource, either leave this field unspecified, or set it to the empty
+     * string ("").
      * </pre>
      *
-     * <code>string new_value = 5;</code>
+     * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The newValue.
      */
@@ -4206,12 +4273,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is the new value to set for any fields that pass the filtering and
-     * selection criteria. To remove a value from a Kubernetes resource, either
-     * leave this field unspecified, or set it to the empty string ("").
+     * Optional. This is the new value to set for any fields that pass the
+     * filtering and selection criteria. To remove a value from a Kubernetes
+     * resource, either leave this field unspecified, or set it to the empty
+     * string ("").
      * </pre>
      *
-     * <code>string new_value = 5;</code>
+     * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for newValue.
      */
@@ -4753,8 +4821,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4762,7 +4830,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return A list containing the targetNamespaces.
        */
@@ -4774,8 +4843,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4783,7 +4852,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The count of targetNamespaces.
        */
@@ -4794,8 +4864,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4803,7 +4873,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the element to return.
        * @return The targetNamespaces at the given index.
@@ -4815,8 +4886,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4824,7 +4895,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the targetNamespaces at the given index.
@@ -4836,8 +4908,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4845,7 +4917,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index to set the value at.
        * @param value The targetNamespaces to set.
@@ -4865,8 +4938,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4874,7 +4947,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The targetNamespaces to add.
        * @return This builder for chaining.
@@ -4893,8 +4967,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4902,7 +4976,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param values The targetNamespaces to add.
        * @return This builder for chaining.
@@ -4918,8 +4993,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4927,7 +5002,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -4942,8 +5018,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * be contained within one of the listed Kubernetes Namespace in the Backup.
        * If this field is not provided, no namespace filtering will be performed
        * (all resources in all Namespaces, including all cluster-scoped resources,
        * will be candidates for substitution).
@@ -4951,7 +5027,8 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * empty string ("") as one of the target namespaces.
        * </pre>
        *
-       * <code>repeated string target_namespaces = 1;</code>
+       * <code>repeated string target_namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The bytes of the targetNamespaces to add.
        * @return This builder for chaining.
@@ -4990,14 +5067,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
@@ -5012,14 +5089,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public int getTargetGroupKindsCount() {
@@ -5033,14 +5110,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getTargetGroupKinds(int index) {
@@ -5054,14 +5131,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setTargetGroupKinds(
@@ -5082,14 +5159,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setTargetGroupKinds(
@@ -5108,14 +5185,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTargetGroupKinds(
@@ -5136,14 +5213,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTargetGroupKinds(
@@ -5164,14 +5241,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTargetGroupKinds(
@@ -5189,14 +5266,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTargetGroupKinds(
@@ -5215,14 +5292,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addAllTargetGroupKinds(
@@ -5241,14 +5318,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearTargetGroupKinds() {
@@ -5265,14 +5342,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder removeTargetGroupKinds(int index) {
@@ -5289,14 +5366,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -5307,14 +5384,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder
@@ -5329,14 +5406,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<
@@ -5352,14 +5429,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -5371,14 +5448,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder
@@ -5391,14 +5468,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to substitution must belong to
-       * one of the listed "types".
-       * If this field is not provided, no type filtering will be performed (all
-       * resources of all types matching previous filtering parameters will be
-       * candidates for substitution).
+       * Optional. (Filtering parameter) Any resource subject to substitution must
+       * belong to one of the listed "types". If this field is not provided, no
+       * type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for substitution).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2;
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind target_group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder>
@@ -5567,7 +5644,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) This is a [regular expression]
+       * Optional. (Filtering parameter) This is a [regular expression]
        * (https://en.wikipedia.org/wiki/Regular_expression)
        * that is compared against the fields matched by the target_json_path
        * expression (and must also have passed the previous filters).
@@ -5578,7 +5655,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value for this field will only match empty fields.
        * </pre>
        *
-       * <code>string original_value_pattern = 4;</code>
+       * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The originalValuePattern.
        */
@@ -5597,7 +5674,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) This is a [regular expression]
+       * Optional. (Filtering parameter) This is a [regular expression]
        * (https://en.wikipedia.org/wiki/Regular_expression)
        * that is compared against the fields matched by the target_json_path
        * expression (and must also have passed the previous filters).
@@ -5608,7 +5685,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value for this field will only match empty fields.
        * </pre>
        *
-       * <code>string original_value_pattern = 4;</code>
+       * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for originalValuePattern.
        */
@@ -5627,7 +5704,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) This is a [regular expression]
+       * Optional. (Filtering parameter) This is a [regular expression]
        * (https://en.wikipedia.org/wiki/Regular_expression)
        * that is compared against the fields matched by the target_json_path
        * expression (and must also have passed the previous filters).
@@ -5638,7 +5715,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value for this field will only match empty fields.
        * </pre>
        *
-       * <code>string original_value_pattern = 4;</code>
+       * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The originalValuePattern to set.
        * @return This builder for chaining.
@@ -5656,7 +5733,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) This is a [regular expression]
+       * Optional. (Filtering parameter) This is a [regular expression]
        * (https://en.wikipedia.org/wiki/Regular_expression)
        * that is compared against the fields matched by the target_json_path
        * expression (and must also have passed the previous filters).
@@ -5667,7 +5744,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value for this field will only match empty fields.
        * </pre>
        *
-       * <code>string original_value_pattern = 4;</code>
+       * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5681,7 +5758,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) This is a [regular expression]
+       * Optional. (Filtering parameter) This is a [regular expression]
        * (https://en.wikipedia.org/wiki/Regular_expression)
        * that is compared against the fields matched by the target_json_path
        * expression (and must also have passed the previous filters).
@@ -5692,7 +5769,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * value for this field will only match empty fields.
        * </pre>
        *
-       * <code>string original_value_pattern = 4;</code>
+       * <code>string original_value_pattern = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for originalValuePattern to set.
        * @return This builder for chaining.
@@ -5713,12 +5790,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is the new value to set for any fields that pass the filtering and
-       * selection criteria. To remove a value from a Kubernetes resource, either
-       * leave this field unspecified, or set it to the empty string ("").
+       * Optional. This is the new value to set for any fields that pass the
+       * filtering and selection criteria. To remove a value from a Kubernetes
+       * resource, either leave this field unspecified, or set it to the empty
+       * string ("").
        * </pre>
        *
-       * <code>string new_value = 5;</code>
+       * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The newValue.
        */
@@ -5737,12 +5815,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is the new value to set for any fields that pass the filtering and
-       * selection criteria. To remove a value from a Kubernetes resource, either
-       * leave this field unspecified, or set it to the empty string ("").
+       * Optional. This is the new value to set for any fields that pass the
+       * filtering and selection criteria. To remove a value from a Kubernetes
+       * resource, either leave this field unspecified, or set it to the empty
+       * string ("").
        * </pre>
        *
-       * <code>string new_value = 5;</code>
+       * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for newValue.
        */
@@ -5761,12 +5840,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is the new value to set for any fields that pass the filtering and
-       * selection criteria. To remove a value from a Kubernetes resource, either
-       * leave this field unspecified, or set it to the empty string ("").
+       * Optional. This is the new value to set for any fields that pass the
+       * filtering and selection criteria. To remove a value from a Kubernetes
+       * resource, either leave this field unspecified, or set it to the empty
+       * string ("").
        * </pre>
        *
-       * <code>string new_value = 5;</code>
+       * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The newValue to set.
        * @return This builder for chaining.
@@ -5784,12 +5864,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is the new value to set for any fields that pass the filtering and
-       * selection criteria. To remove a value from a Kubernetes resource, either
-       * leave this field unspecified, or set it to the empty string ("").
+       * Optional. This is the new value to set for any fields that pass the
+       * filtering and selection criteria. To remove a value from a Kubernetes
+       * resource, either leave this field unspecified, or set it to the empty
+       * string ("").
        * </pre>
        *
-       * <code>string new_value = 5;</code>
+       * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -5803,12 +5884,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is the new value to set for any fields that pass the filtering and
-       * selection criteria. To remove a value from a Kubernetes resource, either
-       * leave this field unspecified, or set it to the empty string ("").
+       * Optional. This is the new value to set for any fields that pass the
+       * filtering and selection criteria. To remove a value from a Kubernetes
+       * resource, either leave this field unspecified, or set it to the empty
+       * string ("").
        * </pre>
        *
-       * <code>string new_value = 5;</code>
+       * <code>string new_value = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for newValue to set.
        * @return This builder for chaining.
@@ -5929,11 +6011,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON Pointer value that references the location in
-     * the target document to move the value from.
+     * Optional. A string containing a JSON Pointer value that references the
+     * location in the target document to move the value from.
      * </pre>
      *
-     * <code>string from_path = 2;</code>
+     * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The fromPath.
      */
@@ -5942,11 +6024,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON Pointer value that references the location in
-     * the target document to move the value from.
+     * Optional. A string containing a JSON Pointer value that references the
+     * location in the target document to move the value from.
      * </pre>
      *
-     * <code>string from_path = 2;</code>
+     * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for fromPath.
      */
@@ -5956,11 +6038,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON-Pointer value that references a location
-     * within the target document where the operation is performed.
+     * Optional. A string containing a JSON-Pointer value that references a
+     * location within the target document where the operation is performed.
      * </pre>
      *
-     * <code>string path = 3;</code>
+     * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -5969,11 +6051,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON-Pointer value that references a location
-     * within the target document where the operation is performed.
+     * Optional. A string containing a JSON-Pointer value that references a
+     * location within the target document where the operation is performed.
      * </pre>
      *
-     * <code>string path = 3;</code>
+     * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -5983,11 +6065,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string that specifies the desired value in string format to
+     * Optional. A string that specifies the desired value in string format to
      * use for transformation.
      * </pre>
      *
-     * <code>string value = 4;</code>
+     * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -5996,11 +6078,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string that specifies the desired value in string format to
+     * Optional. A string that specifies the desired value in string format to
      * use for transformation.
      * </pre>
      *
-     * <code>string value = 4;</code>
+     * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for value.
      */
@@ -6374,11 +6456,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON Pointer value that references the location in
-     * the target document to move the value from.
+     * Optional. A string containing a JSON Pointer value that references the
+     * location in the target document to move the value from.
      * </pre>
      *
-     * <code>string from_path = 2;</code>
+     * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The fromPath.
      */
@@ -6398,11 +6480,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON Pointer value that references the location in
-     * the target document to move the value from.
+     * Optional. A string containing a JSON Pointer value that references the
+     * location in the target document to move the value from.
      * </pre>
      *
-     * <code>string from_path = 2;</code>
+     * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for fromPath.
      */
@@ -6427,11 +6509,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON-Pointer value that references a location
-     * within the target document where the operation is performed.
+     * Optional. A string containing a JSON-Pointer value that references a
+     * location within the target document where the operation is performed.
      * </pre>
      *
-     * <code>string path = 3;</code>
+     * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -6451,11 +6533,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string containing a JSON-Pointer value that references a location
-     * within the target document where the operation is performed.
+     * Optional. A string containing a JSON-Pointer value that references a
+     * location within the target document where the operation is performed.
      * </pre>
      *
-     * <code>string path = 3;</code>
+     * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -6480,11 +6562,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string that specifies the desired value in string format to
+     * Optional. A string that specifies the desired value in string format to
      * use for transformation.
      * </pre>
      *
-     * <code>string value = 4;</code>
+     * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The value.
      */
@@ -6504,11 +6586,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A string that specifies the desired value in string format to
+     * Optional. A string that specifies the desired value in string format to
      * use for transformation.
      * </pre>
      *
-     * <code>string value = 4;</code>
+     * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for value.
      */
@@ -7064,11 +7146,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON Pointer value that references the location in
-       * the target document to move the value from.
+       * Optional. A string containing a JSON Pointer value that references the
+       * location in the target document to move the value from.
        * </pre>
        *
-       * <code>string from_path = 2;</code>
+       * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The fromPath.
        */
@@ -7087,11 +7169,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON Pointer value that references the location in
-       * the target document to move the value from.
+       * Optional. A string containing a JSON Pointer value that references the
+       * location in the target document to move the value from.
        * </pre>
        *
-       * <code>string from_path = 2;</code>
+       * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for fromPath.
        */
@@ -7110,11 +7192,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON Pointer value that references the location in
-       * the target document to move the value from.
+       * Optional. A string containing a JSON Pointer value that references the
+       * location in the target document to move the value from.
        * </pre>
        *
-       * <code>string from_path = 2;</code>
+       * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The fromPath to set.
        * @return This builder for chaining.
@@ -7132,11 +7214,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON Pointer value that references the location in
-       * the target document to move the value from.
+       * Optional. A string containing a JSON Pointer value that references the
+       * location in the target document to move the value from.
        * </pre>
        *
-       * <code>string from_path = 2;</code>
+       * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -7150,11 +7232,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON Pointer value that references the location in
-       * the target document to move the value from.
+       * Optional. A string containing a JSON Pointer value that references the
+       * location in the target document to move the value from.
        * </pre>
        *
-       * <code>string from_path = 2;</code>
+       * <code>string from_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for fromPath to set.
        * @return This builder for chaining.
@@ -7175,11 +7257,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON-Pointer value that references a location
-       * within the target document where the operation is performed.
+       * Optional. A string containing a JSON-Pointer value that references a
+       * location within the target document where the operation is performed.
        * </pre>
        *
-       * <code>string path = 3;</code>
+       * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The path.
        */
@@ -7198,11 +7280,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON-Pointer value that references a location
-       * within the target document where the operation is performed.
+       * Optional. A string containing a JSON-Pointer value that references a
+       * location within the target document where the operation is performed.
        * </pre>
        *
-       * <code>string path = 3;</code>
+       * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for path.
        */
@@ -7221,11 +7303,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON-Pointer value that references a location
-       * within the target document where the operation is performed.
+       * Optional. A string containing a JSON-Pointer value that references a
+       * location within the target document where the operation is performed.
        * </pre>
        *
-       * <code>string path = 3;</code>
+       * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The path to set.
        * @return This builder for chaining.
@@ -7243,11 +7325,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON-Pointer value that references a location
-       * within the target document where the operation is performed.
+       * Optional. A string containing a JSON-Pointer value that references a
+       * location within the target document where the operation is performed.
        * </pre>
        *
-       * <code>string path = 3;</code>
+       * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -7261,11 +7343,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string containing a JSON-Pointer value that references a location
-       * within the target document where the operation is performed.
+       * Optional. A string containing a JSON-Pointer value that references a
+       * location within the target document where the operation is performed.
        * </pre>
        *
-       * <code>string path = 3;</code>
+       * <code>string path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for path to set.
        * @return This builder for chaining.
@@ -7286,11 +7368,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string that specifies the desired value in string format to
+       * Optional. A string that specifies the desired value in string format to
        * use for transformation.
        * </pre>
        *
-       * <code>string value = 4;</code>
+       * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The value.
        */
@@ -7309,11 +7391,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string that specifies the desired value in string format to
+       * Optional. A string that specifies the desired value in string format to
        * use for transformation.
        * </pre>
        *
-       * <code>string value = 4;</code>
+       * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for value.
        */
@@ -7332,11 +7414,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string that specifies the desired value in string format to
+       * Optional. A string that specifies the desired value in string format to
        * use for transformation.
        * </pre>
        *
-       * <code>string value = 4;</code>
+       * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The value to set.
        * @return This builder for chaining.
@@ -7354,11 +7436,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string that specifies the desired value in string format to
+       * Optional. A string that specifies the desired value in string format to
        * use for transformation.
        * </pre>
        *
-       * <code>string value = 4;</code>
+       * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -7372,11 +7454,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A string that specifies the desired value in string format to
+       * Optional. A string that specifies the desired value in string format to
        * use for transformation.
        * </pre>
        *
-       * <code>string value = 4;</code>
+       * <code>string value = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for value to set.
        * @return This builder for chaining.
@@ -7468,16 +7550,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the namespaces.
      */
@@ -7486,16 +7566,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of namespaces.
      */
@@ -7504,16 +7582,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The namespaces at the given index.
@@ -7523,16 +7599,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the namespaces at the given index.
@@ -7543,52 +7617,60 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind> getGroupKindsList();
     /**
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index);
     /**
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     int getGroupKindsCount();
     /**
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
         getGroupKindsOrBuilderList();
@@ -7596,13 +7678,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getGroupKindsOrBuilder(
         int index);
@@ -7611,7 +7695,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is a [JSONPath]
+     * Optional. This is a [JSONPath]
      * (https://github.com/json-path/JsonPath/blob/master/README.md)
      * expression that matches specific fields of candidate
      * resources and it operates as a filtering parameter (resources that
@@ -7619,7 +7703,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * transformation).
      * </pre>
      *
-     * <code>string json_path = 3;</code>
+     * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The jsonPath.
      */
@@ -7628,7 +7712,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is a [JSONPath]
+     * Optional. This is a [JSONPath]
      * (https://github.com/json-path/JsonPath/blob/master/README.md)
      * expression that matches specific fields of candidate
      * resources and it operates as a filtering parameter (resources that
@@ -7636,7 +7720,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * transformation).
      * </pre>
      *
-     * <code>string json_path = 3;</code>
+     * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for jsonPath.
      */
@@ -7699,16 +7783,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the namespaces.
      */
@@ -7719,16 +7801,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of namespaces.
      */
@@ -7739,16 +7819,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The namespaces at the given index.
@@ -7760,16 +7838,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must be
-     * contained within one of the listed Kubernetes Namespace in the Backup.
-     * If this field is not provided, no namespace filtering will be performed
-     * (all resources in all Namespaces, including all cluster-scoped resources,
-     * will be candidates for transformation).
-     * To mix cluster-scoped and namespaced resources in the same rule, use an
-     * empty string ("") as one of the target namespaces.
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must be contained within one of the listed Kubernetes Namespace in the
+     * Backup. If this field is not provided, no namespace filtering will be
+     * performed (all resources in all Namespaces, including all cluster-scoped
+     * resources, will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated string namespaces = 1;</code>
+     * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the namespaces at the given index.
@@ -7786,13 +7862,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
@@ -7803,13 +7881,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.List<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
@@ -7820,13 +7900,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public int getGroupKindsCount() {
@@ -7836,13 +7918,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index) {
@@ -7852,13 +7936,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * (Filtering parameter) Any resource subject to transformation must belong
-     * to one of the listed "types". If this field is not provided, no type
-     * filtering will be performed (all resources of all types matching previous
-     * filtering parameters will be candidates for transformation).
+     * Optional. (Filtering parameter) Any resource subject to transformation
+     * must belong to one of the listed "types". If this field is not provided,
+     * no type filtering will be performed (all resources of all types matching
+     * previous filtering parameters will be candidates for transformation).
      * </pre>
      *
-     * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+     * <code>
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getGroupKindsOrBuilder(
@@ -7874,7 +7960,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is a [JSONPath]
+     * Optional. This is a [JSONPath]
      * (https://github.com/json-path/JsonPath/blob/master/README.md)
      * expression that matches specific fields of candidate
      * resources and it operates as a filtering parameter (resources that
@@ -7882,7 +7968,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * transformation).
      * </pre>
      *
-     * <code>string json_path = 3;</code>
+     * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The jsonPath.
      */
@@ -7902,7 +7988,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This is a [JSONPath]
+     * Optional. This is a [JSONPath]
      * (https://github.com/json-path/JsonPath/blob/master/README.md)
      * expression that matches specific fields of candidate
      * resources and it operates as a filtering parameter (resources that
@@ -7910,7 +7996,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      * transformation).
      * </pre>
      *
-     * <code>string json_path = 3;</code>
+     * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for jsonPath.
      */
@@ -8403,16 +8489,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the namespaces.
        */
@@ -8424,16 +8508,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of namespaces.
        */
@@ -8444,16 +8526,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The namespaces at the given index.
@@ -8465,16 +8545,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the namespaces at the given index.
@@ -8486,16 +8564,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The namespaces to set.
@@ -8515,16 +8591,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The namespaces to add.
        * @return This builder for chaining.
@@ -8543,16 +8617,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The namespaces to add.
        * @return This builder for chaining.
@@ -8568,16 +8640,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -8592,16 +8662,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must be
-       * contained within one of the listed Kubernetes Namespace in the Backup.
-       * If this field is not provided, no namespace filtering will be performed
-       * (all resources in all Namespaces, including all cluster-scoped resources,
-       * will be candidates for transformation).
-       * To mix cluster-scoped and namespaced resources in the same rule, use an
-       * empty string ("") as one of the target namespaces.
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must be contained within one of the listed Kubernetes Namespace in the
+       * Backup. If this field is not provided, no namespace filtering will be
+       * performed (all resources in all Namespaces, including all cluster-scoped
+       * resources, will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated string namespaces = 1;</code>
+       * <code>repeated string namespaces = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the namespaces to add.
        * @return This builder for chaining.
@@ -8640,13 +8708,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
           getGroupKindsList() {
@@ -8660,13 +8730,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public int getGroupKindsCount() {
         if (groupKindsBuilder_ == null) {
@@ -8679,13 +8751,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind getGroupKinds(int index) {
         if (groupKindsBuilder_ == null) {
@@ -8698,13 +8772,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setGroupKinds(
           int index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
@@ -8724,13 +8800,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setGroupKinds(
           int index,
@@ -8748,13 +8826,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder addGroupKinds(com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
         if (groupKindsBuilder_ == null) {
@@ -8773,13 +8853,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder addGroupKinds(
           int index, com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind value) {
@@ -8799,13 +8881,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder addGroupKinds(
           com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder builderForValue) {
@@ -8822,13 +8906,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder addGroupKinds(
           int index,
@@ -8846,13 +8932,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder addAllGroupKinds(
           java.lang.Iterable<? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind>
@@ -8870,13 +8958,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearGroupKinds() {
         if (groupKindsBuilder_ == null) {
@@ -8892,13 +8982,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder removeGroupKinds(int index) {
         if (groupKindsBuilder_ == null) {
@@ -8914,13 +9006,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder getGroupKindsBuilder(
           int index) {
@@ -8930,13 +9024,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder getGroupKindsOrBuilder(
           int index) {
@@ -8950,13 +9046,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public java.util.List<
               ? extends com.google.cloud.gkebackup.v1.RestoreConfig.GroupKindOrBuilder>
@@ -8971,13 +9069,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder addGroupKindsBuilder() {
         return getGroupKindsFieldBuilder()
@@ -8987,13 +9087,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder addGroupKindsBuilder(
           int index) {
@@ -9005,13 +9107,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * (Filtering parameter) Any resource subject to transformation must belong
-       * to one of the listed "types". If this field is not provided, no type
-       * filtering will be performed (all resources of all types matching previous
-       * filtering parameters will be candidates for transformation).
+       * Optional. (Filtering parameter) Any resource subject to transformation
+       * must belong to one of the listed "types". If this field is not provided,
+       * no type filtering will be performed (all resources of all types matching
+       * previous filtering parameters will be candidates for transformation).
        * </pre>
        *
-       * <code>repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2;</code>
+       * <code>
+       * repeated .google.cloud.gkebackup.v1.RestoreConfig.GroupKind group_kinds = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.GroupKind.Builder>
           getGroupKindsBuilderList() {
@@ -9040,7 +9144,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is a [JSONPath]
+       * Optional. This is a [JSONPath]
        * (https://github.com/json-path/JsonPath/blob/master/README.md)
        * expression that matches specific fields of candidate
        * resources and it operates as a filtering parameter (resources that
@@ -9048,7 +9152,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * transformation).
        * </pre>
        *
-       * <code>string json_path = 3;</code>
+       * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The jsonPath.
        */
@@ -9067,7 +9171,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is a [JSONPath]
+       * Optional. This is a [JSONPath]
        * (https://github.com/json-path/JsonPath/blob/master/README.md)
        * expression that matches specific fields of candidate
        * resources and it operates as a filtering parameter (resources that
@@ -9075,7 +9179,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * transformation).
        * </pre>
        *
-       * <code>string json_path = 3;</code>
+       * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for jsonPath.
        */
@@ -9094,7 +9198,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is a [JSONPath]
+       * Optional. This is a [JSONPath]
        * (https://github.com/json-path/JsonPath/blob/master/README.md)
        * expression that matches specific fields of candidate
        * resources and it operates as a filtering parameter (resources that
@@ -9102,7 +9206,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * transformation).
        * </pre>
        *
-       * <code>string json_path = 3;</code>
+       * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The jsonPath to set.
        * @return This builder for chaining.
@@ -9120,7 +9224,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is a [JSONPath]
+       * Optional. This is a [JSONPath]
        * (https://github.com/json-path/JsonPath/blob/master/README.md)
        * expression that matches specific fields of candidate
        * resources and it operates as a filtering parameter (resources that
@@ -9128,7 +9232,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * transformation).
        * </pre>
        *
-       * <code>string json_path = 3;</code>
+       * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -9142,7 +9246,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This is a [JSONPath]
+       * Optional. This is a [JSONPath]
        * (https://github.com/json-path/JsonPath/blob/master/README.md)
        * expression that matches specific fields of candidate
        * resources and it operates as a filtering parameter (resources that
@@ -9150,7 +9254,7 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        * transformation).
        * </pre>
        *
-       * <code>string json_path = 3;</code>
+       * <code>string json_path = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for jsonPath to set.
        * @return This builder for chaining.
@@ -9320,13 +9424,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used to specify a set of fields that should be used to
-     * determine which resources in backup should be acted upon by the supplied
-     * transformation rule actions, and this will ensure that only specific
-     * resources are affected by transformation rule actions.
+     * Optional. This field is used to specify a set of fields that should be
+     * used to determine which resources in backup should be acted upon by the
+     * supplied transformation rule actions, and this will ensure that only
+     * specific resources are affected by transformation rule actions.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the resourceFilter field is set.
      */
@@ -9335,13 +9441,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used to specify a set of fields that should be used to
-     * determine which resources in backup should be acted upon by the supplied
-     * transformation rule actions, and this will ensure that only specific
-     * resources are affected by transformation rule actions.
+     * Optional. This field is used to specify a set of fields that should be
+     * used to determine which resources in backup should be acted upon by the
+     * supplied transformation rule actions, and this will ensure that only
+     * specific resources are affected by transformation rule actions.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The resourceFilter.
      */
@@ -9350,13 +9458,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used to specify a set of fields that should be used to
-     * determine which resources in backup should be acted upon by the supplied
-     * transformation rule actions, and this will ensure that only specific
-     * resources are affected by transformation rule actions.
+     * Optional. This field is used to specify a set of fields that should be
+     * used to determine which resources in backup should be acted upon by the
+     * supplied transformation rule actions, and this will ensure that only
+     * specific resources are affected by transformation rule actions.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder
         getResourceFilterOrBuilder();
@@ -9365,11 +9475,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The description is a user specified string description of the
+     * Optional. The description is a user specified string description of the
      * transformation rule.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -9378,11 +9488,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The description is a user specified string description of the
+     * Optional. The description is a user specified string description of the
      * transformation rule.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -9543,13 +9653,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used to specify a set of fields that should be used to
-     * determine which resources in backup should be acted upon by the supplied
-     * transformation rule actions, and this will ensure that only specific
-     * resources are affected by transformation rule actions.
+     * Optional. This field is used to specify a set of fields that should be
+     * used to determine which resources in backup should be acted upon by the
+     * supplied transformation rule actions, and this will ensure that only
+     * specific resources are affected by transformation rule actions.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the resourceFilter field is set.
      */
@@ -9561,13 +9673,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used to specify a set of fields that should be used to
-     * determine which resources in backup should be acted upon by the supplied
-     * transformation rule actions, and this will ensure that only specific
-     * resources are affected by transformation rule actions.
+     * Optional. This field is used to specify a set of fields that should be
+     * used to determine which resources in backup should be acted upon by the
+     * supplied transformation rule actions, and this will ensure that only
+     * specific resources are affected by transformation rule actions.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The resourceFilter.
      */
@@ -9581,13 +9695,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used to specify a set of fields that should be used to
-     * determine which resources in backup should be acted upon by the supplied
-     * transformation rule actions, and this will ensure that only specific
-     * resources are affected by transformation rule actions.
+     * Optional. This field is used to specify a set of fields that should be
+     * used to determine which resources in backup should be acted upon by the
+     * supplied transformation rule actions, and this will ensure that only
+     * specific resources are affected by transformation rule actions.
      * </pre>
      *
-     * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+     * <code>
+     * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder
@@ -9605,11 +9721,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The description is a user specified string description of the
+     * Optional. The description is a user specified string description of the
      * transformation rule.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -9629,11 +9745,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The description is a user specified string description of the
+     * Optional. The description is a user specified string description of the
      * transformation rule.
      * </pre>
      *
-     * <code>string description = 3;</code>
+     * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -10603,13 +10719,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the resourceFilter field is set.
        */
@@ -10620,13 +10738,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The resourceFilter.
        */
@@ -10643,13 +10763,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setResourceFilter(
           com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter value) {
@@ -10669,13 +10791,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setResourceFilter(
           com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder builderForValue) {
@@ -10692,13 +10816,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeResourceFilter(
           com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter value) {
@@ -10725,13 +10851,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearResourceFilter() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -10747,13 +10875,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter.Builder
           getResourceFilterBuilder() {
@@ -10765,13 +10895,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilterOrBuilder
           getResourceFilterOrBuilder() {
@@ -10787,13 +10919,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * This field is used to specify a set of fields that should be used to
-       * determine which resources in backup should be acted upon by the supplied
-       * transformation rule actions, and this will ensure that only specific
-       * resources are affected by transformation rule actions.
+       * Optional. This field is used to specify a set of fields that should be
+       * used to determine which resources in backup should be acted upon by the
+       * supplied transformation rule actions, and this will ensure that only
+       * specific resources are affected by transformation rule actions.
        * </pre>
        *
-       * <code>.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2;</code>
+       * <code>
+       * .google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter resource_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.gkebackup.v1.RestoreConfig.ResourceFilter,
@@ -10817,11 +10951,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The description is a user specified string description of the
+       * Optional. The description is a user specified string description of the
        * transformation rule.
        * </pre>
        *
-       * <code>string description = 3;</code>
+       * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The description.
        */
@@ -10840,11 +10974,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The description is a user specified string description of the
+       * Optional. The description is a user specified string description of the
        * transformation rule.
        * </pre>
        *
-       * <code>string description = 3;</code>
+       * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for description.
        */
@@ -10863,11 +10997,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The description is a user specified string description of the
+       * Optional. The description is a user specified string description of the
        * transformation rule.
        * </pre>
        *
-       * <code>string description = 3;</code>
+       * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The description to set.
        * @return This builder for chaining.
@@ -10885,11 +11019,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The description is a user specified string description of the
+       * Optional. The description is a user specified string description of the
        * transformation rule.
        * </pre>
        *
-       * <code>string description = 3;</code>
+       * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -10903,11 +11037,11 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The description is a user specified string description of the
+       * Optional. The description is a user specified string description of the
        * transformation rule.
        * </pre>
        *
-       * <code>string description = 3;</code>
+       * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for description to set.
        * @return This builder for chaining.
@@ -11055,13 +11189,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the mechanism to be used to restore volume data.
+   * Optional. Specifies the mechanism to be used to restore volume data.
    * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
    * NO_VOLUME_DATA_RESTORATION).
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for volumeDataRestorePolicy.
@@ -11074,13 +11208,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the mechanism to be used to restore volume data.
+   * Optional. Specifies the mechanism to be used to restore volume data.
    * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
    * NO_VOLUME_DATA_RESTORATION).
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+   * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The volumeDataRestorePolicy.
@@ -11102,15 +11236,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where cluster-scoped
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+   * Optional. Defines the behavior for handling the situation where
+   * cluster-scoped resources being restored already exist in the target
+   * cluster. This MUST be set to a value other than
+   * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
    * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
    * is not empty.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for clusterResourceConflictPolicy.
@@ -11123,15 +11258,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where cluster-scoped
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+   * Optional. Defines the behavior for handling the situation where
+   * cluster-scoped resources being restored already exist in the target
+   * cluster. This MUST be set to a value other than
+   * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
    * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
    * is not empty.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The clusterResourceConflictPolicy.
@@ -11153,13 +11289,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where sets of namespaced
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+   * Optional. Defines the behavior for handling the situation where sets of
+   * namespaced resources being restored already exist in the target cluster.
+   * This MUST be set to a value other than
+   * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for namespacedResourceRestoreMode.
@@ -11172,13 +11309,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Defines the behavior for handling the situation where sets of namespaced
-   * resources being restored already exist in the target cluster. This MUST be
-   * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+   * Optional. Defines the behavior for handling the situation where sets of
+   * namespaced resources being restored already exist in the target cluster.
+   * This MUST be set to a value other than
+   * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+   * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The namespacedResourceRestoreMode.
@@ -11201,12 +11339,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifies the cluster-scoped resources to restore from the Backup.
-   * Not specifying it means NO cluster resource will be restored.
+   * Optional. Identifies the cluster-scoped resources to restore from the
+   * Backup. Not specifying it means NO cluster resource will be restored.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the clusterResourceRestoreScope field is set.
@@ -11219,12 +11357,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifies the cluster-scoped resources to restore from the Backup.
-   * Not specifying it means NO cluster resource will be restored.
+   * Optional. Identifies the cluster-scoped resources to restore from the
+   * Backup. Not specifying it means NO cluster resource will be restored.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The clusterResourceRestoreScope.
@@ -11241,12 +11379,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Identifies the cluster-scoped resources to restore from the Backup.
-   * Not specifying it means NO cluster resource will be restored.
+   * Optional. Identifies the cluster-scoped resources to restore from the
+   * Backup. Not specifying it means NO cluster resource will be restored.
    * </pre>
    *
    * <code>
-   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+   * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11506,15 +11644,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11526,15 +11664,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11547,15 +11685,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11566,15 +11704,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11586,15 +11724,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * substitution will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11612,15 +11750,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11632,15 +11770,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11653,15 +11791,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11672,15 +11810,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11692,15 +11830,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of transformation rules to be applied against Kubernetes resources
-   * as they are selected for restoration from a Backup. Rules are executed in
-   * order defined - this order matters, as changes made by a rule may impact
-   * the filtering logic of subsequent rules. An empty list means no
+   * Optional. A list of transformation rules to be applied against Kubernetes
+   * resources as they are selected for restoration from a Backup. Rules are
+   * executed in order defined - this order matters, as changes made by a rule
+   * may impact the filtering logic of subsequent rules. An empty list means no
    * transformation will occur.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+   * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -12040,7 +12178,6 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration of a restore.
-   * Next id: 12
    * </pre>
    *
    * Protobuf type {@code google.cloud.gkebackup.v1.RestoreConfig}
@@ -12504,13 +12641,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the mechanism to be used to restore volume data.
+     * Optional. Specifies the mechanism to be used to restore volume data.
      * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
      * NO_VOLUME_DATA_RESTORATION).
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for volumeDataRestorePolicy.
@@ -12523,13 +12660,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the mechanism to be used to restore volume data.
+     * Optional. Specifies the mechanism to be used to restore volume data.
      * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
      * NO_VOLUME_DATA_RESTORATION).
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for volumeDataRestorePolicy to set.
@@ -12545,13 +12682,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the mechanism to be used to restore volume data.
+     * Optional. Specifies the mechanism to be used to restore volume data.
      * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
      * NO_VOLUME_DATA_RESTORATION).
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The volumeDataRestorePolicy.
@@ -12570,13 +12707,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the mechanism to be used to restore volume data.
+     * Optional. Specifies the mechanism to be used to restore volume data.
      * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
      * NO_VOLUME_DATA_RESTORATION).
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The volumeDataRestorePolicy to set.
@@ -12596,13 +12733,13 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the mechanism to be used to restore volume data.
+     * Optional. Specifies the mechanism to be used to restore volume data.
      * Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as
      * NO_VOLUME_DATA_RESTORATION).
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1;
+     * .google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy volume_data_restore_policy = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -12619,15 +12756,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where cluster-scoped
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+     * Optional. Defines the behavior for handling the situation where
+     * cluster-scoped resources being restored already exist in the target
+     * cluster. This MUST be set to a value other than
+     * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
      * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
      * is not empty.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for clusterResourceConflictPolicy.
@@ -12640,15 +12778,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where cluster-scoped
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+     * Optional. Defines the behavior for handling the situation where
+     * cluster-scoped resources being restored already exist in the target
+     * cluster. This MUST be set to a value other than
+     * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
      * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
      * is not empty.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for clusterResourceConflictPolicy to set.
@@ -12664,15 +12803,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where cluster-scoped
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+     * Optional. Defines the behavior for handling the situation where
+     * cluster-scoped resources being restored already exist in the target
+     * cluster. This MUST be set to a value other than
+     * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
      * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
      * is not empty.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The clusterResourceConflictPolicy.
@@ -12691,15 +12831,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where cluster-scoped
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+     * Optional. Defines the behavior for handling the situation where
+     * cluster-scoped resources being restored already exist in the target
+     * cluster. This MUST be set to a value other than
+     * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
      * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
      * is not empty.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The clusterResourceConflictPolicy to set.
@@ -12719,15 +12860,16 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where cluster-scoped
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
+     * Optional. Defines the behavior for handling the situation where
+     * cluster-scoped resources being restored already exist in the target
+     * cluster. This MUST be set to a value other than
+     * CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if
      * [cluster_resource_restore_scope][google.cloud.gkebackup.v1.RestoreConfig.cluster_resource_restore_scope]
      * is not empty.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceConflictPolicy cluster_resource_conflict_policy = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -12744,13 +12886,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where sets of namespaced
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+     * Optional. Defines the behavior for handling the situation where sets of
+     * namespaced resources being restored already exist in the target cluster.
+     * This MUST be set to a value other than
+     * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for namespacedResourceRestoreMode.
@@ -12763,13 +12906,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where sets of namespaced
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+     * Optional. Defines the behavior for handling the situation where sets of
+     * namespaced resources being restored already exist in the target cluster.
+     * This MUST be set to a value other than
+     * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for namespacedResourceRestoreMode to set.
@@ -12785,13 +12929,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where sets of namespaced
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+     * Optional. Defines the behavior for handling the situation where sets of
+     * namespaced resources being restored already exist in the target cluster.
+     * This MUST be set to a value other than
+     * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The namespacedResourceRestoreMode.
@@ -12810,13 +12955,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where sets of namespaced
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+     * Optional. Defines the behavior for handling the situation where sets of
+     * namespaced resources being restored already exist in the target cluster.
+     * This MUST be set to a value other than
+     * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The namespacedResourceRestoreMode to set.
@@ -12836,13 +12982,14 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Defines the behavior for handling the situation where sets of namespaced
-     * resources being restored already exist in the target cluster. This MUST be
-     * set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+     * Optional. Defines the behavior for handling the situation where sets of
+     * namespaced resources being restored already exist in the target cluster.
+     * This MUST be set to a value other than
+     * NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3;
+     * .google.cloud.gkebackup.v1.RestoreConfig.NamespacedResourceRestoreMode namespaced_resource_restore_mode = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -12865,12 +13012,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the clusterResourceRestoreScope field is set.
@@ -12882,12 +13029,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The clusterResourceRestoreScope.
@@ -12907,12 +13054,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setClusterResourceRestoreScope(
@@ -12933,12 +13080,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setClusterResourceRestoreScope(
@@ -12957,12 +13104,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeClusterResourceRestoreScope(
@@ -12990,12 +13137,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearClusterResourceRestoreScope() {
@@ -13012,12 +13159,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope.Builder
@@ -13030,12 +13177,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScopeOrBuilder
@@ -13053,12 +13200,12 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Identifies the cluster-scoped resources to restore from the Backup.
-     * Not specifying it means NO cluster resource will be restored.
+     * Optional. Identifies the cluster-scoped resources to restore from the
+     * Backup. Not specifying it means NO cluster resource will be restored.
      * </pre>
      *
      * <code>
-     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4;
+     * .google.cloud.gkebackup.v1.RestoreConfig.ClusterResourceRestoreScope cluster_resource_restore_scope = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -13919,15 +14066,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule>
@@ -13942,15 +14089,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getSubstitutionRulesCount() {
@@ -13964,15 +14111,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule getSubstitutionRules(
@@ -13987,15 +14134,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSubstitutionRules(
@@ -14016,15 +14163,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSubstitutionRules(
@@ -14043,15 +14190,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSubstitutionRules(
@@ -14072,15 +14219,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSubstitutionRules(
@@ -14101,15 +14248,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSubstitutionRules(
@@ -14127,15 +14274,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addSubstitutionRules(
@@ -14154,15 +14301,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllSubstitutionRules(
@@ -14181,15 +14328,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSubstitutionRules() {
@@ -14206,15 +14353,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeSubstitutionRules(int index) {
@@ -14231,15 +14378,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule.Builder
@@ -14250,15 +14397,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRuleOrBuilder
@@ -14273,15 +14420,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -14297,15 +14444,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule.Builder
@@ -14318,15 +14465,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule.Builder
@@ -14340,15 +14487,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * substitution will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule substitution_rules = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.SubstitutionRule.Builder>
@@ -14398,15 +14545,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule>
@@ -14421,15 +14568,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getTransformationRulesCount() {
@@ -14443,15 +14590,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule getTransformationRules(
@@ -14466,15 +14613,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTransformationRules(
@@ -14495,15 +14642,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTransformationRules(
@@ -14522,15 +14669,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTransformationRules(
@@ -14551,15 +14698,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTransformationRules(
@@ -14580,15 +14727,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTransformationRules(
@@ -14606,15 +14753,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTransformationRules(
@@ -14633,15 +14780,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllTransformationRules(
@@ -14660,15 +14807,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearTransformationRules() {
@@ -14685,15 +14832,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeTransformationRules(int index) {
@@ -14710,15 +14857,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder
@@ -14729,15 +14876,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRuleOrBuilder
@@ -14752,15 +14899,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -14776,15 +14923,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder
@@ -14797,15 +14944,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder
@@ -14819,15 +14966,15 @@ public final class RestoreConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of transformation rules to be applied against Kubernetes resources
-     * as they are selected for restoration from a Backup. Rules are executed in
-     * order defined - this order matters, as changes made by a rule may impact
-     * the filtering logic of subsequent rules. An empty list means no
+     * Optional. A list of transformation rules to be applied against Kubernetes
+     * resources as they are selected for restoration from a Backup. Rules are
+     * executed in order defined - this order matters, as changes made by a rule
+     * may impact the filtering logic of subsequent rules. An empty list means no
      * transformation will occur.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11;
+     * repeated .google.cloud.gkebackup.v1.RestoreConfig.TransformationRule transformation_rules = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.gkebackup.v1.RestoreConfig.TransformationRule.Builder>

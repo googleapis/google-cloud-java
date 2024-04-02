@@ -829,7 +829,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
    * @return Whether the intent field is set.
    */
   @java.lang.Deprecated
@@ -849,7 +849,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=995
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=1003
    * @return The intent.
    */
   @java.lang.Deprecated
@@ -889,7 +889,7 @@ public interface QueryResultOrBuilder
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1006
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=1014
    * @return The intentDetectionConfidence.
    */
   @java.lang.Deprecated
@@ -1159,6 +1159,57 @@ public interface QueryResultOrBuilder
    * @return The allowAnswerFeedback.
    */
   boolean getAllowAnswerFeedback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data store connection feature output signals.
+   * Filled only when data stores are involved in serving the query and
+   * DetectIntentRequest.populate data_store_connection_quality_signals is set
+   * to true in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataStoreConnectionSignals field is set.
+   */
+  boolean hasDataStoreConnectionSignals();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data store connection feature output signals.
+   * Filled only when data stores are involved in serving the query and
+   * DetectIntentRequest.populate data_store_connection_quality_signals is set
+   * to true in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataStoreConnectionSignals.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals getDataStoreConnectionSignals();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data store connection feature output signals.
+   * Filled only when data stores are involved in serving the query and
+   * DetectIntentRequest.populate data_store_connection_quality_signals is set
+   * to true in the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignals data_store_connection_signals = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.DataStoreConnectionSignalsOrBuilder
+      getDataStoreConnectionSignalsOrBuilder();
 
   com.google.cloud.dialogflow.cx.v3beta1.QueryResult.QueryCase getQueryCase();
 }

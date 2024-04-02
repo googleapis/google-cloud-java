@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.38.0 (2024-03-28)
+
+### Features
+
+* add backup indexing ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* add smart scheduling ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* add output only and optional api field behavior label ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* remove the next id annotation ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+* update retention policy and cron schedule comment to include new constraints from smart scheduling ([15f7640](https://github.com/googleapis/google-cloud-java/commit/15f7640949d113e2b4124ec23584d8d3bca270ef))
+
+
+
+## 0.37.0 (2024-03-22)
+
+* No change
+
+
 ## 0.36.0 (2024-03-06)
 
 * No change

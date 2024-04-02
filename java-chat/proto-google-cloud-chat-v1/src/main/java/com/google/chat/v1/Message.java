@@ -51,6 +51,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     clientAssignedMessageId_ = "";
     emojiReactionSummaries_ = java.util.Collections.emptyList();
     attachedGifs_ = java.util.Collections.emptyList();
+    accessoryWidgets_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1769,6 +1770,387 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     return attachedGifs_.get(index);
   }
 
+  public static final int ACCESSORY_WIDGETS_FIELD_NUMBER = 44;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.chat.v1.AccessoryWidget> accessoryWidgets_;
+  /**
+   *
+   *
+   * <pre>
+   * One or more interactive widgets that appear at the bottom of a message.
+   * You can add accessory widgets to messages that contain text, cards, or both
+   * text and cards. Not supported for messages that contain dialogs.
+   *
+   * Creating a message with accessory widgets requires [app
+   * authentication]
+   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+   *
+   * The following example shows a Chat app that uses accessory widgets (thumbs
+   * up and thumbs down buttons) in a text message:
+   *
+   * ![Example accessory widgets
+   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+   *
+   * The JSON for this example message is the following:
+   *
+   * ```
+   * {
+   *   "text": "Rate your experience with this Chat app.",
+   *   "accessoryWidgets": [
+   *     {
+   *       "buttonList": {
+   *         "buttons": [
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_up"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doUpvote",
+   *               }
+   *             }
+   *           },
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_down"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doDownvote",
+   *               }
+   *             }
+   *           }
+   *         ]
+   *       }
+   *     }
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.chat.v1.AccessoryWidget> getAccessoryWidgetsList() {
+    return accessoryWidgets_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more interactive widgets that appear at the bottom of a message.
+   * You can add accessory widgets to messages that contain text, cards, or both
+   * text and cards. Not supported for messages that contain dialogs.
+   *
+   * Creating a message with accessory widgets requires [app
+   * authentication]
+   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+   *
+   * The following example shows a Chat app that uses accessory widgets (thumbs
+   * up and thumbs down buttons) in a text message:
+   *
+   * ![Example accessory widgets
+   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+   *
+   * The JSON for this example message is the following:
+   *
+   * ```
+   * {
+   *   "text": "Rate your experience with this Chat app.",
+   *   "accessoryWidgets": [
+   *     {
+   *       "buttonList": {
+   *         "buttons": [
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_up"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doUpvote",
+   *               }
+   *             }
+   *           },
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_down"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doDownvote",
+   *               }
+   *             }
+   *           }
+   *         ]
+   *       }
+   *     }
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.chat.v1.AccessoryWidgetOrBuilder>
+      getAccessoryWidgetsOrBuilderList() {
+    return accessoryWidgets_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more interactive widgets that appear at the bottom of a message.
+   * You can add accessory widgets to messages that contain text, cards, or both
+   * text and cards. Not supported for messages that contain dialogs.
+   *
+   * Creating a message with accessory widgets requires [app
+   * authentication]
+   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+   *
+   * The following example shows a Chat app that uses accessory widgets (thumbs
+   * up and thumbs down buttons) in a text message:
+   *
+   * ![Example accessory widgets
+   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+   *
+   * The JSON for this example message is the following:
+   *
+   * ```
+   * {
+   *   "text": "Rate your experience with this Chat app.",
+   *   "accessoryWidgets": [
+   *     {
+   *       "buttonList": {
+   *         "buttons": [
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_up"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doUpvote",
+   *               }
+   *             }
+   *           },
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_down"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doDownvote",
+   *               }
+   *             }
+   *           }
+   *         ]
+   *       }
+   *     }
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   */
+  @java.lang.Override
+  public int getAccessoryWidgetsCount() {
+    return accessoryWidgets_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more interactive widgets that appear at the bottom of a message.
+   * You can add accessory widgets to messages that contain text, cards, or both
+   * text and cards. Not supported for messages that contain dialogs.
+   *
+   * Creating a message with accessory widgets requires [app
+   * authentication]
+   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+   *
+   * The following example shows a Chat app that uses accessory widgets (thumbs
+   * up and thumbs down buttons) in a text message:
+   *
+   * ![Example accessory widgets
+   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+   *
+   * The JSON for this example message is the following:
+   *
+   * ```
+   * {
+   *   "text": "Rate your experience with this Chat app.",
+   *   "accessoryWidgets": [
+   *     {
+   *       "buttonList": {
+   *         "buttons": [
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_up"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doUpvote",
+   *               }
+   *             }
+   *           },
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_down"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doDownvote",
+   *               }
+   *             }
+   *           }
+   *         ]
+   *       }
+   *     }
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.AccessoryWidget getAccessoryWidgets(int index) {
+    return accessoryWidgets_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * One or more interactive widgets that appear at the bottom of a message.
+   * You can add accessory widgets to messages that contain text, cards, or both
+   * text and cards. Not supported for messages that contain dialogs.
+   *
+   * Creating a message with accessory widgets requires [app
+   * authentication]
+   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+   *
+   * The following example shows a Chat app that uses accessory widgets (thumbs
+   * up and thumbs down buttons) in a text message:
+   *
+   * ![Example accessory widgets
+   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+   *
+   * The JSON for this example message is the following:
+   *
+   * ```
+   * {
+   *   "text": "Rate your experience with this Chat app.",
+   *   "accessoryWidgets": [
+   *     {
+   *       "buttonList": {
+   *         "buttons": [
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_up"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doUpvote",
+   *               }
+   *             }
+   *           },
+   *           {
+   *             "icon": {
+   *               "material_icon": {
+   *                 "name": "thumb_down"
+   *               }
+   *             },
+   *             "color": {
+   *               "red": 0,
+   *               "blue": 255,
+   *               "green": 0
+   *             },
+   *             "onClick": {
+   *               "action": {
+   *                 "function": "doDownvote",
+   *               }
+   *             }
+   *           }
+   *         ]
+   *       }
+   *     }
+   *   ]
+   * }
+   * ```
+   * </pre>
+   *
+   * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.AccessoryWidgetOrBuilder getAccessoryWidgetsOrBuilder(int index) {
+    return accessoryWidgets_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1857,6 +2239,9 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(formattedText_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 43, formattedText_);
+    }
+    for (int i = 0; i < accessoryWidgets_.size(); i++) {
+      output.writeMessage(44, accessoryWidgets_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1947,6 +2332,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(formattedText_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(43, formattedText_);
     }
+    for (int i = 0; i < accessoryWidgets_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(44, accessoryWidgets_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2024,6 +2413,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
       if (!getQuotedMessageMetadata().equals(other.getQuotedMessageMetadata())) return false;
     }
     if (!getAttachedGifsList().equals(other.getAttachedGifsList())) return false;
+    if (!getAccessoryWidgetsList().equals(other.getAccessoryWidgetsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2120,6 +2510,10 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
     if (getAttachedGifsCount() > 0) {
       hash = (37 * hash) + ATTACHED_GIFS_FIELD_NUMBER;
       hash = (53 * hash) + getAttachedGifsList().hashCode();
+    }
+    if (getAccessoryWidgetsCount() > 0) {
+      hash = (37 * hash) + ACCESSORY_WIDGETS_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessoryWidgetsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2276,6 +2670,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
         getDeletionMetadataFieldBuilder();
         getQuotedMessageMetadataFieldBuilder();
         getAttachedGifsFieldBuilder();
+        getAccessoryWidgetsFieldBuilder();
       }
     }
 
@@ -2392,6 +2787,13 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
         attachedGifsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x01000000);
+      if (accessoryWidgetsBuilder_ == null) {
+        accessoryWidgets_ = java.util.Collections.emptyList();
+      } else {
+        accessoryWidgets_ = null;
+        accessoryWidgetsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x02000000);
       return this;
     }
 
@@ -2479,6 +2881,15 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
         result.attachedGifs_ = attachedGifs_;
       } else {
         result.attachedGifs_ = attachedGifsBuilder_.build();
+      }
+      if (accessoryWidgetsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)) {
+          accessoryWidgets_ = java.util.Collections.unmodifiableList(accessoryWidgets_);
+          bitField0_ = (bitField0_ & ~0x02000000);
+        }
+        result.accessoryWidgets_ = accessoryWidgets_;
+      } else {
+        result.accessoryWidgets_ = accessoryWidgetsBuilder_.build();
       }
     }
 
@@ -2843,6 +3254,33 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (accessoryWidgetsBuilder_ == null) {
+        if (!other.accessoryWidgets_.isEmpty()) {
+          if (accessoryWidgets_.isEmpty()) {
+            accessoryWidgets_ = other.accessoryWidgets_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+          } else {
+            ensureAccessoryWidgetsIsMutable();
+            accessoryWidgets_.addAll(other.accessoryWidgets_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.accessoryWidgets_.isEmpty()) {
+          if (accessoryWidgetsBuilder_.isEmpty()) {
+            accessoryWidgetsBuilder_.dispose();
+            accessoryWidgetsBuilder_ = null;
+            accessoryWidgets_ = other.accessoryWidgets_;
+            bitField0_ = (bitField0_ & ~0x02000000);
+            accessoryWidgetsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAccessoryWidgetsFieldBuilder()
+                    : null;
+          } else {
+            accessoryWidgetsBuilder_.addAllMessages(other.accessoryWidgets_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3060,6 +3498,19 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 346
+            case 354:
+              {
+                com.google.chat.v1.AccessoryWidget m =
+                    input.readMessage(
+                        com.google.chat.v1.AccessoryWidget.parser(), extensionRegistry);
+                if (accessoryWidgetsBuilder_ == null) {
+                  ensureAccessoryWidgetsIsMutable();
+                  accessoryWidgets_.add(m);
+                } else {
+                  accessoryWidgetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 354
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9236,6 +9687,1475 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
         attachedGifs_ = null;
       }
       return attachedGifsBuilder_;
+    }
+
+    private java.util.List<com.google.chat.v1.AccessoryWidget> accessoryWidgets_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAccessoryWidgetsIsMutable() {
+      if (!((bitField0_ & 0x02000000) != 0)) {
+        accessoryWidgets_ =
+            new java.util.ArrayList<com.google.chat.v1.AccessoryWidget>(accessoryWidgets_);
+        bitField0_ |= 0x02000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.chat.v1.AccessoryWidget,
+            com.google.chat.v1.AccessoryWidget.Builder,
+            com.google.chat.v1.AccessoryWidgetOrBuilder>
+        accessoryWidgetsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public java.util.List<com.google.chat.v1.AccessoryWidget> getAccessoryWidgetsList() {
+      if (accessoryWidgetsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(accessoryWidgets_);
+      } else {
+        return accessoryWidgetsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public int getAccessoryWidgetsCount() {
+      if (accessoryWidgetsBuilder_ == null) {
+        return accessoryWidgets_.size();
+      } else {
+        return accessoryWidgetsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public com.google.chat.v1.AccessoryWidget getAccessoryWidgets(int index) {
+      if (accessoryWidgetsBuilder_ == null) {
+        return accessoryWidgets_.get(index);
+      } else {
+        return accessoryWidgetsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder setAccessoryWidgets(int index, com.google.chat.v1.AccessoryWidget value) {
+      if (accessoryWidgetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessoryWidgetsIsMutable();
+        accessoryWidgets_.set(index, value);
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder setAccessoryWidgets(
+        int index, com.google.chat.v1.AccessoryWidget.Builder builderForValue) {
+      if (accessoryWidgetsBuilder_ == null) {
+        ensureAccessoryWidgetsIsMutable();
+        accessoryWidgets_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder addAccessoryWidgets(com.google.chat.v1.AccessoryWidget value) {
+      if (accessoryWidgetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessoryWidgetsIsMutable();
+        accessoryWidgets_.add(value);
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder addAccessoryWidgets(int index, com.google.chat.v1.AccessoryWidget value) {
+      if (accessoryWidgetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAccessoryWidgetsIsMutable();
+        accessoryWidgets_.add(index, value);
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder addAccessoryWidgets(com.google.chat.v1.AccessoryWidget.Builder builderForValue) {
+      if (accessoryWidgetsBuilder_ == null) {
+        ensureAccessoryWidgetsIsMutable();
+        accessoryWidgets_.add(builderForValue.build());
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder addAccessoryWidgets(
+        int index, com.google.chat.v1.AccessoryWidget.Builder builderForValue) {
+      if (accessoryWidgetsBuilder_ == null) {
+        ensureAccessoryWidgetsIsMutable();
+        accessoryWidgets_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder addAllAccessoryWidgets(
+        java.lang.Iterable<? extends com.google.chat.v1.AccessoryWidget> values) {
+      if (accessoryWidgetsBuilder_ == null) {
+        ensureAccessoryWidgetsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, accessoryWidgets_);
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder clearAccessoryWidgets() {
+      if (accessoryWidgetsBuilder_ == null) {
+        accessoryWidgets_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x02000000);
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public Builder removeAccessoryWidgets(int index) {
+      if (accessoryWidgetsBuilder_ == null) {
+        ensureAccessoryWidgetsIsMutable();
+        accessoryWidgets_.remove(index);
+        onChanged();
+      } else {
+        accessoryWidgetsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public com.google.chat.v1.AccessoryWidget.Builder getAccessoryWidgetsBuilder(int index) {
+      return getAccessoryWidgetsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public com.google.chat.v1.AccessoryWidgetOrBuilder getAccessoryWidgetsOrBuilder(int index) {
+      if (accessoryWidgetsBuilder_ == null) {
+        return accessoryWidgets_.get(index);
+      } else {
+        return accessoryWidgetsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public java.util.List<? extends com.google.chat.v1.AccessoryWidgetOrBuilder>
+        getAccessoryWidgetsOrBuilderList() {
+      if (accessoryWidgetsBuilder_ != null) {
+        return accessoryWidgetsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(accessoryWidgets_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public com.google.chat.v1.AccessoryWidget.Builder addAccessoryWidgetsBuilder() {
+      return getAccessoryWidgetsFieldBuilder()
+          .addBuilder(com.google.chat.v1.AccessoryWidget.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public com.google.chat.v1.AccessoryWidget.Builder addAccessoryWidgetsBuilder(int index) {
+      return getAccessoryWidgetsFieldBuilder()
+          .addBuilder(index, com.google.chat.v1.AccessoryWidget.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * One or more interactive widgets that appear at the bottom of a message.
+     * You can add accessory widgets to messages that contain text, cards, or both
+     * text and cards. Not supported for messages that contain dialogs.
+     *
+     * Creating a message with accessory widgets requires [app
+     * authentication]
+     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     *
+     * The following example shows a Chat app that uses accessory widgets (thumbs
+     * up and thumbs down buttons) in a text message:
+     *
+     * ![Example accessory widgets
+     * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
+     *
+     * The JSON for this example message is the following:
+     *
+     * ```
+     * {
+     *   "text": "Rate your experience with this Chat app.",
+     *   "accessoryWidgets": [
+     *     {
+     *       "buttonList": {
+     *         "buttons": [
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_up"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doUpvote",
+     *               }
+     *             }
+     *           },
+     *           {
+     *             "icon": {
+     *               "material_icon": {
+     *                 "name": "thumb_down"
+     *               }
+     *             },
+     *             "color": {
+     *               "red": 0,
+     *               "blue": 255,
+     *               "green": 0
+     *             },
+     *             "onClick": {
+     *               "action": {
+     *                 "function": "doDownvote",
+     *               }
+     *             }
+     *           }
+     *         ]
+     *       }
+     *     }
+     *   ]
+     * }
+     * ```
+     * </pre>
+     *
+     * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
+     */
+    public java.util.List<com.google.chat.v1.AccessoryWidget.Builder>
+        getAccessoryWidgetsBuilderList() {
+      return getAccessoryWidgetsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.chat.v1.AccessoryWidget,
+            com.google.chat.v1.AccessoryWidget.Builder,
+            com.google.chat.v1.AccessoryWidgetOrBuilder>
+        getAccessoryWidgetsFieldBuilder() {
+      if (accessoryWidgetsBuilder_ == null) {
+        accessoryWidgetsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.chat.v1.AccessoryWidget,
+                com.google.chat.v1.AccessoryWidget.Builder,
+                com.google.chat.v1.AccessoryWidgetOrBuilder>(
+                accessoryWidgets_,
+                ((bitField0_ & 0x02000000) != 0),
+                getParentForChildren(),
+                isClean());
+        accessoryWidgets_ = null;
+      }
+      return accessoryWidgetsBuilder_;
     }
 
     @java.lang.Override

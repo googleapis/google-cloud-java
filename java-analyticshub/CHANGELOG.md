@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.36.0 (2024-03-28)
+
+* No change
+
+
+## 0.35.0 (2024-03-22)
+
+### Features
+
+* support output fields on DcrExchangeConfig specifying selective sharing behavior on a data clean room ([4d880de](https://github.com/googleapis/google-cloud-java/commit/4d880de0245f5e519f1305e090f427dc032c7a01))
+* support selective sharing on data clean room Listings ([4d880de](https://github.com/googleapis/google-cloud-java/commit/4d880de0245f5e519f1305e090f427dc032c7a01))
+
+
+
 ## 0.34.0 (2024-03-06)
 
 * No change
