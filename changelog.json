@@ -5,6 +5,21 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "64e2ed8d41084d7c7727e0071bf3b69e600f12a1",
+          "message": "add native image reflection configurations for vertexai",
+          "issues": []
+        }
+      ],
+      "version": "1.34.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vertexai",
+      "id": "7b5b4cb6-9bd8-4193-bf66-63cf59cde915",
+      "createTime": "2024-04-02T14:48:01.811Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "a6882fb9b3883424eb608eda94d7e6b7ff6f5ea6",
           "message": "[aiplatform] Add data_key field in feature online store service",
           "issues": []
@@ -49318,5 +49333,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2024-03-28T15:40:06.433Z"
+  "updateTime": "2024-04-02T14:48:01.811Z"
 }
