@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.34.0](https://github.com/googleapis/google-cloud-java/compare/v1.33.0...v1.34.0) (2024-04-02)
+
+
+### Features
+
+* add native image reflection configurations for vertexai ([64e2ed8](https://github.com/googleapis/google-cloud-java/commit/64e2ed8d41084d7c7727e0071bf3b69e600f12a1))
+
 ## [1.33.0](https://github.com/googleapis/google-cloud-java/compare/v1.32.0...v1.33.0) (2024-03-28)
 
 
