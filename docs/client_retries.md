@@ -17,34 +17,34 @@ Java-Asset v3.41.0 as an example, the default retry configurations are defined i
 <br>
 - Retry Status Codes are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1058-L1082). Example:
 ```java
-ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
-definitions.put("no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-// ... More StatusCode configurations
-RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions = ImmutableMap.builder();
+    definitions.put("no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+    // ... More StatusCode configurations
+    RETRYABLE_CODE_DEFINITIONS = definitions.build();
 ```
 
 - Retry parameters are configured [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1086-L1155). Example:
 ```java
-ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
-RetrySettings settings = null;
-settings =
-    RetrySettings.newBuilder()
-    .setInitialRpcTimeout(Duration.ofMillis(60000L))
-    .setRpcTimeoutMultiplier(1.0)
-    .setMaxRpcTimeout(Duration.ofMillis(60000L))
-    .setTotalTimeout(Duration.ofMillis(60000L))
-    .build();
-definitions.put("no_retry_0_params", settings);
-// ... More RetrySettings configurations
-RETRY_PARAM_DEFINITIONS = definitions.build();
+    ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
+    RetrySettings settings = null;
+    settings =
+        RetrySettings.newBuilder()
+        .setInitialRpcTimeout(Duration.ofMillis(60000L))
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.ofMillis(60000L))
+        .setTotalTimeout(Duration.ofMillis(60000L))
+        .build();
+    definitions.put("no_retry_0_params", settings);
+    // ... More RetrySettings configurations
+    RETRY_PARAM_DEFINITIONS = definitions.build();
 ```
 
 - The configurations above are mapped to the RPC [here](https://github.com/googleapis/google-cloud-java/blob/d9da511b4b56302e509abe8b2d919a15ea7dcae7/java-asset/google-cloud-asset/src/main/java/com/google/cloud/asset/v1/stub/AssetServiceStubSettings.java#L1306-L1474). Example:
 ```java
-builder
-  .exportAssetsSettings()
-  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+    builder
+      .exportAssetsSettings()
+      .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+      .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 ```
 
 ## Client Library Retry Concepts
@@ -70,16 +70,16 @@ individual attempt made and an RPC operation is collection of all attempts made.
 have one or more attempts in a single operation.
 
 Individual RPC Bounds (an attempt) are controlled by the following settings:
-- [setInitialRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRetryDelay_org_threeten_bp_Duration_)
-- [setRetryDelayMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRetryDelayMultiplier_double_)
-- [setMaxRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRetryDelay_org_threeten_bp_Duration_)
-- [setInitialRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRpcTimeout_org_threeten_bp_Duration_)
-- [setRpcTimeoutMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRpcTimeoutMultiplier_double_)
-- [setMaxRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRpcTimeout_org_threeten_bp_Duration_)
+- [setInitialRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRetryDelay_org_threeten_bp_Duration_): Delay before the first attempt
+- [setRetryDelayMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRetryDelayMultiplier_double_) - Delay multiplier applied between each attempt
+- [setMaxRetryDelay](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRetryDelay_org_threeten_bp_Duration_) - Max Delay possible for an attempt
+- [setInitialRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setInitialRpcTimeout_org_threeten_bp_Duration_) - Timeout for the first attempt
+- [setRpcTimeoutMultiplier](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setRpcTimeoutMultiplier_double_) - Timeout multiplier applied between each attempt
+- [setMaxRpcTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxRpcTimeout_org_threeten_bp_Duration_) - Max Timeout possible for an attempt
 
 Total RPC Bounds (an operation) are controlled by the following settings:
-- [setTotalTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setTotalTimeout_org_threeten_bp_Duration_)
-- [setMaxAttempts](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxAttempts_int_)
+- [setTotalTimeout](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setTotalTimeout_org_threeten_bp_Duration_) - Total timeout allowed the entire operation
+- [setMaxAttempts](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings.Builder#com_google_api_gax_retrying_RetrySettings_Builder_setMaxAttempts_int_) - Max number of attempts allowed
 
 ### When is an RPC retried
 An RPC will be retried when _both_ of the following scenarios occur:
