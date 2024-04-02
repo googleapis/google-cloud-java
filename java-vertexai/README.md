@@ -137,7 +137,7 @@ public class Main {
 
       GenerativeModel model = new GenerativeModel("gemini-pro", vertexAi);
 
-      ResponseStream<GenerateContentResponse> responseStream = model.generateContent("How are you?");
+      ResponseStream<GenerateContentResponse> responseStream = model.generateContentStream("How are you?");
       // Do something with the ResponseStream, which is an iterable.
     }
   }
