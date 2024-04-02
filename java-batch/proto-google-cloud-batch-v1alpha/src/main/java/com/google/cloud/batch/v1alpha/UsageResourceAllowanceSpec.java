@@ -119,10 +119,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Limit value of a UsageResourceAllowance within its one
-     * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-     * duration of the current month by setting `calendar_period` field as
-     * monthly. That means in your current month, 10000.0 is the cour hour
-     * limitation that your resources are allowed to consume.
+     * duration.
+     *
+     * Limit cannot be a negative value. Default is 0.
+     * For example, you can set `limit` as 10000.0 with duration of the current
+     * month by setting `calendar_period` field as monthly. That means in your
+     * current month, 10000.0 is the core hour limitation that your resources
+     * are allowed to consume.
      * </pre>
      *
      * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -135,10 +138,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Limit value of a UsageResourceAllowance within its one
-     * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-     * duration of the current month by setting `calendar_period` field as
-     * monthly. That means in your current month, 10000.0 is the cour hour
-     * limitation that your resources are allowed to consume.
+     * duration.
+     *
+     * Limit cannot be a negative value. Default is 0.
+     * For example, you can set `limit` as 10000.0 with duration of the current
+     * month by setting `calendar_period` field as monthly. That means in your
+     * current month, 10000.0 is the core hour limitation that your resources
+     * are allowed to consume.
      * </pre>
      *
      * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -306,10 +312,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Limit value of a UsageResourceAllowance within its one
-     * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-     * duration of the current month by setting `calendar_period` field as
-     * monthly. That means in your current month, 10000.0 is the cour hour
-     * limitation that your resources are allowed to consume.
+     * duration.
+     *
+     * Limit cannot be a negative value. Default is 0.
+     * For example, you can set `limit` as 10000.0 with duration of the current
+     * month by setting `calendar_period` field as monthly. That means in your
+     * current month, 10000.0 is the core hour limitation that your resources
+     * are allowed to consume.
      * </pre>
      *
      * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -325,10 +334,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. Limit value of a UsageResourceAllowance within its one
-     * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-     * duration of the current month by setting `calendar_period` field as
-     * monthly. That means in your current month, 10000.0 is the cour hour
-     * limitation that your resources are allowed to consume.
+     * duration.
+     *
+     * Limit cannot be a negative value. Default is 0.
+     * For example, you can set `limit` as 10000.0 with duration of the current
+     * month by setting `calendar_period` field as monthly. That means in your
+     * current month, 10000.0 is the core hour limitation that your resources
+     * are allowed to consume.
      * </pre>
      *
      * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -907,10 +919,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
        *
        * <pre>
        * Required. Limit value of a UsageResourceAllowance within its one
-       * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-       * duration of the current month by setting `calendar_period` field as
-       * monthly. That means in your current month, 10000.0 is the cour hour
-       * limitation that your resources are allowed to consume.
+       * duration.
+       *
+       * Limit cannot be a negative value. Default is 0.
+       * For example, you can set `limit` as 10000.0 with duration of the current
+       * month by setting `calendar_period` field as monthly. That means in your
+       * current month, 10000.0 is the core hour limitation that your resources
+       * are allowed to consume.
        * </pre>
        *
        * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -926,10 +941,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
        *
        * <pre>
        * Required. Limit value of a UsageResourceAllowance within its one
-       * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-       * duration of the current month by setting `calendar_period` field as
-       * monthly. That means in your current month, 10000.0 is the cour hour
-       * limitation that your resources are allowed to consume.
+       * duration.
+       *
+       * Limit cannot be a negative value. Default is 0.
+       * For example, you can set `limit` as 10000.0 with duration of the current
+       * month by setting `calendar_period` field as monthly. That means in your
+       * current month, 10000.0 is the core hour limitation that your resources
+       * are allowed to consume.
        * </pre>
        *
        * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -945,10 +963,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
        *
        * <pre>
        * Required. Limit value of a UsageResourceAllowance within its one
-       * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-       * duration of the current month by setting `calendar_period` field as
-       * monthly. That means in your current month, 10000.0 is the cour hour
-       * limitation that your resources are allowed to consume.
+       * duration.
+       *
+       * Limit cannot be a negative value. Default is 0.
+       * For example, you can set `limit` as 10000.0 with duration of the current
+       * month by setting `calendar_period` field as monthly. That means in your
+       * current month, 10000.0 is the core hour limitation that your resources
+       * are allowed to consume.
        * </pre>
        *
        * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -968,10 +989,13 @@ public final class UsageResourceAllowanceSpec extends com.google.protobuf.Genera
        *
        * <pre>
        * Required. Limit value of a UsageResourceAllowance within its one
-       * duration. Default is 0. For example, you can set `limit` as 10000.0 with
-       * duration of the current month by setting `calendar_period` field as
-       * monthly. That means in your current month, 10000.0 is the cour hour
-       * limitation that your resources are allowed to consume.
+       * duration.
+       *
+       * Limit cannot be a negative value. Default is 0.
+       * For example, you can set `limit` as 10000.0 with duration of the current
+       * month by setting `calendar_period` field as monthly. That means in your
+       * current month, 10000.0 is the core hour limitation that your resources
+       * are allowed to consume.
        * </pre>
        *
        * <code>optional double limit = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -64,7 +64,7 @@ public interface CertificateTemplateOrBuilder
    * Optional. The maximum lifetime allowed for issued
    * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
    * this template. If the issuing
-   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
    * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
    * specifies a
    * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
@@ -91,7 +91,7 @@ public interface CertificateTemplateOrBuilder
    * Optional. The maximum lifetime allowed for issued
    * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
    * this template. If the issuing
-   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
    * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
    * specifies a
    * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]
@@ -118,7 +118,7 @@ public interface CertificateTemplateOrBuilder
    * Optional. The maximum lifetime allowed for issued
    * [Certificates][google.cloud.security.privateca.v1.Certificate] that use
    * this template. If the issuing
-   * [CaPool][google.cloud.security.privateca.v1.CaPool]'s
+   * [CaPool][google.cloud.security.privateca.v1.CaPool] resource's
    * [IssuancePolicy][google.cloud.security.privateca.v1.CaPool.IssuancePolicy]
    * specifies a
    * [maximum_lifetime][google.cloud.security.privateca.v1.CaPool.IssuancePolicy.maximum_lifetime]

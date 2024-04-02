@@ -28,7 +28,7 @@ public interface FetchCaCertsResponseOrBuilder
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all Certificate Authorities in
+   * The PEM encoded CA certificate chains of all certificate authorities in
    * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
    * DISABLED, or STAGED states.
    * </pre>
@@ -42,7 +42,7 @@ public interface FetchCaCertsResponseOrBuilder
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all Certificate Authorities in
+   * The PEM encoded CA certificate chains of all certificate authorities in
    * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
    * DISABLED, or STAGED states.
    * </pre>
@@ -55,7 +55,7 @@ public interface FetchCaCertsResponseOrBuilder
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all Certificate Authorities in
+   * The PEM encoded CA certificate chains of all certificate authorities in
    * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
    * DISABLED, or STAGED states.
    * </pre>
@@ -68,7 +68,7 @@ public interface FetchCaCertsResponseOrBuilder
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all Certificate Authorities in
+   * The PEM encoded CA certificate chains of all certificate authorities in
    * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
    * DISABLED, or STAGED states.
    * </pre>
@@ -83,7 +83,7 @@ public interface FetchCaCertsResponseOrBuilder
    *
    *
    * <pre>
-   * The PEM encoded CA certificate chains of all Certificate Authorities in
+   * The PEM encoded CA certificate chains of all certificate authorities in
    * this [CaPool][google.cloud.security.privateca.v1.CaPool] in the ENABLED,
    * DISABLED, or STAGED states.
    * </pre>

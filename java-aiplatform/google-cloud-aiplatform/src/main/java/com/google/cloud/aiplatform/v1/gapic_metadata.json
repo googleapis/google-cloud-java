@@ -437,6 +437,42 @@
         }
       }
     },
+    "GenAiTuningService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenAiTuningServiceClient",
+          "rpcs": {
+            "CancelTuningJob": {
+              "methods": ["cancelTuningJob", "cancelTuningJob", "cancelTuningJob", "cancelTuningJobCallable"]
+            },
+            "CreateTuningJob": {
+              "methods": ["createTuningJob", "createTuningJob", "createTuningJob", "createTuningJobCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTuningJob": {
+              "methods": ["getTuningJob", "getTuningJob", "getTuningJob", "getTuningJobCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTuningJobs": {
+              "methods": ["listTuningJobs", "listTuningJobs", "listTuningJobs", "listTuningJobsPagedCallable", "listTuningJobsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "IndexEndpointService": {
       "clients": {
         "grpc": {

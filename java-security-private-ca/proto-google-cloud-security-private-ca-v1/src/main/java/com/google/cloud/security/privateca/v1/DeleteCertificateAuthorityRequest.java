@@ -245,9 +245,9 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Optional. This field allows this ca to be deleted even if it's being
+   * Optional. This field allows this CA to be deleted even if it's being
    * depended on by another resource. However, doing so may result in unintended
-   * and unrecoverable effects on any dependent resource(s) since the CA will
+   * and unrecoverable effects on any dependent resources since the CA will
    * no longer be able to issue certificates.
    * </pre>
    *
@@ -1118,9 +1118,9 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. This field allows this ca to be deleted even if it's being
+     * Optional. This field allows this CA to be deleted even if it's being
      * depended on by another resource. However, doing so may result in unintended
-     * and unrecoverable effects on any dependent resource(s) since the CA will
+     * and unrecoverable effects on any dependent resources since the CA will
      * no longer be able to issue certificates.
      * </pre>
      *
@@ -1136,9 +1136,9 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. This field allows this ca to be deleted even if it's being
+     * Optional. This field allows this CA to be deleted even if it's being
      * depended on by another resource. However, doing so may result in unintended
-     * and unrecoverable effects on any dependent resource(s) since the CA will
+     * and unrecoverable effects on any dependent resources since the CA will
      * no longer be able to issue certificates.
      * </pre>
      *
@@ -1158,9 +1158,9 @@ public final class DeleteCertificateAuthorityRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Optional. This field allows this ca to be deleted even if it's being
+     * Optional. This field allows this CA to be deleted even if it's being
      * depended on by another resource. However, doing so may result in unintended
-     * and unrecoverable effects on any dependent resource(s) since the CA will
+     * and unrecoverable effects on any dependent resources since the CA will
      * no longer be able to issue certificates.
      * </pre>
      *

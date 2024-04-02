@@ -1153,6 +1153,9 @@
             "ListPersistentResources": {
               "methods": ["listPersistentResources", "listPersistentResources", "listPersistentResources", "listPersistentResourcesPagedCallable", "listPersistentResourcesCallable"]
             },
+            "RebootPersistentResource": {
+              "methods": ["rebootPersistentResourceAsync", "rebootPersistentResourceAsync", "rebootPersistentResourceAsync", "rebootPersistentResourceOperationCallable", "rebootPersistentResourceCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

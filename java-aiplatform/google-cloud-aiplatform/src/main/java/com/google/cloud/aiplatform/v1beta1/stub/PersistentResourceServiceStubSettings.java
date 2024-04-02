@@ -53,6 +53,8 @@ import com.google.cloud.aiplatform.v1beta1.GetPersistentResourceRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesResponse;
 import com.google.cloud.aiplatform.v1beta1.PersistentResource;
+import com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest;
 import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -147,6 +149,13 @@ public class PersistentResourceServiceStubSettings
           PersistentResource,
           UpdatePersistentResourceOperationMetadata>
       updatePersistentResourceOperationSettings;
+  private final UnaryCallSettings<RebootPersistentResourceRequest, Operation>
+      rebootPersistentResourceSettings;
+  private final OperationCallSettings<
+          RebootPersistentResourceRequest,
+          PersistentResource,
+          RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -338,6 +347,21 @@ public class PersistentResourceServiceStubSettings
     return updatePersistentResourceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to rebootPersistentResource. */
+  public UnaryCallSettings<RebootPersistentResourceRequest, Operation>
+      rebootPersistentResourceSettings() {
+    return rebootPersistentResourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rebootPersistentResource. */
+  public OperationCallSettings<
+          RebootPersistentResourceRequest,
+          PersistentResource,
+          RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceOperationSettings() {
+    return rebootPersistentResourceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -465,6 +489,9 @@ public class PersistentResourceServiceStubSettings
     updatePersistentResourceSettings = settingsBuilder.updatePersistentResourceSettings().build();
     updatePersistentResourceOperationSettings =
         settingsBuilder.updatePersistentResourceOperationSettings().build();
+    rebootPersistentResourceSettings = settingsBuilder.rebootPersistentResourceSettings().build();
+    rebootPersistentResourceOperationSettings =
+        settingsBuilder.rebootPersistentResourceOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -502,6 +529,13 @@ public class PersistentResourceServiceStubSettings
             PersistentResource,
             UpdatePersistentResourceOperationMetadata>
         updatePersistentResourceOperationSettings;
+    private final UnaryCallSettings.Builder<RebootPersistentResourceRequest, Operation>
+        rebootPersistentResourceSettings;
+    private final OperationCallSettings.Builder<
+            RebootPersistentResourceRequest,
+            PersistentResource,
+            RebootPersistentResourceOperationMetadata>
+        rebootPersistentResourceOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -546,6 +580,8 @@ public class PersistentResourceServiceStubSettings
       deletePersistentResourceOperationSettings = OperationCallSettings.newBuilder();
       updatePersistentResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updatePersistentResourceOperationSettings = OperationCallSettings.newBuilder();
+      rebootPersistentResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rebootPersistentResourceOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -559,6 +595,7 @@ public class PersistentResourceServiceStubSettings
               listPersistentResourcesSettings,
               deletePersistentResourceSettings,
               updatePersistentResourceSettings,
+              rebootPersistentResourceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -581,6 +618,9 @@ public class PersistentResourceServiceStubSettings
       updatePersistentResourceSettings = settings.updatePersistentResourceSettings.toBuilder();
       updatePersistentResourceOperationSettings =
           settings.updatePersistentResourceOperationSettings.toBuilder();
+      rebootPersistentResourceSettings = settings.rebootPersistentResourceSettings.toBuilder();
+      rebootPersistentResourceOperationSettings =
+          settings.rebootPersistentResourceOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -594,6 +634,7 @@ public class PersistentResourceServiceStubSettings
               listPersistentResourcesSettings,
               deletePersistentResourceSettings,
               updatePersistentResourceSettings,
+              rebootPersistentResourceSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -636,6 +677,11 @@ public class PersistentResourceServiceStubSettings
 
       builder
           .updatePersistentResourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .rebootPersistentResourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -738,6 +784,31 @@ public class PersistentResourceServiceStubSettings
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .rebootPersistentResourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RebootPersistentResourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(PersistentResource.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  RebootPersistentResourceOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -812,6 +883,21 @@ public class PersistentResourceServiceStubSettings
             UpdatePersistentResourceOperationMetadata>
         updatePersistentResourceOperationSettings() {
       return updatePersistentResourceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rebootPersistentResource. */
+    public UnaryCallSettings.Builder<RebootPersistentResourceRequest, Operation>
+        rebootPersistentResourceSettings() {
+      return rebootPersistentResourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rebootPersistentResource. */
+    public OperationCallSettings.Builder<
+            RebootPersistentResourceRequest,
+            PersistentResource,
+            RebootPersistentResourceOperationMetadata>
+        rebootPersistentResourceOperationSettings() {
+      return rebootPersistentResourceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
