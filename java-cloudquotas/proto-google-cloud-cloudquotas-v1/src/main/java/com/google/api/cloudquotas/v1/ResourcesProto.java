@@ -64,6 +64,10 @@ public final class ResourcesProto {
       internal_static_google_api_cloudquotas_v1_QuotaDetails_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_api_cloudquotas_v1_QuotaDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_cloudquotas_v1_RolloutInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_api_cloudquotas_v1_RolloutInfo_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -143,17 +147,19 @@ public final class ResourcesProto {
           + "sionsEntry\0228\n\007details\030\002 \001(\0132\'.google.api"
           + ".cloudquotas.v1.QuotaDetails\022\034\n\024applicab"
           + "le_locations\030\003 \003(\t\0321\n\017DimensionsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\035\n\014QuotaDe"
-          + "tails\022\r\n\005value\030\001 \001(\003*~\n\020QuotaSafetyCheck"
-          + "\022\"\n\036QUOTA_SAFETY_CHECK_UNSPECIFIED\020\000\022\036\n\032"
-          + "QUOTA_DECREASE_BELOW_USAGE\020\001\022&\n\"QUOTA_DE"
-          + "CREASE_PERCENTAGE_TOO_HIGH\020\002B\321\001\n\035com.goo"
-          + "gle.api.cloudquotas.v1B\016ResourcesProtoP\001"
-          + "ZAcloud.google.com/go/cloudquotas/apiv1/"
-          + "cloudquotaspb;cloudquotaspb\252\002\033Google.Clo"
-          + "ud.CloudQuotas.V1\312\002\033Google\\Cloud\\CloudQu"
-          + "otas\\V1\352\002\036Google::Cloud::CloudQuotas::V1"
-          + "b\006proto3"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"[\n\014QuotaDe"
+          + "tails\022\r\n\005value\030\001 \001(\003\022<\n\014rollout_info\030\003 \001"
+          + "(\0132&.google.api.cloudquotas.v1.RolloutIn"
+          + "fo\"&\n\013RolloutInfo\022\027\n\017ongoing_rollout\030\001 \001"
+          + "(\010*~\n\020QuotaSafetyCheck\022\"\n\036QUOTA_SAFETY_C"
+          + "HECK_UNSPECIFIED\020\000\022\036\n\032QUOTA_DECREASE_BEL"
+          + "OW_USAGE\020\001\022&\n\"QUOTA_DECREASE_PERCENTAGE_"
+          + "TOO_HIGH\020\002B\321\001\n\035com.google.api.cloudquota"
+          + "s.v1B\016ResourcesProtoP\001ZAcloud.google.com"
+          + "/go/cloudquotas/apiv1/cloudquotaspb;clou"
+          + "dquotaspb\252\002\033Google.Cloud.CloudQuotas.V1\312"
+          + "\002\033Google\\Cloud\\CloudQuotas\\V1\352\002\036Google::"
+          + "Cloud::CloudQuotas::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -266,7 +272,15 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_api_cloudquotas_v1_QuotaDetails_descriptor,
             new java.lang.String[] {
-              "Value",
+              "Value", "RolloutInfo",
+            });
+    internal_static_google_api_cloudquotas_v1_RolloutInfo_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_api_cloudquotas_v1_RolloutInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_api_cloudquotas_v1_RolloutInfo_descriptor,
+            new java.lang.String[] {
+              "OngoingRollout",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
