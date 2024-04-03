@@ -698,11 +698,11 @@ grpc-google-cloud-telcoautomation-v1alpha1:0.10.0:0.11.0-SNAPSHOT
 google-cloud-securesourcemanager:0.10.0:0.11.0-SNAPSHOT
 proto-google-cloud-securesourcemanager-v1:0.10.0:0.11.0-SNAPSHOT
 grpc-google-cloud-securesourcemanager-v1:0.10.0:0.11.0-SNAPSHOT
-# google-cloud-vertexai:1.0.0:1.0.0
-# proto-google-cloud-vertexai-v1:1.0.0:1.0.0
-# proto-google-cloud-vertexai-v1beta1:1.0.0:1.0.0
-# grpc-google-cloud-vertexai-v1:1.0.0:1.0.0
-# grpc-google-cloud-vertexai-v1beta1:1.0.0:1.0.0
+google-cloud-vertexai:1.0.0:1.0.0
+proto-google-cloud-vertexai-v1:1.0.0:1.0.0
+proto-google-cloud-vertexai-v1beta1:1.0.0:1.0.0
+grpc-google-cloud-vertexai-v1:1.0.0:1.0.0
+grpc-google-cloud-vertexai-v1beta1:1.0.0:1.0.0
 google-cloud-edgenetwork:0.8.0:0.9.0-SNAPSHOT
 proto-google-cloud-edgenetwork-v1:0.8.0:0.9.0-SNAPSHOT
 grpc-google-cloud-edgenetwork-v1:0.8.0:0.9.0-SNAPSHOT
