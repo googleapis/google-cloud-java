@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.128.0](https://github.com/googleapis/java-pubsub/compare/v1.127.3...v1.128.0) (2024-04-03)
+
+
+### Features
+
+* Add custom datetime format for Cloud Storage subscriptions ([#1970](https://github.com/googleapis/java-pubsub/issues/1970)) ([7113f06](https://github.com/googleapis/java-pubsub/commit/7113f065973bb8b56ab811e0589ffb7975873679))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.38.2 ([#1965](https://github.com/googleapis/java-pubsub/issues/1965)) ([ec3b386](https://github.com/googleapis/java-pubsub/commit/ec3b38665ddc6336f975d597d27c4aa25732c474))
+* Update dependency com.google.cloud:google-cloud-storage to v2.36.1 ([#1968](https://github.com/googleapis/java-pubsub/issues/1968)) ([524109c](https://github.com/googleapis/java-pubsub/commit/524109c1afc5118c79fd97769e194a1325322107))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.26.1 ([#1972](https://github.com/googleapis/java-pubsub/issues/1972)) ([53c1120](https://github.com/googleapis/java-pubsub/commit/53c112033dc721cf91aceddfc1eeb3c6daddb45e))
+
+
+### Documentation
+
+* Add Kinesis ingestion samples ([#1947](https://github.com/googleapis/java-pubsub/issues/1947)) ([5b5c14b](https://github.com/googleapis/java-pubsub/commit/5b5c14ba31636c037c2b8d6a166bd48670e23688))
+
 ## [1.127.3](https://github.com/googleapis/java-pubsub/compare/v1.127.2...v1.127.3) (2024-03-20)
 
 
