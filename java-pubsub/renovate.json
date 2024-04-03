@@ -12,7 +12,10 @@
   ],
   "ignorePaths": [
     ".kokoro/requirements.txt",
-    ".github/workflows/**"
+    ".github/workflows/approve-readme.yaml",
+    ".github/workflows/ci.yaml",
+    ".github/workflows/renovate_config_check.yaml",
+    ".github/workflows/samples.yaml"
   ],
   "customManagers": [
     {
