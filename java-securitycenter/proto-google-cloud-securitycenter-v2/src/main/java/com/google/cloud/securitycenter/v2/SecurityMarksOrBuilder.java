@@ -164,21 +164,21 @@ public interface SecurityMarksOrBuilder
    * <pre>
    * The canonical name of the marks. The following list shows some examples:
    *
-   * + `organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * + `organizations/{organization_id}/assets/{asset_id}/securityMarks`
    * +
-   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks`
    * +
-   * `organizations/{organization_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks"
-   * + `folders/{folder_id}/assets/{asset_id}/securityMarks"
+   * `organizations/{organization_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks`
+   * + `folders/{folder_id}/assets/{asset_id}/securityMarks`
    * +
-   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks`
    * +
-   * `folders/{folder_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks"
-   * + `projects/{project_number}/assets/{asset_id}/securityMarks"
+   * `folders/{folder_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks`
+   * + `projects/{project_number}/assets/{asset_id}/securityMarks`
    * +
-   * `projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * `projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks`
    * +
-   * `projects/{project_number}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks"
+   * `projects/{project_number}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks`
    * </pre>
    *
    * <code>string canonical_name = 3;</code>
@@ -192,21 +192,21 @@ public interface SecurityMarksOrBuilder
    * <pre>
    * The canonical name of the marks. The following list shows some examples:
    *
-   * + `organizations/{organization_id}/assets/{asset_id}/securityMarks"
+   * + `organizations/{organization_id}/assets/{asset_id}/securityMarks`
    * +
-   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks`
    * +
-   * `organizations/{organization_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks"
-   * + `folders/{folder_id}/assets/{asset_id}/securityMarks"
+   * `organizations/{organization_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks`
+   * + `folders/{folder_id}/assets/{asset_id}/securityMarks`
    * +
-   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * `folders/{folder_id}/sources/{source_id}/findings/{finding_id}/securityMarks`
    * +
-   * `folders/{folder_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks"
-   * + `projects/{project_number}/assets/{asset_id}/securityMarks"
+   * `folders/{folder_id}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks`
+   * + `projects/{project_number}/assets/{asset_id}/securityMarks`
    * +
-   * `projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks"
+   * `projects/{project_number}/sources/{source_id}/findings/{finding_id}/securityMarks`
    * +
-   * `projects/{project_number}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks"
+   * `projects/{project_number}/sources/{source_id}/locations/{location}/findings/{finding_id}/securityMarks`
    * </pre>
    *
    * <code>string canonical_name = 3;</code>

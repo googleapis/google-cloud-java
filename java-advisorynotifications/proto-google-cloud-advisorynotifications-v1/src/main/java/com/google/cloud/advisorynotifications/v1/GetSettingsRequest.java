@@ -73,7 +73,8 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The resource name of the settings to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/settings.
+   * organizations/{organization}/locations/{location}/settings or
+   * projects/{projects}/locations/{location}/settings.
    * </pre>
    *
    * <code>
@@ -100,7 +101,8 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The resource name of the settings to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/settings.
+   * organizations/{organization}/locations/{location}/settings or
+   * projects/{projects}/locations/{location}/settings.
    * </pre>
    *
    * <code>
@@ -475,7 +477,8 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the settings to retrieve.
      * Format:
-     * organizations/{organization}/locations/{location}/settings.
+     * organizations/{organization}/locations/{location}/settings or
+     * projects/{projects}/locations/{location}/settings.
      * </pre>
      *
      * <code>
@@ -501,7 +504,8 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the settings to retrieve.
      * Format:
-     * organizations/{organization}/locations/{location}/settings.
+     * organizations/{organization}/locations/{location}/settings or
+     * projects/{projects}/locations/{location}/settings.
      * </pre>
      *
      * <code>
@@ -527,7 +531,8 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the settings to retrieve.
      * Format:
-     * organizations/{organization}/locations/{location}/settings.
+     * organizations/{organization}/locations/{location}/settings or
+     * projects/{projects}/locations/{location}/settings.
      * </pre>
      *
      * <code>
@@ -552,7 +557,8 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the settings to retrieve.
      * Format:
-     * organizations/{organization}/locations/{location}/settings.
+     * organizations/{organization}/locations/{location}/settings or
+     * projects/{projects}/locations/{location}/settings.
      * </pre>
      *
      * <code>
@@ -573,7 +579,8 @@ public final class GetSettingsRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The resource name of the settings to retrieve.
      * Format:
-     * organizations/{organization}/locations/{location}/settings.
+     * organizations/{organization}/locations/{location}/settings or
+     * projects/{projects}/locations/{location}/settings.
      * </pre>
      *
      * <code>
