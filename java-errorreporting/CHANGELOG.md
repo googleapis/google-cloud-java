@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.162.0-beta (2024-04-04)
+
+* No change
+
+
 ## 0.160.0-beta (2024-03-28)
 
 * No change
