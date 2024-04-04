@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.35.0](https://github.com/googleapis/google-cloud-java/compare/v1.34.0...v1.35.0) (2024-04-04)
+
+
+### Features
+
+* [speech] add translation_config in RecognitionConfig message ([2e05371](https://github.com/googleapis/google-cloud-java/commit/2e05371e57260e2298b658aa120e8b9d0e93ed61))
+
 ## [1.34.0](https://github.com/googleapis/google-cloud-java/compare/v1.33.0...v1.34.0) (2024-04-02)
 
 
