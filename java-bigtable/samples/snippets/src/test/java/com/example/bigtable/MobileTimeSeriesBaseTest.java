@@ -29,7 +29,7 @@ import java.time.temporal.ChronoUnit;
 
 public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
 
-  public static final String TABLE_ID = generateTableId("mobile-time-series");
+  public static final String TABLE_ID = generateResourceId("mobile-time-series");
   public static final String COLUMN_FAMILY_NAME_STATS = "stats_summary";
   public static final String COLUMN_FAMILY_NAME_PLAN = "cell_plan";
   public static final Instant CURRENT_TIME = Instant.now();

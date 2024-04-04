@@ -156,7 +156,7 @@ public class HelloWorld {
     // [START bigtable_hw_get_by_key]
     try {
       System.out.println("\nReading a single row by row key");
-      Row row = dataClient.readRow(tableId, ROW_KEY_PREFIX + 0);
+      Row row = dataClient.readRow(TableId.of(tableId), ROW_KEY_PREFIX + 0);
       System.out.println("Row: " + row.getKey().toStringUtf8());
       for (RowCell cell : row.getCells()) {
         System.out.printf(

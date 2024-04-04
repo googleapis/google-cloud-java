@@ -67,7 +67,7 @@ public class TableAdminExampleTest extends BigtableBaseTest {
 
   @Before
   public void setup() throws IOException {
-    tableId = generateTableId(TABLE_PREFIX);
+    tableId = generateResourceId(TABLE_PREFIX);
     tableAdmin = new TableAdminExample(projectId, instanceId, tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf"));
   }
@@ -82,7 +82,7 @@ public class TableAdminExampleTest extends BigtableBaseTest {
   @Test
   public void testCreateAndDeleteTable() throws IOException {
     // Creates a table.
-    String testTable = generateTableId(TABLE_PREFIX);
+    String testTable = generateResourceId(TABLE_PREFIX);
     TableAdminExample testTableAdmin = new TableAdminExample(projectId, instanceId, testTable);
     testTableAdmin.createTable();
     assertTrue(adminClient.exists(testTable));

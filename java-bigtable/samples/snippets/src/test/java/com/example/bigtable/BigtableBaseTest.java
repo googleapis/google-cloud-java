@@ -55,7 +55,7 @@ public class BigtableBaseTest {
     bout.reset();
   }
 
-  public static String generateTableId(String prefix) {
+  public static String generateResourceId(String prefix) {
     return prefix + "-" + UUID.randomUUID().toString().substring(0, 20);
   }
 
