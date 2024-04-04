@@ -355,5 +355,49 @@ public interface RecognitionConfigOrBuilder
    */
   com.google.cloud.speech.v2.TranscriptNormalizationOrBuilder getTranscriptNormalizationOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional configuration used to automatically run translation on
+   * the given audio to the desired language for supported models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the translationConfig field is set.
+   */
+  boolean hasTranslationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional configuration used to automatically run translation on
+   * the given audio to the desired language for supported models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The translationConfig.
+   */
+  com.google.cloud.speech.v2.TranslationConfig getTranslationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional configuration used to automatically run translation on
+   * the given audio to the desired language for supported models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.TranslationConfig translation_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.speech.v2.TranslationConfigOrBuilder getTranslationConfigOrBuilder();
+
   com.google.cloud.speech.v2.RecognitionConfig.DecodingConfigCase getDecodingConfigCase();
 }
