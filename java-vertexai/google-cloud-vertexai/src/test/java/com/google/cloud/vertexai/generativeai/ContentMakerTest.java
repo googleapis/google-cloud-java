@@ -17,6 +17,7 @@
 package com.google.cloud.vertexai.generativeai;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.vertexai.api.Content;
 import com.google.protobuf.ByteString;
@@ -36,6 +37,24 @@ public final class ContentMakerTest {
 
     assertThat(content.getRole()).isEqualTo("user");
     assertThat(content.getParts(0).getText()).isEqualTo(stringInput);
+  }
+
+  @Test
+  public void fromString_throwsIllegalArgumentException_withEmptyString() {
+    String stringInput = "";
+
+    IllegalArgumentException thrown =
+        assertThrows(IllegalArgumentException.class, () -> ContentMaker.fromString(stringInput));
+    assertThat(thrown).hasMessageThat().isEqualTo("text message can't be null or empty.");
+  }
+
+  @Test
+  public void fromString_throwsIllegalArgumentException_withNullString() {
+    String stringInput = null;
+
+    IllegalArgumentException thrown =
+        assertThrows(IllegalArgumentException.class, () -> ContentMaker.fromString(stringInput));
+    assertThat(thrown).hasMessageThat().isEqualTo("text message can't be null or empty.");
   }
 
   @Test
