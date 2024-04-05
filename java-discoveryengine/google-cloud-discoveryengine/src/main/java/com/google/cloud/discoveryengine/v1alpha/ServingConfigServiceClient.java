@@ -36,7 +36,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service for operations related to [ServingConfig][].
+ * Service Description: Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

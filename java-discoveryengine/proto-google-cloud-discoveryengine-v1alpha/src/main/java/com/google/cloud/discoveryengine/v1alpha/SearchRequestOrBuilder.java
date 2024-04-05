@@ -162,11 +162,15 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Maximum number of
-   * [Document][google.cloud.discoveryengine.v1alpha.Document]s to return. If
-   * unspecified, defaults to a reasonable value. The maximum allowed value is
-   * 100. Values above 100 are coerced to 100.
+   * [Document][google.cloud.discoveryengine.v1alpha.Document]s to return. The
+   * maximum allowed value depends on the data type. Values above the maximum
+   * value are coerced to the maximum value.
    *
-   * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
+   * * Websites with basic indexing: Default `10`, Maximum `25`.
+   * * Websites with advanced indexing: Default `25`, Maximum `50`.
+   * * Other: Default `50`, Maximum `100`.
+   *
+   * If this field is negative, an  `INVALID_ARGUMENT` is returned.
    * </pre>
    *
    * <code>int32 page_size = 4;</code>
@@ -930,7 +934,8 @@ public interface SearchRequestOrBuilder
    *
    * If
    * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path]
-   * is not provided, it will use [ServingConfig.EmbeddingConfig.field_path][].
+   * is not provided, it will use
+   * [ServingConfig.EmbeddingConfig.field_path][google.cloud.discoveryengine.v1alpha.ServingConfig.embedding_config].
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec embedding_spec = 23;
@@ -951,7 +956,8 @@ public interface SearchRequestOrBuilder
    *
    * If
    * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path]
-   * is not provided, it will use [ServingConfig.EmbeddingConfig.field_path][].
+   * is not provided, it will use
+   * [ServingConfig.EmbeddingConfig.field_path][google.cloud.discoveryengine.v1alpha.ServingConfig.embedding_config].
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec embedding_spec = 23;
@@ -972,7 +978,8 @@ public interface SearchRequestOrBuilder
    *
    * If
    * [SearchRequest.EmbeddingSpec.EmbeddingVector.field_path][google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec.EmbeddingVector.field_path]
-   * is not provided, it will use [ServingConfig.EmbeddingConfig.field_path][].
+   * is not provided, it will use
+   * [ServingConfig.EmbeddingConfig.field_path][google.cloud.discoveryengine.v1alpha.ServingConfig.embedding_config].
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1alpha.SearchRequest.EmbeddingSpec embedding_spec = 23;

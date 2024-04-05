@@ -26,11 +26,13 @@ import com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.Document;
 import com.google.cloud.discoveryengine.v1alpha.GetDocumentRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.ImportDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1alpha.ImportDocumentsRequest;
 import com.google.cloud.discoveryengine.v1alpha.ImportDocumentsResponse;
 import com.google.cloud.discoveryengine.v1alpha.ListDocumentsRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDocumentsResponse;
+import com.google.cloud.discoveryengine.v1alpha.ProcessedDocument;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsResponse;
@@ -99,6 +101,11 @@ public abstract class DocumentServiceStub implements BackgroundResource {
 
   public UnaryCallable<PurgeDocumentsRequest, Operation> purgeDocumentsCallable() {
     throw new UnsupportedOperationException("Not implemented: purgeDocumentsCallable()");
+  }
+
+  public UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
+      getProcessedDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getProcessedDocumentCallable()");
   }
 
   @Override

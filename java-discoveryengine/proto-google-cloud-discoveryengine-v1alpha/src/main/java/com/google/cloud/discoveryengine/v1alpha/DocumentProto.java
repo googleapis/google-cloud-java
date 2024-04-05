@@ -44,6 +44,10 @@ public final class DocumentProto {
       internal_static_google_cloud_discoveryengine_v1alpha_Document_AclInfo_AccessRestriction_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_Document_AclInfo_AccessRestriction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -84,14 +88,17 @@ public final class DocumentProto {
           + "s/{project}/locations/{location}/collect"
           + "ions/{collection}/dataStores/{data_store"
           + "}/branches/{branch}/documents/{document}"
-          + "B\006\n\004dataB\231\002\n(com.google.cloud.discoverye"
-          + "ngine.v1alphaB\rDocumentProtoP\001ZRcloud.go"
-          + "ogle.com/go/discoveryengine/apiv1alpha/d"
-          + "iscoveryenginepb;discoveryenginepb\242\002\017DIS"
-          + "COVERYENGINE\252\002$Google.Cloud.DiscoveryEng"
-          + "ine.V1Alpha\312\002$Google\\Cloud\\DiscoveryEngi"
-          + "ne\\V1alpha\352\002\'Google::Cloud::DiscoveryEng"
-          + "ine::V1alphab\006proto3"
+          + "B\006\n\004data\"\204\001\n\021ProcessedDocument\022\023\n\tjson_d"
+          + "ata\030\002 \001(\tH\000\022A\n\010document\030\001 \001(\tB/\340A\002\372A)\n\'d"
+          + "iscoveryengine.googleapis.com/DocumentB\027"
+          + "\n\025processed_data_formatB\231\002\n(com.google.c"
+          + "loud.discoveryengine.v1alphaB\rDocumentPr"
+          + "otoP\001ZRcloud.google.com/go/discoveryengi"
+          + "ne/apiv1alpha/discoveryenginepb;discover"
+          + "yenginepb\242\002\017DISCOVERYENGINE\252\002$Google.Clo"
+          + "ud.DiscoveryEngine.V1Alpha\312\002$Google\\Clou"
+          + "d\\DiscoveryEngine\\V1alpha\352\002\'Google::Clou"
+          + "d::DiscoveryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,10 +158,19 @@ public final class DocumentProto {
             new java.lang.String[] {
               "Principals",
             });
+    internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_ProcessedDocument_descriptor,
+            new java.lang.String[] {
+              "JsonData", "Document", "ProcessedDataFormat",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

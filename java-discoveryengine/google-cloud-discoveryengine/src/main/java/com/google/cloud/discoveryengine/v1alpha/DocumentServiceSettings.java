@@ -130,6 +130,12 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
     return ((DocumentServiceStubSettings) getStubSettings()).purgeDocumentsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getProcessedDocument. */
+  public UnaryCallSettings<GetProcessedDocumentRequest, ProcessedDocument>
+      getProcessedDocumentSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).getProcessedDocumentSettings();
+  }
+
   public static final DocumentServiceSettings create(DocumentServiceStubSettings stub)
       throws IOException {
     return new DocumentServiceSettings.Builder(stub.toBuilder()).build();
@@ -291,6 +297,12 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
             PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
         purgeDocumentsOperationSettings() {
       return getStubSettingsBuilder().purgeDocumentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getProcessedDocument. */
+    public UnaryCallSettings.Builder<GetProcessedDocumentRequest, ProcessedDocument>
+        getProcessedDocumentSettings() {
+      return getStubSettingsBuilder().getProcessedDocumentSettings();
     }
 
     @Override

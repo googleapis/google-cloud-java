@@ -616,6 +616,7 @@ public class DocumentServiceClientHttpJsonTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .setAutoGenerateIds(true)
             .setIdField("idField1629396127")
             .build();
@@ -653,6 +654,7 @@ public class DocumentServiceClientHttpJsonTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
               .build();
@@ -727,6 +729,106 @@ public class DocumentServiceClientHttpJsonTest {
       client.purgeDocumentsAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getProcessedDocumentTest() throws Exception {
+    ProcessedDocument expectedResponse =
+        ProcessedDocument.newBuilder()
+            .setDocument(
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DocumentName name =
+        DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+
+    ProcessedDocument actualResponse = client.getProcessedDocument(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessedDocumentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DocumentName name =
+          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+      client.getProcessedDocument(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getProcessedDocumentTest2() throws Exception {
+    ProcessedDocument expectedResponse =
+        ProcessedDocument.newBuilder()
+            .setDocument(
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2446/locations/location-2446/dataStores/dataStore-2446/branches/branche-2446/documents/document-2446";
+
+    ProcessedDocument actualResponse = client.getProcessedDocument(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getProcessedDocumentExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2446/locations/location-2446/dataStores/dataStore-2446/branches/branche-2446/documents/document-2446";
+      client.getProcessedDocument(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

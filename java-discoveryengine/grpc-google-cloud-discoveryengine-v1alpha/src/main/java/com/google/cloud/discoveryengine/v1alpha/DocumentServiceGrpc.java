@@ -362,6 +362,56 @@ public final class DocumentServiceGrpc {
     return getPurgeDocumentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest,
+          com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>
+      getGetProcessedDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetProcessedDocument",
+      requestType = com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1alpha.ProcessedDocument.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest,
+          com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>
+      getGetProcessedDocumentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest,
+            com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>
+        getGetProcessedDocumentMethod;
+    if ((getGetProcessedDocumentMethod = DocumentServiceGrpc.getGetProcessedDocumentMethod)
+        == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getGetProcessedDocumentMethod = DocumentServiceGrpc.getGetProcessedDocumentMethod)
+            == null) {
+          DocumentServiceGrpc.getGetProcessedDocumentMethod =
+              getGetProcessedDocumentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest,
+                          com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetProcessedDocument"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1alpha.ProcessedDocument
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("GetProcessedDocument"))
+                      .build();
+        }
+      }
+    }
+    return getGetProcessedDocumentMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DocumentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DocumentServiceStub> factory =
@@ -533,6 +583,22 @@ public final class DocumentServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getPurgeDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the parsed layout information for a
+     * [Document][google.cloud.discoveryengine.v1alpha.Document].
+     * </pre>
+     */
+    default void getProcessedDocument(
+        com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetProcessedDocumentMethod(), responseObserver);
     }
   }
 
@@ -708,6 +774,24 @@ public final class DocumentServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the parsed layout information for a
+     * [Document][google.cloud.discoveryengine.v1alpha.Document].
+     * </pre>
+     */
+    public void getProcessedDocument(
+        com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetProcessedDocumentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -839,6 +923,20 @@ public final class DocumentServiceGrpc {
         com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPurgeDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the parsed layout information for a
+     * [Document][google.cloud.discoveryengine.v1alpha.Document].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1alpha.ProcessedDocument getProcessedDocument(
+        com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProcessedDocumentMethod(), getCallOptions(), request);
     }
   }
 
@@ -976,6 +1074,22 @@ public final class DocumentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPurgeDocumentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the parsed layout information for a
+     * [Document][google.cloud.discoveryengine.v1alpha.Document].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>
+        getProcessedDocument(
+            com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetProcessedDocumentMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DOCUMENT = 0;
@@ -985,6 +1099,7 @@ public final class DocumentServiceGrpc {
   private static final int METHODID_DELETE_DOCUMENT = 4;
   private static final int METHODID_IMPORT_DOCUMENTS = 5;
   private static final int METHODID_PURGE_DOCUMENTS = 6;
+  private static final int METHODID_GET_PROCESSED_DOCUMENT = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1042,6 +1157,13 @@ public final class DocumentServiceGrpc {
           serviceImpl.purgeDocuments(
               (com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_PROCESSED_DOCUMENT:
+          serviceImpl.getProcessedDocument(
+              (com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1107,6 +1229,13 @@ public final class DocumentServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest,
                     com.google.longrunning.Operation>(service, METHODID_PURGE_DOCUMENTS)))
+        .addMethod(
+            getGetProcessedDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest,
+                    com.google.cloud.discoveryengine.v1alpha.ProcessedDocument>(
+                    service, METHODID_GET_PROCESSED_DOCUMENT)))
         .build();
   }
 
@@ -1165,6 +1294,7 @@ public final class DocumentServiceGrpc {
                       .addMethod(getDeleteDocumentMethod())
                       .addMethod(getImportDocumentsMethod())
                       .addMethod(getPurgeDocumentsMethod())
+                      .addMethod(getGetProcessedDocumentMethod())
                       .build();
         }
       }

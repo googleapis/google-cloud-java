@@ -124,6 +124,9 @@
             "GetDocument": {
               "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
             },
+            "GetProcessedDocument": {
+              "methods": ["getProcessedDocument", "getProcessedDocument", "getProcessedDocument", "getProcessedDocumentCallable"]
+            },
             "ImportDocuments": {
               "methods": ["importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
             },
@@ -180,6 +183,18 @@
           "rpcs": {
             "EstimateDataSize": {
               "methods": ["estimateDataSizeAsync", "estimateDataSizeOperationCallable", "estimateDataSizeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RankService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RankServiceClient",
+          "rpcs": {
+            "Rank": {
+              "methods": ["rank", "rankCallable"]
             }
           }
         }

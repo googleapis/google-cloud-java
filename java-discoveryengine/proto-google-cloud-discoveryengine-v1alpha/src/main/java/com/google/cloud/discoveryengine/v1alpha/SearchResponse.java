@@ -11787,6 +11787,77 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for uri.
        */
       com.google.protobuf.ByteString getUriBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent>
+          getChunkContentsList();
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+          getChunkContents(int index);
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      int getChunkContentsCount();
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                      .ChunkContentOrBuilder>
+          getChunkContentsOrBuilderList();
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+              .ChunkContentOrBuilder
+          getChunkContentsOrBuilder(int index);
     }
     /**
      *
@@ -11811,6 +11882,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         title_ = "";
         document_ = "";
         uri_ = "";
+        chunkContents_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
@@ -11833,6 +11905,922 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.class,
                 com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.Builder
                     .class);
+      }
+
+      public interface ChunkContentOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk textual content.
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         *
+         * @return The content.
+         */
+        java.lang.String getContent();
+        /**
+         *
+         *
+         * <pre>
+         * Chunk textual content.
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         *
+         * @return The bytes for content.
+         */
+        com.google.protobuf.ByteString getContentBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Page identifier.
+         * </pre>
+         *
+         * <code>string page_identifier = 2;</code>
+         *
+         * @return The pageIdentifier.
+         */
+        java.lang.String getPageIdentifier();
+        /**
+         *
+         *
+         * <pre>
+         * Page identifier.
+         * </pre>
+         *
+         * <code>string page_identifier = 2;</code>
+         *
+         * @return The bytes for pageIdentifier.
+         */
+        com.google.protobuf.ByteString getPageIdentifierBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Chunk content.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent}
+       */
+      public static final class ChunkContent extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent)
+          ChunkContentOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ChunkContent.newBuilder() to construct.
+        private ChunkContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ChunkContent() {
+          content_ = "";
+          pageIdentifier_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ChunkContent();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_SearchResponse_Summary_Reference_ChunkContent_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1alpha_SearchResponse_Summary_Reference_ChunkContent_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                      .ChunkContent.class,
+                  com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                      .ChunkContent.Builder.class);
+        }
+
+        public static final int CONTENT_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object content_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Chunk textual content.
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         *
+         * @return The content.
+         */
+        @java.lang.Override
+        public java.lang.String getContent() {
+          java.lang.Object ref = content_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            content_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Chunk textual content.
+         * </pre>
+         *
+         * <code>string content = 1;</code>
+         *
+         * @return The bytes for content.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getContentBytes() {
+          java.lang.Object ref = content_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            content_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int PAGE_IDENTIFIER_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object pageIdentifier_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Page identifier.
+         * </pre>
+         *
+         * <code>string page_identifier = 2;</code>
+         *
+         * @return The pageIdentifier.
+         */
+        @java.lang.Override
+        public java.lang.String getPageIdentifier() {
+          java.lang.Object ref = pageIdentifier_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            pageIdentifier_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page identifier.
+         * </pre>
+         *
+         * <code>string page_identifier = 2;</code>
+         *
+         * @return The bytes for pageIdentifier.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getPageIdentifierBytes() {
+          java.lang.Object ref = pageIdentifier_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            pageIdentifier_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageIdentifier_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, pageIdentifier_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, content_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pageIdentifier_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, pageIdentifier_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+              other =
+                  (com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                          .ChunkContent)
+                      obj;
+
+          if (!getContent().equals(other.getContent())) return false;
+          if (!getPageIdentifier().equals(other.getPageIdentifier())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+          hash = (53 * hash) + getContent().hashCode();
+          hash = (37 * hash) + PAGE_IDENTIFIER_FIELD_NUMBER;
+          hash = (53 * hash) + getPageIdentifier().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Chunk content.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent)
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContentOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchResponse_Summary_Reference_ChunkContent_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchResponse_Summary_Reference_ChunkContent_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContent.class,
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContent.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            content_ = "";
+            pageIdentifier_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1alpha_SearchResponse_Summary_Reference_ChunkContent_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent
+              build() {
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                result =
+                    new com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContent(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.content_ = content_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.pageIdentifier_ = pageIdentifier_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                          .ChunkContent)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent.getDefaultInstance()) return this;
+            if (!other.getContent().isEmpty()) {
+              content_ = other.content_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getPageIdentifier().isEmpty()) {
+              pageIdentifier_ = other.pageIdentifier_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      content_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      pageIdentifier_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object content_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Chunk textual content.
+           * </pre>
+           *
+           * <code>string content = 1;</code>
+           *
+           * @return The content.
+           */
+          public java.lang.String getContent() {
+            java.lang.Object ref = content_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              content_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Chunk textual content.
+           * </pre>
+           *
+           * <code>string content = 1;</code>
+           *
+           * @return The bytes for content.
+           */
+          public com.google.protobuf.ByteString getContentBytes() {
+            java.lang.Object ref = content_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              content_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Chunk textual content.
+           * </pre>
+           *
+           * <code>string content = 1;</code>
+           *
+           * @param value The content to set.
+           * @return This builder for chaining.
+           */
+          public Builder setContent(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            content_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Chunk textual content.
+           * </pre>
+           *
+           * <code>string content = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearContent() {
+            content_ = getDefaultInstance().getContent();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Chunk textual content.
+           * </pre>
+           *
+           * <code>string content = 1;</code>
+           *
+           * @param value The bytes for content to set.
+           * @return This builder for chaining.
+           */
+          public Builder setContentBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            content_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object pageIdentifier_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Page identifier.
+           * </pre>
+           *
+           * <code>string page_identifier = 2;</code>
+           *
+           * @return The pageIdentifier.
+           */
+          public java.lang.String getPageIdentifier() {
+            java.lang.Object ref = pageIdentifier_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              pageIdentifier_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page identifier.
+           * </pre>
+           *
+           * <code>string page_identifier = 2;</code>
+           *
+           * @return The bytes for pageIdentifier.
+           */
+          public com.google.protobuf.ByteString getPageIdentifierBytes() {
+            java.lang.Object ref = pageIdentifier_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              pageIdentifier_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page identifier.
+           * </pre>
+           *
+           * <code>string page_identifier = 2;</code>
+           *
+           * @param value The pageIdentifier to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPageIdentifier(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            pageIdentifier_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page identifier.
+           * </pre>
+           *
+           * <code>string page_identifier = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPageIdentifier() {
+            pageIdentifier_ = getDefaultInstance().getPageIdentifier();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page identifier.
+           * </pre>
+           *
+           * <code>string page_identifier = 2;</code>
+           *
+           * @param value The bytes for pageIdentifier to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPageIdentifierBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            pageIdentifier_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent)
+        private static final com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary
+                .Reference.ChunkContent
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent();
+        }
+
+        public static com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ChunkContent> PARSER =
+            new com.google.protobuf.AbstractParser<ChunkContent>() {
+              @java.lang.Override
+              public ChunkContent parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ChunkContent> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ChunkContent> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
       }
 
       public static final int TITLE_FIELD_NUMBER = 1;
@@ -12000,6 +12988,99 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int CHUNK_CONTENTS_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent>
+          chunkContents_;
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                  .ChunkContent>
+          getChunkContentsList() {
+        return chunkContents_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                      .ChunkContentOrBuilder>
+          getChunkContentsOrBuilderList() {
+        return chunkContents_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public int getChunkContentsCount() {
+        return chunkContents_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+          getChunkContents(int index) {
+        return chunkContents_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of cited chunk contents derived from document content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+              .ChunkContentOrBuilder
+          getChunkContentsOrBuilder(int index) {
+        return chunkContents_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -12023,6 +13104,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 3, uri_);
         }
+        for (int i = 0; i < chunkContents_.size(); i++) {
+          output.writeMessage(4, chunkContents_.get(i));
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -12040,6 +13124,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, uri_);
+        }
+        for (int i = 0; i < chunkContents_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(4, chunkContents_.get(i));
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -12061,6 +13149,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (!getTitle().equals(other.getTitle())) return false;
         if (!getDocument().equals(other.getDocument())) return false;
         if (!getUri().equals(other.getUri())) return false;
+        if (!getChunkContentsList().equals(other.getChunkContentsList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -12078,6 +13167,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getDocument().hashCode();
         hash = (37 * hash) + URI_FIELD_NUMBER;
         hash = (53 * hash) + getUri().hashCode();
+        if (getChunkContentsCount() > 0) {
+          hash = (37 * hash) + CHUNK_CONTENTS_FIELD_NUMBER;
+          hash = (53 * hash) + getChunkContentsList().hashCode();
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -12233,6 +13326,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           title_ = "";
           document_ = "";
           uri_ = "";
+          if (chunkContentsBuilder_ == null) {
+            chunkContents_ = java.util.Collections.emptyList();
+          } else {
+            chunkContents_ = null;
+            chunkContentsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
@@ -12264,11 +13364,25 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference result =
               new com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference(this);
+          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
             buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference result) {
+          if (chunkContentsBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)) {
+              chunkContents_ = java.util.Collections.unmodifiableList(chunkContents_);
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.chunkContents_ = chunkContents_;
+          } else {
+            result.chunkContents_ = chunkContentsBuilder_.build();
+          }
         }
 
         private void buildPartial0(
@@ -12353,6 +13467,33 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000004;
             onChanged();
           }
+          if (chunkContentsBuilder_ == null) {
+            if (!other.chunkContents_.isEmpty()) {
+              if (chunkContents_.isEmpty()) {
+                chunkContents_ = other.chunkContents_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureChunkContentsIsMutable();
+                chunkContents_.addAll(other.chunkContents_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.chunkContents_.isEmpty()) {
+              if (chunkContentsBuilder_.isEmpty()) {
+                chunkContentsBuilder_.dispose();
+                chunkContentsBuilder_ = null;
+                chunkContents_ = other.chunkContents_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+                chunkContentsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getChunkContentsFieldBuilder()
+                        : null;
+              } else {
+                chunkContentsBuilder_.addAllMessages(other.chunkContents_);
+              }
+            }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -12397,6 +13538,23 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000004;
                     break;
                   } // case 26
+                case 34:
+                  {
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                            .ChunkContent
+                        m =
+                            input.readMessage(
+                                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary
+                                    .Reference.ChunkContent.parser(),
+                                extensionRegistry);
+                    if (chunkContentsBuilder_ == null) {
+                      ensureChunkContentsIsMutable();
+                      chunkContents_.add(m);
+                    } else {
+                      chunkContentsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 34
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12762,6 +13920,452 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000004;
           onChanged();
           return this;
+        }
+
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent>
+            chunkContents_ = java.util.Collections.emptyList();
+
+        private void ensureChunkContentsIsMutable() {
+          if (!((bitField0_ & 0x00000008) != 0)) {
+            chunkContents_ =
+                new java.util.ArrayList<
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContent>(chunkContents_);
+            bitField0_ |= 0x00000008;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent,
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent.Builder,
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContentOrBuilder>
+            chunkContentsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent>
+            getChunkContentsList() {
+          if (chunkContentsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(chunkContents_);
+          } else {
+            return chunkContentsBuilder_.getMessageList();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public int getChunkContentsCount() {
+          if (chunkContentsBuilder_ == null) {
+            return chunkContents_.size();
+          } else {
+            return chunkContentsBuilder_.getCount();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent
+            getChunkContents(int index) {
+          if (chunkContentsBuilder_ == null) {
+            return chunkContents_.get(index);
+          } else {
+            return chunkContentsBuilder_.getMessage(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder setChunkContents(
+            int index,
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                value) {
+          if (chunkContentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureChunkContentsIsMutable();
+            chunkContents_.set(index, value);
+            onChanged();
+          } else {
+            chunkContentsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder setChunkContents(
+            int index,
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                    .Builder
+                builderForValue) {
+          if (chunkContentsBuilder_ == null) {
+            ensureChunkContentsIsMutable();
+            chunkContents_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            chunkContentsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder addChunkContents(
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                value) {
+          if (chunkContentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureChunkContentsIsMutable();
+            chunkContents_.add(value);
+            onChanged();
+          } else {
+            chunkContentsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder addChunkContents(
+            int index,
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                value) {
+          if (chunkContentsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureChunkContentsIsMutable();
+            chunkContents_.add(index, value);
+            onChanged();
+          } else {
+            chunkContentsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder addChunkContents(
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                    .Builder
+                builderForValue) {
+          if (chunkContentsBuilder_ == null) {
+            ensureChunkContentsIsMutable();
+            chunkContents_.add(builderForValue.build());
+            onChanged();
+          } else {
+            chunkContentsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder addChunkContents(
+            int index,
+            com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent
+                    .Builder
+                builderForValue) {
+          if (chunkContentsBuilder_ == null) {
+            ensureChunkContentsIsMutable();
+            chunkContents_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            chunkContentsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder addAllChunkContents(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                            .ChunkContent>
+                values) {
+          if (chunkContentsBuilder_ == null) {
+            ensureChunkContentsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, chunkContents_);
+            onChanged();
+          } else {
+            chunkContentsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder clearChunkContents() {
+          if (chunkContentsBuilder_ == null) {
+            chunkContents_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+          } else {
+            chunkContentsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public Builder removeChunkContents(int index) {
+          if (chunkContentsBuilder_ == null) {
+            ensureChunkContentsIsMutable();
+            chunkContents_.remove(index);
+            onChanged();
+          } else {
+            chunkContentsBuilder_.remove(index);
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent.Builder
+            getChunkContentsBuilder(int index) {
+          return getChunkContentsFieldBuilder().getBuilder(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContentOrBuilder
+            getChunkContentsOrBuilder(int index) {
+          if (chunkContentsBuilder_ == null) {
+            return chunkContents_.get(index);
+          } else {
+            return chunkContentsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContentOrBuilder>
+            getChunkContentsOrBuilderList() {
+          if (chunkContentsBuilder_ != null) {
+            return chunkContentsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(chunkContents_);
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent.Builder
+            addChunkContentsBuilder() {
+          return getChunkContentsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                      .ChunkContent.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                .ChunkContent.Builder
+            addChunkContentsBuilder(int index) {
+          return getChunkContentsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                      .ChunkContent.getDefaultInstance());
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of cited chunk contents derived from document content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference.ChunkContent chunk_contents = 4;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent.Builder>
+            getChunkContentsBuilderList() {
+          return getChunkContentsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent,
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContent.Builder,
+                com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                    .ChunkContentOrBuilder>
+            getChunkContentsFieldBuilder() {
+          if (chunkContentsBuilder_ == null) {
+            chunkContentsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContent,
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContent.Builder,
+                    com.google.cloud.discoveryengine.v1alpha.SearchResponse.Summary.Reference
+                        .ChunkContentOrBuilder>(
+                    chunkContents_,
+                    ((bitField0_ & 0x00000008) != 0),
+                    getParentForChildren(),
+                    isClean());
+            chunkContents_ = null;
+          }
+          return chunkContentsBuilder_;
         }
 
         @java.lang.Override

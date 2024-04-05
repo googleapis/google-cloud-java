@@ -99,6 +99,8 @@ public class ChunkServiceClientTest {
             .setContent("content951530617")
             .setDocumentMetadata(Chunk.DocumentMetadata.newBuilder().build())
             .setDerivedStructData(Struct.newBuilder().build())
+            .setPageSpan(Chunk.PageSpan.newBuilder().build())
+            .setChunkMetadata(Chunk.ChunkMetadata.newBuilder().build())
             .build();
     mockChunkService.addResponse(expectedResponse);
 
@@ -153,6 +155,8 @@ public class ChunkServiceClientTest {
             .setContent("content951530617")
             .setDocumentMetadata(Chunk.DocumentMetadata.newBuilder().build())
             .setDerivedStructData(Struct.newBuilder().build())
+            .setPageSpan(Chunk.PageSpan.newBuilder().build())
+            .setChunkMetadata(Chunk.ChunkMetadata.newBuilder().build())
             .build();
     mockChunkService.addResponse(expectedResponse);
 
