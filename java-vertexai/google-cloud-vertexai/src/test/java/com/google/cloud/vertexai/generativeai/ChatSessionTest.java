@@ -45,6 +45,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -313,7 +314,7 @@ public final class ChatSessionTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))

@@ -61,10 +61,10 @@ public class VertexAI implements AutoCloseable {
   private final String apiEndpoint;
   private final Transport transport;
   private final CredentialsProvider credentialsProvider;
-  // The clients will be instantiated lazily
-  private PredictionServiceClient predictionServiceClient = null;
-  private LlmUtilityServiceClient llmUtilityClient = null;
   private final ReentrantLock lock = new ReentrantLock();
+  // The clients will be instantiated lazily
+  private Optional<PredictionServiceClient> predictionServiceClient = Optional.empty();
+  private Optional<LlmUtilityServiceClient> llmUtilityClient = Optional.empty();
 
   /**
    * Construct a VertexAI instance.
@@ -229,22 +229,22 @@ public class VertexAI implements AutoCloseable {
    */
   @InternalApi
   public PredictionServiceClient getPredictionServiceClient() throws IOException {
-    if (predictionServiceClient != null) {
-      return predictionServiceClient;
+    if (predictionServiceClient.isPresent()) {
+      return predictionServiceClient.get();
     }
     lock.lock();
     try {
-      if (predictionServiceClient == null) {
+      if (!predictionServiceClient.isPresent()) {
         PredictionServiceSettings settings = getPredictionServiceSettings();
         // Disable the warning message logged in getApplicationDefault
         Logger defaultCredentialsProviderLogger =
             Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
         Level previousLevel = defaultCredentialsProviderLogger.getLevel();
         defaultCredentialsProviderLogger.setLevel(Level.SEVERE);
-        predictionServiceClient = PredictionServiceClient.create(settings);
+        predictionServiceClient = Optional.of(PredictionServiceClient.create(settings));
         defaultCredentialsProviderLogger.setLevel(previousLevel);
       }
-      return predictionServiceClient;
+      return predictionServiceClient.get();
     } finally {
       lock.unlock();
     }
@@ -280,22 +280,22 @@ public class VertexAI implements AutoCloseable {
    */
   @InternalApi
   public LlmUtilityServiceClient getLlmUtilityClient() throws IOException {
-    if (llmUtilityClient != null) {
-      return llmUtilityClient;
+    if (llmUtilityClient.isPresent()) {
+      return llmUtilityClient.get();
     }
     lock.lock();
     try {
-      if (llmUtilityClient == null) {
+      if (!llmUtilityClient.isPresent()) {
         LlmUtilityServiceSettings settings = getLlmUtilityServiceClientSettings();
         // Disable the warning message logged in getApplicationDefault
         Logger defaultCredentialsProviderLogger =
             Logger.getLogger("com.google.auth.oauth2.DefaultCredentialsProvider");
         Level previousLevel = defaultCredentialsProviderLogger.getLevel();
         defaultCredentialsProviderLogger.setLevel(Level.SEVERE);
-        llmUtilityClient = LlmUtilityServiceClient.create(settings);
+        llmUtilityClient = Optional.of(LlmUtilityServiceClient.create(settings));
         defaultCredentialsProviderLogger.setLevel(previousLevel);
       }
-      return llmUtilityClient;
+      return llmUtilityClient.get();
     } finally {
       lock.unlock();
     }
@@ -325,11 +325,11 @@ public class VertexAI implements AutoCloseable {
   /** Closes the VertexAI instance together with all its instantiated clients. */
   @Override
   public void close() {
-    if (predictionServiceClient != null) {
-      predictionServiceClient.close();
+    if (predictionServiceClient.isPresent()) {
+      predictionServiceClient.get().close();
     }
-    if (llmUtilityClient != null) {
-      llmUtilityClient.close();
+    if (llmUtilityClient.isPresent()) {
+      llmUtilityClient.get().close();
     }
   }
 }

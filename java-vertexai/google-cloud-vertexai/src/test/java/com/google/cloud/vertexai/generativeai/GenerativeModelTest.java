@@ -51,6 +51,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -240,7 +241,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("llmUtilityClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockLlmUtilityServiceClient);
+    field.set(vertexAi, Optional.of(mockLlmUtilityServiceClient));
 
     CountTokensResponse unused = model.countTokens(TEXT);
 
@@ -255,7 +256,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("llmUtilityClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockLlmUtilityServiceClient);
+    field.set(vertexAi, Optional.of(mockLlmUtilityServiceClient));
 
     Content content = ContentMaker.fromString(TEXT);
     CountTokensResponse unused = model.countTokens(content);
@@ -271,7 +272,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("llmUtilityClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockLlmUtilityServiceClient);
+    field.set(vertexAi, Optional.of(mockLlmUtilityServiceClient));
 
     Content content = ContentMaker.fromString(TEXT);
     CountTokensResponse unused = model.countTokens(Arrays.asList(content));
@@ -287,7 +288,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
@@ -307,7 +308,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
@@ -329,7 +330,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
@@ -356,7 +357,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
@@ -382,7 +383,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
@@ -408,7 +409,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
@@ -429,7 +430,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.call(any(GenerateContentRequest.class)))
@@ -457,7 +458,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.streamGenerateContentCallable())
         .thenReturn(mockServerStreamCallable);
@@ -480,7 +481,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.streamGenerateContentCallable())
         .thenReturn(mockServerStreamCallable);
@@ -505,7 +506,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.streamGenerateContentCallable())
         .thenReturn(mockServerStreamCallable);
@@ -535,7 +536,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.streamGenerateContentCallable())
         .thenReturn(mockServerStreamCallable);
@@ -562,7 +563,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.streamGenerateContentCallable())
         .thenReturn(mockServerStreamCallable);
@@ -589,7 +590,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.streamGenerateContentCallable())
         .thenReturn(mockServerStreamCallable);
@@ -611,7 +612,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.streamGenerateContentCallable())
         .thenReturn(mockServerStreamCallable);
@@ -641,7 +642,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.futureCall(any(GenerateContentRequest.class))).thenReturn(mockApiFuture);
@@ -662,7 +663,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.futureCall(any(GenerateContentRequest.class))).thenReturn(mockApiFuture);
@@ -683,7 +684,7 @@ public final class GenerativeModelTest {
 
     Field field = VertexAI.class.getDeclaredField("predictionServiceClient");
     field.setAccessible(true);
-    field.set(vertexAi, mockPredictionServiceClient);
+    field.set(vertexAi, Optional.of(mockPredictionServiceClient));
 
     when(mockPredictionServiceClient.generateContentCallable()).thenReturn(mockUnaryCallable);
     when(mockUnaryCallable.futureCall(any(GenerateContentRequest.class))).thenReturn(mockApiFuture);
