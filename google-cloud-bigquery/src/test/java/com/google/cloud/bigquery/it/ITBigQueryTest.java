@@ -5021,13 +5021,12 @@ public class ITBigQueryTest {
     assertNull(remoteJob.getStatus());
     assertNull(remoteJob.getSelfLink());
     assertNull(remoteJob.getUserEmail());
-    assertTrue(createdTable.delete());
-
     Job completedJob =
         remoteJob.waitFor(
             RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
             RetryOption.totalTimeout(Duration.ofMinutes(1)));
     assertNotNull(completedJob);
+    assertTrue(createdTable.delete());
     assertNull(completedJob.getStatus().getError());
     assertTrue(bigquery.delete(destinationTable));
   }
