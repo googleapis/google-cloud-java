@@ -48,6 +48,7 @@ import com.google.cloud.vertexai.api.Tool;
 import com.google.cloud.vertexai.api.Type;
 import com.google.cloud.vertexai.api.VertexAISearch;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -453,6 +454,16 @@ public final class GenerativeModelTest {
   }
 
   @Test
+  public void generateContent_withNullContents_throws() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+    List<Content> contents = null;
+
+    IllegalArgumentException thrown =
+        assertThrows(IllegalArgumentException.class, () -> model.generateContent(contents));
+    assertThat(thrown).hasMessageThat().isEqualTo("contents can't be null or empty.");
+  }
+
+  @Test
   public void testGenerateContentStreamwithText() throws Exception {
     model = new GenerativeModel(MODEL_NAME, vertexAi);
 
@@ -634,6 +645,16 @@ public final class GenerativeModelTest {
     assertThat(request.getValue().getGenerationConfig()).isEqualTo(GENERATION_CONFIG);
     assertThat(request.getValue().getSafetySettings(0)).isEqualTo(SAFETY_SETTING);
     assertThat(request.getValue().getTools(0)).isEqualTo(TOOL);
+  }
+
+  @Test
+  public void generateContentStream_withEmptyContents_throws() throws Exception {
+    model = new GenerativeModel(MODEL_NAME, vertexAi);
+    List<Content> contents = new ArrayList<>();
+
+    IllegalArgumentException thrown =
+        assertThrows(IllegalArgumentException.class, () -> model.generateContentStream(contents));
+    assertThat(thrown).hasMessageThat().isEqualTo("contents can't be null or empty.");
   }
 
   @Test
