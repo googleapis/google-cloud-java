@@ -21,7 +21,10 @@ import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.CountTokensResponse;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.GenerationConfig;
+import com.google.cloud.vertexai.api.HarmCategory;
 import com.google.cloud.vertexai.api.Part;
+import com.google.cloud.vertexai.api.SafetySetting;
 import com.google.cloud.vertexai.generativeai.ContentMaker;
 import com.google.cloud.vertexai.generativeai.GenerativeModel;
 import com.google.cloud.vertexai.generativeai.PartMaker;
@@ -31,6 +34,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import org.junit.After;
@@ -111,6 +115,40 @@ public class ITGenerativeModelIntegrationTest {
 
     String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
     assertNonEmptyAndLogResponse(methodName, TEXT, response);
+  }
+
+  @Test
+  public void generateContent_withCompleteConfig_respondWithNonEmptyCandidateList()
+      throws IOException {
+    logger.info(String.format("Generating response for question: %s", TEXT));
+    Integer maxOutputTokens = 50;
+    GenerationConfig generationConfig =
+        GenerationConfig.newBuilder()
+            .setMaxOutputTokens(maxOutputTokens)
+            .setTemperature(0)
+            .setTopP(0.3f)
+            .setTopK(2)
+            .addStopSequences("<end_of_sentence>")
+            .build();
+    SafetySetting safetySetting =
+        SafetySetting.newBuilder()
+            .setCategory(HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT)
+            .setThreshold(SafetySetting.HarmBlockThreshold.BLOCK_LOW_AND_ABOVE)
+            .build();
+    GenerativeModel newModel =
+        textModel
+            .withGenerationConfig(generationConfig)
+            .withSafetySettings(Arrays.asList(safetySetting));
+
+    GenerateContentResponse response = newModel.generateContent(TEXT);
+    String contentText = ResponseHandler.getText(response);
+    int numWords = contentText.split("\\s+").length;
+
+    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
+    assertNonEmptyAndLogResponse(methodName, TEXT, response);
+    // We avoid calling the countTokens service and just assert that the number of words should be
+    // less than the maxOutputTokens since each word on average results in more than one tokens.
+    assertThat(numWords).isAtMost(maxOutputTokens);
   }
 
   @Test
