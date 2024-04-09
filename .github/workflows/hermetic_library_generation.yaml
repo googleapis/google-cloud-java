@@ -23,35 +23,7 @@ jobs:
         ref: ${{ github.base_ref }}
         path: baseline
         sparse-checkout: generation_config.yaml
-    - name: setup docker environment
+    - name: diff
       shell: bash
       run: |
-        # we create a volume pointing to `pwd` (google-cloud-java) that will
-        # be referenced by the container and its children
-        docker volume rm repo-google-cloud-java
-        docker volume create --name "repo-google-cloud-java" --opt "type=none" --opt "device=$(pwd)" --opt "o=bind"
-    - name: generate libraries
-      shell: bash
-      run: |
-        docker run --rm \
-          ${repo_volumes} \
-          -v /tmp:/tmp \
-          -v /var/run/docker.sock:/var/run/docker.sock \
-          -e "RUNNING_IN_DOCKER=true" \
-          -e "REPO_BINDING_VOLUMES=${repo_volumes}" \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
-          python /src/cli/entry_point.py generate \
-          --baseline-generation-config-yaml=/workspace/google-cloud-java/baseline/generation_config.yaml \
-          --current-generation-config-yaml=/workspace/google-cloud-java/generation_config.yaml
-          --repository-path=/workspace/google-cloud-java
-    - name: Commit the change and push to the pull request branch
-      shell: bash
-      run: |
-        [ -z "`git config user.email`" ] && git config --global user.email "cloud-java-bot@google.com"
-        [ -z "`git config user.name`" ] && git config --global user.name "cloud-java-bot"
-        git add java-* pom.xml gapic-libraries-bom/pom.xml versions.txt generation_config.yaml
-        # use --allow-empty because (rarely) there's no change.
-        git commit --allow-empty -m "generate libraries based on configuration change"
-        git push
-      env:
-        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_TOKEN }}
+        diff generation_config.yaml baseline/generation_config.yaml
