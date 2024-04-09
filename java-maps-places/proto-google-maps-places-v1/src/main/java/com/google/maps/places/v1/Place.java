@@ -14108,8 +14108,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A set of type tags for this result. For example, "political" and
-   * "locality".  For the complete list of possible values, see Table A and
-   * Table B at
+   * "locality". For the complete list of possible values, see Table A and Table
+   * B at
    * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
@@ -14125,8 +14125,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A set of type tags for this result. For example, "political" and
-   * "locality".  For the complete list of possible values, see Table A and
-   * Table B at
+   * "locality". For the complete list of possible values, see Table A and Table
+   * B at
    * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
@@ -14142,8 +14142,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A set of type tags for this result. For example, "political" and
-   * "locality".  For the complete list of possible values, see Table A and
-   * Table B at
+   * "locality". For the complete list of possible values, see Table A and Table
+   * B at
    * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
@@ -14160,8 +14160,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A set of type tags for this result. For example, "political" and
-   * "locality".  For the complete list of possible values, see Table A and
-   * Table B at
+   * "locality". For the complete list of possible values, see Table A and Table
+   * B at
    * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
@@ -14240,8 +14240,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The display name of the primary type, localized to the request language if
-   * applicable.  For the complete list of possible values, see Table A and
-   * Table B at
+   * applicable. For the complete list of possible values, see Table A and Table
+   * B at
    * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
@@ -14258,8 +14258,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The display name of the primary type, localized to the request language if
-   * applicable.  For the complete list of possible values, see Table A and
-   * Table B at
+   * applicable. For the complete list of possible values, see Table A and Table
+   * B at
    * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
@@ -14278,8 +14278,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The display name of the primary type, localized to the request language if
-   * applicable.  For the complete list of possible values, see Table A and
-   * Table B at
+   * applicable. For the complete list of possible values, see Table A and Table
+   * B at
    * https://developers.google.com/maps/documentation/places/web-service/place-types
    * </pre>
    *
@@ -19699,8 +19699,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19717,8 +19717,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19734,8 +19734,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19752,8 +19752,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19770,8 +19770,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19796,8 +19796,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19821,8 +19821,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19843,8 +19843,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -19864,8 +19864,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A set of type tags for this result. For example, "political" and
-     * "locality".  For the complete list of possible values, see Table A and
-     * Table B at
+     * "locality". For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20023,8 +20023,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20040,8 +20040,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20063,8 +20063,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20088,8 +20088,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20111,8 +20111,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20141,8 +20141,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20163,8 +20163,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20180,8 +20180,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
@@ -20201,8 +20201,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The display name of the primary type, localized to the request language if
-     * applicable.  For the complete list of possible values, see Table A and
-     * Table B at
+     * applicable. For the complete list of possible values, see Table A and Table
+     * B at
      * https://developers.google.com/maps/documentation/places/web-service/place-types
      * </pre>
      *
