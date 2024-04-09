@@ -437,6 +437,42 @@
         }
       }
     },
+    "GenAiTuningService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GenAiTuningServiceClient",
+          "rpcs": {
+            "CancelTuningJob": {
+              "methods": ["cancelTuningJob", "cancelTuningJob", "cancelTuningJob", "cancelTuningJobCallable"]
+            },
+            "CreateTuningJob": {
+              "methods": ["createTuningJob", "createTuningJob", "createTuningJob", "createTuningJobCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetTuningJob": {
+              "methods": ["getTuningJob", "getTuningJob", "getTuningJob", "getTuningJobCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTuningJobs": {
+              "methods": ["listTuningJobs", "listTuningJobs", "listTuningJobs", "listTuningJobsPagedCallable", "listTuningJobsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "IndexEndpointService": {
       "clients": {
         "grpc": {
@@ -969,6 +1005,102 @@
             },
             "UploadModel": {
               "methods": ["uploadModelAsync", "uploadModelAsync", "uploadModelAsync", "uploadModelOperationCallable", "uploadModelCallable"]
+            }
+          }
+        }
+      }
+    },
+    "NotebookService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NotebookServiceClient",
+          "rpcs": {
+            "AssignNotebookRuntime": {
+              "methods": ["assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeAsync", "assignNotebookRuntimeOperationCallable", "assignNotebookRuntimeCallable"]
+            },
+            "CreateNotebookRuntimeTemplate": {
+              "methods": ["createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateAsync", "createNotebookRuntimeTemplateOperationCallable", "createNotebookRuntimeTemplateCallable"]
+            },
+            "DeleteNotebookRuntime": {
+              "methods": ["deleteNotebookRuntimeAsync", "deleteNotebookRuntimeAsync", "deleteNotebookRuntimeAsync", "deleteNotebookRuntimeOperationCallable", "deleteNotebookRuntimeCallable"]
+            },
+            "DeleteNotebookRuntimeTemplate": {
+              "methods": ["deleteNotebookRuntimeTemplateAsync", "deleteNotebookRuntimeTemplateAsync", "deleteNotebookRuntimeTemplateAsync", "deleteNotebookRuntimeTemplateOperationCallable", "deleteNotebookRuntimeTemplateCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetNotebookRuntime": {
+              "methods": ["getNotebookRuntime", "getNotebookRuntime", "getNotebookRuntime", "getNotebookRuntimeCallable"]
+            },
+            "GetNotebookRuntimeTemplate": {
+              "methods": ["getNotebookRuntimeTemplate", "getNotebookRuntimeTemplate", "getNotebookRuntimeTemplate", "getNotebookRuntimeTemplateCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListNotebookRuntimeTemplates": {
+              "methods": ["listNotebookRuntimeTemplates", "listNotebookRuntimeTemplates", "listNotebookRuntimeTemplates", "listNotebookRuntimeTemplatesPagedCallable", "listNotebookRuntimeTemplatesCallable"]
+            },
+            "ListNotebookRuntimes": {
+              "methods": ["listNotebookRuntimes", "listNotebookRuntimes", "listNotebookRuntimes", "listNotebookRuntimesPagedCallable", "listNotebookRuntimesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "StartNotebookRuntime": {
+              "methods": ["startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeAsync", "startNotebookRuntimeOperationCallable", "startNotebookRuntimeCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpgradeNotebookRuntime": {
+              "methods": ["upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeAsync", "upgradeNotebookRuntimeOperationCallable", "upgradeNotebookRuntimeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PersistentResourceService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PersistentResourceServiceClient",
+          "rpcs": {
+            "CreatePersistentResource": {
+              "methods": ["createPersistentResourceAsync", "createPersistentResourceAsync", "createPersistentResourceAsync", "createPersistentResourceOperationCallable", "createPersistentResourceCallable"]
+            },
+            "DeletePersistentResource": {
+              "methods": ["deletePersistentResourceAsync", "deletePersistentResourceAsync", "deletePersistentResourceAsync", "deletePersistentResourceOperationCallable", "deletePersistentResourceCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPersistentResource": {
+              "methods": ["getPersistentResource", "getPersistentResource", "getPersistentResource", "getPersistentResourceCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPersistentResources": {
+              "methods": ["listPersistentResources", "listPersistentResources", "listPersistentResources", "listPersistentResourcesPagedCallable", "listPersistentResourcesCallable"]
+            },
+            "RebootPersistentResource": {
+              "methods": ["rebootPersistentResourceAsync", "rebootPersistentResourceAsync", "rebootPersistentResourceAsync", "rebootPersistentResourceOperationCallable", "rebootPersistentResourceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdatePersistentResource": {
+              "methods": ["updatePersistentResourceAsync", "updatePersistentResourceAsync", "updatePersistentResourceOperationCallable", "updatePersistentResourceCallable"]
             }
           }
         }

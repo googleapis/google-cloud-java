@@ -68,7 +68,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Function calling config.
+   * Optional. Function calling config.
    * </pre>
    *
    * <code>
@@ -85,7 +85,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Function calling config.
+   * Optional. Function calling config.
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Function calling config.
+   * Optional. Function calling config.
    * </pre>
    *
    * <code>
@@ -494,7 +494,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -510,7 +510,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -532,7 +532,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -557,7 +557,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -579,7 +579,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -610,7 +610,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -631,7 +631,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -648,7 +648,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>
@@ -669,7 +669,7 @@ public final class ToolConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Function calling config.
+     * Optional. Function calling config.
      * </pre>
      *
      * <code>

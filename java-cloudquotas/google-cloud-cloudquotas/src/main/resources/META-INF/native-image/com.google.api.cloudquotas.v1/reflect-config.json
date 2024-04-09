@@ -648,6 +648,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.api.cloudquotas.v1.RolloutInfo",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.api.cloudquotas.v1.RolloutInfo$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.api.cloudquotas.v1.UpdateQuotaPreferenceRequest",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

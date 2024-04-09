@@ -57,8 +57,9 @@ public interface SchemaOrBuilder
    * <pre>
    * Optional. The format of the data.
    * Supported formats:
-   *  for NUMBER type: float, double
-   *  for INTEGER type: int32, int64
+   *  for NUMBER type: "float", "double"
+   *  for INTEGER type: "int32", "int64"
+   *  for STRING type: "email", "byte", etc
    * </pre>
    *
    * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -72,8 +73,9 @@ public interface SchemaOrBuilder
    * <pre>
    * Optional. The format of the data.
    * Supported formats:
-   *  for NUMBER type: float, double
-   *  for INTEGER type: int32, int64
+   *  for NUMBER type: "float", "double"
+   *  for INTEGER type: "int32", "int64"
+   *  for STRING type: "email", "byte", etc
    * </pre>
    *
    * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -81,6 +83,31 @@ public interface SchemaOrBuilder
    * @return The bytes for format.
    */
   com.google.protobuf.ByteString getFormatBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The title of the Schema.
+   * </pre>
+   *
+   * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The title.
+   */
+  java.lang.String getTitle();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The title of the Schema.
+   * </pre>
+   *
+   * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for title.
+   */
+  com.google.protobuf.ByteString getTitleBytes();
 
   /**
    *
@@ -124,7 +151,43 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of the elements of Type.ARRAY.
+   * Optional. Default value of the data.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the default field is set.
+   */
+  boolean hasDefault();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default value of the data.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The default.
+   */
+  com.google.protobuf.Value getDefault();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default value of the data.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.ValueOrBuilder getDefaultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+   * Schema of the elements of Type.ARRAY.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Schema items = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -137,7 +200,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of the elements of Type.ARRAY.
+   * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+   * Schema of the elements of Type.ARRAY.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Schema items = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -150,13 +214,40 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Schema of the elements of Type.ARRAY.
+   * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+   * Schema of the elements of Type.ARRAY.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1.Schema items = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.aiplatform.v1.SchemaOrBuilder getItemsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Minimum number of the elements for Type.ARRAY.
+   * </pre>
+   *
+   * <code>int64 min_items = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minItems.
+   */
+  long getMinItems();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of the elements for Type.ARRAY.
+   * </pre>
+   *
+   * <code>int64 max_items = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxItems.
+   */
+  long getMaxItems();
 
   /**
    *
@@ -221,7 +312,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -233,7 +325,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -248,7 +341,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -260,7 +354,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -276,7 +371,8 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -335,6 +431,113 @@ public interface SchemaOrBuilder
    * @return The bytes of the required at the given index.
    */
   com.google.protobuf.ByteString getRequiredBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Minimum number of the properties for Type.OBJECT.
+   * </pre>
+   *
+   * <code>int64 min_properties = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minProperties.
+   */
+  long getMinProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of the properties for Type.OBJECT.
+   * </pre>
+   *
+   * <code>int64 max_properties = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxProperties.
+   */
+  long getMaxProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SCHEMA FIELDS FOR TYPE INTEGER and NUMBER
+   * Minimum value of the Type.INTEGER and Type.NUMBER
+   * </pre>
+   *
+   * <code>double minimum = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minimum.
+   */
+  double getMinimum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum value of the Type.INTEGER and Type.NUMBER
+   * </pre>
+   *
+   * <code>double maximum = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maximum.
+   */
+  double getMaximum();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SCHEMA FIELDS FOR TYPE STRING
+   * Minimum length of the Type.STRING
+   * </pre>
+   *
+   * <code>int64 min_length = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minLength.
+   */
+  long getMinLength();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum length of the Type.STRING
+   * </pre>
+   *
+   * <code>int64 max_length = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxLength.
+   */
+  long getMaxLength();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Pattern of the Type.STRING to restrict a string to a regular
+   * expression.
+   * </pre>
+   *
+   * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pattern.
+   */
+  java.lang.String getPattern();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Pattern of the Type.STRING to restrict a string to a regular
+   * expression.
+   * </pre>
+   *
+   * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pattern.
+   */
+  com.google.protobuf.ByteString getPatternBytes();
 
   /**
    *

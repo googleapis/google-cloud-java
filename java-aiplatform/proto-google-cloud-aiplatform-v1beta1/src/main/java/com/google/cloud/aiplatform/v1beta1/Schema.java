@@ -44,9 +44,11 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   private Schema() {
     type_ = 0;
     format_ = "";
+    title_ = "";
     description_ = "";
     enum_ = com.google.protobuf.LazyStringArrayList.emptyList();
     required_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    pattern_ = "";
   }
 
   @java.lang.Override
@@ -130,8 +132,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The format of the data.
    * Supported formats:
-   *  for NUMBER type: float, double
-   *  for INTEGER type: int32, int64
+   *  for NUMBER type: "float", "double"
+   *  for INTEGER type: "int32", "int64"
+   *  for STRING type: "email", "byte", etc
    * </pre>
    *
    * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -156,8 +159,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The format of the data.
    * Supported formats:
-   *  for NUMBER type: float, double
-   *  for INTEGER type: int32, int64
+   *  for NUMBER type: "float", "double"
+   *  for INTEGER type: "int32", "int64"
+   *  for STRING type: "email", "byte", etc
    * </pre>
    *
    * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -171,6 +175,57 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       format_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TITLE_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The title of the Schema.
+   * </pre>
+   *
+   * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The title.
+   */
+  @java.lang.Override
+  public java.lang.String getTitle() {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      title_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The title of the Schema.
+   * </pre>
+   *
+   * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for title.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTitleBytes() {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      title_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -246,13 +301,60 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return nullable_;
   }
 
+  public static final int DEFAULT_FIELD_NUMBER = 23;
+  private com.google.protobuf.Value default_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default value of the data.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the default field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefault() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default value of the data.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The default.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getDefault() {
+    return default_ == null ? com.google.protobuf.Value.getDefaultInstance() : default_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default value of the data.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getDefaultOrBuilder() {
+    return default_ == null ? com.google.protobuf.Value.getDefaultInstance() : default_;
+  }
+
   public static final int ITEMS_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Schema items_;
   /**
    *
    *
    * <pre>
-   * Optional. Schema of the elements of Type.ARRAY.
+   * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+   * Schema of the elements of Type.ARRAY.
    * </pre>
    *
    * <code>
@@ -263,13 +365,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasItems() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Optional. Schema of the elements of Type.ARRAY.
+   * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+   * Schema of the elements of Type.ARRAY.
    * </pre>
    *
    * <code>
@@ -288,7 +391,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Schema of the elements of Type.ARRAY.
+   * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+   * Schema of the elements of Type.ARRAY.
    * </pre>
    *
    * <code>
@@ -300,6 +404,42 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return items_ == null
         ? com.google.cloud.aiplatform.v1beta1.Schema.getDefaultInstance()
         : items_;
+  }
+
+  public static final int MIN_ITEMS_FIELD_NUMBER = 21;
+  private long minItems_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Minimum number of the elements for Type.ARRAY.
+   * </pre>
+   *
+   * <code>int64 min_items = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minItems.
+   */
+  @java.lang.Override
+  public long getMinItems() {
+    return minItems_;
+  }
+
+  public static final int MAX_ITEMS_FIELD_NUMBER = 22;
+  private long maxItems_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of the elements for Type.ARRAY.
+   * </pre>
+   *
+   * <code>int64 max_items = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxItems.
+   */
+  @java.lang.Override
+  public long getMaxItems() {
+    return maxItems_;
   }
 
   public static final int ENUM_FIELD_NUMBER = 9;
@@ -409,7 +549,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -434,7 +575,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -450,7 +592,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -473,7 +616,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Properties of Type.OBJECT.
+   * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+   * Properties of Type.OBJECT.
    * </pre>
    *
    * <code>
@@ -557,6 +701,169 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return required_.getByteString(index);
   }
 
+  public static final int MIN_PROPERTIES_FIELD_NUMBER = 14;
+  private long minProperties_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Minimum number of the properties for Type.OBJECT.
+   * </pre>
+   *
+   * <code>int64 min_properties = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minProperties.
+   */
+  @java.lang.Override
+  public long getMinProperties() {
+    return minProperties_;
+  }
+
+  public static final int MAX_PROPERTIES_FIELD_NUMBER = 15;
+  private long maxProperties_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of the properties for Type.OBJECT.
+   * </pre>
+   *
+   * <code>int64 max_properties = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxProperties.
+   */
+  @java.lang.Override
+  public long getMaxProperties() {
+    return maxProperties_;
+  }
+
+  public static final int MINIMUM_FIELD_NUMBER = 16;
+  private double minimum_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SCHEMA FIELDS FOR TYPE INTEGER and NUMBER
+   * Minimum value of the Type.INTEGER and Type.NUMBER
+   * </pre>
+   *
+   * <code>double minimum = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minimum.
+   */
+  @java.lang.Override
+  public double getMinimum() {
+    return minimum_;
+  }
+
+  public static final int MAXIMUM_FIELD_NUMBER = 17;
+  private double maximum_ = 0D;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum value of the Type.INTEGER and Type.NUMBER
+   * </pre>
+   *
+   * <code>double maximum = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maximum.
+   */
+  @java.lang.Override
+  public double getMaximum() {
+    return maximum_;
+  }
+
+  public static final int MIN_LENGTH_FIELD_NUMBER = 18;
+  private long minLength_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SCHEMA FIELDS FOR TYPE STRING
+   * Minimum length of the Type.STRING
+   * </pre>
+   *
+   * <code>int64 min_length = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minLength.
+   */
+  @java.lang.Override
+  public long getMinLength() {
+    return minLength_;
+  }
+
+  public static final int MAX_LENGTH_FIELD_NUMBER = 19;
+  private long maxLength_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum length of the Type.STRING
+   * </pre>
+   *
+   * <code>int64 max_length = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxLength.
+   */
+  @java.lang.Override
+  public long getMaxLength() {
+    return maxLength_;
+  }
+
+  public static final int PATTERN_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pattern_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Pattern of the Type.STRING to restrict a string to a regular
+   * expression.
+   * </pre>
+   *
+   * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pattern.
+   */
+  @java.lang.Override
+  public java.lang.String getPattern() {
+    java.lang.Object ref = pattern_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pattern_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Pattern of the Type.STRING to restrict a string to a regular
+   * expression.
+   * </pre>
+   *
+   * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for pattern.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPatternBytes() {
+    java.lang.Object ref = pattern_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pattern_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int EXAMPLE_FIELD_NUMBER = 4;
   private com.google.protobuf.Value example_;
   /**
@@ -573,7 +880,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasExample() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -623,12 +930,12 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.aiplatform.v1beta1.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getItems());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 3);
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getExample());
     }
     for (int i = 0; i < required_.size(); i++) {
@@ -646,6 +953,39 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < enum_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, enum_.getRaw(i));
     }
+    if (minProperties_ != 0L) {
+      output.writeInt64(14, minProperties_);
+    }
+    if (maxProperties_ != 0L) {
+      output.writeInt64(15, maxProperties_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
+      output.writeDouble(16, minimum_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
+      output.writeDouble(17, maximum_);
+    }
+    if (minLength_ != 0L) {
+      output.writeInt64(18, minLength_);
+    }
+    if (maxLength_ != 0L) {
+      output.writeInt64(19, maxLength_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pattern_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, pattern_);
+    }
+    if (minItems_ != 0L) {
+      output.writeInt64(21, minItems_);
+    }
+    if (maxItems_ != 0L) {
+      output.writeInt64(22, maxItems_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(23, getDefault());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, title_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -658,7 +998,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     if (type_ != com.google.cloud.aiplatform.v1beta1.Type.TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getItems());
     }
     for (java.util.Map.Entry<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema> entry :
@@ -672,7 +1012,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, properties__);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getExample());
     }
     {
@@ -700,6 +1040,39 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getEnumList().size();
     }
+    if (minProperties_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(14, minProperties_);
+    }
+    if (maxProperties_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(15, maxProperties_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(16, minimum_);
+    }
+    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(17, maximum_);
+    }
+    if (minLength_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(18, minLength_);
+    }
+    if (maxLength_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(19, maxLength_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pattern_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, pattern_);
+    }
+    if (minItems_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(21, minItems_);
+    }
+    if (maxItems_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(22, maxItems_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getDefault());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, title_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -718,15 +1091,31 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
     if (type_ != other.type_) return false;
     if (!getFormat().equals(other.getFormat())) return false;
+    if (!getTitle().equals(other.getTitle())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (getNullable() != other.getNullable()) return false;
+    if (hasDefault() != other.hasDefault()) return false;
+    if (hasDefault()) {
+      if (!getDefault().equals(other.getDefault())) return false;
+    }
     if (hasItems() != other.hasItems()) return false;
     if (hasItems()) {
       if (!getItems().equals(other.getItems())) return false;
     }
+    if (getMinItems() != other.getMinItems()) return false;
+    if (getMaxItems() != other.getMaxItems()) return false;
     if (!getEnumList().equals(other.getEnumList())) return false;
     if (!internalGetProperties().equals(other.internalGetProperties())) return false;
     if (!getRequiredList().equals(other.getRequiredList())) return false;
+    if (getMinProperties() != other.getMinProperties()) return false;
+    if (getMaxProperties() != other.getMaxProperties()) return false;
+    if (java.lang.Double.doubleToLongBits(getMinimum())
+        != java.lang.Double.doubleToLongBits(other.getMinimum())) return false;
+    if (java.lang.Double.doubleToLongBits(getMaximum())
+        != java.lang.Double.doubleToLongBits(other.getMaximum())) return false;
+    if (getMinLength() != other.getMinLength()) return false;
+    if (getMaxLength() != other.getMaxLength()) return false;
+    if (!getPattern().equals(other.getPattern())) return false;
     if (hasExample() != other.hasExample()) return false;
     if (hasExample()) {
       if (!getExample().equals(other.getExample())) return false;
@@ -746,14 +1135,24 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + type_;
     hash = (37 * hash) + FORMAT_FIELD_NUMBER;
     hash = (53 * hash) + getFormat().hashCode();
+    hash = (37 * hash) + TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getTitle().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + NULLABLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNullable());
+    if (hasDefault()) {
+      hash = (37 * hash) + DEFAULT_FIELD_NUMBER;
+      hash = (53 * hash) + getDefault().hashCode();
+    }
     if (hasItems()) {
       hash = (37 * hash) + ITEMS_FIELD_NUMBER;
       hash = (53 * hash) + getItems().hashCode();
     }
+    hash = (37 * hash) + MIN_ITEMS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinItems());
+    hash = (37 * hash) + MAX_ITEMS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxItems());
     if (getEnumCount() > 0) {
       hash = (37 * hash) + ENUM_FIELD_NUMBER;
       hash = (53 * hash) + getEnumList().hashCode();
@@ -766,6 +1165,26 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + REQUIRED_FIELD_NUMBER;
       hash = (53 * hash) + getRequiredList().hashCode();
     }
+    hash = (37 * hash) + MIN_PROPERTIES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinProperties());
+    hash = (37 * hash) + MAX_PROPERTIES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxProperties());
+    hash = (37 * hash) + MINIMUM_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getMinimum()));
+    hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getMaximum()));
+    hash = (37 * hash) + MIN_LENGTH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMinLength());
+    hash = (37 * hash) + MAX_LENGTH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxLength());
+    hash = (37 * hash) + PATTERN_FIELD_NUMBER;
+    hash = (53 * hash) + getPattern().hashCode();
     if (hasExample()) {
       hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
       hash = (53 * hash) + getExample().hashCode();
@@ -935,6 +1354,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDefaultFieldBuilder();
         getItemsFieldBuilder();
         getExampleFieldBuilder();
       }
@@ -946,16 +1366,31 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       type_ = 0;
       format_ = "";
+      title_ = "";
       description_ = "";
       nullable_ = false;
+      default_ = null;
+      if (defaultBuilder_ != null) {
+        defaultBuilder_.dispose();
+        defaultBuilder_ = null;
+      }
       items_ = null;
       if (itemsBuilder_ != null) {
         itemsBuilder_.dispose();
         itemsBuilder_ = null;
       }
+      minItems_ = 0L;
+      maxItems_ = 0L;
       enum_ = com.google.protobuf.LazyStringArrayList.emptyList();
       internalGetMutableProperties().clear();
       required_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      minProperties_ = 0L;
+      maxProperties_ = 0L;
+      minimum_ = 0D;
+      maximum_ = 0D;
+      minLength_ = 0L;
+      maxLength_ = 0L;
+      pattern_ = "";
       example_ = null;
       if (exampleBuilder_ != null) {
         exampleBuilder_.dispose();
@@ -1004,31 +1439,65 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         result.format_ = format_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.description_ = description_;
+        result.title_ = title_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.nullable_ = nullable_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.items_ = itemsBuilder_ == null ? items_ : itemsBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.default_ = defaultBuilder_ == null ? default_ : defaultBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.items_ = itemsBuilder_ == null ? items_ : itemsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.minItems_ = minItems_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.maxItems_ = maxItems_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         enum_.makeImmutable();
         result.enum_ = enum_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.properties_ =
             internalGetProperties().build(PropertiesDefaultEntryHolder.defaultEntry);
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         required_.makeImmutable();
         result.required_ = required_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.minProperties_ = minProperties_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.maxProperties_ = maxProperties_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.minimum_ = minimum_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.maximum_ = maximum_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.minLength_ = minLength_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.maxLength_ = maxLength_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.pattern_ = pattern_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.example_ = exampleBuilder_ == null ? example_ : exampleBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1086,21 +1555,35 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getTitle().isEmpty()) {
+        title_ = other.title_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getNullable() != false) {
         setNullable(other.getNullable());
       }
+      if (other.hasDefault()) {
+        mergeDefault(other.getDefault());
+      }
       if (other.hasItems()) {
         mergeItems(other.getItems());
+      }
+      if (other.getMinItems() != 0L) {
+        setMinItems(other.getMinItems());
+      }
+      if (other.getMaxItems() != 0L) {
+        setMaxItems(other.getMaxItems());
       }
       if (!other.enum_.isEmpty()) {
         if (enum_.isEmpty()) {
           enum_ = other.enum_;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000200;
         } else {
           ensureEnumIsMutable();
           enum_.addAll(other.enum_);
@@ -1108,15 +1591,38 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       if (!other.required_.isEmpty()) {
         if (required_.isEmpty()) {
           required_ = other.required_;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000800;
         } else {
           ensureRequiredIsMutable();
           required_.addAll(other.required_);
         }
+        onChanged();
+      }
+      if (other.getMinProperties() != 0L) {
+        setMinProperties(other.getMinProperties());
+      }
+      if (other.getMaxProperties() != 0L) {
+        setMaxProperties(other.getMaxProperties());
+      }
+      if (other.getMinimum() != 0D) {
+        setMinimum(other.getMinimum());
+      }
+      if (other.getMaximum() != 0D) {
+        setMaximum(other.getMaximum());
+      }
+      if (other.getMinLength() != 0L) {
+        setMinLength(other.getMinLength());
+      }
+      if (other.getMaxLength() != 0L) {
+        setMaxLength(other.getMaxLength());
+      }
+      if (!other.getPattern().isEmpty()) {
+        pattern_ = other.pattern_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasExample()) {
@@ -1157,7 +1663,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getItemsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
@@ -1171,13 +1677,13 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableProperties()
                     .ensureBuilderMap()
                     .put(properties__.getKey(), properties__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getExampleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 34
             case 42:
@@ -1190,7 +1696,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 nullable_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 58:
@@ -1202,7 +1708,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 66
             case 74:
@@ -1212,6 +1718,72 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 enum_.add(s);
                 break;
               } // case 74
+            case 112:
+              {
+                minProperties_ = input.readInt64();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 112
+            case 120:
+              {
+                maxProperties_ = input.readInt64();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 120
+            case 129:
+              {
+                minimum_ = input.readDouble();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 129
+            case 137:
+              {
+                maximum_ = input.readDouble();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 137
+            case 144:
+              {
+                minLength_ = input.readInt64();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 144
+            case 152:
+              {
+                maxLength_ = input.readInt64();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 152
+            case 162:
+              {
+                pattern_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 162
+            case 168:
+              {
+                minItems_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 168
+            case 176:
+              {
+                maxItems_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 176
+            case 186:
+              {
+                input.readMessage(getDefaultFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 186
+            case 194:
+              {
+                title_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1338,8 +1910,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The format of the data.
      * Supported formats:
-     *  for NUMBER type: float, double
-     *  for INTEGER type: int32, int64
+     *  for NUMBER type: "float", "double"
+     *  for INTEGER type: "int32", "int64"
+     *  for STRING type: "email", "byte", etc
      * </pre>
      *
      * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1363,8 +1936,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The format of the data.
      * Supported formats:
-     *  for NUMBER type: float, double
-     *  for INTEGER type: int32, int64
+     *  for NUMBER type: "float", "double"
+     *  for INTEGER type: "int32", "int64"
+     *  for STRING type: "email", "byte", etc
      * </pre>
      *
      * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1388,8 +1962,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The format of the data.
      * Supported formats:
-     *  for NUMBER type: float, double
-     *  for INTEGER type: int32, int64
+     *  for NUMBER type: "float", "double"
+     *  for INTEGER type: "int32", "int64"
+     *  for STRING type: "email", "byte", etc
      * </pre>
      *
      * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1412,8 +1987,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The format of the data.
      * Supported formats:
-     *  for NUMBER type: float, double
-     *  for INTEGER type: int32, int64
+     *  for NUMBER type: "float", "double"
+     *  for INTEGER type: "int32", "int64"
+     *  for STRING type: "email", "byte", etc
      * </pre>
      *
      * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1432,8 +2008,9 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The format of the data.
      * Supported formats:
-     *  for NUMBER type: float, double
-     *  for INTEGER type: int32, int64
+     *  for NUMBER type: "float", "double"
+     *  for INTEGER type: "int32", "int64"
+     *  for STRING type: "email", "byte", etc
      * </pre>
      *
      * <code>string format = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1448,6 +2025,112 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       format_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object title_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title of the Schema.
+     * </pre>
+     *
+     * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The title.
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title of the Schema.
+     * </pre>
+     *
+     * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for title.
+     */
+    public com.google.protobuf.ByteString getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title of the Schema.
+     * </pre>
+     *
+     * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitle(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      title_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title of the Schema.
+     * </pre>
+     *
+     * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTitle() {
+      title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The title of the Schema.
+     * </pre>
+     *
+     * <code>string title = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      title_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1514,7 +2197,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1531,7 +2214,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1553,7 +2236,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1589,7 +2272,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder setNullable(boolean value) {
 
       nullable_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1605,10 +2288,191 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNullable() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       nullable_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Value default_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        defaultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the default field is set.
+     */
+    public boolean hasDefault() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The default.
+     */
+    public com.google.protobuf.Value getDefault() {
+      if (defaultBuilder_ == null) {
+        return default_ == null ? com.google.protobuf.Value.getDefaultInstance() : default_;
+      } else {
+        return defaultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDefault(com.google.protobuf.Value value) {
+      if (defaultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        default_ = value;
+      } else {
+        defaultBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setDefault(com.google.protobuf.Value.Builder builderForValue) {
+      if (defaultBuilder_ == null) {
+        default_ = builderForValue.build();
+      } else {
+        defaultBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeDefault(com.google.protobuf.Value value) {
+      if (defaultBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && default_ != null
+            && default_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getDefaultBuilder().mergeFrom(value);
+        } else {
+          default_ = value;
+        }
+      } else {
+        defaultBuilder_.mergeFrom(value);
+      }
+      if (default_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearDefault() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      default_ = null;
+      if (defaultBuilder_ != null) {
+        defaultBuilder_.dispose();
+        defaultBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Value.Builder getDefaultBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getDefaultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.ValueOrBuilder getDefaultOrBuilder() {
+      if (defaultBuilder_ != null) {
+        return defaultBuilder_.getMessageOrBuilder();
+      } else {
+        return default_ == null ? com.google.protobuf.Value.getDefaultInstance() : default_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default value of the data.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value default = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        getDefaultFieldBuilder() {
+      if (defaultBuilder_ == null) {
+        defaultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getDefault(), getParentForChildren(), isClean());
+        default_ = null;
+      }
+      return defaultBuilder_;
     }
 
     private com.google.cloud.aiplatform.v1beta1.Schema items_;
@@ -1621,7 +2485,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1631,13 +2496,14 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the items field is set.
      */
     public boolean hasItems() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1659,7 +2525,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1675,7 +2542,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         itemsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1683,7 +2550,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1696,7 +2564,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         itemsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1704,7 +2572,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1713,7 +2582,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeItems(com.google.cloud.aiplatform.v1beta1.Schema value) {
       if (itemsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && items_ != null
             && items_ != com.google.cloud.aiplatform.v1beta1.Schema.getDefaultInstance()) {
           getItemsBuilder().mergeFrom(value);
@@ -1724,7 +2593,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         itemsBuilder_.mergeFrom(value);
       }
       if (items_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1733,7 +2602,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1741,7 +2611,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearItems() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       items_ = null;
       if (itemsBuilder_ != null) {
         itemsBuilder_.dispose();
@@ -1754,7 +2624,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1762,7 +2633,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Schema.Builder getItemsBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getItemsFieldBuilder().getBuilder();
     }
@@ -1770,7 +2641,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1790,7 +2662,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Schema of the elements of Type.ARRAY.
+     * Optional. SCHEMA FIELDS FOR TYPE ARRAY
+     * Schema of the elements of Type.ARRAY.
      * </pre>
      *
      * <code>
@@ -1814,6 +2687,112 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return itemsBuilder_;
     }
 
+    private long minItems_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum number of the elements for Type.ARRAY.
+     * </pre>
+     *
+     * <code>int64 min_items = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minItems.
+     */
+    @java.lang.Override
+    public long getMinItems() {
+      return minItems_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum number of the elements for Type.ARRAY.
+     * </pre>
+     *
+     * <code>int64 min_items = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The minItems to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinItems(long value) {
+
+      minItems_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum number of the elements for Type.ARRAY.
+     * </pre>
+     *
+     * <code>int64 min_items = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinItems() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      minItems_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxItems_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of the elements for Type.ARRAY.
+     * </pre>
+     *
+     * <code>int64 max_items = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxItems.
+     */
+    @java.lang.Override
+    public long getMaxItems() {
+      return maxItems_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of the elements for Type.ARRAY.
+     * </pre>
+     *
+     * <code>int64 max_items = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxItems to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxItems(long value) {
+
+      maxItems_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of the elements for Type.ARRAY.
+     * </pre>
+     *
+     * <code>int64 max_items = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxItems() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      maxItems_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList enum_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1821,7 +2800,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (!enum_.isModifiable()) {
         enum_ = new com.google.protobuf.LazyStringArrayList(enum_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -1911,7 +2890,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnumIsMutable();
       enum_.set(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1935,7 +2914,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       ensureEnumIsMutable();
       enum_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1956,7 +2935,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllEnum(java.lang.Iterable<java.lang.String> values) {
       ensureEnumIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, enum_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -1975,7 +2954,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEnum() {
       enum_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -2001,7 +2980,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureEnumIsMutable();
       enum_.add(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2058,7 +3037,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (properties_ == null) {
         properties_ = new com.google.protobuf.MapFieldBuilder<>(propertiesConverter);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       onChanged();
       return properties_;
     }
@@ -2070,7 +3049,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2095,7 +3075,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2111,7 +3092,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2134,7 +3116,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2155,7 +3138,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearProperties() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000400);
       internalGetMutableProperties().clear();
       return this;
     }
@@ -2163,7 +3146,8 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2181,14 +3165,15 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.Schema>
         getMutableProperties() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       return internalGetMutableProperties().ensureMessageMap();
     }
     /**
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2204,14 +3189,15 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableProperties().ensureBuilderMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2227,14 +3213,15 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableProperties().ensureBuilderMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Properties of Type.OBJECT.
+     * Optional. SCHEMA FIELDS FOR TYPE OBJECT
+     * Properties of Type.OBJECT.
      * </pre>
      *
      * <code>
@@ -2264,7 +3251,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       if (!required_.isModifiable()) {
         required_ = new com.google.protobuf.LazyStringArrayList(required_);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
     }
     /**
      *
@@ -2344,7 +3331,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredIsMutable();
       required_.set(index, value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2366,7 +3353,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequiredIsMutable();
       required_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2385,7 +3372,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequired(java.lang.Iterable<java.lang.String> values) {
       ensureRequiredIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, required_);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2402,7 +3389,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequired() {
       required_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000800);
       ;
       onChanged();
       return this;
@@ -2426,7 +3413,442 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequiredIsMutable();
       required_.add(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private long minProperties_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum number of the properties for Type.OBJECT.
+     * </pre>
+     *
+     * <code>int64 min_properties = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minProperties.
+     */
+    @java.lang.Override
+    public long getMinProperties() {
+      return minProperties_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum number of the properties for Type.OBJECT.
+     * </pre>
+     *
+     * <code>int64 min_properties = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The minProperties to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinProperties(long value) {
+
+      minProperties_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum number of the properties for Type.OBJECT.
+     * </pre>
+     *
+     * <code>int64 min_properties = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinProperties() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      minProperties_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxProperties_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of the properties for Type.OBJECT.
+     * </pre>
+     *
+     * <code>int64 max_properties = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxProperties.
+     */
+    @java.lang.Override
+    public long getMaxProperties() {
+      return maxProperties_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of the properties for Type.OBJECT.
+     * </pre>
+     *
+     * <code>int64 max_properties = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxProperties to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxProperties(long value) {
+
+      maxProperties_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum number of the properties for Type.OBJECT.
+     * </pre>
+     *
+     * <code>int64 max_properties = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxProperties() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      maxProperties_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private double minimum_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SCHEMA FIELDS FOR TYPE INTEGER and NUMBER
+     * Minimum value of the Type.INTEGER and Type.NUMBER
+     * </pre>
+     *
+     * <code>double minimum = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minimum.
+     */
+    @java.lang.Override
+    public double getMinimum() {
+      return minimum_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SCHEMA FIELDS FOR TYPE INTEGER and NUMBER
+     * Minimum value of the Type.INTEGER and Type.NUMBER
+     * </pre>
+     *
+     * <code>double minimum = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The minimum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinimum(double value) {
+
+      minimum_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SCHEMA FIELDS FOR TYPE INTEGER and NUMBER
+     * Minimum value of the Type.INTEGER and Type.NUMBER
+     * </pre>
+     *
+     * <code>double minimum = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinimum() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      minimum_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double maximum_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum value of the Type.INTEGER and Type.NUMBER
+     * </pre>
+     *
+     * <code>double maximum = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maximum.
+     */
+    @java.lang.Override
+    public double getMaximum() {
+      return maximum_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum value of the Type.INTEGER and Type.NUMBER
+     * </pre>
+     *
+     * <code>double maximum = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maximum to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaximum(double value) {
+
+      maximum_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum value of the Type.INTEGER and Type.NUMBER
+     * </pre>
+     *
+     * <code>double maximum = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaximum() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      maximum_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long minLength_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SCHEMA FIELDS FOR TYPE STRING
+     * Minimum length of the Type.STRING
+     * </pre>
+     *
+     * <code>int64 min_length = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minLength.
+     */
+    @java.lang.Override
+    public long getMinLength() {
+      return minLength_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SCHEMA FIELDS FOR TYPE STRING
+     * Minimum length of the Type.STRING
+     * </pre>
+     *
+     * <code>int64 min_length = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The minLength to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinLength(long value) {
+
+      minLength_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SCHEMA FIELDS FOR TYPE STRING
+     * Minimum length of the Type.STRING
+     * </pre>
+     *
+     * <code>int64 min_length = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinLength() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      minLength_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxLength_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum length of the Type.STRING
+     * </pre>
+     *
+     * <code>int64 max_length = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxLength.
+     */
+    @java.lang.Override
+    public long getMaxLength() {
+      return maxLength_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum length of the Type.STRING
+     * </pre>
+     *
+     * <code>int64 max_length = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The maxLength to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxLength(long value) {
+
+      maxLength_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Maximum length of the Type.STRING
+     * </pre>
+     *
+     * <code>int64 max_length = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxLength() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      maxLength_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pattern_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Pattern of the Type.STRING to restrict a string to a regular
+     * expression.
+     * </pre>
+     *
+     * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pattern.
+     */
+    public java.lang.String getPattern() {
+      java.lang.Object ref = pattern_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pattern_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Pattern of the Type.STRING to restrict a string to a regular
+     * expression.
+     * </pre>
+     *
+     * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for pattern.
+     */
+    public com.google.protobuf.ByteString getPatternBytes() {
+      java.lang.Object ref = pattern_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pattern_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Pattern of the Type.STRING to restrict a string to a regular
+     * expression.
+     * </pre>
+     *
+     * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pattern to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPattern(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pattern_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Pattern of the Type.STRING to restrict a string to a regular
+     * expression.
+     * </pre>
+     *
+     * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPattern() {
+      pattern_ = getDefaultInstance().getPattern();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Pattern of the Type.STRING to restrict a string to a regular
+     * expression.
+     * </pre>
+     *
+     * <code>string pattern = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for pattern to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPatternBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pattern_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -2450,7 +3872,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the example field is set.
      */
     public boolean hasExample() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -2490,7 +3912,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         exampleBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -2510,7 +3932,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         exampleBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -2526,7 +3948,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExample(com.google.protobuf.Value value) {
       if (exampleBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && example_ != null
             && example_ != com.google.protobuf.Value.getDefaultInstance()) {
           getExampleBuilder().mergeFrom(value);
@@ -2537,7 +3959,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         exampleBuilder_.mergeFrom(value);
       }
       if (example_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -2553,7 +3975,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value example = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearExample() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00080000);
       example_ = null;
       if (exampleBuilder_ != null) {
         exampleBuilder_.dispose();
@@ -2573,7 +3995,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Value example = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Value.Builder getExampleBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getExampleFieldBuilder().getBuilder();
     }

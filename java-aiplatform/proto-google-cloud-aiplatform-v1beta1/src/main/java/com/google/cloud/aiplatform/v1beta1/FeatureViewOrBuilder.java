@@ -407,7 +407,7 @@ public interface FeatureViewOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
    * @return Whether the vectorSearchConfig field is set.
    */
   @java.lang.Deprecated
@@ -426,7 +426,7 @@ public interface FeatureViewOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FeatureView.vector_search_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=220
+   *     google/cloud/aiplatform/v1beta1/feature_view.proto;l=304
    * @return The vectorSearchConfig.
    */
   @java.lang.Deprecated
@@ -447,6 +447,56 @@ public interface FeatureViewOrBuilder
   @java.lang.Deprecated
   com.google.cloud.aiplatform.v1beta1.FeatureView.VectorSearchConfigOrBuilder
       getVectorSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for index preparation for vector search. It
+   * contains the required configurations to create an index from source data,
+   * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+   * performed during online serving.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the indexConfig field is set.
+   */
+  boolean hasIndexConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for index preparation for vector search. It
+   * contains the required configurations to create an index from source data,
+   * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+   * performed during online serving.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The indexConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig getIndexConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for index preparation for vector search. It
+   * contains the required configurations to create an index from source data,
+   * so that approximate nearest neighbor (a.k.a ANN) algorithms search can be
+   * performed during online serving.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.IndexConfig index_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureView.IndexConfigOrBuilder getIndexConfigOrBuilder();
 
   /**
    *

@@ -597,6 +597,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
@@ -662,6 +663,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =
@@ -725,6 +727,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
@@ -775,6 +778,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
@@ -913,6 +917,7 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setSyncConfig(FeatureView.SyncConfig.newBuilder().build())
             .setVectorSearchConfig(FeatureView.VectorSearchConfig.newBuilder().build())
+            .setIndexConfig(FeatureView.IndexConfig.newBuilder().build())
             .setServiceAccountEmail("serviceAccountEmail1825953988")
             .build();
     Operation resultOperation =

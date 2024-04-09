@@ -53,7 +53,7 @@ public interface BlobOrBuilder
    *
    *
    * <pre>
-   * Required. Raw bytes for media formats.
+   * Required. Raw bytes.
    * </pre>
    *
    * <code>bytes data = 2 [(.google.api.field_behavior) = REQUIRED];</code>

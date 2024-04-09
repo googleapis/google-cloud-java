@@ -423,9 +423,14 @@ public interface ExtensionOrBuilder
    *
    * <pre>
    * Optional. The PrivateServiceConnect config for the extension.
-   * If specified, the service endpoints associated with the Extension should be
-   * registered in the provided Service Directory
+   * If specified, the service endpoints associated with the
+   * Extension should be registered with private network access in the provided
+   * Service Directory
    * (https://cloud.google.com/service-directory/docs/configuring-private-network-access).
+   *
+   * If the service contains more than one endpoint with a network, the service
+   * will arbitrarilty choose one of the endpoints to use for extension
+   * execution.
    * </pre>
    *
    * <code>
@@ -440,9 +445,14 @@ public interface ExtensionOrBuilder
    *
    * <pre>
    * Optional. The PrivateServiceConnect config for the extension.
-   * If specified, the service endpoints associated with the Extension should be
-   * registered in the provided Service Directory
+   * If specified, the service endpoints associated with the
+   * Extension should be registered with private network access in the provided
+   * Service Directory
    * (https://cloud.google.com/service-directory/docs/configuring-private-network-access).
+   *
+   * If the service contains more than one endpoint with a network, the service
+   * will arbitrarilty choose one of the endpoints to use for extension
+   * execution.
    * </pre>
    *
    * <code>
@@ -458,9 +468,14 @@ public interface ExtensionOrBuilder
    *
    * <pre>
    * Optional. The PrivateServiceConnect config for the extension.
-   * If specified, the service endpoints associated with the Extension should be
-   * registered in the provided Service Directory
+   * If specified, the service endpoints associated with the
+   * Extension should be registered with private network access in the provided
+   * Service Directory
    * (https://cloud.google.com/service-directory/docs/configuring-private-network-access).
+   *
+   * If the service contains more than one endpoint with a network, the service
+   * will arbitrarilty choose one of the endpoints to use for extension
+   * execution.
    * </pre>
    *
    * <code>

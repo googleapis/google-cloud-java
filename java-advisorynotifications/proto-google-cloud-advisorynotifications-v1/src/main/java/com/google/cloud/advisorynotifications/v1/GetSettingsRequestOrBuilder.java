@@ -30,7 +30,8 @@ public interface GetSettingsRequestOrBuilder
    * <pre>
    * Required. The resource name of the settings to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/settings.
+   * organizations/{organization}/locations/{location}/settings or
+   * projects/{projects}/locations/{location}/settings.
    * </pre>
    *
    * <code>
@@ -46,7 +47,8 @@ public interface GetSettingsRequestOrBuilder
    * <pre>
    * Required. The resource name of the settings to retrieve.
    * Format:
-   * organizations/{organization}/locations/{location}/settings.
+   * organizations/{organization}/locations/{location}/settings or
+   * projects/{projects}/locations/{location}/settings.
    * </pre>
    *
    * <code>

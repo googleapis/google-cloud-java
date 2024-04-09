@@ -80,7 +80,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     SAFETY_INPUT(8),
     GROUNDEDNESS_INPUT(9),
     FULFILLMENT_INPUT(12),
-    RESPONSE_RECALL_INPUT(13),
     SUMMARIZATION_QUALITY_INPUT(7),
     PAIRWISE_SUMMARIZATION_QUALITY_INPUT(23),
     SUMMARIZATION_HELPFULNESS_INPUT(14),
@@ -90,7 +89,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     QUESTION_ANSWERING_RELEVANCE_INPUT(16),
     QUESTION_ANSWERING_HELPFULNESS_INPUT(17),
     QUESTION_ANSWERING_CORRECTNESS_INPUT(18),
-    RAG_CONTEXT_RECALL_INPUT(11),
     TOOL_CALL_VALID_INPUT(19),
     TOOL_NAME_MATCH_INPUT(20),
     TOOL_PARAMETER_KEY_MATCH_INPUT(21),
@@ -129,8 +127,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           return GROUNDEDNESS_INPUT;
         case 12:
           return FULFILLMENT_INPUT;
-        case 13:
-          return RESPONSE_RECALL_INPUT;
         case 7:
           return SUMMARIZATION_QUALITY_INPUT;
         case 23:
@@ -149,8 +145,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
           return QUESTION_ANSWERING_HELPFULNESS_INPUT;
         case 18:
           return QUESTION_ANSWERING_CORRECTNESS_INPUT;
-        case 11:
-          return RAG_CONTEXT_RECALL_INPUT;
         case 19:
           return TOOL_CALL_VALID_INPUT;
         case 20:
@@ -593,58 +587,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       return (com.google.cloud.aiplatform.v1beta1.FulfillmentInput) metricInputs_;
     }
     return com.google.cloud.aiplatform.v1beta1.FulfillmentInput.getDefaultInstance();
-  }
-
-  public static final int RESPONSE_RECALL_INPUT_FIELD_NUMBER = 13;
-  /**
-   *
-   *
-   * <pre>
-   * Input for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-   *
-   * @return Whether the responseRecallInput field is set.
-   */
-  @java.lang.Override
-  public boolean hasResponseRecallInput() {
-    return metricInputsCase_ == 13;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Input for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-   *
-   * @return The responseRecallInput.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ResponseRecallInput getResponseRecallInput() {
-    if (metricInputsCase_ == 13) {
-      return (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Input for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.ResponseRecallInputOrBuilder
-      getResponseRecallInputOrBuilder() {
-    if (metricInputsCase_ == 13) {
-      return (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.getDefaultInstance();
   }
 
   public static final int SUMMARIZATION_QUALITY_INPUT_FIELD_NUMBER = 7;
@@ -1194,61 +1136,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         .getDefaultInstance();
   }
 
-  public static final int RAG_CONTEXT_RECALL_INPUT_FIELD_NUMBER = 11;
-  /**
-   *
-   *
-   * <pre>
-   * Input for rag context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-   * </code>
-   *
-   * @return Whether the ragContextRecallInput field is set.
-   */
-  @java.lang.Override
-  public boolean hasRagContextRecallInput() {
-    return metricInputsCase_ == 11;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Input for rag context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-   * </code>
-   *
-   * @return The ragContextRecallInput.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.RagContextRecallInput getRagContextRecallInput() {
-    if (metricInputsCase_ == 11) {
-      return (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Input for rag context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.RagContextRecallInputOrBuilder
-      getRagContextRecallInputOrBuilder() {
-    if (metricInputsCase_ == 11) {
-      return (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.getDefaultInstance();
-  }
-
   public static final int TOOL_CALL_VALID_INPUT_FIELD_NUMBER = 19;
   /**
    *
@@ -1577,16 +1464,8 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       output.writeMessage(
           10, (com.google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityInput) metricInputs_);
     }
-    if (metricInputsCase_ == 11) {
-      output.writeMessage(
-          11, (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_);
-    }
     if (metricInputsCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.aiplatform.v1beta1.FulfillmentInput) metricInputs_);
-    }
-    if (metricInputsCase_ == 13) {
-      output.writeMessage(
-          13, (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_);
     }
     if (metricInputsCase_ == 14) {
       output.writeMessage(
@@ -1695,20 +1574,10 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
               10,
               (com.google.cloud.aiplatform.v1beta1.QuestionAnsweringQualityInput) metricInputs_);
     }
-    if (metricInputsCase_ == 11) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              11, (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_);
-    }
     if (metricInputsCase_ == 12) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, (com.google.cloud.aiplatform.v1beta1.FulfillmentInput) metricInputs_);
-    }
-    if (metricInputsCase_ == 13) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              13, (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_);
     }
     if (metricInputsCase_ == 14) {
       size +=
@@ -1818,9 +1687,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 12:
         if (!getFulfillmentInput().equals(other.getFulfillmentInput())) return false;
         break;
-      case 13:
-        if (!getResponseRecallInput().equals(other.getResponseRecallInput())) return false;
-        break;
       case 7:
         if (!getSummarizationQualityInput().equals(other.getSummarizationQualityInput()))
           return false;
@@ -1856,9 +1722,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 18:
         if (!getQuestionAnsweringCorrectnessInput()
             .equals(other.getQuestionAnsweringCorrectnessInput())) return false;
-        break;
-      case 11:
-        if (!getRagContextRecallInput().equals(other.getRagContextRecallInput())) return false;
         break;
       case 19:
         if (!getToolCallValidInput().equals(other.getToolCallValidInput())) return false;
@@ -1923,10 +1786,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         hash = (37 * hash) + FULFILLMENT_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getFulfillmentInput().hashCode();
         break;
-      case 13:
-        hash = (37 * hash) + RESPONSE_RECALL_INPUT_FIELD_NUMBER;
-        hash = (53 * hash) + getResponseRecallInput().hashCode();
-        break;
       case 7:
         hash = (37 * hash) + SUMMARIZATION_QUALITY_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getSummarizationQualityInput().hashCode();
@@ -1962,10 +1821,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       case 18:
         hash = (37 * hash) + QUESTION_ANSWERING_CORRECTNESS_INPUT_FIELD_NUMBER;
         hash = (53 * hash) + getQuestionAnsweringCorrectnessInput().hashCode();
-        break;
-      case 11:
-        hash = (37 * hash) + RAG_CONTEXT_RECALL_INPUT_FIELD_NUMBER;
-        hash = (53 * hash) + getRagContextRecallInput().hashCode();
         break;
       case 19:
         hash = (37 * hash) + TOOL_CALL_VALID_INPUT_FIELD_NUMBER;
@@ -2150,9 +2005,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       if (fulfillmentInputBuilder_ != null) {
         fulfillmentInputBuilder_.clear();
       }
-      if (responseRecallInputBuilder_ != null) {
-        responseRecallInputBuilder_.clear();
-      }
       if (summarizationQualityInputBuilder_ != null) {
         summarizationQualityInputBuilder_.clear();
       }
@@ -2179,9 +2031,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       }
       if (questionAnsweringCorrectnessInputBuilder_ != null) {
         questionAnsweringCorrectnessInputBuilder_.clear();
-      }
-      if (ragContextRecallInputBuilder_ != null) {
-        ragContextRecallInputBuilder_.clear();
       }
       if (toolCallValidInputBuilder_ != null) {
         toolCallValidInputBuilder_.clear();
@@ -2237,7 +2086,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     private void buildPartial0(
         com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.location_ = location_;
       }
     }
@@ -2270,9 +2119,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       if (metricInputsCase_ == 12 && fulfillmentInputBuilder_ != null) {
         result.metricInputs_ = fulfillmentInputBuilder_.build();
       }
-      if (metricInputsCase_ == 13 && responseRecallInputBuilder_ != null) {
-        result.metricInputs_ = responseRecallInputBuilder_.build();
-      }
       if (metricInputsCase_ == 7 && summarizationQualityInputBuilder_ != null) {
         result.metricInputs_ = summarizationQualityInputBuilder_.build();
       }
@@ -2299,9 +2145,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       }
       if (metricInputsCase_ == 18 && questionAnsweringCorrectnessInputBuilder_ != null) {
         result.metricInputs_ = questionAnsweringCorrectnessInputBuilder_.build();
-      }
-      if (metricInputsCase_ == 11 && ragContextRecallInputBuilder_ != null) {
-        result.metricInputs_ = ragContextRecallInputBuilder_.build();
       }
       if (metricInputsCase_ == 19 && toolCallValidInputBuilder_ != null) {
         result.metricInputs_ = toolCallValidInputBuilder_.build();
@@ -2366,7 +2209,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       switch (other.getMetricInputsCase()) {
@@ -2408,11 +2251,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         case FULFILLMENT_INPUT:
           {
             mergeFulfillmentInput(other.getFulfillmentInput());
-            break;
-          }
-        case RESPONSE_RECALL_INPUT:
-          {
-            mergeResponseRecallInput(other.getResponseRecallInput());
             break;
           }
         case SUMMARIZATION_QUALITY_INPUT:
@@ -2459,11 +2297,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         case QUESTION_ANSWERING_CORRECTNESS_INPUT:
           {
             mergeQuestionAnsweringCorrectnessInput(other.getQuestionAnsweringCorrectnessInput());
-            break;
-          }
-        case RAG_CONTEXT_RECALL_INPUT:
-          {
-            mergeRagContextRecallInput(other.getRagContextRecallInput());
             break;
           }
         case TOOL_CALL_VALID_INPUT:
@@ -2520,7 +2353,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 10
             case 18:
@@ -2580,13 +2413,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
                 metricInputsCase_ = 10;
                 break;
               } // case 82
-            case 90:
-              {
-                input.readMessage(
-                    getRagContextRecallInputFieldBuilder().getBuilder(), extensionRegistry);
-                metricInputsCase_ = 11;
-                break;
-              } // case 90
             case 98:
               {
                 input.readMessage(
@@ -2594,13 +2420,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
                 metricInputsCase_ = 12;
                 break;
               } // case 98
-            case 106:
-              {
-                input.readMessage(
-                    getResponseRecallInputFieldBuilder().getBuilder(), extensionRegistry);
-                metricInputsCase_ = 13;
-                break;
-              } // case 106
             case 114:
               {
                 input.readMessage(
@@ -4431,221 +4250,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       metricInputsCase_ = 12;
       onChanged();
       return fulfillmentInputBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallInput,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.Builder,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallInputOrBuilder>
-        responseRecallInputBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     *
-     * @return Whether the responseRecallInput field is set.
-     */
-    @java.lang.Override
-    public boolean hasResponseRecallInput() {
-      return metricInputsCase_ == 13;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     *
-     * @return The responseRecallInput.
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ResponseRecallInput getResponseRecallInput() {
-      if (responseRecallInputBuilder_ == null) {
-        if (metricInputsCase_ == 13) {
-          return (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.getDefaultInstance();
-      } else {
-        if (metricInputsCase_ == 13) {
-          return responseRecallInputBuilder_.getMessage();
-        }
-        return com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     */
-    public Builder setResponseRecallInput(
-        com.google.cloud.aiplatform.v1beta1.ResponseRecallInput value) {
-      if (responseRecallInputBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        metricInputs_ = value;
-        onChanged();
-      } else {
-        responseRecallInputBuilder_.setMessage(value);
-      }
-      metricInputsCase_ = 13;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     */
-    public Builder setResponseRecallInput(
-        com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.Builder builderForValue) {
-      if (responseRecallInputBuilder_ == null) {
-        metricInputs_ = builderForValue.build();
-        onChanged();
-      } else {
-        responseRecallInputBuilder_.setMessage(builderForValue.build());
-      }
-      metricInputsCase_ = 13;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     */
-    public Builder mergeResponseRecallInput(
-        com.google.cloud.aiplatform.v1beta1.ResponseRecallInput value) {
-      if (responseRecallInputBuilder_ == null) {
-        if (metricInputsCase_ == 13
-            && metricInputs_
-                != com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.getDefaultInstance()) {
-          metricInputs_ =
-              com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.newBuilder(
-                      (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          metricInputs_ = value;
-        }
-        onChanged();
-      } else {
-        if (metricInputsCase_ == 13) {
-          responseRecallInputBuilder_.mergeFrom(value);
-        } else {
-          responseRecallInputBuilder_.setMessage(value);
-        }
-      }
-      metricInputsCase_ = 13;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     */
-    public Builder clearResponseRecallInput() {
-      if (responseRecallInputBuilder_ == null) {
-        if (metricInputsCase_ == 13) {
-          metricInputsCase_ = 0;
-          metricInputs_ = null;
-          onChanged();
-        }
-      } else {
-        if (metricInputsCase_ == 13) {
-          metricInputsCase_ = 0;
-          metricInputs_ = null;
-        }
-        responseRecallInputBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.Builder
-        getResponseRecallInputBuilder() {
-      return getResponseRecallInputFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.ResponseRecallInputOrBuilder
-        getResponseRecallInputOrBuilder() {
-      if ((metricInputsCase_ == 13) && (responseRecallInputBuilder_ != null)) {
-        return responseRecallInputBuilder_.getMessageOrBuilder();
-      } else {
-        if (metricInputsCase_ == 13) {
-          return (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for response recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallInput,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.Builder,
-            com.google.cloud.aiplatform.v1beta1.ResponseRecallInputOrBuilder>
-        getResponseRecallInputFieldBuilder() {
-      if (responseRecallInputBuilder_ == null) {
-        if (!(metricInputsCase_ == 13)) {
-          metricInputs_ =
-              com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.getDefaultInstance();
-        }
-        responseRecallInputBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.ResponseRecallInput,
-                com.google.cloud.aiplatform.v1beta1.ResponseRecallInput.Builder,
-                com.google.cloud.aiplatform.v1beta1.ResponseRecallInputOrBuilder>(
-                (com.google.cloud.aiplatform.v1beta1.ResponseRecallInput) metricInputs_,
-                getParentForChildren(),
-                isClean());
-        metricInputs_ = null;
-      }
-      metricInputsCase_ = 13;
-      onChanged();
-      return responseRecallInputBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6837,230 +6441,6 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallInput,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.Builder,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallInputOrBuilder>
-        ragContextRecallInputBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     *
-     * @return Whether the ragContextRecallInput field is set.
-     */
-    @java.lang.Override
-    public boolean hasRagContextRecallInput() {
-      return metricInputsCase_ == 11;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     *
-     * @return The ragContextRecallInput.
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.RagContextRecallInput getRagContextRecallInput() {
-      if (ragContextRecallInputBuilder_ == null) {
-        if (metricInputsCase_ == 11) {
-          return (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.getDefaultInstance();
-      } else {
-        if (metricInputsCase_ == 11) {
-          return ragContextRecallInputBuilder_.getMessage();
-        }
-        return com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     */
-    public Builder setRagContextRecallInput(
-        com.google.cloud.aiplatform.v1beta1.RagContextRecallInput value) {
-      if (ragContextRecallInputBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        metricInputs_ = value;
-        onChanged();
-      } else {
-        ragContextRecallInputBuilder_.setMessage(value);
-      }
-      metricInputsCase_ = 11;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     */
-    public Builder setRagContextRecallInput(
-        com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.Builder builderForValue) {
-      if (ragContextRecallInputBuilder_ == null) {
-        metricInputs_ = builderForValue.build();
-        onChanged();
-      } else {
-        ragContextRecallInputBuilder_.setMessage(builderForValue.build());
-      }
-      metricInputsCase_ = 11;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     */
-    public Builder mergeRagContextRecallInput(
-        com.google.cloud.aiplatform.v1beta1.RagContextRecallInput value) {
-      if (ragContextRecallInputBuilder_ == null) {
-        if (metricInputsCase_ == 11
-            && metricInputs_
-                != com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.getDefaultInstance()) {
-          metricInputs_ =
-              com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.newBuilder(
-                      (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          metricInputs_ = value;
-        }
-        onChanged();
-      } else {
-        if (metricInputsCase_ == 11) {
-          ragContextRecallInputBuilder_.mergeFrom(value);
-        } else {
-          ragContextRecallInputBuilder_.setMessage(value);
-        }
-      }
-      metricInputsCase_ = 11;
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     */
-    public Builder clearRagContextRecallInput() {
-      if (ragContextRecallInputBuilder_ == null) {
-        if (metricInputsCase_ == 11) {
-          metricInputsCase_ = 0;
-          metricInputs_ = null;
-          onChanged();
-        }
-      } else {
-        if (metricInputsCase_ == 11) {
-          metricInputsCase_ = 0;
-          metricInputs_ = null;
-        }
-        ragContextRecallInputBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.Builder
-        getRagContextRecallInputBuilder() {
-      return getRagContextRecallInputFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.RagContextRecallInputOrBuilder
-        getRagContextRecallInputOrBuilder() {
-      if ((metricInputsCase_ == 11) && (ragContextRecallInputBuilder_ != null)) {
-        return ragContextRecallInputBuilder_.getMessageOrBuilder();
-      } else {
-        if (metricInputsCase_ == 11) {
-          return (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.getDefaultInstance();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Input for rag context recall metric.
-     * </pre>
-     *
-     * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallInput,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.Builder,
-            com.google.cloud.aiplatform.v1beta1.RagContextRecallInputOrBuilder>
-        getRagContextRecallInputFieldBuilder() {
-      if (ragContextRecallInputBuilder_ == null) {
-        if (!(metricInputsCase_ == 11)) {
-          metricInputs_ =
-              com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.getDefaultInstance();
-        }
-        ragContextRecallInputBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.RagContextRecallInput,
-                com.google.cloud.aiplatform.v1beta1.RagContextRecallInput.Builder,
-                com.google.cloud.aiplatform.v1beta1.RagContextRecallInputOrBuilder>(
-                (com.google.cloud.aiplatform.v1beta1.RagContextRecallInput) metricInputs_,
-                getParentForChildren(),
-                isClean());
-        metricInputs_ = null;
-      }
-      metricInputsCase_ = 11;
-      onChanged();
-      return ragContextRecallInputBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.ToolCallValidInput,
             com.google.cloud.aiplatform.v1beta1.ToolCallValidInput.Builder,
             com.google.cloud.aiplatform.v1beta1.ToolCallValidInputOrBuilder>
@@ -8041,7 +7421,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       location_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -8061,7 +7441,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
      */
     public Builder clearLocation() {
       location_ = getDefaultInstance().getLocation();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -8086,7 +7466,7 @@ public final class EvaluateInstancesRequest extends com.google.protobuf.Generate
       }
       checkByteStringIsUtf8(value);
       location_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }

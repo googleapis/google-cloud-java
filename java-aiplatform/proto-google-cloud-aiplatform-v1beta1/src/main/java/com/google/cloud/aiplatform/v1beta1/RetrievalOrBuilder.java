@@ -63,6 +63,44 @@ public interface RetrievalOrBuilder
    *
    *
    * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+   *
+   * @return Whether the vertexRagStore field is set.
+   */
+  boolean hasVertexRagStore();
+  /**
+   *
+   *
+   * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+   *
+   * @return The vertexRagStore.
+   */
+  com.google.cloud.aiplatform.v1beta1.VertexRagStore getVertexRagStore();
+  /**
+   *
+   *
+   * <pre>
+   * Set to use data source powered by Vertex RAG store.
+   * User data is uploaded via the VertexRagDataService.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VertexRagStore vertex_rag_store = 4;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.VertexRagStoreOrBuilder getVertexRagStoreOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Disable using the result from this tool in detecting grounding
    * attribution. This does not affect how the result is given to the model for
    * generation.

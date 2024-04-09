@@ -57,6 +57,10 @@ public final class ToolProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Retrieval_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_fieldAccessorTable;
@@ -112,27 +116,32 @@ public final class ToolProto {
           + "nCall\022\021\n\004name\030\001 \001(\tB\003\340A\002\022*\n\004args\030\002 \001(\0132\027"
           + ".google.protobuf.StructB\003\340A\001\"U\n\020Function"
           + "Response\022\021\n\004name\030\001 \001(\tB\003\340A\002\022.\n\010response\030"
-          + "\002 \001(\0132\027.google.protobuf.StructB\003\340A\002\"\204\001\n\t"
+          + "\002 \001(\0132\027.google.protobuf.StructB\003\340A\002\"\321\001\n\t"
           + "Retrieval\022K\n\020vertex_ai_search\030\002 \001(\0132/.go"
           + "ogle.cloud.aiplatform.v1beta1.VertexAISe"
-          + "archH\000\022 \n\023disable_attribution\030\003 \001(\010B\003\340A\001"
-          + "B\010\n\006source\"(\n\016VertexAISearch\022\026\n\tdatastor"
-          + "e\030\001 \001(\tB\003\340A\002\"9\n\025GoogleSearchRetrieval\022 \n"
-          + "\023disable_attribution\030\001 \001(\010B\003\340A\001\"j\n\nToolC"
-          + "onfig\022\\\n\027function_calling_config\030\001 \001(\01326"
+          + "archH\000\022K\n\020vertex_rag_store\030\004 \001(\0132/.googl"
+          + "e.cloud.aiplatform.v1beta1.VertexRagStor"
+          + "eH\000\022 \n\023disable_attribution\030\003 \001(\010B\003\340A\001B\010\n"
+          + "\006source\"\213\001\n\016VertexRagStore\022@\n\013rag_corpor"
+          + "a\030\001 \003(\tB+\340A\002\372A%\n#aiplatform.googleapis.c"
+          + "om/RagCorpus\022\"\n\020similarity_top_k\030\002 \001(\005B\003"
+          + "\340A\001H\000\210\001\001B\023\n\021_similarity_top_k\"(\n\016VertexA"
+          + "ISearch\022\026\n\tdatastore\030\001 \001(\tB\003\340A\002\"9\n\025Googl"
+          + "eSearchRetrieval\022 \n\023disable_attribution\030"
+          + "\001 \001(\010B\003\340A\001\"j\n\nToolConfig\022\\\n\027function_cal"
+          + "ling_config\030\001 \001(\01326.google.cloud.aiplatf"
+          + "orm.v1beta1.FunctionCallingConfigB\003\340A\001\"\307"
+          + "\001\n\025FunctionCallingConfig\022N\n\004mode\030\001 \001(\0162;"
           + ".google.cloud.aiplatform.v1beta1.Functio"
-          + "nCallingConfigB\003\340A\001\"\307\001\n\025FunctionCallingC"
-          + "onfig\022N\n\004mode\030\001 \001(\0162;.google.cloud.aipla"
-          + "tform.v1beta1.FunctionCallingConfig.Mode"
-          + "B\003\340A\001\022#\n\026allowed_function_names\030\002 \003(\tB\003\340"
-          + "A\001\"9\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\010\n\004AUTO"
-          + "\020\001\022\007\n\003ANY\020\002\022\010\n\004NONE\020\003B\340\001\n#com.google.clo"
-          + "ud.aiplatform.v1beta1B\tToolProtoP\001ZCclou"
-          + "d.google.com/go/aiplatform/apiv1beta1/ai"
-          + "platformpb;aiplatformpb\252\002\037Google.Cloud.A"
-          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
-          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform:"
-          + ":V1beta1b\006proto3"
+          + "nCallingConfig.ModeB\003\340A\001\022#\n\026allowed_func"
+          + "tion_names\030\002 \003(\tB\003\340A\001\"9\n\004Mode\022\024\n\020MODE_UN"
+          + "SPECIFIED\020\000\022\010\n\004AUTO\020\001\022\007\n\003ANY\020\002\022\010\n\004NONE\020\003"
+          + "B\340\001\n#com.google.cloud.aiplatform.v1beta1"
+          + "B\tToolProtoP\001ZCcloud.google.com/go/aipla"
+          + "tform/apiv1beta1/aiplatformpb;aiplatform"
+          + "pb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037G"
+          + "oogle\\Cloud\\AIPlatform\\V1beta1\352\002\"Google:"
+          + ":Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -206,10 +215,18 @@ public final class ToolProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Retrieval_descriptor,
             new java.lang.String[] {
-              "VertexAiSearch", "DisableAttribution", "Source",
+              "VertexAiSearch", "VertexRagStore", "DisableAttribution", "Source",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_VertexRagStore_descriptor,
+            new java.lang.String[] {
+              "RagCorpora", "SimilarityTopK",
             });
     internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_VertexAISearch_descriptor,
@@ -217,7 +234,7 @@ public final class ToolProto {
               "Datastore",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GoogleSearchRetrieval_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_aiplatform_v1beta1_GoogleSearchRetrieval_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GoogleSearchRetrieval_descriptor,
@@ -225,7 +242,7 @@ public final class ToolProto {
               "DisableAttribution",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ToolConfig_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_aiplatform_v1beta1_ToolConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ToolConfig_descriptor,
@@ -233,7 +250,7 @@ public final class ToolProto {
               "FunctionCallingConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FunctionCallingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_aiplatform_v1beta1_FunctionCallingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FunctionCallingConfig_descriptor,

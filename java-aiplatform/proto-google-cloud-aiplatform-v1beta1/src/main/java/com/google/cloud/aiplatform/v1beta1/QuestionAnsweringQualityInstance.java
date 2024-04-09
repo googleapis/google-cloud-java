@@ -208,10 +208,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Text to answer the question.
+   * Required. Text to answer the question.
    * </pre>
    *
-   * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return Whether the context field is set.
    */
@@ -223,10 +223,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Text to answer the question.
+   * Required. Text to answer the question.
    * </pre>
    *
-   * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The context.
    */
@@ -246,10 +246,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
    *
    *
    * <pre>
-   * Optional. Text to answer the question.
+   * Required. Text to answer the question.
    * </pre>
    *
-   * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for context.
    */
@@ -1026,10 +1026,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Text to answer the question.
+     * Required. Text to answer the question.
      * </pre>
      *
-     * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return Whether the context field is set.
      */
@@ -1040,10 +1040,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Text to answer the question.
+     * Required. Text to answer the question.
      * </pre>
      *
-     * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The context.
      */
@@ -1062,10 +1062,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Text to answer the question.
+     * Required. Text to answer the question.
      * </pre>
      *
-     * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for context.
      */
@@ -1084,10 +1084,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Text to answer the question.
+     * Required. Text to answer the question.
      * </pre>
      *
-     * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The context to set.
      * @return This builder for chaining.
@@ -1105,10 +1105,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Text to answer the question.
+     * Required. Text to answer the question.
      * </pre>
      *
-     * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1122,10 +1122,10 @@ public final class QuestionAnsweringQualityInstance extends com.google.protobuf.
      *
      *
      * <pre>
-     * Optional. Text to answer the question.
+     * Required. Text to answer the question.
      * </pre>
      *
-     * <code>optional string context = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string context = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for context to set.
      * @return This builder for chaining.

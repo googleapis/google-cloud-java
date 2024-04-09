@@ -28,7 +28,7 @@ public interface FunctionCallingConfigOrBuilder
    *
    *
    * <pre>
-   * Function calling mode.
+   * Optional. Function calling mode.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface FunctionCallingConfigOrBuilder
    *
    *
    * <pre>
-   * Function calling mode.
+   * Optional. Function calling mode.
    * </pre>
    *
    * <code>
@@ -57,9 +57,9 @@ public interface FunctionCallingConfigOrBuilder
    *
    *
    * <pre>
-   * Function names to call. Only set when the Mode is ANY. Function names
-   * should match [FunctionDeclaration.name]. With mode set to ANY, model will
-   * predict a function call from the set of function names provided.
+   * Optional. Function names to call. Only set when the Mode is ANY. Function
+   * names should match [FunctionDeclaration.name]. With mode set to ANY, model
+   * will predict a function call from the set of function names provided.
    * </pre>
    *
    * <code>repeated string allowed_function_names = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -72,9 +72,9 @@ public interface FunctionCallingConfigOrBuilder
    *
    *
    * <pre>
-   * Function names to call. Only set when the Mode is ANY. Function names
-   * should match [FunctionDeclaration.name]. With mode set to ANY, model will
-   * predict a function call from the set of function names provided.
+   * Optional. Function names to call. Only set when the Mode is ANY. Function
+   * names should match [FunctionDeclaration.name]. With mode set to ANY, model
+   * will predict a function call from the set of function names provided.
    * </pre>
    *
    * <code>repeated string allowed_function_names = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -87,9 +87,9 @@ public interface FunctionCallingConfigOrBuilder
    *
    *
    * <pre>
-   * Function names to call. Only set when the Mode is ANY. Function names
-   * should match [FunctionDeclaration.name]. With mode set to ANY, model will
-   * predict a function call from the set of function names provided.
+   * Optional. Function names to call. Only set when the Mode is ANY. Function
+   * names should match [FunctionDeclaration.name]. With mode set to ANY, model
+   * will predict a function call from the set of function names provided.
    * </pre>
    *
    * <code>repeated string allowed_function_names = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -103,9 +103,9 @@ public interface FunctionCallingConfigOrBuilder
    *
    *
    * <pre>
-   * Function names to call. Only set when the Mode is ANY. Function names
-   * should match [FunctionDeclaration.name]. With mode set to ANY, model will
-   * predict a function call from the set of function names provided.
+   * Optional. Function names to call. Only set when the Mode is ANY. Function
+   * names should match [FunctionDeclaration.name]. With mode set to ANY, model
+   * will predict a function call from the set of function names provided.
    * </pre>
    *
    * <code>repeated string allowed_function_names = 2 [(.google.api.field_behavior) = OPTIONAL];

@@ -38,7 +38,9 @@ public class SyncGetSettings {
         AdvisoryNotificationsServiceClient.create()) {
       GetSettingsRequest request =
           GetSettingsRequest.newBuilder()
-              .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+              .setName(
+                  SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]")
+                      .toString())
               .build();
       Settings response = advisoryNotificationsServiceClient.getSettings(request);
     }

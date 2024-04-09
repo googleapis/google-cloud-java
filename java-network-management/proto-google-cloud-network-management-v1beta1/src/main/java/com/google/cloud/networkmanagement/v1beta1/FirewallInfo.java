@@ -568,7 +568,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Possible values: ALLOW, DENY
+   * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
    * </pre>
    *
    * <code>string action = 4;</code>
@@ -591,7 +591,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Possible values: ALLOW, DENY
+   * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
    * </pre>
    *
    * <code>string action = 4;</code>
@@ -1834,7 +1834,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Possible values: ALLOW, DENY
+     * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
      * </pre>
      *
      * <code>string action = 4;</code>
@@ -1856,7 +1856,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Possible values: ALLOW, DENY
+     * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
      * </pre>
      *
      * <code>string action = 4;</code>
@@ -1878,7 +1878,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Possible values: ALLOW, DENY
+     * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
      * </pre>
      *
      * <code>string action = 4;</code>
@@ -1899,7 +1899,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Possible values: ALLOW, DENY
+     * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
      * </pre>
      *
      * <code>string action = 4;</code>
@@ -1916,7 +1916,7 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Possible values: ALLOW, DENY
+     * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
      * </pre>
      *
      * <code>string action = 4;</code>

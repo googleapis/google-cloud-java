@@ -49,10 +49,6 @@ public final class ExtensionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_NoAuth_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_NoAuth_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_ApiKeyConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_ApiKeyConfig_fieldAccessorTable;
@@ -133,7 +129,7 @@ public final class ExtensionProto {
           + "\n\n\010api_spec\"\203\001\n\022ExtensionOperation\022\024\n\014op"
           + "eration_id\030\001 \001(\t\022W\n\024function_declaration"
           + "\030\003 \001(\01324.google.cloud.aiplatform.v1beta1"
-          + ".FunctionDeclarationB\003\340A\003\"\265\010\n\nAuthConfig"
+          + ".FunctionDeclarationB\003\340A\003\"\253\010\n\nAuthConfig"
           + "\022R\n\016api_key_config\030\002 \001(\01328.google.cloud."
           + "aiplatform.v1beta1.AuthConfig.ApiKeyConf"
           + "igH\000\022a\n\026http_basic_auth_config\030\003 \001(\0132?.g"
@@ -146,58 +142,58 @@ public final class ExtensionProto {
           + "fig.OauthConfigH\000\022M\n\013oidc_config\030\007 \001(\01326"
           + ".google.cloud.aiplatform.v1beta1.AuthCon"
           + "fig.OidcConfigH\000\022<\n\tauth_type\030e \001(\0162).go"
-          + "ogle.cloud.aiplatform.v1beta1.AuthType\032\010"
-          + "\n\006NoAuth\032\307\001\n\014ApiKeyConfig\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\002\022J\n\016api_key_secret\030\002 \001(\tB2\340A\002\372A,\n*se"
-          + "cretmanager.googleapis.com/SecretVersion"
-          + "\022X\n\025http_element_location\030\003 \001(\01624.google"
-          + ".cloud.aiplatform.v1beta1.HttpElementLoc"
-          + "ationB\003\340A\002\032d\n\023HttpBasicAuthConfig\022M\n\021cre"
-          + "dential_secret\030\002 \001(\tB2\340A\002\372A,\n*secretmana"
-          + "ger.googleapis.com/SecretVersion\032:\n\032Goog"
-          + "leServiceAccountConfig\022\034\n\017service_accoun"
-          + "t\030\001 \001(\tB\003\340A\001\032P\n\013OauthConfig\022\026\n\014access_to"
-          + "ken\030\001 \001(\tH\000\022\031\n\017service_account\030\002 \001(\tH\000B\016"
-          + "\n\014oauth_config\032J\n\nOidcConfig\022\022\n\010id_token"
-          + "\030\001 \001(\tH\000\022\031\n\017service_account\030\002 \001(\tH\000B\r\n\013o"
-          + "idc_configB\r\n\013auth_config\"\201\004\n\rRuntimeCon"
-          + "fig\022v\n\037code_interpreter_runtime_config\030\002"
-          + " \001(\0132K.google.cloud.aiplatform.v1beta1.R"
-          + "untimeConfig.CodeInterpreterRuntimeConfi"
-          + "gH\000\022u\n\037vertex_ai_search_runtime_config\030\006"
-          + " \001(\0132J.google.cloud.aiplatform.v1beta1.R"
-          + "untimeConfig.VertexAISearchRuntimeConfig"
-          + "H\000\0224\n\016default_params\030\004 \001(\0132\027.google.prot"
-          + "obuf.StructB\003\340A\001\032g\n\034CodeInterpreterRunti"
-          + "meConfig\022\"\n\025file_input_gcs_bucket\030\001 \001(\tB"
-          + "\003\340A\001\022#\n\026file_output_gcs_bucket\030\002 \001(\tB\003\340A"
-          + "\001\032?\n\033VertexAISearchRuntimeConfig\022 \n\023serv"
-          + "ing_config_name\030\001 \001(\tB\003\340A\002B!\n\037GoogleFirs"
-          + "tPartyExtensionConfig\"r\n$ExtensionPrivat"
-          + "eServiceConnectConfig\022J\n\021service_directo"
-          + "ry\030\001 \001(\tB/\340A\002\372A)\n\'servicedirectory.googl"
-          + "eapis.com/Service*\215\001\n\023HttpElementLocatio"
-          + "n\022\027\n\023HTTP_IN_UNSPECIFIED\020\000\022\021\n\rHTTP_IN_QU"
-          + "ERY\020\001\022\022\n\016HTTP_IN_HEADER\020\002\022\020\n\014HTTP_IN_PAT"
-          + "H\020\003\022\020\n\014HTTP_IN_BODY\020\004\022\022\n\016HTTP_IN_COOKIE\020"
-          + "\005*\224\001\n\010AuthType\022\031\n\025AUTH_TYPE_UNSPECIFIED\020"
-          + "\000\022\013\n\007NO_AUTH\020\001\022\020\n\014API_KEY_AUTH\020\002\022\023\n\017HTTP"
-          + "_BASIC_AUTH\020\003\022\037\n\033GOOGLE_SERVICE_ACCOUNT_"
-          + "AUTH\020\004\022\t\n\005OAUTH\020\006\022\r\n\tOIDC_AUTH\020\010B\247\004\n#com"
-          + ".google.cloud.aiplatform.v1beta1B\016Extens"
-          + "ionProtoP\001ZCcloud.google.com/go/aiplatfo"
-          + "rm/apiv1beta1/aiplatformpb;aiplatformpb\252"
-          + "\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037Goog"
-          + "le\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cl"
-          + "oud::AIPlatform::V1beta1\352A\277\001\n*secretmana"
-          + "ger.googleapis.com/SecretVersion\022=projec"
-          + "ts/{project}/secrets/{secret}/versions/{"
-          + "secret_version}\022Rprojects/{project}/loca"
-          + "tions/{location}/secrets/{secret}/versio"
-          + "ns/{secret_version}\352A|\n\'servicedirectory"
-          + ".googleapis.com/Service\022Qprojects/{proje"
-          + "ct}/locations/{location}/namespaces/{nam"
-          + "espace}/services/{service}b\006proto3"
+          + "ogle.cloud.aiplatform.v1beta1.AuthType\032\307"
+          + "\001\n\014ApiKeyConfig\022\021\n\004name\030\001 \001(\tB\003\340A\002\022J\n\016ap"
+          + "i_key_secret\030\002 \001(\tB2\340A\002\372A,\n*secretmanage"
+          + "r.googleapis.com/SecretVersion\022X\n\025http_e"
+          + "lement_location\030\003 \001(\01624.google.cloud.aip"
+          + "latform.v1beta1.HttpElementLocationB\003\340A\002"
+          + "\032d\n\023HttpBasicAuthConfig\022M\n\021credential_se"
+          + "cret\030\002 \001(\tB2\340A\002\372A,\n*secretmanager.google"
+          + "apis.com/SecretVersion\032:\n\032GoogleServiceA"
+          + "ccountConfig\022\034\n\017service_account\030\001 \001(\tB\003\340"
+          + "A\001\032P\n\013OauthConfig\022\026\n\014access_token\030\001 \001(\tH"
+          + "\000\022\031\n\017service_account\030\002 \001(\tH\000B\016\n\014oauth_co"
+          + "nfig\032J\n\nOidcConfig\022\022\n\010id_token\030\001 \001(\tH\000\022\031"
+          + "\n\017service_account\030\002 \001(\tH\000B\r\n\013oidc_config"
+          + "B\r\n\013auth_config\"\201\004\n\rRuntimeConfig\022v\n\037cod"
+          + "e_interpreter_runtime_config\030\002 \001(\0132K.goo"
+          + "gle.cloud.aiplatform.v1beta1.RuntimeConf"
+          + "ig.CodeInterpreterRuntimeConfigH\000\022u\n\037ver"
+          + "tex_ai_search_runtime_config\030\006 \001(\0132J.goo"
+          + "gle.cloud.aiplatform.v1beta1.RuntimeConf"
+          + "ig.VertexAISearchRuntimeConfigH\000\0224\n\016defa"
+          + "ult_params\030\004 \001(\0132\027.google.protobuf.Struc"
+          + "tB\003\340A\001\032g\n\034CodeInterpreterRuntimeConfig\022\""
+          + "\n\025file_input_gcs_bucket\030\001 \001(\tB\003\340A\001\022#\n\026fi"
+          + "le_output_gcs_bucket\030\002 \001(\tB\003\340A\001\032?\n\033Verte"
+          + "xAISearchRuntimeConfig\022 \n\023serving_config"
+          + "_name\030\001 \001(\tB\003\340A\002B!\n\037GoogleFirstPartyExte"
+          + "nsionConfig\"r\n$ExtensionPrivateServiceCo"
+          + "nnectConfig\022J\n\021service_directory\030\001 \001(\tB/"
+          + "\340A\002\372A)\n\'servicedirectory.googleapis.com/"
+          + "Service*\215\001\n\023HttpElementLocation\022\027\n\023HTTP_"
+          + "IN_UNSPECIFIED\020\000\022\021\n\rHTTP_IN_QUERY\020\001\022\022\n\016H"
+          + "TTP_IN_HEADER\020\002\022\020\n\014HTTP_IN_PATH\020\003\022\020\n\014HTT"
+          + "P_IN_BODY\020\004\022\022\n\016HTTP_IN_COOKIE\020\005*\224\001\n\010Auth"
+          + "Type\022\031\n\025AUTH_TYPE_UNSPECIFIED\020\000\022\013\n\007NO_AU"
+          + "TH\020\001\022\020\n\014API_KEY_AUTH\020\002\022\023\n\017HTTP_BASIC_AUT"
+          + "H\020\003\022\037\n\033GOOGLE_SERVICE_ACCOUNT_AUTH\020\004\022\t\n\005"
+          + "OAUTH\020\006\022\r\n\tOIDC_AUTH\020\010B\247\004\n#com.google.cl"
+          + "oud.aiplatform.v1beta1B\016ExtensionProtoP\001"
+          + "ZCcloud.google.com/go/aiplatform/apiv1be"
+          + "ta1/aiplatformpb;aiplatformpb\252\002\037Google.C"
+          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
+          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
+          + "tform::V1beta1\352A\277\001\n*secretmanager.google"
+          + "apis.com/SecretVersion\022=projects/{projec"
+          + "t}/secrets/{secret}/versions/{secret_ver"
+          + "sion}\022Rprojects/{project}/locations/{loc"
+          + "ation}/secrets/{secret}/versions/{secret"
+          + "_version}\352A|\n\'servicedirectory.googleapi"
+          + "s.com/Service\022Qprojects/{project}/locati"
+          + "ons/{location}/namespaces/{namespace}/se"
+          + "rvices/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -267,18 +263,10 @@ public final class ExtensionProto {
               "AuthType",
               "AuthConfig",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_NoAuth_descriptor =
-        internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_descriptor
-            .getNestedTypes()
-            .get(0);
-    internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_NoAuth_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_NoAuth_descriptor,
-            new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_ApiKeyConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_descriptor
             .getNestedTypes()
-            .get(1);
+            .get(0);
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_ApiKeyConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_ApiKeyConfig_descriptor,
@@ -288,7 +276,7 @@ public final class ExtensionProto {
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_HttpBasicAuthConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_descriptor
             .getNestedTypes()
-            .get(2);
+            .get(1);
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_HttpBasicAuthConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_HttpBasicAuthConfig_descriptor,
@@ -298,7 +286,7 @@ public final class ExtensionProto {
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_GoogleServiceAccountConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_descriptor
             .getNestedTypes()
-            .get(3);
+            .get(2);
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_GoogleServiceAccountConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_GoogleServiceAccountConfig_descriptor,
@@ -308,7 +296,7 @@ public final class ExtensionProto {
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_OauthConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_descriptor
             .getNestedTypes()
-            .get(4);
+            .get(3);
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_OauthConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_OauthConfig_descriptor,
@@ -318,7 +306,7 @@ public final class ExtensionProto {
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_OidcConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_descriptor
             .getNestedTypes()
-            .get(5);
+            .get(4);
     internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_OidcConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_AuthConfig_OidcConfig_descriptor,

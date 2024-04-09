@@ -41,6 +41,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
 
   private Tag() {
     tagKey_ = "";
+    tagKeyId_ = "";
     tagValue_ = "";
     tagValueId_ = "";
   }
@@ -132,6 +133,72 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TAG_KEY_ID_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tagKeyId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+   * </pre>
+   *
+   * <code>optional string tag_key_id = 2;</code>
+   *
+   * @return Whether the tagKeyId field is set.
+   */
+  @java.lang.Override
+  public boolean hasTagKeyId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+   * </pre>
+   *
+   * <code>optional string tag_key_id = 2;</code>
+   *
+   * @return The tagKeyId.
+   */
+  @java.lang.Override
+  public java.lang.String getTagKeyId() {
+    java.lang.Object ref = tagKeyId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tagKeyId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+   * </pre>
+   *
+   * <code>optional string tag_key_id = 2;</code>
+   *
+   * @return The bytes for tagKeyId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTagKeyIdBytes() {
+    java.lang.Object ref = tagKeyId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      tagKeyId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TAG_VALUE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -150,7 +217,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTagValue() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -218,7 +285,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTagValueId() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -285,9 +352,12 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tagKey_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tagValue_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tagKeyId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tagValue_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tagValueId_);
     }
     getUnknownFields().writeTo(output);
@@ -303,9 +373,12 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tagKey_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tagValue_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tagKeyId_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tagValue_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tagValueId_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -326,6 +399,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     if (hasTagKey() != other.hasTagKey()) return false;
     if (hasTagKey()) {
       if (!getTagKey().equals(other.getTagKey())) return false;
+    }
+    if (hasTagKeyId() != other.hasTagKeyId()) return false;
+    if (hasTagKeyId()) {
+      if (!getTagKeyId().equals(other.getTagKeyId())) return false;
     }
     if (hasTagValue() != other.hasTagValue()) return false;
     if (hasTagValue()) {
@@ -349,6 +426,10 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
     if (hasTagKey()) {
       hash = (37 * hash) + TAG_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getTagKey().hashCode();
+    }
+    if (hasTagKeyId()) {
+      hash = (37 * hash) + TAG_KEY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTagKeyId().hashCode();
     }
     if (hasTagValue()) {
       hash = (37 * hash) + TAG_VALUE_FIELD_NUMBER;
@@ -497,6 +578,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       tagKey_ = "";
+      tagKeyId_ = "";
       tagValue_ = "";
       tagValueId_ = "";
       return this;
@@ -540,12 +622,16 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.tagValue_ = tagValue_;
+        result.tagKeyId_ = tagKeyId_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.tagValueId_ = tagValueId_;
+        result.tagValue_ = tagValue_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tagValueId_ = tagValueId_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -600,14 +686,19 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasTagKeyId()) {
+        tagKeyId_ = other.tagKeyId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.hasTagValue()) {
         tagValue_ = other.tagValue_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTagValueId()) {
         tagValueId_ = other.tagValueId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -642,16 +733,22 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                tagKeyId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             case 26:
               {
                 tagValue_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 tagValueId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -793,6 +890,126 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object tagKeyId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+     * </pre>
+     *
+     * <code>optional string tag_key_id = 2;</code>
+     *
+     * @return Whether the tagKeyId field is set.
+     */
+    public boolean hasTagKeyId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+     * </pre>
+     *
+     * <code>optional string tag_key_id = 2;</code>
+     *
+     * @return The tagKeyId.
+     */
+    public java.lang.String getTagKeyId() {
+      java.lang.Object ref = tagKeyId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tagKeyId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+     * </pre>
+     *
+     * <code>optional string tag_key_id = 2;</code>
+     *
+     * @return The bytes for tagKeyId.
+     */
+    public com.google.protobuf.ByteString getTagKeyIdBytes() {
+      java.lang.Object ref = tagKeyId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        tagKeyId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+     * </pre>
+     *
+     * <code>optional string tag_key_id = 2;</code>
+     *
+     * @param value The tagKeyId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTagKeyId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      tagKeyId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+     * </pre>
+     *
+     * <code>optional string tag_key_id = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTagKeyId() {
+      tagKeyId_ = getDefaultInstance().getTagKeyId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
+     * </pre>
+     *
+     * <code>optional string tag_key_id = 2;</code>
+     *
+     * @param value The bytes for tagKeyId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTagKeyIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      tagKeyId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object tagValue_ = "";
     /**
      *
@@ -807,7 +1024,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tagValue field is set.
      */
     public boolean hasTagValue() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -873,7 +1090,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       tagValue_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -891,7 +1108,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTagValue() {
       tagValue_ = getDefaultInstance().getTagValue();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -914,7 +1131,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       tagValue_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -932,7 +1149,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tagValueId field is set.
      */
     public boolean hasTagValueId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -995,7 +1212,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       tagValueId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1012,7 +1229,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTagValueId() {
       tagValueId_ = getDefaultInstance().getTagValueId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1034,7 +1251,7 @@ public final class Tag extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       tagValueId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

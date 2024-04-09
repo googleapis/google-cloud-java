@@ -61,6 +61,7 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
             com.google.api.cloudquotas.v1.QuotaDetails.Builder.class);
   }
 
+  private int bitField0_;
   public static final int VALUE_FIELD_NUMBER = 1;
   private long value_ = 0L;
   /**
@@ -77,6 +78,62 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getValue() {
     return value_;
+  }
+
+  public static final int ROLLOUT_INFO_FIELD_NUMBER = 3;
+  private com.google.api.cloudquotas.v1.RolloutInfo rolloutInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Rollout information of this quota.
+   * This field is present only if the effective limit will change due to the
+   * ongoing rollout of the service config.
+   * </pre>
+   *
+   * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+   *
+   * @return Whether the rolloutInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasRolloutInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Rollout information of this quota.
+   * This field is present only if the effective limit will change due to the
+   * ongoing rollout of the service config.
+   * </pre>
+   *
+   * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+   *
+   * @return The rolloutInfo.
+   */
+  @java.lang.Override
+  public com.google.api.cloudquotas.v1.RolloutInfo getRolloutInfo() {
+    return rolloutInfo_ == null
+        ? com.google.api.cloudquotas.v1.RolloutInfo.getDefaultInstance()
+        : rolloutInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Rollout information of this quota.
+   * This field is present only if the effective limit will change due to the
+   * ongoing rollout of the service config.
+   * </pre>
+   *
+   * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.api.cloudquotas.v1.RolloutInfoOrBuilder getRolloutInfoOrBuilder() {
+    return rolloutInfo_ == null
+        ? com.google.api.cloudquotas.v1.RolloutInfo.getDefaultInstance()
+        : rolloutInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -96,6 +153,9 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
     if (value_ != 0L) {
       output.writeInt64(1, value_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getRolloutInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -107,6 +167,9 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (value_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, value_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRolloutInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -125,6 +188,10 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
         (com.google.api.cloudquotas.v1.QuotaDetails) obj;
 
     if (getValue() != other.getValue()) return false;
+    if (hasRolloutInfo() != other.hasRolloutInfo()) return false;
+    if (hasRolloutInfo()) {
+      if (!getRolloutInfo().equals(other.getRolloutInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -138,6 +205,10 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + VALUE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValue());
+    if (hasRolloutInfo()) {
+      hash = (37 * hash) + ROLLOUT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getRolloutInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -267,10 +338,19 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.api.cloudquotas.v1.QuotaDetails.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRolloutInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -278,6 +358,11 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       value_ = 0L;
+      rolloutInfo_ = null;
+      if (rolloutInfoBuilder_ != null) {
+        rolloutInfoBuilder_.dispose();
+        rolloutInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -317,6 +402,13 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.value_ = value_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rolloutInfo_ =
+            rolloutInfoBuilder_ == null ? rolloutInfo_ : rolloutInfoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -367,6 +459,9 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
       if (other.getValue() != 0L) {
         setValue(other.getValue());
       }
+      if (other.hasRolloutInfo()) {
+        mergeRolloutInfo(other.getRolloutInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -399,6 +494,12 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 26:
+              {
+                input.readMessage(getRolloutInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -469,6 +570,210 @@ public final class QuotaDetails extends com.google.protobuf.GeneratedMessageV3
       value_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.api.cloudquotas.v1.RolloutInfo rolloutInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.cloudquotas.v1.RolloutInfo,
+            com.google.api.cloudquotas.v1.RolloutInfo.Builder,
+            com.google.api.cloudquotas.v1.RolloutInfoOrBuilder>
+        rolloutInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     *
+     * @return Whether the rolloutInfo field is set.
+     */
+    public boolean hasRolloutInfo() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     *
+     * @return The rolloutInfo.
+     */
+    public com.google.api.cloudquotas.v1.RolloutInfo getRolloutInfo() {
+      if (rolloutInfoBuilder_ == null) {
+        return rolloutInfo_ == null
+            ? com.google.api.cloudquotas.v1.RolloutInfo.getDefaultInstance()
+            : rolloutInfo_;
+      } else {
+        return rolloutInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     */
+    public Builder setRolloutInfo(com.google.api.cloudquotas.v1.RolloutInfo value) {
+      if (rolloutInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rolloutInfo_ = value;
+      } else {
+        rolloutInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     */
+    public Builder setRolloutInfo(
+        com.google.api.cloudquotas.v1.RolloutInfo.Builder builderForValue) {
+      if (rolloutInfoBuilder_ == null) {
+        rolloutInfo_ = builderForValue.build();
+      } else {
+        rolloutInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     */
+    public Builder mergeRolloutInfo(com.google.api.cloudquotas.v1.RolloutInfo value) {
+      if (rolloutInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && rolloutInfo_ != null
+            && rolloutInfo_ != com.google.api.cloudquotas.v1.RolloutInfo.getDefaultInstance()) {
+          getRolloutInfoBuilder().mergeFrom(value);
+        } else {
+          rolloutInfo_ = value;
+        }
+      } else {
+        rolloutInfoBuilder_.mergeFrom(value);
+      }
+      if (rolloutInfo_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     */
+    public Builder clearRolloutInfo() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rolloutInfo_ = null;
+      if (rolloutInfoBuilder_ != null) {
+        rolloutInfoBuilder_.dispose();
+        rolloutInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     */
+    public com.google.api.cloudquotas.v1.RolloutInfo.Builder getRolloutInfoBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRolloutInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     */
+    public com.google.api.cloudquotas.v1.RolloutInfoOrBuilder getRolloutInfoOrBuilder() {
+      if (rolloutInfoBuilder_ != null) {
+        return rolloutInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return rolloutInfo_ == null
+            ? com.google.api.cloudquotas.v1.RolloutInfo.getDefaultInstance()
+            : rolloutInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rollout information of this quota.
+     * This field is present only if the effective limit will change due to the
+     * ongoing rollout of the service config.
+     * </pre>
+     *
+     * <code>.google.api.cloudquotas.v1.RolloutInfo rollout_info = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.api.cloudquotas.v1.RolloutInfo,
+            com.google.api.cloudquotas.v1.RolloutInfo.Builder,
+            com.google.api.cloudquotas.v1.RolloutInfoOrBuilder>
+        getRolloutInfoFieldBuilder() {
+      if (rolloutInfoBuilder_ == null) {
+        rolloutInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.cloudquotas.v1.RolloutInfo,
+                com.google.api.cloudquotas.v1.RolloutInfo.Builder,
+                com.google.api.cloudquotas.v1.RolloutInfoOrBuilder>(
+                getRolloutInfo(), getParentForChildren(), isClean());
+        rolloutInfo_ = null;
+      }
+      return rolloutInfoBuilder_;
     }
 
     @java.lang.Override

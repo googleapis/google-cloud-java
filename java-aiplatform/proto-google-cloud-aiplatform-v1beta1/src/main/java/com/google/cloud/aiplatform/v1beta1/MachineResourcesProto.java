@@ -64,6 +64,10 @@ public final class MachineResourcesProto {
       internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -102,14 +106,15 @@ public final class MachineResourcesProto {
           + "ize_gb\030\002 \001(\003\"L\n\010NfsMount\022\023\n\006server\030\001 \001(\t"
           + "B\003\340A\002\022\021\n\004path\030\002 \001(\tB\003\340A\002\022\030\n\013mount_point\030"
           + "\003 \001(\tB\003\340A\002\"A\n\025AutoscalingMetricSpec\022\030\n\013m"
-          + "etric_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005B\354\001"
-          + "\n#com.google.cloud.aiplatform.v1beta1B\025M"
-          + "achineResourcesProtoP\001ZCcloud.google.com"
-          + "/go/aiplatform/apiv1beta1/aiplatformpb;a"
-          + "iplatformpb\252\002\037Google.Cloud.AIPlatform.V1"
-          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
-          + "\002\"Google::Cloud::AIPlatform::V1beta1b\006pr"
-          + "oto3"
+          + "etric_name\030\001 \001(\tB\003\340A\002\022\016\n\006target\030\002 \001(\005\".\n"
+          + "\020ShieldedVmConfig\022\032\n\022enable_secure_boot\030"
+          + "\001 \001(\010B\354\001\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\025MachineResourcesProtoP\001ZCcloud.go"
+          + "ogle.com/go/aiplatform/apiv1beta1/aiplat"
+          + "formpb;aiplatformpb\252\002\037Google.Cloud.AIPla"
+          + "tform.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\"
+          + "V1beta1\352\002\"Google::Cloud::AIPlatform::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -189,6 +194,14 @@ public final class MachineResourcesProto {
             internal_static_google_cloud_aiplatform_v1beta1_AutoscalingMetricSpec_descriptor,
             new java.lang.String[] {
               "MetricName", "Target",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_ShieldedVmConfig_descriptor,
+            new java.lang.String[] {
+              "EnableSecureBoot",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

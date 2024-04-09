@@ -30,7 +30,7 @@ public interface VertexAISearchOrBuilder
    * <pre>
    * Required. Fully-qualified Vertex AI Search's datastore resource ID.
    * Format:
-   * projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
    * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,7 +44,7 @@ public interface VertexAISearchOrBuilder
    * <pre>
    * Required. Fully-qualified Vertex AI Search's datastore resource ID.
    * Format:
-   * projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
    * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -64,6 +64,18 @@ public final class IoProto {
       internal_static_google_cloud_aiplatform_v1beta1_ContainerRegistryDestination_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_ContainerRegistryDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_ResourceId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_ResourceId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DirectUploadSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DirectUploadSource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -90,13 +102,22 @@ public final class IoProto {
           + "ation\022M\n\017gcs_destination\030\001 \001(\0132/.google."
           + "cloud.aiplatform.v1beta1.GcsDestinationB"
           + "\003\340A\002\"7\n\034ContainerRegistryDestination\022\027\n\n"
-          + "output_uri\030\001 \001(\tB\003\340A\002B\336\001\n#com.google.clo"
-          + "ud.aiplatform.v1beta1B\007IoProtoP\001ZCcloud."
-          + "google.com/go/aiplatform/apiv1beta1/aipl"
-          + "atformpb;aiplatformpb\252\002\037Google.Cloud.AIP"
-          + "latform.V1Beta1\312\002\037Google\\Cloud\\AIPlatfor"
-          + "m\\V1beta1\352\002\"Google::Cloud::AIPlatform::V"
-          + "1beta1b\006proto3"
+          + "output_uri\030\001 \001(\tB\003\340A\002\"\337\002\n\021GoogleDriveSou"
+          + "rce\022X\n\014resource_ids\030\001 \003(\0132=.google.cloud"
+          + ".aiplatform.v1beta1.GoogleDriveSource.Re"
+          + "sourceIdB\003\340A\002\032\357\001\n\nResourceId\022f\n\rresource"
+          + "_type\030\001 \001(\0162J.google.cloud.aiplatform.v1"
+          + "beta1.GoogleDriveSource.ResourceId.Resou"
+          + "rceTypeB\003\340A\002\022\030\n\013resource_id\030\002 \001(\tB\003\340A\002\"_"
+          + "\n\014ResourceType\022\035\n\031RESOURCE_TYPE_UNSPECIF"
+          + "IED\020\000\022\026\n\022RESOURCE_TYPE_FILE\020\001\022\030\n\024RESOURC"
+          + "E_TYPE_FOLDER\020\002\"\024\n\022DirectUploadSourceB\336\001"
+          + "\n#com.google.cloud.aiplatform.v1beta1B\007I"
+          + "oProtoP\001ZCcloud.google.com/go/aiplatform"
+          + "/apiv1beta1/aiplatformpb;aiplatformpb\252\002\037"
+          + "Google.Cloud.AIPlatform.V1Beta1\312\002\037Google"
+          + "\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Clou"
+          + "d::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -176,6 +197,30 @@ public final class IoProto {
             new java.lang.String[] {
               "OutputUri",
             });
+    internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_descriptor,
+            new java.lang.String[] {
+              "ResourceIds",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_ResourceId_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_ResourceId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GoogleDriveSource_ResourceId_descriptor,
+            new java.lang.String[] {
+              "ResourceType", "ResourceId",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DirectUploadSource_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_aiplatform_v1beta1_DirectUploadSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DirectUploadSource_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

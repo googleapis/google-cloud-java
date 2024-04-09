@@ -79,6 +79,57 @@ public interface GroundingMetadataOrBuilder
    *
    *
    * <pre>
+   * Optional. Queries executed by the retrieval tools.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the retrievalQueries.
+   */
+  java.util.List<java.lang.String> getRetrievalQueriesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Queries executed by the retrieval tools.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of retrievalQueries.
+   */
+  int getRetrievalQueriesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Queries executed by the retrieval tools.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The retrievalQueries at the given index.
+   */
+  java.lang.String getRetrievalQueries(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Queries executed by the retrieval tools.
+   * </pre>
+   *
+   * <code>repeated string retrieval_queries = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the retrievalQueries at the given index.
+   */
+  com.google.protobuf.ByteString getRetrievalQueriesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. List of grounding attributions.
    * </pre>
    *

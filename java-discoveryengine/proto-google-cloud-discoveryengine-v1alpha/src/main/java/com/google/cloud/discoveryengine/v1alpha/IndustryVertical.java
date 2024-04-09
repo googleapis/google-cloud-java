@@ -61,6 +61,16 @@ public enum IndustryVertical implements com.google.protobuf.ProtocolMessageEnum 
    * <code>MEDIA = 2;</code>
    */
   MEDIA(2),
+  /**
+   *
+   *
+   * <pre>
+   * The healthcare FHIR vertical.
+   * </pre>
+   *
+   * <code>HEALTHCARE_FHIR = 7;</code>
+   */
+  HEALTHCARE_FHIR(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -95,6 +105,16 @@ public enum IndustryVertical implements com.google.protobuf.ProtocolMessageEnum 
    * <code>MEDIA = 2;</code>
    */
   public static final int MEDIA_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The healthcare FHIR vertical.
+   * </pre>
+   *
+   * <code>HEALTHCARE_FHIR = 7;</code>
+   */
+  public static final int HEALTHCARE_FHIR_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -126,6 +146,8 @@ public enum IndustryVertical implements com.google.protobuf.ProtocolMessageEnum 
         return GENERIC;
       case 2:
         return MEDIA;
+      case 7:
+        return HEALTHCARE_FHIR;
       default:
         return null;
     }

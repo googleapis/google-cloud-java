@@ -298,6 +298,58 @@ public final class PersistentResourceServiceGrpc {
     return getUpdatePersistentResourceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest,
+          com.google.longrunning.Operation>
+      getRebootPersistentResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RebootPersistentResource",
+      requestType = com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest,
+          com.google.longrunning.Operation>
+      getRebootPersistentResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest,
+            com.google.longrunning.Operation>
+        getRebootPersistentResourceMethod;
+    if ((getRebootPersistentResourceMethod =
+            PersistentResourceServiceGrpc.getRebootPersistentResourceMethod)
+        == null) {
+      synchronized (PersistentResourceServiceGrpc.class) {
+        if ((getRebootPersistentResourceMethod =
+                PersistentResourceServiceGrpc.getRebootPersistentResourceMethod)
+            == null) {
+          PersistentResourceServiceGrpc.getRebootPersistentResourceMethod =
+              getRebootPersistentResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RebootPersistentResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PersistentResourceServiceMethodDescriptorSupplier(
+                              "RebootPersistentResource"))
+                      .build();
+        }
+      }
+    }
+    return getRebootPersistentResourceMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PersistentResourceServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<PersistentResourceServiceStub> factory =
@@ -420,6 +472,20 @@ public final class PersistentResourceServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdatePersistentResourceMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reboots a PersistentResource.
+     * </pre>
+     */
+    default void rebootPersistentResource(
+        com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRebootPersistentResourceMethod(), responseObserver);
+    }
   }
 
   /**
@@ -540,6 +606,22 @@ public final class PersistentResourceServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reboots a PersistentResource.
+     * </pre>
+     */
+    public void rebootPersistentResource(
+        com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRebootPersistentResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -626,6 +708,19 @@ public final class PersistentResourceServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdatePersistentResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reboots a PersistentResource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rebootPersistentResource(
+        com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRebootPersistentResourceMethod(), getCallOptions(), request);
     }
   }
 
@@ -721,6 +816,20 @@ public final class PersistentResourceServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdatePersistentResourceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reboots a PersistentResource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rebootPersistentResource(
+            com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRebootPersistentResourceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_PERSISTENT_RESOURCE = 0;
@@ -728,6 +837,7 @@ public final class PersistentResourceServiceGrpc {
   private static final int METHODID_LIST_PERSISTENT_RESOURCES = 2;
   private static final int METHODID_DELETE_PERSISTENT_RESOURCE = 3;
   private static final int METHODID_UPDATE_PERSISTENT_RESOURCE = 4;
+  private static final int METHODID_REBOOT_PERSISTENT_RESOURCE = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -772,6 +882,11 @@ public final class PersistentResourceServiceGrpc {
         case METHODID_UPDATE_PERSISTENT_RESOURCE:
           serviceImpl.updatePersistentResource(
               (com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REBOOT_PERSISTENT_RESOURCE:
+          serviceImpl.rebootPersistentResource(
+              (com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -827,6 +942,13 @@ public final class PersistentResourceServiceGrpc {
                     com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_UPDATE_PERSISTENT_RESOURCE)))
+        .addMethod(
+            getRebootPersistentResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.RebootPersistentResourceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_REBOOT_PERSISTENT_RESOURCE)))
         .build();
   }
 
@@ -883,6 +1005,7 @@ public final class PersistentResourceServiceGrpc {
                       .addMethod(getListPersistentResourcesMethod())
                       .addMethod(getDeletePersistentResourceMethod())
                       .addMethod(getUpdatePersistentResourceMethod())
+                      .addMethod(getRebootPersistentResourceMethod())
                       .build();
         }
       }

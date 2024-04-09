@@ -2401,10 +2401,8 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The dedicated serving endpoint for this FeatureOnlineStore. Only need to
-   * set when you choose Optimized storage type or enable EmbeddingManagement.
-   * Will use public endpoint by default. Note, for EmbeddingManagement use
-   * case, only [DedicatedServingEndpoint.public_endpoint_domain_name] is
-   * available now.
+   * set when you choose Optimized storage type. Public endpoint is provisioned
+   * by default.
    * </pre>
    *
    * Protobuf type {@code
@@ -2831,10 +2829,8 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The dedicated serving endpoint for this FeatureOnlineStore. Only need to
-     * set when you choose Optimized storage type or enable EmbeddingManagement.
-     * Will use public endpoint by default. Note, for EmbeddingManagement use
-     * case, only [DedicatedServingEndpoint.public_endpoint_domain_name] is
-     * available now.
+     * set when you choose Optimized storage type. Public endpoint is provisioned
+     * by default.
      * </pre>
      *
      * Protobuf type {@code
@@ -3634,6 +3630,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  @java.lang.Deprecated
   public interface EmbeddingManagementOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement)
@@ -3660,11 +3657,14 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
+   * Deprecated: This sub message is no longer needed anymore and embedding
+   * management is automatically enabled when specifying Optimized storage type.
    * Contains settings for embedding management.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement}
    */
+  @java.lang.Deprecated
   public static final class EmbeddingManagement extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement)
@@ -3893,6 +3893,8 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: This sub message is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * Contains settings for embedding management.
      * </pre>
      *
@@ -4847,16 +4849,20 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The settings for embedding management in FeatureOnlineStore.
+   * Optional. Deprecated: This field is no longer needed anymore and embedding
+   * management is automatically enabled when specifying Optimized storage type.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
    * @return Whether the embeddingManagement field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasEmbeddingManagement() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -4864,16 +4870,20 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The settings for embedding management in FeatureOnlineStore.
+   * Optional. Deprecated: This field is no longer needed anymore and embedding
+   * management is automatically enabled when specifying Optimized storage type.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
+   *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
    * @return The embeddingManagement.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
       getEmbeddingManagement() {
     return embeddingManagement_ == null
@@ -4885,14 +4895,16 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The settings for embedding management in FeatureOnlineStore.
+   * Optional. Deprecated: This field is no longer needed anymore and embedding
+   * management is automatically enabled when specifying Optimized storage type.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagementOrBuilder
       getEmbeddingManagementOrBuilder() {
     return embeddingManagement_ == null
@@ -7303,15 +7315,19 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
      * @return Whether the embeddingManagement field is set.
      */
+    @java.lang.Deprecated
     public boolean hasEmbeddingManagement() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -7319,15 +7335,19 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.FeatureOnlineStore.embedding_management is
+     *     deprecated. See google/cloud/aiplatform/v1beta1/feature_online_store.proto;l=174
      * @return The embeddingManagement.
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
         getEmbeddingManagement() {
       if (embeddingManagementBuilder_ == null) {
@@ -7343,13 +7363,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setEmbeddingManagement(
         com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement value) {
       if (embeddingManagementBuilder_ == null) {
@@ -7368,13 +7390,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setEmbeddingManagement(
         com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement.Builder
             builderForValue) {
@@ -7391,13 +7415,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeEmbeddingManagement(
         com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement value) {
       if (embeddingManagementBuilder_ == null) {
@@ -7423,13 +7449,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearEmbeddingManagement() {
       bitField0_ = (bitField0_ & ~0x00000200);
       embeddingManagement_ = null;
@@ -7444,13 +7472,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement.Builder
         getEmbeddingManagementBuilder() {
       bitField0_ |= 0x00000200;
@@ -7461,13 +7491,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagementOrBuilder
         getEmbeddingManagementOrBuilder() {
       if (embeddingManagementBuilder_ != null) {
@@ -7483,11 +7515,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The settings for embedding management in FeatureOnlineStore.
+     * Optional. Deprecated: This field is no longer needed anymore and embedding
+     * management is automatically enabled when specifying Optimized storage type.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement embedding_management = 11 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

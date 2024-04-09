@@ -65041,6 +65041,16569 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface DocumentLayoutOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+        getBlocksList();
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock getBlocks(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    int getBlocksCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                    .DocumentLayoutBlockOrBuilder>
+        getBlocksOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlockOrBuilder
+        getBlocksOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the parsed layout of a document as a collection of blocks that
+   * the document is divided into.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1beta3.Document.DocumentLayout}
+   */
+  public static final class DocumentLayout extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout)
+      DocumentLayoutOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DocumentLayout.newBuilder() to construct.
+    private DocumentLayout(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DocumentLayout() {
+      blocks_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DocumentLayout();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1beta3.DocumentProto
+          .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1beta3.DocumentProto
+          .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.class,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.Builder.class);
+    }
+
+    public interface DocumentLayoutBlockOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of text content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+       * </code>
+       *
+       * @return Whether the textBlock field is set.
+       */
+      boolean hasTextBlock();
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of text content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+       * </code>
+       *
+       * @return The textBlock.
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTextBlock
+          getTextBlock();
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of text content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+       * </code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTextBlockOrBuilder
+          getTextBlockOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of table content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+       * </code>
+       *
+       * @return Whether the tableBlock field is set.
+       */
+      boolean hasTableBlock();
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of table content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+       * </code>
+       *
+       * @return The tableBlock.
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTableBlock
+          getTableBlock();
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of table content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+       * </code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTableBlockOrBuilder
+          getTableBlockOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of list content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+       * </code>
+       *
+       * @return Whether the listBlock field is set.
+       */
+      boolean hasListBlock();
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of list content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+       * </code>
+       *
+       * @return The listBlock.
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutListBlock
+          getListBlock();
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of list content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+       * </code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutListBlockOrBuilder
+          getListBlockOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * ID of the block.
+       * </pre>
+       *
+       * <code>string block_id = 1;</code>
+       *
+       * @return The blockId.
+       */
+      java.lang.String getBlockId();
+      /**
+       *
+       *
+       * <pre>
+       * ID of the block.
+       * </pre>
+       *
+       * <code>string block_id = 1;</code>
+       *
+       * @return The bytes for blockId.
+       */
+      com.google.protobuf.ByteString getBlockIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the block.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+       * </code>
+       *
+       * @return Whether the pageSpan field is set.
+       */
+      boolean hasPageSpan();
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the block.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+       * </code>
+       *
+       * @return The pageSpan.
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan
+          getPageSpan();
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the block.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+       * </code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutPageSpanOrBuilder
+          getPageSpanOrBuilder();
+
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.BlockCase
+          getBlockCase();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a block. A block could be one of the various types (text,
+     * table, list) supported.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock}
+     */
+    public static final class DocumentLayoutBlock extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock)
+        DocumentLayoutBlockOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use DocumentLayoutBlock.newBuilder() to construct.
+      private DocumentLayoutBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DocumentLayoutBlock() {
+        blockId_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new DocumentLayoutBlock();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .class,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .Builder.class);
+      }
+
+      public interface LayoutPageSpanOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Page where block starts in the document.
+         * </pre>
+         *
+         * <code>int32 page_start = 1;</code>
+         *
+         * @return The pageStart.
+         */
+        int getPageStart();
+
+        /**
+         *
+         *
+         * <pre>
+         * Page where block ends in the document.
+         * </pre>
+         *
+         * <code>int32 page_end = 2;</code>
+         *
+         * @return The pageEnd.
+         */
+        int getPageEnd();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents where the block starts and ends in the document.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan}
+       */
+      public static final class LayoutPageSpan extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan)
+          LayoutPageSpanOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LayoutPageSpan.newBuilder() to construct.
+        private LayoutPageSpan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutPageSpan() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new LayoutPageSpan();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutPageSpan_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutPageSpan_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutPageSpan.class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutPageSpan.Builder.class);
+        }
+
+        public static final int PAGE_START_FIELD_NUMBER = 1;
+        private int pageStart_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Page where block starts in the document.
+         * </pre>
+         *
+         * <code>int32 page_start = 1;</code>
+         *
+         * @return The pageStart.
+         */
+        @java.lang.Override
+        public int getPageStart() {
+          return pageStart_;
+        }
+
+        public static final int PAGE_END_FIELD_NUMBER = 2;
+        private int pageEnd_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Page where block ends in the document.
+         * </pre>
+         *
+         * <code>int32 page_end = 2;</code>
+         *
+         * @return The pageEnd.
+         */
+        @java.lang.Override
+        public int getPageEnd() {
+          return pageEnd_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (pageStart_ != 0) {
+            output.writeInt32(1, pageStart_);
+          }
+          if (pageEnd_ != 0) {
+            output.writeInt32(2, pageEnd_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (pageStart_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, pageStart_);
+          }
+          if (pageEnd_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageEnd_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutPageSpan)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutPageSpan
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutPageSpan)
+                      obj;
+
+          if (getPageStart() != other.getPageStart()) return false;
+          if (getPageEnd() != other.getPageEnd()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + PAGE_START_FIELD_NUMBER;
+          hash = (53 * hash) + getPageStart();
+          hash = (37 * hash) + PAGE_END_FIELD_NUMBER;
+          hash = (53 * hash) + getPageEnd();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents where the block starts and ends in the document.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan)
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpanOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutPageSpan_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutPageSpan_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutPageSpan.class,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutPageSpan.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            pageStart_ = 0;
+            pageEnd_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutPageSpan_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutPageSpan
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpan.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutPageSpan
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutPageSpan
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutPageSpan(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutPageSpan
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.pageStart_ = pageStart_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.pageEnd_ = pageEnd_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutPageSpan)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutPageSpan
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan.getDefaultInstance()) return this;
+            if (other.getPageStart() != 0) {
+              setPageStart(other.getPageStart());
+            }
+            if (other.getPageEnd() != 0) {
+              setPageEnd(other.getPageEnd());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      pageStart_ = input.readInt32();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 16:
+                    {
+                      pageEnd_ = input.readInt32();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int pageStart_;
+          /**
+           *
+           *
+           * <pre>
+           * Page where block starts in the document.
+           * </pre>
+           *
+           * <code>int32 page_start = 1;</code>
+           *
+           * @return The pageStart.
+           */
+          @java.lang.Override
+          public int getPageStart() {
+            return pageStart_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where block starts in the document.
+           * </pre>
+           *
+           * <code>int32 page_start = 1;</code>
+           *
+           * @param value The pageStart to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPageStart(int value) {
+
+            pageStart_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where block starts in the document.
+           * </pre>
+           *
+           * <code>int32 page_start = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPageStart() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            pageStart_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private int pageEnd_;
+          /**
+           *
+           *
+           * <pre>
+           * Page where block ends in the document.
+           * </pre>
+           *
+           * <code>int32 page_end = 2;</code>
+           *
+           * @return The pageEnd.
+           */
+          @java.lang.Override
+          public int getPageEnd() {
+            return pageEnd_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where block ends in the document.
+           * </pre>
+           *
+           * <code>int32 page_end = 2;</code>
+           *
+           * @param value The pageEnd to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPageEnd(int value) {
+
+            pageEnd_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where block ends in the document.
+           * </pre>
+           *
+           * <code>int32 page_end = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPageEnd() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            pageEnd_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan)
+        private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutPageSpan();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutPageSpan
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutPageSpan> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutPageSpan>() {
+              @java.lang.Override
+              public LayoutPageSpan parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutPageSpan> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutPageSpan> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpan
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface LayoutTextBlockOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Text content stored in the block.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         *
+         * @return The text.
+         */
+        java.lang.String getText();
+        /**
+         *
+         *
+         * <pre>
+         * Text content stored in the block.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         *
+         * @return The bytes for text.
+         */
+        com.google.protobuf.ByteString getTextBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Type of the text in the block. Available options are: `paragraph`,
+         * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+         * `heading-5`, `header`, `footer`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The type.
+         */
+        java.lang.String getType();
+        /**
+         *
+         *
+         * <pre>
+         * Type of the text in the block. Available options are: `paragraph`,
+         * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+         * `heading-5`, `header`, `footer`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The bytes for type.
+         */
+        com.google.protobuf.ByteString getTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            getBlocksList();
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock getBlocks(
+            int index);
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        int getBlocksCount();
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlockOrBuilder>
+            getBlocksOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlockOrBuilder
+            getBlocksOrBuilder(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a text type block.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock}
+       */
+      public static final class LayoutTextBlock extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock)
+          LayoutTextBlockOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LayoutTextBlock.newBuilder() to construct.
+        private LayoutTextBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutTextBlock() {
+          text_ = "";
+          type_ = "";
+          blocks_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new LayoutTextBlock();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTextBlock_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTextBlock_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock.class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock.Builder.class);
+        }
+
+        public static final int TEXT_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object text_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Text content stored in the block.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         *
+         * @return The text.
+         */
+        @java.lang.Override
+        public java.lang.String getText() {
+          java.lang.Object ref = text_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            text_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text content stored in the block.
+         * </pre>
+         *
+         * <code>string text = 1;</code>
+         *
+         * @return The bytes for text.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTextBytes() {
+          java.lang.Object ref = text_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            text_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int TYPE_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object type_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Type of the text in the block. Available options are: `paragraph`,
+         * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+         * `heading-5`, `header`, `footer`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The type.
+         */
+        @java.lang.Override
+        public java.lang.String getType() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            type_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type of the text in the block. Available options are: `paragraph`,
+         * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+         * `heading-5`, `header`, `footer`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The bytes for type.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTypeBytes() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            type_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int BLOCKS_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            blocks_;
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            getBlocksList() {
+          return blocks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlockOrBuilder>
+            getBlocksOrBuilderList() {
+          return blocks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public int getBlocksCount() {
+          return blocks_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            getBlocks(int index) {
+          return blocks_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A text block could further have child blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlockOrBuilder
+            getBlocksOrBuilder(int index) {
+          return blocks_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+          }
+          for (int i = 0; i < blocks_.size(); i++) {
+            output.writeMessage(3, blocks_.get(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(text_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+          }
+          for (int i = 0; i < blocks_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, blocks_.get(i));
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTextBlock)
+                      obj;
+
+          if (!getText().equals(other.getText())) return false;
+          if (!getType().equals(other.getType())) return false;
+          if (!getBlocksList().equals(other.getBlocksList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + TEXT_FIELD_NUMBER;
+          hash = (53 * hash) + getText().hashCode();
+          hash = (37 * hash) + TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getType().hashCode();
+          if (getBlocksCount() > 0) {
+            hash = (37 * hash) + BLOCKS_FIELD_NUMBER;
+            hash = (53 * hash) + getBlocksList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents a text type block.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock)
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlockOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTextBlock_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTextBlock_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTextBlock.class,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTextBlock.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            text_ = "";
+            type_ = "";
+            if (blocksBuilder_ == null) {
+              blocks_ = java.util.Collections.emptyList();
+            } else {
+              blocks_ = null;
+              blocksBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000004);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTextBlock_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlock.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutTextBlock(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock
+                  result) {
+            if (blocksBuilder_ == null) {
+              if (((bitField0_ & 0x00000004) != 0)) {
+                blocks_ = java.util.Collections.unmodifiableList(blocks_);
+                bitField0_ = (bitField0_ & ~0x00000004);
+              }
+              result.blocks_ = blocks_;
+            } else {
+              result.blocks_ = blocksBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.text_ = text_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.type_ = type_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTextBlock)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock.getDefaultInstance()) return this;
+            if (!other.getText().isEmpty()) {
+              text_ = other.text_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getType().isEmpty()) {
+              type_ = other.type_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            if (blocksBuilder_ == null) {
+              if (!other.blocks_.isEmpty()) {
+                if (blocks_.isEmpty()) {
+                  blocks_ = other.blocks_;
+                  bitField0_ = (bitField0_ & ~0x00000004);
+                } else {
+                  ensureBlocksIsMutable();
+                  blocks_.addAll(other.blocks_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.blocks_.isEmpty()) {
+                if (blocksBuilder_.isEmpty()) {
+                  blocksBuilder_.dispose();
+                  blocksBuilder_ = null;
+                  blocks_ = other.blocks_;
+                  bitField0_ = (bitField0_ & ~0x00000004);
+                  blocksBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getBlocksFieldBuilder()
+                          : null;
+                } else {
+                  blocksBuilder_.addAllMessages(other.blocks_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      text_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      type_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                      .DocumentLayoutBlock.parser(),
+                                  extensionRegistry);
+                      if (blocksBuilder_ == null) {
+                        ensureBlocksIsMutable();
+                        blocks_.add(m);
+                      } else {
+                        blocksBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 26
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object text_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Text content stored in the block.
+           * </pre>
+           *
+           * <code>string text = 1;</code>
+           *
+           * @return The text.
+           */
+          public java.lang.String getText() {
+            java.lang.Object ref = text_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              text_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text content stored in the block.
+           * </pre>
+           *
+           * <code>string text = 1;</code>
+           *
+           * @return The bytes for text.
+           */
+          public com.google.protobuf.ByteString getTextBytes() {
+            java.lang.Object ref = text_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              text_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text content stored in the block.
+           * </pre>
+           *
+           * <code>string text = 1;</code>
+           *
+           * @param value The text to set.
+           * @return This builder for chaining.
+           */
+          public Builder setText(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            text_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text content stored in the block.
+           * </pre>
+           *
+           * <code>string text = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearText() {
+            text_ = getDefaultInstance().getText();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Text content stored in the block.
+           * </pre>
+           *
+           * <code>string text = 1;</code>
+           *
+           * @param value The bytes for text to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTextBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            text_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object type_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Type of the text in the block. Available options are: `paragraph`,
+           * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+           * `heading-5`, `header`, `footer`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @return The type.
+           */
+          public java.lang.String getType() {
+            java.lang.Object ref = type_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              type_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the text in the block. Available options are: `paragraph`,
+           * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+           * `heading-5`, `header`, `footer`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @return The bytes for type.
+           */
+          public com.google.protobuf.ByteString getTypeBytes() {
+            java.lang.Object ref = type_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              type_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the text in the block. Available options are: `paragraph`,
+           * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+           * `heading-5`, `header`, `footer`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @param value The type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            type_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the text in the block. Available options are: `paragraph`,
+           * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+           * `heading-5`, `header`, `footer`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearType() {
+            type_ = getDefaultInstance().getType();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the text in the block. Available options are: `paragraph`,
+           * `subtitle`, `heading-1`, `heading-2`, `heading-3`, `heading-4`,
+           * `heading-5`, `header`, `footer`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @param value The bytes for type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            type_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+              blocks_ = java.util.Collections.emptyList();
+
+          private void ensureBlocksIsMutable() {
+            if (!((bitField0_ & 0x00000004) != 0)) {
+              blocks_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock>(blocks_);
+              bitField0_ |= 0x00000004;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>
+              blocksBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+              getBlocksList() {
+            if (blocksBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(blocks_);
+            } else {
+              return blocksBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public int getBlocksCount() {
+            if (blocksBuilder_ == null) {
+              return blocks_.size();
+            } else {
+              return blocksBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              getBlocks(int index) {
+            if (blocksBuilder_ == null) {
+              return blocks_.get(index);
+            } else {
+              return blocksBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder setBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.set(index, value);
+              onChanged();
+            } else {
+              blocksBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder setBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder addBlocks(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.add(value);
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder addBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.add(index, value);
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder addBlocks(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.add(builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder addBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder addAllBlocks(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock>
+                  values) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blocks_);
+              onChanged();
+            } else {
+              blocksBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder clearBlocks() {
+            if (blocksBuilder_ == null) {
+              blocks_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000004);
+              onChanged();
+            } else {
+              blocksBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public Builder removeBlocks(int index) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.remove(index);
+              onChanged();
+            } else {
+              blocksBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              getBlocksBuilder(int index) {
+            return getBlocksFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                  .DocumentLayoutBlockOrBuilder
+              getBlocksOrBuilder(int index) {
+            if (blocksBuilder_ == null) {
+              return blocks_.get(index);
+            } else {
+              return blocksBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlockOrBuilder>
+              getBlocksOrBuilderList() {
+            if (blocksBuilder_ != null) {
+              return blocksBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(blocks_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              addBlocksBuilder() {
+            return getBlocksFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              addBlocksBuilder(int index) {
+            return getBlocksFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A text block could further have child blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 3;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder>
+              getBlocksBuilderList() {
+            return getBlocksFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>
+              getBlocksFieldBuilder() {
+            if (blocksBuilder_ == null) {
+              blocksBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.Builder,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlockOrBuilder>(
+                      blocks_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+              blocks_ = null;
+            }
+            return blocksBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock)
+        private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTextBlock
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutTextBlock> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutTextBlock>() {
+              @java.lang.Override
+              public LayoutTextBlock parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutTextBlock> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutTextBlock> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlock
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface LayoutTableBlockOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow>
+            getHeaderRowsList();
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRow
+            getHeaderRows(int index);
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        int getHeaderRowsCount();
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRowOrBuilder>
+            getHeaderRowsOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRowOrBuilder
+            getHeaderRowsOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow>
+            getBodyRowsList();
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRow
+            getBodyRows(int index);
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        int getBodyRowsCount();
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRowOrBuilder>
+            getBodyRowsOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRowOrBuilder
+            getBodyRowsOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Table caption/title.
+         * </pre>
+         *
+         * <code>string caption = 3;</code>
+         *
+         * @return The caption.
+         */
+        java.lang.String getCaption();
+        /**
+         *
+         *
+         * <pre>
+         * Table caption/title.
+         * </pre>
+         *
+         * <code>string caption = 3;</code>
+         *
+         * @return The bytes for caption.
+         */
+        com.google.protobuf.ByteString getCaptionBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a table type block.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock}
+       */
+      public static final class LayoutTableBlock extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock)
+          LayoutTableBlockOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LayoutTableBlock.newBuilder() to construct.
+        private LayoutTableBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutTableBlock() {
+          headerRows_ = java.util.Collections.emptyList();
+          bodyRows_ = java.util.Collections.emptyList();
+          caption_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new LayoutTableBlock();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableBlock_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableBlock_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock.class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock.Builder.class);
+        }
+
+        public static final int HEADER_ROWS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow>
+            headerRows_;
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow>
+            getHeaderRowsList() {
+          return headerRows_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRowOrBuilder>
+            getHeaderRowsOrBuilderList() {
+          return headerRows_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public int getHeaderRowsCount() {
+          return headerRows_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRow
+            getHeaderRows(int index) {
+          return headerRows_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Header rows at the top of the table.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRowOrBuilder
+            getHeaderRowsOrBuilder(int index) {
+          return headerRows_.get(index);
+        }
+
+        public static final int BODY_ROWS_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow>
+            bodyRows_;
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow>
+            getBodyRowsList() {
+          return bodyRows_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRowOrBuilder>
+            getBodyRowsOrBuilderList() {
+          return bodyRows_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public int getBodyRowsCount() {
+          return bodyRows_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRow
+            getBodyRows(int index) {
+          return bodyRows_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Body rows containing main table content.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRowOrBuilder
+            getBodyRowsOrBuilder(int index) {
+          return bodyRows_.get(index);
+        }
+
+        public static final int CAPTION_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object caption_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Table caption/title.
+         * </pre>
+         *
+         * <code>string caption = 3;</code>
+         *
+         * @return The caption.
+         */
+        @java.lang.Override
+        public java.lang.String getCaption() {
+          java.lang.Object ref = caption_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            caption_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Table caption/title.
+         * </pre>
+         *
+         * <code>string caption = 3;</code>
+         *
+         * @return The bytes for caption.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getCaptionBytes() {
+          java.lang.Object ref = caption_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            caption_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < headerRows_.size(); i++) {
+            output.writeMessage(1, headerRows_.get(i));
+          }
+          for (int i = 0; i < bodyRows_.size(); i++) {
+            output.writeMessage(2, bodyRows_.get(i));
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caption_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, caption_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < headerRows_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, headerRows_.get(i));
+          }
+          for (int i = 0; i < bodyRows_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, bodyRows_.get(i));
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(caption_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, caption_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTableBlock)
+                      obj;
+
+          if (!getHeaderRowsList().equals(other.getHeaderRowsList())) return false;
+          if (!getBodyRowsList().equals(other.getBodyRowsList())) return false;
+          if (!getCaption().equals(other.getCaption())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getHeaderRowsCount() > 0) {
+            hash = (37 * hash) + HEADER_ROWS_FIELD_NUMBER;
+            hash = (53 * hash) + getHeaderRowsList().hashCode();
+          }
+          if (getBodyRowsCount() > 0) {
+            hash = (37 * hash) + BODY_ROWS_FIELD_NUMBER;
+            hash = (53 * hash) + getBodyRowsList().hashCode();
+          }
+          hash = (37 * hash) + CAPTION_FIELD_NUMBER;
+          hash = (53 * hash) + getCaption().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents a table type block.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock)
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlockOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableBlock_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableBlock_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableBlock.class,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableBlock.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (headerRowsBuilder_ == null) {
+              headerRows_ = java.util.Collections.emptyList();
+            } else {
+              headerRows_ = null;
+              headerRowsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            if (bodyRowsBuilder_ == null) {
+              bodyRows_ = java.util.Collections.emptyList();
+            } else {
+              bodyRows_ = null;
+              bodyRowsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000002);
+            caption_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableBlock_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlock.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutTableBlock(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock
+                  result) {
+            if (headerRowsBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                headerRows_ = java.util.Collections.unmodifiableList(headerRows_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.headerRows_ = headerRows_;
+            } else {
+              result.headerRows_ = headerRowsBuilder_.build();
+            }
+            if (bodyRowsBuilder_ == null) {
+              if (((bitField0_ & 0x00000002) != 0)) {
+                bodyRows_ = java.util.Collections.unmodifiableList(bodyRows_);
+                bitField0_ = (bitField0_ & ~0x00000002);
+              }
+              result.bodyRows_ = bodyRows_;
+            } else {
+              result.bodyRows_ = bodyRowsBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.caption_ = caption_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTableBlock)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock.getDefaultInstance()) return this;
+            if (headerRowsBuilder_ == null) {
+              if (!other.headerRows_.isEmpty()) {
+                if (headerRows_.isEmpty()) {
+                  headerRows_ = other.headerRows_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureHeaderRowsIsMutable();
+                  headerRows_.addAll(other.headerRows_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.headerRows_.isEmpty()) {
+                if (headerRowsBuilder_.isEmpty()) {
+                  headerRowsBuilder_.dispose();
+                  headerRowsBuilder_ = null;
+                  headerRows_ = other.headerRows_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  headerRowsBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getHeaderRowsFieldBuilder()
+                          : null;
+                } else {
+                  headerRowsBuilder_.addAllMessages(other.headerRows_);
+                }
+              }
+            }
+            if (bodyRowsBuilder_ == null) {
+              if (!other.bodyRows_.isEmpty()) {
+                if (bodyRows_.isEmpty()) {
+                  bodyRows_ = other.bodyRows_;
+                  bitField0_ = (bitField0_ & ~0x00000002);
+                } else {
+                  ensureBodyRowsIsMutable();
+                  bodyRows_.addAll(other.bodyRows_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.bodyRows_.isEmpty()) {
+                if (bodyRowsBuilder_.isEmpty()) {
+                  bodyRowsBuilder_.dispose();
+                  bodyRowsBuilder_ = null;
+                  bodyRows_ = other.bodyRows_;
+                  bitField0_ = (bitField0_ & ~0x00000002);
+                  bodyRowsBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getBodyRowsFieldBuilder()
+                          : null;
+                } else {
+                  bodyRowsBuilder_.addAllMessages(other.bodyRows_);
+                }
+              }
+            }
+            if (!other.getCaption().isEmpty()) {
+              caption_ = other.caption_;
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutTableRow
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                      .DocumentLayoutBlock.LayoutTableRow.parser(),
+                                  extensionRegistry);
+                      if (headerRowsBuilder_ == null) {
+                        ensureHeaderRowsIsMutable();
+                        headerRows_.add(m);
+                      } else {
+                        headerRowsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutTableRow
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                      .DocumentLayoutBlock.LayoutTableRow.parser(),
+                                  extensionRegistry);
+                      if (bodyRowsBuilder_ == null) {
+                        ensureBodyRowsIsMutable();
+                        bodyRows_.add(m);
+                      } else {
+                        bodyRowsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      caption_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow>
+              headerRows_ = java.util.Collections.emptyList();
+
+          private void ensureHeaderRowsIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              headerRows_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRow>(headerRows_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRowOrBuilder>
+              headerRowsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow>
+              getHeaderRowsList() {
+            if (headerRowsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(headerRows_);
+            } else {
+              return headerRowsBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public int getHeaderRowsCount() {
+            if (headerRowsBuilder_ == null) {
+              return headerRows_.size();
+            } else {
+              return headerRowsBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow
+              getHeaderRows(int index) {
+            if (headerRowsBuilder_ == null) {
+              return headerRows_.get(index);
+            } else {
+              return headerRowsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder setHeaderRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  value) {
+            if (headerRowsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureHeaderRowsIsMutable();
+              headerRows_.set(index, value);
+              onChanged();
+            } else {
+              headerRowsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder setHeaderRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder
+                  builderForValue) {
+            if (headerRowsBuilder_ == null) {
+              ensureHeaderRowsIsMutable();
+              headerRows_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              headerRowsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder addHeaderRows(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  value) {
+            if (headerRowsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureHeaderRowsIsMutable();
+              headerRows_.add(value);
+              onChanged();
+            } else {
+              headerRowsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder addHeaderRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  value) {
+            if (headerRowsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureHeaderRowsIsMutable();
+              headerRows_.add(index, value);
+              onChanged();
+            } else {
+              headerRowsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder addHeaderRows(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder
+                  builderForValue) {
+            if (headerRowsBuilder_ == null) {
+              ensureHeaderRowsIsMutable();
+              headerRows_.add(builderForValue.build());
+              onChanged();
+            } else {
+              headerRowsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder addHeaderRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder
+                  builderForValue) {
+            if (headerRowsBuilder_ == null) {
+              ensureHeaderRowsIsMutable();
+              headerRows_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              headerRowsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder addAllHeaderRows(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutTableRow>
+                  values) {
+            if (headerRowsBuilder_ == null) {
+              ensureHeaderRowsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, headerRows_);
+              onChanged();
+            } else {
+              headerRowsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder clearHeaderRows() {
+            if (headerRowsBuilder_ == null) {
+              headerRows_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              headerRowsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public Builder removeHeaderRows(int index) {
+            if (headerRowsBuilder_ == null) {
+              ensureHeaderRowsIsMutable();
+              headerRows_.remove(index);
+              onChanged();
+            } else {
+              headerRowsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow.Builder
+              getHeaderRowsBuilder(int index) {
+            return getHeaderRowsFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRowOrBuilder
+              getHeaderRowsOrBuilder(int index) {
+            if (headerRowsBuilder_ == null) {
+              return headerRows_.get(index);
+            } else {
+              return headerRowsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRowOrBuilder>
+              getHeaderRowsOrBuilderList() {
+            if (headerRowsBuilder_ != null) {
+              return headerRowsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(headerRows_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow.Builder
+              addHeaderRowsBuilder() {
+            return getHeaderRowsFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRow.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow.Builder
+              addHeaderRowsBuilder(int index) {
+            return getHeaderRowsFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRow.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Header rows at the top of the table.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow header_rows = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder>
+              getHeaderRowsBuilderList() {
+            return getHeaderRowsFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRowOrBuilder>
+              getHeaderRowsFieldBuilder() {
+            if (headerRowsBuilder_ == null) {
+              headerRowsBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRow,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRow.Builder,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRowOrBuilder>(
+                      headerRows_,
+                      ((bitField0_ & 0x00000001) != 0),
+                      getParentForChildren(),
+                      isClean());
+              headerRows_ = null;
+            }
+            return headerRowsBuilder_;
+          }
+
+          private java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow>
+              bodyRows_ = java.util.Collections.emptyList();
+
+          private void ensureBodyRowsIsMutable() {
+            if (!((bitField0_ & 0x00000002) != 0)) {
+              bodyRows_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRow>(bodyRows_);
+              bitField0_ |= 0x00000002;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRowOrBuilder>
+              bodyRowsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow>
+              getBodyRowsList() {
+            if (bodyRowsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(bodyRows_);
+            } else {
+              return bodyRowsBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public int getBodyRowsCount() {
+            if (bodyRowsBuilder_ == null) {
+              return bodyRows_.size();
+            } else {
+              return bodyRowsBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow
+              getBodyRows(int index) {
+            if (bodyRowsBuilder_ == null) {
+              return bodyRows_.get(index);
+            } else {
+              return bodyRowsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder setBodyRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  value) {
+            if (bodyRowsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBodyRowsIsMutable();
+              bodyRows_.set(index, value);
+              onChanged();
+            } else {
+              bodyRowsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder setBodyRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder
+                  builderForValue) {
+            if (bodyRowsBuilder_ == null) {
+              ensureBodyRowsIsMutable();
+              bodyRows_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              bodyRowsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder addBodyRows(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  value) {
+            if (bodyRowsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBodyRowsIsMutable();
+              bodyRows_.add(value);
+              onChanged();
+            } else {
+              bodyRowsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder addBodyRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  value) {
+            if (bodyRowsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBodyRowsIsMutable();
+              bodyRows_.add(index, value);
+              onChanged();
+            } else {
+              bodyRowsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder addBodyRows(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder
+                  builderForValue) {
+            if (bodyRowsBuilder_ == null) {
+              ensureBodyRowsIsMutable();
+              bodyRows_.add(builderForValue.build());
+              onChanged();
+            } else {
+              bodyRowsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder addBodyRows(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder
+                  builderForValue) {
+            if (bodyRowsBuilder_ == null) {
+              ensureBodyRowsIsMutable();
+              bodyRows_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              bodyRowsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder addAllBodyRows(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutTableRow>
+                  values) {
+            if (bodyRowsBuilder_ == null) {
+              ensureBodyRowsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, bodyRows_);
+              onChanged();
+            } else {
+              bodyRowsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder clearBodyRows() {
+            if (bodyRowsBuilder_ == null) {
+              bodyRows_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000002);
+              onChanged();
+            } else {
+              bodyRowsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public Builder removeBodyRows(int index) {
+            if (bodyRowsBuilder_ == null) {
+              ensureBodyRowsIsMutable();
+              bodyRows_.remove(index);
+              onChanged();
+            } else {
+              bodyRowsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow.Builder
+              getBodyRowsBuilder(int index) {
+            return getBodyRowsFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRowOrBuilder
+              getBodyRowsOrBuilder(int index) {
+            if (bodyRowsBuilder_ == null) {
+              return bodyRows_.get(index);
+            } else {
+              return bodyRowsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRowOrBuilder>
+              getBodyRowsOrBuilderList() {
+            if (bodyRowsBuilder_ != null) {
+              return bodyRowsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(bodyRows_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow.Builder
+              addBodyRowsBuilder() {
+            return getBodyRowsFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRow.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow.Builder
+              addBodyRowsBuilder(int index) {
+            return getBodyRowsFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRow.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Body rows containing main table content.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow body_rows = 2;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder>
+              getBodyRowsBuilderList() {
+            return getBodyRowsFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRowOrBuilder>
+              getBodyRowsFieldBuilder() {
+            if (bodyRowsBuilder_ == null) {
+              bodyRowsBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRow,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRow.Builder,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableRowOrBuilder>(
+                      bodyRows_,
+                      ((bitField0_ & 0x00000002) != 0),
+                      getParentForChildren(),
+                      isClean());
+              bodyRows_ = null;
+            }
+            return bodyRowsBuilder_;
+          }
+
+          private java.lang.Object caption_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Table caption/title.
+           * </pre>
+           *
+           * <code>string caption = 3;</code>
+           *
+           * @return The caption.
+           */
+          public java.lang.String getCaption() {
+            java.lang.Object ref = caption_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              caption_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Table caption/title.
+           * </pre>
+           *
+           * <code>string caption = 3;</code>
+           *
+           * @return The bytes for caption.
+           */
+          public com.google.protobuf.ByteString getCaptionBytes() {
+            java.lang.Object ref = caption_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              caption_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Table caption/title.
+           * </pre>
+           *
+           * <code>string caption = 3;</code>
+           *
+           * @param value The caption to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCaption(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            caption_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Table caption/title.
+           * </pre>
+           *
+           * <code>string caption = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearCaption() {
+            caption_ = getDefaultInstance().getCaption();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Table caption/title.
+           * </pre>
+           *
+           * <code>string caption = 3;</code>
+           *
+           * @param value The bytes for caption to set.
+           * @return This builder for chaining.
+           */
+          public Builder setCaptionBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            caption_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock)
+        private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableBlock
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutTableBlock> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutTableBlock>() {
+              @java.lang.Override
+              public LayoutTableBlock parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutTableBlock> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutTableBlock> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlock
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface LayoutTableRowOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell>
+            getCellsList();
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableCell
+            getCells(int index);
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        int getCellsCount();
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableCellOrBuilder>
+            getCellsOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableCellOrBuilder
+            getCellsOrBuilder(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a row in a table.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow}
+       */
+      public static final class LayoutTableRow extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow)
+          LayoutTableRowOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LayoutTableRow.newBuilder() to construct.
+        private LayoutTableRow(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutTableRow() {
+          cells_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new LayoutTableRow();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableRow_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableRow_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow.Builder.class);
+        }
+
+        public static final int CELLS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell>
+            cells_;
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell>
+            getCellsList() {
+          return cells_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableCellOrBuilder>
+            getCellsOrBuilderList() {
+          return cells_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public int getCellsCount() {
+          return cells_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableCell
+            getCells(int index) {
+          return cells_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table row is a list of table cells.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableCellOrBuilder
+            getCellsOrBuilder(int index) {
+          return cells_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < cells_.size(); i++) {
+            output.writeMessage(1, cells_.get(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < cells_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, cells_.get(i));
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTableRow)
+                      obj;
+
+          if (!getCellsList().equals(other.getCellsList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getCellsCount() > 0) {
+            hash = (37 * hash) + CELLS_FIELD_NUMBER;
+            hash = (53 * hash) + getCellsList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents a row in a table.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow)
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRowOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableRow_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableRow_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRow.class,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableRow.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (cellsBuilder_ == null) {
+              cells_ = java.util.Collections.emptyList();
+            } else {
+              cells_ = null;
+              cellsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableRow_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRow.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutTableRow(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  result) {
+            if (cellsBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                cells_ = java.util.Collections.unmodifiableList(cells_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.cells_ = cells_;
+            } else {
+              result.cells_ = cellsBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTableRow)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableRow
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableRow.getDefaultInstance()) return this;
+            if (cellsBuilder_ == null) {
+              if (!other.cells_.isEmpty()) {
+                if (cells_.isEmpty()) {
+                  cells_ = other.cells_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureCellsIsMutable();
+                  cells_.addAll(other.cells_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.cells_.isEmpty()) {
+                if (cellsBuilder_.isEmpty()) {
+                  cellsBuilder_.dispose();
+                  cellsBuilder_ = null;
+                  cells_ = other.cells_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  cellsBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getCellsFieldBuilder()
+                          : null;
+                } else {
+                  cellsBuilder_.addAllMessages(other.cells_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutTableCell
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                      .DocumentLayoutBlock.LayoutTableCell.parser(),
+                                  extensionRegistry);
+                      if (cellsBuilder_ == null) {
+                        ensureCellsIsMutable();
+                        cells_.add(m);
+                      } else {
+                        cellsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell>
+              cells_ = java.util.Collections.emptyList();
+
+          private void ensureCellsIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              cells_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableCell>(cells_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCellOrBuilder>
+              cellsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell>
+              getCellsList() {
+            if (cellsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(cells_);
+            } else {
+              return cellsBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public int getCellsCount() {
+            if (cellsBuilder_ == null) {
+              return cells_.size();
+            } else {
+              return cellsBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell
+              getCells(int index) {
+            if (cellsBuilder_ == null) {
+              return cells_.get(index);
+            } else {
+              return cellsBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder setCells(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell
+                  value) {
+            if (cellsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureCellsIsMutable();
+              cells_.set(index, value);
+              onChanged();
+            } else {
+              cellsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder setCells(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.Builder
+                  builderForValue) {
+            if (cellsBuilder_ == null) {
+              ensureCellsIsMutable();
+              cells_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              cellsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder addCells(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell
+                  value) {
+            if (cellsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureCellsIsMutable();
+              cells_.add(value);
+              onChanged();
+            } else {
+              cellsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder addCells(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell
+                  value) {
+            if (cellsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureCellsIsMutable();
+              cells_.add(index, value);
+              onChanged();
+            } else {
+              cellsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder addCells(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.Builder
+                  builderForValue) {
+            if (cellsBuilder_ == null) {
+              ensureCellsIsMutable();
+              cells_.add(builderForValue.build());
+              onChanged();
+            } else {
+              cellsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder addCells(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.Builder
+                  builderForValue) {
+            if (cellsBuilder_ == null) {
+              ensureCellsIsMutable();
+              cells_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              cellsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder addAllCells(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutTableCell>
+                  values) {
+            if (cellsBuilder_ == null) {
+              ensureCellsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cells_);
+              onChanged();
+            } else {
+              cellsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder clearCells() {
+            if (cellsBuilder_ == null) {
+              cells_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              cellsBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public Builder removeCells(int index) {
+            if (cellsBuilder_ == null) {
+              ensureCellsIsMutable();
+              cells_.remove(index);
+              onChanged();
+            } else {
+              cellsBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell.Builder
+              getCellsBuilder(int index) {
+            return getCellsFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCellOrBuilder
+              getCellsOrBuilder(int index) {
+            if (cellsBuilder_ == null) {
+              return cells_.get(index);
+            } else {
+              return cellsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableCellOrBuilder>
+              getCellsOrBuilderList() {
+            if (cellsBuilder_ != null) {
+              return cellsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(cells_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell.Builder
+              addCellsBuilder() {
+            return getCellsFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableCell.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell.Builder
+              addCellsBuilder(int index) {
+            return getCellsFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableCell.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table row is a list of table cells.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell cells = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.Builder>
+              getCellsBuilderList() {
+            return getCellsFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCellOrBuilder>
+              getCellsFieldBuilder() {
+            if (cellsBuilder_ == null) {
+              cellsBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableCell,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableCell.Builder,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutTableCellOrBuilder>(
+                      cells_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+              cells_ = null;
+            }
+            return cellsBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableRow)
+        private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableRow();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableRow
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutTableRow> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutTableRow>() {
+              @java.lang.Override
+              public LayoutTableRow parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutTableRow> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutTableRow> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableRow
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface LayoutTableCellOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            getBlocksList();
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock getBlocks(
+            int index);
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        int getBlocksCount();
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlockOrBuilder>
+            getBlocksOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlockOrBuilder
+            getBlocksOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * How many rows this cell spans.
+         * </pre>
+         *
+         * <code>int32 row_span = 2;</code>
+         *
+         * @return The rowSpan.
+         */
+        int getRowSpan();
+
+        /**
+         *
+         *
+         * <pre>
+         * How many columns this cell spans.
+         * </pre>
+         *
+         * <code>int32 col_span = 3;</code>
+         *
+         * @return The colSpan.
+         */
+        int getColSpan();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a cell in a table row.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell}
+       */
+      public static final class LayoutTableCell extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell)
+          LayoutTableCellOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LayoutTableCell.newBuilder() to construct.
+        private LayoutTableCell(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutTableCell() {
+          blocks_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new LayoutTableCell();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableCell_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableCell_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell.Builder.class);
+        }
+
+        public static final int BLOCKS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            blocks_;
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            getBlocksList() {
+          return blocks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlockOrBuilder>
+            getBlocksOrBuilderList() {
+          return blocks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public int getBlocksCount() {
+          return blocks_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            getBlocks(int index) {
+          return blocks_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A table cell is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlockOrBuilder
+            getBlocksOrBuilder(int index) {
+          return blocks_.get(index);
+        }
+
+        public static final int ROW_SPAN_FIELD_NUMBER = 2;
+        private int rowSpan_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * How many rows this cell spans.
+         * </pre>
+         *
+         * <code>int32 row_span = 2;</code>
+         *
+         * @return The rowSpan.
+         */
+        @java.lang.Override
+        public int getRowSpan() {
+          return rowSpan_;
+        }
+
+        public static final int COL_SPAN_FIELD_NUMBER = 3;
+        private int colSpan_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * How many columns this cell spans.
+         * </pre>
+         *
+         * <code>int32 col_span = 3;</code>
+         *
+         * @return The colSpan.
+         */
+        @java.lang.Override
+        public int getColSpan() {
+          return colSpan_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < blocks_.size(); i++) {
+            output.writeMessage(1, blocks_.get(i));
+          }
+          if (rowSpan_ != 0) {
+            output.writeInt32(2, rowSpan_);
+          }
+          if (colSpan_ != 0) {
+            output.writeInt32(3, colSpan_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < blocks_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, blocks_.get(i));
+          }
+          if (rowSpan_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, rowSpan_);
+          }
+          if (colSpan_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, colSpan_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTableCell)
+                      obj;
+
+          if (!getBlocksList().equals(other.getBlocksList())) return false;
+          if (getRowSpan() != other.getRowSpan()) return false;
+          if (getColSpan() != other.getColSpan()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getBlocksCount() > 0) {
+            hash = (37 * hash) + BLOCKS_FIELD_NUMBER;
+            hash = (53 * hash) + getBlocksList().hashCode();
+          }
+          hash = (37 * hash) + ROW_SPAN_FIELD_NUMBER;
+          hash = (53 * hash) + getRowSpan();
+          hash = (37 * hash) + COL_SPAN_FIELD_NUMBER;
+          hash = (53 * hash) + getColSpan();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents a cell in a table row.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell)
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableCellOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableCell_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableCell_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableCell.class,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableCell.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (blocksBuilder_ == null) {
+              blocks_ = java.util.Collections.emptyList();
+            } else {
+              blocks_ = null;
+              blocksBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            rowSpan_ = 0;
+            colSpan_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutTableCell_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableCell.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutTableCell(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell
+                  result) {
+            if (blocksBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                blocks_ = java.util.Collections.unmodifiableList(blocks_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.blocks_ = blocks_;
+            } else {
+              result.blocks_ = blocksBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.rowSpan_ = rowSpan_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.colSpan_ = colSpan_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTableCell)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableCell
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableCell.getDefaultInstance()) return this;
+            if (blocksBuilder_ == null) {
+              if (!other.blocks_.isEmpty()) {
+                if (blocks_.isEmpty()) {
+                  blocks_ = other.blocks_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureBlocksIsMutable();
+                  blocks_.addAll(other.blocks_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.blocks_.isEmpty()) {
+                if (blocksBuilder_.isEmpty()) {
+                  blocksBuilder_.dispose();
+                  blocksBuilder_ = null;
+                  blocks_ = other.blocks_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  blocksBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getBlocksFieldBuilder()
+                          : null;
+                } else {
+                  blocksBuilder_.addAllMessages(other.blocks_);
+                }
+              }
+            }
+            if (other.getRowSpan() != 0) {
+              setRowSpan(other.getRowSpan());
+            }
+            if (other.getColSpan() != 0) {
+              setColSpan(other.getColSpan());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                      .DocumentLayoutBlock.parser(),
+                                  extensionRegistry);
+                      if (blocksBuilder_ == null) {
+                        ensureBlocksIsMutable();
+                        blocks_.add(m);
+                      } else {
+                        blocksBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  case 16:
+                    {
+                      rowSpan_ = input.readInt32();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  case 24:
+                    {
+                      colSpan_ = input.readInt32();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 24
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+              blocks_ = java.util.Collections.emptyList();
+
+          private void ensureBlocksIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              blocks_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock>(blocks_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>
+              blocksBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+              getBlocksList() {
+            if (blocksBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(blocks_);
+            } else {
+              return blocksBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public int getBlocksCount() {
+            if (blocksBuilder_ == null) {
+              return blocks_.size();
+            } else {
+              return blocksBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              getBlocks(int index) {
+            if (blocksBuilder_ == null) {
+              return blocks_.get(index);
+            } else {
+              return blocksBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder setBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.set(index, value);
+              onChanged();
+            } else {
+              blocksBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder setBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.add(value);
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.add(index, value);
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.add(builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addAllBlocks(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock>
+                  values) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blocks_);
+              onChanged();
+            } else {
+              blocksBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder clearBlocks() {
+            if (blocksBuilder_ == null) {
+              blocks_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              blocksBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder removeBlocks(int index) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.remove(index);
+              onChanged();
+            } else {
+              blocksBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              getBlocksBuilder(int index) {
+            return getBlocksFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                  .DocumentLayoutBlockOrBuilder
+              getBlocksOrBuilder(int index) {
+            if (blocksBuilder_ == null) {
+              return blocks_.get(index);
+            } else {
+              return blocksBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlockOrBuilder>
+              getBlocksOrBuilderList() {
+            if (blocksBuilder_ != null) {
+              return blocksBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(blocks_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              addBlocksBuilder() {
+            return getBlocksFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              addBlocksBuilder(int index) {
+            return getBlocksFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A table cell is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder>
+              getBlocksBuilderList() {
+            return getBlocksFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>
+              getBlocksFieldBuilder() {
+            if (blocksBuilder_ == null) {
+              blocksBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.Builder,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlockOrBuilder>(
+                      blocks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+              blocks_ = null;
+            }
+            return blocksBuilder_;
+          }
+
+          private int rowSpan_;
+          /**
+           *
+           *
+           * <pre>
+           * How many rows this cell spans.
+           * </pre>
+           *
+           * <code>int32 row_span = 2;</code>
+           *
+           * @return The rowSpan.
+           */
+          @java.lang.Override
+          public int getRowSpan() {
+            return rowSpan_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * How many rows this cell spans.
+           * </pre>
+           *
+           * <code>int32 row_span = 2;</code>
+           *
+           * @param value The rowSpan to set.
+           * @return This builder for chaining.
+           */
+          public Builder setRowSpan(int value) {
+
+            rowSpan_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * How many rows this cell spans.
+           * </pre>
+           *
+           * <code>int32 row_span = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearRowSpan() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            rowSpan_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private int colSpan_;
+          /**
+           *
+           *
+           * <pre>
+           * How many columns this cell spans.
+           * </pre>
+           *
+           * <code>int32 col_span = 3;</code>
+           *
+           * @return The colSpan.
+           */
+          @java.lang.Override
+          public int getColSpan() {
+            return colSpan_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * How many columns this cell spans.
+           * </pre>
+           *
+           * <code>int32 col_span = 3;</code>
+           *
+           * @param value The colSpan to set.
+           * @return This builder for chaining.
+           */
+          public Builder setColSpan(int value) {
+
+            colSpan_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * How many columns this cell spans.
+           * </pre>
+           *
+           * <code>int32 col_span = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearColSpan() {
+            bitField0_ = (bitField0_ & ~0x00000004);
+            colSpan_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableCell)
+        private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableCell();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutTableCell
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutTableCell> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutTableCell>() {
+              @java.lang.Override
+              public LayoutTableCell parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutTableCell> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutTableCell> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableCell
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface LayoutListBlockOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry>
+            getListEntriesList();
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListEntry
+            getListEntries(int index);
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        int getListEntriesCount();
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListEntryOrBuilder>
+            getListEntriesOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListEntryOrBuilder
+            getListEntriesOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Type of the list_entries (if exist). Available options are `ordered`
+         * and `unordered`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The type.
+         */
+        java.lang.String getType();
+        /**
+         *
+         *
+         * <pre>
+         * Type of the list_entries (if exist). Available options are `ordered`
+         * and `unordered`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The bytes for type.
+         */
+        com.google.protobuf.ByteString getTypeBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a list type block.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock}
+       */
+      public static final class LayoutListBlock extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock)
+          LayoutListBlockOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LayoutListBlock.newBuilder() to construct.
+        private LayoutListBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutListBlock() {
+          listEntries_ = java.util.Collections.emptyList();
+          type_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new LayoutListBlock();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListBlock_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListBlock_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock.class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock.Builder.class);
+        }
+
+        public static final int LIST_ENTRIES_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry>
+            listEntries_;
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry>
+            getListEntriesList() {
+          return listEntries_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListEntryOrBuilder>
+            getListEntriesOrBuilderList() {
+          return listEntries_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public int getListEntriesCount() {
+          return listEntries_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListEntry
+            getListEntries(int index) {
+          return listEntries_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List entries that constitute a list block.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListEntryOrBuilder
+            getListEntriesOrBuilder(int index) {
+          return listEntries_.get(index);
+        }
+
+        public static final int TYPE_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object type_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Type of the list_entries (if exist). Available options are `ordered`
+         * and `unordered`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The type.
+         */
+        @java.lang.Override
+        public java.lang.String getType() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            type_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Type of the list_entries (if exist). Available options are `ordered`
+         * and `unordered`.
+         * </pre>
+         *
+         * <code>string type = 2;</code>
+         *
+         * @return The bytes for type.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTypeBytes() {
+          java.lang.Object ref = type_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            type_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < listEntries_.size(); i++) {
+            output.writeMessage(1, listEntries_.get(i));
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < listEntries_.size(); i++) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(1, listEntries_.get(i));
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutListBlock)
+                      obj;
+
+          if (!getListEntriesList().equals(other.getListEntriesList())) return false;
+          if (!getType().equals(other.getType())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getListEntriesCount() > 0) {
+            hash = (37 * hash) + LIST_ENTRIES_FIELD_NUMBER;
+            hash = (53 * hash) + getListEntriesList().hashCode();
+          }
+          hash = (37 * hash) + TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getType().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents a list type block.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock)
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlockOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListBlock_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListBlock_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListBlock.class,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListBlock.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (listEntriesBuilder_ == null) {
+              listEntries_ = java.util.Collections.emptyList();
+            } else {
+              listEntries_ = null;
+              listEntriesBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            type_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListBlock_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlock.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutListBlock(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock
+                  result) {
+            if (listEntriesBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                listEntries_ = java.util.Collections.unmodifiableList(listEntries_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.listEntries_ = listEntries_;
+            } else {
+              result.listEntries_ = listEntriesBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.type_ = type_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutListBlock)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock.getDefaultInstance()) return this;
+            if (listEntriesBuilder_ == null) {
+              if (!other.listEntries_.isEmpty()) {
+                if (listEntries_.isEmpty()) {
+                  listEntries_ = other.listEntries_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureListEntriesIsMutable();
+                  listEntries_.addAll(other.listEntries_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.listEntries_.isEmpty()) {
+                if (listEntriesBuilder_.isEmpty()) {
+                  listEntriesBuilder_.dispose();
+                  listEntriesBuilder_ = null;
+                  listEntries_ = other.listEntries_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  listEntriesBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getListEntriesFieldBuilder()
+                          : null;
+                } else {
+                  listEntriesBuilder_.addAllMessages(other.listEntries_);
+                }
+              }
+            }
+            if (!other.getType().isEmpty()) {
+              type_ = other.type_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutListEntry
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                      .DocumentLayoutBlock.LayoutListEntry.parser(),
+                                  extensionRegistry);
+                      if (listEntriesBuilder_ == null) {
+                        ensureListEntriesIsMutable();
+                        listEntries_.add(m);
+                      } else {
+                        listEntriesBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      type_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry>
+              listEntries_ = java.util.Collections.emptyList();
+
+          private void ensureListEntriesIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              listEntries_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutListEntry>(listEntries_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntryOrBuilder>
+              listEntriesBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry>
+              getListEntriesList() {
+            if (listEntriesBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(listEntries_);
+            } else {
+              return listEntriesBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public int getListEntriesCount() {
+            if (listEntriesBuilder_ == null) {
+              return listEntries_.size();
+            } else {
+              return listEntriesBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry
+              getListEntries(int index) {
+            if (listEntriesBuilder_ == null) {
+              return listEntries_.get(index);
+            } else {
+              return listEntriesBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder setListEntries(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry
+                  value) {
+            if (listEntriesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureListEntriesIsMutable();
+              listEntries_.set(index, value);
+              onChanged();
+            } else {
+              listEntriesBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder setListEntries(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.Builder
+                  builderForValue) {
+            if (listEntriesBuilder_ == null) {
+              ensureListEntriesIsMutable();
+              listEntries_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              listEntriesBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder addListEntries(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry
+                  value) {
+            if (listEntriesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureListEntriesIsMutable();
+              listEntries_.add(value);
+              onChanged();
+            } else {
+              listEntriesBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder addListEntries(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry
+                  value) {
+            if (listEntriesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureListEntriesIsMutable();
+              listEntries_.add(index, value);
+              onChanged();
+            } else {
+              listEntriesBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder addListEntries(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.Builder
+                  builderForValue) {
+            if (listEntriesBuilder_ == null) {
+              ensureListEntriesIsMutable();
+              listEntries_.add(builderForValue.build());
+              onChanged();
+            } else {
+              listEntriesBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder addListEntries(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.Builder
+                  builderForValue) {
+            if (listEntriesBuilder_ == null) {
+              ensureListEntriesIsMutable();
+              listEntries_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              listEntriesBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder addAllListEntries(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock.LayoutListEntry>
+                  values) {
+            if (listEntriesBuilder_ == null) {
+              ensureListEntriesIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, listEntries_);
+              onChanged();
+            } else {
+              listEntriesBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder clearListEntries() {
+            if (listEntriesBuilder_ == null) {
+              listEntries_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              listEntriesBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public Builder removeListEntries(int index) {
+            if (listEntriesBuilder_ == null) {
+              ensureListEntriesIsMutable();
+              listEntries_.remove(index);
+              onChanged();
+            } else {
+              listEntriesBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry.Builder
+              getListEntriesBuilder(int index) {
+            return getListEntriesFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntryOrBuilder
+              getListEntriesOrBuilder(int index) {
+            if (listEntriesBuilder_ == null) {
+              return listEntries_.get(index);
+            } else {
+              return listEntriesBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutListEntryOrBuilder>
+              getListEntriesOrBuilderList() {
+            if (listEntriesBuilder_ != null) {
+              return listEntriesBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(listEntries_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry.Builder
+              addListEntriesBuilder() {
+            return getListEntriesFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListEntry.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry.Builder
+              addListEntriesBuilder(int index) {
+            return getListEntriesFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListEntry.getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * List entries that constitute a list block.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry list_entries = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.Builder>
+              getListEntriesBuilderList() {
+            return getListEntriesFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntryOrBuilder>
+              getListEntriesFieldBuilder() {
+            if (listEntriesBuilder_ == null) {
+              listEntriesBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutListEntry,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutListEntry.Builder,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.LayoutListEntryOrBuilder>(
+                      listEntries_,
+                      ((bitField0_ & 0x00000001) != 0),
+                      getParentForChildren(),
+                      isClean());
+              listEntries_ = null;
+            }
+            return listEntriesBuilder_;
+          }
+
+          private java.lang.Object type_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Type of the list_entries (if exist). Available options are `ordered`
+           * and `unordered`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @return The type.
+           */
+          public java.lang.String getType() {
+            java.lang.Object ref = type_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              type_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the list_entries (if exist). Available options are `ordered`
+           * and `unordered`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @return The bytes for type.
+           */
+          public com.google.protobuf.ByteString getTypeBytes() {
+            java.lang.Object ref = type_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              type_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the list_entries (if exist). Available options are `ordered`
+           * and `unordered`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @param value The type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            type_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the list_entries (if exist). Available options are `ordered`
+           * and `unordered`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearType() {
+            type_ = getDefaultInstance().getType();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Type of the list_entries (if exist). Available options are `ordered`
+           * and `unordered`.
+           * </pre>
+           *
+           * <code>string type = 2;</code>
+           *
+           * @param value The bytes for type to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            type_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock)
+        private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListBlock
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutListBlock> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutListBlock>() {
+              @java.lang.Override
+              public LayoutListBlock parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutListBlock> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutListBlock> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlock
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface LayoutListEntryOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            getBlocksList();
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock getBlocks(
+            int index);
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        int getBlocksCount();
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlockOrBuilder>
+            getBlocksOrBuilderList();
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlockOrBuilder
+            getBlocksOrBuilder(int index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents an entry in the list.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry}
+       */
+      public static final class LayoutListEntry extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry)
+          LayoutListEntryOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use LayoutListEntry.newBuilder() to construct.
+        private LayoutListEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutListEntry() {
+          blocks_ = java.util.Collections.emptyList();
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new LayoutListEntry();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListEntry_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListEntry_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry.Builder.class);
+        }
+
+        public static final int BLOCKS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            blocks_;
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+            getBlocksList() {
+          return blocks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlockOrBuilder>
+            getBlocksOrBuilderList() {
+          return blocks_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public int getBlocksCount() {
+          return blocks_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            getBlocks(int index) {
+          return blocks_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * A list entry is a list of blocks.
+         * Repeated blocks support further hierarchies and nested blocks.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlockOrBuilder
+            getBlocksOrBuilder(int index) {
+          return blocks_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < blocks_.size(); i++) {
+            output.writeMessage(1, blocks_.get(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < blocks_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, blocks_.get(i));
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry
+              other =
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutListEntry)
+                      obj;
+
+          if (!getBlocksList().equals(other.getBlocksList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getBlocksCount() > 0) {
+            hash = (37 * hash) + BLOCKS_FIELD_NUMBER;
+            hash = (53 * hash) + getBlocksList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents an entry in the list.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry)
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListEntryOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListEntry_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListEntry_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListEntry.class,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListEntry.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (blocksBuilder_ == null) {
+              blocks_ = java.util.Collections.emptyList();
+            } else {
+              blocks_ = null;
+              blocksBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_LayoutListEntry_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListEntry.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutListEntry(this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry
+                  result) {
+            if (blocksBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                blocks_ = java.util.Collections.unmodifiableList(blocks_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.blocks_ = blocks_;
+            } else {
+              result.blocks_ = blocksBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry
+                  result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutListEntry)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListEntry
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListEntry.getDefaultInstance()) return this;
+            if (blocksBuilder_ == null) {
+              if (!other.blocks_.isEmpty()) {
+                if (blocks_.isEmpty()) {
+                  blocks_ = other.blocks_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureBlocksIsMutable();
+                  blocks_.addAll(other.blocks_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.blocks_.isEmpty()) {
+                if (blocksBuilder_.isEmpty()) {
+                  blocksBuilder_.dispose();
+                  blocksBuilder_ = null;
+                  blocks_ = other.blocks_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  blocksBuilder_ =
+                      com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                          ? getBlocksFieldBuilder()
+                          : null;
+                } else {
+                  blocksBuilder_.addAllMessages(other.blocks_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock
+                          m =
+                              input.readMessage(
+                                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                      .DocumentLayoutBlock.parser(),
+                                  extensionRegistry);
+                      if (blocksBuilder_ == null) {
+                        ensureBlocksIsMutable();
+                        blocks_.add(m);
+                      } else {
+                        blocksBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+              blocks_ = java.util.Collections.emptyList();
+
+          private void ensureBlocksIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              blocks_ =
+                  new java.util.ArrayList<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock>(blocks_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>
+              blocksBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+              getBlocksList() {
+            if (blocksBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(blocks_);
+            } else {
+              return blocksBuilder_.getMessageList();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public int getBlocksCount() {
+            if (blocksBuilder_ == null) {
+              return blocks_.size();
+            } else {
+              return blocksBuilder_.getCount();
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              getBlocks(int index) {
+            if (blocksBuilder_ == null) {
+              return blocks_.get(index);
+            } else {
+              return blocksBuilder_.getMessage(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder setBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.set(index, value);
+              onChanged();
+            } else {
+              blocksBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder setBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.add(value);
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  value) {
+            if (blocksBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureBlocksIsMutable();
+              blocks_.add(index, value);
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.add(builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addBlocks(
+              int index,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder
+                  builderForValue) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              blocksBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder addAllBlocks(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                              .DocumentLayoutBlock>
+                  values) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blocks_);
+              onChanged();
+            } else {
+              blocksBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder clearBlocks() {
+            if (blocksBuilder_ == null) {
+              blocks_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              blocksBuilder_.clear();
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public Builder removeBlocks(int index) {
+            if (blocksBuilder_ == null) {
+              ensureBlocksIsMutable();
+              blocks_.remove(index);
+              onChanged();
+            } else {
+              blocksBuilder_.remove(index);
+            }
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              getBlocksBuilder(int index) {
+            return getBlocksFieldBuilder().getBuilder(index);
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                  .DocumentLayoutBlockOrBuilder
+              getBlocksOrBuilder(int index) {
+            if (blocksBuilder_ == null) {
+              return blocks_.get(index);
+            } else {
+              return blocksBuilder_.getMessageOrBuilder(index);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlockOrBuilder>
+              getBlocksOrBuilderList() {
+            if (blocksBuilder_ != null) {
+              return blocksBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(blocks_);
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              addBlocksBuilder() {
+            return getBlocksFieldBuilder()
+                .addBuilder(
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder
+              addBlocksBuilder(int index) {
+            return getBlocksFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .getDefaultInstance());
+          }
+          /**
+           *
+           *
+           * <pre>
+           * A list entry is a list of blocks.
+           * Repeated blocks support further hierarchies and nested blocks.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+           * </code>
+           */
+          public java.util.List<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder>
+              getBlocksBuilderList() {
+            return getBlocksFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>
+              getBlocksFieldBuilder() {
+            if (blocksBuilder_ == null) {
+              blocksBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilderV3<
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock.Builder,
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlockOrBuilder>(
+                      blocks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+              blocks_ = null;
+            }
+            return blocksBuilder_;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListEntry)
+        private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListEntry();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutListEntry
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutListEntry> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutListEntry>() {
+              @java.lang.Override
+              public LayoutListEntry parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutListEntry> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutListEntry> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListEntry
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      private int blockCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object block_;
+
+      public enum BlockCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        TEXT_BLOCK(2),
+        TABLE_BLOCK(3),
+        LIST_BLOCK(4),
+        BLOCK_NOT_SET(0);
+        private final int value;
+
+        private BlockCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static BlockCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static BlockCase forNumber(int value) {
+          switch (value) {
+            case 2:
+              return TEXT_BLOCK;
+            case 3:
+              return TABLE_BLOCK;
+            case 4:
+              return LIST_BLOCK;
+            case 0:
+              return BLOCK_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public BlockCase getBlockCase() {
+        return BlockCase.forNumber(blockCase_);
+      }
+
+      public static final int TEXT_BLOCK_FIELD_NUMBER = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of text content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+       * </code>
+       *
+       * @return Whether the textBlock field is set.
+       */
+      @java.lang.Override
+      public boolean hasTextBlock() {
+        return blockCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of text content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+       * </code>
+       *
+       * @return The textBlock.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTextBlock
+          getTextBlock() {
+        if (blockCase_ == 2) {
+          return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutTextBlock.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of text content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTextBlockOrBuilder
+          getTextBlockOrBuilder() {
+        if (blockCase_ == 2) {
+          return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTextBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutTextBlock.getDefaultInstance();
+      }
+
+      public static final int TABLE_BLOCK_FIELD_NUMBER = 3;
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of table content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+       * </code>
+       *
+       * @return Whether the tableBlock field is set.
+       */
+      @java.lang.Override
+      public boolean hasTableBlock() {
+        return blockCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of table content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+       * </code>
+       *
+       * @return The tableBlock.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTableBlock
+          getTableBlock() {
+        if (blockCase_ == 3) {
+          return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutTableBlock.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of table content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutTableBlockOrBuilder
+          getTableBlockOrBuilder() {
+        if (blockCase_ == 3) {
+          return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutTableBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutTableBlock.getDefaultInstance();
+      }
+
+      public static final int LIST_BLOCK_FIELD_NUMBER = 4;
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of list content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+       * </code>
+       *
+       * @return Whether the listBlock field is set.
+       */
+      @java.lang.Override
+      public boolean hasListBlock() {
+        return blockCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of list content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+       * </code>
+       *
+       * @return The listBlock.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutListBlock
+          getListBlock() {
+        if (blockCase_ == 4) {
+          return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutListBlock.getDefaultInstance();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of list content/structure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutListBlockOrBuilder
+          getListBlockOrBuilder() {
+        if (blockCase_ == 4) {
+          return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutListBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutListBlock.getDefaultInstance();
+      }
+
+      public static final int BLOCK_ID_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object blockId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * ID of the block.
+       * </pre>
+       *
+       * <code>string block_id = 1;</code>
+       *
+       * @return The blockId.
+       */
+      @java.lang.Override
+      public java.lang.String getBlockId() {
+        java.lang.Object ref = blockId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          blockId_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * ID of the block.
+       * </pre>
+       *
+       * <code>string block_id = 1;</code>
+       *
+       * @return The bytes for blockId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getBlockIdBytes() {
+        java.lang.Object ref = blockId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          blockId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PAGE_SPAN_FIELD_NUMBER = 5;
+      private com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutPageSpan
+          pageSpan_;
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the block.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+       * </code>
+       *
+       * @return Whether the pageSpan field is set.
+       */
+      @java.lang.Override
+      public boolean hasPageSpan() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the block.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+       * </code>
+       *
+       * @return The pageSpan.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutPageSpan
+          getPageSpan() {
+        return pageSpan_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpan.getDefaultInstance()
+            : pageSpan_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the block.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutPageSpanOrBuilder
+          getPageSpanOrBuilder() {
+        return pageSpan_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpan.getDefaultInstance()
+            : pageSpan_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(blockId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, blockId_);
+        }
+        if (blockCase_ == 2) {
+          output.writeMessage(
+              2,
+              (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock)
+                  block_);
+        }
+        if (blockCase_ == 3) {
+          output.writeMessage(
+              3,
+              (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock)
+                  block_);
+        }
+        if (blockCase_ == 4) {
+          output.writeMessage(
+              4,
+              (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock)
+                  block_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(5, getPageSpan());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(blockId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, blockId_);
+        }
+        if (blockCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2,
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTextBlock)
+                      block_);
+        }
+        if (blockCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3,
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutTableBlock)
+                      block_);
+        }
+        if (blockCase_ == 4) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  4,
+                  (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutListBlock)
+                      block_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPageSpan());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock other =
+            (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock) obj;
+
+        if (!getBlockId().equals(other.getBlockId())) return false;
+        if (hasPageSpan() != other.hasPageSpan()) return false;
+        if (hasPageSpan()) {
+          if (!getPageSpan().equals(other.getPageSpan())) return false;
+        }
+        if (!getBlockCase().equals(other.getBlockCase())) return false;
+        switch (blockCase_) {
+          case 2:
+            if (!getTextBlock().equals(other.getTextBlock())) return false;
+            break;
+          case 3:
+            if (!getTableBlock().equals(other.getTableBlock())) return false;
+            break;
+          case 4:
+            if (!getListBlock().equals(other.getListBlock())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + BLOCK_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getBlockId().hashCode();
+        if (hasPageSpan()) {
+          hash = (37 * hash) + PAGE_SPAN_FIELD_NUMBER;
+          hash = (53 * hash) + getPageSpan().hashCode();
+        }
+        switch (blockCase_) {
+          case 2:
+            hash = (37 * hash) + TEXT_BLOCK_FIELD_NUMBER;
+            hash = (53 * hash) + getTextBlock().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + TABLE_BLOCK_FIELD_NUMBER;
+            hash = (53 * hash) + getTableBlock().hashCode();
+            break;
+          case 4:
+            hash = (37 * hash) + LIST_BLOCK_FIELD_NUMBER;
+            hash = (53 * hash) + getListBlock().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a block. A block could be one of the various types (text,
+       * table, list) supported.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock)
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlockOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .class,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getPageSpanFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (textBlockBuilder_ != null) {
+            textBlockBuilder_.clear();
+          }
+          if (tableBlockBuilder_ != null) {
+            tableBlockBuilder_.clear();
+          }
+          if (listBlockBuilder_ != null) {
+            listBlockBuilder_.clear();
+          }
+          blockId_ = "";
+          pageSpan_ = null;
+          if (pageSpanBuilder_ != null) {
+            pageSpanBuilder_.dispose();
+            pageSpanBuilder_ = null;
+          }
+          blockCase_ = 0;
+          block_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_DocumentLayoutBlock_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            build() {
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+            buildPartial() {
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock result =
+              new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.blockId_ = blockId_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.pageSpan_ = pageSpanBuilder_ == null ? pageSpan_ : pageSpanBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                result) {
+          result.blockCase_ = blockCase_;
+          result.block_ = this.block_;
+          if (blockCase_ == 2 && textBlockBuilder_ != null) {
+            result.block_ = textBlockBuilder_.build();
+          }
+          if (blockCase_ == 3 && tableBlockBuilder_ != null) {
+            result.block_ = tableBlockBuilder_.build();
+          }
+          if (blockCase_ == 4 && listBlockBuilder_ != null) {
+            result.block_ = listBlockBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock other) {
+          if (other
+              == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .getDefaultInstance()) return this;
+          if (!other.getBlockId().isEmpty()) {
+            blockId_ = other.blockId_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          if (other.hasPageSpan()) {
+            mergePageSpan(other.getPageSpan());
+          }
+          switch (other.getBlockCase()) {
+            case TEXT_BLOCK:
+              {
+                mergeTextBlock(other.getTextBlock());
+                break;
+              }
+            case TABLE_BLOCK:
+              {
+                mergeTableBlock(other.getTableBlock());
+                break;
+              }
+            case LIST_BLOCK:
+              {
+                mergeListBlock(other.getListBlock());
+                break;
+              }
+            case BLOCK_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    blockId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(getTextBlockFieldBuilder().getBuilder(), extensionRegistry);
+                    blockCase_ = 2;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(getTableBlockFieldBuilder().getBuilder(), extensionRegistry);
+                    blockCase_ = 3;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    input.readMessage(getListBlockFieldBuilder().getBuilder(), extensionRegistry);
+                    blockCase_ = 4;
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    input.readMessage(getPageSpanFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 42
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int blockCase_ = 0;
+        private java.lang.Object block_;
+
+        public BlockCase getBlockCase() {
+          return BlockCase.forNumber(blockCase_);
+        }
+
+        public Builder clearBlock() {
+          blockCase_ = 0;
+          block_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlockOrBuilder>
+            textBlockBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         *
+         * @return Whether the textBlock field is set.
+         */
+        @java.lang.Override
+        public boolean hasTextBlock() {
+          return blockCase_ == 2;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         *
+         * @return The textBlock.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlock
+            getTextBlock() {
+          if (textBlockBuilder_ == null) {
+            if (blockCase_ == 2) {
+              return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlock.LayoutTextBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlock.getDefaultInstance();
+          } else {
+            if (blockCase_ == 2) {
+              return textBlockBuilder_.getMessage();
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlock.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         */
+        public Builder setTextBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock
+                value) {
+          if (textBlockBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            block_ = value;
+            onChanged();
+          } else {
+            textBlockBuilder_.setMessage(value);
+          }
+          blockCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         */
+        public Builder setTextBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock.Builder
+                builderForValue) {
+          if (textBlockBuilder_ == null) {
+            block_ = builderForValue.build();
+            onChanged();
+          } else {
+            textBlockBuilder_.setMessage(builderForValue.build());
+          }
+          blockCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         */
+        public Builder mergeTextBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock
+                value) {
+          if (textBlockBuilder_ == null) {
+            if (blockCase_ == 2
+                && block_
+                    != com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutTextBlock.getDefaultInstance()) {
+              block_ =
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock.newBuilder(
+                          (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                  .DocumentLayoutBlock.LayoutTextBlock)
+                              block_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              block_ = value;
+            }
+            onChanged();
+          } else {
+            if (blockCase_ == 2) {
+              textBlockBuilder_.mergeFrom(value);
+            } else {
+              textBlockBuilder_.setMessage(value);
+            }
+          }
+          blockCase_ = 2;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         */
+        public Builder clearTextBlock() {
+          if (textBlockBuilder_ == null) {
+            if (blockCase_ == 2) {
+              blockCase_ = 0;
+              block_ = null;
+              onChanged();
+            }
+          } else {
+            if (blockCase_ == 2) {
+              blockCase_ = 0;
+              block_ = null;
+            }
+            textBlockBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlock.Builder
+            getTextBlockBuilder() {
+          return getTextBlockFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlockOrBuilder
+            getTextBlockOrBuilder() {
+          if ((blockCase_ == 2) && (textBlockBuilder_ != null)) {
+            return textBlockBuilder_.getMessageOrBuilder();
+          } else {
+            if (blockCase_ == 2) {
+              return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlock.LayoutTextBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTextBlock.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of text content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock text_block = 2;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlock.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTextBlockOrBuilder>
+            getTextBlockFieldBuilder() {
+          if (textBlockBuilder_ == null) {
+            if (!(blockCase_ == 2)) {
+              block_ =
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTextBlock.getDefaultInstance();
+            }
+            textBlockBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTextBlock,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTextBlock.Builder,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTextBlockOrBuilder>(
+                    (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                            .LayoutTextBlock)
+                        block_,
+                    getParentForChildren(),
+                    isClean());
+            block_ = null;
+          }
+          blockCase_ = 2;
+          onChanged();
+          return textBlockBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlockOrBuilder>
+            tableBlockBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         *
+         * @return Whether the tableBlock field is set.
+         */
+        @java.lang.Override
+        public boolean hasTableBlock() {
+          return blockCase_ == 3;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         *
+         * @return The tableBlock.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlock
+            getTableBlock() {
+          if (tableBlockBuilder_ == null) {
+            if (blockCase_ == 3) {
+              return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlock.LayoutTableBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlock.getDefaultInstance();
+          } else {
+            if (blockCase_ == 3) {
+              return tableBlockBuilder_.getMessage();
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlock.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         */
+        public Builder setTableBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock
+                value) {
+          if (tableBlockBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            block_ = value;
+            onChanged();
+          } else {
+            tableBlockBuilder_.setMessage(value);
+          }
+          blockCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         */
+        public Builder setTableBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock.Builder
+                builderForValue) {
+          if (tableBlockBuilder_ == null) {
+            block_ = builderForValue.build();
+            onChanged();
+          } else {
+            tableBlockBuilder_.setMessage(builderForValue.build());
+          }
+          blockCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         */
+        public Builder mergeTableBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock
+                value) {
+          if (tableBlockBuilder_ == null) {
+            if (blockCase_ == 3
+                && block_
+                    != com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutTableBlock.getDefaultInstance()) {
+              block_ =
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock.newBuilder(
+                          (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                  .DocumentLayoutBlock.LayoutTableBlock)
+                              block_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              block_ = value;
+            }
+            onChanged();
+          } else {
+            if (blockCase_ == 3) {
+              tableBlockBuilder_.mergeFrom(value);
+            } else {
+              tableBlockBuilder_.setMessage(value);
+            }
+          }
+          blockCase_ = 3;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         */
+        public Builder clearTableBlock() {
+          if (tableBlockBuilder_ == null) {
+            if (blockCase_ == 3) {
+              blockCase_ = 0;
+              block_ = null;
+              onChanged();
+            }
+          } else {
+            if (blockCase_ == 3) {
+              blockCase_ = 0;
+              block_ = null;
+            }
+            tableBlockBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlock.Builder
+            getTableBlockBuilder() {
+          return getTableBlockFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlockOrBuilder
+            getTableBlockOrBuilder() {
+          if ((blockCase_ == 3) && (tableBlockBuilder_ != null)) {
+            return tableBlockBuilder_.getMessageOrBuilder();
+          } else {
+            if (blockCase_ == 3) {
+              return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlock.LayoutTableBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutTableBlock.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of table content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock table_block = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlock.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutTableBlockOrBuilder>
+            getTableBlockFieldBuilder() {
+          if (tableBlockBuilder_ == null) {
+            if (!(blockCase_ == 3)) {
+              block_ =
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutTableBlock.getDefaultInstance();
+            }
+            tableBlockBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableBlock,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableBlock.Builder,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutTableBlockOrBuilder>(
+                    (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                            .LayoutTableBlock)
+                        block_,
+                    getParentForChildren(),
+                    isClean());
+            block_ = null;
+          }
+          blockCase_ = 3;
+          onChanged();
+          return tableBlockBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlockOrBuilder>
+            listBlockBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         *
+         * @return Whether the listBlock field is set.
+         */
+        @java.lang.Override
+        public boolean hasListBlock() {
+          return blockCase_ == 4;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         *
+         * @return The listBlock.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlock
+            getListBlock() {
+          if (listBlockBuilder_ == null) {
+            if (blockCase_ == 4) {
+              return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlock.LayoutListBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlock.getDefaultInstance();
+          } else {
+            if (blockCase_ == 4) {
+              return listBlockBuilder_.getMessage();
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlock.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         */
+        public Builder setListBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock
+                value) {
+          if (listBlockBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            block_ = value;
+            onChanged();
+          } else {
+            listBlockBuilder_.setMessage(value);
+          }
+          blockCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         */
+        public Builder setListBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock.Builder
+                builderForValue) {
+          if (listBlockBuilder_ == null) {
+            block_ = builderForValue.build();
+            onChanged();
+          } else {
+            listBlockBuilder_.setMessage(builderForValue.build());
+          }
+          blockCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         */
+        public Builder mergeListBlock(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock
+                value) {
+          if (listBlockBuilder_ == null) {
+            if (blockCase_ == 4
+                && block_
+                    != com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutListBlock.getDefaultInstance()) {
+              block_ =
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock.newBuilder(
+                          (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                  .DocumentLayoutBlock.LayoutListBlock)
+                              block_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              block_ = value;
+            }
+            onChanged();
+          } else {
+            if (blockCase_ == 4) {
+              listBlockBuilder_.mergeFrom(value);
+            } else {
+              listBlockBuilder_.setMessage(value);
+            }
+          }
+          blockCase_ = 4;
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         */
+        public Builder clearListBlock() {
+          if (listBlockBuilder_ == null) {
+            if (blockCase_ == 4) {
+              blockCase_ = 0;
+              block_ = null;
+              onChanged();
+            }
+          } else {
+            if (blockCase_ == 4) {
+              blockCase_ = 0;
+              block_ = null;
+            }
+            listBlockBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlock.Builder
+            getListBlockBuilder() {
+          return getListBlockFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlockOrBuilder
+            getListBlockOrBuilder() {
+          if ((blockCase_ == 4) && (listBlockBuilder_ != null)) {
+            return listBlockBuilder_.getMessageOrBuilder();
+          } else {
+            if (blockCase_ == 4) {
+              return (com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlock.LayoutListBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutListBlock.getDefaultInstance();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of list content/structure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutListBlock list_block = 4;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlock.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutListBlockOrBuilder>
+            getListBlockFieldBuilder() {
+          if (listBlockBuilder_ == null) {
+            if (!(blockCase_ == 4)) {
+              block_ =
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutListBlock.getDefaultInstance();
+            }
+            listBlockBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListBlock,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListBlock.Builder,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutListBlockOrBuilder>(
+                    (com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                            .LayoutListBlock)
+                        block_,
+                    getParentForChildren(),
+                    isClean());
+            block_ = null;
+          }
+          blockCase_ = 4;
+          onChanged();
+          return listBlockBuilder_;
+        }
+
+        private java.lang.Object blockId_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * ID of the block.
+         * </pre>
+         *
+         * <code>string block_id = 1;</code>
+         *
+         * @return The blockId.
+         */
+        public java.lang.String getBlockId() {
+          java.lang.Object ref = blockId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            blockId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the block.
+         * </pre>
+         *
+         * <code>string block_id = 1;</code>
+         *
+         * @return The bytes for blockId.
+         */
+        public com.google.protobuf.ByteString getBlockIdBytes() {
+          java.lang.Object ref = blockId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            blockId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the block.
+         * </pre>
+         *
+         * <code>string block_id = 1;</code>
+         *
+         * @param value The blockId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlockId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          blockId_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the block.
+         * </pre>
+         *
+         * <code>string block_id = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBlockId() {
+          blockId_ = getDefaultInstance().getBlockId();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the block.
+         * </pre>
+         *
+         * <code>string block_id = 1;</code>
+         *
+         * @param value The bytes for blockId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBlockIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          blockId_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpan
+            pageSpan_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpanOrBuilder>
+            pageSpanBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         *
+         * @return Whether the pageSpan field is set.
+         */
+        public boolean hasPageSpan() {
+          return ((bitField0_ & 0x00000010) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         *
+         * @return The pageSpan.
+         */
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpan
+            getPageSpan() {
+          if (pageSpanBuilder_ == null) {
+            return pageSpan_ == null
+                ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan.getDefaultInstance()
+                : pageSpan_;
+          } else {
+            return pageSpanBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         */
+        public Builder setPageSpan(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan
+                value) {
+          if (pageSpanBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            pageSpan_ = value;
+          } else {
+            pageSpanBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         */
+        public Builder setPageSpan(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan.Builder
+                builderForValue) {
+          if (pageSpanBuilder_ == null) {
+            pageSpan_ = builderForValue.build();
+          } else {
+            pageSpanBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         */
+        public Builder mergePageSpan(
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan
+                value) {
+          if (pageSpanBuilder_ == null) {
+            if (((bitField0_ & 0x00000010) != 0)
+                && pageSpan_ != null
+                && pageSpan_
+                    != com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                        .DocumentLayoutBlock.LayoutPageSpan.getDefaultInstance()) {
+              getPageSpanBuilder().mergeFrom(value);
+            } else {
+              pageSpan_ = value;
+            }
+          } else {
+            pageSpanBuilder_.mergeFrom(value);
+          }
+          if (pageSpan_ != null) {
+            bitField0_ |= 0x00000010;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         */
+        public Builder clearPageSpan() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          pageSpan_ = null;
+          if (pageSpanBuilder_ != null) {
+            pageSpanBuilder_.dispose();
+            pageSpanBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpan.Builder
+            getPageSpanBuilder() {
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return getPageSpanFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutPageSpanOrBuilder
+            getPageSpanOrBuilder() {
+          if (pageSpanBuilder_ != null) {
+            return pageSpanBuilder_.getMessageOrBuilder();
+          } else {
+            return pageSpan_ == null
+                ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan.getDefaultInstance()
+                : pageSpan_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the block.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.LayoutPageSpan page_span = 5;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpan.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutPageSpanOrBuilder>
+            getPageSpanFieldBuilder() {
+          if (pageSpanBuilder_ == null) {
+            pageSpanBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutPageSpan,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutPageSpan.Builder,
+                    com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutPageSpanOrBuilder>(getPageSpan(), getParentForChildren(), isClean());
+            pageSpan_ = null;
+          }
+          return pageSpanBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock)
+      private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+              .DocumentLayoutBlock
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock();
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DocumentLayoutBlock> PARSER =
+          new com.google.protobuf.AbstractParser<DocumentLayoutBlock>() {
+            @java.lang.Override
+            public DocumentLayoutBlock parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DocumentLayoutBlock> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DocumentLayoutBlock> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int BLOCKS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+        blocks_;
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+        getBlocksList() {
+      return blocks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                    .DocumentLayoutBlockOrBuilder>
+        getBlocksOrBuilderList() {
+      return blocks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getBlocksCount() {
+      return blocks_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+        getBlocks(int index) {
+      return blocks_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of blocks in the document.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlockOrBuilder
+        getBlocksOrBuilder(int index) {
+      return blocks_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < blocks_.size(); i++) {
+        output.writeMessage(1, blocks_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < blocks_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, blocks_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1beta3.Document.DocumentLayout)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1beta3.Document.DocumentLayout other =
+          (com.google.cloud.documentai.v1beta3.Document.DocumentLayout) obj;
+
+      if (!getBlocksList().equals(other.getBlocksList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getBlocksCount() > 0) {
+        hash = (37 * hash) + BLOCKS_FIELD_NUMBER;
+        hash = (53 * hash) + getBlocksList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the parsed layout of a document as a collection of blocks that
+     * the document is divided into.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1beta3.Document.DocumentLayout}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.DocumentLayout)
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayoutOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.class,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1beta3.Document.DocumentLayout.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (blocksBuilder_ == null) {
+          blocks_ = java.util.Collections.emptyList();
+        } else {
+          blocks_ = null;
+          blocksBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_DocumentLayout_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1beta3.Document.DocumentLayout.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout build() {
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout buildPartial() {
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout result =
+            new com.google.cloud.documentai.v1beta3.Document.DocumentLayout(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout result) {
+        if (blocksBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            blocks_ = java.util.Collections.unmodifiableList(blocks_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.blocks_ = blocks_;
+        } else {
+          result.blocks_ = blocksBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1beta3.Document.DocumentLayout) {
+          return mergeFrom((com.google.cloud.documentai.v1beta3.Document.DocumentLayout) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.documentai.v1beta3.Document.DocumentLayout other) {
+        if (other
+            == com.google.cloud.documentai.v1beta3.Document.DocumentLayout.getDefaultInstance())
+          return this;
+        if (blocksBuilder_ == null) {
+          if (!other.blocks_.isEmpty()) {
+            if (blocks_.isEmpty()) {
+              blocks_ = other.blocks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureBlocksIsMutable();
+              blocks_.addAll(other.blocks_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.blocks_.isEmpty()) {
+            if (blocksBuilder_.isEmpty()) {
+              blocksBuilder_.dispose();
+              blocksBuilder_ = null;
+              blocks_ = other.blocks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              blocksBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getBlocksFieldBuilder()
+                      : null;
+            } else {
+              blocksBuilder_.addAllMessages(other.blocks_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      m =
+                          input.readMessage(
+                              com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                                  .DocumentLayoutBlock.parser(),
+                              extensionRegistry);
+                  if (blocksBuilder_ == null) {
+                    ensureBlocksIsMutable();
+                    blocks_.add(m);
+                  } else {
+                    blocksBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+          blocks_ = java.util.Collections.emptyList();
+
+      private void ensureBlocksIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          blocks_ =
+              new java.util.ArrayList<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>(
+                  blocks_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                  .DocumentLayoutBlockOrBuilder>
+          blocksBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock>
+          getBlocksList() {
+        if (blocksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(blocks_);
+        } else {
+          return blocksBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public int getBlocksCount() {
+        if (blocksBuilder_ == null) {
+          return blocks_.size();
+        } else {
+          return blocksBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+          getBlocks(int index) {
+        if (blocksBuilder_ == null) {
+          return blocks_.get(index);
+        } else {
+          return blocksBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder setBlocks(
+          int index,
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock value) {
+        if (blocksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlocksIsMutable();
+          blocks_.set(index, value);
+          onChanged();
+        } else {
+          blocksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder setBlocks(
+          int index,
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.Builder
+              builderForValue) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          blocksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder addBlocks(
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock value) {
+        if (blocksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlocksIsMutable();
+          blocks_.add(value);
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder addBlocks(
+          int index,
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock value) {
+        if (blocksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBlocksIsMutable();
+          blocks_.add(index, value);
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder addBlocks(
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.Builder
+              builderForValue) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.add(builderForValue.build());
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder addBlocks(
+          int index,
+          com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.Builder
+              builderForValue) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          blocksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder addAllBlocks(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                          .DocumentLayoutBlock>
+              values) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blocks_);
+          onChanged();
+        } else {
+          blocksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder clearBlocks() {
+        if (blocksBuilder_ == null) {
+          blocks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          blocksBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public Builder removeBlocks(int index) {
+        if (blocksBuilder_ == null) {
+          ensureBlocksIsMutable();
+          blocks_.remove(index);
+          onChanged();
+        } else {
+          blocksBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.Builder
+          getBlocksBuilder(int index) {
+        return getBlocksFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+              .DocumentLayoutBlockOrBuilder
+          getBlocksOrBuilder(int index) {
+        if (blocksBuilder_ == null) {
+          return blocks_.get(index);
+        } else {
+          return blocksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>
+          getBlocksOrBuilderList() {
+        if (blocksBuilder_ != null) {
+          return blocksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(blocks_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.Builder
+          addBlocksBuilder() {
+        return getBlocksFieldBuilder()
+            .addBuilder(
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock.Builder
+          addBlocksBuilder(int index) {
+        return getBlocksFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of blocks in the document.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock blocks = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder>
+          getBlocksBuilderList() {
+        return getBlocksFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                  .Builder,
+              com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                  .DocumentLayoutBlockOrBuilder>
+          getBlocksFieldBuilder() {
+        if (blocksBuilder_ == null) {
+          blocksBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout.DocumentLayoutBlock
+                      .Builder,
+                  com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                      .DocumentLayoutBlockOrBuilder>(
+                  blocks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          blocks_ = null;
+        }
+        return blocksBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.DocumentLayout)
+    private static final com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.Document.DocumentLayout();
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.DocumentLayout getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DocumentLayout> PARSER =
+        new com.google.protobuf.AbstractParser<DocumentLayout>() {
+          @java.lang.Override
+          public DocumentLayout parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DocumentLayout> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DocumentLayout> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.DocumentLayout getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ChunkedDocumentOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.ChunkedDocument)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk>
+        getChunksList();
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk getChunks(int index);
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    int getChunksCount();
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder>
+        getChunksOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder getChunksOrBuilder(
+        int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the chunks that the document is divided into.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1beta3.Document.ChunkedDocument}
+   */
+  public static final class ChunkedDocument extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.ChunkedDocument)
+      ChunkedDocumentOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ChunkedDocument.newBuilder() to construct.
+    private ChunkedDocument(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ChunkedDocument() {
+      chunks_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ChunkedDocument();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1beta3.DocumentProto
+          .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1beta3.DocumentProto
+          .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.class,
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Builder.class);
+    }
+
+    public interface ChunkOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * ID of the chunk.
+       * </pre>
+       *
+       * <code>string chunk_id = 1;</code>
+       *
+       * @return The chunkId.
+       */
+      java.lang.String getChunkId();
+      /**
+       *
+       *
+       * <pre>
+       * ID of the chunk.
+       * </pre>
+       *
+       * <code>string chunk_id = 1;</code>
+       *
+       * @return The bytes for chunkId.
+       */
+      com.google.protobuf.ByteString getChunkIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @return A list containing the sourceBlockIds.
+       */
+      java.util.List<java.lang.String> getSourceBlockIdsList();
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @return The count of sourceBlockIds.
+       */
+      int getSourceBlockIdsCount();
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The sourceBlockIds at the given index.
+       */
+      java.lang.String getSourceBlockIds(int index);
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the sourceBlockIds at the given index.
+       */
+      com.google.protobuf.ByteString getSourceBlockIdsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the chunk.
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       *
+       * @return The content.
+       */
+      java.lang.String getContent();
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the chunk.
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       *
+       * @return The bytes for content.
+       */
+      com.google.protobuf.ByteString getContentBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the chunk.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+       * </code>
+       *
+       * @return Whether the pageSpan field is set.
+       */
+      boolean hasPageSpan();
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the chunk.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+       * </code>
+       *
+       * @return The pageSpan.
+       */
+      com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+          getPageSpan();
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the chunk.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+       * </code>
+       */
+      com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpanOrBuilder
+          getPageSpanOrBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents a chunk.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk}
+     */
+    public static final class Chunk extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk)
+        ChunkOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use Chunk.newBuilder() to construct.
+      private Chunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Chunk() {
+        chunkId_ = "";
+        sourceBlockIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        content_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Chunk();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.class,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder.class);
+      }
+
+      public interface ChunkPageSpanOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Page where chunk starts in the document.
+         * </pre>
+         *
+         * <code>int32 page_start = 1;</code>
+         *
+         * @return The pageStart.
+         */
+        int getPageStart();
+
+        /**
+         *
+         *
+         * <pre>
+         * Page where chunk ends in the document.
+         * </pre>
+         *
+         * <code>int32 page_end = 2;</code>
+         *
+         * @return The pageEnd.
+         */
+        int getPageEnd();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents where the chunk starts and ends in the document.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan}
+       */
+      public static final class ChunkPageSpan extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)
+          ChunkPageSpanOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use ChunkPageSpan.newBuilder() to construct.
+        private ChunkPageSpan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ChunkPageSpan() {}
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ChunkPageSpan();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_ChunkPageSpan_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_ChunkPageSpan_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                      .class,
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                      .Builder.class);
+        }
+
+        public static final int PAGE_START_FIELD_NUMBER = 1;
+        private int pageStart_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Page where chunk starts in the document.
+         * </pre>
+         *
+         * <code>int32 page_start = 1;</code>
+         *
+         * @return The pageStart.
+         */
+        @java.lang.Override
+        public int getPageStart() {
+          return pageStart_;
+        }
+
+        public static final int PAGE_END_FIELD_NUMBER = 2;
+        private int pageEnd_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Page where chunk ends in the document.
+         * </pre>
+         *
+         * <code>int32 page_end = 2;</code>
+         *
+         * @return The pageEnd.
+         */
+        @java.lang.Override
+        public int getPageEnd() {
+          return pageEnd_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (pageStart_ != 0) {
+            output.writeInt32(1, pageStart_);
+          }
+          if (pageEnd_ != 0) {
+            output.writeInt32(2, pageEnd_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (pageStart_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, pageStart_);
+          }
+          if (pageEnd_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageEnd_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan other =
+              (com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)
+                  obj;
+
+          if (getPageStart() != other.getPageStart()) return false;
+          if (getPageEnd() != other.getPageEnd()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + PAGE_START_FIELD_NUMBER;
+          hash = (53 * hash) + getPageStart();
+          hash = (37 * hash) + PAGE_END_FIELD_NUMBER;
+          hash = (53 * hash) + getPageEnd();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Represents where the chunk starts and ends in the document.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpanOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_ChunkPageSpan_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_ChunkPageSpan_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                        .class,
+                    com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            pageStart_ = 0;
+            pageEnd_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1beta3.DocumentProto
+                .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_ChunkPageSpan_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+              build() {
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+              buildPartial() {
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                result =
+                    new com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                        .ChunkPageSpan(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.pageStart_ = pageStart_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.pageEnd_ = pageEnd_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                    .getDefaultInstance()) return this;
+            if (other.getPageStart() != 0) {
+              setPageStart(other.getPageStart());
+            }
+            if (other.getPageEnd() != 0) {
+              setPageEnd(other.getPageEnd());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      pageStart_ = input.readInt32();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 16:
+                    {
+                      pageEnd_ = input.readInt32();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int pageStart_;
+          /**
+           *
+           *
+           * <pre>
+           * Page where chunk starts in the document.
+           * </pre>
+           *
+           * <code>int32 page_start = 1;</code>
+           *
+           * @return The pageStart.
+           */
+          @java.lang.Override
+          public int getPageStart() {
+            return pageStart_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where chunk starts in the document.
+           * </pre>
+           *
+           * <code>int32 page_start = 1;</code>
+           *
+           * @param value The pageStart to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPageStart(int value) {
+
+            pageStart_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where chunk starts in the document.
+           * </pre>
+           *
+           * <code>int32 page_start = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPageStart() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            pageStart_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private int pageEnd_;
+          /**
+           *
+           *
+           * <pre>
+           * Page where chunk ends in the document.
+           * </pre>
+           *
+           * <code>int32 page_end = 2;</code>
+           *
+           * @return The pageEnd.
+           */
+          @java.lang.Override
+          public int getPageEnd() {
+            return pageEnd_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where chunk ends in the document.
+           * </pre>
+           *
+           * <code>int32 page_end = 2;</code>
+           *
+           * @param value The pageEnd to set.
+           * @return This builder for chaining.
+           */
+          public Builder setPageEnd(int value) {
+
+            pageEnd_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Page where chunk ends in the document.
+           * </pre>
+           *
+           * <code>int32 page_end = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearPageEnd() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            pageEnd_ = 0;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan)
+        private static final com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                  .ChunkPageSpan();
+        }
+
+        public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpan
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ChunkPageSpan> PARSER =
+            new com.google.protobuf.AbstractParser<ChunkPageSpan>() {
+              @java.lang.Override
+              public ChunkPageSpan parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ChunkPageSpan> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ChunkPageSpan> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int CHUNK_ID_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object chunkId_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * ID of the chunk.
+       * </pre>
+       *
+       * <code>string chunk_id = 1;</code>
+       *
+       * @return The chunkId.
+       */
+      @java.lang.Override
+      public java.lang.String getChunkId() {
+        java.lang.Object ref = chunkId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          chunkId_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * ID of the chunk.
+       * </pre>
+       *
+       * <code>string chunk_id = 1;</code>
+       *
+       * @return The bytes for chunkId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getChunkIdBytes() {
+        java.lang.Object ref = chunkId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          chunkId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int SOURCE_BLOCK_IDS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList sourceBlockIds_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @return A list containing the sourceBlockIds.
+       */
+      public com.google.protobuf.ProtocolStringList getSourceBlockIdsList() {
+        return sourceBlockIds_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @return The count of sourceBlockIds.
+       */
+      public int getSourceBlockIdsCount() {
+        return sourceBlockIds_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The sourceBlockIds at the given index.
+       */
+      public java.lang.String getSourceBlockIds(int index) {
+        return sourceBlockIds_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of all parsed documents layout source blocks used to generate the
+       * chunk.
+       * </pre>
+       *
+       * <code>repeated string source_block_ids = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the sourceBlockIds at the given index.
+       */
+      public com.google.protobuf.ByteString getSourceBlockIdsBytes(int index) {
+        return sourceBlockIds_.getByteString(index);
+      }
+
+      public static final int CONTENT_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object content_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the chunk.
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       *
+       * @return The content.
+       */
+      @java.lang.Override
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Text content of the chunk.
+       * </pre>
+       *
+       * <code>string content = 3;</code>
+       *
+       * @return The bytes for content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContentBytes() {
+        java.lang.Object ref = content_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PAGE_SPAN_FIELD_NUMBER = 4;
+      private com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+          pageSpan_;
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the chunk.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+       * </code>
+       *
+       * @return Whether the pageSpan field is set.
+       */
+      @java.lang.Override
+      public boolean hasPageSpan() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the chunk.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+       * </code>
+       *
+       * @return The pageSpan.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+          getPageSpan() {
+        return pageSpan_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                .getDefaultInstance()
+            : pageSpan_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Page span of the chunk.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+              .ChunkPageSpanOrBuilder
+          getPageSpanOrBuilder() {
+        return pageSpan_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                .getDefaultInstance()
+            : pageSpan_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chunkId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, chunkId_);
+        }
+        for (int i = 0; i < sourceBlockIds_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sourceBlockIds_.getRaw(i));
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(4, getPageSpan());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(chunkId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, chunkId_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < sourceBlockIds_.size(); i++) {
+            dataSize += computeStringSizeNoTag(sourceBlockIds_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getSourceBlockIdsList().size();
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(content_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPageSpan());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk other =
+            (com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk) obj;
+
+        if (!getChunkId().equals(other.getChunkId())) return false;
+        if (!getSourceBlockIdsList().equals(other.getSourceBlockIdsList())) return false;
+        if (!getContent().equals(other.getContent())) return false;
+        if (hasPageSpan() != other.hasPageSpan()) return false;
+        if (hasPageSpan()) {
+          if (!getPageSpan().equals(other.getPageSpan())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CHUNK_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getChunkId().hashCode();
+        if (getSourceBlockIdsCount() > 0) {
+          hash = (37 * hash) + SOURCE_BLOCK_IDS_FIELD_NUMBER;
+          hash = (53 * hash) + getSourceBlockIdsList().hashCode();
+        }
+        hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+        hash = (53 * hash) + getContent().hashCode();
+        if (hasPageSpan()) {
+          hash = (37 * hash) + PAGE_SPAN_FIELD_NUMBER;
+          hash = (53 * hash) + getPageSpan().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Represents a chunk.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk)
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.class,
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getPageSpanFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          chunkId_ = "";
+          sourceBlockIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          content_ = "";
+          pageSpan_ = null;
+          if (pageSpanBuilder_ != null) {
+            pageSpanBuilder_.dispose();
+            pageSpanBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.documentai.v1beta3.DocumentProto
+              .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_Chunk_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+            getDefaultInstanceForType() {
+          return com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk build() {
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk buildPartial() {
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk result =
+              new com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.chunkId_ = chunkId_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            sourceBlockIds_.makeImmutable();
+            result.sourceBlockIds_ = sourceBlockIds_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.content_ = content_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.pageSpan_ = pageSpanBuilder_ == null ? pageSpan_ : pageSpanBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk) {
+            return mergeFrom(
+                (com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk other) {
+          if (other
+              == com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                  .getDefaultInstance()) return this;
+          if (!other.getChunkId().isEmpty()) {
+            chunkId_ = other.chunkId_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.sourceBlockIds_.isEmpty()) {
+            if (sourceBlockIds_.isEmpty()) {
+              sourceBlockIds_ = other.sourceBlockIds_;
+              bitField0_ |= 0x00000002;
+            } else {
+              ensureSourceBlockIdsIsMutable();
+              sourceBlockIds_.addAll(other.sourceBlockIds_);
+            }
+            onChanged();
+          }
+          if (!other.getContent().isEmpty()) {
+            content_ = other.content_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          if (other.hasPageSpan()) {
+            mergePageSpan(other.getPageSpan());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    chunkId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureSourceBlockIdsIsMutable();
+                    sourceBlockIds_.add(s);
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    content_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    input.readMessage(getPageSpanFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object chunkId_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * ID of the chunk.
+         * </pre>
+         *
+         * <code>string chunk_id = 1;</code>
+         *
+         * @return The chunkId.
+         */
+        public java.lang.String getChunkId() {
+          java.lang.Object ref = chunkId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            chunkId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the chunk.
+         * </pre>
+         *
+         * <code>string chunk_id = 1;</code>
+         *
+         * @return The bytes for chunkId.
+         */
+        public com.google.protobuf.ByteString getChunkIdBytes() {
+          java.lang.Object ref = chunkId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            chunkId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the chunk.
+         * </pre>
+         *
+         * <code>string chunk_id = 1;</code>
+         *
+         * @param value The chunkId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChunkId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          chunkId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the chunk.
+         * </pre>
+         *
+         * <code>string chunk_id = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearChunkId() {
+          chunkId_ = getDefaultInstance().getChunkId();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * ID of the chunk.
+         * </pre>
+         *
+         * <code>string chunk_id = 1;</code>
+         *
+         * @param value The bytes for chunkId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChunkIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          chunkId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList sourceBlockIds_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureSourceBlockIdsIsMutable() {
+          if (!sourceBlockIds_.isModifiable()) {
+            sourceBlockIds_ = new com.google.protobuf.LazyStringArrayList(sourceBlockIds_);
+          }
+          bitField0_ |= 0x00000002;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @return A list containing the sourceBlockIds.
+         */
+        public com.google.protobuf.ProtocolStringList getSourceBlockIdsList() {
+          sourceBlockIds_.makeImmutable();
+          return sourceBlockIds_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @return The count of sourceBlockIds.
+         */
+        public int getSourceBlockIdsCount() {
+          return sourceBlockIds_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The sourceBlockIds at the given index.
+         */
+        public java.lang.String getSourceBlockIds(int index) {
+          return sourceBlockIds_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the sourceBlockIds at the given index.
+         */
+        public com.google.protobuf.ByteString getSourceBlockIdsBytes(int index) {
+          return sourceBlockIds_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The sourceBlockIds to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSourceBlockIds(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourceBlockIdsIsMutable();
+          sourceBlockIds_.set(index, value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @param value The sourceBlockIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addSourceBlockIds(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourceBlockIdsIsMutable();
+          sourceBlockIds_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @param values The sourceBlockIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllSourceBlockIds(java.lang.Iterable<java.lang.String> values) {
+          ensureSourceBlockIdsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceBlockIds_);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSourceBlockIds() {
+          sourceBlockIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * List of all parsed documents layout source blocks used to generate the
+         * chunk.
+         * </pre>
+         *
+         * <code>repeated string source_block_ids = 2;</code>
+         *
+         * @param value The bytes of the sourceBlockIds to add.
+         * @return This builder for chaining.
+         */
+        public Builder addSourceBlockIdsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureSourceBlockIdsIsMutable();
+          sourceBlockIds_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object content_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Text content of the chunk.
+         * </pre>
+         *
+         * <code>string content = 3;</code>
+         *
+         * @return The content.
+         */
+        public java.lang.String getContent() {
+          java.lang.Object ref = content_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            content_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text content of the chunk.
+         * </pre>
+         *
+         * <code>string content = 3;</code>
+         *
+         * @return The bytes for content.
+         */
+        public com.google.protobuf.ByteString getContentBytes() {
+          java.lang.Object ref = content_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            content_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text content of the chunk.
+         * </pre>
+         *
+         * <code>string content = 3;</code>
+         *
+         * @param value The content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContent(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text content of the chunk.
+         * </pre>
+         *
+         * <code>string content = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContent() {
+          content_ = getDefaultInstance().getContent();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Text content of the chunk.
+         * </pre>
+         *
+         * <code>string content = 3;</code>
+         *
+         * @param value The bytes for content to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          content_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+            pageSpan_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                    .Builder,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                    .ChunkPageSpanOrBuilder>
+            pageSpanBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         *
+         * @return Whether the pageSpan field is set.
+         */
+        public boolean hasPageSpan() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         *
+         * @return The pageSpan.
+         */
+        public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+            getPageSpan() {
+          if (pageSpanBuilder_ == null) {
+            return pageSpan_ == null
+                ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                    .getDefaultInstance()
+                : pageSpan_;
+          } else {
+            return pageSpanBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         */
+        public Builder setPageSpan(
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                value) {
+          if (pageSpanBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            pageSpan_ = value;
+          } else {
+            pageSpanBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         */
+        public Builder setPageSpan(
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan.Builder
+                builderForValue) {
+          if (pageSpanBuilder_ == null) {
+            pageSpan_ = builderForValue.build();
+          } else {
+            pageSpanBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         */
+        public Builder mergePageSpan(
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                value) {
+          if (pageSpanBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)
+                && pageSpan_ != null
+                && pageSpan_
+                    != com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                        .ChunkPageSpan.getDefaultInstance()) {
+              getPageSpanBuilder().mergeFrom(value);
+            } else {
+              pageSpan_ = value;
+            }
+          } else {
+            pageSpanBuilder_.mergeFrom(value);
+          }
+          if (pageSpan_ != null) {
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         */
+        public Builder clearPageSpan() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          pageSpan_ = null;
+          if (pageSpanBuilder_ != null) {
+            pageSpanBuilder_.dispose();
+            pageSpanBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                .Builder
+            getPageSpanBuilder() {
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return getPageSpanFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                .ChunkPageSpanOrBuilder
+            getPageSpanOrBuilder() {
+          if (pageSpanBuilder_ != null) {
+            return pageSpanBuilder_.getMessageOrBuilder();
+          } else {
+            return pageSpan_ == null
+                ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                    .getDefaultInstance()
+                : pageSpan_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Page span of the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan page_span = 4;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                    .Builder,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                    .ChunkPageSpanOrBuilder>
+            getPageSpanFieldBuilder() {
+          if (pageSpanBuilder_ == null) {
+            pageSpanBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                        .ChunkPageSpan,
+                    com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.ChunkPageSpan
+                        .Builder,
+                    com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                        .ChunkPageSpanOrBuilder>(getPageSpan(), getParentForChildren(), isClean());
+            pageSpan_ = null;
+          }
+          return pageSpanBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk)
+      private static final com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk();
+      }
+
+      public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Chunk> PARSER =
+          new com.google.protobuf.AbstractParser<Chunk>() {
+            @java.lang.Override
+            public Chunk parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Chunk> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Chunk> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int CHUNKS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk>
+        chunks_;
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk>
+        getChunksList() {
+      return chunks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder>
+        getChunksOrBuilderList() {
+      return chunks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getChunksCount() {
+      return chunks_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk getChunks(int index) {
+      return chunks_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of chunks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder
+        getChunksOrBuilder(int index) {
+      return chunks_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < chunks_.size(); i++) {
+        output.writeMessage(1, chunks_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < chunks_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, chunks_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1beta3.Document.ChunkedDocument)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1beta3.Document.ChunkedDocument other =
+          (com.google.cloud.documentai.v1beta3.Document.ChunkedDocument) obj;
+
+      if (!getChunksList().equals(other.getChunksList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getChunksCount() > 0) {
+        hash = (37 * hash) + CHUNKS_FIELD_NUMBER;
+        hash = (53 * hash) + getChunksList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocument prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the chunks that the document is divided into.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1beta3.Document.ChunkedDocument}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.Document.ChunkedDocument)
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocumentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.class,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (chunksBuilder_ == null) {
+          chunks_ = java.util.Collections.emptyList();
+        } else {
+          chunks_ = null;
+          chunksBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1beta3.DocumentProto
+            .internal_static_google_cloud_documentai_v1beta3_Document_ChunkedDocument_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument
+          getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument build() {
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocument result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument buildPartial() {
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocument result =
+            new com.google.cloud.documentai.v1beta3.Document.ChunkedDocument(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument result) {
+        if (chunksBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            chunks_ = java.util.Collections.unmodifiableList(chunks_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.chunks_ = chunks_;
+        } else {
+          result.chunks_ = chunksBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1beta3.Document.ChunkedDocument) {
+          return mergeFrom((com.google.cloud.documentai.v1beta3.Document.ChunkedDocument) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.documentai.v1beta3.Document.ChunkedDocument other) {
+        if (other
+            == com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.getDefaultInstance())
+          return this;
+        if (chunksBuilder_ == null) {
+          if (!other.chunks_.isEmpty()) {
+            if (chunks_.isEmpty()) {
+              chunks_ = other.chunks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureChunksIsMutable();
+              chunks_.addAll(other.chunks_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.chunks_.isEmpty()) {
+            if (chunksBuilder_.isEmpty()) {
+              chunksBuilder_.dispose();
+              chunksBuilder_ = null;
+              chunks_ = other.chunks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              chunksBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getChunksFieldBuilder()
+                      : null;
+            } else {
+              chunksBuilder_.addAllMessages(other.chunks_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk m =
+                      input.readMessage(
+                          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                              .parser(),
+                          extensionRegistry);
+                  if (chunksBuilder_ == null) {
+                    ensureChunksIsMutable();
+                    chunks_.add(m);
+                  } else {
+                    chunksBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk>
+          chunks_ = java.util.Collections.emptyList();
+
+      private void ensureChunksIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          chunks_ =
+              new java.util.ArrayList<
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk>(chunks_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk,
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder,
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder>
+          chunksBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk>
+          getChunksList() {
+        if (chunksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(chunks_);
+        } else {
+          return chunksBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public int getChunksCount() {
+        if (chunksBuilder_ == null) {
+          return chunks_.size();
+        } else {
+          return chunksBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk getChunks(
+          int index) {
+        if (chunksBuilder_ == null) {
+          return chunks_.get(index);
+        } else {
+          return chunksBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder setChunks(
+          int index, com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk value) {
+        if (chunksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChunksIsMutable();
+          chunks_.set(index, value);
+          onChanged();
+        } else {
+          chunksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder setChunks(
+          int index,
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder
+              builderForValue) {
+        if (chunksBuilder_ == null) {
+          ensureChunksIsMutable();
+          chunks_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          chunksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder addChunks(
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk value) {
+        if (chunksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChunksIsMutable();
+          chunks_.add(value);
+          onChanged();
+        } else {
+          chunksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder addChunks(
+          int index, com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk value) {
+        if (chunksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChunksIsMutable();
+          chunks_.add(index, value);
+          onChanged();
+        } else {
+          chunksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder addChunks(
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder
+              builderForValue) {
+        if (chunksBuilder_ == null) {
+          ensureChunksIsMutable();
+          chunks_.add(builderForValue.build());
+          onChanged();
+        } else {
+          chunksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder addChunks(
+          int index,
+          com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder
+              builderForValue) {
+        if (chunksBuilder_ == null) {
+          ensureChunksIsMutable();
+          chunks_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          chunksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder addAllChunks(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk>
+              values) {
+        if (chunksBuilder_ == null) {
+          ensureChunksIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, chunks_);
+          onChanged();
+        } else {
+          chunksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder clearChunks() {
+        if (chunksBuilder_ == null) {
+          chunks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          chunksBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public Builder removeChunks(int index) {
+        if (chunksBuilder_ == null) {
+          ensureChunksIsMutable();
+          chunks_.remove(index);
+          onChanged();
+        } else {
+          chunksBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder
+          getChunksBuilder(int index) {
+        return getChunksFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder
+          getChunksOrBuilder(int index) {
+        if (chunksBuilder_ == null) {
+          return chunks_.get(index);
+        } else {
+          return chunksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder>
+          getChunksOrBuilderList() {
+        if (chunksBuilder_ != null) {
+          return chunksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(chunks_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder
+          addChunksBuilder() {
+        return getChunksFieldBuilder()
+            .addBuilder(
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder
+          addChunksBuilder(int index) {
+        return getChunksFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * List of chunks.
+       * </pre>
+       *
+       * <code>repeated .google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk chunks = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder>
+          getChunksBuilderList() {
+        return getChunksFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk,
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder,
+              com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder>
+          getChunksFieldBuilder() {
+        if (chunksBuilder_ == null) {
+          chunksBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk,
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Chunk.Builder,
+                  com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.ChunkOrBuilder>(
+                  chunks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          chunks_ = null;
+        }
+        return chunksBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.Document.ChunkedDocument)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.Document.ChunkedDocument)
+    private static final com.google.cloud.documentai.v1beta3.Document.ChunkedDocument
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.Document.ChunkedDocument();
+    }
+
+    public static com.google.cloud.documentai.v1beta3.Document.ChunkedDocument
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ChunkedDocument> PARSER =
+        new com.google.protobuf.AbstractParser<ChunkedDocument>() {
+          @java.lang.Override
+          public ChunkedDocument parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ChunkedDocument> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ChunkedDocument> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -65907,6 +82470,108 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return revisions_.get(index);
   }
 
+  public static final int DOCUMENT_LAYOUT_FIELD_NUMBER = 17;
+  private com.google.cloud.documentai.v1beta3.Document.DocumentLayout documentLayout_;
+  /**
+   *
+   *
+   * <pre>
+   * Parsed layout of the document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+   *
+   * @return Whether the documentLayout field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentLayout() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parsed layout of the document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+   *
+   * @return The documentLayout.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.Document.DocumentLayout getDocumentLayout() {
+    return documentLayout_ == null
+        ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.getDefaultInstance()
+        : documentLayout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Parsed layout of the document.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.Document.DocumentLayoutOrBuilder
+      getDocumentLayoutOrBuilder() {
+    return documentLayout_ == null
+        ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.getDefaultInstance()
+        : documentLayout_;
+  }
+
+  public static final int CHUNKED_DOCUMENT_FIELD_NUMBER = 18;
+  private com.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunkedDocument_;
+  /**
+   *
+   *
+   * <pre>
+   * Document chunked based on chunking config.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+   *
+   * @return Whether the chunkedDocument field is set.
+   */
+  @java.lang.Override
+  public boolean hasChunkedDocument() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Document chunked based on chunking config.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+   *
+   * @return The chunkedDocument.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument getChunkedDocument() {
+    return chunkedDocument_ == null
+        ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.getDefaultInstance()
+        : chunkedDocument_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Document chunked based on chunking config.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.Document.ChunkedDocumentOrBuilder
+      getChunkedDocumentOrBuilder() {
+    return chunkedDocument_ == null
+        ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.getDefaultInstance()
+        : chunkedDocument_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -65957,6 +82622,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < textChanges_.size(); i++) {
       output.writeMessage(14, textChanges_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(17, getDocumentLayout());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(18, getChunkedDocument());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -66004,6 +82675,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < textChanges_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, textChanges_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getDocumentLayout());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunkedDocument());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -66036,6 +82713,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (!getError().equals(other.getError())) return false;
     }
     if (!getRevisionsList().equals(other.getRevisionsList())) return false;
+    if (hasDocumentLayout() != other.hasDocumentLayout()) return false;
+    if (hasDocumentLayout()) {
+      if (!getDocumentLayout().equals(other.getDocumentLayout())) return false;
+    }
+    if (hasChunkedDocument() != other.hasChunkedDocument()) return false;
+    if (hasChunkedDocument()) {
+      if (!getChunkedDocument().equals(other.getChunkedDocument())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 1:
@@ -66093,6 +82778,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (getRevisionsCount() > 0) {
       hash = (37 * hash) + REVISIONS_FIELD_NUMBER;
       hash = (53 * hash) + getRevisionsList().hashCode();
+    }
+    if (hasDocumentLayout()) {
+      hash = (37 * hash) + DOCUMENT_LAYOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentLayout().hashCode();
+    }
+    if (hasChunkedDocument()) {
+      hash = (37 * hash) + CHUNKED_DOCUMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getChunkedDocument().hashCode();
     }
     switch (sourceCase_) {
       case 1:
@@ -66257,6 +82950,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         getShardInfoFieldBuilder();
         getErrorFieldBuilder();
         getRevisionsFieldBuilder();
+        getDocumentLayoutFieldBuilder();
+        getChunkedDocumentFieldBuilder();
       }
     }
 
@@ -66318,6 +83013,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         revisionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000800);
+      documentLayout_ = null;
+      if (documentLayoutBuilder_ != null) {
+        documentLayoutBuilder_.dispose();
+        documentLayoutBuilder_ = null;
+      }
+      chunkedDocument_ = null;
+      if (chunkedDocumentBuilder_ != null) {
+        chunkedDocumentBuilder_.dispose();
+        chunkedDocumentBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -66429,6 +83134,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.documentLayout_ =
+            documentLayoutBuilder_ == null ? documentLayout_ : documentLayoutBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.chunkedDocument_ =
+            chunkedDocumentBuilder_ == null ? chunkedDocument_ : chunkedDocumentBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -66661,6 +83376,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasDocumentLayout()) {
+        mergeDocumentLayout(other.getDocumentLayout());
+      }
+      if (other.hasChunkedDocument()) {
+        mergeChunkedDocument(other.getChunkedDocument());
+      }
       switch (other.getSourceCase()) {
         case URI:
           {
@@ -66826,6 +83547,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 114
+            case 138:
+              {
+                input.readMessage(getDocumentLayoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(getChunkedDocumentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -70054,6 +86787,390 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         revisions_ = null;
       }
       return revisionsBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.Document.DocumentLayout documentLayout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout,
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.Builder,
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayoutOrBuilder>
+        documentLayoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     *
+     * @return Whether the documentLayout field is set.
+     */
+    public boolean hasDocumentLayout() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     *
+     * @return The documentLayout.
+     */
+    public com.google.cloud.documentai.v1beta3.Document.DocumentLayout getDocumentLayout() {
+      if (documentLayoutBuilder_ == null) {
+        return documentLayout_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.getDefaultInstance()
+            : documentLayout_;
+      } else {
+        return documentLayoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     */
+    public Builder setDocumentLayout(
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout value) {
+      if (documentLayoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentLayout_ = value;
+      } else {
+        documentLayoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     */
+    public Builder setDocumentLayout(
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout.Builder builderForValue) {
+      if (documentLayoutBuilder_ == null) {
+        documentLayout_ = builderForValue.build();
+      } else {
+        documentLayoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     */
+    public Builder mergeDocumentLayout(
+        com.google.cloud.documentai.v1beta3.Document.DocumentLayout value) {
+      if (documentLayoutBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && documentLayout_ != null
+            && documentLayout_
+                != com.google.cloud.documentai.v1beta3.Document.DocumentLayout
+                    .getDefaultInstance()) {
+          getDocumentLayoutBuilder().mergeFrom(value);
+        } else {
+          documentLayout_ = value;
+        }
+      } else {
+        documentLayoutBuilder_.mergeFrom(value);
+      }
+      if (documentLayout_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     */
+    public Builder clearDocumentLayout() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      documentLayout_ = null;
+      if (documentLayoutBuilder_ != null) {
+        documentLayoutBuilder_.dispose();
+        documentLayoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.Document.DocumentLayout.Builder
+        getDocumentLayoutBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getDocumentLayoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.Document.DocumentLayoutOrBuilder
+        getDocumentLayoutOrBuilder() {
+      if (documentLayoutBuilder_ != null) {
+        return documentLayoutBuilder_.getMessageOrBuilder();
+      } else {
+        return documentLayout_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.DocumentLayout.getDefaultInstance()
+            : documentLayout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Parsed layout of the document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.DocumentLayout document_layout = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout,
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayout.Builder,
+            com.google.cloud.documentai.v1beta3.Document.DocumentLayoutOrBuilder>
+        getDocumentLayoutFieldBuilder() {
+      if (documentLayoutBuilder_ == null) {
+        documentLayoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayout.Builder,
+                com.google.cloud.documentai.v1beta3.Document.DocumentLayoutOrBuilder>(
+                getDocumentLayout(), getParentForChildren(), isClean());
+        documentLayout_ = null;
+      }
+      return documentLayoutBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunkedDocument_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument,
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Builder,
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocumentOrBuilder>
+        chunkedDocumentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     *
+     * @return Whether the chunkedDocument field is set.
+     */
+    public boolean hasChunkedDocument() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     *
+     * @return The chunkedDocument.
+     */
+    public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument getChunkedDocument() {
+      if (chunkedDocumentBuilder_ == null) {
+        return chunkedDocument_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.getDefaultInstance()
+            : chunkedDocument_;
+      } else {
+        return chunkedDocumentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     */
+    public Builder setChunkedDocument(
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocument value) {
+      if (chunkedDocumentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        chunkedDocument_ = value;
+      } else {
+        chunkedDocumentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     */
+    public Builder setChunkedDocument(
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Builder builderForValue) {
+      if (chunkedDocumentBuilder_ == null) {
+        chunkedDocument_ = builderForValue.build();
+      } else {
+        chunkedDocumentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     */
+    public Builder mergeChunkedDocument(
+        com.google.cloud.documentai.v1beta3.Document.ChunkedDocument value) {
+      if (chunkedDocumentBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && chunkedDocument_ != null
+            && chunkedDocument_
+                != com.google.cloud.documentai.v1beta3.Document.ChunkedDocument
+                    .getDefaultInstance()) {
+          getChunkedDocumentBuilder().mergeFrom(value);
+        } else {
+          chunkedDocument_ = value;
+        }
+      } else {
+        chunkedDocumentBuilder_.mergeFrom(value);
+      }
+      if (chunkedDocument_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     */
+    public Builder clearChunkedDocument() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      chunkedDocument_ = null;
+      if (chunkedDocumentBuilder_ != null) {
+        chunkedDocumentBuilder_.dispose();
+        chunkedDocumentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Builder
+        getChunkedDocumentBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return getChunkedDocumentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.Document.ChunkedDocumentOrBuilder
+        getChunkedDocumentOrBuilder() {
+      if (chunkedDocumentBuilder_ != null) {
+        return chunkedDocumentBuilder_.getMessageOrBuilder();
+      } else {
+        return chunkedDocument_ == null
+            ? com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.getDefaultInstance()
+            : chunkedDocument_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Document chunked based on chunking config.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document.ChunkedDocument chunked_document = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument,
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Builder,
+            com.google.cloud.documentai.v1beta3.Document.ChunkedDocumentOrBuilder>
+        getChunkedDocumentFieldBuilder() {
+      if (chunkedDocumentBuilder_ == null) {
+        chunkedDocumentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocument.Builder,
+                com.google.cloud.documentai.v1beta3.Document.ChunkedDocumentOrBuilder>(
+                getChunkedDocument(), getParentForChildren(), isClean());
+        chunkedDocument_ = null;
+      }
+      return chunkedDocumentBuilder_;
     }
 
     @java.lang.Override

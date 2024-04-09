@@ -398,6 +398,23 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
+   * If true, deploy the model without explainable feature, regardless the
+   * existence of
+   * [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+   * or
+   * [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec].
+   * </pre>
+   *
+   * <code>bool disable_explanations = 19;</code>
+   *
+   * @return The disableExplanations.
+   */
+  boolean getDisableExplanations();
+
+  /**
+   *
+   *
+   * <pre>
    * The service account that the DeployedModel's container runs as. Specify the
    * email address of the service account. If this service account is not
    * specified, the container runs as a service account that doesn't have access

@@ -146,6 +146,27 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>ERROR = 5;</code>
      */
     ERROR(5),
+    /**
+     *
+     *
+     * <pre>
+     * The REBOOTING state indicates the persistent resource is being rebooted
+     * (PR is not available right now but is expected to be ready again later).
+     * </pre>
+     *
+     * <code>REBOOTING = 6;</code>
+     */
+    REBOOTING(6),
+    /**
+     *
+     *
+     * <pre>
+     * The UPDATING state indicates the persistent resource is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 7;</code>
+     */
+    UPDATING(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -202,6 +223,27 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * <code>ERROR = 5;</code>
      */
     public static final int ERROR_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The REBOOTING state indicates the persistent resource is being rebooted
+     * (PR is not available right now but is expected to be ready again later).
+     * </pre>
+     *
+     * <code>REBOOTING = 6;</code>
+     */
+    public static final int REBOOTING_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The UPDATING state indicates the persistent resource is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 7;</code>
+     */
+    public static final int UPDATING_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -237,6 +279,10 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
           return STOPPING;
         case 5:
           return ERROR;
+        case 6:
+          return REBOOTING;
+        case 7:
+          return UPDATING;
         default:
           return null;
       }
