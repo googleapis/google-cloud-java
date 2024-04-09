@@ -284,6 +284,42 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * @return The publishCrl.
      */
     boolean getPublishCrl();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the encoding format of each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * resource's CA certificate and CRLs. If this is omitted, CA certificates
+     * and CRLs will be published in PEM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for encodingFormat.
+     */
+    int getEncodingFormatValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the encoding format of each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * resource's CA certificate and CRLs. If this is omitted, CA certificates
+     * and CRLs will be published in PEM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encodingFormat.
+     */
+    com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+        getEncodingFormat();
   }
   /**
    *
@@ -310,7 +346,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private PublishingOptions() {}
+    private PublishingOptions() {
+      encodingFormat_ = 0;
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -331,6 +369,176 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.class,
               com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Supported encoding formats for publishing.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat}
+     */
+    public enum EncodingFormat implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Not specified. By default, PEM format will be used.
+       * </pre>
+       *
+       * <code>ENCODING_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      ENCODING_FORMAT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate and CRLs will be published in PEM format.
+       * </pre>
+       *
+       * <code>PEM = 1;</code>
+       */
+      PEM(1),
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate and CRLs will be published in DER format.
+       * </pre>
+       *
+       * <code>DER = 2;</code>
+       */
+      DER(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Not specified. By default, PEM format will be used.
+       * </pre>
+       *
+       * <code>ENCODING_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      public static final int ENCODING_FORMAT_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate and CRLs will be published in PEM format.
+       * </pre>
+       *
+       * <code>PEM = 1;</code>
+       */
+      public static final int PEM_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]'s
+       * CA certificate and CRLs will be published in DER format.
+       * </pre>
+       *
+       * <code>DER = 2;</code>
+       */
+      public static final int DER_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EncodingFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EncodingFormat forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ENCODING_FORMAT_UNSPECIFIED;
+          case 1:
+            return PEM;
+          case 2:
+            return DER;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EncodingFormat> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<EncodingFormat>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EncodingFormat>() {
+                public EncodingFormat findValueByNumber(int number) {
+                  return EncodingFormat.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final EncodingFormat[] VALUES = values();
+
+      public static EncodingFormat valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EncodingFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat)
     }
 
     public static final int PUBLISH_CA_CERT_FIELD_NUMBER = 1;
@@ -383,6 +591,56 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       return publishCrl_;
     }
 
+    public static final int ENCODING_FORMAT_FIELD_NUMBER = 3;
+    private int encodingFormat_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the encoding format of each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * resource's CA certificate and CRLs. If this is omitted, CA certificates
+     * and CRLs will be published in PEM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for encodingFormat.
+     */
+    @java.lang.Override
+    public int getEncodingFormatValue() {
+      return encodingFormat_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the encoding format of each
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+     * resource's CA certificate and CRLs. If this is omitted, CA certificates
+     * and CRLs will be published in PEM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encodingFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+        getEncodingFormat() {
+      com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat result =
+          com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat.forNumber(
+              encodingFormat_);
+      return result == null
+          ? com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+              .UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -403,6 +661,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       if (publishCrl_ != false) {
         output.writeBool(2, publishCrl_);
       }
+      if (encodingFormat_
+          != com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+              .ENCODING_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(3, encodingFormat_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -417,6 +681,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       }
       if (publishCrl_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, publishCrl_);
+      }
+      if (encodingFormat_
+          != com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+              .ENCODING_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, encodingFormat_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -436,6 +706,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
 
       if (getPublishCaCert() != other.getPublishCaCert()) return false;
       if (getPublishCrl() != other.getPublishCrl()) return false;
+      if (encodingFormat_ != other.encodingFormat_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -451,6 +722,8 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPublishCaCert());
       hash = (37 * hash) + PUBLISH_CRL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPublishCrl());
+      hash = (37 * hash) + ENCODING_FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + encodingFormat_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -603,6 +876,7 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         publishCaCert_ = false;
         publishCrl_ = false;
+        encodingFormat_ = 0;
         return this;
       }
 
@@ -646,6 +920,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.publishCrl_ = publishCrl_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.encodingFormat_ = encodingFormat_;
         }
       }
 
@@ -705,6 +982,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
         if (other.getPublishCrl() != false) {
           setPublishCrl(other.getPublishCrl());
         }
+        if (other.encodingFormat_ != 0) {
+          setEncodingFormatValue(other.getEncodingFormatValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -743,6 +1023,12 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 24:
+                {
+                  encodingFormat_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -906,6 +1192,127 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
       public Builder clearPublishCrl() {
         bitField0_ = (bitField0_ & ~0x00000002);
         publishCrl_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int encodingFormat_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the encoding format of each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * resource's CA certificate and CRLs. If this is omitted, CA certificates
+       * and CRLs will be published in PEM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for encodingFormat.
+       */
+      @java.lang.Override
+      public int getEncodingFormatValue() {
+        return encodingFormat_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the encoding format of each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * resource's CA certificate and CRLs. If this is omitted, CA certificates
+       * and CRLs will be published in PEM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for encodingFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncodingFormatValue(int value) {
+        encodingFormat_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the encoding format of each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * resource's CA certificate and CRLs. If this is omitted, CA certificates
+       * and CRLs will be published in PEM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The encodingFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+          getEncodingFormat() {
+        com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat result =
+            com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+                .forNumber(encodingFormat_);
+        return result == null
+            ? com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the encoding format of each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * resource's CA certificate and CRLs. If this is omitted, CA certificates
+       * and CRLs will be published in PEM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The encodingFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncodingFormat(
+          com.google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        encodingFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the encoding format of each
+       * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
+       * resource's CA certificate and CRLs. If this is omitted, CA certificates
+       * and CRLs will be published in PEM.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.security.privateca.v1.CaPool.PublishingOptions.EncodingFormat encoding_format = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEncodingFormat() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        encodingFormat_ = 0;
         onChanged();
         return this;
       }
@@ -1074,9 +1481,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * if the issuing
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-     * maximum_lifetime, the effective lifetime will be explicitly truncated to
-     * match it.
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+     * requested maximum_lifetime, the effective lifetime will be explicitly
+     * truncated to match it.
      * </pre>
      *
      * <code>
@@ -1095,9 +1502,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * if the issuing
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-     * maximum_lifetime, the effective lifetime will be explicitly truncated to
-     * match it.
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+     * requested maximum_lifetime, the effective lifetime will be explicitly
+     * truncated to match it.
      * </pre>
      *
      * <code>
@@ -1116,9 +1523,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * if the issuing
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-     * maximum_lifetime, the effective lifetime will be explicitly truncated to
-     * match it.
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+     * requested maximum_lifetime, the effective lifetime will be explicitly
+     * truncated to match it.
      * </pre>
      *
      * <code>
@@ -5315,9 +5722,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * if the issuing
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-     * maximum_lifetime, the effective lifetime will be explicitly truncated to
-     * match it.
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+     * requested maximum_lifetime, the effective lifetime will be explicitly
+     * truncated to match it.
      * </pre>
      *
      * <code>
@@ -5339,9 +5746,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * if the issuing
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-     * maximum_lifetime, the effective lifetime will be explicitly truncated to
-     * match it.
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+     * requested maximum_lifetime, the effective lifetime will be explicitly
+     * truncated to match it.
      * </pre>
      *
      * <code>
@@ -5365,9 +5772,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
      * if the issuing
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * expires before a
-     * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-     * maximum_lifetime, the effective lifetime will be explicitly truncated to
-     * match it.
+     * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+     * requested maximum_lifetime, the effective lifetime will be explicitly
+     * truncated to match it.
      * </pre>
      *
      * <code>
@@ -6801,9 +7208,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -6824,9 +7231,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -6853,9 +7260,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -6884,9 +7291,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -6912,9 +7319,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -6948,9 +7355,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -6976,9 +7383,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -6999,9 +7406,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>
@@ -7026,9 +7433,9 @@ public final class CaPool extends com.google.protobuf.GeneratedMessageV3
        * if the issuing
        * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
        * expires before a
-       * [Certificate][google.cloud.security.privateca.v1.Certificate]'s requested
-       * maximum_lifetime, the effective lifetime will be explicitly truncated to
-       * match it.
+       * [Certificate][google.cloud.security.privateca.v1.Certificate] resource's
+       * requested maximum_lifetime, the effective lifetime will be explicitly
+       * truncated to match it.
        * </pre>
        *
        * <code>

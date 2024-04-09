@@ -153,6 +153,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/settings}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -189,6 +190,7 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                                 fields, "settings.name", request.getSettings().getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{settings.name=projects/*/locations/*/settings}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

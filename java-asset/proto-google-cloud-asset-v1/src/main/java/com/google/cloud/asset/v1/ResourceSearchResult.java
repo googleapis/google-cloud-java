@@ -936,7 +936,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=468
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The kmsKey.
    */
   @java.lang.Override
@@ -978,7 +978,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=468
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The bytes for kmsKey.
    */
   @java.lang.Override
@@ -1873,7 +1873,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=601
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return A list containing the tagKeys.
    */
   @java.lang.Deprecated
@@ -1902,7 +1902,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=601
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return The count of tagKeys.
    */
   @java.lang.Deprecated
@@ -1931,7 +1931,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=601
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
@@ -1961,7 +1961,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=601
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
@@ -1999,7 +1999,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=618
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return A list containing the tagValues.
    */
   @java.lang.Deprecated
@@ -2030,7 +2030,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=618
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return The count of tagValues.
    */
   @java.lang.Deprecated
@@ -2061,7 +2061,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=618
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
@@ -2093,7 +2093,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=618
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
@@ -2127,7 +2127,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=631
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return A list containing the tagValueIds.
    */
   @java.lang.Deprecated
@@ -2154,7 +2154,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=631
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return The count of tagValueIds.
    */
   @java.lang.Deprecated
@@ -2181,7 +2181,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=631
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
@@ -2209,7 +2209,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=631
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
@@ -2234,6 +2234,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *     - `tagKeyIds="tagKeys/123"`
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
@@ -2262,6 +2263,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *     - `tagKeyIds="tagKeys/123"`
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
@@ -2290,6 +2292,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *     - `tagKeyIds="tagKeys/123"`
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
@@ -2318,6 +2321,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *     - `tagKeyIds="tagKeys/123"`
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
@@ -2346,6 +2350,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `tagKeys:"123456789/env*"`
    *     - `tagKeys="123456789/env"`
    *     - `tagKeys:"env"`
+   *     - `tagKeyIds="tagKeys/123"`
    *     - `tagValues:"env"`
    *     - `tagValues:"env/prod"`
    *     - `tagValues:"123456789/env/prod*"`
@@ -2382,6 +2387,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `effectiveTagKeys:"123456789/env*"`
    *     - `effectiveTagKeys="123456789/env"`
    *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagKeyIds="tagKeys/123"`
    *     - `effectiveTagValues:"env"`
    *     - `effectiveTagValues:"env/prod"`
    *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -2410,6 +2416,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `effectiveTagKeys:"123456789/env*"`
    *     - `effectiveTagKeys="123456789/env"`
    *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagKeyIds="tagKeys/123"`
    *     - `effectiveTagValues:"env"`
    *     - `effectiveTagValues:"env/prod"`
    *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -2439,6 +2446,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `effectiveTagKeys:"123456789/env*"`
    *     - `effectiveTagKeys="123456789/env"`
    *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagKeyIds="tagKeys/123"`
    *     - `effectiveTagValues:"env"`
    *     - `effectiveTagValues:"env/prod"`
    *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -2467,6 +2475,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `effectiveTagKeys:"123456789/env*"`
    *     - `effectiveTagKeys="123456789/env"`
    *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagKeyIds="tagKeys/123"`
    *     - `effectiveTagValues:"env"`
    *     - `effectiveTagValues:"env/prod"`
    *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -2495,6 +2504,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *     - `effectiveTagKeys:"123456789/env*"`
    *     - `effectiveTagKeys="123456789/env"`
    *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagKeyIds="tagKeys/123"`
    *     - `effectiveTagValues:"env"`
    *     - `effectiveTagValues:"env/prod"`
    *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -5825,7 +5835,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=468
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @return The kmsKey.
      */
     @java.lang.Deprecated
@@ -5866,7 +5876,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=468
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @return The bytes for kmsKey.
      */
     @java.lang.Deprecated
@@ -5907,7 +5917,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=468
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @param value The kmsKey to set.
      * @return This builder for chaining.
      */
@@ -5947,7 +5957,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=468
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5983,7 +5993,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=468
+     *     google/cloud/asset/v1/assets.proto;l=471
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
      */
@@ -8749,7 +8759,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @return A list containing the tagKeys.
      */
     @java.lang.Deprecated
@@ -8779,7 +8789,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @return The count of tagKeys.
      */
     @java.lang.Deprecated
@@ -8808,7 +8818,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param index The index of the element to return.
      * @return The tagKeys at the given index.
      */
@@ -8838,7 +8848,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param index The index of the value to return.
      * @return The bytes of the tagKeys at the given index.
      */
@@ -8868,7 +8878,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param index The index to set the value at.
      * @param value The tagKeys to set.
      * @return This builder for chaining.
@@ -8906,7 +8916,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param value The tagKeys to add.
      * @return This builder for chaining.
      */
@@ -8943,7 +8953,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param values The tagKeys to add.
      * @return This builder for chaining.
      */
@@ -8977,7 +8987,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9010,7 +9020,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_keys = 23 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=601
+     *     google/cloud/asset/v1/assets.proto;l=604
      * @param value The bytes of the tagKeys to add.
      * @return This builder for chaining.
      */
@@ -9060,7 +9070,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @return A list containing the tagValues.
      */
     @java.lang.Deprecated
@@ -9092,7 +9102,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @return The count of tagValues.
      */
     @java.lang.Deprecated
@@ -9123,7 +9133,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param index The index of the element to return.
      * @return The tagValues at the given index.
      */
@@ -9155,7 +9165,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param index The index of the value to return.
      * @return The bytes of the tagValues at the given index.
      */
@@ -9187,7 +9197,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param index The index to set the value at.
      * @param value The tagValues to set.
      * @return This builder for chaining.
@@ -9227,7 +9237,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param value The tagValues to add.
      * @return This builder for chaining.
      */
@@ -9266,7 +9276,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param values The tagValues to add.
      * @return This builder for chaining.
      */
@@ -9302,7 +9312,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9337,7 +9347,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_values = 25 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=618
+     *     google/cloud/asset/v1/assets.proto;l=621
      * @param value The bytes of the tagValues to add.
      * @return This builder for chaining.
      */
@@ -9383,7 +9393,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @return A list containing the tagValueIds.
      */
     @java.lang.Deprecated
@@ -9411,7 +9421,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @return The count of tagValueIds.
      */
     @java.lang.Deprecated
@@ -9438,7 +9448,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param index The index of the element to return.
      * @return The tagValueIds at the given index.
      */
@@ -9466,7 +9476,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param index The index of the value to return.
      * @return The bytes of the tagValueIds at the given index.
      */
@@ -9494,7 +9504,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param index The index to set the value at.
      * @param value The tagValueIds to set.
      * @return This builder for chaining.
@@ -9530,7 +9540,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param value The tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9565,7 +9575,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param values The tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9597,7 +9607,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -9628,7 +9638,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=631
+     *     google/cloud/asset/v1/assets.proto;l=634
      * @param value The bytes of the tagValueIds to add.
      * @return This builder for chaining.
      */
@@ -9672,6 +9682,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9703,6 +9714,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9734,6 +9746,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9765,6 +9778,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9802,6 +9816,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9836,6 +9851,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9873,6 +9889,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9910,6 +9927,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9944,6 +9962,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -9978,6 +9997,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10012,6 +10032,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10046,6 +10067,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10080,6 +10102,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10107,6 +10130,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10138,6 +10162,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10169,6 +10194,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10196,6 +10222,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10224,6 +10251,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `tagKeys:"123456789/env*"`
      *     - `tagKeys="123456789/env"`
      *     - `tagKeys:"env"`
+     *     - `tagKeyIds="tagKeys/123"`
      *     - `tagValues:"env"`
      *     - `tagValues:"env/prod"`
      *     - `tagValues:"123456789/env/prod*"`
@@ -10289,6 +10317,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10320,6 +10349,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10351,6 +10381,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10382,6 +10413,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10420,6 +10452,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10455,6 +10488,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10492,6 +10526,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10530,6 +10565,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10565,6 +10601,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10600,6 +10637,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10635,6 +10673,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10669,6 +10708,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10703,6 +10743,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10731,6 +10772,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10763,6 +10805,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10795,6 +10838,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10823,6 +10867,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`
@@ -10852,6 +10897,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *     - `effectiveTagKeys:"123456789/env*"`
      *     - `effectiveTagKeys="123456789/env"`
      *     - `effectiveTagKeys:"env"`
+     *     - `effectiveTagKeyIds="tagKeys/123"`
      *     - `effectiveTagValues:"env"`
      *     - `effectiveTagValues:"env/prod"`
      *     - `effectiveTagValues:"123456789/env/prod*"`

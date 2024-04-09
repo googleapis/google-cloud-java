@@ -179,6 +179,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RebootPersistentResource</td>
+ *      <td><p> Reboots a PersistentResource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> rebootPersistentResourceAsync(RebootPersistentResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> rebootPersistentResourceAsync(PersistentResourceName name)
+ *           <li><p> rebootPersistentResourceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> rebootPersistentResourceOperationCallable()
+ *           <li><p> rebootPersistentResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1153,6 +1173,174 @@ public class PersistentResourceServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdatePersistentResourceRequest, Operation>
       updatePersistentResourceCallable() {
     return stub.updatePersistentResourceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reboots a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   PersistentResourceName name =
+   *       PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]");
+   *   PersistentResource response =
+   *       persistentResourceServiceClient.rebootPersistentResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PersistentResource resource. Format:
+   *     `projects/{project_id_or_number}/locations/{location_id}/persistentResources/{persistent_resource_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PersistentResource, RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceAsync(PersistentResourceName name) {
+    RebootPersistentResourceRequest request =
+        RebootPersistentResourceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return rebootPersistentResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reboots a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   String name =
+   *       PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]").toString();
+   *   PersistentResource response =
+   *       persistentResourceServiceClient.rebootPersistentResourceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the PersistentResource resource. Format:
+   *     `projects/{project_id_or_number}/locations/{location_id}/persistentResources/{persistent_resource_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PersistentResource, RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceAsync(String name) {
+    RebootPersistentResourceRequest request =
+        RebootPersistentResourceRequest.newBuilder().setName(name).build();
+    return rebootPersistentResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reboots a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   RebootPersistentResourceRequest request =
+   *       RebootPersistentResourceRequest.newBuilder()
+   *           .setName(
+   *               PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]")
+   *                   .toString())
+   *           .build();
+   *   PersistentResource response =
+   *       persistentResourceServiceClient.rebootPersistentResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PersistentResource, RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceAsync(RebootPersistentResourceRequest request) {
+    return rebootPersistentResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reboots a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   RebootPersistentResourceRequest request =
+   *       RebootPersistentResourceRequest.newBuilder()
+   *           .setName(
+   *               PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<PersistentResource, RebootPersistentResourceOperationMetadata> future =
+   *       persistentResourceServiceClient
+   *           .rebootPersistentResourceOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   PersistentResource response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RebootPersistentResourceRequest,
+          PersistentResource,
+          RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceOperationCallable() {
+    return stub.rebootPersistentResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Reboots a PersistentResource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PersistentResourceServiceClient persistentResourceServiceClient =
+   *     PersistentResourceServiceClient.create()) {
+   *   RebootPersistentResourceRequest request =
+   *       RebootPersistentResourceRequest.newBuilder()
+   *           .setName(
+   *               PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       persistentResourceServiceClient.rebootPersistentResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RebootPersistentResourceRequest, Operation>
+      rebootPersistentResourceCallable() {
+    return stub.rebootPersistentResourceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

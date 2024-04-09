@@ -916,7 +916,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -936,7 +936,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -956,7 +956,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -975,7 +975,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -998,7 +998,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -1125,7 +1125,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -1149,7 +1149,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -1175,7 +1175,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -1197,7 +1197,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -1220,7 +1220,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        * A list of string ranges identifying where the input request matched in
        * `text`. The ranges can be used to format specific parts of `text`. The
        * substrings may not be exact matches of `input` if the matching was
-       * determined by criteria other than string matching (e.g. spell
+       * determined by criteria other than string matching (for example, spell
        * corrections or transliterations).
        *
        * These values are Unicode character offsets of `text`. The ranges are
@@ -1823,7 +1823,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -1850,7 +1850,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -1875,7 +1875,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -1901,7 +1901,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -1934,7 +1934,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -1965,7 +1965,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -1997,7 +1997,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2030,7 +2030,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2060,7 +2060,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2091,7 +2091,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2123,7 +2123,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2151,7 +2151,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2179,7 +2179,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2201,7 +2201,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2227,7 +2227,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2256,7 +2256,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2281,7 +2281,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -2307,7 +2307,7 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          * A list of string ranges identifying where the input request matched in
          * `text`. The ranges can be used to format specific parts of `text`. The
          * substrings may not be exact matches of `input` if the matching was
-         * determined by criteria other than string matching (e.g. spell
+         * determined by criteria other than string matching (for example, spell
          * corrections or transliterations).
          *
          * These values are Unicode character offsets of `text`. The ranges are
@@ -6143,7 +6143,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        *
        * <pre>
        * The predicted text. This text does not represent a Place, but rather a
-       * text query that could be used in a search endpoint (e.g. TextSearch).
+       * text query that could be used in a search endpoint (for example,
+       * Text Search).
        *
        * `text` is recommended for developers who wish to show a single UI
        * element. Developers who wish to show two separate, but related, UI
@@ -6168,7 +6169,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        *
        * <pre>
        * The predicted text. This text does not represent a Place, but rather a
-       * text query that could be used in a search endpoint (e.g. TextSearch).
+       * text query that could be used in a search endpoint (for example,
+       * Text Search).
        *
        * `text` is recommended for developers who wish to show a single UI
        * element. Developers who wish to show two separate, but related, UI
@@ -6193,7 +6195,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        *
        * <pre>
        * The predicted text. This text does not represent a Place, but rather a
-       * text query that could be used in a search endpoint (e.g. TextSearch).
+       * text query that could be used in a search endpoint (for example,
+       * Text Search).
        *
        * `text` is recommended for developers who wish to show a single UI
        * element. Developers who wish to show two separate, but related, UI
@@ -6333,7 +6336,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        *
        * <pre>
        * The predicted text. This text does not represent a Place, but rather a
-       * text query that could be used in a search endpoint (e.g. TextSearch).
+       * text query that could be used in a search endpoint (for example,
+       * Text Search).
        *
        * `text` is recommended for developers who wish to show a single UI
        * element. Developers who wish to show two separate, but related, UI
@@ -6361,7 +6365,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        *
        * <pre>
        * The predicted text. This text does not represent a Place, but rather a
-       * text query that could be used in a search endpoint (e.g. TextSearch).
+       * text query that could be used in a search endpoint (for example,
+       * Text Search).
        *
        * `text` is recommended for developers who wish to show a single UI
        * element. Developers who wish to show two separate, but related, UI
@@ -6393,7 +6398,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
        *
        * <pre>
        * The predicted text. This text does not represent a Place, but rather a
-       * text query that could be used in a search endpoint (e.g. TextSearch).
+       * text query that could be used in a search endpoint (for example,
+       * Text Search).
        *
        * `text` is recommended for developers who wish to show a single UI
        * element. Developers who wish to show two separate, but related, UI
@@ -6953,7 +6959,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -6980,7 +6987,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -7015,7 +7023,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -7051,7 +7060,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -7085,7 +7095,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -7128,7 +7139,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -7160,7 +7172,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -7189,7 +7202,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI
@@ -7223,7 +7237,8 @@ public final class AutocompletePlacesResponse extends com.google.protobuf.Genera
          *
          * <pre>
          * The predicted text. This text does not represent a Place, but rather a
-         * text query that could be used in a search endpoint (e.g. TextSearch).
+         * text query that could be used in a search endpoint (for example,
+         * Text Search).
          *
          * `text` is recommended for developers who wish to show a single UI
          * element. Developers who wish to show two separate, but related, UI

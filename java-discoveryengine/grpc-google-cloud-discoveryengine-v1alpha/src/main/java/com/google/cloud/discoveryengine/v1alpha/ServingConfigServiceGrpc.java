@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service for operations related to [ServingConfig][].
+ * Service for operations related to
+ * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -228,7 +229,8 @@ public final class ServingConfigServiceGrpc {
    *
    *
    * <pre>
-   * Service for operations related to [ServingConfig][].
+   * Service for operations related to
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
    * </pre>
    */
   public interface AsyncService {
@@ -286,7 +288,8 @@ public final class ServingConfigServiceGrpc {
    * Base class for the server implementation of the service ServingConfigService.
    *
    * <pre>
-   * Service for operations related to [ServingConfig][].
+   * Service for operations related to
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
    * </pre>
    */
   public abstract static class ServingConfigServiceImplBase
@@ -302,7 +305,8 @@ public final class ServingConfigServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service ServingConfigService.
    *
    * <pre>
-   * Service for operations related to [ServingConfig][].
+   * Service for operations related to
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
    * </pre>
    */
   public static final class ServingConfigServiceStub
@@ -376,7 +380,8 @@ public final class ServingConfigServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service ServingConfigService.
    *
    * <pre>
-   * Service for operations related to [ServingConfig][].
+   * Service for operations related to
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
    * </pre>
    */
   public static final class ServingConfigServiceBlockingStub
@@ -438,7 +443,8 @@ public final class ServingConfigServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service ServingConfigService.
    *
    * <pre>
-   * Service for operations related to [ServingConfig][].
+   * Service for operations related to
+   * [ServingConfig][google.cloud.discoveryengine.v1alpha.ServingConfig].
    * </pre>
    */
   public static final class ServingConfigServiceFutureStub

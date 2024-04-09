@@ -24,6 +24,8 @@ package com.google.cloud.batch.v1alpha;
  *
  * <pre>
  * The Resource Allowance description for Cloud Batch.
+ * Only one Resource Allowance is supported now under a specific location and
+ * project.
  * </pre>
  *
  * Protobuf type {@code google.cloud.batch.v1alpha.ResourceAllowance}
@@ -800,6 +802,8 @@ public final class ResourceAllowance extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The Resource Allowance description for Cloud Batch.
+   * Only one Resource Allowance is supported now under a specific location and
+   * project.
    * </pre>
    *
    * Protobuf type {@code google.cloud.batch.v1alpha.ResourceAllowance}

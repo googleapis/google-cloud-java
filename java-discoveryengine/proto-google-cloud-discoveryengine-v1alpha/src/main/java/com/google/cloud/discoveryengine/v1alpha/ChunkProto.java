@@ -36,6 +36,14 @@ public final class ChunkProto {
       internal_static_google_cloud_discoveryengine_v1alpha_Chunk_DocumentMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_Chunk_DocumentMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_Chunk_PageSpan_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_Chunk_PageSpan_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1alpha_Chunk_ChunkMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1alpha_Chunk_ChunkMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -49,28 +57,37 @@ public final class ChunkProto {
           + "hunk.proto\022$google.cloud.discoveryengine"
           + ".v1alpha\032\037google/api/field_behavior.prot"
           + "o\032\031google/api/resource.proto\032\034google/pro"
-          + "tobuf/struct.proto\"\253\004\n\005Chunk\022\014\n\004name\030\001 \001"
+          + "tobuf/struct.proto\"\230\007\n\005Chunk\022\014\n\004name\030\001 \001"
           + "(\t\022\n\n\002id\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022W\n\021docum"
           + "ent_metadata\030\005 \001(\0132<.google.cloud.discov"
           + "eryengine.v1alpha.Chunk.DocumentMetadata"
           + "\0229\n\023derived_struct_data\030\004 \001(\0132\027.google.p"
-          + "rotobuf.StructB\003\340A\003\032.\n\020DocumentMetadata\022"
-          + "\013\n\003uri\030\001 \001(\t\022\r\n\005title\030\002 \001(\t:\262\002\352A\256\002\n$disc"
-          + "overyengine.googleapis.com/Chunk\022uprojec"
-          + "ts/{project}/locations/{location}/dataSt"
-          + "ores/{data_store}/branches/{branch}/docu"
-          + "ments/{document}/chunks/{chunk}\022\216\001projec"
-          + "ts/{project}/locations/{location}/collec"
-          + "tions/{collection}/dataStores/{data_stor"
-          + "e}/branches/{branch}/documents/{document"
-          + "}/chunks/{chunk}B\226\002\n(com.google.cloud.di"
-          + "scoveryengine.v1alphaB\nChunkProtoP\001ZRclo"
-          + "ud.google.com/go/discoveryengine/apiv1al"
-          + "pha/discoveryenginepb;discoveryenginepb\242"
-          + "\002\017DISCOVERYENGINE\252\002$Google.Cloud.Discove"
-          + "ryEngine.V1Alpha\312\002$Google\\Cloud\\Discover"
-          + "yEngine\\V1alpha\352\002\'Google::Cloud::Discove"
-          + "ryEngine::V1alphab\006proto3"
+          + "rotobuf.StructB\003\340A\003\022G\n\tpage_span\030\006 \001(\01324"
+          + ".google.cloud.discoveryengine.v1alpha.Ch"
+          + "unk.PageSpan\022V\n\016chunk_metadata\030\007 \001(\01329.g"
+          + "oogle.cloud.discoveryengine.v1alpha.Chun"
+          + "k.ChunkMetadataB\003\340A\003\032.\n\020DocumentMetadata"
+          + "\022\013\n\003uri\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\0320\n\010PageSpan"
+          + "\022\022\n\npage_start\030\001 \001(\005\022\020\n\010page_end\030\002 \001(\005\032\227"
+          + "\001\n\rChunkMetadata\022D\n\017previous_chunks\030\001 \003("
+          + "\0132+.google.cloud.discoveryengine.v1alpha"
+          + ".Chunk\022@\n\013next_chunks\030\002 \003(\0132+.google.clo"
+          + "ud.discoveryengine.v1alpha.Chunk:\262\002\352A\256\002\n"
+          + "$discoveryengine.googleapis.com/Chunk\022up"
+          + "rojects/{project}/locations/{location}/d"
+          + "ataStores/{data_store}/branches/{branch}"
+          + "/documents/{document}/chunks/{chunk}\022\216\001p"
+          + "rojects/{project}/locations/{location}/c"
+          + "ollections/{collection}/dataStores/{data"
+          + "_store}/branches/{branch}/documents/{doc"
+          + "ument}/chunks/{chunk}B\226\002\n(com.google.clo"
+          + "ud.discoveryengine.v1alphaB\nChunkProtoP\001"
+          + "ZRcloud.google.com/go/discoveryengine/ap"
+          + "iv1alpha/discoveryenginepb;discoveryengi"
+          + "nepb\242\002\017DISCOVERYENGINE\252\002$Google.Cloud.Di"
+          + "scoveryEngine.V1Alpha\312\002$Google\\Cloud\\Dis"
+          + "coveryEngine\\V1alpha\352\002\'Google::Cloud::Di"
+          + "scoveryEngine::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,7 +103,13 @@ public final class ChunkProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_Chunk_descriptor,
             new java.lang.String[] {
-              "Name", "Id", "Content", "DocumentMetadata", "DerivedStructData",
+              "Name",
+              "Id",
+              "Content",
+              "DocumentMetadata",
+              "DerivedStructData",
+              "PageSpan",
+              "ChunkMetadata",
             });
     internal_static_google_cloud_discoveryengine_v1alpha_Chunk_DocumentMetadata_descriptor =
         internal_static_google_cloud_discoveryengine_v1alpha_Chunk_descriptor
@@ -97,6 +120,26 @@ public final class ChunkProto {
             internal_static_google_cloud_discoveryengine_v1alpha_Chunk_DocumentMetadata_descriptor,
             new java.lang.String[] {
               "Uri", "Title",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_Chunk_PageSpan_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_Chunk_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_discoveryengine_v1alpha_Chunk_PageSpan_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_Chunk_PageSpan_descriptor,
+            new java.lang.String[] {
+              "PageStart", "PageEnd",
+            });
+    internal_static_google_cloud_discoveryengine_v1alpha_Chunk_ChunkMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1alpha_Chunk_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_discoveryengine_v1alpha_Chunk_ChunkMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1alpha_Chunk_ChunkMetadata_descriptor,
+            new java.lang.String[] {
+              "PreviousChunks", "NextChunks",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

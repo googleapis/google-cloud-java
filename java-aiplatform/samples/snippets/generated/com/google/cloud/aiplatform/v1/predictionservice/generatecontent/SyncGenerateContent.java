@@ -43,6 +43,7 @@ public class SyncGenerateContent {
           GenerateContentRequest.newBuilder()
               .setModel("model104069929")
               .addAllContents(new ArrayList<Content>())
+              .setSystemInstruction(Content.newBuilder().build())
               .addAllTools(new ArrayList<Tool>())
               .addAllSafetySettings(new ArrayList<SafetySetting>())
               .setGenerationConfig(GenerationConfig.newBuilder().build())

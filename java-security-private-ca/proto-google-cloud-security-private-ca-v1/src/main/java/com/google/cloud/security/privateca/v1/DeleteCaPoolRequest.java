@@ -207,7 +207,7 @@ public final class DeleteCaPoolRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Optional. This field allows this pool to be deleted even if it's being
    * depended on by another resource. However, doing so may result in unintended
-   * and unrecoverable effects on any dependent resource(s) since the pool will
+   * and unrecoverable effects on any dependent resources since the pool will
    * no longer be able to issue certificates.
    * </pre>
    *
@@ -909,7 +909,7 @@ public final class DeleteCaPoolRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. This field allows this pool to be deleted even if it's being
      * depended on by another resource. However, doing so may result in unintended
-     * and unrecoverable effects on any dependent resource(s) since the pool will
+     * and unrecoverable effects on any dependent resources since the pool will
      * no longer be able to issue certificates.
      * </pre>
      *
@@ -927,7 +927,7 @@ public final class DeleteCaPoolRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. This field allows this pool to be deleted even if it's being
      * depended on by another resource. However, doing so may result in unintended
-     * and unrecoverable effects on any dependent resource(s) since the pool will
+     * and unrecoverable effects on any dependent resources since the pool will
      * no longer be able to issue certificates.
      * </pre>
      *
@@ -949,7 +949,7 @@ public final class DeleteCaPoolRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Optional. This field allows this pool to be deleted even if it's being
      * depended on by another resource. However, doing so may result in unintended
-     * and unrecoverable effects on any dependent resource(s) since the pool will
+     * and unrecoverable effects on any dependent resources since the pool will
      * no longer be able to issue certificates.
      * </pre>
      *

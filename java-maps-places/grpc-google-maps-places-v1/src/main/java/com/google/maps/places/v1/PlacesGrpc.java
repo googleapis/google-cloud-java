@@ -22,11 +22,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Service definition for the Places API.
- * Note: every request actually requires a field mask set outside of
- * the request proto (all/'*', is not assumed).  That can be set via either a
- * side channel (SystemParameterContext) over RPC, or a header
- * (X-Goog-FieldMask) over HTTP. See:
- * https://cloud.google.com/apis/docs/system-parameters
+ * Note: every request (except for Autocomplete requests) requires a field mask
+ * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
+ * can be set via the HTTP header `X-Goog-FieldMask`. See:
+ * https://developers.google.com/maps/documentation/places/web-service/choose-fields
  * </pre>
  */
 @javax.annotation.Generated(
@@ -298,11 +297,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request actually requires a field mask set outside of
-   * the request proto (all/'*', is not assumed).  That can be set via either a
-   * side channel (SystemParameterContext) over RPC, or a header
-   * (X-Goog-FieldMask) over HTTP. See:
-   * https://cloud.google.com/apis/docs/system-parameters
+   * Note: every request (except for Autocomplete requests) requires a field mask
+   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
+   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
   public interface AsyncService {
@@ -385,11 +383,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request actually requires a field mask set outside of
-   * the request proto (all/'*', is not assumed).  That can be set via either a
-   * side channel (SystemParameterContext) over RPC, or a header
-   * (X-Goog-FieldMask) over HTTP. See:
-   * https://cloud.google.com/apis/docs/system-parameters
+   * Note: every request (except for Autocomplete requests) requires a field mask
+   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
+   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
   public abstract static class PlacesImplBase implements io.grpc.BindableService, AsyncService {
@@ -405,11 +402,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request actually requires a field mask set outside of
-   * the request proto (all/'*', is not assumed).  That can be set via either a
-   * side channel (SystemParameterContext) over RPC, or a header
-   * (X-Goog-FieldMask) over HTTP. See:
-   * https://cloud.google.com/apis/docs/system-parameters
+   * Note: every request (except for Autocomplete requests) requires a field mask
+   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
+   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
   public static final class PlacesStub extends io.grpc.stub.AbstractAsyncStub<PlacesStub> {
@@ -508,11 +504,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request actually requires a field mask set outside of
-   * the request proto (all/'*', is not assumed).  That can be set via either a
-   * side channel (SystemParameterContext) over RPC, or a header
-   * (X-Goog-FieldMask) over HTTP. See:
-   * https://cloud.google.com/apis/docs/system-parameters
+   * Note: every request (except for Autocomplete requests) requires a field mask
+   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
+   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
   public static final class PlacesBlockingStub
@@ -598,11 +593,10 @@ public final class PlacesGrpc {
    *
    * <pre>
    * Service definition for the Places API.
-   * Note: every request actually requires a field mask set outside of
-   * the request proto (all/'*', is not assumed).  That can be set via either a
-   * side channel (SystemParameterContext) over RPC, or a header
-   * (X-Goog-FieldMask) over HTTP. See:
-   * https://cloud.google.com/apis/docs/system-parameters
+   * Note: every request (except for Autocomplete requests) requires a field mask
+   * set outside of the request proto (`all/&#42;`, is not assumed). The field mask
+   * can be set via the HTTP header `X-Goog-FieldMask`. See:
+   * https://developers.google.com/maps/documentation/places/web-service/choose-fields
    * </pre>
    */
   public static final class PlacesFutureStub

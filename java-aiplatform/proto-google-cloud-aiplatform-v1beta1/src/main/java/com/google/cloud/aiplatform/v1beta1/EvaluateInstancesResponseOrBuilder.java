@@ -317,42 +317,6 @@ public interface EvaluateInstancesResponseOrBuilder
    *
    *
    * <pre>
-   * Result for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;</code>
-   *
-   * @return Whether the responseRecallResult field is set.
-   */
-  boolean hasResponseRecallResult();
-  /**
-   *
-   *
-   * <pre>
-   * Result for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;</code>
-   *
-   * @return The responseRecallResult.
-   */
-  com.google.cloud.aiplatform.v1beta1.ResponseRecallResult getResponseRecallResult();
-  /**
-   *
-   *
-   * <pre>
-   * Result for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallResult response_recall_result = 12;</code>
-   */
-  com.google.cloud.aiplatform.v1beta1.ResponseRecallResultOrBuilder
-      getResponseRecallResultOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Summarization only metrics.
    * Result for summarization quality metric.
    * </pre>
@@ -740,48 +704,6 @@ public interface EvaluateInstancesResponseOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringCorrectnessResultOrBuilder
       getQuestionAnsweringCorrectnessResultOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * RAG only metrics.
-   * Result for context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-   * </code>
-   *
-   * @return Whether the ragContextRecallResult field is set.
-   */
-  boolean hasRagContextRecallResult();
-  /**
-   *
-   *
-   * <pre>
-   * RAG only metrics.
-   * Result for context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-   * </code>
-   *
-   * @return The ragContextRecallResult.
-   */
-  com.google.cloud.aiplatform.v1beta1.RagContextRecallResult getRagContextRecallResult();
-  /**
-   *
-   *
-   * <pre>
-   * RAG only metrics.
-   * Result for context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallResult rag_context_recall_result = 10;
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.RagContextRecallResultOrBuilder
-      getRagContextRecallResultOrBuilder();
 
   /**
    *

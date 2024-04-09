@@ -916,6 +916,878 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public interface RetrievedContextOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI reference of the attribution.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI reference of the attribution.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Title of the attribution.
+     * </pre>
+     *
+     * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The title.
+     */
+    java.lang.String getTitle();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Title of the attribution.
+     * </pre>
+     *
+     * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for title.
+     */
+    com.google.protobuf.ByteString getTitleBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Attribution from context retrieved by the retrieval tools.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext}
+   */
+  public static final class RetrievedContext extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+      RetrievedContextOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RetrievedContext.newBuilder() to construct.
+    private RetrievedContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RetrievedContext() {
+      uri_ = "";
+      title_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RetrievedContext();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GroundingAttribution_RetrievedContext_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ContentProto
+          .internal_static_google_cloud_aiplatform_v1beta1_GroundingAttribution_RetrievedContext_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.class,
+              com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.Builder
+                  .class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI reference of the attribution.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. URI reference of the attribution.
+     * </pre>
+     *
+     * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TITLE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object title_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Title of the attribution.
+     * </pre>
+     *
+     * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The title.
+     */
+    @java.lang.Override
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Title of the attribution.
+     * </pre>
+     *
+     * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for title.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext other =
+          (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext) obj;
+
+      if (!getUri().equals(other.getUri())) return false;
+      if (!getTitle().equals(other.getTitle())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+        com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContextOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingAttribution_RetrievedContext_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingAttribution_RetrievedContext_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.class,
+                com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        title_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingAttribution_RetrievedContext_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext build() {
+        com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext result =
+            new com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.title_ = title_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+                .getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  title_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. URI reference of the attribution.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. URI reference of the attribution.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. URI reference of the attribution.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. URI reference of the attribution.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. URI reference of the attribution.
+       * </pre>
+       *
+       * <code>string uri = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object title_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Title of the attribution.
+       * </pre>
+       *
+       * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The title.
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Title of the attribution.
+       * </pre>
+       *
+       * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for title.
+       */
+      public com.google.protobuf.ByteString getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Title of the attribution.
+       * </pre>
+       *
+       * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitle(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        title_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Title of the attribution.
+       * </pre>
+       *
+       * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTitle() {
+        title_ = getDefaultInstance().getTitle();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Title of the attribution.
+       * </pre>
+       *
+       * <code>string title = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        title_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+    private static final com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RetrievedContext> PARSER =
+        new com.google.protobuf.AbstractParser<RetrievedContext>() {
+          @java.lang.Override
+          public RetrievedContext parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RetrievedContext> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RetrievedContext> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int referenceCase_ = 0;
 
@@ -927,6 +1799,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     WEB(3),
+    RETRIEVED_CONTEXT(4),
     REFERENCE_NOT_SET(0);
     private final int value;
 
@@ -947,6 +1820,8 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 3:
           return WEB;
+        case 4:
+          return RETRIEVED_CONTEXT;
         case 0:
           return REFERENCE_NOT_SET;
         default:
@@ -1018,6 +1893,67 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       return (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.Web) reference_;
     }
     return com.google.cloud.aiplatform.v1beta1.GroundingAttribution.Web.getDefaultInstance();
+  }
+
+  public static final int RETRIEVED_CONTEXT_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Attribution from context retrieved by the retrieval tools.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retrievedContext field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetrievedContext() {
+    return referenceCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Attribution from context retrieved by the retrieval tools.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retrievedContext.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+      getRetrievedContext() {
+    if (referenceCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext) reference_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Attribution from context retrieved by the retrieval tools.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContextOrBuilder
+      getRetrievedContextOrBuilder() {
+    if (referenceCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext) reference_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        .getDefaultInstance();
   }
 
   public static final int SEGMENT_FIELD_NUMBER = 1;
@@ -1139,6 +2075,11 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       output.writeMessage(
           3, (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.Web) reference_);
     }
+    if (referenceCase_ == 4) {
+      output.writeMessage(
+          4,
+          (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext) reference_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1158,6 +2099,13 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.Web) reference_);
+    }
+    if (referenceCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4,
+              (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+                  reference_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1189,6 +2137,9 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       case 3:
         if (!getWeb().equals(other.getWeb())) return false;
         break;
+      case 4:
+        if (!getRetrievedContext().equals(other.getRetrievedContext())) return false;
+        break;
       case 0:
       default:
     }
@@ -1215,6 +2166,10 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       case 3:
         hash = (37 * hash) + WEB_FIELD_NUMBER;
         hash = (53 * hash) + getWeb().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + RETRIEVED_CONTEXT_FIELD_NUMBER;
+        hash = (53 * hash) + getRetrievedContext().hashCode();
         break;
       case 0:
       default:
@@ -1371,6 +2326,9 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       if (webBuilder_ != null) {
         webBuilder_.clear();
       }
+      if (retrievedContextBuilder_ != null) {
+        retrievedContextBuilder_.clear();
+      }
       segment_ = null;
       if (segmentBuilder_ != null) {
         segmentBuilder_.dispose();
@@ -1417,11 +2375,11 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.GroundingAttribution result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.segment_ = segmentBuilder_ == null ? segment_ : segmentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.confidenceScore_ = confidenceScore_;
         to_bitField0_ |= 0x00000002;
       }
@@ -1434,6 +2392,9 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       result.reference_ = this.reference_;
       if (referenceCase_ == 3 && webBuilder_ != null) {
         result.reference_ = webBuilder_.build();
+      }
+      if (referenceCase_ == 4 && retrievedContextBuilder_ != null) {
+        result.reference_ = retrievedContextBuilder_.build();
       }
     }
 
@@ -1495,6 +2456,11 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
             mergeWeb(other.getWeb());
             break;
           }
+        case RETRIEVED_CONTEXT:
+          {
+            mergeRetrievedContext(other.getRetrievedContext());
+            break;
+          }
         case REFERENCE_NOT_SET:
           {
             break;
@@ -1529,13 +2495,13 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getSegmentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 21:
               {
                 confidenceScore_ = input.readFloat();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 21
             case 26:
@@ -1544,6 +2510,13 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
                 referenceCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getRetrievedContextFieldBuilder().getBuilder(), extensionRegistry);
+                referenceCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1807,6 +2780,250 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       return webBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext,
+            com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContextOrBuilder>
+        retrievedContextBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retrievedContext field is set.
+     */
+    @java.lang.Override
+    public boolean hasRetrievedContext() {
+      return referenceCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retrievedContext.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+        getRetrievedContext() {
+      if (retrievedContextBuilder_ == null) {
+        if (referenceCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+              reference_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+            .getDefaultInstance();
+      } else {
+        if (referenceCase_ == 4) {
+          return retrievedContextBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetrievedContext(
+        com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext value) {
+      if (retrievedContextBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reference_ = value;
+        onChanged();
+      } else {
+        retrievedContextBuilder_.setMessage(value);
+      }
+      referenceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetrievedContext(
+        com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.Builder
+            builderForValue) {
+      if (retrievedContextBuilder_ == null) {
+        reference_ = builderForValue.build();
+        onChanged();
+      } else {
+        retrievedContextBuilder_.setMessage(builderForValue.build());
+      }
+      referenceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRetrievedContext(
+        com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext value) {
+      if (retrievedContextBuilder_ == null) {
+        if (referenceCase_ == 4
+            && reference_
+                != com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+                    .getDefaultInstance()) {
+          reference_ =
+              com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+                          reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reference_ = value;
+        }
+        onChanged();
+      } else {
+        if (referenceCase_ == 4) {
+          retrievedContextBuilder_.mergeFrom(value);
+        } else {
+          retrievedContextBuilder_.setMessage(value);
+        }
+      }
+      referenceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRetrievedContext() {
+      if (retrievedContextBuilder_ == null) {
+        if (referenceCase_ == 4) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+      } else {
+        if (referenceCase_ == 4) {
+          referenceCase_ = 0;
+          reference_ = null;
+        }
+        retrievedContextBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.Builder
+        getRetrievedContextBuilder() {
+      return getRetrievedContextFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContextOrBuilder
+        getRetrievedContextOrBuilder() {
+      if ((referenceCase_ == 4) && (retrievedContextBuilder_ != null)) {
+        return retrievedContextBuilder_.getMessageOrBuilder();
+      } else {
+        if (referenceCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+              reference_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Attribution from context retrieved by the retrieval tools.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext,
+            com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.Builder,
+            com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContextOrBuilder>
+        getRetrievedContextFieldBuilder() {
+      if (retrievedContextBuilder_ == null) {
+        if (!(referenceCase_ == 4)) {
+          reference_ =
+              com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext
+                  .getDefaultInstance();
+        }
+        retrievedContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext,
+                com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext.Builder,
+                com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContextOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext)
+                    reference_,
+                getParentForChildren(),
+                isClean());
+        reference_ = null;
+      }
+      referenceCase_ = 4;
+      onChanged();
+      return retrievedContextBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.Segment segment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.Segment,
@@ -1827,7 +3044,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
      * @return Whether the segment field is set.
      */
     public boolean hasSegment() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1871,7 +3088,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       } else {
         segmentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1892,7 +3109,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
       } else {
         segmentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1909,7 +3126,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeSegment(com.google.cloud.aiplatform.v1beta1.Segment value) {
       if (segmentBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && segment_ != null
             && segment_ != com.google.cloud.aiplatform.v1beta1.Segment.getDefaultInstance()) {
           getSegmentBuilder().mergeFrom(value);
@@ -1920,7 +3137,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
         segmentBuilder_.mergeFrom(value);
       }
       if (segment_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1937,7 +3154,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearSegment() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       segment_ = null;
       if (segmentBuilder_ != null) {
         segmentBuilder_.dispose();
@@ -1958,7 +3175,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Segment.Builder getSegmentBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSegmentFieldBuilder().getBuilder();
     }
@@ -2027,7 +3244,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasConfidenceScore() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2065,7 +3282,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
     public Builder setConfidenceScore(float value) {
 
       confidenceScore_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2084,7 +3301,7 @@ public final class GroundingAttribution extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearConfidenceScore() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       confidenceScore_ = 0F;
       onChanged();
       return this;

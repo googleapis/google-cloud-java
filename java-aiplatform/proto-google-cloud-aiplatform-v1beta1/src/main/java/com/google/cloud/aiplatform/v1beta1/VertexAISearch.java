@@ -73,7 +73,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Fully-qualified Vertex AI Search's datastore resource ID.
-   * projects/&lt;&gt;/locations/&lt;&gt;/collections/&lt;&gt;/dataStores/&lt;&gt;
+   * Format:
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
    * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -97,7 +98,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Required. Fully-qualified Vertex AI Search's datastore resource ID.
-   * projects/&lt;&gt;/locations/&lt;&gt;/collections/&lt;&gt;/dataStores/&lt;&gt;
+   * Format:
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
    * </pre>
    *
    * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -466,7 +468,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Fully-qualified Vertex AI Search's datastore resource ID.
-     * projects/&lt;&gt;/locations/&lt;&gt;/collections/&lt;&gt;/dataStores/&lt;&gt;
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
      * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -489,7 +492,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Fully-qualified Vertex AI Search's datastore resource ID.
-     * projects/&lt;&gt;/locations/&lt;&gt;/collections/&lt;&gt;/dataStores/&lt;&gt;
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
      * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -512,7 +516,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Fully-qualified Vertex AI Search's datastore resource ID.
-     * projects/&lt;&gt;/locations/&lt;&gt;/collections/&lt;&gt;/dataStores/&lt;&gt;
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
      * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -534,7 +539,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Fully-qualified Vertex AI Search's datastore resource ID.
-     * projects/&lt;&gt;/locations/&lt;&gt;/collections/&lt;&gt;/dataStores/&lt;&gt;
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
      * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -552,7 +558,8 @@ public final class VertexAISearch extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. Fully-qualified Vertex AI Search's datastore resource ID.
-     * projects/&lt;&gt;/locations/&lt;&gt;/collections/&lt;&gt;/dataStores/&lt;&gt;
+     * Format:
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
      * </pre>
      *
      * <code>string datastore = 1 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -63,7 +63,7 @@ public interface ChunkOrBuilder
    *
    *
    * <pre>
-   * Unique chunk id of the current chunk.
+   * Unique chunk ID of the current chunk.
    * </pre>
    *
    * <code>string id = 2;</code>
@@ -75,7 +75,7 @@ public interface ChunkOrBuilder
    *
    *
    * <pre>
-   * Unique chunk id of the current chunk.
+   * Unique chunk ID of the current chunk.
    * </pre>
    *
    * <code>string id = 2;</code>
@@ -191,4 +191,80 @@ public interface ChunkOrBuilder
    * </code>
    */
   com.google.protobuf.StructOrBuilder getDerivedStructDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Page span of the chunk.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan page_span = 6;</code>
+   *
+   * @return Whether the pageSpan field is set.
+   */
+  boolean hasPageSpan();
+  /**
+   *
+   *
+   * <pre>
+   * Page span of the chunk.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan page_span = 6;</code>
+   *
+   * @return The pageSpan.
+   */
+  com.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan getPageSpan();
+  /**
+   *
+   *
+   * <pre>
+   * Page span of the chunk.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1alpha.Chunk.PageSpan page_span = 6;</code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.Chunk.PageSpanOrBuilder getPageSpanOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata of the current chunk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadata chunk_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the chunkMetadata field is set.
+   */
+  boolean hasChunkMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata of the current chunk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadata chunk_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The chunkMetadata.
+   */
+  com.google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadata getChunkMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata of the current chunk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadata chunk_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1alpha.Chunk.ChunkMetadataOrBuilder getChunkMetadataOrBuilder();
 }

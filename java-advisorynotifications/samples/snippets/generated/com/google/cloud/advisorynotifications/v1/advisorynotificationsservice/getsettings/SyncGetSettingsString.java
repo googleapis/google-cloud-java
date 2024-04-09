@@ -35,7 +35,8 @@ public class SyncGetSettingsString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AdvisoryNotificationsServiceClient advisoryNotificationsServiceClient =
         AdvisoryNotificationsServiceClient.create()) {
-      String name = SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString();
+      String name =
+          SettingsName.ofOrganizationLocationName("[ORGANIZATION]", "[LOCATION]").toString();
       Settings response = advisoryNotificationsServiceClient.getSettings(name);
     }
   }

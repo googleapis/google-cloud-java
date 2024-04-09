@@ -476,7 +476,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> FetchCaCerts</td>
- *      <td><p> FetchCaCerts returns the current trust anchor for the [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA certificate chains for all Certificate Authorities in the ENABLED, DISABLED, or STAGED states.</td>
+ *      <td><p> FetchCaCerts returns the current trust anchor for the [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA certificate chains for all certificate authorities in the ENABLED, DISABLED, or STAGED states.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -4122,7 +4122,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * FetchCaCerts returns the current trust anchor for the
    * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA certificate chains
-   * for all Certificate Authorities in the ENABLED, DISABLED, or STAGED states.
+   * for all certificate authorities in the ENABLED, DISABLED, or STAGED states.
    *
    * <p>Sample code:
    *
@@ -4156,7 +4156,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * FetchCaCerts returns the current trust anchor for the
    * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA certificate chains
-   * for all Certificate Authorities in the ENABLED, DISABLED, or STAGED states.
+   * for all certificate authorities in the ENABLED, DISABLED, or STAGED states.
    *
    * <p>Sample code:
    *
@@ -4187,7 +4187,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * FetchCaCerts returns the current trust anchor for the
    * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA certificate chains
-   * for all Certificate Authorities in the ENABLED, DISABLED, or STAGED states.
+   * for all certificate authorities in the ENABLED, DISABLED, or STAGED states.
    *
    * <p>Sample code:
    *
@@ -4219,7 +4219,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
   /**
    * FetchCaCerts returns the current trust anchor for the
    * [CaPool][google.cloud.security.privateca.v1.CaPool]. This will include CA certificate chains
-   * for all Certificate Authorities in the ENABLED, DISABLED, or STAGED states.
+   * for all certificate authorities in the ENABLED, DISABLED, or STAGED states.
    *
    * <p>Sample code:
    *

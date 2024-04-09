@@ -107,7 +107,7 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * Possible values: ALLOW, DENY
+   * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
    * </pre>
    *
    * <code>string action = 4;</code>
@@ -119,7 +119,7 @@ public interface FirewallInfoOrBuilder
    *
    *
    * <pre>
-   * Possible values: ALLOW, DENY
+   * Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
    * </pre>
    *
    * <code>string action = 4;</code>

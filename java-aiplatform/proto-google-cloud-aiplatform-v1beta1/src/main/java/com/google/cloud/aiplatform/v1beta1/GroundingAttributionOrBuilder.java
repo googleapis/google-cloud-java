@@ -69,6 +69,48 @@ public interface GroundingAttributionOrBuilder
    *
    *
    * <pre>
+   * Optional. Attribution from context retrieved by the retrieval tools.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retrievedContext field is set.
+   */
+  boolean hasRetrievedContext();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Attribution from context retrieved by the retrieval tools.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retrievedContext.
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext getRetrievedContext();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Attribution from context retrieved by the retrieval tools.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContext retrieved_context = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GroundingAttribution.RetrievedContextOrBuilder
+      getRetrievedContextOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Segment of the content this attribution belongs to.
    * </pre>
    *

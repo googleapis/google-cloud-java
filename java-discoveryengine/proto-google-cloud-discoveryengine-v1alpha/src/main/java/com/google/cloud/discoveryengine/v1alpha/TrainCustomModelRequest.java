@@ -80,8 +80,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * A newline delimited jsonl/ndjson file.
      *
      * For search-tuning model, each line should have the _id, title
-     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     * "relevant text"}
+     * and text. Example:
+     * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -98,8 +98,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * A newline delimited jsonl/ndjson file.
      *
      * For search-tuning model, each line should have the _id, title
-     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     * "relevant text"}
+     * and text. Example:
+     * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -276,8 +276,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * A newline delimited jsonl/ndjson file.
      *
      * For search-tuning model, each line should have the _id, title
-     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     * "relevant text"}
+     * and text. Example:
+     * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -305,8 +305,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
      * A newline delimited jsonl/ndjson file.
      *
      * For search-tuning model, each line should have the _id, title
-     * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-     * "relevant text"}
+     * and text. Example:
+     * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
      * </pre>
      *
      * <code>string corpus_data_path = 1;</code>
@@ -965,8 +965,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        * A newline delimited jsonl/ndjson file.
        *
        * For search-tuning model, each line should have the _id, title
-       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       * "relevant text"}
+       * and text. Example:
+       * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -993,8 +993,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        * A newline delimited jsonl/ndjson file.
        *
        * For search-tuning model, each line should have the _id, title
-       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       * "relevant text"}
+       * and text. Example:
+       * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -1021,8 +1021,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        * A newline delimited jsonl/ndjson file.
        *
        * For search-tuning model, each line should have the _id, title
-       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       * "relevant text"}
+       * and text. Example:
+       * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -1048,8 +1048,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        * A newline delimited jsonl/ndjson file.
        *
        * For search-tuning model, each line should have the _id, title
-       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       * "relevant text"}
+       * and text. Example:
+       * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>
@@ -1071,8 +1071,8 @@ public final class TrainCustomModelRequest extends com.google.protobuf.Generated
        * A newline delimited jsonl/ndjson file.
        *
        * For search-tuning model, each line should have the _id, title
-       * and text. Example: {"_id": "doc1", title: "relevant doc", "text":
-       * "relevant text"}
+       * and text. Example:
+       * `{"_id": "doc1", title: "relevant doc", "text": "relevant text"}`
        * </pre>
        *
        * <code>string corpus_data_path = 1;</code>

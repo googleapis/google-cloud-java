@@ -270,6 +270,16 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ChatCompletions</td>
+ *      <td><p> Exposes an OpenAI-compatible endpoint for chat completions.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> chatCompletionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1516,6 +1526,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *       GenerateContentRequest.newBuilder()
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
@@ -1549,6 +1560,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *       GenerateContentRequest.newBuilder()
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
@@ -1583,6 +1595,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *       GenerateContentRequest.newBuilder()
    *           .setModel("model104069929")
    *           .addAllContents(new ArrayList<Content>())
+   *           .setSystemInstruction(Content.newBuilder().build())
    *           .addAllTools(new ArrayList<Tool>())
    *           .setToolConfig(ToolConfig.newBuilder().build())
    *           .addAllSafetySettings(new ArrayList<SafetySetting>())
@@ -1599,6 +1612,39 @@ public class PredictionServiceClient implements BackgroundResource {
   public final ServerStreamingCallable<GenerateContentRequest, GenerateContentResponse>
       streamGenerateContentCallable() {
     return stub.streamGenerateContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exposes an OpenAI-compatible endpoint for chat completions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ChatCompletionsRequest request =
+   *       ChatCompletionsRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setHttpBody(HttpBody.newBuilder().build())
+   *           .build();
+   *   ServerStream<HttpBody> stream =
+   *       predictionServiceClient.chatCompletionsCallable().call(request);
+   *   for (HttpBody response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<ChatCompletionsRequest, HttpBody> chatCompletionsCallable() {
+    return stub.chatCompletionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

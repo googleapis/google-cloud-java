@@ -317,42 +317,6 @@ public interface EvaluateInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Input for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-   *
-   * @return Whether the responseRecallInput field is set.
-   */
-  boolean hasResponseRecallInput();
-  /**
-   *
-   *
-   * <pre>
-   * Input for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-   *
-   * @return The responseRecallInput.
-   */
-  com.google.cloud.aiplatform.v1beta1.ResponseRecallInput getResponseRecallInput();
-  /**
-   *
-   *
-   * <pre>
-   * Input for response recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.ResponseRecallInput response_recall_input = 13;</code>
-   */
-  com.google.cloud.aiplatform.v1beta1.ResponseRecallInputOrBuilder
-      getResponseRecallInputOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Input for summarization quality metric.
    * </pre>
    *
@@ -739,45 +703,6 @@ public interface EvaluateInstancesRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.QuestionAnsweringCorrectnessInputOrBuilder
       getQuestionAnsweringCorrectnessInputOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * Input for rag context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-   * </code>
-   *
-   * @return Whether the ragContextRecallInput field is set.
-   */
-  boolean hasRagContextRecallInput();
-  /**
-   *
-   *
-   * <pre>
-   * Input for rag context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-   * </code>
-   *
-   * @return The ragContextRecallInput.
-   */
-  com.google.cloud.aiplatform.v1beta1.RagContextRecallInput getRagContextRecallInput();
-  /**
-   *
-   *
-   * <pre>
-   * Input for rag context recall metric.
-   * </pre>
-   *
-   * <code>.google.cloud.aiplatform.v1beta1.RagContextRecallInput rag_context_recall_input = 11;
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.RagContextRecallInputOrBuilder
-      getRagContextRecallInputOrBuilder();
 
   /**
    *

@@ -92,18 +92,17 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Default service account that this PersistentResource's workloads
-   * run as. The workloads include:
+   * Optional. Required when all below conditions are met
+   *  * `enable_custom_service_account` is true;
+   *  * any runtime is specified via `ResourceRuntimeSpec` on creation time,
+   *    for example, Ray
    *
-   *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-   *    for example, Ray.
-   *  * Jobs submitted to PersistentResource, if no other service account
-   *    specified in the job specs.
+   * The users must have `iam.serviceAccounts.actAs` permission on this service
+   * account and then the specified runtime containers will run as it.
    *
-   * Only works when custom service account is enabled and users have the
-   * `iam.serviceAccounts.actAs` permission on this service account.
-   *
-   * Required if any containers are specified in `ResourceRuntimeSpec`.
+   * Do not set this field if you want to submit jobs using custom service
+   * account to this PersistentResource after creation, but only specify the
+   * `service_account` inside the job.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -126,18 +125,17 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Default service account that this PersistentResource's workloads
-   * run as. The workloads include:
+   * Optional. Required when all below conditions are met
+   *  * `enable_custom_service_account` is true;
+   *  * any runtime is specified via `ResourceRuntimeSpec` on creation time,
+   *    for example, Ray
    *
-   *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-   *    for example, Ray.
-   *  * Jobs submitted to PersistentResource, if no other service account
-   *    specified in the job specs.
+   * The users must have `iam.serviceAccounts.actAs` permission on this service
+   * account and then the specified runtime containers will run as it.
    *
-   * Only works when custom service account is enabled and users have the
-   * `iam.serviceAccounts.actAs` permission on this service account.
-   *
-   * Required if any containers are specified in `ResourceRuntimeSpec`.
+   * Do not set this field if you want to submit jobs using custom service
+   * account to this PersistentResource after creation, but only specify the
+   * `service_account` inside the job.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -592,18 +590,17 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Default service account that this PersistentResource's workloads
-     * run as. The workloads include:
+     * Optional. Required when all below conditions are met
+     *  * `enable_custom_service_account` is true;
+     *  * any runtime is specified via `ResourceRuntimeSpec` on creation time,
+     *    for example, Ray
      *
-     *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-     *    for example, Ray.
-     *  * Jobs submitted to PersistentResource, if no other service account
-     *    specified in the job specs.
+     * The users must have `iam.serviceAccounts.actAs` permission on this service
+     * account and then the specified runtime containers will run as it.
      *
-     * Only works when custom service account is enabled and users have the
-     * `iam.serviceAccounts.actAs` permission on this service account.
-     *
-     * Required if any containers are specified in `ResourceRuntimeSpec`.
+     * Do not set this field if you want to submit jobs using custom service
+     * account to this PersistentResource after creation, but only specify the
+     * `service_account` inside the job.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -625,18 +622,17 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Default service account that this PersistentResource's workloads
-     * run as. The workloads include:
+     * Optional. Required when all below conditions are met
+     *  * `enable_custom_service_account` is true;
+     *  * any runtime is specified via `ResourceRuntimeSpec` on creation time,
+     *    for example, Ray
      *
-     *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-     *    for example, Ray.
-     *  * Jobs submitted to PersistentResource, if no other service account
-     *    specified in the job specs.
+     * The users must have `iam.serviceAccounts.actAs` permission on this service
+     * account and then the specified runtime containers will run as it.
      *
-     * Only works when custom service account is enabled and users have the
-     * `iam.serviceAccounts.actAs` permission on this service account.
-     *
-     * Required if any containers are specified in `ResourceRuntimeSpec`.
+     * Do not set this field if you want to submit jobs using custom service
+     * account to this PersistentResource after creation, but only specify the
+     * `service_account` inside the job.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -658,18 +654,17 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Default service account that this PersistentResource's workloads
-     * run as. The workloads include:
+     * Optional. Required when all below conditions are met
+     *  * `enable_custom_service_account` is true;
+     *  * any runtime is specified via `ResourceRuntimeSpec` on creation time,
+     *    for example, Ray
      *
-     *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-     *    for example, Ray.
-     *  * Jobs submitted to PersistentResource, if no other service account
-     *    specified in the job specs.
+     * The users must have `iam.serviceAccounts.actAs` permission on this service
+     * account and then the specified runtime containers will run as it.
      *
-     * Only works when custom service account is enabled and users have the
-     * `iam.serviceAccounts.actAs` permission on this service account.
-     *
-     * Required if any containers are specified in `ResourceRuntimeSpec`.
+     * Do not set this field if you want to submit jobs using custom service
+     * account to this PersistentResource after creation, but only specify the
+     * `service_account` inside the job.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -690,18 +685,17 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Default service account that this PersistentResource's workloads
-     * run as. The workloads include:
+     * Optional. Required when all below conditions are met
+     *  * `enable_custom_service_account` is true;
+     *  * any runtime is specified via `ResourceRuntimeSpec` on creation time,
+     *    for example, Ray
      *
-     *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-     *    for example, Ray.
-     *  * Jobs submitted to PersistentResource, if no other service account
-     *    specified in the job specs.
+     * The users must have `iam.serviceAccounts.actAs` permission on this service
+     * account and then the specified runtime containers will run as it.
      *
-     * Only works when custom service account is enabled and users have the
-     * `iam.serviceAccounts.actAs` permission on this service account.
-     *
-     * Required if any containers are specified in `ResourceRuntimeSpec`.
+     * Do not set this field if you want to submit jobs using custom service
+     * account to this PersistentResource after creation, but only specify the
+     * `service_account` inside the job.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -718,18 +712,17 @@ public final class ServiceAccountSpec extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Default service account that this PersistentResource's workloads
-     * run as. The workloads include:
+     * Optional. Required when all below conditions are met
+     *  * `enable_custom_service_account` is true;
+     *  * any runtime is specified via `ResourceRuntimeSpec` on creation time,
+     *    for example, Ray
      *
-     *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-     *    for example, Ray.
-     *  * Jobs submitted to PersistentResource, if no other service account
-     *    specified in the job specs.
+     * The users must have `iam.serviceAccounts.actAs` permission on this service
+     * account and then the specified runtime containers will run as it.
      *
-     * Only works when custom service account is enabled and users have the
-     * `iam.serviceAccounts.actAs` permission on this service account.
-     *
-     * Required if any containers are specified in `ResourceRuntimeSpec`.
+     * Do not set this field if you want to submit jobs using custom service
+     * account to this PersistentResource after creation, but only specify the
+     * `service_account` inside the job.
      * </pre>
      *
      * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -1512,12 +1512,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name of the processor version.
+   * Identifier. The resource name of the processor version.
    * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1537,12 +1537,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The resource name of the processor version.
+   * Identifier. The resource name of the processor version.
    * Format:
    * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1666,10 +1666,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The state of the processor version.
+   * Output only. The state of the processor version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -1681,10 +1683,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The state of the processor version.
+   * Output only. The state of the processor version.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6;</code>
+   * <code>
+   * .google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -2651,12 +2655,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the processor version.
+     * Identifier. The resource name of the processor version.
      * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2675,12 +2679,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the processor version.
+     * Identifier. The resource name of the processor version.
      * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2699,12 +2703,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the processor version.
+     * Identifier. The resource name of the processor version.
      * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2722,12 +2726,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the processor version.
+     * Identifier. The resource name of the processor version.
      * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2741,12 +2745,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The resource name of the processor version.
+     * Identifier. The resource name of the processor version.
      * Format:
      * `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3061,10 +3065,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The state of the processor version.
+     * Output only. The state of the processor version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -3076,10 +3082,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The state of the processor version.
+     * Output only. The state of the processor version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -3094,10 +3102,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The state of the processor version.
+     * Output only. The state of the processor version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -3113,10 +3123,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The state of the processor version.
+     * Output only. The state of the processor version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -3134,10 +3146,12 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The state of the processor version.
+     * Output only. The state of the processor version.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6;</code>
+     * <code>
+     * .google.cloud.documentai.v1beta3.ProcessorVersion.State state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */

@@ -155,6 +155,23 @@ public class PersistentResourceServiceSettings
         .updatePersistentResourceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to rebootPersistentResource. */
+  public UnaryCallSettings<RebootPersistentResourceRequest, Operation>
+      rebootPersistentResourceSettings() {
+    return ((PersistentResourceServiceStubSettings) getStubSettings())
+        .rebootPersistentResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rebootPersistentResource. */
+  public OperationCallSettings<
+          RebootPersistentResourceRequest,
+          PersistentResource,
+          RebootPersistentResourceOperationMetadata>
+      rebootPersistentResourceOperationSettings() {
+    return ((PersistentResourceServiceStubSettings) getStubSettings())
+        .rebootPersistentResourceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -335,6 +352,21 @@ public class PersistentResourceServiceSettings
             UpdatePersistentResourceOperationMetadata>
         updatePersistentResourceOperationSettings() {
       return getStubSettingsBuilder().updatePersistentResourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rebootPersistentResource. */
+    public UnaryCallSettings.Builder<RebootPersistentResourceRequest, Operation>
+        rebootPersistentResourceSettings() {
+      return getStubSettingsBuilder().rebootPersistentResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rebootPersistentResource. */
+    public OperationCallSettings.Builder<
+            RebootPersistentResourceRequest,
+            PersistentResource,
+            RebootPersistentResourceOperationMetadata>
+        rebootPersistentResourceOperationSettings() {
+      return getStubSettingsBuilder().rebootPersistentResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

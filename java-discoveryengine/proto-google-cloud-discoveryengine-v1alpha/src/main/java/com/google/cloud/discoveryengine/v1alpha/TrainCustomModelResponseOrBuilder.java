@@ -144,4 +144,58 @@ public interface TrainCustomModelResponseOrBuilder
    * @return The bytes for modelStatus.
    */
   com.google.protobuf.ByteString getModelStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  int getMetricsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  boolean containsMetrics(java.lang.String key);
+  /** Use {@link #getMetricsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.Double> getMetrics();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.Double> getMetricsMap();
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  double getMetricsOrDefault(java.lang.String key, double defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The metrics of the trained model.
+   * </pre>
+   *
+   * <code>map&lt;string, double&gt; metrics = 4;</code>
+   */
+  double getMetricsOrThrow(java.lang.String key);
 }

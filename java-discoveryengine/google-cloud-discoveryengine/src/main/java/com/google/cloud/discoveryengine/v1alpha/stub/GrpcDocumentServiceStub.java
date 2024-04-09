@@ -31,11 +31,13 @@ import com.google.cloud.discoveryengine.v1alpha.CreateDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.DeleteDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.Document;
 import com.google.cloud.discoveryengine.v1alpha.GetDocumentRequest;
+import com.google.cloud.discoveryengine.v1alpha.GetProcessedDocumentRequest;
 import com.google.cloud.discoveryengine.v1alpha.ImportDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1alpha.ImportDocumentsRequest;
 import com.google.cloud.discoveryengine.v1alpha.ImportDocumentsResponse;
 import com.google.cloud.discoveryengine.v1alpha.ListDocumentsRequest;
 import com.google.cloud.discoveryengine.v1alpha.ListDocumentsResponse;
+import com.google.cloud.discoveryengine.v1alpha.ProcessedDocument;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsMetadata;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsRequest;
 import com.google.cloud.discoveryengine.v1alpha.PurgeDocumentsResponse;
@@ -133,6 +135,17 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetProcessedDocumentRequest, ProcessedDocument>
+      getProcessedDocumentMethodDescriptor =
+          MethodDescriptor.<GetProcessedDocumentRequest, ProcessedDocument>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1alpha.DocumentService/GetProcessedDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetProcessedDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ProcessedDocument.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -148,6 +161,8 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   private final OperationCallable<
           PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
       purgeDocumentsOperationCallable;
+  private final UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
+      getProcessedDocumentCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -263,6 +278,17 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetProcessedDocumentRequest, ProcessedDocument>
+        getProcessedDocumentTransportSettings =
+            GrpcCallSettings.<GetProcessedDocumentRequest, ProcessedDocument>newBuilder()
+                .setMethodDescriptor(getProcessedDocumentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getDocumentCallable =
         callableFactory.createUnaryCallable(
@@ -300,6 +326,11 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
             settings.purgeDocumentsOperationSettings(),
             clientContext,
             operationsStub);
+    this.getProcessedDocumentCallable =
+        callableFactory.createUnaryCallable(
+            getProcessedDocumentTransportSettings,
+            settings.getProcessedDocumentSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -360,6 +391,12 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   public OperationCallable<PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
       purgeDocumentsOperationCallable() {
     return purgeDocumentsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetProcessedDocumentRequest, ProcessedDocument>
+      getProcessedDocumentCallable() {
+    return getProcessedDocumentCallable;
   }
 
   @Override

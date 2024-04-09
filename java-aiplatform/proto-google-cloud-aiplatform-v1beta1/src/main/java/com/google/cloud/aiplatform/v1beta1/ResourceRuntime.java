@@ -38,7 +38,9 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     super(builder);
   }
 
-  private ResourceRuntime() {}
+  private ResourceRuntime() {
+    notebookRuntimeTemplate_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -199,6 +201,69 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     return map.get(key);
   }
 
+  public static final int NOTEBOOK_RUNTIME_TEMPLATE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notebookRuntimeTemplate_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+   * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+   * (if set), and with the same Ray and Python version as the Persistent
+   * Cluster. Example:
+   *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+   * </pre>
+   *
+   * <code>
+   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The notebookRuntimeTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getNotebookRuntimeTemplate() {
+    java.lang.Object ref = notebookRuntimeTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notebookRuntimeTemplate_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+   * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+   * (if set), and with the same Ray and Python version as the Persistent
+   * Cluster. Example:
+   *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+   * </pre>
+   *
+   * <code>
+   * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for notebookRuntimeTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNotebookRuntimeTemplateBytes() {
+    java.lang.Object ref = notebookRuntimeTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      notebookRuntimeTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -215,6 +280,9 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAccessUris(), AccessUrisDefaultEntryHolder.defaultEntry, 1);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookRuntimeTemplate_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, notebookRuntimeTemplate_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -234,6 +302,9 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, accessUris__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notebookRuntimeTemplate_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, notebookRuntimeTemplate_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -251,6 +322,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.aiplatform.v1beta1.ResourceRuntime) obj;
 
     if (!internalGetAccessUris().equals(other.internalGetAccessUris())) return false;
+    if (!getNotebookRuntimeTemplate().equals(other.getNotebookRuntimeTemplate())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -266,6 +338,8 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + ACCESS_URIS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAccessUris().hashCode();
     }
+    hash = (37 * hash) + NOTEBOOK_RUNTIME_TEMPLATE_FIELD_NUMBER;
+    hash = (53 * hash) + getNotebookRuntimeTemplate().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -428,6 +502,7 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       internalGetMutableAccessUris().clear();
+      notebookRuntimeTemplate_ = "";
       return this;
     }
 
@@ -467,6 +542,9 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.accessUris_ = internalGetAccessUris();
         result.accessUris_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.notebookRuntimeTemplate_ = notebookRuntimeTemplate_;
       }
     }
 
@@ -518,6 +596,11 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
         return this;
       internalGetMutableAccessUris().mergeFrom(other.internalGetAccessUris());
       bitField0_ |= 0x00000001;
+      if (!other.getNotebookRuntimeTemplate().isEmpty()) {
+        notebookRuntimeTemplate_ = other.notebookRuntimeTemplate_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -556,6 +639,12 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                notebookRuntimeTemplate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -780,6 +869,142 @@ public final class ResourceRuntime extends com.google.protobuf.GeneratedMessageV
     public Builder putAllAccessUris(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAccessUris().getMutableMap().putAll(values);
       bitField0_ |= 0x00000001;
+      return this;
+    }
+
+    private java.lang.Object notebookRuntimeTemplate_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+     * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+     * (if set), and with the same Ray and Python version as the Persistent
+     * Cluster. Example:
+     *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+     * </pre>
+     *
+     * <code>
+     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The notebookRuntimeTemplate.
+     */
+    public java.lang.String getNotebookRuntimeTemplate() {
+      java.lang.Object ref = notebookRuntimeTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notebookRuntimeTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+     * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+     * (if set), and with the same Ray and Python version as the Persistent
+     * Cluster. Example:
+     *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+     * </pre>
+     *
+     * <code>
+     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for notebookRuntimeTemplate.
+     */
+    public com.google.protobuf.ByteString getNotebookRuntimeTemplateBytes() {
+      java.lang.Object ref = notebookRuntimeTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        notebookRuntimeTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+     * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+     * (if set), and with the same Ray and Python version as the Persistent
+     * Cluster. Example:
+     *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+     * </pre>
+     *
+     * <code>
+     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The notebookRuntimeTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotebookRuntimeTemplate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      notebookRuntimeTemplate_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+     * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+     * (if set), and with the same Ray and Python version as the Persistent
+     * Cluster. Example:
+     *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+     * </pre>
+     *
+     * <code>
+     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNotebookRuntimeTemplate() {
+      notebookRuntimeTemplate_ = getDefaultInstance().getNotebookRuntimeTemplate();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of NotebookRuntimeTemplate for the RoV
+     * Persistent Cluster The NotebokRuntimeTemplate is created in the same VPC
+     * (if set), and with the same Ray and Python version as the Persistent
+     * Cluster. Example:
+     *   "projects/1000/locations/us-central1/notebookRuntimeTemplates/abc123"
+     * </pre>
+     *
+     * <code>
+     * string notebook_runtime_template = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for notebookRuntimeTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotebookRuntimeTemplateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      notebookRuntimeTemplate_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
 

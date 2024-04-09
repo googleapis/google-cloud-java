@@ -17,6 +17,7 @@
 package com.google.cloud.advisorynotifications.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,19 +33,34 @@ public class SettingsName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/settings");
+  private static final PathTemplate PROJECT_LOCATION =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/settings");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String organization;
   private final String location;
+  private final String project;
 
   @Deprecated
   protected SettingsName() {
     organization = null;
     location = null;
+    project = null;
   }
 
   private SettingsName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     location = Preconditions.checkNotNull(builder.getLocation());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION;
+  }
+
+  private SettingsName(ProjectLocationBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION;
   }
 
   public String getOrganization() {
@@ -55,8 +71,20 @@ public class SettingsName implements ResourceName {
     return location;
   }
 
+  public String getProject() {
+    return project;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newOrganizationLocationBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationBuilder newProjectLocationBuilder() {
+    return new ProjectLocationBuilder();
   }
 
   public Builder toBuilder() {
@@ -67,18 +95,38 @@ public class SettingsName implements ResourceName {
     return newBuilder().setOrganization(organization).setLocation(location).build();
   }
 
+  public static SettingsName ofOrganizationLocationName(String organization, String location) {
+    return newBuilder().setOrganization(organization).setLocation(location).build();
+  }
+
+  public static SettingsName ofProjectLocationName(String project, String location) {
+    return newProjectLocationBuilder().setProject(project).setLocation(location).build();
+  }
+
   public static String format(String organization, String location) {
     return newBuilder().setOrganization(organization).setLocation(location).build().toString();
+  }
+
+  public static String formatOrganizationLocationName(String organization, String location) {
+    return newBuilder().setOrganization(organization).setLocation(location).build().toString();
+  }
+
+  public static String formatProjectLocationName(String project, String location) {
+    return newProjectLocationBuilder().setProject(project).setLocation(location).build().toString();
   }
 
   public static SettingsName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        ORGANIZATION_LOCATION.validatedMatch(
-            formattedString, "SettingsName.parse: formattedString not in valid format");
-    return of(matchMap.get("organization"), matchMap.get("location"));
+    if (ORGANIZATION_LOCATION.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION.match(formattedString);
+      return ofOrganizationLocationName(matchMap.get("organization"), matchMap.get("location"));
+    } else if (PROJECT_LOCATION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION.match(formattedString);
+      return ofProjectLocationName(matchMap.get("project"), matchMap.get("location"));
+    }
+    throw new ValidationException("SettingsName.parse: formattedString not in valid format");
   }
 
   public static List<SettingsName> parseList(List<String> formattedStrings) {
@@ -102,7 +150,8 @@ public class SettingsName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_LOCATION.matches(formattedString);
+    return ORGANIZATION_LOCATION.matches(formattedString)
+        || PROJECT_LOCATION.matches(formattedString);
   }
 
   @Override
@@ -117,6 +166,9 @@ public class SettingsName implements ResourceName {
           if (location != null) {
             fieldMapBuilder.put("location", location);
           }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -130,7 +182,7 @@ public class SettingsName implements ResourceName {
 
   @Override
   public String toString() {
-    return ORGANIZATION_LOCATION.instantiate("organization", organization, "location", location);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -141,7 +193,8 @@ public class SettingsName implements ResourceName {
     if (o != null && getClass() == o.getClass()) {
       SettingsName that = ((SettingsName) o);
       return Objects.equals(this.organization, that.organization)
-          && Objects.equals(this.location, that.location);
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.project, that.project);
     }
     return false;
   }
@@ -150,9 +203,13 @@ public class SettingsName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(organization);
     h *= 1000003;
     h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
     return h;
   }
 
@@ -182,8 +239,41 @@ public class SettingsName implements ResourceName {
     }
 
     private Builder(SettingsName settingsName) {
+      Preconditions.checkArgument(
+          Objects.equals(settingsName.pathTemplate, ORGANIZATION_LOCATION),
+          "toBuilder is only supported when SettingsName has the pattern of organizations/{organization}/locations/{location}/settings");
       this.organization = settingsName.organization;
       this.location = settingsName.location;
+    }
+
+    public SettingsName build() {
+      return new SettingsName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/settings. */
+  public static class ProjectLocationBuilder {
+    private String project;
+    private String location;
+
+    protected ProjectLocationBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public ProjectLocationBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationBuilder setLocation(String location) {
+      this.location = location;
+      return this;
     }
 
     public SettingsName build() {

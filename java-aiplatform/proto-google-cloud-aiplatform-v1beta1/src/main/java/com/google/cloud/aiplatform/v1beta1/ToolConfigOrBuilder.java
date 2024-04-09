@@ -28,7 +28,7 @@ public interface ToolConfigOrBuilder
    *
    *
    * <pre>
-   * Function calling config.
+   * Optional. Function calling config.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface ToolConfigOrBuilder
    *
    *
    * <pre>
-   * Function calling config.
+   * Optional. Function calling config.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface ToolConfigOrBuilder
    *
    *
    * <pre>
-   * Function calling config.
+   * Optional. Function calling config.
    * </pre>
    *
    * <code>
