@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.backupdr.v1",
+  "libraryPackage": "com.google.cloud.backupdr.v1",
+  "services": {
+    "BackupDR": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BackupDRClient",
+          "rpcs": {
+            "CreateManagementServer": {
+              "methods": ["createManagementServerAsync", "createManagementServerAsync", "createManagementServerAsync", "createManagementServerOperationCallable", "createManagementServerCallable"]
+            },
+            "DeleteManagementServer": {
+              "methods": ["deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerOperationCallable", "deleteManagementServerCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetManagementServer": {
+              "methods": ["getManagementServer", "getManagementServer", "getManagementServer", "getManagementServerCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListManagementServers": {
+              "methods": ["listManagementServers", "listManagementServers", "listManagementServers", "listManagementServersPagedCallable", "listManagementServersCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

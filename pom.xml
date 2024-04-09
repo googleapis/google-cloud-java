@@ -34,6 +34,7 @@
     <module>java-asset</module>
     <module>java-assured-workloads</module>
     <module>java-automl</module>
+    <module>java-backupdr</module>
     <module>java-bare-metal-solution</module>
     <module>java-batch</module>
     <module>java-beyondcorp-appconnections</module>
