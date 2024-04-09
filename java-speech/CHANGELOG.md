@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.36.0 (2024-04-04)
+
+### Features
+
+* add translation_config in RecognitionConfig message ([2e05371](https://github.com/googleapis/google-cloud-java/commit/2e05371e57260e2298b658aa120e8b9d0e93ed61))
+
+
+
 ## 4.34.0 (2024-03-28)
 
 * No change

@@ -228,7 +228,6 @@ public final class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(String text) throws IOException {
-    // TODO(b/330402637): Check null and empty values for the input string.
     return countTokens(ContentMaker.fromString(text));
   }
 
@@ -255,6 +254,7 @@ public final class GenerativeModel {
    */
   @BetaApi
   public CountTokensResponse countTokens(List<Content> contents) throws IOException {
+    checkArgument(contents != null && !contents.isEmpty(), "contents can't be null or empty.");
     CountTokensRequest request =
         CountTokensRequest.newBuilder()
             .setEndpoint(resourceName)
@@ -287,7 +287,6 @@ public final class GenerativeModel {
    * @throws IOException if an I/O error occurs while making the API call
    */
   public GenerateContentResponse generateContent(String text) throws IOException {
-    // TODO(b/330402637): Check null and empty values for the input string.
     return generateContent(ContentMaker.fromString(text));
   }
 
@@ -447,6 +446,7 @@ public final class GenerativeModel {
    * contents and model configurations.
    */
   private GenerateContentRequest buildGenerateContentRequest(List<Content> contents) {
+    checkArgument(contents != null && !contents.isEmpty(), "contents can't be null or empty.");
     return GenerateContentRequest.newBuilder()
         .setModel(resourceName)
         .addAllContents(contents)

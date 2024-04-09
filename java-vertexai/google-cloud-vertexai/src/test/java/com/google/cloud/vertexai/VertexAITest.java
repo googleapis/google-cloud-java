@@ -60,12 +60,6 @@ public final class VertexAITest {
     assertThat(vertexAi.getLocation()).isEqualTo(TEST_LOCATION);
     assertThat(vertexAi.getTransport()).isEqualTo(Transport.GRPC);
     assertThat(vertexAi.getApiEndpoint()).isEqualTo(TEST_DEFAULT_ENDPOINT);
-    IllegalStateException thrown =
-        assertThrows(IllegalStateException.class, () -> vertexAi.getCredentials());
-    assertThat(thrown)
-        .hasMessageThat()
-        .isEqualTo(
-            "Either Credentials or scopes needs to be provided while instantiating VertexAI.");
   }
 
   @Test
@@ -143,11 +137,5 @@ public final class VertexAITest {
     assertThat(vertexAi.getLocation()).isEqualTo(TEST_LOCATION);
     assertThat(vertexAi.getTransport()).isEqualTo(Transport.REST);
     assertThat(vertexAi.getApiEndpoint()).isEqualTo(TEST_DEFAULT_ENDPOINT);
-    IllegalStateException thrown =
-        assertThrows(IllegalStateException.class, () -> vertexAi.getCredentials());
-    assertThat(thrown)
-        .hasMessageThat()
-        .isEqualTo(
-            "Either Credentials or scopes needs to be provided while instantiating VertexAI.");
   }
 }
