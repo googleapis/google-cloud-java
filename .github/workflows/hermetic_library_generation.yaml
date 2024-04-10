@@ -1,12 +1,10 @@
 name: Hermetic library generation upon generation config change through pull requests
-
 on:
   pull_request:
     types:
-    - synchronize
+      - synchronize
     paths:
-    - generation_config.yaml
-
+      - generation_config.yaml
 jobs:
   library_generation:
     runs-on: ubuntu-latest
