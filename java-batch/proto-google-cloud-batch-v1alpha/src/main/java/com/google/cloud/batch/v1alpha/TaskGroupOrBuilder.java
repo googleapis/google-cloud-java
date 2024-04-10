@@ -426,4 +426,66 @@ public interface TaskGroupOrBuilder
    * @return The runAsNonRoot.
    */
   boolean getRunAsNonRoot();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ServiceAccount used by tasks within the task group for the access
+   * to other Cloud resources. This allows tasks to operate with permissions
+   * distinct from the service account for the VM set at `AllocationPolicy`. Use
+   * this field when tasks require different access rights than those of the VM.
+   *
+   * Specify the service account's `email` field. Ensure `scopes`
+   * include any necessary permissions for tasks, in addition to the default
+   * 'cloud-platform' scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  boolean hasServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ServiceAccount used by tasks within the task group for the access
+   * to other Cloud resources. This allows tasks to operate with permissions
+   * distinct from the service account for the VM set at `AllocationPolicy`. Use
+   * this field when tasks require different access rights than those of the VM.
+   *
+   * Specify the service account's `email` field. Ensure `scopes`
+   * include any necessary permissions for tasks, in addition to the default
+   * 'cloud-platform' scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceAccount.
+   */
+  com.google.cloud.batch.v1alpha.ServiceAccount getServiceAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ServiceAccount used by tasks within the task group for the access
+   * to other Cloud resources. This allows tasks to operate with permissions
+   * distinct from the service account for the VM set at `AllocationPolicy`. Use
+   * this field when tasks require different access rights than those of the VM.
+   *
+   * Specify the service account's `email` field. Ensure `scopes`
+   * include any necessary permissions for tasks, in addition to the default
+   * 'cloud-platform' scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.batch.v1alpha.ServiceAccountOrBuilder getServiceAccountOrBuilder();
 }

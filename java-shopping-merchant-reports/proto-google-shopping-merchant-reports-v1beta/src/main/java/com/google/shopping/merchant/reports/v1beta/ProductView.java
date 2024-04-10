@@ -74,6 +74,7 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     thumbnailLink_ = "";
     aggregatedReportingContextStatus_ = 0;
     itemIssues_ = java.util.Collections.emptyList();
+    clickPotential_ = 0;
   }
 
   @java.lang.Override
@@ -312,6 +313,198 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.ProductView.AggregatedReportingContextStatus)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A product's [click
+   * potential](https://support.google.com/merchants/answer/188488) estimates
+   * its performance potential compared to highest performing products of the
+   * merchant. Click potential of a product helps merchants to prioritize which
+   * products to fix and helps them understand how products are performing
+   * against their potential.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.reports.v1beta.ProductView.ClickPotential}
+   */
+  public enum ClickPotential implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unknown predicted clicks impact.
+     * </pre>
+     *
+     * <code>CLICK_POTENTIAL_UNSPECIFIED = 0;</code>
+     */
+    CLICK_POTENTIAL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Potential to receive a low number of clicks compared to the highest
+     * performing products of the merchant.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    LOW(1),
+    /**
+     *
+     *
+     * <pre>
+     * Potential to receive a moderate number of clicks compared to the highest
+     * performing products of the merchant.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    MEDIUM(2),
+    /**
+     *
+     *
+     * <pre>
+     * Potential to receive a similar number of clicks as the highest performing
+     * products of the merchant.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    HIGH(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unknown predicted clicks impact.
+     * </pre>
+     *
+     * <code>CLICK_POTENTIAL_UNSPECIFIED = 0;</code>
+     */
+    public static final int CLICK_POTENTIAL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Potential to receive a low number of clicks compared to the highest
+     * performing products of the merchant.
+     * </pre>
+     *
+     * <code>LOW = 1;</code>
+     */
+    public static final int LOW_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Potential to receive a moderate number of clicks compared to the highest
+     * performing products of the merchant.
+     * </pre>
+     *
+     * <code>MEDIUM = 2;</code>
+     */
+    public static final int MEDIUM_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Potential to receive a similar number of clicks as the highest performing
+     * products of the merchant.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    public static final int HIGH_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ClickPotential valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ClickPotential forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CLICK_POTENTIAL_UNSPECIFIED;
+        case 1:
+          return LOW;
+        case 2:
+          return MEDIUM;
+        case 3:
+          return HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ClickPotential> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ClickPotential> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ClickPotential>() {
+          public ClickPotential findValueByNumber(int number) {
+            return ClickPotential.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.reports.v1beta.ProductView.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final ClickPotential[] VALUES = values();
+
+    public static ClickPotential valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ClickPotential(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.ProductView.ClickPotential)
   }
 
   public interface ItemIssueOrBuilder
@@ -7915,6 +8108,86 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     return itemIssues_.get(index);
   }
 
+  public static final int CLICK_POTENTIAL_FIELD_NUMBER = 29;
+  private int clickPotential_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Estimated performance potential compared to highest performing products of
+   * the merchant.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clickPotential.
+   */
+  @java.lang.Override
+  public int getClickPotentialValue() {
+    return clickPotential_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Estimated performance potential compared to highest performing products of
+   * the merchant.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+   * </code>
+   *
+   * @return The clickPotential.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential
+      getClickPotential() {
+    com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential result =
+        com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential.forNumber(
+            clickPotential_);
+    return result == null
+        ? com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CLICK_POTENTIAL_RANK_FIELD_NUMBER = 30;
+  private long clickPotentialRank_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Rank of the product based on its click potential. A product with
+   * `click_potential_rank` 1 has the highest click potential among the
+   * merchant's products that fulfill the search query conditions.
+   * </pre>
+   *
+   * <code>optional int64 click_potential_rank = 30;</code>
+   *
+   * @return Whether the clickPotentialRank field is set.
+   */
+  @java.lang.Override
+  public boolean hasClickPotentialRank() {
+    return ((bitField0_ & 0x04000000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Rank of the product based on its click potential. A product with
+   * `click_potential_rank` 1 has the highest click potential among the
+   * merchant's products that fulfill the search query conditions.
+   * </pre>
+   *
+   * <code>optional int64 click_potential_rank = 30;</code>
+   *
+   * @return The clickPotentialRank.
+   */
+  @java.lang.Override
+  public long getClickPotentialRank() {
+    return clickPotentialRank_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8012,6 +8285,15 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(28, channel_);
+    }
+    if (clickPotential_
+        != com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential
+            .CLICK_POTENTIAL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(29, clickPotential_);
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      output.writeInt64(30, clickPotentialRank_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -8112,6 +8394,15 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(28, channel_);
+    }
+    if (clickPotential_
+        != com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential
+            .CLICK_POTENTIAL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(29, clickPotential_);
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(30, clickPotentialRank_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -8237,6 +8528,11 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         return false;
     }
     if (!getItemIssuesList().equals(other.getItemIssuesList())) return false;
+    if (clickPotential_ != other.clickPotential_) return false;
+    if (hasClickPotentialRank() != other.hasClickPotentialRank()) return false;
+    if (hasClickPotentialRank()) {
+      if (getClickPotentialRank() != other.getClickPotentialRank()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -8359,6 +8655,12 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
     if (getItemIssuesCount() > 0) {
       hash = (37 * hash) + ITEM_ISSUES_FIELD_NUMBER;
       hash = (53 * hash) + getItemIssuesList().hashCode();
+    }
+    hash = (37 * hash) + CLICK_POTENTIAL_FIELD_NUMBER;
+    hash = (53 * hash) + clickPotential_;
+    if (hasClickPotentialRank()) {
+      hash = (37 * hash) + CLICK_POTENTIAL_RANK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getClickPotentialRank());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -8568,6 +8870,8 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         itemIssuesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x08000000);
+      clickPotential_ = 0;
+      clickPotentialRank_ = 0L;
       return this;
     }
 
@@ -8728,6 +9032,13 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x04000000) != 0)) {
         result.aggregatedReportingContextStatus_ = aggregatedReportingContextStatus_;
         to_bitField0_ |= 0x02000000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.clickPotential_ = clickPotential_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.clickPotentialRank_ = clickPotentialRank_;
+        to_bitField0_ |= 0x04000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8935,6 +9246,12 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.clickPotential_ != 0) {
+        setClickPotentialValue(other.getClickPotentialValue());
+      }
+      if (other.hasClickPotentialRank()) {
+        setClickPotentialRank(other.getClickPotentialRank());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -9138,6 +9455,18 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 224
+            case 232:
+              {
+                clickPotential_ = input.readEnum();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 232
+            case 240:
+              {
+                clickPotentialRank_ = input.readInt64();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 240
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13262,6 +13591,192 @@ public final class ProductView extends com.google.protobuf.GeneratedMessageV3
         itemIssues_ = null;
       }
       return itemIssuesBuilder_;
+    }
+
+    private int clickPotential_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Estimated performance potential compared to highest performing products of
+     * the merchant.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for clickPotential.
+     */
+    @java.lang.Override
+    public int getClickPotentialValue() {
+      return clickPotential_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Estimated performance potential compared to highest performing products of
+     * the merchant.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for clickPotential to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClickPotentialValue(int value) {
+      clickPotential_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Estimated performance potential compared to highest performing products of
+     * the merchant.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+     * </code>
+     *
+     * @return The clickPotential.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential
+        getClickPotential() {
+      com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential result =
+          com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential.forNumber(
+              clickPotential_);
+      return result == null
+          ? com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Estimated performance potential compared to highest performing products of
+     * the merchant.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+     * </code>
+     *
+     * @param value The clickPotential to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClickPotential(
+        com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x10000000;
+      clickPotential_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Estimated performance potential compared to highest performing products of
+     * the merchant.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClickPotential() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      clickPotential_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long clickPotentialRank_;
+    /**
+     *
+     *
+     * <pre>
+     * Rank of the product based on its click potential. A product with
+     * `click_potential_rank` 1 has the highest click potential among the
+     * merchant's products that fulfill the search query conditions.
+     * </pre>
+     *
+     * <code>optional int64 click_potential_rank = 30;</code>
+     *
+     * @return Whether the clickPotentialRank field is set.
+     */
+    @java.lang.Override
+    public boolean hasClickPotentialRank() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rank of the product based on its click potential. A product with
+     * `click_potential_rank` 1 has the highest click potential among the
+     * merchant's products that fulfill the search query conditions.
+     * </pre>
+     *
+     * <code>optional int64 click_potential_rank = 30;</code>
+     *
+     * @return The clickPotentialRank.
+     */
+    @java.lang.Override
+    public long getClickPotentialRank() {
+      return clickPotentialRank_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rank of the product based on its click potential. A product with
+     * `click_potential_rank` 1 has the highest click potential among the
+     * merchant's products that fulfill the search query conditions.
+     * </pre>
+     *
+     * <code>optional int64 click_potential_rank = 30;</code>
+     *
+     * @param value The clickPotentialRank to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClickPotentialRank(long value) {
+
+      clickPotentialRank_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Rank of the product based on its click potential. A product with
+     * `click_potential_rank` 1 has the highest click potential among the
+     * merchant's products that fulfill the search query conditions.
+     * </pre>
+     *
+     * <code>optional int64 click_potential_rank = 30;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClickPotentialRank() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      clickPotentialRank_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

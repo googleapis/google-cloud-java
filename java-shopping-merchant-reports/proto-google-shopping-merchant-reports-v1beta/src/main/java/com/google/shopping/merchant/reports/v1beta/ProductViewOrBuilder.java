@@ -1187,4 +1187,62 @@ public interface ProductViewOrBuilder
    */
   com.google.shopping.merchant.reports.v1beta.ProductView.ItemIssueOrBuilder getItemIssuesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Estimated performance potential compared to highest performing products of
+   * the merchant.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for clickPotential.
+   */
+  int getClickPotentialValue();
+  /**
+   *
+   *
+   * <pre>
+   * Estimated performance potential compared to highest performing products of
+   * the merchant.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential click_potential = 29;
+   * </code>
+   *
+   * @return The clickPotential.
+   */
+  com.google.shopping.merchant.reports.v1beta.ProductView.ClickPotential getClickPotential();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rank of the product based on its click potential. A product with
+   * `click_potential_rank` 1 has the highest click potential among the
+   * merchant's products that fulfill the search query conditions.
+   * </pre>
+   *
+   * <code>optional int64 click_potential_rank = 30;</code>
+   *
+   * @return Whether the clickPotentialRank field is set.
+   */
+  boolean hasClickPotentialRank();
+  /**
+   *
+   *
+   * <pre>
+   * Rank of the product based on its click potential. A product with
+   * `click_potential_rank` 1 has the highest click potential among the
+   * merchant's products that fulfill the search query conditions.
+   * </pre>
+   *
+   * <code>optional int64 click_potential_rank = 30;</code>
+   *
+   * @return The clickPotentialRank.
+   */
+  long getClickPotentialRank();
 }
