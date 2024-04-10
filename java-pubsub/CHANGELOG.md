@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.128.1](https://github.com/googleapis/java-pubsub/compare/v1.128.0...v1.128.1) (2024-04-10)
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 ([#1975](https://github.com/googleapis/java-pubsub/issues/1975)) ([618abdd](https://github.com/googleapis/java-pubsub/commit/618abdd44dd9670a5d6a1ca3c923e3d0621c6248))
+* Update actions/github-script action to v7 ([#1976](https://github.com/googleapis/java-pubsub/issues/1976)) ([c836172](https://github.com/googleapis/java-pubsub/commit/c8361722544ec4170b94651e77b02634938c7883))
+
 ## [1.128.0](https://github.com/googleapis/java-pubsub/compare/v1.127.3...v1.128.0) (2024-04-03)
 
 
