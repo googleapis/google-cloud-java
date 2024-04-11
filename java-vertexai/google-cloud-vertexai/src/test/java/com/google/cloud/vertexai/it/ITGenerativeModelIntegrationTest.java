@@ -17,6 +17,7 @@ package com.google.cloud.vertexai.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.core.ApiFuture;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.Content;
 import com.google.cloud.vertexai.api.CountTokensResponse;
@@ -110,7 +111,7 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
-  public void generateContent_withPlainText_respondWithNonEmptyCandidateList() throws IOException {
+  public void generateContent_withPlainText_nonEmptyCandidateList() throws IOException {
     GenerateContentResponse response = textModel.generateContent(TEXT);
 
     String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -118,8 +119,7 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
-  public void generateContent_withCompleteConfig_respondWithNonEmptyCandidateList()
-      throws IOException {
+  public void generateContent_withCompleteConfig_nonEmptyCandidateList() throws IOException {
     logger.info(String.format("Generating response for question: %s", TEXT));
     Integer maxOutputTokens = 50;
     GenerationConfig generationConfig =
@@ -152,8 +152,16 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
-  public void generateContentStream_withPlainText_respondWithNonEmptyCandidateList()
-      throws IOException {
+  public void generateContentAsync_withPlainText_nonEmptyCandidateList() throws Exception {
+    ApiFuture<GenerateContentResponse> responseFuture = textModel.generateContentAsync(TEXT);
+    GenerateContentResponse response = responseFuture.get();
+
+    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
+    assertNonEmptyAndLogResponse(methodName, TEXT, response);
+  }
+
+  @Test
+  public void generateContentStream_withPlainText_nonEmptyCandidateList() throws IOException {
     ResponseStream<GenerateContentResponse> stream = textModel.generateContentStream(TEXT);
 
     String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -163,8 +171,7 @@ public class ITGenerativeModelIntegrationTest {
   // TODO(b/333866041): Re-enable byteImage test
   @Ignore("The test is not compatible with GraalVM native image test on GitHub.")
   @Test
-  public void generateContentStream_withByteImage_respondWithNonEmptyCandidateList()
-      throws Exception {
+  public void generateContentStream_withByteImage_nonEmptyCandidateList() throws Exception {
     ResponseStream<GenerateContentResponse> stream =
         multiModalModel.generateContentStream(
             ContentMaker.fromMultiModalData(
@@ -176,8 +183,7 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
-  public void generateContentStream_withGcsVideo_respondWithNonEmptyCandidateList()
-      throws Exception {
+  public void generateContentStream_withGcsVideo_nonEmptyCandidateList() throws Exception {
     Part videoPart = PartMaker.fromMimeTypeAndData("video/mp4", GCS_VIDEO_URI);
     Content content = ContentMaker.fromMultiModalData(VIDEO_INQUIRY, videoPart);
 
@@ -188,8 +194,7 @@ public class ITGenerativeModelIntegrationTest {
   }
 
   @Test
-  public void generateContentStream_withGcsImage_respondWithNonEmptyCandidateList()
-      throws Exception {
+  public void generateContentStream_withGcsImage_nonEmptyCandidateList() throws Exception {
     Part imagePart = PartMaker.fromMimeTypeAndData("image/jpeg", GCS_IMAGE_URI);
     Content content = ContentMaker.fromMultiModalData(IMAGE_INQUIRY, imagePart);
 
