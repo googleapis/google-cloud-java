@@ -3,8 +3,6 @@ on:
   pull_request:
     types:
       - synchronize
-    paths:
-      - generation_config.yaml
 jobs:
   library_generation:
     runs-on: ubuntu-latest
