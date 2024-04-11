@@ -1370,6 +1370,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     INLINE_SOURCE(2),
     GCS_SOURCE(3),
     BIGQUERY_SOURCE(4),
+    FHIR_STORE_SOURCE(10),
+    SPANNER_SOURCE(11),
+    CLOUD_SQL_SOURCE(12),
+    FIRESTORE_SOURCE(13),
+    BIGTABLE_SOURCE(15),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -1394,6 +1399,16 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
           return GCS_SOURCE;
         case 4:
           return BIGQUERY_SOURCE;
+        case 10:
+          return FHIR_STORE_SOURCE;
+        case 11:
+          return SPANNER_SOURCE;
+        case 12:
+          return CLOUD_SQL_SOURCE;
+        case 13:
+          return FIRESTORE_SOURCE;
+        case 15:
+          return BIGTABLE_SOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -1574,6 +1589,266 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     return com.google.cloud.discoveryengine.v1beta.BigQuerySource.getDefaultInstance();
   }
 
+  public static final int FHIR_STORE_SOURCE_FIELD_NUMBER = 10;
+  /**
+   *
+   *
+   * <pre>
+   * FhirStore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+   *
+   * @return Whether the fhirStoreSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasFhirStoreSource() {
+    return sourceCase_ == 10;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * FhirStore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+   *
+   * @return The fhirStoreSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.FhirStoreSource getFhirStoreSource() {
+    if (sourceCase_ == 10) {
+      return (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.FhirStoreSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * FhirStore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.FhirStoreSourceOrBuilder
+      getFhirStoreSourceOrBuilder() {
+    if (sourceCase_ == 10) {
+      return (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.FhirStoreSource.getDefaultInstance();
+  }
+
+  public static final int SPANNER_SOURCE_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * Spanner input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+   *
+   * @return Whether the spannerSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpannerSource() {
+    return sourceCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Spanner input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+   *
+   * @return The spannerSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SpannerSource getSpannerSource() {
+    if (sourceCase_ == 11) {
+      return (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.SpannerSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Spanner input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SpannerSourceOrBuilder
+      getSpannerSourceOrBuilder() {
+    if (sourceCase_ == 11) {
+      return (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.SpannerSource.getDefaultInstance();
+  }
+
+  public static final int CLOUD_SQL_SOURCE_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+   *
+   * @return Whether the cloudSqlSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudSqlSource() {
+    return sourceCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+   *
+   * @return The cloudSqlSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CloudSqlSource getCloudSqlSource() {
+    if (sourceCase_ == 12) {
+      return (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.CloudSqlSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.CloudSqlSourceOrBuilder
+      getCloudSqlSourceOrBuilder() {
+    if (sourceCase_ == 12) {
+      return (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.CloudSqlSource.getDefaultInstance();
+  }
+
+  public static final int FIRESTORE_SOURCE_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Firestore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+   *
+   * @return Whether the firestoreSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasFirestoreSource() {
+    return sourceCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Firestore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+   *
+   * @return The firestoreSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.FirestoreSource getFirestoreSource() {
+    if (sourceCase_ == 13) {
+      return (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Firestore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.FirestoreSourceOrBuilder
+      getFirestoreSourceOrBuilder() {
+    if (sourceCase_ == 13) {
+      return (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance();
+  }
+
+  public static final int BIGTABLE_SOURCE_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+   *
+   * @return Whether the bigtableSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigtableSource() {
+    return sourceCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+   *
+   * @return The bigtableSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.BigtableSource getBigtableSource() {
+    if (sourceCase_ == 15) {
+      return (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.BigtableSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.BigtableSourceOrBuilder
+      getBigtableSourceOrBuilder() {
+    if (sourceCase_ == 15) {
+      return (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_;
+    }
+    return com.google.cloud.discoveryengine.v1beta.BigtableSource.getDefaultInstance();
+  }
+
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1732,6 +2007,55 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         : result;
   }
 
+  public static final int UPDATE_MASK_FIELD_NUMBER = 7;
+  private com.google.protobuf.FieldMask updateMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported documents to update. If
+   * not set, the default is to update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateMask() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported documents to update. If
+   * not set, the default is to update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+   *
+   * @return The updateMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getUpdateMask() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported documents to update. If
+   * not set, the default is to update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+  }
+
   public static final int AUTO_GENERATE_IDS_FIELD_NUMBER = 8;
   private boolean autoGenerateIds_ = false;
   /**
@@ -1751,14 +2075,18 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
    * otherwise, documents without IDs fail to be imported.
    *
-   * Only set this field when using
-   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-   * when
+   * Supported data sources:
+   *
+   * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
    * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-   * or
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
    * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-   * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+   * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+   * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
    * <code>bool auto_generate_ids = 8;</code>
@@ -1778,35 +2106,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The field in the Cloud Storage and BigQuery sources that indicates the
-   * unique IDs of the documents.
+   * The field indicates the ID field or column to be used as unique IDs of
+   * the documents.
    *
    * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
    * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-   * "some_uuid"}`. For
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-   * the column name of the BigQuery table where the unique ids are stored.
+   * "some_uuid"}`. For others, it may be the column name of the table where the
+   * unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column are used as the
+   * The values of the JSON field or the table column are used as the
    * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-   * field or the BigQuery column must be of string type, and the values must be
+   * field or the table column must be of string type, and the values must be
    * set as valid strings conform to
    * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
    * Otherwise, documents without valid IDs fail to be imported.
    *
-   * Only set this field when using
-   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-   * when
-   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-   * or
-   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-   * is `custom`. And only set this field when
+   * Only set this field when
    * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
    * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
    *
    * If it is unset, a default value `_id` is used when importing from the
    * allowed data sources.
+   *
+   * Supported data sources:
+   *
+   * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+   * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+   * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
    * <code>string id_field = 9;</code>
@@ -1829,35 +2162,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The field in the Cloud Storage and BigQuery sources that indicates the
-   * unique IDs of the documents.
+   * The field indicates the ID field or column to be used as unique IDs of
+   * the documents.
    *
    * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
    * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-   * "some_uuid"}`. For
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-   * the column name of the BigQuery table where the unique ids are stored.
+   * "some_uuid"}`. For others, it may be the column name of the table where the
+   * unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column are used as the
+   * The values of the JSON field or the table column are used as the
    * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-   * field or the BigQuery column must be of string type, and the values must be
+   * field or the table column must be of string type, and the values must be
    * set as valid strings conform to
    * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
    * Otherwise, documents without valid IDs fail to be imported.
    *
-   * Only set this field when using
-   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-   * when
-   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-   * or
-   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-   * is `custom`. And only set this field when
+   * Only set this field when
    * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
    * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
    *
    * If it is unset, a default value `_id` is used when importing from the
    * allowed data sources.
+   *
+   * Supported data sources:
+   *
+   * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+   * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+   * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
    * <code>string id_field = 9;</code>
@@ -1913,11 +2251,29 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             .getNumber()) {
       output.writeEnum(6, reconciliationMode_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getUpdateMask());
+    }
     if (autoGenerateIds_ != false) {
       output.writeBool(8, autoGenerateIds_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idField_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, idField_);
+    }
+    if (sourceCase_ == 10) {
+      output.writeMessage(10, (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_);
+    }
+    if (sourceCase_ == 11) {
+      output.writeMessage(11, (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_);
+    }
+    if (sourceCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_);
+    }
+    if (sourceCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_);
+    }
+    if (sourceCase_ == 15) {
+      output.writeMessage(15, (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1957,11 +2313,39 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, reconciliationMode_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getUpdateMask());
+    }
     if (autoGenerateIds_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, autoGenerateIds_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(idField_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, idField_);
+    }
+    if (sourceCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_);
+    }
+    if (sourceCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_);
+    }
+    if (sourceCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_);
+    }
+    if (sourceCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_);
+    }
+    if (sourceCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1985,6 +2369,10 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (!getErrorConfig().equals(other.getErrorConfig())) return false;
     }
     if (reconciliationMode_ != other.reconciliationMode_) return false;
+    if (hasUpdateMask() != other.hasUpdateMask()) return false;
+    if (hasUpdateMask()) {
+      if (!getUpdateMask().equals(other.getUpdateMask())) return false;
+    }
     if (getAutoGenerateIds() != other.getAutoGenerateIds()) return false;
     if (!getIdField().equals(other.getIdField())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
@@ -1997,6 +2385,21 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         break;
       case 4:
         if (!getBigquerySource().equals(other.getBigquerySource())) return false;
+        break;
+      case 10:
+        if (!getFhirStoreSource().equals(other.getFhirStoreSource())) return false;
+        break;
+      case 11:
+        if (!getSpannerSource().equals(other.getSpannerSource())) return false;
+        break;
+      case 12:
+        if (!getCloudSqlSource().equals(other.getCloudSqlSource())) return false;
+        break;
+      case 13:
+        if (!getFirestoreSource().equals(other.getFirestoreSource())) return false;
+        break;
+      case 15:
+        if (!getBigtableSource().equals(other.getBigtableSource())) return false;
         break;
       case 0:
       default:
@@ -2020,6 +2423,10 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + RECONCILIATION_MODE_FIELD_NUMBER;
     hash = (53 * hash) + reconciliationMode_;
+    if (hasUpdateMask()) {
+      hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateMask().hashCode();
+    }
     hash = (37 * hash) + AUTO_GENERATE_IDS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoGenerateIds());
     hash = (37 * hash) + ID_FIELD_FIELD_NUMBER;
@@ -2036,6 +2443,26 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       case 4:
         hash = (37 * hash) + BIGQUERY_SOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getBigquerySource().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + FHIR_STORE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getFhirStoreSource().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + SPANNER_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getSpannerSource().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + CLOUD_SQL_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudSqlSource().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + FIRESTORE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getFirestoreSource().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + BIGTABLE_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getBigtableSource().hashCode();
         break;
       case 0:
       default:
@@ -2182,6 +2609,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getErrorConfigFieldBuilder();
+        getUpdateMaskFieldBuilder();
       }
     }
 
@@ -2198,6 +2626,21 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (bigquerySourceBuilder_ != null) {
         bigquerySourceBuilder_.clear();
       }
+      if (fhirStoreSourceBuilder_ != null) {
+        fhirStoreSourceBuilder_.clear();
+      }
+      if (spannerSourceBuilder_ != null) {
+        spannerSourceBuilder_.clear();
+      }
+      if (cloudSqlSourceBuilder_ != null) {
+        cloudSqlSourceBuilder_.clear();
+      }
+      if (firestoreSourceBuilder_ != null) {
+        firestoreSourceBuilder_.clear();
+      }
+      if (bigtableSourceBuilder_ != null) {
+        bigtableSourceBuilder_.clear();
+      }
       parent_ = "";
       errorConfig_ = null;
       if (errorConfigBuilder_ != null) {
@@ -2205,6 +2648,11 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         errorConfigBuilder_ = null;
       }
       reconciliationMode_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
       autoGenerateIds_ = false;
       idField_ = "";
       sourceCase_ = 0;
@@ -2248,22 +2696,26 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     private void buildPartial0(
         com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.parent_ = parent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.errorConfig_ =
             errorConfigBuilder_ == null ? errorConfig_ : errorConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.reconciliationMode_ = reconciliationMode_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.autoGenerateIds_ = autoGenerateIds_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.idField_ = idField_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2281,6 +2733,21 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       if (sourceCase_ == 4 && bigquerySourceBuilder_ != null) {
         result.source_ = bigquerySourceBuilder_.build();
+      }
+      if (sourceCase_ == 10 && fhirStoreSourceBuilder_ != null) {
+        result.source_ = fhirStoreSourceBuilder_.build();
+      }
+      if (sourceCase_ == 11 && spannerSourceBuilder_ != null) {
+        result.source_ = spannerSourceBuilder_.build();
+      }
+      if (sourceCase_ == 12 && cloudSqlSourceBuilder_ != null) {
+        result.source_ = cloudSqlSourceBuilder_.build();
+      }
+      if (sourceCase_ == 13 && firestoreSourceBuilder_ != null) {
+        result.source_ = firestoreSourceBuilder_.build();
+      }
+      if (sourceCase_ == 15 && bigtableSourceBuilder_ != null) {
+        result.source_ = bigtableSourceBuilder_.build();
       }
     }
 
@@ -2333,7 +2800,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasErrorConfig()) {
@@ -2342,12 +2809,15 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (other.reconciliationMode_ != 0) {
         setReconciliationModeValue(other.getReconciliationModeValue());
       }
+      if (other.hasUpdateMask()) {
+        mergeUpdateMask(other.getUpdateMask());
+      }
       if (other.getAutoGenerateIds() != false) {
         setAutoGenerateIds(other.getAutoGenerateIds());
       }
       if (!other.getIdField().isEmpty()) {
         idField_ = other.idField_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -2364,6 +2834,31 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         case BIGQUERY_SOURCE:
           {
             mergeBigquerySource(other.getBigquerySource());
+            break;
+          }
+        case FHIR_STORE_SOURCE:
+          {
+            mergeFhirStoreSource(other.getFhirStoreSource());
+            break;
+          }
+        case SPANNER_SOURCE:
+          {
+            mergeSpannerSource(other.getSpannerSource());
+            break;
+          }
+        case CLOUD_SQL_SOURCE:
+          {
+            mergeCloudSqlSource(other.getCloudSqlSource());
+            break;
+          }
+        case FIRESTORE_SOURCE:
+          {
+            mergeFirestoreSource(other.getFirestoreSource());
+            break;
+          }
+        case BIGTABLE_SOURCE:
+          {
+            mergeBigtableSource(other.getBigtableSource());
             break;
           }
         case SOURCE_NOT_SET:
@@ -2400,7 +2895,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 10
             case 18:
@@ -2424,27 +2919,63 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
             case 42:
               {
                 input.readMessage(getErrorConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 48:
               {
                 reconciliationMode_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 48
+            case 58:
+              {
+                input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 58
             case 64:
               {
                 autoGenerateIds_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 64
             case 74:
               {
                 idField_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(getFhirStoreSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(getSpannerSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 11;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getCloudSqlSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(getFirestoreSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 13;
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(getBigtableSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 15;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3146,6 +3677,1071 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       return bigquerySourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.FhirStoreSource,
+            com.google.cloud.discoveryengine.v1beta.FhirStoreSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.FhirStoreSourceOrBuilder>
+        fhirStoreSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     *
+     * @return Whether the fhirStoreSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasFhirStoreSource() {
+      return sourceCase_ == 10;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     *
+     * @return The fhirStoreSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.FhirStoreSource getFhirStoreSource() {
+      if (fhirStoreSourceBuilder_ == null) {
+        if (sourceCase_ == 10) {
+          return (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.FhirStoreSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 10) {
+          return fhirStoreSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.FhirStoreSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     */
+    public Builder setFhirStoreSource(
+        com.google.cloud.discoveryengine.v1beta.FhirStoreSource value) {
+      if (fhirStoreSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        fhirStoreSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     */
+    public Builder setFhirStoreSource(
+        com.google.cloud.discoveryengine.v1beta.FhirStoreSource.Builder builderForValue) {
+      if (fhirStoreSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        fhirStoreSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     */
+    public Builder mergeFhirStoreSource(
+        com.google.cloud.discoveryengine.v1beta.FhirStoreSource value) {
+      if (fhirStoreSourceBuilder_ == null) {
+        if (sourceCase_ == 10
+            && source_
+                != com.google.cloud.discoveryengine.v1beta.FhirStoreSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.FhirStoreSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 10) {
+          fhirStoreSourceBuilder_.mergeFrom(value);
+        } else {
+          fhirStoreSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 10;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     */
+    public Builder clearFhirStoreSource() {
+      if (fhirStoreSourceBuilder_ == null) {
+        if (sourceCase_ == 10) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 10) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        fhirStoreSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.FhirStoreSource.Builder
+        getFhirStoreSourceBuilder() {
+      return getFhirStoreSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.FhirStoreSourceOrBuilder
+        getFhirStoreSourceOrBuilder() {
+      if ((sourceCase_ == 10) && (fhirStoreSourceBuilder_ != null)) {
+        return fhirStoreSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 10) {
+          return (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.FhirStoreSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * FhirStore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.FhirStoreSource,
+            com.google.cloud.discoveryengine.v1beta.FhirStoreSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.FhirStoreSourceOrBuilder>
+        getFhirStoreSourceFieldBuilder() {
+      if (fhirStoreSourceBuilder_ == null) {
+        if (!(sourceCase_ == 10)) {
+          source_ = com.google.cloud.discoveryengine.v1beta.FhirStoreSource.getDefaultInstance();
+        }
+        fhirStoreSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.FhirStoreSource,
+                com.google.cloud.discoveryengine.v1beta.FhirStoreSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.FhirStoreSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.FhirStoreSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 10;
+      onChanged();
+      return fhirStoreSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SpannerSource,
+            com.google.cloud.discoveryengine.v1beta.SpannerSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.SpannerSourceOrBuilder>
+        spannerSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     *
+     * @return Whether the spannerSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerSource() {
+      return sourceCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     *
+     * @return The spannerSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SpannerSource getSpannerSource() {
+      if (spannerSourceBuilder_ == null) {
+        if (sourceCase_ == 11) {
+          return (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.SpannerSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 11) {
+          return spannerSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.SpannerSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     */
+    public Builder setSpannerSource(com.google.cloud.discoveryengine.v1beta.SpannerSource value) {
+      if (spannerSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        spannerSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     */
+    public Builder setSpannerSource(
+        com.google.cloud.discoveryengine.v1beta.SpannerSource.Builder builderForValue) {
+      if (spannerSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        spannerSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     */
+    public Builder mergeSpannerSource(com.google.cloud.discoveryengine.v1beta.SpannerSource value) {
+      if (spannerSourceBuilder_ == null) {
+        if (sourceCase_ == 11
+            && source_
+                != com.google.cloud.discoveryengine.v1beta.SpannerSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.SpannerSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 11) {
+          spannerSourceBuilder_.mergeFrom(value);
+        } else {
+          spannerSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     */
+    public Builder clearSpannerSource() {
+      if (spannerSourceBuilder_ == null) {
+        if (sourceCase_ == 11) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 11) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        spannerSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SpannerSource.Builder getSpannerSourceBuilder() {
+      return getSpannerSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SpannerSourceOrBuilder
+        getSpannerSourceOrBuilder() {
+      if ((sourceCase_ == 11) && (spannerSourceBuilder_ != null)) {
+        return spannerSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 11) {
+          return (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.SpannerSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spanner input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SpannerSource,
+            com.google.cloud.discoveryengine.v1beta.SpannerSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.SpannerSourceOrBuilder>
+        getSpannerSourceFieldBuilder() {
+      if (spannerSourceBuilder_ == null) {
+        if (!(sourceCase_ == 11)) {
+          source_ = com.google.cloud.discoveryengine.v1beta.SpannerSource.getDefaultInstance();
+        }
+        spannerSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SpannerSource,
+                com.google.cloud.discoveryengine.v1beta.SpannerSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.SpannerSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.SpannerSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 11;
+      onChanged();
+      return spannerSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.CloudSqlSource,
+            com.google.cloud.discoveryengine.v1beta.CloudSqlSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.CloudSqlSourceOrBuilder>
+        cloudSqlSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     *
+     * @return Whether the cloudSqlSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSqlSource() {
+      return sourceCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     *
+     * @return The cloudSqlSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.CloudSqlSource getCloudSqlSource() {
+      if (cloudSqlSourceBuilder_ == null) {
+        if (sourceCase_ == 12) {
+          return (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.CloudSqlSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 12) {
+          return cloudSqlSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.CloudSqlSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     */
+    public Builder setCloudSqlSource(com.google.cloud.discoveryengine.v1beta.CloudSqlSource value) {
+      if (cloudSqlSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        cloudSqlSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     */
+    public Builder setCloudSqlSource(
+        com.google.cloud.discoveryengine.v1beta.CloudSqlSource.Builder builderForValue) {
+      if (cloudSqlSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudSqlSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     */
+    public Builder mergeCloudSqlSource(
+        com.google.cloud.discoveryengine.v1beta.CloudSqlSource value) {
+      if (cloudSqlSourceBuilder_ == null) {
+        if (sourceCase_ == 12
+            && source_
+                != com.google.cloud.discoveryengine.v1beta.CloudSqlSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.CloudSqlSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 12) {
+          cloudSqlSourceBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     */
+    public Builder clearCloudSqlSource() {
+      if (cloudSqlSourceBuilder_ == null) {
+        if (sourceCase_ == 12) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 12) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        cloudSqlSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.CloudSqlSource.Builder
+        getCloudSqlSourceBuilder() {
+      return getCloudSqlSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.CloudSqlSourceOrBuilder
+        getCloudSqlSourceOrBuilder() {
+      if ((sourceCase_ == 12) && (cloudSqlSourceBuilder_ != null)) {
+        return cloudSqlSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 12) {
+          return (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.CloudSqlSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud SQL input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.CloudSqlSource,
+            com.google.cloud.discoveryengine.v1beta.CloudSqlSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.CloudSqlSourceOrBuilder>
+        getCloudSqlSourceFieldBuilder() {
+      if (cloudSqlSourceBuilder_ == null) {
+        if (!(sourceCase_ == 12)) {
+          source_ = com.google.cloud.discoveryengine.v1beta.CloudSqlSource.getDefaultInstance();
+        }
+        cloudSqlSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.CloudSqlSource,
+                com.google.cloud.discoveryengine.v1beta.CloudSqlSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.CloudSqlSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.CloudSqlSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 12;
+      onChanged();
+      return cloudSqlSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.FirestoreSource,
+            com.google.cloud.discoveryengine.v1beta.FirestoreSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.FirestoreSourceOrBuilder>
+        firestoreSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     *
+     * @return Whether the firestoreSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasFirestoreSource() {
+      return sourceCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     *
+     * @return The firestoreSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.FirestoreSource getFirestoreSource() {
+      if (firestoreSourceBuilder_ == null) {
+        if (sourceCase_ == 13) {
+          return (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 13) {
+          return firestoreSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     */
+    public Builder setFirestoreSource(
+        com.google.cloud.discoveryengine.v1beta.FirestoreSource value) {
+      if (firestoreSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        firestoreSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     */
+    public Builder setFirestoreSource(
+        com.google.cloud.discoveryengine.v1beta.FirestoreSource.Builder builderForValue) {
+      if (firestoreSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        firestoreSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     */
+    public Builder mergeFirestoreSource(
+        com.google.cloud.discoveryengine.v1beta.FirestoreSource value) {
+      if (firestoreSourceBuilder_ == null) {
+        if (sourceCase_ == 13
+            && source_
+                != com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.FirestoreSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 13) {
+          firestoreSourceBuilder_.mergeFrom(value);
+        } else {
+          firestoreSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     */
+    public Builder clearFirestoreSource() {
+      if (firestoreSourceBuilder_ == null) {
+        if (sourceCase_ == 13) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 13) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        firestoreSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.FirestoreSource.Builder
+        getFirestoreSourceBuilder() {
+      return getFirestoreSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.FirestoreSourceOrBuilder
+        getFirestoreSourceOrBuilder() {
+      if ((sourceCase_ == 13) && (firestoreSourceBuilder_ != null)) {
+        return firestoreSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 13) {
+          return (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Firestore input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.FirestoreSource,
+            com.google.cloud.discoveryengine.v1beta.FirestoreSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.FirestoreSourceOrBuilder>
+        getFirestoreSourceFieldBuilder() {
+      if (firestoreSourceBuilder_ == null) {
+        if (!(sourceCase_ == 13)) {
+          source_ = com.google.cloud.discoveryengine.v1beta.FirestoreSource.getDefaultInstance();
+        }
+        firestoreSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.FirestoreSource,
+                com.google.cloud.discoveryengine.v1beta.FirestoreSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.FirestoreSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.FirestoreSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 13;
+      onChanged();
+      return firestoreSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.BigtableSource,
+            com.google.cloud.discoveryengine.v1beta.BigtableSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.BigtableSourceOrBuilder>
+        bigtableSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     *
+     * @return Whether the bigtableSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigtableSource() {
+      return sourceCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     *
+     * @return The bigtableSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.BigtableSource getBigtableSource() {
+      if (bigtableSourceBuilder_ == null) {
+        if (sourceCase_ == 15) {
+          return (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.BigtableSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 15) {
+          return bigtableSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.discoveryengine.v1beta.BigtableSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     */
+    public Builder setBigtableSource(com.google.cloud.discoveryengine.v1beta.BigtableSource value) {
+      if (bigtableSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        bigtableSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     */
+    public Builder setBigtableSource(
+        com.google.cloud.discoveryengine.v1beta.BigtableSource.Builder builderForValue) {
+      if (bigtableSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigtableSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     */
+    public Builder mergeBigtableSource(
+        com.google.cloud.discoveryengine.v1beta.BigtableSource value) {
+      if (bigtableSourceBuilder_ == null) {
+        if (sourceCase_ == 15
+            && source_
+                != com.google.cloud.discoveryengine.v1beta.BigtableSource.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.discoveryengine.v1beta.BigtableSource.newBuilder(
+                      (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 15) {
+          bigtableSourceBuilder_.mergeFrom(value);
+        } else {
+          bigtableSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     */
+    public Builder clearBigtableSource() {
+      if (bigtableSourceBuilder_ == null) {
+        if (sourceCase_ == 15) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 15) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        bigtableSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.BigtableSource.Builder
+        getBigtableSourceBuilder() {
+      return getBigtableSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.BigtableSourceOrBuilder
+        getBigtableSourceOrBuilder() {
+      if ((sourceCase_ == 15) && (bigtableSourceBuilder_ != null)) {
+        return bigtableSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 15) {
+          return (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_;
+        }
+        return com.google.cloud.discoveryengine.v1beta.BigtableSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Bigtable input source.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.BigtableSource,
+            com.google.cloud.discoveryengine.v1beta.BigtableSource.Builder,
+            com.google.cloud.discoveryengine.v1beta.BigtableSourceOrBuilder>
+        getBigtableSourceFieldBuilder() {
+      if (bigtableSourceBuilder_ == null) {
+        if (!(sourceCase_ == 15)) {
+          source_ = com.google.cloud.discoveryengine.v1beta.BigtableSource.getDefaultInstance();
+        }
+        bigtableSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.BigtableSource,
+                com.google.cloud.discoveryengine.v1beta.BigtableSource.Builder,
+                com.google.cloud.discoveryengine.v1beta.BigtableSourceOrBuilder>(
+                (com.google.cloud.discoveryengine.v1beta.BigtableSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 15;
+      onChanged();
+      return bigtableSourceBuilder_;
+    }
+
     private java.lang.Object parent_ = "";
     /**
      *
@@ -3220,7 +4816,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       parent_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3241,7 +4837,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3267,7 +4863,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3290,7 +4886,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return Whether the errorConfig field is set.
      */
     public boolean hasErrorConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3330,7 +4926,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       } else {
         errorConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3350,7 +4946,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       } else {
         errorConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3366,7 +4962,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder mergeErrorConfig(
         com.google.cloud.discoveryengine.v1beta.ImportErrorConfig value) {
       if (errorConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && errorConfig_ != null
             && errorConfig_
                 != com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.getDefaultInstance()) {
@@ -3378,7 +4974,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         errorConfigBuilder_.mergeFrom(value);
       }
       if (errorConfig_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3393,7 +4989,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.discoveryengine.v1beta.ImportErrorConfig error_config = 5;</code>
      */
     public Builder clearErrorConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       errorConfig_ = null;
       if (errorConfigBuilder_ != null) {
         errorConfigBuilder_.dispose();
@@ -3413,7 +5009,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.discoveryengine.v1beta.ImportErrorConfig.Builder
         getErrorConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getErrorConfigFieldBuilder().getBuilder();
     }
@@ -3500,7 +5096,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder setReconciliationModeValue(int value) {
       reconciliationMode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3551,7 +5147,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000400;
       reconciliationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -3572,10 +5168,204 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearReconciliationMode() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000400);
       reconciliationMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask updateMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     *
+     * @return Whether the updateMask field is set.
+     */
+    public boolean hasUpdateMask() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     *
+     * @return The updateMask.
+     */
+    public com.google.protobuf.FieldMask getUpdateMask() {
+      if (updateMaskBuilder_ == null) {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      } else {
+        return updateMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateMask_ = value;
+      } else {
+        updateMaskBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     */
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (updateMaskBuilder_ == null) {
+        updateMask_ = builderForValue.build();
+      } else {
+        updateMaskBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     */
+    public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
+      if (updateMaskBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
+        } else {
+          updateMask_ = value;
+        }
+      } else {
+        updateMaskBuilder_.mergeFrom(value);
+      }
+      if (updateMask_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     */
+    public Builder clearUpdateMask() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
+        updateMaskBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     */
+    public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getUpdateMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
+      if (updateMaskBuilder_ != null) {
+        return updateMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates which fields in the provided imported documents to update. If
+     * not set, the default is to update all fields.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getUpdateMaskFieldBuilder() {
+      if (updateMaskBuilder_ == null) {
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
+        updateMask_ = null;
+      }
+      return updateMaskBuilder_;
     }
 
     private boolean autoGenerateIds_;
@@ -3596,14 +5386,18 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
      * otherwise, documents without IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
      * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
      * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>bool auto_generate_ids = 8;</code>
@@ -3631,14 +5425,18 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
      * otherwise, documents without IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
      * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
      * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>bool auto_generate_ids = 8;</code>
@@ -3649,7 +5447,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
     public Builder setAutoGenerateIds(boolean value) {
 
       autoGenerateIds_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3670,14 +5468,18 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
      * otherwise, documents without IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
      * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
      * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>bool auto_generate_ids = 8;</code>
@@ -3685,7 +5487,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAutoGenerateIds() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00001000);
       autoGenerateIds_ = false;
       onChanged();
       return this;
@@ -3696,35 +5498,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The field in the Cloud Storage and BigQuery sources that indicates the
-     * unique IDs of the documents.
+     * The field indicates the ID field or column to be used as unique IDs of
+     * the documents.
      *
      * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
      * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-     * "some_uuid"}`. For
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-     * the column name of the BigQuery table where the unique ids are stored.
+     * "some_uuid"}`. For others, it may be the column name of the table where the
+     * unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column are used as the
+     * The values of the JSON field or the table column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-     * field or the BigQuery column must be of string type, and the values must be
+     * field or the table column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
      * Otherwise, documents without valid IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
-     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
-     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. And only set this field when
+     * Only set this field when
      * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
      * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
      *
      * If it is unset, a default value `_id` is used when importing from the
      * allowed data sources.
+     *
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>string id_field = 9;</code>
@@ -3746,35 +5553,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The field in the Cloud Storage and BigQuery sources that indicates the
-     * unique IDs of the documents.
+     * The field indicates the ID field or column to be used as unique IDs of
+     * the documents.
      *
      * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
      * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-     * "some_uuid"}`. For
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-     * the column name of the BigQuery table where the unique ids are stored.
+     * "some_uuid"}`. For others, it may be the column name of the table where the
+     * unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column are used as the
+     * The values of the JSON field or the table column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-     * field or the BigQuery column must be of string type, and the values must be
+     * field or the table column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
      * Otherwise, documents without valid IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
-     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
-     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. And only set this field when
+     * Only set this field when
      * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
      * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
      *
      * If it is unset, a default value `_id` is used when importing from the
      * allowed data sources.
+     *
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>string id_field = 9;</code>
@@ -3796,35 +5608,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The field in the Cloud Storage and BigQuery sources that indicates the
-     * unique IDs of the documents.
+     * The field indicates the ID field or column to be used as unique IDs of
+     * the documents.
      *
      * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
      * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-     * "some_uuid"}`. For
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-     * the column name of the BigQuery table where the unique ids are stored.
+     * "some_uuid"}`. For others, it may be the column name of the table where the
+     * unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column are used as the
+     * The values of the JSON field or the table column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-     * field or the BigQuery column must be of string type, and the values must be
+     * field or the table column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
      * Otherwise, documents without valid IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
-     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
-     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. And only set this field when
+     * Only set this field when
      * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
      * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
      *
      * If it is unset, a default value `_id` is used when importing from the
      * allowed data sources.
+     *
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>string id_field = 9;</code>
@@ -3837,7 +5654,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       idField_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3845,35 +5662,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The field in the Cloud Storage and BigQuery sources that indicates the
-     * unique IDs of the documents.
+     * The field indicates the ID field or column to be used as unique IDs of
+     * the documents.
      *
      * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
      * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-     * "some_uuid"}`. For
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-     * the column name of the BigQuery table where the unique ids are stored.
+     * "some_uuid"}`. For others, it may be the column name of the table where the
+     * unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column are used as the
+     * The values of the JSON field or the table column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-     * field or the BigQuery column must be of string type, and the values must be
+     * field or the table column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
      * Otherwise, documents without valid IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
-     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
-     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. And only set this field when
+     * Only set this field when
      * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
      * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
      *
      * If it is unset, a default value `_id` is used when importing from the
      * allowed data sources.
+     *
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>string id_field = 9;</code>
@@ -3882,7 +5704,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearIdField() {
       idField_ = getDefaultInstance().getIdField();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3890,35 +5712,40 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The field in the Cloud Storage and BigQuery sources that indicates the
-     * unique IDs of the documents.
+     * The field indicates the ID field or column to be used as unique IDs of
+     * the documents.
      *
      * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
      * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-     * "some_uuid"}`. For
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-     * the column name of the BigQuery table where the unique ids are stored.
+     * "some_uuid"}`. For others, it may be the column name of the table where the
+     * unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column are used as the
+     * The values of the JSON field or the table column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-     * field or the BigQuery column must be of string type, and the values must be
+     * field or the table column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
      * Otherwise, documents without valid IDs fail to be imported.
      *
-     * Only set this field when using
-     * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-     * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-     * when
-     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-     * or
-     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-     * is `custom`. And only set this field when
+     * Only set this field when
      * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
      * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
      *
      * If it is unset, a default value `_id` is used when importing from the
      * allowed data sources.
+     *
+     * Supported data sources:
+     *
+     * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+     * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+     * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+     * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+     * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+     * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+     * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+     * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
      * </pre>
      *
      * <code>string id_field = 9;</code>
@@ -3932,7 +5759,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       idField_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

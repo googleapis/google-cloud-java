@@ -342,6 +342,331 @@ public final class ConversationalSearchServiceGrpc {
     return getListConversationsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+      getAnswerQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnswerQuery",
+      requestType = com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+          com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+      getAnswerQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+        getAnswerQueryMethod;
+    if ((getAnswerQueryMethod = ConversationalSearchServiceGrpc.getAnswerQueryMethod) == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getAnswerQueryMethod = ConversationalSearchServiceGrpc.getAnswerQueryMethod) == null) {
+          ConversationalSearchServiceGrpc.getAnswerQueryMethod =
+              getAnswerQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+                          com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnswerQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier("AnswerQuery"))
+                      .build();
+        }
+      }
+    }
+    return getAnswerQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.GetAnswerRequest,
+          com.google.cloud.discoveryengine.v1beta.Answer>
+      getGetAnswerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAnswer",
+      requestType = com.google.cloud.discoveryengine.v1beta.GetAnswerRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.Answer.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.GetAnswerRequest,
+          com.google.cloud.discoveryengine.v1beta.Answer>
+      getGetAnswerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.GetAnswerRequest,
+            com.google.cloud.discoveryengine.v1beta.Answer>
+        getGetAnswerMethod;
+    if ((getGetAnswerMethod = ConversationalSearchServiceGrpc.getGetAnswerMethod) == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getGetAnswerMethod = ConversationalSearchServiceGrpc.getGetAnswerMethod) == null) {
+          ConversationalSearchServiceGrpc.getGetAnswerMethod =
+              getGetAnswerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.GetAnswerRequest,
+                          com.google.cloud.discoveryengine.v1beta.Answer>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAnswer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.GetAnswerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.Answer.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier("GetAnswer"))
+                      .build();
+        }
+      }
+    }
+    return getGetAnswerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.CreateSessionRequest,
+          com.google.cloud.discoveryengine.v1beta.Session>
+      getCreateSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSession",
+      requestType = com.google.cloud.discoveryengine.v1beta.CreateSessionRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.Session.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.CreateSessionRequest,
+          com.google.cloud.discoveryengine.v1beta.Session>
+      getCreateSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.CreateSessionRequest,
+            com.google.cloud.discoveryengine.v1beta.Session>
+        getCreateSessionMethod;
+    if ((getCreateSessionMethod = ConversationalSearchServiceGrpc.getCreateSessionMethod) == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getCreateSessionMethod = ConversationalSearchServiceGrpc.getCreateSessionMethod)
+            == null) {
+          ConversationalSearchServiceGrpc.getCreateSessionMethod =
+              getCreateSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.CreateSessionRequest,
+                          com.google.cloud.discoveryengine.v1beta.Session>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.CreateSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.Session.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier("CreateSession"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest, com.google.protobuf.Empty>
+      getDeleteSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSession",
+      requestType = com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest, com.google.protobuf.Empty>
+      getDeleteSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest, com.google.protobuf.Empty>
+        getDeleteSessionMethod;
+    if ((getDeleteSessionMethod = ConversationalSearchServiceGrpc.getDeleteSessionMethod) == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getDeleteSessionMethod = ConversationalSearchServiceGrpc.getDeleteSessionMethod)
+            == null) {
+          ConversationalSearchServiceGrpc.getDeleteSessionMethod =
+              getDeleteSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier("DeleteSession"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest,
+          com.google.cloud.discoveryengine.v1beta.Session>
+      getUpdateSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSession",
+      requestType = com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.Session.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest,
+          com.google.cloud.discoveryengine.v1beta.Session>
+      getUpdateSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest,
+            com.google.cloud.discoveryengine.v1beta.Session>
+        getUpdateSessionMethod;
+    if ((getUpdateSessionMethod = ConversationalSearchServiceGrpc.getUpdateSessionMethod) == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getUpdateSessionMethod = ConversationalSearchServiceGrpc.getUpdateSessionMethod)
+            == null) {
+          ConversationalSearchServiceGrpc.getUpdateSessionMethod =
+              getUpdateSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest,
+                          com.google.cloud.discoveryengine.v1beta.Session>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.Session.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier("UpdateSession"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.GetSessionRequest,
+          com.google.cloud.discoveryengine.v1beta.Session>
+      getGetSessionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSession",
+      requestType = com.google.cloud.discoveryengine.v1beta.GetSessionRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.Session.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.GetSessionRequest,
+          com.google.cloud.discoveryengine.v1beta.Session>
+      getGetSessionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.GetSessionRequest,
+            com.google.cloud.discoveryengine.v1beta.Session>
+        getGetSessionMethod;
+    if ((getGetSessionMethod = ConversationalSearchServiceGrpc.getGetSessionMethod) == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getGetSessionMethod = ConversationalSearchServiceGrpc.getGetSessionMethod) == null) {
+          ConversationalSearchServiceGrpc.getGetSessionMethod =
+              getGetSessionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.GetSessionRequest,
+                          com.google.cloud.discoveryengine.v1beta.Session>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSession"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.GetSessionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.Session.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier("GetSession"))
+                      .build();
+        }
+      }
+    }
+    return getGetSessionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ListSessionsRequest,
+          com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>
+      getListSessionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSessions",
+      requestType = com.google.cloud.discoveryengine.v1beta.ListSessionsRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.ListSessionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ListSessionsRequest,
+          com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>
+      getListSessionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.ListSessionsRequest,
+            com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>
+        getListSessionsMethod;
+    if ((getListSessionsMethod = ConversationalSearchServiceGrpc.getListSessionsMethod) == null) {
+      synchronized (ConversationalSearchServiceGrpc.class) {
+        if ((getListSessionsMethod = ConversationalSearchServiceGrpc.getListSessionsMethod)
+            == null) {
+          ConversationalSearchServiceGrpc.getListSessionsMethod =
+              getListSessionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.ListSessionsRequest,
+                          com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSessions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.ListSessionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.ListSessionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationalSearchServiceMethodDescriptorSupplier("ListSessions"))
+                      .build();
+        }
+      }
+    }
+    return getListSessionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConversationalSearchServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConversationalSearchServiceStub> factory =
@@ -490,6 +815,116 @@ public final class ConversationalSearchServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListConversationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method.
+     * </pre>
+     */
+    default void answerQuery(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnswerQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Answer.
+     * </pre>
+     */
+    default void getAnswer(
+        com.google.cloud.discoveryengine.v1beta.GetAnswerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Answer>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAnswerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to create
+     * already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    default void createSession(
+        com.google.cloud.discoveryengine.v1beta.CreateSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to delete
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    default void deleteSession(
+        com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Session.
+     * [Session][google.cloud.discoveryengine.v1beta.Session] action type cannot
+     * be changed. If the [Session][google.cloud.discoveryengine.v1beta.Session]
+     * to update does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    default void updateSession(
+        com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Session.
+     * </pre>
+     */
+    default void getSession(
+        com.google.cloud.discoveryengine.v1beta.GetSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSessionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Sessions by their parent
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    default void listSessions(
+        com.google.cloud.discoveryengine.v1beta.ListSessionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSessionsMethod(), responseObserver);
     }
   }
 
@@ -640,6 +1075,128 @@ public final class ConversationalSearchServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method.
+     * </pre>
+     */
+    public void answerQuery(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnswerQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Answer.
+     * </pre>
+     */
+    public void getAnswer(
+        com.google.cloud.discoveryengine.v1beta.GetAnswerRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Answer>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAnswerMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to create
+     * already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public void createSession(
+        com.google.cloud.discoveryengine.v1beta.CreateSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to delete
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public void deleteSession(
+        com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Session.
+     * [Session][google.cloud.discoveryengine.v1beta.Session] action type cannot
+     * be changed. If the [Session][google.cloud.discoveryengine.v1beta.Session]
+     * to update does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public void updateSession(
+        com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSessionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Session.
+     * </pre>
+     */
+    public void getSession(
+        com.google.cloud.discoveryengine.v1beta.GetSessionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSessionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Sessions by their parent
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public void listSessions(
+        com.google.cloud.discoveryengine.v1beta.ListSessionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSessionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -748,6 +1305,105 @@ public final class ConversationalSearchServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.ListConversationsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse answerQuery(
+        com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Answer.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Answer getAnswer(
+        com.google.cloud.discoveryengine.v1beta.GetAnswerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnswerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to create
+     * already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Session createSession(
+        com.google.cloud.discoveryengine.v1beta.CreateSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to delete
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSession(
+        com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Session.
+     * [Session][google.cloud.discoveryengine.v1beta.Session] action type cannot
+     * be changed. If the [Session][google.cloud.discoveryengine.v1beta.Session]
+     * to update does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Session updateSession(
+        com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Session.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Session getSession(
+        com.google.cloud.discoveryengine.v1beta.GetSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Sessions by their parent
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.ListSessionsResponse listSessions(
+        com.google.cloud.discoveryengine.v1beta.ListSessionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -868,6 +1524,111 @@ public final class ConversationalSearchServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListConversationsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answer query method.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>
+        answerQuery(com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnswerQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Answer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.Answer>
+        getAnswer(com.google.cloud.discoveryengine.v1beta.GetAnswerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAnswerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to create
+     * already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.Session>
+        createSession(com.google.cloud.discoveryengine.v1beta.CreateSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Session.
+     * If the [Session][google.cloud.discoveryengine.v1beta.Session] to delete
+     * does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSession(com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Session.
+     * [Session][google.cloud.discoveryengine.v1beta.Session] action type cannot
+     * be changed. If the [Session][google.cloud.discoveryengine.v1beta.Session]
+     * to update does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.Session>
+        updateSession(com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Session.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.Session>
+        getSession(com.google.cloud.discoveryengine.v1beta.GetSessionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSessionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Sessions by their parent
+     * [DataStore][google.cloud.discoveryengine.v1beta.DataStore].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>
+        listSessions(com.google.cloud.discoveryengine.v1beta.ListSessionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSessionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CONVERSE_CONVERSATION = 0;
@@ -876,6 +1637,13 @@ public final class ConversationalSearchServiceGrpc {
   private static final int METHODID_UPDATE_CONVERSATION = 3;
   private static final int METHODID_GET_CONVERSATION = 4;
   private static final int METHODID_LIST_CONVERSATIONS = 5;
+  private static final int METHODID_ANSWER_QUERY = 6;
+  private static final int METHODID_GET_ANSWER = 7;
+  private static final int METHODID_CREATE_SESSION = 8;
+  private static final int METHODID_DELETE_SESSION = 9;
+  private static final int METHODID_UPDATE_SESSION = 10;
+  private static final int METHODID_GET_SESSION = 11;
+  private static final int METHODID_LIST_SESSIONS = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -929,6 +1697,49 @@ public final class ConversationalSearchServiceGrpc {
               (com.google.cloud.discoveryengine.v1beta.ListConversationsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1beta.ListConversationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ANSWER_QUERY:
+          serviceImpl.answerQuery(
+              (com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ANSWER:
+          serviceImpl.getAnswer(
+              (com.google.cloud.discoveryengine.v1beta.GetAnswerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Answer>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SESSION:
+          serviceImpl.createSession(
+              (com.google.cloud.discoveryengine.v1beta.CreateSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SESSION:
+          serviceImpl.deleteSession(
+              (com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_SESSION:
+          serviceImpl.updateSession(
+              (com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SESSION:
+          serviceImpl.getSession(
+              (com.google.cloud.discoveryengine.v1beta.GetSessionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Session>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SESSIONS:
+          serviceImpl.listSessions(
+              (com.google.cloud.discoveryengine.v1beta.ListSessionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>)
                   responseObserver);
           break;
         default:
@@ -990,6 +1801,53 @@ public final class ConversationalSearchServiceGrpc {
                     com.google.cloud.discoveryengine.v1beta.ListConversationsRequest,
                     com.google.cloud.discoveryengine.v1beta.ListConversationsResponse>(
                     service, METHODID_LIST_CONVERSATIONS)))
+        .addMethod(
+            getAnswerQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest,
+                    com.google.cloud.discoveryengine.v1beta.AnswerQueryResponse>(
+                    service, METHODID_ANSWER_QUERY)))
+        .addMethod(
+            getGetAnswerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.GetAnswerRequest,
+                    com.google.cloud.discoveryengine.v1beta.Answer>(service, METHODID_GET_ANSWER)))
+        .addMethod(
+            getCreateSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.CreateSessionRequest,
+                    com.google.cloud.discoveryengine.v1beta.Session>(
+                    service, METHODID_CREATE_SESSION)))
+        .addMethod(
+            getDeleteSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.DeleteSessionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SESSION)))
+        .addMethod(
+            getUpdateSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest,
+                    com.google.cloud.discoveryengine.v1beta.Session>(
+                    service, METHODID_UPDATE_SESSION)))
+        .addMethod(
+            getGetSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.GetSessionRequest,
+                    com.google.cloud.discoveryengine.v1beta.Session>(
+                    service, METHODID_GET_SESSION)))
+        .addMethod(
+            getListSessionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.ListSessionsRequest,
+                    com.google.cloud.discoveryengine.v1beta.ListSessionsResponse>(
+                    service, METHODID_LIST_SESSIONS)))
         .build();
   }
 
@@ -1048,6 +1906,13 @@ public final class ConversationalSearchServiceGrpc {
                       .addMethod(getUpdateConversationMethod())
                       .addMethod(getGetConversationMethod())
                       .addMethod(getListConversationsMethod())
+                      .addMethod(getAnswerQueryMethod())
+                      .addMethod(getGetAnswerMethod())
+                      .addMethod(getCreateSessionMethod())
+                      .addMethod(getDeleteSessionMethod())
+                      .addMethod(getUpdateSessionMethod())
+                      .addMethod(getGetSessionMethod())
+                      .addMethod(getListSessionsMethod())
                       .build();
         }
       }

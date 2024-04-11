@@ -43,7 +43,8 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Sydney toll pass. See additional details at https://www.myetoll.com.au.
+   * Sydney toll pass. See additional details at
+   * https://www.myetoll.com.au.
    * </pre>
    *
    * <code>AU_ETOLL_TAG = 82;</code>
@@ -236,6 +237,31 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IN_LOCAL_HP_PLATE_EXEMPT = 79;</code>
    */
   IN_LOCAL_HP_PLATE_EXEMPT(79),
+  /**
+   *
+   *
+   * <pre>
+   * Japan
+   * ETC. Electronic wireless system to collect tolls.
+   * https://www.go-etc.jp/
+   * </pre>
+   *
+   * <code>JP_ETC = 98;</code>
+   */
+  JP_ETC(98),
+  /**
+   *
+   *
+   * <pre>
+   * Japan
+   * ETC2.0. New version of ETC with further discount and bidirectional
+   * communication between devices on vehicles and antennas on the road.
+   * https://www.go-etc.jp/etc2/index.html
+   * </pre>
+   *
+   * <code>JP_ETC2 = 99;</code>
+   */
+  JP_ETC2(99),
   /**
    *
    *
@@ -1000,6 +1026,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * WV, USA
+   * </pre>
+   *
+   * <code>US_WV_MOV_PASS = 100;</code>
+   */
+  US_WV_MOV_PASS(100),
+  /**
+   *
+   *
+   * <pre>
    * WV, USA.
    * </pre>
    *
@@ -1023,7 +1059,8 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Sydney toll pass. See additional details at https://www.myetoll.com.au.
+   * Sydney toll pass. See additional details at
+   * https://www.myetoll.com.au.
    * </pre>
    *
    * <code>AU_ETOLL_TAG = 82;</code>
@@ -1216,6 +1253,31 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IN_LOCAL_HP_PLATE_EXEMPT = 79;</code>
    */
   public static final int IN_LOCAL_HP_PLATE_EXEMPT_VALUE = 79;
+  /**
+   *
+   *
+   * <pre>
+   * Japan
+   * ETC. Electronic wireless system to collect tolls.
+   * https://www.go-etc.jp/
+   * </pre>
+   *
+   * <code>JP_ETC = 98;</code>
+   */
+  public static final int JP_ETC_VALUE = 98;
+  /**
+   *
+   *
+   * <pre>
+   * Japan
+   * ETC2.0. New version of ETC with further discount and bidirectional
+   * communication between devices on vehicles and antennas on the road.
+   * https://www.go-etc.jp/etc2/index.html
+   * </pre>
+   *
+   * <code>JP_ETC2 = 99;</code>
+   */
+  public static final int JP_ETC2_VALUE = 99;
   /**
    *
    *
@@ -1979,6 +2041,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * WV, USA
+   * </pre>
+   *
+   * <code>US_WV_MOV_PASS = 100;</code>
+   */
+  public static final int US_WV_MOV_PASS_VALUE = 100;
+  /**
+   *
+   *
+   * <pre>
    * WV, USA.
    * </pre>
    *
@@ -2050,6 +2122,10 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
         return IN_FASTAG;
       case 79:
         return IN_LOCAL_HP_PLATE_EXEMPT;
+      case 98:
+        return JP_ETC;
+      case 99:
+        return JP_ETC2;
       case 90:
         return MX_IAVE;
       case 91:
@@ -2200,6 +2276,8 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
         return US_WV_EZPASSWV;
       case 63:
         return US_WV_MEMORIAL_BRIDGE_TICKETS;
+      case 100:
+        return US_WV_MOV_PASS;
       case 64:
         return US_WV_NEWELL_TOLL_BRIDGE_TICKET;
       default:

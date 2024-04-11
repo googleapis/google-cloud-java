@@ -140,6 +140,181 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * FhirStore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+   *
+   * @return Whether the fhirStoreSource field is set.
+   */
+  boolean hasFhirStoreSource();
+  /**
+   *
+   *
+   * <pre>
+   * FhirStore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+   *
+   * @return The fhirStoreSource.
+   */
+  com.google.cloud.discoveryengine.v1beta.FhirStoreSource getFhirStoreSource();
+  /**
+   *
+   *
+   * <pre>
+   * FhirStore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FhirStoreSource fhir_store_source = 10;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.FhirStoreSourceOrBuilder getFhirStoreSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+   *
+   * @return Whether the spannerSource field is set.
+   */
+  boolean hasSpannerSource();
+  /**
+   *
+   *
+   * <pre>
+   * Spanner input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+   *
+   * @return The spannerSource.
+   */
+  com.google.cloud.discoveryengine.v1beta.SpannerSource getSpannerSource();
+  /**
+   *
+   *
+   * <pre>
+   * Spanner input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SpannerSource spanner_source = 11;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SpannerSourceOrBuilder getSpannerSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+   *
+   * @return Whether the cloudSqlSource field is set.
+   */
+  boolean hasCloudSqlSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+   *
+   * @return The cloudSqlSource.
+   */
+  com.google.cloud.discoveryengine.v1beta.CloudSqlSource getCloudSqlSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud SQL input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.CloudSqlSource cloud_sql_source = 12;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.CloudSqlSourceOrBuilder getCloudSqlSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Firestore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+   *
+   * @return Whether the firestoreSource field is set.
+   */
+  boolean hasFirestoreSource();
+  /**
+   *
+   *
+   * <pre>
+   * Firestore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+   *
+   * @return The firestoreSource.
+   */
+  com.google.cloud.discoveryengine.v1beta.FirestoreSource getFirestoreSource();
+  /**
+   *
+   *
+   * <pre>
+   * Firestore input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.FirestoreSource firestore_source = 13;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.FirestoreSourceOrBuilder getFirestoreSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+   *
+   * @return Whether the bigtableSource field is set.
+   */
+  boolean hasBigtableSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+   *
+   * @return The bigtableSource.
+   */
+  com.google.cloud.discoveryengine.v1beta.BigtableSource getBigtableSource();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Bigtable input source.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.BigtableSource bigtable_source = 15;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.BigtableSourceOrBuilder getBigtableSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent branch resource name, such as
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * Requires create/update permission.
@@ -242,6 +417,44 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
+   * Indicates which fields in the provided imported documents to update. If
+   * not set, the default is to update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+   *
+   * @return Whether the updateMask field is set.
+   */
+  boolean hasUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported documents to update. If
+   * not set, the default is to update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+   *
+   * @return The updateMask.
+   */
+  com.google.protobuf.FieldMask getUpdateMask();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates which fields in the provided imported documents to update. If
+   * not set, the default is to update all fields.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask update_mask = 7;</code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether to automatically generate IDs for the documents if absent.
    *
    * If set to `true`,
@@ -255,14 +468,18 @@ public interface ImportDocumentsRequestOrBuilder
    * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
    * otherwise, documents without IDs fail to be imported.
    *
-   * Only set this field when using
-   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-   * when
+   * Supported data sources:
+   *
+   * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
    * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-   * or
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
    * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-   * is `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+   * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+   * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
    * <code>bool auto_generate_ids = 8;</code>
@@ -275,35 +492,40 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The field in the Cloud Storage and BigQuery sources that indicates the
-   * unique IDs of the documents.
+   * The field indicates the ID field or column to be used as unique IDs of
+   * the documents.
    *
    * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
    * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-   * "some_uuid"}`. For
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-   * the column name of the BigQuery table where the unique ids are stored.
+   * "some_uuid"}`. For others, it may be the column name of the table where the
+   * unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column are used as the
+   * The values of the JSON field or the table column are used as the
    * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-   * field or the BigQuery column must be of string type, and the values must be
+   * field or the table column must be of string type, and the values must be
    * set as valid strings conform to
    * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
    * Otherwise, documents without valid IDs fail to be imported.
    *
-   * Only set this field when using
-   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-   * when
-   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-   * or
-   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-   * is `custom`. And only set this field when
+   * Only set this field when
    * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
    * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
    *
    * If it is unset, a default value `_id` is used when importing from the
    * allowed data sources.
+   *
+   * Supported data sources:
+   *
+   * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+   * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+   * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
    * <code>string id_field = 9;</code>
@@ -315,35 +537,40 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * The field in the Cloud Storage and BigQuery sources that indicates the
-   * unique IDs of the documents.
+   * The field indicates the ID field or column to be used as unique IDs of
+   * the documents.
    *
    * For [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] it is the
    * key of the JSON field. For instance, `my_id` for JSON `{"my_id":
-   * "some_uuid"}`. For
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
-   * the column name of the BigQuery table where the unique ids are stored.
+   * "some_uuid"}`. For others, it may be the column name of the table where the
+   * unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column are used as the
+   * The values of the JSON field or the table column are used as the
    * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
-   * field or the BigQuery column must be of string type, and the values must be
+   * field or the table column must be of string type, and the values must be
    * set as valid strings conform to
    * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
    * Otherwise, documents without valid IDs fail to be imported.
    *
-   * Only set this field when using
-   * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
-   * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource], and
-   * when
-   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
-   * or
-   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
-   * is `custom`. And only set this field when
+   * Only set this field when
    * [auto_generate_ids][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.auto_generate_ids]
    * is unset or set as `false`. Otherwise, an INVALID_ARGUMENT error is thrown.
    *
    * If it is unset, a default value `_id` is used when importing from the
    * allowed data sources.
+   *
+   * Supported data sources:
+   *
+   * * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource].
+   * [GcsSource.data_schema][google.cloud.discoveryengine.v1beta.GcsSource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource].
+   * [BigQuerySource.data_schema][google.cloud.discoveryengine.v1beta.BigQuerySource.data_schema]
+   * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
+   * * [SpannerSource][google.cloud.discoveryengine.v1beta.SpannerSource].
+   * * [CloudSqlSource][google.cloud.discoveryengine.v1beta.CloudSqlSource].
+   * * [FirestoreSource][google.cloud.discoveryengine.v1beta.FirestoreSource].
+   * * [BigtableSource][google.cloud.discoveryengine.v1beta.BigtableSource].
    * </pre>
    *
    * <code>string id_field = 9;</code>

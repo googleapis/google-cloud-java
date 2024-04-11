@@ -23,8 +23,8 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates toll information on a [Route][google.maps.routing.v2.Route] or
- * on a [RouteLeg][google.maps.routing.v2.RouteLeg].
+ * Encapsulates toll information on a [`Route`][google.maps.routing.v2.Route] or
+ * on a [`RouteLeg`][google.maps.routing.v2.RouteLeg].
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.TollInfo}
@@ -73,8 +73,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The monetary amount of tolls for the corresponding
-   * [Route][google.maps.routing.v2.Route] or
-   * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+   * [`Route`][google.maps.routing.v2.Route] or
+   * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
    * amount for each currency that is expected to be charged by the toll
    * stations. Typically this list will contain only one item for routes with
    * tolls in one currency. For international trips, this list may contain
@@ -92,8 +92,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The monetary amount of tolls for the corresponding
-   * [Route][google.maps.routing.v2.Route] or
-   * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+   * [`Route`][google.maps.routing.v2.Route] or
+   * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
    * amount for each currency that is expected to be charged by the toll
    * stations. Typically this list will contain only one item for routes with
    * tolls in one currency. For international trips, this list may contain
@@ -111,8 +111,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The monetary amount of tolls for the corresponding
-   * [Route][google.maps.routing.v2.Route] or
-   * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+   * [`Route`][google.maps.routing.v2.Route] or
+   * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
    * amount for each currency that is expected to be charged by the toll
    * stations. Typically this list will contain only one item for routes with
    * tolls in one currency. For international trips, this list may contain
@@ -130,8 +130,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The monetary amount of tolls for the corresponding
-   * [Route][google.maps.routing.v2.Route] or
-   * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+   * [`Route`][google.maps.routing.v2.Route] or
+   * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
    * amount for each currency that is expected to be charged by the toll
    * stations. Typically this list will contain only one item for routes with
    * tolls in one currency. For international trips, this list may contain
@@ -149,8 +149,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The monetary amount of tolls for the corresponding
-   * [Route][google.maps.routing.v2.Route] or
-   * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+   * [`Route`][google.maps.routing.v2.Route] or
+   * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
    * amount for each currency that is expected to be charged by the toll
    * stations. Typically this list will contain only one item for routes with
    * tolls in one currency. For international trips, this list may contain
@@ -327,8 +327,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates toll information on a [Route][google.maps.routing.v2.Route] or
-   * on a [RouteLeg][google.maps.routing.v2.RouteLeg].
+   * Encapsulates toll information on a [`Route`][google.maps.routing.v2.Route] or
+   * on a [`RouteLeg`][google.maps.routing.v2.RouteLeg].
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.TollInfo}
@@ -568,8 +568,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -590,8 +590,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -612,8 +612,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -634,8 +634,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -662,8 +662,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -687,8 +687,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -715,8 +715,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -743,8 +743,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -768,8 +768,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -793,8 +793,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -819,8 +819,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -844,8 +844,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -869,8 +869,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -887,8 +887,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -909,8 +909,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -932,8 +932,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -950,8 +950,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain
@@ -969,8 +969,8 @@ public final class TollInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The monetary amount of tolls for the corresponding
-     * [Route][google.maps.routing.v2.Route] or
-     * [RouteLeg][google.maps.routing.v2.RouteLeg]. This list contains a money
+     * [`Route`][google.maps.routing.v2.Route] or
+     * [`RouteLeg`][google.maps.routing.v2.RouteLeg]. This list contains a money
      * amount for each currency that is expected to be charged by the toll
      * stations. Typically this list will contain only one item for routes with
      * tolls in one currency. For international trips, this list may contain

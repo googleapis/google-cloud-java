@@ -35,6 +35,11 @@ import com.google.cloud.discoveryengine.v1beta.Engine;
 import com.google.cloud.discoveryengine.v1beta.GetEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesResponse;
+import com.google.cloud.discoveryengine.v1beta.PauseEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineMetadata;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateEngineRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -98,6 +103,30 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   ProtoUtils.marshaller(ListEnginesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<PauseEngineRequest, Engine> pauseEngineMethodDescriptor =
+      MethodDescriptor.<PauseEngineRequest, Engine>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/PauseEngine")
+          .setRequestMarshaller(ProtoUtils.marshaller(PauseEngineRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ResumeEngineRequest, Engine> resumeEngineMethodDescriptor =
+      MethodDescriptor.<ResumeEngineRequest, Engine>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/ResumeEngine")
+          .setRequestMarshaller(ProtoUtils.marshaller(ResumeEngineRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<TuneEngineRequest, Operation> tuneEngineMethodDescriptor =
+      MethodDescriptor.<TuneEngineRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1beta.EngineService/TuneEngine")
+          .setRequestMarshaller(ProtoUtils.marshaller(TuneEngineRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
   private final UnaryCallable<CreateEngineRequest, Operation> createEngineCallable;
   private final OperationCallable<CreateEngineRequest, Engine, CreateEngineMetadata>
       createEngineOperationCallable;
@@ -109,6 +138,11 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
   private final UnaryCallable<ListEnginesRequest, ListEnginesResponse> listEnginesCallable;
   private final UnaryCallable<ListEnginesRequest, ListEnginesPagedResponse>
       listEnginesPagedCallable;
+  private final UnaryCallable<PauseEngineRequest, Engine> pauseEngineCallable;
+  private final UnaryCallable<ResumeEngineRequest, Engine> resumeEngineCallable;
+  private final UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable;
+  private final OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -202,6 +236,36 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<PauseEngineRequest, Engine> pauseEngineTransportSettings =
+        GrpcCallSettings.<PauseEngineRequest, Engine>newBuilder()
+            .setMethodDescriptor(pauseEngineMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ResumeEngineRequest, Engine> resumeEngineTransportSettings =
+        GrpcCallSettings.<ResumeEngineRequest, Engine>newBuilder()
+            .setMethodDescriptor(resumeEngineMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<TuneEngineRequest, Operation> tuneEngineTransportSettings =
+        GrpcCallSettings.<TuneEngineRequest, Operation>newBuilder()
+            .setMethodDescriptor(tuneEngineMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.createEngineCallable =
         callableFactory.createUnaryCallable(
@@ -233,6 +297,21 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
     this.listEnginesPagedCallable =
         callableFactory.createPagedCallable(
             listEnginesTransportSettings, settings.listEnginesSettings(), clientContext);
+    this.pauseEngineCallable =
+        callableFactory.createUnaryCallable(
+            pauseEngineTransportSettings, settings.pauseEngineSettings(), clientContext);
+    this.resumeEngineCallable =
+        callableFactory.createUnaryCallable(
+            resumeEngineTransportSettings, settings.resumeEngineSettings(), clientContext);
+    this.tuneEngineCallable =
+        callableFactory.createUnaryCallable(
+            tuneEngineTransportSettings, settings.tuneEngineSettings(), clientContext);
+    this.tuneEngineOperationCallable =
+        callableFactory.createOperationCallable(
+            tuneEngineTransportSettings,
+            settings.tuneEngineOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -282,6 +361,27 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
   @Override
   public UnaryCallable<ListEnginesRequest, ListEnginesPagedResponse> listEnginesPagedCallable() {
     return listEnginesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PauseEngineRequest, Engine> pauseEngineCallable() {
+    return pauseEngineCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResumeEngineRequest, Engine> resumeEngineCallable() {
+    return resumeEngineCallable;
+  }
+
+  @Override
+  public UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable() {
+    return tuneEngineCallable;
+  }
+
+  @Override
+  public OperationCallable<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationCallable() {
+    return tuneEngineOperationCallable;
   }
 
   @Override

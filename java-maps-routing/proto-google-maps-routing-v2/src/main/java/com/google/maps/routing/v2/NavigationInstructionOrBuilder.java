@@ -28,8 +28,9 @@ public interface NavigationInstructionOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the navigation instructions for the current step (e.g., turn
-   * left, merge, straight, etc.). This field determines which icon to display.
+   * Encapsulates the navigation instructions for the current step (for example,
+   * turn left, merge, or straight). This field determines which icon to
+   * display.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
@@ -41,8 +42,9 @@ public interface NavigationInstructionOrBuilder
    *
    *
    * <pre>
-   * Encapsulates the navigation instructions for the current step (e.g., turn
-   * left, merge, straight, etc.). This field determines which icon to display.
+   * Encapsulates the navigation instructions for the current step (for example,
+   * turn left, merge, or straight). This field determines which icon to
+   * display.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Maneuver maneuver = 1;</code>
