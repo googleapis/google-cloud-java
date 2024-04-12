@@ -17,33 +17,36 @@
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_image_classification.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
 /**
  * Protobuf type {@code
  * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs}
  */
-public final class AutoMlImageClassificationInputs extends com.google.protobuf.GeneratedMessageV3
+public final class AutoMlImageClassificationInputs extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs)
     AutoMlImageClassificationInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AutoMlImageClassificationInputs.class.getName());
+  }
   // Use AutoMlImageClassificationInputs.newBuilder() to construct.
-  private AutoMlImageClassificationInputs(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private AutoMlImageClassificationInputs(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
   private AutoMlImageClassificationInputs() {
     modelType_ = 0;
     baseModelId_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AutoMlImageClassificationInputs();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -53,7 +56,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .AutoMLImageClassificationProto
@@ -135,6 +138,15 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     UNRECOGNIZED(-1),
     ;
 
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          ModelType.class.getName());
+    }
     /**
      *
      *
@@ -476,8 +488,8 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
             .getNumber()) {
       output.writeEnum(1, modelType_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, baseModelId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(baseModelId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, baseModelId_);
     }
     if (budgetMilliNodeHours_ != 0L) {
       output.writeInt64(3, budgetMilliNodeHours_);
@@ -503,8 +515,8 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, modelType_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baseModelId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, baseModelId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(baseModelId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, baseModelId_);
     }
     if (budgetMilliNodeHours_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, budgetMilliNodeHours_);
@@ -615,7 +627,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   public static com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageClassificationInputs
       parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1.schema.trainingjob.definition
@@ -623,14 +635,14 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageClassificationInputs
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1.schema.trainingjob.definition
@@ -638,14 +650,14 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageClassificationInputs
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1.schema.trainingjob.definition
@@ -654,7 +666,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -679,7 +691,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -687,7 +699,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
    * Protobuf type {@code
    * google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs)
       com.google.cloud.aiplatform.v1.schema.trainingjob.definition
@@ -699,7 +711,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMLImageClassificationProto
@@ -715,7 +727,7 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
     // com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs.newBuilder()
     private Builder() {}
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
     }
 
@@ -792,39 +804,6 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.multiLabel_ = multiLabel_;
       }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -1365,17 +1344,6 @@ public final class AutoMlImageClassificationInputs extends com.google.protobuf.G
       multiLabel_ = false;
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageClassificationInputs)

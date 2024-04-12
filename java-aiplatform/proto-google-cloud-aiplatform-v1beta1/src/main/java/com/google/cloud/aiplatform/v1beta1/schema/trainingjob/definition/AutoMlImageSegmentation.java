@@ -17,7 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_segmentation.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 /**
@@ -30,23 +30,27 @@ package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
  * Protobuf type {@code
  * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentation}
  */
-public final class AutoMlImageSegmentation extends com.google.protobuf.GeneratedMessageV3
+public final class AutoMlImageSegmentation extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentation)
     AutoMlImageSegmentationOrBuilder {
   private static final long serialVersionUID = 0L;
+
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AutoMlImageSegmentation.class.getName());
+  }
   // Use AutoMlImageSegmentation.newBuilder() to construct.
-  private AutoMlImageSegmentation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private AutoMlImageSegmentation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
   private AutoMlImageSegmentation() {}
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AutoMlImageSegmentation();
-  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -55,7 +59,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
         .AutoMLImageSegmentationProto
@@ -332,7 +336,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageSegmentation
       parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -340,14 +344,14 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageSegmentation
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -355,14 +359,14 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlImageSegmentation
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -371,7 +375,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -396,7 +400,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -410,7 +414,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentation}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentation)
       com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -422,7 +426,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMLImageSegmentationProto
@@ -440,13 +444,13 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         getInputsFieldBuilder();
         getMetadataFieldBuilder();
       }
@@ -522,39 +526,6 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
         to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -645,7 +616,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
     private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlImageSegmentationInputs
         inputs_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageSegmentationInputs,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -852,7 +823,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationInputs inputs = 1;
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageSegmentationInputs,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -862,7 +833,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
         getInputsFieldBuilder() {
       if (inputsBuilder_ == null) {
         inputsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                     .AutoMlImageSegmentationInputs,
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -878,7 +849,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
     private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlImageSegmentationMetadata
         metadata_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageSegmentationMetadata,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1085,7 +1056,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentationMetadata metadata = 2;
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlImageSegmentationMetadata,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1095,7 +1066,7 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
         getMetadataFieldBuilder() {
       if (metadataBuilder_ == null) {
         metadataBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                     .AutoMlImageSegmentationMetadata,
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1106,17 +1077,6 @@ public final class AutoMlImageSegmentation extends com.google.protobuf.Generated
         metadata_ = null;
       }
       return metadataBuilder_;
-    }
-
-    @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageSegmentation)

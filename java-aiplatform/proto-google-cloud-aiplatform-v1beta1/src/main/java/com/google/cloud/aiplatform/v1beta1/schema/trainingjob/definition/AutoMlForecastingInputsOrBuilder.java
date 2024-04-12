@@ -17,7 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 public interface AutoMlForecastingInputsOrBuilder
@@ -197,19 +197,19 @@ public interface AutoMlForecastingInputsOrBuilder
    *
    * The supported optimization objectives:
    *
-   *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *
-   *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   * * "minimize-mae" - Minimize mean-absolute error (MAE).
    *
-   *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
    *
-   *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
    *
-   *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-   *     percentage error (WAPE) and mean-absolute-error (MAE).
+   * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+   * percentage error (WAPE) and mean-absolute-error (MAE).
    *
-   *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-   *     defined in `quantiles`.
+   * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+   * defined in `quantiles`.
    * </pre>
    *
    * <code>string optimization_objective = 5;</code>
@@ -227,19 +227,19 @@ public interface AutoMlForecastingInputsOrBuilder
    *
    * The supported optimization objectives:
    *
-   *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *
-   *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   * * "minimize-mae" - Minimize mean-absolute error (MAE).
    *
-   *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
    *
-   *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
    *
-   *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-   *     percentage error (WAPE) and mean-absolute-error (MAE).
+   * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+   * percentage error (WAPE) and mean-absolute-error (MAE).
    *
-   *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-   *     defined in `quantiles`.
+   * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+   * defined in `quantiles`.
    * </pre>
    *
    * <code>string optimization_objective = 5;</code>
@@ -674,10 +674,10 @@ public interface AutoMlForecastingInputsOrBuilder
    * Validation options for the data validation component. The available options
    * are:
    *
-   *   * "fail-pipeline" - default, will validate against the validation and
-   *      fail the pipeline if it fails.
+   * * "fail-pipeline" - default, will validate against the validation and
+   * fail the pipeline if it fails.
    *
-   *   * "ignore-validation" - ignore the results of the validation and continue
+   * * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *
    * <code>string validation_options = 17;</code>
@@ -692,10 +692,10 @@ public interface AutoMlForecastingInputsOrBuilder
    * Validation options for the data validation component. The available options
    * are:
    *
-   *   * "fail-pipeline" - default, will validate against the validation and
-   *      fail the pipeline if it fails.
+   * * "fail-pipeline" - default, will validate against the validation and
+   * fail the pipeline if it fails.
    *
-   *   * "ignore-validation" - ignore the results of the validation and continue
+   * * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *
    * <code>string validation_options = 17;</code>

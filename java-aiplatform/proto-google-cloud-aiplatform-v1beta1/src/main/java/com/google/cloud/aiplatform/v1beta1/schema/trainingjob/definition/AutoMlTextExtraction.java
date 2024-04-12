@@ -17,7 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_extraction.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 /**
@@ -30,23 +30,27 @@ package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
  * Protobuf type {@code
  * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction}
  */
-public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMessageV3
+public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction)
     AutoMlTextExtractionOrBuilder {
   private static final long serialVersionUID = 0L;
+
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AutoMlTextExtraction.class.getName());
+  }
   // Use AutoMlTextExtraction.newBuilder() to construct.
-  private AutoMlTextExtraction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private AutoMlTextExtraction(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
   private AutoMlTextExtraction() {}
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AutoMlTextExtraction();
-  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -55,7 +59,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
         .AutoMLTextExtractionProto
@@ -251,7 +255,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTextExtraction
       parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -259,14 +263,14 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTextExtraction
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -274,14 +278,14 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlTextExtraction
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -290,7 +294,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -315,7 +319,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -329,7 +333,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction)
       com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -341,7 +345,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMLTextExtractionProto
@@ -359,13 +363,13 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         getInputsFieldBuilder();
       }
     }
@@ -431,39 +435,6 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00000001;
       }
       result.bitField0_ |= to_bitField0_;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -543,7 +514,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
     private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlTextExtractionInputs
         inputs_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlTextExtractionInputs,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -748,7 +719,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtractionInputs inputs = 1;
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlTextExtractionInputs,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -758,7 +729,7 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
         getInputsFieldBuilder() {
       if (inputsBuilder_ == null) {
         inputsBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                     .AutoMlTextExtractionInputs,
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -769,17 +740,6 @@ public final class AutoMlTextExtraction extends com.google.protobuf.GeneratedMes
         inputs_ = null;
       }
       return inputsBuilder_;
-    }
-
-    @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextExtraction)

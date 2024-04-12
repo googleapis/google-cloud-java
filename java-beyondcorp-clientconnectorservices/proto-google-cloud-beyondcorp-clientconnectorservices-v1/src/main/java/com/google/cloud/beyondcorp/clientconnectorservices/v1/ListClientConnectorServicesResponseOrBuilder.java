@@ -17,7 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 public interface ListClientConnectorServicesResponseOrBuilder

@@ -17,7 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 /**
@@ -29,13 +29,23 @@ package com.google.cloud.beyondcorp.clientconnectorservices.v1;
  *
  * Protobuf type {@code google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService}
  */
-public final class ClientConnectorService extends com.google.protobuf.GeneratedMessageV3
+public final class ClientConnectorService extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService)
     ClientConnectorServiceOrBuilder {
   private static final long serialVersionUID = 0L;
+
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ClientConnectorService.class.getName());
+  }
   // Use ClientConnectorService.newBuilder() to construct.
-  private ClientConnectorService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private ClientConnectorService(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
@@ -45,12 +55,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     state_ = 0;
   }
 
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ClientConnectorService();
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
         .ClientConnectorServicesServiceProto
@@ -58,7 +62,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
         .ClientConnectorServicesServiceProto
@@ -155,6 +159,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     UNRECOGNIZED(-1),
     ;
 
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          State.class.getName());
+    }
     /**
      *
      *
@@ -386,23 +399,27 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
    * Protobuf type {@code
    * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress}
    */
-  public static final class Ingress extends com.google.protobuf.GeneratedMessageV3
+  public static final class Ingress extends com.google.protobuf.GeneratedMessage
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress)
       IngressOrBuilder {
     private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          Ingress.class.getName());
+    }
     // Use Ingress.newBuilder() to construct.
-    private Ingress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private Ingress(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
 
     private Ingress() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Ingress();
-    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -411,7 +428,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
@@ -543,25 +560,29 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * Protobuf type {@code
      * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config}
      */
-    public static final class Config extends com.google.protobuf.GeneratedMessageV3
+    public static final class Config extends com.google.protobuf.GeneratedMessage
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config)
         ConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 26,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            Config.class.getName());
+      }
       // Use Config.newBuilder() to construct.
-      private Config(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private Config(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
 
       private Config() {
         transportProtocol_ = 0;
         destinationRoutes_ = java.util.Collections.emptyList();
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new Config();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -571,7 +592,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.beyondcorp.clientconnectorservices.v1
             .ClientConnectorServicesServiceProto
@@ -617,6 +638,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         UNRECOGNIZED(-1),
         ;
 
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 26,
+              /* patch= */ 1,
+              /* suffix= */ "",
+              TransportProtocol.class.getName());
+        }
         /**
          *
          *
@@ -797,25 +827,29 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
        * Protobuf type {@code
        * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.DestinationRoute}
        */
-      public static final class DestinationRoute extends com.google.protobuf.GeneratedMessageV3
+      public static final class DestinationRoute extends com.google.protobuf.GeneratedMessage
           implements
           // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.DestinationRoute)
           DestinationRouteOrBuilder {
         private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 26,
+              /* patch= */ 1,
+              /* suffix= */ "",
+              DestinationRoute.class.getName());
+        }
         // Use DestinationRoute.newBuilder() to construct.
-        private DestinationRoute(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        private DestinationRoute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
         }
 
         private DestinationRoute() {
           address_ = "";
           netmask_ = "";
-        }
-
-        @java.lang.Override
-        @SuppressWarnings({"unused"})
-        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-          return new DestinationRoute();
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -825,7 +859,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.beyondcorp.clientconnectorservices.v1
               .ClientConnectorServicesServiceProto
@@ -958,11 +992,11 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
             throws java.io.IOException {
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, address_);
           }
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(netmask_)) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, netmask_);
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(netmask_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, netmask_);
           }
           getUnknownFields().writeTo(output);
         }
@@ -973,11 +1007,11 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           if (size != -1) return size;
 
           size = 0;
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, address_);
           }
-          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(netmask_)) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, netmask_);
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(netmask_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, netmask_);
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -1072,7 +1106,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                 .Ingress.Config.DestinationRoute
             parseFrom(java.io.InputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
         }
 
         public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -1081,15 +1115,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
               PARSER, input, extensionRegistry);
         }
 
         public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                 .Ingress.Config.DestinationRoute
             parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-              PARSER, input);
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
         }
 
         public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -1098,14 +1131,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
               PARSER, input, extensionRegistry);
         }
 
         public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                 .Ingress.Config.DestinationRoute
             parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
         }
 
         public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -1114,7 +1147,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
               PARSER, input, extensionRegistry);
         }
 
@@ -1141,7 +1174,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
         @java.lang.Override
         protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           Builder builder = new Builder(parent);
           return builder;
         }
@@ -1158,7 +1191,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
          * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.DestinationRoute}
          */
         public static final class Builder
-            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
             implements
             // @@protoc_insertion_point(builder_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.DestinationRoute)
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
@@ -1170,7 +1203,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           }
 
           @java.lang.Override
-          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
               internalGetFieldAccessorTable() {
             return com.google.cloud.beyondcorp.clientconnectorservices.v1
                 .ClientConnectorServicesServiceProto
@@ -1186,7 +1219,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.DestinationRoute.newBuilder()
           private Builder() {}
 
-          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             super(parent);
           }
 
@@ -1254,41 +1287,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             if (((from_bitField0_ & 0x00000002) != 0)) {
               result.netmask_ = netmask_;
             }
-          }
-
-          @java.lang.Override
-          public Builder clone() {
-            return super.clone();
-          }
-
-          @java.lang.Override
-          public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return super.setField(field, value);
-          }
-
-          @java.lang.Override
-          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-            return super.clearField(field);
-          }
-
-          @java.lang.Override
-          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-            return super.clearOneof(oneof);
-          }
-
-          @java.lang.Override
-          public Builder setRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index,
-              java.lang.Object value) {
-            return super.setRepeatedField(field, index, value);
-          }
-
-          @java.lang.Override
-          public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-            return super.addRepeatedField(field, value);
           }
 
           @java.lang.Override
@@ -1601,18 +1599,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             bitField0_ |= 0x00000002;
             onChanged();
             return this;
-          }
-
-          @java.lang.Override
-          public final Builder setUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.setUnknownFields(unknownFields);
-          }
-
-          @java.lang.Override
-          public final Builder mergeUnknownFields(
-              final com.google.protobuf.UnknownFieldSet unknownFields) {
-            return super.mergeUnknownFields(unknownFields);
           }
 
           // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.DestinationRoute)
@@ -1954,7 +1940,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
               .Ingress.Config
           parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -1963,14 +1949,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
               .Ingress.Config
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -1979,14 +1965,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
               .Ingress.Config
           parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -1995,7 +1981,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
@@ -2022,7 +2008,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -2037,7 +2023,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
        * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config}
        */
       public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
           implements
           // @@protoc_insertion_point(builder_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config)
           com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
@@ -2049,7 +2035,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.beyondcorp.clientconnectorservices.v1
               .ClientConnectorServicesServiceProto
@@ -2065,7 +2051,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config.newBuilder()
         private Builder() {}
 
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
         }
 
@@ -2155,41 +2141,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
 
         @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-
-        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other
               instanceof
@@ -2234,7 +2185,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 destinationRoutes_ = other.destinationRoutes_;
                 bitField0_ = (bitField0_ & ~0x00000002);
                 destinationRoutesBuilder_ =
-                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                         ? getDestinationRoutesFieldBuilder()
                         : null;
               } else {
@@ -2442,7 +2393,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           }
         }
 
-        private com.google.protobuf.RepeatedFieldBuilderV3<
+        private com.google.protobuf.RepeatedFieldBuilder<
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Ingress.Config.DestinationRoute,
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -2850,7 +2801,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           return getDestinationRoutesFieldBuilder().getBuilderList();
         }
 
-        private com.google.protobuf.RepeatedFieldBuilderV3<
+        private com.google.protobuf.RepeatedFieldBuilder<
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Ingress.Config.DestinationRoute,
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -2860,7 +2811,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             getDestinationRoutesFieldBuilder() {
           if (destinationRoutesBuilder_ == null) {
             destinationRoutesBuilder_ =
-                new com.google.protobuf.RepeatedFieldBuilderV3<
+                new com.google.protobuf.RepeatedFieldBuilder<
                     com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                         .Ingress.Config.DestinationRoute,
                     com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -2874,18 +2825,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             destinationRoutes_ = null;
           }
           return destinationRoutesBuilder_;
-        }
-
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
         }
 
         // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config)
@@ -3197,7 +3136,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
             .Ingress
         parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -3205,14 +3144,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         parseFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
             .Ingress
         parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -3220,14 +3159,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         parseDelimitedFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
             .Ingress
         parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -3236,7 +3175,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
@@ -3261,8 +3200,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3277,8 +3215,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * Protobuf type {@code
      * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
         implements
         // @@protoc_insertion_point(builder_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress)
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -3290,7 +3227,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.beyondcorp.clientconnectorservices.v1
             .ClientConnectorServicesServiceProto
@@ -3306,7 +3243,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.newBuilder()
       private Builder() {}
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
       }
 
@@ -3376,41 +3313,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (ingressConfigCase_ == 1 && configBuilder_ != null) {
           result.ingressConfig_ = configBuilder_.build();
         }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -3510,7 +3412,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       private int bitField0_;
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                   .Config,
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
@@ -3742,7 +3644,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
        * .google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config config = 1;
        * </code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                   .Config,
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
@@ -3757,7 +3659,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .Ingress.Config.getDefaultInstance();
           }
           configBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
+              new com.google.protobuf.SingleFieldBuilder<
                   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                       .Ingress.Config,
                   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -3774,18 +3676,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         ingressConfigCase_ = 1;
         onChanged();
         return configBuilder_;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress)
@@ -3910,23 +3800,27 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
    * Protobuf type {@code
    * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress}
    */
-  public static final class Egress extends com.google.protobuf.GeneratedMessageV3
+  public static final class Egress extends com.google.protobuf.GeneratedMessage
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress)
       EgressOrBuilder {
     private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          Egress.class.getName());
+    }
     // Use Egress.newBuilder() to construct.
-    private Egress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private Egress(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
 
     private Egress() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Egress();
-    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -3935,7 +3829,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
@@ -3987,24 +3881,28 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * Protobuf type {@code
      * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc}
      */
-    public static final class PeeredVpc extends com.google.protobuf.GeneratedMessageV3
+    public static final class PeeredVpc extends com.google.protobuf.GeneratedMessage
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc)
         PeeredVpcOrBuilder {
       private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 26,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            PeeredVpc.class.getName());
+      }
       // Use PeeredVpc.newBuilder() to construct.
-      private PeeredVpc(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private PeeredVpc(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
 
       private PeeredVpc() {
         networkVpc_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new PeeredVpc();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4014,7 +3912,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.beyondcorp.clientconnectorservices.v1
             .ClientConnectorServicesServiceProto
@@ -4091,8 +3989,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkVpc_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, networkVpc_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(networkVpc_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, networkVpc_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -4103,8 +4001,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(networkVpc_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, networkVpc_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(networkVpc_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, networkVpc_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -4195,7 +4093,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
               .Egress.PeeredVpc
           parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -4204,14 +4102,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
               .Egress.PeeredVpc
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -4220,14 +4118,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
               .Egress.PeeredVpc
           parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -4236,7 +4134,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
@@ -4263,7 +4161,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -4278,7 +4176,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
        * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc}
        */
       public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
           implements
           // @@protoc_insertion_point(builder_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc)
           com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
@@ -4290,7 +4188,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.beyondcorp.clientconnectorservices.v1
               .ClientConnectorServicesServiceProto
@@ -4306,7 +4204,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc.newBuilder()
         private Builder() {}
 
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
         }
 
@@ -4370,41 +4268,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.networkVpc_ = networkVpc_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -4590,18 +4453,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           bitField0_ |= 0x00000001;
           onChanged();
           return this;
-        }
-
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
         }
 
         // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc)
@@ -4913,7 +4764,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
             .Egress
         parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -4921,14 +4772,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         parseFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
             .Egress
         parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -4936,14 +4787,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         parseDelimitedFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
             .Egress
         parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -4952,7 +4803,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
@@ -4977,8 +4828,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4992,8 +4842,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * Protobuf type {@code
      * google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
         implements
         // @@protoc_insertion_point(builder_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress)
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -5005,7 +4854,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.beyondcorp.clientconnectorservices.v1
             .ClientConnectorServicesServiceProto
@@ -5021,7 +4870,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       // com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.newBuilder()
       private Builder() {}
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
       }
 
@@ -5091,41 +4940,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (destinationTypeCase_ == 1 && peeredVpcBuilder_ != null) {
           result.destinationType_ = peeredVpcBuilder_.build();
         }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -5224,7 +5038,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       private int bitField0_;
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
                   .PeeredVpc,
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
@@ -5456,7 +5270,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
        * .google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc peered_vpc = 1;
        * </code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
                   .PeeredVpc,
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
@@ -5471,7 +5285,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .PeeredVpc.getDefaultInstance();
           }
           peeredVpcBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
+              new com.google.protobuf.SingleFieldBuilder<
                   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                       .Egress.PeeredVpc,
                   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -5488,18 +5302,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         destinationTypeCase_ = 1;
         onChanged();
         return peeredVpcBuilder_;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress)
@@ -5952,8 +5754,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getCreateTime());
@@ -5961,8 +5763,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getUpdateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, displayName_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, displayName_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getIngress());
@@ -5985,8 +5787,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCreateTime());
@@ -5994,8 +5796,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, displayName_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, displayName_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getIngress());
@@ -6123,33 +5925,33 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -6157,7 +5959,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -6181,7 +5983,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -6194,7 +5996,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
    *
    * Protobuf type {@code google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService)
       com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOrBuilder {
@@ -6205,7 +6007,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
@@ -6222,13 +6024,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getIngressFieldBuilder();
@@ -6332,39 +6134,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         result.state_ = state_;
       }
       result.bitField0_ |= to_bitField0_;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -6604,7 +6373,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     private com.google.protobuf.Timestamp createTime_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
@@ -6789,14 +6558,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
         createTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.protobuf.Timestamp,
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>(
@@ -6807,7 +6576,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     }
 
     private com.google.protobuf.Timestamp updateTime_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
@@ -6992,14 +6761,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
         updateTimeBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.protobuf.Timestamp,
                 com.google.protobuf.Timestamp.Builder,
                 com.google.protobuf.TimestampOrBuilder>(
@@ -7137,7 +6906,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
     private com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
         ingress_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                 .Builder,
@@ -7340,7 +7109,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * .google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress ingress = 6 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                 .Builder,
@@ -7349,7 +7118,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         getIngressFieldBuilder() {
       if (ingressBuilder_ == null) {
         ingressBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Ingress,
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -7363,7 +7132,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
     private com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
         egress_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
                 .Builder,
@@ -7565,7 +7334,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * .google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress egress = 7 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
                 .Builder,
@@ -7574,7 +7343,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         getEgressFieldBuilder() {
       if (egressBuilder_ == null) {
         egressBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Egress,
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
@@ -7690,17 +7459,6 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       state_ = 0;
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService)

@@ -17,20 +17,30 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 /**
  * Protobuf type {@code
  * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs}
  */
-public final class AutoMlForecastingInputs extends com.google.protobuf.GeneratedMessageV3
+public final class AutoMlForecastingInputs extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs)
     AutoMlForecastingInputsOrBuilder {
   private static final long serialVersionUID = 0L;
+
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AutoMlForecastingInputs.class.getName());
+  }
   // Use AutoMlForecastingInputs.newBuilder() to construct.
-  private AutoMlForecastingInputs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private AutoMlForecastingInputs(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
@@ -49,19 +59,13 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     additionalExperiments_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AutoMlForecastingInputs();
-  }
-
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMLForecastingProto
         .internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlForecastingInputs_descriptor;
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMLForecastingProto
         .internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlForecastingInputs_fieldAccessorTable
@@ -220,23 +224,27 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation}
    */
-  public static final class Transformation extends com.google.protobuf.GeneratedMessageV3
+  public static final class Transformation extends com.google.protobuf.GeneratedMessage
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation)
       TransformationOrBuilder {
     private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          Transformation.class.getName());
+    }
     // Use Transformation.newBuilder() to construct.
-    private Transformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private Transformation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
 
     private Transformation() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Transformation();
-    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -245,7 +253,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMLForecastingProto
@@ -286,24 +294,28 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation}
      */
-    public static final class AutoTransformation extends com.google.protobuf.GeneratedMessageV3
+    public static final class AutoTransformation extends com.google.protobuf.GeneratedMessage
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation)
         AutoTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 26,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            AutoTransformation.class.getName());
+      }
       // Use AutoTransformation.newBuilder() to construct.
-      private AutoTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private AutoTransformation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
 
       private AutoTransformation() {
         columnName_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new AutoTransformation();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -313,7 +325,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMLForecastingProto
@@ -378,8 +390,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, columnName_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -390,8 +402,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, columnName_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -482,7 +494,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.AutoTransformation
           parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -491,14 +503,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.AutoTransformation
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -507,14 +519,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.AutoTransformation
           parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -523,7 +535,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
@@ -550,7 +562,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -566,7 +578,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation}
        */
       public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
           implements
           // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation)
           com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
@@ -578,7 +590,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMLForecastingProto
@@ -594,7 +606,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation.newBuilder()
         private Builder() {}
 
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
         }
 
@@ -658,41 +670,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.columnName_ = columnName_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -851,18 +828,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return this;
         }
 
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
         // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation)
       }
 
@@ -952,12 +917,12 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * *  The z_score of the value.
      *
      * *  log(value+1) when the value is greater than or equal to 0. Otherwise,
-     *    this transformation is not applied and the value is considered a
-     *    missing value.
+     * this transformation is not applied and the value is considered a
+     * missing value.
      *
      * *  z_score of log(value+1) when the value is greater than or equal to 0.
-     *    Otherwise, this transformation is not applied and the value is
-     *    considered a missing value.
+     * Otherwise, this transformation is not applied and the value is
+     * considered a missing value.
      *
      * *  A boolean value that indicates whether the value is valid.
      * </pre>
@@ -965,24 +930,28 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation}
      */
-    public static final class NumericTransformation extends com.google.protobuf.GeneratedMessageV3
+    public static final class NumericTransformation extends com.google.protobuf.GeneratedMessage
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation)
         NumericTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 26,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            NumericTransformation.class.getName());
+      }
       // Use NumericTransformation.newBuilder() to construct.
-      private NumericTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private NumericTransformation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
 
       private NumericTransformation() {
         columnName_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new NumericTransformation();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -992,7 +961,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMLForecastingProto
@@ -1057,8 +1026,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, columnName_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -1069,8 +1038,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, columnName_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1161,7 +1130,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.NumericTransformation
           parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1170,14 +1139,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.NumericTransformation
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1186,14 +1155,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.NumericTransformation
           parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1202,7 +1171,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
@@ -1229,7 +1198,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -1244,12 +1213,12 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * *  The z_score of the value.
        *
        * *  log(value+1) when the value is greater than or equal to 0. Otherwise,
-       *    this transformation is not applied and the value is considered a
-       *    missing value.
+       * this transformation is not applied and the value is considered a
+       * missing value.
        *
        * *  z_score of log(value+1) when the value is greater than or equal to 0.
-       *    Otherwise, this transformation is not applied and the value is
-       *    considered a missing value.
+       * Otherwise, this transformation is not applied and the value is
+       * considered a missing value.
        *
        * *  A boolean value that indicates whether the value is valid.
        * </pre>
@@ -1258,7 +1227,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation}
        */
       public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
           implements
           // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation)
           com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
@@ -1270,7 +1239,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMLForecastingProto
@@ -1286,7 +1255,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation.newBuilder()
         private Builder() {}
 
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
         }
 
@@ -1350,41 +1319,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.columnName_ = columnName_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -1543,18 +1477,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return this;
         }
 
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
         // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation)
       }
 
@@ -1640,38 +1562,41 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Training pipeline will perform following transformation functions.
      *
      * *  The categorical string as is--no change to case, punctuation,
-     *    spelling, tense, and so on.
+     * spelling, tense, and so on.
      *
      * *  Convert the category name to a dictionary lookup index and generate an
-     *    embedding for each index.
+     * embedding for each index.
      *
      * *  Categories that appear less than 5 times in the training dataset are
-     *    treated as the "unknown" category. The "unknown" category gets its own
-     *    special lookup index and resulting embedding.
+     * treated as the "unknown" category. The "unknown" category gets its own
+     * special lookup index and resulting embedding.
      * </pre>
      *
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation}
      */
-    public static final class CategoricalTransformation
-        extends com.google.protobuf.GeneratedMessageV3
+    public static final class CategoricalTransformation extends com.google.protobuf.GeneratedMessage
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation)
         CategoricalTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 26,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            CategoricalTransformation.class.getName());
+      }
       // Use CategoricalTransformation.newBuilder() to construct.
-      private CategoricalTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private CategoricalTransformation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
 
       private CategoricalTransformation() {
         columnName_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new CategoricalTransformation();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1681,7 +1606,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMLForecastingProto
@@ -1747,8 +1672,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, columnName_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -1759,8 +1684,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, columnName_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -1851,7 +1776,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.CategoricalTransformation
           parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1860,14 +1785,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.CategoricalTransformation
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1876,14 +1801,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.CategoricalTransformation
           parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -1892,7 +1817,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
@@ -1919,7 +1844,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -1930,21 +1855,21 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * Training pipeline will perform following transformation functions.
        *
        * *  The categorical string as is--no change to case, punctuation,
-       *    spelling, tense, and so on.
+       * spelling, tense, and so on.
        *
        * *  Convert the category name to a dictionary lookup index and generate an
-       *    embedding for each index.
+       * embedding for each index.
        *
        * *  Categories that appear less than 5 times in the training dataset are
-       *    treated as the "unknown" category. The "unknown" category gets its own
-       *    special lookup index and resulting embedding.
+       * treated as the "unknown" category. The "unknown" category gets its own
+       * special lookup index and resulting embedding.
        * </pre>
        *
        * Protobuf type {@code
        * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation}
        */
       public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
           implements
           // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation)
           com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
@@ -1956,7 +1881,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMLForecastingProto
@@ -1973,7 +1898,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation.newBuilder()
         private Builder() {}
 
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
         }
 
@@ -2038,41 +1963,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.columnName_ = columnName_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -2231,18 +2121,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return this;
         }
 
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
         // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation)
       }
 
@@ -2391,35 +2269,39 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * *  Apply the transformation functions for Numerical columns.
      *
      * *  Determine the year, month, day,and weekday. Treat each value from the
-     *    timestamp as a Categorical column.
+     * timestamp as a Categorical column.
      *
      * *  Invalid numerical values (for example, values that fall outside of a
-     *    typical timestamp range, or are extreme values) receive no special
-     *    treatment and are not removed.
+     * typical timestamp range, or are extreme values) receive no special
+     * treatment and are not removed.
      * </pre>
      *
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation}
      */
-    public static final class TimestampTransformation extends com.google.protobuf.GeneratedMessageV3
+    public static final class TimestampTransformation extends com.google.protobuf.GeneratedMessage
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation)
         TimestampTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 26,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            TimestampTransformation.class.getName());
+      }
       // Use TimestampTransformation.newBuilder() to construct.
-      private TimestampTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private TimestampTransformation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
 
       private TimestampTransformation() {
         columnName_ = "";
         timeFormat_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new TimestampTransformation();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2429,7 +2311,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMLForecastingProto
@@ -2581,11 +2463,11 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, columnName_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeFormat_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, timeFormat_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timeFormat_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, timeFormat_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -2596,11 +2478,11 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, columnName_);
         }
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeFormat_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, timeFormat_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timeFormat_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, timeFormat_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -2694,7 +2576,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.TimestampTransformation
           parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -2703,14 +2585,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.TimestampTransformation
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -2719,14 +2601,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.TimestampTransformation
           parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -2735,7 +2617,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
@@ -2762,7 +2644,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -2775,18 +2657,18 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * *  Apply the transformation functions for Numerical columns.
        *
        * *  Determine the year, month, day,and weekday. Treat each value from the
-       *    timestamp as a Categorical column.
+       * timestamp as a Categorical column.
        *
        * *  Invalid numerical values (for example, values that fall outside of a
-       *    typical timestamp range, or are extreme values) receive no special
-       *    treatment and are not removed.
+       * typical timestamp range, or are extreme values) receive no special
+       * treatment and are not removed.
        * </pre>
        *
        * Protobuf type {@code
        * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation}
        */
       public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
           implements
           // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation)
           com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
@@ -2798,7 +2680,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMLForecastingProto
@@ -2815,7 +2697,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation.newBuilder()
         private Builder() {}
 
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
         }
 
@@ -2883,41 +2765,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.timeFormat_ = timeFormat_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -3283,18 +3130,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           return this;
         }
 
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
         // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation)
       }
 
@@ -3380,33 +3215,37 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Training pipeline will perform following transformation functions.
      *
      * *  The text as is--no change to case, punctuation, spelling, tense, and
-     *    so on.
+     * so on.
      *
      * *  Convert the category name to a dictionary lookup index and generate an
-     *    embedding for each index.
+     * embedding for each index.
      * </pre>
      *
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation}
      */
-    public static final class TextTransformation extends com.google.protobuf.GeneratedMessageV3
+    public static final class TextTransformation extends com.google.protobuf.GeneratedMessage
         implements
         // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation)
         TextTransformationOrBuilder {
       private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 26,
+            /* patch= */ 1,
+            /* suffix= */ "",
+            TextTransformation.class.getName());
+      }
       // Use TextTransformation.newBuilder() to construct.
-      private TextTransformation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      private TextTransformation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
       }
 
       private TextTransformation() {
         columnName_ = "";
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-        return new TextTransformation();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3416,7 +3255,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMLForecastingProto
@@ -3481,8 +3320,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, columnName_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -3493,8 +3332,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(columnName_)) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, columnName_);
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(columnName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, columnName_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -3585,7 +3424,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.TextTransformation
           parseFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -3594,14 +3433,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.TextTransformation
           parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -3610,14 +3449,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               java.io.InputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
             PARSER, input, extensionRegistry);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMlForecastingInputs.Transformation.TextTransformation
           parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
       }
 
       public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -3626,7 +3465,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
             PARSER, input, extensionRegistry);
       }
 
@@ -3653,7 +3492,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -3664,17 +3503,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * Training pipeline will perform following transformation functions.
        *
        * *  The text as is--no change to case, punctuation, spelling, tense, and
-       *    so on.
+       * so on.
        *
        * *  Convert the category name to a dictionary lookup index and generate an
-       *    embedding for each index.
+       * embedding for each index.
        * </pre>
        *
        * Protobuf type {@code
        * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation}
        */
       public static final class Builder
-          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
           implements
           // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation)
           com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
@@ -3686,7 +3525,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         }
 
         @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
               .AutoMLForecastingProto
@@ -3702,7 +3541,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation.newBuilder()
         private Builder() {}
 
-        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
         }
 
@@ -3766,41 +3605,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.columnName_ = columnName_;
           }
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.setField(field, value);
-        }
-
-        @java.lang.Override
-        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-
-        @java.lang.Override
-        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index,
-            java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-          return super.addRepeatedField(field, value);
         }
 
         @java.lang.Override
@@ -3957,18 +3761,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           bitField0_ |= 0x00000001;
           onChanged();
           return this;
-        }
-
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
         }
 
         // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation)
@@ -4562,7 +4354,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlForecastingInputs.Transformation
         parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -4570,14 +4362,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         parseFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlForecastingInputs.Transformation
         parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -4585,14 +4377,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         parseDelimitedFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlForecastingInputs.Transformation
         parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -4601,7 +4393,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
@@ -4627,8 +4419,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4636,8 +4427,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
         implements
         // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation)
         com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
@@ -4649,7 +4439,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMLForecastingProto
@@ -4665,7 +4455,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.newBuilder()
       private Builder() {}
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
       }
 
@@ -4766,41 +4556,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (transformationDetailCase_ == 5 && textBuilder_ != null) {
           result.transformationDetail_ = textBuilder_.build();
         }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -4946,7 +4701,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
       private int bitField0_;
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.AutoTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5125,7 +4880,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.AutoTransformation auto = 1;
        * </code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.AutoTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5140,7 +4895,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
                     .AutoMlForecastingInputs.Transformation.AutoTransformation.getDefaultInstance();
           }
           autoBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
+              new com.google.protobuf.SingleFieldBuilder<
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                       .AutoMlForecastingInputs.Transformation.AutoTransformation,
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5159,7 +4914,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return autoBuilder_;
       }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.NumericTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5338,7 +5093,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.NumericTransformation numeric = 2;
        * </code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.NumericTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5354,7 +5109,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
                     .getDefaultInstance();
           }
           numericBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
+              new com.google.protobuf.SingleFieldBuilder<
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                       .AutoMlForecastingInputs.Transformation.NumericTransformation,
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5373,7 +5128,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return numericBuilder_;
       }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.CategoricalTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5555,7 +5310,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.CategoricalTransformation categorical = 3;
        * </code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.CategoricalTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5571,7 +5326,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
                     .getDefaultInstance();
           }
           categoricalBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
+              new com.google.protobuf.SingleFieldBuilder<
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                       .AutoMlForecastingInputs.Transformation.CategoricalTransformation,
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5590,7 +5345,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return categoricalBuilder_;
       }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.TimestampTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5769,7 +5524,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TimestampTransformation timestamp = 4;
        * </code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.TimestampTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5785,7 +5540,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
                     .getDefaultInstance();
           }
           timestampBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
+              new com.google.protobuf.SingleFieldBuilder<
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                       .AutoMlForecastingInputs.Transformation.TimestampTransformation,
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5804,7 +5559,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         return timestampBuilder_;
       }
 
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.TextTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5983,7 +5738,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation.TextTransformation text = 5;
        * </code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilder<
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingInputs.Transformation.TextTransformation,
               com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -5998,7 +5753,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
                     .AutoMlForecastingInputs.Transformation.TextTransformation.getDefaultInstance();
           }
           textBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
+              new com.google.protobuf.SingleFieldBuilder<
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                       .AutoMlForecastingInputs.Transformation.TextTransformation,
                   com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -6015,18 +5770,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         transformationDetailCase_ = 5;
         onChanged();
         return textBuilder_;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Transformation)
@@ -6101,17 +5844,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * The time granularity unit of this time period.
      * The supported units are:
      *
-     *  * "minute"
+     * * "minute"
      *
-     *  * "hour"
+     * * "hour"
      *
-     *  * "day"
+     * * "day"
      *
-     *  * "week"
+     * * "week"
      *
-     *  * "month"
+     * * "month"
      *
-     *  * "year"
+     * * "year"
      * </pre>
      *
      * <code>string unit = 1;</code>
@@ -6126,17 +5869,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * The time granularity unit of this time period.
      * The supported units are:
      *
-     *  * "minute"
+     * * "minute"
      *
-     *  * "hour"
+     * * "hour"
      *
-     *  * "day"
+     * * "day"
      *
-     *  * "week"
+     * * "week"
      *
-     *  * "month"
+     * * "month"
      *
-     *  * "year"
+     * * "year"
      * </pre>
      *
      * <code>string unit = 1;</code>
@@ -6171,24 +5914,28 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity}
    */
-  public static final class Granularity extends com.google.protobuf.GeneratedMessageV3
+  public static final class Granularity extends com.google.protobuf.GeneratedMessage
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity)
       GranularityOrBuilder {
     private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          Granularity.class.getName());
+    }
     // Use Granularity.newBuilder() to construct.
-    private Granularity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private Granularity(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
 
     private Granularity() {
       unit_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new Granularity();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6198,7 +5945,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMLForecastingProto
@@ -6221,17 +5968,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * The time granularity unit of this time period.
      * The supported units are:
      *
-     *  * "minute"
+     * * "minute"
      *
-     *  * "hour"
+     * * "hour"
      *
-     *  * "day"
+     * * "day"
      *
-     *  * "week"
+     * * "week"
      *
-     *  * "month"
+     * * "month"
      *
-     *  * "year"
+     * * "year"
      * </pre>
      *
      * <code>string unit = 1;</code>
@@ -6257,17 +6004,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * The time granularity unit of this time period.
      * The supported units are:
      *
-     *  * "minute"
+     * * "minute"
      *
-     *  * "hour"
+     * * "hour"
      *
-     *  * "day"
+     * * "day"
      *
-     *  * "week"
+     * * "week"
      *
-     *  * "month"
+     * * "month"
      *
-     *  * "year"
+     * * "year"
      * </pre>
      *
      * <code>string unit = 1;</code>
@@ -6322,8 +6069,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, unit_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(unit_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, unit_);
       }
       if (quantity_ != 0L) {
         output.writeInt64(2, quantity_);
@@ -6337,8 +6084,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unit_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, unit_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(unit_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, unit_);
       }
       if (quantity_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, quantity_);
@@ -6435,7 +6182,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlForecastingInputs.Granularity
         parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -6443,14 +6190,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         parseFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlForecastingInputs.Granularity
         parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -6458,14 +6205,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         parseDelimitedFrom(
             java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
           PARSER, input, extensionRegistry);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlForecastingInputs.Granularity
         parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
     }
 
     public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -6474,7 +6221,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
           PARSER, input, extensionRegistry);
     }
 
@@ -6500,8 +6247,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6515,8 +6261,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Protobuf type {@code
      * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity}
      */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
         implements
         // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity)
         com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs
@@ -6528,7 +6273,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMLForecastingProto
@@ -6544,7 +6289,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity.newBuilder()
       private Builder() {}
 
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
       }
 
@@ -6612,41 +6357,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.quantity_ = quantity_;
         }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
       }
 
       @java.lang.Override
@@ -6745,17 +6455,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * The time granularity unit of this time period.
        * The supported units are:
        *
-       *  * "minute"
+       * * "minute"
        *
-       *  * "hour"
+       * * "hour"
        *
-       *  * "day"
+       * * "day"
        *
-       *  * "week"
+       * * "week"
        *
-       *  * "month"
+       * * "month"
        *
-       *  * "year"
+       * * "year"
        * </pre>
        *
        * <code>string unit = 1;</code>
@@ -6780,17 +6490,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * The time granularity unit of this time period.
        * The supported units are:
        *
-       *  * "minute"
+       * * "minute"
        *
-       *  * "hour"
+       * * "hour"
        *
-       *  * "day"
+       * * "day"
        *
-       *  * "week"
+       * * "week"
        *
-       *  * "month"
+       * * "month"
        *
-       *  * "year"
+       * * "year"
        * </pre>
        *
        * <code>string unit = 1;</code>
@@ -6815,17 +6525,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * The time granularity unit of this time period.
        * The supported units are:
        *
-       *  * "minute"
+       * * "minute"
        *
-       *  * "hour"
+       * * "hour"
        *
-       *  * "day"
+       * * "day"
        *
-       *  * "week"
+       * * "week"
        *
-       *  * "month"
+       * * "month"
        *
-       *  * "year"
+       * * "year"
        * </pre>
        *
        * <code>string unit = 1;</code>
@@ -6849,17 +6559,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * The time granularity unit of this time period.
        * The supported units are:
        *
-       *  * "minute"
+       * * "minute"
        *
-       *  * "hour"
+       * * "hour"
        *
-       *  * "day"
+       * * "day"
        *
-       *  * "week"
+       * * "week"
        *
-       *  * "month"
+       * * "month"
        *
-       *  * "year"
+       * * "year"
        * </pre>
        *
        * <code>string unit = 1;</code>
@@ -6879,17 +6589,17 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
        * The time granularity unit of this time period.
        * The supported units are:
        *
-       *  * "minute"
+       * * "minute"
        *
-       *  * "hour"
+       * * "hour"
        *
-       *  * "day"
+       * * "day"
        *
-       *  * "week"
+       * * "week"
        *
-       *  * "month"
+       * * "month"
        *
-       *  * "year"
+       * * "year"
        * </pre>
        *
        * <code>string unit = 1;</code>
@@ -6968,18 +6678,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         quantity_ = 0L;
         onChanged();
         return this;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity)
@@ -7319,19 +7017,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    *
    * The supported optimization objectives:
    *
-   *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *
-   *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   * * "minimize-mae" - Minimize mean-absolute error (MAE).
    *
-   *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
    *
-   *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
    *
-   *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-   *     percentage error (WAPE) and mean-absolute-error (MAE).
+   * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+   * percentage error (WAPE) and mean-absolute-error (MAE).
    *
-   *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-   *     defined in `quantiles`.
+   * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+   * defined in `quantiles`.
    * </pre>
    *
    * <code>string optimization_objective = 5;</code>
@@ -7360,19 +7058,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    *
    * The supported optimization objectives:
    *
-   *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+   * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
    *
-   *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+   * * "minimize-mae" - Minimize mean-absolute error (MAE).
    *
-   *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+   * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
    *
-   *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+   * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
    *
-   *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-   *     percentage error (WAPE) and mean-absolute-error (MAE).
+   * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+   * percentage error (WAPE) and mean-absolute-error (MAE).
    *
-   *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-   *     defined in `quantiles`.
+   * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+   * defined in `quantiles`.
    * </pre>
    *
    * <code>string optimization_objective = 5;</code>
@@ -7954,10 +7652,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * Validation options for the data validation component. The available options
    * are:
    *
-   *   * "fail-pipeline" - default, will validate against the validation and
-   *      fail the pipeline if it fails.
+   * * "fail-pipeline" - default, will validate against the validation and
+   * fail the pipeline if it fails.
    *
-   *   * "ignore-validation" - ignore the results of the validation and continue
+   * * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *
    * <code>string validation_options = 17;</code>
@@ -7983,10 +7681,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * Validation options for the data validation component. The available options
    * are:
    *
-   *   * "fail-pipeline" - default, will validate against the validation and
-   *      fail the pipeline if it fails.
+   * * "fail-pipeline" - default, will validate against the validation and
+   * fail the pipeline if it fails.
    *
-   *   * "ignore-validation" - ignore the results of the validation and continue
+   * * "ignore-validation" - ignore the results of the validation and continue
    * </pre>
    *
    * <code>string validation_options = 17;</code>
@@ -8085,26 +7783,26 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, targetColumn_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(targetColumn_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, targetColumn_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeriesIdentifierColumn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, timeSeriesIdentifierColumn_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timeSeriesIdentifierColumn_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, timeSeriesIdentifierColumn_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeColumn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, timeColumn_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timeColumn_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, timeColumn_);
     }
     for (int i = 0; i < transformations_.size(); i++) {
       output.writeMessage(4, transformations_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(optimizationObjective_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, optimizationObjective_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(optimizationObjective_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, optimizationObjective_);
     }
     if (trainBudgetMilliNodeHours_ != 0L) {
       output.writeInt64(6, trainBudgetMilliNodeHours_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumn_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, weightColumn_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(weightColumn_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, weightColumn_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(15, getExportEvaluatedDataItemsConfig());
@@ -8116,19 +7814,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     for (int i = 0; i < quantiles_.size(); i++) {
       output.writeDoubleNoTag(quantiles_.getDouble(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationOptions_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, validationOptions_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(validationOptions_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 17, validationOptions_);
     }
     for (int i = 0; i < timeSeriesAttributeColumns_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
+      com.google.protobuf.GeneratedMessage.writeString(
           output, 19, timeSeriesAttributeColumns_.getRaw(i));
     }
     for (int i = 0; i < unavailableAtForecastColumns_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
+      com.google.protobuf.GeneratedMessage.writeString(
           output, 20, unavailableAtForecastColumns_.getRaw(i));
     }
     for (int i = 0; i < availableAtForecastColumns_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
+      com.google.protobuf.GeneratedMessage.writeString(
           output, 21, availableAtForecastColumns_.getRaw(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -8141,7 +7839,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       output.writeInt64(24, contextWindow_);
     }
     for (int i = 0; i < additionalExperiments_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
+      com.google.protobuf.GeneratedMessage.writeString(
           output, 25, additionalExperiments_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
@@ -8153,27 +7851,27 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetColumn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, targetColumn_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(targetColumn_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, targetColumn_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeSeriesIdentifierColumn_)) {
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timeSeriesIdentifierColumn_)) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(2, timeSeriesIdentifierColumn_);
+          com.google.protobuf.GeneratedMessage.computeStringSize(2, timeSeriesIdentifierColumn_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(timeColumn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, timeColumn_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(timeColumn_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, timeColumn_);
     }
     for (int i = 0; i < transformations_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, transformations_.get(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(optimizationObjective_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, optimizationObjective_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(optimizationObjective_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, optimizationObjective_);
     }
     if (trainBudgetMilliNodeHours_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, trainBudgetMilliNodeHours_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(weightColumn_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, weightColumn_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(weightColumn_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, weightColumn_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -8190,8 +7888,8 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
       quantilesMemoizedSerializedSize = dataSize;
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(validationOptions_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, validationOptions_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(validationOptions_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(17, validationOptions_);
     }
     {
       int dataSize = 0;
@@ -8398,7 +8096,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs
       parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -8406,14 +8104,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -8421,14 +8119,14 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMlForecastingInputs
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -8437,7 +8135,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -8462,7 +8160,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -8470,7 +8168,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs)
       com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -8482,7 +8180,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .AutoMLForecastingProto
@@ -8500,13 +8198,13 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         getTransformationsFieldBuilder();
         getDataGranularityFieldBuilder();
         getExportEvaluatedDataItemsConfigFieldBuilder();
@@ -8673,39 +8371,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     }
 
     @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
-
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other
           instanceof
@@ -8761,7 +8426,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             transformations_ = other.transformations_;
             bitField0_ = (bitField0_ & ~0x00000008);
             transformationsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? getTransformationsFieldBuilder()
                     : null;
           } else {
@@ -9360,7 +9025,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       }
     }
 
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.google.protobuf.RepeatedFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlForecastingInputs.Transformation,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -9822,7 +9487,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       return getTransformationsFieldBuilder().getBuilderList();
     }
 
-    private com.google.protobuf.RepeatedFieldBuilderV3<
+    private com.google.protobuf.RepeatedFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlForecastingInputs.Transformation,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -9832,7 +9497,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         getTransformationsFieldBuilder() {
       if (transformationsBuilder_ == null) {
         transformationsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
+            new com.google.protobuf.RepeatedFieldBuilder<
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                     .AutoMlForecastingInputs.Transformation,
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -9859,19 +9524,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * The supported optimization objectives:
      *
-     *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *
-     *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     * * "minimize-mae" - Minimize mean-absolute error (MAE).
      *
-     *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
      *
-     *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
      *
-     *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-     *     percentage error (WAPE) and mean-absolute-error (MAE).
+     * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+     * percentage error (WAPE) and mean-absolute-error (MAE).
      *
-     *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-     *     defined in `quantiles`.
+     * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+     * defined in `quantiles`.
      * </pre>
      *
      * <code>string optimization_objective = 5;</code>
@@ -9899,19 +9564,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * The supported optimization objectives:
      *
-     *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *
-     *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     * * "minimize-mae" - Minimize mean-absolute error (MAE).
      *
-     *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
      *
-     *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
      *
-     *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-     *     percentage error (WAPE) and mean-absolute-error (MAE).
+     * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+     * percentage error (WAPE) and mean-absolute-error (MAE).
      *
-     *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-     *     defined in `quantiles`.
+     * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+     * defined in `quantiles`.
      * </pre>
      *
      * <code>string optimization_objective = 5;</code>
@@ -9939,19 +9604,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * The supported optimization objectives:
      *
-     *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *
-     *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     * * "minimize-mae" - Minimize mean-absolute error (MAE).
      *
-     *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
      *
-     *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
      *
-     *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-     *     percentage error (WAPE) and mean-absolute-error (MAE).
+     * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+     * percentage error (WAPE) and mean-absolute-error (MAE).
      *
-     *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-     *     defined in `quantiles`.
+     * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+     * defined in `quantiles`.
      * </pre>
      *
      * <code>string optimization_objective = 5;</code>
@@ -9978,19 +9643,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * The supported optimization objectives:
      *
-     *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *
-     *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     * * "minimize-mae" - Minimize mean-absolute error (MAE).
      *
-     *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
      *
-     *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
      *
-     *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-     *     percentage error (WAPE) and mean-absolute-error (MAE).
+     * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+     * percentage error (WAPE) and mean-absolute-error (MAE).
      *
-     *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-     *     defined in `quantiles`.
+     * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+     * defined in `quantiles`.
      * </pre>
      *
      * <code>string optimization_objective = 5;</code>
@@ -10013,19 +9678,19 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      *
      * The supported optimization objectives:
      *
-     *   * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
+     * * "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE).
      *
-     *   * "minimize-mae" - Minimize mean-absolute error (MAE).
+     * * "minimize-mae" - Minimize mean-absolute error (MAE).
      *
-     *   * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
+     * * "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE).
      *
-     *   * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
+     * * "minimize-rmspe" - Minimize root-mean-squared percentage error (RMSPE).
      *
-     *   * "minimize-wape-mae" - Minimize the combination of weighted absolute
-     *     percentage error (WAPE) and mean-absolute-error (MAE).
+     * * "minimize-wape-mae" - Minimize the combination of weighted absolute
+     * percentage error (WAPE) and mean-absolute-error (MAE).
      *
-     *   * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
-     *     defined in `quantiles`.
+     * * "minimize-quantile-loss" - Minimize the quantile loss at the quantiles
+     * defined in `quantiles`.
      * </pre>
      *
      * <code>string optimization_objective = 5;</code>
@@ -10876,7 +10541,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .AutoMlForecastingInputs.Granularity
         dataGranularity_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlForecastingInputs.Granularity,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -11083,7 +10748,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs.Granularity data_granularity = 22;
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlForecastingInputs.Granularity,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -11093,7 +10758,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         getDataGranularityFieldBuilder() {
       if (dataGranularityBuilder_ == null) {
         dataGranularityBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                     .AutoMlForecastingInputs.Granularity,
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -11227,7 +10892,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
     private com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
             .ExportEvaluatedDataItemsConfig
         exportEvaluatedDataItemsConfig_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .ExportEvaluatedDataItemsConfig,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -11443,7 +11108,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * .google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig export_evaluated_data_items_config = 15;
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .ExportEvaluatedDataItemsConfig,
             com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -11453,7 +11118,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         getExportEvaluatedDataItemsConfigFieldBuilder() {
       if (exportEvaluatedDataItemsConfigBuilder_ == null) {
         exportEvaluatedDataItemsConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                     .ExportEvaluatedDataItemsConfig,
                 com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -11632,10 +11297,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Validation options for the data validation component. The available options
      * are:
      *
-     *   * "fail-pipeline" - default, will validate against the validation and
-     *      fail the pipeline if it fails.
+     * * "fail-pipeline" - default, will validate against the validation and
+     * fail the pipeline if it fails.
      *
-     *   * "ignore-validation" - ignore the results of the validation and continue
+     * * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
      * <code>string validation_options = 17;</code>
@@ -11660,10 +11325,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Validation options for the data validation component. The available options
      * are:
      *
-     *   * "fail-pipeline" - default, will validate against the validation and
-     *      fail the pipeline if it fails.
+     * * "fail-pipeline" - default, will validate against the validation and
+     * fail the pipeline if it fails.
      *
-     *   * "ignore-validation" - ignore the results of the validation and continue
+     * * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
      * <code>string validation_options = 17;</code>
@@ -11688,10 +11353,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Validation options for the data validation component. The available options
      * are:
      *
-     *   * "fail-pipeline" - default, will validate against the validation and
-     *      fail the pipeline if it fails.
+     * * "fail-pipeline" - default, will validate against the validation and
+     * fail the pipeline if it fails.
      *
-     *   * "ignore-validation" - ignore the results of the validation and continue
+     * * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
      * <code>string validation_options = 17;</code>
@@ -11715,10 +11380,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Validation options for the data validation component. The available options
      * are:
      *
-     *   * "fail-pipeline" - default, will validate against the validation and
-     *      fail the pipeline if it fails.
+     * * "fail-pipeline" - default, will validate against the validation and
+     * fail the pipeline if it fails.
      *
-     *   * "ignore-validation" - ignore the results of the validation and continue
+     * * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
      * <code>string validation_options = 17;</code>
@@ -11738,10 +11403,10 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
      * Validation options for the data validation component. The available options
      * are:
      *
-     *   * "fail-pipeline" - default, will validate against the validation and
-     *      fail the pipeline if it fails.
+     * * "fail-pipeline" - default, will validate against the validation and
+     * fail the pipeline if it fails.
      *
-     *   * "ignore-validation" - ignore the results of the validation and continue
+     * * "ignore-validation" - ignore the results of the validation and continue
      * </pre>
      *
      * <code>string validation_options = 17;</code>
@@ -11933,17 +11598,6 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
       bitField0_ |= 0x00010000;
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingInputs)

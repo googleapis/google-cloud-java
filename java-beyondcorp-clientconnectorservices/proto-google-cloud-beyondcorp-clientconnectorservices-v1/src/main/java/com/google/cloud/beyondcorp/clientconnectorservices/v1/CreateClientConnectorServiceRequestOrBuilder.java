@@ -17,7 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 public interface CreateClientConnectorServiceRequestOrBuilder
@@ -59,9 +59,9 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    *
    * <pre>
    * Optional. User-settable client connector service resource ID.
-   *  * Must start with a letter.
-   *  * Must contain between 4-63 characters from `/[a-z][0-9]-/`.
-   *  * Must end with a number or a letter.
+   * * Must start with a letter.
+   * * Must contain between 4-63 characters from `/[a-z][0-9]-/`.
+   * * Must end with a number or a letter.
    *
    * A random system generated name will be assigned
    * if not specified by the user.
@@ -77,9 +77,9 @@ public interface CreateClientConnectorServiceRequestOrBuilder
    *
    * <pre>
    * Optional. User-settable client connector service resource ID.
-   *  * Must start with a letter.
-   *  * Must contain between 4-63 characters from `/[a-z][0-9]-/`.
-   *  * Must end with a number or a letter.
+   * * Must start with a letter.
+   * * Must contain between 4-63 characters from `/[a-z][0-9]-/`.
+   * * Must end with a number or a letter.
    *
    * A random system generated name will be assigned
    * if not specified by the user.

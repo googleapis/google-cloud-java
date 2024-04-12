@@ -17,7 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_image_segmentation.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 public interface AutoMlImageSegmentationInputsOrBuilder
@@ -56,7 +56,7 @@ public interface AutoMlImageSegmentationInputsOrBuilder
    * will be `model-converged`.
    * Note, node_hour  = actual_hour * number_of_nodes_involved. Or
    * actaul_wall_clock_hours = train_budget_milli_node_hours /
-   *                           (number_of_nodes_involved * 1000)
+   * (number_of_nodes_involved * 1000)
    * For modelType `cloud-high-accuracy-1`(default), the budget must be between
    * 20,000 and 2,000,000 milli node hours, inclusive. The default value is
    * 192,000 which represents one day in wall time
