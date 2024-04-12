@@ -151,16 +151,27 @@ class BigtableExporterUtils {
   static MonitoredResource detectResource() {
     GCPPlatformDetector detector = GCPPlatformDetector.DEFAULT_INSTANCE;
     DetectedPlatform detectedPlatform = detector.detectPlatform();
-    switch (detectedPlatform.getSupportedPlatform()) {
-      case GOOGLE_COMPUTE_ENGINE:
-        return createGceMonitoredResource(
-            detectedPlatform.getProjectId(), detectedPlatform.getAttributes());
-      case GOOGLE_KUBERNETES_ENGINE:
-        return createGkeMonitoredResource(
-            detectedPlatform.getProjectId(), detectedPlatform.getAttributes());
-      default:
-        return null;
+    MonitoredResource monitoredResource = null;
+    try {
+      switch (detectedPlatform.getSupportedPlatform()) {
+        case GOOGLE_COMPUTE_ENGINE:
+          monitoredResource =
+              createGceMonitoredResource(
+                  detectedPlatform.getProjectId(), detectedPlatform.getAttributes());
+          break;
+        case GOOGLE_KUBERNETES_ENGINE:
+          monitoredResource =
+              createGkeMonitoredResource(
+                  detectedPlatform.getProjectId(), detectedPlatform.getAttributes());
+          break;
+      }
+    } catch (IllegalStateException e) {
+      logger.log(
+          Level.WARNING,
+          "Failed to create monitored resource for " + detectedPlatform.getSupportedPlatform(),
+          e);
     }
+    return monitoredResource;
   }
 
   private static MonitoredResource createGceMonitoredResource(
@@ -168,8 +179,8 @@ class BigtableExporterUtils {
     return MonitoredResource.newBuilder()
         .setType("gce_instance")
         .putLabels("project_id", projectId)
-        .putLabels("instance_id", attributes.get(AttributeKeys.GCE_INSTANCE_ID))
-        .putLabels("zone", attributes.get(AttributeKeys.GCE_AVAILABILITY_ZONE))
+        .putLabels("instance_id", getAttribute(attributes, AttributeKeys.GCE_INSTANCE_ID))
+        .putLabels("zone", getAttribute(attributes, AttributeKeys.GCE_AVAILABILITY_ZONE))
         .build();
   }
 
@@ -178,12 +189,21 @@ class BigtableExporterUtils {
     return MonitoredResource.newBuilder()
         .setType("k8s_container")
         .putLabels("project_id", projectId)
-        .putLabels("location", attributes.get(AttributeKeys.GKE_CLUSTER_LOCATION))
-        .putLabels("cluster_name", attributes.get(AttributeKeys.GKE_CLUSTER_NAME))
+        .putLabels("location", getAttribute(attributes, AttributeKeys.GKE_CLUSTER_LOCATION))
+        .putLabels("cluster_name", getAttribute(attributes, AttributeKeys.GKE_CLUSTER_NAME))
         .putLabels("namespace_name", MoreObjects.firstNonNull(System.getenv("NAMESPACE"), ""))
         .putLabels("pod_name", MoreObjects.firstNonNull(System.getenv("HOSTNAME"), ""))
         .putLabels("container_name", MoreObjects.firstNonNull(System.getenv("CONTAINER_NAME"), ""))
         .build();
+  }
+
+  private static String getAttribute(Map<String, String> attributes, String key) {
+    String value = attributes.get(key);
+    if (value == null) {
+      throw new IllegalStateException(
+          "Required attribute " + key + " does not exist in the attributes map " + attributes);
+    }
+    return value;
   }
 
   private static TimeSeries convertPointToBigtableTimeSeries(

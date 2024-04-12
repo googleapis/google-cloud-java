@@ -149,6 +149,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -166,6 +168,9 @@ import javax.annotation.Nullable;
  */
 @InternalApi
 public class EnhancedBigtableStub implements AutoCloseable {
+
+  private static final Logger logger = Logger.getLogger(EnhancedBigtableStub.class.getName());
+
   private static final String CLIENT_NAME = "Bigtable";
   private static final long FLOW_CONTROL_ADJUSTING_INTERVAL_MS = TimeUnit.SECONDS.toMillis(20);
   private final EnhancedBigtableStubSettings settings;
@@ -238,8 +243,15 @@ public class EnhancedBigtableStub implements AutoCloseable {
             ? ((InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider()).toBuilder()
             : null;
 
-    OpenTelemetry openTelemetry =
-        getOpenTelemetry(settings.getProjectId(), settings.getMetricsProvider(), credentials);
+    OpenTelemetry openTelemetry = null;
+    try {
+      // We don't want client side metrics to crash the client, so catch any exception when getting
+      // the OTEL instance and log the exception instead.
+      openTelemetry =
+          getOpenTelemetry(settings.getProjectId(), settings.getMetricsProvider(), credentials);
+    } catch (Throwable t) {
+      logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
+    }
     ErrorCountPerConnectionMetricTracker errorCountPerConnectionMetricTracker;
     // Skip setting up ErrorCountPerConnectionMetricTracker if openTelemetry is null
     if (openTelemetry != null && transportProvider != null) {
@@ -291,7 +303,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   public static ApiTracerFactory createBigtableTracerFactory(
-      EnhancedBigtableStubSettings settings, OpenTelemetry openTelemetry) throws IOException {
+      EnhancedBigtableStubSettings settings, @Nullable OpenTelemetry openTelemetry)
+      throws IOException {
     return createBigtableTracerFactory(
         settings, Tags.getTagger(), Stats.getStatsRecorder(), openTelemetry);
   }
@@ -301,7 +314,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
       EnhancedBigtableStubSettings settings,
       Tagger tagger,
       StatsRecorder stats,
-      OpenTelemetry openTelemetry)
+      @Nullable OpenTelemetry openTelemetry)
       throws IOException {
     String projectId = settings.getProjectId();
     String instanceId = settings.getInstanceId();
