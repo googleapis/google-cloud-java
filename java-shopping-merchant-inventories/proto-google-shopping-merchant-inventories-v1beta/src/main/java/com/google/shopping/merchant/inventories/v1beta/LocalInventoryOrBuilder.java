@@ -71,13 +71,16 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Required. Store code (the store ID from your Business Profile) of the
-   * physical store the product is sold in. See the [Local product inventory
-   * feed specification](https://support.google.com/merchants/answer/3061342)
-   * for more information.
+   * Required. Immutable. Store code (the store ID from your Business Profile)
+   * of the physical store the product is sold in. See the [Local product
+   * inventory feed
+   * specification](https://support.google.com/merchants/answer/3061342) for
+   * more information.
    * </pre>
    *
-   * <code>string store_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string store_code = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The storeCode.
    */
@@ -86,13 +89,16 @@ public interface LocalInventoryOrBuilder
    *
    *
    * <pre>
-   * Required. Store code (the store ID from your Business Profile) of the
-   * physical store the product is sold in. See the [Local product inventory
-   * feed specification](https://support.google.com/merchants/answer/3061342)
-   * for more information.
+   * Required. Immutable. Store code (the store ID from your Business Profile)
+   * of the physical store the product is sold in. See the [Local product
+   * inventory feed
+   * specification](https://support.google.com/merchants/answer/3061342) for
+   * more information.
    * </pre>
    *
-   * <code>string store_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string store_code = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for storeCode.
    */

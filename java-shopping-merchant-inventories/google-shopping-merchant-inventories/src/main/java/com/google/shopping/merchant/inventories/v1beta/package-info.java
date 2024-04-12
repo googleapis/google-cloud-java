@@ -35,7 +35,7 @@
  *     LocalInventoryServiceClient.create()) {
  *   InsertLocalInventoryRequest request =
  *       InsertLocalInventoryRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setLocalInventory(LocalInventory.newBuilder().build())
  *           .build();
  *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
@@ -59,7 +59,7 @@
  *     RegionalInventoryServiceClient.create()) {
  *   InsertRegionalInventoryRequest request =
  *       InsertRegionalInventoryRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setRegionalInventory(RegionalInventory.newBuilder().build())
  *           .build();
  *   RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);

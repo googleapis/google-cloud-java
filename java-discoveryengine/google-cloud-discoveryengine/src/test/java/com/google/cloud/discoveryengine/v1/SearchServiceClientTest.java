@@ -45,6 +45,7 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class SearchServiceClientTest {
+  private static MockLocations mockLocations;
   private static MockSearchService mockSearchService;
   private static MockServiceHelper mockServiceHelper;
   private LocalChannelProvider channelProvider;
@@ -53,9 +54,11 @@ public class SearchServiceClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockSearchService = new MockSearchService();
+    mockLocations = new MockLocations();
     mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSearchService));
+            UUID.randomUUID().toString(),
+            Arrays.<MockGrpcService>asList(mockSearchService, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -106,6 +109,7 @@ public class SearchServiceClientTest {
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
+            .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
             .setFilter("filter-1274492040")
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
@@ -140,6 +144,7 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
+    Assert.assertEquals(request.getDataStoreSpecsList(), actualRequest.getDataStoreSpecsList());
     Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertEquals(request.getCanonicalFilter(), actualRequest.getCanonicalFilter());
     Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
@@ -180,6 +185,7 @@ public class SearchServiceClientTest {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")

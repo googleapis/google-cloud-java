@@ -52,7 +52,7 @@ import javax.annotation.Generated;
  *     RegionalInventoryServiceClient.create()) {
  *   InsertRegionalInventoryRequest request =
  *       InsertRegionalInventoryRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setRegionalInventory(RegionalInventory.newBuilder().build())
  *           .build();
  *   RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);
@@ -81,6 +81,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listRegionalInventories(ProductName parent)
  *           <li><p> listRegionalInventories(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -254,7 +255,45 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RegionalInventoryServiceClient regionalInventoryServiceClient =
    *     RegionalInventoryServiceClient.create()) {
-   *   String parent = "parent-995424086";
+   *   ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+   *   for (RegionalInventory element :
+   *       regionalInventoryServiceClient.listRegionalInventories(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The `name` of the parent product to list `RegionalInventory` resources
+   *     for. Format: `accounts/{account}/products/{product}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRegionalInventoriesPagedResponse listRegionalInventories(ProductName parent) {
+    ListRegionalInventoriesRequest request =
+        ListRegionalInventoriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRegionalInventories(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `RegionalInventory` resources for the given product in your merchant account. The
+   * response might contain fewer items than specified by `pageSize`. If `pageToken` was returned in
+   * previous request, it can be used to obtain additional results.
+   *
+   * <p>`RegionalInventory` resources are listed per product for a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionalInventoryServiceClient regionalInventoryServiceClient =
+   *     RegionalInventoryServiceClient.create()) {
+   *   String parent = ProductName.of("[ACCOUNT]", "[PRODUCT]").toString();
    *   for (RegionalInventory element :
    *       regionalInventoryServiceClient.listRegionalInventories(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -292,7 +331,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *     RegionalInventoryServiceClient.create()) {
    *   ListRegionalInventoriesRequest request =
    *       ListRegionalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -331,7 +370,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *     RegionalInventoryServiceClient.create()) {
    *   ListRegionalInventoriesRequest request =
    *       ListRegionalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -369,7 +408,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *     RegionalInventoryServiceClient.create()) {
    *   ListRegionalInventoriesRequest request =
    *       ListRegionalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -417,7 +456,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *     RegionalInventoryServiceClient.create()) {
    *   InsertRegionalInventoryRequest request =
    *       InsertRegionalInventoryRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setRegionalInventory(RegionalInventory.newBuilder().build())
    *           .build();
    *   RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);
@@ -454,7 +493,7 @@ public class RegionalInventoryServiceClient implements BackgroundResource {
    *     RegionalInventoryServiceClient.create()) {
    *   InsertRegionalInventoryRequest request =
    *       InsertRegionalInventoryRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setRegionalInventory(RegionalInventory.newBuilder().build())
    *           .build();
    *   ApiFuture<RegionalInventory> future =

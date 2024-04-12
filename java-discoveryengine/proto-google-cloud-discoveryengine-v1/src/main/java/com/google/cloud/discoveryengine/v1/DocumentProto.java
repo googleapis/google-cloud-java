@@ -49,30 +49,32 @@ public final class DocumentProto {
           + "nt.proto\022\037google.cloud.discoveryengine.v"
           + "1\032\037google/api/field_behavior.proto\032\031goog"
           + "le/api/resource.proto\032\034google/protobuf/s"
-          + "truct.proto\"\217\005\n\010Document\022.\n\013struct_data\030"
-          + "\004 \001(\0132\027.google.protobuf.StructH\000\022\023\n\tjson"
-          + "_data\030\005 \001(\tH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\017\n\002id\030\002"
-          + " \001(\tB\003\340A\005\022\021\n\tschema_id\030\003 \001(\t\022B\n\007content\030"
-          + "\n \001(\01321.google.cloud.discoveryengine.v1."
-          + "Document.Content\022\032\n\022parent_document_id\030\007"
-          + " \001(\t\0229\n\023derived_struct_data\030\006 \001(\0132\027.goog"
-          + "le.protobuf.StructB\003\340A\003\032K\n\007Content\022\023\n\tra"
-          + "w_bytes\030\002 \001(\014H\000\022\r\n\003uri\030\003 \001(\tH\000\022\021\n\tmime_t"
-          + "ype\030\001 \001(\tB\t\n\007content:\226\002\352A\222\002\n\'discoveryen"
-          + "gine.googleapis.com/Document\022fprojects/{"
-          + "project}/locations/{location}/dataStores"
-          + "/{data_store}/branches/{branch}/document"
-          + "s/{document}\022\177projects/{project}/locatio"
-          + "ns/{location}/collections/{collection}/d"
-          + "ataStores/{data_store}/branches/{branch}"
-          + "/documents/{document}B\006\n\004dataB\200\002\n#com.go"
-          + "ogle.cloud.discoveryengine.v1B\rDocumentP"
-          + "rotoP\001ZMcloud.google.com/go/discoveryeng"
-          + "ine/apiv1/discoveryenginepb;discoveryeng"
-          + "inepb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.D"
-          + "iscoveryEngine.V1\312\002\037Google\\Cloud\\Discove"
-          + "ryEngine\\V1\352\002\"Google::Cloud::DiscoveryEn"
-          + "gine::V1b\006proto3"
+          + "truct.proto\032\037google/protobuf/timestamp.p"
+          + "roto\"\304\005\n\010Document\022.\n\013struct_data\030\004 \001(\0132\027"
+          + ".google.protobuf.StructH\000\022\023\n\tjson_data\030\005"
+          + " \001(\tH\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\017\n\002id\030\002 \001(\tB\003\340"
+          + "A\005\022\021\n\tschema_id\030\003 \001(\t\022B\n\007content\030\n \001(\01321"
+          + ".google.cloud.discoveryengine.v1.Documen"
+          + "t.Content\022\032\n\022parent_document_id\030\007 \001(\t\0229\n"
+          + "\023derived_struct_data\030\006 \001(\0132\027.google.prot"
+          + "obuf.StructB\003\340A\003\0223\n\nindex_time\030\r \001(\0132\032.g"
+          + "oogle.protobuf.TimestampB\003\340A\003\032K\n\007Content"
+          + "\022\023\n\traw_bytes\030\002 \001(\014H\000\022\r\n\003uri\030\003 \001(\tH\000\022\021\n\t"
+          + "mime_type\030\001 \001(\tB\t\n\007content:\226\002\352A\222\002\n\'disco"
+          + "veryengine.googleapis.com/Document\022fproj"
+          + "ects/{project}/locations/{location}/data"
+          + "Stores/{data_store}/branches/{branch}/do"
+          + "cuments/{document}\022\177projects/{project}/l"
+          + "ocations/{location}/collections/{collect"
+          + "ion}/dataStores/{data_store}/branches/{b"
+          + "ranch}/documents/{document}B\006\n\004dataB\200\002\n#"
+          + "com.google.cloud.discoveryengine.v1B\rDoc"
+          + "umentProtoP\001ZMcloud.google.com/go/discov"
+          + "eryengine/apiv1/discoveryenginepb;discov"
+          + "eryenginepb\242\002\017DISCOVERYENGINE\252\002\037Google.C"
+          + "loud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\D"
+          + "iscoveryEngine\\V1\352\002\"Google::Cloud::Disco"
+          + "veryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,6 +83,7 @@ public final class DocumentProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_Document_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -96,6 +99,7 @@ public final class DocumentProto {
               "Content",
               "ParentDocumentId",
               "DerivedStructData",
+              "IndexTime",
               "Data",
             });
     internal_static_google_cloud_discoveryengine_v1_Document_Content_descriptor =
@@ -115,6 +119,7 @@ public final class DocumentProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

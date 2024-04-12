@@ -22,6 +22,7 @@ import com.google.shopping.merchant.inventories.v1beta.ListLocalInventoriesReque
 import com.google.shopping.merchant.inventories.v1beta.ListLocalInventoriesResponse;
 import com.google.shopping.merchant.inventories.v1beta.LocalInventory;
 import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceClient;
+import com.google.shopping.merchant.inventories.v1beta.ProductName;
 
 public class AsyncListLocalInventoriesPaged {
 
@@ -39,7 +40,7 @@ public class AsyncListLocalInventoriesPaged {
         LocalInventoryServiceClient.create()) {
       ListLocalInventoriesRequest request =
           ListLocalInventoriesRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

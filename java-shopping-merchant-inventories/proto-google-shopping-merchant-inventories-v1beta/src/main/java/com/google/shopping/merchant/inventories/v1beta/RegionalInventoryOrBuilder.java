@@ -71,13 +71,15 @@ public interface RegionalInventoryOrBuilder
    *
    *
    * <pre>
-   * Required. ID of the region for this
+   * Required. Immutable. ID of the region for this
    * `RegionalInventory` resource. See the [Regional availability and
    * pricing](https://support.google.com/merchants/answer/9698880) for more
    * details.
    * </pre>
    *
-   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The region.
    */
@@ -86,13 +88,15 @@ public interface RegionalInventoryOrBuilder
    *
    *
    * <pre>
-   * Required. ID of the region for this
+   * Required. Immutable. ID of the region for this
    * `RegionalInventory` resource. See the [Regional availability and
    * pricing](https://support.google.com/merchants/answer/9698880) for more
    * details.
    * </pre>
    *
-   * <code>string region = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string region = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for region.
    */

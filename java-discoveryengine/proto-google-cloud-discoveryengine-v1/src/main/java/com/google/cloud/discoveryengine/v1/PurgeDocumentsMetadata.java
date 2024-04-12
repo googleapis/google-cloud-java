@@ -194,6 +194,24 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
     return failureCount_;
   }
 
+  public static final int IGNORED_COUNT_FIELD_NUMBER = 5;
+  private long ignoredCount_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Count of entries that were ignored as entries were not found.
+   * </pre>
+   *
+   * <code>int64 ignored_count = 5;</code>
+   *
+   * @return The ignoredCount.
+   */
+  @java.lang.Override
+  public long getIgnoredCount() {
+    return ignoredCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -220,6 +238,9 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
     if (failureCount_ != 0L) {
       output.writeInt64(4, failureCount_);
     }
+    if (ignoredCount_ != 0L) {
+      output.writeInt64(5, ignoredCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -240,6 +261,9 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
     }
     if (failureCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, failureCount_);
+    }
+    if (ignoredCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, ignoredCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -267,6 +291,7 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
     }
     if (getSuccessCount() != other.getSuccessCount()) return false;
     if (getFailureCount() != other.getFailureCount()) return false;
+    if (getIgnoredCount() != other.getIgnoredCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -290,6 +315,8 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSuccessCount());
     hash = (37 * hash) + FAILURE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFailureCount());
+    hash = (37 * hash) + IGNORED_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getIgnoredCount());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -453,6 +480,7 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
       }
       successCount_ = 0L;
       failureCount_ = 0L;
+      ignoredCount_ = 0L;
       return this;
     }
 
@@ -503,6 +531,9 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.failureCount_ = failureCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.ignoredCount_ = ignoredCount_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -565,6 +596,9 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
       if (other.getFailureCount() != 0L) {
         setFailureCount(other.getFailureCount());
       }
+      if (other.getIgnoredCount() != 0L) {
+        setIgnoredCount(other.getIgnoredCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -615,6 +649,12 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                ignoredCount_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1115,6 +1155,59 @@ public final class PurgeDocumentsMetadata extends com.google.protobuf.GeneratedM
     public Builder clearFailureCount() {
       bitField0_ = (bitField0_ & ~0x00000008);
       failureCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long ignoredCount_;
+    /**
+     *
+     *
+     * <pre>
+     * Count of entries that were ignored as entries were not found.
+     * </pre>
+     *
+     * <code>int64 ignored_count = 5;</code>
+     *
+     * @return The ignoredCount.
+     */
+    @java.lang.Override
+    public long getIgnoredCount() {
+      return ignoredCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Count of entries that were ignored as entries were not found.
+     * </pre>
+     *
+     * <code>int64 ignored_count = 5;</code>
+     *
+     * @param value The ignoredCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIgnoredCount(long value) {
+
+      ignoredCount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Count of entries that were ignored as entries were not found.
+     * </pre>
+     *
+     * <code>int64 ignored_count = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIgnoredCount() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ignoredCount_ = 0L;
       onChanged();
       return this;
     }

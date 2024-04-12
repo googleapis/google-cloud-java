@@ -51,7 +51,7 @@ import javax.annotation.Generated;
  *     LocalInventoryServiceClient.create()) {
  *   InsertLocalInventoryRequest request =
  *       InsertLocalInventoryRequest.newBuilder()
- *           .setParent("parent-995424086")
+ *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
  *           .setLocalInventory(LocalInventory.newBuilder().build())
  *           .build();
  *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
@@ -80,6 +80,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listLocalInventories(ProductName parent)
  *           <li><p> listLocalInventories(String parent)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
@@ -251,7 +252,45 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (LocalInventoryServiceClient localInventoryServiceClient =
    *     LocalInventoryServiceClient.create()) {
-   *   String parent = "parent-995424086";
+   *   ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+   *   for (LocalInventory element :
+   *       localInventoryServiceClient.listLocalInventories(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The `name` of the parent product to list local inventories for. Format:
+   *     `accounts/{account}/products/{product}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocalInventoriesPagedResponse listLocalInventories(ProductName parent) {
+    ListLocalInventoriesRequest request =
+        ListLocalInventoriesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listLocalInventories(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the `LocalInventory` resources for the given product in your merchant account. The
+   * response might contain fewer items than specified by `pageSize`. If `pageToken` was returned in
+   * previous request, it can be used to obtain additional results.
+   *
+   * <p>`LocalInventory` resources are listed per product for a given account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (LocalInventoryServiceClient localInventoryServiceClient =
+   *     LocalInventoryServiceClient.create()) {
+   *   String parent = ProductName.of("[ACCOUNT]", "[PRODUCT]").toString();
    *   for (LocalInventory element :
    *       localInventoryServiceClient.listLocalInventories(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -289,7 +328,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   ListLocalInventoriesRequest request =
    *       ListLocalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -328,7 +367,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   ListLocalInventoriesRequest request =
    *       ListLocalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -366,7 +405,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   ListLocalInventoriesRequest request =
    *       ListLocalInventoriesRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -414,7 +453,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   InsertLocalInventoryRequest request =
    *       InsertLocalInventoryRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setLocalInventory(LocalInventory.newBuilder().build())
    *           .build();
    *   LocalInventory response = localInventoryServiceClient.insertLocalInventory(request);
@@ -451,7 +490,7 @@ public class LocalInventoryServiceClient implements BackgroundResource {
    *     LocalInventoryServiceClient.create()) {
    *   InsertLocalInventoryRequest request =
    *       InsertLocalInventoryRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
    *           .setLocalInventory(LocalInventory.newBuilder().build())
    *           .build();
    *   ApiFuture<LocalInventory> future =
