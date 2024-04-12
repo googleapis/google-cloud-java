@@ -50,7 +50,6 @@ public class ITGenerativeModelIntegrationTest {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String MODEL_NAME_TEXT = "gemini-pro";
   private static final String MODEL_NAME_MULTIMODAL = "gemini-pro-vision";
-  private static final String MODEL_NAME_LATEST_GEMINI = "gemini-1.5-pro-preview-0409";
   private static final String LOCATION = "us-central1";
 
   // Tested content
@@ -68,14 +67,12 @@ public class ITGenerativeModelIntegrationTest {
   private VertexAI vertexAi;
   private GenerativeModel textModel;
   private GenerativeModel multiModalModel;
-  private GenerativeModel latestGemini;
 
   @Before
   public void setUp() throws IOException {
     vertexAi = new VertexAI(PROJECT_ID, LOCATION);
     textModel = new GenerativeModel(MODEL_NAME_TEXT, vertexAi);
     multiModalModel = new GenerativeModel(MODEL_NAME_MULTIMODAL, vertexAi);
-    latestGemini = new GenerativeModel(MODEL_NAME_LATEST_GEMINI, vertexAi);
   }
 
   @After
@@ -161,29 +158,6 @@ public class ITGenerativeModelIntegrationTest {
 
     String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
     assertNonEmptyAndLogResponse(methodName, TEXT, response);
-  }
-
-  @Test
-  public void generateContent_withContentList_nonEmptyCandidate() throws IOException {
-    String followupPrompt = "Why do you think these two things are put together?";
-    GenerateContentResponse response =
-        latestGemini.generateContent(
-            Arrays.asList(
-                // First Content is from the user (default role is 'user')
-                ContentMaker.fromMultiModalData(
-                    "Please describe this image.",
-                    PartMaker.fromMimeTypeAndData("image/jpeg", GCS_IMAGE_URI)),
-                // Second Content is from the model
-                ContentMaker.forRole("model")
-                    .fromString(
-                        "This is an image of a yellow rubber duck and a blue toy truck. The duck is"
-                            + " on the left and the truck is on the right."),
-                // Another followup question from the user; "user" is the default role so we omit
-                // can it. Same for `fromMultiModalList`
-                ContentMaker.fromString(followupPrompt)));
-
-    String methodName = Thread.currentThread().getStackTrace()[1].getMethodName();
-    assertNonEmptyAndLogResponse(methodName, followupPrompt, response);
   }
 
   @Test
