@@ -16,13 +16,22 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METHOD_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STATUS_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STREAMING_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TABLE_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
 
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.tracing.SpanName;
-import com.google.cloud.bigtable.stats.StatsRecorderWrapper;
-import com.google.common.annotations.VisibleForTesting;
+import com.google.cloud.bigtable.Version;
 import com.google.common.base.Stopwatch;
 import com.google.common.math.IntMath;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.DoubleHistogram;
+import io.opentelemetry.api.metrics.LongCounter;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -37,8 +46,7 @@ import org.threeten.bp.Duration;
  */
 class BuiltinMetricsTracer extends BigtableTracer {
 
-  private final StatsRecorderWrapper recorder;
-
+  private static final String NAME = "java-bigtable/" + Version.VERSION;
   private final OperationType operationType;
   private final SpanName spanName;
 
@@ -64,21 +72,56 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   private boolean flowControlIsDisabled = false;
 
-  private AtomicInteger requestLeft = new AtomicInteger(0);
+  private final AtomicInteger requestLeft = new AtomicInteger(0);
 
   // Monitored resource labels
   private String tableId = "unspecified";
   private String zone = "global";
   private String cluster = "unspecified";
 
-  private AtomicLong totalClientBlockingTime = new AtomicLong(0);
+  private final AtomicLong totalClientBlockingTime = new AtomicLong(0);
 
-  @VisibleForTesting
+  private final Attributes baseAttributes;
+
+  private Long serverLatencies = null;
+
+  // OpenCensus (and server) histogram buckets use [start, end), however OpenTelemetry uses (start,
+  // end]. To work around this, we measure all the latencies in nanoseconds and convert them
+  // to milliseconds and use DoubleHistogram. This should minimize the chance of a data
+  // point fall on the bucket boundary that causes off by one errors.
+  private final DoubleHistogram operationLatenciesHistogram;
+  private final DoubleHistogram attemptLatenciesHistogram;
+  private final DoubleHistogram serverLatenciesHistogram;
+  private final DoubleHistogram firstResponseLatenciesHistogram;
+  private final DoubleHistogram clientBlockingLatenciesHistogram;
+  private final DoubleHistogram applicationBlockingLatenciesHistogram;
+  private final LongCounter connectivityErrorCounter;
+  private final LongCounter retryCounter;
+
   BuiltinMetricsTracer(
-      OperationType operationType, SpanName spanName, StatsRecorderWrapper recorder) {
+      OperationType operationType,
+      SpanName spanName,
+      Attributes attributes,
+      DoubleHistogram operationLatenciesHistogram,
+      DoubleHistogram attemptLatenciesHistogram,
+      DoubleHistogram serverLatenciesHistogram,
+      DoubleHistogram firstResponseLatenciesHistogram,
+      DoubleHistogram clientBlockingLatenciesHistogram,
+      DoubleHistogram applicationBlockingLatenciesHistogram,
+      LongCounter connectivityErrorCounter,
+      LongCounter retryCounter) {
     this.operationType = operationType;
     this.spanName = spanName;
-    this.recorder = recorder;
+    this.baseAttributes = attributes;
+
+    this.operationLatenciesHistogram = operationLatenciesHistogram;
+    this.attemptLatenciesHistogram = attemptLatenciesHistogram;
+    this.serverLatenciesHistogram = serverLatenciesHistogram;
+    this.firstResponseLatenciesHistogram = firstResponseLatenciesHistogram;
+    this.clientBlockingLatenciesHistogram = clientBlockingLatenciesHistogram;
+    this.applicationBlockingLatenciesHistogram = applicationBlockingLatenciesHistogram;
+    this.connectivityErrorCounter = connectivityErrorCounter;
+    this.retryCounter = retryCounter;
   }
 
   @Override
@@ -203,13 +246,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   @Override
   public void recordGfeMetadata(@Nullable Long latency, @Nullable Throwable throwable) {
-    // Record the metrics and put in the map after the attempt is done, so we can have cluster and
-    // zone information
     if (latency != null) {
-      recorder.putGfeLatencies(latency);
-      recorder.putGfeMissingHeaders(0);
-    } else {
-      recorder.putGfeMissingHeaders(1);
+      serverLatencies = latency;
     }
   }
 
@@ -220,13 +258,13 @@ class BuiltinMetricsTracer extends BigtableTracer {
   }
 
   @Override
-  public void batchRequestThrottled(long throttledTimeMs) {
-    totalClientBlockingTime.addAndGet(throttledTimeMs);
+  public void batchRequestThrottled(long throttledTimeNanos) {
+    totalClientBlockingTime.addAndGet(Duration.ofNanos(throttledTimeNanos).toMillis());
   }
 
   @Override
-  public void grpcChannelQueuedLatencies(long queuedTimeMs) {
-    totalClientBlockingTime.addAndGet(queuedTimeMs);
+  public void grpcChannelQueuedLatencies(long queuedTimeNanos) {
+    totalClientBlockingTime.addAndGet(queuedTimeNanos);
   }
 
   @Override
@@ -239,26 +277,43 @@ class BuiltinMetricsTracer extends BigtableTracer {
       return;
     }
     operationTimer.stop();
-    long operationLatency = operationTimer.elapsed(TimeUnit.MILLISECONDS);
+
+    boolean isStreaming = operationType == OperationType.ServerStreaming;
+    String statusStr = Util.extractStatus(status);
+
+    // Publish metric data with all the attributes. The attributes get filtered in
+    // BuiltinMetricsConstants when we construct the views.
+    Attributes attributes =
+        baseAttributes
+            .toBuilder()
+            .put(TABLE_ID_KEY, tableId)
+            .put(CLUSTER_ID_KEY, cluster)
+            .put(ZONE_ID_KEY, zone)
+            .put(METHOD_KEY, spanName.toString())
+            .put(CLIENT_NAME_KEY, NAME)
+            .put(STREAMING_KEY, isStreaming)
+            .put(STATUS_KEY, statusStr)
+            .build();
+
     long operationLatencyNano = operationTimer.elapsed(TimeUnit.NANOSECONDS);
 
     // Only record when retry count is greater than 0 so the retry
     // graph will be less confusing
     if (attemptCount > 1) {
-      recorder.putRetryCount(attemptCount - 1);
+      retryCounter.add(attemptCount - 1, attributes);
     }
 
+    operationLatenciesHistogram.record(convertToMs(operationLatencyNano), attributes);
+
     // serverLatencyTimer should already be stopped in recordAttemptCompletion
-    recorder.putOperationLatencies(operationLatency);
-    recorder.putApplicationLatencies(
-        Duration.ofNanos(operationLatencyNano - totalServerLatencyNano.get()).toMillis());
+    long applicationLatencyNano = operationLatencyNano - totalServerLatencyNano.get();
+    applicationBlockingLatenciesHistogram.record(convertToMs(applicationLatencyNano), attributes);
 
     if (operationType == OperationType.ServerStreaming
         && spanName.getMethodName().equals("ReadRows")) {
-      recorder.putFirstResponseLatencies(firstResponsePerOpTimer.elapsed(TimeUnit.MILLISECONDS));
+      firstResponseLatenciesHistogram.record(
+          convertToMs(firstResponsePerOpTimer.elapsed(TimeUnit.NANOSECONDS)), attributes);
     }
-
-    recorder.recordOperation(Util.extractStatus(status), tableId, zone, cluster);
   }
 
   private void recordAttemptCompletion(@Nullable Throwable status) {
@@ -273,8 +328,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
       }
     }
 
-    // Make sure to reset the blocking time after recording it for the next attempt
-    recorder.putClientBlockingLatencies(totalClientBlockingTime.getAndSet(0));
+    boolean isStreaming = operationType == OperationType.ServerStreaming;
 
     // Patch the status until it's fixed in gax. When an attempt failed,
     // it'll throw a ServerStreamingAttemptException. Unwrap the exception
@@ -283,7 +337,35 @@ class BuiltinMetricsTracer extends BigtableTracer {
       status = status.getCause();
     }
 
-    recorder.putAttemptLatencies(attemptTimer.elapsed(TimeUnit.MILLISECONDS));
-    recorder.recordAttempt(Util.extractStatus(status), tableId, zone, cluster);
+    String statusStr = Util.extractStatus(status);
+
+    Attributes attributes =
+        baseAttributes
+            .toBuilder()
+            .put(TABLE_ID_KEY, tableId)
+            .put(CLUSTER_ID_KEY, cluster)
+            .put(ZONE_ID_KEY, zone)
+            .put(METHOD_KEY, spanName.toString())
+            .put(CLIENT_NAME_KEY, NAME)
+            .put(STREAMING_KEY, isStreaming)
+            .put(STATUS_KEY, statusStr)
+            .build();
+
+    clientBlockingLatenciesHistogram.record(convertToMs(totalClientBlockingTime.get()), attributes);
+
+    attemptLatenciesHistogram.record(
+        convertToMs(attemptTimer.elapsed(TimeUnit.NANOSECONDS)), attributes);
+
+    if (serverLatencies != null) {
+      serverLatenciesHistogram.record(serverLatencies, attributes);
+      connectivityErrorCounter.add(0, attributes);
+    } else {
+      connectivityErrorCounter.add(1, attributes);
+    }
+  }
+
+  private static double convertToMs(long nanoSeconds) {
+    double toMs = 1e-6;
+    return nanoSeconds * toMs;
   }
 }

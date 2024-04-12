@@ -163,6 +163,12 @@
         <differenceType>8001</differenceType>
         <className>com/google/cloud/bigtable/data/v2/stub/metrics/BigtableTracerBatchedUnaryCallable</className>
     </difference>
+    <!-- InternalApi constructor was updated -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/BuiltinMetricsTracerFactory</className>
+        <method>*</method>
+    </difference>
     <!-- InternalApi was updated -->
     <difference>
         <differenceType>6001</differenceType>
@@ -188,6 +194,11 @@
         <method>*</method>
     </difference>
     <!-- InternalApi was updated -->
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/metrics/ErrorCountPerConnectionMetricTracker</className>
+        <method>*</method>
+    </difference>
     <difference>
         <differenceType>7012</differenceType>
         <className>com/google/cloud/bigtable/data/v2/models/MutationApi</className>

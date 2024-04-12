@@ -23,17 +23,29 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.bigtable.v2.*;
+import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.*;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
-import com.google.cloud.bigtable.stats.StatsRecorderWrapperForConnection;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.InstrumentSelector;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.View;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import org.junit.After;
 import org.junit.Before;
@@ -51,25 +63,50 @@ public class ErrorCountPerConnectionTest {
   private final FakeService fakeService = new FakeService();
   private EnhancedBigtableStubSettings.Builder builder;
   private ArgumentCaptor<Runnable> runnableCaptor;
-  private StatsRecorderWrapperForConnection statsRecorderWrapperForConnection;
+
+  private InMemoryMetricReader metricReader;
+
+  private Attributes attributes;
 
   @Before
   public void setup() throws Exception {
     server = FakeServiceBuilder.create(fakeService).start();
 
     ScheduledExecutorService executors = Mockito.mock(ScheduledExecutorService.class);
+
+    attributes =
+        Attributes.builder()
+            .put(BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY, "fake-project")
+            .put(BuiltinMetricsConstants.INSTANCE_ID_KEY, "fake-instance")
+            .put(BuiltinMetricsConstants.APP_PROFILE_KEY, "")
+            .put(BuiltinMetricsConstants.CLIENT_NAME_KEY, "bigtable-java/" + Version.VERSION)
+            .build();
+
+    metricReader = InMemoryMetricReader.create();
+
+    SdkMeterProviderBuilder meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader);
+
+    for (Map.Entry<InstrumentSelector, View> entry :
+        BuiltinMetricsConstants.getAllViews().entrySet()) {
+      meterProvider.registerView(entry.getKey(), entry.getValue());
+    }
+
+    OpenTelemetrySdk otel =
+        OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
+
     builder =
         BigtableDataSettings.newBuilderForEmulator(server.getPort())
             .stubSettings()
             .setBackgroundExecutorProvider(FixedExecutorProvider.create(executors))
             .setProjectId("fake-project")
-            .setInstanceId("fake-instance");
+            .setInstanceId("fake-instance")
+            .setMetricsProvider(CustomOpenTelemetryMetricsProvider.create(otel));
+
     runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
     Mockito.when(
             executors.scheduleAtFixedRate(runnableCaptor.capture(), anyLong(), anyLong(), any()))
         .thenReturn(null);
-
-    statsRecorderWrapperForConnection = Mockito.mock(StatsRecorderWrapperForConnection.class);
   }
 
   @After
@@ -98,14 +135,21 @@ public class ErrorCountPerConnectionTest {
         // noop
       }
     }
-    ArgumentCaptor<Long> errorCountCaptor = ArgumentCaptor.forClass(long.class);
-    Mockito.doNothing()
-        .when(statsRecorderWrapperForConnection)
-        .putAndRecordPerConnectionErrorCount(errorCountCaptor.capture());
+
     runInterceptorTasksAndAssertCount();
-    List<Long> allErrorCounts = errorCountCaptor.getAllValues();
-    assertThat(allErrorCounts.size()).isEqualTo(1);
-    assertThat(allErrorCounts.get(0)).isEqualTo(errorCount);
+
+    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
+    MetricData metricData =
+        BuiltinMetricsTestUtils.getMetricData(
+            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+
+    // Make sure the correct bucket is updated with the correct number of data points
+    ArrayList<HistogramPointData> histogramPointData =
+        new ArrayList<>(metricData.getHistogramData().getPoints());
+    assertThat(histogramPointData.size()).isEqualTo(1);
+    HistogramPointData point = histogramPointData.get(0);
+    int index = findDataPointIndex(point.getBoundaries(), errorCount);
+    assertThat(point.getCounts().get(index)).isEqualTo(1);
   }
 
   @Test
@@ -131,28 +175,35 @@ public class ErrorCountPerConnectionTest {
         // noop
       }
     }
-    ArgumentCaptor<Long> errorCountCaptor = ArgumentCaptor.forClass(long.class);
-    Mockito.doNothing()
-        .when(statsRecorderWrapperForConnection)
-        .putAndRecordPerConnectionErrorCount(errorCountCaptor.capture());
     runInterceptorTasksAndAssertCount();
 
-    List<Long> allErrorCounts = errorCountCaptor.getAllValues();
-    assertThat(allErrorCounts.size()).isEqualTo(2);
-    // Requests get assigned to channels using a Round Robin algorithm, so half to each.
-    assertThat(allErrorCounts).containsExactly(totalErrorCount / 2, totalErrorCount / 2);
+    long errorCountPerChannel = totalErrorCount / 2;
+
+    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
+    MetricData metricData =
+        BuiltinMetricsTestUtils.getMetricData(
+            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+
+    // The 2 channels should get equal amount of errors, so the totalErrorCount / 2 bucket is
+    // updated twice.
+    ArrayList<HistogramPointData> histogramPointData =
+        new ArrayList<>(metricData.getHistogramData().getPoints());
+    assertThat(histogramPointData.size()).isEqualTo(1);
+    HistogramPointData point = histogramPointData.get(0);
+    int index = findDataPointIndex(point.getBoundaries(), errorCountPerChannel);
+    assertThat(point.getCounts().get(index)).isEqualTo(2);
   }
 
   @Test
   public void readOverTwoPeriods() throws Exception {
     EnhancedBigtableStub stub = EnhancedBigtableStub.create(builder.build());
-    long errorCount = 0;
+    long errorCount1 = 0;
 
     for (int i = 0; i < 20; i++) {
       Query query;
       if (i % 3 == 0) {
         query = Query.create(ERROR_TABLE_NAME);
-        errorCount += 1;
+        errorCount1 += 1;
       } else {
         query = Query.create(SUCCESS_TABLE_NAME);
       }
@@ -162,16 +213,9 @@ public class ErrorCountPerConnectionTest {
         // noop
       }
     }
-    ArgumentCaptor<Long> errorCountCaptor = ArgumentCaptor.forClass(long.class);
-    Mockito.doNothing()
-        .when(statsRecorderWrapperForConnection)
-        .putAndRecordPerConnectionErrorCount(errorCountCaptor.capture());
-    runInterceptorTasksAndAssertCount();
-    List<Long> allErrorCounts = errorCountCaptor.getAllValues();
-    assertThat(allErrorCounts.size()).isEqualTo(1);
-    assertThat(allErrorCounts.get(0)).isEqualTo(errorCount);
 
-    errorCount = 0;
+    runInterceptorTasksAndAssertCount();
+    long errorCount2 = 0;
 
     for (int i = 0; i < 20; i++) {
       Query query;
@@ -179,7 +223,7 @@ public class ErrorCountPerConnectionTest {
         query = Query.create(SUCCESS_TABLE_NAME);
       } else {
         query = Query.create(ERROR_TABLE_NAME);
-        errorCount += 1;
+        errorCount2 += 1;
       }
       try {
         stub.readRowsCallable().call(query).iterator().hasNext();
@@ -187,27 +231,22 @@ public class ErrorCountPerConnectionTest {
         // noop
       }
     }
-    errorCountCaptor = ArgumentCaptor.forClass(long.class);
-    Mockito.doNothing()
-        .when(statsRecorderWrapperForConnection)
-        .putAndRecordPerConnectionErrorCount(errorCountCaptor.capture());
-    runInterceptorTasksAndAssertCount();
-    allErrorCounts = errorCountCaptor.getAllValues();
-    assertThat(allErrorCounts.size()).isEqualTo(1);
-    assertThat(allErrorCounts.get(0)).isEqualTo(errorCount);
-  }
 
-  @Test
-  public void ignoreInactiveConnection() throws Exception {
-    EnhancedBigtableStub stub = EnhancedBigtableStub.create(builder.build());
-
-    ArgumentCaptor<Long> errorCountCaptor = ArgumentCaptor.forClass(long.class);
-    Mockito.doNothing()
-        .when(statsRecorderWrapperForConnection)
-        .putAndRecordPerConnectionErrorCount(errorCountCaptor.capture());
     runInterceptorTasksAndAssertCount();
-    List<Long> allErrorCounts = errorCountCaptor.getAllValues();
-    assertThat(allErrorCounts).isEmpty();
+
+    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
+    MetricData metricData =
+        BuiltinMetricsTestUtils.getMetricData(
+            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+
+    ArrayList<HistogramPointData> histogramPointData =
+        new ArrayList<>(metricData.getHistogramData().getPoints());
+    assertThat(histogramPointData.size()).isEqualTo(1);
+    HistogramPointData point = histogramPointData.get(0);
+    int index1 = findDataPointIndex(point.getBoundaries(), errorCount1);
+    int index2 = findDataPointIndex(point.getBoundaries(), errorCount2);
+    assertThat(point.getCounts().get(index1)).isEqualTo(1);
+    assertThat(point.getCounts().get(index2)).isEqualTo(1);
   }
 
   @Test
@@ -221,27 +260,34 @@ public class ErrorCountPerConnectionTest {
         // noop
       }
     }
-    ArgumentCaptor<Long> errorCountCaptor = ArgumentCaptor.forClass(long.class);
-    Mockito.doNothing()
-        .when(statsRecorderWrapperForConnection)
-        .putAndRecordPerConnectionErrorCount(errorCountCaptor.capture());
     runInterceptorTasksAndAssertCount();
-    List<Long> allErrorCounts = errorCountCaptor.getAllValues();
-    assertThat(allErrorCounts.size()).isEqualTo(1);
-    assertThat(allErrorCounts.get(0)).isEqualTo(0);
+    Collection<MetricData> allMetrics = metricReader.collectAllMetrics();
+    MetricData metricData =
+        BuiltinMetricsTestUtils.getMetricData(
+            allMetrics, BuiltinMetricsConstants.PER_CONNECTION_ERROR_COUNT_NAME);
+    long value = BuiltinMetricsTestUtils.getAggregatedValue(metricData, attributes);
+    assertThat(value).isEqualTo(0);
   }
 
   private void runInterceptorTasksAndAssertCount() {
     int actualNumOfTasks = 0;
     for (Runnable runnable : runnableCaptor.getAllValues()) {
       if (runnable instanceof ErrorCountPerConnectionMetricTracker) {
-        ((ErrorCountPerConnectionMetricTracker) runnable)
-            .setStatsRecorderWrapperForConnection(statsRecorderWrapperForConnection);
         runnable.run();
         actualNumOfTasks++;
       }
     }
     assertThat(actualNumOfTasks).isEqualTo(1);
+  }
+
+  private int findDataPointIndex(List<Double> boundaries, long dataPoint) {
+    int index = 0;
+    for (; index < boundaries.size(); index++) {
+      if (boundaries.get(index) >= dataPoint) {
+        break;
+      }
+    }
+    return index;
   }
 
   static class FakeService extends BigtableGrpc.BigtableImplBase {

@@ -39,7 +39,6 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableMap;
@@ -120,15 +119,20 @@ public class MetricsTracerTest {
             .setInstanceId(INSTANCE_ID)
             .setAppProfileId(APP_PROFILE_ID)
             .build();
-    EnhancedBigtableStubSettings stubSettings =
-        settings
-            .getStubSettings()
+
+    ClientContext clientContext =
+        EnhancedBigtableStub.createClientContext(settings.getStubSettings());
+    clientContext =
+        clientContext
             .toBuilder()
             .setTracerFactory(
                 EnhancedBigtableStub.createBigtableTracerFactory(
-                    settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder()))
+                    settings.getStubSettings(),
+                    Tags.getTagger(),
+                    localStats.getStatsRecorder(),
+                    null))
             .build();
-    stub = new EnhancedBigtableStub(stubSettings, ClientContext.create(stubSettings));
+    stub = new EnhancedBigtableStub(settings.getStubSettings(), clientContext);
   }
 
   @After

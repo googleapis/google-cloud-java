@@ -44,6 +44,8 @@ import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.metrics.DefaultMetricsProvider;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.common.base.MoreObjects;
@@ -229,6 +231,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   private final FeatureFlags featureFlags;
 
+  private final MetricsProvider metricsProvider;
+
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
 
@@ -255,6 +259,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     jwtAudienceMapping = builder.jwtAudienceMapping;
     enableRoutingCookie = builder.enableRoutingCookie;
     enableRetryInfo = builder.enableRetryInfo;
+    metricsProvider = builder.metricsProvider;
 
     // Per method settings.
     readRowsSettings = builder.readRowsSettings.build();
@@ -314,6 +319,10 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   @InternalApi("Used for internal testing")
   public Map<String, String> getJwtAudienceMapping() {
     return jwtAudienceMapping;
+  }
+
+  public MetricsProvider getMetricsProvider() {
+    return metricsProvider;
   }
 
   /**
@@ -636,6 +645,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     private FeatureFlags.Builder featureFlags;
 
+    private MetricsProvider metricsProvider;
+
     /**
      * Initializes a new Builder with sane defaults for all settings.
      *
@@ -652,6 +663,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       this.enableRoutingCookie = true;
       this.enableRetryInfo = true;
+      metricsProvider = DefaultMetricsProvider.INSTANCE;
+
       // Defaults provider
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
@@ -771,6 +784,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       jwtAudienceMapping = settings.jwtAudienceMapping;
       enableRoutingCookie = settings.enableRoutingCookie;
       enableRetryInfo = settings.enableRetryInfo;
+      metricsProvider = settings.metricsProvider;
+
       // Per method settings.
       readRowsSettings = settings.readRowsSettings.toBuilder();
       readRowSettings = settings.readRowSettings.toBuilder();
@@ -913,6 +928,30 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return this;
     }
 
+    /**
+     * Sets the {@link MetricsProvider}.
+     *
+     * <p>By default, this is set to {@link
+     * com.google.cloud.bigtable.data.v2.stub.metrics.DefaultMetricsProvider#INSTANCE} which will
+     * collect and export client side metrics.
+     *
+     * <p>To disable client side metrics, set it to {@link
+     * com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider#INSTANCE}.
+     *
+     * <p>To use a custom OpenTelemetry instance, refer to {@link
+     * com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider} on how to
+     * set it up.
+     */
+    public Builder setMetricsProvider(MetricsProvider metricsProvider) {
+      this.metricsProvider = Preconditions.checkNotNull(metricsProvider);
+      return this;
+    }
+
+    /** Gets the {@link MetricsProvider}. */
+    public MetricsProvider getMetricsProvider() {
+      return this.metricsProvider;
+    }
+
     @InternalApi("Used for internal testing")
     public Map<String, String> getJwtAudienceMapping() {
       return jwtAudienceMapping;
@@ -1028,6 +1067,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       featureFlags.setRoutingCookie(this.getEnableRoutingCookie());
       featureFlags.setRetryInfo(this.getEnableRetryInfo());
+      // client_Side_metrics_enabled feature flag is only set when a user is running with a
+      // DefaultMetricsProvider. This may cause false negatives when a user registered the
+      // metrics on their CustomOpenTelemetryMetricsProvider.
+      featureFlags.setClientSideMetricsEnabled(
+          this.getMetricsProvider() instanceof DefaultMetricsProvider);
 
       // Serialize the web64 encode the bigtable feature flags
       ByteArrayOutputStream boas = new ByteArrayOutputStream();
@@ -1080,6 +1124,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
             generateInitialChangeStreamPartitionsSettings)
         .add("readChangeStreamSettings", readChangeStreamSettings)
         .add("pingAndWarmSettings", pingAndWarmSettings)
+        .add("metricsProvider", metricsProvider)
         .add("parent", super.toString())
         .toString();
   }

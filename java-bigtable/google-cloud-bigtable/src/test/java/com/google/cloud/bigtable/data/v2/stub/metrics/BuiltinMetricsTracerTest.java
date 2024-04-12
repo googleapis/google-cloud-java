@@ -15,14 +15,24 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLICATION_BLOCKING_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_BLOCKING_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CONNECTIVITY_ERROR_COUNT_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METHOD_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.OPERATION_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.RETRY_COUNT_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.SERVER_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STATUS_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STREAMING_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TABLE_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getAggregatedValue;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getMetricData;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.verifyAttributes;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.timeout;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 import com.google.api.client.util.Lists;
 import com.google.api.core.ApiFunction;
@@ -36,7 +46,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
-import com.google.api.gax.tracing.SpanName;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
@@ -45,6 +54,7 @@ import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ResponseParams;
+import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
@@ -52,9 +62,9 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
-import com.google.cloud.bigtable.stats.StatsRecorderWrapper;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Range;
 import com.google.protobuf.ByteString;
@@ -77,11 +87,21 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.ServerCallStreamObserver;
 import io.grpc.stub.StreamObserver;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.InstrumentSelector;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.View;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -92,12 +112,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-import org.mockito.stubbing.Answer;
 import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
@@ -105,8 +121,8 @@ public class BuiltinMetricsTracerTest {
   private static final String PROJECT_ID = "fake-project";
   private static final String INSTANCE_ID = "fake-instance";
   private static final String APP_PROFILE_ID = "default";
-  private static final String TABLE_ID = "fake-table";
-  private static final String AUTHORIZED_VIEW_ID = "fake-authorized-view";
+  private static final String TABLE = "fake-table";
+
   private static final String BAD_TABLE_ID = "non-exist-table";
   private static final String ZONE = "us-west-1";
   private static final String CLUSTER = "cluster-0";
@@ -114,6 +130,7 @@ public class BuiltinMetricsTracerTest {
   private static final long SERVER_LATENCY = 100;
   private static final long APPLICATION_LATENCY = 200;
   private static final long SLEEP_VARIABILITY = 15;
+  private static final String CLIENT_NAME = "java-bigtable/" + Version.VERSION;
 
   private static final long CHANNEL_BLOCKING_LATENCY = 75;
 
@@ -124,18 +141,35 @@ public class BuiltinMetricsTracerTest {
 
   private EnhancedBigtableStub stub;
 
-  @Mock private BuiltinMetricsTracerFactory mockFactory;
-  @Mock private StatsRecorderWrapper statsRecorderWrapper;
-
-  @Captor private ArgumentCaptor<String> status;
-  @Captor private ArgumentCaptor<String> tableId;
-  @Captor private ArgumentCaptor<String> zone;
-  @Captor private ArgumentCaptor<String> cluster;
-
   private int batchElementCount = 2;
+
+  private Attributes baseAttributes;
+
+  private InMemoryMetricReader metricReader;
 
   @Before
   public void setUp() throws Exception {
+    metricReader = InMemoryMetricReader.create();
+
+    baseAttributes =
+        Attributes.builder()
+            .put(BuiltinMetricsConstants.BIGTABLE_PROJECT_ID_KEY, PROJECT_ID)
+            .put(BuiltinMetricsConstants.INSTANCE_ID_KEY, INSTANCE_ID)
+            .put(BuiltinMetricsConstants.APP_PROFILE_KEY, APP_PROFILE_ID)
+            .build();
+
+    SdkMeterProviderBuilder meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader);
+
+    for (Map.Entry<InstrumentSelector, View> entry :
+        BuiltinMetricsConstants.getAllViews().entrySet()) {
+      meterProvider.registerView(entry.getKey(), entry.getValue());
+    }
+
+    OpenTelemetrySdk otel =
+        OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
+    BuiltinMetricsTracerFactory facotry = BuiltinMetricsTracerFactory.create(otel, baseAttributes);
+
     // Add an interceptor to add server-timing in headers
     ServerInterceptor trailersInterceptor =
         new ServerInterceptor() {
@@ -216,7 +250,8 @@ public class BuiltinMetricsTracerTest {
                         .setMaxOutstandingRequestBytes(1001L)
                         .build())
                 .build());
-    stubSettingsBuilder.setTracerFactory(mockFactory);
+
+    stubSettingsBuilder.setTracerFactory(facotry);
 
     InstantiatingGrpcChannelProvider.Builder channelProvider =
         ((InstantiatingGrpcChannelProvider) stubSettingsBuilder.getTransportChannelProvider())
@@ -247,117 +282,117 @@ public class BuiltinMetricsTracerTest {
 
   @Test
   public void testReadRowsOperationLatencies() {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenAnswer(
-            (Answer<BuiltinMetricsTracer>)
-                invocationOnMock ->
-                    new BuiltinMetricsTracer(
-                        OperationType.ServerStreaming,
-                        SpanName.of("Bigtable", "ReadRows"),
-                        statsRecorderWrapper));
-    ArgumentCaptor<Long> operationLatency = ArgumentCaptor.forClass(Long.class);
-
     Stopwatch stopwatch = Stopwatch.createStarted();
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE_ID)).iterator());
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)).iterator());
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
-    verify(statsRecorderWrapper).putOperationLatencies(operationLatency.capture());
-    // verify record operation is only called once
-    verify(statsRecorderWrapper)
-        .recordOperation(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    Attributes expectedAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(STREAMING_KEY, true)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
 
-    assertThat(operationLatency.getValue()).isIn(Range.closed(SERVER_LATENCY, elapsed));
-    assertThat(status.getAllValues()).containsExactly("OK");
-    assertThat(tableId.getAllValues()).containsExactly(TABLE_ID);
-    assertThat(zone.getAllValues()).containsExactly(ZONE);
-    assertThat(cluster.getAllValues()).containsExactly(CLUSTER);
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+
+    MetricData metricData = getMetricData(allMetricData, OPERATION_LATENCIES_NAME);
+
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isIn(Range.closed(SERVER_LATENCY, elapsed));
   }
 
   @Test
   public void testReadRowsOperationLatenciesOnAuthorizedView() {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenAnswer(
-            (Answer<BuiltinMetricsTracer>)
-                invocationOnMock ->
-                    new BuiltinMetricsTracer(
-                        OperationType.ServerStreaming,
-                        SpanName.of("Bigtable", "ReadRows"),
-                        statsRecorderWrapper));
-    ArgumentCaptor<Long> operationLatency = ArgumentCaptor.forClass(Long.class);
-
+    String authorizedViewId = "test-authorized-view-id";
     Stopwatch stopwatch = Stopwatch.createStarted();
     Lists.newArrayList(
-        stub.readRowsCallable()
-            .call(Query.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID)))
-            .iterator());
+        stub.readRowsCallable().call(Query.create(AuthorizedViewId.of(TABLE, authorizedViewId))));
     long elapsed = stopwatch.elapsed(TimeUnit.MILLISECONDS);
 
-    verify(statsRecorderWrapper).putOperationLatencies(operationLatency.capture());
-    // verify record operation is only called once
-    verify(statsRecorderWrapper)
-        .recordOperation(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    Attributes expectedAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(STREAMING_KEY, true)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
 
-    assertThat(operationLatency.getValue()).isIn(Range.closed(SERVER_LATENCY, elapsed));
-    assertThat(status.getAllValues()).containsExactly("OK");
-    assertThat(tableId.getAllValues()).containsExactly(TABLE_ID);
-    assertThat(zone.getAllValues()).containsExactly(ZONE);
-    assertThat(cluster.getAllValues()).containsExactly(CLUSTER);
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+
+    MetricData metricData = getMetricData(allMetricData, OPERATION_LATENCIES_NAME);
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isIn(Range.closed(SERVER_LATENCY, elapsed));
   }
 
   @Test
   public void testGfeMetrics() {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenAnswer(
-            (Answer<BuiltinMetricsTracer>)
-                invocationOnMock ->
-                    new BuiltinMetricsTracer(
-                        OperationType.ServerStreaming,
-                        SpanName.of("Bigtable", "ReadRows"),
-                        statsRecorderWrapper));
-    ArgumentCaptor<Long> gfeLatency = ArgumentCaptor.forClass(Long.class);
-    ArgumentCaptor<Long> gfeMissingHeaders = ArgumentCaptor.forClass(Long.class);
+    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE)));
 
-    Lists.newArrayList(stub.readRowsCallable().call(Query.create(TABLE_ID)));
+    Attributes expectedAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .build();
 
-    // Verify record attempt are called multiple times
-    verify(statsRecorderWrapper, times(fakeService.getAttemptCounter().get()))
-        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
 
-    // The request was retried and gfe latency is only recorded in the retry attempt
-    verify(statsRecorderWrapper).putGfeLatencies(gfeLatency.capture());
-    assertThat(gfeLatency.getValue()).isEqualTo(FAKE_SERVER_TIMING);
+    MetricData serverLatenciesMetricData = getMetricData(allMetricData, SERVER_LATENCIES_NAME);
 
-    // The first time the request was retried, it'll increment missing header counter
-    verify(statsRecorderWrapper, times(fakeService.getAttemptCounter().get()))
-        .putGfeMissingHeaders(gfeMissingHeaders.capture());
-    assertThat(gfeMissingHeaders.getAllValues()).containsExactly(1L, 0L);
+    long serverLatencies = getAggregatedValue(serverLatenciesMetricData, expectedAttributes);
+    assertThat(serverLatencies).isEqualTo(FAKE_SERVER_TIMING);
 
-    assertThat(status.getAllValues()).containsExactly("UNAVAILABLE", "OK");
-    assertThat(tableId.getAllValues()).containsExactly(TABLE_ID, TABLE_ID);
-    assertThat(zone.getAllValues()).containsExactly("global", ZONE);
-    assertThat(cluster.getAllValues()).containsExactly("unspecified", CLUSTER);
+    MetricData connectivityErrorCountMetricData =
+        getMetricData(allMetricData, CONNECTIVITY_ERROR_COUNT_NAME);
+    Attributes expected1 =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "UNAVAILABLE")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, "global")
+            .put(CLUSTER_ID_KEY, "unspecified")
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
+    Attributes expected2 =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
+
+    verifyAttributes(connectivityErrorCountMetricData, expected1);
+    verifyAttributes(connectivityErrorCountMetricData, expected2);
+
+    assertThat(getAggregatedValue(connectivityErrorCountMetricData, expected1)).isEqualTo(1);
+    assertThat(getAggregatedValue(connectivityErrorCountMetricData, expected2)).isEqualTo(0);
   }
 
   @Test
   public void testReadRowsApplicationLatencyWithAutoFlowControl() throws Exception {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenAnswer(
-            (Answer<BuiltinMetricsTracer>)
-                invocationOnMock ->
-                    new BuiltinMetricsTracer(
-                        OperationType.ServerStreaming,
-                        SpanName.of("Bigtable", "ReadRows"),
-                        statsRecorderWrapper));
-
-    ArgumentCaptor<Long> applicationLatency = ArgumentCaptor.forClass(Long.class);
-    ArgumentCaptor<Long> operationLatency = ArgumentCaptor.forClass(Long.class);
-
     final SettableApiFuture future = SettableApiFuture.create();
     final AtomicInteger counter = new AtomicInteger(0);
     // For auto flow control, application latency is the time application spent in onResponse.
     stub.readRowsCallable()
         .call(
-            Query.create(TABLE_ID),
+            Query.create(TABLE),
             new ResponseObserver<Row>() {
               @Override
               public void onStart(StreamController streamController) {}
@@ -383,37 +418,38 @@ public class BuiltinMetricsTracerTest {
             });
     future.get();
 
-    verify(statsRecorderWrapper).putApplicationLatencies(applicationLatency.capture());
-    verify(statsRecorderWrapper).putOperationLatencies(operationLatency.capture());
-    verify(statsRecorderWrapper)
-        .recordOperation(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
-
     assertThat(counter.get()).isEqualTo(fakeService.getResponseCounter().get());
-    // Thread.sleep might not sleep for the requested amount depending on the interrupt period
-    // defined by the OS.
-    // On linux this is ~1ms but on windows may be as high as 15-20ms.
-    assertThat(applicationLatency.getValue())
-        .isAtLeast((APPLICATION_LATENCY - SLEEP_VARIABILITY) * counter.get());
-    assertThat(applicationLatency.getValue())
-        .isAtMost(operationLatency.getValue() - SERVER_LATENCY);
+
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData applicationLatency =
+        getMetricData(allMetricData, APPLICATION_BLOCKING_LATENCIES_NAME);
+
+    Attributes expectedAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .build();
+    long value = getAggregatedValue(applicationLatency, expectedAttributes);
+
+    assertThat(value).isAtLeast((APPLICATION_LATENCY - SLEEP_VARIABILITY) * counter.get());
+
+    MetricData operationLatency = getMetricData(allMetricData, OPERATION_LATENCIES_NAME);
+    long operationLatencyValue =
+        getAggregatedValue(
+            operationLatency,
+            expectedAttributes.toBuilder().put(STATUS_KEY, "OK").put(STREAMING_KEY, true).build());
+    assertThat(value).isAtMost(operationLatencyValue - SERVER_LATENCY);
   }
 
   @Test
   public void testReadRowsApplicationLatencyWithManualFlowControl() throws Exception {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenAnswer(
-            (Answer<BuiltinMetricsTracer>)
-                invocationOnMock ->
-                    new BuiltinMetricsTracer(
-                        OperationType.ServerStreaming,
-                        SpanName.of("Bigtable", "ReadRows"),
-                        statsRecorderWrapper));
-
-    ArgumentCaptor<Long> applicationLatency = ArgumentCaptor.forClass(Long.class);
-    ArgumentCaptor<Long> operationLatency = ArgumentCaptor.forClass(Long.class);
     int counter = 0;
 
-    Iterator<Row> rows = stub.readRowsCallable().call(Query.create(TABLE_ID)).iterator();
+    Iterator<Row> rows = stub.readRowsCallable().call(Query.create(TABLE)).iterator();
 
     while (rows.hasNext()) {
       counter++;
@@ -421,148 +457,189 @@ public class BuiltinMetricsTracerTest {
       rows.next();
     }
 
-    verify(statsRecorderWrapper).putApplicationLatencies(applicationLatency.capture());
-    verify(statsRecorderWrapper).putOperationLatencies(operationLatency.capture());
-    verify(statsRecorderWrapper)
-        .recordOperation(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData applicationLatency =
+        getMetricData(allMetricData, APPLICATION_BLOCKING_LATENCIES_NAME);
 
-    // For manual flow control, the last application latency shouldn't count, because at that point
-    // the server already sent back all the responses.
+    Attributes expectedAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .build();
+
+    long value = getAggregatedValue(applicationLatency, expectedAttributes);
+    // For manual flow control, the last application latency shouldn't count, because at that
+    // point the server already sent back all the responses.
     assertThat(counter).isEqualTo(fakeService.getResponseCounter().get());
-    assertThat(applicationLatency.getValue())
-        .isAtLeast(APPLICATION_LATENCY * (counter - 1) - SERVER_LATENCY);
-    assertThat(applicationLatency.getValue())
-        .isAtMost(operationLatency.getValue() - SERVER_LATENCY);
+    assertThat(value).isAtLeast(APPLICATION_LATENCY * (counter - 1) - SERVER_LATENCY);
+
+    MetricData operationLatency = getMetricData(allMetricData, OPERATION_LATENCIES_NAME);
+    long operationLatencyValue =
+        getAggregatedValue(
+            operationLatency,
+            expectedAttributes.toBuilder().put(STATUS_KEY, "OK").put(STREAMING_KEY, true).build());
+    assertThat(value).isAtMost(operationLatencyValue - SERVER_LATENCY);
   }
 
   @Test
-  public void testRetryCount() {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenAnswer(
-            (Answer<BuiltinMetricsTracer>)
-                invocationOnMock ->
-                    new BuiltinMetricsTracer(
-                        OperationType.ServerStreaming,
-                        SpanName.of("Bigtable", "MutateRow"),
-                        statsRecorderWrapper));
-
-    ArgumentCaptor<Integer> retryCount = ArgumentCaptor.forClass(Integer.class);
-
+  public void testRetryCount() throws InterruptedException {
     stub.mutateRowCallable()
-        .call(RowMutation.create(TABLE_ID, "random-row").setCell("cf", "q", "value"));
+        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
 
-    // In TracedUnaryCallable, we create a future and add a TraceFinisher to the callback. Main
-    // thread is blocked on waiting for the future to be completed. When onComplete is called on
-    // the grpc thread, the future is completed, however we might not have enough time for
-    // TraceFinisher to run. Add a 1 second time out to wait for the callback. This shouldn't have
-    // any impact on production code.
-    verify(statsRecorderWrapper, timeout(1000)).putRetryCount(retryCount.capture());
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData metricData = getMetricData(allMetricData, RETRY_COUNT_NAME);
+    Attributes expectedAttributes =
+        baseAttributes
+            .toBuilder()
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(METHOD_KEY, "Bigtable.MutateRow")
+            .put(STATUS_KEY, "OK")
+            .build();
 
-    assertThat(retryCount.getValue()).isEqualTo(fakeService.getAttemptCounter().get() - 1);
+    long value = getAggregatedValue(metricData, expectedAttributes);
+    assertThat(value).isEqualTo(fakeService.getAttemptCounter().get() - 1);
   }
 
   @Test
   public void testMutateRowAttemptsTagValues() {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.Unary, SpanName.of("Bigtable", "MutateRow"), statsRecorderWrapper));
-
     stub.mutateRowCallable()
-        .call(RowMutation.create(TABLE_ID, "random-row").setCell("cf", "q", "value"));
+        .call(RowMutation.create(TABLE, "random-row").setCell("cf", "q", "value"));
 
-    // Set a timeout to reduce flakiness of this test. BasicRetryingFuture will set
-    // attempt succeeded and set the response which will call complete() in AbstractFuture which
-    // calls releaseWaiters(). onOperationComplete() is called in TracerFinisher which will be
-    // called after the mutateRow call is returned. So there's a race between when the call returns
-    // and when the record() is called in onOperationCompletion().
-    verify(statsRecorderWrapper, timeout(50).times(fakeService.getAttemptCounter().get()))
-        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
-    assertThat(zone.getAllValues()).containsExactly("global", "global", ZONE);
-    assertThat(cluster.getAllValues()).containsExactly("unspecified", "unspecified", CLUSTER);
-    assertThat(status.getAllValues()).containsExactly("UNAVAILABLE", "UNAVAILABLE", "OK");
-    assertThat(tableId.getAllValues()).containsExactly(TABLE_ID, TABLE_ID, TABLE_ID);
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData metricData = getMetricData(allMetricData, ATTEMPT_LATENCIES_NAME);
+
+    Attributes expected1 =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "UNAVAILABLE")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, "global")
+            .put(CLUSTER_ID_KEY, "unspecified")
+            .put(METHOD_KEY, "Bigtable.MutateRow")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(STREAMING_KEY, false)
+            .build();
+
+    Attributes expected2 =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.MutateRow")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(STREAMING_KEY, false)
+            .build();
+
+    verifyAttributes(metricData, expected1);
+    verifyAttributes(metricData, expected2);
   }
 
   @Test
   public void testMutateRowsPartialError() throws InterruptedException {
+    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TableId.of(TABLE), null);
     int numMutations = 6;
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.Unary, SpanName.of("Bigtable", "MutateRows"), statsRecorderWrapper));
-
-    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE_ID, null);
     for (int i = 0; i < numMutations; i++) {
       String key = i % 2 == 0 ? "key" : "fail-key";
       batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
     }
 
-    assertThrows(BatchingException.class, () -> batcher.close());
+    Assert.assertThrows(BatchingException.class, batcher::close);
 
-    int expectedNumRequests = numMutations / batchElementCount;
-    verify(statsRecorderWrapper, timeout(100).times(expectedNumRequests))
-        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData metricData = getMetricData(allMetricData, ATTEMPT_LATENCIES_NAME);
 
-    assertThat(zone.getAllValues()).containsExactly(ZONE, ZONE, ZONE);
-    assertThat(cluster.getAllValues()).containsExactly(CLUSTER, CLUSTER, CLUSTER);
-    assertThat(status.getAllValues()).containsExactly("OK", "OK", "OK");
+    Attributes expected =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.MutateRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(STREAMING_KEY, false)
+            .build();
+
+    verifyAttributes(metricData, expected);
   }
 
   @Test
   public void testMutateRowsRpcError() {
+    Batcher<RowMutationEntry, Void> batcher =
+        stub.newMutateRowsBatcher(TableId.of(BAD_TABLE_ID), null);
     int numMutations = 6;
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.Unary, SpanName.of("Bigtable", "MutateRows"), statsRecorderWrapper));
-
-    Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(BAD_TABLE_ID, null);
     for (int i = 0; i < numMutations; i++) {
-      batcher.add(RowMutationEntry.create("key").setCell("f", "q", "v"));
+      String key = i % 2 == 0 ? "key" : "fail-key";
+      batcher.add(RowMutationEntry.create(key).setCell("f", "q", "v"));
     }
 
-    assertThrows(BatchingException.class, () -> batcher.close());
+    Assert.assertThrows(BatchingException.class, batcher::close);
 
-    int expectedNumRequests = numMutations / batchElementCount;
-    verify(statsRecorderWrapper, timeout(100).times(expectedNumRequests))
-        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData metricData = getMetricData(allMetricData, ATTEMPT_LATENCIES_NAME);
 
-    assertThat(zone.getAllValues()).containsExactly("global", "global", "global");
-    assertThat(cluster.getAllValues()).containsExactly("unspecified", "unspecified", "unspecified");
-    assertThat(status.getAllValues()).containsExactly("NOT_FOUND", "NOT_FOUND", "NOT_FOUND");
+    Attributes expected =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "NOT_FOUND")
+            .put(TABLE_ID_KEY, BAD_TABLE_ID)
+            .put(ZONE_ID_KEY, "global")
+            .put(CLUSTER_ID_KEY, "unspecified")
+            .put(METHOD_KEY, "Bigtable.MutateRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(STREAMING_KEY, false)
+            .build();
+
+    verifyAttributes(metricData, expected);
   }
 
   @Test
   public void testReadRowsAttemptsTagValues() {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.ServerStreaming,
-                SpanName.of("Bigtable", "ReadRows"),
-                statsRecorderWrapper));
-
     Lists.newArrayList(stub.readRowsCallable().call(Query.create("fake-table")).iterator());
 
-    // Set a timeout to reduce flakiness of this test. BasicRetryingFuture will set
-    // attempt succeeded and set the response which will call complete() in AbstractFuture which
-    // calls releaseWaiters(). onOperationComplete() is called in TracerFinisher which will be
-    // called after the mutateRow call is returned. So there's a race between when the call returns
-    // and when the record() is called in onOperationCompletion().
-    verify(statsRecorderWrapper, timeout(50).times(fakeService.getAttemptCounter().get()))
-        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
-    assertThat(zone.getAllValues()).containsExactly("global", ZONE);
-    assertThat(cluster.getAllValues()).containsExactly("unspecified", CLUSTER);
-    assertThat(status.getAllValues()).containsExactly("UNAVAILABLE", "OK");
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData metricData = getMetricData(allMetricData, ATTEMPT_LATENCIES_NAME);
+
+    Attributes expected1 =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "UNAVAILABLE")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, "global")
+            .put(CLUSTER_ID_KEY, "unspecified")
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(STREAMING_KEY, true)
+            .build();
+
+    Attributes expected2 =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "OK")
+            .put(TABLE_ID_KEY, TABLE)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .put(STREAMING_KEY, true)
+            .build();
+
+    verifyAttributes(metricData, expected1);
+    verifyAttributes(metricData, expected2);
   }
 
   @Test
   public void testBatchBlockingLatencies() throws InterruptedException {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.Unary, SpanName.of("Bigtable", "MutateRows"), statsRecorderWrapper));
-    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE_ID, null)) {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
       for (int i = 0; i < 6; i++) {
         batcher.add(RowMutationEntry.create("key").setCell("f", "q", "v"));
       }
@@ -571,86 +648,100 @@ public class BuiltinMetricsTracerTest {
       batcher.close();
 
       int expectedNumRequests = 6 / batchElementCount;
-      ArgumentCaptor<Long> throttledTime = ArgumentCaptor.forClass(Long.class);
-      verify(statsRecorderWrapper, timeout(1000).times(expectedNumRequests))
-          .putClientBlockingLatencies(throttledTime.capture());
 
+      Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+      MetricData applicationLatency = getMetricData(allMetricData, CLIENT_BLOCKING_LATENCIES_NAME);
+
+      Attributes expectedAttributes =
+          baseAttributes
+              .toBuilder()
+              .put(TABLE_ID_KEY, TABLE)
+              .put(ZONE_ID_KEY, ZONE)
+              .put(CLUSTER_ID_KEY, CLUSTER)
+              .put(METHOD_KEY, "Bigtable.MutateRows")
+              .put(CLIENT_NAME_KEY, CLIENT_NAME)
+              .build();
+
+      long value = getAggregatedValue(applicationLatency, expectedAttributes);
       // After the first request is sent, batcher will block on add because of the server latency.
-      // Blocking latency should be around server latency.
-      assertThat(throttledTime.getAllValues().get(1)).isAtLeast(SERVER_LATENCY - 10);
-      assertThat(throttledTime.getAllValues().get(2)).isAtLeast(SERVER_LATENCY - 10);
-
-      verify(statsRecorderWrapper, timeout(100).times(expectedNumRequests))
-          .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
-
-      assertThat(zone.getAllValues()).containsExactly(ZONE, ZONE, ZONE);
-      assertThat(cluster.getAllValues()).containsExactly(CLUSTER, CLUSTER, CLUSTER);
+      // Blocking latency should be around server latency. So each data point would be at least
+      // (SERVER_LATENCY - 10).
+      long expected = (SERVER_LATENCY - 10) * (expectedNumRequests - 1) / expectedNumRequests;
+      assertThat(value).isAtLeast(expected);
     }
   }
 
   @Test
-  public void testQueuedOnChannelServerStreamLatencies() throws InterruptedException {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.ServerStreaming,
-                SpanName.of("Bigtable", "ReadRows"),
-                statsRecorderWrapper));
+  public void testQueuedOnChannelServerStreamLatencies() {
+    stub.readRowsCallable().all().call(Query.create(TABLE));
 
-    stub.readRowsCallable().all().call(Query.create(TABLE_ID));
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData clientLatency = getMetricData(allMetricData, CLIENT_BLOCKING_LATENCIES_NAME);
 
-    ArgumentCaptor<Long> blockedTime = ArgumentCaptor.forClass(Long.class);
+    Attributes attributes =
+        baseAttributes
+            .toBuilder()
+            .put(TABLE_ID_KEY, TABLE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
 
-    verify(statsRecorderWrapper, timeout(1000).times(fakeService.attemptCounter.get()))
-        .putClientBlockingLatencies(blockedTime.capture());
-
-    assertThat(blockedTime.getAllValues().get(1)).isAtLeast(CHANNEL_BLOCKING_LATENCY);
+    long value = getAggregatedValue(clientLatency, attributes);
+    assertThat(value).isAtLeast(CHANNEL_BLOCKING_LATENCY);
   }
 
   @Test
-  public void testQueuedOnChannelUnaryLatencies() throws InterruptedException {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.Unary, SpanName.of("Bigtable", "MutateRow"), statsRecorderWrapper));
-    stub.mutateRowCallable().call(RowMutation.create(TABLE_ID, "a-key").setCell("f", "q", "v"));
+  public void testQueuedOnChannelUnaryLatencies() {
 
-    ArgumentCaptor<Long> blockedTime = ArgumentCaptor.forClass(Long.class);
+    stub.mutateRowCallable().call(RowMutation.create(TABLE, "a-key").setCell("f", "q", "v"));
 
-    verify(statsRecorderWrapper, timeout(1000).times(fakeService.attemptCounter.get()))
-        .putClientBlockingLatencies(blockedTime.capture());
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData clientLatency = getMetricData(allMetricData, CLIENT_BLOCKING_LATENCIES_NAME);
 
-    assertThat(blockedTime.getAllValues().get(1)).isAtLeast(CHANNEL_BLOCKING_LATENCY);
-    assertThat(blockedTime.getAllValues().get(2)).isAtLeast(CHANNEL_BLOCKING_LATENCY);
+    Attributes attributes =
+        baseAttributes
+            .toBuilder()
+            .put(TABLE_ID_KEY, TABLE)
+            .put(CLUSTER_ID_KEY, CLUSTER)
+            .put(ZONE_ID_KEY, ZONE)
+            .put(METHOD_KEY, "Bigtable.MutateRow")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
+
+    long expected = CHANNEL_BLOCKING_LATENCY * 2 / 3;
+    long actual = getAggregatedValue(clientLatency, attributes);
+    assertThat(actual).isAtLeast(expected);
   }
 
   @Test
   public void testPermanentFailure() {
-    when(mockFactory.newTracer(any(), any(), any()))
-        .thenReturn(
-            new BuiltinMetricsTracer(
-                OperationType.ServerStreaming,
-                SpanName.of("Bigtable", "ReadRows"),
-                statsRecorderWrapper));
-
     try {
       Lists.newArrayList(stub.readRowsCallable().call(Query.create(BAD_TABLE_ID)).iterator());
       Assert.fail("Request should throw not found error");
     } catch (NotFoundException e) {
     }
 
-    ArgumentCaptor<Long> attemptLatency = ArgumentCaptor.forClass(Long.class);
-    ArgumentCaptor<Long> operationLatency = ArgumentCaptor.forClass(Long.class);
+    Collection<MetricData> allMetricData = metricReader.collectAllMetrics();
+    MetricData attemptLatency = getMetricData(allMetricData, ATTEMPT_LATENCIES_NAME);
 
-    verify(statsRecorderWrapper, timeout(50)).putAttemptLatencies(attemptLatency.capture());
-    verify(statsRecorderWrapper, timeout(50)).putOperationLatencies(operationLatency.capture());
-    verify(statsRecorderWrapper, timeout(50))
-        .recordAttempt(status.capture(), tableId.capture(), zone.capture(), cluster.capture());
+    Attributes expected =
+        baseAttributes
+            .toBuilder()
+            .put(STATUS_KEY, "NOT_FOUND")
+            .put(TABLE_ID_KEY, BAD_TABLE_ID)
+            .put(CLUSTER_ID_KEY, "unspecified")
+            .put(ZONE_ID_KEY, "global")
+            .put(STREAMING_KEY, true)
+            .put(METHOD_KEY, "Bigtable.ReadRows")
+            .put(CLIENT_NAME_KEY, CLIENT_NAME)
+            .build();
 
-    assertThat(status.getValue()).isEqualTo("NOT_FOUND");
-    assertThat(tableId.getValue()).isEqualTo(BAD_TABLE_ID);
-    assertThat(cluster.getValue()).isEqualTo("unspecified");
-    assertThat(zone.getValue()).isEqualTo("global");
+    verifyAttributes(attemptLatency, expected);
+
+    MetricData opLatency = getMetricData(allMetricData, OPERATION_LATENCIES_NAME);
+    verifyAttributes(opLatency, expected);
   }
 
   private static class FakeService extends BigtableGrpc.BigtableImplBase {

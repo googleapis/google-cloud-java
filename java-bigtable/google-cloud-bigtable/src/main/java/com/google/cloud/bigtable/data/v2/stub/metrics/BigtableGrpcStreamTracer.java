@@ -42,7 +42,7 @@ class BigtableGrpcStreamTracer extends ClientStreamTracer {
 
   @Override
   public void outboundMessageSent(int seqNo, long optionalWireSize, long optionalUncompressedSize) {
-    tracer.grpcChannelQueuedLatencies(stopwatch.elapsed(TimeUnit.MILLISECONDS));
+    tracer.grpcChannelQueuedLatencies(stopwatch.elapsed(TimeUnit.NANOSECONDS));
   }
 
   static class Factory extends ClientStreamTracer.Factory {

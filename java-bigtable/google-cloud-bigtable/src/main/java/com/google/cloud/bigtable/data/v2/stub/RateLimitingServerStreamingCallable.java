@@ -86,7 +86,7 @@ class RateLimitingServerStreamingCallable
     stopwatch.stop();
     if (context.getTracer() instanceof BigtableTracer) {
       ((BigtableTracer) context.getTracer())
-          .batchRequestThrottled(stopwatch.elapsed(TimeUnit.MILLISECONDS));
+          .batchRequestThrottled(stopwatch.elapsed(TimeUnit.NANOSECONDS));
     }
     RateLimitingResponseObserver innerObserver =
         new RateLimitingResponseObserver(limiter, lastQpsChangeTime, responseObserver);

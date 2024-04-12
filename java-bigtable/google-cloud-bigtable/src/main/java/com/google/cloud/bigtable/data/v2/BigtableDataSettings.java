@@ -25,19 +25,16 @@ import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.stub.BigtableBatchingCallSettings;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
-import com.google.cloud.bigtable.stats.BigtableStackdriverStatsExporter;
-import com.google.cloud.bigtable.stats.BuiltinViews;
+import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -77,7 +74,10 @@ public final class BigtableDataSettings {
 
   private static final Logger LOGGER = Logger.getLogger(BigtableDataSettings.class.getName());
   private static final String BIGTABLE_EMULATOR_HOST_ENV_VAR = "BIGTABLE_EMULATOR_HOST";
-  private static final AtomicBoolean BUILTIN_METRICS_REGISTERED = new AtomicBoolean(false);
+  // This is the legacy credential override used in the deprecated enableBuiltinMetrics method to
+  // override the default credentials set on the Bigtable client. Keeping it for backward
+  // compatibility.
+  @Deprecated @Nullable private static Credentials legacyMetricCredentialOverride;
 
   private final EnhancedBigtableStubSettings stubSettings;
 
@@ -197,23 +197,34 @@ public final class BigtableDataSettings {
     com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientGfeViews();
   }
 
-  /** Register built in metrics. */
-  public static void enableBuiltinMetrics() throws IOException {
-    if (BUILTIN_METRICS_REGISTERED.compareAndSet(false, true)) {
-      BuiltinViews.registerBigtableBuiltinViews();
-      BigtableStackdriverStatsExporter.register(GoogleCredentials.getApplicationDefault());
-    }
-  }
+  /**
+   * Register built in metrics.
+   *
+   * @deprecated This is a no-op that doesn't do anything. Builtin metrics are enabled by default
+   *     now. Please refer to {@link
+   *     BigtableDataSettings.Builder#setMetricsProvider(MetricsProvider)} on how to enable or
+   *     disable built-in metrics.
+   */
+  @Deprecated
+  public static void enableBuiltinMetrics() throws IOException {}
 
   /**
    * Register built in metrics with credentials. The credentials need to have metric write access
    * for all the projects you're publishing to.
+   *
+   * @deprecated This is a no-op that doesn't do anything. Builtin metrics are enabled by default
+   *     now. Please refer {@link BigtableDataSettings.Builder#setMetricsProvider(MetricsProvider)}
+   *     on how to enable or disable built-in metrics.
    */
+  @Deprecated
   public static void enableBuiltinMetrics(Credentials credentials) throws IOException {
-    if (BUILTIN_METRICS_REGISTERED.compareAndSet(false, true)) {
-      BuiltinViews.registerBigtableBuiltinViews();
-      BigtableStackdriverStatsExporter.register(credentials);
-    }
+    BigtableDataSettings.legacyMetricCredentialOverride = credentials;
+  }
+
+  /** Get the metrics credentials if it's set by {@link #enableBuiltinMetrics(Credentials)}. */
+  @InternalApi
+  public static Credentials getMetricsCredentials() {
+    return legacyMetricCredentialOverride;
   }
 
   /** Returns the target project id. */
@@ -276,6 +287,11 @@ public final class BigtableDataSettings {
   @InternalApi("Intended for use by the Bigtable dataflow connectors only")
   public boolean isBulkMutationFlowControlEnabled() {
     return stubSettings.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled();
+  }
+
+  /** Gets the {@link MetricsProvider}. * */
+  public MetricsProvider getMetricsProvider() {
+    return stubSettings.getMetricsProvider();
   }
 
   /** Returns the underlying RPC settings. */
@@ -525,6 +541,30 @@ public final class BigtableDataSettings {
     @InternalApi("Intended for use by the Bigtable dataflow connectors only")
     public boolean isBulkMutationFlowControlEnabled() {
       return stubSettings.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled();
+    }
+
+    /**
+     * Sets the {@link MetricsProvider}.
+     *
+     * <p>By default, this is set to {@link
+     * com.google.cloud.bigtable.data.v2.stub.metrics.DefaultMetricsProvider#INSTANCE} which will
+     * collect and export client side metrics.
+     *
+     * <p>To disable client side metrics, set it to {@link
+     * com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider#INSTANCE}.
+     *
+     * <p>To use a custom OpenTelemetry instance, refer to {@link
+     * com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider} on how to
+     * set it up.
+     */
+    public Builder setMetricsProvider(MetricsProvider metricsProvider) {
+      stubSettings.setMetricsProvider(metricsProvider);
+      return this;
+    }
+
+    /** Gets the {@link MetricsProvider}. */
+    public MetricsProvider getMetricsProvider() {
+      return stubSettings.getMetricsProvider();
     }
 
     /**
