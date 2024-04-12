@@ -17,7 +17,7 @@
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
 /**
@@ -30,26 +30,29 @@ package com.google.cloud.beyondcorp.clientconnectorservices.v1;
  * Protobuf type {@code
  * google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest}
  */
-public final class UpdateClientConnectorServiceRequest
-    extends com.google.protobuf.GeneratedMessageV3
+public final class UpdateClientConnectorServiceRequest extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest)
     UpdateClientConnectorServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UpdateClientConnectorServiceRequest.class.getName());
+  }
   // Use UpdateClientConnectorServiceRequest.newBuilder() to construct.
   private UpdateClientConnectorServiceRequest(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
   private UpdateClientConnectorServiceRequest() {
     requestId_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new UpdateClientConnectorServiceRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -59,7 +62,7 @@ public final class UpdateClientConnectorServiceRequest
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
         .ClientConnectorServicesServiceProto
@@ -332,8 +335,8 @@ public final class UpdateClientConnectorServiceRequest
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getClientConnectorService());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, requestId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, requestId_);
     }
     if (validateOnly_ != false) {
       output.writeBool(4, validateOnly_);
@@ -357,8 +360,8 @@ public final class UpdateClientConnectorServiceRequest
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getClientConnectorService());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, requestId_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, requestId_);
     }
     if (validateOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, validateOnly_);
@@ -476,7 +479,7 @@ public final class UpdateClientConnectorServiceRequest
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1
           .UpdateClientConnectorServiceRequest
       parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -484,14 +487,14 @@ public final class UpdateClientConnectorServiceRequest
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1
           .UpdateClientConnectorServiceRequest
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -499,14 +502,14 @@ public final class UpdateClientConnectorServiceRequest
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1
           .UpdateClientConnectorServiceRequest
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -515,7 +518,7 @@ public final class UpdateClientConnectorServiceRequest
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -540,7 +543,7 @@ public final class UpdateClientConnectorServiceRequest
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -554,7 +557,7 @@ public final class UpdateClientConnectorServiceRequest
    * Protobuf type {@code
    * google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest)
       com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -566,7 +569,7 @@ public final class UpdateClientConnectorServiceRequest
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
@@ -584,13 +587,13 @@ public final class UpdateClientConnectorServiceRequest
       maybeForceBuilderInitialization();
     }
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         getUpdateMaskFieldBuilder();
         getClientConnectorServiceFieldBuilder();
       }
@@ -684,39 +687,6 @@ public final class UpdateClientConnectorServiceRequest
         result.allowMissing_ = allowMissing_;
       }
       result.bitField0_ |= to_bitField0_;
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -835,7 +805,7 @@ public final class UpdateClientConnectorServiceRequest
     private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
@@ -1065,14 +1035,14 @@ public final class UpdateClientConnectorServiceRequest
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.FieldMask,
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
         updateMaskBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.protobuf.FieldMask,
                 com.google.protobuf.FieldMask.Builder,
                 com.google.protobuf.FieldMaskOrBuilder>(
@@ -1084,7 +1054,7 @@ public final class UpdateClientConnectorServiceRequest
 
     private com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
         clientConnectorService_;
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Builder,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOrBuilder>
@@ -1280,14 +1250,14 @@ public final class UpdateClientConnectorServiceRequest
      * .google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService client_connector_service = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Builder,
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorServiceOrBuilder>
         getClientConnectorServiceFieldBuilder() {
       if (clientConnectorServiceBuilder_ == null) {
         clientConnectorServiceBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
+            new com.google.protobuf.SingleFieldBuilder<
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService,
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Builder,
@@ -1572,17 +1542,6 @@ public final class UpdateClientConnectorServiceRequest
       allowMissing_ = false;
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest)

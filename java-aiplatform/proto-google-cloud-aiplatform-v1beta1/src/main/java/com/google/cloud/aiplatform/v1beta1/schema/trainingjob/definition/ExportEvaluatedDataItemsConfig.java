@@ -17,7 +17,7 @@
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/export_evaluated_data_items_config.proto
 
-// Protobuf Java Version: 3.25.2
+// Protobuf Java Version: 4.26.1
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
 /**
@@ -30,25 +30,28 @@ package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
  * Protobuf type {@code
  * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig}
  */
-public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.GeneratedMessageV3
+public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig)
     ExportEvaluatedDataItemsConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ExportEvaluatedDataItemsConfig.class.getName());
+  }
   // Use ExportEvaluatedDataItemsConfig.newBuilder() to construct.
-  private ExportEvaluatedDataItemsConfig(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private ExportEvaluatedDataItemsConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
   private ExportEvaluatedDataItemsConfig() {
     destinationBigqueryUri_ = "";
-  }
-
-  @java.lang.Override
-  @SuppressWarnings({"unused"})
-  protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ExportEvaluatedDataItemsConfig();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -58,7 +61,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
         .ExportEvaluatedDataItemsConfigProto
@@ -165,8 +168,8 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBigqueryUri_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, destinationBigqueryUri_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destinationBigqueryUri_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 1, destinationBigqueryUri_);
     }
     if (overrideExistingTable_ != false) {
       output.writeBool(2, overrideExistingTable_);
@@ -180,8 +183,8 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationBigqueryUri_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, destinationBigqueryUri_);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destinationBigqueryUri_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(1, destinationBigqueryUri_);
     }
     if (overrideExistingTable_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, overrideExistingTable_);
@@ -277,7 +280,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .ExportEvaluatedDataItemsConfig
       parseFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -285,14 +288,14 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
       parseFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .ExportEvaluatedDataItemsConfig
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -300,14 +303,14 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .ExportEvaluatedDataItemsConfig
       parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
   public static com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -316,7 +319,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+    return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
@@ -342,7 +345,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -356,7 +359,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
    * Protobuf type {@code
    * google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig}
    */
-  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+  public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig)
       com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
@@ -368,7 +371,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
           .ExportEvaluatedDataItemsConfigProto
@@ -384,7 +387,7 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
     // com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig.newBuilder()
     private Builder() {}
 
-    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
     }
 
@@ -452,39 +455,6 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.overrideExistingTable_ = overrideExistingTable_;
       }
-    }
-
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.setField(field, value);
-    }
-
-    @java.lang.Override
-    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-
-    @java.lang.Override
-    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-      return super.addRepeatedField(field, value);
     }
 
     @java.lang.Override
@@ -763,17 +733,6 @@ public final class ExportEvaluatedDataItemsConfig extends com.google.protobuf.Ge
       overrideExistingTable_ = false;
       onChanged();
       return this;
-    }
-
-    @java.lang.Override
-    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFields(unknownFields);
-    }
-
-    @java.lang.Override
-    public final Builder mergeUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.ExportEvaluatedDataItemsConfig)
