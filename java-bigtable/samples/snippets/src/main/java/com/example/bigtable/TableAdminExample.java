@@ -108,6 +108,11 @@ public class TableAdminExample {
     printModifiedColumnFamily();
     deleteColumnFamily();
     deleteTable();
+    close();
+  }
+
+  // Close the client
+  void close() {
     adminClient.close();
   }
 

@@ -77,6 +77,9 @@ public class TableAdminExampleTest extends BigtableBaseTest {
     if (adminClient.exists(tableId)) {
       adminClient.deleteTable(tableId);
     }
+    if (tableAdmin != null) {
+      tableAdmin.close();
+    }
   }
 
   @Test

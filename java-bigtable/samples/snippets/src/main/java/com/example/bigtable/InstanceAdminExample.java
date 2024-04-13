@@ -87,6 +87,11 @@ public class InstanceAdminExample {
     addCluster();
     deleteCluster();
     deleteInstance();
+    close();
+  }
+
+  // Close the client
+  void close() {
     adminClient.close();
   }
 

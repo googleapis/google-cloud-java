@@ -78,6 +78,9 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
     if (adminClient.exists(instanceId)) {
       adminClient.deleteInstance(instanceId);
     }
+    if (instanceAdmin != null) {
+      instanceAdmin.close();
+    }
   }
 
   @Test
