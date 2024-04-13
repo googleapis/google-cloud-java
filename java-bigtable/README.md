@@ -224,6 +224,33 @@ Cloud Bigtable client supports publishing client side metrics to
 This feature is available once you upgrade to version 2.16.0 and above.
 Follow the guide on https://cloud.google.com/bigtable/docs/client-side-metrics-setup to enable.
 
+## Client side metrics
+
+Since version 2.38.0, [client side metrics](https://cloud.google.com/bigtable/docs/client-side-metrics)
+is enabled by default. This feature collects useful telemetry data in the client and is recommended to
+use in conjunction with server-side metrics to get a complete, actionable view of your Bigtable
+performance. There is no additional cost to publish and view client-side metrics
+in Cloud Monitoring.
+
+### Opt-out client side metrics
+
+You can opt-out client side metrics with the following settings:
+
+```
+BigtableDataSettings settings = BigtableDataSettings.newBuilder()
+        .setProjectId("my-project")
+        .setInstanceId("my-instance")
+        .setMetricsProvider(NoopMetricsProvider.INSTANCE)
+        .build();
+```
+
+### Use a custom OpenTelemetry instance
+
+If your application already has OpenTelemetry integration, you can register client side metrics on
+your OpenTelemetry instance. You can refer to
+[CustomOpenTelemetryMetricsProvider](https://github.com/googleapis/java-bigtable/blob/main/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/metrics/CustomOpenTelemetryMetricsProvider.java)
+on how to set it up.
+
 ## Client request tracing: OpenCensus Tracing
 
 Cloud Bigtable client supports [OpenCensus Tracing](https://opencensus.io/tracing/),
@@ -238,13 +265,13 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-impl</artifactId>
-  <version>0.24.0</version>
+  <version>0.31.1</version>
   <scope>runtime</scope>
 </dependency>
 <dependency>
   <groupId>io.opencensus</groupId>
   <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
-  <version>0.24.0</version>
+  <version>0.31.1</version>
   <exclusions>
     <exclusion>
       <groupId>io.grpc</groupId>
@@ -297,140 +324,46 @@ Tracing.getTraceConfig().updateActiveTraceParams(
 );
 ```
 
-## Enabling Cloud Bigtable Metrics: OpenCensus Stats
+### Disable Bigtbale traces
 
----
-Note: We recommend [enabling client side built-in metrics](#enabling-client-side-metrics)
-if you want to view your metrics on cloud monitoring. This integration is only for exporting the
-metrics to a third party dashboard.
----
+If your application already has OpenCensus Tracing integration and you want to disable Bigtable
+traces, you can do the following:
 
-Cloud Bigtable client supports [Opencensus Metrics](https://opencensus.io/stats/),
-which gives insight into the client internals and aids in debugging production issues.
-All Cloud Bigtable Metrics are prefixed with `cloud.google.com/java/bigtable/`. The
-metrics will be tagged with:
- * `bigtable_project_id`: the project that contains the target Bigtable instance.
-   Please note that this id could be different from project that the client is running
-   in and different from the project where the metrics are exported to.
-* `bigtable_instance_id`: the instance id of the target Bigtable instance
-* `bigtable_app_profile_id`: the app profile id that is being used to access the target
-  Bigtable instance
-
-### Available operation level metric views:
-
-* `cloud.google.com/java/bigtable/op_latency`: A distribution of latency of
-  each client method call, across all of it's RPC attempts. Tagged by
-  operation name and final response status.
-
-* `cloud.google.com/java/bigtable/completed_ops`: The total count of
-  method invocations. Tagged by operation name and final response status.
-
-* `cloud.google.com/java/bigtable/read_rows_first_row_latency`: A
-  distribution of the latency of receiving the first row in a ReadRows
-  operation.
-
-* `cloud.google.com/java/bigtable/attempt_latency`: A distribution of latency of
-  each client RPC, tagged by operation name and the attempt status. Under normal
-  circumstances, this will be identical to op_latency. However, when the client
-  receives transient errors, op_latency will be the sum of all attempt_latencies
-  and the exponential delays.
-
-* `cloud.google.com/java/bigtable/attempts_per_op`: A distribution of attempts that
-  each operation required, tagged by operation name and final operation status.
-  Under normal circumstances, this will be 1.
-
-#### GFE metric views:
-* `cloud.google.com/java/bigtable/gfe_latency`: A distribution of the latency
-between Google's network receives an RPC and reads back the first byte of
-the response.
-
-* `cloud.google.com/java/bigtable/gfe_header_missing_count`: A counter of the
-number of RPC responses received without the server-timing header, which
-indicates that the request probably never reached Google's network.
-
-By default, the functionality is disabled. For example to enable metrics using
-[Google Stackdriver](https://cloud.google.com/monitoring/docs/):
-
-
-[//]: # (TODO: figure out how to keep opencensus version in sync with pom.xml)
-
-If you are using Maven, add this to your pom.xml file
-```xml
-<dependency>
-  <groupId>io.opencensus</groupId>
-  <artifactId>opencensus-impl</artifactId>
-  <version>0.24.0</version>
-  <scope>runtime</scope>
-</dependency>
-<dependency>
-  <groupId>io.opencensus</groupId>
-  <artifactId>opencensus-exporter-stats-stackdriver</artifactId>
-  <version>0.24.0</version>
-  <exclusions>
-    <exclusion>
-      <groupId>io.grpc</groupId>
-      <artifactId>*</artifactId>
-    </exclusion>
-    <exclusion>
-      <groupId>com.google.auth</groupId>
-      <artifactId>*</artifactId>
-    </exclusion>
-  </exclusions>
-</dependency>
 ```
-If you are using Gradle, add this to your dependencies
-```Groovy
-compile 'io.opencensus:opencensus-impl:0.24.0'
-compile 'io.opencensus:opencensus-exporter-stats-stackdriver:0.24.0'
-```
-If you are using SBT, add this to your dependencies
-```Scala
-libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.24.0"
-libraryDependencies += "io.opencensus" % "opencensus-exporter-stats-stackdriver" % "0.24.0"
+public static class MySampler extends Sampler {
+
+    private final Sampler childSampler;
+
+    MySampler(Sampler child) {
+        this.childSampler = child;
+    }
+
+    @Override
+    public boolean shouldSample(@Nullable SpanContext parentContext,
+                                @Nullable Boolean hasRemoteParent,
+                                TraceId traceId,
+                                SpanId spanId,
+                                String name,
+                                List<Span> parentLinks) {
+        if (name.contains("Bigtable")) {
+            return false;
+        }
+        return childSampler.shouldSample(parentContext, hasRemoteParent, traceId, spanId, name, parentLinks);
+    }
+
+    @Override
+    public String getDescription() {
+        return "from my sampler";
+    }
+}
 ```
 
-At the start of your application configure the exporter and enable the Bigtable stats views:
-
-```java
-import io.opencensus.exporter.stats.stackdriver.StackdriverStatsConfiguration;
-import io.opencensus.exporter.stats.stackdriver.StackdriverStatsExporter;
-
-StackdriverStatsExporter.createAndRegister(
-    StackdriverStatsConfiguration.builder()
-        .setProjectId("YOUR_PROJECT_ID")
-        .build()
-);
-
-BigtableDataSettings.enableOpenCensusStats();
-// Enable GFE metric views
-BigtableDataSettings.enableGfeOpenCensusStats();
+And use this sampler in your trace config:
 ```
-
-You can view the metrics on the Google Cloud Platform Console
-[Metrics explorer](https://console.cloud.google.com/monitoring/metrics-explorer)
-page.
-
-You can configure how frequently metrics are pushed to StackDriver and the
-[Monitored resource type](https://cloud.google.com/monitoring/api/resources) by
-updating `StackdriverStatsConfiguration`:
-
-``` java
-// Example: configuring export interval and monitored resource type
-StackdriverStatsExporter.createAndRegister(
-    StackdriverStatsConfiguration.builder()
-        .setProjectId("YOUR_PROJECT_ID")
-        // Exporting metrics every 10 seconds
-        .setExportInterval(Duration.create(10, 0))
-        // Configure monitored resource type. A common practice is to use the
-        // monitored resource objects that represent the physical resources
-        // where your application code is running. See the full list of
-        // monitored resource type here:
-        // https://cloud.google.com/monitoring/api/resources
-        .setMonitoredResource(MonitoredResource.newBuilder()
-            .setType("global")
-            .putLabels("project_id", "YOUR_PROJECT_ID")
-          .build())
-        .build()
+Tracing.getTraceConfig().updateActiveTraceParams(
+        Tracing.getTraceConfig().getActiveTraceParams().toBuilder()
+                .setSampler(new MySampler(Samplers.probabilitySampler(0.1)))
+                .build()
 );
 ```
 
