@@ -995,6 +995,63 @@
         }
       }
     },
+    "ModelMonitoringService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ModelMonitoringServiceClient",
+          "rpcs": {
+            "CreateModelMonitor": {
+              "methods": ["createModelMonitorAsync", "createModelMonitorAsync", "createModelMonitorAsync", "createModelMonitorOperationCallable", "createModelMonitorCallable"]
+            },
+            "CreateModelMonitoringJob": {
+              "methods": ["createModelMonitoringJob", "createModelMonitoringJob", "createModelMonitoringJob", "createModelMonitoringJobCallable"]
+            },
+            "DeleteModelMonitor": {
+              "methods": ["deleteModelMonitorAsync", "deleteModelMonitorAsync", "deleteModelMonitorAsync", "deleteModelMonitorOperationCallable", "deleteModelMonitorCallable"]
+            },
+            "DeleteModelMonitoringJob": {
+              "methods": ["deleteModelMonitoringJobAsync", "deleteModelMonitoringJobAsync", "deleteModelMonitoringJobAsync", "deleteModelMonitoringJobOperationCallable", "deleteModelMonitoringJobCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetModelMonitor": {
+              "methods": ["getModelMonitor", "getModelMonitor", "getModelMonitor", "getModelMonitorCallable"]
+            },
+            "GetModelMonitoringJob": {
+              "methods": ["getModelMonitoringJob", "getModelMonitoringJob", "getModelMonitoringJob", "getModelMonitoringJobCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListModelMonitoringJobs": {
+              "methods": ["listModelMonitoringJobs", "listModelMonitoringJobs", "listModelMonitoringJobs", "listModelMonitoringJobsPagedCallable", "listModelMonitoringJobsCallable"]
+            },
+            "ListModelMonitors": {
+              "methods": ["listModelMonitors", "listModelMonitors", "listModelMonitors", "listModelMonitorsPagedCallable", "listModelMonitorsCallable"]
+            },
+            "SearchModelMonitoringAlerts": {
+              "methods": ["searchModelMonitoringAlerts", "searchModelMonitoringAlerts", "searchModelMonitoringAlerts", "searchModelMonitoringAlertsPagedCallable", "searchModelMonitoringAlertsCallable"]
+            },
+            "SearchModelMonitoringStats": {
+              "methods": ["searchModelMonitoringStats", "searchModelMonitoringStats", "searchModelMonitoringStats", "searchModelMonitoringStatsPagedCallable", "searchModelMonitoringStatsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateModelMonitor": {
+              "methods": ["updateModelMonitorAsync", "updateModelMonitorAsync", "updateModelMonitorOperationCallable", "updateModelMonitorCallable"]
+            }
+          }
+        }
+      }
+    },
     "ModelService": {
       "clients": {
         "grpc": {

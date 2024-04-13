@@ -28,8 +28,9 @@ public interface DestroySecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to destroy in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to destroy in
+   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -43,8 +44,9 @@ public interface DestroySecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to destroy in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to destroy in
+   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -59,9 +61,10 @@ public interface DestroySecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-   * the etag of the currently stored secret version object. If the etag is
-   * omitted, the request succeeds.
+   * Optional. Etag of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+   * succeeds if it matches the etag of the currently stored secret version
+   * object. If the etag is omitted, the request succeeds.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,9 +76,10 @@ public interface DestroySecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-   * the etag of the currently stored secret version object. If the etag is
-   * omitted, the request succeeds.
+   * Optional. Etag of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+   * succeeds if it matches the etag of the currently stored secret version
+   * object. If the etag is omitted, the request succeeds.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

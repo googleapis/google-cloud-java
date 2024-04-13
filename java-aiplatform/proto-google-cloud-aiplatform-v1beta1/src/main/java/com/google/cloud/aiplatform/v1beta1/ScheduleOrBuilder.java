@@ -131,6 +131,52 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
+   * Request for
+   * [ModelMonitoringService.CreateModelMonitoringJob][google.cloud.aiplatform.v1beta1.ModelMonitoringService.CreateModelMonitoringJob].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest create_model_monitoring_job_request = 15;
+   * </code>
+   *
+   * @return Whether the createModelMonitoringJobRequest field is set.
+   */
+  boolean hasCreateModelMonitoringJobRequest();
+  /**
+   *
+   *
+   * <pre>
+   * Request for
+   * [ModelMonitoringService.CreateModelMonitoringJob][google.cloud.aiplatform.v1beta1.ModelMonitoringService.CreateModelMonitoringJob].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest create_model_monitoring_job_request = 15;
+   * </code>
+   *
+   * @return The createModelMonitoringJobRequest.
+   */
+  com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest
+      getCreateModelMonitoringJobRequest();
+  /**
+   *
+   *
+   * <pre>
+   * Request for
+   * [ModelMonitoringService.CreateModelMonitoringJob][google.cloud.aiplatform.v1beta1.ModelMonitoringService.CreateModelMonitoringJob].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequest create_model_monitoring_job_request = 15;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CreateModelMonitoringJobRequestOrBuilder
+      getCreateModelMonitoringJobRequestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The resource name of the Schedule.
    * </pre>
    *

@@ -124,14 +124,6 @@ public final class ImportConfigProto {
       internal_static_google_cloud_discoveryengine_v1alpha_ImportSuggestionDenyListEntriesMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1alpha_ImportSuggestionDenyListEntriesMetadata_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsMetadata_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -279,21 +271,15 @@ public final class ImportConfigProto {
           + "ies_count\030\003 \001(\003\"\213\001\n\'ImportSuggestionDeny"
           + "ListEntriesMetadata\022/\n\013create_time\030\001 \001(\013"
           + "2\032.google.protobuf.Timestamp\022/\n\013update_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.Timestamp\"~\n"
-          + "#ImportCompletionSuggestionsResponse\022)\n\r"
-          + "error_samples\030\001 \003(\0132\022.google.rpc.Status\022"
-          + "\025\n\rsuccess_count\030\002 \001(\003\022\025\n\rfailure_count\030"
-          + "\003 \001(\003\"\207\001\n#ImportCompletionSuggestionsMet"
-          + "adata\022/\n\013create_time\030\001 \001(\0132\032.google.prot"
-          + "obuf.Timestamp\022/\n\013update_time\030\002 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\235\002\n(com.google.c"
-          + "loud.discoveryengine.v1alphaB\021ImportConf"
-          + "igProtoP\001ZRcloud.google.com/go/discovery"
-          + "engine/apiv1alpha/discoveryenginepb;disc"
-          + "overyenginepb\242\002\017DISCOVERYENGINE\252\002$Google"
-          + ".Cloud.DiscoveryEngine.V1Alpha\312\002$Google\\"
-          + "Cloud\\DiscoveryEngine\\V1alpha\352\002\'Google::"
-          + "Cloud::DiscoveryEngine::V1alphab\006proto3"
+          + "ime\030\002 \001(\0132\032.google.protobuf.TimestampB\235\002"
+          + "\n(com.google.cloud.discoveryengine.v1alp"
+          + "haB\021ImportConfigProtoP\001ZRcloud.google.co"
+          + "m/go/discoveryengine/apiv1alpha/discover"
+          + "yenginepb;discoveryenginepb\242\002\017DISCOVERYE"
+          + "NGINE\252\002$Google.Cloud.DiscoveryEngine.V1A"
+          + "lpha\312\002$Google\\Cloud\\DiscoveryEngine\\V1al"
+          + "pha\352\002\'Google::Cloud::DiscoveryEngine::V1"
+          + "alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -530,22 +516,6 @@ public final class ImportConfigProto {
     internal_static_google_cloud_discoveryengine_v1alpha_ImportSuggestionDenyListEntriesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1alpha_ImportSuggestionDenyListEntriesMetadata_descriptor,
-            new java.lang.String[] {
-              "CreateTime", "UpdateTime",
-            });
-    internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
-    internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsResponse_descriptor,
-            new java.lang.String[] {
-              "ErrorSamples", "SuccessCount", "FailureCount",
-            });
-    internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(19);
-    internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsMetadata_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_discoveryengine_v1alpha_ImportCompletionSuggestionsMetadata_descriptor,
             new java.lang.String[] {
               "CreateTime", "UpdateTime",
             });

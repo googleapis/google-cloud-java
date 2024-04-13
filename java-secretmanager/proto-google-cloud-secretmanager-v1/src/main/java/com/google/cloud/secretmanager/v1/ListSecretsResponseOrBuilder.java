@@ -28,8 +28,8 @@ public interface ListSecretsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
@@ -39,8 +39,8 @@ public interface ListSecretsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
@@ -50,8 +50,8 @@ public interface ListSecretsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
@@ -61,8 +61,8 @@ public interface ListSecretsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
@@ -73,8 +73,8 @@ public interface ListSecretsResponseOrBuilder
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secretmanager.v1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secretmanager.v1.Secret secrets = 1;</code>
@@ -86,7 +86,8 @@ public interface ListSecretsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretsRequest.page_token][google.cloud.secretmanager.v1.ListSecretsRequest.page_token] to retrieve the next page.
+   * [ListSecretsRequest.page_token][google.cloud.secretmanager.v1.ListSecretsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -99,7 +100,8 @@ public interface ListSecretsResponseOrBuilder
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretsRequest.page_token][google.cloud.secretmanager.v1.ListSecretsRequest.page_token] to retrieve the next page.
+   * [ListSecretsRequest.page_token][google.cloud.secretmanager.v1.ListSecretsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

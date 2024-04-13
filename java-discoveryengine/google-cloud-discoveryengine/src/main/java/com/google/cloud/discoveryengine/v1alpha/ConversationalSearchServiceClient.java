@@ -187,6 +187,137 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> AnswerQuery</td>
+ *      <td><p> Answer query method.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> answerQuery(AnswerQueryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> answerQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAnswer</td>
+ *      <td><p> Gets a Answer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAnswer(GetAnswerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAnswer(AnswerName name)
+ *           <li><p> getAnswer(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAnswerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSession</td>
+ *      <td><p> Creates a Session.
+ * <p>  If the [Session][google.cloud.discoveryengine.v1alpha.Session] to create already exists, an ALREADY_EXISTS error is returned.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSession(CreateSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createSession(DataStoreName parent, Session session)
+ *           <li><p> createSession(String parent, Session session)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSession</td>
+ *      <td><p> Deletes a Session.
+ * <p>  If the [Session][google.cloud.discoveryengine.v1alpha.Session] to delete does not exist, a NOT_FOUND error is returned.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSession(DeleteSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSession(SessionName name)
+ *           <li><p> deleteSession(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSession</td>
+ *      <td><p> Updates a Session.
+ * <p>  [Session][google.cloud.discoveryengine.v1alpha.Session] action type cannot be changed. If the [Session][google.cloud.discoveryengine.v1alpha.Session] to update does not exist, a NOT_FOUND error is returned.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSession(UpdateSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSession(Session session, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSession</td>
+ *      <td><p> Gets a Session.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSession(GetSessionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSession(SessionName name)
+ *           <li><p> getSession(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSessionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSessions</td>
+ *      <td><p> Lists all Sessions by their parent [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSessions(ListSessionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSessions(DataStoreName parent)
+ *           <li><p> listSessions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSessionsPagedCallable()
+ *           <li><p> listSessionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1197,6 +1328,928 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
     return stub.listConversationsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Answer query method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   AnswerQueryRequest request =
+   *       AnswerQueryRequest.newBuilder()
+   *           .setServingConfig(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .setQuery(Query.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
+   *           .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+   *           .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
+   *           .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
+   *           .setQueryUnderstandingSpec(
+   *               AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
+   *           .setAsynchronousMode(true)
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .build();
+   *   AnswerQueryResponse response = conversationalSearchServiceClient.answerQuery(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnswerQueryResponse answerQuery(AnswerQueryRequest request) {
+    return answerQueryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Answer query method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   AnswerQueryRequest request =
+   *       AnswerQueryRequest.newBuilder()
+   *           .setServingConfig(
+   *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+   *                   .toString())
+   *           .setQuery(Query.newBuilder().build())
+   *           .setSession(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .setSafetySpec(AnswerQueryRequest.SafetySpec.newBuilder().build())
+   *           .setRelatedQuestionsSpec(AnswerQueryRequest.RelatedQuestionsSpec.newBuilder().build())
+   *           .setAnswerGenerationSpec(AnswerQueryRequest.AnswerGenerationSpec.newBuilder().build())
+   *           .setSearchSpec(AnswerQueryRequest.SearchSpec.newBuilder().build())
+   *           .setQueryUnderstandingSpec(
+   *               AnswerQueryRequest.QueryUnderstandingSpec.newBuilder().build())
+   *           .setAsynchronousMode(true)
+   *           .setUserPseudoId("userPseudoId-1155274652")
+   *           .build();
+   *   ApiFuture<AnswerQueryResponse> future =
+   *       conversationalSearchServiceClient.answerQueryCallable().futureCall(request);
+   *   // Do something.
+   *   AnswerQueryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    return stub.answerQueryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Answer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   AnswerName name =
+   *       AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]");
+   *   Answer response = conversationalSearchServiceClient.getAnswer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Answer to get. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Answer getAnswer(AnswerName name) {
+    GetAnswerRequest request =
+        GetAnswerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAnswer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Answer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   String name =
+   *       AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
+   *           .toString();
+   *   Answer response = conversationalSearchServiceClient.getAnswer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Answer to get. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Answer getAnswer(String name) {
+    GetAnswerRequest request = GetAnswerRequest.newBuilder().setName(name).build();
+    return getAnswer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Answer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   GetAnswerRequest request =
+   *       GetAnswerRequest.newBuilder()
+   *           .setName(
+   *               AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
+   *                   .toString())
+   *           .build();
+   *   Answer response = conversationalSearchServiceClient.getAnswer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Answer getAnswer(GetAnswerRequest request) {
+    return getAnswerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Answer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   GetAnswerRequest request =
+   *       GetAnswerRequest.newBuilder()
+   *           .setName(
+   *               AnswerName.ofProjectLocationDataStoreSessionAnswerName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]", "[ANSWER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Answer> future =
+   *       conversationalSearchServiceClient.getAnswerCallable().futureCall(request);
+   *   // Do something.
+   *   Answer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable() {
+    return stub.getAnswerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to create already exists, an
+   * ALREADY_EXISTS error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   DataStoreName parent =
+   *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+   *   Session session = Session.newBuilder().build();
+   *   Session response = conversationalSearchServiceClient.createSession(parent, session);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Full resource name of parent data store. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * @param session Required. The session to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session createSession(DataStoreName parent, Session session) {
+    CreateSessionRequest request =
+        CreateSessionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSession(session)
+            .build();
+    return createSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to create already exists, an
+   * ALREADY_EXISTS error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   String parent =
+   *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *           .toString();
+   *   Session session = Session.newBuilder().build();
+   *   Session response = conversationalSearchServiceClient.createSession(parent, session);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Full resource name of parent data store. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * @param session Required. The session to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session createSession(String parent, Session session) {
+    CreateSessionRequest request =
+        CreateSessionRequest.newBuilder().setParent(parent).setSession(session).build();
+    return createSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to create already exists, an
+   * ALREADY_EXISTS error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   CreateSessionRequest request =
+   *       CreateSessionRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setSession(Session.newBuilder().build())
+   *           .build();
+   *   Session response = conversationalSearchServiceClient.createSession(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session createSession(CreateSessionRequest request) {
+    return createSessionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to create already exists, an
+   * ALREADY_EXISTS error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   CreateSessionRequest request =
+   *       CreateSessionRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setSession(Session.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Session> future =
+   *       conversationalSearchServiceClient.createSessionCallable().futureCall(request);
+   *   // Do something.
+   *   Session response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSessionRequest, Session> createSessionCallable() {
+    return stub.createSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to delete does not exist, a
+   * NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   SessionName name =
+   *       SessionName.ofProjectLocationDataStoreSessionName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]");
+   *   conversationalSearchServiceClient.deleteSession(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Session to delete. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSession(SessionName name) {
+    DeleteSessionRequest request =
+        DeleteSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to delete does not exist, a
+   * NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   String name =
+   *       SessionName.ofProjectLocationDataStoreSessionName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *           .toString();
+   *   conversationalSearchServiceClient.deleteSession(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Session to delete. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSession(String name) {
+    DeleteSessionRequest request = DeleteSessionRequest.newBuilder().setName(name).build();
+    deleteSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to delete does not exist, a
+   * NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   DeleteSessionRequest request =
+   *       DeleteSessionRequest.newBuilder()
+   *           .setName(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .build();
+   *   conversationalSearchServiceClient.deleteSession(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSession(DeleteSessionRequest request) {
+    deleteSessionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Session.
+   *
+   * <p>If the [Session][google.cloud.discoveryengine.v1alpha.Session] to delete does not exist, a
+   * NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   DeleteSessionRequest request =
+   *       DeleteSessionRequest.newBuilder()
+   *           .setName(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       conversationalSearchServiceClient.deleteSessionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSessionRequest, Empty> deleteSessionCallable() {
+    return stub.deleteSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Session.
+   *
+   * <p>[Session][google.cloud.discoveryengine.v1alpha.Session] action type cannot be changed. If
+   * the [Session][google.cloud.discoveryengine.v1alpha.Session] to update does not exist, a
+   * NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   Session session = Session.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Session response = conversationalSearchServiceClient.updateSession(session, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param session Required. The Session to update.
+   * @param updateMask Indicates which fields in the provided
+   *     [Session][google.cloud.discoveryengine.v1alpha.Session] to update. The following are NOT
+   *     supported:
+   *     <ul>
+   *       <li>[Session.name][google.cloud.discoveryengine.v1alpha.Session.name]
+   *     </ul>
+   *     <p>If not set or empty, all supported fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session updateSession(Session session, FieldMask updateMask) {
+    UpdateSessionRequest request =
+        UpdateSessionRequest.newBuilder().setSession(session).setUpdateMask(updateMask).build();
+    return updateSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Session.
+   *
+   * <p>[Session][google.cloud.discoveryengine.v1alpha.Session] action type cannot be changed. If
+   * the [Session][google.cloud.discoveryengine.v1alpha.Session] to update does not exist, a
+   * NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   UpdateSessionRequest request =
+   *       UpdateSessionRequest.newBuilder()
+   *           .setSession(Session.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Session response = conversationalSearchServiceClient.updateSession(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session updateSession(UpdateSessionRequest request) {
+    return updateSessionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Session.
+   *
+   * <p>[Session][google.cloud.discoveryengine.v1alpha.Session] action type cannot be changed. If
+   * the [Session][google.cloud.discoveryengine.v1alpha.Session] to update does not exist, a
+   * NOT_FOUND error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   UpdateSessionRequest request =
+   *       UpdateSessionRequest.newBuilder()
+   *           .setSession(Session.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Session> future =
+   *       conversationalSearchServiceClient.updateSessionCallable().futureCall(request);
+   *   // Do something.
+   *   Session response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSessionRequest, Session> updateSessionCallable() {
+    return stub.updateSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   SessionName name =
+   *       SessionName.ofProjectLocationDataStoreSessionName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]");
+   *   Session response = conversationalSearchServiceClient.getSession(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Session to get. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session getSession(SessionName name) {
+    GetSessionRequest request =
+        GetSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   String name =
+   *       SessionName.ofProjectLocationDataStoreSessionName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *           .toString();
+   *   Session response = conversationalSearchServiceClient.getSession(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Session to get. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session getSession(String name) {
+    GetSessionRequest request = GetSessionRequest.newBuilder().setName(name).build();
+    return getSession(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   GetSessionRequest request =
+   *       GetSessionRequest.newBuilder()
+   *           .setName(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .build();
+   *   Session response = conversationalSearchServiceClient.getSession(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Session getSession(GetSessionRequest request) {
+    return getSessionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Session.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   GetSessionRequest request =
+   *       GetSessionRequest.newBuilder()
+   *           .setName(
+   *               SessionName.ofProjectLocationDataStoreSessionName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Session> future =
+   *       conversationalSearchServiceClient.getSessionCallable().futureCall(request);
+   *   // Do something.
+   *   Session response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSessionRequest, Session> getSessionCallable() {
+    return stub.getSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Sessions by their parent [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   DataStoreName parent =
+   *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+   *   for (Session element : conversationalSearchServiceClient.listSessions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The data store resource name. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSessionsPagedResponse listSessions(DataStoreName parent) {
+    ListSessionsRequest request =
+        ListSessionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSessions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Sessions by their parent [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   String parent =
+   *       DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *           .toString();
+   *   for (Session element : conversationalSearchServiceClient.listSessions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The data store resource name. Format:
+   *     `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSessionsPagedResponse listSessions(String parent) {
+    ListSessionsRequest request = ListSessionsRequest.newBuilder().setParent(parent).build();
+    return listSessions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Sessions by their parent [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   ListSessionsRequest request =
+   *       ListSessionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Session element : conversationalSearchServiceClient.listSessions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSessionsPagedResponse listSessions(ListSessionsRequest request) {
+    return listSessionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Sessions by their parent [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   ListSessionsRequest request =
+   *       ListSessionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Session> future =
+   *       conversationalSearchServiceClient.listSessionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Session element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSessionsRequest, ListSessionsPagedResponse>
+      listSessionsPagedCallable() {
+    return stub.listSessionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Sessions by their parent [DataStore][google.cloud.discoveryengine.v1alpha.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+   *     ConversationalSearchServiceClient.create()) {
+   *   ListSessionsRequest request =
+   *       ListSessionsRequest.newBuilder()
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListSessionsResponse response =
+   *         conversationalSearchServiceClient.listSessionsCallable().call(request);
+   *     for (Session element : response.getSessionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSessionsRequest, ListSessionsResponse> listSessionsCallable() {
+    return stub.listSessionsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1304,6 +2357,81 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
     protected ListConversationsFixedSizeCollection createCollection(
         List<ListConversationsPage> pages, int collectionSize) {
       return new ListConversationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSessionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSessionsRequest,
+          ListSessionsResponse,
+          Session,
+          ListSessionsPage,
+          ListSessionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSessionsPagedResponse> createAsync(
+        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        ApiFuture<ListSessionsResponse> futureResponse) {
+      ApiFuture<ListSessionsPage> futurePage =
+          ListSessionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSessionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSessionsPagedResponse(ListSessionsPage page) {
+      super(page, ListSessionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSessionsPage
+      extends AbstractPage<ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage> {
+
+    private ListSessionsPage(
+        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        ListSessionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSessionsPage createEmptyPage() {
+      return new ListSessionsPage(null, null);
+    }
+
+    @Override
+    protected ListSessionsPage createPage(
+        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        ListSessionsResponse response) {
+      return new ListSessionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSessionsPage> createPageAsync(
+        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        ApiFuture<ListSessionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSessionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSessionsRequest,
+          ListSessionsResponse,
+          Session,
+          ListSessionsPage,
+          ListSessionsFixedSizeCollection> {
+
+    private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSessionsFixedSizeCollection createEmptyCollection() {
+      return new ListSessionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSessionsFixedSizeCollection createCollection(
+        List<ListSessionsPage> pages, int collectionSize) {
+      return new ListSessionsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

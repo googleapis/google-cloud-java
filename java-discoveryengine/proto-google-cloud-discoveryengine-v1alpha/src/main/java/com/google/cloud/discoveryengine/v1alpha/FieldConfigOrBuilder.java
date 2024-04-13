@@ -519,4 +519,110 @@ public interface FieldConfigOrBuilder
    * @return The bytes for keyPropertyType.
    */
   com.google.protobuf.ByteString getKeyPropertyTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @return A list containing the advancedSiteSearchDataSources.
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource>
+      getAdvancedSiteSearchDataSourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @return The count of advancedSiteSearchDataSources.
+   */
+  int getAdvancedSiteSearchDataSourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The advancedSiteSearchDataSources at the given index.
+   */
+  com.google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource
+      getAdvancedSiteSearchDataSources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for
+   *     advancedSiteSearchDataSources.
+   */
+  java.util.List<java.lang.Integer> getAdvancedSiteSearchDataSourcesValueList();
+  /**
+   *
+   *
+   * <pre>
+   * If this field is set, only the corresponding source will be indexed for
+   * this field. Otherwise, the values from different sources are merged.
+   *
+   * Assuming a page with `&lt;author, a&gt;` in meta tag, and `&lt;author, b&gt;` in page
+   * map:
+   *  if this enum is set to METATAGS, we will only index `&lt;author, a&gt;`;
+   *  if this enum is not set, we will merge them and index `&lt;author, [a, b]&gt;`.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1alpha.FieldConfig.AdvancedSiteSearchDataSource advanced_site_search_data_sources = 10;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of advancedSiteSearchDataSources at the given index.
+   */
+  int getAdvancedSiteSearchDataSourcesValue(int index);
 }

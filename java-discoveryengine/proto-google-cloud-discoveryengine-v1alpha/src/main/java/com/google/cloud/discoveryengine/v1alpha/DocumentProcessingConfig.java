@@ -2491,67 +2491,75 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @return A list containing the enhancedDocumentElements.
        */
+      @java.lang.Deprecated
       java.util.List<java.lang.String> getEnhancedDocumentElementsList();
       /**
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @return The count of enhancedDocumentElements.
        */
+      @java.lang.Deprecated
       int getEnhancedDocumentElementsCount();
       /**
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @param index The index of the element to return.
        * @return The enhancedDocumentElements at the given index.
        */
+      @java.lang.Deprecated
       java.lang.String getEnhancedDocumentElements(int index);
       /**
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @param index The index of the value to return.
        * @return The bytes of the enhancedDocumentElements at the given index.
        */
+      @java.lang.Deprecated
       com.google.protobuf.ByteString getEnhancedDocumentElementsBytes(int index);
 
       /**
@@ -2624,17 +2632,19 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @return A list containing the enhancedDocumentElements.
        */
+      @java.lang.Deprecated
       public com.google.protobuf.ProtocolStringList getEnhancedDocumentElementsList() {
         return enhancedDocumentElements_;
       }
@@ -2642,17 +2652,19 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @return The count of enhancedDocumentElements.
        */
+      @java.lang.Deprecated
       public int getEnhancedDocumentElementsCount() {
         return enhancedDocumentElements_.size();
       }
@@ -2660,18 +2672,20 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @param index The index of the element to return.
        * @return The enhancedDocumentElements at the given index.
        */
+      @java.lang.Deprecated
       public java.lang.String getEnhancedDocumentElements(int index) {
         return enhancedDocumentElements_.get(index);
       }
@@ -2679,18 +2693,20 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Apply additional enhanced OCR processing to a list of document
-       * elements.
-       *
-       * Supported values:
-       * * `table`: advanced table parsing model.
+       * [DEPRECATED] This field is deprecated. To use the additional enhanced
+       * document elements processing, please switch to `layout_parsing_config`.
        * </pre>
        *
-       * <code>repeated string enhanced_document_elements = 1;</code>
+       * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+       *     is deprecated. See
+       *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
        * @param index The index of the value to return.
        * @return The bytes of the enhancedDocumentElements at the given index.
        */
+      @java.lang.Deprecated
       public com.google.protobuf.ByteString getEnhancedDocumentElementsBytes(int index) {
         return enhancedDocumentElements_.getByteString(index);
       }
@@ -3172,17 +3188,19 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @return A list containing the enhancedDocumentElements.
          */
+        @java.lang.Deprecated
         public com.google.protobuf.ProtocolStringList getEnhancedDocumentElementsList() {
           enhancedDocumentElements_.makeImmutable();
           return enhancedDocumentElements_;
@@ -3191,17 +3209,19 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @return The count of enhancedDocumentElements.
          */
+        @java.lang.Deprecated
         public int getEnhancedDocumentElementsCount() {
           return enhancedDocumentElements_.size();
         }
@@ -3209,18 +3229,20 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @param index The index of the element to return.
          * @return The enhancedDocumentElements at the given index.
          */
+        @java.lang.Deprecated
         public java.lang.String getEnhancedDocumentElements(int index) {
           return enhancedDocumentElements_.get(index);
         }
@@ -3228,18 +3250,20 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @param index The index of the value to return.
          * @return The bytes of the enhancedDocumentElements at the given index.
          */
+        @java.lang.Deprecated
         public com.google.protobuf.ByteString getEnhancedDocumentElementsBytes(int index) {
           return enhancedDocumentElements_.getByteString(index);
         }
@@ -3247,19 +3271,21 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @param index The index to set the value at.
          * @param value The enhancedDocumentElements to set.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder setEnhancedDocumentElements(int index, java.lang.String value) {
           if (value == null) {
             throw new NullPointerException();
@@ -3274,18 +3300,20 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @param value The enhancedDocumentElements to add.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder addEnhancedDocumentElements(java.lang.String value) {
           if (value == null) {
             throw new NullPointerException();
@@ -3300,18 +3328,20 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @param values The enhancedDocumentElements to add.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder addAllEnhancedDocumentElements(java.lang.Iterable<java.lang.String> values) {
           ensureEnhancedDocumentElementsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, enhancedDocumentElements_);
@@ -3323,17 +3353,19 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder clearEnhancedDocumentElements() {
           enhancedDocumentElements_ = com.google.protobuf.LazyStringArrayList.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -3345,18 +3377,20 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          *
          *
          * <pre>
-         * Apply additional enhanced OCR processing to a list of document
-         * elements.
-         *
-         * Supported values:
-         * * `table`: advanced table parsing model.
+         * [DEPRECATED] This field is deprecated. To use the additional enhanced
+         * document elements processing, please switch to `layout_parsing_config`.
          * </pre>
          *
-         * <code>repeated string enhanced_document_elements = 1;</code>
+         * <code>repeated string enhanced_document_elements = 1 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.discoveryengine.v1alpha.DocumentProcessingConfig.ParsingConfig.OcrParsingConfig.enhanced_document_elements
+         *     is deprecated. See
+         *     google/cloud/discoveryengine/v1alpha/document_processing_config.proto;l=76
          * @param value The bytes of the enhancedDocumentElements to add.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder addEnhancedDocumentElementsBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
             throw new NullPointerException();
