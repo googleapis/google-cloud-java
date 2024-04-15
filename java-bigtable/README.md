@@ -215,7 +215,7 @@ try {
 
 TIP: If you are experiencing version conflicts with gRPC, see [Version Conflicts](#version-conflicts).
 
-## Enabling client side metrics
+## Client side metrics
 
 Cloud Bigtable client supports publishing client side metrics to
 [Cloud Monitoring](https://cloud.google.com/monitoring/docs/monitoring-overview) under the
@@ -223,8 +223,6 @@ Cloud Bigtable client supports publishing client side metrics to
 
 This feature is available once you upgrade to version 2.16.0 and above.
 Follow the guide on https://cloud.google.com/bigtable/docs/client-side-metrics-setup to enable.
-
-## Client side metrics
 
 Since version 2.38.0, [client side metrics](https://cloud.google.com/bigtable/docs/client-side-metrics)
 is enabled by default. This feature collects useful telemetry data in the client and is recommended to
@@ -236,7 +234,7 @@ in Cloud Monitoring.
 
 You can opt-out client side metrics with the following settings:
 
-```
+```java
 BigtableDataSettings settings = BigtableDataSettings.newBuilder()
         .setProjectId("my-project")
         .setInstanceId("my-instance")
@@ -329,7 +327,7 @@ Tracing.getTraceConfig().updateActiveTraceParams(
 If your application already has OpenCensus Tracing integration and you want to disable Bigtable
 traces, you can do the following:
 
-```
+```java
 public static class MySampler extends Sampler {
 
     private final Sampler childSampler;
@@ -359,7 +357,7 @@ public static class MySampler extends Sampler {
 ```
 
 And use this sampler in your trace config:
-```
+```java
 Tracing.getTraceConfig().updateActiveTraceParams(
         Tracing.getTraceConfig().getActiveTraceParams().toBuilder()
                 .setSampler(new MySampler(Samplers.probabilitySampler(0.1)))
