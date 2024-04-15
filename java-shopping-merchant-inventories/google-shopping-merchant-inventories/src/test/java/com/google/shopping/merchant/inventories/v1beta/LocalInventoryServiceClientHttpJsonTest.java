@@ -90,7 +90,7 @@ public class LocalInventoryServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "accounts/account-653/products/product-653";
+    ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
 
     ListLocalInventoriesPagedResponse pagedListResponse = client.listLocalInventories(parent);
 
@@ -116,6 +116,56 @@ public class LocalInventoryServiceClientHttpJsonTest {
 
   @Test
   public void listLocalInventoriesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+      client.listLocalInventories(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocalInventoriesTest2() throws Exception {
+    LocalInventory responsesElement = LocalInventory.newBuilder().build();
+    ListLocalInventoriesResponse expectedResponse =
+        ListLocalInventoriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocalInventories(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "accounts/account-653/products/product-653";
+
+    ListLocalInventoriesPagedResponse pagedListResponse = client.listLocalInventories(parent);
+
+    List<LocalInventory> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocalInventoriesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listLocalInventoriesExceptionTest2() throws Exception {
     ApiException exception =
         ApiExceptionFactory.createException(
             new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
@@ -151,7 +201,7 @@ public class LocalInventoryServiceClientHttpJsonTest {
 
     InsertLocalInventoryRequest request =
         InsertLocalInventoryRequest.newBuilder()
-            .setParent("accounts/account-653/products/product-653")
+            .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setLocalInventory(LocalInventory.newBuilder().build())
             .build();
 
@@ -183,7 +233,7 @@ public class LocalInventoryServiceClientHttpJsonTest {
     try {
       InsertLocalInventoryRequest request =
           InsertLocalInventoryRequest.newBuilder()
-              .setParent("accounts/account-653/products/product-653")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setLocalInventory(LocalInventory.newBuilder().build())
               .build();
       client.insertLocalInventory(request);

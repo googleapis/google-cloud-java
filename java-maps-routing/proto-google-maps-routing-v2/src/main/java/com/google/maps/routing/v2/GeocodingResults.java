@@ -23,7 +23,7 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Contains [GeocodedWaypoints][google.maps.routing.v2.GeocodedWaypoint] for
+ * Contains [`GeocodedWaypoints`][google.maps.routing.v2.GeocodedWaypoint] for
  * origin, destination and intermediate waypoints. Only populated for address
  * waypoints.
  * </pre>
@@ -440,7 +440,7 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Contains [GeocodedWaypoints][google.maps.routing.v2.GeocodedWaypoint] for
+   * Contains [`GeocodedWaypoints`][google.maps.routing.v2.GeocodedWaypoint] for
    * origin, destination and intermediate waypoints. Only populated for address
    * waypoints.
    * </pre>

@@ -317,5 +317,55 @@ public interface DocumentOrBuilder
    */
   com.google.protobuf.StructOrBuilder getDerivedStructDataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time the document was indexed. If this field is set,
+   * the document could be returned in search results.
+   *
+   * This field is OUTPUT_ONLY. If this field is not populated, it means the
+   * document has never been indexed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the indexTime field is set.
+   */
+  boolean hasIndexTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time the document was indexed. If this field is set,
+   * the document could be returned in search results.
+   *
+   * This field is OUTPUT_ONLY. If this field is not populated, it means the
+   * document has never been indexed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The indexTime.
+   */
+  com.google.protobuf.Timestamp getIndexTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The last time the document was indexed. If this field is set,
+   * the document could be returned in search results.
+   *
+   * This field is OUTPUT_ONLY. If this field is not populated, it means the
+   * document has never been indexed.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp index_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
+
   com.google.cloud.discoveryengine.v1.Document.DataCase getDataCase();
 }

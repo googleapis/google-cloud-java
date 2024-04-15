@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.EnableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.EnableSecretVersion].
+ * Request message for
+ * [SecretManagerService.EnableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.EnableSecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.EnableSecretVersionRequest}
@@ -72,8 +73,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in
+   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -98,8 +100,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in
+   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -129,9 +132,10 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-   * the etag of the currently stored secret version object. If the etag is
-   * omitted, the request succeeds.
+   * Optional. Etag of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+   * succeeds if it matches the etag of the currently stored secret version
+   * object. If the etag is omitted, the request succeeds.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,9 +158,10 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-   * the etag of the currently stored secret version object. If the etag is
-   * omitted, the request succeeds.
+   * Optional. Etag of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+   * succeeds if it matches the etag of the currently stored secret version
+   * object. If the etag is omitted, the request succeeds.
    * </pre>
    *
    * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -349,7 +354,8 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.EnableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.EnableSecretVersion].
+   * Request message for
+   * [SecretManagerService.EnableSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.EnableSecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.EnableSecretVersionRequest}
@@ -551,8 +557,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -576,8 +583,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -601,8 +609,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -625,8 +634,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -645,8 +655,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -672,9 +683,10 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-     * the etag of the currently stored secret version object. If the etag is
-     * omitted, the request succeeds.
+     * Optional. Etag of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+     * succeeds if it matches the etag of the currently stored secret version
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -696,9 +708,10 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-     * the etag of the currently stored secret version object. If the etag is
-     * omitted, the request succeeds.
+     * Optional. Etag of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+     * succeeds if it matches the etag of the currently stored secret version
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -720,9 +733,10 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-     * the etag of the currently stored secret version object. If the etag is
-     * omitted, the request succeeds.
+     * Optional. Etag of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+     * succeeds if it matches the etag of the currently stored secret version
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -743,9 +757,10 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-     * the etag of the currently stored secret version object. If the etag is
-     * omitted, the request succeeds.
+     * Optional. Etag of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+     * succeeds if it matches the etag of the currently stored secret version
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -762,9 +777,10 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. Etag of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request succeeds if it matches
-     * the etag of the currently stored secret version object. If the etag is
-     * omitted, the request succeeds.
+     * Optional. Etag of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]. The request
+     * succeeds if it matches the etag of the currently stored secret version
+     * object. If the etag is omitted, the request succeeds.
      * </pre>
      *
      * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

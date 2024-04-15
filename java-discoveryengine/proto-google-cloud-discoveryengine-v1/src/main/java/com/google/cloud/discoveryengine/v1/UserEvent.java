@@ -517,22 +517,26 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * Token to attribute an API response to user action(s) to trigger the event.
    *
    * Highly recommended for user events that are the result of
-   * [RecommendationService.Recommend][]. This field enables accurate
-   * attribution of recommendation model performance.
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
+   * This field enables accurate attribution of recommendation model
+   * performance.
    *
    * The value must be one of:
    *
-   * * [RecommendResponse.attribution_token][] for events that are the result of
-   * [RecommendationService.Recommend][].
+   * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token] for events that are the result of
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token] for events that are the result of
    * [SearchService.Search][google.cloud.discoveryengine.v1.SearchService.Search].
    *
    * This token enables us to accurately attribute page view or conversion
    * completion back to the event and the particular predict response containing
    * this clicked/purchased product. If user clicks on product K in the
-   * recommendation results, pass [RecommendResponse.attribution_token][] as a
-   * URL parameter to product K's page. When recording events on product K's
-   * page, log the [RecommendResponse.attribution_token][] to this field.
+   * recommendation results, pass
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+   * as a URL parameter to product K's page. When recording events on product
+   * K's page, log the
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+   * to this field.
    * </pre>
    *
    * <code>string attribution_token = 8;</code>
@@ -558,22 +562,26 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * Token to attribute an API response to user action(s) to trigger the event.
    *
    * Highly recommended for user events that are the result of
-   * [RecommendationService.Recommend][]. This field enables accurate
-   * attribution of recommendation model performance.
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
+   * This field enables accurate attribution of recommendation model
+   * performance.
    *
    * The value must be one of:
    *
-   * * [RecommendResponse.attribution_token][] for events that are the result of
-   * [RecommendationService.Recommend][].
+   * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token] for events that are the result of
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token] for events that are the result of
    * [SearchService.Search][google.cloud.discoveryengine.v1.SearchService.Search].
    *
    * This token enables us to accurately attribute page view or conversion
    * completion back to the event and the particular predict response containing
    * this clicked/purchased product. If user clicks on product K in the
-   * recommendation results, pass [RecommendResponse.attribution_token][] as a
-   * URL parameter to product K's page. When recording events on product K's
-   * page, log the [RecommendResponse.attribution_token][] to this field.
+   * recommendation results, pass
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+   * as a URL parameter to product K's page. When recording events on product
+   * K's page, log the
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+   * to this field.
    * </pre>
    *
    * <code>string attribution_token = 8;</code>
@@ -611,9 +619,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * conforming to https://google.aip.dev/160#filtering.
    *
    * Similarly, for `view-item-list` events that are generated from a
-   * [RecommendRequest][], this field may be populated directly from
-   * [RecommendRequest.filter][] conforming to
-   * https://google.aip.dev/160#filtering.
+   * [RecommendRequest][google.cloud.discoveryengine.v1.RecommendRequest], this
+   * field may be populated directly from
+   * [RecommendRequest.filter][google.cloud.discoveryengine.v1.RecommendRequest.filter]
+   * conforming to https://google.aip.dev/160#filtering.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -649,9 +658,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * conforming to https://google.aip.dev/160#filtering.
    *
    * Similarly, for `view-item-list` events that are generated from a
-   * [RecommendRequest][], this field may be populated directly from
-   * [RecommendRequest.filter][] conforming to
-   * https://google.aip.dev/160#filtering.
+   * [RecommendRequest][google.cloud.discoveryengine.v1.RecommendRequest], this
+   * field may be populated directly from
+   * [RecommendRequest.filter][google.cloud.discoveryengine.v1.RecommendRequest.filter]
+   * conforming to https://google.aip.dev/160#filtering.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3613,22 +3623,26 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Token to attribute an API response to user action(s) to trigger the event.
      *
      * Highly recommended for user events that are the result of
-     * [RecommendationService.Recommend][]. This field enables accurate
-     * attribution of recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      *
      * The value must be one of:
      *
-     * * [RecommendResponse.attribution_token][] for events that are the result of
-     * [RecommendationService.Recommend][].
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token] for events that are the result of
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1.SearchService.Search].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [RecommendResponse.attribution_token][] as a
-     * URL parameter to product K's page. When recording events on product K's
-     * page, log the [RecommendResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3653,22 +3667,26 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Token to attribute an API response to user action(s) to trigger the event.
      *
      * Highly recommended for user events that are the result of
-     * [RecommendationService.Recommend][]. This field enables accurate
-     * attribution of recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      *
      * The value must be one of:
      *
-     * * [RecommendResponse.attribution_token][] for events that are the result of
-     * [RecommendationService.Recommend][].
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token] for events that are the result of
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1.SearchService.Search].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [RecommendResponse.attribution_token][] as a
-     * URL parameter to product K's page. When recording events on product K's
-     * page, log the [RecommendResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3693,22 +3711,26 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Token to attribute an API response to user action(s) to trigger the event.
      *
      * Highly recommended for user events that are the result of
-     * [RecommendationService.Recommend][]. This field enables accurate
-     * attribution of recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      *
      * The value must be one of:
      *
-     * * [RecommendResponse.attribution_token][] for events that are the result of
-     * [RecommendationService.Recommend][].
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token] for events that are the result of
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1.SearchService.Search].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [RecommendResponse.attribution_token][] as a
-     * URL parameter to product K's page. When recording events on product K's
-     * page, log the [RecommendResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3732,22 +3754,26 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Token to attribute an API response to user action(s) to trigger the event.
      *
      * Highly recommended for user events that are the result of
-     * [RecommendationService.Recommend][]. This field enables accurate
-     * attribution of recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      *
      * The value must be one of:
      *
-     * * [RecommendResponse.attribution_token][] for events that are the result of
-     * [RecommendationService.Recommend][].
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token] for events that are the result of
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1.SearchService.Search].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [RecommendResponse.attribution_token][] as a
-     * URL parameter to product K's page. When recording events on product K's
-     * page, log the [RecommendResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3767,22 +3793,26 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * Token to attribute an API response to user action(s) to trigger the event.
      *
      * Highly recommended for user events that are the result of
-     * [RecommendationService.Recommend][]. This field enables accurate
-     * attribution of recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      *
      * The value must be one of:
      *
-     * * [RecommendResponse.attribution_token][] for events that are the result of
-     * [RecommendationService.Recommend][].
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token] for events that are the result of
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1.SearchService.Search].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [RecommendResponse.attribution_token][] as a
-     * URL parameter to product K's page. When recording events on product K's
-     * page, log the [RecommendResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3816,9 +3846,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendRequest][], this field may be populated directly from
-     * [RecommendRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1.RecommendRequest], this
+     * field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3853,9 +3884,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendRequest][], this field may be populated directly from
-     * [RecommendRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1.RecommendRequest], this
+     * field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3890,9 +3922,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendRequest][], this field may be populated directly from
-     * [RecommendRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1.RecommendRequest], this
+     * field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3926,9 +3959,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendRequest][], this field may be populated directly from
-     * [RecommendRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1.RecommendRequest], this
+     * field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -3958,9 +3992,10 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * conforming to https://google.aip.dev/160#filtering.
      *
      * Similarly, for `view-item-list` events that are generated from a
-     * [RecommendRequest][], this field may be populated directly from
-     * [RecommendRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendRequest][google.cloud.discoveryengine.v1.RecommendRequest], this
+     * field may be populated directly from
+     * [RecommendRequest.filter][google.cloud.discoveryengine.v1.RecommendRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.

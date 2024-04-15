@@ -803,6 +803,83 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     return runAsNonRoot_;
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 15;
+  private com.google.cloud.batch.v1alpha.ServiceAccount serviceAccount_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ServiceAccount used by tasks within the task group for the access
+   * to other Cloud resources. This allows tasks to operate with permissions
+   * distinct from the service account for the VM set at `AllocationPolicy`. Use
+   * this field when tasks require different access rights than those of the VM.
+   *
+   * Specify the service account's `email` field. Ensure `scopes`
+   * include any necessary permissions for tasks, in addition to the default
+   * 'cloud-platform' scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceAccount() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ServiceAccount used by tasks within the task group for the access
+   * to other Cloud resources. This allows tasks to operate with permissions
+   * distinct from the service account for the VM set at `AllocationPolicy`. Use
+   * this field when tasks require different access rights than those of the VM.
+   *
+   * Specify the service account's `email` field. Ensure `scopes`
+   * include any necessary permissions for tasks, in addition to the default
+   * 'cloud-platform' scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1alpha.ServiceAccount getServiceAccount() {
+    return serviceAccount_ == null
+        ? com.google.cloud.batch.v1alpha.ServiceAccount.getDefaultInstance()
+        : serviceAccount_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. ServiceAccount used by tasks within the task group for the access
+   * to other Cloud resources. This allows tasks to operate with permissions
+   * distinct from the service account for the VM set at `AllocationPolicy`. Use
+   * this field when tasks require different access rights than those of the VM.
+   *
+   * Specify the service account's `email` field. Ensure `scopes`
+   * include any necessary permissions for tasks, in addition to the default
+   * 'cloud-platform' scope.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.batch.v1alpha.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
+    return serviceAccount_ == null
+        ? com.google.cloud.batch.v1alpha.ServiceAccount.getDefaultInstance()
+        : serviceAccount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -853,6 +930,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     }
     if (runAsNonRoot_ != false) {
       output.writeBool(14, runAsNonRoot_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(15, getServiceAccount());
     }
     getUnknownFields().writeTo(output);
   }
@@ -908,6 +988,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     if (runAsNonRoot_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, runAsNonRoot_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getServiceAccount());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -941,6 +1024,10 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     if (getRequireHostsFile() != other.getRequireHostsFile()) return false;
     if (getPermissiveSsh() != other.getPermissiveSsh()) return false;
     if (getRunAsNonRoot() != other.getRunAsNonRoot()) return false;
+    if (hasServiceAccount() != other.hasServiceAccount()) return false;
+    if (hasServiceAccount()) {
+      if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -984,6 +1071,10 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPermissiveSsh());
     hash = (37 * hash) + RUN_AS_NON_ROOT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRunAsNonRoot());
+    if (hasServiceAccount()) {
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1149,6 +1240,7 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
         getTaskSpecFieldBuilder();
         getAllocationPolicyFieldBuilder();
         getTaskEnvironmentsFieldBuilder();
+        getServiceAccountFieldBuilder();
       }
     }
 
@@ -1182,6 +1274,11 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       requireHostsFile_ = false;
       permissiveSsh_ = false;
       runAsNonRoot_ = false;
+      serviceAccount_ = null;
+      if (serviceAccountBuilder_ != null) {
+        serviceAccountBuilder_.dispose();
+        serviceAccountBuilder_ = null;
+      }
       return this;
     }
 
@@ -1268,6 +1365,11 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.runAsNonRoot_ = runAsNonRoot_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.serviceAccount_ =
+            serviceAccountBuilder_ == null ? serviceAccount_ : serviceAccountBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1377,6 +1479,9 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getRunAsNonRoot() != false) {
         setRunAsNonRoot(other.getRunAsNonRoot());
+      }
+      if (other.hasServiceAccount()) {
+        mergeServiceAccount(other.getServiceAccount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1490,6 +1595,12 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 112
+            case 122:
+              {
+                input.readMessage(getServiceAccountFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3183,6 +3294,274 @@ public final class TaskGroup extends com.google.protobuf.GeneratedMessageV3
       runAsNonRoot_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.batch.v1alpha.ServiceAccount serviceAccount_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1alpha.ServiceAccount,
+            com.google.cloud.batch.v1alpha.ServiceAccount.Builder,
+            com.google.cloud.batch.v1alpha.ServiceAccountOrBuilder>
+        serviceAccountBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceAccount field is set.
+     */
+    public boolean hasServiceAccount() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceAccount.
+     */
+    public com.google.cloud.batch.v1alpha.ServiceAccount getServiceAccount() {
+      if (serviceAccountBuilder_ == null) {
+        return serviceAccount_ == null
+            ? com.google.cloud.batch.v1alpha.ServiceAccount.getDefaultInstance()
+            : serviceAccount_;
+      } else {
+        return serviceAccountBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceAccount(com.google.cloud.batch.v1alpha.ServiceAccount value) {
+      if (serviceAccountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceAccount_ = value;
+      } else {
+        serviceAccountBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceAccount(
+        com.google.cloud.batch.v1alpha.ServiceAccount.Builder builderForValue) {
+      if (serviceAccountBuilder_ == null) {
+        serviceAccount_ = builderForValue.build();
+      } else {
+        serviceAccountBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeServiceAccount(com.google.cloud.batch.v1alpha.ServiceAccount value) {
+      if (serviceAccountBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && serviceAccount_ != null
+            && serviceAccount_
+                != com.google.cloud.batch.v1alpha.ServiceAccount.getDefaultInstance()) {
+          getServiceAccountBuilder().mergeFrom(value);
+        } else {
+          serviceAccount_ = value;
+        }
+      } else {
+        serviceAccountBuilder_.mergeFrom(value);
+      }
+      if (serviceAccount_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearServiceAccount() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      serviceAccount_ = null;
+      if (serviceAccountBuilder_ != null) {
+        serviceAccountBuilder_.dispose();
+        serviceAccountBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.batch.v1alpha.ServiceAccount.Builder getServiceAccountBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getServiceAccountFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.batch.v1alpha.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
+      if (serviceAccountBuilder_ != null) {
+        return serviceAccountBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceAccount_ == null
+            ? com.google.cloud.batch.v1alpha.ServiceAccount.getDefaultInstance()
+            : serviceAccount_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. ServiceAccount used by tasks within the task group for the access
+     * to other Cloud resources. This allows tasks to operate with permissions
+     * distinct from the service account for the VM set at `AllocationPolicy`. Use
+     * this field when tasks require different access rights than those of the VM.
+     *
+     * Specify the service account's `email` field. Ensure `scopes`
+     * include any necessary permissions for tasks, in addition to the default
+     * 'cloud-platform' scope.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.ServiceAccount service_account = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.batch.v1alpha.ServiceAccount,
+            com.google.cloud.batch.v1alpha.ServiceAccount.Builder,
+            com.google.cloud.batch.v1alpha.ServiceAccountOrBuilder>
+        getServiceAccountFieldBuilder() {
+      if (serviceAccountBuilder_ == null) {
+        serviceAccountBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.batch.v1alpha.ServiceAccount,
+                com.google.cloud.batch.v1alpha.ServiceAccount.Builder,
+                com.google.cloud.batch.v1alpha.ServiceAccountOrBuilder>(
+                getServiceAccount(), getParentForChildren(), isClean());
+        serviceAccount_ = null;
+      }
+      return serviceAccountBuilder_;
     }
 
     @java.lang.Override

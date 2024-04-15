@@ -55,6 +55,11 @@ import com.google.cloud.discoveryengine.v1beta.Engine;
 import com.google.cloud.discoveryengine.v1beta.GetEngineRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesRequest;
 import com.google.cloud.discoveryengine.v1beta.ListEnginesResponse;
+import com.google.cloud.discoveryengine.v1beta.PauseEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineMetadata;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineRequest;
+import com.google.cloud.discoveryengine.v1beta.TuneEngineResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateEngineRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -122,6 +127,11 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
   private final UnaryCallSettings<GetEngineRequest, Engine> getEngineSettings;
   private final PagedCallSettings<ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
       listEnginesSettings;
+  private final UnaryCallSettings<PauseEngineRequest, Engine> pauseEngineSettings;
+  private final UnaryCallSettings<ResumeEngineRequest, Engine> resumeEngineSettings;
+  private final UnaryCallSettings<TuneEngineRequest, Operation> tuneEngineSettings;
+  private final OperationCallSettings<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationSettings;
 
   private static final PagedListDescriptor<ListEnginesRequest, ListEnginesResponse, Engine>
       LIST_ENGINES_PAGE_STR_DESC =
@@ -212,6 +222,27 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
   public PagedCallSettings<ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
       listEnginesSettings() {
     return listEnginesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to pauseEngine. */
+  public UnaryCallSettings<PauseEngineRequest, Engine> pauseEngineSettings() {
+    return pauseEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to resumeEngine. */
+  public UnaryCallSettings<ResumeEngineRequest, Engine> resumeEngineSettings() {
+    return resumeEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to tuneEngine. */
+  public UnaryCallSettings<TuneEngineRequest, Operation> tuneEngineSettings() {
+    return tuneEngineSettings;
+  }
+
+  /** Returns the object with the settings used for calls to tuneEngine. */
+  public OperationCallSettings<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationSettings() {
+    return tuneEngineOperationSettings;
   }
 
   public EngineServiceStub createStub() throws IOException {
@@ -340,6 +371,10 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     updateEngineSettings = settingsBuilder.updateEngineSettings().build();
     getEngineSettings = settingsBuilder.getEngineSettings().build();
     listEnginesSettings = settingsBuilder.listEnginesSettings().build();
+    pauseEngineSettings = settingsBuilder.pauseEngineSettings().build();
+    resumeEngineSettings = settingsBuilder.resumeEngineSettings().build();
+    tuneEngineSettings = settingsBuilder.tuneEngineSettings().build();
+    tuneEngineOperationSettings = settingsBuilder.tuneEngineOperationSettings().build();
   }
 
   /** Builder for EngineServiceStubSettings. */
@@ -356,6 +391,12 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
     private final PagedCallSettings.Builder<
             ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
         listEnginesSettings;
+    private final UnaryCallSettings.Builder<PauseEngineRequest, Engine> pauseEngineSettings;
+    private final UnaryCallSettings.Builder<ResumeEngineRequest, Engine> resumeEngineSettings;
+    private final UnaryCallSettings.Builder<TuneEngineRequest, Operation> tuneEngineSettings;
+    private final OperationCallSettings.Builder<
+            TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+        tuneEngineOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -390,6 +431,10 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
       updateEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEnginesSettings = PagedCallSettings.newBuilder(LIST_ENGINES_PAGE_STR_FACT);
+      pauseEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumeEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      tuneEngineSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      tuneEngineOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -397,7 +442,10 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
               deleteEngineSettings,
               updateEngineSettings,
               getEngineSettings,
-              listEnginesSettings);
+              listEnginesSettings,
+              pauseEngineSettings,
+              resumeEngineSettings,
+              tuneEngineSettings);
       initDefaults(this);
     }
 
@@ -411,6 +459,10 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
       updateEngineSettings = settings.updateEngineSettings.toBuilder();
       getEngineSettings = settings.getEngineSettings.toBuilder();
       listEnginesSettings = settings.listEnginesSettings.toBuilder();
+      pauseEngineSettings = settings.pauseEngineSettings.toBuilder();
+      resumeEngineSettings = settings.resumeEngineSettings.toBuilder();
+      tuneEngineSettings = settings.tuneEngineSettings.toBuilder();
+      tuneEngineOperationSettings = settings.tuneEngineOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -418,7 +470,10 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
               deleteEngineSettings,
               updateEngineSettings,
               getEngineSettings,
-              listEnginesSettings);
+              listEnginesSettings,
+              pauseEngineSettings,
+              resumeEngineSettings,
+              tuneEngineSettings);
     }
 
     private static Builder createDefault() {
@@ -472,6 +527,21 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .pauseEngineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .resumeEngineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .tuneEngineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createEngineOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -507,6 +577,29 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(DeleteEngineMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .tuneEngineOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<TuneEngineRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TuneEngineResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(TuneEngineMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -574,6 +667,27 @@ public class EngineServiceStubSettings extends StubSettings<EngineServiceStubSet
             ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
         listEnginesSettings() {
       return listEnginesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to pauseEngine. */
+    public UnaryCallSettings.Builder<PauseEngineRequest, Engine> pauseEngineSettings() {
+      return pauseEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resumeEngine. */
+    public UnaryCallSettings.Builder<ResumeEngineRequest, Engine> resumeEngineSettings() {
+      return resumeEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to tuneEngine. */
+    public UnaryCallSettings.Builder<TuneEngineRequest, Operation> tuneEngineSettings() {
+      return tuneEngineSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to tuneEngine. */
+    public OperationCallSettings.Builder<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+        tuneEngineOperationSettings() {
+      return tuneEngineOperationSettings;
     }
 
     /** Returns the endpoint set by the user or the the service's default endpoint. */

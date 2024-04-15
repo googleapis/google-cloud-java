@@ -117,6 +117,27 @@ public class EngineServiceSettings extends ClientSettings<EngineServiceSettings>
     return ((EngineServiceStubSettings) getStubSettings()).listEnginesSettings();
   }
 
+  /** Returns the object with the settings used for calls to pauseEngine. */
+  public UnaryCallSettings<PauseEngineRequest, Engine> pauseEngineSettings() {
+    return ((EngineServiceStubSettings) getStubSettings()).pauseEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resumeEngine. */
+  public UnaryCallSettings<ResumeEngineRequest, Engine> resumeEngineSettings() {
+    return ((EngineServiceStubSettings) getStubSettings()).resumeEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to tuneEngine. */
+  public UnaryCallSettings<TuneEngineRequest, Operation> tuneEngineSettings() {
+    return ((EngineServiceStubSettings) getStubSettings()).tuneEngineSettings();
+  }
+
+  /** Returns the object with the settings used for calls to tuneEngine. */
+  public OperationCallSettings<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+      tuneEngineOperationSettings() {
+    return ((EngineServiceStubSettings) getStubSettings()).tuneEngineOperationSettings();
+  }
+
   public static final EngineServiceSettings create(EngineServiceStubSettings stub)
       throws IOException {
     return new EngineServiceSettings.Builder(stub.toBuilder()).build();
@@ -266,6 +287,27 @@ public class EngineServiceSettings extends ClientSettings<EngineServiceSettings>
             ListEnginesRequest, ListEnginesResponse, ListEnginesPagedResponse>
         listEnginesSettings() {
       return getStubSettingsBuilder().listEnginesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to pauseEngine. */
+    public UnaryCallSettings.Builder<PauseEngineRequest, Engine> pauseEngineSettings() {
+      return getStubSettingsBuilder().pauseEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resumeEngine. */
+    public UnaryCallSettings.Builder<ResumeEngineRequest, Engine> resumeEngineSettings() {
+      return getStubSettingsBuilder().resumeEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to tuneEngine. */
+    public UnaryCallSettings.Builder<TuneEngineRequest, Operation> tuneEngineSettings() {
+      return getStubSettingsBuilder().tuneEngineSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to tuneEngine. */
+    public OperationCallSettings.Builder<TuneEngineRequest, TuneEngineResponse, TuneEngineMetadata>
+        tuneEngineOperationSettings() {
+      return getStubSettingsBuilder().tuneEngineOperationSettings();
     }
 
     @Override

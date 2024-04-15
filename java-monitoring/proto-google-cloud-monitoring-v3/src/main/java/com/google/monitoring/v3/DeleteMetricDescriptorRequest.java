@@ -71,7 +71,8 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The metric descriptor on which to execute the request. The format is:
+   * Required. The metric descriptor on which to execute the request. The format
+   * is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
    *
@@ -101,7 +102,8 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The metric descriptor on which to execute the request. The format is:
+   * Required. The metric descriptor on which to execute the request. The format
+   * is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
    *
@@ -476,7 +478,8 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The metric descriptor on which to execute the request. The format is:
+     * Required. The metric descriptor on which to execute the request. The format
+     * is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
      *
@@ -505,7 +508,8 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The metric descriptor on which to execute the request. The format is:
+     * Required. The metric descriptor on which to execute the request. The format
+     * is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
      *
@@ -534,7 +538,8 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The metric descriptor on which to execute the request. The format is:
+     * Required. The metric descriptor on which to execute the request. The format
+     * is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
      *
@@ -562,7 +567,8 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The metric descriptor on which to execute the request. The format is:
+     * Required. The metric descriptor on which to execute the request. The format
+     * is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
      *
@@ -586,7 +592,8 @@ public final class DeleteMetricDescriptorRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The metric descriptor on which to execute the request. The format is:
+     * Required. The metric descriptor on which to execute the request. The format
+     * is:
      *
      *     projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
      *

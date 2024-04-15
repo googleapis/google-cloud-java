@@ -94,6 +94,51 @@ public class LocalInventoryServiceClientTest {
             .build();
     mockLocalInventoryService.addResponse(expectedResponse);
 
+    ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+
+    ListLocalInventoriesPagedResponse pagedListResponse = client.listLocalInventories(parent);
+
+    List<LocalInventory> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLocalInventoriesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLocalInventoryService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLocalInventoriesRequest actualRequest =
+        ((ListLocalInventoriesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLocalInventoriesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLocalInventoryService.addException(exception);
+
+    try {
+      ProductName parent = ProductName.of("[ACCOUNT]", "[PRODUCT]");
+      client.listLocalInventories(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLocalInventoriesTest2() throws Exception {
+    LocalInventory responsesElement = LocalInventory.newBuilder().build();
+    ListLocalInventoriesResponse expectedResponse =
+        ListLocalInventoriesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLocalInventories(Arrays.asList(responsesElement))
+            .build();
+    mockLocalInventoryService.addResponse(expectedResponse);
+
     String parent = "parent-995424086";
 
     ListLocalInventoriesPagedResponse pagedListResponse = client.listLocalInventories(parent);
@@ -116,7 +161,7 @@ public class LocalInventoryServiceClientTest {
   }
 
   @Test
-  public void listLocalInventoriesExceptionTest() throws Exception {
+  public void listLocalInventoriesExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockLocalInventoryService.addException(exception);
 
@@ -150,7 +195,7 @@ public class LocalInventoryServiceClientTest {
 
     InsertLocalInventoryRequest request =
         InsertLocalInventoryRequest.newBuilder()
-            .setParent("parent-995424086")
+            .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
             .setLocalInventory(LocalInventory.newBuilder().build())
             .build();
 
@@ -178,7 +223,7 @@ public class LocalInventoryServiceClientTest {
     try {
       InsertLocalInventoryRequest request =
           InsertLocalInventoryRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setLocalInventory(LocalInventory.newBuilder().build())
               .build();
       client.insertLocalInventory(request);

@@ -24,7 +24,7 @@ package com.google.cloud.discoveryengine.v1alpha;
  *
  * <pre>
  * Tiers of search features. Different tiers might have different
- * pricing. To learn more, please check the pricing documentation.
+ * pricing. To learn more, check the pricing documentation.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.discoveryengine.v1alpha.SearchTier}

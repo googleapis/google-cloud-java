@@ -18,6 +18,7 @@ package com.google.shopping.merchant.inventories.v1beta.samples;
 
 // [START merchantapi_v1beta_generated_RegionalInventoryService_InsertRegionalInventory_sync]
 import com.google.shopping.merchant.inventories.v1beta.InsertRegionalInventoryRequest;
+import com.google.shopping.merchant.inventories.v1beta.ProductName;
 import com.google.shopping.merchant.inventories.v1beta.RegionalInventory;
 import com.google.shopping.merchant.inventories.v1beta.RegionalInventoryServiceClient;
 
@@ -37,7 +38,7 @@ public class SyncInsertRegionalInventory {
         RegionalInventoryServiceClient.create()) {
       InsertRegionalInventoryRequest request =
           InsertRegionalInventoryRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setRegionalInventory(RegionalInventory.newBuilder().build())
               .build();
       RegionalInventory response = regionalInventoryServiceClient.insertRegionalInventory(request);

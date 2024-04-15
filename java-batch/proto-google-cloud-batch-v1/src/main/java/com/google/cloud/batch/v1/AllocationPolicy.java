@@ -12862,7 +12862,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Service account that VMs will run as.
+   * Defines the service account for Batch-created VMs. If omitted, the [default
+   * Compute Engine service
+   * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+   * is used. Must match the service account specified in any used instance
+   * template configured in the Batch job.
+   *
+   * Includes the following fields:
+   *  * email: The service account's email address. If not set, the default
+   *  Compute Engine service account is used.
+   *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+   *  default cloud-platform scope. (list of strings)
    * </pre>
    *
    * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -12877,7 +12887,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Service account that VMs will run as.
+   * Defines the service account for Batch-created VMs. If omitted, the [default
+   * Compute Engine service
+   * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+   * is used. Must match the service account specified in any used instance
+   * template configured in the Batch job.
+   *
+   * Includes the following fields:
+   *  * email: The service account's email address. If not set, the default
+   *  Compute Engine service account is used.
+   *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+   *  default cloud-platform scope. (list of strings)
    * </pre>
    *
    * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -12894,7 +12914,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Service account that VMs will run as.
+   * Defines the service account for Batch-created VMs. If omitted, the [default
+   * Compute Engine service
+   * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+   * is used. Must match the service account specified in any used instance
+   * template configured in the Batch job.
+   *
+   * Includes the following fields:
+   *  * email: The service account's email address. If not set, the default
+   *  Compute Engine service account is used.
+   *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+   *  default cloud-platform scope. (list of strings)
    * </pre>
    *
    * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14483,7 +14513,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14497,7 +14537,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14517,7 +14567,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14539,7 +14599,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14559,7 +14629,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14586,7 +14666,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14605,7 +14695,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14619,7 +14719,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>
@@ -14637,7 +14747,17 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Service account that VMs will run as.
+     * Defines the service account for Batch-created VMs. If omitted, the [default
+     * Compute Engine service
+     * account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account)
+     * is used. Must match the service account specified in any used instance
+     * template configured in the Batch job.
+     *
+     * Includes the following fields:
+     *  * email: The service account's email address. If not set, the default
+     *  Compute Engine service account is used.
+     *  * scopes: Additional OAuth scopes to grant the service account, beyond the
+     *  default cloud-platform scope. (list of strings)
      * </pre>
      *
      * <code>.google.cloud.batch.v1.ServiceAccount service_account = 9;</code>

@@ -24,7 +24,7 @@ package com.google.maps.routing.v2;
  *
  * <pre>
  * A set of values that specify the navigation action to take for the current
- * step (e.g., turn left, merge, straight, etc.).
+ * step (for example, turn left, merge, or straight).
  * </pre>
  *
  * Protobuf enum {@code google.maps.routing.v2.Maneuver}

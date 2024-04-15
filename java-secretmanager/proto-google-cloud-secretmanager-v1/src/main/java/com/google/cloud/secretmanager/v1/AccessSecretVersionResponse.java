@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * Response message for [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion].
+ * Response message for
+ * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.AccessSecretVersionResponse}
@@ -72,7 +73,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -96,7 +98,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+   * The resource name of the
+   * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
@@ -345,7 +348,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion].
+   * Response message for
+   * [SecretManagerService.AccessSecretVersion][google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.AccessSecretVersionResponse}
@@ -561,7 +565,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -584,7 +589,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -607,7 +613,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -629,7 +636,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
@@ -647,7 +655,8 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The resource name of the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
+     * The resource name of the
+     * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
      * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *

@@ -60,6 +60,26 @@ public final class EngineServiceProto {
       internal_static_google_cloud_discoveryengine_v1beta_UpdateEngineRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_UpdateEngineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_PauseEngineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_PauseEngineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_ResumeEngineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_ResumeEngineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_TuneEngineRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_TuneEngineRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_TuneEngineMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_TuneEngineMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_TuneEngineResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_TuneEngineResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -103,38 +123,63 @@ public final class EngineServiceProto {
           + "e_token\030\002 \001(\t\"\210\001\n\023UpdateEngineRequest\022@\n"
           + "\006engine\030\001 \001(\0132+.google.cloud.discoveryen"
           + "gine.v1beta.EngineB\003\340A\002\022/\n\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMask2\243\n\n\rEng"
-          + "ineService\022\272\002\n\014CreateEngine\0228.google.clo"
-          + "ud.discoveryengine.v1beta.CreateEngineRe"
-          + "quest\032\035.google.longrunning.Operation\"\320\001\312"
-          + "Af\n*google.cloud.discoveryengine.v1beta."
-          + "Engine\0228google.cloud.discoveryengine.v1b"
-          + "eta.CreateEngineMetadata\332A\027parent,engine"
-          + ",engine_id\202\323\344\223\002G\"=/v1beta/{parent=projec"
-          + "ts/*/locations/*/collections/*}/engines:"
-          + "\006engine\022\212\002\n\014DeleteEngine\0228.google.cloud."
-          + "discoveryengine.v1beta.DeleteEngineReque"
-          + "st\032\035.google.longrunning.Operation\"\240\001\312AQ\n"
-          + "\025google.protobuf.Empty\0228google.cloud.dis"
-          + "coveryengine.v1beta.DeleteEngineMetadata"
-          + "\332A\004name\202\323\344\223\002?*=/v1beta/{name=projects/*/"
-          + "locations/*/collections/*/engines/*}\022\340\001\n"
-          + "\014UpdateEngine\0228.google.cloud.discoveryen"
-          + "gine.v1beta.UpdateEngineRequest\032+.google"
-          + ".cloud.discoveryengine.v1beta.Engine\"i\332A"
-          + "\022engine,update_mask\202\323\344\223\002N2D/v1beta/{engi"
-          + "ne.name=projects/*/locations/*/collectio"
-          + "ns/*/engines/*}:\006engine\022\275\001\n\tGetEngine\0225."
-          + "google.cloud.discoveryengine.v1beta.GetE"
-          + "ngineRequest\032+.google.cloud.discoveryeng"
-          + "ine.v1beta.Engine\"L\332A\004name\202\323\344\223\002?\022=/v1bet"
-          + "a/{name=projects/*/locations/*/collectio"
-          + "ns/*/engines/*}\022\320\001\n\013ListEngines\0227.google"
-          + ".cloud.discoveryengine.v1beta.ListEngine"
-          + "sRequest\0328.google.cloud.discoveryengine."
-          + "v1beta.ListEnginesResponse\"N\332A\006parent\202\323\344"
-          + "\223\002?\022=/v1beta/{parent=projects/*/location"
-          + "s/*/collections/*}/engines\032R\312A\036discovery"
+          + " \001(\0132\032.google.protobuf.FieldMask\"Q\n\022Paus"
+          + "eEngineRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'\n%di"
+          + "scoveryengine.googleapis.com/Engine\"R\n\023R"
+          + "esumeEngineRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372A\'"
+          + "\n%discoveryengine.googleapis.com/Engine\""
+          + "P\n\021TuneEngineRequest\022;\n\004name\030\001 \001(\tB-\340A\002\372"
+          + "A\'\n%discoveryengine.googleapis.com/Engin"
+          + "e\"S\n\022TuneEngineMetadata\022=\n\006engine\030\001 \001(\tB"
+          + "-\340A\002\372A\'\n%discoveryengine.googleapis.com/"
+          + "Engine\"\024\n\022TuneEngineResponse2\247\017\n\rEngineS"
+          + "ervice\022\272\002\n\014CreateEngine\0228.google.cloud.d"
+          + "iscoveryengine.v1beta.CreateEngineReques"
+          + "t\032\035.google.longrunning.Operation\"\320\001\312Af\n*"
+          + "google.cloud.discoveryengine.v1beta.Engi"
+          + "ne\0228google.cloud.discoveryengine.v1beta."
+          + "CreateEngineMetadata\332A\027parent,engine,eng"
+          + "ine_id\202\323\344\223\002G\"=/v1beta/{parent=projects/*"
+          + "/locations/*/collections/*}/engines:\006eng"
+          + "ine\022\212\002\n\014DeleteEngine\0228.google.cloud.disc"
+          + "overyengine.v1beta.DeleteEngineRequest\032\035"
+          + ".google.longrunning.Operation\"\240\001\312AQ\n\025goo"
+          + "gle.protobuf.Empty\0228google.cloud.discove"
+          + "ryengine.v1beta.DeleteEngineMetadata\332A\004n"
+          + "ame\202\323\344\223\002?*=/v1beta/{name=projects/*/loca"
+          + "tions/*/collections/*/engines/*}\022\340\001\n\014Upd"
+          + "ateEngine\0228.google.cloud.discoveryengine"
+          + ".v1beta.UpdateEngineRequest\032+.google.clo"
+          + "ud.discoveryengine.v1beta.Engine\"i\332A\022eng"
+          + "ine,update_mask\202\323\344\223\002N2D/v1beta/{engine.n"
+          + "ame=projects/*/locations/*/collections/*"
+          + "/engines/*}:\006engine\022\275\001\n\tGetEngine\0225.goog"
+          + "le.cloud.discoveryengine.v1beta.GetEngin"
+          + "eRequest\032+.google.cloud.discoveryengine."
+          + "v1beta.Engine\"L\332A\004name\202\323\344\223\002?\022=/v1beta/{n"
+          + "ame=projects/*/locations/*/collections/*"
+          + "/engines/*}\022\320\001\n\013ListEngines\0227.google.clo"
+          + "ud.discoveryengine.v1beta.ListEnginesReq"
+          + "uest\0328.google.cloud.discoveryengine.v1be"
+          + "ta.ListEnginesResponse\"N\332A\006parent\202\323\344\223\002?\022"
+          + "=/v1beta/{parent=projects/*/locations/*/"
+          + "collections/*}/engines\022\312\001\n\013PauseEngine\0227"
+          + ".google.cloud.discoveryengine.v1beta.Pau"
+          + "seEngineRequest\032+.google.cloud.discovery"
+          + "engine.v1beta.Engine\"U\332A\004name\202\323\344\223\002H\"C/v1"
+          + "beta/{name=projects/*/locations/*/collec"
+          + "tions/*/engines/*}:pause:\001*\022\315\001\n\014ResumeEn"
+          + "gine\0228.google.cloud.discoveryengine.v1be"
+          + "ta.ResumeEngineRequest\032+.google.cloud.di"
+          + "scoveryengine.v1beta.Engine\"V\332A\004name\202\323\344\223"
+          + "\002I\"D/v1beta/{name=projects/*/locations/*"
+          + "/collections/*/engines/*}:resume:\001*\022\344\001\n\n"
+          + "TuneEngine\0226.google.cloud.discoveryengin"
+          + "e.v1beta.TuneEngineRequest\032\035.google.long"
+          + "running.Operation\"\177\312A(\n\022TuneEngineRespon"
+          + "se\022\022TuneEngineMetadata\332A\004name\202\323\344\223\002G\"B/v1"
+          + "beta/{name=projects/*/locations/*/collec"
+          + "tions/*/engines/*}:tune:\001*\032R\312A\036discovery"
           + "engine.googleapis.com\322A.https://www.goog"
           + "leapis.com/auth/cloud-platformB\231\002\n\'com.g"
           + "oogle.cloud.discoveryengine.v1betaB\022Engi"
@@ -224,6 +269,44 @@ public final class EngineServiceProto {
             new java.lang.String[] {
               "Engine", "UpdateMask",
             });
+    internal_static_google_cloud_discoveryengine_v1beta_PauseEngineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_discoveryengine_v1beta_PauseEngineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_PauseEngineRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_ResumeEngineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_discoveryengine_v1beta_ResumeEngineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_ResumeEngineRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_TuneEngineRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_discoveryengine_v1beta_TuneEngineRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_TuneEngineRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_TuneEngineMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_discoveryengine_v1beta_TuneEngineMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_TuneEngineMetadata_descriptor,
+            new java.lang.String[] {
+              "Engine",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_TuneEngineResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_discoveryengine_v1beta_TuneEngineResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_TuneEngineResponse_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

@@ -131,6 +131,60 @@
  * }
  * }</pre>
  *
+ * <p>======================= GroundedGenerationServiceClient =======================
+ *
+ * <p>Service Description: Service for grounded generation.
+ *
+ * <p>Sample for GroundedGenerationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GroundedGenerationServiceClient groundedGenerationServiceClient =
+ *     GroundedGenerationServiceClient.create()) {
+ *   CheckGroundingRequest request =
+ *       CheckGroundingRequest.newBuilder()
+ *           .setGroundingConfig(
+ *               GroundingConfigName.of("[PROJECT]", "[LOCATION]", "[GROUNDING_CONFIG]")
+ *                   .toString())
+ *           .setAnswerCandidate("answerCandidate-292402331")
+ *           .addAllFacts(new ArrayList<GroundingFact>())
+ *           .setGroundingSpec(CheckGroundingSpec.newBuilder().build())
+ *           .build();
+ *   CheckGroundingResponse response = groundedGenerationServiceClient.checkGrounding(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RankServiceClient =======================
+ *
+ * <p>Service Description: Service for ranking text records.
+ *
+ * <p>Sample for RankServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RankServiceClient rankServiceClient = RankServiceClient.create()) {
+ *   RankRequest request =
+ *       RankRequest.newBuilder()
+ *           .setRankingConfig(
+ *               RankingConfigName.of("[PROJECT]", "[LOCATION]", "[RANKING_CONFIG]").toString())
+ *           .setModel("model104069929")
+ *           .setTopN(110545924)
+ *           .setQuery("query107944136")
+ *           .addAllRecords(new ArrayList<RankingRecord>())
+ *           .setIgnoreRecordDetailsInResponse(true)
+ *           .build();
+ *   RankResponse response = rankServiceClient.rank(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= RecommendationServiceClient =======================
  *
  * <p>Service Description: Service for making recommendations.

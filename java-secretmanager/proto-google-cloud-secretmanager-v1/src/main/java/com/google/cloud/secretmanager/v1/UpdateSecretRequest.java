@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.UpdateSecret][google.cloud.secretmanager.v1.SecretManagerService.UpdateSecret].
+ * Request message for
+ * [SecretManagerService.UpdateSecret][google.cloud.secretmanager.v1.SecretManagerService.UpdateSecret].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secretmanager.v1.UpdateSecretRequest}
@@ -68,7 +69,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -85,7 +87,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -104,7 +107,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+   * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+   * values.
    * </pre>
    *
    * <code>
@@ -350,7 +354,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.UpdateSecret][google.cloud.secretmanager.v1.SecretManagerService.UpdateSecret].
+   * Request message for
+   * [SecretManagerService.UpdateSecret][google.cloud.secretmanager.v1.SecretManagerService.UpdateSecret].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secretmanager.v1.UpdateSecretRequest}
@@ -572,7 +577,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -588,7 +594,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -610,7 +617,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -634,7 +642,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -655,7 +664,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -684,7 +694,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -705,7 +716,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -721,7 +733,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>
@@ -741,7 +754,8 @@ public final class UpdateSecretRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field values.
+     * Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
+     * values.
      * </pre>
      *
      * <code>

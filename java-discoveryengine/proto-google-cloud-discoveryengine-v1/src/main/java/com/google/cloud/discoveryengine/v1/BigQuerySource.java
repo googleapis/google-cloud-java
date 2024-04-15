@@ -406,7 +406,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *   [Document.struct_data][google.cloud.discoveryengine.v1.Document.struct_data].
    * * `custom`: One custom data per row in arbitrary format that conforms to
    *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-   *   store. This can only be used by Gen App Builder.
+   *   store. This can only be used by the GENERIC Data Store vertical.
    * </pre>
    *
    * <code>string data_schema = 6;</code>
@@ -447,7 +447,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
    *   [Document.struct_data][google.cloud.discoveryengine.v1.Document.struct_data].
    * * `custom`: One custom data per row in arbitrary format that conforms to
    *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-   *   store. This can only be used by Gen App Builder.
+   *   store. This can only be used by the GENERIC Data Store vertical.
    * </pre>
    *
    * <code>string data_schema = 6;</code>
@@ -1649,7 +1649,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *   [Document.struct_data][google.cloud.discoveryengine.v1.Document.struct_data].
      * * `custom`: One custom data per row in arbitrary format that conforms to
      *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by Gen App Builder.
+     *   store. This can only be used by the GENERIC Data Store vertical.
      * </pre>
      *
      * <code>string data_schema = 6;</code>
@@ -1689,7 +1689,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *   [Document.struct_data][google.cloud.discoveryengine.v1.Document.struct_data].
      * * `custom`: One custom data per row in arbitrary format that conforms to
      *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by Gen App Builder.
+     *   store. This can only be used by the GENERIC Data Store vertical.
      * </pre>
      *
      * <code>string data_schema = 6;</code>
@@ -1729,7 +1729,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *   [Document.struct_data][google.cloud.discoveryengine.v1.Document.struct_data].
      * * `custom`: One custom data per row in arbitrary format that conforms to
      *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by Gen App Builder.
+     *   store. This can only be used by the GENERIC Data Store vertical.
      * </pre>
      *
      * <code>string data_schema = 6;</code>
@@ -1768,7 +1768,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *   [Document.struct_data][google.cloud.discoveryengine.v1.Document.struct_data].
      * * `custom`: One custom data per row in arbitrary format that conforms to
      *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by Gen App Builder.
+     *   store. This can only be used by the GENERIC Data Store vertical.
      * </pre>
      *
      * <code>string data_schema = 6;</code>
@@ -1803,7 +1803,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      *   [Document.struct_data][google.cloud.discoveryengine.v1.Document.struct_data].
      * * `custom`: One custom data per row in arbitrary format that conforms to
      *   the defined [Schema][google.cloud.discoveryengine.v1.Schema] of the data
-     *   store. This can only be used by Gen App Builder.
+     *   store. This can only be used by the GENERIC Data Store vertical.
      * </pre>
      *
      * <code>string data_schema = 6;</code>

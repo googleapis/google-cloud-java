@@ -689,6 +689,95 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int STARTING_SCHEMA_FIELD_NUMBER = 28;
+  private com.google.cloud.discoveryengine.v1.Schema startingSchema_;
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+   * it. If unset, a default vertical specialized schema will be used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+   *
+   * @return Whether the startingSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartingSchema() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+   * it. If unset, a default vertical specialized schema will be used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+   *
+   * @return The startingSchema.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.Schema getStartingSchema() {
+    return startingSchema_ == null
+        ? com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()
+        : startingSchema_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The start schema to use for this
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+   * it. If unset, a default vertical specialized schema will be used.
+   *
+   * This field is only used by [CreateDataStore][] API, and will be ignored if
+   * used in other APIs. This field will be omitted from all API responses
+   * including [CreateDataStore][] API. To retrieve a schema of a
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+   * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+   * API instead.
+   *
+   * The provided schema will be validated against certain rules on schema.
+   * Learn more from [this
+   * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SchemaOrBuilder getStartingSchemaOrBuilder() {
+    return startingSchema_ == null
+        ? com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()
+        : startingSchema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -732,6 +821,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSchemaId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, defaultSchemaId_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(28, getStartingSchema());
     }
     getUnknownFields().writeTo(output);
   }
@@ -777,6 +869,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultSchemaId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, defaultSchemaId_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getStartingSchema());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -802,6 +897,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasStartingSchema() != other.hasStartingSchema()) return false;
+    if (hasStartingSchema()) {
+      if (!getStartingSchema().equals(other.getStartingSchema())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -831,6 +930,10 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasStartingSchema()) {
+      hash = (37 * hash) + STARTING_SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getStartingSchema().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -973,6 +1076,7 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCreateTimeFieldBuilder();
+        getStartingSchemaFieldBuilder();
       }
     }
 
@@ -991,6 +1095,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      startingSchema_ = null;
+      if (startingSchemaBuilder_ != null) {
+        startingSchemaBuilder_.dispose();
+        startingSchemaBuilder_ = null;
       }
       return this;
     }
@@ -1056,6 +1165,11 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.startingSchema_ =
+            startingSchemaBuilder_ == null ? startingSchema_ : startingSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1139,6 +1253,9 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasStartingSchema()) {
+        mergeStartingSchema(other.getStartingSchema());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1220,6 +1337,12 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 58
+            case 226:
+              {
+                input.readMessage(getStartingSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2314,6 +2437,309 @@ public final class DataStore extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1.Schema startingSchema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.Schema,
+            com.google.cloud.discoveryengine.v1.Schema.Builder,
+            com.google.cloud.discoveryengine.v1.SchemaOrBuilder>
+        startingSchemaBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     *
+     * @return Whether the startingSchema field is set.
+     */
+    public boolean hasStartingSchema() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     *
+     * @return The startingSchema.
+     */
+    public com.google.cloud.discoveryengine.v1.Schema getStartingSchema() {
+      if (startingSchemaBuilder_ == null) {
+        return startingSchema_ == null
+            ? com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()
+            : startingSchema_;
+      } else {
+        return startingSchemaBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     */
+    public Builder setStartingSchema(com.google.cloud.discoveryengine.v1.Schema value) {
+      if (startingSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startingSchema_ = value;
+      } else {
+        startingSchemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     */
+    public Builder setStartingSchema(
+        com.google.cloud.discoveryengine.v1.Schema.Builder builderForValue) {
+      if (startingSchemaBuilder_ == null) {
+        startingSchema_ = builderForValue.build();
+      } else {
+        startingSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     */
+    public Builder mergeStartingSchema(com.google.cloud.discoveryengine.v1.Schema value) {
+      if (startingSchemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && startingSchema_ != null
+            && startingSchema_ != com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()) {
+          getStartingSchemaBuilder().mergeFrom(value);
+        } else {
+          startingSchema_ = value;
+        }
+      } else {
+        startingSchemaBuilder_.mergeFrom(value);
+      }
+      if (startingSchema_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     */
+    public Builder clearStartingSchema() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      startingSchema_ = null;
+      if (startingSchemaBuilder_ != null) {
+        startingSchemaBuilder_.dispose();
+        startingSchemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.Schema.Builder getStartingSchemaBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getStartingSchemaFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.SchemaOrBuilder getStartingSchemaOrBuilder() {
+      if (startingSchemaBuilder_ != null) {
+        return startingSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        return startingSchema_ == null
+            ? com.google.cloud.discoveryengine.v1.Schema.getDefaultInstance()
+            : startingSchema_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The start schema to use for this
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
+     * it. If unset, a default vertical specialized schema will be used.
+     *
+     * This field is only used by [CreateDataStore][] API, and will be ignored if
+     * used in other APIs. This field will be omitted from all API responses
+     * including [CreateDataStore][] API. To retrieve a schema of a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
+     * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
+     * API instead.
+     *
+     * The provided schema will be validated against certain rules on schema.
+     * Learn more from [this
+     * doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.Schema starting_schema = 28;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1.Schema,
+            com.google.cloud.discoveryengine.v1.Schema.Builder,
+            com.google.cloud.discoveryengine.v1.SchemaOrBuilder>
+        getStartingSchemaFieldBuilder() {
+      if (startingSchemaBuilder_ == null) {
+        startingSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1.Schema,
+                com.google.cloud.discoveryengine.v1.Schema.Builder,
+                com.google.cloud.discoveryengine.v1.SchemaOrBuilder>(
+                getStartingSchema(), getParentForChildren(), isClean());
+        startingSchema_ = null;
+      }
+      return startingSchemaBuilder_;
     }
 
     @java.lang.Override

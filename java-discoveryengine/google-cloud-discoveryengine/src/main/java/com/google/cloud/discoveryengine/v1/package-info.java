@@ -131,6 +131,37 @@
  * }
  * }</pre>
  *
+ * <p>======================= RecommendationServiceClient =======================
+ *
+ * <p>Service Description: Service for making recommendations.
+ *
+ * <p>Sample for RecommendationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RecommendationServiceClient recommendationServiceClient =
+ *     RecommendationServiceClient.create()) {
+ *   RecommendRequest request =
+ *       RecommendRequest.newBuilder()
+ *           .setServingConfig(
+ *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+ *                   .toString())
+ *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setPageSize(883849137)
+ *           .setFilter("filter-1274492040")
+ *           .setValidateOnly(true)
+ *           .putAllParams(new HashMap<String, Value>())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .build();
+ *   RecommendResponse response = recommendationServiceClient.recommend(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= SchemaServiceClient =======================
  *
  * <p>Service Description: Service for managing [Schema][google.cloud.discoveryengine.v1.Schema]s.
@@ -179,6 +210,7 @@
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
+ *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")

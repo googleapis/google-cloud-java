@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.shopping.merchant.inventories.v1beta.InsertLocalInventoryRequest;
 import com.google.shopping.merchant.inventories.v1beta.LocalInventory;
 import com.google.shopping.merchant.inventories.v1beta.LocalInventoryServiceClient;
+import com.google.shopping.merchant.inventories.v1beta.ProductName;
 
 public class AsyncInsertLocalInventory {
 
@@ -38,7 +39,7 @@ public class AsyncInsertLocalInventory {
         LocalInventoryServiceClient.create()) {
       InsertLocalInventoryRequest request =
           InsertLocalInventoryRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
               .setLocalInventory(LocalInventory.newBuilder().build())
               .build();
       ApiFuture<LocalInventory> future =

@@ -98,7 +98,7 @@
               "methods": ["purgeDocumentsAsync", "purgeDocumentsOperationCallable", "purgeDocumentsCallable"]
             },
             "UpdateDocument": {
-              "methods": ["updateDocument", "updateDocumentCallable"]
+              "methods": ["updateDocument", "updateDocument", "updateDocumentCallable"]
             }
           }
         }
@@ -123,6 +123,18 @@
             },
             "UpdateEngine": {
               "methods": ["updateEngine", "updateEngine", "updateEngineCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RecommendationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RecommendationServiceClient",
+          "rpcs": {
+            "Recommend": {
+              "methods": ["recommend", "recommendCallable"]
             }
           }
         }

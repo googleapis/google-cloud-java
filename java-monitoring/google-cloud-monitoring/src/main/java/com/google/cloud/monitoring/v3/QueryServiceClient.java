@@ -37,9 +37,9 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: The QueryService API is used to manage time series data in Stackdriver
- * Monitoring. Time series data is a collection of data points that describes the time-varying
- * values of a metric.
+ * Service Description: The QueryService API is used to manage time series data in Cloud Monitoring.
+ * Time series data is a collection of data points that describes the time-varying values of a
+ * metric.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -76,7 +76,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> QueryTimeSeries</td>
- *      <td><p> Queries time series using Monitoring Query Language. This method does not require a Workspace.</td>
+ *      <td><p> Queries time series using Monitoring Query Language.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -181,7 +181,7 @@ public class QueryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries time series using Monitoring Query Language. This method does not require a Workspace.
+   * Queries time series using Monitoring Query Language.
    *
    * <p>Sample code:
    *
@@ -214,7 +214,7 @@ public class QueryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries time series using Monitoring Query Language. This method does not require a Workspace.
+   * Queries time series using Monitoring Query Language.
    *
    * <p>Sample code:
    *
@@ -248,7 +248,7 @@ public class QueryServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Queries time series using Monitoring Query Language. This method does not require a Workspace.
+   * Queries time series using Monitoring Query Language.
    *
    * <p>Sample code:
    *

@@ -266,6 +266,142 @@ public final class EngineServiceGrpc {
     return getListEnginesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.PauseEngineRequest,
+          com.google.cloud.discoveryengine.v1beta.Engine>
+      getPauseEngineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PauseEngine",
+      requestType = com.google.cloud.discoveryengine.v1beta.PauseEngineRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.Engine.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.PauseEngineRequest,
+          com.google.cloud.discoveryengine.v1beta.Engine>
+      getPauseEngineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.PauseEngineRequest,
+            com.google.cloud.discoveryengine.v1beta.Engine>
+        getPauseEngineMethod;
+    if ((getPauseEngineMethod = EngineServiceGrpc.getPauseEngineMethod) == null) {
+      synchronized (EngineServiceGrpc.class) {
+        if ((getPauseEngineMethod = EngineServiceGrpc.getPauseEngineMethod) == null) {
+          EngineServiceGrpc.getPauseEngineMethod =
+              getPauseEngineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.PauseEngineRequest,
+                          com.google.cloud.discoveryengine.v1beta.Engine>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PauseEngine"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.PauseEngineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.Engine.getDefaultInstance()))
+                      .setSchemaDescriptor(new EngineServiceMethodDescriptorSupplier("PauseEngine"))
+                      .build();
+        }
+      }
+    }
+    return getPauseEngineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest,
+          com.google.cloud.discoveryengine.v1beta.Engine>
+      getResumeEngineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResumeEngine",
+      requestType = com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1beta.Engine.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest,
+          com.google.cloud.discoveryengine.v1beta.Engine>
+      getResumeEngineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest,
+            com.google.cloud.discoveryengine.v1beta.Engine>
+        getResumeEngineMethod;
+    if ((getResumeEngineMethod = EngineServiceGrpc.getResumeEngineMethod) == null) {
+      synchronized (EngineServiceGrpc.class) {
+        if ((getResumeEngineMethod = EngineServiceGrpc.getResumeEngineMethod) == null) {
+          EngineServiceGrpc.getResumeEngineMethod =
+              getResumeEngineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest,
+                          com.google.cloud.discoveryengine.v1beta.Engine>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResumeEngine"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.Engine.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EngineServiceMethodDescriptorSupplier("ResumeEngine"))
+                      .build();
+        }
+      }
+    }
+    return getResumeEngineMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.TuneEngineRequest,
+          com.google.longrunning.Operation>
+      getTuneEngineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TuneEngine",
+      requestType = com.google.cloud.discoveryengine.v1beta.TuneEngineRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.TuneEngineRequest,
+          com.google.longrunning.Operation>
+      getTuneEngineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.TuneEngineRequest,
+            com.google.longrunning.Operation>
+        getTuneEngineMethod;
+    if ((getTuneEngineMethod = EngineServiceGrpc.getTuneEngineMethod) == null) {
+      synchronized (EngineServiceGrpc.class) {
+        if ((getTuneEngineMethod = EngineServiceGrpc.getTuneEngineMethod) == null) {
+          EngineServiceGrpc.getTuneEngineMethod =
+              getTuneEngineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.TuneEngineRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TuneEngine"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.TuneEngineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new EngineServiceMethodDescriptorSupplier("TuneEngine"))
+                      .build();
+        }
+      }
+    }
+    return getTuneEngineMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EngineServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EngineServiceStub> factory =
@@ -389,6 +525,55 @@ public final class EngineServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListEnginesMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    default void pauseEngine(
+        com.google.cloud.discoveryengine.v1beta.PauseEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Engine>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPauseEngineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    default void resumeEngine(
+        com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Engine>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResumeEngineMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    default void tuneEngine(
+        com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTuneEngineMethod(), responseObserver);
+    }
   }
 
   /**
@@ -508,6 +693,60 @@ public final class EngineServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public void pauseEngine(
+        com.google.cloud.discoveryengine.v1beta.PauseEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Engine>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPauseEngineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public void resumeEngine(
+        com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Engine>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResumeEngineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public void tuneEngine(
+        com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTuneEngineMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -594,6 +833,51 @@ public final class EngineServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.ListEnginesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEnginesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine pauseEngine(
+        com.google.cloud.discoveryengine.v1beta.PauseEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Engine resumeEngine(
+        com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeEngineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.longrunning.Operation tuneEngine(
+        com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTuneEngineMethod(), getCallOptions(), request);
     }
   }
 
@@ -685,6 +969,53 @@ public final class EngineServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEnginesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.Engine>
+        pauseEngine(com.google.cloud.discoveryengine.v1beta.PauseEngineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPauseEngineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes the training of an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1beta.Engine>
+        resumeEngine(com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResumeEngineMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunes an existing engine. Only applicable if
+     * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+     * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        tuneEngine(com.google.cloud.discoveryengine.v1beta.TuneEngineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTuneEngineMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ENGINE = 0;
@@ -692,6 +1023,9 @@ public final class EngineServiceGrpc {
   private static final int METHODID_UPDATE_ENGINE = 2;
   private static final int METHODID_GET_ENGINE = 3;
   private static final int METHODID_LIST_ENGINES = 4;
+  private static final int METHODID_PAUSE_ENGINE = 5;
+  private static final int METHODID_RESUME_ENGINE = 6;
+  private static final int METHODID_TUNE_ENGINE = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -738,6 +1072,23 @@ public final class EngineServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1beta.ListEnginesResponse>)
                   responseObserver);
+          break;
+        case METHODID_PAUSE_ENGINE:
+          serviceImpl.pauseEngine(
+              (com.google.cloud.discoveryengine.v1beta.PauseEngineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Engine>)
+                  responseObserver);
+          break;
+        case METHODID_RESUME_ENGINE:
+          serviceImpl.resumeEngine(
+              (com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Engine>)
+                  responseObserver);
+          break;
+        case METHODID_TUNE_ENGINE:
+          serviceImpl.tuneEngine(
+              (com.google.cloud.discoveryengine.v1beta.TuneEngineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -789,6 +1140,26 @@ public final class EngineServiceGrpc {
                     com.google.cloud.discoveryengine.v1beta.ListEnginesRequest,
                     com.google.cloud.discoveryengine.v1beta.ListEnginesResponse>(
                     service, METHODID_LIST_ENGINES)))
+        .addMethod(
+            getPauseEngineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.PauseEngineRequest,
+                    com.google.cloud.discoveryengine.v1beta.Engine>(
+                    service, METHODID_PAUSE_ENGINE)))
+        .addMethod(
+            getResumeEngineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.ResumeEngineRequest,
+                    com.google.cloud.discoveryengine.v1beta.Engine>(
+                    service, METHODID_RESUME_ENGINE)))
+        .addMethod(
+            getTuneEngineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.TuneEngineRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TUNE_ENGINE)))
         .build();
   }
 
@@ -845,6 +1216,9 @@ public final class EngineServiceGrpc {
                       .addMethod(getUpdateEngineMethod())
                       .addMethod(getGetEngineMethod())
                       .addMethod(getListEnginesMethod())
+                      .addMethod(getPauseEngineMethod())
+                      .addMethod(getResumeEngineMethod())
+                      .addMethod(getTuneEngineMethod())
                       .build();
         }
       }

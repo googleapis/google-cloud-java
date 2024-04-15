@@ -584,8 +584,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A content string and a MIME type that describes the content string's
-   * format.
+   * Documentation that is included in the notifications and incidents
+   * pertaining to this policy.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.AlertPolicy.Documentation}
@@ -998,8 +998,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A content string and a MIME type that describes the content string's
-     * format.
+     * Documentation that is included in the notifications and incidents
+     * pertaining to this policy.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.AlertPolicy.Documentation}
@@ -3602,7 +3602,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A condition control that determines how metric-threshold conditions
-       * are evaluated when data stops arriving.
+       * are evaluated when data stops arriving. To use this control, the value
+       * of the `duration` field must be greater than or equal to 60 seconds.
        * </pre>
        *
        * <code>
@@ -3617,7 +3618,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A condition control that determines how metric-threshold conditions
-       * are evaluated when data stops arriving.
+       * are evaluated when data stops arriving. To use this control, the value
+       * of the `duration` field must be greater than or equal to 60 seconds.
        * </pre>
        *
        * <code>
@@ -5239,7 +5241,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A condition control that determines how metric-threshold conditions
-       * are evaluated when data stops arriving.
+       * are evaluated when data stops arriving. To use this control, the value
+       * of the `duration` field must be greater than or equal to 60 seconds.
        * </pre>
        *
        * <code>
@@ -5257,7 +5260,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * A condition control that determines how metric-threshold conditions
-       * are evaluated when data stops arriving.
+       * are evaluated when data stops arriving. To use this control, the value
+       * of the `duration` field must be greater than or equal to 60 seconds.
        * </pre>
        *
        * <code>
@@ -8288,7 +8292,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A condition control that determines how metric-threshold conditions
-         * are evaluated when data stops arriving.
+         * are evaluated when data stops arriving. To use this control, the value
+         * of the `duration` field must be greater than or equal to 60 seconds.
          * </pre>
          *
          * <code>
@@ -8306,7 +8311,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A condition control that determines how metric-threshold conditions
-         * are evaluated when data stops arriving.
+         * are evaluated when data stops arriving. To use this control, the value
+         * of the `duration` field must be greater than or equal to 60 seconds.
          * </pre>
          *
          * <code>
@@ -8327,7 +8333,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A condition control that determines how metric-threshold conditions
-         * are evaluated when data stops arriving.
+         * are evaluated when data stops arriving. To use this control, the value
+         * of the `duration` field must be greater than or equal to 60 seconds.
          * </pre>
          *
          * <code>
@@ -8351,7 +8358,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A condition control that determines how metric-threshold conditions
-         * are evaluated when data stops arriving.
+         * are evaluated when data stops arriving. To use this control, the value
+         * of the `duration` field must be greater than or equal to 60 seconds.
          * </pre>
          *
          * <code>
@@ -8376,7 +8384,8 @@ public final class AlertPolicy extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * A condition control that determines how metric-threshold conditions
-         * are evaluated when data stops arriving.
+         * are evaluated when data stops arriving. To use this control, the value
+         * of the `duration` field must be greater than or equal to 60 seconds.
          * </pre>
          *
          * <code>

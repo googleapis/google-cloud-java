@@ -57,6 +57,7 @@ public class SyncConverseConversation {
               .putAllUserLabels(new HashMap<String, String>())
               .setSummarySpec(SearchRequest.ContentSearchSpec.SummarySpec.newBuilder().build())
               .setFilter("filter-1274492040")
+              .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .build();
       ConverseConversationResponse response =
           conversationalSearchServiceClient.converseConversation(request);

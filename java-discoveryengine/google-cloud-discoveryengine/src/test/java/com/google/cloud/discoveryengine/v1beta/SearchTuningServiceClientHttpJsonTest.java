@@ -30,6 +30,7 @@ import com.google.protobuf.Any;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -82,6 +83,7 @@ public class SearchTuningServiceClientHttpJsonTest {
             .addAllErrorSamples(new ArrayList<Status>())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
             .setModelStatus("modelStatus488502395")
+            .putAllMetrics(new HashMap<String, Double>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -58,23 +58,44 @@
         "grpc": {
           "libraryClient": "ConversationalSearchServiceClient",
           "rpcs": {
+            "AnswerQuery": {
+              "methods": ["answerQuery", "answerQueryCallable"]
+            },
             "ConverseConversation": {
               "methods": ["converseConversation", "converseConversation", "converseConversation", "converseConversationCallable"]
             },
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "CreateSession": {
+              "methods": ["createSession", "createSession", "createSession", "createSessionCallable"]
+            },
             "DeleteConversation": {
               "methods": ["deleteConversation", "deleteConversation", "deleteConversation", "deleteConversationCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSession", "deleteSession", "deleteSession", "deleteSessionCallable"]
+            },
+            "GetAnswer": {
+              "methods": ["getAnswer", "getAnswer", "getAnswer", "getAnswerCallable"]
             },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },
+            "GetSession": {
+              "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
+            },
             "ListConversations": {
               "methods": ["listConversations", "listConversations", "listConversations", "listConversationsPagedCallable", "listConversationsCallable"]
             },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
             "UpdateConversation": {
               "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
+            },
+            "UpdateSession": {
+              "methods": ["updateSession", "updateSession", "updateSessionCallable"]
             }
           }
         }
@@ -183,6 +204,36 @@
           "rpcs": {
             "EstimateDataSize": {
               "methods": ["estimateDataSizeAsync", "estimateDataSizeOperationCallable", "estimateDataSizeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "GroundedGenerationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GroundedGenerationServiceClient",
+          "rpcs": {
+            "CheckGrounding": {
+              "methods": ["checkGrounding", "checkGroundingCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProjectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectServiceClient",
+          "rpcs": {
+            "GetProject": {
+              "methods": ["getProject", "getProject", "getProject", "getProjectCallable"]
+            },
+            "ProvisionProject": {
+              "methods": ["provisionProjectAsync", "provisionProjectAsync", "provisionProjectAsync", "provisionProjectOperationCallable", "provisionProjectCallable"]
+            },
+            "ReportConsentChange": {
+              "methods": ["reportConsentChange", "reportConsentChange", "reportConsentChange", "reportConsentChangeCallable"]
             }
           }
         }

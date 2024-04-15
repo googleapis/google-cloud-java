@@ -422,6 +422,78 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * Debug information specifically related to forward geocoding issues arising
+   * from Geolocation Search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
+   * </code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo>
+      getGeoSearchDebugInfoList();
+  /**
+   *
+   *
+   * <pre>
+   * Debug information specifically related to forward geocoding issues arising
+   * from Geolocation Search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo getGeoSearchDebugInfo(
+      int index);
+  /**
+   *
+   *
+   * <pre>
+   * Debug information specifically related to forward geocoding issues arising
+   * from Geolocation Search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
+   * </code>
+   */
+  int getGeoSearchDebugInfoCount();
+  /**
+   *
+   *
+   * <pre>
+   * Debug information specifically related to forward geocoding issues arising
+   * from Geolocation Search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfoOrBuilder>
+      getGeoSearchDebugInfoOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Debug information specifically related to forward geocoding issues arising
+   * from Geolocation Search.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfo geo_search_debug_info = 16;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.GeoSearchDebugInfoOrBuilder
+      getGeoSearchDebugInfoOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Query expansion information for the returned results.
    * </pre>
    *

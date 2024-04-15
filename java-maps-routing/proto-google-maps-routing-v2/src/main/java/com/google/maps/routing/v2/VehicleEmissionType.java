@@ -25,7 +25,7 @@ package com.google.maps.routing.v2;
  * <pre>
  * A set of values describing the vehicle's emission type.
  * Applies only to the `DRIVE`
- * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
+ * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
  * </pre>
  *
  * Protobuf enum {@code google.maps.routing.v2.VehicleEmissionType}

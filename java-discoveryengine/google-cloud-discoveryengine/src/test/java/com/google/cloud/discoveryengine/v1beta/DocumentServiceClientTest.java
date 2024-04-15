@@ -31,6 +31,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
@@ -407,21 +408,18 @@ public class DocumentServiceClientTest {
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
-    UpdateDocumentRequest request =
-        UpdateDocumentRequest.newBuilder()
-            .setDocument(Document.newBuilder().build())
-            .setAllowMissing(true)
-            .build();
+    Document document = Document.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Document actualResponse = client.updateDocument(request);
+    Document actualResponse = client.updateDocument(document, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateDocumentRequest actualRequest = ((UpdateDocumentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getDocument(), actualRequest.getDocument());
-    Assert.assertEquals(request.getAllowMissing(), actualRequest.getAllowMissing());
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -434,12 +432,9 @@ public class DocumentServiceClientTest {
     mockDocumentService.addException(exception);
 
     try {
-      UpdateDocumentRequest request =
-          UpdateDocumentRequest.newBuilder()
-              .setDocument(Document.newBuilder().build())
-              .setAllowMissing(true)
-              .build();
-      client.updateDocument(request);
+      Document document = Document.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDocument(document, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -540,6 +535,7 @@ public class DocumentServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
             .setAutoGenerateIds(true)
             .setIdField("idField1629396127")
             .build();
@@ -554,9 +550,15 @@ public class DocumentServiceClientTest {
     Assert.assertEquals(request.getInlineSource(), actualRequest.getInlineSource());
     Assert.assertEquals(request.getGcsSource(), actualRequest.getGcsSource());
     Assert.assertEquals(request.getBigquerySource(), actualRequest.getBigquerySource());
+    Assert.assertEquals(request.getFhirStoreSource(), actualRequest.getFhirStoreSource());
+    Assert.assertEquals(request.getSpannerSource(), actualRequest.getSpannerSource());
+    Assert.assertEquals(request.getCloudSqlSource(), actualRequest.getCloudSqlSource());
+    Assert.assertEquals(request.getFirestoreSource(), actualRequest.getFirestoreSource());
+    Assert.assertEquals(request.getBigtableSource(), actualRequest.getBigtableSource());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getErrorConfig(), actualRequest.getErrorConfig());
     Assert.assertEquals(request.getReconciliationMode(), actualRequest.getReconciliationMode());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
     Assert.assertEquals(request.getAutoGenerateIds(), actualRequest.getAutoGenerateIds());
     Assert.assertEquals(request.getIdField(), actualRequest.getIdField());
     Assert.assertTrue(
@@ -578,6 +580,7 @@ public class DocumentServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
               .build();

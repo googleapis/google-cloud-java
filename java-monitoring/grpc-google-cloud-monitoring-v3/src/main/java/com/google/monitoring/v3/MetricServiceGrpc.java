@@ -515,7 +515,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
+     * Lists monitored resource descriptors that match a filter.
      * </pre>
      */
     default void listMonitoredResourceDescriptors(
@@ -531,7 +531,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a Workspace.
+     * Gets a single monitored resource descriptor.
      * </pre>
      */
     default void getMonitoredResourceDescriptor(
@@ -545,7 +545,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require a Workspace.
+     * Lists metric descriptors that match a filter.
      * </pre>
      */
     default void listMetricDescriptors(
@@ -560,7 +560,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Workspace.
+     * Gets a single metric descriptor.
      * </pre>
      */
     default void getMetricDescriptor(
@@ -575,10 +575,11 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Creates a new metric descriptor.
-     * The creation is executed asynchronously and callers may check the returned
-     * operation to track its progress.
+     * The creation is executed asynchronously.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
+     * The metric descriptor is updated if it already exists,
+     * except that metric labels are never removed.
      * </pre>
      */
     default void createMetricDescriptor(
@@ -608,7 +609,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a Workspace.
+     * Lists time series that match a filter.
      * </pre>
      */
     default void listTimeSeries(
@@ -627,6 +628,9 @@ public final class MetricServiceGrpc {
      * The response is empty if all time series in the request were written.
      * If any time series could not be written, a corresponding failure message is
      * included in the error response.
+     * This method does not support
+     * [resource locations constraint of an organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
      * </pre>
      */
     default void createTimeSeries(
@@ -699,7 +703,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
+     * Lists monitored resource descriptors that match a filter.
      * </pre>
      */
     public void listMonitoredResourceDescriptors(
@@ -717,7 +721,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a Workspace.
+     * Gets a single monitored resource descriptor.
      * </pre>
      */
     public void getMonitoredResourceDescriptor(
@@ -733,7 +737,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require a Workspace.
+     * Lists metric descriptors that match a filter.
      * </pre>
      */
     public void listMetricDescriptors(
@@ -750,7 +754,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Workspace.
+     * Gets a single metric descriptor.
      * </pre>
      */
     public void getMetricDescriptor(
@@ -767,10 +771,11 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Creates a new metric descriptor.
-     * The creation is executed asynchronously and callers may check the returned
-     * operation to track its progress.
+     * The creation is executed asynchronously.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
+     * The metric descriptor is updated if it already exists,
+     * except that metric labels are never removed.
      * </pre>
      */
     public void createMetricDescriptor(
@@ -804,7 +809,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a Workspace.
+     * Lists time series that match a filter.
      * </pre>
      */
     public void listTimeSeries(
@@ -825,6 +830,9 @@ public final class MetricServiceGrpc {
      * The response is empty if all time series in the request were written.
      * If any time series could not be written, a corresponding failure message is
      * included in the error response.
+     * This method does not support
+     * [resource locations constraint of an organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
      * </pre>
      */
     public void createTimeSeries(
@@ -885,7 +893,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
+     * Lists monitored resource descriptors that match a filter.
      * </pre>
      */
     public com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse
@@ -899,7 +907,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a Workspace.
+     * Gets a single monitored resource descriptor.
      * </pre>
      */
     public com.google.api.MonitoredResourceDescriptor getMonitoredResourceDescriptor(
@@ -912,7 +920,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require a Workspace.
+     * Lists metric descriptors that match a filter.
      * </pre>
      */
     public com.google.monitoring.v3.ListMetricDescriptorsResponse listMetricDescriptors(
@@ -925,7 +933,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Workspace.
+     * Gets a single metric descriptor.
      * </pre>
      */
     public com.google.api.MetricDescriptor getMetricDescriptor(
@@ -939,10 +947,11 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Creates a new metric descriptor.
-     * The creation is executed asynchronously and callers may check the returned
-     * operation to track its progress.
+     * The creation is executed asynchronously.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
+     * The metric descriptor is updated if it already exists,
+     * except that metric labels are never removed.
      * </pre>
      */
     public com.google.api.MetricDescriptor createMetricDescriptor(
@@ -970,7 +979,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a Workspace.
+     * Lists time series that match a filter.
      * </pre>
      */
     public com.google.monitoring.v3.ListTimeSeriesResponse listTimeSeries(
@@ -987,6 +996,9 @@ public final class MetricServiceGrpc {
      * The response is empty if all time series in the request were written.
      * If any time series could not be written, a corresponding failure message is
      * included in the error response.
+     * This method does not support
+     * [resource locations constraint of an organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
      * </pre>
      */
     public com.google.protobuf.Empty createTimeSeries(
@@ -1041,7 +1053,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
+     * Lists monitored resource descriptors that match a filter.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1057,7 +1069,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single monitored resource descriptor. This method does not require a Workspace.
+     * Gets a single monitored resource descriptor.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1073,7 +1085,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists metric descriptors that match a filter. This method does not require a Workspace.
+     * Lists metric descriptors that match a filter.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1087,7 +1099,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Gets a single metric descriptor. This method does not require a Workspace.
+     * Gets a single metric descriptor.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.api.MetricDescriptor>
@@ -1101,10 +1113,11 @@ public final class MetricServiceGrpc {
      *
      * <pre>
      * Creates a new metric descriptor.
-     * The creation is executed asynchronously and callers may check the returned
-     * operation to track its progress.
+     * The creation is executed asynchronously.
      * User-created metric descriptors define
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
+     * The metric descriptor is updated if it already exists,
+     * except that metric labels are never removed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.api.MetricDescriptor>
@@ -1132,7 +1145,7 @@ public final class MetricServiceGrpc {
      *
      *
      * <pre>
-     * Lists time series that match a filter. This method does not require a Workspace.
+     * Lists time series that match a filter.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1150,6 +1163,9 @@ public final class MetricServiceGrpc {
      * The response is empty if all time series in the request were written.
      * If any time series could not be written, a corresponding failure message is
      * included in the error response.
+     * This method does not support
+     * [resource locations constraint of an organization
+     * policy](https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations#setting_the_organization_policy).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

@@ -28,7 +28,8 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name),
    * organization or folder on which to execute the request. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
@@ -47,7 +48,8 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name),
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name),
    * organization or folder on which to execute the request. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
@@ -67,10 +69,11 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-   * that specifies which time series should be returned.  The filter must
-   * specify a single metric type, and can additionally specify metric labels
-   * and other information. For example:
+   * Required. A [monitoring
+   * filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies
+   * which time series should be returned.  The filter must specify a single
+   * metric type, and can additionally specify metric labels and other
+   * information. For example:
    *
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *         metric.labels.instance_name = "my-instance-name"
@@ -85,10 +88,11 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A [monitoring filter](https://cloud.google.com/monitoring/api/v3/filters)
-   * that specifies which time series should be returned.  The filter must
-   * specify a single metric type, and can additionally specify metric labels
-   * and other information. For example:
+   * Required. A [monitoring
+   * filter](https://cloud.google.com/monitoring/api/v3/filters) that specifies
+   * which time series should be returned.  The filter must specify a single
+   * metric type, and can additionally specify metric labels and other
+   * information. For example:
    *
    *     metric.type = "compute.googleapis.com/instance/cpu/usage_time" AND
    *         metric.labels.instance_name = "my-instance-name"
@@ -104,9 +108,9 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The time interval for which results should be returned. Only time series
-   * that contain data points in the specified interval are included
-   * in the response.
+   * Required. The time interval for which results should be returned. Only time
+   * series that contain data points in the specified interval are included in
+   * the response.
    * </pre>
    *
    * <code>
@@ -120,9 +124,9 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The time interval for which results should be returned. Only time series
-   * that contain data points in the specified interval are included
-   * in the response.
+   * Required. The time interval for which results should be returned. Only time
+   * series that contain data points in the specified interval are included in
+   * the response.
    * </pre>
    *
    * <code>
@@ -136,9 +140,9 @@ public interface ListTimeSeriesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The time interval for which results should be returned. Only time series
-   * that contain data points in the specified interval are included
-   * in the response.
+   * Required. The time interval for which results should be returned. Only time
+   * series that contain data points in the specified interval are included in
+   * the response.
    * </pre>
    *
    * <code>

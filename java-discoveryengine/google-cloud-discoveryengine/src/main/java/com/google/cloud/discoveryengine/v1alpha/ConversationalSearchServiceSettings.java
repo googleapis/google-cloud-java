@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1alpha;
 
 import static com.google.cloud.discoveryengine.v1alpha.ConversationalSearchServiceClient.ListConversationsPagedResponse;
+import static com.google.cloud.discoveryengine.v1alpha.ConversationalSearchServiceClient.ListSessionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -116,6 +117,42 @@ public class ConversationalSearchServiceSettings
       listConversationsSettings() {
     return ((ConversationalSearchServiceStubSettings) getStubSettings())
         .listConversationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to answerQuery. */
+  public UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).answerQuerySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAnswer. */
+  public UnaryCallSettings<GetAnswerRequest, Answer> getAnswerSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).getAnswerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSession. */
+  public UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).createSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSession. */
+  public UnaryCallSettings<DeleteSessionRequest, Empty> deleteSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).deleteSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSession. */
+  public UnaryCallSettings<UpdateSessionRequest, Session> updateSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).updateSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSession. */
+  public UnaryCallSettings<GetSessionRequest, Session> getSessionSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).getSessionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSessions. */
+  public PagedCallSettings<ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+      listSessionsSettings() {
+    return ((ConversationalSearchServiceStubSettings) getStubSettings()).listSessionsSettings();
   }
 
   public static final ConversationalSearchServiceSettings create(
@@ -266,6 +303,44 @@ public class ConversationalSearchServiceSettings
             ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
         listConversationsSettings() {
       return getStubSettingsBuilder().listConversationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to answerQuery. */
+    public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings() {
+      return getStubSettingsBuilder().answerQuerySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAnswer. */
+    public UnaryCallSettings.Builder<GetAnswerRequest, Answer> getAnswerSettings() {
+      return getStubSettingsBuilder().getAnswerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSession. */
+    public UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings() {
+      return getStubSettingsBuilder().createSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSession. */
+    public UnaryCallSettings.Builder<DeleteSessionRequest, Empty> deleteSessionSettings() {
+      return getStubSettingsBuilder().deleteSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSession. */
+    public UnaryCallSettings.Builder<UpdateSessionRequest, Session> updateSessionSettings() {
+      return getStubSettingsBuilder().updateSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSession. */
+    public UnaryCallSettings.Builder<GetSessionRequest, Session> getSessionSettings() {
+      return getStubSettingsBuilder().getSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSessions. */
+    public PagedCallSettings.Builder<
+            ListSessionsRequest, ListSessionsResponse, ListSessionsPagedResponse>
+        listSessionsSettings() {
+      return getStubSettingsBuilder().listSessionsSettings();
     }
 
     @Override

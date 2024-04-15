@@ -78,7 +78,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ComputeRoutes</td>
  *      <td><p> Returns the primary route along with optional alternate routes, given a set of terminal and intermediate waypoints.
- * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using URL parameter `$fields` or `fields`, or by using an HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated list of field paths. See detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+ * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using URL parameter `$fields` or `fields`, or by using an HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters)). The value is a comma separated list of field paths. See detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
  * <p>  For example, in this method:
  * <ul>
  * <li>  Field mask of all available fields (for manual inspection):   `X-Goog-FieldMask: &#42;`
@@ -104,7 +104,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ComputeRouteMatrix</td>
  *      <td><p> Takes in a list of origins and destinations and returns a stream containing route information for each combination of origin and destination.
- * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using the URL parameter `$fields` or `fields`, or by using the HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated list of field paths. See this detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
+ * <p>  &#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the input. You can provide the response field mask by using the URL parameter `$fields` or `fields`, or by using the HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and headers](https://cloud.google.com/apis/docs/system-parameters)). The value is a comma separated list of field paths. See this detailed documentation about [how to construct the field paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
  * <p>  For example, in this method:
  * <ul>
  * <li>  Field mask of all available fields (for manual inspection):   `X-Goog-FieldMask: &#42;`
@@ -232,7 +232,7 @@ public class RoutesClient implements BackgroundResource {
    * <p>&#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the
    * input. You can provide the response field mask by using URL parameter `$fields` or `fields`, or
    * by using an HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and
-   * headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated
+   * headers](https://cloud.google.com/apis/docs/system-parameters)). The value is a comma separated
    * list of field paths. See detailed documentation about [how to construct the field
    * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
    *
@@ -309,7 +309,7 @@ public class RoutesClient implements BackgroundResource {
    * <p>&#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the
    * input. You can provide the response field mask by using URL parameter `$fields` or `fields`, or
    * by using an HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL parameters and
-   * headers](https://cloud.google.com/apis/docs/system-parameters). The value is a comma separated
+   * headers](https://cloud.google.com/apis/docs/system-parameters)). The value is a comma separated
    * list of field paths. See detailed documentation about [how to construct the field
    * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
    *
@@ -386,7 +386,7 @@ public class RoutesClient implements BackgroundResource {
    * <p>&#42;&#42;NOTE:&#42;&#42; This method requires that you specify a response field mask in the
    * input. You can provide the response field mask by using the URL parameter `$fields` or
    * `fields`, or by using the HTTP/gRPC header `X-Goog-FieldMask` (see the [available URL
-   * parameters and headers](https://cloud.google.com/apis/docs/system-parameters). The value is a
+   * parameters and headers](https://cloud.google.com/apis/docs/system-parameters)). The value is a
    * comma separated list of field paths. See this detailed documentation about [how to construct
    * the field
    * paths](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/field_mask.proto).
@@ -435,6 +435,7 @@ public class RoutesClient implements BackgroundResource {
    *           .setArrivalTime(Timestamp.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
    *           .setRegionCode("regionCode-1991004415")
+   *           .setUnits(Units.forNumber(0))
    *           .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
    *           .setTrafficModel(TrafficModel.forNumber(0))
    *           .setTransitPreferences(TransitPreferences.newBuilder().build())

@@ -23,7 +23,7 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Contains a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
+ * Contains a segment of a [`RouteLeg`][google.maps.routing.v2.RouteLeg]. A
  * step corresponds to a single navigation instruction. Route legs are made up
  * of steps.
  * </pre>
@@ -1890,7 +1890,7 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
+   * Contains a segment of a [`RouteLeg`][google.maps.routing.v2.RouteLeg]. A
    * step corresponds to a single navigation instruction. Route legs are made up
    * of steps.
    * </pre>

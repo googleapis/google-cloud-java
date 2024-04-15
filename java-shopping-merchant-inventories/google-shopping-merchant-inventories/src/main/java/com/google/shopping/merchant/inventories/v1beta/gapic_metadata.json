@@ -17,7 +17,7 @@
               "methods": ["insertLocalInventory", "insertLocalInventoryCallable"]
             },
             "ListLocalInventories": {
-              "methods": ["listLocalInventories", "listLocalInventories", "listLocalInventoriesPagedCallable", "listLocalInventoriesCallable"]
+              "methods": ["listLocalInventories", "listLocalInventories", "listLocalInventories", "listLocalInventoriesPagedCallable", "listLocalInventoriesCallable"]
             }
           }
         }
@@ -35,7 +35,7 @@
               "methods": ["insertRegionalInventory", "insertRegionalInventoryCallable"]
             },
             "ListRegionalInventories": {
-              "methods": ["listRegionalInventories", "listRegionalInventories", "listRegionalInventoriesPagedCallable", "listRegionalInventoriesCallable"]
+              "methods": ["listRegionalInventories", "listRegionalInventories", "listRegionalInventories", "listRegionalInventoriesPagedCallable", "listRegionalInventoriesCallable"]
             }
           }
         }

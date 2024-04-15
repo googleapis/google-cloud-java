@@ -189,7 +189,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a polyline using the [GeoJSON LineString
-   * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+   * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
    * </pre>
    *
    * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -205,7 +205,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a polyline using the [GeoJSON LineString
-   * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+   * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
    * </pre>
    *
    * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -224,7 +224,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Specifies a polyline using the [GeoJSON LineString
-   * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+   * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
    * </pre>
    *
    * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -798,7 +798,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -814,7 +814,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -840,7 +840,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -863,7 +863,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -883,7 +883,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -915,7 +915,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -941,7 +941,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -954,7 +954,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>
@@ -975,7 +975,7 @@ public final class Polyline extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Specifies a polyline using the [GeoJSON LineString
-     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4)
+     * format](https://tools.ietf.org/html/rfc7946#section-3.1.4).
      * </pre>
      *
      * <code>.google.protobuf.Struct geo_json_linestring = 2;</code>

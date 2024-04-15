@@ -20,6 +20,7 @@ package com.google.cloud.discoveryengine.v1beta.samples;
 import com.google.cloud.discoveryengine.v1beta.Document;
 import com.google.cloud.discoveryengine.v1beta.DocumentServiceClient;
 import com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest;
+import com.google.protobuf.FieldMask;
 
 public class SyncUpdateDocument {
 
@@ -38,6 +39,7 @@ public class SyncUpdateDocument {
           UpdateDocumentRequest.newBuilder()
               .setDocument(Document.newBuilder().build())
               .setAllowMissing(true)
+              .setUpdateMask(FieldMask.newBuilder().build())
               .build();
       Document response = documentServiceClient.updateDocument(request);
     }
