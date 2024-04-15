@@ -5,6 +5,7 @@
   <artifactId>google-cloud-backupdr-bom</artifactId>
   <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-backupdr:current} -->
   <packaging>pom</packaging>
+
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom-parent</artifactId>
