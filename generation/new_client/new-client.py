@@ -250,7 +250,7 @@ def generate(
     )
 
     # In monorepo, .OwlBot.yaml needs to be in the directory of the module.
-    owlbot_yaml_location_from_module = ".OwlBot.yaml"
+    owlbot_yaml_location_from_module = ".OwlBot-hermetic.yaml"
     # create owlbot config
     templates.render(
         template_name="owlbot.yaml.monorepo.j2",
