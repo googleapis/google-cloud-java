@@ -5,7 +5,7 @@
 #     https://github.com/googleapis/google-cloud-java/pull/9502 --json body
 #     --jq '.body'`
 # 2nd argument: the path to a directory that whose child directories contain
-#     ".OwlBot.yaml", "pom.xml", and "CHANGELOG.md". It's the root directory
+#     ".Owlbot-hermetic.yaml", "pom.xml", and "CHANGELOG.md". It's the root directory
 #     of the google-cloud-java repository.
 # Example:
 #   google-cloud-java$ python3 split_release_note.py main_changelog.txt .
@@ -46,7 +46,7 @@ def detect_modules(root_directory: Path):
 
         module_path = repo_metadata_path.parent
         module_pom_xml = module_path / 'pom.xml'
-        owlbot_yaml_path = module_path/ '.OwlBot.yaml'
+        owlbot_yaml_path = module_path/ '.OwlBot-hermetic.yaml'
         if not module_pom_xml.exists():
             continue
         tree = ET.parse(module_pom_xml)
@@ -166,7 +166,7 @@ def main():
             break
 
 
-    # Step 2: Detects target modules by .OwlBot.yaml for api-name: field.
+    # Step 2: Detects target modules by .Owlbot-hermetic.yaml for api-name: field.
     root_directory = sys.argv[2]
     modules = detect_modules(Path(root_directory))
     api_to_modules = {module.api_name: module for module in modules}
