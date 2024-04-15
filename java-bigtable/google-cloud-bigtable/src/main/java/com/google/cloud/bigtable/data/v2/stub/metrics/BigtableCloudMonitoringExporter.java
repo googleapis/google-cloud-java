@@ -82,7 +82,7 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
           System.getProperty("bigtable.test-monitoring-endpoint"),
           MetricServiceSettings.getDefaultEndpoint());
 
-  private static String APPLICATION_RESOURCE_PROJECT_ID = "project_id";
+  private static final String APPLICATION_RESOURCE_PROJECT_ID = "project_id";
 
   private final MetricServiceClient client;
 
@@ -133,7 +133,15 @@ public final class BigtableCloudMonitoringExporter implements MetricExporter {
     // Detect the resource that the client application is running on. For example,
     // this could be a GCE instance or a GKE pod. Currently, we only support GCE instance and
     // GKE pod. This method will return null for everything else.
-    MonitoredResource applicationResource = BigtableExporterUtils.detectResource();
+    MonitoredResource applicationResource = null;
+    try {
+      applicationResource = BigtableExporterUtils.detectResource();
+    } catch (Exception e) {
+      logger.log(
+          Level.WARNING,
+          "Failed to detect resource, will skip exporting application level metrics ",
+          e);
+    }
 
     return new BigtableCloudMonitoringExporter(
         projectId,

@@ -203,15 +203,23 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public static EnhancedBigtableStub create(EnhancedBigtableStubSettings settings)
       throws IOException {
     ClientContext clientContext = createClientContext(settings);
-    OpenTelemetry openTelemetry =
-        getOpenTelemetry(
-            settings.getProjectId(), settings.getMetricsProvider(), clientContext.getCredentials());
+    OpenTelemetry openTelemetry = null;
+    try {
+      // We don't want client side metrics to crash the client, so catch any exception when getting
+      // the OTEL instance and log the exception instead.
+      openTelemetry =
+          getOpenTelemetry(
+              settings.getProjectId(),
+              settings.getMetricsProvider(),
+              clientContext.getCredentials());
+    } catch (Throwable t) {
+      logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
+    }
     ClientContext contextWithTracer =
         clientContext
             .toBuilder()
             .setTracerFactory(createBigtableTracerFactory(settings, openTelemetry))
             .build();
-
     return new EnhancedBigtableStub(settings, contextWithTracer);
   }
 
