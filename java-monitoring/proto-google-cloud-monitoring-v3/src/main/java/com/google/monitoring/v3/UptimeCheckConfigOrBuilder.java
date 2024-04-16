@@ -28,7 +28,8 @@ public interface UptimeCheckConfigOrBuilder
    *
    *
    * <pre>
-   * A unique resource name for this Uptime check configuration. The format is:
+   * Identifier. A unique resource name for this Uptime check configuration. The
+   * format is:
    *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    *
@@ -40,7 +41,7 @@ public interface UptimeCheckConfigOrBuilder
    * response.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -49,7 +50,8 @@ public interface UptimeCheckConfigOrBuilder
    *
    *
    * <pre>
-   * A unique resource name for this Uptime check configuration. The format is:
+   * Identifier. A unique resource name for this Uptime check configuration. The
+   * format is:
    *
    *      projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID]
    *
@@ -61,7 +63,7 @@ public interface UptimeCheckConfigOrBuilder
    * response.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -198,6 +200,41 @@ public interface UptimeCheckConfigOrBuilder
    * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
    */
   com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder getResourceGroupOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a Synthetic Monitor to invoke.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+   *
+   * @return Whether the syntheticMonitor field is set.
+   */
+  boolean hasSyntheticMonitor();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a Synthetic Monitor to invoke.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+   *
+   * @return The syntheticMonitor.
+   */
+  com.google.monitoring.v3.SyntheticMonitorTarget getSyntheticMonitor();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a Synthetic Monitor to invoke.
+   * </pre>
+   *
+   * <code>.google.monitoring.v3.SyntheticMonitorTarget synthetic_monitor = 21;</code>
+   */
+  com.google.monitoring.v3.SyntheticMonitorTargetOrBuilder getSyntheticMonitorOrBuilder();
 
   /**
    *
@@ -551,7 +588,7 @@ public interface UptimeCheckConfigOrBuilder
    * <code>bool is_internal = 15 [deprecated = true];</code>
    *
    * @deprecated google.monitoring.v3.UptimeCheckConfig.is_internal is deprecated. See
-   *     google/monitoring/v3/uptime.proto;l=478
+   *     google/monitoring/v3/uptime.proto;l=545
    * @return The isInternal.
    */
   @java.lang.Deprecated

@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.chat.v1;
 
-/** Protobuf type {@code google.chat.v1.ListMembershipsResponse} */
+/**
+ *
+ *
+ * <pre>
+ * Response to list memberships of the space.
+ * </pre>
+ *
+ * Protobuf type {@code google.chat.v1.ListMembershipsResponse}
+ */
 public final class ListMembershipsResponse extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.chat.v1.ListMembershipsResponse)
@@ -360,7 +368,15 @@ public final class ListMembershipsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.chat.v1.ListMembershipsResponse} */
+  /**
+   *
+   *
+   * <pre>
+   * Response to list memberships of the space.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.ListMembershipsResponse}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.chat.v1.ListMembershipsResponse)

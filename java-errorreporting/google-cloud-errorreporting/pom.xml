@@ -43,6 +43,10 @@
 
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-errorreporting-v1beta1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
     </dependency>
     <dependency>
@@ -50,6 +54,11 @@
       <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-errorreporting-v1beta1</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>

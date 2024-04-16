@@ -85,7 +85,7 @@ public interface ActionResponseOrBuilder
    *
    * <pre>
    * Input only. A response to an interaction event related to a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
    * accompanied by `ResponseType.Dialog`.
    * </pre>
    *
@@ -101,7 +101,7 @@ public interface ActionResponseOrBuilder
    *
    * <pre>
    * Input only. A response to an interaction event related to a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
    * accompanied by `ResponseType.Dialog`.
    * </pre>
    *
@@ -117,7 +117,7 @@ public interface ActionResponseOrBuilder
    *
    * <pre>
    * Input only. A response to an interaction event related to a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be
+   * [dialog](https://developers.google.com/workspace/chat/dialogs). Must be
    * accompanied by `ResponseType.Dialog`.
    * </pre>
    *

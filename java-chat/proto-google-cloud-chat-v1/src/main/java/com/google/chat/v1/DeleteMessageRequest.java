@@ -19,7 +19,15 @@
 // Protobuf Java Version: 3.25.2
 package com.google.chat.v1;
 
-/** Protobuf type {@code google.chat.v1.DeleteMessageRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request to delete a message.
+ * </pre>
+ *
+ * Protobuf type {@code google.chat.v1.DeleteMessageRequest}
+ */
 public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.chat.v1.DeleteMessageRequest)
@@ -70,7 +78,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
    * If you've set a custom ID for your message, you can use the value from the
    * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
    * message]
-   * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>
@@ -102,7 +110,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
    * If you've set a custom ID for your message, you can use the value from the
    * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
    * message]
-   * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>
@@ -134,9 +142,9 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
    * `false`, if a message has threaded replies, deletion fails.
    *
    * Only applies when [authenticating as a
-   * user](https://developers.google.com/chat/api/guides/auth/users). Has no
-   * effect when [authenticating as a Chat app]
-   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+   * Has no effect when [authenticating as a Chat app]
+   * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
    * <code>bool force = 2;</code>
@@ -315,7 +323,15 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.chat.v1.DeleteMessageRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request to delete a message.
+   * </pre>
+   *
+   * Protobuf type {@code google.chat.v1.DeleteMessageRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.chat.v1.DeleteMessageRequest)
@@ -514,7 +530,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -545,7 +561,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -576,7 +592,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -606,7 +622,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -632,7 +648,7 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * If you've set a custom ID for your message, you can use the value from the
      * `clientAssignedMessageId` field for `{message}`. For details, see [Name a
      * message]
-     * (https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+     * (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
      * </pre>
      *
      * <code>
@@ -662,9 +678,9 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * `false`, if a message has threaded replies, deletion fails.
      *
      * Only applies when [authenticating as a
-     * user](https://developers.google.com/chat/api/guides/auth/users). Has no
-     * effect when [authenticating as a Chat app]
-     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Has no effect when [authenticating as a Chat app]
+     * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -683,9 +699,9 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * `false`, if a message has threaded replies, deletion fails.
      *
      * Only applies when [authenticating as a
-     * user](https://developers.google.com/chat/api/guides/auth/users). Has no
-     * effect when [authenticating as a Chat app]
-     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Has no effect when [authenticating as a Chat app]
+     * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -708,9 +724,9 @@ public final class DeleteMessageRequest extends com.google.protobuf.GeneratedMes
      * `false`, if a message has threaded replies, deletion fails.
      *
      * Only applies when [authenticating as a
-     * user](https://developers.google.com/chat/api/guides/auth/users). Has no
-     * effect when [authenticating as a Chat app]
-     * (https://developers.google.com/chat/api/guides/auth/service-accounts).
+     * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user).
+     * Has no effect when [authenticating as a Chat app]
+     * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
      * </pre>
      *
      * <code>bool force = 2;</code>

@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.containeranalysis.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -28,11 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.GrafeasV1Beta1Stub;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.GrafeasV1Beta1StubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.containeranalysis.v1beta1.NoteName;
-import com.google.containeranalysis.v1beta1.OccurrenceName;
-import com.google.containeranalysis.v1beta1.ProjectName;
 import com.google.protobuf.Empty;
-import com.google.protobuf.FieldMask;
 import io.grafeas.v1beta1.BatchCreateNotesRequest;
 import io.grafeas.v1beta1.BatchCreateNotesResponse;
 import io.grafeas.v1beta1.BatchCreateOccurrencesRequest;
@@ -58,11 +54,10 @@ import io.grafeas.v1beta1.UpdateOccurrenceRequest;
 import io.grafeas.v1beta1.VulnerabilityOccurrencesSummary;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: [Grafeas](grafeas.io) API.
  *
@@ -80,31 +75,243 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
- *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
- *   Occurrence response = grafeasV1Beta1Client.getOccurrence(name);
+ *   GetOccurrenceRequest request =
+ *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
+ *   Occurrence response = grafeasV1Beta1Client.getOccurrence(request);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the grafeasV1Beta1Client object to clean up resources such
+ * <p>Note: close() needs to be called on the GrafeasV1Beta1Client object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOccurrence</td>
+ *      <td><p> Gets the specified occurrence.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOccurrence(GetOccurrenceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOccurrenceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListOccurrences</td>
+ *      <td><p> Lists occurrences for the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOccurrences(ListOccurrencesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOccurrencesPagedCallable()
+ *           <li><p> listOccurrencesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteOccurrence</td>
+ *      <td><p> Deletes the specified occurrence. For example, use this method to delete an occurrence when the occurrence is no longer applicable for the given resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteOccurrence(DeleteOccurrenceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOccurrenceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateOccurrence</td>
+ *      <td><p> Creates a new occurrence.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createOccurrence(CreateOccurrenceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createOccurrenceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateOccurrences</td>
+ *      <td><p> Creates new occurrences in batch.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateOccurrences(BatchCreateOccurrencesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateOccurrencesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateOccurrence</td>
+ *      <td><p> Updates the specified occurrence.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateOccurrence(UpdateOccurrenceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOccurrenceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOccurrenceNote</td>
+ *      <td><p> Gets the note attached to the specified occurrence. Consumer projects can use this method to get a note that belongs to a provider project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOccurrenceNote(GetOccurrenceNoteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOccurrenceNoteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetNote</td>
+ *      <td><p> Gets the specified note.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getNote(GetNoteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getNoteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListNotes</td>
+ *      <td><p> Lists notes for the specified project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNotes(ListNotesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNotesPagedCallable()
+ *           <li><p> listNotesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteNote</td>
+ *      <td><p> Deletes the specified note.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteNote(DeleteNoteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteNoteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateNote</td>
+ *      <td><p> Creates a new note.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createNote(CreateNoteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createNoteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateNotes</td>
+ *      <td><p> Creates new notes in batch.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateNotes(BatchCreateNotesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateNotesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateNote</td>
+ *      <td><p> Updates the specified note.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateNote(UpdateNoteRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateNoteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListNoteOccurrences</td>
+ *      <td><p> Lists occurrences referencing the specified note. Provider projects can use this method to get all occurrences across consumer projects referencing the specified note.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listNoteOccurrences(ListNoteOccurrencesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listNoteOccurrencesPagedCallable()
+ *           <li><p> listNoteOccurrencesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetVulnerabilityOccurrencesSummary</td>
+ *      <td><p> Gets a summary of the number and severity of occurrences.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getVulnerabilityOccurrencesSummary(GetVulnerabilityOccurrencesSummaryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getVulnerabilityOccurrencesSummaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -117,30 +324,50 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GrafeasV1Beta1Settings grafeasV1Beta1Settings =
  *     GrafeasV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * GrafeasV1Beta1Client grafeasV1Beta1Client =
- *     GrafeasV1Beta1Client.create(grafeasV1Beta1Settings);
- * </code>
- * </pre>
+ * GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create(grafeasV1Beta1Settings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * GrafeasV1Beta1Settings grafeasV1Beta1Settings =
  *     GrafeasV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
- * GrafeasV1Beta1Client grafeasV1Beta1Client =
- *     GrafeasV1Beta1Client.create(grafeasV1Beta1Settings);
- * </code>
- * </pre>
+ * GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create(grafeasV1Beta1Settings);
+ * }</pre>
+ *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * GrafeasV1Beta1Settings grafeasV1Beta1Settings =
+ *     GrafeasV1Beta1Settings.newHttpJsonBuilder().build();
+ * GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create(grafeasV1Beta1Settings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class GrafeasV1Beta1Client implements BackgroundResource {
   private final GrafeasV1Beta1Settings settings;
   private final GrafeasV1Beta1Stub stub;
@@ -161,9 +388,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
 
   /**
    * Constructs an instance of GrafeasV1Beta1Client, using the given stub for making calls. This is
-   * for advanced usage - prefer to use GrafeasV1Beta1Settings}.
+   * for advanced usage - prefer using create(GrafeasV1Beta1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final GrafeasV1Beta1Client create(GrafeasV1Beta1Stub stub) {
     return new GrafeasV1Beta1Client(stub);
   }
@@ -178,7 +404,6 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     this.stub = ((GrafeasV1Beta1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected GrafeasV1Beta1Client(GrafeasV1Beta1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -188,71 +413,28 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public GrafeasV1Beta1Stub getStub() {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified occurrence.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence response = grafeasV1Beta1Client.getOccurrence(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Occurrence getOccurrence(OccurrenceName name) {
-    GetOccurrenceRequest request =
-        GetOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence response = grafeasV1Beta1Client.getOccurrence(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Occurrence getOccurrence(String name) {
-    GetOccurrenceRequest request = GetOccurrenceRequest.newBuilder().setName(name).build();
-    return getOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceRequest request = GetOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   GetOccurrenceRequest request =
+   *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
    *   Occurrence response = grafeasV1Beta1Client.getOccurrence(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -261,102 +443,57 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return getOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified occurrence.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceRequest request = GetOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Occurrence&gt; future = grafeasV1Beta1Client.getOccurrenceCallable().futureCall(request);
-   *   // Do something
+   *   GetOccurrenceRequest request =
+   *       GetOccurrenceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.getOccurrenceCallable().futureCall(request);
+   *   // Do something.
    *   Occurrence response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     return stub.getOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project to list occurrences for in the form of
-   *     `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListOccurrencesPagedResponse listOccurrences(ProjectName parent, String filter) {
-    ListOccurrencesRequest request =
-        ListOccurrencesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setFilter(filter)
-            .build();
-    return listOccurrences(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists occurrences for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project to list occurrences for in the form of
-   *     `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListOccurrencesPagedResponse listOccurrences(String parent, String filter) {
-    ListOccurrencesRequest request =
-        ListOccurrencesRequest.newBuilder().setParent(parent).setFilter(filter).build();
-    return listOccurrences(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists occurrences for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   ListOccurrencesRequest request =
+   *       ListOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   for (Occurrence element : grafeasV1Beta1Client.listOccurrences(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -365,45 +502,63 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return listOccurrencesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListOccurrencesPagedResponse&gt; future = grafeasV1Beta1Client.listOccurrencesPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListOccurrencesRequest request =
+   *       ListOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.listOccurrencesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Occurrence element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListOccurrencesRequest, ListOccurrencesPagedResponse>
       listOccurrencesPagedCallable() {
     return stub.listOccurrencesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListOccurrencesRequest request = ListOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   ListOccurrencesRequest request =
+   *       ListOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
-   *     ListOccurrencesResponse response = grafeasV1Beta1Client.listOccurrencesCallable().call(request);
+   *     ListOccurrencesResponse response =
+   *         grafeasV1Beta1Client.listOccurrencesCallable().call(request);
    *     for (Occurrence element : response.getOccurrencesList()) {
    *       // doThingsWith(element);
    *     }
@@ -415,76 +570,32 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse>
       listOccurrencesCallable() {
     return stub.listOccurrencesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
    * occurrence is no longer applicable for the given resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   grafeasV1Beta1Client.deleteOccurrence(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteOccurrence(OccurrenceName name) {
-    DeleteOccurrenceRequest request =
-        DeleteOccurrenceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
-   * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   grafeasV1Beta1Client.deleteOccurrence(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteOccurrence(String name) {
-    DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder().setName(name).build();
-    deleteOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
-   * occurrence is no longer applicable for the given resource.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   DeleteOccurrenceRequest request =
+   *       DeleteOccurrenceRequest.newBuilder().setName("name3373707").build();
    *   grafeasV1Beta1Client.deleteOccurrence(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -493,99 +604,53 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     deleteOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified occurrence. For example, use this method to delete an occurrence when the
    * occurrence is no longer applicable for the given resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   DeleteOccurrenceRequest request = DeleteOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = grafeasV1Beta1Client.deleteOccurrenceCallable().futureCall(request);
-   *   // Do something
+   *   DeleteOccurrenceRequest request =
+   *       DeleteOccurrenceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future = grafeasV1Beta1Client.deleteOccurrenceCallable().futureCall(request);
+   *   // Do something.
    *   future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
     return stub.deleteOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new occurrence.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   Occurrence response = grafeasV1Beta1Client.createOccurrence(parent, occurrence);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     occurrence is to be created.
-   * @param occurrence The occurrence to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Occurrence createOccurrence(ProjectName parent, Occurrence occurrence) {
-    CreateOccurrenceRequest request =
-        CreateOccurrenceRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setOccurrence(occurrence)
-            .build();
-    return createOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   Occurrence response = grafeasV1Beta1Client.createOccurrence(parent.toString(), occurrence);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     occurrence is to be created.
-   * @param occurrence The occurrence to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Occurrence createOccurrence(String parent, Occurrence occurrence) {
-    CreateOccurrenceRequest request =
-        CreateOccurrenceRequest.newBuilder().setParent(parent).setOccurrence(occurrence).build();
-    return createOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   CreateOccurrenceRequest request = CreateOccurrenceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
+   *   CreateOccurrenceRequest request =
+   *       CreateOccurrenceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .build();
    *   Occurrence response = grafeasV1Beta1Client.createOccurrence(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -594,105 +659,57 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return createOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new occurrence.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   CreateOccurrenceRequest request = CreateOccurrenceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
-   *   ApiFuture&lt;Occurrence&gt; future = grafeasV1Beta1Client.createOccurrenceCallable().futureCall(request);
-   *   // Do something
+   *   CreateOccurrenceRequest request =
+   *       CreateOccurrenceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.createOccurrenceCallable().futureCall(request);
+   *   // Do something.
    *   Occurrence response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
     return stub.createOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new occurrences in batch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesResponse response = grafeasV1Beta1Client.batchCreateOccurrences(parent, occurrences);
+   *   BatchCreateOccurrencesRequest request =
+   *       BatchCreateOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllOccurrences(new ArrayList<Occurrence>())
+   *           .build();
+   *   BatchCreateOccurrencesResponse response =
+   *       grafeasV1Beta1Client.batchCreateOccurrences(request);
    * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     occurrences are to be created.
-   * @param occurrences The occurrences to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchCreateOccurrencesResponse batchCreateOccurrences(
-      ProjectName parent, List<Occurrence> occurrences) {
-    BatchCreateOccurrencesRequest request =
-        BatchCreateOccurrencesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .addAllOccurrences(occurrences)
-            .build();
-    return batchCreateOccurrences(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new occurrences in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesResponse response = grafeasV1Beta1Client.batchCreateOccurrences(parent.toString(), occurrences);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     occurrences are to be created.
-   * @param occurrences The occurrences to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchCreateOccurrencesResponse batchCreateOccurrences(
-      String parent, List<Occurrence> occurrences) {
-    BatchCreateOccurrencesRequest request =
-        BatchCreateOccurrencesRequest.newBuilder()
-            .setParent(parent)
-            .addAllOccurrences(occurrences)
-            .build();
-    return batchCreateOccurrences(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new occurrences in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesRequest request = BatchCreateOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllOccurrences(occurrences)
-   *     .build();
-   *   BatchCreateOccurrencesResponse response = grafeasV1Beta1Client.batchCreateOccurrences(request);
-   * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -702,112 +719,58 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return batchCreateOccurrencesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new occurrences in batch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   List&lt;Occurrence&gt; occurrences = new ArrayList&lt;&gt;();
-   *   BatchCreateOccurrencesRequest request = BatchCreateOccurrencesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .addAllOccurrences(occurrences)
-   *     .build();
-   *   ApiFuture&lt;BatchCreateOccurrencesResponse&gt; future = grafeasV1Beta1Client.batchCreateOccurrencesCallable().futureCall(request);
-   *   // Do something
+   *   BatchCreateOccurrencesRequest request =
+   *       BatchCreateOccurrencesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllOccurrences(new ArrayList<Occurrence>())
+   *           .build();
+   *   ApiFuture<BatchCreateOccurrencesResponse> future =
+   *       grafeasV1Beta1Client.batchCreateOccurrencesCallable().futureCall(request);
+   *   // Do something.
    *   BatchCreateOccurrencesResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesCallable() {
     return stub.batchCreateOccurrencesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified occurrence.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Occurrence response = grafeasV1Beta1Client.updateOccurrence(name, occurrence, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @param occurrence The updated occurrence.
-   * @param updateMask The fields to update.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Occurrence updateOccurrence(
-      OccurrenceName name, Occurrence occurrence, FieldMask updateMask) {
-    UpdateOccurrenceRequest request =
-        UpdateOccurrenceRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setOccurrence(occurrence)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Occurrence response = grafeasV1Beta1Client.updateOccurrence(name.toString(), occurrence, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @param occurrence The updated occurrence.
-   * @param updateMask The fields to update.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Occurrence updateOccurrence(
-      String name, Occurrence occurrence, FieldMask updateMask) {
-    UpdateOccurrenceRequest request =
-        UpdateOccurrenceRequest.newBuilder()
-            .setName(name)
-            .setOccurrence(occurrence)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateOccurrence(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified occurrence.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   UpdateOccurrenceRequest request = UpdateOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
+   *   UpdateOccurrenceRequest request =
+   *       UpdateOccurrenceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
    *   Occurrence response = grafeasV1Beta1Client.updateOccurrence(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -816,95 +779,55 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return updateOccurrenceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified occurrence.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Occurrence occurrence = Occurrence.newBuilder().build();
-   *   UpdateOccurrenceRequest request = UpdateOccurrenceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setOccurrence(occurrence)
-   *     .build();
-   *   ApiFuture&lt;Occurrence&gt; future = grafeasV1Beta1Client.updateOccurrenceCallable().futureCall(request);
-   *   // Do something
+   *   UpdateOccurrenceRequest request =
+   *       UpdateOccurrenceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOccurrence(Occurrence.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.updateOccurrenceCallable().futureCall(request);
+   *   // Do something.
    *   Occurrence response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable() {
     return stub.updateOccurrenceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the note attached to the specified occurrence. Consumer projects can use this method to
    * get a note that belongs to a provider project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Note response = grafeasV1Beta1Client.getOccurrenceNote(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note getOccurrenceNote(OccurrenceName name) {
-    GetOccurrenceNoteRequest request =
-        GetOccurrenceNoteRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return getOccurrenceNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the note attached to the specified occurrence. Consumer projects can use this method to
-   * get a note that belongs to a provider project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   Note response = grafeasV1Beta1Client.getOccurrenceNote(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the occurrence in the form of
-   *     `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note getOccurrenceNote(String name) {
-    GetOccurrenceNoteRequest request = GetOccurrenceNoteRequest.newBuilder().setName(name).build();
-    return getOccurrenceNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the note attached to the specified occurrence. Consumer projects can use this method to
-   * get a note that belongs to a provider project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceNoteRequest request = GetOccurrenceNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   GetOccurrenceNoteRequest request =
+   *       GetOccurrenceNoteRequest.newBuilder().setName("name3373707").build();
    *   Note response = grafeasV1Beta1Client.getOccurrenceNote(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -913,87 +836,49 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return getOccurrenceNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the note attached to the specified occurrence. Consumer projects can use this method to
    * get a note that belongs to a provider project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
-   *   GetOccurrenceNoteRequest request = GetOccurrenceNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasV1Beta1Client.getOccurrenceNoteCallable().futureCall(request);
-   *   // Do something
+   *   GetOccurrenceNoteRequest request =
+   *       GetOccurrenceNoteRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.getOccurrenceNoteCallable().futureCall(request);
+   *   // Do something.
    *   Note response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetOccurrenceNoteRequest, Note> getOccurrenceNoteCallable() {
     return stub.getOccurrenceNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note response = grafeasV1Beta1Client.getNote(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note getNote(NoteName name) {
-    GetNoteRequest request =
-        GetNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note response = grafeasV1Beta1Client.getNote(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note getNote(String name) {
-    GetNoteRequest request = GetNoteRequest.newBuilder().setName(name).build();
-    return getNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   GetNoteRequest request = GetNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   GetNoteRequest request = GetNoteRequest.newBuilder().setName("name3373707").build();
    *   Note response = grafeasV1Beta1Client.getNote(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1002,100 +887,55 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return getNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   GetNoteRequest request = GetNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasV1Beta1Client.getNoteCallable().futureCall(request);
-   *   // Do something
+   *   GetNoteRequest request = GetNoteRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.getNoteCallable().futureCall(request);
+   *   // Do something.
    *   Note response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetNoteRequest, Note> getNoteCallable() {
     return stub.getNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Note element : grafeasV1Beta1Client.listNotes(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListNotesPagedResponse listNotes(ProjectName parent, String filter) {
-    ListNotesRequest request =
-        ListNotesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setFilter(filter)
-            .build();
-    return listNotes(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists notes for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (Note element : grafeasV1Beta1Client.listNotes(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListNotesPagedResponse listNotes(String parent, String filter) {
-    ListNotesRequest request =
-        ListNotesRequest.newBuilder().setParent(parent).setFilter(filter).build();
-    return listNotes(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists notes for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListNotesRequest request = ListNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   ListNotesRequest request =
+   *       ListNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   for (Note element : grafeasV1Beta1Client.listNotes(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1104,42 +944,58 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return listNotesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListNotesRequest request = ListNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListNotesPagedResponse&gt; future = grafeasV1Beta1Client.listNotesPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListNotesRequest request =
+   *       ListNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.listNotesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Note element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
     return stub.listNotesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists notes for the specified project.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListNotesRequest request = ListNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
+   *   ListNotesRequest request =
+   *       ListNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
    *     ListNotesResponse response = grafeasV1Beta1Client.listNotesCallable().call(request);
    *     for (Note element : response.getNotesList()) {
@@ -1153,70 +1009,29 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return stub.listNotesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   grafeasV1Beta1Client.deleteNote(name);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNote(NoteName name) {
-    DeleteNoteRequest request =
-        DeleteNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   grafeasV1Beta1Client.deleteNote(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteNote(String name) {
-    DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName(name).build();
-    deleteNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Deletes the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName("name3373707").build();
    *   grafeasV1Beta1Client.deleteNote(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1225,105 +1040,52 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     deleteNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = grafeasV1Beta1Client.deleteNoteCallable().futureCall(request);
-   *   // Do something
+   *   DeleteNoteRequest request = DeleteNoteRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Empty> future = grafeasV1Beta1Client.deleteNoteCallable().futureCall(request);
+   *   // Do something.
    *   future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
     return stub.deleteNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   Note response = grafeasV1Beta1Client.createNote(parent, noteId, note);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     note is to be created.
-   * @param noteId The ID to use for this note.
-   * @param note The note to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note createNote(ProjectName parent, String noteId, Note note) {
-    CreateNoteRequest request =
-        CreateNoteRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setNoteId(noteId)
-            .setNote(note)
-            .build();
-    return createNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   Note response = grafeasV1Beta1Client.createNote(parent.toString(), noteId, note);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     note is to be created.
-   * @param noteId The ID to use for this note.
-   * @param note The note to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note createNote(String parent, String noteId, Note note) {
-    CreateNoteRequest request =
-        CreateNoteRequest.newBuilder().setParent(parent).setNoteId(noteId).setNote(note).build();
-    return createNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates a new note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   CreateNoteRequest request = CreateNoteRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setNoteId(noteId)
-   *     .setNote(note)
-   *     .build();
+   *   CreateNoteRequest request =
+   *       CreateNoteRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setNoteId("noteId-1039694675")
+   *           .setNote(Note.newBuilder().build())
+   *           .build();
    *   Note response = grafeasV1Beta1Client.createNote(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1332,103 +1094,56 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return createNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String noteId = "";
-   *   Note note = Note.newBuilder().build();
-   *   CreateNoteRequest request = CreateNoteRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setNoteId(noteId)
-   *     .setNote(note)
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasV1Beta1Client.createNoteCallable().futureCall(request);
-   *   // Do something
+   *   CreateNoteRequest request =
+   *       CreateNoteRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setNoteId("noteId-1039694675")
+   *           .setNote(Note.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.createNoteCallable().futureCall(request);
+   *   // Do something.
    *   Note response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateNoteRequest, Note> createNoteCallable() {
     return stub.createNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new notes in batch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesResponse response = grafeasV1Beta1Client.batchCreateNotes(parent, notes);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     notes are to be created.
-   * @param notes The notes to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchCreateNotesResponse batchCreateNotes(
-      ProjectName parent, Map<String, Note> notes) {
-    BatchCreateNotesRequest request =
-        BatchCreateNotesRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .putAllNotes(notes)
-            .build();
-    return batchCreateNotes(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new notes in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesResponse response = grafeasV1Beta1Client.batchCreateNotes(parent.toString(), notes);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project in the form of `projects/[PROJECT_ID]`, under which the
-   *     notes are to be created.
-   * @param notes The notes to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchCreateNotesResponse batchCreateNotes(String parent, Map<String, Note> notes) {
-    BatchCreateNotesRequest request =
-        BatchCreateNotesRequest.newBuilder().setParent(parent).putAllNotes(notes).build();
-    return batchCreateNotes(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Creates new notes in batch.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesRequest request = BatchCreateNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .putAllNotes(notes)
-   *     .build();
+   *   BatchCreateNotesRequest request =
+   *       BatchCreateNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .putAllNotes(new HashMap<String, Note>())
+   *           .build();
    *   BatchCreateNotesResponse response = grafeasV1Beta1Client.batchCreateNotes(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1437,108 +1152,58 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return batchCreateNotesCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates new notes in batch.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Map&lt;String, Note&gt; notes = new HashMap&lt;&gt;();
-   *   BatchCreateNotesRequest request = BatchCreateNotesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .putAllNotes(notes)
-   *     .build();
-   *   ApiFuture&lt;BatchCreateNotesResponse&gt; future = grafeasV1Beta1Client.batchCreateNotesCallable().futureCall(request);
-   *   // Do something
+   *   BatchCreateNotesRequest request =
+   *       BatchCreateNotesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .putAllNotes(new HashMap<String, Note>())
+   *           .build();
+   *   ApiFuture<BatchCreateNotesResponse> future =
+   *       grafeasV1Beta1Client.batchCreateNotesCallable().futureCall(request);
+   *   // Do something.
    *   BatchCreateNotesResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesCallable() {
     return stub.batchCreateNotesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Note response = grafeasV1Beta1Client.updateNote(name, note, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @param note The updated note.
-   * @param updateMask The fields to update.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note updateNote(NoteName name, Note note, FieldMask updateMask) {
-    UpdateNoteRequest request =
-        UpdateNoteRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setNote(note)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   FieldMask updateMask = FieldMask.newBuilder().build();
-   *   Note response = grafeasV1Beta1Client.updateNote(name.toString(), note, updateMask);
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @param note The updated note.
-   * @param updateMask The fields to update.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final Note updateNote(String name, Note note, FieldMask updateMask) {
-    UpdateNoteRequest request =
-        UpdateNoteRequest.newBuilder()
-            .setName(name)
-            .setNote(note)
-            .setUpdateMask(updateMask)
-            .build();
-    return updateNote(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   UpdateNoteRequest request = UpdateNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setNote(note)
-   *     .build();
+   *   UpdateNoteRequest request =
+   *       UpdateNoteRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setNote(Note.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
    *   Note response = grafeasV1Beta1Client.updateNote(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1547,107 +1212,61 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return updateNoteCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Note note = Note.newBuilder().build();
-   *   UpdateNoteRequest request = UpdateNoteRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setNote(note)
-   *     .build();
-   *   ApiFuture&lt;Note&gt; future = grafeasV1Beta1Client.updateNoteCallable().futureCall(request);
-   *   // Do something
+   *   UpdateNoteRequest request =
+   *       UpdateNoteRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setNote(Note.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Note> future = grafeasV1Beta1Client.updateNoteCallable().futureCall(request);
+   *   // Do something.
    *   Note response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable() {
     return stub.updateNoteCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasV1Beta1Client.listNoteOccurrences(name, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note to list occurrences for in the form of
-   *     `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListNoteOccurrencesPagedResponse listNoteOccurrences(NoteName name, String filter) {
-    ListNoteOccurrencesRequest request =
-        ListNoteOccurrencesRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setFilter(filter)
-            .build();
-    return listNoteOccurrences(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists occurrences referencing the specified note. Provider projects can use this method to get
-   * all occurrences across consumer projects referencing the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   String filter = "";
-   *   for (Occurrence element : grafeasV1Beta1Client.listNoteOccurrences(name.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param name The name of the note to list occurrences for in the form of
-   *     `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListNoteOccurrencesPagedResponse listNoteOccurrences(String name, String filter) {
-    ListNoteOccurrencesRequest request =
-        ListNoteOccurrencesRequest.newBuilder().setName(name).setFilter(filter).build();
-    return listNoteOccurrences(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists occurrences referencing the specified note. Provider projects can use this method to get
-   * all occurrences across consumer projects referencing the specified note.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   ListNoteOccurrencesRequest request = ListNoteOccurrencesRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   ListNoteOccurrencesRequest request =
+   *       ListNoteOccurrencesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   for (Occurrence element : grafeasV1Beta1Client.listNoteOccurrences(request).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1657,47 +1276,65 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return listNoteOccurrencesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   ListNoteOccurrencesRequest request = ListNoteOccurrencesRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ListNoteOccurrencesPagedResponse&gt; future = grafeasV1Beta1Client.listNoteOccurrencesPagedCallable().futureCall(request);
-   *   // Do something
+   *   ListNoteOccurrencesRequest request =
+   *       ListNoteOccurrencesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Occurrence> future =
+   *       grafeasV1Beta1Client.listNoteOccurrencesPagedCallable().futureCall(request);
+   *   // Do something.
    *   for (Occurrence element : future.get().iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesPagedCallable() {
     return stub.listNoteOccurrencesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists occurrences referencing the specified note. Provider projects can use this method to get
    * all occurrences across consumer projects referencing the specified note.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   NoteName name = NoteName.of("[PROJECT]", "[NOTE]");
-   *   ListNoteOccurrencesRequest request = ListNoteOccurrencesRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
+   *   ListNoteOccurrencesRequest request =
+   *       ListNoteOccurrencesRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
    *   while (true) {
-   *     ListNoteOccurrencesResponse response = grafeasV1Beta1Client.listNoteOccurrencesCallable().call(request);
+   *     ListNoteOccurrencesResponse response =
+   *         grafeasV1Beta1Client.listNoteOccurrencesCallable().call(request);
    *     for (Occurrence element : response.getOccurrencesList()) {
    *       // doThingsWith(element);
    *     }
@@ -1709,86 +1346,35 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
    *     }
    *   }
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesCallable() {
     return stub.listNoteOccurrencesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a summary of the number and severity of occurrences.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   VulnerabilityOccurrencesSummary response = grafeasV1Beta1Client.getVulnerabilityOccurrencesSummary(parent, filter);
+   *   GetVulnerabilityOccurrencesSummaryRequest request =
+   *       GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   VulnerabilityOccurrencesSummary response =
+   *       grafeasV1Beta1Client.getVulnerabilityOccurrencesSummary(request);
    * }
-   * </code></pre>
-   *
-   * @param parent The name of the project to get a vulnerability summary for in the form of
-   *     `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VulnerabilityOccurrencesSummary getVulnerabilityOccurrencesSummary(
-      ProjectName parent, String filter) {
-    GetVulnerabilityOccurrencesSummaryRequest request =
-        GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setFilter(filter)
-            .build();
-    return getVulnerabilityOccurrencesSummary(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a summary of the number and severity of occurrences.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   VulnerabilityOccurrencesSummary response = grafeasV1Beta1Client.getVulnerabilityOccurrencesSummary(parent.toString(), filter);
-   * }
-   * </code></pre>
-   *
-   * @param parent The name of the project to get a vulnerability summary for in the form of
-   *     `projects/[PROJECT_ID]`.
-   * @param filter The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final VulnerabilityOccurrencesSummary getVulnerabilityOccurrencesSummary(
-      String parent, String filter) {
-    GetVulnerabilityOccurrencesSummaryRequest request =
-        GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
-            .setParent(parent)
-            .setFilter(filter)
-            .build();
-    return getVulnerabilityOccurrencesSummary(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a summary of the number and severity of occurrences.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   GetVulnerabilityOccurrencesSummaryRequest request = GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   VulnerabilityOccurrencesSummary response = grafeasV1Beta1Client.getVulnerabilityOccurrencesSummary(request);
-   * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1798,23 +1384,30 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
     return getVulnerabilityOccurrencesSummaryCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a summary of the number and severity of occurrences.
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (GrafeasV1Beta1Client grafeasV1Beta1Client = GrafeasV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   GetVulnerabilityOccurrencesSummaryRequest request = GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;VulnerabilityOccurrencesSummary&gt; future = grafeasV1Beta1Client.getVulnerabilityOccurrencesSummaryCallable().futureCall(request);
-   *   // Do something
+   *   GetVulnerabilityOccurrencesSummaryRequest request =
+   *       GetVulnerabilityOccurrencesSummaryRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<VulnerabilityOccurrencesSummary> future =
+   *       grafeasV1Beta1Client.getVulnerabilityOccurrencesSummaryCallable().futureCall(request);
+   *   // Do something.
    *   VulnerabilityOccurrencesSummary response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
@@ -1867,12 +1460,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListOccurrencesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListOccurrencesPage, ListOccurrencesPagedResponse>() {
-            @Override
-            public ListOccurrencesPagedResponse apply(ListOccurrencesPage input) {
-              return new ListOccurrencesPagedResponse(input);
-            }
-          },
+          input -> new ListOccurrencesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1944,14 +1532,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
       ApiFuture<ListNotesPage> futurePage =
           ListNotesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListNotesPage, ListNotesPagedResponse>() {
-            @Override
-            public ListNotesPagedResponse apply(ListNotesPage input) {
-              return new ListNotesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListNotesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListNotesPagedResponse(ListNotesPage page) {
@@ -2021,12 +1602,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListNoteOccurrencesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListNoteOccurrencesPage, ListNoteOccurrencesPagedResponse>() {
-            @Override
-            public ListNoteOccurrencesPagedResponse apply(ListNoteOccurrencesPage input) {
-              return new ListNoteOccurrencesPagedResponse(input);
-            }
-          },
+          input -> new ListNoteOccurrencesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

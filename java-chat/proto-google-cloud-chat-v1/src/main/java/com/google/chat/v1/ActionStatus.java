@@ -24,7 +24,7 @@ package com.google.chat.v1;
  *
  * <pre>
  * Represents the status for a request to either invoke or submit a
- * [dialog](https://developers.google.com/chat/how-tos/dialogs).
+ * [dialog](https://developers.google.com/workspace/chat/dialogs).
  * </pre>
  *
  * Protobuf type {@code google.chat.v1.ActionStatus}
@@ -322,7 +322,7 @@ public final class ActionStatus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents the status for a request to either invoke or submit a
-   * [dialog](https://developers.google.com/chat/how-tos/dialogs).
+   * [dialog](https://developers.google.com/workspace/chat/dialogs).
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.ActionStatus}

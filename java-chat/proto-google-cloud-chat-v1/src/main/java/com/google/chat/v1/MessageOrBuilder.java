@@ -42,7 +42,7 @@ public interface MessageOrBuilder
    * from the `clientAssignedMessageId` field. For example,
    * `spaces/AAAAAAAAAAA/messages/client-custom-name`. For details, see [Name
    * a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -68,7 +68,7 @@ public interface MessageOrBuilder
    * from the `clientAssignedMessageId` field. For example,
    * `spaces/AAAAAAAAAAA/messages/client-custom-name`. For details, see [Name
    * a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -83,9 +83,9 @@ public interface MessageOrBuilder
    * <pre>
    * Output only. The user who created the message.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the output
-   * populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -100,9 +100,9 @@ public interface MessageOrBuilder
    * <pre>
    * Output only. The user who created the message.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the output
-   * populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -117,9 +117,9 @@ public interface MessageOrBuilder
    * <pre>
    * Output only. The user who created the message.
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the output
-   * populates the
-   * [user](https://developers.google.com/chat/api/reference/rest/v1/User)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
    * `name` and `type`.
    * </pre>
    *
@@ -277,13 +277,13 @@ public interface MessageOrBuilder
    * <pre>
    * Plain-text body of the message. The first link to an image, video, or web
    * page generates a
-   * [preview chip](https://developers.google.com/chat/how-tos/preview-links).
+   * [preview chip](https://developers.google.com/workspace/chat/preview-links).
    * You can also [&#64;mention a Google Chat
-   * user](https://developers.google.com/chat/format-messages#messages-&#64;mention),
+   * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
    * or everyone in the space.
    *
    * To learn about creating text messages, see [Send a text
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#create-text-messages).
+   * message](https://developers.google.com/workspace/chat/create-messages#create-text-messages).
    * </pre>
    *
    * <code>string text = 4;</code>
@@ -297,13 +297,13 @@ public interface MessageOrBuilder
    * <pre>
    * Plain-text body of the message. The first link to an image, video, or web
    * page generates a
-   * [preview chip](https://developers.google.com/chat/how-tos/preview-links).
+   * [preview chip](https://developers.google.com/workspace/chat/preview-links).
    * You can also [&#64;mention a Google Chat
-   * user](https://developers.google.com/chat/format-messages#messages-&#64;mention),
+   * user](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention),
    * or everyone in the space.
    *
    * To learn about creating text messages, see [Send a text
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#create-text-messages).
+   * message](https://developers.google.com/workspace/chat/create-messages#create-text-messages).
    * </pre>
    *
    * <code>string text = 4;</code>
@@ -321,23 +321,24 @@ public interface MessageOrBuilder
    * but includes the following:
    *
    * * [Markup
-   *   syntax](https://developers.google.com/chat/format-messages)
-   *   for bold, italic, strikethrough, monospace, and monospace block.
+   * syntax](https://developers.google.com/workspace/chat/format-messages)
+   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
+   * list.
    *
    * * [User
-   *   mentions](https://developers.google.com/chat/format-messages#messages-&#64;mention)
-   *   using the format `&lt;users/{user}&gt;`.
+   * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
+   * using the format `&lt;users/{user}&gt;`.
    *
    * * Custom hyperlinks using the format `&lt;{url}|{rendered_text}&gt;` where the
-   *   first string is the URL and the second is the rendered text—for example,
-   *   `&lt;http://example.com|custom text&gt;`.
+   * first string is the URL and the second is the rendered text—for example,
+   * `&lt;http://example.com|custom text&gt;`.
    *
    * * Custom emoji using the format `:{emoji_name}:`—for example, `:smile:`.
-   *   This doesn't apply to Unicode emoji, such as `U+1F600` for a grinning
+   * This doesn't apply to Unicode emoji, such as `U+1F600` for a grinning
    * face emoji.
    *
    * For more information, see [View text formatting sent in a
-   * message](https://developers.google.com/chat/format-messages#view_text_formatting_sent_in_a_message)
+   * message](https://developers.google.com/workspace/chat/format-messages#view_text_formatting_sent_in_a_message)
    * </pre>
    *
    * <code>string formatted_text = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -354,23 +355,24 @@ public interface MessageOrBuilder
    * but includes the following:
    *
    * * [Markup
-   *   syntax](https://developers.google.com/chat/format-messages)
-   *   for bold, italic, strikethrough, monospace, and monospace block.
+   * syntax](https://developers.google.com/workspace/chat/format-messages)
+   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
+   * list.
    *
    * * [User
-   *   mentions](https://developers.google.com/chat/format-messages#messages-&#64;mention)
-   *   using the format `&lt;users/{user}&gt;`.
+   * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
+   * using the format `&lt;users/{user}&gt;`.
    *
    * * Custom hyperlinks using the format `&lt;{url}|{rendered_text}&gt;` where the
-   *   first string is the URL and the second is the rendered text—for example,
-   *   `&lt;http://example.com|custom text&gt;`.
+   * first string is the URL and the second is the rendered text—for example,
+   * `&lt;http://example.com|custom text&gt;`.
    *
    * * Custom emoji using the format `:{emoji_name}:`—for example, `:smile:`.
-   *   This doesn't apply to Unicode emoji, such as `U+1F600` for a grinning
+   * This doesn't apply to Unicode emoji, such as `U+1F600` for a grinning
    * face emoji.
    *
    * For more information, see [View text formatting sent in a
-   * message](https://developers.google.com/chat/format-messages#view_text_formatting_sent_in_a_message)
+   * message](https://developers.google.com/workspace/chat/format-messages#view_text_formatting_sent_in_a_message)
    * </pre>
    *
    * <code>string formatted_text = 43 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -466,15 +468,14 @@ public interface MessageOrBuilder
    *
    * <pre>
    * An array of
-   * [cards](https://developers.google.com/chat/api/reference/rest/v1/cards).
+   * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * messages can't contain cards.
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the messages can't contain cards.
    *
-   * To learn about cards and how to create them, see [Design dynamic,
-   * interactive, and consistent UIs with
-   * cards](https://developers.google.com/chat/ui).
+   * To learn about cards and how to create them, see [Send card
+   * messages](https://developers.google.com/workspace/chat/create-messages#create).
    *
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
@@ -487,15 +488,14 @@ public interface MessageOrBuilder
    *
    * <pre>
    * An array of
-   * [cards](https://developers.google.com/chat/api/reference/rest/v1/cards).
+   * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * messages can't contain cards.
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the messages can't contain cards.
    *
-   * To learn about cards and how to create them, see [Design dynamic,
-   * interactive, and consistent UIs with
-   * cards](https://developers.google.com/chat/ui).
+   * To learn about cards and how to create them, see [Send card
+   * messages](https://developers.google.com/workspace/chat/create-messages#create).
    *
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
@@ -508,15 +508,14 @@ public interface MessageOrBuilder
    *
    * <pre>
    * An array of
-   * [cards](https://developers.google.com/chat/api/reference/rest/v1/cards).
+   * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * messages can't contain cards.
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the messages can't contain cards.
    *
-   * To learn about cards and how to create them, see [Design dynamic,
-   * interactive, and consistent UIs with
-   * cards](https://developers.google.com/chat/ui).
+   * To learn about cards and how to create them, see [Send card
+   * messages](https://developers.google.com/workspace/chat/create-messages#create).
    *
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
@@ -529,15 +528,14 @@ public interface MessageOrBuilder
    *
    * <pre>
    * An array of
-   * [cards](https://developers.google.com/chat/api/reference/rest/v1/cards).
+   * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * messages can't contain cards.
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the messages can't contain cards.
    *
-   * To learn about cards and how to create them, see [Design dynamic,
-   * interactive, and consistent UIs with
-   * cards](https://developers.google.com/chat/ui).
+   * To learn about cards and how to create them, see [Send card
+   * messages](https://developers.google.com/workspace/chat/create-messages#create).
    *
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
@@ -550,15 +548,14 @@ public interface MessageOrBuilder
    *
    * <pre>
    * An array of
-   * [cards](https://developers.google.com/chat/api/reference/rest/v1/cards).
+   * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
    * Only Chat apps can create cards. If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the
-   * messages can't contain cards.
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the messages can't contain cards.
    *
-   * To learn about cards and how to create them, see [Design dynamic,
-   * interactive, and consistent UIs with
-   * cards](https://developers.google.com/chat/ui).
+   * To learn about cards and how to create them, see [Send card
+   * messages](https://developers.google.com/workspace/chat/create-messages#create).
    *
    * [Card builder](https://addons.gsuite.google.com/uikit/builder)
    * </pre>
@@ -634,7 +631,7 @@ public interface MessageOrBuilder
    * <pre>
    * The thread the message belongs to. For example usage, see
    * [Start or reply to a message
-   * thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
+   * thread](https://developers.google.com/workspace/chat/create-messages#create-message-thread).
    * </pre>
    *
    * <code>.google.chat.v1.Thread thread = 11;</code>
@@ -648,7 +645,7 @@ public interface MessageOrBuilder
    * <pre>
    * The thread the message belongs to. For example usage, see
    * [Start or reply to a message
-   * thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
+   * thread](https://developers.google.com/workspace/chat/create-messages#create-message-thread).
    * </pre>
    *
    * <code>.google.chat.v1.Thread thread = 11;</code>
@@ -662,7 +659,7 @@ public interface MessageOrBuilder
    * <pre>
    * The thread the message belongs to. For example usage, see
    * [Start or reply to a message
-   * thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
+   * thread](https://developers.google.com/workspace/chat/create-messages#create-message-thread).
    * </pre>
    *
    * <code>.google.chat.v1.Thread thread = 11;</code>
@@ -674,9 +671,9 @@ public interface MessageOrBuilder
    *
    * <pre>
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the output
-   * populates the
-   * [space](https://developers.google.com/chat/api/reference/rest/v1/spaces)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
@@ -690,9 +687,9 @@ public interface MessageOrBuilder
    *
    * <pre>
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the output
-   * populates the
-   * [space](https://developers.google.com/chat/api/reference/rest/v1/spaces)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
@@ -706,9 +703,9 @@ public interface MessageOrBuilder
    *
    * <pre>
    * If your Chat app [authenticates as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), the output
-   * populates the
-   * [space](https://developers.google.com/chat/api/reference/rest/v1/spaces)
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * the output populates the
+   * [space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces)
    * `name`.
    * </pre>
    *
@@ -912,7 +909,7 @@ public interface MessageOrBuilder
    * <pre>
    * Output only. A URL in `spaces.messages.text` that matches a link preview
    * pattern. For more information, see [Preview
-   * links](https://developers.google.com/chat/how-tos/preview-links).
+   * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
    * <code>.google.chat.v1.MatchedUrl matched_url = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -927,7 +924,7 @@ public interface MessageOrBuilder
    * <pre>
    * Output only. A URL in `spaces.messages.text` that matches a link preview
    * pattern. For more information, see [Preview
-   * links](https://developers.google.com/chat/how-tos/preview-links).
+   * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
    * <code>.google.chat.v1.MatchedUrl matched_url = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -942,7 +939,7 @@ public interface MessageOrBuilder
    * <pre>
    * Output only. A URL in `spaces.messages.text` that matches a link preview
    * pattern. For more information, see [Preview
-   * links](https://developers.google.com/chat/how-tos/preview-links).
+   * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
    * <code>.google.chat.v1.MatchedUrl matched_url = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -975,9 +972,9 @@ public interface MessageOrBuilder
    * Optional. A custom ID for the message. You can use field to identify a
    * message, or to get, delete, or update a message. To set a custom ID,
    * specify the
-   * [`messageId`](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create#body.QUERY_PARAMETERS.message_id)
+   * [`messageId`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/create#body.QUERY_PARAMETERS.message_id)
    * field when you create the message. For details, see [Name a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>string client_assigned_message_id = 32;</code>
@@ -992,9 +989,9 @@ public interface MessageOrBuilder
    * Optional. A custom ID for the message. You can use field to identify a
    * message, or to get, delete, or update a message. To set a custom ID,
    * specify the
-   * [`messageId`](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create#body.QUERY_PARAMETERS.message_id)
+   * [`messageId`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/create#body.QUERY_PARAMETERS.message_id)
    * field when you create the message. For details, see [Name a
-   * message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+   * message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * </pre>
    *
    * <code>string client_assigned_message_id = 32;</code>
@@ -1075,11 +1072,12 @@ public interface MessageOrBuilder
    * attachments aren't supported for private messages.
    *
    * Only Chat apps can send private messages. If your Chat app [authenticates
-   * as a user](https://developers.google.com/chat/api/guides/auth/users) to
-   * send a message, the message can't be private and must omit this field.
+   * as a
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * to send a message, the message can't be private and must omit this field.
    *
    * For details, see [Send private messages to Google Chat
-   * users](https://developers.google.com/chat/api/guides/v1/messages/private).
+   * users](https://developers.google.com/workspace/chat/private-messages).
    * </pre>
    *
    * <code>
@@ -1099,11 +1097,12 @@ public interface MessageOrBuilder
    * attachments aren't supported for private messages.
    *
    * Only Chat apps can send private messages. If your Chat app [authenticates
-   * as a user](https://developers.google.com/chat/api/guides/auth/users) to
-   * send a message, the message can't be private and must omit this field.
+   * as a
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * to send a message, the message can't be private and must omit this field.
    *
    * For details, see [Send private messages to Google Chat
-   * users](https://developers.google.com/chat/api/guides/v1/messages/private).
+   * users](https://developers.google.com/workspace/chat/private-messages).
    * </pre>
    *
    * <code>
@@ -1123,11 +1122,12 @@ public interface MessageOrBuilder
    * attachments aren't supported for private messages.
    *
    * Only Chat apps can send private messages. If your Chat app [authenticates
-   * as a user](https://developers.google.com/chat/api/guides/auth/users) to
-   * send a message, the message can't be private and must omit this field.
+   * as a
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * to send a message, the message can't be private and must omit this field.
    *
    * For details, see [Send private messages to Google Chat
-   * users](https://developers.google.com/chat/api/guides/v1/messages/private).
+   * users](https://developers.google.com/workspace/chat/private-messages).
    * </pre>
    *
    * <code>
@@ -1291,67 +1291,13 @@ public interface MessageOrBuilder
    * <pre>
    * One or more interactive widgets that appear at the bottom of a message.
    * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs.
+   * text and cards. Not supported for messages that contain dialogs. For
+   * details, see [Add interactive widgets at the bottom of a
+   * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
    * authentication]
-   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
-   *
-   * The following example shows a Chat app that uses accessory widgets (thumbs
-   * up and thumbs down buttons) in a text message:
-   *
-   * ![Example accessory widgets
-   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
-   *
-   * The JSON for this example message is the following:
-   *
-   * ```
-   * {
-   *   "text": "Rate your experience with this Chat app.",
-   *   "accessoryWidgets": [
-   *     {
-   *       "buttonList": {
-   *         "buttons": [
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_up"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doUpvote",
-   *               }
-   *             }
-   *           },
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_down"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doDownvote",
-   *               }
-   *             }
-   *           }
-   *         ]
-   *       }
-   *     }
-   *   ]
-   * }
-   * ```
+   * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
@@ -1363,67 +1309,13 @@ public interface MessageOrBuilder
    * <pre>
    * One or more interactive widgets that appear at the bottom of a message.
    * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs.
+   * text and cards. Not supported for messages that contain dialogs. For
+   * details, see [Add interactive widgets at the bottom of a
+   * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
    * authentication]
-   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
-   *
-   * The following example shows a Chat app that uses accessory widgets (thumbs
-   * up and thumbs down buttons) in a text message:
-   *
-   * ![Example accessory widgets
-   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
-   *
-   * The JSON for this example message is the following:
-   *
-   * ```
-   * {
-   *   "text": "Rate your experience with this Chat app.",
-   *   "accessoryWidgets": [
-   *     {
-   *       "buttonList": {
-   *         "buttons": [
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_up"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doUpvote",
-   *               }
-   *             }
-   *           },
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_down"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doDownvote",
-   *               }
-   *             }
-   *           }
-   *         ]
-   *       }
-   *     }
-   *   ]
-   * }
-   * ```
+   * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
@@ -1435,67 +1327,13 @@ public interface MessageOrBuilder
    * <pre>
    * One or more interactive widgets that appear at the bottom of a message.
    * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs.
+   * text and cards. Not supported for messages that contain dialogs. For
+   * details, see [Add interactive widgets at the bottom of a
+   * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
    * authentication]
-   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
-   *
-   * The following example shows a Chat app that uses accessory widgets (thumbs
-   * up and thumbs down buttons) in a text message:
-   *
-   * ![Example accessory widgets
-   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
-   *
-   * The JSON for this example message is the following:
-   *
-   * ```
-   * {
-   *   "text": "Rate your experience with this Chat app.",
-   *   "accessoryWidgets": [
-   *     {
-   *       "buttonList": {
-   *         "buttons": [
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_up"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doUpvote",
-   *               }
-   *             }
-   *           },
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_down"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doDownvote",
-   *               }
-   *             }
-   *           }
-   *         ]
-   *       }
-   *     }
-   *   ]
-   * }
-   * ```
+   * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
@@ -1507,67 +1345,13 @@ public interface MessageOrBuilder
    * <pre>
    * One or more interactive widgets that appear at the bottom of a message.
    * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs.
+   * text and cards. Not supported for messages that contain dialogs. For
+   * details, see [Add interactive widgets at the bottom of a
+   * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
    * authentication]
-   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
-   *
-   * The following example shows a Chat app that uses accessory widgets (thumbs
-   * up and thumbs down buttons) in a text message:
-   *
-   * ![Example accessory widgets
-   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
-   *
-   * The JSON for this example message is the following:
-   *
-   * ```
-   * {
-   *   "text": "Rate your experience with this Chat app.",
-   *   "accessoryWidgets": [
-   *     {
-   *       "buttonList": {
-   *         "buttons": [
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_up"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doUpvote",
-   *               }
-   *             }
-   *           },
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_down"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doDownvote",
-   *               }
-   *             }
-   *           }
-   *         ]
-   *       }
-   *     }
-   *   ]
-   * }
-   * ```
+   * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>
@@ -1580,67 +1364,13 @@ public interface MessageOrBuilder
    * <pre>
    * One or more interactive widgets that appear at the bottom of a message.
    * You can add accessory widgets to messages that contain text, cards, or both
-   * text and cards. Not supported for messages that contain dialogs.
+   * text and cards. Not supported for messages that contain dialogs. For
+   * details, see [Add interactive widgets at the bottom of a
+   * message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets).
    *
    * Creating a message with accessory widgets requires [app
    * authentication]
-   * (https://developers.google.com/chat/api/guides/auth/service-accounts).
-   *
-   * The following example shows a Chat app that uses accessory widgets (thumbs
-   * up and thumbs down buttons) in a text message:
-   *
-   * ![Example accessory widgets
-   * message](https://developers.google.com/chat/images/message-accessory-widgets-reference.png)
-   *
-   * The JSON for this example message is the following:
-   *
-   * ```
-   * {
-   *   "text": "Rate your experience with this Chat app.",
-   *   "accessoryWidgets": [
-   *     {
-   *       "buttonList": {
-   *         "buttons": [
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_up"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doUpvote",
-   *               }
-   *             }
-   *           },
-   *           {
-   *             "icon": {
-   *               "material_icon": {
-   *                 "name": "thumb_down"
-   *               }
-   *             },
-   *             "color": {
-   *               "red": 0,
-   *               "blue": 255,
-   *               "green": 0
-   *             },
-   *             "onClick": {
-   *               "action": {
-   *                 "function": "doDownvote",
-   *               }
-   *             }
-   *           }
-   *         ]
-   *       }
-   *     }
-   *   ]
-   * }
-   * ```
+   * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
    * </pre>
    *
    * <code>repeated .google.chat.v1.AccessoryWidget accessory_widgets = 44;</code>

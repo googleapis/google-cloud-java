@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,29 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.containeranalysis.v1beta1;
 
-import com.google.api.core.ApiFunction;
-import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.paging.AbstractFixedSizeCollection;
-import com.google.api.gax.paging.AbstractPage;
-import com.google.api.gax.paging.AbstractPagedListResponse;
-import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.ContainerAnalysisV1Beta1Stub;
 import com.google.cloud.devtools.containeranalysis.v1beta1.stub.ContainerAnalysisV1Beta1StubSettings;
-import com.google.common.util.concurrent.MoreExecutors;
-import com.google.containeranalysis.v1beta1.GetScanConfigRequest;
-import com.google.containeranalysis.v1beta1.IamResourceName;
-import com.google.containeranalysis.v1beta1.ListScanConfigsRequest;
-import com.google.containeranalysis.v1beta1.ListScanConfigsResponse;
-import com.google.containeranalysis.v1beta1.ProjectName;
-import com.google.containeranalysis.v1beta1.ScanConfig;
-import com.google.containeranalysis.v1beta1.ScanConfigName;
-import com.google.containeranalysis.v1beta1.UpdateScanConfigRequest;
+import com.google.containeranalysis.v1beta1.ExportSBOMRequest;
+import com.google.containeranalysis.v1beta1.ExportSBOMResponse;
+import com.google.containeranalysis.v1beta1.GeneratePackagesSummaryRequest;
+import com.google.containeranalysis.v1beta1.PackagesSummaryResponse;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -46,10 +36,10 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Retrieves analysis results of Cloud components such as Docker container
- * images. The Container Analysis API is an implementation of the [Grafeas](grafeas.io) API.
+ * images. The Container Analysis API is an implementation of the [Grafeas](https://grafeas.io) API.
  *
  * <p>Analysis results are stored as a series of occurrences. An `Occurrence` contains information
  * about a specific analysis instance on a resource. An occurrence refers to a `Note`. A note
@@ -63,33 +53,138 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
- *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+ *     ContainerAnalysisV1Beta1Client.create()) {
+ *   ResourceName resource =
+ *       new ResourceName() {
+ *         {@literal @}Override
+ *         public Map<String, String> getFieldValuesMap() {
+ *           Map<String, String> fieldValuesMap = new HashMap<>();
+ *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+ *           return fieldValuesMap;
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String getFieldValue(String fieldName) {
+ *           return getFieldValuesMap().get(fieldName);
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String toString() {
+ *           return "projects/project-8432/notes/note-8432";
+ *         }
+ *       };
  *   Policy policy = Policy.newBuilder().build();
  *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(resource, policy);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
- * <p>Note: close() needs to be called on the containerAnalysisV1Beta1Client object to clean up
+ * <p>Note: close() needs to be called on the ContainerAnalysisV1Beta1Client object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's
- * methods:
- *
- * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
- *       converted into function parameters. It may be the case that not all fields are available as
- *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
- *       which must be constructed before the call. Not every API method will have a request object
- *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
- *       callable object, which can be used to initiate calls to the service.
- * </ol>
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the access control policy on the specified note or occurrence. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or an occurrence, respectively.
+ * <p>  The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a note or an occurrence resource. Requires `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy` permission if the resource is a note or occurrence, respectively.
+ * <p>  The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns the permissions that a caller has on the specified note or occurrence. Requires list permission on the project (for example, `containeranalysis.notes.list`).
+ * <p>  The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for occurrences.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(ResourceName resource, List&lt;String&gt; permissions)
+ *           <li><p> testIamPermissions(String resource, List&lt;String&gt; permissions)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GeneratePackagesSummary</td>
+ *      <td><p> Gets a summary of the packages within a given resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generatePackagesSummary(GeneratePackagesSummaryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generatePackagesSummaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportSBOM</td>
+ *      <td><p> Generates an SBOM and other dependency information for the given resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportSBOM(ExportSBOMRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportSBOMCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
  *
  * <p>See the individual methods for example code.
  *
@@ -102,30 +197,53 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ContainerAnalysisV1Beta1Settings containerAnalysisV1Beta1Settings =
  *     ContainerAnalysisV1Beta1Settings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
  *     ContainerAnalysisV1Beta1Client.create(containerAnalysisV1Beta1Settings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ContainerAnalysisV1Beta1Settings containerAnalysisV1Beta1Settings =
  *     ContainerAnalysisV1Beta1Settings.newBuilder().setEndpoint(myEndpoint).build();
  * ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
  *     ContainerAnalysisV1Beta1Client.create(containerAnalysisV1Beta1Settings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ContainerAnalysisV1Beta1Settings containerAnalysisV1Beta1Settings =
+ *     ContainerAnalysisV1Beta1Settings.newHttpJsonBuilder().build();
+ * ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+ *     ContainerAnalysisV1Beta1Client.create(containerAnalysisV1Beta1Settings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
   private final ContainerAnalysisV1Beta1Settings settings;
   private final ContainerAnalysisV1Beta1Stub stub;
@@ -147,9 +265,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
 
   /**
    * Constructs an instance of ContainerAnalysisV1Beta1Client, using the given stub for making
-   * calls. This is for advanced usage - prefer to use ContainerAnalysisV1Beta1Settings}.
+   * calls. This is for advanced usage - prefer using create(ContainerAnalysisV1Beta1Settings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ContainerAnalysisV1Beta1Client create(ContainerAnalysisV1Beta1Stub stub) {
     return new ContainerAnalysisV1Beta1Client(stub);
   }
@@ -165,7 +282,6 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     this.stub = ((ContainerAnalysisV1Beta1StubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected ContainerAnalysisV1Beta1Client(ContainerAnalysisV1Beta1Stub stub) {
     this.settings = null;
     this.stub = stub;
@@ -175,12 +291,11 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public ContainerAnalysisV1Beta1Stub getStub() {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified note or occurrence. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -191,13 +306,37 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   ResourceName resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "projects/project-8432/notes/note-8432";
+   *         }
+   *       };
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(resource, policy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -206,7 +345,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(IamResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -215,7 +354,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified note or occurrence. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -226,13 +365,37 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   String resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "resource-341064690");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "resource-341064690";
+   *         }
+   *       }.toString();
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(resource.toString(), policy);
+   *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(resource, policy);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -247,7 +410,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return setIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified note or occurrence. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -258,17 +421,23 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .setPolicy(policy)
-   *     .build();
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
    *   Policy response = containerAnalysisV1Beta1Client.setIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -277,7 +446,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return setIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the access control policy on the specified note or occurrence. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -288,25 +457,32 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Policy policy = Policy.newBuilder().build();
-   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .setPolicy(policy)
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = containerAnalysisV1Beta1Client.setIamPolicyCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource("SetIamPolicyRequest1223629066".toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       containerAnalysisV1Beta1Client.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a note or an occurrence resource. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -317,18 +493,42 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   ResourceName resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "projects/project-8432/notes/note-8432";
+   *         }
+   *       };
    *   Policy response = containerAnalysisV1Beta1Client.getIamPolicy(resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(IamResourceName resource) {
+  public final Policy getIamPolicy(ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -336,7 +536,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a note or an occurrence resource. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -347,12 +547,36 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   Policy response = containerAnalysisV1Beta1Client.getIamPolicy(resource.toString());
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   String resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "resource-341064690");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "resource-341064690";
+   *         }
+   *       }.toString();
+   *   Policy response = containerAnalysisV1Beta1Client.getIamPolicy(resource);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -363,7 +587,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return getIamPolicy(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a note or an occurrence resource. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -374,15 +598,22 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
    *   Policy response = containerAnalysisV1Beta1Client.getIamPolicy(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -391,7 +622,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return getIamPolicyCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the access control policy for a note or an occurrence resource. Requires
    * `containeranalysis.notes.setIamPolicy` or `containeranalysis.occurrences.setIamPolicy`
@@ -402,23 +633,31 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .build();
-   *   ApiFuture&lt;Policy&gt; future = containerAnalysisV1Beta1Client.getIamPolicyCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource("GetIamPolicyRequest-1527610370".toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       containerAnalysisV1Beta1Client.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
    *   Policy response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified note or occurrence. Requires list
    * permission on the project (for example, `containeranalysis.notes.list`).
@@ -428,13 +667,38 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = containerAnalysisV1Beta1Client.testIamPermissions(resource, permissions);
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   ResourceName resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "projects/project-8432/notes/note-8432");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "projects/project-8432/notes/note-8432";
+   *         }
+   *       };
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       containerAnalysisV1Beta1Client.testIamPermissions(resource, permissions);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -444,7 +708,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      IamResourceName resource, List<String> permissions) {
+      ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -453,7 +717,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified note or occurrence. Requires list
    * permission on the project (for example, `containeranalysis.notes.list`).
@@ -463,13 +727,38 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = containerAnalysisV1Beta1Client.testIamPermissions(resource.toString(), permissions);
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   String resource =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("resource", "resource-341064690");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "resource-341064690";
+   *         }
+   *       }.toString();
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       containerAnalysisV1Beta1Client.testIamPermissions(resource, permissions);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -488,7 +777,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return testIamPermissions(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified note or occurrence. Requires list
    * permission on the project (for example, `containeranalysis.notes.list`).
@@ -498,17 +787,23 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   TestIamPermissionsResponse response = containerAnalysisV1Beta1Client.testIamPermissions(request);
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response =
+   *       containerAnalysisV1Beta1Client.testIamPermissions(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -517,7 +812,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     return testIamPermissionsCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the permissions that a caller has on the specified note or occurrence. Requires list
    * permission on the project (for example, `containeranalysis.notes.list`).
@@ -527,354 +822,138 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   IamResourceName resource = NoteName.of("[PROJECT]", "[NOTE]");
-   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-   *     .setResource(resource.toString())
-   *     .addAllPermissions(permissions)
-   *     .build();
-   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = containerAnalysisV1Beta1Client.testIamPermissionsCallable().futureCall(request);
-   *   // Do something
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource("TestIamPermissionsRequest942398222".toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       containerAnalysisV1Beta1Client.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
    *   TestIamPermissionsResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the specified scan configuration.
+   * Gets a summary of the packages within a given resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanConfig response = containerAnalysisV1Beta1Client.getScanConfig(name);
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   GeneratePackagesSummaryRequest request =
+   *       GeneratePackagesSummaryRequest.newBuilder().setName("name3373707").build();
+   *   PackagesSummaryResponse response =
+   *       containerAnalysisV1Beta1Client.generatePackagesSummary(request);
    * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the scan configuration in the form of
-   *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ScanConfig getScanConfig(ScanConfigName name) {
-    GetScanConfigRequest request =
-        GetScanConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getScanConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the specified scan configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanConfig response = containerAnalysisV1Beta1Client.getScanConfig(name.toString());
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the scan configuration in the form of
-   *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ScanConfig getScanConfig(String name) {
-    GetScanConfigRequest request = GetScanConfigRequest.newBuilder().setName(name).build();
-    return getScanConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets the specified scan configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   GetScanConfigRequest request = GetScanConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ScanConfig response = containerAnalysisV1Beta1Client.getScanConfig(request);
-   * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ScanConfig getScanConfig(GetScanConfigRequest request) {
-    return getScanConfigCallable().call(request);
+  public final PackagesSummaryResponse generatePackagesSummary(
+      GeneratePackagesSummaryRequest request) {
+    return generatePackagesSummaryCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the specified scan configuration.
+   * Gets a summary of the packages within a given resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   GetScanConfigRequest request = GetScanConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ScanConfig&gt; future = containerAnalysisV1Beta1Client.getScanConfigCallable().futureCall(request);
-   *   // Do something
-   *   ScanConfig response = future.get();
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   GeneratePackagesSummaryRequest request =
+   *       GeneratePackagesSummaryRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<PackagesSummaryResponse> future =
+   *       containerAnalysisV1Beta1Client.generatePackagesSummaryCallable().futureCall(request);
+   *   // Do something.
+   *   PackagesSummaryResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
-  public final UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable() {
-    return stub.getScanConfigCallable();
+  public final UnaryCallable<GeneratePackagesSummaryRequest, PackagesSummaryResponse>
+      generatePackagesSummaryCallable() {
+    return stub.generatePackagesSummaryCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists scan configurations for the specified project.
+   * Generates an SBOM and other dependency information for the given resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (ScanConfig element : containerAnalysisV1Beta1Client.listScanConfigs(parent, filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   ExportSBOMRequest request = ExportSBOMRequest.newBuilder().setName("name3373707").build();
+   *   ExportSBOMResponse response = containerAnalysisV1Beta1Client.exportSBOM(request);
    * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the project to list scan configurations for in the form of
-   *     `projects/[PROJECT_ID]`.
-   * @param filter Required. The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListScanConfigsPagedResponse listScanConfigs(ProjectName parent, String filter) {
-    ListScanConfigsRequest request =
-        ListScanConfigsRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setFilter(filter)
-            .build();
-    return listScanConfigs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists scan configurations for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   String filter = "";
-   *   for (ScanConfig element : containerAnalysisV1Beta1Client.listScanConfigs(parent.toString(), filter).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
-   *
-   * @param parent Required. The name of the project to list scan configurations for in the form of
-   *     `projects/[PROJECT_ID]`.
-   * @param filter Required. The filter expression.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListScanConfigsPagedResponse listScanConfigs(String parent, String filter) {
-    ListScanConfigsRequest request =
-        ListScanConfigsRequest.newBuilder().setParent(parent).setFilter(filter).build();
-    return listScanConfigs(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists scan configurations for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ScanConfig element : containerAnalysisV1Beta1Client.listScanConfigs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListScanConfigsPagedResponse listScanConfigs(ListScanConfigsRequest request) {
-    return listScanConfigsPagedCallable().call(request);
+  public final ExportSBOMResponse exportSBOM(ExportSBOMRequest request) {
+    return exportSBOMCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists scan configurations for the specified project.
+   * Generates an SBOM and other dependency information for the given resource.
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListScanConfigsPagedResponse&gt; future = containerAnalysisV1Beta1Client.listScanConfigsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ScanConfig element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client =
+   *     ContainerAnalysisV1Beta1Client.create()) {
+   *   ExportSBOMRequest request = ExportSBOMRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<ExportSBOMResponse> future =
+   *       containerAnalysisV1Beta1Client.exportSBOMCallable().futureCall(request);
+   *   // Do something.
+   *   ExportSBOMResponse response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
-  public final UnaryCallable<ListScanConfigsRequest, ListScanConfigsPagedResponse>
-      listScanConfigsPagedCallable() {
-    return stub.listScanConfigsPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Lists scan configurations for the specified project.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   ListScanConfigsRequest request = ListScanConfigsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListScanConfigsResponse response = containerAnalysisV1Beta1Client.listScanConfigsCallable().call(request);
-   *     for (ScanConfig element : response.getScanConfigsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse>
-      listScanConfigsCallable() {
-    return stub.listScanConfigsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified scan configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
-   *   ScanConfig response = containerAnalysisV1Beta1Client.updateScanConfig(name, scanConfig);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the scan configuration in the form of
-   *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
-   * @param scanConfig Required. The updated scan configuration.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ScanConfig updateScanConfig(ScanConfigName name, ScanConfig scanConfig) {
-    UpdateScanConfigRequest request =
-        UpdateScanConfigRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .setScanConfig(scanConfig)
-            .build();
-    return updateScanConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified scan configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
-   *   ScanConfig response = containerAnalysisV1Beta1Client.updateScanConfig(name.toString(), scanConfig);
-   * }
-   * </code></pre>
-   *
-   * @param name Required. The name of the scan configuration in the form of
-   *     `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
-   * @param scanConfig Required. The updated scan configuration.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ScanConfig updateScanConfig(String name, ScanConfig scanConfig) {
-    UpdateScanConfigRequest request =
-        UpdateScanConfigRequest.newBuilder().setName(name).setScanConfig(scanConfig).build();
-    return updateScanConfig(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified scan configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
-   *   UpdateScanConfigRequest request = UpdateScanConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setScanConfig(scanConfig)
-   *     .build();
-   *   ScanConfig response = containerAnalysisV1Beta1Client.updateScanConfig(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ScanConfig updateScanConfig(UpdateScanConfigRequest request) {
-    return updateScanConfigCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Updates the specified scan configuration.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ContainerAnalysisV1Beta1Client containerAnalysisV1Beta1Client = ContainerAnalysisV1Beta1Client.create()) {
-   *   ScanConfigName name = ScanConfigName.of("[PROJECT]", "[SCAN_CONFIG]");
-   *   ScanConfig scanConfig = ScanConfig.newBuilder().build();
-   *   UpdateScanConfigRequest request = UpdateScanConfigRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .setScanConfig(scanConfig)
-   *     .build();
-   *   ApiFuture&lt;ScanConfig&gt; future = containerAnalysisV1Beta1Client.updateScanConfigCallable().futureCall(request);
-   *   // Do something
-   *   ScanConfig response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final UnaryCallable<UpdateScanConfigRequest, ScanConfig> updateScanConfigCallable() {
-    return stub.updateScanConfigCallable();
+  public final UnaryCallable<ExportSBOMRequest, ExportSBOMResponse> exportSBOMCallable() {
+    return stub.exportSBOMCallable();
   }
 
   @Override
@@ -905,87 +984,5 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
-  }
-
-  public static class ListScanConfigsPagedResponse
-      extends AbstractPagedListResponse<
-          ListScanConfigsRequest,
-          ListScanConfigsResponse,
-          ScanConfig,
-          ListScanConfigsPage,
-          ListScanConfigsFixedSizeCollection> {
-
-    public static ApiFuture<ListScanConfigsPagedResponse> createAsync(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ApiFuture<ListScanConfigsResponse> futureResponse) {
-      ApiFuture<ListScanConfigsPage> futurePage =
-          ListScanConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListScanConfigsPage, ListScanConfigsPagedResponse>() {
-            @Override
-            public ListScanConfigsPagedResponse apply(ListScanConfigsPage input) {
-              return new ListScanConfigsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
-    }
-
-    private ListScanConfigsPagedResponse(ListScanConfigsPage page) {
-      super(page, ListScanConfigsFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListScanConfigsPage
-      extends AbstractPage<
-          ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig, ListScanConfigsPage> {
-
-    private ListScanConfigsPage(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ListScanConfigsResponse response) {
-      super(context, response);
-    }
-
-    private static ListScanConfigsPage createEmptyPage() {
-      return new ListScanConfigsPage(null, null);
-    }
-
-    @Override
-    protected ListScanConfigsPage createPage(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ListScanConfigsResponse response) {
-      return new ListScanConfigsPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListScanConfigsPage> createPageAsync(
-        PageContext<ListScanConfigsRequest, ListScanConfigsResponse, ScanConfig> context,
-        ApiFuture<ListScanConfigsResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListScanConfigsFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListScanConfigsRequest,
-          ListScanConfigsResponse,
-          ScanConfig,
-          ListScanConfigsPage,
-          ListScanConfigsFixedSizeCollection> {
-
-    private ListScanConfigsFixedSizeCollection(
-        List<ListScanConfigsPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListScanConfigsFixedSizeCollection createEmptyCollection() {
-      return new ListScanConfigsFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListScanConfigsFixedSizeCollection createCollection(
-        List<ListScanConfigsPage> pages, int collectionSize) {
-      return new ListScanConfigsFixedSizeCollection(pages, collectionSize);
-    }
   }
 }

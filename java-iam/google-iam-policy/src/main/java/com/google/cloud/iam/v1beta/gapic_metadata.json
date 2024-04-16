@@ -1,0 +1,54 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.iam.v1beta",
+  "libraryPackage": "com.google.cloud.iam.v1beta",
+  "services": {
+    "WorkloadIdentityPools": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WorkloadIdentityPoolsClient",
+          "rpcs": {
+            "CreateWorkloadIdentityPool": {
+              "methods": ["createWorkloadIdentityPoolAsync", "createWorkloadIdentityPoolAsync", "createWorkloadIdentityPoolAsync", "createWorkloadIdentityPoolOperationCallable", "createWorkloadIdentityPoolCallable"]
+            },
+            "CreateWorkloadIdentityPoolProvider": {
+              "methods": ["createWorkloadIdentityPoolProviderAsync", "createWorkloadIdentityPoolProviderAsync", "createWorkloadIdentityPoolProviderAsync", "createWorkloadIdentityPoolProviderOperationCallable", "createWorkloadIdentityPoolProviderCallable"]
+            },
+            "DeleteWorkloadIdentityPool": {
+              "methods": ["deleteWorkloadIdentityPoolAsync", "deleteWorkloadIdentityPoolAsync", "deleteWorkloadIdentityPoolAsync", "deleteWorkloadIdentityPoolOperationCallable", "deleteWorkloadIdentityPoolCallable"]
+            },
+            "DeleteWorkloadIdentityPoolProvider": {
+              "methods": ["deleteWorkloadIdentityPoolProviderAsync", "deleteWorkloadIdentityPoolProviderAsync", "deleteWorkloadIdentityPoolProviderAsync", "deleteWorkloadIdentityPoolProviderOperationCallable", "deleteWorkloadIdentityPoolProviderCallable"]
+            },
+            "GetWorkloadIdentityPool": {
+              "methods": ["getWorkloadIdentityPool", "getWorkloadIdentityPool", "getWorkloadIdentityPool", "getWorkloadIdentityPoolCallable"]
+            },
+            "GetWorkloadIdentityPoolProvider": {
+              "methods": ["getWorkloadIdentityPoolProvider", "getWorkloadIdentityPoolProvider", "getWorkloadIdentityPoolProvider", "getWorkloadIdentityPoolProviderCallable"]
+            },
+            "ListWorkloadIdentityPoolProviders": {
+              "methods": ["listWorkloadIdentityPoolProviders", "listWorkloadIdentityPoolProviders", "listWorkloadIdentityPoolProviders", "listWorkloadIdentityPoolProvidersPagedCallable", "listWorkloadIdentityPoolProvidersCallable"]
+            },
+            "ListWorkloadIdentityPools": {
+              "methods": ["listWorkloadIdentityPools", "listWorkloadIdentityPools", "listWorkloadIdentityPools", "listWorkloadIdentityPoolsPagedCallable", "listWorkloadIdentityPoolsCallable"]
+            },
+            "UndeleteWorkloadIdentityPool": {
+              "methods": ["undeleteWorkloadIdentityPoolAsync", "undeleteWorkloadIdentityPoolAsync", "undeleteWorkloadIdentityPoolAsync", "undeleteWorkloadIdentityPoolOperationCallable", "undeleteWorkloadIdentityPoolCallable"]
+            },
+            "UndeleteWorkloadIdentityPoolProvider": {
+              "methods": ["undeleteWorkloadIdentityPoolProviderAsync", "undeleteWorkloadIdentityPoolProviderAsync", "undeleteWorkloadIdentityPoolProviderAsync", "undeleteWorkloadIdentityPoolProviderOperationCallable", "undeleteWorkloadIdentityPoolProviderCallable"]
+            },
+            "UpdateWorkloadIdentityPool": {
+              "methods": ["updateWorkloadIdentityPoolAsync", "updateWorkloadIdentityPoolAsync", "updateWorkloadIdentityPoolOperationCallable", "updateWorkloadIdentityPoolCallable"]
+            },
+            "UpdateWorkloadIdentityPoolProvider": {
+              "methods": ["updateWorkloadIdentityPoolProviderAsync", "updateWorkloadIdentityPoolProviderAsync", "updateWorkloadIdentityPoolProviderOperationCallable", "updateWorkloadIdentityPoolProviderCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -36,8 +36,8 @@ public interface GetMembershipRequestOrBuilder
    * Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`
    *
    * When [authenticated as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), you can
-   * use the user's email as an alias for `{member}`. For example,
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * you can use the user's email as an alias for `{member}`. For example,
    * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
    * email of the Google Chat user.
    * </pre>
@@ -61,8 +61,8 @@ public interface GetMembershipRequestOrBuilder
    * Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`
    *
    * When [authenticated as a
-   * user](https://developers.google.com/chat/api/guides/auth/users), you can
-   * use the user's email as an alias for `{member}`. For example,
+   * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
+   * you can use the user's email as an alias for `{member}`. For example,
    * `spaces/{space}/members/example&#64;gmail.com` where `example&#64;gmail.com` is the
    * email of the Google Chat user.
    * </pre>

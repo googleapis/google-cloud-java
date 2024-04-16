@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.containeranalysis.v1beta1.stub;
 
 import static com.google.cloud.devtools.containeranalysis.v1beta1.GrafeasV1Beta1Client.ListNoteOccurrencesPagedResponse;
@@ -25,9 +26,9 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
+import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grafeas.v1beta1.BatchCreateNotesRequest;
 import io.grafeas.v1beta1.BatchCreateNotesResponse;
@@ -55,20 +56,18 @@ import io.grafeas.v1beta1.VulnerabilityOccurrencesSummary;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Container Analysis API.
+ * gRPC stub implementation for the GrafeasV1Beta1 service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
-
   private static final MethodDescriptor<GetOccurrenceRequest, Occurrence>
       getOccurrenceMethodDescriptor =
           MethodDescriptor.<GetOccurrenceRequest, Occurrence>newBuilder()
@@ -78,6 +77,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
                   ProtoUtils.marshaller(GetOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListOccurrencesRequest, ListOccurrencesResponse>
       listOccurrencesMethodDescriptor =
           MethodDescriptor.<ListOccurrencesRequest, ListOccurrencesResponse>newBuilder()
@@ -88,6 +88,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOccurrencesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteOccurrenceRequest, Empty>
       deleteOccurrenceMethodDescriptor =
           MethodDescriptor.<DeleteOccurrenceRequest, Empty>newBuilder()
@@ -97,6 +98,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
                   ProtoUtils.marshaller(DeleteOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateOccurrenceRequest, Occurrence>
       createOccurrenceMethodDescriptor =
           MethodDescriptor.<CreateOccurrenceRequest, Occurrence>newBuilder()
@@ -106,6 +108,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
                   ProtoUtils.marshaller(CreateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesMethodDescriptor =
@@ -118,6 +121,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateOccurrencesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateOccurrenceRequest, Occurrence>
       updateOccurrenceMethodDescriptor =
           MethodDescriptor.<UpdateOccurrenceRequest, Occurrence>newBuilder()
@@ -127,6 +131,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
                   ProtoUtils.marshaller(UpdateOccurrenceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Occurrence.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetOccurrenceNoteRequest, Note>
       getOccurrenceNoteMethodDescriptor =
           MethodDescriptor.<GetOccurrenceNoteRequest, Note>newBuilder()
@@ -136,6 +141,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
                   ProtoUtils.marshaller(GetOccurrenceNoteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetNoteRequest, Note> getNoteMethodDescriptor =
       MethodDescriptor.<GetNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -143,6 +149,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListNotesRequest, ListNotesResponse>
       listNotesMethodDescriptor =
           MethodDescriptor.<ListNotesRequest, ListNotesResponse>newBuilder()
@@ -151,6 +158,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListNotesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListNotesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteNoteRequest, Empty> deleteNoteMethodDescriptor =
       MethodDescriptor.<DeleteNoteRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -158,6 +166,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateNoteRequest, Note> createNoteMethodDescriptor =
       MethodDescriptor.<CreateNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -165,6 +174,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesMethodDescriptor =
           MethodDescriptor.<BatchCreateNotesRequest, BatchCreateNotesResponse>newBuilder()
@@ -175,6 +185,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateNotesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateNoteRequest, Note> updateNoteMethodDescriptor =
       MethodDescriptor.<UpdateNoteRequest, Note>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -182,6 +193,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateNoteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Note.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesMethodDescriptor =
           MethodDescriptor.<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>newBuilder()
@@ -192,6 +204,7 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNoteOccurrencesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryMethodDescriptor =
@@ -207,8 +220,6 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VulnerabilityOccurrencesSummary.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable;
   private final UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse>
@@ -237,6 +248,8 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
           GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcGrafeasV1Beta1Stub create(GrafeasV1Beta1StubSettings settings)
@@ -277,18 +290,16 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GetOccurrenceRequest, Occurrence> getOccurrenceTransportSettings =
         GrpcCallSettings.<GetOccurrenceRequest, Occurrence>newBuilder()
             .setMethodDescriptor(getOccurrenceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetOccurrenceRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetOccurrenceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListOccurrencesRequest, ListOccurrencesResponse>
@@ -296,39 +307,30 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
             GrpcCallSettings.<ListOccurrencesRequest, ListOccurrencesResponse>newBuilder()
                 .setMethodDescriptor(listOccurrencesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListOccurrencesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListOccurrencesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<DeleteOccurrenceRequest, Empty> deleteOccurrenceTransportSettings =
         GrpcCallSettings.<DeleteOccurrenceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteOccurrenceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteOccurrenceRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteOccurrenceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateOccurrenceRequest, Occurrence> createOccurrenceTransportSettings =
         GrpcCallSettings.<CreateOccurrenceRequest, Occurrence>newBuilder()
             .setMethodDescriptor(createOccurrenceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateOccurrenceRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateOccurrenceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
@@ -337,91 +339,70 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
                 .<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>newBuilder()
                 .setMethodDescriptor(batchCreateOccurrencesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchCreateOccurrencesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchCreateOccurrencesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateOccurrenceRequest, Occurrence> updateOccurrenceTransportSettings =
         GrpcCallSettings.<UpdateOccurrenceRequest, Occurrence>newBuilder()
             .setMethodDescriptor(updateOccurrenceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateOccurrenceRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateOccurrenceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetOccurrenceNoteRequest, Note> getOccurrenceNoteTransportSettings =
         GrpcCallSettings.<GetOccurrenceNoteRequest, Note>newBuilder()
             .setMethodDescriptor(getOccurrenceNoteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetOccurrenceNoteRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetOccurrenceNoteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<GetNoteRequest, Note> getNoteTransportSettings =
         GrpcCallSettings.<GetNoteRequest, Note>newBuilder()
             .setMethodDescriptor(getNoteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetNoteRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetNoteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNotesRequest, ListNotesResponse> listNotesTransportSettings =
         GrpcCallSettings.<ListNotesRequest, ListNotesResponse>newBuilder()
             .setMethodDescriptor(listNotesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListNotesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListNotesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<DeleteNoteRequest, Empty> deleteNoteTransportSettings =
         GrpcCallSettings.<DeleteNoteRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteNoteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteNoteRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteNoteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<CreateNoteRequest, Note> createNoteTransportSettings =
         GrpcCallSettings.<CreateNoteRequest, Note>newBuilder()
             .setMethodDescriptor(createNoteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateNoteRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateNoteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<BatchCreateNotesRequest, BatchCreateNotesResponse>
@@ -429,26 +410,20 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
             GrpcCallSettings.<BatchCreateNotesRequest, BatchCreateNotesResponse>newBuilder()
                 .setMethodDescriptor(batchCreateNotesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchCreateNotesRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchCreateNotesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<UpdateNoteRequest, Note> updateNoteTransportSettings =
         GrpcCallSettings.<UpdateNoteRequest, Note>newBuilder()
             .setMethodDescriptor(updateNoteMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateNoteRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateNoteRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
                 })
             .build();
     GrpcCallSettings<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
@@ -456,13 +431,10 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
             GrpcCallSettings.<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>newBuilder()
                 .setMethodDescriptor(listNoteOccurrencesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListNoteOccurrencesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListNoteOccurrencesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
                     })
                 .build();
     GrpcCallSettings<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
@@ -472,14 +444,10 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
                     newBuilder()
                 .setMethodDescriptor(getVulnerabilityOccurrencesSummaryMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetVulnerabilityOccurrencesSummaryRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetVulnerabilityOccurrencesSummaryRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
                     })
                 .build();
 
@@ -548,82 +516,105 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
             settings.getVulnerabilityOccurrencesSummarySettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
   public UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     return getOccurrenceCallable;
   }
 
+  @Override
+  public UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse> listOccurrencesCallable() {
+    return listOccurrencesCallable;
+  }
+
+  @Override
   public UnaryCallable<ListOccurrencesRequest, ListOccurrencesPagedResponse>
       listOccurrencesPagedCallable() {
     return listOccurrencesPagedCallable;
   }
 
-  public UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse> listOccurrencesCallable() {
-    return listOccurrencesCallable;
-  }
-
+  @Override
   public UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
     return deleteOccurrenceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
     return createOccurrenceCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesCallable() {
     return batchCreateOccurrencesCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable() {
     return updateOccurrenceCallable;
   }
 
+  @Override
   public UnaryCallable<GetOccurrenceNoteRequest, Note> getOccurrenceNoteCallable() {
     return getOccurrenceNoteCallable;
   }
 
+  @Override
   public UnaryCallable<GetNoteRequest, Note> getNoteCallable() {
     return getNoteCallable;
   }
 
-  public UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
-    return listNotesPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return listNotesCallable;
   }
 
+  @Override
+  public UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
+    return listNotesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
     return deleteNoteCallable;
   }
 
+  @Override
   public UnaryCallable<CreateNoteRequest, Note> createNoteCallable() {
     return createNoteCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesCallable() {
     return batchCreateNotesCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable() {
     return updateNoteCallable;
   }
 
-  public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
-      listNoteOccurrencesPagedCallable() {
-    return listNoteOccurrencesPagedCallable;
-  }
-
+  @Override
   public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesCallable() {
     return listNoteOccurrencesCallable;
   }
 
+  @Override
+  public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
+      listNoteOccurrencesPagedCallable() {
+    return listNoteOccurrencesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
       getVulnerabilityOccurrencesSummaryCallable() {
     return getVulnerabilityOccurrencesSummaryCallable;
@@ -631,7 +622,13 @@ public class GrpcGrafeasV1Beta1Stub extends GrafeasV1Beta1Stub {
 
   @Override
   public final void close() {
-    shutdown();
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
   }
 
   @Override

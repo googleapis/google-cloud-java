@@ -34,6 +34,16 @@
 
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-errorreporting-v1beta1</artifactId>
+        <version>0.163.0-beta-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-errorreporting-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-errorreporting-v1beta1</artifactId>
+        <version>0.163.0-beta-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-errorreporting-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-error-reporting-v1beta1</artifactId>
         <version>0.129.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-error-reporting-v1beta1:current} -->
       </dependency>
@@ -48,7 +58,9 @@
   <modules>
     <module>google-cloud-errorreporting</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
+    <module>grpc-google-cloud-errorreporting-v1beta1</module>
     <module>proto-google-cloud-error-reporting-v1beta1</module>
+    <module>proto-google-cloud-errorreporting-v1beta1</module>
     <module>google-cloud-errorreporting-bom</module>
   </modules>
 

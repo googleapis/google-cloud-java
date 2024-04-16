@@ -753,3 +753,9 @@ grpc-google-cloud-parallelstore-v1beta:0.4.0:0.5.0-SNAPSHOT
 google-cloud-backupdr:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-backupdr-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-backupdr-v1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-errorreporting-v1beta1:0.162.0-beta:0.163.0-beta-SNAPSHOT
+grpc-google-cloud-errorreporting-v1beta1:0.162.0-beta:0.163.0-beta-SNAPSHOT
+proto-google-cloud-managed-identities-v1beta1:1.39.0:1.40.0-SNAPSHOT
+grpc-google-cloud-managed-identities-v1beta1:1.39.0:1.40.0-SNAPSHOT
+proto-google-cloud-os-login-v1beta:2.40.0:2.41.0-SNAPSHOT
+grpc-google-cloud-os-login-v1beta:2.40.0:2.41.0-SNAPSHOT

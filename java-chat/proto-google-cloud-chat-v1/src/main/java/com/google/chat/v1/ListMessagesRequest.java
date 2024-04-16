@@ -136,8 +136,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
    *
    * If unspecified, at most 25 are returned.
    *
-   * The maximum value is 1,000. If you use a value more than 1,000, it's
-   * automatically changed to 1,000.
+   * The maximum value is 1000. If you use a value more than 1000, it's
+   * automatically changed to 1000.
    *
    * Negative values return an `INVALID_ARGUMENT` error.
    * </pre>
@@ -1019,8 +1019,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      * If unspecified, at most 25 are returned.
      *
-     * The maximum value is 1,000. If you use a value more than 1,000, it's
-     * automatically changed to 1,000.
+     * The maximum value is 1000. If you use a value more than 1000, it's
+     * automatically changed to 1000.
      *
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
@@ -1042,8 +1042,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      * If unspecified, at most 25 are returned.
      *
-     * The maximum value is 1,000. If you use a value more than 1,000, it's
-     * automatically changed to 1,000.
+     * The maximum value is 1000. If you use a value more than 1000, it's
+     * automatically changed to 1000.
      *
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>
@@ -1069,8 +1069,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
      *
      * If unspecified, at most 25 are returned.
      *
-     * The maximum value is 1,000. If you use a value more than 1,000, it's
-     * automatically changed to 1,000.
+     * The maximum value is 1000. If you use a value more than 1000, it's
+     * automatically changed to 1000.
      *
      * Negative values return an `INVALID_ARGUMENT` error.
      * </pre>

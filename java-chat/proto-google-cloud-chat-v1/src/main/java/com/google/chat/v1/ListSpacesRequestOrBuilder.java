@@ -33,8 +33,8 @@ public interface ListSpacesRequestOrBuilder
    *
    * If unspecified, at most 100 spaces are returned.
    *
-   * The maximum value is 1,000. If you use a value more than 1,000, it's
-   * automatically changed to 1,000.
+   * The maximum value is 1000. If you use a value more than 1000, it's
+   * automatically changed to 1000.
    *
    * Negative values return an `INVALID_ARGUMENT` error.
    * </pre>
@@ -85,7 +85,7 @@ public interface ListSpacesRequestOrBuilder
    * Optional. A query filter.
    *
    * You can filter spaces by the space type
-   * ([`space_type`](https://developers.google.com/chat/api/reference/rest/v1/spaces#spacetype)).
+   * ([`space_type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces#spacetype)).
    *
    * To filter by space type, you must specify valid enum value, such as
    * `SPACE` or `GROUP_CHAT` (the `space_type` can't be
@@ -115,7 +115,7 @@ public interface ListSpacesRequestOrBuilder
    * Optional. A query filter.
    *
    * You can filter spaces by the space type
-   * ([`space_type`](https://developers.google.com/chat/api/reference/rest/v1/spaces#spacetype)).
+   * ([`space_type`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces#spacetype)).
    *
    * To filter by space type, you must specify valid enum value, such as
    * `SPACE` or `GROUP_CHAT` (the `space_type` can't be

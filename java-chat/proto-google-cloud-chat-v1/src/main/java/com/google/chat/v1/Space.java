@@ -76,7 +76,15 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Protobuf enum {@code google.chat.v1.Space.Type}
    */
   public enum Type implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>TYPE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reserved.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
     TYPE_UNSPECIFIED(0),
     /**
      *
@@ -102,7 +110,15 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>TYPE_UNSPECIFIED = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reserved.
+     * </pre>
+     *
+     * <code>TYPE_UNSPECIFIED = 0;</code>
+     */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
     /**
      *
@@ -1544,7 +1560,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -1564,7 +1580,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
    * @return The type.
    */
   @java.lang.Override
@@ -1642,7 +1658,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=122
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
    * @return The threaded.
    */
   @java.lang.Override
@@ -1660,7 +1676,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The space's display name. Required when [creating a
-   * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+   * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
    * If you receive the error message `ALREADY_EXISTS` when creating a space or
    * updating the `displayName`, try a different `displayName`. An
    * existing space within the Google Workspace organization might already use
@@ -1692,7 +1708,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The space's display name. Required when [creating a
-   * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+   * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
    * If you receive the error message `ALREADY_EXISTS` when creating a space or
    * updating the `displayName`, try a different `displayName`. An
    * existing space within the Google Workspace organization might already use
@@ -1730,13 +1746,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Input when creating a space in a Google Workspace organization. Omit this
    * field when creating spaces in the following conditions:
    *
-   *   * The authenticated user uses a Google Account. By default,
-   *     the space permits any Google Chat user.
+   *   * The authenticated user uses a consumer account (unmanaged user
+   *     account). By default, a space created by a consumer account permits any
+   *     Google Chat user.
    *
    *   * The space is used to [import data to Google Chat]
-   *     (https://developers.google.com/chat/api/guides/import-data-overview).
-   *     Import mode spaces must only permit members from the same Google
-   *     Workspace organization.
+   *     (https://developers.google.com/chat/api/guides/import-data-overview)
+   *     because import mode spaces must only permit members from the same
+   *     Google Workspace organization. However, as part of the [Google
+   *     Workspace Developer Preview
+   *     Program](https://developers.google.com/workspace/preview), import mode
+   *     spaces can permit any Google Chat user so this field can then be set
+   *     for import mode spaces.
    *
    * For existing spaces, this field is output only.
    * </pre>
@@ -2760,7 +2781,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -2780,7 +2801,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -2803,7 +2824,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
      * @return The type.
      */
     @java.lang.Override
@@ -2824,7 +2845,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -2850,7 +2871,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=110
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=111
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3024,7 +3045,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=122
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
      * @return The threaded.
      */
     @java.lang.Override
@@ -3043,7 +3064,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=122
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -3066,7 +3087,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=122
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=123
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3083,7 +3104,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The space's display name. Required when [creating a
-     * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
      * If you receive the error message `ALREADY_EXISTS` when creating a space or
      * updating the `displayName`, try a different `displayName`. An
      * existing space within the Google Workspace organization might already use
@@ -3114,7 +3135,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The space's display name. Required when [creating a
-     * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
      * If you receive the error message `ALREADY_EXISTS` when creating a space or
      * updating the `displayName`, try a different `displayName`. An
      * existing space within the Google Workspace organization might already use
@@ -3145,7 +3166,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The space's display name. Required when [creating a
-     * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
      * If you receive the error message `ALREADY_EXISTS` when creating a space or
      * updating the `displayName`, try a different `displayName`. An
      * existing space within the Google Workspace organization might already use
@@ -3175,7 +3196,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The space's display name. Required when [creating a
-     * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
      * If you receive the error message `ALREADY_EXISTS` when creating a space or
      * updating the `displayName`, try a different `displayName`. An
      * existing space within the Google Workspace organization might already use
@@ -3201,7 +3222,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The space's display name. Required when [creating a
-     * space](https://developers.google.com/chat/api/reference/rest/v1/spaces/create).
+     * space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create).
      * If you receive the error message `ALREADY_EXISTS` when creating a space or
      * updating the `displayName`, try a different `displayName`. An
      * existing space within the Google Workspace organization might already use
@@ -3237,13 +3258,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Input when creating a space in a Google Workspace organization. Omit this
      * field when creating spaces in the following conditions:
      *
-     *   * The authenticated user uses a Google Account. By default,
-     *     the space permits any Google Chat user.
+     *   * The authenticated user uses a consumer account (unmanaged user
+     *     account). By default, a space created by a consumer account permits any
+     *     Google Chat user.
      *
      *   * The space is used to [import data to Google Chat]
-     *     (https://developers.google.com/chat/api/guides/import-data-overview).
-     *     Import mode spaces must only permit members from the same Google
-     *     Workspace organization.
+     *     (https://developers.google.com/chat/api/guides/import-data-overview)
+     *     because import mode spaces must only permit members from the same
+     *     Google Workspace organization. However, as part of the [Google
+     *     Workspace Developer Preview
+     *     Program](https://developers.google.com/workspace/preview), import mode
+     *     spaces can permit any Google Chat user so this field can then be set
+     *     for import mode spaces.
      *
      * For existing spaces, this field is output only.
      * </pre>
@@ -3264,13 +3290,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Input when creating a space in a Google Workspace organization. Omit this
      * field when creating spaces in the following conditions:
      *
-     *   * The authenticated user uses a Google Account. By default,
-     *     the space permits any Google Chat user.
+     *   * The authenticated user uses a consumer account (unmanaged user
+     *     account). By default, a space created by a consumer account permits any
+     *     Google Chat user.
      *
      *   * The space is used to [import data to Google Chat]
-     *     (https://developers.google.com/chat/api/guides/import-data-overview).
-     *     Import mode spaces must only permit members from the same Google
-     *     Workspace organization.
+     *     (https://developers.google.com/chat/api/guides/import-data-overview)
+     *     because import mode spaces must only permit members from the same
+     *     Google Workspace organization. However, as part of the [Google
+     *     Workspace Developer Preview
+     *     Program](https://developers.google.com/workspace/preview), import mode
+     *     spaces can permit any Google Chat user so this field can then be set
+     *     for import mode spaces.
      *
      * For existing spaces, this field is output only.
      * </pre>
@@ -3295,13 +3326,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Input when creating a space in a Google Workspace organization. Omit this
      * field when creating spaces in the following conditions:
      *
-     *   * The authenticated user uses a Google Account. By default,
-     *     the space permits any Google Chat user.
+     *   * The authenticated user uses a consumer account (unmanaged user
+     *     account). By default, a space created by a consumer account permits any
+     *     Google Chat user.
      *
      *   * The space is used to [import data to Google Chat]
-     *     (https://developers.google.com/chat/api/guides/import-data-overview).
-     *     Import mode spaces must only permit members from the same Google
-     *     Workspace organization.
+     *     (https://developers.google.com/chat/api/guides/import-data-overview)
+     *     because import mode spaces must only permit members from the same
+     *     Google Workspace organization. However, as part of the [Google
+     *     Workspace Developer Preview
+     *     Program](https://developers.google.com/workspace/preview), import mode
+     *     spaces can permit any Google Chat user so this field can then be set
+     *     for import mode spaces.
      *
      * For existing spaces, this field is output only.
      * </pre>

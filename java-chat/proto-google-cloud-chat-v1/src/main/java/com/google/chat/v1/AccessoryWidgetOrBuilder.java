@@ -28,7 +28,7 @@ public interface AccessoryWidgetOrBuilder
    *
    *
    * <pre>
-   * A list of buttons that are displayed under the message.
+   * A list of buttons.
    * </pre>
    *
    * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -40,7 +40,7 @@ public interface AccessoryWidgetOrBuilder
    *
    *
    * <pre>
-   * A list of buttons that are displayed under the message.
+   * A list of buttons.
    * </pre>
    *
    * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>
@@ -52,7 +52,7 @@ public interface AccessoryWidgetOrBuilder
    *
    *
    * <pre>
-   * A list of buttons that are displayed under the message.
+   * A list of buttons.
    * </pre>
    *
    * <code>.google.apps.card.v1.ButtonList button_list = 1;</code>

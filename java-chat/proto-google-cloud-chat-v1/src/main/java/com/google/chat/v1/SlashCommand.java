@@ -23,8 +23,9 @@ package com.google.chat.v1;
  *
  *
  * <pre>
- * A [slash command](https://developers.google.com/chat/how-tos/slash-commands)
- * in Google Chat.
+ * A [slash
+ * command](https://developers.google.com/workspace/chat/slash-commands) in
+ * Google Chat.
  * </pre>
  *
  * Protobuf type {@code google.chat.v1.SlashCommand}
@@ -240,8 +241,9 @@ public final class SlashCommand extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [slash command](https://developers.google.com/chat/how-tos/slash-commands)
-   * in Google Chat.
+   * A [slash
+   * command](https://developers.google.com/workspace/chat/slash-commands) in
+   * Google Chat.
    * </pre>
    *
    * Protobuf type {@code google.chat.v1.SlashCommand}
